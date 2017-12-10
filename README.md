@@ -1,7 +1,7 @@
 # C_bytecode_analysis
->repository for analysis of ELF files writen in C programming language
+>repository for analysis of ELF files written in C programming language
 
-## DEPENDANCIES
+## DEPENDENCIES
 - [Python 3.x](https://www.python.org/) - language used
 - [pyelftools](https://github.com/eliben/pyelftools) - Critical dependency used for the addr2line tool
 - [pycparser](https://github.com/eliben/pycparser) - used for the c_lexer tool and is currently not needed but will become useful when we start to parse C gramatics
@@ -9,6 +9,7 @@
 ## Install
 - to install pyelftools and pycparser simply clone the git repositories and run for each:
 > sudo python3 setup.py install
+- this repository requires no installation simply clone it and use it
 
 ## Usage
 - to use the tools run:
