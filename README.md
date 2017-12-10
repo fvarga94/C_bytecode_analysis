@@ -21,3 +21,9 @@
 > gcc -g A21.c -o A21.out
 - comp_script is a bash script which compiles all of the C files in input
 
+## Description
+- pyelfaddr2line will construct a list of all the files a addres in the .text section was compiled from, it outputs to .addr2line file
+- c_lexer.py returns the tokens used for lexical analysis, outputs to .lexed file
+- labels get the encapsulations of C source code, outputs to .labels file
+- label_lines uses the all the other programs to label addresses in the ELF file, outputs to .labeled_addresses file
+
