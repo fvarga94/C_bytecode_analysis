@@ -6,11 +6,11 @@
 - [pyelftools](https://github.com/eliben/pyelftools) - Critical dependency used for the addr2line tool
 - [pycparser](https://github.com/eliben/pycparser) - used for the c_lexer tool and is currently not needed but will become useful when we start to parse C gramatics
 
-##Install
+## Install
 - to install pyelftools and pycparser simply clone the git repositories and run for each:
 > sudo python3 setup.py install
 
-##Usage
+## Usage
 - to use the tools run:
 > python3 <tool_name>.py input/<file_name>
 - then search for your results in the output folder
