@@ -1,5 +1,5 @@
 from pycparser.c_lexer import CLexer
-
+import sys
 _scope_stack=[dict()]
 
 def _is_type_in_scope(name):
@@ -29,7 +29,7 @@ def _lex_type_lookup_func(name):
 	return is_type
 
 if __name__ == "__main__":
-	filename = 'input/A21.c'
+	filename = sys.argv[1]
 	f = open(filename)
 	text=f.readlines()
 	for i in range(len(text)):
@@ -42,7 +42,11 @@ if __name__ == "__main__":
 	lex.build()
 	lex.input(text)
 	f.close()
-	f=open('output/A21.c.lexed','w')
+	fname=sys.argv[1]
+	pom=fname.split("/")
+	pom[0]="output"
+	fname="/".join(pom)
+	f=open(fname+'.lexed','w')
 	while 1:
 		tok = lex.token()
 		if not tok: break
