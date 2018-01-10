@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #-------------------------------------------------------------------------------
 # elftools example: dwarf_decode_address.py
 #

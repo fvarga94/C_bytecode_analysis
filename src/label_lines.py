@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from pyelfaddr2line import addr2line
 from labels_with_lex import lex_and_label
 import sys

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from pycparser.c_lexer import CLexer
 import sys
 _scope_stack=[dict()]

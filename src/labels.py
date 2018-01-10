@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 keywords="auto break case char\
  const continue default do\
  double else enum extern\
