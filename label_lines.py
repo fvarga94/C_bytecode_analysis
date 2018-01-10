@@ -1,10 +1,11 @@
 from pyelfaddr2line import addr2line
-from labels import split_and_label
+from labels_with_lex import lex_and_label
 import sys
 import copy
 
 if __name__ == '__main__':
     fname=sys.argv[1]
+    src=sys.argv[2]
     text=addr2line(fname)
     #f=open(sys.argv[1]+".addr2line")
     #text=f.readlines()
@@ -29,22 +30,25 @@ if __name__ == '__main__':
     lbs={}
     opn=[]
     for f_name in files:
-        pom=split_and_label("input/"+f_name)
+        pom=lex_and_label(f_name,src)
         lbs[f_name]={}
         start=int(pom[0][0])
         for y in pom[0][1:]:
             opn.append(y)
         for x in pom[1:]:
             end=int(x[0])
-            for i in range(start,end):
-                lbs[f_name][str(i)]="\t".join(opn)
+            for i in range(start,end+1):
+                if str(i) not in lbs[f_name]:
+                    lbs[f_name][str(i)]="\t".join(opn)
+                elif len(opn)>len(lbs[f_name][str(i)].split("\t")):
+                    lbs[f_name][str(i)]="\t".join(opn)
+                #print (i,opn)
             for y in x[1:]:
                 if y in opn:
                     opn.remove(y)
                 else:
                     opn.append(y)
             start=end
-    #print (lbs)
     for f_name in files:
         for func_dict in adr_dict:
             for addr in adr_dict[func_dict]:
@@ -53,8 +57,9 @@ if __name__ == '__main__':
                     #print("\t"+lbs[f_name][addr[6]])
                     addr.append(lbs[f_name][addr[6]])
     pom=fname.split("/")
-    pom[0]="output"
-    fname="/".join(pom)
+    pom[-2]="output"
+    fname="/".join(pom[-2:])
+
     f=open(fname+".labeled_addresses",'w')
     for func_dict in adr_dict.keys():
         f.write(("---\t"+func_dict+"\n"))

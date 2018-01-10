@@ -28,8 +28,7 @@ def _lex_type_lookup_func(name):
 	is_type = _is_type_in_scope(name)
 	return is_type
 
-if __name__ == "__main__":
-	filename = sys.argv[1]
+def lex(filename):
 	f = open(filename)
 	text=f.readlines()
 	for i in range(len(text)):
@@ -42,15 +41,22 @@ if __name__ == "__main__":
 	lex.build()
 	lex.input(text)
 	f.close()
-	fname=sys.argv[1]
+	list_of_tokens=[]
+	while 1:
+		tok = lex.token()
+		if not tok: break
+		#~ print type(tok)
+		list_of_tokens.append((tok.value, tok.type, tok.lineno, lex.filename, tok.lexpos))
+	return list_of_tokens
+
+if __name__ == "__main__":
+	filename = sys.argv[1]
+	lot=lex(filename)
+	fname=filename
 	pom=fname.split("/")
 	pom[0]="output"
 	fname="/".join(pom)
 	f=open(fname+'.lexed','w')
-	while 1:
-		tok = lex.token()
-		if not tok: break
-
-		#~ print type(tok)
-		f.write(str([tok.value, tok.type, tok.lineno, lex.filename, tok.lexpos])+"\n")
+	for tok in lot:
+		f.write(str([t for t in tok])+"\n")
 	f.close()

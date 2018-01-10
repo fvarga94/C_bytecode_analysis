@@ -2,7 +2,11 @@
 int main()
 {
     int test;
+    int count=0;
     scanf("%d",&test);
+    for (int i=0; i<3; i++)
+	for (int j=0; j<3; j++)
+	    count+=1;
     while(test--)
     {
         int number,i,leaves=0;
@@ -29,5 +33,6 @@ int main()
                 printf("No\n");
         }
     }
+    printf("%d",count);
     return 0;
 }

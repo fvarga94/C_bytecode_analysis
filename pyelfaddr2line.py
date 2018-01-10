@@ -36,6 +36,7 @@ def process_file(filename, address1,address2):
             #print (address)
             #address=address2
         funcname_l = decode_funcname(dwarfinfo, address1,address2+1)
+
         for funcname in funcname_l:
             if funcname[1] not in ndict:
                 ndict[funcname[1]]=[]
@@ -66,6 +67,7 @@ def decode_funcname(dwarfinfo, address1, address2):
     # this simplifies things by disregarding subprograms that may have
     # split address ranges.
     func_l=[]
+    l=[i for i in range(address1,address2)]
     for CU in dwarfinfo.iter_CUs():
         for DIE in CU.iter_DIEs():
             try:
@@ -87,9 +89,20 @@ def decode_funcname(dwarfinfo, address1, address2):
                         print('Error: invalid DW_AT_high_pc class:',
                               highpc_attr_class)
                         continue
-                    for address in range(address1,address2):
-                        if lowpc <= address <= highpc:
+                    if lowpc in l and highpc in l:
+                        for address in range(lowpc,highpc):
                             func_l.append((address,DIE.attributes['DW_AT_name'].value))
+                    elif lowpc not in l and highpc in l:
+                        for address in range(address1,highpc):
+                            func_l.append((address,DIE.attributes['DW_AT_name'].value))
+                    elif lowpc in l and highpc not in l:
+                        for address in range(lowpc,address2):
+                            func_l.append((address,DIE.attributes['DW_AT_name'].value))
+                    else:
+                        pass
+                        for address in range(address1,address2):
+                            func_l.append((address,DIE.attributes['DW_AT_name'].value))
+                    print("Processing:",DIE.attributes['DW_AT_name'].value)
             except KeyError:
                 continue
     return func_l
@@ -116,6 +129,8 @@ def decode_file_line(dwarfinfo, addresses):
                     filename = lineprog['file_entry'][prevstate.file - 1].name
                     line = prevstate.line
                     dfl.append((address,line,filename))
+                    if address%100==0:
+                        print (dfl[-1])
                 prevstate = entry.state
     return dfl
 
@@ -132,6 +147,7 @@ def get_addr(filename):
 
 def addr2line(fname):
     addr1,addr2=get_addr(fname)
+    print ("Addresses gathered.")
     return process_file(fname, int(addr1,16), int(addr2,16))
 
 
@@ -141,11 +157,12 @@ if __name__ == '__main__':
         print('Expected usage: {0} <executable>'.format(sys.argv[0]))
         sys.exit(1)
     addr1,addr2=get_addr(sys.argv[1])
+    print ("Addresses gathered:", - int(addr1,16) + int(addr2,16))
     output=process_file(sys.argv[1], int(addr1,16), int(addr2,16))
     fname=sys.argv[1]
     pom=fname.split("/")
-    pom[0]="output"
-    fname="/".join(pom)
+    pom[-2]="output"
+    fname="/".join(pom[-2:])
     f=open(fname+".addr2line",'w')
     for o in output:
         f.write(o)

@@ -1,13 +1,3 @@
-keywords="auto break case char\
- const continue default do\
- double else enum extern\
- float for goto if\
- int long register return\
- short signed sizeof static\
- struct switch typedef union\
- unsigned void volatile while"
-
-keywords=keywords.split(' ')
 import re
 import sys
 import copy
@@ -58,7 +48,7 @@ def one_line_encap(pom_str,first,last,level):
                 stop=0
                 while(stop==0):
                     for encap_pom in capsules[:-1]:
-                        if encap_pom in pom_str[fi]
+                        if encap_pom in pom_str[fi]:s
                 nn=pom_str[pom_str.find(";",pom_str.find(")",fi)):].count("\n")
                 start_end[encap][j][2]=line_num-nn
                 pom_lab.append(encap+"_"+str(level))
@@ -67,7 +57,8 @@ def one_line_encap(pom_str,first,last,level):
     return
 
 def remove_strings(s):
-    new,_=re.subn('(\".*\[^\\]\")|(\'.*\[^\\]\')',"\"\"",s)
+    new,p=re.subn('(".*\[^\\]")|(\'.*\[^\\]\')','""',s)
+    print (p )
     return new
 
 def ln_set(pom_str,line_num):
@@ -85,6 +76,7 @@ def split_and_label(fname,src=""):
     #print (line_num)
     level=0
     lines=remove_strings(lines)
+    print (lines)
     num=lines.count("{")+lines.count("}")
     start=0
     lab=[line_num]
