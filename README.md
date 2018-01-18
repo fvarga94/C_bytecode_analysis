@@ -14,6 +14,8 @@
 ## Usage
 - to use the tools run:
 > python3 src/<tool_name>.py input/<file_name>
+- for labels_with_lex.py and label_lines.py
+> python3 src/<tool_name>.py input/<file_name> <source of code folder>
 - then search for your results in the output folder
 - C_lexer.py, labels.py, labels_with_lex.py take C source code as input
 - pyelfaddr2line.py and label_lines.py take the ELF .out file as input

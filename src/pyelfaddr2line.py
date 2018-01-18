@@ -21,7 +21,7 @@ from elftools.dwarf.descriptions import describe_form_class
 from elftools.elf.elffile import ELFFile
 
 
-def process_file(filename, address1,address2):
+def process_file(filename, address1,address2,ofs):
     #print('Processing file:', filename)
     with open(filename, 'rb') as f:
         elffile = ELFFile(f)
@@ -55,7 +55,7 @@ def process_file(filename, address1,address2):
                 if file==None:
                     continue
                 #print('Function:', bytes2str(funcname))
-                output.append('-\tAddr:\t'+hex(address)+\
+                output.append('-\tAddr:\t'+str(address-address1+ofs)+\
                 '\tFile:\t'+bytes2str(file)+\
                 '\tLine:\t'+str(line)+"\n")
         return output
@@ -141,15 +141,14 @@ def get_addr(filename):
     #print('In file:', filename)
     with open(filename, 'rb') as f:
         elffile = ELFFile(f)
-
         for section in elffile.iter_sections():
             if section.name.startswith('.text'):
-                return hex(section.header['sh_addr']),hex(section.header['sh_addr']+section.data_size)
+                return section.header["sh_offset"],hex(section.header['sh_addr']),hex(section.header['sh_addr']+section.data_size)
 
 def addr2line(fname):
-    addr1,addr2=get_addr(fname)
+    ofs,addr1,addr2=get_addr(fname)
     print ("Addresses gathered.")
-    return process_file(fname, int(addr1,16), int(addr2,16))
+    return process_file(fname, int(addr1,16), int(addr2,16),ofs)
 
 
 
@@ -157,9 +156,9 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print('Expected usage: {0} <executable>'.format(sys.argv[0]))
         sys.exit(1)
-    addr1,addr2=get_addr(sys.argv[1])
-    print ("Addresses gathered:", - int(addr1,16) + int(addr2,16))
-    output=process_file(sys.argv[1], int(addr1,16), int(addr2,16))
+    ofs,addr1,addr2=get_addr(sys.argv[1])
+    print ("Addresses gathered:", int(addr1,16), int(addr2,16))
+    output=process_file(sys.argv[1], int(addr1,16), int(addr2,16),ofs)
     fname=sys.argv[1]
     pom=fname.split("/")
     pom[-2]="output"
