@@ -21,7 +21,7 @@ from elftools.dwarf.descriptions import describe_form_class
 from elftools.elf.elffile import ELFFile
 
 
-def process_file(filename, address1,address2,ofs):
+def process_file(filename, address_start, address_end, offset):
     #print('Processing file:', filename)
     with open(filename, 'rb') as f:
         elffile = ELFFile(f)
@@ -34,41 +34,39 @@ def process_file(filename, address1,address2,ofs):
         # starting point for all DWARF-based processing in pyelftools.
         dwarfinfo = elffile.get_dwarf_info()
         ndict={}
-            #print (address)
-            #address=address2
-        funcname_l = decode_funcname(dwarfinfo, address1,address2+1)
+        funcname_l = decode_funcname(dwarfinfo, address_start, address_end + 1)
 
-        for funcname in funcname_l:
-            if funcname[1] not in ndict:
-                ndict[funcname[1]]=[]
-                ndict[funcname[1]].append(funcname[0])
+        for func_name in funcname_l:
+            if func_name[1] not in ndict:
+                ndict[func_name[1]]=[]
+                ndict[func_name[1]].append(func_name[0])
             else:
-                ndict[funcname[1]].append(funcname[0])
+                ndict[func_name[1]].append(func_name[0])
         output=[]
-        for funcname in ndict:
-            output.append('---\tFunc:\t'+bytes2str(funcname)+"\n")
+        for func_name in ndict:
+            output.append('---\tFunc:\t' + bytes2str(func_name) + "\n")
             addresses=[]
-            for address in ndict[funcname]:
+            for address in ndict[func_name]:
                 addresses.append(address)
             alf_list = decode_file_line(dwarfinfo, addresses)
-            for address,line,file in alf_list:
-                if file==None:
+            for address,line, file_name in alf_list:
+                if file_name == None:
                     continue
                 #print('Function:', bytes2str(funcname))
-                output.append('-\tAddr:\t'+str(address-address1+ofs)+\
-                '\tFile:\t'+bytes2str(file)+\
-                '\tLine:\t'+str(line)+"\n")
+                output.append('-\tAddr:\t' + str(address - address_start + offset) +\
+                '\tFile:\t' + bytes2str(file_name) + \
+                '\tLine:\t' + str(line) + "\n")
         return output
 
 
 
-def decode_funcname(dwarfinfo, address1, address2):
+def decode_funcname(dwarfinfo, address_start, address_end):
     # Go over all DIEs in the DWARF information, looking for a subprogram
     # entry with an address range that includes the given address. Note that
     # this simplifies things by disregarding subprograms that may have
     # split address ranges.
     func_l=[]
-    l=[i for i in range(address1,address2)]
+    l=[ i for i in range(address_start, address_end) ]
     for CU in dwarfinfo.iter_CUs():
         for DIE in CU.iter_DIEs():
             try:
@@ -91,19 +89,19 @@ def decode_funcname(dwarfinfo, address1, address2):
                               highpc_attr_class)
                         continue
                     if lowpc in l and highpc in l:
-                        for address in range(lowpc,highpc):
-                            func_l.append((address,DIE.attributes['DW_AT_name'].value))
+                        for address in range(lowpc, highpc):
+                            func_l.append((address, DIE.attributes['DW_AT_name'].value))
                     elif lowpc not in l and highpc in l:
-                        for address in range(address1,highpc):
-                            func_l.append((address,DIE.attributes['DW_AT_name'].value))
+                        for address in range(address_start, highpc):
+                            func_l.append((address, DIE.attributes['DW_AT_name'].value))
                     elif lowpc in l and highpc not in l:
-                        for address in range(lowpc,address2):
-                            func_l.append((address,DIE.attributes['DW_AT_name'].value))
+                        for address in range(lowpc, address_end):
+                            func_l.append((address, DIE.attributes['DW_AT_name'].value))
                     else:
                         pass
-                        for address in range(address1,address2):
-                            func_l.append((address,DIE.attributes['DW_AT_name'].value))
-                    print("Processing:",DIE.attributes['DW_AT_name'].value)
+                        for address in range(address_start, address_end):
+                            func_l.append((address, DIE.attributes['DW_AT_name'].value))
+                    print("Processing:", DIE.attributes['DW_AT_name'].value)
             except KeyError:
                 continue
     return func_l
@@ -112,10 +110,11 @@ def decode_funcname(dwarfinfo, address1, address2):
 def decode_file_line(dwarfinfo, addresses):
     # Go over all the line programs in the DWARF information, looking for
     # one that describes the given address.
-    dfl=[]
+
+    dfl=[] #decode file list
+
     for CU in dwarfinfo.iter_CUs():
         # First, look at line programs to find the file/line for the address
-
         for address in addresses:
             lineprog = dwarfinfo.line_program_for_CU(CU)
             prevstate = None
@@ -129,7 +128,7 @@ def decode_file_line(dwarfinfo, addresses):
                 if prevstate and prevstate.address <= address < entry.state.address:
                     filename = lineprog['file_entry'][prevstate.file - 1].name
                     line = prevstate.line
-                    dfl.append((address,line,filename))
+                    dfl.append((address, line, filename))
                     if address%100==0:
                         print (dfl[-1])
                 prevstate = entry.state
@@ -143,12 +142,17 @@ def get_addr(filename):
         elffile = ELFFile(f)
         for section in elffile.iter_sections():
             if section.name.startswith('.text'):
-                return section.header["sh_offset"],hex(section.header['sh_addr']),hex(section.header['sh_addr']+section.data_size)
+                return  section.header["sh_offset"],\
+                        hex(section.header['sh_addr']),\
+                        hex(section.header['sh_addr'] + section.data_size)
 
 def addr2line(fname):
-    ofs,addr1,addr2=get_addr(fname)
+    offset, address_start, address_end = get_addr(fname)
     print ("Addresses gathered.")
-    return process_file(fname, int(addr1,16), int(addr2,16),ofs)
+
+    return process_file(fname,
+                        int(address_start, 16), int(address_end, 16),
+                        offset)
 
 
 
@@ -156,9 +160,9 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print('Expected usage: {0} <executable>'.format(sys.argv[0]))
         sys.exit(1)
-    ofs,addr1,addr2=get_addr(sys.argv[1])
-    print ("Addresses gathered:", int(addr1,16), int(addr2,16))
-    output=process_file(sys.argv[1], int(addr1,16), int(addr2,16),ofs)
+    offset, address_start, address_end = get_addr(sys.argv[1])
+    print ("Addresses gathered:", int(address_start, 16), int(address_end, 16))
+    output=process_file(sys.argv[1], int(address_start, 16), int(address_end, 16),offset)
     fname=sys.argv[1]
     pom=fname.split("/")
     pom[-2]="output"
