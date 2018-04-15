@@ -93,3 +93,4 @@ if __name__ == "__main__":
 	for tok in lot:
 		f.write(str([t for t in tok])+"\n")
 	f.close()
+	print ("output writen to: "+fname+'.lexed')

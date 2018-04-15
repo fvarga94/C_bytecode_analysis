@@ -11,6 +11,7 @@
 # reconstructed some of the example tools to form this tool F.Varga
 from __future__ import print_function
 import sys
+import r2script
 
 # If pyelftools is not installed, the example can also run from the root or
 # examples/ dir of the source distribution.
@@ -43,20 +44,39 @@ def process_file(filename, address_start, address_end, offset):
             else:
                 ndict[func_name[1]].append(func_name[0])
         output=[]
+        new_output = []
         for func_name in ndict:
-            output.append('---\tFunc:\t' + bytes2str(func_name) + "\n")
+            min_a,max_a = address_end,0
             addresses=[]
+            output.append([func_name])
             for address in ndict[func_name]:
                 addresses.append(address)
             alf_list = decode_file_line(dwarfinfo, addresses)
-            for address,line, file_name in alf_list:
+            for address, line, file_name in alf_list:
                 if file_name == None:
                     continue
                 #print('Function:', bytes2str(funcname))
-                output.append('-\tAddr:\t' + str(address - address_start + offset) +\
-                '\tFile:\t' + bytes2str(file_name) + \
-                '\tLine:\t' + str(line) + "\n")
-        return output
+                if address>max_a:
+                    max_a=address
+                if address<min_a:
+                    min_a=address
+                output.append([address, bytes2str(file_name), str(line)])
+            fo = r2script.disassemble( hex(min_a), 1 - min_a + max_a, filename)
+            i=0
+            for j in range(len(output)):
+                if len(output[j])==1:
+                    new_output.append(output[j])
+                    continue
+                if output[j][0]>fo[i][0]:
+                    continue
+                elif output[j][0] == fo[i][0]:
+                    new_output.append([hex(fo[i][0]),str(fo[i][1])\
+                                        ,str(fo[i][2]),output[j][1],\
+                                        output[j][2]])
+                    i+=1
+                    if i==len(fo):
+                        break
+        return new_output
 
 
 
@@ -142,7 +162,8 @@ def get_addr(filename):
         elffile = ELFFile(f)
         for section in elffile.iter_sections():
             if section.name.startswith('.text'):
-                return  section.header["sh_offset"],\
+                print (section.header["sh_name"])
+                return  int(section.header["sh_offset"]),\
                         hex(section.header['sh_addr']),\
                         hex(section.header['sh_addr'] + section.data_size)
 
@@ -162,12 +183,18 @@ if __name__ == '__main__':
         sys.exit(1)
     offset, address_start, address_end = get_addr(sys.argv[1])
     print ("Addresses gathered:", int(address_start, 16), int(address_end, 16))
-    output=process_file(sys.argv[1], int(address_start, 16), int(address_end, 16),offset)
+    print ("Size: ",  - int(address_start, 16) + int(address_end, 16))
+    output=process_file(sys.argv[1], int(address_start, 16), int(address_end, 16), offset)
+
     fname=sys.argv[1]
     pom=fname.split("/")
     pom[-2]="output"
-    fname="/".join(pom[-2:])
-    f=open(fname+".addr2line",'w')
+    fname="/".join(pom[-2:])+".addr2line"
+    f=open(fname,'w')
     for o in output:
-        f.write(o)
+        if len(o)==1:
+            f.write('{0}'.format(bytes2str(o[0]))+"\n")
+            continue
+        f.write('{0[0]}\t{0[1]:>18}\t{0[2]:>40}\t{0[4]:>10}\t{0[3]:>}'.format(o)+"\n")
     f.close()
+    print ("output writen to: "+fname)

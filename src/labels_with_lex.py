@@ -4,9 +4,20 @@ import sys
 import copy
 from c_lexer import LEX
 
+current="zero_level"
+open_functions=[current]
+end_functions=["-1"]
+
 k_words = [ "IF","ELSE","WHILE",
             "FOR","SWITCH","DO"
             ]
+k_dict={}
+k_dict[current]={}
+for x in k_words:
+    k_dict[current][x]=0
+k_dict[current]["CALL"]=0
+k_dict[current]["functions"]=0
+
 
 def check_parenthesis(token):
     #check if token is parenthesis
@@ -20,16 +31,23 @@ def check_brace(token):
     #check if token is brace
     if token[1] == "LBRACE":
         return 1
-elif token[1] == "RBRACE":
-        return -1
+    elif token[1] == "RBRACE":
+            return -1
     return 0
 
 def lex_and_label(fname, src=""):
+    global current,k_dict,open_functions,end_functions
+
     lexer = LEX()
+    #print (src+fname)
     tokens = lexer.lex(src+fname)
     labels = []
     do_check = 0 #flag for checking od do_while scope
     for i in range(len(tokens)):
+        if len(end_functions)!=0 and tokens[i][2]==end_functions[-1]:
+            end_functions.pop()
+            open_functions.pop()
+            current=open_functions[-1]
         if tokens[i][1] in k_words:
             #SOLVE capsules
             if tokens[i][1] == "DO":
@@ -69,6 +87,7 @@ def lex_and_label(fname, src=""):
                         break
                 labels.append((tokens[i][2], tokens[i][1], tokens[end][2], i)) #start event
                 labels.append((tokens[end][2], tokens[i][1], i)) #end event
+                k_dict[current][tokens[i][1]]+=1
             else:
                 #solves eg. for (int i=0; i<5; i++) for (int j=0; j<5; j++) {t++;}
                 end = 0
@@ -94,12 +113,16 @@ def lex_and_label(fname, src=""):
 
                 labels.append((tokens[i][2], tokens[i][1], tokens[end][2], i)) #start event
                 labels.append((tokens[end][2], tokens[i][1], i)) #end event
+                k_dict[current][tokens[i][1]]+=1
 
         if tokens[i][1] == "ID" and tokens[i+1][1] == "LPAREN":
             #solve for a function
+            #print (tokens[i])
             is_definition = 0
             paren = 0
             start = 0
+            end = 0
+            brace = 0
             for j in range(i + 1, len(tokens)):
                 paren += check_parenthesis(tokens[j])
                 if tokens[j][1] == "RPAREN" and paren == 0:
@@ -109,8 +132,6 @@ def lex_and_label(fname, src=""):
                         break
                     else:
                         break
-            brace = 0
-            end = 0
             for j in range(start, len(tokens)):
                 if brace == 0 and tokens[j][1] == "LBRACE":
                     start = j
@@ -121,15 +142,29 @@ def lex_and_label(fname, src=""):
             if is_definition == 1:
                 labels.append((tokens[start][2], "FUNCTION", tokens[end][2], start)) #start event
                 labels.append((tokens[end][2], "FUNCTION", start)) #end event
+                k_dict[current]["functions"]+=1
+                end_functions.append(tokens[end][2])
+                open_functions.append(tokens[i][0])
+                current=tokens[i][0]
+                k_dict[current]={}
+                for x in k_words:
+                    k_dict[current][x]=0
+                k_dict[current]["CALL"]=0
+                k_dict[current]["functions"]=0
             else:
-                #this is a function call maybe usefull later
-                pass
+                start=i
+                end=i
+                labels.append((tokens[start][2], "CALL", tokens[end][2], start)) #start event
+                labels.append((tokens[end][2], "CALL", start)) #end event
+                k_dict[current]["CALL"]+=1
     labels.sort( key = lambda x: (x[0], x[-1], len(x) - 3)) #sort start/end events bj line with ends before starts
     labels_with_levels = []
     end_l = []
     for label in labels:
         if len(label) == 4: #if event start
             end_l.append(label[2])
+            if label[0] == end_l[-1]:
+                end_l.pop()
             labels_with_levels.append((label[0], label[1] + "_" + str(len(end_l))))
         else: #if event end
             #while (label[0]>end_l[-1]):
@@ -137,16 +172,20 @@ def lex_and_label(fname, src=""):
             labels_with_levels.append((label[0], label[1] + "_" + str(len(end_l))))
             if label[0] == end_l[-1]:
                 end_l.pop()
-    return labels_with_levels
+    return labels_with_levels, k_dict
 
 
 if __name__ == '__main__':
     fname = sys.argv[1]
-    lab = lex_and_label(fname)
+    lab, k_dict_pom = lex_and_label(fname)
     pom = fname.split("/")
     pom[-2] = "output"
     fname = "/".join(pom[-2:])
     f = open(fname + ".labels","w")
+    for f_name in k_dict_pom.keys():
+        #print (f_name)
+        f.write(f_name+"\t"+str(k_dict_pom[f_name])+"\n")
     for l in lab:
-         f.write(str(l) + "\n")
+        f.write(str(l) + "\n")
     f.close()
+    print ("output writen to: "+fname + ".labels")
