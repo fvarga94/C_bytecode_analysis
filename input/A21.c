@@ -1,4 +1,13 @@
 #include<stdio.h>
+
+void do_things(void)
+{
+	int random_var = 2;
+	for (int i=0; i<3; i++) random_var *= random_var;
+	printf("%d",random_var);
+	return;
+}
+
 int main()
 {
     int test;
@@ -25,6 +34,7 @@ int main()
             }
             branches=branches-leaves;
         }
+	do_things();
         if(branches==0)
         {
             printf("Yes\n");

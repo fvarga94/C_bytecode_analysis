@@ -35,7 +35,7 @@ def label_lines(fname, src):
                 for i in range(start, end + 1):
                     if str(i) not in lbs[f_name]:
                         lbs[f_name][str(i)] = "\t".join(opn)
-                    elif len(opn) > len(lbs[f_name][str(i)].split("\t")):
+                    elif len(opn) >= len(lbs[f_name][str(i)].split("\t")):
                         lbs[f_name][str(i)]="\t".join(opn)
                     #print (i,opn)
                 for y in x[1: ]:

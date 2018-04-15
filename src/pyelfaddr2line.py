@@ -43,9 +43,9 @@ def process_file(filename, address_start, address_end, offset):
                 ndict[func_name[1]].append(func_name[0])
             else:
                 ndict[func_name[1]].append(func_name[0])
-        output=[]
         new_output = []
         for func_name in ndict:
+            output=[]
             min_a,max_a = address_end,0
             addresses=[]
             output.append([func_name])
@@ -192,6 +192,7 @@ if __name__ == '__main__':
     fname="/".join(pom[-2:])+".addr2line"
     f=open(fname,'w')
     for o in output:
+        #print (o)
         if len(o)==1:
             f.write('{0}'.format(bytes2str(o[0]))+"\n")
             continue
