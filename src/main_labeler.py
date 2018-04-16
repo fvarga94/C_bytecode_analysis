@@ -10,10 +10,12 @@ def label_lines(fname, src):
         files = []
         adr_dict = {}
         func_list = []
+        length = {}
         for addrlbl in text_addressed:
-            if len(addrlbl) == 1 :
+            if len(addrlbl) == 2 :
                 func_list.append(addrlbl[0])
                 adr_dict[addrlbl[0]]=[]
+                length[addrlbl[0]]=addrlbl[1]
                 continue
             adr_dict[func_list[-1]].append(addrlbl)
             if addrlbl[3] not in files:
@@ -51,20 +53,21 @@ def label_lines(fname, src):
                     if addr[3] == f_name and addr[4] in lbs[f_name]:
                         #print("\t"+lbs[f_name][addr[4]])
                         addr.append(lbs[f_name][addr[4]])
-        return adr_dict, f_name_dict
+        return adr_dict, f_name_dict, length
 
 
 if __name__ == '__main__':
     fname, src = sys.argv[1], sys.argv[2]
-    adr_dict, f_name_dict = label_lines(fname, src)
+    adr_dict, f_name_dict, length = label_lines(fname, src)
     pom=fname.split("/")
     pom[-2]="output"
     fname="/".join(pom[-2: ])
 
     f=open(fname+".labeled_addresses",'w')
     for func_dict in adr_dict.keys():
+        dict_print=[x+","+str(f_name_dict[bytes2str(func_dict)][x]) for x in f_name_dict[bytes2str(func_dict)]]
         f.write(bytes2str(func_dict)+"\t"+\
-            str(f_name_dict[bytes2str(func_dict)])+"\n")
+            ":".join(dict_print)+"\t"+str(length[func_dict])+"\n")
         for addr in adr_dict[func_dict]:
             f.write('{0[0]}\t{0[1]:>18}\t{0[2]:>40}\t{0[4]:>10}\t{0[3]:>}\t{0[5]}'.format(addr)+"\n")
     f.close()

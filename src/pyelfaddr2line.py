@@ -44,6 +44,7 @@ def process_file(filename, address_start, address_end, offset):
             else:
                 ndict[func_name[1]].append(func_name[0])
         new_output = []
+        function_length={}
         for func_name in ndict:
             output=[]
             min_a,max_a = address_end,0
@@ -66,6 +67,7 @@ def process_file(filename, address_start, address_end, offset):
             for j in range(len(output)):
                 if len(output[j])==1:
                     new_output.append(output[j])
+                    current=output[j][0]
                     continue
                 if output[j][0]>fo[i][0]:
                     continue
@@ -76,6 +78,10 @@ def process_file(filename, address_start, address_end, offset):
                     i+=1
                     if i==len(fo):
                         break
+            function_length[current]=i
+        for i in range(len(new_output)):
+            if new_output[i][0] in function_length.keys():
+                new_output[i].append(function_length[new_output[i][0]])
         return new_output
 
 
@@ -192,9 +198,8 @@ if __name__ == '__main__':
     fname="/".join(pom[-2:])+".addr2line"
     f=open(fname,'w')
     for o in output:
-        #print (o)
-        if len(o)==1:
-            f.write('{0}'.format(bytes2str(o[0]))+"\n")
+        if len(o)==2:
+            f.write('{0}\t{1}'.format(bytes2str(o[0]),o[1])+"\n")
             continue
         f.write('{0[0]}\t{0[1]:>18}\t{0[2]:>40}\t{0[4]:>10}\t{0[3]:>}'.format(o)+"\n")
     f.close()
