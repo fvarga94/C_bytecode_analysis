@@ -36,23 +36,27 @@ def process_file(filename, address_start, address_end, offset):
         dwarfinfo = elffile.get_dwarf_info()
         ndict={}
         funcname_l = decode_funcname(dwarfinfo, address_start, address_end + 1)
-
         for func_name in funcname_l:
             if func_name[1] not in ndict:
                 ndict[func_name[1]]=[]
                 ndict[func_name[1]].append(func_name[0])
             else:
                 ndict[func_name[1]].append(func_name[0])
+        number_f=len(ndict.keys())
         new_output = []
         function_length={}
+        function_counter=-1
         for func_name in ndict:
+            function_counter+=1
             output=[]
             min_a,max_a = address_end,0
             addresses=[]
             output.append([func_name])
             for address in ndict[func_name]:
                 addresses.append(address)
-            alf_list = decode_file_line(dwarfinfo, addresses)
+            print ("Processing func_name: ",func_name," i= ",function_counter," of: ", number_f)
+            alf_list = decode_file_line (dwarfinfo, addresses)
+            print ("End")
             for address, line, file_name in alf_list:
                 if file_name == None:
                     continue
@@ -62,6 +66,7 @@ def process_file(filename, address_start, address_end, offset):
                 if address<min_a:
                     min_a=address
                 output.append([address, bytes2str(file_name), str(line)])
+            print (func_name,hex(min_a),hex(max_a))
             fo = r2script.disassemble( hex(min_a), 1 - min_a + max_a, filename)
             i=0
             for j in range(len(output)):
@@ -114,13 +119,17 @@ def decode_funcname(dwarfinfo, address_start, address_end):
                         print('Error: invalid DW_AT_high_pc class:',
                               highpc_attr_class)
                         continue
+                    #print ("--------------",hex(lowpc),hex(highpc))
                     if lowpc in l and highpc in l:
+                        #print ("oba")
                         for address in range(lowpc, highpc):
                             func_l.append((address, DIE.attributes['DW_AT_name'].value))
                     elif lowpc not in l and highpc in l:
+                        #print ("HIGH")
                         for address in range(address_start, highpc):
                             func_l.append((address, DIE.attributes['DW_AT_name'].value))
                     elif lowpc in l and highpc not in l:
+                        #print ("low")
                         for address in range(lowpc, address_end):
                             func_l.append((address, DIE.attributes['DW_AT_name'].value))
                     else:
@@ -137,27 +146,30 @@ def decode_file_line(dwarfinfo, addresses):
     # Go over all the line programs in the DWARF information, looking for
     # one that describes the given address.
 
-    dfl=[] #decode file list
-
+    dfl=[] #decode file listdwarfinfo.iter_CUs()
+    i=-1
     for CU in dwarfinfo.iter_CUs():
+        i+=1
         # First, look at line programs to find the file/line for the address
+        #print ("----",hex(addresses[-1]))
         for address in addresses:
+            i+=1
             lineprog = dwarfinfo.line_program_for_CU(CU)
             prevstate = None
             for entry in lineprog.get_entries():
                 # We're interested in those entries where a new state is assigned
-                if entry.state is None or entry.state.end_sequence:
+                if entry.state is None:
                     continue
+                #print ("entry ...",hex(entry.state.address))
                 # Looking for a range of addresses in two consecutive states that
                 # contain the required address.
-
                 if prevstate and prevstate.address <= address < entry.state.address:
                     filename = lineprog['file_entry'][prevstate.file - 1].name
                     line = prevstate.line
+                    #print (hex(address))
                     dfl.append((address, line, filename))
-                    if address%100==0:
-                        print (dfl[-1])
                 prevstate = entry.state
+        print ("i: ",i)
     return dfl
 
 
@@ -175,7 +187,7 @@ def get_addr(filename):
 
 def addr2line(fname):
     offset, address_start, address_end = get_addr(fname)
-    print ("Addresses gathered.")
+    print ("Addresses gathered: ",address_start,address_end)
 
     return process_file(fname,
                         int(address_start, 16), int(address_end, 16),

@@ -30,6 +30,7 @@ class LEX(object):
 
 	def _lex_error_func(self, msg, line, column):
 		#used for the compiler, not implemented since we only lex compilable code
+		print ("----------------",msg, line, column)
 		pass
 
 	def _lex_on_lbrace_func(self):
@@ -51,9 +52,28 @@ class LEX(object):
 		#read the file and remove processor instructions
 		f = open(filename)
 		text = f.readlines()
+		remove=0
 		for i in range(len(text)):
-			if text[i][0] == "#":
+			text[i]=text[i].lstrip()
+			if text[i]=="":
+				text[i]="\n"
+			if remove==1:
+				if text[i].find("*/")!=-1:
+					remove=0
+					text[i]=text[i][text[i].find("*/")+2:]
+				else:
+					text[i]="\n"
+			if text[i][0] == "#" or (text[i].find("//")==0):
 				text[i] = "\n"
+			if text[i].find("/*")!=-1:
+				if text[i].find("*/")==-1:
+					remove=1
+					text[i]=text[i][:text[i].find("/*")]+"\n"
+				else:
+					text[i]=text[i]=text[i][:text[i].find("/*")]+text[i][text[i].find("*/")+2:]
+
+		#for t in  text:
+		#	print (t)
 		text = "".join(text)
 		f.close()
 

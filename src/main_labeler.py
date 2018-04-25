@@ -23,6 +23,7 @@ def label_lines(fname, src):
         lbs = {}
         opn = [] #open
         f_name_dict={}
+        print (files)
         for f_name in files:
             print (f_name)
             pom,k_dict = lex_and_label(f_name,src)
@@ -46,10 +47,10 @@ def label_lines(fname, src):
                     else:
                         opn.append(y)
                 start=end
+        cur=(None,None)
         for f_name in files:
             for func_dict in adr_dict:
                 for addr in adr_dict[func_dict]:
-                    #print (addr)
                     if addr[3] == f_name and addr[4] in lbs[f_name]:
                         #print("\t"+lbs[f_name][addr[4]])
                         addr.append(lbs[f_name][addr[4]])
@@ -58,12 +59,16 @@ def label_lines(fname, src):
 
 if __name__ == '__main__':
     fname, src = sys.argv[1], sys.argv[2]
+
     adr_dict, f_name_dict, length = label_lines(fname, src)
     pom=fname.split("/")
     pom[-2]="output"
     fname="/".join(pom[-2: ])
 
     f=open(fname+".labeled_addresses",'w')
+    print (adr_dict.keys())
+    print (f_name_dict.keys())
+    #print (len(f_name_dict.keys()))
     for func_dict in adr_dict.keys():
         dict_print=[x+","+str(f_name_dict[bytes2str(func_dict)][x]) for x in f_name_dict[bytes2str(func_dict)]]
         f.write(bytes2str(func_dict)+"\t"+\

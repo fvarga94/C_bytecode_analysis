@@ -36,14 +36,29 @@ def check_brace(token):
     return 0
 
 def lex_and_label(fname, src=""):
+    print ("Labeling")
     global current,k_dict,open_functions,end_functions
 
     lexer = LEX()
     #print (src+fname)
-    tokens = lexer.lex(src+fname)
+    tokens_with_comments = lexer.lex(src+fname)
+    remove = 0
+    tokens=[]
+    for i in range(len(tokens_with_comments)):
+        if tokens_with_comments[i][0]=="/" and tokens_with_comments[i+1][0]=="*":
+            remove=1
+            #print ("start: ",tokens_with_comments[i][2])
+        if remove == 0:
+            #print (tokens_with_comments[i])
+            tokens.append(tokens_with_comments[i])
+        if tokens_with_comments[i][0]=="/" and tokens_with_comments[i-1][0]=="*":
+            remove=0
+            #print ("end ",tokens_with_comments[i][2])
     labels = []
     do_check = 0 #flag for checking od do_while scope
     for i in range(len(tokens)):
+        #if tokens[i][2]>700:
+        #    print (tokens[i])
         if len(end_functions)!=0 and tokens[i][2]==end_functions[-1]:
             end_functions.pop()
             open_functions.pop()
@@ -85,9 +100,10 @@ def lex_and_label(fname, src=""):
                     if tokens[j][1] == "RBRACE" and brace == 0:
                         end = j
                         break
-                labels.append((tokens[i][2], tokens[i][1], tokens[end][2], i)) #start event
-                labels.append((tokens[end][2], tokens[i][1], i)) #end event
                 k_dict[current][tokens[i][1]]+=1
+                num=str(k_dict[current][tokens[i][1]])
+                labels.append((tokens[i][2], tokens[i][1] + "_" + num, tokens[end][2], i)) #start event
+                labels.append((tokens[end][2], tokens[i][1] + "_" + num, i)) #end event
             else:
                 #solves eg. for (int i=0; i<5; i++) for (int j=0; j<5; j++) {t++;}
                 end = 0
@@ -110,14 +126,14 @@ def lex_and_label(fname, src=""):
                             # notice no braces
                             end = j
                             break
-
-                labels.append((tokens[i][2], tokens[i][1], tokens[end][2], i)) #start event
-                labels.append((tokens[end][2], tokens[i][1], i)) #end event
                 k_dict[current][tokens[i][1]]+=1
+                num=str(k_dict[current][tokens[i][1]])
+                labels.append((tokens[i][2], tokens[i][1] + "_" + num, tokens[end][2], i)) #start event
+                labels.append((tokens[end][2], tokens[i][1] + "_" + num, i)) #end event
+
 
         if tokens[i][1] == "ID" and tokens[i+1][1] == "LPAREN":
             #solve for a function
-            #print (tokens[i])
             is_definition = 0
             paren = 0
             start = 0
@@ -140,13 +156,15 @@ def lex_and_label(fname, src=""):
                     end = j
                     break
             if is_definition == 1:
-                labels.append((tokens[start][2], "FUNCTION", tokens[end][2], start)) #start event
-                labels.append((tokens[end][2], "FUNCTION", start)) #end event
                 k_dict[current]["functions"]+=1
                 end_functions.append(tokens[end][2])
                 open_functions.append(tokens[i][0])
+                num=str(k_dict[current]["functions"])
+                labels.append((tokens[start][2], "FUNCTION_"+num, tokens[end][2], start)) #start event
+                labels.append((tokens[end][2], "FUNCTION_"+num, start)) #end event
                 current=tokens[i][0]
                 k_dict[current]={}
+                print ("Found: ",current)
                 for x in k_words:
                     k_dict[current][x]=0
                 k_dict[current]["CALL"]=0
@@ -154,9 +172,11 @@ def lex_and_label(fname, src=""):
             else:
                 start=i
                 end=i
-                labels.append((tokens[start][2], "CALL", tokens[end][2], start)) #start event
-                labels.append((tokens[end][2], "CALL", start)) #end event
                 k_dict[current]["CALL"]+=1
+                num=str(k_dict[current]["CALL"])
+                labels.append((tokens[start][2], "CALL_"+num, tokens[end][2], start)) #start event
+                labels.append((tokens[end][2], "CALL_"+num, start)) #end event
+
     labels.sort( key = lambda x: (x[0], x[-1], len(x) - 3)) #sort start/end events bj line with ends before starts
     labels_with_levels = []
     end_l = []
@@ -165,12 +185,12 @@ def lex_and_label(fname, src=""):
             end_l.append(label[2])
             if label[0] == end_l[-1]:
                 end_l.pop()
-            labels_with_levels.append((label[0], label[1] + "_" + str(len(end_l))))
+            labels_with_levels.append((label[0], label[1])) #+ "_" + str(len(end_l))
         else: #if event end
             #while (label[0]>end_l[-1]):
             #    end_l.pop()
-            labels_with_levels.append((label[0], label[1] + "_" + str(len(end_l))))
-            if label[0] == end_l[-1]:
+            labels_with_levels.append((label[0], label[1] )) #+ "_" + str(len(end_l))
+            if len(label)!=0 and len(end_l)!=0 and label[0] == end_l[-1]:
                 end_l.pop()
     return labels_with_levels, k_dict
 
