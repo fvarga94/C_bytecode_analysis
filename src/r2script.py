@@ -5,9 +5,9 @@ def disassemble(start_adr,length,fname):
     base=0
     set_base=""
     start_adr=int(start_adr,16)
-    if fname.split(".")[1]=="o":
-        base=0x08000040
-        set_base="-B 0x08000000"
+    if fname.split(".")[-1]=="o":
+        base=0x04000040
+        set_base="-B 0x04000000"
     print ("Dissasembling: ",hex(start_adr),length,fname)
     in_re = re.compile("  +")
     end_re = re.compile(";.*")
