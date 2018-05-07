@@ -67,6 +67,7 @@ def process_file(filename, address_start, address_end, offset):
                     min_a=address
                 output.append([address, bytes2str(file_name), str(line)])
             print (func_name,hex(min_a),hex(max_a))
+            sys.stderr.write("Proccessing: "+str(function_counter+1)+" / "+str(number_f)+"\n")
             fo = r2script.disassemble( hex(min_a), 1 - min_a + max_a, filename)
             i=0
             for j in range(len(output)):

@@ -42,6 +42,7 @@ def lex_and_label(fname, src=""):
     lexer = LEX()
     #print (src+fname)
     tokens_with_comments = lexer.lex(src+fname)
+    print ("Labeled")
     remove = 0
     tokens=[]
     for i in range(len(tokens_with_comments)):
@@ -59,6 +60,7 @@ def lex_and_label(fname, src=""):
     for i in range(len(tokens)):
         #if tokens[i][2]>700:
         #    print (tokens[i])
+        #print (tokens[i])
         if len(end_functions)!=0 and tokens[i][2]==end_functions[-1]:
             end_functions.pop()
             open_functions.pop()

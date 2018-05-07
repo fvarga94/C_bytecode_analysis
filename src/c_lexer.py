@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pycparser.c_lexer import CLexer
 import sys
+import re
 
 class LEX(object):
 	'''
@@ -53,6 +54,10 @@ class LEX(object):
 		f = open(filename)
 		text = f.readlines()
 		remove=0
+		hard_remove=0
+		pattern='"(\\\\.|[^"])*"'
+		print (pattern)
+		regsub=re.compile(pattern)
 		for i in range(len(text)):
 			text[i]=text[i].lstrip()
 			if text[i]=="":
@@ -63,7 +68,14 @@ class LEX(object):
 					text[i]=text[i][text[i].find("*/")+2:]
 				else:
 					text[i]="\n"
+			if hard_remove==1:
+				if text[i][-2:]=="\\\n":
+					hard_remove+=1
+				text[i]="\n"
+				hard_remove-=1
 			if text[i][0] == "#" or (text[i].find("//")==0):
+				if text[i][-2:]=="\\\n":
+					hard_remove=1
 				text[i] = "\n"
 			if text[i].find("/*")!=-1:
 				if text[i].find("*/")==-1:
@@ -71,9 +83,10 @@ class LEX(object):
 					text[i]=text[i][:text[i].find("/*")]+"\n"
 				else:
 					text[i]=text[i]=text[i][:text[i].find("/*")]+text[i][text[i].find("*/")+2:]
-
-		#for t in  text:
-		#	print (t)
+			text[i]=re.sub(regsub,"\"next\"",text[i])
+		for i in range(len(text)):
+			if i>1676 and i<1682:
+				print (text[i])
 		text = "".join(text)
 		f.close()
 
@@ -96,7 +109,7 @@ class LEX(object):
 			list_of_tokens.append((tok.value, tok.type,
 								   tok.lineno, lex.filename,
 								   tok.lexpos))
-
+			#print (tok)
 		return list_of_tokens
 
 if __name__ == "__main__":

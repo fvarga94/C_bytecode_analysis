@@ -11,7 +11,7 @@ def disassemble(start_adr,length,fname):
     print ("Dissasembling: ",hex(start_adr),length,fname)
     in_re = re.compile("  +")
     end_re = re.compile(";.*")
-    r2 = r2pipe.open(fname,[set_base])
+    r2 = r2pipe.open(fname,[set_base,"-2"])
     r2.cmd("s "+hex(start_adr+base))
     print (hex(start_adr+base))
     output = r2.cmd("pD "+str(length))

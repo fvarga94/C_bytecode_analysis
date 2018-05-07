@@ -26,6 +26,7 @@ def label_lines(fname, src):
         print (files)
         for f_name in files:
             print (f_name)
+            sys.stderr.write("Lexing: "+f_name+"\n")
             pom,k_dict = lex_and_label(f_name,src)
             for x in k_dict.keys():
                 f_name_dict[x]=k_dict[x]
