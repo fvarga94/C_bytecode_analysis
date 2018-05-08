@@ -3,6 +3,9 @@ from pycparser.c_lexer import CLexer
 import sys
 import re
 
+
+#clang -Xclang -dump-tokens code.c
+
 class LEX(object):
 	'''
 	Wraper function for the c_lexer class found in the pycparser package.
@@ -51,11 +54,11 @@ class LEX(object):
 		#lex the input file
 
 		#read the file and remove processor instructions
-		f = open(filename)
+		f = open(filename, errors="replace")
 		text = f.readlines()
 		remove=0
 		hard_remove=0
-		pattern='"(\\\\.|[^"])*"'
+		pattern='^[^\']*"(\\\\.|[^"])*[^\']*"$'
 		print (pattern)
 		regsub=re.compile(pattern)
 		for i in range(len(text)):
@@ -83,10 +86,11 @@ class LEX(object):
 					text[i]=text[i][:text[i].find("/*")]+"\n"
 				else:
 					text[i]=text[i]=text[i][:text[i].find("/*")]+text[i][text[i].find("*/")+2:]
-			text[i]=re.sub(regsub,"\"next\"",text[i])
-		for i in range(len(text)):
-			if i>1676 and i<1682:
-				print (text[i])
+			text[i]=re.sub(regsub,"\g<1>\"next\"",text[i])
+			#print (i,text[i])
+		#for i in range(len(text)):
+		#	if i>1676 and i<1682:
+		#		print (text[i])
 		text = "".join(text)
 		f.close()
 

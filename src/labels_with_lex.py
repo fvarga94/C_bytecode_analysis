@@ -144,12 +144,18 @@ def lex_and_label(fname, src=""):
             for j in range(i + 1, len(tokens)):
                 paren += check_parenthesis(tokens[j])
                 if tokens[j][1] == "RPAREN" and paren == 0:
-                    if tokens[j+1][1] == "LBRACE":
-                        is_definition = 1
-                        start = j + 1
+                    if tokens[j+1][1]=="SEMI":
                         break
-                    else:
-                        break
+                    for k in range(j+1,len(tokens)):
+                        if tokens[k][1] in ["ID","SEMI","TIMES"]:
+                            continue
+                        if tokens[k][1] == "LBRACE":
+                            is_definition = 1
+                            start = k
+                            break
+                        else:
+                            break
+                    break
             for j in range(start, len(tokens)):
                 if brace == 0 and tokens[j][1] == "LBRACE":
                     start = j
