@@ -80,7 +80,10 @@ class LEX(object):
 				if text[i][-2:]=="\\\n":
 					hard_remove=1
 				text[i] = "\n"
-			if text[i].find("/*")!=-1:
+			n=text[i].find("/*")
+			m=text[i].find("'")
+			g=text[i].find("\"")
+			if n!=-1 and (m>n or m==-1) and (g>n or g==-1):
 				if text[i].find("*/")==-1:
 					remove=1
 					text[i]=text[i][:text[i].find("/*")]+"\n"
@@ -88,9 +91,9 @@ class LEX(object):
 					text[i]=text[i]=text[i][:text[i].find("/*")]+text[i][text[i].find("*/")+2:]
 			text[i]=re.sub(regsub,"\g<1>\"next\"",text[i])
 			#print (i,text[i])
-		#for i in range(len(text)):
-		#	if i>1676 and i<1682:
-		#		print (text[i])
+		for i in range(len(text)):
+			if i>3325 and i<3340:
+				print (i,text[i])
 		text = "".join(text)
 		f.close()
 

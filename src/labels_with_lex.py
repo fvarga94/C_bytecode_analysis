@@ -147,7 +147,7 @@ def lex_and_label(fname, src=""):
                     if tokens[j+1][1]=="SEMI":
                         break
                     for k in range(j+1,len(tokens)):
-                        if tokens[k][1] in ["ID","SEMI","TIMES"]:
+                        if tokens[k][1] in ["ID","SEMI","TIMES","INT"]:
                             continue
                         if tokens[k][1] == "LBRACE":
                             is_definition = 1

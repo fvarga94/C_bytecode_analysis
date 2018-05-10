@@ -71,6 +71,8 @@ if __name__ == '__main__':
     print (f_name_dict.keys())
     #print (len(f_name_dict.keys()))
     for func_dict in adr_dict.keys():
+        if bytes2str(func_dict) not in f_name_dict:
+            continue
         dict_print=[x+","+str(f_name_dict[bytes2str(func_dict)][x]) for x in f_name_dict[bytes2str(func_dict)]]
         f.write(bytes2str(func_dict)+"\t"+\
             ":".join(dict_print)+"\t"+str(length[func_dict])+"\n")
