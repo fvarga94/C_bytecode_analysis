@@ -2,9 +2,10 @@
 from pycparser.c_lexer import CLexer
 import sys
 import re
-
+import subprocess
 
 #clang -Xclang -dump-tokens code.c
+#gcc -fpreprocessed -E -dD code.c
 
 class LEX(object):
 	'''
@@ -54,48 +55,83 @@ class LEX(object):
 		#lex the input file
 
 		#read the file and remove processor instructions
-		f = open(filename, errors="replace")
-		text = f.readlines()
-		remove=0
+		completed=subprocess.run(["gcc", "-fpreprocessed", "-E","-dD",filename], stdout=subprocess.PIPE, universal_newlines=True)
+		text=completed.stdout.split('\n')
+		num=[]
+		del text[-1]
 		hard_remove=0
-		pattern='^[^\']*"(\\\\.|[^"])*[^\']*"$'
-		print (pattern)
-		regsub=re.compile(pattern)
 		for i in range(len(text)):
 			text[i]=text[i].lstrip()
-			if text[i]=="":
-				text[i]="\n"
-			if remove==1:
-				if text[i].find("*/")!=-1:
-					remove=0
-					text[i]=text[i][text[i].find("*/")+2:]
-				else:
-					text[i]="\n"
 			if hard_remove==1:
-				if text[i][-2:]=="\\\n":
+				if text[i][-1]=="\\":
 					hard_remove+=1
-				text[i]="\n"
+				text[i]=""
 				hard_remove-=1
-			if text[i][0] == "#" or (text[i].find("//")==0):
-				if text[i][-2:]=="\\\n":
+			if len(text[i])!=0 and text[i][0]=='#':
+				if text[i][-1]=="\\":
 					hard_remove=1
-				text[i] = "\n"
-			n=text[i].find("/*")
-			m=text[i].find("'")
-			g=text[i].find("\"")
-			if n!=-1 and (m>n or m==-1) and (g>n or g==-1):
-				if text[i].find("*/")==-1:
-					remove=1
-					text[i]=text[i][:text[i].find("/*")]+"\n"
-				else:
-					text[i]=text[i]=text[i][:text[i].find("/*")]+text[i][text[i].find("*/")+2:]
-			text[i]=re.sub(regsub,"\g<1>\"next\"",text[i])
-			#print (i,text[i])
+				check=text[i].split(" ")
+				if len(check)==3 and check[2]=='"'+filename+'"':
+					number=int(check[1])
+					num.append((i,number-1))
+				text[i]=""
+		#print (num)
+		added=0
+		for i in range(len(num)):
+			add=num[i][1]-num[i][0]-added-1
+			#print (num[i][0],num[i][1],add,added+num[i][0])
+			for j in range(add):
+				text.insert(num[i][0]+added,"")
+			added+=add
+		#print (repr(text[1664]))
+		#f = open(filename, errors="replace")
+		#text1 = f.readlines()
+		#print (len(text),len(text1))
+		#print (text[2252])
+		#remove=0
+		#hard_remove=0
+		#pattern='^[^\']*"(\\\\.|[^"])*[^\']*"$'
+		pattern='\\\\.(\\\\.)*'
+
+		print (pattern)
+		regsub=re.compile(pattern)
+		#for i in range(len(text1)):
+		#	print (i,text1[i],i,text[i])
 		for i in range(len(text)):
-			if i>3325 and i<3340:
-				print (i,text[i])
-		text = "".join(text)
-		f.close()
+		#	text[i]=text[i].lstrip()
+		#	if text[i]=="":
+		#		text[i]="\n"
+			#if remove==1:
+			#	if text[i].find("*/")!=-1:
+			#		remove=0
+			#		text[i]=text[i][text[i].find("*/")+2:]
+			#	else:
+			#		text[i]="\n"
+			#if hard_remove==1:
+			#	if text[i][-2:]=="\\\n":
+			#		hard_remove+=1
+			#	text[i]="\n"
+			#	hard_remove-=1
+			#if text[i][0] == "#" or (text[i].find("//")==0):
+			#	if text[i][-2:]=="\\\n":
+			#		hard_remove=1
+			#	text[i] = "\n"
+			#n=text[i].find("/*")
+			#m=text[i].find("'")
+			#g=text[i].find("\"")
+			#if n!=-1 and (m>n or m==-1) and (g>n or g==-1):
+			#	if text[i].find("*/")==-1:
+			#		remove=1
+			#		text[i]=text[i][:text[i].find("/*")]+"\n"
+			#	else:
+			#		text[i]=text[i]=text[i][:text[i].find("/*")]+text[i][text[i].find("*/")+2:]
+			text[i]=re.sub(regsub,"\g<1> ",text[i])
+			print (i,text[i])
+		#for i in range(len(text)):
+		#	if i>1660 and i<1670:
+		#		print (i,text[i])
+		text = "\n".join(text)
+		#f.close()
 
 		self._scope_stack=[dict()] #open new scope list
 
