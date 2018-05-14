@@ -3,6 +3,7 @@ import re
 import sys
 import copy
 from c_lexer import LEX
+import subprocess
 
 current="zero_level"
 open_functions=[current]
@@ -40,21 +41,12 @@ def lex_and_label(fname, src=""):
     global current,k_dict,open_functions,end_functions
 
     lexer = LEX()
-    #print (src+fname)
-    tokens_with_comments = lexer.lex(src+fname)
+    completed=subprocess.run(["find",src,"-name","*"+fname], stdout=subprocess.PIPE, universal_newlines=True)
+    source_files=completed.stdout.split('\n')
+    print (source_files)
+    tokens = lexer.lex(source_files[0])
     print ("Labeled")
     remove = 0
-    tokens=[]
-    for i in range(len(tokens_with_comments)):
-        if tokens_with_comments[i][0]=="/" and tokens_with_comments[i+1][0]=="*":
-            remove=1
-            #print ("start: ",tokens_with_comments[i][2])
-        if remove == 0:
-            #print (tokens_with_comments[i])
-            tokens.append(tokens_with_comments[i])
-        if tokens_with_comments[i][0]=="/" and tokens_with_comments[i-1][0]=="*":
-            remove=0
-            #print ("end ",tokens_with_comments[i][2])
     labels = []
     do_check = 0 #flag for checking od do_while scope
     for i in range(len(tokens)):
@@ -156,19 +148,21 @@ def lex_and_label(fname, src=""):
                         else:
                             break
                     break
-            for j in range(start, len(tokens)):
-                if brace == 0 and tokens[j][1] == "LBRACE":
-                    start = j
-                brace += check_brace(tokens[j])
-                if tokens[j][1] == "RBRACE" and brace == 0:
-                    end = j
-                    break
+            if start!=0:
+                for j in range(start, len(tokens)):
+                    if brace == 0 and tokens[j][1] == "LBRACE":
+                        start = j
+                    brace += check_brace(tokens[j])
+                    if tokens[j][1] == "RBRACE" and brace == 0:
+                        end = j
+                        break
             if is_definition == 1:
                 k_dict[current]["functions"]+=1
                 end_functions.append(tokens[end][2])
                 open_functions.append(tokens[i][0])
                 num=str(k_dict[current]["functions"])
                 labels.append((tokens[start][2], "FUNCTION_"+num, tokens[end][2], start)) #start event
+                print (tokens[start][2])
                 labels.append((tokens[end][2], "FUNCTION_"+num, start)) #end event
                 current=tokens[i][0]
                 k_dict[current]={}
@@ -200,6 +194,7 @@ def lex_and_label(fname, src=""):
             labels_with_levels.append((label[0], label[1] )) #+ "_" + str(len(end_l))
             if len(label)!=0 and len(end_l)!=0 and label[0] == end_l[-1]:
                 end_l.pop()
+    #print (labels_with_levels)
     return labels_with_levels, k_dict
 
 

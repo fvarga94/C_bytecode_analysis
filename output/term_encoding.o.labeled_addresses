@@ -1,0 +1,553 @@
+init_utf8	functions,0:FOR,0:DO,0:CALL,0:ELSE,0:WHILE,0:IF,0:SWITCH,0	13
+0x0	              0x55	                                push rbp	        21	encoding.c	FUNCTION_1
+0x1	          0x4889e5	                            mov rbp, rsp	        21	encoding.c	FUNCTION_1
+0x4	        0x48897de8	             mov qword [rbp - 0x18], rdi	        21	encoding.c	FUNCTION_1
+0x8	        0x488975e0	             mov qword [rbp - 0x20], rsi	        21	encoding.c	FUNCTION_1
+0xc	        0x488b45e0	             mov rax, qword [rbp - 0x20]	        22	encoding.c	FUNCTION_1
+0x10	        0x488945f8	                mov qword [rbp - 8], rax	        22	encoding.c	FUNCTION_1
+0x14	        0x488b45f8	                mov rax, qword [rbp - 8]	        24	encoding.c	FUNCTION_1
+0x18	    0xc70000000000	                      mov dword [rax], 0	        24	encoding.c	FUNCTION_1
+0x1e	        0x488b45f8	                mov rax, qword [rbp - 8]	        25	encoding.c	FUNCTION_1
+0x22	    0xc74004000000	                  mov dword [rax + 4], 0	        25	encoding.c	FUNCTION_1
+0x29	              0x90	                                     nop	        26	encoding.c	FUNCTION_1
+0x2a	              0x5d	                                 pop rbp	        26	encoding.c	FUNCTION_1
+0x2b	              0xc3	                                     ret	        26	encoding.c	FUNCTION_1
+decode_utf8	functions,0:FOR,1:DO,0:CALL,5:ELSE,9:WHILE,0:IF,24:SWITCH,1	352
+0x2c	              0x55	                                push rbp	        31	encoding.c	FUNCTION_2
+0x2d	          0x4889e5	                            mov rbp, rsp	        31	encoding.c	FUNCTION_2
+0x30	        0x48897de8	             mov qword [rbp - 0x18], rdi	        31	encoding.c	FUNCTION_2
+0x34	        0x488975e0	             mov qword [rbp - 0x20], rsi	        31	encoding.c	FUNCTION_2
+0x38	        0x488955d8	             mov qword [rbp - 0x28], rdx	        31	encoding.c	FUNCTION_2
+0x3c	        0x48894dd0	             mov qword [rbp - 0x30], rcx	        31	encoding.c	FUNCTION_2
+0x40	        0x448945cc	             mov dword [rbp - 0x34], r8d	        31	encoding.c	FUNCTION_2
+0x44	        0x4c894dc0	              mov qword [rbp - 0x40], r9	        31	encoding.c	FUNCTION_2
+0x48	        0x488b45e0	             mov rax, qword [rbp - 0x20]	        32	encoding.c	FUNCTION_2
+0x4c	        0x488945f8	                mov qword [rbp - 8], rax	        32	encoding.c	FUNCTION_2
+0x50	      0xe98c040000	                           jmp 0x4000521	        38	encoding.c	FUNCTION_2	FOR_1
+0x55	        0x488b4510	            mov rax, qword [rbp + 0x10] 	        39	encoding.c	FUNCTION_2	FOR_1
+0x59	          0x488b10	                    mov rdx, qword [rax]	        39	encoding.c	FUNCTION_2	FOR_1
+0x5c	        0x488b45c0	             mov rax, qword [rbp - 0x40]	        39	encoding.c	FUNCTION_2	FOR_1
+0x60	          0x4801d0	                            add rax, rdx	        39	encoding.c	FUNCTION_2	FOR_1
+0x63	           0xfb600	                   movzx eax, byte [rax]	        39	encoding.c	FUNCTION_2	FOR_1
+0x66	          0x8845f7	                  mov byte [rbp - 9], al	        39	encoding.c	FUNCTION_2	FOR_1
+0x69	        0x807df71f	                cmp byte [rbp - 9], 0x1f	        45	encoding.c	FUNCTION_2	FOR_1	IF_1
+0x6d	     0xf868c040000	                           jbe 0x400053f	        45	encoding.c	FUNCTION_2	FOR_1	IF_1
+0x73	        0x807df71f	                cmp byte [rbp - 9], 0x1f	        48	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0x77	            0x767a	                           jbe 0x4000133	        48	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0x79	        0x807df77e	                cmp byte [rbp - 9], 0x7e	        48	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0x7d	            0x7774	                            ja 0x4000133	        48	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0x7f	        0x488b45f8	                mov rax, qword [rbp - 8]	        49	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0x83	            0x8b00	                    mov eax, dword [rax]	        49	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0x85	            0x85c0	                           test eax, eax	        49	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0x87	            0x743f	                            je 0x4000108	        49	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0x89	        0x488b45f8	                mov rax, qword [rbp - 8]	        50	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0x8d	    0xc70000000000	                      mov dword [rax], 0	        50	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0x93	        0x488b45d0	             mov rax, qword [rbp - 0x30]	        51	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0x97	            0x8b00	                    mov eax, dword [rax]	        51	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0x99	          0x8d4801	                      lea ecx, [rax + 1]	        51	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0x9c	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	        51	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0xa0	            0x890a	                    mov dword [rdx], ecx	        51	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0xa2	            0x4898	                                    cdqe	        51	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0xa4	    0x488d14850000	                        lea rdx, [rax*4]	        51	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0xac	        0x488b45d8	             mov rax, qword [rbp - 0x28]	        51	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0xb0	          0x4801d0	                            add rax, rdx	        51	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0xb3	    0xc700fdff0000	                 mov dword [rax], 0xfffd	        51	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3
+0xb9	        0x488b45d0	             mov rax, qword [rbp - 0x30]	        52	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3	IF_4
+0xbd	            0x8b00	                    mov eax, dword [rax]	        52	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3	IF_4
+0xbf	          0x3b45cc	             cmp eax, dword [rbp - 0x34]	        52	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3	IF_4
+0xc2	     0xf8d3a040000	                           jge 0x4000542	        52	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3	IF_4
+0xc8	        0x488b45d0	             mov rax, qword [rbp - 0x30]	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xcc	            0x8b00	                    mov eax, dword [rax]	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xce	          0x8d4801	                      lea ecx, [rax + 1]	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xd1	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xd5	            0x890a	                    mov dword [rdx], ecx	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xd7	            0x4898	                                    cdqe	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xd9	    0x488d14850000	                        lea rdx, [rax*4]	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xe1	        0x488b45d8	             mov rax, qword [rbp - 0x28]	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xe5	          0x4801c2	                            add rdx, rax	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xe8	         0xfb645f7	               movzx eax, byte [rbp - 9]	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xec	            0x8902	                    mov dword [rdx], eax	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xee	      0xe9dc030000	                           jmp 0x400050f	        55	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2
+0xf3	        0x807df77f	                cmp byte [rbp - 9], 0x7f	        61	encoding.c	FUNCTION_2	FOR_1	ELSE_2	IF_5
+0xf7	     0xf8408040000	                            je 0x4000545	        61	encoding.c	FUNCTION_2	FOR_1	ELSE_2	IF_5
+0xfd	         0xfb645f7	               movzx eax, byte [rbp - 9]	        64	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x101	            0x84c0	                             test al, al	        64	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x103	     0xf89a5010000	                           jns 0x40002ee	        64	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x109	        0x807df7bf	                cmp byte [rbp - 9], 0xbf	        64	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x10d	     0xf879b010000	                            ja 0x40002ee	        64	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x113	        0x488b45f8	                mov rax, qword [rbp - 8]	        65	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x117	            0x8b00	                    mov eax, dword [rax]	        65	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x119	            0x85c0	                           test eax, eax	        65	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x11b	            0x752b	                           jne 0x4000188	        65	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x11d	        0x488b45d0	             mov rax, qword [rbp - 0x30]	        66	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x121	            0x8b00	                    mov eax, dword [rax]	        66	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x123	          0x8d4801	                      lea ecx, [rax + 1]	        66	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x126	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	        66	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x12a	            0x890a	                    mov dword [rdx], ecx	        66	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x12c	            0x4898	                                    cdqe	        66	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x12e	    0x488d14850000	                        lea rdx, [rax*4]	        66	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x136	        0x488b45d8	             mov rax, qword [rbp - 0x28]	        66	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x13a	          0x4801d0	                            add rax, rdx	        66	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x13d	    0xc700fdff0000	                 mov dword [rax], 0xfffd	        66	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x143	      0xe987030000	                           jmp 0x400050f	        67	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_7
+0x148	        0x488b45f8	                mov rax, qword [rbp - 8]	        70	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x14c	          0x8b4008	                mov eax, dword [rax + 8]	        70	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x14f	          0xc1e006	                              shl eax, 6	        70	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x152	            0x89c2	                            mov edx, eax	        70	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x154	        0x488b45f8	                mov rax, qword [rbp - 8]	        70	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x158	          0x895008	                mov dword [rax + 8], edx	        70	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x15b	        0x488b45f8	                mov rax, qword [rbp - 8]	        71	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x15f	          0x8b4008	                mov eax, dword [rax + 8]	        71	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x162	         0xfb655f7	               movzx edx, byte [rbp - 9]	        71	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x166	          0x83e23f	                           and edx, 0x3f	        71	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x169	             0x9c2	                             or edx, eax	        71	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x16b	        0x488b45f8	                mov rax, qword [rbp - 8]	        71	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x16f	          0x895008	                mov dword [rax + 8], edx	        71	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x172	        0x488b45f8	                mov rax, qword [rbp - 8]	        72	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x176	            0x8b00	                    mov eax, dword [rax]	        72	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x178	          0x8d50ff	                      lea edx, [rax - 1]	        72	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x17b	        0x488b45f8	                mov rax, qword [rbp - 8]	        72	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x17f	            0x8910	                    mov dword [rax], edx	        72	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6
+0x181	        0x488b45f8	                mov rax, qword [rbp - 8]	        74	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x185	            0x8b00	                    mov eax, dword [rax]	        74	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x187	            0x85c0	                           test eax, eax	        74	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x189	     0xf8540030000	                           jne 0x400050f	        74	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x18f	        0x488b45f8	                mov rax, qword [rbp - 8]	        79	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x193	          0x8b4004	                mov eax, dword [rax + 4]	        79	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x196	          0x83f806	                              cmp eax, 6	        79	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x199	     0xf879e000000	                            ja 0x400027d	        79	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x19f	            0x89c0	                            mov eax, eax	        79	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x1a1	    0x488b04c50000	                  mov rax, qword [rax*8]	        79	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x1a9	            0xffe0	                                 jmp rax	        79	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x1ab	        0x488b45f8	                mov rax, qword [rbp - 8]	        81	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_9
+0x1af	          0x8b4008	                mov eax, dword [rax + 8]	        81	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_9
+0x1b2	          0x83f87f	                           cmp eax, 0x7f	        81	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_9
+0x1b5	            0x7f79	                            jg 0x4000270	        81	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_9
+0x1b7	        0x488b45f8	                mov rax, qword [rbp - 8]	        81	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_9
+0x1bb	    0xc74008fdff00	            mov dword [rax + 8], 0xfffd 	        81	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_9
+0x1c2	            0xeb6c	                           jmp 0x4000270	        82	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x1c4	        0x488b45f8	                mov rax, qword [rbp - 8]	        84	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_10
+0x1c8	          0x8b4008	                mov eax, dword [rax + 8]	        84	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_10
+0x1cb	      0x3dff070000	                          cmp eax, 0x7ff	        84	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_10
+0x1d0	            0x7f61	                            jg 0x4000273	        84	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_10
+0x1d2	        0x488b45f8	                mov rax, qword [rbp - 8]	        84	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_10
+0x1d6	    0xc74008fdff00	            mov dword [rax + 8], 0xfffd 	        84	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_10
+0x1dd	            0xeb54	                           jmp 0x4000273	        85	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x1df	        0x488b45f8	                mov rax, qword [rbp - 8]	        87	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_11
+0x1e3	          0x8b4008	                mov eax, dword [rax + 8]	        87	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_11
+0x1e6	      0x3dffff0000	                         cmp eax, 0xffff	        87	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_11
+0x1eb	            0x7f49	                            jg 0x4000276	        87	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_11
+0x1ed	        0x488b45f8	                mov rax, qword [rbp - 8]	        87	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_11
+0x1f1	    0xc74008fdff00	            mov dword [rax + 8], 0xfffd 	        87	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_11
+0x1f8	            0xeb3c	                           jmp 0x4000276	        88	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x1fa	        0x488b45f8	                mov rax, qword [rbp - 8]	        90	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_12
+0x1fe	          0x8b4008	                mov eax, dword [rax + 8]	        90	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_12
+0x201	      0x3dffff1f00	                       cmp eax, 0x1fffff	        90	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_12
+0x206	            0x7f31	                            jg 0x4000279	        90	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_12
+0x208	        0x488b45f8	                mov rax, qword [rbp - 8]	        90	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_12
+0x20c	    0xc74008fdff00	            mov dword [rax + 8], 0xfffd 	        90	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_12
+0x213	            0xeb24	                           jmp 0x4000279	        91	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x215	        0x488b45f8	                mov rax, qword [rbp - 8]	        93	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_13
+0x219	          0x8b4008	                mov eax, dword [rax + 8]	        93	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_13
+0x21c	      0x3dffffff03	                      cmp eax, 0x3ffffff	        93	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_13
+0x221	            0x7f19	                            jg 0x400027c	        93	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_13
+0x223	        0x488b45f8	                mov rax, qword [rbp - 8]	        93	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_13
+0x227	    0xc74008fdff00	            mov dword [rax + 8], 0xfffd 	        93	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1	IF_13
+0x22e	            0xeb0c	                           jmp 0x400027c	        94	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x230	              0x90	                                     nop	        82	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x231	            0xeb0a	                           jmp 0x400027d	        82	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x233	              0x90	                                     nop	        85	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x234	            0xeb07	                           jmp 0x400027d	        85	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x236	              0x90	                                     nop	        88	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x237	            0xeb04	                           jmp 0x400027d	        88	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x239	              0x90	                                     nop	        91	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x23a	            0xeb01	                           jmp 0x400027d	        91	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x23c	              0x90	                                     nop	        94	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	SWITCH_1
+0x23d	        0x488b45f8	                mov rax, qword [rbp - 8]	        97	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x241	          0x8b4008	                mov eax, dword [rax + 8]	        97	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x244	      0x3dffd70000	                         cmp eax, 0xd7ff	        97	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x249	            0x7e0e	                           jle 0x4000299	        97	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x24b	        0x488b45f8	                mov rax, qword [rbp - 8]	        97	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x24f	          0x8b4008	                mov eax, dword [rax + 8]	        97	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x252	      0x3dffdf0000	                         cmp eax, 0xdfff	        97	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x257	            0x7e1c	                           jle 0x40002b5	        97	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x259	        0x488b45f8	                mov rax, qword [rbp - 8]	        98	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x25d	          0x8b4008	                mov eax, dword [rax + 8]	        98	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x260	      0x3dfeff0000	                         cmp eax, 0xfffe	        97	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x265	            0x740e	                            je 0x40002b5	        97	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x267	        0x488b45f8	                mov rax, qword [rbp - 8]	        99	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x26b	          0x8b4008	                mov eax, dword [rax + 8]	        99	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x26e	      0x3dffff0000	                         cmp eax, 0xffff	        98	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x273	            0x750b	                           jne 0x40002c0	        98	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x275	        0x488b45f8	                mov rax, qword [rbp - 8]	       100	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x279	    0xc74008fdff00	            mov dword [rax + 8], 0xfffd 	       100	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8	IF_14
+0x280	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x284	            0x8b00	                    mov eax, dword [rax]	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x286	          0x8d4801	                      lea ecx, [rax + 1]	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x289	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x28d	            0x890a	                    mov dword [rdx], ecx	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x28f	            0x4898	                                    cdqe	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x291	    0x488d14850000	                        lea rdx, [rax*4]	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x299	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x29d	          0x4801c2	                            add rdx, rax	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x2a0	        0x488b45f8	                mov rax, qword [rbp - 8]	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x2a4	          0x8b4008	                mov eax, dword [rax + 8]	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x2a7	            0x8902	                    mov dword [rdx], eax	       104	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x2a9	      0xe921020000	                           jmp 0x400050f	        74	encoding.c	FUNCTION_2	FOR_1	ELSE_3	IF_6	IF_8
+0x2ae	        0x807df7bf	                cmp byte [rbp - 9], 0xbf	       108	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x2b2	            0x7660	                           jbe 0x4000354	       108	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x2b4	        0x807df7df	                cmp byte [rbp - 9], 0xdf	       108	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x2b8	            0x775a	                            ja 0x4000354	       108	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x2ba	        0x488b45f8	                mov rax, qword [rbp - 8]	       109	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2be	            0x8b00	                    mov eax, dword [rax]	       109	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2c0	            0x85c0	                           test eax, eax	       109	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2c2	            0x7426	                            je 0x400032a	       109	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2c4	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       110	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2c8	            0x8b00	                    mov eax, dword [rax]	       110	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2ca	          0x8d4801	                      lea ecx, [rax + 1]	       110	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2cd	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       110	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2d1	            0x890a	                    mov dword [rdx], ecx	       110	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2d3	            0x4898	                                    cdqe	       110	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2d5	    0x488d14850000	                        lea rdx, [rax*4]	       110	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2dd	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       110	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2e1	          0x4801d0	                            add rax, rdx	       110	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2e4	    0xc700fdff0000	                 mov dword [rax], 0xfffd	       110	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15	IF_16
+0x2ea	         0xfb645f7	               movzx eax, byte [rbp - 9]	       112	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x2ee	          0x83e01f	                           and eax, 0x1f	       112	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x2f1	            0x89c2	                            mov edx, eax	       112	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x2f3	        0x488b45f8	                mov rax, qword [rbp - 8]	       112	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x2f7	          0x895008	                mov dword [rax + 8], edx	       112	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x2fa	        0x488b45f8	                mov rax, qword [rbp - 8]	       113	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x2fe	    0xc74004020000	                  mov dword [rax + 4], 2	       113	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x305	        0x488b45f8	                mov rax, qword [rbp - 8]	       114	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x309	    0xc70001000000	                      mov dword [rax], 1	       114	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x30f	      0xe9bb010000	                           jmp 0x400050f	       114	encoding.c	FUNCTION_2	FOR_1	ELSE_4	IF_15
+0x314	        0x807df7df	                cmp byte [rbp - 9], 0xdf	       117	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x318	            0x7660	                           jbe 0x40003ba	       117	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x31a	        0x807df7ef	                cmp byte [rbp - 9], 0xef	       117	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x31e	            0x775a	                            ja 0x40003ba	       117	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x320	        0x488b45f8	                mov rax, qword [rbp - 8]	       118	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x324	            0x8b00	                    mov eax, dword [rax]	       118	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x326	            0x85c0	                           test eax, eax	       118	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x328	            0x7426	                            je 0x4000390	       118	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x32a	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       119	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x32e	            0x8b00	                    mov eax, dword [rax]	       119	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x330	          0x8d4801	                      lea ecx, [rax + 1]	       119	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x333	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       119	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x337	            0x890a	                    mov dword [rdx], ecx	       119	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x339	            0x4898	                                    cdqe	       119	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x33b	    0x488d14850000	                        lea rdx, [rax*4]	       119	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x343	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       119	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x347	          0x4801d0	                            add rax, rdx	       119	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x34a	    0xc700fdff0000	                 mov dword [rax], 0xfffd	       119	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17	IF_18
+0x350	         0xfb645f7	               movzx eax, byte [rbp - 9]	       121	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x354	          0x83e00f	                            and eax, 0xf	       121	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x357	            0x89c2	                            mov edx, eax	       121	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x359	        0x488b45f8	                mov rax, qword [rbp - 8]	       121	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x35d	          0x895008	                mov dword [rax + 8], edx	       121	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x360	        0x488b45f8	                mov rax, qword [rbp - 8]	       122	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x364	    0xc74004030000	                  mov dword [rax + 4], 3	       122	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x36b	        0x488b45f8	                mov rax, qword [rbp - 8]	       123	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x36f	    0xc70002000000	                      mov dword [rax], 2	       123	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x375	      0xe955010000	                           jmp 0x400050f	       123	encoding.c	FUNCTION_2	FOR_1	ELSE_5	IF_17
+0x37a	        0x807df7ef	                cmp byte [rbp - 9], 0xef	       126	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x37e	            0x7660	                           jbe 0x4000420	       126	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x380	        0x807df7f7	                cmp byte [rbp - 9], 0xf7	       126	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x384	            0x775a	                            ja 0x4000420	       126	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x386	        0x488b45f8	                mov rax, qword [rbp - 8]	       127	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x38a	            0x8b00	                    mov eax, dword [rax]	       127	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x38c	            0x85c0	                           test eax, eax	       127	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x38e	            0x7426	                            je 0x40003f6	       127	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x390	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       128	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x394	            0x8b00	                    mov eax, dword [rax]	       128	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x396	          0x8d4801	                      lea ecx, [rax + 1]	       128	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x399	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       128	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x39d	            0x890a	                    mov dword [rdx], ecx	       128	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x39f	            0x4898	                                    cdqe	       128	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x3a1	    0x488d14850000	                        lea rdx, [rax*4]	       128	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x3a9	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       128	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x3ad	          0x4801d0	                            add rax, rdx	       128	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x3b0	    0xc700fdff0000	                 mov dword [rax], 0xfffd	       128	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19	IF_20
+0x3b6	         0xfb645f7	               movzx eax, byte [rbp - 9]	       130	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x3ba	          0x83e007	                              and eax, 7	       130	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x3bd	            0x89c2	                            mov edx, eax	       130	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x3bf	        0x488b45f8	                mov rax, qword [rbp - 8]	       130	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x3c3	          0x895008	                mov dword [rax + 8], edx	       130	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x3c6	        0x488b45f8	                mov rax, qword [rbp - 8]	       131	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x3ca	    0xc74004040000	                  mov dword [rax + 4], 4	       131	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x3d1	        0x488b45f8	                mov rax, qword [rbp - 8]	       132	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x3d5	    0xc70003000000	                      mov dword [rax], 3	       132	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x3db	      0xe9ef000000	                           jmp 0x400050f	       132	encoding.c	FUNCTION_2	FOR_1	ELSE_6	IF_19
+0x3e0	        0x807df7f7	                cmp byte [rbp - 9], 0xf7	       135	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x3e4	            0x7660	                           jbe 0x4000486	       135	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x3e6	        0x807df7fb	                cmp byte [rbp - 9], 0xfb	       135	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x3ea	            0x775a	                            ja 0x4000486	       135	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x3ec	        0x488b45f8	                mov rax, qword [rbp - 8]	       136	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x3f0	            0x8b00	                    mov eax, dword [rax]	       136	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x3f2	            0x85c0	                           test eax, eax	       136	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x3f4	            0x7426	                            je 0x400045c	       136	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x3f6	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       137	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x3fa	            0x8b00	                    mov eax, dword [rax]	       137	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x3fc	          0x8d4801	                      lea ecx, [rax + 1]	       137	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x3ff	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       137	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x403	            0x890a	                    mov dword [rdx], ecx	       137	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x405	            0x4898	                                    cdqe	       137	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x407	    0x488d14850000	                        lea rdx, [rax*4]	       137	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x40f	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       137	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x413	          0x4801d0	                            add rax, rdx	       137	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x416	    0xc700fdff0000	                 mov dword [rax], 0xfffd	       137	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21	IF_22
+0x41c	         0xfb645f7	               movzx eax, byte [rbp - 9]	       139	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x420	          0x83e003	                              and eax, 3	       139	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x423	            0x89c2	                            mov edx, eax	       139	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x425	        0x488b45f8	                mov rax, qword [rbp - 8]	       139	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x429	          0x895008	                mov dword [rax + 8], edx	       139	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x42c	        0x488b45f8	                mov rax, qword [rbp - 8]	       140	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x430	    0xc74004050000	                  mov dword [rax + 4], 5	       140	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x437	        0x488b45f8	                mov rax, qword [rbp - 8]	       141	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x43b	    0xc70004000000	                      mov dword [rax], 4	       141	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x441	      0xe989000000	                           jmp 0x400050f	       141	encoding.c	FUNCTION_2	FOR_1	ELSE_7	IF_21
+0x446	        0x807df7fb	                cmp byte [rbp - 9], 0xfb	       144	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x44a	            0x765d	                           jbe 0x40004e9	       144	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x44c	        0x807df7fd	                cmp byte [rbp - 9], 0xfd	       144	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x450	            0x7757	                            ja 0x40004e9	       144	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x452	        0x488b45f8	                mov rax, qword [rbp - 8]	       145	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x456	            0x8b00	                    mov eax, dword [rax]	       145	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x458	            0x85c0	                           test eax, eax	       145	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x45a	            0x7426	                            je 0x40004c2	       145	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x45c	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       146	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x460	            0x8b00	                    mov eax, dword [rax]	       146	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x462	          0x8d4801	                      lea ecx, [rax + 1]	       146	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x465	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       146	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x469	            0x890a	                    mov dword [rdx], ecx	       146	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x46b	            0x4898	                                    cdqe	       146	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x46d	    0x488d14850000	                        lea rdx, [rax*4]	       146	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x475	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       146	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x479	          0x4801d0	                            add rax, rdx	       146	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x47c	    0xc700fdff0000	                 mov dword [rax], 0xfffd	       146	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23	IF_24
+0x482	         0xfb645f7	               movzx eax, byte [rbp - 9]	       148	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x486	          0x83e001	                              and eax, 1	       148	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x489	            0x89c2	                            mov edx, eax	       148	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x48b	        0x488b45f8	                mov rax, qword [rbp - 8]	       148	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x48f	          0x895008	                mov dword [rax + 8], edx	       148	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x492	        0x488b45f8	                mov rax, qword [rbp - 8]	       149	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x496	    0xc74004060000	                  mov dword [rax + 4], 6	       149	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x49d	        0x488b45f8	                mov rax, qword [rbp - 8]	       150	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x4a1	    0xc70005000000	                      mov dword [rax], 5	       150	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x4a7	            0xeb26	                           jmp 0x400050f	       150	encoding.c	FUNCTION_2	FOR_1	ELSE_8	IF_23
+0x4a9	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       154	encoding.c	FUNCTION_2	FOR_1	ELSE_9
+0x4ad	            0x8b00	                    mov eax, dword [rax]	       154	encoding.c	FUNCTION_2	FOR_1	ELSE_9
+0x4af	          0x8d4801	                      lea ecx, [rax + 1]	       154	encoding.c	FUNCTION_2	FOR_1	ELSE_9
+0x4b2	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       154	encoding.c	FUNCTION_2	FOR_1	ELSE_9
+0x4b6	            0x890a	                    mov dword [rdx], ecx	       154	encoding.c	FUNCTION_2	FOR_1	ELSE_9
+0x4b8	            0x4898	                                    cdqe	       154	encoding.c	FUNCTION_2	FOR_1	ELSE_9
+0x4ba	    0x488d14850000	                        lea rdx, [rax*4]	       154	encoding.c	FUNCTION_2	FOR_1	ELSE_9
+0x4c2	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       154	encoding.c	FUNCTION_2	FOR_1	ELSE_9
+0x4c6	          0x4801d0	                            add rax, rdx	       154	encoding.c	FUNCTION_2	FOR_1	ELSE_9
+0x4c9	    0xc700fdff0000	                 mov dword [rax], 0xfffd	       154	encoding.c	FUNCTION_2	FOR_1	ELSE_9
+0x4cf	        0x488b4510	            mov rax, qword [rbp + 0x10] 	        38	encoding.c	FUNCTION_2	FOR_1
+0x4d3	          0x488b00	                    mov rax, qword [rax]	        38	encoding.c	FUNCTION_2	FOR_1
+0x4d6	        0x488d5001	                      lea rdx, [rax + 1]	        38	encoding.c	FUNCTION_2	FOR_1
+0x4da	        0x488b4510	            mov rax, qword [rbp + 0x10] 	        38	encoding.c	FUNCTION_2	FOR_1
+0x4de	          0x488910	                    mov qword [rax], rdx	        38	encoding.c	FUNCTION_2	FOR_1
+0x4e1	        0x488b4510	            mov rax, qword [rbp + 0x10] 	        38	encoding.c	FUNCTION_2	FOR_1
+0x4e5	          0x488b00	                    mov rax, qword [rax]	        38	encoding.c	FUNCTION_2	FOR_1
+0x4e8	        0x483b4518	            cmp rax, qword [rbp + 0x18] 	        38	encoding.c	FUNCTION_2	FOR_1
+0x4ec	            0x7318	                           jae 0x4000546	        38	encoding.c	FUNCTION_2	FOR_1
+0x4ee	        0x488b45d0	             mov rax, qword [rbp - 0x30]	        38	encoding.c	FUNCTION_2	FOR_1
+0x4f2	            0x8b00	                    mov eax, dword [rax]	        38	encoding.c	FUNCTION_2	FOR_1
+0x4f4	          0x3b45cc	             cmp eax, dword [rbp - 0x34]	        38	encoding.c	FUNCTION_2	FOR_1
+0x4f7	     0xf8c58fbffff	                            jl 0x4000095	        38	encoding.c	FUNCTION_2	FOR_1
+0x4fd	            0xeb07	                           jmp 0x4000546	        38	encoding.c	FUNCTION_2	FOR_1
+0x4ff	              0x90	                                     nop	        46	encoding.c	FUNCTION_2	FOR_1	IF_1
+0x500	            0xeb04	                           jmp 0x4000546	        46	encoding.c	FUNCTION_2	FOR_1	IF_1
+0x502	              0x90	                                     nop	        53	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3	IF_4
+0x503	            0xeb01	                           jmp 0x4000546	        53	encoding.c	FUNCTION_2	FOR_1	ELSE_1	IF_2	IF_3	IF_4
+0x505	              0x90	                                     nop	        62	encoding.c	FUNCTION_2	FOR_1	ELSE_2	IF_5
+0x506	              0x5d	                                 pop rbp	       157	encoding.c	FUNCTION_2
+0x507	              0xc3	                                     ret	       157	encoding.c	FUNCTION_2
+decode_usascii	functions,0:FOR,1:DO,0:CALL,0:ELSE,0:WHILE,0:IF,1:SWITCH,0	60
+0x508	              0x55	                                push rbp	       167	encoding.c	FUNCTION_3
+0x509	          0x4889e5	                            mov rbp, rsp	       167	encoding.c	FUNCTION_3
+0x50c	        0x48897de8	             mov qword [rbp - 0x18], rdi	       167	encoding.c	FUNCTION_3
+0x510	        0x488975e0	             mov qword [rbp - 0x20], rsi	       167	encoding.c	FUNCTION_3
+0x514	        0x488955d8	             mov qword [rbp - 0x28], rdx	       167	encoding.c	FUNCTION_3
+0x518	        0x48894dd0	             mov qword [rbp - 0x30], rcx	       167	encoding.c	FUNCTION_3
+0x51c	        0x448945cc	             mov dword [rbp - 0x34], r8d	       167	encoding.c	FUNCTION_3
+0x520	        0x4c894dc0	              mov qword [rbp - 0x40], r9	       167	encoding.c	FUNCTION_3
+0x524	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       168	encoding.c	FUNCTION_3
+0x528	          0x488b10	                    mov rdx, qword [rax]	       168	encoding.c	FUNCTION_3
+0x52b	        0x488b45c0	             mov rax, qword [rbp - 0x40]	       168	encoding.c	FUNCTION_3
+0x52f	          0x4801d0	                            add rax, rdx	       168	encoding.c	FUNCTION_3
+0x532	           0xfb600	                   movzx eax, byte [rax]	       168	encoding.c	FUNCTION_3
+0x535	           0xfbec0	                           movsx eax, al	       168	encoding.c	FUNCTION_3
+0x538	      0x2580000000	                           and eax, 0x80	       168	encoding.c	FUNCTION_3
+0x53d	          0x8945fc	                mov dword [rbp - 4], eax	       168	encoding.c	FUNCTION_3
+0x540	            0xeb65	                           jmp 0x40005e7	       170	encoding.c	FUNCTION_3	FOR_1
+0x542	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       171	encoding.c	FUNCTION_3	FOR_1
+0x546	          0x488b10	                    mov rdx, qword [rax]	       171	encoding.c	FUNCTION_3	FOR_1
+0x549	        0x488b45c0	             mov rax, qword [rbp - 0x40]	       171	encoding.c	FUNCTION_3	FOR_1
+0x54d	          0x4801d0	                            add rax, rdx	       171	encoding.c	FUNCTION_3	FOR_1
+0x550	           0xfb610	                   movzx edx, byte [rax]	       171	encoding.c	FUNCTION_3	FOR_1
+0x553	          0x8b45fc	                mov eax, dword [rbp - 4]	       171	encoding.c	FUNCTION_3	FOR_1
+0x556	            0x31d0	                            xor eax, edx	       171	encoding.c	FUNCTION_3	FOR_1
+0x558	          0x8845fb	                  mov byte [rbp - 5], al	       171	encoding.c	FUNCTION_3	FOR_1
+0x55b	        0x807dfb1f	                cmp byte [rbp - 5], 0x1f	       173	encoding.c	FUNCTION_3	FOR_1	IF_1
+0x55f	            0x7660	                           jbe 0x4000601	       173	encoding.c	FUNCTION_3	FOR_1	IF_1
+0x561	        0x807dfb7f	                cmp byte [rbp - 5], 0x7f	       173	encoding.c	FUNCTION_3	FOR_1	IF_1
+0x565	            0x745a	                            je 0x4000601	       173	encoding.c	FUNCTION_3	FOR_1	IF_1
+0x567	         0xfb645fb	               movzx eax, byte [rbp - 5]	       173	encoding.c	FUNCTION_3	FOR_1	IF_1
+0x56b	            0x84c0	                             test al, al	       173	encoding.c	FUNCTION_3	FOR_1	IF_1
+0x56d	            0x7852	                            js 0x4000601	       173	encoding.c	FUNCTION_3	FOR_1	IF_1
+0x56f	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       176	encoding.c	FUNCTION_3	FOR_1
+0x573	            0x8b00	                    mov eax, dword [rax]	       176	encoding.c	FUNCTION_3	FOR_1
+0x575	          0x8d4801	                      lea ecx, [rax + 1]	       176	encoding.c	FUNCTION_3	FOR_1
+0x578	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       176	encoding.c	FUNCTION_3	FOR_1
+0x57c	            0x890a	                    mov dword [rdx], ecx	       176	encoding.c	FUNCTION_3	FOR_1
+0x57e	            0x4898	                                    cdqe	       176	encoding.c	FUNCTION_3	FOR_1
+0x580	    0x488d14850000	                        lea rdx, [rax*4]	       176	encoding.c	FUNCTION_3	FOR_1
+0x588	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       176	encoding.c	FUNCTION_3	FOR_1
+0x58c	          0x4801c2	                            add rdx, rax	       176	encoding.c	FUNCTION_3	FOR_1
+0x58f	         0xfb645fb	               movzx eax, byte [rbp - 5]	       176	encoding.c	FUNCTION_3	FOR_1
+0x593	            0x8902	                    mov dword [rdx], eax	       176	encoding.c	FUNCTION_3	FOR_1
+0x595	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       170	encoding.c	FUNCTION_3	FOR_1
+0x599	          0x488b00	                    mov rax, qword [rax]	       170	encoding.c	FUNCTION_3	FOR_1
+0x59c	        0x488d5001	                      lea rdx, [rax + 1]	       170	encoding.c	FUNCTION_3	FOR_1
+0x5a0	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       170	encoding.c	FUNCTION_3	FOR_1
+0x5a4	          0x488910	                    mov qword [rax], rdx	       170	encoding.c	FUNCTION_3	FOR_1
+0x5a7	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       170	encoding.c	FUNCTION_3	FOR_1
+0x5ab	          0x488b00	                    mov rax, qword [rax]	       170	encoding.c	FUNCTION_3	FOR_1
+0x5ae	        0x483b4518	            cmp rax, qword [rbp + 0x18] 	       170	encoding.c	FUNCTION_3	FOR_1
+0x5b2	            0x730e	                           jae 0x4000602	       170	encoding.c	FUNCTION_3	FOR_1
+0x5b4	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       170	encoding.c	FUNCTION_3	FOR_1
+0x5b8	            0x8b00	                    mov eax, dword [rax]	       170	encoding.c	FUNCTION_3	FOR_1
+0x5ba	          0x3b45cc	             cmp eax, dword [rbp - 0x34]	       170	encoding.c	FUNCTION_3	FOR_1
+0x5bd	            0x7c83	                            jl 0x4000582	       170	encoding.c	FUNCTION_3	FOR_1
+0x5bf	            0xeb01	                           jmp 0x4000602	       170	encoding.c	FUNCTION_3	FOR_1
+0x5c1	              0x90	                                     nop	       174	encoding.c	FUNCTION_3	FOR_1	IF_1
+0x5c2	              0x5d	                                 pop rbp	       178	encoding.c	FUNCTION_3
+0x5c3	              0xc3	                                     ret	       178	encoding.c	FUNCTION_3
+vterm_lookup_encoding	functions,0:FOR,1:DO,0:CALL,0:ELSE,0:WHILE,0:IF,1:SWITCH,0	38
+0x6e7	              0x55	                                push rbp	       228	encoding.c	FUNCTION_5
+0x6e8	          0x4889e5	                            mov rbp, rsp	       228	encoding.c	FUNCTION_5
+0x6eb	          0x897dec	             mov dword [rbp - 0x14], edi	       228	encoding.c	FUNCTION_5
+0x6ee	            0x89f0	                            mov eax, esi	       228	encoding.c	FUNCTION_5
+0x6f0	          0x8845e8	               mov byte [rbp - 0x18], al	       228	encoding.c	FUNCTION_5
+0x6f3	    0xc745fc000000	                  mov dword [rbp - 4], 0	       230	encoding.c	FUNCTION_5	FOR_1
+0x6fa	            0xeb45	                           jmp 0x4000781	       230	encoding.c	FUNCTION_5	FOR_1
+0x6fc	          0x8b45fc	                mov eax, dword [rbp - 4]	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x6ff	            0x4898	                                    cdqe	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x701	        0x48c1e004	                              shl rax, 4	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x705	    0x480500000000	                              add rax, 0	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x70b	            0x8b00	                    mov eax, dword [rax]	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x70d	          0x3b45ec	             cmp eax, dword [rbp - 0x14]	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x710	            0x752b	                           jne 0x400077d	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x712	          0x8b45fc	                mov eax, dword [rbp - 4]	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x715	            0x4898	                                    cdqe	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x717	        0x48c1e004	                              shl rax, 4	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x71b	    0x480500000000	                              add rax, 0	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x721	           0xfb600	                   movzx eax, byte [rax]	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x724	          0x3a45e8	               cmp al, byte [rbp - 0x18]	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x727	            0x7514	                           jne 0x400077d	       231	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x729	          0x8b45fc	                mov eax, dword [rbp - 4]	       232	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x72c	            0x4898	                                    cdqe	       232	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x72e	        0x48c1e004	                              shl rax, 4	       232	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x732	    0x480500000000	                              add rax, 0	       232	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x738	          0x488b00	                    mov rax, qword [rax]	       232	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x73b	            0xeb1f	                           jmp 0x400079c	       232	encoding.c	FUNCTION_5	FOR_1	IF_1
+0x73d	        0x8345fc01	                  add dword [rbp - 4], 1	       230	encoding.c	FUNCTION_5	FOR_1
+0x741	          0x8b45fc	                mov eax, dword [rbp - 4]	       230	encoding.c	FUNCTION_5	FOR_1
+0x744	            0x4898	                                    cdqe	       230	encoding.c	FUNCTION_5	FOR_1
+0x746	        0x48c1e004	                              shl rax, 4	       230	encoding.c	FUNCTION_5	FOR_1
+0x74a	    0x480500000000	                              add rax, 0	       230	encoding.c	FUNCTION_5	FOR_1
+0x750	           0xfb600	                   movzx eax, byte [rax]	       230	encoding.c	FUNCTION_5	FOR_1
+0x753	            0x84c0	                             test al, al	       230	encoding.c	FUNCTION_5	FOR_1
+0x755	            0x75a5	                           jne 0x400073c	       230	encoding.c	FUNCTION_5	FOR_1
+0x757	      0xb800000000	                              mov eax, 0	       233	encoding.c	FUNCTION_5
+0x75c	              0x5d	                                 pop rbp	       234	encoding.c	FUNCTION_5
+0x75d	              0xc3	                                     ret	       234	encoding.c	FUNCTION_5
+decode_table	functions,0:FOR,1:DO,0:CALL,0:ELSE,1:WHILE,0:IF,2:SWITCH,0	85
+0x5c4	              0x55	                                push rbp	       193	encoding.c	FUNCTION_4
+0x5c5	          0x4889e5	                            mov rbp, rsp	       193	encoding.c	FUNCTION_4
+0x5c8	        0x48897de8	             mov qword [rbp - 0x18], rdi	       193	encoding.c	FUNCTION_4
+0x5cc	        0x488975e0	             mov qword [rbp - 0x20], rsi	       193	encoding.c	FUNCTION_4
+0x5d0	        0x488955d8	             mov qword [rbp - 0x28], rdx	       193	encoding.c	FUNCTION_4
+0x5d4	        0x48894dd0	             mov qword [rbp - 0x30], rcx	       193	encoding.c	FUNCTION_4
+0x5d8	        0x448945cc	             mov dword [rbp - 0x34], r8d	       193	encoding.c	FUNCTION_4
+0x5dc	        0x4c894dc0	              mov qword [rbp - 0x40], r9	       193	encoding.c	FUNCTION_4
+0x5e0	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       194	encoding.c	FUNCTION_4
+0x5e4	        0x488945f8	                mov qword [rbp - 8], rax	       194	encoding.c	FUNCTION_4
+0x5e8	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       195	encoding.c	FUNCTION_4
+0x5ec	          0x488b10	                    mov rdx, qword [rax]	       195	encoding.c	FUNCTION_4
+0x5ef	        0x488b45c0	             mov rax, qword [rbp - 0x40]	       195	encoding.c	FUNCTION_4
+0x5f3	          0x4801d0	                            add rax, rdx	       195	encoding.c	FUNCTION_4
+0x5f6	           0xfb600	                   movzx eax, byte [rax]	       195	encoding.c	FUNCTION_4
+0x5f9	           0xfbec0	                           movsx eax, al	       195	encoding.c	FUNCTION_4
+0x5fc	      0x2580000000	                           and eax, 0x80	       195	encoding.c	FUNCTION_4
+0x601	          0x8945f4	              mov dword [rbp - 0xc], eax	       195	encoding.c	FUNCTION_4
+0x604	      0xe9bd000000	                           jmp 0x4000706	       197	encoding.c	FUNCTION_4	FOR_1
+0x609	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       198	encoding.c	FUNCTION_4	FOR_1
+0x60d	          0x488b10	                    mov rdx, qword [rax]	       198	encoding.c	FUNCTION_4	FOR_1
+0x610	        0x488b45c0	             mov rax, qword [rbp - 0x40]	       198	encoding.c	FUNCTION_4	FOR_1
+0x614	          0x4801d0	                            add rax, rdx	       198	encoding.c	FUNCTION_4	FOR_1
+0x617	           0xfb610	                   movzx edx, byte [rax]	       198	encoding.c	FUNCTION_4	FOR_1
+0x61a	          0x8b45f4	              mov eax, dword [rbp - 0xc]	       198	encoding.c	FUNCTION_4	FOR_1
+0x61d	            0x31d0	                            xor eax, edx	       198	encoding.c	FUNCTION_4	FOR_1
+0x61f	          0x8845f3	                mov byte [rbp - 0xd], al	       198	encoding.c	FUNCTION_4	FOR_1
+0x622	        0x807df31f	              cmp byte [rbp - 0xd], 0x1f	       200	encoding.c	FUNCTION_4	FOR_1	IF_1
+0x626	     0xf86b8000000	                           jbe 0x4000724	       200	encoding.c	FUNCTION_4	FOR_1	IF_1
+0x62c	        0x807df37f	              cmp byte [rbp - 0xd], 0x7f	       200	encoding.c	FUNCTION_4	FOR_1	IF_1
+0x630	     0xf84ae000000	                            je 0x4000724	       200	encoding.c	FUNCTION_4	FOR_1	IF_1
+0x636	         0xfb645f3	             movzx eax, byte [rbp - 0xd]	       200	encoding.c	FUNCTION_4	FOR_1	IF_1
+0x63a	            0x84c0	                             test al, al	       200	encoding.c	FUNCTION_4	FOR_1	IF_1
+0x63c	     0xf88a2000000	                            js 0x4000724	       200	encoding.c	FUNCTION_4	FOR_1	IF_1
+0x642	         0xfb655f3	             movzx edx, byte [rbp - 0xd]	       203	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x646	        0x488b45f8	                mov rax, qword [rbp - 8]	       203	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x64a	          0x4863d2	                         movsxd rdx, edx	       203	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x64d	        0x4883c204	                              add rdx, 4	       203	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x651	          0x8b0490	            mov eax, dword [rax + rdx*4]	       203	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x654	            0x85c0	                           test eax, eax	       203	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x656	            0x7436	                            je 0x40006ce	       203	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x658	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x65c	            0x8b00	                    mov eax, dword [rax]	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x65e	          0x8d4801	                      lea ecx, [rax + 1]	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x661	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x665	            0x890a	                    mov dword [rdx], ecx	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x667	            0x4898	                                    cdqe	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x669	    0x488d14850000	                        lea rdx, [rax*4]	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x671	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x675	          0x4801c2	                            add rdx, rax	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x678	         0xfb64df3	             movzx ecx, byte [rbp - 0xd]	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x67c	        0x488b45f8	                mov rax, qword [rbp - 8]	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x680	          0x4863c9	                         movsxd rcx, ecx	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x683	        0x4883c104	                              add rcx, 4	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x687	          0x8b0488	            mov eax, dword [rax + rcx*4]	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x68a	            0x8902	                    mov dword [rdx], eax	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x68c	            0xeb26	                           jmp 0x40006f4	       204	encoding.c	FUNCTION_4	FOR_1	IF_2
+0x68e	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x692	            0x8b00	                    mov eax, dword [rax]	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x694	          0x8d4801	                      lea ecx, [rax + 1]	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x697	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x69b	            0x890a	                    mov dword [rdx], ecx	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x69d	            0x4898	                                    cdqe	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x69f	    0x488d14850000	                        lea rdx, [rax*4]	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x6a7	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x6ab	          0x4801c2	                            add rdx, rax	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x6ae	         0xfb645f3	             movzx eax, byte [rbp - 0xd]	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x6b2	            0x8902	                    mov dword [rdx], eax	       206	encoding.c	FUNCTION_4	FOR_1	ELSE_1
+0x6b4	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       197	encoding.c	FUNCTION_4	FOR_1
+0x6b8	          0x488b00	                    mov rax, qword [rax]	       197	encoding.c	FUNCTION_4	FOR_1
+0x6bb	        0x488d5001	                      lea rdx, [rax + 1]	       197	encoding.c	FUNCTION_4	FOR_1
+0x6bf	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       197	encoding.c	FUNCTION_4	FOR_1
+0x6c3	          0x488910	                    mov qword [rax], rdx	       197	encoding.c	FUNCTION_4	FOR_1
+0x6c6	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       197	encoding.c	FUNCTION_4	FOR_1
+0x6ca	          0x488b00	                    mov rax, qword [rax]	       197	encoding.c	FUNCTION_4	FOR_1
+0x6cd	        0x483b4518	            cmp rax, qword [rbp + 0x18] 	       197	encoding.c	FUNCTION_4	FOR_1
+0x6d1	            0x7312	                           jae 0x4000725	       197	encoding.c	FUNCTION_4	FOR_1
+0x6d3	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       197	encoding.c	FUNCTION_4	FOR_1
+0x6d7	            0x8b00	                    mov eax, dword [rax]	       197	encoding.c	FUNCTION_4	FOR_1
+0x6d9	          0x3b45cc	             cmp eax, dword [rbp - 0x34]	       197	encoding.c	FUNCTION_4	FOR_1
+0x6dc	     0xf8c27ffffff	                            jl 0x4000649	       197	encoding.c	FUNCTION_4	FOR_1
+0x6e2	            0xeb01	                           jmp 0x4000725	       197	encoding.c	FUNCTION_4	FOR_1
+0x6e4	              0x90	                                     nop	       201	encoding.c	FUNCTION_4	FOR_1	IF_1
+0x6e5	              0x5d	                                 pop rbp	       208	encoding.c	FUNCTION_4
+0x6e6	              0xc3	                                     ret	       208	encoding.c	FUNCTION_4

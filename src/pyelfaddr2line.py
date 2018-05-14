@@ -149,13 +149,15 @@ def decode_file_line(dwarfinfo, addresses):
 
     dfl=[] #decode file listdwarfinfo.iter_CUs()
     i=-1
+    #count=0
+    #count_flag=len(addresses)
     for CU in dwarfinfo.iter_CUs():
         i+=1
         # First, look at line programs to find the file/line for the address
         #print ("----",hex(addresses[-1]))
+        lineprog = dwarfinfo.line_program_for_CU(CU)
         for address in addresses:
             i+=1
-            lineprog = dwarfinfo.line_program_for_CU(CU)
             prevstate = None
             for entry in lineprog.get_entries():
                 # We're interested in those entries where a new state is assigned
@@ -169,7 +171,10 @@ def decode_file_line(dwarfinfo, addresses):
                     line = prevstate.line
                     #print (hex(address))
                     dfl.append((address, line, filename))
+                    #count+=1
                 prevstate = entry.state
+            #if count==count_flag:
+            #    break
         print ("i: ",i)
     return dfl
 

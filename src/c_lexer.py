@@ -77,15 +77,22 @@ class LEX(object):
 				text[i]=""
 		#print (num)
 		added=0
+		if num[0]==(0,0):
+			del text[0]
+			added=-1
 		for i in range(len(num)):
 			add=num[i][1]-num[i][0]-added-1
 			#print (num[i][0],num[i][1],add,added+num[i][0])
+			if add==-1:
+				continue
 			for j in range(add):
 				text.insert(num[i][0]+added,"")
 			added+=add
 		#print (repr(text[1664]))
 		#f = open(filename, errors="replace")
 		#text1 = f.readlines()
+		#for i in range(len(text)):
+		#	print (i,text[i],i,text1[i])
 		#print (len(text),len(text1))
 		#print (text[2252])
 		#remove=0
@@ -126,7 +133,7 @@ class LEX(object):
 			#	else:
 			#		text[i]=text[i]=text[i][:text[i].find("/*")]+text[i][text[i].find("*/")+2:]
 			text[i]=re.sub(regsub,"\g<1> ",text[i])
-			print (i,text[i])
+			#print (i,text[i])
 		#for i in range(len(text)):
 		#	if i>1660 and i<1670:
 		#		print (i,text[i])
