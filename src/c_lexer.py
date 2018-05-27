@@ -100,7 +100,7 @@ class LEX(object):
 		#pattern='^[^\']*"(\\\\.|[^"])*[^\']*"$'
 		pattern='\\\\.(\\\\.)*'
 
-		print (pattern)
+		#print (pattern)
 		regsub=re.compile(pattern)
 		#for i in range(len(text1)):
 		#	print (i,text1[i],i,text[i])

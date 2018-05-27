@@ -59,11 +59,11 @@ def label_lines(fname, src):
 
 
 if __name__ == '__main__':
-    fname, src = sys.argv[1], sys.argv[2]
+    fname, src, out = sys.argv[1], sys.argv[2], sys.argv[3]
 
     adr_dict, f_name_dict, length = label_lines(fname, src)
     pom=fname.split("/")
-    pom[-2]="output"
+    pom[-2]="output"+out
     fname="/".join(pom[-2: ])
 
     f=open(fname+".labeled_addresses",'w')
