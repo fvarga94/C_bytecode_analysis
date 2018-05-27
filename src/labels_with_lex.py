@@ -41,8 +41,14 @@ def lex_and_label(fname, src=""):
     global current,k_dict,open_functions,end_functions
 
     lexer = LEX()
+
     completed=subprocess.run(["find",src,"-name","*"+fname], stdout=subprocess.PIPE, universal_newlines=True)
     source_files=completed.stdout.split('\n')
+    if len(source_files)==1:
+        completed=subprocess.run(["find","/usr/include/","-name","*"+fname], stdout=subprocess.PIPE, universal_newlines=True)
+        source_files=completed.stdout.split('\n')
+
+
     print (source_files)
     tokens = lexer.lex(source_files[0])
     print ("Labeled")

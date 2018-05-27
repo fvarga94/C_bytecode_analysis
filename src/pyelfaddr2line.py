@@ -171,6 +171,7 @@ def decode_file_line(dwarfinfo, addresses):
                     line = prevstate.line
                     #print (hex(address))
                     dfl.append((address, line, filename))
+                    #print (filename)
                     #count+=1
                 prevstate = entry.state
             #if count==count_flag:
