@@ -1,0 +1,256 @@
+check_pager_config	functions,0:IF,1:WHILE,0:CALL,1:SWITCH,0:DO,0:ELSE,0:FOR,0	21
+0x4000570	        0x4883ec28	                           sub rsp, 0x28	       216	pager.c	FUNCTION_13
+0x4000574	        0x48893c24	                    mov qword [rsp], rdi	       219	pager.c	FUNCTION_13
+0x4000578	          0x4889e6	                            mov rsi, rsp	       223	pager.c	FUNCTION_13	CALL_1
+0x400057b	      0xbf00000000	                              mov edi, 0	       223	pager.c	FUNCTION_13	CALL_1
+0x4000580	    0x64488b042528	                mov rax, qword fs:[0x28]	       216	pager.c	FUNCTION_13
+0x4000589	      0x4889442418	             mov qword [rsp + 0x18], rax	       216	pager.c	FUNCTION_13
+0x400058e	            0x31c0	                            xor eax, eax	       216	pager.c	FUNCTION_13
+0x4000590	    0xc7442408ffff	        mov dword [rsp + 8], 0xffffffff 	       220	pager.c	FUNCTION_13
+0x4000598	    0x48c744241000	               mov qword [rsp + 0x10], 0	       221	pager.c	FUNCTION_13
+0x40005a1	      0xe800000000	                          call 0x40005a6	       223	pager.c	FUNCTION_13	CALL_1
+0x40005a6	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       225	pager.c	FUNCTION_13	IF_1
+0x40005ab	          0x4885c0	                           test rax, rax	       225	pager.c	FUNCTION_13	IF_1
+0x40005ae	            0x7407	                            je 0x40005b7	       225	pager.c	FUNCTION_13	IF_1
+0x40005b0	    0x488905000000	            mov qword [0x040005b7], rax 	       226	pager.c	FUNCTION_13	IF_1
+0x40005b7	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	       228	pager.c	FUNCTION_13
+0x40005bc	    0x644833142528	                xor rdx, qword fs:[0x28]	       228	pager.c	FUNCTION_13
+0x40005c5	        0x8b442408	                mov eax, dword [rsp + 8]	       228	pager.c	FUNCTION_13
+0x40005c9	            0x7505	                           jne 0x40005d0	       228	pager.c	FUNCTION_13
+0x40005cb	        0x4883c428	                           add rsp, 0x28	       228	pager.c	FUNCTION_13
+0x40005cf	              0xc3	                                     ret	       228	pager.c	FUNCTION_13
+0x40005d0	      0xe800000000	                  call section_end..text	       228	pager.c	FUNCTION_13
+wait_for_pager_signal	functions,0:IF,0:WHILE,0:CALL,3:SWITCH,0:DO,0:ELSE,0:FOR,0	13
+0x4000290	              0x53	                                push rbx	        34	pager.c	FUNCTION_3
+0x4000291	            0x89fb	                            mov ebx, edi	        34	pager.c	FUNCTION_3
+0x4000293	      0xbf01000000	                              mov edi, 1	        20	pager.c	FUNCTION_1	CALL_3
+0x4000298	      0xe800000000	                          call 0x400029d	        20	pager.c	FUNCTION_1	CALL_3
+0x400029d	      0xbf02000000	                              mov edi, 2	        21	pager.c	FUNCTION_1	CALL_4
+0x40002a2	      0xe800000000	                          call 0x40002a7	        21	pager.c	FUNCTION_1	CALL_4
+0x40002a7	      0xbf00000000	                              mov edi, 0	        23	pager.c	FUNCTION_1	CALL_5
+0x40002ac	      0xe800000000	                          call 0x40002b1	        23	pager.c	FUNCTION_1	CALL_5
+0x40002b1	            0x89df	                            mov edi, ebx	        36	pager.c	FUNCTION_3	CALL_2
+0x40002b3	      0xe800000000	                          call 0x40002b8	        36	pager.c	FUNCTION_3	CALL_2
+0x40002b8	            0x89df	                            mov edi, ebx	        37	pager.c	FUNCTION_3	CALL_3
+0x40002ba	              0x5b	                                 pop rbx	        38	pager.c	FUNCTION_3
+0x40002bb	      0xe900000000	           jmp sym.wait_for_pager_atexit	        37	pager.c	FUNCTION_3	CALL_3
+wait_for_pager_atexit	functions,0:IF,0:WHILE,0:CALL,1:SWITCH,0:DO,0:ELSE,0:FOR,0	12
+0x40002c0	        0x4883ec08	                              sub rsp, 8	        29	pager.c	FUNCTION_2
+0x40002c4	    0x488b3d000000	            mov rdi, qword [0x040002cb] 	        16	pager.c	FUNCTION_1	IF_1	CALL_1
+0x40002cb	      0xe800000000	                          call 0x40002d0	        16	pager.c	FUNCTION_1	IF_1	CALL_1
+0x40002d0	    0x488b3d000000	            mov rdi, qword [0x040002d7] 	        17	pager.c	FUNCTION_1	IF_1	CALL_2
+0x40002d7	      0xe800000000	                          call 0x40002dc	        17	pager.c	FUNCTION_1	IF_1	CALL_2
+0x40002dc	      0xbf01000000	                              mov edi, 1	        20	pager.c	FUNCTION_1	CALL_3
+0x40002e1	      0xe800000000	                          call 0x40002e6	        20	pager.c	FUNCTION_1	CALL_3
+0x40002e6	      0xbf02000000	                              mov edi, 2	        21	pager.c	FUNCTION_1	CALL_4
+0x40002eb	      0xe800000000	                          call 0x40002f0	        21	pager.c	FUNCTION_1	CALL_4
+0x40002f0	      0xbf00000000	                              mov edi, 0	        25	pager.c	FUNCTION_1	CALL_6
+0x40002f5	        0x4883c408	                              add rsp, 8	        31	pager.c	FUNCTION_2
+0x40002f9	      0xe900000000	                           jmp 0x40002fe	        25	pager.c	FUNCTION_1	CALL_6
+git_pager	functions,0:IF,6:WHILE,0:CALL,4:SWITCH,0:DO,0:ELSE,0:FOR,0	40
+0x4000300	            0x85ff	                           test edi, edi	        51	pager.c	FUNCTION_5	IF_1
+0x4000302	            0x743c	                            je 0x4000340	        51	pager.c	FUNCTION_5	IF_1
+0x4000304	        0x4883ec08	                              sub rsp, 8	        48	pager.c	FUNCTION_5
+0x4000308	      0xbf00000000	                              mov edi, 0	        54	pager.c	FUNCTION_5	CALL_1
+0x400030d	      0xe800000000	                          call 0x4000312	        54	pager.c	FUNCTION_5	CALL_1
+0x4000312	          0x4885c0	                           test rax, rax	        55	pager.c	FUNCTION_5	IF_2
+0x4000315	            0x7431	                            je 0x4000348	        55	pager.c	FUNCTION_5	IF_2
+0x4000317	           0xfb610	                   movzx edx, byte [rax]	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x400031a	            0x84d2	                             test dl, dl	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x400031c	            0x7417	                            je 0x4000335	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x400031e	          0x80fa63	                            cmp dl, 0x63	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x4000321	            0x7514	                           jne 0x4000337	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x4000323	        0x80780161	                cmp byte [rax + 1], 0x61	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x4000327	            0x750e	                           jne 0x4000337	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x4000329	        0x80780274	                cmp byte [rax + 2], 0x74	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x400032d	            0x7508	                           jne 0x4000337	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x400032f	        0x80780300	                   cmp byte [rax + 3], 0	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x4000333	            0x7502	                           jne 0x4000337	        64	pager.c	FUNCTION_5	IF_6	CALL_4
+0x4000335	            0x31c0	                            xor eax, eax	        65	pager.c	FUNCTION_5	IF_6
+0x4000337	        0x4883c408	                              add rsp, 8	        68	pager.c	FUNCTION_5
+0x400033b	              0xc3	                                     ret	        68	pager.c	FUNCTION_5
+0x400033c	         0xf1f4000	                         nop dword [rax]	        68	pager.c	FUNCTION_5
+0x4000340	            0x31c0	                            xor eax, eax	        65	pager.c	FUNCTION_5	IF_6
+0x4000342	              0xc3	                                     ret	        68	pager.c	FUNCTION_5
+0x4000343	       0xf1f440000	                   nop dword [rax + rax]	        68	pager.c	FUNCTION_5
+0x4000348	    0x488b05000000	            mov rax, qword [0x0400034f] 	        56	pager.c	FUNCTION_5	IF_2	IF_3
+0x400034f	          0x4885c0	                           test rax, rax	        56	pager.c	FUNCTION_5	IF_2	IF_3
+0x4000352	            0x75c3	                           jne 0x4000317	        56	pager.c	FUNCTION_5	IF_2	IF_3
+0x4000354	            0x31f6	                            xor esi, esi	        57	pager.c	FUNCTION_5	IF_2	CALL_2
+0x4000356	      0xbf00000000	                              mov edi, 0	        57	pager.c	FUNCTION_5	IF_2	CALL_2
+0x400035b	      0xe800000000	                          call 0x4000360	        57	pager.c	FUNCTION_5	IF_2	CALL_2
+0x4000360	    0x488b05000000	            mov rax, qword [0x04000367] 	        58	pager.c	FUNCTION_5	IF_2
+0x4000367	          0x4885c0	                           test rax, rax	        60	pager.c	FUNCTION_5	IF_4
+0x400036a	            0x75ab	                           jne 0x4000317	        60	pager.c	FUNCTION_5	IF_4
+0x400036c	      0xbf00000000	                              mov edi, 0	        61	pager.c	FUNCTION_5	CALL_3
+0x4000371	      0xe800000000	                          call 0x4000376	        61	pager.c	FUNCTION_5	CALL_3
+0x4000376	      0xba00000000	                              mov edx, 0	        63	pager.c	FUNCTION_5	IF_5
+0x400037b	          0x4885c0	                           test rax, rax	        63	pager.c	FUNCTION_5	IF_5
+0x400037e	        0x480f44c2	                          cmove rax, rdx	        63	pager.c	FUNCTION_5	IF_5
+0x4000382	            0xeb93	                           jmp 0x4000317	        63	pager.c	FUNCTION_5	IF_5
+setup_pager	functions,0:IF,3:WHILE,0:CALL,15:SWITCH,0:DO,0:ELSE,0:FOR,0	73
+0x40003b0	              0x53	                                push rbx	       105	pager.c	FUNCTION_8
+0x40003b1	      0xbf01000000	                              mov edi, 1	       106	pager.c	FUNCTION_8	CALL_2
+0x40003b6	        0x4883ec50	                           sub rsp, 0x50	       105	pager.c	FUNCTION_8
+0x40003ba	    0x64488b042528	                mov rax, qword fs:[0x28]	       105	pager.c	FUNCTION_8
+0x40003c3	      0x4889442448	             mov qword [rsp + 0x48], rax	       105	pager.c	FUNCTION_8
+0x40003c8	            0x31c0	                            xor eax, eax	       105	pager.c	FUNCTION_8
+0x40003ca	      0xe800000000	                          call 0x40003cf	       106	pager.c	FUNCTION_8	CALL_2
+0x40003cf	            0x89c7	                            mov edi, eax	       106	pager.c	FUNCTION_8	CALL_2
+0x40003d1	      0xe800000000	                          call 0x40003d6	       106	pager.c	FUNCTION_8	CALL_2
+0x40003d6	          0x4885c0	                           test rax, rax	       108	pager.c	FUNCTION_8	IF_1
+0x40003d9	     0xf848d000000	                            je 0x400046c	       108	pager.c	FUNCTION_8	IF_1
+0x40003df	    0x8b0d00000000	            mov ecx, dword [0x040003e5] 	       159	pager.c	FUNCTION_10	IF_1
+0x40003e5	          0x4889c3	                            mov rbx, rax	       159	pager.c	FUNCTION_10	IF_1
+0x40003e8	            0x85c9	                           test ecx, ecx	       159	pager.c	FUNCTION_10	IF_1
+0x40003ea	     0xf84e0000000	                            je 0x40004d0	       159	pager.c	FUNCTION_10	IF_1
+0x40003f0	      0xba00000000	                              mov edx, 0	       118	pager.c	FUNCTION_8	CALL_4
+0x40003f5	      0xbe40000000	                           mov esi, 0x40	       118	pager.c	FUNCTION_8	CALL_4
+0x40003fa	          0x4889e7	                            mov rdi, rsp	       118	pager.c	FUNCTION_8	CALL_4
+0x40003fd	            0x31c0	                            xor eax, eax	       118	pager.c	FUNCTION_8	CALL_4
+0x40003ff	      0xe800000000	                          call 0x4000404	       118	pager.c	FUNCTION_8	CALL_4
+0x4000404	            0x31d2	                            xor edx, edx	       119	pager.c	FUNCTION_8	CALL_5
+0x4000406	          0x4889e6	                            mov rsi, rsp	       119	pager.c	FUNCTION_8	CALL_5
+0x4000409	      0xbf00000000	                              mov edi, 0	       119	pager.c	FUNCTION_8	CALL_5
+0x400040e	      0xe800000000	                          call 0x4000413	       119	pager.c	FUNCTION_8	CALL_5
+0x4000413	      0xba01000000	                              mov edx, 1	       122	pager.c	FUNCTION_8	CALL_6
+0x4000418	      0xbe00000000	                              mov esi, 0	       122	pager.c	FUNCTION_8	CALL_6
+0x400041d	      0xbf00000000	                              mov edi, 0	       122	pager.c	FUNCTION_8	CALL_6
+0x4000422	      0xe800000000	                          call 0x4000427	       122	pager.c	FUNCTION_8	CALL_6
+0x4000427	          0x4889de	                            mov rsi, rbx	        99	pager.c	FUNCTION_7	CALL_1
+0x400042a	      0xbf00000000	                              mov edi, 0	        99	pager.c	FUNCTION_7	CALL_1
+0x400042f	      0xe800000000	                          call 0x4000434	        99	pager.c	FUNCTION_7	CALL_1
+0x4000434	      0xbf00000000	                              mov edi, 0	       101	pager.c	FUNCTION_7	CALL_2
+0x4000439	    0x800d00000000	              or byte [0x04000440], 0x40	       100	pager.c	FUNCTION_7
+0x4000440	      0xe8fbfbffff	                call sym.setup_pager_env	       101	pager.c	FUNCTION_7	CALL_2
+0x4000445	      0xbe00000000	                              mov esi, 0	       127	pager.c	FUNCTION_8	CALL_8
+0x400044a	      0xbf00000000	                              mov edi, 0	       127	pager.c	FUNCTION_8	CALL_8
+0x400044f	    0xc70500000000	     mov dword [0x04000459], 0xffffffff 	       126	pager.c	FUNCTION_8
+0x4000459	      0xe800000000	                          call 0x400045e	       127	pager.c	FUNCTION_8	CALL_8
+0x400045e	      0xbf00000000	                              mov edi, 0	       128	pager.c	FUNCTION_8	IF_2	CALL_9
+0x4000463	      0xe800000000	                          call 0x4000468	       128	pager.c	FUNCTION_8	IF_2	CALL_9
+0x4000468	            0x85c0	                           test eax, eax	       128	pager.c	FUNCTION_8	IF_2	CALL_9
+0x400046a	            0x741c	                            je 0x4000488	       128	pager.c	FUNCTION_8	IF_2	CALL_9
+0x400046c	      0x488b442448	            mov rax, qword [rsp + 0x48] 	       140	pager.c	FUNCTION_8
+0x4000471	    0x644833042528	                xor rax, qword fs:[0x28]	       140	pager.c	FUNCTION_8
+0x400047a	            0x7576	                           jne 0x40004f2	       140	pager.c	FUNCTION_8
+0x400047c	        0x4883c450	                           add rsp, 0x50	       140	pager.c	FUNCTION_8
+0x4000480	              0x5b	                                 pop rbx	       140	pager.c	FUNCTION_8
+0x4000481	              0xc3	                                     ret	       140	pager.c	FUNCTION_8
+0x4000482	    0x660f1f440000	                    nop word [rax + rax]	       140	pager.c	FUNCTION_8
+0x4000488	    0x8b3d00000000	            mov edi, dword [0x0400048e] 	       132	pager.c	FUNCTION_8	CALL_10
+0x400048e	      0xbe01000000	                              mov esi, 1	       132	pager.c	FUNCTION_8	CALL_10
+0x4000493	      0xe800000000	                          call 0x4000498	       132	pager.c	FUNCTION_8	CALL_10
+0x4000498	      0xbf02000000	                              mov edi, 2	       133	pager.c	FUNCTION_8	IF_3	CALL_11
+0x400049d	      0xe800000000	                          call 0x40004a2	       133	pager.c	FUNCTION_8	IF_3	CALL_11
+0x40004a2	            0x85c0	                           test eax, eax	       133	pager.c	FUNCTION_8	IF_3	CALL_11
+0x40004a4	            0x753a	                           jne 0x40004e0	       133	pager.c	FUNCTION_8	IF_3	CALL_11
+0x40004a6	    0x8b3d00000000	            mov edi, dword [0x040004ac] 	       135	pager.c	FUNCTION_8	CALL_13
+0x40004ac	      0xe800000000	                          call 0x40004b1	       135	pager.c	FUNCTION_8	CALL_13
+0x40004b1	      0xbf00000000	                              mov edi, 0	       138	pager.c	FUNCTION_8	CALL_14
+0x40004b6	      0xe800000000	                          call 0x40004bb	       138	pager.c	FUNCTION_8	CALL_14
+0x40004bb	      0xbf00000000	                              mov edi, 0	       139	pager.c	FUNCTION_8	CALL_15
+0x40004c0	      0xe800000000	                          call 0x40004c5	       139	pager.c	FUNCTION_8	CALL_15
+0x40004c5	            0xeba5	                           jmp 0x400046c	       139	pager.c	FUNCTION_8	CALL_15
+0x40004c7	    0x660f1f840000	                    nop word [rax + rax]	       139	pager.c	FUNCTION_8	CALL_15
+0x40004d0	      0xe81bfdffff	            call sym.term_columns.part.2	       139	pager.c	FUNCTION_8	CALL_15
+0x40004d5	            0x89c1	                            mov ecx, eax	       139	pager.c	FUNCTION_8	CALL_15
+0x40004d7	      0xe914ffffff	                           jmp 0x40003f0	       139	pager.c	FUNCTION_8	CALL_15
+0x40004dc	         0xf1f4000	                         nop dword [rax]	       139	pager.c	FUNCTION_8	CALL_15
+0x40004e0	    0x8b3d00000000	            mov edi, dword [0x040004e6] 	       134	pager.c	FUNCTION_8	CALL_12
+0x40004e6	      0xbe02000000	                              mov esi, 2	       134	pager.c	FUNCTION_8	CALL_12
+0x40004eb	      0xe800000000	                          call 0x40004f0	       134	pager.c	FUNCTION_8	CALL_12
+0x40004f0	            0xebb4	                           jmp 0x40004a6	       134	pager.c	FUNCTION_8	CALL_12
+0x40004f2	      0xe800000000	                          call 0x40004f7	       140	pager.c	FUNCTION_8
+decimal_width	functions,0:IF,0:WHILE,0:CALL,0:SWITCH,0:DO,0:ELSE,0:FOR,1	14
+0x4000530	        0x4883ff09	                              cmp rdi, 9	       185	pager.c	FUNCTION_11	FOR_1
+0x4000534	      0xb901000000	                              mov ecx, 1	       185	pager.c	FUNCTION_11	FOR_1
+0x4000539	            0x7623	                           jbe 0x400055e	       185	pager.c	FUNCTION_11	FOR_1
+0x400053b	    0x48becdcccccc	          movabs rsi, 0xcccccccccccccccd	       186	pager.c	FUNCTION_11	FOR_1
+0x4000545	           0xf1f00	                         nop dword [rax]	       186	pager.c	FUNCTION_11	FOR_1
+0x4000548	          0x4889f8	                            mov rax, rdi	       186	pager.c	FUNCTION_11	FOR_1
+0x400054b	          0x83c101	                              add ecx, 1	       185	pager.c	FUNCTION_11	FOR_1
+0x400054e	          0x48f7e6	                                 mul rsi	       186	pager.c	FUNCTION_11	FOR_1
+0x4000551	        0x48c1ea03	                              shr rdx, 3	       186	pager.c	FUNCTION_11	FOR_1
+0x4000555	        0x4883fa09	                              cmp rdx, 9	       185	pager.c	FUNCTION_11	FOR_1
+0x4000559	          0x4889d7	                            mov rdi, rdx	       186	pager.c	FUNCTION_11	FOR_1
+0x400055c	            0x77ea	                            ja 0x4000548	       185	pager.c	FUNCTION_11	FOR_1
+0x400055e	            0x89c8	                            mov eax, ecx	       188	pager.c	FUNCTION_11
+0x4000560	              0xc3	                                     ret	       188	pager.c	FUNCTION_11
+pager_in_use	functions,0:IF,0:WHILE,0:CALL,1:SWITCH,0:DO,0:ELSE,0:FOR,0	3
+0x4000500	            0x31f6	                            xor esi, esi	       144	pager.c	FUNCTION_9	CALL_1
+0x4000502	      0xbf00000000	                              mov edi, 0	       144	pager.c	FUNCTION_9	CALL_1
+0x4000507	      0xe900000000	                           jmp 0x400050c	       144	pager.c	FUNCTION_9	CALL_1
+setup_pager_env	functions,0:IF,3:WHILE,0:CALL,10:SWITCH,0:DO,0:ELSE,0:FOR,1	72
+0x4000040	            0x4156	                                push r14	        71	pager.c	FUNCTION_6
+0x4000042	            0x4155	                                push r13	        71	pager.c	FUNCTION_6
+0x4000044	          0x4989fe	                            mov r14, rdi	        71	pager.c	FUNCTION_6
+0x4000047	            0x4154	                                push r12	        71	pager.c	FUNCTION_6
+0x4000049	              0x55	                                push rbp	        71	pager.c	FUNCTION_6
+0x400004a	      0xbf00000000	                              mov edi, 0	        74	pager.c	FUNCTION_6	CALL_1
+0x400004f	              0x53	                                push rbx	        71	pager.c	FUNCTION_6
+0x4000050	        0x4883ec10	                           sub rsp, 0x10	        71	pager.c	FUNCTION_6
+0x4000054	    0x64488b042528	                mov rax, qword fs:[0x28]	        71	pager.c	FUNCTION_6
+0x400005d	      0x4889442408	                mov qword [rsp + 8], rax	        71	pager.c	FUNCTION_6
+0x4000062	            0x31c0	                            xor eax, eax	        71	pager.c	FUNCTION_6
+0x4000064	      0xe800000000	                          call 0x4000069	        74	pager.c	FUNCTION_6	CALL_1
+0x4000069	          0x4889e6	                            mov rsi, rsp	        75	pager.c	FUNCTION_6	CALL_2
+0x400006c	          0x4889c7	                            mov rdi, rax	        75	pager.c	FUNCTION_6	CALL_2
+0x400006f	          0x4989c5	                            mov r13, rax	        74	pager.c	FUNCTION_6	CALL_1
+0x4000072	      0xe800000000	                          call 0x4000077	        75	pager.c	FUNCTION_6	CALL_2
+0x4000077	            0x85c0	                           test eax, eax	        77	pager.c	FUNCTION_6	IF_1
+0x4000079	     0xf88a3000000	                            js 0x4000122	        77	pager.c	FUNCTION_6	IF_1
+0x400007f	            0x7467	                            je 0x40000e8	        81	pager.c	FUNCTION_6	FOR_1
+0x4000081	          0x83e801	                              sub eax, 1	        81	pager.c	FUNCTION_6	FOR_1
+0x4000084	            0x31db	                            xor ebx, ebx	        81	pager.c	FUNCTION_6	FOR_1
+0x4000086	    0x4c8d24c50800	                    lea r12, [rax*8 + 8]	        81	pager.c	FUNCTION_6	FOR_1
+0x400008e	            0xeb09	                           jmp 0x4000099	        81	pager.c	FUNCTION_6	FOR_1
+0x4000090	        0x4883c308	                              add rbx, 8	        81	pager.c	FUNCTION_6	FOR_1
+0x4000094	          0x4939dc	                            cmp r12, rbx	        81	pager.c	FUNCTION_6	FOR_1
+0x4000097	            0x744f	                            je 0x40000e8	        81	pager.c	FUNCTION_6	FOR_1
+0x4000099	        0x488b0424	                    mov rax, qword [rsp]	        82	pager.c	FUNCTION_6	FOR_1	CALL_5
+0x400009d	      0xbe3d000000	                           mov esi, 0x3d	        82	pager.c	FUNCTION_6	FOR_1	CALL_5
+0x40000a2	        0x488b3c18	              mov rdi, qword [rax + rbx]	        82	pager.c	FUNCTION_6	FOR_1	CALL_5
+0x40000a6	      0xe800000000	                          call 0x40000ab	        82	pager.c	FUNCTION_6	FOR_1	CALL_5
+0x40000ab	          0x4885c0	                           test rax, rax	        84	pager.c	FUNCTION_6	FOR_1	IF_2
+0x40000ae	          0x4889c5	                            mov rbp, rax	        82	pager.c	FUNCTION_6	FOR_1	CALL_5
+0x40000b1	            0x7463	                            je 0x4000116	        84	pager.c	FUNCTION_6	FOR_1	IF_2
+0x40000b3	          0xc60000	                       mov byte [rax], 0	        87	pager.c	FUNCTION_6	FOR_1
+0x40000b6	        0x488b0424	                    mov rax, qword [rsp]	        88	pager.c	FUNCTION_6	FOR_1	IF_3	CALL_7
+0x40000ba	        0x488b3c18	              mov rdi, qword [rax + rbx]	        88	pager.c	FUNCTION_6	FOR_1	IF_3	CALL_7
+0x40000be	      0xe800000000	                          call 0x40000c3	        88	pager.c	FUNCTION_6	FOR_1	IF_3	CALL_7
+0x40000c3	          0x4885c0	                           test rax, rax	        88	pager.c	FUNCTION_6	FOR_1	IF_3	CALL_7
+0x40000c6	            0x75c8	                           jne 0x4000090	        88	pager.c	FUNCTION_6	FOR_1	IF_3	CALL_7
+0x40000c8	        0xc645003d	                    mov byte [rbp], 0x3d	        89	pager.c	FUNCTION_6	FOR_1	IF_3
+0x40000cc	        0x488b0424	                    mov rax, qword [rsp]	        90	pager.c	FUNCTION_6	FOR_1	IF_3	CALL_8
+0x40000d0	          0x4c89f7	                            mov rdi, r14	        90	pager.c	FUNCTION_6	FOR_1	IF_3	CALL_8
+0x40000d3	        0x488b3418	              mov rsi, qword [rax + rbx]	        90	pager.c	FUNCTION_6	FOR_1	IF_3	CALL_8
+0x40000d7	        0x4883c308	                              add rbx, 8	        90	pager.c	FUNCTION_6	FOR_1	IF_3	CALL_8
+0x40000db	      0xe800000000	                          call 0x40000e0	        90	pager.c	FUNCTION_6	FOR_1	IF_3	CALL_8
+0x40000e0	          0x4939dc	                            cmp r12, rbx	        81	pager.c	FUNCTION_6	FOR_1
+0x40000e3	            0x75b4	                           jne 0x4000099	        81	pager.c	FUNCTION_6	FOR_1
+0x40000e5	           0xf1f00	                         nop dword [rax]	        81	pager.c	FUNCTION_6	FOR_1
+0x40000e8	          0x4c89ef	                            mov rdi, r13	        93	pager.c	FUNCTION_6	CALL_9
+0x40000eb	      0xe800000000	                          call 0x40000f0	        93	pager.c	FUNCTION_6	CALL_9
+0x40000f0	        0x488b3c24	                    mov rdi, qword [rsp]	        94	pager.c	FUNCTION_6	CALL_10
+0x40000f4	      0xe800000000	                          call 0x40000f9	        94	pager.c	FUNCTION_6	CALL_10
+0x40000f9	      0x488b442408	                mov rax, qword [rsp + 8]	        95	pager.c	FUNCTION_6
+0x40000fe	    0x644833042528	                xor rax, qword fs:[0x28]	        95	pager.c	FUNCTION_6
+0x4000107	            0x752f	                           jne 0x4000138	        95	pager.c	FUNCTION_6
+0x4000109	        0x4883c410	                           add rsp, 0x10	        95	pager.c	FUNCTION_6
+0x400010d	              0x5b	                                 pop rbx	        95	pager.c	FUNCTION_6
+0x400010e	              0x5d	                                 pop rbp	        95	pager.c	FUNCTION_6
+0x400010f	            0x415c	                                 pop r12	        95	pager.c	FUNCTION_6
+0x4000111	            0x415d	                                 pop r13	        95	pager.c	FUNCTION_6
+0x4000113	            0x415e	                                 pop r14	        95	pager.c	FUNCTION_6
+0x4000115	              0xc3	                                     ret	        95	pager.c	FUNCTION_6
+0x4000116	      0xbf00000000	                              mov edi, 0	        85	pager.c	FUNCTION_6	FOR_1	CALL_6
+0x400011b	            0x31c0	                            xor eax, eax	        85	pager.c	FUNCTION_6	FOR_1	CALL_6
+0x400011d	      0xe800000000	                          call 0x4000122	        85	pager.c	FUNCTION_6	FOR_1	CALL_6
+0x4000122	            0x89c7	                            mov edi, eax	        78	pager.c	FUNCTION_6	IF_1	CALL_3
+0x4000124	      0xe800000000	                          call 0x4000129	        78	pager.c	FUNCTION_6	IF_1	CALL_3
+0x4000129	      0xbf00000000	                              mov edi, 0	        78	pager.c	FUNCTION_6	IF_1	CALL_3
+0x400012e	          0x4889c6	                            mov rsi, rax	        78	pager.c	FUNCTION_6	IF_1	CALL_3
+0x4000131	            0x31c0	                            xor eax, eax	        78	pager.c	FUNCTION_6	IF_1	CALL_3
+0x4000133	      0xe800000000	                          call 0x4000138	        78	pager.c	FUNCTION_6	IF_1	CALL_3
+0x4000138	      0xe800000000	                          call 0x400013d	        95	pager.c	FUNCTION_6

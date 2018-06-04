@@ -1,0 +1,394 @@
+cmd_patch_id	functions,0:IF,4:SWITCH,0:FOR,0:ELSE,2:DO,0:CALL,5:WHILE,0	100
+0x400047d	              0x55	                                push rbp	       181	patch-id.c	FUNCTION_8
+0x400047e	              0x53	                                push rbx	       181	patch-id.c	FUNCTION_8
+0x400047f	    0x4881ecd80000	                           sub rsp, 0xd8	       181	patch-id.c	FUNCTION_8
+0x4000486	            0x89fb	                            mov ebx, edi	       181	patch-id.c	FUNCTION_8
+0x4000488	          0x4889f5	                            mov rbp, rsi	       181	patch-id.c	FUNCTION_8
+0x400048b	    0x64488b042528	                mov rax, qword fs:[0x28]	       181	patch-id.c	FUNCTION_8
+0x4000494	    0x48898424c800	             mov qword [rsp + 0xc8], rax	       181	patch-id.c	FUNCTION_8
+0x400049c	            0x31c0	                            xor eax, eax	       181	patch-id.c	FUNCTION_8
+0x400049e	    0xc744240cffff	      mov dword [rsp + 0xc], 0xffffffff 	       182	patch-id.c	FUNCTION_8
+0x40004a6	      0x488d74240c	                    lea rsi, [rsp + 0xc]	       184	patch-id.c	FUNCTION_8	CALL_1
+0x40004ab	      0xbf00000000	                              mov edi, 0	       184	patch-id.c	FUNCTION_8	CALL_1
+0x40004b0	      0xe800000000	                          call 0x40004b5	       184	patch-id.c	FUNCTION_8	CALL_1
+0x40004b5	      0x837c240c00	                cmp dword [rsp + 0xc], 0	       187	patch-id.c	FUNCTION_8	IF_1
+0x40004ba	            0x7908	                           jns 0x40004c4	       187	patch-id.c	FUNCTION_8	IF_1
+0x40004bc	    0xc744240c0000	                mov dword [rsp + 0xc], 0	       188	patch-id.c	FUNCTION_8	IF_1
+0x40004c4	          0x83fb02	                              cmp ebx, 2	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004c7	            0x754a	                           jne 0x4000513	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004c9	        0x488b4508	                mov rax, qword [rbp + 8]	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004cd	      0xbf00000000	                              mov edi, 0	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004d2	      0xb909000000	                              mov ecx, 9	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004d7	          0x4889c6	                            mov rsi, rax	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004da	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004dc	           0xf97c1	                                 seta cl	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004df	           0xf92c2	                                 setb dl	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004e2	            0x38d1	                              cmp cl, dl	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004e4	            0x750a	                           jne 0x40004f0	       190	patch-id.c	FUNCTION_8	IF_2	CALL_2
+0x40004e6	    0xc744240c0100	                mov dword [rsp + 0xc], 1	       191	patch-id.c	FUNCTION_8	IF_2
+0x40004ee	            0xeb32	                           jmp 0x4000522	       191	patch-id.c	FUNCTION_8	IF_2
+0x40004f0	      0xbf00000000	                              mov edi, 0	       192	patch-id.c	FUNCTION_8	ELSE_1	IF_3	CALL_3
+0x40004f5	      0xb90b000000	                            mov ecx, 0xb	       192	patch-id.c	FUNCTION_8	ELSE_1	IF_3	CALL_3
+0x40004fa	          0x4889c6	                            mov rsi, rax	       192	patch-id.c	FUNCTION_8	ELSE_1	IF_3	CALL_3
+0x40004fd	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	       192	patch-id.c	FUNCTION_8	ELSE_1	IF_3	CALL_3
+0x40004ff	           0xf97c2	                                 seta dl	       192	patch-id.c	FUNCTION_8	ELSE_1	IF_3	CALL_3
+0x4000502	           0xf92c0	                                 setb al	       192	patch-id.c	FUNCTION_8	ELSE_1	IF_3	CALL_3
+0x4000505	            0x38c2	                              cmp dl, al	       192	patch-id.c	FUNCTION_8	ELSE_1	IF_3	CALL_3
+0x4000507	            0x750f	                           jne 0x4000518	       192	patch-id.c	FUNCTION_8	ELSE_1	IF_3	CALL_3
+0x4000509	    0xc744240c0000	                mov dword [rsp + 0xc], 0	       193	patch-id.c	FUNCTION_8	ELSE_1	IF_3
+0x4000511	            0xeb0f	                           jmp 0x4000522	       193	patch-id.c	FUNCTION_8	ELSE_1	IF_3
+0x4000513	          0x83fb01	                              cmp ebx, 1	       194	patch-id.c	FUNCTION_8	ELSE_2	IF_4
+0x4000516	            0x740a	                            je 0x4000522	       194	patch-id.c	FUNCTION_8	ELSE_2	IF_4
+0x4000518	      0xbf00000000	                              mov edi, 0	       195	patch-id.c	FUNCTION_8	ELSE_2	IF_4
+0x400051d	      0xe800000000	                          call 0x4000522	       195	patch-id.c	FUNCTION_8	ELSE_2	IF_4
+0x4000522	        0x8b5c240c	              mov ebx, dword [rsp + 0xc]	       197	patch-id.c	FUNCTION_8	CALL_5
+0x4000526	    0x48c744241000	               mov qword [rsp + 0x10], 0	       155	patch-id.c	FUNCTION_6
+0x400052f	    0x48c744241800	               mov qword [rsp + 0x18], 0	       155	patch-id.c	FUNCTION_6
+0x4000538	    0x48c744242000	               mov qword [rsp + 0x20], 0	       155	patch-id.c	FUNCTION_6
+0x4000541	    0x48c744243000	               mov qword [rsp + 0x30], 0	        90	string3.h	FUNCTION_12	CALL_6
+0x400054a	    0x48c744243800	               mov qword [rsp + 0x38], 0	        90	string3.h	FUNCTION_12	CALL_6
+0x4000553	    0xc74424400000	               mov dword [rsp + 0x40], 0	        90	string3.h	FUNCTION_12	CALL_6
+0x400055b	      0xe9af000000	                           jmp 0x400060f	        90	string3.h	FUNCTION_12	CALL_6
+0x4000560	            0x89d9	                            mov ecx, ebx	       159	patch-id.c	FUNCTION_6	WHILE_1	CALL_3
+0x4000562	      0x488d542410	                   lea rdx, [rsp + 0x10]	       159	patch-id.c	FUNCTION_6	WHILE_1	CALL_3
+0x4000567	      0x488d742470	                   lea rsi, [rsp + 0x70]	       159	patch-id.c	FUNCTION_6	WHILE_1	CALL_3
+0x400056c	      0x488d7c2450	                   lea rdi, [rsp + 0x50]	       159	patch-id.c	FUNCTION_6	WHILE_1	CALL_3
+0x4000571	      0xe88ffbffff	                call sym.get_one_patchid	       159	patch-id.c	FUNCTION_6	WHILE_1	CALL_3
+0x4000576	            0x85c0	                           test eax, eax	         8	patch-id.c	FUNCTION_1	IF_1
+0x4000578	            0x7479	                            je 0x40005f3	         8	patch-id.c	FUNCTION_1	IF_1
+0x400057a	      0x488d7c2430	                   lea rdi, [rsp + 0x30]	        11	patch-id.c	FUNCTION_1	CALL_2
+0x400057f	      0xe800000000	                          call 0x4000584	        11	patch-id.c	FUNCTION_1	CALL_2
+0x4000584	          0x488b10	                    mov rdx, qword [rax]	        53	string3.h	FUNCTION_9	CALL_3
+0x4000587	    0x488994249000	             mov qword [rsp + 0x90], rdx	        53	string3.h	FUNCTION_9	CALL_3
+0x400058f	        0x488b5008	                mov rdx, qword [rax + 8]	        53	string3.h	FUNCTION_9	CALL_3
+0x4000593	    0x488994249800	             mov qword [rsp + 0x98], rdx	        53	string3.h	FUNCTION_9	CALL_3
+0x400059b	        0x488b5010	            mov rdx, qword [rax + 0x10] 	        53	string3.h	FUNCTION_9	CALL_3
+0x400059f	    0x48899424a000	             mov qword [rsp + 0xa0], rdx	        53	string3.h	FUNCTION_9	CALL_3
+0x40005a7	        0x488b5018	            mov rdx, qword [rax + 0x18] 	        53	string3.h	FUNCTION_9	CALL_3
+0x40005ab	    0x48899424a800	             mov qword [rsp + 0xa8], rdx	        53	string3.h	FUNCTION_9	CALL_3
+0x40005b3	        0x488b5020	            mov rdx, qword [rax + 0x20] 	        53	string3.h	FUNCTION_9	CALL_3
+0x40005b7	    0x48899424b000	             mov qword [rsp + 0xb0], rdx	        53	string3.h	FUNCTION_9	CALL_3
+0x40005bf	         0xfb64028	           movzx eax, byte [rax + 0x28] 	        53	string3.h	FUNCTION_9	CALL_3
+0x40005c3	    0x888424b80000	               mov byte [rsp + 0xb8], al	        53	string3.h	FUNCTION_9	CALL_3
+0x40005ca	      0x488d7c2470	                   lea rdi, [rsp + 0x70]	        12	patch-id.c	FUNCTION_1	CALL_4
+0x40005cf	      0xe800000000	                          call 0x40005d4	        12	patch-id.c	FUNCTION_1	CALL_4
+0x40005d4	    0x488d8c249000	                   lea rcx, [rsp + 0x90]	       104	stdio2.h	FUNCTION_26	CALL_2
+0x40005dc	          0x4889c2	                            mov rdx, rax	       104	stdio2.h	FUNCTION_26	CALL_2
+0x40005df	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	FUNCTION_26	CALL_2
+0x40005e4	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	FUNCTION_26	CALL_2
+0x40005e9	      0xb800000000	                              mov eax, 0	       104	stdio2.h	FUNCTION_26	CALL_2
+0x40005ee	      0xe800000000	                          call 0x40005f3	       104	stdio2.h	FUNCTION_26	CALL_2
+0x40005f3	      0x488b442450	            mov rax, qword [rsp + 0x50] 	        53	string3.h	FUNCTION_9	CALL_3
+0x40005f8	      0x4889442430	             mov qword [rsp + 0x30], rax	        53	string3.h	FUNCTION_9	CALL_3
+0x40005fd	      0x488b442458	            mov rax, qword [rsp + 0x58] 	        53	string3.h	FUNCTION_9	CALL_3
+0x4000602	      0x4889442438	             mov qword [rsp + 0x38], rax	        53	string3.h	FUNCTION_9	CALL_3
+0x4000607	        0x8b442460	            mov eax, dword [rsp + 0x60] 	        53	string3.h	FUNCTION_9	CALL_3
+0x400060b	        0x89442440	             mov dword [rsp + 0x40], eax	        53	string3.h	FUNCTION_9	CALL_3
+0x400060f	    0x488b3d000000	            mov rdi, qword [0x04000616] 	       158	patch-id.c	FUNCTION_6	WHILE_1	CALL_2
+0x4000616	      0xe800000000	                          call 0x400061b	       158	patch-id.c	FUNCTION_6	WHILE_1	CALL_2
+0x400061b	            0x85c0	                           test eax, eax	       158	patch-id.c	FUNCTION_6	WHILE_1	CALL_2
+0x400061d	     0xf843dffffff	                            je 0x4000560	       158	patch-id.c	FUNCTION_6	WHILE_1	CALL_2
+0x4000623	      0x488d7c2410	                   lea rdi, [rsp + 0x10]	       163	patch-id.c	FUNCTION_6	CALL_6
+0x4000628	      0xe800000000	                          call 0x400062d	       163	patch-id.c	FUNCTION_6	CALL_6
+0x400062d	      0xb800000000	                              mov eax, 0	       199	patch-id.c	FUNCTION_8
+0x4000632	    0x488b9c24c800	            mov rbx, qword [rsp + 0xc8] 	       199	patch-id.c	FUNCTION_8
+0x400063a	    0x6448331c2528	                xor rbx, qword fs:[0x28]	       199	patch-id.c	FUNCTION_8
+0x4000643	            0x7405	                            je 0x400064a	       199	patch-id.c	FUNCTION_8
+0x4000645	      0xe800000000	                          call 0x400064a	       199	patch-id.c	FUNCTION_8
+0x400064a	    0x4881c4d80000	                           add rsp, 0xd8	       199	patch-id.c	FUNCTION_8
+0x4000651	              0x5b	                                 pop rbx	       199	patch-id.c	FUNCTION_8
+0x4000652	              0x5d	                                 pop rbp	       199	patch-id.c	FUNCTION_8
+0x4000653	              0xc3	                                     ret	       199	patch-id.c	FUNCTION_8
+flush_one_hunk	functions,0:IF,0:SWITCH,0:FOR,1:ELSE,0:DO,0:CALL,2:WHILE,0	31
+0x4000096	              0x55	                                push rbp	        58	patch-id.c	FUNCTION_4
+0x4000097	              0x53	                                push rbx	        58	patch-id.c	FUNCTION_4
+0x4000098	        0x4883ec28	                           sub rsp, 0x28	        58	patch-id.c	FUNCTION_4
+0x400009c	          0x4889fb	                            mov rbx, rdi	        58	patch-id.c	FUNCTION_4
+0x400009f	          0x4889f5	                            mov rbp, rsi	        58	patch-id.c	FUNCTION_4
+0x40000a2	    0x64488b042528	                mov rax, qword fs:[0x28]	        58	patch-id.c	FUNCTION_4
+0x40000ab	      0x4889442418	             mov qword [rsp + 0x18], rax	        58	patch-id.c	FUNCTION_4
+0x40000b0	            0x31c0	                            xor eax, eax	        58	patch-id.c	FUNCTION_4
+0x40000b2	          0x4889e7	                            mov rdi, rsp	        63	patch-id.c	FUNCTION_4	CALL_1
+0x40000b5	      0xe800000000	                          call 0x40000ba	        63	patch-id.c	FUNCTION_4	CALL_1
+0x40000ba	          0x4889ef	                            mov rdi, rbp	        64	patch-id.c	FUNCTION_4	CALL_2
+0x40000bd	      0xe800000000	                          call 0x40000c2	        64	patch-id.c	FUNCTION_4	CALL_2
+0x40000c2	      0xb800000000	                              mov eax, 0	        64	patch-id.c	FUNCTION_4	CALL_2
+0x40000c7	      0xba00000000	                              mov edx, 0	        60	patch-id.c	FUNCTION_4
+0x40000cc	         0xfb63403	             movzx esi, byte [rbx + rax]	        67	patch-id.c	FUNCTION_4	FOR_1
+0x40000d0	         0xfb60c04	             movzx ecx, byte [rsp + rax]	        67	patch-id.c	FUNCTION_4	FOR_1
+0x40000d4	             0x1f1	                            add ecx, esi	        67	patch-id.c	FUNCTION_4	FOR_1
+0x40000d6	             0x1ca	                            add edx, ecx	        67	patch-id.c	FUNCTION_4	FOR_1
+0x40000d8	          0x881403	                mov byte [rbx + rax], dl	        68	patch-id.c	FUNCTION_4	FOR_1
+0x40000db	        0x66c1ea08	                               shr dx, 8	        69	patch-id.c	FUNCTION_4	FOR_1
+0x40000df	        0x4883c001	                              add rax, 1	        69	patch-id.c	FUNCTION_4	FOR_1
+0x40000e3	        0x4883f814	                           cmp rax, 0x14	        66	patch-id.c	FUNCTION_4	FOR_1
+0x40000e7	            0x75e3	                           jne 0x40000cc	        66	patch-id.c	FUNCTION_4	FOR_1
+0x40000e9	      0x488b442418	            mov rax, qword [rsp + 0x18] 	        71	patch-id.c	FUNCTION_4
+0x40000ee	    0x644833042528	                xor rax, qword fs:[0x28]	        71	patch-id.c	FUNCTION_4
+0x40000f7	            0x7405	                            je 0x40000fe	        71	patch-id.c	FUNCTION_4
+0x40000f9	      0xe800000000	                          call 0x40000fe	        71	patch-id.c	FUNCTION_4
+0x40000fe	        0x4883c428	                           add rsp, 0x28	        71	patch-id.c	FUNCTION_4
+0x4000102	              0x5b	                                 pop rbx	        71	patch-id.c	FUNCTION_4
+0x4000103	              0x5d	                                 pop rbp	        71	patch-id.c	FUNCTION_4
+0x4000104	              0xc3	                                     ret	        71	patch-id.c	FUNCTION_4
+git_patch_id_config	functions,0:IF,1:SWITCH,0:FOR,0:ELSE,0:DO,0:CALL,3:WHILE,0	31
+0x4000040	              0x55	                                push rbp	       169	patch-id.c	FUNCTION_7
+0x4000041	              0x53	                                push rbx	       169	patch-id.c	FUNCTION_7
+0x4000042	        0x4883ec08	                              sub rsp, 8	       169	patch-id.c	FUNCTION_7
+0x4000046	          0x4889f8	                            mov rax, rdi	       169	patch-id.c	FUNCTION_7
+0x4000049	          0x4989f0	                             mov r8, rsi	       169	patch-id.c	FUNCTION_7
+0x400004c	          0x4889d5	                            mov rbp, rdx	       169	patch-id.c	FUNCTION_7
+0x400004f	      0xbf00000000	                              mov edi, 0	       172	patch-id.c	FUNCTION_7	IF_1	CALL_1
+0x4000054	      0xb90f000000	                            mov ecx, 0xf	       172	patch-id.c	FUNCTION_7	IF_1	CALL_1
+0x4000059	          0x4889c6	                            mov rsi, rax	       172	patch-id.c	FUNCTION_7	IF_1	CALL_1
+0x400005c	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	       172	patch-id.c	FUNCTION_7	IF_1	CALL_1
+0x400005e	           0xf97c3	                                 seta bl	       172	patch-id.c	FUNCTION_7	IF_1	CALL_1
+0x4000061	           0xf92c2	                                 setb dl	       172	patch-id.c	FUNCTION_7	IF_1	CALL_1
+0x4000064	            0x29d3	                            sub ebx, edx	       172	patch-id.c	FUNCTION_7	IF_1	CALL_1
+0x4000066	           0xfbedb	                           movsx ebx, bl	       172	patch-id.c	FUNCTION_7	IF_1	CALL_1
+0x4000069	            0x85db	                           test ebx, ebx	       172	patch-id.c	FUNCTION_7	IF_1	CALL_1
+0x400006b	            0x7510	                           jne 0x400007d	       172	patch-id.c	FUNCTION_7	IF_1	CALL_1
+0x400006d	          0x4c89c6	                             mov rsi, r8	       173	patch-id.c	FUNCTION_7	IF_1	CALL_2
+0x4000070	          0x4889c7	                            mov rdi, rax	       173	patch-id.c	FUNCTION_7	IF_1	CALL_2
+0x4000073	      0xe800000000	                          call 0x4000078	       173	patch-id.c	FUNCTION_7	IF_1	CALL_2
+0x4000078	          0x894500	                    mov dword [rbp], eax	       173	patch-id.c	FUNCTION_7	IF_1	CALL_2
+0x400007b	            0xeb10	                           jmp 0x400008d	       174	patch-id.c	FUNCTION_7	IF_1
+0x400007d	          0x4889ea	                            mov rdx, rbp	       177	patch-id.c	FUNCTION_7	CALL_3
+0x4000080	          0x4c89c6	                             mov rsi, r8	       177	patch-id.c	FUNCTION_7	CALL_3
+0x4000083	          0x4889c7	                            mov rdi, rax	       177	patch-id.c	FUNCTION_7	CALL_3
+0x4000086	      0xe800000000	                          call 0x400008b	       177	patch-id.c	FUNCTION_7	CALL_3
+0x400008b	            0x89c3	                            mov ebx, eax	       177	patch-id.c	FUNCTION_7	CALL_3
+0x400008d	            0x89d8	                            mov eax, ebx	       178	patch-id.c	FUNCTION_7
+0x400008f	        0x4883c408	                              add rsp, 8	       178	patch-id.c	FUNCTION_7
+0x4000093	              0x5b	                                 pop rbx	       178	patch-id.c	FUNCTION_7
+0x4000094	              0x5d	                                 pop rbp	       178	patch-id.c	FUNCTION_7
+0x4000095	              0xc3	                                     ret	       178	patch-id.c	FUNCTION_7
+get_one_patchid	functions,0:IF,14:SWITCH,0:FOR,0:ELSE,2:DO,0:CALL,21:WHILE,1	228
+0x4000105	            0x4157	                                push r15	        75	patch-id.c	FUNCTION_5
+0x4000107	            0x4156	                                push r14	        75	patch-id.c	FUNCTION_5
+0x4000109	            0x4155	                                push r13	        75	patch-id.c	FUNCTION_5
+0x400010b	            0x4154	                                push r12	        75	patch-id.c	FUNCTION_5
+0x400010d	              0x55	                                push rbp	        75	patch-id.c	FUNCTION_5
+0x400010e	              0x53	                                push rbx	        75	patch-id.c	FUNCTION_5
+0x400010f	    0x4881ec980900	                          sub rsp, 0x998	        75	patch-id.c	FUNCTION_5
+0x4000116	          0x4989ff	                            mov r15, rdi	        75	patch-id.c	FUNCTION_5
+0x4000119	          0x4889f3	                            mov rbx, rsi	        75	patch-id.c	FUNCTION_5
+0x400011c	      0x4889742418	             mov qword [rsp + 0x18], rsi	        75	patch-id.c	FUNCTION_5
+0x4000121	          0x4989d5	                            mov r13, rdx	        75	patch-id.c	FUNCTION_5
+0x4000124	        0x894c2414	             mov dword [rsp + 0x14], ecx	        75	patch-id.c	FUNCTION_5
+0x4000128	    0x64488b042528	                mov rax, qword fs:[0x28]	        75	patch-id.c	FUNCTION_5
+0x4000131	    0x488984248809	            mov qword [rsp + 0x988], rax	        75	patch-id.c	FUNCTION_5
+0x4000139	            0x31c0	                            xor eax, eax	        75	patch-id.c	FUNCTION_5
+0x400013b	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	        80	patch-id.c	FUNCTION_5	CALL_1
+0x4000140	      0xe800000000	                          call 0x4000145	        80	patch-id.c	FUNCTION_5	CALL_1
+0x4000145	    0x48c703000000	                      mov qword [rbx], 0	        90	string3.h	FUNCTION_12	CALL_6
+0x400014c	    0x48c743080000	                  mov qword [rbx + 8], 0	        90	string3.h	FUNCTION_12	CALL_6
+0x4000154	    0xc74310000000	               mov dword [rbx + 0x10], 0	        90	string3.h	FUNCTION_12	CALL_6
+0x400015b	    0x41beffffffff	                    mov r14d, 0xffffffff	        77	patch-id.c	FUNCTION_5
+0x4000161	          0x4489f5	                           mov ebp, r14d	        77	patch-id.c	FUNCTION_5
+0x4000164	    0x41bc00000000	                             mov r12d, 0	        76	patch-id.c	FUNCTION_5
+0x400016a	      0xe96b020000	                           jmp 0x40003da	        76	patch-id.c	FUNCTION_5
+0x400016f	        0x498b5d10	            mov rbx, qword [r13 + 0x10] 	        84	patch-id.c	FUNCTION_5	WHILE_1
+0x4000173	          0x4889df	                            mov rdi, rbx	        84	patch-id.c	FUNCTION_5	WHILE_1
+0x4000176	      0xb800000000	                              mov eax, 0	        84	patch-id.c	FUNCTION_5	WHILE_1
+0x400017b	           0xfb610	                   movzx edx, byte [rax]	       484	git-compat-util.h	FUNCTION_47	DO_1	IF_1
+0x400017e	            0x84d2	                             test dl, dl	       484	git-compat-util.h	FUNCTION_47	DO_1	IF_1
+0x4000180	            0x746f	                            je 0x40001f1	       484	git-compat-util.h	FUNCTION_47	DO_1	IF_1
+0x4000182	        0x4883c701	                              add rdi, 1	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x4000186	        0x4883c001	                              add rax, 1	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x400018a	          0x3a57ff	                  cmp dl, byte [rdi - 1]	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x400018d	            0x74ec	                            je 0x400017b	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x400018f	          0x4889df	                            mov rdi, rbx	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x4000192	      0xb800000000	                              mov eax, 0	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x4000197	           0xfb610	                   movzx edx, byte [rax]	       484	git-compat-util.h	FUNCTION_47	DO_1	IF_1
+0x400019a	            0x84d2	                             test dl, dl	       484	git-compat-util.h	FUNCTION_47	DO_1	IF_1
+0x400019c	            0x7453	                            je 0x40001f1	       484	git-compat-util.h	FUNCTION_47	DO_1	IF_1
+0x400019e	        0x4883c701	                              add rdi, 1	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001a2	        0x4883c001	                              add rax, 1	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001a6	          0x3a57ff	                  cmp dl, byte [rdi - 1]	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001a9	            0x74ec	                            je 0x4000197	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001ab	          0x4889df	                            mov rdi, rbx	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001ae	      0xb800000000	                              mov eax, 0	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001b3	           0xfb610	                   movzx edx, byte [rax]	       484	git-compat-util.h	FUNCTION_47	DO_1	IF_1
+0x40001b6	            0x84d2	                             test dl, dl	       484	git-compat-util.h	FUNCTION_47	DO_1	IF_1
+0x40001b8	            0x7437	                            je 0x40001f1	       484	git-compat-util.h	FUNCTION_47	DO_1	IF_1
+0x40001ba	        0x4883c701	                              add rdi, 1	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001be	        0x4883c001	                              add rax, 1	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001c2	          0x3a57ff	                  cmp dl, byte [rdi - 1]	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001c5	            0x74ec	                            je 0x40001b3	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001c7	      0xe954020000	                           jmp 0x4000420	       488	git-compat-util.h	FUNCTION_47	DO_1
+0x40001cc	    0x48c7c1ffffff	             mov rcx, 0xffffffffffffffff	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x40001d3	          0x4889df	                            mov rdi, rbx	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x40001d6	      0xb800000000	                              mov eax, 0	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x40001db	            0xf2ae	              repne scasb al, byte [rdi]	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x40001dd	          0x48f7d1	                                 not rcx	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x40001e0	        0x488d41ff	                      lea rax, [rcx - 1]	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x40001e4	        0x4883f80c	                            cmp rax, 0xc	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x40001e8	     0xf87ec010000	                            ja 0x40003da	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x40001ee	          0x4889df	                            mov rdi, rbx	        85	patch-id.c	FUNCTION_5	WHILE_1
+0x40001f1	          0x4c89fe	                            mov rsi, r15	        94	patch-id.c	FUNCTION_5	WHILE_1	IF_2	CALL_9
+0x40001f4	      0xe800000000	                          call 0x40001f9	        94	patch-id.c	FUNCTION_5	WHILE_1	IF_2	CALL_9
+0x40001f9	            0x85c0	                           test eax, eax	        94	patch-id.c	FUNCTION_5	WHILE_1	IF_2	CALL_9
+0x40001fb	     0xf84f8010000	                            je 0x40003f9	        94	patch-id.c	FUNCTION_5	WHILE_1	IF_2	CALL_9
+0x4000201	          0x4585e4	                         test r12d, r12d	       100	patch-id.c	FUNCTION_5	WHILE_1	IF_3	CALL_10
+0x4000204	            0x7515	                           jne 0x400021b	       100	patch-id.c	FUNCTION_5	WHILE_1	IF_3	CALL_10
+0x4000206	      0xbe00000000	                              mov esi, 0	       100	patch-id.c	FUNCTION_5	WHILE_1	IF_3	CALL_10
+0x400020b	          0x4889df	                            mov rdi, rbx	       100	patch-id.c	FUNCTION_5	WHILE_1	IF_3	CALL_10
+0x400020e	      0xe800000000	                          call 0x4000213	       100	patch-id.c	FUNCTION_5	WHILE_1	IF_3	CALL_10
+0x4000213	            0x85c0	                           test eax, eax	       100	patch-id.c	FUNCTION_5	WHILE_1	IF_3	CALL_10
+0x4000215	     0xf84bf010000	                            je 0x40003da	       100	patch-id.c	FUNCTION_5	WHILE_1	IF_3	CALL_10
+0x400021b	          0x83fdff	             cmp ebp, 0xffffffffffffffff	       104	patch-id.c	FUNCTION_5	WHILE_1	IF_4
+0x400021e	            0x753f	                           jne 0x400025f	       104	patch-id.c	FUNCTION_5	WHILE_1	IF_4
+0x4000220	      0xbe00000000	                              mov esi, 0	       105	patch-id.c	FUNCTION_5	WHILE_1	IF_4	IF_5	CALL_11
+0x4000225	          0x4889df	                            mov rdi, rbx	       105	patch-id.c	FUNCTION_5	WHILE_1	IF_4	IF_5	CALL_11
+0x4000228	      0xe800000000	                          call 0x400022d	       105	patch-id.c	FUNCTION_5	WHILE_1	IF_4	IF_5	CALL_11
+0x400022d	            0x85c0	                           test eax, eax	       105	patch-id.c	FUNCTION_5	WHILE_1	IF_4	IF_5	CALL_11
+0x400022f	     0xf85a5010000	                           jne 0x40003da	       105	patch-id.c	FUNCTION_5	WHILE_1	IF_4	IF_5	CALL_11
+0x4000235	      0xbe00000000	                              mov esi, 0	       107	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_1	IF_6	CALL_12
+0x400023a	          0x4889df	                            mov rdi, rbx	       107	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_1	IF_6	CALL_12
+0x400023d	      0xe800000000	                          call 0x4000242	       107	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_1	IF_6	CALL_12
+0x4000242	            0x85c0	                           test eax, eax	       107	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_1	IF_6	CALL_12
+0x4000244	     0xf85f3010000	                           jne 0x400043d	       107	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_1	IF_6	CALL_12
+0x400024a	           0xfb603	                   movzx eax, byte [rbx]	       109	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_2	IF_7	CALL_13
+0x400024d	    0xf68000000000	                      test byte [rax], 4	       109	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_2	IF_7	CALL_13
+0x4000254	     0xf8525010000	                           jne 0x400037f	       109	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_2	IF_7	CALL_13
+0x400025a	      0xe9ee010000	                           jmp 0x400044d	       109	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_2	IF_7	CALL_13
+0x400025f	          0x4489f0	                           mov eax, r14d	       114	patch-id.c	FUNCTION_5	WHILE_1	IF_8
+0x4000262	             0x9e8	                             or eax, ebp	       114	patch-id.c	FUNCTION_5	WHILE_1	IF_8
+0x4000264	     0xf8515010000	                           jne 0x400037f	       114	patch-id.c	FUNCTION_5	WHILE_1	IF_8
+0x400026a	      0xbe00000000	                              mov esi, 0	       115	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_9	CALL_14
+0x400026f	          0x4889df	                            mov rdi, rbx	       115	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_9	CALL_14
+0x4000272	      0xe800000000	                          call 0x4000277	       115	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_9	CALL_14
+0x4000277	            0x85c0	                           test eax, eax	       115	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_9	CALL_14
+0x4000279	     0xf84cc000000	                            je 0x400034b	       115	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_9	CALL_14
+0x400027f	        0x488d4304	                      lea rax, [rbx + 4]	        34	patch-id.c	FUNCTION_3
+0x4000283	      0x4889442408	                mov qword [rsp + 8], rax	        34	patch-id.c	FUNCTION_3
+0x4000288	      0xbe00000000	                              mov esi, 0	        35	patch-id.c	FUNCTION_3	CALL_1
+0x400028d	          0x4889c7	                            mov rdi, rax	        35	patch-id.c	FUNCTION_3	CALL_1
+0x4000290	      0xe800000000	                          call 0x4000295	        35	patch-id.c	FUNCTION_3	CALL_1
+0x4000295	            0x89c2	                            mov edx, eax	        35	patch-id.c	FUNCTION_3	CALL_1
+0x4000297	            0x4898	                                    cdqe	        36	patch-id.c	FUNCTION_3	IF_1
+0x4000299	      0x807c03042c	         cmp byte [rbx + rax + 4], 0x2c 	        36	patch-id.c	FUNCTION_3	IF_1
+0x400029e	            0x751e	                           jne 0x40002be	        36	patch-id.c	FUNCTION_3	IF_1
+0x40002a0	      0x488b5c2408	                mov rbx, qword [rsp + 8]	        37	patch-id.c	FUNCTION_3	IF_1
+0x40002a5	      0x488d440301	                lea rax, [rbx + rax + 1]	        37	patch-id.c	FUNCTION_3	IF_1
+0x40002aa	      0x4889442408	                mov qword [rsp + 8], rax	        37	patch-id.c	FUNCTION_3	IF_1
+0x40002af	      0xbe00000000	                              mov esi, 0	        38	patch-id.c	FUNCTION_3	IF_1	CALL_2
+0x40002b4	          0x4889c7	                            mov rdi, rax	        38	patch-id.c	FUNCTION_3	IF_1	CALL_2
+0x40002b7	      0xe800000000	                          call 0x40002bc	        38	patch-id.c	FUNCTION_3	IF_1	CALL_2
+0x40002bc	            0x89c2	                            mov edx, eax	        38	patch-id.c	FUNCTION_3	IF_1	CALL_2
+0x40002be	            0x85d2	                           test edx, edx	        40	patch-id.c	FUNCTION_3	IF_2
+0x40002c0	     0xf8414010000	                            je 0x40003da	        40	patch-id.c	FUNCTION_3	IF_2
+0x40002c6	          0x4863d2	                         movsxd rdx, edx	        40	patch-id.c	FUNCTION_3	IF_2
+0x40002c9	      0x488b442408	                mov rax, qword [rsp + 8]	        40	patch-id.c	FUNCTION_3	IF_2
+0x40002ce	        0x803c1020	              cmp byte [rax + rdx], 0x20	        40	patch-id.c	FUNCTION_3	IF_2
+0x40002d2	     0xf8502010000	                           jne 0x40003da	        40	patch-id.c	FUNCTION_3	IF_2
+0x40002d8	      0x807c10012b	         cmp byte [rax + rdx + 1], 0x2b 	        40	patch-id.c	FUNCTION_3	IF_2
+0x40002dd	     0xf85f7000000	                           jne 0x40003da	        40	patch-id.c	FUNCTION_3	IF_2
+0x40002e3	      0x488d5c1002	                lea rbx, [rax + rdx + 2]	        43	patch-id.c	FUNCTION_3
+0x40002e8	      0xbe00000000	                              mov esi, 0	        44	patch-id.c	FUNCTION_3	CALL_3
+0x40002ed	          0x4889df	                            mov rdi, rbx	        44	patch-id.c	FUNCTION_3	CALL_3
+0x40002f0	      0xe800000000	                          call 0x40002f5	        44	patch-id.c	FUNCTION_3	CALL_3
+0x40002f5	            0x89c2	                            mov edx, eax	        44	patch-id.c	FUNCTION_3	CALL_3
+0x40002f7	            0x4898	                                    cdqe	        45	patch-id.c	FUNCTION_3	IF_3
+0x40002f9	        0x803c032c	              cmp byte [rbx + rax], 0x2c	        45	patch-id.c	FUNCTION_3	IF_3
+0x40002fd	            0x7514	                           jne 0x4000313	        45	patch-id.c	FUNCTION_3	IF_3
+0x40002ff	      0x488d5c0301	                lea rbx, [rbx + rax + 1]	        46	patch-id.c	FUNCTION_3	IF_3
+0x4000304	      0xbe00000000	                              mov esi, 0	        47	patch-id.c	FUNCTION_3	IF_3	CALL_4
+0x4000309	          0x4889df	                            mov rdi, rbx	        47	patch-id.c	FUNCTION_3	IF_3	CALL_4
+0x400030c	      0xe800000000	                          call 0x4000311	        47	patch-id.c	FUNCTION_3	IF_3	CALL_4
+0x4000311	            0x89c2	                            mov edx, eax	        47	patch-id.c	FUNCTION_3	IF_3	CALL_4
+0x4000313	            0x85d2	                           test edx, edx	        49	patch-id.c	FUNCTION_3	IF_4
+0x4000315	     0xf84bf000000	                            je 0x40003da	        49	patch-id.c	FUNCTION_3	IF_4
+0x400031b	      0xba0a000000	                            mov edx, 0xa	       280	stdlib.h	FUNCTION_68	CALL_2
+0x4000320	      0xbe00000000	                              mov esi, 0	       280	stdlib.h	FUNCTION_68	CALL_2
+0x4000325	      0x488b7c2408	                mov rdi, qword [rsp + 8]	       280	stdlib.h	FUNCTION_68	CALL_2
+0x400032a	      0xe800000000	                          call 0x400032f	       280	stdlib.h	FUNCTION_68	CALL_2
+0x400032f	            0x89c5	                            mov ebp, eax	       280	stdlib.h	FUNCTION_68	CALL_2
+0x4000331	      0xba0a000000	                            mov edx, 0xa	       280	stdlib.h	FUNCTION_68	CALL_2
+0x4000336	      0xbe00000000	                              mov esi, 0	       280	stdlib.h	FUNCTION_68	CALL_2
+0x400033b	          0x4889df	                            mov rdi, rbx	       280	stdlib.h	FUNCTION_68	CALL_2
+0x400033e	      0xe800000000	                          call 0x4000343	       280	stdlib.h	FUNCTION_68	CALL_2
+0x4000343	          0x4189c6	                           mov r14d, eax	       280	stdlib.h	FUNCTION_68	CALL_2
+0x4000346	      0xe98f000000	                           jmp 0x40003da	       280	stdlib.h	FUNCTION_68	CALL_2
+0x400034b	      0xbe00000000	                              mov esi, 0	       122	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_10	CALL_16
+0x4000350	          0x4889df	                            mov rdi, rbx	       122	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_10	CALL_16
+0x4000353	      0xe800000000	                          call 0x4000358	       122	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_10	CALL_16
+0x4000358	            0x85c0	                           test eax, eax	       122	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_10	CALL_16
+0x400035a	     0xf84ed000000	                            je 0x400044d	       122	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_10	CALL_16
+0x4000360	    0x41beffffffff	                    mov r14d, 0xffffffff	       128	patch-id.c	FUNCTION_5	WHILE_1	IF_8
+0x4000366	          0x4489f5	                           mov ebp, r14d	       128	patch-id.c	FUNCTION_5	WHILE_1	IF_8
+0x4000369	      0x837c241400	               cmp dword [rsp + 0x14], 0	       126	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_11
+0x400036e	            0x740f	                            je 0x400037f	       126	patch-id.c	FUNCTION_5	WHILE_1	IF_8	IF_11
+0x4000370	      0x488d742420	                   lea rsi, [rsp + 0x20]	       127	patch-id.c	FUNCTION_5	WHILE_1	IF_8	CALL_17
+0x4000375	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	       127	patch-id.c	FUNCTION_5	WHILE_1	IF_8	CALL_17
+0x400037a	      0xe817fdffff	                 call sym.flush_one_hunk	       127	patch-id.c	FUNCTION_5	WHILE_1	IF_8	CALL_17
+0x400037f	           0xfb603	                   movzx eax, byte [rbx]	       132	patch-id.c	FUNCTION_5	WHILE_1	IF_12
+0x4000382	            0x3c20	                            cmp al, 0x20	       132	patch-id.c	FUNCTION_5	WHILE_1	IF_12
+0x4000384	           0xf94c2	                                 sete dl	       132	patch-id.c	FUNCTION_5	WHILE_1	IF_12
+0x4000387	            0x3c2d	                            cmp al, 0x2d	       132	patch-id.c	FUNCTION_5	WHILE_1	IF_12
+0x4000389	            0x7404	                            je 0x400038f	       132	patch-id.c	FUNCTION_5	WHILE_1	IF_12
+0x400038b	            0x84d2	                             test dl, dl	       132	patch-id.c	FUNCTION_5	WHILE_1	IF_12
+0x400038d	            0x7403	                            je 0x4000392	       132	patch-id.c	FUNCTION_5	WHILE_1	IF_12
+0x400038f	          0x83ed01	                              sub ebp, 1	       133	patch-id.c	FUNCTION_5	WHILE_1	IF_12
+0x4000392	            0x3c2b	                            cmp al, 0x2b	       134	patch-id.c	FUNCTION_5	WHILE_1	IF_13
+0x4000394	            0x7404	                            je 0x400039a	       134	patch-id.c	FUNCTION_5	WHILE_1	IF_13
+0x4000396	            0x84d2	                             test dl, dl	       134	patch-id.c	FUNCTION_5	WHILE_1	IF_13
+0x4000398	            0x7404	                            je 0x400039e	       134	patch-id.c	FUNCTION_5	WHILE_1	IF_13
+0x400039a	        0x4183ee01	                             sub r14d, 1	       135	patch-id.c	FUNCTION_5	WHILE_1	IF_13
+0x400039e	          0x4889da	                            mov rdx, rbx	        18	patch-id.c	FUNCTION_2
+0x40003a1	          0x4889d9	                            mov rcx, rbx	        17	patch-id.c	FUNCTION_2
+0x40003a4	            0xeb12	                           jmp 0x40003b8	        17	patch-id.c	FUNCTION_2
+0x40003a6	           0xfb6f0	                           movzx esi, al	        22	patch-id.c	FUNCTION_2	WHILE_1	IF_1	CALL_1
+0x40003a9	    0xf68600000000	                      test byte [rsi], 1	        22	patch-id.c	FUNCTION_2	WHILE_1	IF_1	CALL_1
+0x40003b0	            0x7506	                           jne 0x40003b8	        22	patch-id.c	FUNCTION_2	WHILE_1	IF_1	CALL_1
+0x40003b2	            0x8802	                      mov byte [rdx], al	        23	patch-id.c	FUNCTION_2	WHILE_1	IF_1
+0x40003b4	        0x488d5201	                      lea rdx, [rdx + 1]	        23	patch-id.c	FUNCTION_2	WHILE_1	IF_1
+0x40003b8	        0x4883c101	                              add rcx, 1	        21	patch-id.c	FUNCTION_2	WHILE_1
+0x40003bc	         0xfb641ff	               movzx eax, byte [rcx - 1]	        21	patch-id.c	FUNCTION_2	WHILE_1
+0x40003c0	            0x84c0	                             test al, al	        21	patch-id.c	FUNCTION_2	WHILE_1
+0x40003c2	            0x75e2	                           jne 0x40003a6	        21	patch-id.c	FUNCTION_2	WHILE_1
+0x40003c4	          0x4829da	                            sub rdx, rbx	        25	patch-id.c	FUNCTION_2
+0x40003c7	          0x4101d4	                           add r12d, edx	       139	patch-id.c	FUNCTION_5	WHILE_1
+0x40003ca	          0x4863d2	                         movsxd rdx, edx	       140	patch-id.c	FUNCTION_5	WHILE_1	CALL_19
+0x40003cd	          0x4889de	                            mov rsi, rbx	       140	patch-id.c	FUNCTION_5	WHILE_1	CALL_19
+0x40003d0	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	       140	patch-id.c	FUNCTION_5	WHILE_1	CALL_19
+0x40003d5	      0xe800000000	                          call 0x40003da	       140	patch-id.c	FUNCTION_5	WHILE_1	CALL_19
+0x40003da	      0xba0a000000	                            mov edx, 0xa	        83	patch-id.c	FUNCTION_5	WHILE_1	CALL_3
+0x40003df	    0x488b35000000	            mov rsi, qword [0x040003e6] 	        83	patch-id.c	FUNCTION_5	WHILE_1	CALL_3
+0x40003e6	          0x4c89ef	                            mov rdi, r13	        83	patch-id.c	FUNCTION_5	WHILE_1	CALL_3
+0x40003e9	      0xe800000000	                          call 0x40003ee	        83	patch-id.c	FUNCTION_5	WHILE_1	CALL_3
+0x40003ee	          0x83f8ff	             cmp eax, 0xffffffffffffffff	        83	patch-id.c	FUNCTION_5	WHILE_1	CALL_3
+0x40003f1	     0xf8578fdffff	                           jne 0x400016f	        83	patch-id.c	FUNCTION_5	WHILE_1	CALL_3
+0x40003f7	            0xeb54	                           jmp 0x400044d	        83	patch-id.c	FUNCTION_5	WHILE_1	CALL_3
+0x40003f9	      0x488d742420	                   lea rsi, [rsp + 0x20]	       146	patch-id.c	FUNCTION_5	CALL_21
+0x40003fe	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	       146	patch-id.c	FUNCTION_5	CALL_21
+0x4000403	      0xe88efcffff	                 call sym.flush_one_hunk	       146	patch-id.c	FUNCTION_5	CALL_21
+0x4000408	          0x4489e0	                           mov eax, r12d	       149	patch-id.c	FUNCTION_5
+0x400040b	    0x488b9c248809	           mov rbx, qword [rsp + 0x988] 	       149	patch-id.c	FUNCTION_5
+0x4000413	    0x6448331c2528	                xor rbx, qword fs:[0x28]	       149	patch-id.c	FUNCTION_5
+0x400041c	            0x744d	                            je 0x400046b	       149	patch-id.c	FUNCTION_5
+0x400041e	            0xeb46	                           jmp 0x4000466	       149	patch-id.c	FUNCTION_5
+0x4000420	      0xbe00000000	                              mov esi, 0	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x4000425	          0x4889df	                            mov rdi, rbx	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x4000428	      0xe800000000	                          call 0x400042d	        91	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_8
+0x400042d	          0x4889df	                            mov rdi, rbx	        85	patch-id.c	FUNCTION_5	WHILE_1
+0x4000430	            0x85c0	                           test eax, eax	        90	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_6
+0x4000432	     0xf84b9fdffff	                            je 0x40001f1	        90	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_6
+0x4000438	      0xe98ffdffff	                           jmp 0x40001cc	        90	patch-id.c	FUNCTION_5	WHILE_1	IF_1	CALL_6
+0x400043d	    0x41be01000000	                             mov r14d, 1	       108	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_1	IF_6
+0x4000443	      0xbd01000000	                              mov ebp, 1	       108	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_1	IF_6
+0x4000448	      0xe932ffffff	                           jmp 0x400037f	       108	patch-id.c	FUNCTION_5	WHILE_1	IF_4	ELSE_1	IF_6
+0x400044d	    0x49c707000000	                      mov qword [r15], 0	        90	string3.h	FUNCTION_12	CALL_6
+0x4000454	    0x49c747080000	                  mov qword [r15 + 8], 0	        90	string3.h	FUNCTION_12	CALL_6
+0x400045c	    0x41c747100000	               mov dword [r15 + 0x10], 0	        90	string3.h	FUNCTION_12	CALL_6
+0x4000464	            0xeb93	                           jmp 0x40003f9	        90	string3.h	FUNCTION_12	CALL_6
+0x4000466	      0xe800000000	                          call 0x400046b	       149	patch-id.c	FUNCTION_5
+0x400046b	    0x4881c4980900	                          add rsp, 0x998	       149	patch-id.c	FUNCTION_5
+0x4000472	              0x5b	                                 pop rbx	       149	patch-id.c	FUNCTION_5
+0x4000473	              0x5d	                                 pop rbp	       149	patch-id.c	FUNCTION_5
+0x4000474	            0x415c	                                 pop r12	       149	patch-id.c	FUNCTION_5
+0x4000476	            0x415d	                                 pop r13	       149	patch-id.c	FUNCTION_5
+0x4000478	            0x415e	                                 pop r14	       149	patch-id.c	FUNCTION_5
+0x400047a	            0x415f	                                 pop r15	       149	patch-id.c	FUNCTION_5
+0x400047c	              0xc3	                                     ret	       149	patch-id.c	FUNCTION_5

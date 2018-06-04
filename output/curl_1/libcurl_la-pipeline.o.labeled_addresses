@@ -1,0 +1,593 @@
+Curl_pipeline_leave_read	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,0:DO,0:IF,0	8
+0x400096b	              0x55	                                push rbp	       375	pipeline.c	
+0x400096c	          0x4889e5	                            mov rbp, rsp	       375	pipeline.c	
+0x400096f	        0x48897df8	                mov qword [rbp - 8], rdi	       375	pipeline.c	
+0x4000973	        0x488b45f8	                mov rax, qword [rbp - 8]	       376	pipeline.c	FUNCTION_17
+0x4000977	    0xc68008040000	               mov byte [rax + 0x408], 0	       376	pipeline.c	FUNCTION_17
+0x400097e	              0x90	                                     nop	       377	pipeline.c	FUNCTION_17
+0x400097f	              0x5d	                                 pop rbp	       377	pipeline.c	FUNCTION_17
+0x4000980	              0xc3	                                     ret	       377	pipeline.c	FUNCTION_17
+Curl_pipeline_checkget_read	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,1:DO,0:IF,2	30
+0x40008ed	              0x55	                                push rbp	       350	pipeline.c	
+0x40008ee	          0x4889e5	                            mov rbp, rsp	       350	pipeline.c	
+0x40008f1	        0x4883ec10	                           sub rsp, 0x10	       350	pipeline.c	
+0x40008f5	        0x48897df8	                mov qword [rbp - 8], rdi	       350	pipeline.c	
+0x40008f9	        0x488975f0	             mov qword [rbp - 0x10], rsi	       350	pipeline.c	
+0x40008fd	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       351	pipeline.c	FUNCTION_15
+0x4000901	     0xfb6806d0300	          movzx eax, byte [rax + 0x36d] 	       351	pipeline.c	FUNCTION_15
+0x4000908	            0x84c0	                             test al, al	       351	pipeline.c	FUNCTION_15
+0x400090a	            0x7407	                            je 0x4000913	       351	pipeline.c	FUNCTION_15
+0x400090c	      0xb801000000	                              mov eax, 1	       353	pipeline.c	FUNCTION_15	IF_1
+0x4000911	            0xeb40	                           jmp 0x4000953	       353	pipeline.c	FUNCTION_15	IF_1
+0x4000913	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       355	pipeline.c	FUNCTION_15
+0x4000917	     0xfb680080400	          movzx eax, byte [rax + 0x408] 	       355	pipeline.c	FUNCTION_15
+0x400091e	          0x83f001	                              xor eax, 1	       355	pipeline.c	FUNCTION_15
+0x4000921	            0x84c0	                             test al, al	       355	pipeline.c	FUNCTION_15
+0x4000923	            0x7429	                            je 0x400094e	       355	pipeline.c	FUNCTION_15
+0x4000925	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       355	pipeline.c	FUNCTION_15
+0x4000929	        0x488b45f8	                mov rax, qword [rbp - 8]	       355	pipeline.c	FUNCTION_15
+0x400092d	          0x4889d6	                            mov rsi, rdx	       355	pipeline.c	FUNCTION_15
+0x4000930	          0x4889c7	                            mov rdi, rax	       355	pipeline.c	FUNCTION_15
+0x4000933	      0xe800000000	                          call 0x4000938	       355	pipeline.c	FUNCTION_15
+0x4000938	            0x84c0	                             test al, al	       355	pipeline.c	FUNCTION_15
+0x400093a	            0x7412	                            je 0x400094e	       355	pipeline.c	FUNCTION_15
+0x400093c	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       357	pipeline.c	FUNCTION_15	IF_2
+0x4000940	    0xc68008040000	               mov byte [rax + 0x408], 1	       357	pipeline.c	FUNCTION_15	IF_2
+0x4000947	      0xb801000000	                              mov eax, 1	       358	pipeline.c	FUNCTION_15	IF_2
+0x400094c	            0xeb05	                           jmp 0x4000953	       358	pipeline.c	FUNCTION_15	IF_2
+0x400094e	      0xb800000000	                              mov eax, 0	       360	pipeline.c	FUNCTION_15	IF_2
+0x4000953	              0xc9	                                   leave	       361	pipeline.c	FUNCTION_15
+0x4000954	              0xc3	                                     ret	       361	pipeline.c	FUNCTION_15
+Curl_recvpipe_head	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,1:DO,0:IF,0	13
+0x400082d	              0x55	                                push rbp	       306	pipeline.c	
+0x400082e	          0x4889e5	                            mov rbp, rsp	       306	pipeline.c	
+0x4000831	        0x4883ec10	                           sub rsp, 0x10	       306	pipeline.c	
+0x4000835	        0x48897df8	                mov qword [rbp - 8], rdi	       306	pipeline.c	
+0x4000839	        0x488975f0	             mov qword [rbp - 0x10], rsi	       306	pipeline.c	
+0x400083d	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       307	pipeline.c	FUNCTION_12
+0x4000841	    0x488d90300400	                  lea rdx, [rax + 0x430]	       307	pipeline.c	FUNCTION_12
+0x4000848	        0x488b45f8	                mov rax, qword [rbp - 8]	       307	pipeline.c	FUNCTION_12
+0x400084c	          0x4889d6	                            mov rsi, rdx	       307	pipeline.c	FUNCTION_12
+0x400084f	          0x4889c7	                            mov rdi, rax	       307	pipeline.c	FUNCTION_12
+0x4000852	      0xe89affffff	                      call sym.pipe_head	       307	pipeline.c	FUNCTION_12
+0x4000857	              0xc9	                                   leave	       308	pipeline.c	FUNCTION_12	CALL_1
+0x4000858	              0xc3	                                     ret	       308	pipeline.c	FUNCTION_12	CALL_1
+Curl_pipeline_server_blacklisted	WHILE,1:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,6:DO,0:IF,2	51
+0x400063b	              0x55	                                push rbp	       240	pipeline.c	
+0x400063c	          0x4889e5	                            mov rbp, rsp	       240	pipeline.c	
+0x400063f	        0x4883ec30	                           sub rsp, 0x30	       240	pipeline.c	
+0x4000643	        0x48897dd8	             mov qword [rbp - 0x28], rdi	       240	pipeline.c	
+0x4000647	        0x488975d0	             mov qword [rbp - 0x30], rsi	       240	pipeline.c	
+0x400064b	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       241	pipeline.c	FUNCTION_9
+0x400064f	    0x488b80a80000	            mov rax, qword [rax + 0xa8] 	       241	pipeline.c	FUNCTION_9
+0x4000656	          0x4885c0	                           test rax, rax	       241	pipeline.c	FUNCTION_9
+0x4000659	     0xf849b000000	                            je 0x40006fa	       241	pipeline.c	FUNCTION_9
+0x400065f	      0x48837dd000	               cmp qword [rbp - 0x30], 0	       241	pipeline.c	FUNCTION_9
+0x4000664	     0xf8490000000	                            je 0x40006fa	       241	pipeline.c	FUNCTION_9
+0x400066a	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       243	pipeline.c	FUNCTION_9	IF_1
+0x400066e	    0x488b80a80000	            mov rax, qword [rax + 0xa8] 	       243	pipeline.c	FUNCTION_9	IF_1
+0x4000675	          0x4889c7	                            mov rdi, rax	       242	pipeline.c	FUNCTION_9	IF_1
+0x4000678	      0xe800000000	                          call 0x400067d	       242	pipeline.c	FUNCTION_9	IF_1
+0x400067d	        0x488945f0	             mov qword [rbp - 0x10], rax	       242	pipeline.c	FUNCTION_9	IF_1
+0x4000681	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       245	pipeline.c	FUNCTION_9	IF_1
+0x4000685	          0x488b00	                    mov rax, qword [rax]	       245	pipeline.c	FUNCTION_9	IF_1
+0x4000688	        0x488945e8	             mov qword [rbp - 0x18], rax	       245	pipeline.c	FUNCTION_9	IF_1
+0x400068c	            0xeb65	                           jmp 0x40006f3	       246	pipeline.c	FUNCTION_9	IF_1
+0x400068e	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       247	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x4000692	        0x488945f8	                mov qword [rbp - 8], rax	       247	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x4000696	        0x488b45f8	                mov rax, qword [rbp - 8]	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x400069a	        0x4883c018	                           add rax, 0x18	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x400069e	          0x4889c7	                            mov rdi, rax	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006a1	      0xe800000000	                          call 0x40006a6	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006a6	          0x4889c2	                            mov rdx, rax	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006a9	        0x488b45f8	                mov rax, qword [rbp - 8]	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006ad	        0x488d4818	                   lea rcx, [rax + 0x18]	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006b1	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006b5	          0x4889c6	                            mov rsi, rax	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006b8	          0x4889cf	                            mov rdi, rcx	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006bb	      0xe800000000	                          call 0x40006c0	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006c0	            0x85c0	                           test eax, eax	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006c2	            0x7423	                            je 0x40006e7	       248	pipeline.c	FUNCTION_9	IF_1	WHILE_1
+0x40006c4	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       250	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2	CALL_3
+0x40006c8	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       250	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2	CALL_3
+0x40006cc	    0x488d35000000	                   lea rsi, [0x040006d3]	       250	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2	CALL_3
+0x40006d3	          0x4889c7	                            mov rdi, rax	       250	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2	CALL_3
+0x40006d6	      0xb800000000	                              mov eax, 0	       250	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2	CALL_3
+0x40006db	      0xe800000000	                          call 0x40006e0	       250	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2	CALL_3
+0x40006e0	      0xb801000000	                              mov eax, 1	       251	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2	CALL_4
+0x40006e5	            0xeb18	                           jmp 0x40006ff	       251	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2	CALL_4
+0x40006e7	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       253	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2
+0x40006eb	        0x488b4010	            mov rax, qword [rax + 0x10] 	       253	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2
+0x40006ef	        0x488945e8	             mov qword [rbp - 0x18], rax	       253	pipeline.c	FUNCTION_9	IF_1	WHILE_1	IF_2
+0x40006f3	      0x48837de800	               cmp qword [rbp - 0x18], 0	       246	pipeline.c	FUNCTION_9	IF_1
+0x40006f8	            0x7594	                           jne 0x400068e	       246	pipeline.c	FUNCTION_9	IF_1
+0x40006fa	      0xb800000000	                              mov eax, 0	       258	pipeline.c	FUNCTION_9	IF_1
+0x40006ff	              0xc9	                                   leave	       259	pipeline.c	FUNCTION_9
+0x4000700	              0xc3	                                     ret	       259	pipeline.c	FUNCTION_9
+Curl_pipeline_set_site_blacklist	WHILE,1:functions,0:ELSE,1:FOR,0:SWITCH,0:CALL,9:DO,0:IF,4	85
+0x40004f2	              0x55	                                push rbp	       194	pipeline.c	
+0x40004f3	          0x4889e5	                            mov rbp, rsp	       194	pipeline.c	
+0x40004f6	              0x53	                                push rbx	       194	pipeline.c	
+0x40004f7	        0x4883ec28	                           sub rsp, 0x28	       194	pipeline.c	
+0x40004fb	        0x48897dd8	             mov qword [rbp - 0x28], rdi	       194	pipeline.c	
+0x40004ff	        0x488975d0	             mov qword [rbp - 0x30], rsi	       194	pipeline.c	
+0x4000503	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       196	pipeline.c	FUNCTION_8
+0x4000507	        0x488b4018	            mov rax, qword [rax + 0x18] 	       196	pipeline.c	FUNCTION_8
+0x400050b	          0x4885c0	                           test rax, rax	       196	pipeline.c	FUNCTION_8
+0x400050e	            0x7411	                            je 0x4000521	       196	pipeline.c	FUNCTION_8
+0x4000510	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       197	pipeline.c	FUNCTION_8	IF_1
+0x4000514	      0xbe00000000	                              mov esi, 0	       197	pipeline.c	FUNCTION_8	IF_1
+0x4000519	          0x4889c7	                            mov rdi, rax	       197	pipeline.c	FUNCTION_8	IF_1
+0x400051c	      0xe800000000	                          call 0x4000521	       197	pipeline.c	FUNCTION_8	IF_1
+0x4000521	      0x48837dd800	               cmp qword [rbp - 0x28], 0	       199	pipeline.c	FUNCTION_8
+0x4000526	     0xf8403010000	                            je 0x400062f	       199	pipeline.c	FUNCTION_8
+0x400052c	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       200	pipeline.c	FUNCTION_8	IF_2
+0x4000530	    0x488d35dbfbff	 lea rsi, sym.site_blacklist_llist_dtor 	       200	pipeline.c	FUNCTION_8	IF_2
+0x4000537	          0x4889c7	                            mov rdi, rax	       200	pipeline.c	FUNCTION_8	IF_2
+0x400053a	      0xe800000000	                          call 0x400053f	       200	pipeline.c	FUNCTION_8	IF_2
+0x400053f	      0xe9db000000	                           jmp 0x400061f	       203	pipeline.c	FUNCTION_8	IF_2
+0x4000544	    0x488b05000000	            mov rax, qword [0x0400054b] 	       207	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x400054b	          0x488b18	                    mov rbx, qword [rax]	       207	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x400054e	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       207	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x4000552	          0x488b00	                    mov rax, qword [rax]	       207	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x4000555	          0x4889c7	                            mov rdi, rax	       207	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x4000558	      0xe800000000	                          call 0x400055d	       207	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x400055d	        0x4883c020	                           add rax, 0x20	       207	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x4000561	          0x4889c7	                            mov rdi, rax	       207	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x4000564	            0xffd3	                                call rbx	       207	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x4000566	        0x488945e0	             mov qword [rbp - 0x20], rax	       207	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x400056a	      0x48837de000	               cmp qword [rbp - 0x20], 0	       208	pipeline.c	FUNCTION_8	IF_2	WHILE_1	CALL_4
+0x400056f	            0x751b	                           jne 0x400058c	       208	pipeline.c	FUNCTION_8	IF_2	WHILE_1	CALL_4
+0x4000571	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       209	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x4000575	      0xbe00000000	                              mov esi, 0	       209	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x400057a	          0x4889c7	                            mov rdi, rax	       209	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x400057d	      0xe800000000	                          call 0x4000582	       209	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x4000582	      0xb803000000	                              mov eax, 3	       210	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3	CALL_5
+0x4000587	      0xe9a8000000	                           jmp 0x4000634	       210	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3	CALL_5
+0x400058c	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       212	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x4000590	          0x488b00	                    mov rax, qword [rax]	       212	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x4000593	        0x488b55e0	             mov rdx, qword [rbp - 0x20]	       212	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x4000597	        0x4883c21a	                           add rdx, 0x1a	       212	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x400059b	          0x4889c6	                            mov rsi, rax	       212	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x400059e	          0x4889d7	                            mov rdi, rdx	       212	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x40005a1	      0xe800000000	                          call 0x40005a6	       212	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_3
+0x40005a6	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       214	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x40005aa	        0x4883c01a	                           add rax, 0x1a	       214	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x40005ae	      0xbe3a000000	                           mov esi, 0x3a	       214	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x40005b3	          0x4889c7	                            mov rdi, rax	       214	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x40005b6	      0xe800000000	                          call 0x40005bb	       214	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x40005bb	        0x488945e8	             mov qword [rbp - 0x18], rax	       214	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x40005bf	      0x48837de800	               cmp qword [rbp - 0x18], 0	       215	pipeline.c	FUNCTION_8	IF_2	WHILE_1	CALL_7
+0x40005c4	            0x742e	                            je 0x40005f4	       215	pipeline.c	FUNCTION_8	IF_2	WHILE_1	CALL_7
+0x40005c6	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       216	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005ca	          0xc60000	                       mov byte [rax], 0	       216	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005cd	      0x488345e801	               add qword [rbp - 0x18], 1	       217	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005d2	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       218	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005d6	      0xba0a000000	                            mov edx, 0xa	       218	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005db	      0xbe00000000	                              mov esi, 0	       218	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005e0	          0x4889c7	                            mov rdi, rax	       218	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005e3	      0xe800000000	                          call 0x40005e8	       218	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005e8	            0x89c2	                            mov edx, eax	       218	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005ea	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       218	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005ee	        0x66895018	               mov word [rax + 0x18], dx	       218	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005f2	            0xeb0a	                           jmp 0x40005fe	       218	pipeline.c	FUNCTION_8	IF_2	WHILE_1	IF_4
+0x40005f4	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       222	pipeline.c	FUNCTION_8	IF_2	WHILE_1	ELSE_1
+0x40005f8	    0x66c740185000	            mov word [rax + 0x18], 0x50 	       222	pipeline.c	FUNCTION_8	IF_2	WHILE_1	ELSE_1
+0x40005fe	        0x488b4de0	             mov rcx, qword [rbp - 0x20]	       225	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x4000602	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       225	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x4000606	        0x488b7008	                mov rsi, qword [rax + 8]	       225	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x400060a	        0x488b55e0	             mov rdx, qword [rbp - 0x20]	       225	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x400060e	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       225	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x4000612	          0x4889c7	                            mov rdi, rax	       225	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x4000615	      0xe800000000	                          call 0x400061a	       225	pipeline.c	FUNCTION_8	IF_2	WHILE_1
+0x400061a	      0x488345d808	               add qword [rbp - 0x28], 8	       226	pipeline.c	FUNCTION_8	IF_2	WHILE_1	CALL_9
+0x400061f	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       203	pipeline.c	FUNCTION_8	IF_2
+0x4000623	          0x488b00	                    mov rax, qword [rax]	       203	pipeline.c	FUNCTION_8	IF_2
+0x4000626	          0x4885c0	                           test rax, rax	       203	pipeline.c	FUNCTION_8	IF_2
+0x4000629	     0xf8515ffffff	                           jne 0x4000544	       203	pipeline.c	FUNCTION_8	IF_2
+0x400062f	      0xb800000000	                              mov eax, 0	       230	pipeline.c	FUNCTION_8
+0x4000634	        0x4883c428	                           add rsp, 0x28	       231	pipeline.c	FUNCTION_8
+0x4000638	              0x5b	                                 pop rbx	       231	pipeline.c	FUNCTION_8
+0x4000639	              0x5d	                                 pop rbp	       231	pipeline.c	FUNCTION_8
+0x400063a	              0xc3	                                     ret	       231	pipeline.c	FUNCTION_8
+Curl_sendpipe_head	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,1:DO,0:IF,0	13
+0x4000859	              0x55	                                push rbp	       313	pipeline.c	
+0x400085a	          0x4889e5	                            mov rbp, rsp	       313	pipeline.c	
+0x400085d	        0x4883ec10	                           sub rsp, 0x10	       313	pipeline.c	
+0x4000861	        0x48897df8	                mov qword [rbp - 8], rdi	       313	pipeline.c	
+0x4000865	        0x488975f0	             mov qword [rbp - 0x10], rsi	       313	pipeline.c	
+0x4000869	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       314	pipeline.c	FUNCTION_13
+0x400086d	    0x488d90100400	                  lea rdx, [rax + 0x410]	       314	pipeline.c	FUNCTION_13
+0x4000874	        0x488b45f8	                mov rax, qword [rbp - 8]	       314	pipeline.c	FUNCTION_13
+0x4000878	          0x4889d6	                            mov rsi, rdx	       314	pipeline.c	FUNCTION_13
+0x400087b	          0x4889c7	                            mov rdi, rax	       314	pipeline.c	FUNCTION_13
+0x400087e	      0xe86effffff	                      call sym.pipe_head	       314	pipeline.c	FUNCTION_13
+0x4000883	              0xc9	                                   leave	       315	pipeline.c	FUNCTION_13	CALL_1
+0x4000884	              0xc3	                                     ret	       315	pipeline.c	FUNCTION_13	CALL_1
+site_blacklist_llist_dtor	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,1:DO,0:IF,0	15
+0x4000112	              0x55	                                push rbp	        47	pipeline.c	FUNCTION_1
+0x4000113	          0x4889e5	                            mov rbp, rsp	        47	pipeline.c	FUNCTION_1
+0x4000116	        0x4883ec20	                           sub rsp, 0x20	        47	pipeline.c	FUNCTION_1
+0x400011a	        0x48897de8	             mov qword [rbp - 0x18], rdi	        47	pipeline.c	FUNCTION_1
+0x400011e	        0x488975e0	             mov qword [rbp - 0x20], rsi	        47	pipeline.c	FUNCTION_1
+0x4000122	        0x488b45e0	             mov rax, qword [rbp - 0x20]	        48	pipeline.c	FUNCTION_1
+0x4000126	        0x488945f8	                mov qword [rbp - 8], rax	        48	pipeline.c	FUNCTION_1
+0x400012a	    0x488b05000000	            mov rax, qword [0x04000131] 	        50	pipeline.c	FUNCTION_1	CALL_1
+0x4000131	          0x488b00	                    mov rax, qword [rax]	        50	pipeline.c	FUNCTION_1	CALL_1
+0x4000134	        0x488b55f8	                mov rdx, qword [rbp - 8]	        50	pipeline.c	FUNCTION_1	CALL_1
+0x4000138	          0x4889d7	                            mov rdi, rdx	        50	pipeline.c	FUNCTION_1	CALL_1
+0x400013b	            0xffd0	                                call rax	        50	pipeline.c	FUNCTION_1	CALL_1
+0x400013d	              0x90	                                     nop	        51	pipeline.c	FUNCTION_1
+0x400013e	              0xc9	                                   leave	        51	pipeline.c	FUNCTION_1
+0x400013f	              0xc3	                                     ret	        51	pipeline.c	FUNCTION_1
+Curl_add_handle_to_pipeline	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,4:DO,0:IF,1	38
+0x40002b0	              0x55	                                push rbp	       104	pipeline.c	
+0x40002b1	          0x4889e5	                            mov rbp, rsp	       104	pipeline.c	
+0x40002b4	        0x4883ec30	                           sub rsp, 0x30	       104	pipeline.c	
+0x40002b8	        0x48897dd8	             mov qword [rbp - 0x28], rdi	       104	pipeline.c	
+0x40002bc	        0x488975d0	             mov qword [rbp - 0x30], rsi	       104	pipeline.c	
+0x40002c0	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       105	pipeline.c	FUNCTION_5
+0x40002c4	    0x488b80100400	           mov rax, qword [rax + 0x410] 	       105	pipeline.c	FUNCTION_5
+0x40002cb	        0x488945f0	             mov qword [rbp - 0x10], rax	       105	pipeline.c	FUNCTION_5
+0x40002cf	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       109	pipeline.c	FUNCTION_5
+0x40002d3	    0x480510040000	                          add rax, 0x410	       109	pipeline.c	FUNCTION_5
+0x40002d9	        0x488945f8	                mov qword [rbp - 8], rax	       109	pipeline.c	FUNCTION_5
+0x40002dd	        0x488b55f8	                mov rdx, qword [rbp - 8]	       111	pipeline.c	FUNCTION_5
+0x40002e1	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       111	pipeline.c	FUNCTION_5
+0x40002e5	          0x4889d6	                            mov rsi, rdx	       111	pipeline.c	FUNCTION_5
+0x40002e8	          0x4889c7	                            mov rdi, rax	       111	pipeline.c	FUNCTION_5
+0x40002eb	      0xe889ffffff	            call sym.addHandleToPipeline	       111	pipeline.c	FUNCTION_5
+0x40002f0	          0x8945ec	             mov dword [rbp - 0x14], eax	       111	pipeline.c	FUNCTION_5
+0x40002f3	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       113	pipeline.c	FUNCTION_5
+0x40002f7	    0x480510040000	                          add rax, 0x410	       113	pipeline.c	FUNCTION_5
+0x40002fd	        0x483b45f8	                cmp rax, qword [rbp - 8]	       113	pipeline.c	FUNCTION_5
+0x4000301	            0x753d	                           jne 0x4000340	       113	pipeline.c	FUNCTION_5
+0x4000303	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       113	pipeline.c	FUNCTION_5
+0x4000307	    0x488b80100400	           mov rax, qword [rax + 0x410] 	       113	pipeline.c	FUNCTION_5
+0x400030e	        0x483b45f0	             cmp rax, qword [rbp - 0x10]	       113	pipeline.c	FUNCTION_5
+0x4000312	            0x742c	                            je 0x4000340	       113	pipeline.c	FUNCTION_5
+0x4000314	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       115	pipeline.c	FUNCTION_5	IF_1
+0x4000318	          0x4889c7	                            mov rdi, rax	       115	pipeline.c	FUNCTION_5	IF_1
+0x400031b	      0xe800000000	                          call 0x4000320	       115	pipeline.c	FUNCTION_5	IF_1
+0x4000320	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       116	pipeline.c	FUNCTION_5	IF_1	CALL_2
+0x4000324	    0x488b80100400	           mov rax, qword [rax + 0x410] 	       116	pipeline.c	FUNCTION_5	IF_1	CALL_2
+0x400032b	          0x488b00	                    mov rax, qword [rax]	       116	pipeline.c	FUNCTION_5	IF_1	CALL_2
+0x400032e	      0xba06000000	                              mov edx, 6	       116	pipeline.c	FUNCTION_5	IF_1	CALL_2
+0x4000333	      0xbe00000000	                              mov esi, 0	       116	pipeline.c	FUNCTION_5	IF_1	CALL_2
+0x4000338	          0x4889c7	                            mov rdi, rax	       116	pipeline.c	FUNCTION_5	IF_1	CALL_2
+0x400033b	      0xe800000000	                          call 0x4000340	       116	pipeline.c	FUNCTION_5	IF_1	CALL_2
+0x4000340	          0x8b45ec	             mov eax, dword [rbp - 0x14]	       123	pipeline.c	FUNCTION_5
+0x4000343	              0xc9	                                   leave	       124	pipeline.c	FUNCTION_5
+0x4000344	              0xc3	                                     ret	       124	pipeline.c	FUNCTION_5
+Curl_pipeline_leave_write	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,0:DO,0:IF,0	8
+0x4000955	              0x55	                                push rbp	       367	pipeline.c	
+0x4000956	          0x4889e5	                            mov rbp, rsp	       367	pipeline.c	
+0x4000959	        0x48897df8	                mov qword [rbp - 8], rdi	       367	pipeline.c	
+0x400095d	        0x488b45f8	                mov rax, qword [rbp - 8]	       368	pipeline.c	FUNCTION_16
+0x4000961	    0xc68009040000	               mov byte [rax + 0x409], 0	       368	pipeline.c	FUNCTION_16
+0x4000968	              0x90	                                     nop	       369	pipeline.c	FUNCTION_16
+0x4000969	              0x5d	                                 pop rbp	       369	pipeline.c	FUNCTION_16
+0x400096a	              0xc3	                                     ret	       369	pipeline.c	FUNCTION_16
+Curl_pipeline_checkget_write	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,1:DO,0:IF,2	30
+0x4000885	              0x55	                                push rbp	       327	pipeline.c	
+0x4000886	          0x4889e5	                            mov rbp, rsp	       327	pipeline.c	
+0x4000889	        0x4883ec10	                           sub rsp, 0x10	       327	pipeline.c	
+0x400088d	        0x48897df8	                mov qword [rbp - 8], rdi	       327	pipeline.c	
+0x4000891	        0x488975f0	             mov qword [rbp - 0x10], rsi	       327	pipeline.c	
+0x4000895	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       328	pipeline.c	FUNCTION_14
+0x4000899	     0xfb6806d0300	          movzx eax, byte [rax + 0x36d] 	       328	pipeline.c	FUNCTION_14
+0x40008a0	            0x84c0	                             test al, al	       328	pipeline.c	FUNCTION_14
+0x40008a2	            0x7407	                            je 0x40008ab	       328	pipeline.c	FUNCTION_14
+0x40008a4	      0xb801000000	                              mov eax, 1	       330	pipeline.c	FUNCTION_14	IF_1
+0x40008a9	            0xeb40	                           jmp 0x40008eb	       330	pipeline.c	FUNCTION_14	IF_1
+0x40008ab	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       332	pipeline.c	FUNCTION_14
+0x40008af	     0xfb680090400	          movzx eax, byte [rax + 0x409] 	       332	pipeline.c	FUNCTION_14
+0x40008b6	          0x83f001	                              xor eax, 1	       332	pipeline.c	FUNCTION_14
+0x40008b9	            0x84c0	                             test al, al	       332	pipeline.c	FUNCTION_14
+0x40008bb	            0x7429	                            je 0x40008e6	       332	pipeline.c	FUNCTION_14
+0x40008bd	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       332	pipeline.c	FUNCTION_14
+0x40008c1	        0x488b45f8	                mov rax, qword [rbp - 8]	       332	pipeline.c	FUNCTION_14
+0x40008c5	          0x4889d6	                            mov rsi, rdx	       332	pipeline.c	FUNCTION_14
+0x40008c8	          0x4889c7	                            mov rdi, rax	       332	pipeline.c	FUNCTION_14
+0x40008cb	      0xe800000000	                          call 0x40008d0	       332	pipeline.c	FUNCTION_14
+0x40008d0	            0x84c0	                             test al, al	       332	pipeline.c	FUNCTION_14
+0x40008d2	            0x7412	                            je 0x40008e6	       332	pipeline.c	FUNCTION_14
+0x40008d4	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       334	pipeline.c	FUNCTION_14	IF_2
+0x40008d8	    0xc68009040000	               mov byte [rax + 0x409], 1	       334	pipeline.c	FUNCTION_14	IF_2
+0x40008df	      0xb801000000	                              mov eax, 1	       335	pipeline.c	FUNCTION_14	IF_2
+0x40008e4	            0xeb05	                           jmp 0x40008eb	       335	pipeline.c	FUNCTION_14	IF_2
+0x40008e6	      0xb800000000	                              mov eax, 0	       337	pipeline.c	FUNCTION_14	IF_2
+0x40008eb	              0xc9	                                   leave	       338	pipeline.c	FUNCTION_14
+0x40008ec	              0xc3	                                     ret	       338	pipeline.c	FUNCTION_14
+Curl_pipeline_penalized	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,3:DO,0:IF,4	68
+0x4000166	              0x55	                                push rbp	        61	pipeline.c	FUNCTION_3
+0x4000167	          0x4889e5	                            mov rbp, rsp	        61	pipeline.c	FUNCTION_3
+0x400016a	        0x4883ec40	                           sub rsp, 0x40	        61	pipeline.c	FUNCTION_3
+0x400016e	        0x48897dc8	             mov qword [rbp - 0x38], rdi	        61	pipeline.c	FUNCTION_3
+0x4000172	        0x488975c0	             mov qword [rbp - 0x40], rsi	        61	pipeline.c	FUNCTION_3
+0x4000176	      0x48837dc800	               cmp qword [rbp - 0x38], 0	        62	pipeline.c	FUNCTION_3	IF_1
+0x400017b	     0xf84f1000000	                            je 0x4000272	        62	pipeline.c	FUNCTION_3	IF_1
+0x4000181	        0xc645df00	                mov byte [rbp - 0x21], 0	        63	pipeline.c	FUNCTION_3	IF_1
+0x4000185	        0x488b45c8	             mov rax, qword [rbp - 0x38]	        65	pipeline.c	FUNCTION_3	IF_1	CALL_1
+0x4000189	    0x488b80a80000	            mov rax, qword [rax + 0xa8] 	        65	pipeline.c	FUNCTION_3	IF_1	CALL_1
+0x4000190	          0x4889c7	                            mov rdi, rax	        64	pipeline.c	FUNCTION_3	IF_1
+0x4000193	      0xe800000000	                          call 0x4000198	        64	pipeline.c	FUNCTION_3	IF_1
+0x4000198	        0x488945e8	             mov qword [rbp - 0x18], rax	        64	pipeline.c	FUNCTION_3	IF_1
+0x400019c	        0x488b45c8	             mov rax, qword [rbp - 0x38]	        67	pipeline.c	FUNCTION_3	IF_1	CALL_2
+0x40001a0	    0x488b80a80000	            mov rax, qword [rax + 0xa8] 	        67	pipeline.c	FUNCTION_3	IF_1	CALL_2
+0x40001a7	          0x4889c7	                            mov rdi, rax	        66	pipeline.c	FUNCTION_3	IF_1
+0x40001aa	      0xe800000000	                          call 0x40001af	        66	pipeline.c	FUNCTION_3	IF_1
+0x40001af	        0x488945f0	             mov qword [rbp - 0x10], rax	        66	pipeline.c	FUNCTION_3	IF_1
+0x40001b3	    0x48c745e0feff	mov qword [rbp - 0x20], 0xfffffffffffffffe	        68	pipeline.c	FUNCTION_3	IF_1
+0x40001bb	        0x488b45c0	             mov rax, qword [rbp - 0x40]	        71	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001bf	    0x488b80300400	           mov rax, qword [rax + 0x430] 	        71	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001c6	          0x4885c0	                           test rax, rax	        71	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001c9	            0x7436	                            je 0x4000201	        71	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001cb	        0x488b45c0	             mov rax, qword [rbp - 0x40]	        72	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001cf	    0x488b80300400	           mov rax, qword [rax + 0x430] 	        72	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001d6	          0x488b00	                    mov rax, qword [rax]	        72	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001d9	        0x488945f8	                mov qword [rbp - 8], rax	        72	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001dd	        0x488b45f8	                mov rax, qword [rbp - 8]	        74	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001e1	    0x488b80c00000	            mov rax, qword [rax + 0xc0] 	        74	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001e8	        0x488945e0	             mov qword [rbp - 0x20], rax	        74	pipeline.c	FUNCTION_3	IF_1	IF_2
+0x40001ec	      0x48837de800	               cmp qword [rbp - 0x18], 0	        76	pipeline.c	FUNCTION_3	IF_1	IF_2	IF_3
+0x40001f1	            0x7e0e	                           jle 0x4000201	        76	pipeline.c	FUNCTION_3	IF_1	IF_2	IF_3
+0x40001f3	        0x488b45e0	             mov rax, qword [rbp - 0x20]	        76	pipeline.c	FUNCTION_3	IF_1	IF_2	IF_3
+0x40001f7	        0x483b45e8	             cmp rax, qword [rbp - 0x18]	        76	pipeline.c	FUNCTION_3	IF_1	IF_2	IF_3
+0x40001fb	            0x7e04	                           jle 0x4000201	        76	pipeline.c	FUNCTION_3	IF_1	IF_2	IF_3
+0x40001fd	        0xc645df01	                mov byte [rbp - 0x21], 1	        77	pipeline.c	FUNCTION_3	IF_1	IF_2	IF_3
+0x4000201	      0x48837df000	               cmp qword [rbp - 0x10], 0	        80	pipeline.c	FUNCTION_3	IF_1	IF_4
+0x4000206	            0x7e12	                           jle 0x400021a	        80	pipeline.c	FUNCTION_3	IF_1	IF_4
+0x4000208	        0x488b45c0	             mov rax, qword [rbp - 0x40]	        81	pipeline.c	FUNCTION_3	IF_1	IF_4
+0x400020c	        0x488b4040	            mov rax, qword [rax + 0x40] 	        81	pipeline.c	FUNCTION_3	IF_1	IF_4
+0x4000210	        0x483b45f0	             cmp rax, qword [rbp - 0x10]	        80	pipeline.c	FUNCTION_3	IF_1	IF_4
+0x4000214	            0x7e04	                           jle 0x400021a	        80	pipeline.c	FUNCTION_3	IF_1	IF_4
+0x4000216	        0xc645df01	                mov byte [rbp - 0x21], 1	        82	pipeline.c	FUNCTION_3	IF_1	IF_4
+0x400021a	        0x807ddf00	                cmp byte [rbp - 0x21], 0	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x400021e	            0x7409	                            je 0x4000229	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000220	    0x488d05000000	                   lea rax, [0x04000227]	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000227	            0xeb07	                           jmp 0x4000230	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000229	    0x488d05000000	                   lea rax, [0x04000230]	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000230	        0x488b55c0	             mov rdx, qword [rbp - 0x40]	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000234	        0x4c8b4240	              mov r8, qword [rdx + 0x40]	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000238	        0x488b55c0	             mov rdx, qword [rbp - 0x40]	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x400023c	        0x488b5268	            mov rdx, qword [rdx + 0x68] 	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000240	        0x488b75e0	             mov rsi, qword [rbp - 0x20]	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000244	        0x488b4dc0	             mov rcx, qword [rbp - 0x40]	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000248	        0x488b7dc8	             mov rdi, qword [rbp - 0x38]	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x400024c	        0x4883ec08	                              sub rsp, 8	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000250	              0x50	                                push rax	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000251	          0x4d89c1	                              mov r9, r8	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000254	          0x4989f0	                             mov r8, rsi	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000257	    0x488d35000000	                   lea rsi, [0x0400025e]	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x400025e	      0xb800000000	                              mov eax, 0	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000263	      0xe800000000	                          call 0x4000268	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x4000268	        0x4883c410	                           add rsp, 0x10	        84	pipeline.c	FUNCTION_3	IF_1	CALL_3
+0x400026c	         0xfb645df	            movzx eax, byte [rbp - 0x21]	        88	pipeline.c	FUNCTION_3	IF_1
+0x4000270	            0xeb05	                           jmp 0x4000277	        88	pipeline.c	FUNCTION_3	IF_1
+0x4000272	      0xb800000000	                              mov eax, 0	        90	pipeline.c	FUNCTION_3	IF_1
+0x4000277	              0xc9	                                   leave	        91	pipeline.c	FUNCTION_3
+0x4000278	              0xc3	                                     ret	        91	pipeline.c	FUNCTION_3
+Curl_pipeline_set_server_blacklist	WHILE,1:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,7:DO,0:IF,3	62
+0x4000701	              0x55	                                push rbp	       263	pipeline.c	
+0x4000702	          0x4889e5	                            mov rbp, rsp	       263	pipeline.c	
+0x4000705	        0x4883ec20	                           sub rsp, 0x20	       263	pipeline.c	
+0x4000709	        0x48897de8	             mov qword [rbp - 0x18], rdi	       263	pipeline.c	
+0x400070d	        0x488975e0	             mov qword [rbp - 0x20], rsi	       263	pipeline.c	
+0x4000711	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       265	pipeline.c	FUNCTION_10
+0x4000715	        0x488b4018	            mov rax, qword [rax + 0x18] 	       265	pipeline.c	FUNCTION_10
+0x4000719	          0x4885c0	                           test rax, rax	       265	pipeline.c	FUNCTION_10
+0x400071c	            0x7411	                            je 0x400072f	       265	pipeline.c	FUNCTION_10
+0x400071e	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       266	pipeline.c	FUNCTION_10	IF_1
+0x4000722	      0xbe00000000	                              mov esi, 0	       266	pipeline.c	FUNCTION_10	IF_1
+0x4000727	          0x4889c7	                            mov rdi, rax	       266	pipeline.c	FUNCTION_10	IF_1
+0x400072a	      0xe800000000	                          call 0x400072f	       266	pipeline.c	FUNCTION_10	IF_1
+0x400072f	      0x48837de800	               cmp qword [rbp - 0x18], 0	       268	pipeline.c	FUNCTION_10
+0x4000734	     0xf84b0000000	                            je 0x40007ea	       268	pipeline.c	FUNCTION_10
+0x400073a	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       269	pipeline.c	FUNCTION_10	IF_2
+0x400073e	    0x488d35fbf9ff	lea rsi, sym.server_blacklist_llist_dtor 	       269	pipeline.c	FUNCTION_10	IF_2
+0x4000745	          0x4889c7	                            mov rdi, rax	       269	pipeline.c	FUNCTION_10	IF_2
+0x4000748	      0xe800000000	                          call 0x400074d	       269	pipeline.c	FUNCTION_10	IF_2
+0x400074d	      0xe988000000	                           jmp 0x40007da	       272	pipeline.c	FUNCTION_10	IF_2
+0x4000752	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       274	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x4000756	          0x488b00	                    mov rax, qword [rax]	       274	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x4000759	          0x4889c7	                            mov rdi, rax	       274	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x400075c	      0xe800000000	                          call 0x4000761	       274	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x4000761	        0x488945f0	             mov qword [rbp - 0x10], rax	       274	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x4000765	    0x488b05000000	            mov rax, qword [0x0400076c] 	       276	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x400076c	          0x488b00	                    mov rax, qword [rax]	       276	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x400076f	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       276	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x4000773	        0x4883c220	                           add rdx, 0x20	       276	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x4000777	          0x4889d7	                            mov rdi, rdx	       276	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x400077a	            0xffd0	                                call rax	       276	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x400077c	        0x488945f8	                mov qword [rbp - 8], rax	       276	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x4000780	      0x48837df800	                  cmp qword [rbp - 8], 0	       277	pipeline.c	FUNCTION_10	IF_2	WHILE_1	CALL_4
+0x4000785	            0x7518	                           jne 0x400079f	       277	pipeline.c	FUNCTION_10	IF_2	WHILE_1	CALL_4
+0x4000787	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       278	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x400078b	      0xbe00000000	                              mov esi, 0	       278	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x4000790	          0x4889c7	                            mov rdi, rax	       278	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x4000793	      0xe800000000	                          call 0x4000798	       278	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x4000798	      0xb803000000	                              mov eax, 3	       279	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3	CALL_5
+0x400079d	            0xeb50	                           jmp 0x40007ef	       279	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3	CALL_5
+0x400079f	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       281	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x40007a3	          0x488b00	                    mov rax, qword [rax]	       281	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x40007a6	        0x488b55f8	                mov rdx, qword [rbp - 8]	       281	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x40007aa	        0x4883c218	                           add rdx, 0x18	       281	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x40007ae	          0x4889c6	                            mov rsi, rax	       281	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x40007b1	          0x4889d7	                            mov rdi, rdx	       281	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x40007b4	      0xe800000000	                          call 0x40007b9	       281	pipeline.c	FUNCTION_10	IF_2	WHILE_1	IF_3
+0x40007b9	        0x488b4df8	                mov rcx, qword [rbp - 8]	       283	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x40007bd	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       283	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x40007c1	        0x488b7008	                mov rsi, qword [rax + 8]	       283	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x40007c5	        0x488b55f8	                mov rdx, qword [rbp - 8]	       283	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x40007c9	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       283	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x40007cd	          0x4889c7	                            mov rdi, rax	       283	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x40007d0	      0xe800000000	                          call 0x40007d5	       283	pipeline.c	FUNCTION_10	IF_2	WHILE_1
+0x40007d5	      0x488345e808	               add qword [rbp - 0x18], 8	       284	pipeline.c	FUNCTION_10	IF_2	WHILE_1	CALL_7
+0x40007da	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       272	pipeline.c	FUNCTION_10	IF_2
+0x40007de	          0x488b00	                    mov rax, qword [rax]	       272	pipeline.c	FUNCTION_10	IF_2
+0x40007e1	          0x4885c0	                           test rax, rax	       272	pipeline.c	FUNCTION_10	IF_2
+0x40007e4	     0xf8568ffffff	                           jne 0x4000752	       272	pipeline.c	FUNCTION_10	IF_2
+0x40007ea	      0xb800000000	                              mov eax, 0	       289	pipeline.c	FUNCTION_10
+0x40007ef	              0xc9	                                   leave	       290	pipeline.c	FUNCTION_10
+0x40007f0	              0xc3	                                     ret	       290	pipeline.c	FUNCTION_10
+addHandleToPipeline	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,1:DO,0:IF,0	16
+0x4000279	              0x55	                                push rbp	        95	pipeline.c	
+0x400027a	          0x4889e5	                            mov rbp, rsp	        95	pipeline.c	
+0x400027d	        0x4883ec10	                           sub rsp, 0x10	        95	pipeline.c	
+0x4000281	        0x48897df8	                mov qword [rbp - 8], rdi	        95	pipeline.c	
+0x4000285	        0x488975f0	             mov qword [rbp - 0x10], rsi	        95	pipeline.c	
+0x4000289	        0x488b45f8	                mov rax, qword [rbp - 8]	        96	pipeline.c	FUNCTION_4
+0x400028d	        0x488d4830	                   lea rcx, [rax + 0x30]	        96	pipeline.c	FUNCTION_4
+0x4000291	        0x488b45f0	             mov rax, qword [rbp - 0x10]	        96	pipeline.c	FUNCTION_4
+0x4000295	        0x488b7008	                mov rsi, qword [rax + 8]	        96	pipeline.c	FUNCTION_4
+0x4000299	        0x488b55f8	                mov rdx, qword [rbp - 8]	        96	pipeline.c	FUNCTION_4
+0x400029d	        0x488b45f0	             mov rax, qword [rbp - 0x10]	        96	pipeline.c	FUNCTION_4
+0x40002a1	          0x4889c7	                            mov rdi, rax	        96	pipeline.c	FUNCTION_4
+0x40002a4	      0xe800000000	                          call 0x40002a9	        96	pipeline.c	FUNCTION_4
+0x40002a9	      0xb800000000	                              mov eax, 0	        98	pipeline.c	FUNCTION_4
+0x40002ae	              0xc9	                                   leave	        99	pipeline.c	FUNCTION_4
+0x40002af	              0xc3	                                     ret	        99	pipeline.c	FUNCTION_4
+server_blacklist_llist_dtor	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,1:DO,0:IF,0	13
+0x4000140	              0x55	                                push rbp	        54	pipeline.c	FUNCTION_2
+0x4000141	          0x4889e5	                            mov rbp, rsp	        54	pipeline.c	FUNCTION_2
+0x4000144	        0x4883ec10	                           sub rsp, 0x10	        54	pipeline.c	FUNCTION_2
+0x4000148	        0x48897df8	                mov qword [rbp - 8], rdi	        54	pipeline.c	FUNCTION_2
+0x400014c	        0x488975f0	             mov qword [rbp - 0x10], rsi	        54	pipeline.c	FUNCTION_2
+0x4000150	    0x488b05000000	            mov rax, qword [0x04000157] 	        56	pipeline.c	FUNCTION_2	CALL_1
+0x4000157	          0x488b00	                    mov rax, qword [rax]	        56	pipeline.c	FUNCTION_2	CALL_1
+0x400015a	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	        56	pipeline.c	FUNCTION_2	CALL_1
+0x400015e	          0x4889d7	                            mov rdi, rdx	        56	pipeline.c	FUNCTION_2	CALL_1
+0x4000161	            0xffd0	                                call rax	        56	pipeline.c	FUNCTION_2	CALL_1
+0x4000163	              0x90	                                     nop	        57	pipeline.c	FUNCTION_2
+0x4000164	              0xc9	                                   leave	        57	pipeline.c	FUNCTION_2
+0x4000165	              0xc3	                                     ret	        57	pipeline.c	FUNCTION_2
+Curl_move_handle_from_send_to_recv_pipe	WHILE,1:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,4:DO,0:IF,2	49
+0x4000345	              0x55	                                push rbp	       134	pipeline.c	
+0x4000346	          0x4889e5	                            mov rbp, rsp	       134	pipeline.c	
+0x4000349	        0x4883ec20	                           sub rsp, 0x20	       134	pipeline.c	
+0x400034d	        0x48897de8	             mov qword [rbp - 0x18], rdi	       134	pipeline.c	
+0x4000351	        0x488975e0	             mov qword [rbp - 0x20], rsi	       134	pipeline.c	
+0x4000355	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       137	pipeline.c	FUNCTION_6
+0x4000359	    0x488b80100400	           mov rax, qword [rax + 0x410] 	       137	pipeline.c	FUNCTION_6
+0x4000360	        0x488945f8	                mov qword [rbp - 8], rax	       137	pipeline.c	FUNCTION_6
+0x4000364	      0xe98a000000	                           jmp 0x40003f3	       138	pipeline.c	FUNCTION_6
+0x4000369	        0x488b45f8	                mov rax, qword [rbp - 8]	       139	pipeline.c	FUNCTION_6	WHILE_1
+0x400036d	          0x488b00	                    mov rax, qword [rax]	       139	pipeline.c	FUNCTION_6	WHILE_1
+0x4000370	        0x483b45e8	             cmp rax, qword [rbp - 0x18]	       139	pipeline.c	FUNCTION_6	WHILE_1
+0x4000374	            0x7571	                           jne 0x40003e7	       139	pipeline.c	FUNCTION_6	WHILE_1
+0x4000376	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x400037a	    0x488b90380400	           mov rdx, qword [rax + 0x438] 	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x4000381	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x4000385	    0x488db0300400	                  lea rsi, [rax + 0x430]	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x400038c	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x4000390	    0x488db8100400	                  lea rdi, [rax + 0x410]	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x4000397	        0x488b45f8	                mov rax, qword [rbp - 8]	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x400039b	          0x4889d1	                            mov rcx, rdx	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x400039e	          0x4889f2	                            mov rdx, rsi	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003a1	          0x4889c6	                            mov rsi, rax	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003a4	      0xe800000000	                          call 0x40003a9	       140	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003a9	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       143	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003ad	    0x488b80100400	           mov rax, qword [rax + 0x410] 	       143	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003b4	          0x4885c0	                           test rax, rax	       143	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003b7	            0x7447	                            je 0x4000400	       143	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003b9	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       146	pipeline.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x40003bd	          0x4889c7	                            mov rdi, rax	       146	pipeline.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x40003c0	      0xe800000000	                          call 0x40003c5	       146	pipeline.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x40003c5	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       151	pipeline.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x40003c9	    0x488b80100400	           mov rax, qword [rax + 0x410] 	       151	pipeline.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x40003d0	          0x488b00	                    mov rax, qword [rax]	       151	pipeline.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x40003d3	      0xba06000000	                              mov edx, 6	       151	pipeline.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x40003d8	      0xbe00000000	                              mov esi, 0	       151	pipeline.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x40003dd	          0x4889c7	                            mov rdi, rax	       151	pipeline.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x40003e0	      0xe800000000	                          call 0x40003e5	       151	pipeline.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x40003e5	            0xeb19	                           jmp 0x4000400	       158	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003e7	        0x488b45f8	                mov rax, qword [rbp - 8]	       160	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003eb	        0x488b4010	            mov rax, qword [rax + 0x10] 	       160	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003ef	        0x488945f8	                mov qword [rbp - 8], rax	       160	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x40003f3	      0x48837df800	                  cmp qword [rbp - 8], 0	       138	pipeline.c	FUNCTION_6
+0x40003f8	     0xf856bffffff	                           jne 0x4000369	       138	pipeline.c	FUNCTION_6
+0x40003fe	            0xeb01	                           jmp 0x4000401	       162	pipeline.c	FUNCTION_6	WHILE_1
+0x4000400	              0x90	                                     nop	       158	pipeline.c	FUNCTION_6	WHILE_1	IF_1
+0x4000401	              0x90	                                     nop	       162	pipeline.c	FUNCTION_6	WHILE_1
+0x4000402	              0xc9	                                   leave	       162	pipeline.c	FUNCTION_6	WHILE_1
+0x4000403	              0xc3	                                     ret	       162	pipeline.c	FUNCTION_6	WHILE_1
+Curl_pipeline_site_blacklisted	WHILE,1:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,3:DO,0:IF,3	58
+0x4000404	              0x55	                                push rbp	       166	pipeline.c	
+0x4000405	          0x4889e5	                            mov rbp, rsp	       166	pipeline.c	
+0x4000408	        0x4883ec30	                           sub rsp, 0x30	       166	pipeline.c	
+0x400040c	        0x48897dd8	             mov qword [rbp - 0x28], rdi	       166	pipeline.c	
+0x4000410	        0x488975d0	             mov qword [rbp - 0x30], rsi	       166	pipeline.c	
+0x4000414	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       167	pipeline.c	FUNCTION_7
+0x4000418	    0x488b80a80000	            mov rax, qword [rax + 0xa8] 	       167	pipeline.c	FUNCTION_7
+0x400041f	          0x4885c0	                           test rax, rax	       167	pipeline.c	FUNCTION_7
+0x4000422	     0xf84c3000000	                            je 0x40004eb	       167	pipeline.c	FUNCTION_7
+0x4000428	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       169	pipeline.c	FUNCTION_7	IF_1
+0x400042c	    0x488b80a80000	            mov rax, qword [rax + 0xa8] 	       169	pipeline.c	FUNCTION_7	IF_1
+0x4000433	          0x4889c7	                            mov rdi, rax	       168	pipeline.c	FUNCTION_7	IF_1
+0x4000436	      0xe800000000	                          call 0x400043b	       168	pipeline.c	FUNCTION_7	IF_1
+0x400043b	        0x488945f0	             mov qword [rbp - 0x10], rax	       168	pipeline.c	FUNCTION_7	IF_1
+0x400043f	      0x48837df000	               cmp qword [rbp - 0x10], 0	       171	pipeline.c	FUNCTION_7	IF_1
+0x4000444	     0xf84a1000000	                            je 0x40004eb	       171	pipeline.c	FUNCTION_7	IF_1
+0x400044a	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       174	pipeline.c	FUNCTION_7	IF_1	IF_2
+0x400044e	          0x488b00	                    mov rax, qword [rax]	       174	pipeline.c	FUNCTION_7	IF_1	IF_2
+0x4000451	        0x488945e8	             mov qword [rbp - 0x18], rax	       174	pipeline.c	FUNCTION_7	IF_1	IF_2
+0x4000455	      0xe986000000	                           jmp 0x40004e0	       175	pipeline.c	FUNCTION_7	IF_1	IF_2
+0x400045a	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       178	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x400045e	          0x488b00	                    mov rax, qword [rax]	       178	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x4000461	        0x488945f8	                mov qword [rbp - 8], rax	       178	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x4000465	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x4000469	    0x488b80d80000	            mov rax, qword [rax + 0xd8] 	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x4000470	        0x488b55f8	                mov rdx, qword [rbp - 8]	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x4000474	        0x4883c21a	                           add rdx, 0x1a	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x4000478	          0x4889c6	                            mov rsi, rax	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x400047b	          0x4889d7	                            mov rdi, rdx	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x400047e	      0xe800000000	                          call 0x4000483	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x4000483	            0x85c0	                           test eax, eax	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x4000485	            0x744d	                            je 0x40004d4	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x4000487	        0x488b45f8	                mov rax, qword [rbp - 8]	       180	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3	CALL_2
+0x400048b	         0xfb74018	           movzx eax, word [rax + 0x18] 	       180	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3	CALL_2
+0x400048f	           0xfb7d0	                           movzx edx, ax	       180	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3	CALL_2
+0x4000492	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       180	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3	CALL_2
+0x4000496	    0x8b8098010000	           mov eax, dword [rax + 0x198] 	       180	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3	CALL_2
+0x400049c	            0x39c2	                            cmp edx, eax	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x400049e	            0x7534	                           jne 0x40004d4	       179	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1
+0x40004a0	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       181	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004a4	    0x8b8898010000	           mov ecx, dword [rax + 0x198] 	       181	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004aa	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       181	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004ae	    0x488b90d80000	            mov rdx, qword [rax + 0xd8] 	       181	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004b5	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       181	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004b9	    0x488d35000000	                   lea rsi, [0x040004c0]	       181	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004c0	          0x4889c7	                            mov rdi, rax	       181	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004c3	      0xb800000000	                              mov eax, 0	       181	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004c8	      0xe800000000	                          call 0x40004cd	       181	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004cd	      0xb801000000	                              mov eax, 1	       183	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004d2	            0xeb1c	                           jmp 0x40004f0	       183	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004d4	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       185	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004d8	        0x488b4010	            mov rax, qword [rax + 0x10] 	       185	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004dc	        0x488945e8	             mov qword [rbp - 0x18], rax	       185	pipeline.c	FUNCTION_7	IF_1	IF_2	WHILE_1	IF_3
+0x40004e0	      0x48837de800	               cmp qword [rbp - 0x18], 0	       175	pipeline.c	FUNCTION_7	IF_1	IF_2
+0x40004e5	     0xf856fffffff	                           jne 0x400045a	       175	pipeline.c	FUNCTION_7	IF_1	IF_2
+0x40004eb	      0xb800000000	                              mov eax, 0	       189	pipeline.c	FUNCTION_7	IF_1
+0x40004f0	              0xc9	                                   leave	       190	pipeline.c	FUNCTION_7
+0x40004f1	              0xc3	                                     ret	       190	pipeline.c	FUNCTION_7
+pipe_head	WHILE,0:functions,0:ELSE,0:FOR,0:SWITCH,0:CALL,0:DO,0:IF,2	19
+0x40007f1	              0x55	                                push rbp	       294	pipeline.c	
+0x40007f2	          0x4889e5	                            mov rbp, rsp	       294	pipeline.c	
+0x40007f5	        0x48897de8	             mov qword [rbp - 0x18], rdi	       294	pipeline.c	
+0x40007f9	        0x488975e0	             mov qword [rbp - 0x20], rsi	       294	pipeline.c	
+0x40007fd	      0x48837de000	               cmp qword [rbp - 0x20], 0	       295	pipeline.c	FUNCTION_11
+0x4000802	            0x7422	                            je 0x4000826	       295	pipeline.c	FUNCTION_11
+0x4000804	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       296	pipeline.c	FUNCTION_11	IF_1
+0x4000808	          0x488b00	                    mov rax, qword [rax]	       296	pipeline.c	FUNCTION_11	IF_1
+0x400080b	        0x488945f8	                mov qword [rbp - 8], rax	       296	pipeline.c	FUNCTION_11	IF_1
+0x400080f	      0x48837df800	                  cmp qword [rbp - 8], 0	       297	pipeline.c	FUNCTION_11	IF_1
+0x4000814	            0x7410	                            je 0x4000826	       297	pipeline.c	FUNCTION_11	IF_1
+0x4000816	        0x488b45f8	                mov rax, qword [rbp - 8]	       298	pipeline.c	FUNCTION_11	IF_1	IF_2
+0x400081a	          0x488b00	                    mov rax, qword [rax]	       298	pipeline.c	FUNCTION_11	IF_1	IF_2
+0x400081d	        0x483b45e8	             cmp rax, qword [rbp - 0x18]	       298	pipeline.c	FUNCTION_11	IF_1	IF_2
+0x4000821	           0xf94c0	                                 sete al	       298	pipeline.c	FUNCTION_11	IF_1	IF_2
+0x4000824	            0xeb05	                           jmp 0x400082b	       298	pipeline.c	FUNCTION_11	IF_1	IF_2
+0x4000826	      0xb800000000	                              mov eax, 0	       300	pipeline.c	FUNCTION_11	IF_1
+0x400082b	              0x5d	                                 pop rbp	       301	pipeline.c	FUNCTION_11
+0x400082c	              0xc3	                                     ret	       301	pipeline.c	FUNCTION_11

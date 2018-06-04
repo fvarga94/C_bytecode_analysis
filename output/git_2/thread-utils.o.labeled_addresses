@@ -1,0 +1,46 @@
+online_cpus	ELSE,0:FOR,0:IF,5:functions,0:DO,0:SWITCH,0:WHILE,0:CALL,5	8
+0x4000040	        0x4883ec08	                              sub rsp, 8	        22	thread-utils.c	FUNCTION_1
+0x4000044	      0xbf54000000	                           mov edi, 0x54	        57	thread-utils.c	FUNCTION_1	IF_5	CALL_5
+0x4000049	      0xe800000000	                          call 0x400004e	        57	thread-utils.c	FUNCTION_1	IF_5	CALL_5
+0x400004e	      0xba01000000	                              mov edx, 1	        58	thread-utils.c	FUNCTION_1	IF_5
+0x4000053	          0x4885c0	                           test rax, rax	        58	thread-utils.c	FUNCTION_1	IF_5
+0x4000056	           0xf4ec2	                         cmovle eax, edx	        58	thread-utils.c	FUNCTION_1	IF_5
+0x4000059	        0x4883c408	                              add rsp, 8	        62	thread-utils.c	FUNCTION_1
+0x400005d	              0xc3	                                     ret	        62	thread-utils.c	FUNCTION_1
+init_recursive_mutex	ELSE,0:FOR,0:IF,2:functions,0:DO,0:SWITCH,0:WHILE,0:CALL,4	36
+0x4000060	              0x55	                                push rbp	        65	thread-utils.c	FUNCTION_2
+0x4000061	              0x53	                                push rbx	        65	thread-utils.c	FUNCTION_2
+0x4000062	          0x4889fd	                            mov rbp, rdi	        65	thread-utils.c	FUNCTION_2
+0x4000065	        0x4883ec18	                           sub rsp, 0x18	        65	thread-utils.c	FUNCTION_2
+0x4000069	          0x4889e7	                            mov rdi, rsp	        69	thread-utils.c	FUNCTION_2	CALL_1
+0x400006c	    0x64488b042528	                mov rax, qword fs:[0x28]	        65	thread-utils.c	FUNCTION_2
+0x4000075	      0x4889442408	                mov qword [rsp + 8], rax	        65	thread-utils.c	FUNCTION_2
+0x400007a	            0x31c0	                            xor eax, eax	        65	thread-utils.c	FUNCTION_2
+0x400007c	      0xe800000000	                          call 0x4000081	        69	thread-utils.c	FUNCTION_2	CALL_1
+0x4000081	            0x85c0	                           test eax, eax	        70	thread-utils.c	FUNCTION_2	IF_1
+0x4000083	            0x89c3	                            mov ebx, eax	        70	thread-utils.c	FUNCTION_2	IF_1
+0x4000085	            0x7419	                            je 0x40000a0	        70	thread-utils.c	FUNCTION_2	IF_1
+0x4000087	      0x488b542408	                mov rdx, qword [rsp + 8]	        77	thread-utils.c	FUNCTION_2
+0x400008c	    0x644833142528	                xor rdx, qword fs:[0x28]	        77	thread-utils.c	FUNCTION_2
+0x4000095	            0x89d8	                            mov eax, ebx	        77	thread-utils.c	FUNCTION_2
+0x4000097	            0x7536	                           jne 0x40000cf	        77	thread-utils.c	FUNCTION_2
+0x4000099	        0x4883c418	                           add rsp, 0x18	        77	thread-utils.c	FUNCTION_2
+0x400009d	              0x5b	                                 pop rbx	        77	thread-utils.c	FUNCTION_2
+0x400009e	              0x5d	                                 pop rbp	        77	thread-utils.c	FUNCTION_2
+0x400009f	              0xc3	                                     ret	        77	thread-utils.c	FUNCTION_2
+0x40000a0	      0xbe01000000	                              mov esi, 1	        71	thread-utils.c	FUNCTION_2	IF_1	CALL_2
+0x40000a5	          0x4889e7	                            mov rdi, rsp	        71	thread-utils.c	FUNCTION_2	IF_1	CALL_2
+0x40000a8	      0xe800000000	                          call 0x40000ad	        71	thread-utils.c	FUNCTION_2	IF_1	CALL_2
+0x40000ad	            0x85c0	                           test eax, eax	        72	thread-utils.c	FUNCTION_2	IF_1	IF_2
+0x40000af	            0x89c3	                            mov ebx, eax	        71	thread-utils.c	FUNCTION_2	IF_1	CALL_2
+0x40000b1	            0x740d	                            je 0x40000c0	        72	thread-utils.c	FUNCTION_2	IF_1	IF_2
+0x40000b3	          0x4889e7	                            mov rdi, rsp	        74	thread-utils.c	FUNCTION_2	IF_1	CALL_4
+0x40000b6	      0xe800000000	                          call 0x40000bb	        74	thread-utils.c	FUNCTION_2	IF_1	CALL_4
+0x40000bb	            0xebca	                           jmp 0x4000087	        74	thread-utils.c	FUNCTION_2	IF_1	CALL_4
+0x40000bd	           0xf1f00	                         nop dword [rax]	        74	thread-utils.c	FUNCTION_2	IF_1	CALL_4
+0x40000c0	          0x4889e6	                            mov rsi, rsp	        73	thread-utils.c	FUNCTION_2	IF_1	CALL_3
+0x40000c3	          0x4889ef	                            mov rdi, rbp	        73	thread-utils.c	FUNCTION_2	IF_1	CALL_3
+0x40000c6	      0xe800000000	                          call 0x40000cb	        73	thread-utils.c	FUNCTION_2	IF_1	CALL_3
+0x40000cb	            0x89c3	                            mov ebx, eax	        73	thread-utils.c	FUNCTION_2	IF_1	CALL_3
+0x40000cd	            0xebe4	                           jmp 0x40000b3	        73	thread-utils.c	FUNCTION_2	IF_1	CALL_3
+0x40000cf	      0xe800000000	         call section_end..text.unlikely	        77	thread-utils.c	FUNCTION_2

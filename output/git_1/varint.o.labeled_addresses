@@ -1,0 +1,71 @@
+decode_varint	SWITCH,0:IF,1:functions,0:WHILE,1:CALL,1:FOR,0:ELSE,0:DO,0	28
+0x4000040	          0x488b07	                    mov rax, qword [rdi]	         6	varint.c	FUNCTION_1
+0x4000043	        0x488d5001	                      lea rdx, [rax + 1]	         7	varint.c	FUNCTION_1
+0x4000047	           0xfb608	                   movzx ecx, byte [rax]	         7	varint.c	FUNCTION_1
+0x400004a	          0x4889c8	                            mov rax, rcx	         8	varint.c	FUNCTION_1
+0x400004d	          0x83e07f	                           and eax, 0x7f	         8	varint.c	FUNCTION_1
+0x4000050	            0x84c9	                             test cl, cl	         9	varint.c	FUNCTION_1	WHILE_1
+0x4000052	            0x7934	                           jns 0x4000088	         9	varint.c	FUNCTION_1	WHILE_1
+0x4000054	        0x488d4001	                      lea rax, [rax + 1]	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x4000058	    0x49b800000000	           movabs r8, 0xfe00000000000000	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x4000062	            0xeb0b	                           jmp 0x400006f	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x4000064	        0x4883c001	                              add rax, 1	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x4000068	            0x7422	                            je 0x400008c	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x400006a	          0x4c85c0	                            test rax, r8	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x400006d	            0x7523	                           jne 0x4000092	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x400006f	        0x4883c201	                              add rdx, 1	        13	varint.c	FUNCTION_1	WHILE_1
+0x4000073	         0xfb64aff	               movzx ecx, byte [rdx - 1]	        13	varint.c	FUNCTION_1	WHILE_1
+0x4000077	        0x48c1e007	                              shl rax, 7	        14	varint.c	FUNCTION_1	WHILE_1
+0x400007b	          0x4889ce	                            mov rsi, rcx	        14	varint.c	FUNCTION_1	WHILE_1
+0x400007e	          0x83e67f	                           and esi, 0x7f	        14	varint.c	FUNCTION_1	WHILE_1
+0x4000081	          0x4801f0	                            add rax, rsi	        14	varint.c	FUNCTION_1	WHILE_1
+0x4000084	            0x84c9	                             test cl, cl	         9	varint.c	FUNCTION_1	WHILE_1
+0x4000086	            0x78dc	                            js 0x4000064	         9	varint.c	FUNCTION_1	WHILE_1
+0x4000088	          0x488917	                    mov qword [rdi], rdx	        16	varint.c	FUNCTION_1
+0x400008b	              0xc3	                                     ret	        17	varint.c	FUNCTION_1
+0x400008c	      0xb800000000	                              mov eax, 0	        12	varint.c	FUNCTION_1	WHILE_1	IF_1
+0x4000091	              0xc3	                                     ret	        12	varint.c	FUNCTION_1	WHILE_1	IF_1
+0x4000092	      0xb800000000	                              mov eax, 0	        12	varint.c	FUNCTION_1	WHILE_1	IF_1
+0x4000097	              0xc3	                                     ret	        18	varint.c	FUNCTION_1
+encode_varint	SWITCH,0:IF,1:functions,0:WHILE,1:CALL,1:FOR,0:ELSE,0:DO,0	41
+0x4000098	              0x53	                                push rbx	        21	varint.c	FUNCTION_2
+0x4000099	        0x4883ec20	                           sub rsp, 0x20	        21	varint.c	FUNCTION_2
+0x400009d	          0x4889f8	                            mov rax, rdi	        21	varint.c	FUNCTION_2
+0x40000a0	          0x4889f7	                            mov rdi, rsi	        21	varint.c	FUNCTION_2
+0x40000a3	    0x64488b342528	                mov rsi, qword fs:[0x28]	        21	varint.c	FUNCTION_2
+0x40000ac	      0x4889742418	             mov qword [rsp + 0x18], rsi	        21	varint.c	FUNCTION_2
+0x40000b1	            0x31f6	                            xor esi, esi	        21	varint.c	FUNCTION_2
+0x40000b3	            0x89c2	                            mov edx, eax	        24	varint.c	FUNCTION_2
+0x40000b5	          0x83e27f	                           and edx, 0x7f	        24	varint.c	FUNCTION_2
+0x40000b8	        0x8854240f	                mov byte [rsp + 0xf], dl	        24	varint.c	FUNCTION_2
+0x40000bc	        0x48c1e807	                              shr rax, 7	        25	varint.c	FUNCTION_2	WHILE_1
+0x40000c0	          0x4885c0	                           test rax, rax	        25	varint.c	FUNCTION_2	WHILE_1
+0x40000c3	            0x7421	                            je 0x40000e6	        25	varint.c	FUNCTION_2	WHILE_1
+0x40000c5	      0xbb0f000000	                            mov ebx, 0xf	        25	varint.c	FUNCTION_2	WHILE_1
+0x40000ca	          0x83eb01	                              sub ebx, 1	        26	varint.c	FUNCTION_2	WHILE_1
+0x40000cd	        0x4883e801	                              sub rax, 1	        26	varint.c	FUNCTION_2	WHILE_1
+0x40000d1	            0x89da	                            mov edx, ebx	        26	varint.c	FUNCTION_2	WHILE_1
+0x40000d3	            0x89c1	                            mov ecx, eax	        26	varint.c	FUNCTION_2	WHILE_1
+0x40000d5	          0x83c980	                      or ecx, 0xffffff80	        26	varint.c	FUNCTION_2	WHILE_1
+0x40000d8	          0x880c14	                mov byte [rsp + rdx], cl	        26	varint.c	FUNCTION_2	WHILE_1
+0x40000db	        0x48c1e807	                              shr rax, 7	        25	varint.c	FUNCTION_2	WHILE_1
+0x40000df	          0x4885c0	                           test rax, rax	        25	varint.c	FUNCTION_2	WHILE_1
+0x40000e2	            0x75e6	                           jne 0x40000ca	        25	varint.c	FUNCTION_2	WHILE_1
+0x40000e4	            0xeb05	                           jmp 0x40000eb	        25	varint.c	FUNCTION_2	WHILE_1
+0x40000e6	      0xbb0f000000	                            mov ebx, 0xf	        23	varint.c	FUNCTION_2
+0x40000eb	          0x4885ff	                           test rdi, rdi	        27	varint.c	FUNCTION_2	IF_1
+0x40000ee	            0x7413	                            je 0x4000103	        27	varint.c	FUNCTION_2	IF_1
+0x40000f0	            0x89d8	                            mov eax, ebx	        28	varint.c	FUNCTION_2	CALL_1
+0x40000f2	      0xba10000000	                           mov edx, 0x10	        53	string3.h	FUNCTION_3	CALL_3
+0x40000f7	          0x4829c2	                            sub rdx, rax	        53	string3.h	FUNCTION_3	CALL_3
+0x40000fa	        0x488d3404	                    lea rsi, [rsp + rax]	        53	string3.h	FUNCTION_3	CALL_3
+0x40000fe	      0xe800000000	                          call 0x4000103	        53	string3.h	FUNCTION_3	CALL_3
+0x4000103	      0xb810000000	                           mov eax, 0x10	        29	varint.c	FUNCTION_2
+0x4000108	            0x29d8	                            sub eax, ebx	        29	varint.c	FUNCTION_2
+0x400010a	      0x488b742418	            mov rsi, qword [rsp + 0x18] 	        30	varint.c	FUNCTION_2
+0x400010f	    0x644833342528	                xor rsi, qword fs:[0x28]	        30	varint.c	FUNCTION_2
+0x4000118	            0x7405	                            je 0x400011f	        30	varint.c	FUNCTION_2
+0x400011a	      0xe800000000	                          call 0x400011f	        30	varint.c	FUNCTION_2
+0x400011f	        0x4883c420	                           add rsp, 0x20	        30	varint.c	FUNCTION_2
+0x4000123	              0x5b	                                 pop rbx	        30	varint.c	FUNCTION_2
+0x4000124	              0xc3	                                     ret	        30	varint.c	FUNCTION_2

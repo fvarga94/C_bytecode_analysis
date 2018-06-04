@@ -1,0 +1,739 @@
+vterm_output_get_buffer_current	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	2
+0x400070b	    0x488b87100100	           mov rax, qword [rdi + 0x110] 	       237	vterm.c	FUNCTION_19
+0x4000712	              0xc3	                                     ret	       238	vterm.c	FUNCTION_19
+vterm_allocator_free	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	8
+0x4000293	        0x4883ec08	                              sub rsp, 8	        86	vterm.c	FUNCTION_7
+0x4000297	          0x4889f2	                            mov rdx, rsi	        86	vterm.c	FUNCTION_7
+0x400029a	        0x488b7708	                mov rsi, qword [rdi + 8]	        87	vterm.c	FUNCTION_7
+0x400029e	          0x488b07	                    mov rax, qword [rdi]	        87	vterm.c	FUNCTION_7
+0x40002a1	          0x4889d7	                            mov rdi, rdx	        87	vterm.c	FUNCTION_7
+0x40002a4	          0xff5008	                    call qword [rax + 8]	        87	vterm.c	FUNCTION_7
+0x40002a7	        0x4883c408	                              add rsp, 8	        88	vterm.c	FUNCTION_7
+0x40002ab	              0xc3	                                     ret	        88	vterm.c	FUNCTION_7
+vterm_push_output_sprintf_dcs	SWITCH,0:functions,0:CALL,7:ELSE,1:DO,0:FOR,0:WHILE,0:IF,2	65
+0x40005d4	            0x4154	                                push r12	       211	vterm.c	FUNCTION_17
+0x40005d6	              0x55	                                push rbp	       211	vterm.c	FUNCTION_17
+0x40005d7	              0x53	                                push rbx	       211	vterm.c	FUNCTION_17
+0x40005d8	    0x4881ecd00000	                           sub rsp, 0xd0	       211	vterm.c	FUNCTION_17
+0x40005df	          0x4889fb	                            mov rbx, rdi	       211	vterm.c	FUNCTION_17
+0x40005e2	          0x4889f5	                            mov rbp, rsi	       211	vterm.c	FUNCTION_17
+0x40005e5	      0x4889542430	             mov qword [rsp + 0x30], rdx	       211	vterm.c	FUNCTION_17
+0x40005ea	      0x48894c2438	             mov qword [rsp + 0x38], rcx	       211	vterm.c	FUNCTION_17
+0x40005ef	      0x4c89442440	              mov qword [rsp + 0x40], r8	       211	vterm.c	FUNCTION_17
+0x40005f4	      0x4c894c2448	              mov qword [rsp + 0x48], r9	       211	vterm.c	FUNCTION_17
+0x40005f9	            0x84c0	                             test al, al	       211	vterm.c	FUNCTION_17
+0x40005fb	            0x7437	                            je 0x4000634	       211	vterm.c	FUNCTION_17
+0x40005fd	       0xf29442450	       movaps xmmword [rsp + 0x50], xmm0	       211	vterm.c	FUNCTION_17
+0x4000602	       0xf294c2460	       movaps xmmword [rsp + 0x60], xmm1	       211	vterm.c	FUNCTION_17
+0x4000607	       0xf29542470	       movaps xmmword [rsp + 0x70], xmm2	       211	vterm.c	FUNCTION_17
+0x400060c	     0xf299c248000	       movaps xmmword [rsp + 0x80], xmm3	       211	vterm.c	FUNCTION_17
+0x4000614	     0xf29a4249000	       movaps xmmword [rsp + 0x90], xmm4	       211	vterm.c	FUNCTION_17
+0x400061c	     0xf29ac24a000	       movaps xmmword [rsp + 0xa0], xmm5	       211	vterm.c	FUNCTION_17
+0x4000624	     0xf29b424b000	       movaps xmmword [rsp + 0xb0], xmm6	       211	vterm.c	FUNCTION_17
+0x400062c	     0xf29bc24c000	       movaps xmmword [rsp + 0xc0], xmm7	       211	vterm.c	FUNCTION_17
+0x4000634	    0x64488b042528	                mov rax, qword fs:[0x28]	       211	vterm.c	FUNCTION_17
+0x400063d	      0x4889442418	             mov qword [rsp + 0x18], rax	       211	vterm.c	FUNCTION_17
+0x4000642	            0x31c0	                            xor eax, eax	       211	vterm.c	FUNCTION_17
+0x4000644	    0x4c8ba3100100	           mov r12, qword [rbx + 0x110] 	       212	vterm.c	FUNCTION_17
+0x400064b	        0xf6431802	               test byte [rbx + 0x18], 2	       215	vterm.c	FUNCTION_17	IF_1
+0x400064f	            0x7514	                           jne 0x4000665	       215	vterm.c	FUNCTION_17	IF_1
+0x4000651	      0xba50000000	                           mov edx, 0x50	       216	vterm.c	FUNCTION_17	CALL_1
+0x4000656	      0xbe00000000	                              mov esi, 0	       216	vterm.c	FUNCTION_17	CALL_1
+0x400065b	          0x4889df	                            mov rdi, rbx	       216	vterm.c	FUNCTION_17	CALL_1
+0x400065e	      0xe800000000	                          call 0x4000663	       216	vterm.c	FUNCTION_17	CALL_1
+0x4000663	            0xeb17	                           jmp 0x400067c	       216	vterm.c	FUNCTION_17	CALL_1
+0x4000665	      0xba90000000	                           mov edx, 0x90	       218	vterm.c	FUNCTION_17	CALL_2
+0x400066a	      0xbe00000000	                              mov esi, 0	       218	vterm.c	FUNCTION_17	CALL_2
+0x400066f	          0x4889df	                            mov rdi, rbx	       218	vterm.c	FUNCTION_17	CALL_2
+0x4000672	      0xb800000000	                              mov eax, 0	       218	vterm.c	FUNCTION_17	CALL_2
+0x4000677	      0xe800000000	                          call 0x400067c	       218	vterm.c	FUNCTION_17	CALL_2
+0x400067c	    0xc70424100000	                   mov dword [rsp], 0x10	       220	vterm.c	FUNCTION_17	CALL_3
+0x4000683	    0xc74424043000	               mov dword [rsp + 4], 0x30	       220	vterm.c	FUNCTION_17	CALL_3
+0x400068b	    0x488d8424f000	                   lea rax, [rsp + 0xf0]	       220	vterm.c	FUNCTION_17	CALL_3
+0x4000693	      0x4889442408	                mov qword [rsp + 8], rax	       220	vterm.c	FUNCTION_17	CALL_3
+0x4000698	      0x488d442420	                   lea rax, [rsp + 0x20]	       220	vterm.c	FUNCTION_17	CALL_3
+0x400069d	      0x4889442410	             mov qword [rsp + 0x10], rax	       220	vterm.c	FUNCTION_17	CALL_3
+0x40006a2	          0x4889e2	                            mov rdx, rsp	       221	vterm.c	FUNCTION_17	CALL_4
+0x40006a5	          0x4889ee	                            mov rsi, rbp	       221	vterm.c	FUNCTION_17	CALL_4
+0x40006a8	          0x4889df	                            mov rdi, rbx	       221	vterm.c	FUNCTION_17	CALL_4
+0x40006ab	      0xe800000000	                          call 0x40006b0	       221	vterm.c	FUNCTION_17	CALL_4
+0x40006b0	      0xba00000000	                              mov edx, 0	       224	vterm.c	FUNCTION_17	CALL_6
+0x40006b5	      0xbe9c000000	                           mov esi, 0x9c	       224	vterm.c	FUNCTION_17	CALL_6
+0x40006ba	          0x4889df	                            mov rdi, rbx	       224	vterm.c	FUNCTION_17	CALL_6
+0x40006bd	      0xb800000000	                              mov eax, 0	       224	vterm.c	FUNCTION_17	CALL_6
+0x40006c2	      0xe800000000	                          call 0x40006c7	       224	vterm.c	FUNCTION_17	CALL_6
+0x40006c7	    0x488b83080100	           mov rax, qword [rbx + 0x108] 	       226	vterm.c	FUNCTION_17	IF_2	CALL_7
+0x40006ce	        0x4883e801	                              sub rax, 1	       226	vterm.c	FUNCTION_17	IF_2	CALL_7
+0x40006d2	    0x483983100100	           cmp qword [rbx + 0x110], rax 	       226	vterm.c	FUNCTION_17	IF_2	CALL_7
+0x40006d9	            0x7207	                            jb 0x40006e2	       226	vterm.c	FUNCTION_17	IF_2	CALL_7
+0x40006db	    0x4c89a3100100	            mov qword [rbx + 0x110], r12	       227	vterm.c	FUNCTION_17	IF_2
+0x40006e2	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       228	vterm.c	FUNCTION_17
+0x40006e7	    0x644833042528	                xor rax, qword fs:[0x28]	       228	vterm.c	FUNCTION_17
+0x40006f0	            0x7405	                            je 0x40006f7	       228	vterm.c	FUNCTION_17
+0x40006f2	      0xe800000000	                          call 0x40006f7	       228	vterm.c	FUNCTION_17
+0x40006f7	    0x4881c4d00000	                           add rsp, 0xd0	       228	vterm.c	FUNCTION_17
+0x40006fe	              0x5b	                                 pop rbx	       228	vterm.c	FUNCTION_17
+0x40006ff	              0x5d	                                 pop rbp	       228	vterm.c	FUNCTION_17
+0x4000700	            0x415c	                                 pop r12	       228	vterm.c	FUNCTION_17
+0x4000702	              0xc3	                                     ret	       228	vterm.c	FUNCTION_17
+utf8_seqlen	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,5	17
+0x40000f2	      0xb801000000	                              mov eax, 1	        10	utf8.h	FUNCTION_26	IF_1
+0x40000f7	        0x4883ff7f	                           cmp rdi, 0x7f	        10	utf8.h	FUNCTION_26	IF_1
+0x40000fb	            0x7e3a	                           jle 0x4000137	        10	utf8.h	FUNCTION_26	IF_1
+0x40000fd	      0xb802000000	                              mov eax, 2	        11	utf8.h	FUNCTION_26	IF_2
+0x4000102	    0x4881ffff0700	                          cmp rdi, 0x7ff	        11	utf8.h	FUNCTION_26	IF_2
+0x4000109	            0x7e2c	                           jle 0x4000137	        11	utf8.h	FUNCTION_26	IF_2
+0x400010b	      0xb803000000	                              mov eax, 3	        12	utf8.h	FUNCTION_26	IF_3
+0x4000110	    0x4881ffffff00	                         cmp rdi, 0xffff	        12	utf8.h	FUNCTION_26	IF_3
+0x4000117	            0x7e1e	                           jle 0x4000137	        12	utf8.h	FUNCTION_26	IF_3
+0x4000119	      0xb804000000	                              mov eax, 4	        13	utf8.h	FUNCTION_26	IF_4
+0x400011e	    0x4881ffffff1f	                       cmp rdi, 0x1fffff	        13	utf8.h	FUNCTION_26	IF_4
+0x4000125	            0x7e10	                           jle 0x4000137	        13	utf8.h	FUNCTION_26	IF_4
+0x4000127	    0x4881ff000000	                cmp rdi, loc.imp.memmove	        15	utf8.h	FUNCTION_26
+0x400012e	           0xf9dc0	                                setge al	        15	utf8.h	FUNCTION_26
+0x4000131	           0xfb6c0	                           movzx eax, al	        15	utf8.h	FUNCTION_26
+0x4000134	          0x83c005	                              add eax, 5	        15	utf8.h	FUNCTION_26
+0x4000137	            0xf3c3	                                     ret	        16	utf8.h	FUNCTION_26
+vterm_rect_move	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	5
+0x40000bb	             0x137	                    add dword [rdi], esi	        77	vterm.h	FUNCTION_30
+0x40000bd	           0x17704	                add dword [rdi + 4], esi	        77	vterm.h	FUNCTION_30
+0x40000c0	           0x15708	                add dword [rdi + 8], edx	        78	vterm.h	FUNCTION_30
+0x40000c3	           0x1570c	              add dword [rdi + 0xc], edx	        78	vterm.h	FUNCTION_30
+0x40000c6	              0xc3	                                     ret	        78	vterm.h	FUNCTION_30
+default_malloc	SWITCH,0:functions,0:CALL,2:ELSE,0:DO,0:FOR,0:WHILE,0:IF,1	17
+0x400004e	              0x55	                                push rbp	        17	vterm.c	FUNCTION_1
+0x400004f	              0x53	                                push rbx	        17	vterm.c	FUNCTION_1
+0x4000050	        0x4883ec08	                              sub rsp, 8	        17	vterm.c	FUNCTION_1
+0x4000054	          0x4889fd	                            mov rbp, rdi	        17	vterm.c	FUNCTION_1
+0x4000057	      0xe800000000	                          call 0x400005c	        18	vterm.c	FUNCTION_1	CALL_1
+0x400005c	          0x4889c3	                            mov rbx, rax	        18	vterm.c	FUNCTION_1	CALL_1
+0x400005f	          0x4885c0	                           test rax, rax	        19	vterm.c	FUNCTION_1	IF_1
+0x4000062	            0x7410	                            je 0x4000074	        19	vterm.c	FUNCTION_1	IF_1
+0x4000064	          0x4889ea	                            mov rdx, rbp	        90	string3.h	FUNCTION_34	CALL_6
+0x4000067	      0xbe00000000	                              mov esi, 0	        90	string3.h	FUNCTION_34	CALL_6
+0x400006c	          0x4889c7	                            mov rdi, rax	        90	string3.h	FUNCTION_34	CALL_6
+0x400006f	      0xe800000000	                          call 0x4000074	        90	string3.h	FUNCTION_34	CALL_6
+0x4000074	          0x4889d8	                            mov rax, rbx	        22	vterm.c	FUNCTION_1
+0x4000077	        0x4883c408	                              add rsp, 8	        22	vterm.c	FUNCTION_1
+0x400007b	              0x5b	                                 pop rbx	        22	vterm.c	FUNCTION_1
+0x400007c	              0x5d	                                 pop rbp	        22	vterm.c	FUNCTION_1
+0x400007d	              0xc3	                                     ret	        22	vterm.c	FUNCTION_1
+vterm_push_output_bytes	SWITCH,0:functions,0:CALL,2:ELSE,0:DO,0:FOR,0:WHILE,0:IF,1	18
+0x4000361	              0x55	                                push rbp	       118	vterm.c	FUNCTION_12
+0x4000362	              0x53	                                push rbx	       118	vterm.c	FUNCTION_12
+0x4000363	        0x4883ec08	                              sub rsp, 8	       118	vterm.c	FUNCTION_12
+0x4000367	          0x4889fd	                            mov rbp, rdi	       118	vterm.c	FUNCTION_12
+0x400036a	    0x488bbf100100	           mov rdi, qword [rdi + 0x110] 	       119	vterm.c	FUNCTION_12	IF_1
+0x4000371	    0x488b85080100	           mov rax, qword [rbp + 0x108] 	       119	vterm.c	FUNCTION_12	IF_1
+0x4000378	          0x4829f8	                            sub rax, rdi	       119	vterm.c	FUNCTION_12	IF_1
+0x400037b	          0x4839d0	                            cmp rax, rdx	       119	vterm.c	FUNCTION_12	IF_1
+0x400037e	          0x4889d3	                            mov rbx, rdx	       119	vterm.c	FUNCTION_12	IF_1
+0x4000381	        0x480f46d8	                         cmovbe rbx, rax	       119	vterm.c	FUNCTION_12	IF_1
+0x4000385	    0x4803bd000100	            add rdi, qword [rbp + 0x100]	        53	string3.h	FUNCTION_31	CALL_3
+0x400038c	          0x4889da	                            mov rdx, rbx	        53	string3.h	FUNCTION_31	CALL_3
+0x400038f	      0xe800000000	                          call 0x4000394	        53	string3.h	FUNCTION_31	CALL_3
+0x4000394	    0x48019d100100	           add qword [rbp + 0x110], rbx 	       125	vterm.c	FUNCTION_12
+0x400039b	        0x4883c408	                              add rsp, 8	       126	vterm.c	FUNCTION_12
+0x400039f	              0x5b	                                 pop rbx	       126	vterm.c	FUNCTION_12
+0x40003a0	              0x5d	                                 pop rbp	       126	vterm.c	FUNCTION_12
+0x40003a1	              0xc3	                                     ret	       126	vterm.c	FUNCTION_12
+vterm_allocator_malloc	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	8
+0x40001b6	        0x4883ec08	                              sub rsp, 8	        81	vterm.c	FUNCTION_6
+0x40001ba	          0x4889f2	                            mov rdx, rsi	        81	vterm.c	FUNCTION_6
+0x40001bd	        0x488b7708	                mov rsi, qword [rdi + 8]	        82	vterm.c	FUNCTION_6
+0x40001c1	          0x488b07	                    mov rax, qword [rdi]	        82	vterm.c	FUNCTION_6
+0x40001c4	          0x4889d7	                            mov rdi, rdx	        82	vterm.c	FUNCTION_6
+0x40001c7	            0xff10	                        call qword [rax]	        82	vterm.c	FUNCTION_6
+0x40001c9	        0x4883c408	                              add rsp, 8	        83	vterm.c	FUNCTION_6
+0x40001cd	              0xc3	                                     ret	        83	vterm.c	FUNCTION_6
+vterm_push_output_sprintf	SWITCH,0:functions,0:CALL,3:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	32
+0x400040a	    0x4881ecd80000	                           sub rsp, 0xd8	       185	vterm.c	FUNCTION_15
+0x4000411	      0x4889542430	             mov qword [rsp + 0x30], rdx	       185	vterm.c	FUNCTION_15
+0x4000416	      0x48894c2438	             mov qword [rsp + 0x38], rcx	       185	vterm.c	FUNCTION_15
+0x400041b	      0x4c89442440	              mov qword [rsp + 0x40], r8	       185	vterm.c	FUNCTION_15
+0x4000420	      0x4c894c2448	              mov qword [rsp + 0x48], r9	       185	vterm.c	FUNCTION_15
+0x4000425	            0x84c0	                             test al, al	       185	vterm.c	FUNCTION_15
+0x4000427	            0x7437	                            je 0x4000460	       185	vterm.c	FUNCTION_15
+0x4000429	       0xf29442450	       movaps xmmword [rsp + 0x50], xmm0	       185	vterm.c	FUNCTION_15
+0x400042e	       0xf294c2460	       movaps xmmword [rsp + 0x60], xmm1	       185	vterm.c	FUNCTION_15
+0x4000433	       0xf29542470	       movaps xmmword [rsp + 0x70], xmm2	       185	vterm.c	FUNCTION_15
+0x4000438	     0xf299c248000	       movaps xmmword [rsp + 0x80], xmm3	       185	vterm.c	FUNCTION_15
+0x4000440	     0xf29a4249000	       movaps xmmword [rsp + 0x90], xmm4	       185	vterm.c	FUNCTION_15
+0x4000448	     0xf29ac24a000	       movaps xmmword [rsp + 0xa0], xmm5	       185	vterm.c	FUNCTION_15
+0x4000450	     0xf29b424b000	       movaps xmmword [rsp + 0xb0], xmm6	       185	vterm.c	FUNCTION_15
+0x4000458	     0xf29bc24c000	       movaps xmmword [rsp + 0xc0], xmm7	       185	vterm.c	FUNCTION_15
+0x4000460	    0x64488b042528	                mov rax, qword fs:[0x28]	       185	vterm.c	FUNCTION_15
+0x4000469	      0x4889442418	             mov qword [rsp + 0x18], rax	       185	vterm.c	FUNCTION_15
+0x400046e	            0x31c0	                            xor eax, eax	       185	vterm.c	FUNCTION_15
+0x4000470	    0xc70424100000	                   mov dword [rsp], 0x10	       187	vterm.c	FUNCTION_15	CALL_1
+0x4000477	    0xc74424043000	               mov dword [rsp + 4], 0x30	       187	vterm.c	FUNCTION_15	CALL_1
+0x400047f	    0x488d8424e000	                   lea rax, [rsp + 0xe0]	       187	vterm.c	FUNCTION_15	CALL_1
+0x4000487	      0x4889442408	                mov qword [rsp + 8], rax	       187	vterm.c	FUNCTION_15	CALL_1
+0x400048c	      0x488d442420	                   lea rax, [rsp + 0x20]	       187	vterm.c	FUNCTION_15	CALL_1
+0x4000491	      0x4889442410	             mov qword [rsp + 0x10], rax	       187	vterm.c	FUNCTION_15	CALL_1
+0x4000496	          0x4889e2	                            mov rdx, rsp	       188	vterm.c	FUNCTION_15	CALL_2
+0x4000499	      0xe800000000	                          call 0x400049e	       188	vterm.c	FUNCTION_15	CALL_2
+0x400049e	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       190	vterm.c	FUNCTION_15
+0x40004a3	    0x644833042528	                xor rax, qword fs:[0x28]	       190	vterm.c	FUNCTION_15
+0x40004ac	            0x7405	                            je 0x40004b3	       190	vterm.c	FUNCTION_15
+0x40004ae	      0xe800000000	                          call 0x40004b3	       190	vterm.c	FUNCTION_15
+0x40004b3	    0x4881c4d80000	                           add rsp, 0xd8	       190	vterm.c	FUNCTION_15
+0x40004ba	              0xc3	                                     ret	       190	vterm.c	FUNCTION_15
+vterm_rect_contains	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	14
+0x4000094	      0xb800000000	                              mov eax, 0	        66	vterm.h	FUNCTION_29
+0x4000099	            0x39fa	                            cmp edx, edi	        66	vterm.h	FUNCTION_29
+0x400009b	            0x7c1c	                            jl 0x40000b9	        66	vterm.h	FUNCTION_29
+0x400009d	        0x48c1ff20	                           sar rdi, 0x20	        65	vterm.h	FUNCTION_29
+0x40000a1	            0x39fa	                            cmp edx, edi	        65	vterm.h	FUNCTION_29
+0x40000a3	            0x7d14	                           jge 0x40000b9	        65	vterm.h	FUNCTION_29
+0x40000a5	        0x48c1fa20	                           sar rdx, 0x20	        65	vterm.h	FUNCTION_29
+0x40000a9	            0x39f2	                            cmp edx, esi	        65	vterm.h	FUNCTION_29
+0x40000ab	            0x7c0c	                            jl 0x40000b9	        65	vterm.h	FUNCTION_29
+0x40000ad	        0x48c1fe20	                           sar rsi, 0x20	        66	vterm.h	FUNCTION_29
+0x40000b1	            0x39f2	                            cmp edx, esi	        66	vterm.h	FUNCTION_29
+0x40000b3	           0xf9cc0	                                 setl al	        66	vterm.h	FUNCTION_29
+0x40000b6	           0xfb6c0	                           movzx eax, al	        66	vterm.h	FUNCTION_29
+0x40000b9	            0xf3c3	                                     ret	        67	vterm.h	FUNCTION_29
+default_free	SWITCH,0:functions,0:CALL,1:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	4
+0x4000040	        0x4883ec08	                              sub rsp, 8	        25	vterm.c	FUNCTION_2
+0x4000044	      0xe800000000	                          call 0x4000049	        26	vterm.c	FUNCTION_2	CALL_1
+0x4000049	        0x4883c408	                              add rsp, 8	        27	vterm.c	FUNCTION_2
+0x400004d	              0xc3	                                     ret	        27	vterm.c	FUNCTION_2
+vterm_push_output_sprintf_ctrl	SWITCH,0:functions,0:CALL,6:ELSE,1:DO,0:FOR,0:WHILE,0:IF,2	62
+0x40004bb	            0x4154	                                push r12	       193	vterm.c	FUNCTION_16
+0x40004bd	              0x55	                                push rbp	       193	vterm.c	FUNCTION_16
+0x40004be	              0x53	                                push rbx	       193	vterm.c	FUNCTION_16
+0x40004bf	    0x4881ecd00000	                           sub rsp, 0xd0	       193	vterm.c	FUNCTION_16
+0x40004c6	          0x4889fb	                            mov rbx, rdi	       193	vterm.c	FUNCTION_16
+0x40004c9	          0x4889d5	                            mov rbp, rdx	       193	vterm.c	FUNCTION_16
+0x40004cc	      0x48894c2438	             mov qword [rsp + 0x38], rcx	       193	vterm.c	FUNCTION_16
+0x40004d1	      0x4c89442440	              mov qword [rsp + 0x40], r8	       193	vterm.c	FUNCTION_16
+0x40004d6	      0x4c894c2448	              mov qword [rsp + 0x48], r9	       193	vterm.c	FUNCTION_16
+0x40004db	            0x84c0	                             test al, al	       193	vterm.c	FUNCTION_16
+0x40004dd	            0x7437	                            je 0x4000516	       193	vterm.c	FUNCTION_16
+0x40004df	       0xf29442450	       movaps xmmword [rsp + 0x50], xmm0	       193	vterm.c	FUNCTION_16
+0x40004e4	       0xf294c2460	       movaps xmmword [rsp + 0x60], xmm1	       193	vterm.c	FUNCTION_16
+0x40004e9	       0xf29542470	       movaps xmmword [rsp + 0x70], xmm2	       193	vterm.c	FUNCTION_16
+0x40004ee	     0xf299c248000	       movaps xmmword [rsp + 0x80], xmm3	       193	vterm.c	FUNCTION_16
+0x40004f6	     0xf29a4249000	       movaps xmmword [rsp + 0x90], xmm4	       193	vterm.c	FUNCTION_16
+0x40004fe	     0xf29ac24a000	       movaps xmmword [rsp + 0xa0], xmm5	       193	vterm.c	FUNCTION_16
+0x4000506	     0xf29b424b000	       movaps xmmword [rsp + 0xb0], xmm6	       193	vterm.c	FUNCTION_16
+0x400050e	     0xf29bc24c000	       movaps xmmword [rsp + 0xc0], xmm7	       193	vterm.c	FUNCTION_16
+0x4000516	    0x64488b042528	                mov rax, qword fs:[0x28]	       193	vterm.c	FUNCTION_16
+0x400051f	      0x4889442418	             mov qword [rsp + 0x18], rax	       193	vterm.c	FUNCTION_16
+0x4000524	            0x31c0	                            xor eax, eax	       193	vterm.c	FUNCTION_16
+0x4000526	    0x4c8ba3100100	           mov r12, qword [rbx + 0x110] 	       194	vterm.c	FUNCTION_16
+0x400052d	          0x4084f6	                           test sil, sil	       197	vterm.c	FUNCTION_16	IF_1
+0x4000530	            0x791c	                           jns 0x400054e	       197	vterm.c	FUNCTION_16	IF_1
+0x4000532	        0xf6431802	               test byte [rbx + 0x18], 2	       197	vterm.c	FUNCTION_16	IF_1
+0x4000536	            0x7516	                           jne 0x400054e	       197	vterm.c	FUNCTION_16	IF_1
+0x4000538	        0x400fb6d6	                          movzx edx, sil	       198	vterm.c	FUNCTION_16	CALL_1
+0x400053c	          0x83ea40	                           sub edx, 0x40	       198	vterm.c	FUNCTION_16	CALL_1
+0x400053f	      0xbe00000000	                              mov esi, 0	       198	vterm.c	FUNCTION_16	CALL_1
+0x4000544	          0x4889df	                            mov rdi, rbx	       198	vterm.c	FUNCTION_16	CALL_1
+0x4000547	      0xe800000000	                          call 0x400054c	       198	vterm.c	FUNCTION_16	CALL_1
+0x400054c	            0xeb16	                           jmp 0x4000564	       198	vterm.c	FUNCTION_16	CALL_1
+0x400054e	        0x400fb6d6	                          movzx edx, sil	       200	vterm.c	FUNCTION_16	CALL_2
+0x4000552	      0xbe00000000	                              mov esi, 0	       200	vterm.c	FUNCTION_16	CALL_2
+0x4000557	          0x4889df	                            mov rdi, rbx	       200	vterm.c	FUNCTION_16	CALL_2
+0x400055a	      0xb800000000	                              mov eax, 0	       200	vterm.c	FUNCTION_16	CALL_2
+0x400055f	      0xe800000000	                          call 0x4000564	       200	vterm.c	FUNCTION_16	CALL_2
+0x4000564	    0xc70424180000	                   mov dword [rsp], 0x18	       202	vterm.c	FUNCTION_16	CALL_3
+0x400056b	    0xc74424043000	               mov dword [rsp + 4], 0x30	       202	vterm.c	FUNCTION_16	CALL_3
+0x4000573	    0x488d8424f000	                   lea rax, [rsp + 0xf0]	       202	vterm.c	FUNCTION_16	CALL_3
+0x400057b	      0x4889442408	                mov qword [rsp + 8], rax	       202	vterm.c	FUNCTION_16	CALL_3
+0x4000580	      0x488d442420	                   lea rax, [rsp + 0x20]	       202	vterm.c	FUNCTION_16	CALL_3
+0x4000585	      0x4889442410	             mov qword [rsp + 0x10], rax	       202	vterm.c	FUNCTION_16	CALL_3
+0x400058a	          0x4889e2	                            mov rdx, rsp	       203	vterm.c	FUNCTION_16	CALL_4
+0x400058d	          0x4889ee	                            mov rsi, rbp	       203	vterm.c	FUNCTION_16	CALL_4
+0x4000590	          0x4889df	                            mov rdi, rbx	       203	vterm.c	FUNCTION_16	CALL_4
+0x4000593	      0xe800000000	                          call 0x4000598	       203	vterm.c	FUNCTION_16	CALL_4
+0x4000598	    0x488b83080100	           mov rax, qword [rbx + 0x108] 	       206	vterm.c	FUNCTION_16	IF_2	CALL_6
+0x400059f	        0x4883e801	                              sub rax, 1	       206	vterm.c	FUNCTION_16	IF_2	CALL_6
+0x40005a3	    0x483983100100	           cmp qword [rbx + 0x110], rax 	       206	vterm.c	FUNCTION_16	IF_2	CALL_6
+0x40005aa	            0x7207	                            jb 0x40005b3	       206	vterm.c	FUNCTION_16	IF_2	CALL_6
+0x40005ac	    0x4c89a3100100	            mov qword [rbx + 0x110], r12	       207	vterm.c	FUNCTION_16	IF_2
+0x40005b3	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       208	vterm.c	FUNCTION_16
+0x40005b8	    0x644833042528	                xor rax, qword fs:[0x28]	       208	vterm.c	FUNCTION_16
+0x40005c1	            0x7405	                            je 0x40005c8	       208	vterm.c	FUNCTION_16
+0x40005c3	      0xe800000000	                          call 0x40005c8	       208	vterm.c	FUNCTION_16
+0x40005c8	    0x4881c4d00000	                           add rsp, 0xd0	       208	vterm.c	FUNCTION_16
+0x40005cf	              0x5b	                                 pop rbx	       208	vterm.c	FUNCTION_16
+0x40005d0	              0x5d	                                 pop rbp	       208	vterm.c	FUNCTION_16
+0x40005d1	            0x415c	                                 pop r12	       208	vterm.c	FUNCTION_16
+0x40005d3	              0xc3	                                     ret	       208	vterm.c	FUNCTION_16
+vterm_output_get_buffer_size	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	2
+0x4000703	    0x488b87080100	           mov rax, qword [rdi + 0x108] 	       232	vterm.c	FUNCTION_18
+0x400070a	              0xc3	                                     ret	       233	vterm.c	FUNCTION_18
+vterm_get_prop_type	SWITCH,1:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	16
+0x40007ad	          0x83ff0a	                            cmp edi, 0xa	       280	vterm.c	FUNCTION_23	SWITCH_1
+0x40007b0	            0x7721	                            ja 0x40007d3	       280	vterm.c	FUNCTION_23	SWITCH_1
+0x40007b2	            0x89ff	                            mov edi, edi	       280	vterm.c	FUNCTION_23	SWITCH_1
+0x40007b4	    0xff24fd000000	                       jmp qword [rdi*8]	       280	vterm.c	FUNCTION_23	SWITCH_1
+0x40007bb	      0xb803000000	                              mov eax, 3	       284	vterm.c	FUNCTION_23	SWITCH_1
+0x40007c0	              0xc3	                                     ret	       284	vterm.c	FUNCTION_23	SWITCH_1
+0x40007c1	      0xb802000000	                              mov eax, 2	       287	vterm.c	FUNCTION_23	SWITCH_1
+0x40007c6	              0xc3	                                     ret	       287	vterm.c	FUNCTION_23	SWITCH_1
+0x40007c7	      0xb802000000	                              mov eax, 2	       288	vterm.c	FUNCTION_23	SWITCH_1
+0x40007cc	              0xc3	                                     ret	       288	vterm.c	FUNCTION_23	SWITCH_1
+0x40007cd	      0xb800000000	                              mov eax, 0	       291	vterm.c	FUNCTION_23	SWITCH_1
+0x40007d2	              0xc3	                                     ret	       291	vterm.c	FUNCTION_23	SWITCH_1
+0x40007d3	      0xb800000000	                              mov eax, 0	       293	vterm.c	FUNCTION_23
+0x40007d8	              0xc3	                                     ret	       293	vterm.c	FUNCTION_23
+0x40007d9	      0xb801000000	                              mov eax, 1	       281	vterm.c	FUNCTION_23	SWITCH_1
+0x40007de	              0xc3	                                     ret	       294	vterm.c	FUNCTION_23
+vterm_copy_cells	SWITCH,0:functions,0:CALL,0:ELSE,2:DO,0:FOR,2:WHILE,0:IF,2	72
+0x4000953	            0x4157	                                push r15	       369	vterm.c	FUNCTION_25
+0x4000955	            0x4156	                                push r14	       369	vterm.c	FUNCTION_25
+0x4000957	            0x4155	                                push r13	       369	vterm.c	FUNCTION_25
+0x4000959	            0x4154	                                push r12	       369	vterm.c	FUNCTION_25
+0x400095b	              0x55	                                push rbp	       369	vterm.c	FUNCTION_25
+0x400095c	              0x53	                                push rbx	       369	vterm.c	FUNCTION_25
+0x400095d	        0x4883ec28	                           sub rsp, 0x28	       369	vterm.c	FUNCTION_25
+0x4000961	            0x89f8	                            mov eax, edi	       369	vterm.c	FUNCTION_25
+0x4000963	          0x4989fb	                            mov r11, rdi	       369	vterm.c	FUNCTION_25
+0x4000966	        0x49c1fb20	                           sar r11, 0x20	       369	vterm.c	FUNCTION_25
+0x400096a	      0x44895c2410	            mov dword [rsp + 0x10], r11d	       369	vterm.c	FUNCTION_25
+0x400096f	        0x89742414	             mov dword [rsp + 0x14], esi	       369	vterm.c	FUNCTION_25
+0x4000973	          0x4989f2	                            mov r10, rsi	       369	vterm.c	FUNCTION_25
+0x4000976	        0x49c1fa20	                           sar r10, 0x20	       369	vterm.c	FUNCTION_25
+0x400097a	          0x4589d4	                          mov r12d, r10d	       369	vterm.c	FUNCTION_25
+0x400097d	          0x4189ce	                           mov r14d, ecx	       371	vterm.c	FUNCTION_25
+0x4000980	          0x4129f6	                           sub r14d, esi	       371	vterm.c	FUNCTION_25
+0x4000983	      0xb901000000	                              mov ecx, 1	       386	vterm.c	FUNCTION_25	ELSE_1
+0x4000988	            0x29fa	                            sub edx, edi	       378	vterm.c	FUNCTION_25	IF_1
+0x400098a	        0x89542418	             mov dword [rsp + 0x18], edx	       378	vterm.c	FUNCTION_25	IF_1
+0x400098e	            0x7910	                           jns 0x40009a0	       378	vterm.c	FUNCTION_25	IF_1
+0x4000990	          0x8d47ff	                      lea eax, [rdi - 1]	       380	vterm.c	FUNCTION_25	IF_1
+0x4000993	        0x89442410	             mov dword [rsp + 0x10], eax	       380	vterm.c	FUNCTION_25	IF_1
+0x4000997	        0x418d43ff	                      lea eax, [r11 - 1]	       379	vterm.c	FUNCTION_25	IF_1
+0x400099b	      0xb9ffffffff	                     mov ecx, 0xffffffff	       381	vterm.c	FUNCTION_25	IF_1
+0x40009a0	    0xc74424080100	                  mov dword [rsp + 8], 1	       397	vterm.c	FUNCTION_25	ELSE_2
+0x40009a8	          0x4585f6	                         test r14d, r14d	       389	vterm.c	FUNCTION_25	IF_2
+0x40009ab	            0x7914	                           jns 0x40009c1	       389	vterm.c	FUNCTION_25	IF_2
+0x40009ad	        0x448d66ff	                     lea r12d, [rsi - 1]	       391	vterm.c	FUNCTION_25	IF_2
+0x40009b1	        0x418d52ff	                      lea edx, [r10 - 1]	       390	vterm.c	FUNCTION_25	IF_2
+0x40009b5	        0x89542414	             mov dword [rsp + 0x14], edx	       390	vterm.c	FUNCTION_25	IF_2
+0x40009b9	    0xc7442408ffff	        mov dword [rsp + 8], 0xffffffff 	       392	vterm.c	FUNCTION_25	IF_2
+0x40009c1	        0x3b442410	            cmp eax, dword [rsp + 0x10] 	       400	vterm.c	FUNCTION_25	FOR_1
+0x40009c5	            0x7463	                            je 0x4000a2a	       400	vterm.c	FUNCTION_25	FOR_1
+0x40009c7	        0x4c890c24	                     mov qword [rsp], r9	       400	vterm.c	FUNCTION_25	FOR_1
+0x40009cb	          0x4d89c7	                             mov r15, r8	       400	vterm.c	FUNCTION_25	FOR_1
+0x40009ce	        0x894c241c	             mov dword [rsp + 0x1c], ecx	       400	vterm.c	FUNCTION_25	FOR_1
+0x40009d2	        0x8944240c	              mov dword [rsp + 0xc], eax	       400	vterm.c	FUNCTION_25	FOR_1
+0x40009d6	            0xeb37	                           jmp 0x4000a0f	       400	vterm.c	FUNCTION_25	FOR_1
+0x40009d8	        0x418d341e	                    lea esi, [r14 + rbx]	       404	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009dc	        0x48c1e620	                           shl rsi, 0x20	       404	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009e0	          0x4c09ee	                             or rsi, r13	       404	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009e3	          0x4889df	                            mov rdi, rbx	       405	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009e6	        0x48c1e720	                           shl rdi, 0x20	       405	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009ea	          0x4809ef	                             or rdi, rbp	       405	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009ed	        0x488b1424	                    mov rdx, qword [rsp]	       405	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009f1	          0x41ffd7	                                call r15	       405	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009f4	         0x35c2408	                add ebx, dword [rsp + 8]	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009f8	          0x4139dc	                           cmp r12d, ebx	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009fb	            0x75db	                           jne 0x40009d8	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x40009fd	        0x8b4c241c	            mov ecx, dword [rsp + 0x1c] 	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a01	         0x14c240c	              add dword [rsp + 0xc], ecx	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a05	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a09	        0x39442410	            cmp dword [rsp + 0x10], eax 	       400	vterm.c	FUNCTION_25	FOR_1
+0x4000a0d	            0x741b	                            je 0x4000a2a	       400	vterm.c	FUNCTION_25	FOR_1
+0x4000a0f	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       400	vterm.c	FUNCTION_25	FOR_1
+0x4000a13	        0x8b4c2414	            mov ecx, dword [rsp + 0x14] 	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a17	            0x89cb	                            mov ebx, ecx	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a19	        0x8b542418	            mov edx, dword [rsp + 0x18] 	       403	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a1d	        0x448d2c02	                   lea r13d, [rdx + rax]	       403	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a21	            0x89c5	                            mov ebp, eax	       405	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a23	          0x4439e1	                           cmp ecx, r12d	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a26	            0x75b0	                           jne 0x40009d8	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a28	            0xebd3	                           jmp 0x40009fd	       401	vterm.c	FUNCTION_25	FOR_1	FOR_2
+0x4000a2a	        0x4883c428	                           add rsp, 0x28	       407	vterm.c	FUNCTION_25
+0x4000a2e	              0x5b	                                 pop rbx	       407	vterm.c	FUNCTION_25
+0x4000a2f	              0x5d	                                 pop rbp	       407	vterm.c	FUNCTION_25
+0x4000a30	            0x415c	                                 pop r12	       407	vterm.c	FUNCTION_25
+0x4000a32	            0x415d	                                 pop r13	       407	vterm.c	FUNCTION_25
+0x4000a34	            0x415e	                                 pop r14	       407	vterm.c	FUNCTION_25
+0x4000a36	            0x415f	                                 pop r15	       407	vterm.c	FUNCTION_25
+0x4000a38	              0xc3	                                     ret	       407	vterm.c	FUNCTION_25
+vterm_color_equal	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	15
+0x40000c7	      0xb800000000	                              mov eax, 0	        62	vterm_internal.h	FUNCTION_43
+0x40000cc	          0x4038f7	                            cmp dil, sil	        62	vterm_internal.h	FUNCTION_43
+0x40000cf	            0x751f	                           jne 0x40000f0	        62	vterm_internal.h	FUNCTION_43
+0x40000d1	            0x89f0	                            mov eax, esi	        62	vterm_internal.h	FUNCTION_43
+0x40000d3	           0xfb6d4	                           movzx edx, ah	        62	vterm_internal.h	FUNCTION_43
+0x40000d6	      0xb800000000	                              mov eax, 0	        62	vterm_internal.h	FUNCTION_43
+0x40000db	            0x89f9	                            mov ecx, edi	        62	vterm_internal.h	FUNCTION_43
+0x40000dd	            0x38d5	                              cmp ch, dl	        62	vterm_internal.h	FUNCTION_43
+0x40000df	            0x750f	                           jne 0x40000f0	        62	vterm_internal.h	FUNCTION_43
+0x40000e1	          0xc1ef10	                           shr edi, 0x10	        62	vterm_internal.h	FUNCTION_43
+0x40000e4	          0xc1ee10	                           shr esi, 0x10	        62	vterm_internal.h	FUNCTION_43
+0x40000e7	          0x4038f7	                            cmp dil, sil	        62	vterm_internal.h	FUNCTION_43
+0x40000ea	           0xf94c0	                                 sete al	        62	vterm_internal.h	FUNCTION_43
+0x40000ed	           0xfb6c0	                           movzx eax, al	        62	vterm_internal.h	FUNCTION_43
+0x40000f0	            0xf3c3	                                     ret	        63	vterm_internal.h	FUNCTION_43
+vterm_scroll_rect	SWITCH,0:functions,0:CALL,2:ELSE,4:DO,0:FOR,0:WHILE,0:IF,8	126
+0x40007df	            0x4157	                                push r15	       302	vterm.c	FUNCTION_24
+0x40007e1	            0x4156	                                push r14	       302	vterm.c	FUNCTION_24
+0x40007e3	            0x4155	                                push r13	       302	vterm.c	FUNCTION_24
+0x40007e5	            0x4154	                                push r12	       302	vterm.c	FUNCTION_24
+0x40007e7	              0x55	                                push rbp	       302	vterm.c	FUNCTION_24
+0x40007e8	              0x53	                                push rbx	       302	vterm.c	FUNCTION_24
+0x40007e9	        0x4883ec38	                           sub rsp, 0x38	       302	vterm.c	FUNCTION_24
+0x40007ed	            0x89d3	                            mov ebx, edx	       302	vterm.c	FUNCTION_24
+0x40007ef	      0x4c894c2408	                 mov qword [rsp + 8], r9	       302	vterm.c	FUNCTION_24
+0x40007f4	          0x4989fc	                            mov r12, rdi	       302	vterm.c	FUNCTION_24
+0x40007f7	        0x49c1fc20	                           sar r12, 0x20	       302	vterm.c	FUNCTION_24
+0x40007fb	      0x4489642410	            mov dword [rsp + 0x10], r12d	       302	vterm.c	FUNCTION_24
+0x4000800	          0xc1fa1f	                           sar edx, 0x1f	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000803	            0x89d0	                            mov eax, edx	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000805	            0x31d8	                            xor eax, ebx	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000807	            0x29d0	                            sub eax, edx	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000809	          0x4489e2	                           mov edx, r12d	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x400080c	            0x29fa	                            sub edx, edi	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x400080e	            0x39d0	                            cmp eax, edx	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000810	            0x7d2b	                           jge 0x400083d	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000812	            0x89cd	                            mov ebp, ecx	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000814	          0x4d89c2	                             mov r10, r8	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000817	          0x4189fd	                           mov r13d, edi	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x400081a	          0x4189f7	                           mov r15d, esi	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x400081d	          0x4989f6	                            mov r14, rsi	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000820	        0x49c1fe20	                           sar r14, 0x20	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000824	      0x4489742420	            mov dword [rsp + 0x20], r14d	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000829	            0x89ca	                            mov edx, ecx	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x400082b	          0xc1fa1f	                           sar edx, 0x1f	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x400082e	            0x89d0	                            mov eax, edx	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000830	            0x31c8	                            xor eax, ecx	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000832	            0x29d0	                            sub eax, edx	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000834	          0x4489f2	                           mov edx, r14d	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000837	            0x29f2	                            sub edx, esi	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x4000839	            0x39d0	                            cmp eax, edx	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x400083b	            0x7c16	                            jl 0x4000853	       306	vterm.c	FUNCTION_24	IF_1	CALL_1
+0x400083d	      0x488b4c2470	            mov rcx, qword [rsp + 0x70] 	       309	vterm.c	FUNCTION_24	IF_1
+0x4000842	      0xba00000000	                              mov edx, 0	       309	vterm.c	FUNCTION_24	IF_1
+0x4000847	      0x488b442408	                mov rax, qword [rsp + 8]	       309	vterm.c	FUNCTION_24	IF_1
+0x400084c	            0xffd0	                                call rax	       309	vterm.c	FUNCTION_24	IF_1
+0x400084e	      0xe9f1000000	                           jmp 0x4000944	       309	vterm.c	FUNCTION_24	IF_1
+0x4000853	            0x85c9	                           test ecx, ecx	       313	vterm.c	FUNCTION_24	IF_2
+0x4000855	            0x781f	                            js 0x4000876	       313	vterm.c	FUNCTION_24	IF_2
+0x4000857	          0x4489f6	                           mov esi, r14d	       319	vterm.c	FUNCTION_24	IF_2
+0x400085a	            0x29ce	                            sub esi, ecx	       319	vterm.c	FUNCTION_24	IF_2
+0x400085c	        0x48c1e620	                           shl rsi, 0x20	       319	vterm.c	FUNCTION_24	IF_2
+0x4000860	          0x4489f8	                           mov eax, r15d	       319	vterm.c	FUNCTION_24	IF_2
+0x4000863	          0x4809c6	                             or rsi, rax	       319	vterm.c	FUNCTION_24	IF_2
+0x4000866	          0x4c89f0	                            mov rax, r14	       321	vterm.c	FUNCTION_24	IF_2
+0x4000869	        0x48c1e020	                           shl rax, 0x20	       321	vterm.c	FUNCTION_24	IF_2
+0x400086d	        0x428d0c39	                    lea ecx, [rcx + r15]	       321	vterm.c	FUNCTION_24	IF_2
+0x4000871	          0x4809c1	                             or rcx, rax	       321	vterm.c	FUNCTION_24	IF_2
+0x4000874	            0xeb1a	                           jmp 0x4000890	       321	vterm.c	FUNCTION_24	IF_2
+0x4000876	          0x4c89f0	                            mov rax, r14	       330	vterm.c	FUNCTION_24	ELSE_1
+0x4000879	        0x48c1e020	                           shl rax, 0x20	       330	vterm.c	FUNCTION_24	ELSE_1
+0x400087d	            0x29ce	                            sub esi, ecx	       330	vterm.c	FUNCTION_24	ELSE_1
+0x400087f	          0x4809c6	                             or rsi, rax	       330	vterm.c	FUNCTION_24	ELSE_1
+0x4000882	        0x428d0c31	                    lea ecx, [rcx + r14]	       332	vterm.c	FUNCTION_24	ELSE_1
+0x4000886	        0x48c1e120	                           shl rcx, 0x20	       332	vterm.c	FUNCTION_24	ELSE_1
+0x400088a	          0x4489f8	                           mov eax, r15d	       332	vterm.c	FUNCTION_24	ELSE_1
+0x400088d	          0x4809c1	                             or rcx, rax	       332	vterm.c	FUNCTION_24	ELSE_1
+0x4000890	            0x85db	                           test ebx, ebx	       335	vterm.c	FUNCTION_24	IF_3
+0x4000892	            0x781f	                            js 0x40008b3	       335	vterm.c	FUNCTION_24	IF_3
+0x4000894	          0x4489e7	                           mov edi, r12d	       337	vterm.c	FUNCTION_24	IF_3
+0x4000897	            0x29df	                            sub edi, ebx	       337	vterm.c	FUNCTION_24	IF_3
+0x4000899	        0x48c1e720	                           shl rdi, 0x20	       337	vterm.c	FUNCTION_24	IF_3
+0x400089d	          0x4489e8	                           mov eax, r13d	       337	vterm.c	FUNCTION_24	IF_3
+0x40008a0	          0x4809c7	                             or rdi, rax	       337	vterm.c	FUNCTION_24	IF_3
+0x40008a3	          0x4c89e0	                            mov rax, r12	       339	vterm.c	FUNCTION_24	IF_3
+0x40008a6	        0x48c1e020	                           shl rax, 0x20	       339	vterm.c	FUNCTION_24	IF_3
+0x40008aa	        0x428d142b	                    lea edx, [rbx + r13]	       339	vterm.c	FUNCTION_24	IF_3
+0x40008ae	          0x4809c2	                             or rdx, rax	       339	vterm.c	FUNCTION_24	IF_3
+0x40008b1	            0xeb1d	                           jmp 0x40008d0	       339	vterm.c	FUNCTION_24	IF_3
+0x40008b3	          0x4c89e0	                            mov rax, r12	       344	vterm.c	FUNCTION_24	ELSE_2
+0x40008b6	        0x48c1e020	                           shl rax, 0x20	       344	vterm.c	FUNCTION_24	ELSE_2
+0x40008ba	          0x4489ef	                           mov edi, r13d	       344	vterm.c	FUNCTION_24	ELSE_2
+0x40008bd	            0x29df	                            sub edi, ebx	       344	vterm.c	FUNCTION_24	ELSE_2
+0x40008bf	          0x4809c7	                             or rdi, rax	       344	vterm.c	FUNCTION_24	ELSE_2
+0x40008c2	        0x428d1423	                    lea edx, [rbx + r12]	       346	vterm.c	FUNCTION_24	ELSE_2
+0x40008c6	        0x48c1e220	                           shl rdx, 0x20	       346	vterm.c	FUNCTION_24	ELSE_2
+0x40008ca	          0x4489e8	                           mov eax, r13d	       346	vterm.c	FUNCTION_24	ELSE_2
+0x40008cd	          0x4809c2	                             or rdx, rax	       346	vterm.c	FUNCTION_24	ELSE_2
+0x40008d0	          0x4d85d2	                           test r10, r10	       349	vterm.c	FUNCTION_24	IF_4
+0x40008d3	            0x7408	                            je 0x40008dd	       349	vterm.c	FUNCTION_24	IF_4
+0x40008d5	      0x4c8b442470	              mov r8, qword [rsp + 0x70]	       350	vterm.c	FUNCTION_24	IF_4
+0x40008da	          0x41ffd2	                                call r10	       350	vterm.c	FUNCTION_24	IF_4
+0x40008dd	            0x85db	                           test ebx, ebx	       352	vterm.c	FUNCTION_24	IF_5
+0x40008df	            0x7e08	                           jle 0x40008e9	       352	vterm.c	FUNCTION_24	IF_5
+0x40008e1	          0x4589e5	                          mov r13d, r12d	       353	vterm.c	FUNCTION_24	IF_5
+0x40008e4	          0x4129dd	                           sub r13d, ebx	       353	vterm.c	FUNCTION_24	IF_5
+0x40008e7	            0xeb10	                           jmp 0x40008f9	       353	vterm.c	FUNCTION_24	IF_5
+0x40008e9	          0x4489e8	                           mov eax, r13d	       355	vterm.c	FUNCTION_24	ELSE_3	IF_6
+0x40008ec	            0x29d8	                            sub eax, ebx	       355	vterm.c	FUNCTION_24	ELSE_3	IF_6
+0x40008ee	            0x85db	                           test ebx, ebx	       355	vterm.c	FUNCTION_24	ELSE_3	IF_6
+0x40008f0	       0xf49442410	          cmovns eax, dword [rsp + 0x10]	       355	vterm.c	FUNCTION_24	ELSE_3	IF_6
+0x40008f5	        0x89442410	             mov dword [rsp + 0x10], eax	       355	vterm.c	FUNCTION_24	ELSE_3	IF_6
+0x40008f9	            0x85ed	                           test ebp, ebp	       357	vterm.c	FUNCTION_24	IF_7
+0x40008fb	            0x7e08	                           jle 0x4000905	       357	vterm.c	FUNCTION_24	IF_7
+0x40008fd	          0x4589f7	                          mov r15d, r14d	       358	vterm.c	FUNCTION_24	IF_7
+0x4000900	          0x4129ef	                           sub r15d, ebp	       358	vterm.c	FUNCTION_24	IF_7
+0x4000903	            0xeb10	                           jmp 0x4000915	       358	vterm.c	FUNCTION_24	IF_7
+0x4000905	          0x4489f8	                           mov eax, r15d	       360	vterm.c	FUNCTION_24	ELSE_4	IF_8
+0x4000908	            0x29e8	                            sub eax, ebp	       360	vterm.c	FUNCTION_24	ELSE_4	IF_8
+0x400090a	            0x85ed	                           test ebp, ebp	       360	vterm.c	FUNCTION_24	ELSE_4	IF_8
+0x400090c	       0xf49442420	          cmovns eax, dword [rsp + 0x20]	       360	vterm.c	FUNCTION_24	ELSE_4	IF_8
+0x4000911	        0x89442420	             mov dword [rsp + 0x20], eax	       360	vterm.c	FUNCTION_24	ELSE_4	IF_8
+0x4000915	      0x488b7c2410	            mov rdi, qword [rsp + 0x10] 	       362	vterm.c	FUNCTION_24
+0x400091a	        0x48c1e720	                           shl rdi, 0x20	       362	vterm.c	FUNCTION_24
+0x400091e	          0x4589ed	                          mov r13d, r13d	       362	vterm.c	FUNCTION_24
+0x4000921	          0x4c09ef	                             or rdi, r13	       362	vterm.c	FUNCTION_24
+0x4000924	      0x488b742420	            mov rsi, qword [rsp + 0x20] 	       362	vterm.c	FUNCTION_24
+0x4000929	        0x48c1e620	                           shl rsi, 0x20	       362	vterm.c	FUNCTION_24
+0x400092d	          0x4489f8	                           mov eax, r15d	       362	vterm.c	FUNCTION_24
+0x4000930	          0x4809c6	                             or rsi, rax	       362	vterm.c	FUNCTION_24
+0x4000933	      0x488b4c2470	            mov rcx, qword [rsp + 0x70] 	       362	vterm.c	FUNCTION_24
+0x4000938	      0xba00000000	                              mov edx, 0	       362	vterm.c	FUNCTION_24
+0x400093d	      0x488b442408	                mov rax, qword [rsp + 8]	       362	vterm.c	FUNCTION_24
+0x4000942	            0xffd0	                                call rax	       362	vterm.c	FUNCTION_24
+0x4000944	        0x4883c438	                           add rsp, 0x38	       363	vterm.c	FUNCTION_24
+0x4000948	              0x5b	                                 pop rbx	       363	vterm.c	FUNCTION_24
+0x4000949	              0x5d	                                 pop rbp	       363	vterm.c	FUNCTION_24
+0x400094a	            0x415c	                                 pop r12	       363	vterm.c	FUNCTION_24
+0x400094c	            0x415d	                                 pop r13	       363	vterm.c	FUNCTION_24
+0x400094e	            0x415e	                                 pop r14	       363	vterm.c	FUNCTION_24
+0x4000950	            0x415f	                                 pop r15	       363	vterm.c	FUNCTION_24
+0x4000952	              0xc3	                                     ret	       363	vterm.c	FUNCTION_24
+vterm_new	SWITCH,0:functions,0:CALL,1:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	6
+0x400027b	        0x4883ec08	                              sub rsp, 8	        35	vterm.c	FUNCTION_3
+0x400027f	      0xb900000000	                              mov ecx, 0	        36	vterm.c	FUNCTION_3	CALL_1
+0x4000284	      0xba00000000	                              mov edx, 0	        36	vterm.c	FUNCTION_3	CALL_1
+0x4000289	      0xe800000000	                          call 0x400028e	        36	vterm.c	FUNCTION_3	CALL_1
+0x400028e	        0x4883c408	                              add rsp, 8	        37	vterm.c	FUNCTION_3
+0x4000292	              0xc3	                                     ret	        37	vterm.c	FUNCTION_3
+vterm_new_with_allocator	SWITCH,0:functions,0:CALL,2:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	39
+0x40001ce	            0x4156	                                push r14	        40	vterm.c	FUNCTION_4
+0x40001d0	            0x4155	                                push r13	        40	vterm.c	FUNCTION_4
+0x40001d2	            0x4154	                                push r12	        40	vterm.c	FUNCTION_4
+0x40001d4	              0x55	                                push rbp	        40	vterm.c	FUNCTION_4
+0x40001d5	              0x53	                                push rbx	        40	vterm.c	FUNCTION_4
+0x40001d6	          0x4189fe	                           mov r14d, edi	        40	vterm.c	FUNCTION_4
+0x40001d9	          0x4189f5	                           mov r13d, esi	        40	vterm.c	FUNCTION_4
+0x40001dc	          0x4989d4	                            mov r12, rdx	        40	vterm.c	FUNCTION_4
+0x40001df	          0x4889cd	                            mov rbp, rcx	        40	vterm.c	FUNCTION_4
+0x40001e2	          0x4889ce	                            mov rsi, rcx	        42	vterm.c	FUNCTION_4
+0x40001e5	      0xbf28010000	                          mov edi, 0x128	        42	vterm.c	FUNCTION_4
+0x40001ea	            0xff12	                        call qword [rdx]	        42	vterm.c	FUNCTION_4
+0x40001ec	          0x4889c3	                            mov rbx, rax	        42	vterm.c	FUNCTION_4
+0x40001ef	          0x4c8920	                    mov qword [rax], r12	        44	vterm.c	FUNCTION_4
+0x40001f2	        0x48896808	                mov qword [rax + 8], rbp	        45	vterm.c	FUNCTION_4
+0x40001f6	        0x44897010	            mov dword [rax + 0x10], r14d	        47	vterm.c	FUNCTION_4
+0x40001fa	        0x44896814	            mov dword [rax + 0x14], r13d	        48	vterm.c	FUNCTION_4
+0x40001fe	    0xc74020000000	               mov dword [rax + 0x20], 0	        50	vterm.c	FUNCTION_4
+0x4000205	    0x48c780d00000	               mov qword [rax + 0xd0], 0	        52	vterm.c	FUNCTION_4
+0x4000210	    0x48c780d80000	               mov qword [rax + 0xd8], 0	        53	vterm.c	FUNCTION_4
+0x400021b	    0x48c780f00000	          mov qword [rax + 0xf0], 0x1f4 	        55	vterm.c	FUNCTION_4
+0x4000226	    0x48c780f80000	               mov qword [rax + 0xf8], 0	        56	vterm.c	FUNCTION_4
+0x4000231	      0xbef4010000	                          mov esi, 0x1f4	        57	vterm.c	FUNCTION_4	CALL_1
+0x4000236	          0x4889c7	                            mov rdi, rax	        57	vterm.c	FUNCTION_4	CALL_1
+0x4000239	      0xe800000000	                          call 0x400023e	        57	vterm.c	FUNCTION_4	CALL_1
+0x400023e	    0x488983e80000	             mov qword [rbx + 0xe8], rax	        57	vterm.c	FUNCTION_4	CALL_1
+0x4000245	    0x48c783080100	          mov qword [rbx + 0x108], 0xc8 	        59	vterm.c	FUNCTION_4
+0x4000250	    0x48c783100100	              mov qword [rbx + 0x110], 0	        60	vterm.c	FUNCTION_4
+0x400025b	      0xbec8000000	                           mov esi, 0xc8	        61	vterm.c	FUNCTION_4	CALL_2
+0x4000260	          0x4889df	                            mov rdi, rbx	        61	vterm.c	FUNCTION_4	CALL_2
+0x4000263	      0xe800000000	                          call 0x4000268	        61	vterm.c	FUNCTION_4	CALL_2
+0x4000268	    0x488983000100	            mov qword [rbx + 0x100], rax	        61	vterm.c	FUNCTION_4	CALL_2
+0x400026f	          0x4889d8	                            mov rax, rbx	        64	vterm.c	FUNCTION_4
+0x4000272	              0x5b	                                 pop rbx	        64	vterm.c	FUNCTION_4
+0x4000273	              0x5d	                                 pop rbp	        64	vterm.c	FUNCTION_4
+0x4000274	            0x415c	                                 pop r12	        64	vterm.c	FUNCTION_4
+0x4000276	            0x415d	                                 pop r13	        64	vterm.c	FUNCTION_4
+0x4000278	            0x415e	                                 pop r14	        64	vterm.c	FUNCTION_4
+0x400027a	              0xc3	                                     ret	        64	vterm.c	FUNCTION_4
+vterm_get_size	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,2	9
+0x40002fd	          0x4885f6	                           test rsi, rsi	        92	vterm.c	FUNCTION_8	IF_1
+0x4000300	            0x7405	                            je 0x4000307	        92	vterm.c	FUNCTION_8	IF_1
+0x4000302	          0x8b4710	            mov eax, dword [rdi + 0x10] 	        93	vterm.c	FUNCTION_8	IF_1
+0x4000305	            0x8906	                    mov dword [rsi], eax	        93	vterm.c	FUNCTION_8	IF_1
+0x4000307	          0x4885d2	                           test rdx, rdx	        94	vterm.c	FUNCTION_8	IF_2
+0x400030a	            0x7405	                            je 0x4000311	        94	vterm.c	FUNCTION_8	IF_2
+0x400030c	          0x8b4714	            mov eax, dword [rdi + 0x14] 	        95	vterm.c	FUNCTION_8	IF_2
+0x400030f	            0x8902	                    mov dword [rdx], eax	        95	vterm.c	FUNCTION_8	IF_2
+0x4000311	            0xf3c3	                                     ret	        95	vterm.c	FUNCTION_8	IF_2
+vterm_get_utf8	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	3
+0x4000348	         0xfb64718	           movzx eax, byte [rdi + 0x18] 	       109	vterm.c	FUNCTION_10
+0x400034c	          0x83e001	                              and eax, 1	       109	vterm.c	FUNCTION_10
+0x400034f	              0xc3	                                     ret	       110	vterm.c	FUNCTION_10
+vterm_output_read	SWITCH,0:functions,0:CALL,2:ELSE,0:DO,0:FOR,0:WHILE,0:IF,2	24
+0x4000722	              0x55	                                push rbp	       246	vterm.c	FUNCTION_21
+0x4000723	              0x53	                                push rbx	       246	vterm.c	FUNCTION_21
+0x4000724	        0x4883ec08	                              sub rsp, 8	       246	vterm.c	FUNCTION_21
+0x4000728	          0x4889fd	                            mov rbp, rdi	       246	vterm.c	FUNCTION_21
+0x400072b	          0x4889f7	                            mov rdi, rsi	       246	vterm.c	FUNCTION_21
+0x400072e	    0x488b9d100100	           mov rbx, qword [rbp + 0x110] 	       247	vterm.c	FUNCTION_21	IF_1
+0x4000735	          0x4839d3	                            cmp rbx, rdx	       247	vterm.c	FUNCTION_21	IF_1
+0x4000738	        0x480f47da	                          cmova rbx, rdx	       247	vterm.c	FUNCTION_21	IF_1
+0x400073c	    0x488bb5000100	           mov rsi, qword [rbp + 0x100] 	        53	string3.h	FUNCTION_31	CALL_3
+0x4000743	          0x4889da	                            mov rdx, rbx	        53	string3.h	FUNCTION_31	CALL_3
+0x4000746	      0xe800000000	                          call 0x400074b	        53	string3.h	FUNCTION_31	CALL_3
+0x400074b	    0x488b95100100	           mov rdx, qword [rbp + 0x110] 	       252	vterm.c	FUNCTION_21	IF_2
+0x4000752	          0x4839da	                            cmp rdx, rbx	       252	vterm.c	FUNCTION_21	IF_2
+0x4000755	            0x7613	                           jbe 0x400076a	       252	vterm.c	FUNCTION_21	IF_2
+0x4000757	    0x488bbd000100	           mov rdi, qword [rbp + 0x100] 	       253	vterm.c	FUNCTION_21	CALL_2
+0x400075e	          0x4829da	                            sub rdx, rbx	        59	string3.h	FUNCTION_32	CALL_3
+0x4000761	        0x488d341f	                    lea rsi, [rdi + rbx]	        59	string3.h	FUNCTION_32	CALL_3
+0x4000765	      0xe800000000	                          call 0x400076a	        59	string3.h	FUNCTION_32	CALL_3
+0x400076a	    0x48299d100100	            sub qword [rbp + 0x110], rbx	       255	vterm.c	FUNCTION_21
+0x4000771	          0x4889d8	                            mov rax, rbx	       258	vterm.c	FUNCTION_21
+0x4000774	        0x4883c408	                              add rsp, 8	       258	vterm.c	FUNCTION_21
+0x4000778	              0x5b	                                 pop rbx	       258	vterm.c	FUNCTION_21
+0x4000779	              0x5d	                                 pop rbp	       258	vterm.c	FUNCTION_21
+0x400077a	              0xc3	                                     ret	       258	vterm.c	FUNCTION_21
+vterm_output_get_buffer_remaining	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	3
+0x4000713	    0x488b87080100	           mov rax, qword [rdi + 0x108] 	       242	vterm.c	FUNCTION_20
+0x400071a	    0x482b87100100	            sub rax, qword [rdi + 0x110]	       242	vterm.c	FUNCTION_20
+0x4000721	              0xc3	                                     ret	       243	vterm.c	FUNCTION_20
+vterm_free	SWITCH,0:functions,0:CALL,5:ELSE,0:DO,0:FOR,0:WHILE,0:IF,2	21
+0x40002ac	              0x53	                                push rbx	        67	vterm.c	FUNCTION_5
+0x40002ad	          0x4889fb	                            mov rbx, rdi	        67	vterm.c	FUNCTION_5
+0x40002b0	    0x488bbf200100	           mov rdi, qword [rdi + 0x120] 	        68	vterm.c	FUNCTION_5	IF_1
+0x40002b7	          0x4885ff	                           test rdi, rdi	        68	vterm.c	FUNCTION_5	IF_1
+0x40002ba	            0x7405	                            je 0x40002c1	        68	vterm.c	FUNCTION_5	IF_1
+0x40002bc	      0xe800000000	                          call 0x40002c1	        69	vterm.c	FUNCTION_5	CALL_1
+0x40002c1	    0x488bbb180100	           mov rdi, qword [rbx + 0x118] 	        71	vterm.c	FUNCTION_5	IF_2
+0x40002c8	          0x4885ff	                           test rdi, rdi	        71	vterm.c	FUNCTION_5	IF_2
+0x40002cb	            0x7405	                            je 0x40002d2	        71	vterm.c	FUNCTION_5	IF_2
+0x40002cd	      0xe800000000	                          call 0x40002d2	        72	vterm.c	FUNCTION_5	CALL_2
+0x40002d2	    0x488bb3e80000	            mov rsi, qword [rbx + 0xe8] 	        74	vterm.c	FUNCTION_5	CALL_3
+0x40002d9	          0x4889df	                            mov rdi, rbx	        74	vterm.c	FUNCTION_5	CALL_3
+0x40002dc	      0xe800000000	                          call 0x40002e1	        74	vterm.c	FUNCTION_5	CALL_3
+0x40002e1	    0x488bb3000100	           mov rsi, qword [rbx + 0x100] 	        75	vterm.c	FUNCTION_5	CALL_4
+0x40002e8	          0x4889df	                            mov rdi, rbx	        75	vterm.c	FUNCTION_5	CALL_4
+0x40002eb	      0xe800000000	                          call 0x40002f0	        75	vterm.c	FUNCTION_5	CALL_4
+0x40002f0	          0x4889de	                            mov rsi, rbx	        77	vterm.c	FUNCTION_5	CALL_5
+0x40002f3	          0x4889df	                            mov rdi, rbx	        77	vterm.c	FUNCTION_5	CALL_5
+0x40002f6	      0xe800000000	                          call 0x40002fb	        77	vterm.c	FUNCTION_5	CALL_5
+0x40002fb	              0x5b	                                 pop rbx	        78	vterm.c	FUNCTION_5
+0x40002fc	              0xc3	                                     ret	        78	vterm.c	FUNCTION_5
+vterm_set_utf8	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	6
+0x4000350	          0x83e601	                              and esi, 1	       114	vterm.c	FUNCTION_11
+0x4000353	         0xfb64718	           movzx eax, byte [rdi + 0x18] 	       114	vterm.c	FUNCTION_11
+0x4000357	          0x83e0fe	                     and eax, 0xfffffffe	       114	vterm.c	FUNCTION_11
+0x400035a	             0x9c6	                             or esi, eax	       114	vterm.c	FUNCTION_11
+0x400035c	        0x40887718	              mov byte [rdi + 0x18], sil	       114	vterm.c	FUNCTION_11
+0x4000360	              0xc3	                                     ret	       114	vterm.c	FUNCTION_11
+vterm_set_size	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,1	16
+0x4000313	          0x4889f8	                            mov rax, rdi	        99	vterm.c	FUNCTION_9
+0x4000316	          0x897710	             mov dword [rdi + 0x10], esi	       100	vterm.c	FUNCTION_9
+0x4000319	          0x895714	             mov dword [rdi + 0x14], edx	       101	vterm.c	FUNCTION_9
+0x400031c	    0x488b8fd00000	            mov rcx, qword [rdi + 0xd0] 	       103	vterm.c	FUNCTION_9	IF_1
+0x4000323	          0x4885c9	                           test rcx, rcx	       103	vterm.c	FUNCTION_9	IF_1
+0x4000326	            0x741e	                            je 0x4000346	       103	vterm.c	FUNCTION_9	IF_1
+0x4000328	            0x89f7	                            mov edi, esi	       103	vterm.c	FUNCTION_9	IF_1
+0x400032a	        0x488b4930	            mov rcx, qword [rcx + 0x30] 	       103	vterm.c	FUNCTION_9	IF_1
+0x400032e	          0x4885c9	                           test rcx, rcx	       103	vterm.c	FUNCTION_9	IF_1
+0x4000331	            0x7413	                            je 0x4000346	       103	vterm.c	FUNCTION_9	IF_1
+0x4000333	        0x4883ec08	                              sub rsp, 8	        99	vterm.c	FUNCTION_9
+0x4000337	            0x89d6	                            mov esi, edx	        99	vterm.c	FUNCTION_9
+0x4000339	    0x488b90d80000	            mov rdx, qword [rax + 0xd8] 	       104	vterm.c	FUNCTION_9	IF_1
+0x4000340	            0xffd1	                                call rcx	       104	vterm.c	FUNCTION_9	IF_1
+0x4000342	        0x4883c408	                              add rsp, 8	       105	vterm.c	FUNCTION_9
+0x4000346	            0xf3c3	                                     ret	       105	vterm.c	FUNCTION_9
+vterm_pos_cmp	SWITCH,0:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	9
+0x400007e	            0x89f8	                            mov eax, edi	        47	vterm.h	FUNCTION_28
+0x4000080	            0x29f0	                            sub eax, esi	        47	vterm.h	FUNCTION_28
+0x4000082	            0x39f7	                            cmp edi, esi	        47	vterm.h	FUNCTION_28
+0x4000084	            0x750c	                           jne 0x4000092	        47	vterm.h	FUNCTION_28
+0x4000086	        0x48c1ff20	                           sar rdi, 0x20	        47	vterm.h	FUNCTION_28
+0x400008a	        0x48c1fe20	                           sar rsi, 0x20	        47	vterm.h	FUNCTION_28
+0x400008e	            0x89f8	                            mov eax, edi	        47	vterm.h	FUNCTION_28
+0x4000090	            0x29f0	                            sub eax, esi	        47	vterm.h	FUNCTION_28
+0x4000092	            0xf3c3	                                     ret	        48	vterm.h	FUNCTION_28
+vterm_push_output_vsprintf	SWITCH,0:functions,0:CALL,5:ELSE,1:DO,0:FOR,0:WHILE,0:IF,4	28
+0x40003a2	    0x488b87100100	           mov rax, qword [rdi + 0x110] 	       130	vterm.c	FUNCTION_13
+0x40003a9	    0x4c8b87080100	            mov r8, qword [rdi + 0x108] 	       130	vterm.c	FUNCTION_13
+0x40003b0	        0x498d48ff	                       lea rcx, [r8 - 1]	       153	vterm.c	FUNCTION_14	IF_1	CALL_1
+0x40003b4	          0x4839c8	                            cmp rax, rcx	       153	vterm.c	FUNCTION_14	IF_1	CALL_1
+0x40003b7	            0x734f	                           jae 0x4000408	       153	vterm.c	FUNCTION_14	IF_1	CALL_1
+0x40003b9	              0x53	                                push rbx	       146	vterm.c	FUNCTION_14
+0x40003ba	          0x4889d1	                            mov rcx, rdx	       146	vterm.c	FUNCTION_14
+0x40003bd	          0x4889f2	                            mov rdx, rsi	       146	vterm.c	FUNCTION_14
+0x40003c0	          0x4889fb	                            mov rbx, rdi	       146	vterm.c	FUNCTION_14
+0x40003c3	          0x4c89c6	                             mov rsi, r8	       159	vterm.c	FUNCTION_14	CALL_3
+0x40003c6	          0x4829c6	                            sub rsi, rax	       159	vterm.c	FUNCTION_14	CALL_3
+0x40003c9	    0x480387000100	            add rax, qword [rdi + 0x100]	       159	vterm.c	FUNCTION_14	CALL_3
+0x40003d0	          0x4889c7	                            mov rdi, rax	       159	vterm.c	FUNCTION_14	CALL_3
+0x40003d3	      0xe800000000	                          call 0x40003d8	       159	vterm.c	FUNCTION_14	CALL_3
+0x40003d8	    0x488b8b080100	           mov rcx, qword [rbx + 0x108] 	       163	vterm.c	FUNCTION_14	IF_2
+0x40003df	    0x488b93100100	           mov rdx, qword [rbx + 0x110] 	       163	vterm.c	FUNCTION_14	IF_2
+0x40003e6	            0x89ce	                            mov esi, ecx	       163	vterm.c	FUNCTION_14	IF_2
+0x40003e8	            0x29d6	                            sub esi, edx	       163	vterm.c	FUNCTION_14	IF_2
+0x40003ea	            0x39f0	                            cmp eax, esi	       163	vterm.c	FUNCTION_14	IF_2
+0x40003ec	            0x750d	                           jne 0x40003fb	       163	vterm.c	FUNCTION_14	IF_2
+0x40003ee	        0x4883e901	                              sub rcx, 1	       165	vterm.c	FUNCTION_14	IF_2
+0x40003f2	    0x48898b100100	            mov qword [rbx + 0x110], rcx	       165	vterm.c	FUNCTION_14	IF_2
+0x40003f9	            0xeb0c	                           jmp 0x4000407	       165	vterm.c	FUNCTION_14	IF_2
+0x40003fb	            0x4898	                                    cdqe	       168	vterm.c	FUNCTION_14	ELSE_1
+0x40003fd	          0x4801c2	                            add rdx, rax	       168	vterm.c	FUNCTION_14	ELSE_1
+0x4000400	    0x488993100100	            mov qword [rbx + 0x110], rdx	       168	vterm.c	FUNCTION_14	ELSE_1
+0x4000407	              0x5b	                                 pop rbx	       182	vterm.c	FUNCTION_14
+0x4000408	            0xf3c3	                                     ret	       182	vterm.c	FUNCTION_14
+fill_utf8	SWITCH,1:functions,0:CALL,1:ELSE,0:DO,0:FOR,0:WHILE,1:IF,0	46
+0x4000139	              0x55	                                push rbp	        24	utf8.h	FUNCTION_27
+0x400013a	              0x53	                                push rbx	        24	utf8.h	FUNCTION_27
+0x400013b	          0x4889fb	                            mov rbx, rdi	        24	utf8.h	FUNCTION_27
+0x400013e	          0x4889f5	                            mov rbp, rsi	        24	utf8.h	FUNCTION_27
+0x4000141	      0xe800000000	                          call 0x4000146	        25	utf8.h	FUNCTION_27	CALL_1
+0x4000146	          0x83f801	                              cmp eax, 1	        29	utf8.h	FUNCTION_27	WHILE_1
+0x4000149	            0x7e1d	                           jle 0x4000168	        29	utf8.h	FUNCTION_27	WHILE_1
+0x400014b	            0x89c2	                            mov edx, eax	        29	utf8.h	FUNCTION_27	WHILE_1
+0x400014d	          0x83ea01	                              sub edx, 1	        30	utf8.h	FUNCTION_27	WHILE_1
+0x4000150	          0x4863f2	                         movsxd rsi, edx	        31	utf8.h	FUNCTION_27	WHILE_1
+0x4000153	            0x89d9	                            mov ecx, ebx	        31	utf8.h	FUNCTION_27	WHILE_1
+0x4000155	          0x83e13f	                           and ecx, 0x3f	        31	utf8.h	FUNCTION_27	WHILE_1
+0x4000158	          0x83c980	                      or ecx, 0xffffff80	        31	utf8.h	FUNCTION_27	WHILE_1
+0x400015b	        0x884c3500	                mov byte [rbp + rsi], cl	        31	utf8.h	FUNCTION_27	WHILE_1
+0x400015f	        0x48c1fb06	                              sar rbx, 6	        32	utf8.h	FUNCTION_27	WHILE_1
+0x4000163	          0x83fa01	                              cmp edx, 1	        29	utf8.h	FUNCTION_27	WHILE_1
+0x4000166	            0x75e5	                           jne 0x400014d	        29	utf8.h	FUNCTION_27	WHILE_1
+0x4000168	          0x83f806	                              cmp eax, 6	        35	utf8.h	FUNCTION_27	SWITCH_1
+0x400016b	            0x7746	                            ja 0x40001b3	        35	utf8.h	FUNCTION_27	SWITCH_1
+0x400016d	            0x89c2	                            mov edx, eax	        35	utf8.h	FUNCTION_27	SWITCH_1
+0x400016f	    0xff24d5000000	                       jmp qword [rdx*8]	        35	utf8.h	FUNCTION_27	SWITCH_1
+0x4000176	          0x83e37f	                           and ebx, 0x7f	        36	utf8.h	FUNCTION_27	SWITCH_1
+0x4000179	          0x885d00	                      mov byte [rbp], bl	        36	utf8.h	FUNCTION_27	SWITCH_1
+0x400017c	            0xeb35	                           jmp 0x40001b3	        36	utf8.h	FUNCTION_27	SWITCH_1
+0x400017e	          0x83e31f	                           and ebx, 0x1f	        37	utf8.h	FUNCTION_27	SWITCH_1
+0x4000181	          0x83cbc0	                      or ebx, 0xffffffc0	        37	utf8.h	FUNCTION_27	SWITCH_1
+0x4000184	          0x885d00	                      mov byte [rbp], bl	        37	utf8.h	FUNCTION_27	SWITCH_1
+0x4000187	            0xeb2a	                           jmp 0x40001b3	        37	utf8.h	FUNCTION_27	SWITCH_1
+0x4000189	          0x83e30f	                            and ebx, 0xf	        38	utf8.h	FUNCTION_27	SWITCH_1
+0x400018c	          0x83cbe0	                      or ebx, 0xffffffe0	        38	utf8.h	FUNCTION_27	SWITCH_1
+0x400018f	          0x885d00	                      mov byte [rbp], bl	        38	utf8.h	FUNCTION_27	SWITCH_1
+0x4000192	            0xeb1f	                           jmp 0x40001b3	        38	utf8.h	FUNCTION_27	SWITCH_1
+0x4000194	          0x83e307	                              and ebx, 7	        39	utf8.h	FUNCTION_27	SWITCH_1
+0x4000197	          0x83cbf0	                      or ebx, 0xfffffff0	        39	utf8.h	FUNCTION_27	SWITCH_1
+0x400019a	          0x885d00	                      mov byte [rbp], bl	        39	utf8.h	FUNCTION_27	SWITCH_1
+0x400019d	            0xeb14	                           jmp 0x40001b3	        39	utf8.h	FUNCTION_27	SWITCH_1
+0x400019f	          0x83e303	                              and ebx, 3	        40	utf8.h	FUNCTION_27	SWITCH_1
+0x40001a2	          0x83cbf8	                      or ebx, 0xfffffff8	        40	utf8.h	FUNCTION_27	SWITCH_1
+0x40001a5	          0x885d00	                      mov byte [rbp], bl	        40	utf8.h	FUNCTION_27	SWITCH_1
+0x40001a8	            0xeb09	                           jmp 0x40001b3	        40	utf8.h	FUNCTION_27	SWITCH_1
+0x40001aa	          0x83e301	                              and ebx, 1	        41	utf8.h	FUNCTION_27	SWITCH_1
+0x40001ad	          0x83cbfc	                      or ebx, 0xfffffffc	        41	utf8.h	FUNCTION_27	SWITCH_1
+0x40001b0	          0x885d00	                      mov byte [rbp], bl	        41	utf8.h	FUNCTION_27	SWITCH_1
+0x40001b3	              0x5b	                                 pop rbx	        45	utf8.h	FUNCTION_27
+0x40001b4	              0x5d	                                 pop rbp	        45	utf8.h	FUNCTION_27
+0x40001b5	              0xc3	                                     ret	        45	utf8.h	FUNCTION_27
+vterm_get_attr_type	SWITCH,1:functions,0:CALL,0:ELSE,0:DO,0:FOR,0:WHILE,0:IF,0	16
+0x400077b	          0x83ff0a	                            cmp edi, 0xa	       262	vterm.c	FUNCTION_22	SWITCH_1
+0x400077e	            0x7721	                            ja 0x40007a1	       262	vterm.c	FUNCTION_22	SWITCH_1
+0x4000780	            0x89ff	                            mov edi, edi	       262	vterm.c	FUNCTION_22	SWITCH_1
+0x4000782	    0xff24fd000000	                       jmp qword [rdi*8]	       262	vterm.c	FUNCTION_22	SWITCH_1
+0x4000789	      0xb802000000	                              mov eax, 2	       264	vterm.c	FUNCTION_22	SWITCH_1
+0x400078e	              0xc3	                                     ret	       264	vterm.c	FUNCTION_22	SWITCH_1
+0x400078f	      0xb804000000	                              mov eax, 4	       270	vterm.c	FUNCTION_22	SWITCH_1
+0x4000794	              0xc3	                                     ret	       270	vterm.c	FUNCTION_22	SWITCH_1
+0x4000795	      0xb804000000	                              mov eax, 4	       271	vterm.c	FUNCTION_22	SWITCH_1
+0x400079a	              0xc3	                                     ret	       271	vterm.c	FUNCTION_22	SWITCH_1
+0x400079b	      0xb800000000	                              mov eax, 0	       273	vterm.c	FUNCTION_22	SWITCH_1
+0x40007a0	              0xc3	                                     ret	       273	vterm.c	FUNCTION_22	SWITCH_1
+0x40007a1	      0xb800000000	                              mov eax, 0	       275	vterm.c	FUNCTION_22
+0x40007a6	              0xc3	                                     ret	       275	vterm.c	FUNCTION_22
+0x40007a7	      0xb801000000	                              mov eax, 1	       263	vterm.c	FUNCTION_22	SWITCH_1
+0x40007ac	              0xc3	                                     ret	       276	vterm.c	FUNCTION_22

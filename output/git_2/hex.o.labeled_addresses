@@ -1,0 +1,103 @@
+parse_oid_hex	WHILE,0:FOR,0:ELSE,0:CALL,1:IF,1:DO,0:SWITCH,0:functions,0	23
+0x4000150	        0x488d4f28	                   lea rcx, [rdi + 0x28]	        69	hex.c	FUNCTION_4
+0x4000154	         0xf1f4000	                         nop dword [rax]	        69	hex.c	FUNCTION_4
+0x4000158	           0xfb607	                   movzx eax, byte [rdi]	      1273	cache.h	FUNCTION_32
+0x400015b	     0xfbe80000000	                   movsx eax, byte [rax]	      1273	cache.h	FUNCTION_32
+0x4000162	      0xa9f0ffffff	                    test eax, 0xfffffff0	      1283	cache.h	FUNCTION_33	CALL_2
+0x4000167	            0x7513	                           jne 0x400017c	      1283	cache.h	FUNCTION_33	CALL_2
+0x4000169	      0x440fb64701	               movzx r8d, byte [rdi + 1]	      1273	cache.h	FUNCTION_32
+0x400016e	          0xc1e004	                              shl eax, 4	      1283	cache.h	FUNCTION_33	CALL_2
+0x4000171	    0x450fbe800000	                    movsx r8d, byte [r8]	      1283	cache.h	FUNCTION_33	CALL_2
+0x4000179	          0x4409c0	                             or eax, r8d	      1283	cache.h	FUNCTION_33	CALL_2
+0x400017c	            0x85c0	                           test eax, eax	        55	hex.c	FUNCTION_2	FOR_1	IF_1
+0x400017e	            0x7820	                            js 0x40001a0	        55	hex.c	FUNCTION_2	FOR_1	IF_1
+0x4000180	        0x4883c702	                              add rdi, 2	        58	hex.c	FUNCTION_2	FOR_1
+0x4000184	        0x4883c601	                              add rsi, 1	        57	hex.c	FUNCTION_2	FOR_1
+0x4000188	          0x8846ff	                  mov byte [rsi - 1], al	        57	hex.c	FUNCTION_2	FOR_1
+0x400018b	          0x4839cf	                            cmp rdi, rcx	        53	hex.c	FUNCTION_2	FOR_1
+0x400018e	            0x75c8	                           jne 0x4000158	        53	hex.c	FUNCTION_2	FOR_1
+0x4000190	          0x48893a	                    mov qword [rdx], rdi	        72	hex.c	FUNCTION_4	IF_1
+0x4000193	            0x31c0	                            xor eax, eax	        60	hex.c	FUNCTION_2
+0x4000195	              0xc3	                                     ret	        74	hex.c	FUNCTION_4
+0x4000196	    0x662e0f1f8400	                 nop word cs:[rax + rax]	        74	hex.c	FUNCTION_4
+0x40001a0	      0xb8ffffffff	                     mov eax, 0xffffffff	        56	hex.c	FUNCTION_2	FOR_1	IF_1
+0x40001a5	              0xc3	                                     ret	        56	hex.c	FUNCTION_2	FOR_1	IF_1
+oid_to_hex_r	WHILE,0:FOR,0:ELSE,0:CALL,1:IF,0:DO,0:SWITCH,0:functions,0	19
+0x4000200	        0x4c8d4e14	                    lea r9, [rsi + 0x14]	        93	hex.c	FUNCTION_6
+0x4000204	          0x4889f8	                            mov rax, rdi	        93	hex.c	FUNCTION_6
+0x4000207	          0x4889f9	                            mov rcx, rdi	        79	hex.c	FUNCTION_5
+0x400020a	    0x660f1f440000	                    nop word [rax + rax]	        79	hex.c	FUNCTION_5
+0x4000210	        0x4883c601	                              add rsi, 1	        83	hex.c	FUNCTION_5	FOR_1
+0x4000214	         0xfb656ff	               movzx edx, byte [rsi - 1]	        83	hex.c	FUNCTION_5	FOR_1
+0x4000218	        0x4883c102	                              add rcx, 2	        83	hex.c	FUNCTION_5	FOR_1
+0x400021c	          0x4989d0	                             mov r8, rdx	        84	hex.c	FUNCTION_5	FOR_1
+0x400021f	          0x83e20f	                            and edx, 0xf	        85	hex.c	FUNCTION_5	FOR_1
+0x4000222	        0x49c1e804	                               shr r8, 4	        84	hex.c	FUNCTION_5	FOR_1
+0x4000226	     0xfb692000000	                   movzx edx, byte [rdx]	        85	hex.c	FUNCTION_5	FOR_1
+0x400022d	        0x4183e00f	                            and r8d, 0xf	        84	hex.c	FUNCTION_5	FOR_1
+0x4000231	    0x450fb6800000	                    movzx r8d, byte [r8]	        84	hex.c	FUNCTION_5	FOR_1
+0x4000239	        0x448841fe	                 mov byte [rcx - 2], r8b	        84	hex.c	FUNCTION_5	FOR_1
+0x400023d	          0x4c39ce	                             cmp rsi, r9	        82	hex.c	FUNCTION_5	FOR_1
+0x4000240	          0x8851ff	                  mov byte [rcx - 1], dl	        85	hex.c	FUNCTION_5	FOR_1
+0x4000243	            0x75cb	                           jne 0x4000210	        82	hex.c	FUNCTION_5	FOR_1
+0x4000245	        0xc6402800	                mov byte [rax + 0x28], 0	        87	hex.c	FUNCTION_5
+0x4000249	              0xc3	                                     ret	        95	hex.c	FUNCTION_6
+hex_to_bytes	WHILE,0:FOR,1:ELSE,0:CALL,2:IF,1:DO,0:SWITCH,0:functions,0	32
+0x4000040	          0x4885d2	                           test rdx, rdx	        40	hex.c	FUNCTION_1	FOR_1
+0x4000043	            0x745d	                            je 0x40000a2	        40	hex.c	FUNCTION_1	FOR_1
+0x4000045	           0xfb606	                   movzx eax, byte [rsi]	      1273	cache.h	FUNCTION_32
+0x4000048	         0xfb64e01	               movzx ecx, byte [rsi + 1]	      1273	cache.h	FUNCTION_32
+0x400004c	     0xfbe80000000	                   movsx eax, byte [rax]	        41	hex.c	FUNCTION_1	FOR_1	CALL_2
+0x4000053	     0xfbe89000000	                   movsx ecx, byte [rcx]	        41	hex.c	FUNCTION_1	FOR_1	CALL_2
+0x400005a	          0xc1e004	                              shl eax, 4	        41	hex.c	FUNCTION_1	FOR_1	CALL_2
+0x400005d	             0x9c8	                             or eax, ecx	        41	hex.c	FUNCTION_1	FOR_1	CALL_2
+0x400005f	      0xa900ffffff	                    test eax, 0xffffff00	        43	hex.c	FUNCTION_1	FOR_1	IF_1
+0x4000064	            0x7542	                           jne 0x40000a8	        43	hex.c	FUNCTION_1	FOR_1	IF_1
+0x4000066	        0x4c8d4701	                       lea r8, [rdi + 1]	        43	hex.c	FUNCTION_1	FOR_1	IF_1
+0x400006a	          0x4801fa	                            add rdx, rdi	        43	hex.c	FUNCTION_1	FOR_1	IF_1
+0x400006d	            0xeb26	                           jmp 0x4000095	        43	hex.c	FUNCTION_1	FOR_1	IF_1
+0x400006f	              0x90	                                     nop	        43	hex.c	FUNCTION_1	FOR_1	IF_1
+0x4000070	           0xfb606	                   movzx eax, byte [rsi]	      1273	cache.h	FUNCTION_32
+0x4000073	         0xfb64e01	               movzx ecx, byte [rsi + 1]	      1273	cache.h	FUNCTION_32
+0x4000077	        0x4983c001	                               add r8, 1	      1273	cache.h	FUNCTION_32
+0x400007b	     0xfbe80000000	                   movsx eax, byte [rax]	        41	hex.c	FUNCTION_1	FOR_1	CALL_2
+0x4000082	     0xfbe89000000	                   movsx ecx, byte [rcx]	        41	hex.c	FUNCTION_1	FOR_1	CALL_2
+0x4000089	          0xc1e004	                              shl eax, 4	        41	hex.c	FUNCTION_1	FOR_1	CALL_2
+0x400008c	             0x9c8	                             or eax, ecx	        41	hex.c	FUNCTION_1	FOR_1	CALL_2
+0x400008e	      0xa900ffffff	                    test eax, 0xffffff00	        43	hex.c	FUNCTION_1	FOR_1	IF_1
+0x4000093	            0x7513	                           jne 0x40000a8	        43	hex.c	FUNCTION_1	FOR_1	IF_1
+0x4000095	        0x4883c602	                              add rsi, 2	        40	hex.c	FUNCTION_1	FOR_1
+0x4000099	          0x4939d0	                             cmp r8, rdx	        40	hex.c	FUNCTION_1	FOR_1
+0x400009c	        0x418840ff	                   mov byte [r8 - 1], al	        45	hex.c	FUNCTION_1	FOR_1
+0x40000a0	            0x75ce	                           jne 0x4000070	        40	hex.c	FUNCTION_1	FOR_1
+0x40000a2	            0x31c0	                            xor eax, eax	        47	hex.c	FUNCTION_1
+0x40000a4	              0xc3	                                     ret	        47	hex.c	FUNCTION_1
+0x40000a5	           0xf1f00	                         nop dword [rax]	        47	hex.c	FUNCTION_1
+0x40000a8	      0xb8ffffffff	                     mov eax, 0xffffffff	        44	hex.c	FUNCTION_1	FOR_1	IF_1
+0x40000ad	              0xc3	                                     ret	        44	hex.c	FUNCTION_1	FOR_1	IF_1
+oid_to_hex	WHILE,0:FOR,0:ELSE,0:CALL,1:IF,0:DO,0:SWITCH,0:functions,0	25
+0x40002c0	    0x8b0500000000	            mov eax, dword [0x040002c6] 	       101	hex.c	FUNCTION_7	CALL_1
+0x40002c6	        0x4c8d4714	                    lea r8, [rdi + 0x14]	       101	hex.c	FUNCTION_7	CALL_1
+0x40002ca	          0x83c001	                              add eax, 1	       101	hex.c	FUNCTION_7	CALL_1
+0x40002cd	          0x83e003	                              and eax, 3	       101	hex.c	FUNCTION_7	CALL_1
+0x40002d0	    0x890500000000	            mov dword [0x040002d6], eax 	       101	hex.c	FUNCTION_7	CALL_1
+0x40002d6	            0x4898	                                    cdqe	       102	hex.c	FUNCTION_7	CALL_2
+0x40002d8	        0x488d1480	                  lea rdx, [rax + rax*4]	       102	hex.c	FUNCTION_7	CALL_2
+0x40002dc	    0x488d84d00000	                  lea rax, [rax + rdx*8]	       102	hex.c	FUNCTION_7	CALL_2
+0x40002e4	          0x4889c1	                            mov rcx, rax	        79	hex.c	FUNCTION_5
+0x40002e7	    0x660f1f840000	                    nop word [rax + rax]	        79	hex.c	FUNCTION_5
+0x40002f0	        0x4883c701	                              add rdi, 1	        83	hex.c	FUNCTION_5	FOR_1
+0x40002f4	         0xfb657ff	               movzx edx, byte [rdi - 1]	        83	hex.c	FUNCTION_5	FOR_1
+0x40002f8	        0x4883c102	                              add rcx, 2	        83	hex.c	FUNCTION_5	FOR_1
+0x40002fc	          0x4889d6	                            mov rsi, rdx	        84	hex.c	FUNCTION_5	FOR_1
+0x40002ff	          0x83e20f	                            and edx, 0xf	        85	hex.c	FUNCTION_5	FOR_1
+0x4000302	        0x48c1ee04	                              shr rsi, 4	        84	hex.c	FUNCTION_5	FOR_1
+0x4000306	     0xfb692000000	                   movzx edx, byte [rdx]	        85	hex.c	FUNCTION_5	FOR_1
+0x400030d	          0x83e60f	                            and esi, 0xf	        84	hex.c	FUNCTION_5	FOR_1
+0x4000310	     0xfb6b6000000	                   movzx esi, byte [rsi]	        84	hex.c	FUNCTION_5	FOR_1
+0x4000317	        0x408871fe	                 mov byte [rcx - 2], sil	        84	hex.c	FUNCTION_5	FOR_1
+0x400031b	          0x4c39c7	                             cmp rdi, r8	        82	hex.c	FUNCTION_5	FOR_1
+0x400031e	          0x8851ff	                  mov byte [rcx - 1], dl	        85	hex.c	FUNCTION_5	FOR_1
+0x4000321	            0x75cd	                           jne 0x40002f0	        82	hex.c	FUNCTION_5	FOR_1
+0x4000323	        0xc6402800	                mov byte [rax + 0x28], 0	        87	hex.c	FUNCTION_5
+0x4000327	              0xc3	                                     ret	       108	hex.c	FUNCTION_8

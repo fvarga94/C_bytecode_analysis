@@ -1,0 +1,203 @@
+alias_lookup	IF,0:FOR,0:ELSE,0:functions,0:SWITCH,0:DO,0:CALL,1:WHILE,0	16
+0x400009d	        0x4883ec28	                           sub rsp, 0x28	        21	alias.c	FUNCTION_2
+0x40000a1	    0x64488b042528	                mov rax, qword fs:[0x28]	        21	alias.c	FUNCTION_2
+0x40000aa	      0x4889442418	             mov qword [rsp + 0x18], rax	        21	alias.c	FUNCTION_2
+0x40000af	            0x31c0	                            xor eax, eax	        21	alias.c	FUNCTION_2
+0x40000b1	        0x48893c24	                    mov qword [rsp], rdi	        22	alias.c	FUNCTION_2
+0x40000b5	    0x48c744240800	                  mov qword [rsp + 8], 0	        22	alias.c	FUNCTION_2
+0x40000be	          0x4889e6	                            mov rsi, rsp	        24	alias.c	FUNCTION_2	CALL_1
+0x40000c1	      0xbf00000000	                              mov edi, 0	        24	alias.c	FUNCTION_2	CALL_1
+0x40000c6	      0xe800000000	                          call 0x40000cb	        24	alias.c	FUNCTION_2	CALL_1
+0x40000cb	      0x488b442408	                mov rax, qword [rsp + 8]	        27	alias.c	FUNCTION_2
+0x40000d0	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	        27	alias.c	FUNCTION_2
+0x40000d5	    0x644833142528	                xor rdx, qword fs:[0x28]	        27	alias.c	FUNCTION_2
+0x40000de	            0x7405	                            je 0x40000e5	        27	alias.c	FUNCTION_2
+0x40000e0	      0xe800000000	                          call 0x40000e5	        27	alias.c	FUNCTION_2
+0x40000e5	        0x4883c428	                           add rsp, 0x28	        27	alias.c	FUNCTION_2
+0x40000e9	              0xc3	                                     ret	        27	alias.c	FUNCTION_2
+config_alias_cb	IF,1:FOR,0:ELSE,0:functions,0:SWITCH,0:DO,0:CALL,3:WHILE,0	32
+0x4000040	          0x4889f8	                            mov rax, rdi	        10	alias.c	FUNCTION_1
+0x4000043	      0xb900000000	                              mov ecx, 0	        10	alias.c	FUNCTION_1
+0x4000048	        0x440fb601	                   movzx r8d, byte [rcx]	       484	git-compat-util.h	FUNCTION_11	DO_1	IF_1
+0x400004c	          0x4584c0	                           test r8b, r8b	       484	git-compat-util.h	FUNCTION_11	DO_1	IF_1
+0x400004f	            0x7426	                            je 0x4000077	       484	git-compat-util.h	FUNCTION_11	DO_1	IF_1
+0x4000051	        0x4883c001	                              add rax, 1	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x4000055	        0x4883c101	                              add rcx, 1	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x4000059	        0x443a40ff	                 cmp r8b, byte [rax - 1]	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x400005d	            0x74e9	                            je 0x4000048	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x400005f	      0xb800000000	                              mov eax, 0	        17	alias.c	FUNCTION_1
+0x4000064	              0xc3	                                     ret	        18	alias.c	FUNCTION_1
+0x4000065	      0x498d7c2408	                      lea rdi, [r12 + 8]	        15	alias.c	FUNCTION_1	CALL_3
+0x400006a	          0x4889ea	                            mov rdx, rbp	        15	alias.c	FUNCTION_1	CALL_3
+0x400006d	          0x4889de	                            mov rsi, rbx	        15	alias.c	FUNCTION_1	CALL_3
+0x4000070	      0xe800000000	                          call 0x4000075	        15	alias.c	FUNCTION_1	CALL_3
+0x4000075	            0xeb21	                           jmp 0x4000098	        15	alias.c	FUNCTION_1	CALL_3
+0x4000077	            0x4154	                                push r12	        10	alias.c	FUNCTION_1
+0x4000079	              0x55	                                push rbp	        10	alias.c	FUNCTION_1
+0x400007a	              0x53	                                push rbx	        10	alias.c	FUNCTION_1
+0x400007b	          0x4989d4	                            mov r12, rdx	        10	alias.c	FUNCTION_1
+0x400007e	          0x4889f5	                            mov rbp, rsi	        10	alias.c	FUNCTION_1
+0x4000081	          0x4889fb	                            mov rbx, rdi	        10	alias.c	FUNCTION_1
+0x4000084	          0x488b32	                    mov rsi, qword [rdx]	        14	alias.c	FUNCTION_1	IF_1	CALL_2
+0x4000087	          0x4889c7	                            mov rdi, rax	        14	alias.c	FUNCTION_1	IF_1	CALL_2
+0x400008a	      0xe800000000	                          call 0x400008f	        14	alias.c	FUNCTION_1	IF_1	CALL_2
+0x400008f	            0x85c0	                           test eax, eax	        14	alias.c	FUNCTION_1	IF_1	CALL_2
+0x4000091	            0x74d2	                            je 0x4000065	        14	alias.c	FUNCTION_1	IF_1	CALL_2
+0x4000093	      0xb800000000	                              mov eax, 0	        17	alias.c	FUNCTION_1
+0x4000098	              0x5b	                                 pop rbx	        18	alias.c	FUNCTION_1
+0x4000099	              0x5d	                                 pop rbp	        18	alias.c	FUNCTION_1
+0x400009a	            0x415c	                                 pop r12	        18	alias.c	FUNCTION_1
+0x400009c	              0xc3	                                     ret	        18	alias.c	FUNCTION_1
+split_cmdline	IF,6:FOR,1:ELSE,3:functions,0:SWITCH,0:DO,0:CALL,7:WHILE,1	147
+0x40000ea	            0x4157	                                push r15	        37	alias.c	FUNCTION_3
+0x40000ec	            0x4156	                                push r14	        37	alias.c	FUNCTION_3
+0x40000ee	            0x4155	                                push r13	        37	alias.c	FUNCTION_3
+0x40000f0	            0x4154	                                push r12	        37	alias.c	FUNCTION_3
+0x40000f2	              0x55	                                push rbp	        37	alias.c	FUNCTION_3
+0x40000f3	              0x53	                                push rbx	        37	alias.c	FUNCTION_3
+0x40000f4	        0x4883ec18	                           sub rsp, 0x18	        37	alias.c	FUNCTION_3
+0x40000f8	          0x4889fd	                            mov rbp, rdi	        37	alias.c	FUNCTION_3
+0x40000fb	          0x4989f7	                            mov r15, rsi	        37	alias.c	FUNCTION_3
+0x40000fe	      0xbf80000000	                           mov edi, 0x80	        41	alias.c	FUNCTION_3	CALL_1
+0x4000103	      0xe800000000	                          call 0x4000108	        41	alias.c	FUNCTION_3	CALL_1
+0x4000108	          0x498907	                    mov qword [r15], rax	        41	alias.c	FUNCTION_3	CALL_1
+0x400010b	          0x488928	                    mov qword [rax], rbp	        44	alias.c	FUNCTION_3
+0x400010e	    0x41bc00000000	                             mov r12d, 0	        39	alias.c	FUNCTION_3
+0x4000114	    0x41bd10000000	                          mov r13d, 0x10	        38	alias.c	FUNCTION_3
+0x400011a	    0xc74424080100	                  mov dword [rsp + 8], 1	        44	alias.c	FUNCTION_3
+0x4000122	      0xba00000000	                              mov edx, 0	        45	alias.c	FUNCTION_3	FOR_1
+0x4000127	      0xbb00000000	                              mov ebx, 0	        45	alias.c	FUNCTION_3	FOR_1
+0x400012c	      0xe920010000	                           jmp 0x4000251	        45	alias.c	FUNCTION_3	FOR_1
+0x4000131	          0x4584e4	                         test r12b, r12b	        47	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x4000134	     0xf85c8000000	                           jne 0x4000202	        47	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x400013a	           0xfb6c8	                           movzx ecx, al	        47	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x400013d	    0xf68100000000	                      test byte [rcx], 1	        47	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x4000144	     0xf84a8000000	                            je 0x40001f2	        47	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x400014a	          0x8d4201	                      lea eax, [rdx + 1]	        48	alias.c	FUNCTION_3	FOR_1	IF_1
+0x400014d	        0x8944240c	              mov dword [rsp + 0xc], eax	        48	alias.c	FUNCTION_3	FOR_1	IF_1
+0x4000151	          0x4863d2	                         movsxd rdx, edx	        48	alias.c	FUNCTION_3	FOR_1	IF_1
+0x4000154	      0xc644150000	                 mov byte [rbp + rdx], 0	        48	alias.c	FUNCTION_3	FOR_1	IF_1
+0x4000159	          0x83c301	                              add ebx, 1	        49	alias.c	FUNCTION_3	FOR_1	IF_1	WHILE_1
+0x400015c	          0x4863c3	                         movsxd rax, ebx	        49	alias.c	FUNCTION_3	FOR_1	IF_1	WHILE_1
+0x400015f	       0xfb6440500	             movzx eax, byte [rbp + rax]	        49	alias.c	FUNCTION_3	FOR_1	IF_1	WHILE_1
+0x4000164	            0x84c0	                             test al, al	        49	alias.c	FUNCTION_3	FOR_1	IF_1	WHILE_1
+0x4000166	            0x740c	                            je 0x4000174	        49	alias.c	FUNCTION_3	FOR_1	IF_1	WHILE_1
+0x4000168	           0xfb6c0	                           movzx eax, al	        50	alias.c	FUNCTION_3	FOR_1	IF_1	WHILE_1	CALL_3
+0x400016b	    0xf68000000000	                      test byte [rax], 1	        50	alias.c	FUNCTION_3	FOR_1	IF_1	WHILE_1	CALL_3
+0x4000172	            0x75e5	                           jne 0x4000159	        50	alias.c	FUNCTION_3	FOR_1	IF_1	WHILE_1	CALL_3
+0x4000174	        0x8b442408	                mov eax, dword [rsp + 8]	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x4000178	        0x448d7001	                     lea r14d, [rax + 1]	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x400017c	          0x4539f5	                          cmp r13d, r14d	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x400017f	            0x7d52	                           jge 0x40001d3	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x4000181	      0x438d446d30	          lea eax, [r13 + r13*2 + 0x30] 	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x4000186	          0x4189c5	                           mov r13d, eax	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x4000189	        0x41c1ed1f	                          shr r13d, 0x1f	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x400018d	          0x4101c5	                           add r13d, eax	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x4000190	          0x41d1fd	                             sar r13d, 1	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x4000193	          0x4539ee	                          cmp r14d, r13d	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x4000196	        0x450f4dee	                       cmovge r13d, r14d	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x400019a	          0x4963d5	                        movsxd rdx, r13d	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x400019d	    0x48b8ffffffff	         movabs rax, 0x1fffffffffffffff 	       795	git-compat-util.h	FUNCTION_19	IF_1	CALL_1
+0x40001a7	          0x4839c2	                            cmp rdx, rax	       795	git-compat-util.h	FUNCTION_19	IF_1	CALL_1
+0x40001aa	            0x7614	                           jbe 0x40001c0	       795	git-compat-util.h	FUNCTION_19	IF_1	CALL_1
+0x40001ac	      0xbe08000000	                              mov esi, 8	       796	git-compat-util.h	FUNCTION_19	IF_1	CALL_2
+0x40001b1	      0xbf00000000	                              mov edi, 0	       796	git-compat-util.h	FUNCTION_19	IF_1	CALL_2
+0x40001b6	      0xb800000000	                              mov eax, 0	       796	git-compat-util.h	FUNCTION_19	IF_1	CALL_2
+0x40001bb	      0xe800000000	                          call 0x40001c0	       796	git-compat-util.h	FUNCTION_19	IF_1	CALL_2
+0x40001c0	    0x488d34d50000	                        lea rsi, [rdx*8]	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x40001c8	          0x498b3f	                    mov rdi, qword [r15]	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x40001cb	      0xe800000000	                          call 0x40001d0	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x40001d0	          0x498907	                    mov qword [r15], rax	        52	alias.c	FUNCTION_3	FOR_1	IF_1	CALL_4
+0x40001d3	      0x4863442408	            movsxd rax, dword [rsp + 8] 	        53	alias.c	FUNCTION_3	FOR_1	IF_1
+0x40001d8	          0x498b0f	                    mov rcx, qword [r15]	        53	alias.c	FUNCTION_3	FOR_1	IF_1
+0x40001db	        0x8b7c240c	              mov edi, dword [rsp + 0xc]	        53	alias.c	FUNCTION_3	FOR_1	IF_1
+0x40001df	          0x4863d7	                         movsxd rdx, edi	        53	alias.c	FUNCTION_3	FOR_1	IF_1
+0x40001e2	          0x4801ea	                            add rdx, rbp	        53	alias.c	FUNCTION_3	FOR_1	IF_1
+0x40001e5	        0x488914c1	            mov qword [rcx + rax*8], rdx	        53	alias.c	FUNCTION_3	FOR_1	IF_1
+0x40001e9	      0x4489742408	               mov dword [rsp + 8], r14d	        53	alias.c	FUNCTION_3	FOR_1	IF_1
+0x40001ee	            0x89fa	                            mov edx, edi	        48	alias.c	FUNCTION_3	FOR_1	IF_1
+0x40001f0	            0xeb5f	                           jmp 0x4000251	        53	alias.c	FUNCTION_3	FOR_1	IF_1
+0x40001f2	            0x3c27	                            cmp al, 0x27	        54	alias.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+0x40001f4	            0x7404	                            je 0x40001fa	        54	alias.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+0x40001f6	            0x3c22	                            cmp al, 0x22	        54	alias.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+0x40001f8	            0x7518	                           jne 0x4000212	        54	alias.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+0x40001fa	          0x83c301	                              add ebx, 1	        56	alias.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+0x40001fd	          0x4189c4	                           mov r12d, eax	        55	alias.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+0x4000200	            0xeb4f	                           jmp 0x4000251	        56	alias.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+0x4000202	          0x4138c4	                            cmp r12b, al	        57	alias.c	FUNCTION_3	FOR_1	ELSE_2	IF_3
+0x4000205	            0x750b	                           jne 0x4000212	        57	alias.c	FUNCTION_3	FOR_1	ELSE_2	IF_3
+0x4000207	          0x83c301	                              add ebx, 1	        59	alias.c	FUNCTION_3	FOR_1	ELSE_2	IF_3
+0x400020a	    0x41bc00000000	                             mov r12d, 0	        58	alias.c	FUNCTION_3	FOR_1	ELSE_2	IF_3
+0x4000210	            0xeb3f	                           jmp 0x4000251	        58	alias.c	FUNCTION_3	FOR_1	ELSE_2	IF_3
+0x4000212	            0x3c5c	                            cmp al, 0x5c	        61	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4
+0x4000214	            0x752e	                           jne 0x4000244	        61	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4
+0x4000216	        0x4180fc27	                          cmp r12b, 0x27	        61	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4
+0x400021a	            0x7428	                            je 0x4000244	        61	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4
+0x400021c	          0x83c301	                              add ebx, 1	        62	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4
+0x400021f	          0x4863c3	                         movsxd rax, ebx	        63	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4
+0x4000222	       0xfb6440500	             movzx eax, byte [rbp + rax]	        63	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4
+0x4000227	            0x84c0	                             test al, al	        64	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4	IF_5
+0x4000229	            0x7519	                           jne 0x4000244	        64	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4	IF_5
+0x400022b	          0x498b3f	                    mov rdi, qword [r15]	        65	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4	IF_5	CALL_5
+0x400022e	      0xe800000000	                          call 0x4000233	        65	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4	IF_5	CALL_5
+0x4000233	    0x49c707000000	                      mov qword [r15], 0	        65	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4	IF_5	CALL_5
+0x400023a	      0xb8ffffffff	                     mov eax, 0xffffffff	        66	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4	IF_5
+0x400023f	      0xe9ac000000	                           jmp 0x40002f0	        66	alias.c	FUNCTION_3	FOR_1	ELSE_3	IF_4	IF_5
+0x4000244	          0x4863ca	                         movsxd rcx, edx	        69	alias.c	FUNCTION_3	FOR_1	ELSE_3
+0x4000247	        0x88440d00	                mov byte [rbp + rcx], al	        69	alias.c	FUNCTION_3	FOR_1	ELSE_3
+0x400024b	          0x83c301	                              add ebx, 1	        70	alias.c	FUNCTION_3	FOR_1	ELSE_3
+0x400024e	          0x8d5201	                      lea edx, [rdx + 1]	        69	alias.c	FUNCTION_3	FOR_1	ELSE_3
+0x4000251	          0x4863c3	                         movsxd rax, ebx	        45	alias.c	FUNCTION_3	FOR_1
+0x4000254	       0xfb6440500	             movzx eax, byte [rbp + rax]	        45	alias.c	FUNCTION_3	FOR_1
+0x4000259	            0x84c0	                             test al, al	        45	alias.c	FUNCTION_3	FOR_1
+0x400025b	     0xf85d0feffff	                           jne 0x4000131	        45	alias.c	FUNCTION_3	FOR_1
+0x4000261	          0x4863d2	                         movsxd rdx, edx	        74	alias.c	FUNCTION_3
+0x4000264	      0xc644150000	                 mov byte [rbp + rdx], 0	        74	alias.c	FUNCTION_3
+0x4000269	          0x4584e4	                         test r12b, r12b	        76	alias.c	FUNCTION_3	IF_6
+0x400026c	            0x7416	                            je 0x4000284	        76	alias.c	FUNCTION_3	IF_6
+0x400026e	          0x498b3f	                    mov rdi, qword [r15]	        77	alias.c	FUNCTION_3	IF_6	CALL_6
+0x4000271	      0xe800000000	                          call 0x4000276	        77	alias.c	FUNCTION_3	IF_6	CALL_6
+0x4000276	    0x49c707000000	                      mov qword [r15], 0	        77	alias.c	FUNCTION_3	IF_6	CALL_6
+0x400027d	      0xb8feffffff	                     mov eax, 0xfffffffe	        78	alias.c	FUNCTION_3	IF_6
+0x4000282	            0xeb6c	                           jmp 0x40002f0	        78	alias.c	FUNCTION_3	IF_6
+0x4000284	        0x8b442408	                mov eax, dword [rsp + 8]	        81	alias.c	FUNCTION_3	CALL_7
+0x4000288	          0x83c001	                              add eax, 1	        81	alias.c	FUNCTION_3	CALL_7
+0x400028b	          0x4139c5	                           cmp r13d, eax	        81	alias.c	FUNCTION_3	CALL_7
+0x400028e	            0x7d4c	                           jge 0x40002dc	        81	alias.c	FUNCTION_3	CALL_7
+0x4000290	      0x438d546d30	          lea edx, [r13 + r13*2 + 0x30] 	        81	alias.c	FUNCTION_3	CALL_7
+0x4000295	            0x89d1	                            mov ecx, edx	        81	alias.c	FUNCTION_3	CALL_7
+0x4000297	          0xc1e91f	                           shr ecx, 0x1f	        81	alias.c	FUNCTION_3	CALL_7
+0x400029a	             0x1ca	                            add edx, ecx	        81	alias.c	FUNCTION_3	CALL_7
+0x400029c	            0xd1fa	                              sar edx, 1	        81	alias.c	FUNCTION_3	CALL_7
+0x400029e	            0x39d0	                            cmp eax, edx	        81	alias.c	FUNCTION_3	CALL_7
+0x40002a0	           0xf4cc2	                          cmovl eax, edx	        81	alias.c	FUNCTION_3	CALL_7
+0x40002a3	          0x4863d0	                         movsxd rdx, eax	        81	alias.c	FUNCTION_3	CALL_7
+0x40002a6	    0x48b8ffffffff	         movabs rax, 0x1fffffffffffffff 	       795	git-compat-util.h	FUNCTION_19	IF_1	CALL_1
+0x40002b0	          0x4839c2	                            cmp rdx, rax	       795	git-compat-util.h	FUNCTION_19	IF_1	CALL_1
+0x40002b3	            0x7614	                           jbe 0x40002c9	       795	git-compat-util.h	FUNCTION_19	IF_1	CALL_1
+0x40002b5	      0xbe08000000	                              mov esi, 8	       796	git-compat-util.h	FUNCTION_19	IF_1	CALL_2
+0x40002ba	      0xbf00000000	                              mov edi, 0	       796	git-compat-util.h	FUNCTION_19	IF_1	CALL_2
+0x40002bf	      0xb800000000	                              mov eax, 0	       796	git-compat-util.h	FUNCTION_19	IF_1	CALL_2
+0x40002c4	      0xe800000000	                          call 0x40002c9	       796	git-compat-util.h	FUNCTION_19	IF_1	CALL_2
+0x40002c9	    0x488d34d50000	                        lea rsi, [rdx*8]	        81	alias.c	FUNCTION_3	CALL_7
+0x40002d1	          0x498b3f	                    mov rdi, qword [r15]	        81	alias.c	FUNCTION_3	CALL_7
+0x40002d4	      0xe800000000	                          call 0x40002d9	        81	alias.c	FUNCTION_3	CALL_7
+0x40002d9	          0x498907	                    mov qword [r15], rax	        81	alias.c	FUNCTION_3	CALL_7
+0x40002dc	        0x8b742408	                mov esi, dword [rsp + 8]	        82	alias.c	FUNCTION_3
+0x40002e0	          0x4863d6	                         movsxd rdx, esi	        82	alias.c	FUNCTION_3
+0x40002e3	          0x498b07	                    mov rax, qword [r15]	        82	alias.c	FUNCTION_3
+0x40002e6	    0x48c704d00000	              mov qword [rax + rdx*8], 0	        82	alias.c	FUNCTION_3
+0x40002ee	            0x89f0	                            mov eax, esi	        84	alias.c	FUNCTION_3
+0x40002f0	        0x4883c418	                           add rsp, 0x18	        85	alias.c	FUNCTION_3
+0x40002f4	              0x5b	                                 pop rbx	        85	alias.c	FUNCTION_3
+0x40002f5	              0x5d	                                 pop rbp	        85	alias.c	FUNCTION_3
+0x40002f6	            0x415c	                                 pop r12	        85	alias.c	FUNCTION_3
+0x40002f8	            0x415d	                                 pop r13	        85	alias.c	FUNCTION_3
+0x40002fa	            0x415e	                                 pop r14	        85	alias.c	FUNCTION_3
+0x40002fc	            0x415f	                                 pop r15	        85	alias.c	FUNCTION_3
+0x40002fe	              0xc3	                                     ret	        85	alias.c	FUNCTION_3
+split_cmdline_strerror	IF,0:FOR,0:ELSE,0:functions,0:SWITCH,0:DO,0:CALL,0:WHILE,0	4
+0x40002ff	            0xf7d7	                                 not edi	        89	alias.c	FUNCTION_4
+0x4000301	          0x4863ff	                         movsxd rdi, edi	        89	alias.c	FUNCTION_4
+0x4000304	    0x488b04fd0000	                  mov rax, qword [rdi*8]	        89	alias.c	FUNCTION_4
+0x400030c	              0xc3	                                     ret	        90	alias.c	FUNCTION_4

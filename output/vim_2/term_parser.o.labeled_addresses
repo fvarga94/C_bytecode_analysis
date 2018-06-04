@@ -1,0 +1,449 @@
+vterm_parser_set_callbacks	FOR,0:functions,0:SWITCH,0:CALL,0:DO,0:WHILE,0:IF,0:ELSE,0	3
+0x40007d0	    0x4889b7d00000	             mov qword [rdi + 0xd0], rsi	       339	parser.c	FUNCTION_10
+0x40007d7	    0x488997d80000	             mov qword [rdi + 0xd8], rdx	       340	parser.c	FUNCTION_10
+0x40007de	              0xc3	                                     ret	       340	parser.c	FUNCTION_10
+append_strbuffer	FOR,0:functions,0:SWITCH,0:CALL,2:DO,0:WHILE,0:IF,2:ELSE,0	21
+0x4000040	              0x55	                                push rbp	        65	parser.c	FUNCTION_5
+0x4000041	              0x53	                                push rbx	        65	parser.c	FUNCTION_5
+0x4000042	          0x4889d3	                            mov rbx, rdx	        65	parser.c	FUNCTION_5
+0x4000045	        0x4883ec08	                              sub rsp, 8	        65	parser.c	FUNCTION_5
+0x4000049	    0x488b8ff80000	            mov rcx, qword [rdi + 0xf8] 	        66	parser.c	FUNCTION_5	IF_1
+0x4000050	    0x488b87f00000	            mov rax, qword [rdi + 0xf0] 	        66	parser.c	FUNCTION_5	IF_1
+0x4000057	          0x4829c8	                            sub rax, rcx	        66	parser.c	FUNCTION_5	IF_1
+0x400005a	          0x4839d0	                            cmp rax, rdx	        66	parser.c	FUNCTION_5	IF_1
+0x400005d	        0x480f46d8	                         cmovbe rbx, rax	        66	parser.c	FUNCTION_5	IF_1
+0x4000061	          0x4885db	                           test rbx, rbx	        71	parser.c	FUNCTION_5	IF_2
+0x4000064	            0x741c	                            je 0x4000082	        71	parser.c	FUNCTION_5	IF_2
+0x4000066	    0x48038fe80000	             add rcx, qword [rdi + 0xe8]	       126	string3.h	FUNCTION_20	CALL_3
+0x400006d	          0x4889fd	                            mov rbp, rdi	       126	string3.h	FUNCTION_20	CALL_3
+0x4000070	          0x4889da	                            mov rdx, rbx	       126	string3.h	FUNCTION_20	CALL_3
+0x4000073	          0x4889cf	                            mov rdi, rcx	       126	string3.h	FUNCTION_20	CALL_3
+0x4000076	      0xe800000000	                          call 0x400007b	       126	string3.h	FUNCTION_20	CALL_3
+0x400007b	    0x48019df80000	            add qword [rbp + 0xf8], rbx 	        73	parser.c	FUNCTION_5	IF_2
+0x4000082	        0x4883c408	                              add rsp, 8	        75	parser.c	FUNCTION_5
+0x4000086	              0x5b	                                 pop rbx	        75	parser.c	FUNCTION_5
+0x4000087	              0x5d	                                 pop rbp	        75	parser.c	FUNCTION_5
+0x4000088	              0xc3	                                     ret	        75	parser.c	FUNCTION_5
+done_string	FOR,0:functions,0:SWITCH,1:CALL,4:DO,0:WHILE,0:IF,7:ELSE,1	45
+0x4000090	              0x53	                                push rbx	        90	parser.c	FUNCTION_8
+0x4000091	          0x4889fb	                            mov rbx, rdi	        90	parser.c	FUNCTION_8
+0x4000094	          0x4889f7	                            mov rdi, rsi	        90	parser.c	FUNCTION_8
+0x4000097	    0x488b83f80000	            mov rax, qword [rbx + 0xf8] 	        91	parser.c	FUNCTION_8	IF_1
+0x400009e	          0x4889d6	                            mov rsi, rdx	        90	parser.c	FUNCTION_8
+0x40000a1	          0x4885c0	                           test rax, rax	        91	parser.c	FUNCTION_8	IF_1
+0x40000a4	            0x7442	                            je 0x40000e8	        91	parser.c	FUNCTION_8	IF_1
+0x40000a6	          0x4885ff	                           test rdi, rdi	        92	parser.c	FUNCTION_8	IF_1	IF_2
+0x40000a9	            0x7475	                            je 0x4000120	        92	parser.c	FUNCTION_8	IF_1	IF_2
+0x40000ab	          0x4889fe	                            mov rsi, rdi	        93	parser.c	FUNCTION_8	IF_1	CALL_1
+0x40000ae	          0x4889df	                            mov rdi, rbx	        93	parser.c	FUNCTION_8	IF_1	CALL_1
+0x40000b1	      0xe88affffff	               call sym.append_strbuffer	        93	parser.c	FUNCTION_8	IF_1	CALL_1
+0x40000b6	    0x488bb3f80000	            mov rsi, qword [rbx + 0xf8] 	        93	parser.c	FUNCTION_8	IF_1	CALL_1
+0x40000bd	    0x8b83e0000000	            mov eax, dword [rbx + 0xe0] 	       103	parser.c	FUNCTION_8	SWITCH_1
+0x40000c3	    0x488bbbe80000	            mov rdi, qword [rbx + 0xe8] 	        95	parser.c	FUNCTION_8	IF_1
+0x40000ca	            0x85c0	                           test eax, eax	       103	parser.c	FUNCTION_8	SWITCH_1
+0x40000cc	            0x752b	                           jne 0x40000f9	       103	parser.c	FUNCTION_8	SWITCH_1
+0x40000ce	    0x488b83d00000	            mov rax, qword [rbx + 0xd0] 	       105	parser.c	FUNCTION_8	SWITCH_1	IF_4
+0x40000d5	          0x4885c0	                           test rax, rax	       105	parser.c	FUNCTION_8	SWITCH_1	IF_4
+0x40000d8	            0x7409	                            je 0x40000e3	       105	parser.c	FUNCTION_8	SWITCH_1	IF_4
+0x40000da	        0x488b4020	            mov rax, qword [rax + 0x20] 	       105	parser.c	FUNCTION_8	SWITCH_1	IF_4
+0x40000de	          0x4885c0	                           test rax, rax	       105	parser.c	FUNCTION_8	SWITCH_1	IF_4
+0x40000e1	            0x7530	                           jne 0x4000113	       105	parser.c	FUNCTION_8	SWITCH_1	IF_4
+0x40000e3	              0x5b	                                 pop rbx	       123	parser.c	FUNCTION_8
+0x40000e4	              0xc3	                                     ret	       123	parser.c	FUNCTION_8
+0x40000e5	           0xf1f00	                         nop dword [rax]	       123	parser.c	FUNCTION_8
+0x40000e8	          0x4885ff	                           test rdi, rdi	       100	parser.c	FUNCTION_8	ELSE_1	IF_3
+0x40000eb	        0x480f44f0	                          cmove rsi, rax	       100	parser.c	FUNCTION_8	ELSE_1	IF_3
+0x40000ef	    0x8b83e0000000	            mov eax, dword [rbx + 0xe0] 	       103	parser.c	FUNCTION_8	SWITCH_1
+0x40000f5	            0x85c0	                           test eax, eax	       103	parser.c	FUNCTION_8	SWITCH_1
+0x40000f7	            0x74d5	                            je 0x40000ce	       103	parser.c	FUNCTION_8	SWITCH_1
+0x40000f9	          0x83f801	                              cmp eax, 1	       103	parser.c	FUNCTION_8	SWITCH_1
+0x40000fc	            0x75e5	                           jne 0x40000e3	       103	parser.c	FUNCTION_8	SWITCH_1
+0x40000fe	    0x488b83d00000	            mov rax, qword [rbx + 0xd0] 	       113	parser.c	FUNCTION_8	SWITCH_1	IF_6
+0x4000105	          0x4885c0	                           test rax, rax	       113	parser.c	FUNCTION_8	SWITCH_1	IF_6
+0x4000108	            0x74d9	                            je 0x40000e3	       113	parser.c	FUNCTION_8	SWITCH_1	IF_6
+0x400010a	        0x488b4028	            mov rax, qword [rax + 0x28] 	       113	parser.c	FUNCTION_8	SWITCH_1	IF_6
+0x400010e	          0x4885c0	                           test rax, rax	       113	parser.c	FUNCTION_8	SWITCH_1	IF_6
+0x4000111	            0x74d0	                            je 0x40000e3	       113	parser.c	FUNCTION_8	SWITCH_1	IF_6
+0x4000113	    0x488b93d80000	            mov rdx, qword [rbx + 0xd8] 	       114	parser.c	FUNCTION_8	SWITCH_1	IF_6	IF_7
+0x400011a	              0x5b	                                 pop rbx	       123	parser.c	FUNCTION_8
+0x400011b	            0xffe0	                                 jmp rax	       114	parser.c	FUNCTION_8	SWITCH_1	IF_6	IF_7
+0x400011d	           0xf1f00	                         nop dword [rax]	       114	parser.c	FUNCTION_8	SWITCH_1	IF_6	IF_7
+0x4000120	          0x4889c6	                            mov rsi, rax	       114	parser.c	FUNCTION_8	SWITCH_1	IF_6	IF_7
+0x4000123	            0xeb98	                           jmp 0x40000bd	       114	parser.c	FUNCTION_8	SWITCH_1	IF_6	IF_7
+vterm_parser_get_cbdata	FOR,0:functions,0:SWITCH,0:CALL,0:DO,0:WHILE,0:IF,0:ELSE,0	2
+0x40007e0	    0x488b87d80000	            mov rax, qword [rdi + 0xd8] 	       345	parser.c	FUNCTION_11
+0x40007e7	              0xc3	                                     ret	       346	parser.c	FUNCTION_11
+vterm_input_write	FOR,1:functions,0:SWITCH,4:CALL,31:DO,0:WHILE,0:IF,29:ELSE,11	373
+0x4000130	            0x4157	                                push r15	       126	parser.c	FUNCTION_9
+0x4000132	            0x4156	                                push r14	       126	parser.c	FUNCTION_9
+0x4000134	      0xb900000000	                              mov ecx, 0	       140	parser.c	FUNCTION_9	SWITCH_1
+0x4000139	            0x4155	                                push r13	       126	parser.c	FUNCTION_9
+0x400013b	            0x4154	                                push r12	       126	parser.c	FUNCTION_9
+0x400013d	          0x4989d6	                            mov r14, rdx	       126	parser.c	FUNCTION_9
+0x4000140	              0x55	                                push rbp	       126	parser.c	FUNCTION_9
+0x4000141	              0x53	                                push rbx	       126	parser.c	FUNCTION_9
+0x4000142	        0x4883ec48	                           sub rsp, 0x48	       126	parser.c	FUNCTION_9
+0x4000146	    0x64488b042528	                mov rax, qword fs:[0x28]	       126	parser.c	FUNCTION_9
+0x400014f	      0x4889442438	             mov qword [rsp + 0x38], rax	       126	parser.c	FUNCTION_9
+0x4000154	            0x31c0	                            xor eax, eax	       126	parser.c	FUNCTION_9
+0x4000156	          0x8b4720	            mov eax, dword [rdi + 0x20] 	       130	parser.c	FUNCTION_9	SWITCH_1
+0x4000159	          0x83e805	                              sub eax, 5	       130	parser.c	FUNCTION_9	SWITCH_1
+0x400015c	          0x83f801	                              cmp eax, 1	       140	parser.c	FUNCTION_9	SWITCH_1
+0x400015f	        0x480f46ce	                         cmovbe rcx, rsi	       140	parser.c	FUNCTION_9	SWITCH_1
+0x4000163	          0x4885d2	                           test rdx, rdx	       148	parser.c	FUNCTION_9	FOR_1
+0x4000166	     0xf8499000000	                            je 0x4000205	       148	parser.c	FUNCTION_9	FOR_1
+0x400016c	        0x488d4728	                   lea rax, [rdi + 0x28]	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x4000170	          0x4989fc	                            mov r12, rdi	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x4000173	          0x4989f5	                            mov r13, rsi	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x4000176	          0x4989cf	                            mov r15, rcx	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x4000179	            0x31db	                            xor ebx, ebx	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x400017b	      0x4889442408	                mov qword [rsp + 8], rax	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x4000180	        0x488d4750	                   lea rax, [rdi + 0x50]	        38	parser.c	FUNCTION_3	IF_2	IF_3
+0x4000184	      0x4889442410	             mov qword [rsp + 0x10], rax	        38	parser.c	FUNCTION_3	IF_2	IF_3
+0x4000189	        0x488d473c	                   lea rax, [rdi + 0x3c]	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x400018d	      0x4889442418	             mov qword [rsp + 0x18], rax	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x4000192	    0x660f1f440000	                    nop word [rax + rax]	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x4000198	      0x498d7c1d00	                    lea rdi, [r13 + rbx]	       149	parser.c	FUNCTION_9	FOR_1
+0x400019d	           0xfb62f	                   movzx ebp, byte [rdi]	       149	parser.c	FUNCTION_9	FOR_1
+0x40001a0	          0x4084ed	                           test bpl, bpl	       151	parser.c	FUNCTION_9	FOR_1	IF_1
+0x40001a3	            0x744b	                            je 0x40001f0	       151	parser.c	FUNCTION_9	FOR_1	IF_1
+0x40001a5	        0x4080fd7f	                           cmp bpl, 0x7f	       151	parser.c	FUNCTION_9	FOR_1	IF_1
+0x40001a9	            0x7445	                            je 0x40001f0	       151	parser.c	FUNCTION_9	FOR_1	IF_1
+0x40001ab	            0x89e8	                            mov eax, ebp	       158	parser.c	FUNCTION_9	FOR_1	IF_3
+0x40001ad	          0x83e0fd	                     and eax, 0xfffffffd	       158	parser.c	FUNCTION_9	FOR_1	IF_3
+0x40001b0	            0x3c18	                            cmp al, 0x18	       158	parser.c	FUNCTION_9	FOR_1	IF_3
+0x40001b2	     0xf84f8000000	                            je 0x40002b0	       158	parser.c	FUNCTION_9	FOR_1	IF_3
+0x40001b8	        0x4080fd1b	                           cmp bpl, 0x1b	       162	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4
+0x40001bc	     0xf842e010000	                            je 0x40002f0	       162	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4
+0x40001c2	        0x4080fd07	                              cmp bpl, 7	       170	parser.c	FUNCTION_9	FOR_1	ELSE_3	IF_6
+0x40001c6	     0xf8454010000	                            je 0x4000320	       170	parser.c	FUNCTION_9	FOR_1	ELSE_3	IF_6
+0x40001cc	        0x4080fd1f	                           cmp bpl, 0x1f	       174	parser.c	FUNCTION_9	FOR_1	ELSE_4	IF_7
+0x40001d0	     0xf86a2010000	                           jbe 0x4000378	       174	parser.c	FUNCTION_9	FOR_1	ELSE_4	IF_7
+0x40001d6	    0x41837c242006	               cmp dword [r12 + 0x20], 6	       184	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x40001dc	            0x771e	                            ja 0x40001fc	       184	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x40001de	      0x418b442420	            mov eax, dword [r12 + 0x20] 	       184	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x40001e3	    0xff24c5000000	                       jmp qword [rax*8]	       184	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x40001ea	    0x660f1f440000	                    nop word [rax + rax]	       184	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x40001f0	    0x41837c242004	               cmp dword [r12 + 0x20], 4	       152	parser.c	FUNCTION_9	FOR_1	IF_1	IF_2
+0x40001f6	     0xf87cc000000	                            ja 0x40002c8	       152	parser.c	FUNCTION_9	FOR_1	IF_1	IF_2
+0x40001fc	        0x4883c301	                              add rbx, 1	       152	parser.c	FUNCTION_9	FOR_1	IF_1	IF_2
+0x4000200	          0x4939de	                            cmp r14, rbx	       148	parser.c	FUNCTION_9	FOR_1
+0x4000203	            0x7793	                            ja 0x4000198	       148	parser.c	FUNCTION_9	FOR_1
+0x4000205	      0x488b742438	            mov rsi, qword [rsp + 0x38] 	       335	parser.c	FUNCTION_9
+0x400020a	    0x644833342528	                xor rsi, qword fs:[0x28]	       335	parser.c	FUNCTION_9
+0x4000213	          0x4c89f0	                            mov rax, r14	       335	parser.c	FUNCTION_9
+0x4000216	     0xf85a2050000	                           jne 0x40007be	       335	parser.c	FUNCTION_9
+0x400021c	        0x4883c448	                           add rsp, 0x48	       335	parser.c	FUNCTION_9
+0x4000220	              0x5b	                                 pop rbx	       335	parser.c	FUNCTION_9
+0x4000221	              0x5d	                                 pop rbp	       335	parser.c	FUNCTION_9
+0x4000222	            0x415c	                                 pop r12	       335	parser.c	FUNCTION_9
+0x4000224	            0x415d	                                 pop r13	       335	parser.c	FUNCTION_9
+0x4000226	            0x415e	                                 pop r14	       335	parser.c	FUNCTION_9
+0x4000228	            0x415f	                                 pop r15	       335	parser.c	FUNCTION_9
+0x400022a	              0xc3	                                     ret	       335	parser.c	FUNCTION_9
+0x400022b	       0xf1f440000	                   nop dword [rax + rax]	       335	parser.c	FUNCTION_9
+0x4000230	        0x4080fd5c	                           cmp bpl, 0x5c	       186	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10
+0x4000234	     0xf8457050000	                            je 0x4000791	       186	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10
+0x400023a	    0x41c744242004	               mov dword [r12 + 0x20], 4	       192	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x4000243	        0x4080fd5b	                           cmp bpl, 0x5b	       196	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x4000247	     0xf8464020000	                            je 0x40004b1	       196	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x400024d	        0x4080fd5d	                           cmp bpl, 0x5d	       196	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x4000251	     0xf84cf030000	                            je 0x4000626	       196	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x4000257	        0x4080fd50	                           cmp bpl, 0x50	       196	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x400025b	     0xf849b030000	                            je 0x40005fc	       196	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x4000261	          0x8d45e0	                   lea eax, [rbp - 0x20]	       210	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	CALL_13
+0x4000264	            0x3c0f	                             cmp al, 0xf	       210	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	CALL_13
+0x4000266	     0xf865c040000	                           jbe 0x40006c8	       210	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	CALL_13
+0x400026c	      0x418b442424	            mov eax, dword [r12 + 0x24] 	       214	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	ELSE_5	IF_13
+0x4000271	            0x85c0	                           test eax, eax	       214	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	ELSE_5	IF_13
+0x4000273	     0xf85b2040000	                           jne 0x400072b	       214	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	ELSE_5	IF_13
+0x4000279	          0x8d55c0	                   lea edx, [rbp - 0x40]	       214	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	ELSE_5	IF_13
+0x400027c	          0x80fa1f	                            cmp dl, 0x1f	       214	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	ELSE_5	IF_13
+0x400027f	     0xf87a6040000	                            ja 0x400072b	       214	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	ELSE_5	IF_13
+0x4000285	    0x498b8424d000	            mov rax, qword [r12 + 0xd0] 	        15	parser.c	FUNCTION_2	IF_1
+0x400028d	          0x4885c0	                           test rax, rax	        15	parser.c	FUNCTION_2	IF_1
+0x4000290	            0x741e	                            je 0x40002b0	        15	parser.c	FUNCTION_2	IF_1
+0x4000292	        0x488b4008	                mov rax, qword [rax + 8]	        15	parser.c	FUNCTION_2	IF_1
+0x4000296	          0x4885c0	                           test rax, rax	        15	parser.c	FUNCTION_2	IF_1
+0x4000299	            0x7415	                            je 0x40002b0	        15	parser.c	FUNCTION_2	IF_1
+0x400029b	          0x8d7d40	                   lea edi, [rbp + 0x40]	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x400029e	    0x498bb424d800	            mov rsi, qword [r12 + 0xd8] 	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x40002a6	        0x400fb6ff	                          movzx edi, dil	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x40002aa	            0xffd0	                                call rax	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x40002ac	         0xf1f4000	                         nop dword [rax]	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x40002b0	    0x41c744242000	               mov dword [r12 + 0x20], 0	       189	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10	CALL_7
+0x40002b9	        0x4883c301	                              add rbx, 1	       190	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10
+0x40002bd	          0x4531ff	                          xor r15d, r15d	       189	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10	CALL_7
+0x40002c0	      0xe93bffffff	                           jmp 0x4000200	       190	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10
+0x40002c5	           0xf1f00	                         nop dword [rax]	       190	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10
+0x40002c8	          0x4889fa	                            mov rdx, rdi	        86	parser.c	FUNCTION_7	CALL_1
+0x40002cb	          0x4c89fe	                            mov rsi, r15	        86	parser.c	FUNCTION_7	CALL_1
+0x40002ce	          0x4c89e7	                            mov rdi, r12	        86	parser.c	FUNCTION_7	CALL_1
+0x40002d1	          0x4c29fa	                            sub rdx, r15	        86	parser.c	FUNCTION_7	CALL_1
+0x40002d4	        0x4883c301	                              add rbx, 1	       154	parser.c	FUNCTION_9	FOR_1	IF_1	IF_2
+0x40002d8	      0xe863fdffff	               call sym.append_strbuffer	        86	parser.c	FUNCTION_7	CALL_1
+0x40002dd	      0x4d8d7c1d00	                    lea r15, [r13 + rbx]	       154	parser.c	FUNCTION_9	FOR_1	IF_1	IF_2
+0x40002e2	      0xe919ffffff	                           jmp 0x4000200	       154	parser.c	FUNCTION_9	FOR_1	IF_1	IF_2
+0x40002e7	    0x660f1f840000	                    nop word [rax + rax]	       154	parser.c	FUNCTION_9	FOR_1	IF_1	IF_2
+0x40002f0	    0x41837c242005	               cmp dword [r12 + 0x20], 5	       164	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4	IF_5
+0x40002f6	    0x41c744242400	               mov dword [r12 + 0x24], 0	       163	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4
+0x40002ff	     0xf840b020000	                            je 0x4000510	       164	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4	IF_5
+0x4000305	    0x41c744242004	               mov dword [r12 + 0x20], 4	       167	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4	CALL_3
+0x400030e	        0x4883c301	                              add rbx, 1	       167	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4	CALL_3
+0x4000312	          0x4531ff	                          xor r15d, r15d	       167	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4	CALL_3
+0x4000315	      0xe9e6feffff	                           jmp 0x4000200	       167	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4	CALL_3
+0x400031a	    0x660f1f440000	                    nop word [rax + rax]	       167	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4	CALL_3
+0x4000320	      0x418b442420	            mov eax, dword [r12 + 0x20] 	       171	parser.c	FUNCTION_9	FOR_1	ELSE_3	IF_6
+0x4000325	          0x83f805	                              cmp eax, 5	       170	parser.c	FUNCTION_9	FOR_1	ELSE_3	IF_6
+0x4000328	     0xf846a030000	                            je 0x4000698	       170	parser.c	FUNCTION_9	FOR_1	ELSE_3	IF_6
+0x400032e	          0x83f804	                              cmp eax, 4	       175	parser.c	FUNCTION_9	FOR_1	ELSE_4	IF_7	IF_8
+0x4000331	            0x774f	                            ja 0x4000382	       175	parser.c	FUNCTION_9	FOR_1	ELSE_4	IF_7	IF_8
+0x4000333	    0x498b8424d000	            mov rax, qword [r12 + 0xd0] 	        15	parser.c	FUNCTION_2	IF_1
+0x400033b	          0x4885c0	                           test rax, rax	        15	parser.c	FUNCTION_2	IF_1
+0x400033e	     0xf84b8feffff	                            je 0x40001fc	        15	parser.c	FUNCTION_2	IF_1
+0x4000344	        0x488b4008	                mov rax, qword [rax + 8]	        15	parser.c	FUNCTION_2	IF_1
+0x4000348	          0x4885c0	                           test rax, rax	        15	parser.c	FUNCTION_2	IF_1
+0x400034b	            0x740e	                            je 0x400035b	        15	parser.c	FUNCTION_2	IF_1
+0x400034d	    0x498bb424d800	            mov rsi, qword [r12 + 0xd8] 	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x4000355	        0x400fb6fd	                          movzx edi, bpl	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x4000359	            0xffd0	                                call rax	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x400035b	        0x4883c301	                              add rbx, 1	       179	parser.c	FUNCTION_9	FOR_1	ELSE_4	IF_7	IF_9
+0x400035f	    0x41837c242004	               cmp dword [r12 + 0x20], 4	       178	parser.c	FUNCTION_9	FOR_1	ELSE_4	IF_7	IF_9
+0x4000365	     0xf8695feffff	                           jbe 0x4000200	       178	parser.c	FUNCTION_9	FOR_1	ELSE_4	IF_7	IF_9
+0x400036b	      0x4d8d7c1d00	                    lea r15, [r13 + rbx]	       199	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	CALL_9
+0x4000370	      0xe98bfeffff	                           jmp 0x4000200	       200	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x4000375	           0xf1f00	                         nop dword [rax]	       200	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x4000378	      0x418b442420	            mov eax, dword [r12 + 0x20] 	       200	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x400037d	          0x83f804	                              cmp eax, 4	       175	parser.c	FUNCTION_9	FOR_1	ELSE_4	IF_7	IF_8
+0x4000380	            0x76b1	                           jbe 0x4000333	       175	parser.c	FUNCTION_9	FOR_1	ELSE_4	IF_7	IF_8
+0x4000382	          0x4889fa	                            mov rdx, rdi	        86	parser.c	FUNCTION_7	CALL_1
+0x4000385	          0x4c89fe	                            mov rsi, r15	        86	parser.c	FUNCTION_7	CALL_1
+0x4000388	          0x4c89e7	                            mov rdi, r12	        86	parser.c	FUNCTION_7	CALL_1
+0x400038b	          0x4c29fa	                            sub rdx, r15	        86	parser.c	FUNCTION_7	CALL_1
+0x400038e	      0xe8adfcffff	               call sym.append_strbuffer	        86	parser.c	FUNCTION_7	CALL_1
+0x4000393	    0x498b8424d000	            mov rax, qword [r12 + 0xd0] 	        15	parser.c	FUNCTION_2	IF_1
+0x400039b	          0x4885c0	                           test rax, rax	        15	parser.c	FUNCTION_2	IF_1
+0x400039e	            0x75a4	                           jne 0x4000344	        15	parser.c	FUNCTION_2	IF_1
+0x40003a0	            0xebb9	                           jmp 0x400035b	        15	parser.c	FUNCTION_2	IF_1
+0x40003a2	    0x660f1f440000	                    nop word [rax + rax]	        15	parser.c	FUNCTION_2	IF_1
+0x40003a8	          0x8d45d0	                   lea eax, [rbp - 0x30]	       246	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003ab	            0x3c09	                               cmp al, 9	       246	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003ad	     0xf879a010000	                            ja 0x400054d	       246	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003b3	      0x496374244c	         movsxd rsi, dword [r12 + 0x4c] 	       247	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17	IF_18
+0x40003b8	      0x498b44f450	    mov rax, qword [r12 + rsi*8 + 0x50] 	       247	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17	IF_18
+0x40003bd	    0x483dffffff3f	                     cmp rax, 0x3fffffff	       247	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17	IF_18
+0x40003c3	     0xf8425030000	                            je 0x40006ee	       247	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17	IF_18
+0x40003c9	        0x488d0480	                  lea rax, [rax + rax*4]	       247	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17	IF_18
+0x40003cd	        0x488d1400	                    lea rdx, [rax + rax]	       247	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17	IF_18
+0x40003d1	        0x400fb6c5	                          movzx eax, bpl	       250	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003d5	        0x4883c301	                              add rbx, 1	       251	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003d9	          0x83e830	                           sub eax, 0x30	       250	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003dc	            0x4898	                                    cdqe	       250	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003de	          0x4801d0	                            add rax, rdx	       250	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003e1	      0x498944f450	     mov qword [r12 + rsi*8 + 0x50], rax	       250	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003e6	      0xe915feffff	                           jmp 0x4000200	       251	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003eb	       0xf1f440000	                   nop dword [rax + rax]	       251	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x40003f0	          0x8d45c4	                   lea eax, [rbp - 0x3c]	       230	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15
+0x40003f3	            0x3c03	                               cmp al, 3	       230	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15
+0x40003f5	      0x4963442438	         movsxd rax, dword [r12 + 0x38] 	       231	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15	IF_16
+0x40003fa	     0xf8755020000	                            ja 0x4000655	       230	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15
+0x4000400	          0x83f80e	                            cmp eax, 0xe	       231	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15	IF_16
+0x4000403	     0xf8ff3fdffff	                            jg 0x40001fc	       231	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15	IF_16
+0x4000409	          0x8d5001	                      lea edx, [rax + 1]	       232	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15	IF_16
+0x400040c	        0x4883c301	                              add rbx, 1	       232	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15	IF_16
+0x4000410	      0x4189542438	             mov dword [r12 + 0x38], edx	       232	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15	IF_16
+0x4000415	      0x41886c043c	        mov byte [r12 + rax + 0x3c], bpl	       232	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15	IF_16
+0x400041a	      0xe9e1fdffff	                           jmp 0x4000200	       232	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15	IF_16
+0x400041f	              0x90	                                     nop	       232	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_15	IF_16
+0x4000420	          0x8d4580	                   lea eax, [rbp - 0x80]	       299	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27
+0x4000423	            0x3c1f	                            cmp al, 0x1f	       299	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27
+0x4000425	     0xf87a4000000	                            ja 0x40004cf	       299	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27
+0x400042b	    0x41f644241801	               test byte [r12 + 0x18], 1	       299	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27
+0x4000431	     0xf8598000000	                           jne 0x40004cf	       299	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27
+0x4000437	        0x4080fd9b	                           cmp bpl, 0x9b	       300	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4
+0x400043b	     0xf8468030000	                            je 0x40007a9	       300	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4
+0x4000441	        0x4080fd9d	                           cmp bpl, 0x9d	       300	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4
+0x4000445	     0xf84db010000	                            je 0x4000626	       300	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4
+0x400044b	        0x4080fd90	                           cmp bpl, 0x90	       300	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4
+0x400044f	     0xf84a7010000	                            je 0x40005fc	       300	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4
+0x4000455	    0x498b8424d000	            mov rax, qword [r12 + 0xd0] 	        15	parser.c	FUNCTION_2	IF_1
+0x400045d	          0x4885c0	                           test rax, rax	        15	parser.c	FUNCTION_2	IF_1
+0x4000460	     0xf8496fdffff	                            je 0x40001fc	        15	parser.c	FUNCTION_2	IF_1
+0x4000466	        0x488b4008	                mov rax, qword [rax + 8]	        15	parser.c	FUNCTION_2	IF_1
+0x400046a	          0x4885c0	                           test rax, rax	        15	parser.c	FUNCTION_2	IF_1
+0x400046d	     0xf8489fdffff	                            je 0x40001fc	        15	parser.c	FUNCTION_2	IF_1
+0x4000473	    0x498bb424d800	            mov rsi, qword [r12 + 0xd8] 	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x400047b	        0x400fb6fd	                          movzx edi, bpl	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x400047f	        0x4883c301	                              add rbx, 1	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x4000483	            0xffd0	                                call rax	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x4000485	      0xe976fdffff	                           jmp 0x4000200	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x400048a	    0x660f1f440000	                    nop word [rax + rax]	        16	parser.c	FUNCTION_2	IF_1	IF_2
+0x4000490	          0x8d45e0	                   lea eax, [rbp - 0x20]	       269	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	CALL_19
+0x4000493	            0x3c0f	                             cmp al, 0xf	       269	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	CALL_19
+0x4000495	     0xf87f0000000	                            ja 0x400058b	       269	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	CALL_19
+0x400049b	      0x4963442424	         movsxd rax, dword [r12 + 0x24] 	       270	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	IF_22
+0x40004a0	          0x83f80e	                            cmp eax, 0xe	       270	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	IF_22
+0x40004a3	          0x8d5001	                      lea edx, [rax + 1]	       270	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	IF_22
+0x40004a6	     0xf8f50fdffff	                            jg 0x40001fc	       270	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	IF_22
+0x40004ac	      0xe904020000	                           jmp 0x40006b5	       270	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	IF_22
+0x40004b1	    0x41c744243800	               mov dword [r12 + 0x38], 0	       202	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x40004ba	    0x41c744242001	               mov dword [r12 + 0x20], 1	       203	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	CALL_10
+0x40004c3	        0x4883c301	                              add rbx, 1	       204	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x40004c7	          0x4531ff	                          xor r15d, r15d	       203	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	CALL_10
+0x40004ca	      0xe931fdffff	                           jmp 0x4000200	       204	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3
+0x40004cf	    0x498b8424d000	            mov rax, qword [r12 + 0xd0] 	       319	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004d7	          0x4885c0	                           test rax, rax	       319	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004da	     0xf841e020000	                            je 0x40006fe	       319	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004e0	          0x488b00	                    mov rax, qword [rax]	       319	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004e3	          0x4885c0	                           test rax, rax	       319	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004e6	     0xf8412020000	                            je 0x40006fe	       319	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004ec	          0x4c89f6	                            mov rsi, r14	       320	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004ef	    0x498b9424d800	            mov rdx, qword [r12 + 0xd8] 	       320	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004f7	          0x4829de	                            sub rsi, rbx	       320	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004fa	            0xffd0	                                call rax	       320	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004fc	            0x4898	                                    cdqe	       320	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_28
+0x40004fe	          0x4885c0	                           test rax, rax	       322	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_29
+0x4000501	     0xf84f7010000	                            je 0x40006fe	       322	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_29
+0x4000507	          0x4801c3	                            add rbx, rax	       322	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_29
+0x400050a	      0xe9f1fcffff	                           jmp 0x4000200	       322	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_29
+0x400050f	              0x90	                                     nop	       322	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_29
+0x4000510	    0x41c744242006	               mov dword [r12 + 0x20], 6	       165	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4	IF_5
+0x4000519	      0xe9defcffff	                           jmp 0x40001fc	       165	parser.c	FUNCTION_9	FOR_1	ELSE_1	IF_4	IF_5
+0x400051e	        0x4080fd9c	                           cmp bpl, 0x9c	       287	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_25
+0x4000522	     0xf8461010000	                            je 0x4000689	       287	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_25
+0x4000528	        0x4883c301	                              add rbx, 1	       291	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_10	IF_26
+0x400052c	          0x4939de	                            cmp r14, rbx	       291	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_10	IF_26
+0x400052f	     0xf85cbfcffff	                           jne 0x4000200	       291	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_10	IF_26
+0x4000535	      0x4b8d543500	                    lea rdx, [r13 + r14]	        86	parser.c	FUNCTION_7	CALL_1
+0x400053a	          0x4c89fe	                            mov rsi, r15	        86	parser.c	FUNCTION_7	CALL_1
+0x400053d	          0x4c89e7	                            mov rdi, r12	        86	parser.c	FUNCTION_7	CALL_1
+0x4000540	          0x4c29fa	                            sub rdx, r15	        86	parser.c	FUNCTION_7	CALL_1
+0x4000543	      0xe8f8faffff	               call sym.append_strbuffer	        86	parser.c	FUNCTION_7	CALL_1
+0x4000548	      0xe9b8fcffff	                           jmp 0x4000205	        86	parser.c	FUNCTION_7	CALL_1
+0x400054d	      0x496354244c	         movsxd rdx, dword [r12 + 0x4c] 	        86	parser.c	FUNCTION_7	CALL_1
+0x4000552	          0x8d4201	                      lea eax, [rdx + 1]	        86	parser.c	FUNCTION_7	CALL_1
+0x4000555	        0x4080fd3a	                           cmp bpl, 0x3a	       253	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_19
+0x4000559	     0xf84a9010000	                            je 0x4000708	       253	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_19
+0x400055f	        0x4080fd3b	                           cmp bpl, 0x3b	       257	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_20
+0x4000563	     0xf84a9010000	                            je 0x4000712	       257	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_20
+0x4000569	      0x418944244c	             mov dword [r12 + 0x4c], eax	       264	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x400056e	          0x8d45e0	                   lea eax, [rbp - 0x20]	       269	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	CALL_19
+0x4000571	    0x41c744242400	               mov dword [r12 + 0x24], 0	       265	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x400057a	    0x41c744242003	               mov dword [r12 + 0x20], 3	       266	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x4000583	            0x3c0f	                             cmp al, 0xf	       269	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	CALL_19
+0x4000585	     0xf8623010000	                           jbe 0x40006ae	       269	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	CALL_19
+0x400058b	          0x8d45c0	                   lea eax, [rbp - 0x40]	       277	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_9	IF_24
+0x400058e	            0x3c3e	                            cmp al, 0x3e	       277	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_9	IF_24
+0x4000590	     0xf871afdffff	                            ja 0x40002b0	       277	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_9	IF_24
+0x4000596	      0x4963442424	         movsxd rax, dword [r12 + 0x24] 	       278	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_9	IF_24
+0x400059b	          0x4889c2	                            mov rdx, rax	       278	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_9	IF_24
+0x400059e	    0x41c644042800	          mov byte [r12 + rax + 0x28], 0	       278	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_9	IF_24
+0x40005a4	    0x498b8424d000	            mov rax, qword [r12 + 0xd0] 	        35	parser.c	FUNCTION_3	IF_2
+0x40005ac	          0x4885c0	                           test rax, rax	        35	parser.c	FUNCTION_3	IF_2
+0x40005af	     0xf84fbfcffff	                            je 0x40002b0	        35	parser.c	FUNCTION_3	IF_2
+0x40005b5	        0x488b4018	            mov rax, qword [rax + 0x18] 	        35	parser.c	FUNCTION_3	IF_2
+0x40005b9	          0x4885c0	                           test rax, rax	        35	parser.c	FUNCTION_3	IF_2
+0x40005bc	     0xf84eefcffff	                            je 0x40002b0	        35	parser.c	FUNCTION_3	IF_2
+0x40005c2	      0x418b7c2438	            mov edi, dword [r12 + 0x38] 	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005c7	      0x488b4c2408	                mov rcx, qword [rsp + 8]	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005cc	            0x31f6	                            xor esi, esi	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005ce	            0x85d2	                           test edx, edx	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005d0	    0x4d8b8c24d800	              mov r9, qword [r12 + 0xd8]	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005d8	      0x418b54244c	            mov edx, dword [r12 + 0x4c] 	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005dd	        0x440fb6c5	                          movzx r8d, bpl	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005e1	        0x480f44ce	                          cmove rcx, rsi	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005e5	            0x85ff	                           test edi, edi	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005e7	    0x480f45742418	          cmovne rsi, qword [rsp + 0x18]	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005ed	          0x4889f7	                            mov rdi, rsi	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005f0	      0x488b742410	            mov rsi, qword [rsp + 0x10] 	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005f5	            0xffd0	                                call rax	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005f7	      0xe9b4fcffff	                           jmp 0x40002b0	        36	parser.c	FUNCTION_3	IF_2	IF_3
+0x40005fc	    0x41c78424e000	               mov dword [r12 + 0xe0], 1	        79	parser.c	FUNCTION_6
+0x4000608	    0x49c78424f800	               mov qword [r12 + 0xf8], 0	        81	parser.c	FUNCTION_6
+0x4000614	        0x4883c301	                              add rbx, 1	       199	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	CALL_9
+0x4000618	    0x41c744242005	               mov dword [r12 + 0x20], 5	       199	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	CALL_9
+0x4000621	      0xe945fdffff	                           jmp 0x400036b	       199	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	CALL_9
+0x4000626	        0x4883c301	                              add rbx, 1	       310	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4	CALL_29
+0x400062a	    0x41c78424e000	               mov dword [r12 + 0xe0], 0	        79	parser.c	FUNCTION_6
+0x4000636	    0x49c78424f800	               mov qword [r12 + 0xf8], 0	        81	parser.c	FUNCTION_6
+0x4000642	    0x41c744242005	               mov dword [r12 + 0x20], 5	       310	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4	CALL_29
+0x400064b	      0x4d8d7c1d00	                    lea r15, [r13 + rbx]	       310	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4	CALL_29
+0x4000650	      0xe9abfbffff	                           jmp 0x4000200	       311	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4
+0x4000655	    0x41c644043c00	          mov byte [r12 + rax + 0x3c], 0	       237	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x400065b	          0x8d45d0	                   lea eax, [rbp - 0x30]	       246	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x400065e	    0x41c744244c00	               mov dword [r12 + 0x4c], 0	       239	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x4000667	    0x49c7442450ff	     mov qword [r12 + 0x50], 0x3fffffff 	       240	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x4000670	    0x41c744242002	               mov dword [r12 + 0x20], 2	       241	parser.c	FUNCTION_9	FOR_1	SWITCH_2
+0x4000679	            0x3c09	                               cmp al, 9	       246	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x400067b	            0x766f	                           jbe 0x40006ec	       246	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x400067d	      0xb801000000	                              mov eax, 1	       246	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x4000682	            0x31d2	                            xor edx, edx	       246	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x4000684	      0xe9ccfeffff	                           jmp 0x4000555	       246	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17
+0x4000689	    0x41f644241801	               test byte [r12 + 0x18], 1	       287	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_25
+0x400068f	     0xf8593feffff	                           jne 0x4000528	       287	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_25
+0x4000695	           0xf1f00	                         nop dword [rax]	       287	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_25
+0x4000698	          0x4889fa	                            mov rdx, rdi	       288	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_25	CALL_22
+0x400069b	          0x4c29fa	                            sub rdx, r15	       288	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_25	CALL_22
+0x400069e	          0x4c89fe	                            mov rsi, r15	       188	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10	CALL_6
+0x40006a1	          0x4c89e7	                            mov rdi, r12	       188	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10	CALL_6
+0x40006a4	      0xe8e7f9ffff	                    call sym.done_string	       188	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10	CALL_6
+0x40006a9	      0xe902fcffff	                           jmp 0x40002b0	       188	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10	CALL_6
+0x40006ae	      0xba01000000	                              mov edx, 1	       269	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	CALL_19
+0x40006b3	            0x31c0	                            xor eax, eax	       270	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	IF_22
+0x40006b5	      0x4189542424	             mov dword [r12 + 0x24], edx	       271	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	IF_22
+0x40006ba	        0x4883c301	                              add rbx, 1	       271	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	IF_22
+0x40006be	      0x41886c0428	        mov byte [r12 + rax + 0x28], bpl	       271	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	IF_22
+0x40006c3	      0xe938fbffff	                           jmp 0x4000200	       271	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_21	IF_22
+0x40006c8	      0x4963442424	         movsxd rax, dword [r12 + 0x24] 	       211	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	IF_12
+0x40006cd	          0x83f80e	                            cmp eax, 0xe	       211	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	IF_12
+0x40006d0	     0xf8f26fbffff	                            jg 0x40001fc	       211	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	IF_12
+0x40006d6	          0x8d5001	                      lea edx, [rax + 1]	       212	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	IF_12
+0x40006d9	        0x4883c301	                              add rbx, 1	       212	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	IF_12
+0x40006dd	      0x4189542424	             mov dword [r12 + 0x24], edx	       212	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	IF_12
+0x40006e2	      0x41886c0428	        mov byte [r12 + rax + 0x28], bpl	       212	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	IF_12
+0x40006e7	      0xe914fbffff	                           jmp 0x4000200	       212	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	IF_12
+0x40006ec	            0x31f6	                            xor esi, esi	       212	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	IF_11	IF_12
+0x40006ee	    0x49c744f45000	       mov qword [r12 + rsi*8 + 0x50], 0	       248	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17	IF_18
+0x40006f7	            0x31d2	                            xor edx, edx	       248	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17	IF_18
+0x40006f9	      0xe9d3fcffff	                           jmp 0x40003d1	       248	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_17	IF_18
+0x40006fe	      0xb801000000	                              mov eax, 1	       325	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_29
+0x4000703	      0xe9fffdffff	                           jmp 0x4000507	       325	parser.c	FUNCTION_9	FOR_1	SWITCH_2	ELSE_11	IF_29
+0x4000708	      0xbe00000080	                     mov esi, 0x80000000	       254	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_19
+0x400070d	      0x490974d450	      or qword [r12 + rdx*8 + 0x50], rsi	       254	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_19
+0x4000712	      0x418944244c	             mov dword [r12 + 0x4c], eax	       258	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_20
+0x4000717	            0x4898	                                    cdqe	       259	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_20
+0x4000719	        0x4883c301	                              add rbx, 1	       260	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_20
+0x400071d	    0x49c744c450ff	mov qword [r12 + rax*8 + 0x50], 0x3fffffff 	       259	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_20
+0x4000726	      0xe9d5faffff	                           jmp 0x4000200	       260	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_20
+0x400072b	          0x8d55d0	                   lea edx, [rbp - 0x30]	       218	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	ELSE_6	IF_14
+0x400072e	          0x80fa4e	                            cmp dl, 0x4e	       218	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	ELSE_6	IF_14
+0x4000731	     0xf87c5faffff	                            ja 0x40001fc	       218	parser.c	FUNCTION_9	FOR_1	SWITCH_2	SWITCH_3	ELSE_6	IF_14
+0x4000737	      0x488b742408	                mov rsi, qword [rsp + 8]	       126	string3.h	FUNCTION_20	CALL_3
+0x400073c	          0x4c63f8	                         movsxd r15, eax	        52	parser.c	FUNCTION_4
+0x400073f	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	       126	string3.h	FUNCTION_20	CALL_3
+0x4000744	      0xb911000000	                           mov ecx, 0x11	       126	string3.h	FUNCTION_20	CALL_3
+0x4000749	          0x4c89fa	                            mov rdx, r15	       126	string3.h	FUNCTION_20	CALL_3
+0x400074c	      0xe800000000	                          call 0x4000751	       126	string3.h	FUNCTION_20	CALL_3
+0x4000751	    0x498b8424d000	            mov rax, qword [r12 + 0xd0] 	        57	parser.c	FUNCTION_4	IF_1
+0x4000759	        0x498d7701	                      lea rsi, [r15 + 1]	        54	parser.c	FUNCTION_4
+0x400075d	      0x42886c3c20	        mov byte [rsp + r15 + 0x20], bpl	        54	parser.c	FUNCTION_4
+0x4000762	      0xc644342000	          mov byte [rsp + rsi + 0x20], 0	        55	parser.c	FUNCTION_4
+0x4000767	          0x4885c0	                           test rax, rax	        57	parser.c	FUNCTION_4	IF_1
+0x400076a	     0xf8440fbffff	                            je 0x40002b0	        57	parser.c	FUNCTION_4	IF_1
+0x4000770	        0x488b4010	            mov rax, qword [rax + 0x10] 	        57	parser.c	FUNCTION_4	IF_1
+0x4000774	          0x4885c0	                           test rax, rax	        57	parser.c	FUNCTION_4	IF_1
+0x4000777	     0xf8433fbffff	                            je 0x40002b0	        57	parser.c	FUNCTION_4	IF_1
+0x400077d	    0x498b9424d800	            mov rdx, qword [r12 + 0xd8] 	        58	parser.c	FUNCTION_4	IF_1	IF_2
+0x4000785	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	        58	parser.c	FUNCTION_4	IF_1	IF_2
+0x400078a	            0xffd0	                                call rax	        58	parser.c	FUNCTION_4	IF_1	IF_2
+0x400078c	      0xe91ffbffff	                           jmp 0x40002b0	        58	parser.c	FUNCTION_4	IF_1	IF_2
+0x4000791	          0x4889fa	                            mov rdx, rdi	       188	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10	CALL_6
+0x4000794	    0x41c744242005	               mov dword [r12 + 0x20], 5	       187	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10
+0x400079d	          0x4c29fa	                            sub rdx, r15	       188	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10	CALL_6
+0x40007a0	        0x4883ea01	                              sub rdx, 1	       188	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10	CALL_6
+0x40007a4	      0xe9f5feffff	                           jmp 0x400069e	       188	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_10	CALL_6
+0x40007a9	    0x41c744242001	               mov dword [r12 + 0x20], 1	       306	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4	CALL_27
+0x40007b2	        0x4883c301	                              add rbx, 1	       307	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4
+0x40007b6	          0x4531ff	                          xor r15d, r15d	       306	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4	CALL_27
+0x40007b9	      0xe942faffff	                           jmp 0x4000200	       307	parser.c	FUNCTION_9	FOR_1	SWITCH_2	IF_27	SWITCH_4
+0x40007be	      0xe800000000	                          call 0x40007c3	       335	parser.c	FUNCTION_9

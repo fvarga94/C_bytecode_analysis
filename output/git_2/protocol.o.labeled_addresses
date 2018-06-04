@@ -1,0 +1,137 @@
+get_protocol_version_config	IF,2:functions,0:SWITCH,0:CALL,3:WHILE,0:FOR,0:ELSE,0:DO,0	26
+0x4000090	        0x4883ec18	                           sub rsp, 0x18	        18	protocol.c	ELSE_3	FUNCTION_2
+0x4000094	      0xbf00000000	                              mov edi, 0	        20	protocol.c	ELSE_3	FUNCTION_2	IF_1	CALL_1
+0x4000099	          0x4889e6	                            mov rsi, rsp	        20	protocol.c	ELSE_3	FUNCTION_2	IF_1	CALL_1
+0x400009c	    0x64488b042528	                mov rax, qword fs:[0x28]	        18	protocol.c	ELSE_3	FUNCTION_2
+0x40000a5	      0x4889442408	                mov qword [rsp + 8], rax	        18	protocol.c	ELSE_3	FUNCTION_2
+0x40000aa	            0x31c0	                            xor eax, eax	        18	protocol.c	ELSE_3	FUNCTION_2
+0x40000ac	      0xe800000000	                          call 0x40000b1	        20	protocol.c	ELSE_3	FUNCTION_2	IF_1	CALL_1
+0x40000b1	            0x85c0	                           test eax, eax	        20	protocol.c	ELSE_3	FUNCTION_2	IF_1	CALL_1
+0x40000b3	            0x752b	                           jne 0x40000e0	        20	protocol.c	ELSE_3	FUNCTION_2	IF_1	CALL_1
+0x40000b5	        0x488b3424	                    mov rsi, qword [rsp]	        21	protocol.c	ELSE_3	FUNCTION_2	IF_1	CALL_2
+0x40000b9	          0x4889f7	                            mov rdi, rsi	        21	protocol.c	ELSE_3	FUNCTION_2	IF_1	CALL_2
+0x40000bc	      0xe87fffffff	         call sym.parse_protocol_version	        21	protocol.c	ELSE_3	FUNCTION_2	IF_1	CALL_2
+0x40000c1	          0x83f8ff	             cmp eax, 0xffffffffffffffff	        23	protocol.c	ELSE_3	FUNCTION_2	IF_1	IF_2
+0x40000c4	            0x7423	                            je 0x40000e9	        23	protocol.c	ELSE_3	FUNCTION_2	IF_1	IF_2
+0x40000c6	      0x488b542408	                mov rdx, qword [rsp + 8]	        31	protocol.c	ELSE_3	FUNCTION_2
+0x40000cb	    0x644833142528	                xor rdx, qword fs:[0x28]	        31	protocol.c	ELSE_3	FUNCTION_2
+0x40000d4	            0x750e	                           jne 0x40000e4	        31	protocol.c	ELSE_3	FUNCTION_2
+0x40000d6	        0x4883c418	                           add rsp, 0x18	        31	protocol.c	ELSE_3	FUNCTION_2
+0x40000da	              0xc3	                                     ret	        31	protocol.c	ELSE_3	FUNCTION_2
+0x40000db	       0xf1f440000	                   nop dword [rax + rax]	        31	protocol.c	ELSE_3	FUNCTION_2
+0x40000e0	            0x31c0	                            xor eax, eax	        30	protocol.c	ELSE_3	FUNCTION_2
+0x40000e2	            0xebe2	                           jmp 0x40000c6	        30	protocol.c	ELSE_3	FUNCTION_2
+0x40000e4	      0xe800000000	                          call 0x40000e9	        31	protocol.c	ELSE_3	FUNCTION_2
+0x40000e9	      0xbf00000000	                              mov edi, 0	        24	protocol.c	ELSE_3	FUNCTION_2	IF_1	IF_2	CALL_3
+0x40000ee	            0x31c0	                            xor eax, eax	        24	protocol.c	ELSE_3	FUNCTION_2	IF_1	IF_2	CALL_3
+0x40000f0	      0xe800000000	                          call 0x40000f5	        24	protocol.c	ELSE_3	FUNCTION_2	IF_1	IF_2	CALL_3
+parse_protocol_version	IF,3:functions,0:SWITCH,0:CALL,3:WHILE,0:FOR,0:ELSE,3:DO,0	25
+0x4000040	           0xfb617	                   movzx edx, byte [rdi]	         7	protocol.c	FUNCTION_1	IF_1	CALL_1
+0x4000043	          0x83fa30	                           cmp edx, 0x30	         7	protocol.c	FUNCTION_1	IF_1	CALL_1
+0x4000046	            0x7510	                           jne 0x4000058	         7	protocol.c	FUNCTION_1	IF_1	CALL_1
+0x4000048	            0x31c0	                            xor eax, eax	         7	protocol.c	FUNCTION_1	IF_1	CALL_1
+0x400004a	        0x807f0100	                   cmp byte [rdi + 1], 0	         7	protocol.c	FUNCTION_1	IF_1	CALL_1
+0x400004e	           0xf95c0	                                setne al	         7	protocol.c	FUNCTION_1	IF_1	CALL_1
+0x4000051	            0xf7d8	                                 neg eax	         7	protocol.c	FUNCTION_1	IF_1	CALL_1
+0x4000053	              0xc3	                                     ret	         7	protocol.c	FUNCTION_1	IF_1	CALL_1
+0x4000054	         0xf1f4000	                         nop dword [rax]	         7	protocol.c	FUNCTION_1	IF_1	CALL_1
+0x4000058	          0x83fa31	                           cmp edx, 0x31	         9	protocol.c	FUNCTION_1	ELSE_1	IF_2	CALL_2
+0x400005b	            0x7513	                           jne 0x4000070	         9	protocol.c	FUNCTION_1	ELSE_1	IF_2	CALL_2
+0x400005d	        0x807f0101	                   cmp byte [rdi + 1], 1	        10	protocol.c	FUNCTION_1	ELSE_1	IF_2
+0x4000061	            0x19c0	                            sbb eax, eax	        10	protocol.c	FUNCTION_1	ELSE_1	IF_2
+0x4000063	          0x83e002	                              and eax, 2	        10	protocol.c	FUNCTION_1	ELSE_1	IF_2
+0x4000066	          0x83e801	                              sub eax, 1	        10	protocol.c	FUNCTION_1	ELSE_1	IF_2
+0x4000069	              0xc3	                                     ret	        10	protocol.c	FUNCTION_1	ELSE_1	IF_2
+0x400006a	    0x660f1f440000	                    nop word [rax + rax]	        10	protocol.c	FUNCTION_1	ELSE_1	IF_2
+0x4000070	          0x83fa32	                           cmp edx, 0x32	        11	protocol.c	FUNCTION_1	ELSE_2	IF_3	CALL_3
+0x4000073	      0xb8ffffffff	                     mov eax, 0xffffffff	        14	protocol.c	FUNCTION_1	ELSE_3
+0x4000078	            0x750c	                           jne 0x4000086	        11	protocol.c	FUNCTION_1	ELSE_2	IF_3	CALL_3
+0x400007a	        0x807f0101	                   cmp byte [rdi + 1], 1	        12	protocol.c	FUNCTION_1	ELSE_2	IF_3
+0x400007e	            0x19c0	                            sbb eax, eax	        12	protocol.c	FUNCTION_1	ELSE_2	IF_3
+0x4000080	          0x83e003	                              and eax, 3	        12	protocol.c	FUNCTION_1	ELSE_2	IF_3
+0x4000083	          0x83e801	                              sub eax, 1	        12	protocol.c	FUNCTION_1	ELSE_2	IF_3
+0x4000086	            0xf3c3	                                     ret	        15	protocol.c	FUNCTION_1	ELSE_3
+determine_protocol_version_client	IF,3:functions,0:SWITCH,0:CALL,4:WHILE,0:FOR,0:ELSE,0:DO,0	26
+0x40001e0	      0xb800000000	                              mov eax, 0	        68	protocol.c	FUNCTION_4
+0x40001e5	            0xeb16	                           jmp 0x40001fd	        68	protocol.c	FUNCTION_4
+0x40001e7	    0x660f1f840000	                    nop word [rax + rax]	        68	protocol.c	FUNCTION_4
+0x40001f0	        0x4883c701	                              add rdi, 1	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x40001f4	        0x4883c001	                              add rax, 1	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x40001f8	          0x3a57ff	                  cmp dl, byte [rdi - 1]	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x40001fb	            0x7523	                           jne 0x4000220	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x40001fd	           0xfb610	                   movzx edx, byte [rax]	       484	git-compat-util.h	FUNCTION_11	DO_1	IF_1
+0x4000200	            0x84d2	                             test dl, dl	       484	git-compat-util.h	FUNCTION_11	DO_1	IF_1
+0x4000202	            0x75ec	                           jne 0x40001f0	       484	git-compat-util.h	FUNCTION_11	DO_1	IF_1
+0x4000204	        0x4883ec08	                              sub rsp, 8	        68	protocol.c	FUNCTION_4
+0x4000208	      0xe833feffff	         call sym.parse_protocol_version	        72	protocol.c	FUNCTION_4	IF_1	CALL_2
+0x400020d	          0x83f8ff	             cmp eax, 0xffffffffffffffff	        74	protocol.c	FUNCTION_4	IF_1	IF_2
+0x4000210	            0x741b	                            je 0x400022d	        74	protocol.c	FUNCTION_4	IF_1	IF_2
+0x4000212	            0x85c0	                           test eax, eax	        76	protocol.c	FUNCTION_4	IF_1	IF_3
+0x4000214	            0x740d	                            je 0x4000223	        76	protocol.c	FUNCTION_4	IF_1	IF_3
+0x4000216	        0x4883c408	                              add rsp, 8	        81	protocol.c	FUNCTION_4
+0x400021a	              0xc3	                                     ret	        81	protocol.c	FUNCTION_4
+0x400021b	       0xf1f440000	                   nop dword [rax + rax]	        81	protocol.c	FUNCTION_4
+0x4000220	            0x31c0	                            xor eax, eax	        69	protocol.c	FUNCTION_4
+0x4000222	              0xc3	                                     ret	        81	protocol.c	FUNCTION_4
+0x4000223	      0xbf00000000	                              mov edi, 0	        77	protocol.c	FUNCTION_4	IF_1	CALL_4
+0x4000228	      0xe800000000	                          call 0x400022d	        77	protocol.c	FUNCTION_4	IF_1	CALL_4
+0x400022d	      0xbf00000000	                              mov edi, 0	        75	protocol.c	FUNCTION_4	IF_1	CALL_3
+0x4000232	            0x31c0	                            xor eax, eax	        75	protocol.c	FUNCTION_4	IF_1	CALL_3
+0x4000234	      0xe800000000	               call str.protocol.version	        75	protocol.c	FUNCTION_4	IF_1	CALL_3
+determine_protocol_version_server	IF,1:functions,1:SWITCH,0:CALL,3:WHILE,0:FOR,0:ELSE,0:DO,0	56
+0x4000100	              0x53	                                push rbx	        34	protocol.c	FUNCTION_3
+0x4000101	      0xbf00000000	                              mov edi, 0	        35	protocol.c	FUNCTION_3	CALL_1
+0x4000106	            0x31db	                            xor ebx, ebx	        36	protocol.c	FUNCTION_3
+0x4000108	        0x4883ec30	                           sub rsp, 0x30	        34	protocol.c	FUNCTION_3
+0x400010c	    0x64488b042528	                mov rax, qword fs:[0x28]	        34	protocol.c	FUNCTION_3
+0x4000115	      0x4889442428	             mov qword [rsp + 0x28], rax	        34	protocol.c	FUNCTION_3
+0x400011a	            0x31c0	                            xor eax, eax	        34	protocol.c	FUNCTION_3
+0x400011c	      0xe800000000	                          call 0x4000121	        35	protocol.c	FUNCTION_3	CALL_1
+0x4000121	          0x4885c0	                           test rax, rax	        45	protocol.c	FUNCTION_3	IF_1
+0x4000124	     0xf8494000000	                            je 0x40001be	        45	protocol.c	FUNCTION_3	IF_1
+0x400012a	      0xb9ffffffff	                     mov ecx, 0xffffffff	        48	protocol.c	FUNCTION_3	IF_1	CALL_2
+0x400012f	      0xba3a000000	                           mov edx, 0x3a	        48	protocol.c	FUNCTION_3	IF_1	CALL_2
+0x4000134	          0x4889c6	                            mov rsi, rax	        48	protocol.c	FUNCTION_3	IF_1	CALL_2
+0x4000137	          0x4889e7	                            mov rdi, rsp	        48	protocol.c	FUNCTION_3	IF_1	CALL_2
+0x400013a	      0x804c241001	                 or byte [rsp + 0x10], 1	        46	protocol.c	FUNCTION_3	IF_1
+0x400013f	    0x48c704240000	                      mov qword [rsp], 0	        46	protocol.c	FUNCTION_3	IF_1
+0x4000147	    0xc74424080000	                  mov dword [rsp + 8], 0	        46	protocol.c	FUNCTION_3	IF_1
+0x400014f	    0xc744240c0000	                mov dword [rsp + 0xc], 0	        46	protocol.c	FUNCTION_3	IF_1
+0x4000157	    0x48c744241800	               mov qword [rsp + 0x18], 0	        46	protocol.c	FUNCTION_3	IF_1
+0x4000160	      0xe800000000	                          call 0x4000165	        48	protocol.c	FUNCTION_3	IF_1	CALL_2
+0x4000165	        0x488b0c24	                    mov rcx, qword [rsp]	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x4000169	          0x4885c9	                           test rcx, rcx	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x400016c	            0x7446	                            je 0x40001b4	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x400016e	        0x8b742408	                mov esi, dword [rsp + 8]	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x4000172	        0x48c1e604	                              shl rsi, 4	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x4000176	          0x4801ce	                            add rsi, rcx	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x4000179	     0xf1f80000000	                         nop dword [rax]	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x4000180	          0x4839f1	                            cmp rcx, rsi	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x4000183	            0x732f	                           jae 0x40001b4	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x4000185	          0x488b39	                    mov rdi, qword [rcx]	        54	protocol.c	FUNCTION_3	FUNCTION_1	CALL_1
+0x4000188	      0xb800000000	                              mov eax, 0	        54	protocol.c	FUNCTION_3	FUNCTION_1	CALL_1
+0x400018d	            0xeb0e	                           jmp 0x400019d	        54	protocol.c	FUNCTION_3	FUNCTION_1	CALL_1
+0x400018f	              0x90	                                     nop	        54	protocol.c	FUNCTION_3	FUNCTION_1	CALL_1
+0x4000190	        0x4883c701	                              add rdi, 1	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x4000194	        0x4883c001	                              add rax, 1	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x4000198	          0x3a57ff	                  cmp dl, byte [rdi - 1]	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x400019b	            0x7511	                           jne 0x40001ae	       488	git-compat-util.h	FUNCTION_11	DO_1
+0x400019d	           0xfb610	                   movzx edx, byte [rax]	       484	git-compat-util.h	FUNCTION_11	DO_1	IF_1
+0x40001a0	            0x84d2	                             test dl, dl	       484	git-compat-util.h	FUNCTION_11	DO_1	IF_1
+0x40001a2	            0x75ec	                           jne 0x4000190	       484	git-compat-util.h	FUNCTION_11	DO_1	IF_1
+0x40001a4	      0xe897feffff	         call sym.parse_protocol_version	        55	protocol.c	FUNCTION_3	FUNCTION_1	CALL_2
+0x40001a9	            0x39c3	                            cmp ebx, eax	        55	protocol.c	FUNCTION_3	FUNCTION_1	CALL_2
+0x40001ab	           0xf4cd8	                          cmovl ebx, eax	        55	protocol.c	FUNCTION_3	FUNCTION_1	CALL_2
+0x40001ae	        0x4883c110	                           add rcx, 0x10	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x40001b2	            0x75cc	                           jne 0x4000180	        50	protocol.c	FUNCTION_3	IF_1	FUNCTION_1
+0x40001b4	            0x31f6	                            xor esi, esi	        61	protocol.c	FUNCTION_3	IF_1	CALL_3
+0x40001b6	          0x4889e7	                            mov rdi, rsp	        61	protocol.c	FUNCTION_3	IF_1	CALL_3
+0x40001b9	      0xe800000000	                          call 0x40001be	        61	protocol.c	FUNCTION_3	IF_1	CALL_3
+0x40001be	            0x89d8	                            mov eax, ebx	        65	protocol.c	FUNCTION_3
+0x40001c0	      0x488b5c2428	            mov rbx, qword [rsp + 0x28] 	        65	protocol.c	FUNCTION_3
+0x40001c5	    0x6448331c2528	                xor rbx, qword fs:[0x28]	        65	protocol.c	FUNCTION_3
+0x40001ce	            0x7506	                           jne 0x40001d6	        65	protocol.c	FUNCTION_3
+0x40001d0	        0x4883c430	                           add rsp, 0x30	        65	protocol.c	FUNCTION_3
+0x40001d4	              0x5b	                                 pop rbx	        65	protocol.c	FUNCTION_3
+0x40001d5	              0xc3	                                     ret	        65	protocol.c	FUNCTION_3
+0x40001d6	      0xe800000000	                          call 0x40001db	        65	protocol.c	FUNCTION_3

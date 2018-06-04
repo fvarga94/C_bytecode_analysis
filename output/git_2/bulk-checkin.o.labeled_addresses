@@ -1,0 +1,20 @@
+plug_bulk_checkin	WHILE,0:CALL,0:SWITCH,0:DO,0:FOR,0:ELSE,0:functions,0:IF,0	2
+0x40007e0	    0x800d00000000	                 or byte [0x040007e7], 1	       272	bulk-checkin.c	FUNCTION_7
+0x40007e7	              0xc3	                                     ret	       272	bulk-checkin.c	FUNCTION_7
+unplug_bulk_checkin	WHILE,0:CALL,1:SWITCH,0:DO,0:FOR,0:ELSE,0:functions,0:IF,1	6
+0x40007f0	    0x802500000000	             and byte [0x040007f7], 0xfe	       277	bulk-checkin.c	FUNCTION_8
+0x40007f7	    0x48833d000000	               cmp qword [0x040007ff], 0	       278	bulk-checkin.c	FUNCTION_8	IF_1
+0x40007ff	            0x740f	                            je 0x4000810	       278	bulk-checkin.c	FUNCTION_8	IF_1
+0x4000801	      0xe93af8ffff	 jmp sym.finish_bulk_checkin.constprop.4	       279	bulk-checkin.c	FUNCTION_8	CALL_1
+0x4000806	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       279	bulk-checkin.c	FUNCTION_8	CALL_1
+0x4000810	            0xf3c3	                                     ret	       279	bulk-checkin.c	FUNCTION_8	CALL_1
+index_bulk_checkin	WHILE,0:CALL,2:SWITCH,0:DO,0:FOR,0:ELSE,0:functions,0:IF,1	9
+0x40007b0	        0x4883ec18	                           sub rsp, 0x18	       262	bulk-checkin.c	FUNCTION_6
+0x40007b4	      0xe817faffff	    call sym.deflate_to_pack.constprop.1	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x40007b9	    0xf60500000000	               test byte [0x040007c0], 1	       265	bulk-checkin.c	FUNCTION_6	IF_1
+0x40007c0	            0x750d	                           jne 0x40007cf	       265	bulk-checkin.c	FUNCTION_6	IF_1
+0x40007c2	        0x8944240c	              mov dword [rsp + 0xc], eax	       265	bulk-checkin.c	FUNCTION_6	IF_1
+0x40007c6	      0xe875f8ffff	call sym.finish_bulk_checkin.constprop.4	       266	bulk-checkin.c	FUNCTION_6	CALL_2
+0x40007cb	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       266	bulk-checkin.c	FUNCTION_6	CALL_2
+0x40007cf	        0x4883c418	                           add rsp, 0x18	       268	bulk-checkin.c	FUNCTION_6
+0x40007d3	              0xc3	                                     ret	       268	bulk-checkin.c	FUNCTION_6

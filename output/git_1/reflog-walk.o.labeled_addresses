@@ -1,0 +1,659 @@
+reflog_walk_empty	CALL,0:functions,0:IF,0:FOR,0:SWITCH,0:WHILE,0:ELSE,0:DO,0	8
+0x4000869	          0x4885ff	                           test rdi, rdi	       301	reflog-walk.c	FUNCTION_12
+0x400086c	            0x740c	                            je 0x400087a	       301	reflog-walk.c	FUNCTION_12
+0x400086e	      0x48837f0800	                  cmp qword [rdi + 8], 0	       301	reflog-walk.c	FUNCTION_12
+0x4000873	           0xf94c0	                                 sete al	       301	reflog-walk.c	FUNCTION_12
+0x4000876	           0xfb6c0	                           movzx eax, al	       301	reflog-walk.c	FUNCTION_12
+0x4000879	              0xc3	                                     ret	       301	reflog-walk.c	FUNCTION_12
+0x400087a	      0xb801000000	                              mov eax, 1	       301	reflog-walk.c	FUNCTION_12
+0x400087f	              0xc3	                                     ret	       302	reflog-walk.c	FUNCTION_12
+init_reflog_walk	CALL,1:functions,0:IF,0:FOR,0:SWITCH,0:WHILE,0:ELSE,0:DO,0	9
+0x400028d	              0x53	                                push rbx	       114	reflog-walk.c	FUNCTION_5
+0x400028e	          0x4889fb	                            mov rbx, rdi	       114	reflog-walk.c	FUNCTION_5
+0x4000291	      0xbe40000000	                           mov esi, 0x40	       115	reflog-walk.c	FUNCTION_5	CALL_1
+0x4000296	      0xbf01000000	                              mov edi, 1	       115	reflog-walk.c	FUNCTION_5	CALL_1
+0x400029b	      0xe800000000	                          call 0x40002a0	       115	reflog-walk.c	FUNCTION_5	CALL_1
+0x40002a0	          0x488903	                    mov qword [rbx], rax	       115	reflog-walk.c	FUNCTION_5	CALL_1
+0x40002a3	        0x80482801	                 or byte [rax + 0x28], 1	       116	reflog-walk.c	FUNCTION_5
+0x40002a7	              0x5b	                                 pop rbx	       117	reflog-walk.c	FUNCTION_5
+0x40002a8	              0xc3	                                     ret	       117	reflog-walk.c	FUNCTION_5
+free_complete_reflog	CALL,5:functions,0:IF,1:FOR,1:SWITCH,0:WHILE,0:ELSE,0:DO,0	31
+0x4000040	          0x4885ff	                           test rdi, rdi	        45	reflog-walk.c	FUNCTION_2	IF_1
+0x4000043	            0x7464	                            je 0x40000a9	        45	reflog-walk.c	FUNCTION_2	IF_1
+0x4000045	            0x4154	                                push r12	        42	reflog-walk.c	FUNCTION_2
+0x4000047	              0x55	                                push rbp	        42	reflog-walk.c	FUNCTION_2
+0x4000048	              0x53	                                push rbx	        42	reflog-walk.c	FUNCTION_2
+0x4000049	          0x4989fc	                            mov r12, rdi	        42	reflog-walk.c	FUNCTION_2
+0x400004c	        0x837f1800	               cmp dword [rdi + 0x18], 0	        48	reflog-walk.c	FUNCTION_2	FOR_1
+0x4000050	            0x7e38	                           jle 0x400008a	        48	reflog-walk.c	FUNCTION_2	FOR_1
+0x4000052	      0xbd00000000	                              mov ebp, 0	        48	reflog-walk.c	FUNCTION_2	FOR_1
+0x4000057	          0x4863c5	                         movsxd rax, ebp	        49	reflog-walk.c	FUNCTION_2	FOR_1	CALL_1
+0x400005a	        0x488d1cc0	                  lea rbx, [rax + rax*8]	        49	reflog-walk.c	FUNCTION_2	FOR_1	CALL_1
+0x400005e	        0x48c1e303	                              shl rbx, 3	        49	reflog-walk.c	FUNCTION_2	FOR_1	CALL_1
+0x4000062	      0x498b442410	            mov rax, qword [r12 + 0x10] 	        49	reflog-walk.c	FUNCTION_2	FOR_1	CALL_1
+0x4000067	      0x488b7c1828	      mov rdi, qword [rax + rbx + 0x28] 	        49	reflog-walk.c	FUNCTION_2	FOR_1	CALL_1
+0x400006c	      0xe800000000	                          call 0x4000071	        49	reflog-walk.c	FUNCTION_2	FOR_1	CALL_1
+0x4000071	      0x498b442410	            mov rax, qword [r12 + 0x10] 	        50	reflog-walk.c	FUNCTION_2	FOR_1	CALL_2
+0x4000076	      0x488b7c1840	      mov rdi, qword [rax + rbx + 0x40] 	        50	reflog-walk.c	FUNCTION_2	FOR_1	CALL_2
+0x400007b	      0xe800000000	                          call 0x4000080	        50	reflog-walk.c	FUNCTION_2	FOR_1	CALL_2
+0x4000080	          0x83c501	                              add ebp, 1	        48	reflog-walk.c	FUNCTION_2	FOR_1
+0x4000083	      0x41396c2418	            cmp dword [r12 + 0x18], ebp 	        48	reflog-walk.c	FUNCTION_2	FOR_1
+0x4000088	            0x7fcd	                            jg 0x4000057	        48	reflog-walk.c	FUNCTION_2	FOR_1
+0x400008a	      0x498b7c2410	            mov rdi, qword [r12 + 0x10] 	        52	reflog-walk.c	FUNCTION_2	CALL_3
+0x400008f	      0xe800000000	                          call 0x4000094	        52	reflog-walk.c	FUNCTION_2	CALL_3
+0x4000094	        0x498b3c24	                    mov rdi, qword [r12]	        53	reflog-walk.c	FUNCTION_2	CALL_4
+0x4000098	      0xe800000000	                          call 0x400009d	        53	reflog-walk.c	FUNCTION_2	CALL_4
+0x400009d	          0x4c89e7	                            mov rdi, r12	        54	reflog-walk.c	FUNCTION_2	CALL_5
+0x40000a0	      0xe800000000	                          call 0x40000a5	        54	reflog-walk.c	FUNCTION_2	CALL_5
+0x40000a5	              0x5b	                                 pop rbx	        55	reflog-walk.c	FUNCTION_2
+0x40000a6	              0x5d	                                 pop rbp	        55	reflog-walk.c	FUNCTION_2
+0x40000a7	            0x415c	                                 pop r12	        55	reflog-walk.c	FUNCTION_2
+0x40000a9	            0xf3c3	                                     ret	        55	reflog-walk.c	FUNCTION_2
+get_reflog_selector	CALL,6:functions,0:IF,4:FOR,0:SWITCH,0:WHILE,0:ELSE,2:DO,0	86
+0x40005c8	            0x4156	                                push r14	       206	reflog-walk.c	FUNCTION_7
+0x40005ca	            0x4155	                                push r13	       206	reflog-walk.c	FUNCTION_7
+0x40005cc	            0x4154	                                push r12	       206	reflog-walk.c	FUNCTION_7
+0x40005ce	              0x55	                                push rbp	       206	reflog-walk.c	FUNCTION_7
+0x40005cf	              0x53	                                push rbx	       206	reflog-walk.c	FUNCTION_7
+0x40005d0	        0x488b6e38	            mov rbp, qword [rsi + 0x38] 	       207	reflog-walk.c	FUNCTION_7
+0x40005d4	          0x4885ed	                           test rbp, rbp	       211	reflog-walk.c	FUNCTION_7	IF_1
+0x40005d7	     0xf8405010000	                            je 0x40006e2	       211	reflog-walk.c	FUNCTION_7	IF_1
+0x40005dd	          0x4189cc	                           mov r12d, ecx	       211	reflog-walk.c	FUNCTION_7	IF_1
+0x40005e0	          0x4989d5	                            mov r13, rdx	       211	reflog-walk.c	FUNCTION_7	IF_1
+0x40005e3	          0x4889fb	                            mov rbx, rdi	       211	reflog-walk.c	FUNCTION_7	IF_1
+0x40005e6	          0x4585c0	                           test r8d, r8d	       214	reflog-walk.c	FUNCTION_7	IF_2
+0x40005e9	            0x7426	                            je 0x4000611	       214	reflog-walk.c	FUNCTION_7	IF_2
+0x40005eb	        0x4c8b7508	                mov r14, qword [rbp + 8]	       215	reflog-walk.c	FUNCTION_7	IF_2	IF_3
+0x40005ef	      0x49837e0800	                  cmp qword [r14 + 8], 0	       215	reflog-walk.c	FUNCTION_7	IF_2	IF_3
+0x40005f4	            0x7511	                           jne 0x4000607	       215	reflog-walk.c	FUNCTION_7	IF_2	IF_3
+0x40005f6	      0xbe00000000	                              mov esi, 0	       217	reflog-walk.c	FUNCTION_7	IF_2	CALL_1
+0x40005fb	          0x498b3e	                    mov rdi, qword [r14]	       217	reflog-walk.c	FUNCTION_7	IF_2	CALL_1
+0x40005fe	      0xe800000000	                          call 0x4000603	       217	reflog-walk.c	FUNCTION_7	IF_2	CALL_1
+0x4000603	        0x49894608	                mov qword [r14 + 8], rax	       217	reflog-walk.c	FUNCTION_7	IF_2	CALL_1
+0x4000607	        0x488b4508	                mov rax, qword [rbp + 8]	       218	reflog-walk.c	FUNCTION_7	IF_2
+0x400060b	        0x488b5008	                mov rdx, qword [rax + 8]	       218	reflog-walk.c	FUNCTION_7	IF_2
+0x400060f	            0xeb07	                           jmp 0x4000618	       218	reflog-walk.c	FUNCTION_7	IF_2
+0x4000611	        0x488b4508	                mov rax, qword [rbp + 8]	       220	reflog-walk.c	FUNCTION_7	ELSE_1
+0x4000615	          0x488b10	                    mov rdx, qword [rax]	       220	reflog-walk.c	FUNCTION_7	ELSE_1
+0x4000618	      0xbe00000000	                              mov esi, 0	       223	reflog-walk.c	FUNCTION_7	CALL_2
+0x400061d	          0x4889df	                            mov rdi, rbx	       223	reflog-walk.c	FUNCTION_7	CALL_2
+0x4000620	      0xb800000000	                              mov eax, 0	       223	reflog-walk.c	FUNCTION_7	CALL_2
+0x4000625	      0xe800000000	                          call 0x400062a	       223	reflog-walk.c	FUNCTION_7	CALL_2
+0x400062a	          0x8b4504	                mov eax, dword [rbp + 4]	       224	reflog-walk.c	FUNCTION_7	IF_4
+0x400062d	          0x83f802	                              cmp eax, 2	       224	reflog-walk.c	FUNCTION_7	IF_4
+0x4000630	            0x7409	                            je 0x400063b	       224	reflog-walk.c	FUNCTION_7	IF_4
+0x4000632	          0x4585e4	                         test r12d, r12d	       225	reflog-walk.c	FUNCTION_7	IF_4
+0x4000635	            0x744d	                            je 0x4000684	       225	reflog-walk.c	FUNCTION_7	IF_4
+0x4000637	            0x85c0	                           test eax, eax	       225	reflog-walk.c	FUNCTION_7	IF_4
+0x4000639	            0x7549	                           jne 0x4000684	       225	reflog-walk.c	FUNCTION_7	IF_4
+0x400063b	        0x488b4d08	                mov rcx, qword [rbp + 8]	       226	reflog-walk.c	FUNCTION_7	IF_4
+0x400063f	        0x48634500	                 movsxd rax, dword [rbp]	       226	reflog-walk.c	FUNCTION_7	IF_4
+0x4000643	      0x488d54c009	              lea rdx, [rax + rax*8 + 9]	       226	reflog-walk.c	FUNCTION_7	IF_4
+0x4000648	        0x488b4110	            mov rax, qword [rcx + 0x10] 	       226	reflog-walk.c	FUNCTION_7	IF_4
+0x400064c	        0x488d04d0	                  lea rax, [rax + rdx*8]	       226	reflog-walk.c	FUNCTION_7	IF_4
+0x4000650	          0x8b7038	            mov esi, dword [rax + 0x38] 	       227	reflog-walk.c	FUNCTION_7	IF_4	CALL_4
+0x4000653	        0x488b7830	            mov rdi, qword [rax + 0x30] 	       227	reflog-walk.c	FUNCTION_7	IF_4	CALL_4
+0x4000657	          0x4c89ea	                            mov rdx, r13	       227	reflog-walk.c	FUNCTION_7	IF_4	CALL_4
+0x400065a	      0xe800000000	                          call 0x400065f	       227	reflog-walk.c	FUNCTION_7	IF_4	CALL_4
+0x400065f	          0x4889c6	                            mov rsi, rax	       227	reflog-walk.c	FUNCTION_7	IF_4	CALL_4
+0x4000662	      0xb800000000	                              mov eax, 0	       279	strbuf.h	FUNCTION_20	CALL_2
+0x4000667	    0x48c7c1ffffff	             mov rcx, 0xffffffffffffffff	       279	strbuf.h	FUNCTION_20	CALL_2
+0x400066e	          0x4889f7	                            mov rdi, rsi	       279	strbuf.h	FUNCTION_20	CALL_2
+0x4000671	            0xf2ae	              repne scasb al, byte [rdi]	       279	strbuf.h	FUNCTION_20	CALL_2
+0x4000673	          0x48f7d1	                                 not rcx	       279	strbuf.h	FUNCTION_20	CALL_2
+0x4000676	        0x488d51ff	                      lea rdx, [rcx - 1]	       279	strbuf.h	FUNCTION_20	CALL_2
+0x400067a	          0x4889df	                            mov rdi, rbx	       279	strbuf.h	FUNCTION_20	CALL_2
+0x400067d	      0xe800000000	                          call 0x4000682	       279	strbuf.h	FUNCTION_20	CALL_2
+0x4000682	            0xeb1f	                           jmp 0x40006a3	       279	strbuf.h	FUNCTION_20	CALL_2
+0x4000684	        0x488b4508	                mov rax, qword [rbp + 8]	       229	reflog-walk.c	FUNCTION_7	ELSE_2	CALL_5
+0x4000688	          0x8b5018	            mov edx, dword [rax + 0x18] 	       229	reflog-walk.c	FUNCTION_7	ELSE_2	CALL_5
+0x400068b	          0x83ea02	                              sub edx, 2	       229	reflog-walk.c	FUNCTION_7	ELSE_2	CALL_5
+0x400068e	          0x2b5500	                    sub edx, dword [rbp]	       229	reflog-walk.c	FUNCTION_7	ELSE_2	CALL_5
+0x4000691	      0xbe00000000	                              mov esi, 0	       229	reflog-walk.c	FUNCTION_7	ELSE_2	CALL_5
+0x4000696	          0x4889df	                            mov rdi, rbx	       229	reflog-walk.c	FUNCTION_7	ELSE_2	CALL_5
+0x4000699	      0xb800000000	                              mov eax, 0	       229	reflog-walk.c	FUNCTION_7	ELSE_2	CALL_5
+0x400069e	      0xe800000000	                          call 0x40006a3	       229	reflog-walk.c	FUNCTION_7	ELSE_2	CALL_5
+0x40006a3	          0x488b03	                    mov rax, qword [rbx]	       141	strbuf.h	FUNCTION_17
+0x40006a6	          0x4885c0	                           test rax, rax	       141	strbuf.h	FUNCTION_17
+0x40006a9	            0x740a	                            je 0x40006b5	       141	strbuf.h	FUNCTION_17
+0x40006ab	        0x4883e801	                              sub rax, 1	       227	strbuf.h	FUNCTION_19	IF_1	CALL_1
+0x40006af	        0x48394308	                cmp qword [rbx + 8], rax	       227	strbuf.h	FUNCTION_19	IF_1	CALL_1
+0x40006b3	            0x750d	                           jne 0x40006c2	       227	strbuf.h	FUNCTION_19	IF_1	CALL_1
+0x40006b5	      0xbe01000000	                              mov esi, 1	       228	strbuf.h	FUNCTION_19	CALL_2
+0x40006ba	          0x4889df	                            mov rdi, rbx	       228	strbuf.h	FUNCTION_19	CALL_2
+0x40006bd	      0xe800000000	                          call 0x40006c2	       228	strbuf.h	FUNCTION_19	CALL_2
+0x40006c2	        0x488b5310	            mov rdx, qword [rbx + 0x10] 	       229	strbuf.h	FUNCTION_19
+0x40006c6	        0x488b4308	                mov rax, qword [rbx + 8]	       229	strbuf.h	FUNCTION_19
+0x40006ca	        0x488d4801	                      lea rcx, [rax + 1]	       229	strbuf.h	FUNCTION_19
+0x40006ce	        0x48894b08	                mov qword [rbx + 8], rcx	       229	strbuf.h	FUNCTION_19
+0x40006d2	        0xc604027d	              mov byte [rdx + rax], 0x7d	       229	strbuf.h	FUNCTION_19
+0x40006d6	        0x488b5310	            mov rdx, qword [rbx + 0x10] 	       230	strbuf.h	FUNCTION_19
+0x40006da	        0x488b4308	                mov rax, qword [rbx + 8]	       230	strbuf.h	FUNCTION_19
+0x40006de	        0xc6040200	                 mov byte [rdx + rax], 0	       230	strbuf.h	FUNCTION_19
+0x40006e2	              0x5b	                                 pop rbx	       234	reflog-walk.c	FUNCTION_7
+0x40006e3	              0x5d	                                 pop rbp	       234	reflog-walk.c	FUNCTION_7
+0x40006e4	            0x415c	                                 pop r12	       234	reflog-walk.c	FUNCTION_7
+0x40006e6	            0x415d	                                 pop r13	       234	reflog-walk.c	FUNCTION_7
+0x40006e8	            0x415e	                                 pop r14	       234	reflog-walk.c	FUNCTION_7
+0x40006ea	              0xc3	                                     ret	       234	reflog-walk.c	FUNCTION_7
+show_reflog_message	CALL,4:functions,0:IF,2:FOR,0:SWITCH,0:WHILE,0:ELSE,1:DO,0	50
+0x4000794	              0x55	                                push rbp	       279	reflog-walk.c	FUNCTION_11
+0x4000795	              0x53	                                push rbx	       279	reflog-walk.c	FUNCTION_11
+0x4000796	        0x4883ec28	                           sub rsp, 0x28	       279	reflog-walk.c	FUNCTION_11
+0x400079a	    0x64488b042528	                mov rax, qword fs:[0x28]	       279	reflog-walk.c	FUNCTION_11
+0x40007a3	      0x4889442418	             mov qword [rsp + 0x18], rax	       279	reflog-walk.c	FUNCTION_11
+0x40007a8	            0x31c0	                            xor eax, eax	       279	reflog-walk.c	FUNCTION_11
+0x40007aa	          0x4885ff	                           test rdi, rdi	       280	reflog-walk.c	FUNCTION_11	IF_1
+0x40007ad	     0xf849a000000	                            je 0x400084d	       280	reflog-walk.c	FUNCTION_11	IF_1
+0x40007b3	            0x89f5	                            mov ebp, esi	       280	reflog-walk.c	FUNCTION_11	IF_1
+0x40007b5	        0x488b4738	            mov rax, qword [rdi + 0x38] 	       280	reflog-walk.c	FUNCTION_11	IF_1
+0x40007b9	          0x4885c0	                           test rax, rax	       280	reflog-walk.c	FUNCTION_11	IF_1
+0x40007bc	     0xf848b000000	                            je 0x400084d	       280	reflog-walk.c	FUNCTION_11	IF_1
+0x40007c2	    0x48c704240000	                      mov qword [rsp], 0	       283	reflog-walk.c	FUNCTION_11	IF_1
+0x40007ca	    0x48c744240800	                  mov qword [rsp + 8], 0	       283	reflog-walk.c	FUNCTION_11	IF_1
+0x40007d3	    0x48c744241000	               mov qword [rsp + 0x10], 0	       283	reflog-walk.c	FUNCTION_11	IF_1
+0x40007dc	        0x4c8b4008	                 mov r8, qword [rax + 8]	       285	reflog-walk.c	FUNCTION_11	IF_1
+0x40007e0	          0x486300	                 movsxd rax, dword [rax]	       285	reflog-walk.c	FUNCTION_11	IF_1
+0x40007e3	      0x488d74c009	              lea rsi, [rax + rax*8 + 9]	       285	reflog-walk.c	FUNCTION_11	IF_1
+0x40007e8	        0x498b4010	              mov rax, qword [r8 + 0x10]	       285	reflog-walk.c	FUNCTION_11	IF_1
+0x40007ec	        0x488d1cf0	                  lea rbx, [rax + rsi*8]	       285	reflog-walk.c	FUNCTION_11	IF_1
+0x40007f0	    0x41b800000000	                              mov r8d, 0	       286	reflog-walk.c	FUNCTION_11	IF_1	CALL_1
+0x40007f6	          0x4889fe	                            mov rsi, rdi	       286	reflog-walk.c	FUNCTION_11	IF_1	CALL_1
+0x40007f9	          0x4889e7	                            mov rdi, rsp	       286	reflog-walk.c	FUNCTION_11	IF_1	CALL_1
+0x40007fc	      0xe800000000	                          call 0x4000801	       286	reflog-walk.c	FUNCTION_11	IF_1	CALL_1
+0x4000801	            0x85ed	                           test ebp, ebp	       287	reflog-walk.c	FUNCTION_11	IF_1	IF_2
+0x4000803	            0x741f	                            je 0x4000824	       287	reflog-walk.c	FUNCTION_11	IF_1	IF_2
+0x4000805	        0x488b4b40	            mov rcx, qword [rbx + 0x40] 	       104	stdio2.h	FUNCTION_32	CALL_2
+0x4000809	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       104	stdio2.h	FUNCTION_32	CALL_2
+0x400080e	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	FUNCTION_32	CALL_2
+0x4000813	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	FUNCTION_32	CALL_2
+0x4000818	      0xb800000000	                              mov eax, 0	       104	stdio2.h	FUNCTION_32	CALL_2
+0x400081d	      0xe800000000	                          call 0x4000822	       104	stdio2.h	FUNCTION_32	CALL_2
+0x4000822	            0xeb21	                           jmp 0x4000845	       104	stdio2.h	FUNCTION_32	CALL_2
+0x4000824	        0x488b4b28	            mov rcx, qword [rbx + 0x28] 	       104	stdio2.h	FUNCTION_32	CALL_2
+0x4000828	        0x4c8b4340	              mov r8, qword [rbx + 0x40]	       104	stdio2.h	FUNCTION_32	CALL_2
+0x400082c	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       104	stdio2.h	FUNCTION_32	CALL_2
+0x4000831	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	FUNCTION_32	CALL_2
+0x4000836	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	FUNCTION_32	CALL_2
+0x400083b	      0xb800000000	                              mov eax, 0	       104	stdio2.h	FUNCTION_32	CALL_2
+0x4000840	      0xe800000000	                          call 0x4000845	       104	stdio2.h	FUNCTION_32	CALL_2
+0x4000845	          0x4889e7	                            mov rdi, rsp	       295	reflog-walk.c	FUNCTION_11	IF_1	CALL_4
+0x4000848	      0xe800000000	                          call 0x400084d	       295	reflog-walk.c	FUNCTION_11	IF_1	CALL_4
+0x400084d	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       297	reflog-walk.c	FUNCTION_11
+0x4000852	    0x644833042528	                xor rax, qword fs:[0x28]	       297	reflog-walk.c	FUNCTION_11
+0x400085b	            0x7405	                            je 0x4000862	       297	reflog-walk.c	FUNCTION_11
+0x400085d	      0xe800000000	                          call 0x4000862	       297	reflog-walk.c	FUNCTION_11
+0x4000862	        0x4883c428	                           add rsp, 0x28	       297	reflog-walk.c	FUNCTION_11
+0x4000866	              0x5b	                                 pop rbx	       297	reflog-walk.c	FUNCTION_11
+0x4000867	              0x5d	                                 pop rbp	       297	reflog-walk.c	FUNCTION_11
+0x4000868	              0xc3	                                     ret	       297	reflog-walk.c	FUNCTION_11
+get_reflog_message	CALL,2:functions,0:IF,2:FOR,0:SWITCH,0:WHILE,0:ELSE,0:DO,0	24
+0x40006eb	        0x488b4638	            mov rax, qword [rsi + 0x38] 	       239	reflog-walk.c	FUNCTION_8
+0x40006ef	          0x4885c0	                           test rax, rax	       243	reflog-walk.c	FUNCTION_8	IF_1
+0x40006f2	            0x744e	                            je 0x4000742	       243	reflog-walk.c	FUNCTION_8	IF_1
+0x40006f4	        0x4883ec08	                              sub rsp, 8	       238	reflog-walk.c	FUNCTION_8
+0x40006f8	          0x4989f8	                             mov r8, rdi	       238	reflog-walk.c	FUNCTION_8
+0x40006fb	        0x488b5008	                mov rdx, qword [rax + 8]	       246	reflog-walk.c	FUNCTION_8
+0x40006ff	          0x486300	                 movsxd rax, dword [rax]	       247	reflog-walk.c	FUNCTION_8	CALL_1
+0x4000702	      0x488d44c009	              lea rax, [rax + rax*8 + 9]	       247	reflog-walk.c	FUNCTION_8	CALL_1
+0x4000707	        0x48c1e003	                              shl rax, 3	       247	reflog-walk.c	FUNCTION_8	CALL_1
+0x400070b	        0x48034210	             add rax, qword [rdx + 0x10]	       247	reflog-walk.c	FUNCTION_8	CALL_1
+0x400070f	        0x488b7040	            mov rsi, qword [rax + 0x40] 	       247	reflog-walk.c	FUNCTION_8	CALL_1
+0x4000713	      0xb800000000	                              mov eax, 0	       247	reflog-walk.c	FUNCTION_8	CALL_1
+0x4000718	    0x48c7c1ffffff	             mov rcx, 0xffffffffffffffff	       247	reflog-walk.c	FUNCTION_8	CALL_1
+0x400071f	          0x4889f7	                            mov rdi, rsi	       247	reflog-walk.c	FUNCTION_8	CALL_1
+0x4000722	            0xf2ae	              repne scasb al, byte [rdi]	       247	reflog-walk.c	FUNCTION_8	CALL_1
+0x4000724	          0x48f7d1	                                 not rcx	       247	reflog-walk.c	FUNCTION_8	CALL_1
+0x4000727	        0x4883e901	                              sub rcx, 1	       248	reflog-walk.c	FUNCTION_8	IF_2
+0x400072b	          0x4889ca	                            mov rdx, rcx	       248	reflog-walk.c	FUNCTION_8	IF_2
+0x400072e	        0x4883f901	                              cmp rcx, 1	       249	reflog-walk.c	FUNCTION_8	IF_2
+0x4000732	        0x4883d2ff	             adc rdx, 0xffffffffffffffff	       249	reflog-walk.c	FUNCTION_8	IF_2
+0x4000736	          0x4c89c7	                             mov rdi, r8	       250	reflog-walk.c	FUNCTION_8	CALL_2
+0x4000739	      0xe800000000	                          call 0x400073e	       250	reflog-walk.c	FUNCTION_8	CALL_2
+0x400073e	        0x4883c408	                              add rsp, 8	       251	reflog-walk.c	FUNCTION_8
+0x4000742	            0xf3c3	                                     ret	       251	reflog-walk.c	FUNCTION_8
+read_complete_reflog	CALL,12:functions,0:IF,4:FOR,0:SWITCH,0:WHILE,0:ELSE,0:DO,0	62
+0x40000ab	            0x4154	                                push r12	        58	reflog-walk.c	FUNCTION_3
+0x40000ad	              0x55	                                push rbp	        58	reflog-walk.c	FUNCTION_3
+0x40000ae	              0x53	                                push rbx	        58	reflog-walk.c	FUNCTION_3
+0x40000af	          0x4889fd	                            mov rbp, rdi	        58	reflog-walk.c	FUNCTION_3
+0x40000b2	      0xbe20000000	                           mov esi, 0x20	        59	reflog-walk.c	FUNCTION_3
+0x40000b7	      0xbf01000000	                              mov edi, 1	        59	reflog-walk.c	FUNCTION_3
+0x40000bc	      0xe800000000	                          call 0x40000c1	        59	reflog-walk.c	FUNCTION_3
+0x40000c1	          0x4889c3	                            mov rbx, rax	        59	reflog-walk.c	FUNCTION_3
+0x40000c4	          0x4889ef	                            mov rdi, rbp	        61	reflog-walk.c	FUNCTION_3	CALL_2
+0x40000c7	      0xe800000000	                          call 0x40000cc	        61	reflog-walk.c	FUNCTION_3	CALL_2
+0x40000cc	          0x488903	                    mov qword [rbx], rax	        61	reflog-walk.c	FUNCTION_3	CALL_2
+0x40000cf	          0x4889da	                            mov rdx, rbx	        62	reflog-walk.c	FUNCTION_3	CALL_3
+0x40000d2	      0xbe00000000	                              mov esi, 0	        62	reflog-walk.c	FUNCTION_3	CALL_3
+0x40000d7	          0x4889ef	                            mov rdi, rbp	        62	reflog-walk.c	FUNCTION_3	CALL_3
+0x40000da	      0xe800000000	                          call 0x40000df	        62	reflog-walk.c	FUNCTION_3	CALL_3
+0x40000df	        0x837b1800	               cmp dword [rbx + 0x18], 0	        63	reflog-walk.c	FUNCTION_3	IF_1
+0x40000e3	     0xf859d000000	                           jne 0x4000186	        63	reflog-walk.c	FUNCTION_3	IF_1
+0x40000e9	      0xb900000000	                              mov ecx, 0	        66	reflog-walk.c	FUNCTION_3	IF_1	CALL_4
+0x40000ee	      0xba00000000	                              mov edx, 0	        66	reflog-walk.c	FUNCTION_3	IF_1	CALL_4
+0x40000f3	      0xbe01000000	                              mov esi, 1	        66	reflog-walk.c	FUNCTION_3	IF_1	CALL_4
+0x40000f8	          0x4889ef	                            mov rdi, rbp	        66	reflog-walk.c	FUNCTION_3	IF_1	CALL_4
+0x40000fb	      0xe800000000	                          call 0x4000100	        66	reflog-walk.c	FUNCTION_3	IF_1	CALL_4
+0x4000100	          0x4989c4	                            mov r12, rax	        66	reflog-walk.c	FUNCTION_3	IF_1	CALL_4
+0x4000103	          0x4885c0	                           test rax, rax	        68	reflog-walk.c	FUNCTION_3	IF_1	IF_2
+0x4000106	            0x7418	                            je 0x4000120	        68	reflog-walk.c	FUNCTION_3	IF_1	IF_2
+0x4000108	          0x4889da	                            mov rdx, rbx	        69	reflog-walk.c	FUNCTION_3	IF_1	IF_2	CALL_5
+0x400010b	      0xbe00000000	                              mov esi, 0	        69	reflog-walk.c	FUNCTION_3	IF_1	IF_2	CALL_5
+0x4000110	          0x4889c7	                            mov rdi, rax	        69	reflog-walk.c	FUNCTION_3	IF_1	IF_2	CALL_5
+0x4000113	      0xe800000000	                          call 0x4000118	        69	reflog-walk.c	FUNCTION_3	IF_1	IF_2	CALL_5
+0x4000118	          0x4c89e7	                            mov rdi, r12	        70	reflog-walk.c	FUNCTION_3	IF_1	IF_2	CALL_6
+0x400011b	      0xe800000000	                          call 0x4000120	        70	reflog-walk.c	FUNCTION_3	IF_1	IF_2	CALL_6
+0x4000120	        0x837b1800	               cmp dword [rbx + 0x18], 0	        73	reflog-walk.c	FUNCTION_3	IF_3
+0x4000124	            0x7560	                           jne 0x4000186	        73	reflog-walk.c	FUNCTION_3	IF_3
+0x4000126	          0x4889ee	                            mov rsi, rbp	        74	reflog-walk.c	FUNCTION_3	IF_3	CALL_7
+0x4000129	      0xbf00000000	                              mov edi, 0	        74	reflog-walk.c	FUNCTION_3	IF_3	CALL_7
+0x400012e	      0xb800000000	                              mov eax, 0	        74	reflog-walk.c	FUNCTION_3	IF_3	CALL_7
+0x4000133	      0xe800000000	                          call 0x4000138	        74	reflog-walk.c	FUNCTION_3	IF_3	CALL_7
+0x4000138	          0x4989c4	                            mov r12, rax	        74	reflog-walk.c	FUNCTION_3	IF_3	CALL_7
+0x400013b	          0x4889da	                            mov rdx, rbx	        75	reflog-walk.c	FUNCTION_3	IF_3	CALL_8
+0x400013e	      0xbe00000000	                              mov esi, 0	        75	reflog-walk.c	FUNCTION_3	IF_3	CALL_8
+0x4000143	          0x4889c7	                            mov rdi, rax	        75	reflog-walk.c	FUNCTION_3	IF_3	CALL_8
+0x4000146	      0xe800000000	                          call 0x400014b	        75	reflog-walk.c	FUNCTION_3	IF_3	CALL_8
+0x400014b	        0x837b1800	               cmp dword [rbx + 0x18], 0	        76	reflog-walk.c	FUNCTION_3	IF_3	IF_4
+0x400014f	            0x752d	                           jne 0x400017e	        76	reflog-walk.c	FUNCTION_3	IF_3	IF_4
+0x4000151	          0x4c89e7	                            mov rdi, r12	        77	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_9
+0x4000154	      0xe800000000	                          call 0x4000159	        77	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_9
+0x4000159	          0x4889ee	                            mov rsi, rbp	        78	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_10
+0x400015c	      0xbf00000000	                              mov edi, 0	        78	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_10
+0x4000161	      0xb800000000	                              mov eax, 0	        78	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_10
+0x4000166	      0xe800000000	                          call 0x400016b	        78	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_10
+0x400016b	          0x4989c4	                            mov r12, rax	        78	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_10
+0x400016e	          0x4889da	                            mov rdx, rbx	        79	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_11
+0x4000171	      0xbe00000000	                              mov esi, 0	        79	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_11
+0x4000176	          0x4889c7	                            mov rdi, rax	        79	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_11
+0x4000179	      0xe800000000	                          call 0x400017e	        79	reflog-walk.c	FUNCTION_3	IF_3	IF_4	CALL_11
+0x400017e	          0x4c89e7	                            mov rdi, r12	        81	reflog-walk.c	FUNCTION_3	IF_3	CALL_12
+0x4000181	      0xe800000000	                          call 0x4000186	        81	reflog-walk.c	FUNCTION_3	IF_3	CALL_12
+0x4000186	          0x4889d8	                            mov rax, rbx	        84	reflog-walk.c	FUNCTION_3
+0x4000189	              0x5b	                                 pop rbx	        84	reflog-walk.c	FUNCTION_3
+0x400018a	              0x5d	                                 pop rbp	        84	reflog-walk.c	FUNCTION_3
+0x400018b	            0x415c	                                 pop r12	        84	reflog-walk.c	FUNCTION_3
+0x400018d	              0xc3	                                     ret	        84	reflog-walk.c	FUNCTION_3
+get_reflog_timestamp	CALL,0:functions,0:IF,1:FOR,0:SWITCH,0:WHILE,0:ELSE,0:DO,0	12
+0x400076c	        0x488b4738	            mov rax, qword [rdi + 0x38] 	       267	reflog-walk.c	FUNCTION_10
+0x4000770	          0x4885c0	                           test rax, rax	       270	reflog-walk.c	FUNCTION_10	IF_1
+0x4000773	            0x7419	                            je 0x400078e	       270	reflog-walk.c	FUNCTION_10	IF_1
+0x4000775	        0x488b5008	                mov rdx, qword [rax + 8]	       273	reflog-walk.c	FUNCTION_10
+0x4000779	          0x486300	                 movsxd rax, dword [rax]	       274	reflog-walk.c	FUNCTION_10
+0x400077c	      0x488d44c009	              lea rax, [rax + rax*8 + 9]	       274	reflog-walk.c	FUNCTION_10
+0x4000781	        0x48c1e003	                              shl rax, 3	       274	reflog-walk.c	FUNCTION_10
+0x4000785	        0x48034210	             add rax, qword [rdx + 0x10]	       274	reflog-walk.c	FUNCTION_10
+0x4000789	        0x488b4030	            mov rax, qword [rax + 0x30] 	       274	reflog-walk.c	FUNCTION_10
+0x400078d	              0xc3	                                     ret	       274	reflog-walk.c	FUNCTION_10
+0x400078e	      0xb800000000	                              mov eax, 0	       271	reflog-walk.c	FUNCTION_10	IF_1
+0x4000793	              0xc3	                                     ret	       275	reflog-walk.c	FUNCTION_10
+next_reflog_entry	CALL,3:functions,0:IF,3:FOR,1:SWITCH,0:WHILE,0:ELSE,0:DO,0	73
+0x4000880	      0x48837f0800	                  cmp qword [rdi + 8], 0	       327	reflog-walk.c	FUNCTION_15	FOR_1
+0x4000885	     0xf84bf000000	                            je 0x400094a	       327	reflog-walk.c	FUNCTION_15	FOR_1
+0x400088b	            0x4156	                                push r14	       322	reflog-walk.c	FUNCTION_15
+0x400088d	            0x4155	                                push r13	       322	reflog-walk.c	FUNCTION_15
+0x400088f	            0x4154	                                push r12	       322	reflog-walk.c	FUNCTION_15
+0x4000891	              0x55	                                push rbp	       322	reflog-walk.c	FUNCTION_15
+0x4000892	              0x53	                                push rbx	       322	reflog-walk.c	FUNCTION_15
+0x4000893	          0x4989fd	                            mov r13, rdi	       322	reflog-walk.c	FUNCTION_15
+0x4000896	    0x41bc00000000	                             mov r12d, 0	       327	reflog-walk.c	FUNCTION_15	FOR_1
+0x400089c	    0x41be00000000	                             mov r14d, 0	       327	reflog-walk.c	FUNCTION_15	FOR_1
+0x40008a2	      0xbd00000000	                              mov ebp, 0	       327	reflog-walk.c	FUNCTION_15	FOR_1
+0x40008a7	        0x498b4500	                    mov rax, qword [r13]	       328	reflog-walk.c	FUNCTION_15	FOR_1
+0x40008ab	        0x4a8b1ce0	            mov rbx, qword [rax + r12*8]	       328	reflog-walk.c	FUNCTION_15	FOR_1
+0x40008af	            0x8b13	                    mov edx, dword [rbx]	       306	reflog-walk.c	FUNCTION_13	FOR_1
+0x40008b1	            0x85d2	                           test edx, edx	       306	reflog-walk.c	FUNCTION_13	FOR_1
+0x40008b3	            0x7875	                            js 0x400092a	       306	reflog-walk.c	FUNCTION_13	FOR_1
+0x40008b5	        0x488b4308	                mov rax, qword [rbx + 8]	       307	reflog-walk.c	FUNCTION_13	FOR_1
+0x40008b9	          0x4863d2	                         movsxd rdx, edx	       308	reflog-walk.c	FUNCTION_13	FOR_1	CALL_1
+0x40008bc	        0x488d14d2	                  lea rdx, [rdx + rdx*8]	       308	reflog-walk.c	FUNCTION_13	FOR_1	CALL_1
+0x40008c0	        0x488b4010	            mov rax, qword [rax + 0x10] 	       308	reflog-walk.c	FUNCTION_13	FOR_1	CALL_1
+0x40008c4	      0x488d7cd014	          lea rdi, [rax + rdx*8 + 0x14] 	       308	reflog-walk.c	FUNCTION_13	FOR_1	CALL_1
+0x40008c9	      0xe800000000	                          call 0x40008ce	       308	reflog-walk.c	FUNCTION_13	FOR_1	CALL_1
+0x40008ce	          0x4885c0	                           test rax, rax	       310	reflog-walk.c	FUNCTION_13	FOR_1	IF_1
+0x40008d1	            0x740b	                            je 0x40008de	       310	reflog-walk.c	FUNCTION_13	FOR_1	IF_1
+0x40008d3	           0xfb610	                   movzx edx, byte [rax]	       310	reflog-walk.c	FUNCTION_13	FOR_1	IF_1
+0x40008d6	          0x83e20e	                            and edx, 0xe	       310	reflog-walk.c	FUNCTION_13	FOR_1	IF_1
+0x40008d9	          0x80fa02	                               cmp dl, 2	       310	reflog-walk.c	FUNCTION_13	FOR_1	IF_1
+0x40008dc	            0x7479	                            je 0x4000957	       310	reflog-walk.c	FUNCTION_13	FOR_1	IF_1
+0x40008de	            0x8b03	                    mov eax, dword [rbx]	       306	reflog-walk.c	FUNCTION_13	FOR_1
+0x40008e0	          0x8d50ff	                      lea edx, [rax - 1]	       306	reflog-walk.c	FUNCTION_13	FOR_1
+0x40008e3	            0x8913	                    mov dword [rbx], edx	       306	reflog-walk.c	FUNCTION_13	FOR_1
+0x40008e5	            0x85d2	                           test edx, edx	       306	reflog-walk.c	FUNCTION_13	FOR_1
+0x40008e7	            0x79cc	                           jns 0x40008b5	       306	reflog-walk.c	FUNCTION_13	FOR_1
+0x40008e9	            0xeb3f	                           jmp 0x400092a	       306	reflog-walk.c	FUNCTION_13	FOR_1
+0x40008eb	        0x488b7508	                mov rsi, qword [rbp + 8]	       318	reflog-walk.c	FUNCTION_14
+0x40008ef	        0x48635500	                 movsxd rdx, dword [rbp]	       318	reflog-walk.c	FUNCTION_14
+0x40008f3	        0x488d0cd2	                  lea rcx, [rdx + rdx*8]	       318	reflog-walk.c	FUNCTION_14
+0x40008f7	        0x48c1e103	                              shl rcx, 3	       318	reflog-walk.c	FUNCTION_14
+0x40008fb	        0x48034e10	             add rcx, qword [rsi + 0x10]	       318	reflog-walk.c	FUNCTION_14
+0x40008ff	        0x488b7308	                mov rsi, qword [rbx + 8]	       318	reflog-walk.c	FUNCTION_14
+0x4000903	          0x486313	                 movsxd rdx, dword [rbx]	       318	reflog-walk.c	FUNCTION_14
+0x4000906	        0x488d14d2	                  lea rdx, [rdx + rdx*8]	       318	reflog-walk.c	FUNCTION_14
+0x400090a	        0x48c1e203	                              shl rdx, 3	       318	reflog-walk.c	FUNCTION_14
+0x400090e	        0x48035610	             add rdx, qword [rsi + 0x10]	       318	reflog-walk.c	FUNCTION_14
+0x4000912	        0x488b4930	            mov rcx, qword [rcx + 0x30] 	       334	reflog-walk.c	FUNCTION_15	FOR_1	IF_2	CALL_3
+0x4000916	        0x483b4a30	            cmp rcx, qword [rdx + 0x30] 	       308	reflog-walk.c	FUNCTION_13	FOR_1	CALL_1
+0x400091a	        0x4c0f42f0	                          cmovb r14, rax	       308	reflog-walk.c	FUNCTION_13	FOR_1	CALL_1
+0x400091e	        0x480f42eb	                          cmovb rbp, rbx	       308	reflog-walk.c	FUNCTION_13	FOR_1	CALL_1
+0x4000922	            0xeb06	                           jmp 0x400092a	       308	reflog-walk.c	FUNCTION_13	FOR_1	CALL_1
+0x4000924	          0x4989c6	                            mov r14, rax	       308	reflog-walk.c	FUNCTION_13	FOR_1	CALL_1
+0x4000927	          0x4889dd	                            mov rbp, rbx	       335	reflog-walk.c	FUNCTION_15	FOR_1	IF_2
+0x400092a	        0x4983c401	                              add r12, 1	       327	reflog-walk.c	FUNCTION_15	FOR_1
+0x400092e	        0x4d396508	                cmp qword [r13 + 8], r12	       327	reflog-walk.c	FUNCTION_15	FOR_1
+0x4000932	     0xf876fffffff	                            ja 0x40008a7	       327	reflog-walk.c	FUNCTION_15	FOR_1
+0x4000938	          0x4885ed	                           test rbp, rbp	       340	reflog-walk.c	FUNCTION_15	IF_3
+0x400093b	            0x7413	                            je 0x4000950	       340	reflog-walk.c	FUNCTION_15	IF_3
+0x400093d	        0x836d0001	                      sub dword [rbp], 1	       341	reflog-walk.c	FUNCTION_15	IF_3
+0x4000941	        0x49896d38	             mov qword [r13 + 0x38], rbp	       342	reflog-walk.c	FUNCTION_15	IF_3
+0x4000945	          0x4c89f0	                            mov rax, r14	       343	reflog-walk.c	FUNCTION_15	IF_3
+0x4000948	            0xeb14	                           jmp 0x400095e	       343	reflog-walk.c	FUNCTION_15	IF_3
+0x400094a	      0xb800000000	                              mov eax, 0	       346	reflog-walk.c	FUNCTION_15
+0x400094f	              0xc3	                                     ret	       347	reflog-walk.c	FUNCTION_15
+0x4000950	      0xb800000000	                              mov eax, 0	       346	reflog-walk.c	FUNCTION_15
+0x4000955	            0xeb07	                           jmp 0x400095e	       346	reflog-walk.c	FUNCTION_15
+0x4000957	          0x4885ed	                           test rbp, rbp	       334	reflog-walk.c	FUNCTION_15	FOR_1	IF_2	CALL_3
+0x400095a	            0x758f	                           jne 0x40008eb	       334	reflog-walk.c	FUNCTION_15	FOR_1	IF_2	CALL_3
+0x400095c	            0xebc6	                           jmp 0x4000924	       334	reflog-walk.c	FUNCTION_15	FOR_1	IF_2	CALL_3
+0x400095e	              0x5b	                                 pop rbx	       347	reflog-walk.c	FUNCTION_15
+0x400095f	              0x5d	                                 pop rbp	       347	reflog-walk.c	FUNCTION_15
+0x4000960	            0x415c	                                 pop r12	       347	reflog-walk.c	FUNCTION_15
+0x4000962	            0x415d	                                 pop r13	       347	reflog-walk.c	FUNCTION_15
+0x4000964	            0x415e	                                 pop r14	       347	reflog-walk.c	FUNCTION_15
+0x4000966	              0xc3	                                     ret	       347	reflog-walk.c	FUNCTION_15
+get_reflog_ident	CALL,0:functions,0:IF,1:FOR,0:SWITCH,0:WHILE,0:ELSE,0:DO,0	12
+0x4000744	        0x488b4738	            mov rax, qword [rdi + 0x38] 	       255	reflog-walk.c	FUNCTION_9
+0x4000748	          0x4885c0	                           test rax, rax	       258	reflog-walk.c	FUNCTION_9	IF_1
+0x400074b	            0x7419	                            je 0x4000766	       258	reflog-walk.c	FUNCTION_9	IF_1
+0x400074d	        0x488b5008	                mov rdx, qword [rax + 8]	       261	reflog-walk.c	FUNCTION_9
+0x4000751	          0x486300	                 movsxd rax, dword [rax]	       262	reflog-walk.c	FUNCTION_9
+0x4000754	      0x488d44c009	              lea rax, [rax + rax*8 + 9]	       262	reflog-walk.c	FUNCTION_9
+0x4000759	        0x48c1e003	                              shl rax, 3	       262	reflog-walk.c	FUNCTION_9
+0x400075d	        0x48034210	             add rax, qword [rdx + 0x10]	       262	reflog-walk.c	FUNCTION_9
+0x4000761	        0x488b4028	            mov rax, qword [rax + 0x28] 	       262	reflog-walk.c	FUNCTION_9
+0x4000765	              0xc3	                                     ret	       262	reflog-walk.c	FUNCTION_9
+0x4000766	      0xb800000000	                              mov eax, 0	       259	reflog-walk.c	FUNCTION_9	IF_1
+0x400076b	              0xc3	                                     ret	       263	reflog-walk.c	FUNCTION_9
+read_one_reflog	CALL,5:functions,0:IF,0:FOR,0:SWITCH,0:WHILE,0:ELSE,0:DO,0	74
+0x400018e	            0x4157	                                push r15	        25	reflog-walk.c	FUNCTION_1
+0x4000190	            0x4156	                                push r14	        25	reflog-walk.c	FUNCTION_1
+0x4000192	            0x4155	                                push r13	        25	reflog-walk.c	FUNCTION_1
+0x4000194	            0x4154	                                push r12	        25	reflog-walk.c	FUNCTION_1
+0x4000196	              0x55	                                push rbp	        25	reflog-walk.c	FUNCTION_1
+0x4000197	              0x53	                                push rbx	        25	reflog-walk.c	FUNCTION_1
+0x4000198	        0x4883ec18	                           sub rsp, 0x18	        25	reflog-walk.c	FUNCTION_1
+0x400019c	          0x4989fd	                            mov r13, rdi	        25	reflog-walk.c	FUNCTION_1
+0x400019f	          0x4989f4	                            mov r12, rsi	        25	reflog-walk.c	FUNCTION_1
+0x40001a2	        0x48891424	                    mov qword [rsp], rdx	        25	reflog-walk.c	FUNCTION_1
+0x40001a6	          0x4989cf	                            mov r15, rcx	        25	reflog-walk.c	FUNCTION_1
+0x40001a9	          0x4589c6	                           mov r14d, r8d	        25	reflog-walk.c	FUNCTION_1
+0x40001ac	      0x4c894c2408	                 mov qword [rsp + 8], r9	        25	reflog-walk.c	FUNCTION_1
+0x40001b1	      0x488b6c2450	            mov rbp, qword [rsp + 0x50] 	        25	reflog-walk.c	FUNCTION_1
+0x40001b6	          0x8b4518	            mov eax, dword [rbp + 0x18] 	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001b9	          0x8d4801	                      lea ecx, [rax + 1]	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001bc	          0x8b451c	            mov eax, dword [rbp + 0x1c] 	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001bf	            0x39c1	                            cmp ecx, eax	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001c1	            0x7e50	                           jle 0x4000213	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001c3	        0x8d444030	          lea eax, [rax + rax*2 + 0x30] 	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001c7	            0x89c2	                            mov edx, eax	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001c9	          0xc1ea1f	                           shr edx, 0x1f	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001cc	             0x1c2	                            add edx, eax	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001ce	            0xd1fa	                              sar edx, 1	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001d0	            0x39d1	                            cmp ecx, edx	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001d2	           0xf4fd1	                          cmovg edx, ecx	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001d5	          0x89551c	            mov dword [rbp + 0x1c], edx 	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001d8	          0x4863d2	                         movsxd rdx, edx	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x40001db	    0x48b88ee3388e	           movabs rax, 0x38e38e38e38e38e	       795	git-compat-util.h	FUNCTION_61	IF_1	CALL_1
+0x40001e5	          0x4839c2	                            cmp rdx, rax	       795	git-compat-util.h	FUNCTION_61	IF_1	CALL_1
+0x40001e8	            0x7614	                           jbe 0x40001fe	       795	git-compat-util.h	FUNCTION_61	IF_1	CALL_1
+0x40001ea	      0xbe48000000	                           mov esi, 0x48	       796	git-compat-util.h	FUNCTION_61	IF_1	CALL_2
+0x40001ef	      0xbf00000000	                              mov edi, 0	       796	git-compat-util.h	FUNCTION_61	IF_1	CALL_2
+0x40001f4	      0xb800000000	                              mov eax, 0	       796	git-compat-util.h	FUNCTION_61	IF_1	CALL_2
+0x40001f9	      0xe800000000	                          call 0x40001fe	       796	git-compat-util.h	FUNCTION_61	IF_1	CALL_2
+0x40001fe	        0x488d34d2	                  lea rsi, [rdx + rdx*8]	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x4000202	        0x48c1e603	                              shl rsi, 3	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x4000206	        0x488b7d10	            mov rdi, qword [rbp + 0x10] 	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x400020a	      0xe800000000	                          call 0x400020f	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x400020f	        0x48894510	            mov qword [rbp + 0x10], rax 	        29	reflog-walk.c	FUNCTION_1	CALL_1
+0x4000213	        0x48634518	         movsxd rax, dword [rbp + 0x18] 	        30	reflog-walk.c	FUNCTION_1
+0x4000217	        0x488d14c0	                  lea rdx, [rax + rax*8]	        30	reflog-walk.c	FUNCTION_1
+0x400021b	        0x488b4510	            mov rax, qword [rbp + 0x10] 	        30	reflog-walk.c	FUNCTION_1
+0x400021f	        0x488d1cd0	                  lea rbx, [rax + rdx*8]	        30	reflog-walk.c	FUNCTION_1
+0x4000223	        0x498b4500	                    mov rax, qword [r13]	        53	string3.h	FUNCTION_74	CALL_3
+0x4000227	          0x488903	                    mov qword [rbx], rax	        53	string3.h	FUNCTION_74	CALL_3
+0x400022a	        0x498b4508	                mov rax, qword [r13 + 8]	        53	string3.h	FUNCTION_74	CALL_3
+0x400022e	        0x48894308	                mov qword [rbx + 8], rax	        53	string3.h	FUNCTION_74	CALL_3
+0x4000232	        0x418b4510	            mov eax, dword [r13 + 0x10] 	        53	string3.h	FUNCTION_74	CALL_3
+0x4000236	          0x894310	             mov dword [rbx + 0x10], eax	        53	string3.h	FUNCTION_74	CALL_3
+0x4000239	        0x498b1424	                    mov rdx, qword [r12]	        53	string3.h	FUNCTION_74	CALL_3
+0x400023d	        0x48895314	             mov qword [rbx + 0x14], rdx	        53	string3.h	FUNCTION_74	CALL_3
+0x4000241	      0x498b542408	                mov rdx, qword [r12 + 8]	        53	string3.h	FUNCTION_74	CALL_3
+0x4000246	        0x4889531c	             mov qword [rbx + 0x1c], rdx	        53	string3.h	FUNCTION_74	CALL_3
+0x400024a	      0x418b542410	            mov edx, dword [r12 + 0x10] 	        53	string3.h	FUNCTION_74	CALL_3
+0x400024f	          0x895324	             mov dword [rbx + 0x24], edx	        53	string3.h	FUNCTION_74	CALL_3
+0x4000252	        0x488b3c24	                    mov rdi, qword [rsp]	        33	reflog-walk.c	FUNCTION_1	CALL_4
+0x4000256	      0xe800000000	                          call 0x400025b	        33	reflog-walk.c	FUNCTION_1	CALL_4
+0x400025b	        0x48894328	             mov qword [rbx + 0x28], rax	        33	reflog-walk.c	FUNCTION_1	CALL_4
+0x400025f	        0x4c897b30	             mov qword [rbx + 0x30], r15	        34	reflog-walk.c	FUNCTION_1
+0x4000263	        0x44897338	            mov dword [rbx + 0x38], r14d	        35	reflog-walk.c	FUNCTION_1
+0x4000267	      0x488b7c2408	                mov rdi, qword [rsp + 8]	        36	reflog-walk.c	FUNCTION_1	CALL_5
+0x400026c	      0xe800000000	                          call 0x4000271	        36	reflog-walk.c	FUNCTION_1	CALL_5
+0x4000271	        0x48894340	             mov qword [rbx + 0x40], rax	        36	reflog-walk.c	FUNCTION_1	CALL_5
+0x4000275	        0x83451801	               add dword [rbp + 0x18], 1	        37	reflog-walk.c	FUNCTION_1
+0x4000279	      0xb800000000	                              mov eax, 0	        39	reflog-walk.c	FUNCTION_1
+0x400027e	        0x4883c418	                           add rsp, 0x18	        39	reflog-walk.c	FUNCTION_1
+0x4000282	              0x5b	                                 pop rbx	        39	reflog-walk.c	FUNCTION_1
+0x4000283	              0x5d	                                 pop rbp	        39	reflog-walk.c	FUNCTION_1
+0x4000284	            0x415c	                                 pop r12	        39	reflog-walk.c	FUNCTION_1
+0x4000286	            0x415d	                                 pop r13	        39	reflog-walk.c	FUNCTION_1
+0x4000288	            0x415e	                                 pop r14	        39	reflog-walk.c	FUNCTION_1
+0x400028a	            0x415f	                                 pop r15	        39	reflog-walk.c	FUNCTION_1
+0x400028c	              0xc3	                                     ret	        39	reflog-walk.c	FUNCTION_1
+add_reflog_for_walk	CALL,24:functions,0:IF,12:FOR,0:SWITCH,0:WHILE,0:ELSE,5:DO,0	206
+0x40002a9	            0x4157	                                push r15	       121	reflog-walk.c	FUNCTION_6
+0x40002ab	            0x4156	                                push r14	       121	reflog-walk.c	FUNCTION_6
+0x40002ad	            0x4155	                                push r13	       121	reflog-walk.c	FUNCTION_6
+0x40002af	            0x4154	                                push r12	       121	reflog-walk.c	FUNCTION_6
+0x40002b1	              0x55	                                push rbp	       121	reflog-walk.c	FUNCTION_6
+0x40002b2	              0x53	                                push rbx	       121	reflog-walk.c	FUNCTION_6
+0x40002b3	        0x4883ec48	                           sub rsp, 0x48	       121	reflog-walk.c	FUNCTION_6
+0x40002b7	          0x4889fb	                            mov rbx, rdi	       121	reflog-walk.c	FUNCTION_6
+0x40002ba	          0x4989f4	                            mov r12, rsi	       121	reflog-walk.c	FUNCTION_6
+0x40002bd	          0x4989d5	                            mov r13, rdx	       121	reflog-walk.c	FUNCTION_6
+0x40002c0	    0x64488b042528	                mov rax, qword fs:[0x28]	       121	reflog-walk.c	FUNCTION_6
+0x40002c9	      0x4889442438	             mov qword [rsp + 0x38], rax	       121	reflog-walk.c	FUNCTION_6
+0x40002ce	            0x31c0	                            xor eax, eax	       121	reflog-walk.c	FUNCTION_6
+0x40002d0	      0xbe40000000	                           mov esi, 0x40	       126	reflog-walk.c	FUNCTION_6	CALL_1
+0x40002d5	          0x4889d7	                            mov rdi, rdx	       126	reflog-walk.c	FUNCTION_6	CALL_1
+0x40002d8	      0xe800000000	                          call 0x40002dd	       126	reflog-walk.c	FUNCTION_6	CALL_1
+0x40002dd	      0x41f6042420	                   test byte [r12], 0x20	       130	reflog-walk.c	FUNCTION_6	IF_1
+0x40002e2	            0x7412	                            je 0x40002f6	       130	reflog-walk.c	FUNCTION_6	IF_1
+0x40002e4	          0x4c89ee	                            mov rsi, r13	       131	reflog-walk.c	FUNCTION_6	CALL_2
+0x40002e7	      0xbf00000000	                              mov edi, 0	       131	reflog-walk.c	FUNCTION_6	CALL_2
+0x40002ec	      0xb800000000	                              mov eax, 0	       131	reflog-walk.c	FUNCTION_6	CALL_2
+0x40002f1	      0xe800000000	                          call 0x40002f6	       131	reflog-walk.c	FUNCTION_6	CALL_2
+0x40002f6	          0x4889c5	                            mov rbp, rax	       131	reflog-walk.c	FUNCTION_6	CALL_2
+0x40002f9	          0x4c89ef	                            mov rdi, r13	       133	reflog-walk.c	FUNCTION_6	CALL_3
+0x40002fc	      0xe800000000	                          call 0x4000301	       133	reflog-walk.c	FUNCTION_6	CALL_3
+0x4000301	          0x4989c4	                            mov r12, rax	       133	reflog-walk.c	FUNCTION_6	CALL_3
+0x4000304	          0x4885ed	                           test rbp, rbp	       134	reflog-walk.c	FUNCTION_6	IF_2
+0x4000307	            0x7462	                            je 0x400036b	       134	reflog-walk.c	FUNCTION_6	IF_2
+0x4000309	        0x807d017b	                cmp byte [rbp + 1], 0x7b	       134	reflog-walk.c	FUNCTION_6	IF_2
+0x400030d	            0x7571	                           jne 0x4000380	       134	reflog-walk.c	FUNCTION_6	IF_2
+0x400030f	          0x4889e8	                            mov rax, rbp	       136	reflog-walk.c	FUNCTION_6	IF_2
+0x4000312	          0x4c29e8	                            sub rax, r13	       136	reflog-walk.c	FUNCTION_6	IF_2
+0x4000315	      0x41c6040400	                 mov byte [r12 + rax], 0	       136	reflog-walk.c	FUNCTION_6	IF_2
+0x400031a	        0x4c8d6d02	                      lea r13, [rbp + 2]	       137	reflog-walk.c	FUNCTION_6	IF_2	CALL_4
+0x400031e	      0xba0a000000	                            mov edx, 0xa	       137	reflog-walk.c	FUNCTION_6	IF_2	CALL_4
+0x4000323	      0x488d742418	                   lea rsi, [rsp + 0x18]	       137	reflog-walk.c	FUNCTION_6	IF_2	CALL_4
+0x4000328	          0x4c89ef	                            mov rdi, r13	       137	reflog-walk.c	FUNCTION_6	IF_2	CALL_4
+0x400032b	      0xe800000000	                          call 0x4000330	       137	reflog-walk.c	FUNCTION_6	IF_2	CALL_4
+0x4000330	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	       138	reflog-walk.c	FUNCTION_6	IF_2	IF_3
+0x4000335	          0x803a7d	                    cmp byte [rdx], 0x7d	       138	reflog-walk.c	FUNCTION_6	IF_2	IF_3
+0x4000338	            0x7512	                           jne 0x400034c	       138	reflog-walk.c	FUNCTION_6	IF_2	IF_3
+0x400033a	            0x89c5	                            mov ebp, eax	       137	reflog-walk.c	FUNCTION_6	IF_2	CALL_4
+0x400033c	    0xc744240c0100	                mov dword [rsp + 0xc], 1	       144	reflog-walk.c	FUNCTION_6	IF_2	ELSE_1
+0x4000344	    0x41bd00000000	                             mov r13d, 0	       122	reflog-walk.c	FUNCTION_6
+0x400034a	            0xeb47	                           jmp 0x4000393	       122	reflog-walk.c	FUNCTION_6
+0x400034c	      0xbe00000000	                              mov esi, 0	       140	reflog-walk.c	FUNCTION_6	IF_2	IF_3	CALL_5
+0x4000351	          0x4c89ef	                            mov rdi, r13	       140	reflog-walk.c	FUNCTION_6	IF_2	IF_3	CALL_5
+0x4000354	      0xe800000000	                          call 0x4000359	       140	reflog-walk.c	FUNCTION_6	IF_2	IF_3	CALL_5
+0x4000359	          0x4989c5	                            mov r13, rax	       140	reflog-walk.c	FUNCTION_6	IF_2	IF_3	CALL_5
+0x400035c	    0xc744240c0200	                mov dword [rsp + 0xc], 2	       141	reflog-walk.c	FUNCTION_6	IF_2	IF_3
+0x4000364	      0xbdffffffff	                     mov ebp, 0xffffffff	       139	reflog-walk.c	FUNCTION_6	IF_2	IF_3
+0x4000369	            0xeb28	                           jmp 0x4000393	       134	reflog-walk.c	FUNCTION_6	IF_2
+0x400036b	    0xc744240c0000	                mov dword [rsp + 0xc], 0	       128	reflog-walk.c	FUNCTION_6
+0x4000373	      0xbd00000000	                              mov ebp, 0	       146	reflog-walk.c	FUNCTION_6	ELSE_2
+0x4000378	    0x41bd00000000	                             mov r13d, 0	       122	reflog-walk.c	FUNCTION_6
+0x400037e	            0xeb13	                           jmp 0x4000393	       122	reflog-walk.c	FUNCTION_6
+0x4000380	    0xc744240c0000	                mov dword [rsp + 0xc], 0	       128	reflog-walk.c	FUNCTION_6
+0x4000388	      0xbd00000000	                              mov ebp, 0	       146	reflog-walk.c	FUNCTION_6	ELSE_2
+0x400038d	    0x41bd00000000	                             mov r13d, 0	       122	reflog-walk.c	FUNCTION_6
+0x4000393	        0x4c8d7b18	                   lea r15, [rbx + 0x18]	       148	reflog-walk.c	FUNCTION_6	CALL_6
+0x4000397	          0x4c89e6	                            mov rsi, r12	       148	reflog-walk.c	FUNCTION_6	CALL_6
+0x400039a	          0x4c89ff	                            mov rdi, r15	       148	reflog-walk.c	FUNCTION_6	CALL_6
+0x400039d	      0xe800000000	                          call 0x40003a2	       148	reflog-walk.c	FUNCTION_6	CALL_6
+0x40003a2	          0x4885c0	                           test rax, rax	       149	reflog-walk.c	FUNCTION_6	IF_4
+0x40003a5	            0x7409	                            je 0x40003b0	       149	reflog-walk.c	FUNCTION_6	IF_4
+0x40003a7	        0x4c8b7008	                mov r14, qword [rax + 8]	       150	reflog-walk.c	FUNCTION_6	IF_4
+0x40003ab	      0xe9ee000000	                           jmp 0x400049e	       150	reflog-walk.c	FUNCTION_6	IF_4
+0x40003b0	      0x41803c2400	                       cmp byte [r12], 0	       152	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5
+0x40003b5	            0x7538	                           jne 0x40003ef	       152	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5
+0x40003b7	          0x4c89e7	                            mov rdi, r12	       153	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_7
+0x40003ba	      0xe800000000	                          call 0x40003bf	       153	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_7
+0x40003bf	      0xb900000000	                              mov ecx, 0	       154	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_8
+0x40003c4	      0xba00000000	                              mov edx, 0	       154	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_8
+0x40003c9	      0xbe00000000	                              mov esi, 0	       154	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_8
+0x40003ce	      0xbf00000000	                              mov edi, 0	       154	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_8
+0x40003d3	      0xe800000000	                          call 0x40003d8	       154	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_8
+0x40003d8	          0x4989c4	                            mov r12, rax	       154	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_8
+0x40003db	          0x4885c0	                           test rax, rax	       155	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	IF_6
+0x40003de	            0x750f	                           jne 0x40003ef	       155	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	IF_6
+0x40003e0	      0xbf00000000	                              mov edi, 0	       156	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_9
+0x40003e5	      0xb800000000	                              mov eax, 0	       156	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_9
+0x40003ea	      0xe800000000	                          call 0x40003ef	       156	reflog-walk.c	FUNCTION_6	ELSE_3	IF_5	CALL_9
+0x40003ef	          0x4c89e7	                            mov rdi, r12	       159	reflog-walk.c	FUNCTION_6	ELSE_3	CALL_10
+0x40003f2	      0xe8b4fcffff	           call sym.read_complete_reflog	       159	reflog-walk.c	FUNCTION_6	ELSE_3	CALL_10
+0x40003f7	          0x4989c6	                            mov r14, rax	       159	reflog-walk.c	FUNCTION_6	ELSE_3	CALL_10
+0x40003fa	          0x4885c0	                           test rax, rax	       160	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7
+0x40003fd	            0x740a	                            je 0x4000409	       160	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7
+0x40003ff	        0x83781800	               cmp dword [rax + 0x18], 0	       160	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7
+0x4000403	     0xf8586000000	                           jne 0x400048f	       160	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7
+0x4000409	      0xb800000000	                              mov eax, 0	       163	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_12
+0x400040e	    0x48c7c1ffffff	             mov rcx, 0xffffffffffffffff	       163	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_12
+0x4000415	          0x4c89e7	                            mov rdi, r12	       163	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_12
+0x4000418	            0xf2ae	              repne scasb al, byte [rdi]	       163	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_12
+0x400041a	          0x48f7d1	                                 not rcx	       163	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_12
+0x400041d	        0x488d71ff	                      lea rsi, [rcx - 1]	       163	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_12
+0x4000421	      0x488d4c2418	                   lea rcx, [rsp + 0x18]	       163	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_12
+0x4000426	      0x488d542420	                   lea rdx, [rsp + 0x20]	       163	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_12
+0x400042b	          0x4c89e7	                            mov rdi, r12	       163	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_12
+0x400042e	      0xe800000000	                          call 0x4000433	       163	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_12
+0x4000433	          0x83f801	                              cmp eax, 1	       165	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	IF_8
+0x4000436	            0x7e0c	                           jle 0x4000444	       165	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	IF_8
+0x4000438	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	       166	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_13
+0x400043d	      0xe800000000	                          call 0x4000442	       166	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_13
+0x4000442	            0xeb25	                           jmp 0x4000469	       166	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	CALL_13
+0x4000444	          0x83f801	                              cmp eax, 1	       167	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	ELSE_4	IF_9
+0x4000447	            0x7520	                           jne 0x4000469	       167	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	ELSE_4	IF_9
+0x4000449	          0x4c89f7	                            mov rdi, r14	       168	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	ELSE_4	IF_9	CALL_14
+0x400044c	      0xe8effbffff	           call sym.free_complete_reflog	       168	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	ELSE_4	IF_9	CALL_14
+0x4000451	          0x4c89e7	                            mov rdi, r12	       169	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	ELSE_4	IF_9	CALL_15
+0x4000454	      0xe800000000	                          call 0x4000459	       169	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	ELSE_4	IF_9	CALL_15
+0x4000459	      0x4c8b642418	            mov r12, qword [rsp + 0x18] 	       170	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	ELSE_4	IF_9
+0x400045e	          0x4c89e7	                            mov rdi, r12	       171	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	ELSE_4	IF_9	CALL_16
+0x4000461	      0xe845fcffff	           call sym.read_complete_reflog	       171	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	ELSE_4	IF_9	CALL_16
+0x4000466	          0x4989c6	                            mov r14, rax	       171	reflog-walk.c	FUNCTION_6	ELSE_3	IF_7	ELSE_4	IF_9	CALL_16
+0x4000469	          0x4d85f6	                           test r14, r14	       174	reflog-walk.c	FUNCTION_6	ELSE_3	IF_10
+0x400046c	            0x7407	                            je 0x4000475	       174	reflog-walk.c	FUNCTION_6	ELSE_3	IF_10
+0x400046e	      0x41837e1800	               cmp dword [r14 + 0x18], 0	       174	reflog-walk.c	FUNCTION_6	ELSE_3	IF_10
+0x4000473	            0x751a	                           jne 0x400048f	       174	reflog-walk.c	FUNCTION_6	ELSE_3	IF_10
+0x4000475	          0x4c89f7	                            mov rdi, r14	       175	reflog-walk.c	FUNCTION_6	ELSE_3	IF_10	CALL_17
+0x4000478	      0xe8c3fbffff	           call sym.free_complete_reflog	       175	reflog-walk.c	FUNCTION_6	ELSE_3	IF_10	CALL_17
+0x400047d	          0x4c89e7	                            mov rdi, r12	       176	reflog-walk.c	FUNCTION_6	ELSE_3	IF_10	CALL_18
+0x4000480	      0xe800000000	                          call 0x4000485	       176	reflog-walk.c	FUNCTION_6	ELSE_3	IF_10	CALL_18
+0x4000485	      0xb8ffffffff	                     mov eax, 0xffffffff	       177	reflog-walk.c	FUNCTION_6	ELSE_3	IF_10
+0x400048a	      0xe9fb000000	                           jmp 0x400058a	       177	reflog-walk.c	FUNCTION_6	ELSE_3	IF_10
+0x400048f	          0x4c89e6	                            mov rsi, r12	       179	reflog-walk.c	FUNCTION_6	ELSE_3	CALL_19
+0x4000492	          0x4c89ff	                            mov rdi, r15	       179	reflog-walk.c	FUNCTION_6	ELSE_3	CALL_19
+0x4000495	      0xe800000000	                          call 0x400049a	       179	reflog-walk.c	FUNCTION_6	ELSE_3	CALL_19
+0x400049a	        0x4c897008	                mov qword [rax + 8], r14	       180	reflog-walk.c	FUNCTION_6	ELSE_3
+0x400049e	          0x4c89e7	                            mov rdi, r12	       182	reflog-walk.c	FUNCTION_6	CALL_20
+0x40004a1	      0xe800000000	                          call 0x40004a6	       182	reflog-walk.c	FUNCTION_6	CALL_20
+0x40004a6	      0xbe10000000	                           mov esi, 0x10	       184	reflog-walk.c	FUNCTION_6	CALL_21
+0x40004ab	      0xbf01000000	                              mov edi, 1	       184	reflog-walk.c	FUNCTION_6	CALL_21
+0x40004b0	      0xe800000000	                          call 0x40004b5	       184	reflog-walk.c	FUNCTION_6	CALL_21
+0x40004b5	          0x4989c4	                            mov r12, rax	       184	reflog-walk.c	FUNCTION_6	CALL_21
+0x40004b8	            0x85ed	                           test ebp, ebp	       185	reflog-walk.c	FUNCTION_6	IF_11
+0x40004ba	            0x7943	                           jns 0x40004ff	       185	reflog-walk.c	FUNCTION_6	IF_11
+0x40004bc	        0x418b4618	            mov eax, dword [r14 + 0x18] 	        90	reflog-walk.c	FUNCTION_4	FOR_1
+0x40004c0	          0x83e801	                              sub eax, 1	        90	reflog-walk.c	FUNCTION_4	FOR_1
+0x40004c3	     0xf88d3000000	                            js 0x400059c	        90	reflog-walk.c	FUNCTION_4	FOR_1
+0x40004c9	        0x498b4e10	            mov rcx, qword [r14 + 0x10] 	        91	reflog-walk.c	FUNCTION_4	FOR_1	IF_1
+0x40004cd	          0x4863d0	                         movsxd rdx, eax	        91	reflog-walk.c	FUNCTION_4	FOR_1	IF_1
+0x40004d0	        0x488d14d2	                  lea rdx, [rdx + rdx*8]	        91	reflog-walk.c	FUNCTION_4	FOR_1	IF_1
+0x40004d4	      0x4c3b6cd130	    cmp r13, qword [rcx + rdx*8 + 0x30] 	        91	reflog-walk.c	FUNCTION_4	FOR_1	IF_1
+0x40004d9	            0x7217	                            jb 0x40004f2	        91	reflog-walk.c	FUNCTION_4	FOR_1	IF_1
+0x40004db	      0xe9cb000000	                           jmp 0x40005ab	        91	reflog-walk.c	FUNCTION_4	FOR_1	IF_1
+0x40004e0	          0x4863d0	                         movsxd rdx, eax	        91	reflog-walk.c	FUNCTION_4	FOR_1	IF_1
+0x40004e3	        0x488d14d2	                  lea rdx, [rdx + rdx*8]	        91	reflog-walk.c	FUNCTION_4	FOR_1	IF_1
+0x40004e7	      0x4c3b6cd130	    cmp r13, qword [rcx + rdx*8 + 0x30] 	        91	reflog-walk.c	FUNCTION_4	FOR_1	IF_1
+0x40004ec	     0xf83b9000000	                           jae 0x40005ab	        91	reflog-walk.c	FUNCTION_4	FOR_1	IF_1
+0x40004f2	          0x83e801	                              sub eax, 1	        90	reflog-walk.c	FUNCTION_4	FOR_1
+0x40004f5	          0x83f8ff	             cmp eax, 0xffffffffffffffff	        90	reflog-walk.c	FUNCTION_4	FOR_1
+0x40004f8	            0x75e6	                           jne 0x40004e0	        90	reflog-walk.c	FUNCTION_4	FOR_1
+0x40004fa	      0xe99d000000	                           jmp 0x400059c	        90	reflog-walk.c	FUNCTION_4	FOR_1
+0x40004ff	            0xf7d5	                                 not ebp	       192	reflog-walk.c	FUNCTION_6	ELSE_5
+0x4000501	        0x41036e18	             add ebp, dword [r14 + 0x18]	       192	reflog-walk.c	FUNCTION_6	ELSE_5
+0x4000505	            0x8928	                    mov dword [rax], ebp	       192	reflog-walk.c	FUNCTION_6	ELSE_5
+0x4000507	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       193	reflog-walk.c	FUNCTION_6
+0x400050b	      0x4189442404	                mov dword [r12 + 4], eax	       193	reflog-walk.c	FUNCTION_6
+0x4000510	      0x4d89742408	                mov qword [r12 + 8], r14	       194	reflog-walk.c	FUNCTION_6
+0x4000515	        0x488b4308	                mov rax, qword [rbx + 8]	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x4000519	        0x488d5001	                      lea rdx, [rax + 1]	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x400051d	        0x488b4310	            mov rax, qword [rbx + 0x10] 	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x4000521	          0x4839c2	                            cmp rdx, rax	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x4000524	            0x764c	                           jbe 0x4000572	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x4000526	      0x488d744030	          lea rsi, [rax + rax*2 + 0x30] 	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x400052b	          0x48d1ee	                              shr rsi, 1	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x400052e	          0x4839f2	                            cmp rdx, rsi	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x4000531	        0x480f47f2	                          cmova rsi, rdx	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x4000535	        0x48897310	             mov qword [rbx + 0x10], rsi	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x4000539	          0x4889f2	                            mov rdx, rsi	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x400053c	    0x48b8ffffffff	         movabs rax, 0x1fffffffffffffff 	       795	git-compat-util.h	FUNCTION_61	IF_1	CALL_1
+0x4000546	          0x4839c6	                            cmp rsi, rax	       795	git-compat-util.h	FUNCTION_61	IF_1	CALL_1
+0x4000549	            0x7614	                           jbe 0x400055f	       795	git-compat-util.h	FUNCTION_61	IF_1	CALL_1
+0x400054b	      0xbe08000000	                              mov esi, 8	       796	git-compat-util.h	FUNCTION_61	IF_1	CALL_2
+0x4000550	      0xbf00000000	                              mov edi, 0	       796	git-compat-util.h	FUNCTION_61	IF_1	CALL_2
+0x4000555	      0xb800000000	                              mov eax, 0	       796	git-compat-util.h	FUNCTION_61	IF_1	CALL_2
+0x400055a	      0xe800000000	                          call 0x400055f	       796	git-compat-util.h	FUNCTION_61	IF_1	CALL_2
+0x400055f	    0x488d34f50000	                        lea rsi, [rsi*8]	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x4000567	          0x488b3b	                    mov rdi, qword [rbx]	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x400056a	      0xe800000000	                          call 0x400056f	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x400056f	          0x488903	                    mov qword [rbx], rax	       196	reflog-walk.c	FUNCTION_6	CALL_24
+0x4000572	          0x488b13	                    mov rdx, qword [rbx]	       197	reflog-walk.c	FUNCTION_6
+0x4000575	        0x488b4308	                mov rax, qword [rbx + 8]	       197	reflog-walk.c	FUNCTION_6
+0x4000579	        0x488d4801	                      lea rcx, [rax + 1]	       197	reflog-walk.c	FUNCTION_6
+0x400057d	        0x48894b08	                mov qword [rbx + 8], rcx	       197	reflog-walk.c	FUNCTION_6
+0x4000581	        0x4c8924c2	            mov qword [rdx + rax*8], r12	       197	reflog-walk.c	FUNCTION_6
+0x4000585	      0xb800000000	                              mov eax, 0	       199	reflog-walk.c	FUNCTION_6
+0x400058a	      0x488b4c2438	            mov rcx, qword [rsp + 0x38] 	       200	reflog-walk.c	FUNCTION_6
+0x400058f	    0x6448330c2528	                xor rcx, qword fs:[0x28]	       200	reflog-walk.c	FUNCTION_6
+0x4000598	            0x741f	                            je 0x40005b9	       200	reflog-walk.c	FUNCTION_6
+0x400059a	            0xeb18	                           jmp 0x40005b4	       200	reflog-walk.c	FUNCTION_6
+0x400059c	          0x4c89e7	                            mov rdi, r12	       188	reflog-walk.c	FUNCTION_6	IF_11	IF_12	CALL_23
+0x400059f	      0xe800000000	                          call 0x40005a4	       188	reflog-walk.c	FUNCTION_6	IF_11	IF_12	CALL_23
+0x40005a4	      0xb8ffffffff	                     mov eax, 0xffffffff	       189	reflog-walk.c	FUNCTION_6	IF_11	IF_12
+0x40005a9	            0xebdf	                           jmp 0x400058a	       189	reflog-walk.c	FUNCTION_6	IF_11	IF_12
+0x40005ab	        0x41890424	                    mov dword [r12], eax	       186	reflog-walk.c	FUNCTION_6	IF_11	CALL_22
+0x40005af	      0xe953ffffff	                           jmp 0x4000507	       186	reflog-walk.c	FUNCTION_6	IF_11	CALL_22
+0x40005b4	      0xe800000000	                          call 0x40005b9	       200	reflog-walk.c	FUNCTION_6
+0x40005b9	        0x4883c448	                           add rsp, 0x48	       200	reflog-walk.c	FUNCTION_6
+0x40005bd	              0x5b	                                 pop rbx	       200	reflog-walk.c	FUNCTION_6
+0x40005be	              0x5d	                                 pop rbp	       200	reflog-walk.c	FUNCTION_6
+0x40005bf	            0x415c	                                 pop r12	       200	reflog-walk.c	FUNCTION_6
+0x40005c1	            0x415d	                                 pop r13	       200	reflog-walk.c	FUNCTION_6
+0x40005c3	            0x415e	                                 pop r14	       200	reflog-walk.c	FUNCTION_6
+0x40005c5	            0x415f	                                 pop r15	       200	reflog-walk.c	FUNCTION_6
+0x40005c7	              0xc3	                                     ret	       200	reflog-walk.c	FUNCTION_6
