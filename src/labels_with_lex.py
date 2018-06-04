@@ -42,10 +42,10 @@ def lex_and_label(fname, src=""):
 
     lexer = LEX()
 
-    completed=subprocess.run(["find",src,"-name","*"+fname], stdout=subprocess.PIPE, universal_newlines=True)
+    completed=subprocess.run(["find",src,"-name",fname], stdout=subprocess.PIPE, universal_newlines=True)
     source_files=completed.stdout.split('\n')
     if len(source_files)==1:
-        completed=subprocess.run(["find","/usr/include/","-name","*"+fname], stdout=subprocess.PIPE, universal_newlines=True)
+        completed=subprocess.run(["find","/usr/include/","-name",fname], stdout=subprocess.PIPE, universal_newlines=True)
         source_files=completed.stdout.split('\n')
 
 
@@ -132,7 +132,7 @@ def lex_and_label(fname, src=""):
                 labels.append((tokens[end][2], tokens[i][1] + "_" + num, i)) #end event
 
 
-        if tokens[i][1] == "ID" and tokens[i+1][1] == "LPAREN":
+        if i+1<len(tokens) and tokens[i][1] == "ID" and tokens[i+1][1] == "LPAREN":
             #solve for a function
             is_definition = 0
             paren = 0
@@ -142,7 +142,7 @@ def lex_and_label(fname, src=""):
             for j in range(i + 1, len(tokens)):
                 paren += check_parenthesis(tokens[j])
                 if tokens[j][1] == "RPAREN" and paren == 0:
-                    if tokens[j+1][1]=="SEMI":
+                    if j+1<len(tokens) and tokens[j+1][1]=="SEMI":
                         break
                     for k in range(j+1,len(tokens)):
                         if tokens[k][1] in ["ID","SEMI","TIMES","INT"]:

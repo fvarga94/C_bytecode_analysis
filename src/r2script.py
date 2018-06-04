@@ -25,5 +25,11 @@ def disassemble(start_adr,length,fname):
         formated = re.sub(end_re, "", re.sub( in_re, "\t", o)).split("\t")[:3]
         if formated[1][-1] == ".":
             formated[1]=formated[1][:-1]
+        #if formated[1]=="~":
+        #    values=[]
+        #    break
+        #if formated[2]=="invalid":
+        #    values=[]
+        #    break
         values.append((int(formated[0], 16)-base, hex(int(formated[1], 16)), formated[2] ))
-    return values
+    return values,base

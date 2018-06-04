@@ -15,7 +15,7 @@ for file in $files;
     check="$HOME/C_bytecode_analysis/output/$dir/$name.labeled_addresses"
     if [ ! -s $check ]
     then
-      eval "python3 src/main_labeler.py $file $HOME/$dir/src/ /$dir > log_$name.txt"
+      eval "python3 src/main_labeler.py $file $HOME/$dir/ /$dir > log_$name.txt"
     fi
     echo -e "--\ndone ${file##*/}\n--\n";
 done
