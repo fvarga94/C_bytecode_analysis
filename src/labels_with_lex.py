@@ -36,21 +36,12 @@ def check_brace(token):
             return -1
     return 0
 
-def lex_and_label(fname, src=""):
+def lex_and_label(fname, text, ignore_list):
     print ("Labeling")
     global current,k_dict,open_functions,end_functions
 
     lexer = LEX()
-
-    completed=subprocess.run(["find",src,"-name",fname], stdout=subprocess.PIPE, universal_newlines=True)
-    source_files=completed.stdout.split('\n')
-    if len(source_files)==1:
-        completed=subprocess.run(["find","/usr/include/","-name",fname], stdout=subprocess.PIPE, universal_newlines=True)
-        source_files=completed.stdout.split('\n')
-
-
-    print (source_files)
-    tokens = lexer.lex(source_files[0])
+    tokens = lexer.lex(text)
     print ("Labeled")
     remove = 0
     labels = []
@@ -132,8 +123,9 @@ def lex_and_label(fname, src=""):
                 labels.append((tokens[end][2], tokens[i][1] + "_" + num, i)) #end event
 
 
-        if i+1<len(tokens) and tokens[i][1] == "ID" and tokens[i+1][1] == "LPAREN":
+        if i+1<len(tokens) and tokens[i][1] == "ID" and tokens[i+1][1] == "LPAREN" and not tokens[i][0] in ignore_list:
             #solve for a function
+            #print (tokens[i])
             is_definition = 0
             paren = 0
             start = 0

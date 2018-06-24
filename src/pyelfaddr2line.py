@@ -70,8 +70,8 @@ def process_file(filename, address_start, address_end, offset):
             sys.stderr.write("Proccessing: "+str(function_counter+1)+" / "+str(number_f)+"\n")
             fo, base_address = r2script.disassemble( hex(min_a), 1 - min_a + max_a, filename)
             i=0
-            #if not fo:
-            #    continue
+            if fo==None:
+                continue
             for j in range(len(output)):
                 if len(output[j])==1:
                     new_output.append(output[j])

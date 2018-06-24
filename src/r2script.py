@@ -31,5 +31,7 @@ def disassemble(start_adr,length,fname):
         #if formated[2]=="invalid":
         #    values=[]
         #    break
+        if formated[0]=="~":
+            return None,None
         values.append((int(formated[0], 16)-base, hex(int(formated[1], 16)), formated[2] ))
     return values,base
