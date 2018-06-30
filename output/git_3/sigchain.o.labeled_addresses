@@ -1,0 +1,134 @@
+sigchain_push_common	SWITCH,0:IF,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,5	18
+0x40001a0	              0x53	                                push rbx	        46	sigchain.c	FUNCTION_4
+0x40001a1	          0x4889fe	                            mov rsi, rdi	        47	sigchain.c	FUNCTION_4	CALL_1
+0x40001a4	          0x4889fb	                            mov rbx, rdi	        46	sigchain.c	FUNCTION_4
+0x40001a7	      0xbf02000000	                              mov edi, 2	        47	sigchain.c	FUNCTION_4	CALL_1
+0x40001ac	      0xe800000000	                          call 0x40001b1	        47	sigchain.c	FUNCTION_4	CALL_1
+0x40001b1	          0x4889de	                            mov rsi, rbx	        48	sigchain.c	FUNCTION_4	CALL_2
+0x40001b4	      0xbf01000000	                              mov edi, 1	        48	sigchain.c	FUNCTION_4	CALL_2
+0x40001b9	      0xe800000000	                          call 0x40001be	        48	sigchain.c	FUNCTION_4	CALL_2
+0x40001be	          0x4889de	                            mov rsi, rbx	        49	sigchain.c	FUNCTION_4	CALL_3
+0x40001c1	      0xbf0f000000	                            mov edi, 0xf	        49	sigchain.c	FUNCTION_4	CALL_3
+0x40001c6	      0xe800000000	                          call 0x40001cb	        49	sigchain.c	FUNCTION_4	CALL_3
+0x40001cb	          0x4889de	                            mov rsi, rbx	        50	sigchain.c	FUNCTION_4	CALL_4
+0x40001ce	      0xbf03000000	                              mov edi, 3	        50	sigchain.c	FUNCTION_4	CALL_4
+0x40001d3	      0xe800000000	                          call 0x40001d8	        50	sigchain.c	FUNCTION_4	CALL_4
+0x40001d8	          0x4889de	                            mov rsi, rbx	        51	sigchain.c	FUNCTION_4	CALL_5
+0x40001db	      0xbf0d000000	                            mov edi, 0xd	        51	sigchain.c	FUNCTION_4	CALL_5
+0x40001e0	              0x5b	                                 pop rbx	        52	sigchain.c	FUNCTION_4
+0x40001e1	      0xe95afeffff	                   jmp sym.sigchain_push	        51	sigchain.c	FUNCTION_4	CALL_5
+sigchain_pop	SWITCH,0:IF,2:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,2	30
+0x4000140	              0x55	                                push rbp	        33	sigchain.c	FUNCTION_3
+0x4000141	          0x8d57ff	                      lea edx, [rdi - 1]	        15	sigchain.c	FUNCTION_1	IF_1
+0x4000144	              0x53	                                push rbx	        33	sigchain.c	FUNCTION_3
+0x4000145	          0x4863c7	                         movsxd rax, edi	        34	sigchain.c	FUNCTION_3
+0x4000148	        0x4883ec08	                              sub rsp, 8	        33	sigchain.c	FUNCTION_3
+0x400014c	        0x48c1e004	                              shl rax, 4	        34	sigchain.c	FUNCTION_3
+0x4000150	          0x83fa1e	                           cmp edx, 0x1e	        15	sigchain.c	FUNCTION_1	IF_1
+0x4000153	            0x7739	                            ja 0x400018e	        15	sigchain.c	FUNCTION_1	IF_1
+0x4000155	    0x488d98000000	                          lea rbx, [rax]	        15	sigchain.c	FUNCTION_1	IF_1
+0x400015c	            0x31ed	                            xor ebp, ebp	        37	sigchain.c	FUNCTION_3	IF_1
+0x400015e	        0x48635308	            movsxd rdx, dword [rbx + 8] 	        36	sigchain.c	FUNCTION_3	IF_1
+0x4000162	            0x85d2	                           test edx, edx	        36	sigchain.c	FUNCTION_3	IF_1
+0x4000164	            0x7e1b	                           jle 0x4000181	        36	sigchain.c	FUNCTION_3	IF_1
+0x4000166	    0x488b80000000	                    mov rax, qword [rax]	        39	sigchain.c	FUNCTION_3	IF_2	CALL_2
+0x400016d	      0x488b74d0f8	        mov rsi, qword [rax + rdx*8 - 8]	        39	sigchain.c	FUNCTION_3	IF_2	CALL_2
+0x4000172	      0xe800000000	                          call 0x4000177	        39	sigchain.c	FUNCTION_3	IF_2	CALL_2
+0x4000177	        0x4883f8ff	             cmp rax, 0xffffffffffffffff	        39	sigchain.c	FUNCTION_3	IF_2	CALL_2
+0x400017b	            0x740d	                            je 0x400018a	        39	sigchain.c	FUNCTION_3	IF_2	CALL_2
+0x400017d	        0x836b0801	                  sub dword [rbx + 8], 1	        41	sigchain.c	FUNCTION_3
+0x4000181	        0x4883c408	                              add rsp, 8	        43	sigchain.c	FUNCTION_3
+0x4000185	            0x89e8	                            mov eax, ebp	        43	sigchain.c	FUNCTION_3
+0x4000187	              0x5b	                                 pop rbx	        43	sigchain.c	FUNCTION_3
+0x4000188	              0x5d	                                 pop rbp	        43	sigchain.c	FUNCTION_3
+0x4000189	              0xc3	                                     ret	        43	sigchain.c	FUNCTION_3
+0x400018a	            0x89c5	                            mov ebp, eax	        40	sigchain.c	FUNCTION_3	IF_2
+0x400018c	            0xebf3	                           jmp 0x4000181	        40	sigchain.c	FUNCTION_3	IF_2
+0x400018e	            0x89fe	                            mov esi, edi	        16	sigchain.c	FUNCTION_1	CALL_1
+0x4000190	            0x31c0	                            xor eax, eax	        16	sigchain.c	FUNCTION_1	CALL_1
+0x4000192	      0xbf00000000	                              mov edi, 0	        16	sigchain.c	FUNCTION_1	CALL_1
+0x4000197	      0xe800000000	                          call 0x400019c	        16	sigchain.c	FUNCTION_1	CALL_1
+sigchain_push	SWITCH,0:IF,1:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,3	70
+0x4000040	            0x4156	                                push r14	        20	sigchain.c	FUNCTION_2
+0x4000042	            0x4155	                                push r13	        20	sigchain.c	FUNCTION_2
+0x4000044	            0x4154	                                push r12	        20	sigchain.c	FUNCTION_2
+0x4000046	              0x55	                                push rbp	        20	sigchain.c	FUNCTION_2
+0x4000047	              0x53	                                push rbx	        20	sigchain.c	FUNCTION_2
+0x4000048	          0x4863df	                         movsxd rbx, edi	        20	sigchain.c	FUNCTION_2
+0x400004b	          0x4989dc	                            mov r12, rbx	        20	sigchain.c	FUNCTION_2
+0x400004e	        0x48c1e304	                              shl rbx, 4	        21	sigchain.c	FUNCTION_2
+0x4000052	      0x418d4424ff	                      lea eax, [r12 - 1]	        15	sigchain.c	FUNCTION_1	IF_1
+0x4000057	          0x83f81e	                           cmp eax, 0x1e	        15	sigchain.c	FUNCTION_1	IF_1
+0x400005a	     0xf87c0000000	                            ja 0x4000120	        15	sigchain.c	FUNCTION_1	IF_1
+0x4000060	    0x488dab000000	                          lea rbp, [rbx]	        15	sigchain.c	FUNCTION_1	IF_1
+0x4000067	          0x4989f5	                            mov r13, rsi	        15	sigchain.c	FUNCTION_1	IF_1
+0x400006a	        0x48634d08	            movsxd rcx, dword [rbp + 8] 	        24	sigchain.c	FUNCTION_2	CALL_2
+0x400006e	          0x8b450c	              mov eax, dword [rbp + 0xc]	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000071	            0x39c1	                            cmp ecx, eax	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000073	     0xf8c97000000	                            jl 0x4000110	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000079	        0x8d444030	          lea eax, [rax + rax*2 + 0x30] 	        24	sigchain.c	FUNCTION_2	CALL_2
+0x400007d	            0x89c2	                            mov edx, eax	        24	sigchain.c	FUNCTION_2	CALL_2
+0x400007f	          0xc1ea1f	                           shr edx, 0x1f	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000082	             0x1c2	                            add edx, eax	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000084	            0xd1fa	                              sar edx, 1	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000086	            0x39d1	                            cmp ecx, edx	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000088	            0x7d76	                           jge 0x4000100	        24	sigchain.c	FUNCTION_2	CALL_2
+0x400008a	          0x89550c	              mov dword [rbp + 0xc], edx	        24	sigchain.c	FUNCTION_2	CALL_2
+0x400008d	          0x4863d2	                         movsxd rdx, edx	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000090	    0x48b8ffffffff	         movabs rax, 0x1fffffffffffffff 	       795	git-compat-util.h	FUNCTION_20	IF_1
+0x400009a	          0x4839c2	                            cmp rdx, rax	       795	git-compat-util.h	FUNCTION_20	IF_1
+0x400009d	     0xf878c000000	                            ja 0x400012f	       795	git-compat-util.h	FUNCTION_20	IF_1
+0x40000a3	    0x488bbb000000	                    mov rdi, qword [rbx]	        24	sigchain.c	FUNCTION_2	CALL_2
+0x40000aa	    0x488d34d50000	                        lea rsi, [rdx*8]	        24	sigchain.c	FUNCTION_2	CALL_2
+0x40000b2	      0xe800000000	                          call 0x40000b7	        24	sigchain.c	FUNCTION_2	CALL_2
+0x40000b7	        0x48634d08	            movsxd rcx, dword [rbp + 8] 	        24	sigchain.c	FUNCTION_2	CALL_2
+0x40000bb	    0x488983000000	                    mov qword [rbx], rax	        24	sigchain.c	FUNCTION_2	CALL_2
+0x40000c2	        0x4c8d34c8	                  lea r14, [rax + rcx*8]	        25	sigchain.c	FUNCTION_2	CALL_3
+0x40000c6	          0x4c89ee	                            mov rsi, r13	        25	sigchain.c	FUNCTION_2	CALL_3
+0x40000c9	          0x4489e7	                           mov edi, r12d	        25	sigchain.c	FUNCTION_2	CALL_3
+0x40000cc	      0xe800000000	                          call 0x40000d1	        25	sigchain.c	FUNCTION_2	CALL_3
+0x40000d1	        0x48634d08	            movsxd rcx, dword [rbp + 8] 	        26	sigchain.c	FUNCTION_2	IF_1
+0x40000d5	          0x498906	                    mov qword [r14], rax	        25	sigchain.c	FUNCTION_2	CALL_3
+0x40000d8	    0x488b93000000	                    mov rdx, qword [rbx]	        26	sigchain.c	FUNCTION_2	IF_1
+0x40000df	      0x48833ccaff	cmp qword [rdx + rcx*8], 0xffffffffffffffff	        26	sigchain.c	FUNCTION_2	IF_1
+0x40000e4	          0x4889c8	                            mov rax, rcx	        26	sigchain.c	FUNCTION_2	IF_1
+0x40000e7	            0x7430	                            je 0x4000119	        26	sigchain.c	FUNCTION_2	IF_1
+0x40000e9	          0x83c001	                              add eax, 1	        28	sigchain.c	FUNCTION_2
+0x40000ec	          0x894508	                mov dword [rbp + 8], eax	        28	sigchain.c	FUNCTION_2
+0x40000ef	            0x31c0	                            xor eax, eax	        29	sigchain.c	FUNCTION_2
+0x40000f1	              0x5b	                                 pop rbx	        30	sigchain.c	FUNCTION_2
+0x40000f2	              0x5d	                                 pop rbp	        30	sigchain.c	FUNCTION_2
+0x40000f3	            0x415c	                                 pop r12	        30	sigchain.c	FUNCTION_2
+0x40000f5	            0x415d	                                 pop r13	        30	sigchain.c	FUNCTION_2
+0x40000f7	            0x415e	                                 pop r14	        30	sigchain.c	FUNCTION_2
+0x40000f9	              0xc3	                                     ret	        30	sigchain.c	FUNCTION_2
+0x40000fa	    0x660f1f440000	                    nop word [rax + rax]	        30	sigchain.c	FUNCTION_2
+0x4000100	          0x8d5101	                      lea edx, [rcx + 1]	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000103	          0x89550c	              mov dword [rbp + 0xc], edx	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000106	            0xeb85	                           jmp 0x400008d	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000108	     0xf1f84000000	                   nop dword [rax + rax]	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000110	    0x488b83000000	                    mov rax, qword [rbx]	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000117	            0xeba9	                           jmp 0x40000c2	        24	sigchain.c	FUNCTION_2	CALL_2
+0x4000119	      0xb8ffffffff	                     mov eax, 0xffffffff	        27	sigchain.c	FUNCTION_2	IF_1
+0x400011e	            0xebd1	                           jmp 0x40000f1	        27	sigchain.c	FUNCTION_2	IF_1
+0x4000120	          0x4489e6	                           mov esi, r12d	        16	sigchain.c	FUNCTION_1	CALL_1
+0x4000123	      0xbf00000000	                              mov edi, 0	        16	sigchain.c	FUNCTION_1	CALL_1
+0x4000128	            0x31c0	                            xor eax, eax	        16	sigchain.c	FUNCTION_1	CALL_1
+0x400012a	      0xe800000000	                          call 0x400012f	        16	sigchain.c	FUNCTION_1	CALL_1
+0x400012f	      0xbe08000000	                              mov esi, 8	       796	git-compat-util.h	FUNCTION_20	IF_1	CALL_1
+0x4000134	      0xbf00000000	                              mov edi, 0	       796	git-compat-util.h	FUNCTION_20	IF_1	CALL_1
+0x4000139	            0x31c0	                            xor eax, eax	       796	git-compat-util.h	FUNCTION_20	IF_1	CALL_1
+0x400013b	      0xe800000000	                   call sym.sigchain_pop	       796	git-compat-util.h	FUNCTION_20	IF_1	CALL_1
+sigchain_pop_common	SWITCH,0:IF,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,5	12
+0x40001f0	        0x4883ec08	                              sub rsp, 8	        55	sigchain.c	FUNCTION_5
+0x40001f4	      0xbf0d000000	                            mov edi, 0xd	        56	sigchain.c	FUNCTION_5	CALL_1
+0x40001f9	      0xe800000000	                          call 0x40001fe	        56	sigchain.c	FUNCTION_5	CALL_1
+0x40001fe	      0xbf03000000	                              mov edi, 3	        57	sigchain.c	FUNCTION_5	CALL_2
+0x4000203	      0xe800000000	                          call 0x4000208	        57	sigchain.c	FUNCTION_5	CALL_2
+0x4000208	      0xbf0f000000	                            mov edi, 0xf	        58	sigchain.c	FUNCTION_5	CALL_3
+0x400020d	      0xe800000000	                          call 0x4000212	        58	sigchain.c	FUNCTION_5	CALL_3
+0x4000212	      0xbf01000000	                              mov edi, 1	        59	sigchain.c	FUNCTION_5	CALL_4
+0x4000217	      0xe800000000	                          call 0x400021c	        59	sigchain.c	FUNCTION_5	CALL_4
+0x400021c	      0xbf02000000	                              mov edi, 2	        60	sigchain.c	FUNCTION_5	CALL_5
+0x4000221	        0x4883c408	                              add rsp, 8	        61	sigchain.c	FUNCTION_5
+0x4000225	      0xe916ffffff	                    jmp sym.sigchain_pop	        60	sigchain.c	FUNCTION_5	CALL_5

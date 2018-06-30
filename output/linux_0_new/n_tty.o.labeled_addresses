@@ -1,0 +1,311 @@
+n_tty_receive_buf	CALL,1:functions,0:IF,0:SWITCH,0:FOR,0:DO,0:WHILE,0:ELSE,0	2
+0x4002f70	          0x4531c0	                            xor r8d, r8d	      1738	n_tty.c	FUNCTION_53	CALL_1
+0x4002f73	      0xe9a8f3ffff	        jmp sym.n_tty_receive_buf_common	      1738	n_tty.c	FUNCTION_53	CALL_1
+n_tty_flush_buffer	CALL,5:functions,0:IF,1:SWITCH,0:FOR,0:DO,0:WHILE,0:ELSE,0	21
+0x40016e0	              0x55	                                push rbp	       356	n_tty.c	FUNCTION_15
+0x40016e1	    0x488dafc00000	                   lea rbp, [rdi + 0xc0]	       357	n_tty.c	FUNCTION_15	CALL_1
+0x40016e8	              0x53	                                push rbx	       356	n_tty.c	FUNCTION_15
+0x40016e9	          0x4889fb	                            mov rbx, rdi	       356	n_tty.c	FUNCTION_15
+0x40016ec	          0x4889ef	                            mov rdi, rbp	       357	n_tty.c	FUNCTION_15	CALL_1
+0x40016ef	      0xe800000000	                          call 0x40016f4	       357	n_tty.c	FUNCTION_15	CALL_1
+0x40016f4	    0x488bbb580200	           mov rdi, qword [rbx + 0x258] 	       358	n_tty.c	FUNCTION_15	CALL_2
+0x40016fb	      0xe850eaffff	             call sym.reset_buffer_flags	       358	n_tty.c	FUNCTION_15	CALL_2
+0x4001700	          0x4889df	                            mov rdi, rbx	       359	n_tty.c	FUNCTION_15	CALL_3
+0x4001703	      0xe838ffffff	              call sym.n_tty_kick_worker	       359	n_tty.c	FUNCTION_15	CALL_3
+0x4001708	    0x488b83f80100	           mov rax, qword [rbx + 0x1f8] 	       361	n_tty.c	FUNCTION_15	IF_1
+0x400170f	          0x4885c0	                           test rax, rax	       361	n_tty.c	FUNCTION_15	IF_1
+0x4001712	            0x7411	                            je 0x4001725	       361	n_tty.c	FUNCTION_15	IF_1
+0x4001714	    0xf680e5010000	              test byte [rax + 0x1e5], 1	       333	n_tty.c	FUNCTION_14	IF_1
+0x400171b	            0x7408	                            je 0x4001725	       333	n_tty.c	FUNCTION_14	IF_1
+0x400171d	          0x4889df	                            mov rdi, rbx	       333	n_tty.c	FUNCTION_14	IF_1
+0x4001720	      0xe8fbf1ffff	 call sym.n_tty_packet_mode_flush.part.8	       333	n_tty.c	FUNCTION_14	IF_1
+0x4001725	          0x4889ef	                            mov rdi, rbp	       363	n_tty.c	FUNCTION_15	CALL_5
+0x4001728	              0x5b	                                 pop rbx	       364	n_tty.c	FUNCTION_15
+0x4001729	              0x5d	                                 pop rbp	       364	n_tty.c	FUNCTION_15
+0x400172a	      0xe900000000	                           jmp 0x400172f	       363	n_tty.c	FUNCTION_15	CALL_5
+isig	CALL,12:functions,0:IF,2:SWITCH,0:FOR,0:DO,0:WHILE,0:ELSE,1	47
+0x4000970	    0xf6861c010000	          test byte [rsi + 0x11c], 0x80 	      1092	n_tty.c	FUNCTION_34	IF_1	CALL_1
+0x4000977	     0xf85ae000000	                           jne 0x4000a2b	      1092	n_tty.c	FUNCTION_34	IF_1	CALL_1
+0x400097d	            0x4155	                                push r13	      1089	n_tty.c	FUNCTION_34
+0x400097f	    0x4c8daec00000	                   lea r13, [rsi + 0xc0]	      1097	n_tty.c	FUNCTION_34	ELSE_1	CALL_3
+0x4000986	            0x4154	                                push r12	      1089	n_tty.c	FUNCTION_34
+0x4000988	              0x55	                                push rbp	      1089	n_tty.c	FUNCTION_34
+0x4000989	              0x53	                                push rbx	      1089	n_tty.c	FUNCTION_34
+0x400098a	          0x4189fc	                           mov r12d, edi	      1089	n_tty.c	FUNCTION_34
+0x400098d	    0x488bae580200	           mov rbp, qword [rsi + 0x258] 	      1090	n_tty.c	FUNCTION_34
+0x4000994	          0x4c89ef	                            mov rdi, r13	      1097	n_tty.c	FUNCTION_34	ELSE_1	CALL_3
+0x4000997	          0x4889f3	                            mov rbx, rsi	      1097	n_tty.c	FUNCTION_34	ELSE_1	CALL_3
+0x400099a	      0xe800000000	                          call 0x400099f	      1097	n_tty.c	FUNCTION_34	ELSE_1	CALL_3
+0x400099f	          0x4c89ef	                            mov rdi, r13	      1098	n_tty.c	FUNCTION_34	ELSE_1	CALL_4
+0x40009a2	      0xe800000000	                          call 0x40009a7	      1098	n_tty.c	FUNCTION_34	ELSE_1	CALL_4
+0x40009a7	          0x4489e7	                           mov edi, r12d	      1100	n_tty.c	FUNCTION_34	ELSE_1	CALL_5
+0x40009aa	    0x4c8da5a02200	                 lea r12, [rbp + 0x22a0]	      1103	n_tty.c	FUNCTION_34	ELSE_1	CALL_6
+0x40009b1	          0x4889de	                            mov rsi, rbx	      1100	n_tty.c	FUNCTION_34	ELSE_1	CALL_5
+0x40009b4	      0xe867f7ffff	                         call sym.__isig	      1100	n_tty.c	FUNCTION_34	ELSE_1	CALL_5
+0x40009b9	          0x4c89e7	                            mov rdi, r12	      1103	n_tty.c	FUNCTION_34	ELSE_1	CALL_6
+0x40009bc	      0xe800000000	                          call 0x40009c1	      1103	n_tty.c	FUNCTION_34	ELSE_1	CALL_6
+0x40009c1	          0x4c89e7	                            mov rdi, r12	      1106	n_tty.c	FUNCTION_34	ELSE_1	CALL_7
+0x40009c4	    0x48c785782200	            mov qword [rbp + 0x2278], 0 	      1104	n_tty.c	FUNCTION_34	ELSE_1
+0x40009cf	    0x48c745180000	               mov qword [rbp + 0x18], 0	      1104	n_tty.c	FUNCTION_34	ELSE_1
+0x40009d7	    0x48c745200000	               mov qword [rbp + 0x20], 0	      1105	n_tty.c	FUNCTION_34	ELSE_1
+0x40009df	    0x48c745280000	               mov qword [rbp + 0x28], 0	      1105	n_tty.c	FUNCTION_34	ELSE_1
+0x40009e7	      0xe800000000	                          call 0x40009ec	      1106	n_tty.c	FUNCTION_34	ELSE_1	CALL_7
+0x40009ec	          0x4889df	                            mov rdi, rbx	      1109	n_tty.c	FUNCTION_34	ELSE_1	CALL_8
+0x40009ef	      0xe800000000	                          call 0x40009f4	      1109	n_tty.c	FUNCTION_34	ELSE_1	CALL_8
+0x40009f4	    0x488bbb580200	           mov rdi, qword [rbx + 0x258] 	      1112	n_tty.c	FUNCTION_34	ELSE_1	CALL_9
+0x40009fb	      0xe850f7ffff	             call sym.reset_buffer_flags	      1112	n_tty.c	FUNCTION_34	ELSE_1	CALL_9
+0x4000a00	    0x488b83f80100	           mov rax, qword [rbx + 0x1f8] 	      1115	n_tty.c	FUNCTION_34	ELSE_1	IF_2
+0x4000a07	          0x4885c0	                           test rax, rax	      1115	n_tty.c	FUNCTION_34	ELSE_1	IF_2
+0x4000a0a	            0x7409	                            je 0x4000a15	      1115	n_tty.c	FUNCTION_34	ELSE_1	IF_2
+0x4000a0c	    0xf680e5010000	              test byte [rax + 0x1e5], 1	       333	n_tty.c	FUNCTION_14	IF_1
+0x4000a13	            0x751b	                           jne 0x4000a30	       333	n_tty.c	FUNCTION_14	IF_1
+0x4000a15	          0x4c89ef	                            mov rdi, r13	      1118	n_tty.c	FUNCTION_34	ELSE_1	CALL_11
+0x4000a18	      0xe800000000	                          call 0x4000a1d	      1118	n_tty.c	FUNCTION_34	ELSE_1	CALL_11
+0x4000a1d	          0x4c89ef	                            mov rdi, r13	      1119	n_tty.c	FUNCTION_34	ELSE_1	CALL_12
+0x4000a20	              0x5b	                                 pop rbx	      1121	n_tty.c	FUNCTION_34
+0x4000a21	              0x5d	                                 pop rbp	      1121	n_tty.c	FUNCTION_34
+0x4000a22	            0x415c	                                 pop r12	      1121	n_tty.c	FUNCTION_34
+0x4000a24	            0x415d	                                 pop r13	      1121	n_tty.c	FUNCTION_34
+0x4000a26	      0xe900000000	                           jmp 0x4000a2b	      1119	n_tty.c	FUNCTION_34	ELSE_1	CALL_12
+0x4000a2b	      0xe9f0f6ffff	                          jmp sym.__isig	      1094	n_tty.c	FUNCTION_34	IF_1	CALL_2
+0x4000a30	          0x4889df	                            mov rdi, rbx	      1094	n_tty.c	FUNCTION_34	IF_1	CALL_2
+0x4000a33	      0xe8e8feffff	 call sym.n_tty_packet_mode_flush.part.8	      1094	n_tty.c	FUNCTION_34	IF_1	CALL_2
+0x4000a38	            0xebdb	                           jmp 0x4000a15	      1094	n_tty.c	FUNCTION_34	IF_1	CALL_2
+n_tty_inherit_ops	CALL,0:functions,0:IF,0:SWITCH,0:FOR,0:DO,0:WHILE,0:ELSE,0	8
+0x40000d0	          0x4889f8	                            mov rax, rdi	      2469	n_tty.c	FUNCTION_67
+0x40000d3	    0x48c7c6000000	                              mov rsi, 0	      2470	n_tty.c	FUNCTION_67
+0x40000da	      0xb913000000	                           mov ecx, 0x13	      2470	n_tty.c	FUNCTION_67
+0x40000df	          0xf348a5	  rep movsq qword [rdi], qword ptr [rsi]	      2470	n_tty.c	FUNCTION_67
+0x40000e2	    0x48c780880000	               mov qword [rax + 0x88], 0	      2471	n_tty.c	FUNCTION_67
+0x40000ed	    0xc74014000000	               mov dword [rax + 0x14], 0	      2472	n_tty.c	FUNCTION_67
+0x40000f4	    0xc78090000000	               mov dword [rax + 0x90], 0	      2472	n_tty.c	FUNCTION_67
+0x40000fe	              0xc3	                                     ret	      2472	n_tty.c	FUNCTION_67
+__isig	CALL,3:functions,0:IF,1:SWITCH,0:FOR,0:DO,0:WHILE,0:ELSE,0	19
+0x4000120	              0x55	                                push rbp	      1080	n_tty.c	FUNCTION_33
+0x4000121	              0x53	                                push rbx	      1080	n_tty.c	FUNCTION_33
+0x4000122	            0x89fd	                            mov ebp, edi	      1080	n_tty.c	FUNCTION_33
+0x4000124	          0x4889f7	                            mov rdi, rsi	      1081	n_tty.c	FUNCTION_33	CALL_1
+0x4000127	      0xe800000000	                          call 0x400012c	      1081	n_tty.c	FUNCTION_33	CALL_1
+0x400012c	          0x4885c0	                           test rax, rax	      1082	n_tty.c	FUNCTION_33	IF_1
+0x400012f	            0x741c	                            je 0x400014d	      1082	n_tty.c	FUNCTION_33	IF_1
+0x4000131	          0x4889c3	                            mov rbx, rax	      1082	n_tty.c	FUNCTION_33	IF_1
+0x4000134	            0x89ee	                            mov esi, ebp	      1083	n_tty.c	FUNCTION_33	IF_1	CALL_2
+0x4000136	          0x4889c7	                            mov rdi, rax	      1083	n_tty.c	FUNCTION_33	IF_1	CALL_2
+0x4000139	      0xba01000000	                              mov edx, 1	      1083	n_tty.c	FUNCTION_33	IF_1	CALL_2
+0x400013e	      0xe800000000	                          call 0x4000143	      1083	n_tty.c	FUNCTION_33	IF_1	CALL_2
+0x4000143	          0x4889df	                            mov rdi, rbx	      1084	n_tty.c	FUNCTION_33	IF_1	CALL_3
+0x4000146	              0x5b	                                 pop rbx	      1086	n_tty.c	FUNCTION_33
+0x4000147	              0x5d	                                 pop rbp	      1086	n_tty.c	FUNCTION_33
+0x4000148	      0xe900000000	                           jmp 0x400014d	      1084	n_tty.c	FUNCTION_33	IF_1	CALL_3
+0x400014d	              0x5b	                                 pop rbx	      1086	n_tty.c	FUNCTION_33
+0x400014e	              0x5d	                                 pop rbp	      1086	n_tty.c	FUNCTION_33
+0x400014f	              0xc3	                                     ret	      1086	n_tty.c	FUNCTION_33
+n_tty_close	CALL,2:functions,0:IF,1:SWITCH,0:FOR,0:DO,0:WHILE,0:ELSE,0	16
+0x4000a40	              0x55	                                push rbp	      1856	n_tty.c	FUNCTION_56
+0x4000a41	              0x53	                                push rbx	      1856	n_tty.c	FUNCTION_56
+0x4000a42	          0x4889fb	                            mov rbx, rdi	      1856	n_tty.c	FUNCTION_56
+0x4000a45	    0x488b87f80100	           mov rax, qword [rdi + 0x1f8] 	      1859	n_tty.c	FUNCTION_56	IF_1
+0x4000a4c	    0x488baf580200	           mov rbp, qword [rdi + 0x258] 	      1857	n_tty.c	FUNCTION_56
+0x4000a53	          0x4885c0	                           test rax, rax	      1859	n_tty.c	FUNCTION_56	IF_1
+0x4000a56	            0x740e	                            je 0x4000a66	      1859	n_tty.c	FUNCTION_56	IF_1
+0x4000a58	    0xf680e5010000	              test byte [rax + 0x1e5], 1	       333	n_tty.c	FUNCTION_14	IF_1
+0x4000a5f	            0x7405	                            je 0x4000a66	       333	n_tty.c	FUNCTION_14	IF_1
+0x4000a61	      0xe8bafeffff	 call sym.n_tty_packet_mode_flush.part.8	       333	n_tty.c	FUNCTION_14	IF_1
+0x4000a66	          0x4889ef	                            mov rdi, rbp	      1862	n_tty.c	FUNCTION_56	CALL_2
+0x4000a69	      0xe800000000	                          call 0x4000a6e	      1862	n_tty.c	FUNCTION_56	CALL_2
+0x4000a6e	    0x48c783580200	              mov qword [rbx + 0x258], 0	      1863	n_tty.c	FUNCTION_56
+0x4000a79	              0x5b	                                 pop rbx	      1864	n_tty.c	FUNCTION_56
+0x4000a7a	              0x5d	                                 pop rbp	      1864	n_tty.c	FUNCTION_56
+0x4000a7b	              0xc3	                                     ret	      1864	n_tty.c	FUNCTION_56
+n_tty_receive_buf2	CALL,1:functions,0:IF,0:SWITCH,0:FOR,0:DO,0:WHILE,0:ELSE,0	2
+0x4002f60	    0x41b801000000	                              mov r8d, 1	      1744	n_tty.c	FUNCTION_54	CALL_1
+0x4002f66	      0xe9b5f3ffff	        jmp sym.n_tty_receive_buf_common	      1744	n_tty.c	FUNCTION_54	CALL_1
+echo_char	CALL,6:functions,0:IF,2:SWITCH,0:FOR,0:DO,0:WHILE,0:ELSE,1	31
+0x4000040	        0x4080ffff	                           cmp dil, 0xff	       911	n_tty.c	FUNCTION_30	IF_1
+0x4000044	    0x488b86580200	           mov rax, qword [rsi + 0x258] 	       909	n_tty.c	FUNCTION_30
+0x400004b	            0x744f	                            je 0x400009c	       911	n_tty.c	FUNCTION_30	IF_1
+0x400004d	    0xf6861d010000	              test byte [rsi + 0x11d], 2	       915	n_tty.c	FUNCTION_30	ELSE_1	IF_2	CALL_4
+0x4000054	            0x742b	                            je 0x4000081	       915	n_tty.c	FUNCTION_30	ELSE_1	IF_2	CALL_4
+0x4000056	        0x400fb6d7	                          movzx edx, dil	       915	n_tty.c	FUNCTION_30	ELSE_1	IF_2	CALL_4
+0x400005a	    0xf68200000000	                      test byte [rdx], 8	       915	n_tty.c	FUNCTION_30	ELSE_1	IF_2	CALL_4
+0x4000061	            0x741e	                            je 0x4000081	       915	n_tty.c	FUNCTION_30	ELSE_1	IF_2	CALL_4
+0x4000063	        0x4080ff09	                              cmp dil, 9	       915	n_tty.c	FUNCTION_30	ELSE_1	IF_2	CALL_4
+0x4000067	            0x7418	                            je 0x4000081	       915	n_tty.c	FUNCTION_30	ELSE_1	IF_2	CALL_4
+0x4000069	        0x488b4818	            mov rcx, qword [rax + 0x18] 	       813	n_tty.c	FUNCTION_25	CALL_1
+0x400006d	        0x488d5101	                      lea rdx, [rcx + 1]	       813	n_tty.c	FUNCTION_25	CALL_1
+0x4000071	    0x81e1ff0f0000	                          and ecx, 0xfff	       813	n_tty.c	FUNCTION_25	CALL_1
+0x4000077	    0xc68408601200	    mov byte [rax + rcx + 0x1260], 0xff 	       813	n_tty.c	FUNCTION_25	CALL_1
+0x400007f	            0xeb04	                           jmp 0x4000085	       813	n_tty.c	FUNCTION_25	CALL_1
+0x4000081	        0x488b5018	            mov rdx, qword [rax + 0x18] 	       813	n_tty.c	FUNCTION_25	CALL_1
+0x4000085	        0x488d4a01	                      lea rcx, [rdx + 1]	       813	n_tty.c	FUNCTION_25	CALL_1
+0x4000089	    0x81e2ff0f0000	                          and edx, 0xfff	       813	n_tty.c	FUNCTION_25	CALL_1
+0x400008f	        0x48894818	             mov qword [rax + 0x18], rcx	       813	n_tty.c	FUNCTION_25	CALL_1
+0x4000093	    0x4088bc106012	     mov byte [rax + rdx + 0x1260], dil 	       813	n_tty.c	FUNCTION_25	CALL_1
+0x400009b	              0xc3	                                     ret	       813	n_tty.c	FUNCTION_25	CALL_1
+0x400009c	        0x488b5018	            mov rdx, qword [rax + 0x18] 	       813	n_tty.c	FUNCTION_25	CALL_1
+0x40000a0	          0x4889d1	                            mov rcx, rdx	       813	n_tty.c	FUNCTION_25	CALL_1
+0x40000a3	    0x81e1ff0f0000	                          and ecx, 0xfff	       813	n_tty.c	FUNCTION_25	CALL_1
+0x40000a9	    0x4088bc086012	     mov byte [rax + rcx + 0x1260], dil 	       813	n_tty.c	FUNCTION_25	CALL_1
+0x40000b1	        0x488d4a02	                      lea rcx, [rdx + 2]	       813	n_tty.c	FUNCTION_25	CALL_1
+0x40000b5	        0x4883c201	                              add rdx, 1	       813	n_tty.c	FUNCTION_25	CALL_1
+0x40000b9	    0x81e2ff0f0000	                          and edx, 0xfff	       813	n_tty.c	FUNCTION_25	CALL_1
+0x40000bf	        0x48894818	             mov qword [rax + 0x18], rcx	       813	n_tty.c	FUNCTION_25	CALL_1
+0x40000c3	    0x4088bc106012	     mov byte [rax + rdx + 0x1260], dil 	       813	n_tty.c	FUNCTION_25	CALL_1
+0x40000cb	              0xc3	                                     ret	       813	n_tty.c	FUNCTION_25	CALL_1
+__process_echoes	CALL,13:functions,0:IF,13:SWITCH,1:FOR,0:DO,0:WHILE,3:ELSE,4	151
+0x40003c0	            0x4157	                                push r15	       611	n_tty.c	FUNCTION_21
+0x40003c2	            0x4156	                                push r14	       611	n_tty.c	FUNCTION_21
+0x40003c4	            0x4155	                                push r13	       611	n_tty.c	FUNCTION_21
+0x40003c6	            0x4154	                                push r12	       611	n_tty.c	FUNCTION_21
+0x40003c8	          0x4989fc	                            mov r12, rdi	       611	n_tty.c	FUNCTION_21
+0x40003cb	              0x55	                                push rbp	       611	n_tty.c	FUNCTION_21
+0x40003cc	              0x53	                                push rbx	       611	n_tty.c	FUNCTION_21
+0x40003cd	    0x4c8bbf580200	           mov r15, qword [rdi + 0x258] 	       612	n_tty.c	FUNCTION_21
+0x40003d4	      0xe800000000	                          call 0x40003d9	       617	n_tty.c	FUNCTION_21	CALL_1
+0x40003d9	          0x4189c5	                           mov r13d, eax	       617	n_tty.c	FUNCTION_21	CALL_1
+0x40003dc	    0x498b9f782200	          mov rbx, qword [r15 + 0x2278] 	       619	n_tty.c	FUNCTION_21
+0x40003e3	        0x498b4720	            mov rax, qword [r15 + 0x20] 	       619	n_tty.c	FUNCTION_21
+0x40003e7	          0x4489ed	                           mov ebp, r13d	       617	n_tty.c	FUNCTION_21	CALL_1
+0x40003ea	          0x4839c3	                            cmp rbx, rax	       620	n_tty.c	FUNCTION_21	WHILE_1
+0x40003ed	            0x7447	                            je 0x4000436	       620	n_tty.c	FUNCTION_21	WHILE_1
+0x40003ef	          0x4889da	                            mov rdx, rbx	       144	n_tty.c	FUNCTION_4
+0x40003f2	    0x81e2ff0f0000	                          and edx, 0xfff	       144	n_tty.c	FUNCTION_4
+0x40003f8	    0x410fb6b41760	   movzx esi, byte [r15 + rdx + 0x1260] 	       144	n_tty.c	FUNCTION_4
+0x4000401	        0x4080feff	                           cmp sil, 0xff	       622	n_tty.c	FUNCTION_21	WHILE_1	IF_1
+0x4000405	            0x7447	                            je 0x400044e	       622	n_tty.c	FUNCTION_21	WHILE_1	IF_1
+0x4000407	    0x41f684241401	              test byte [r12 + 0x114], 1	       713	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	IF_9	CALL_9
+0x4000410	     0xf8598000000	                           jne 0x40004ae	       713	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	IF_9	CALL_9
+0x4000416	            0x85ed	                           test ebp, ebp	       719	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	ELSE_2	IF_11
+0x4000418	     0xf849c010000	                            je 0x40005ba	       719	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	ELSE_2	IF_11
+0x400041e	          0x4c89e7	                            mov rdi, r12	       721	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	ELSE_2	CALL_11
+0x4000421	          0x83ed01	                              sub ebp, 1	       722	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	ELSE_2
+0x4000424	      0xe800000000	                          call 0x4000429	       721	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	ELSE_2	CALL_11
+0x4000429	        0x498b4720	            mov rax, qword [r15 + 0x20] 	       721	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	ELSE_2	CALL_11
+0x400042d	        0x4883c301	                              add rbx, 1	       724	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1
+0x4000431	          0x4839c3	                            cmp rbx, rax	       620	n_tty.c	FUNCTION_21	WHILE_1
+0x4000434	            0x75b9	                           jne 0x40003ef	       620	n_tty.c	FUNCTION_21	WHILE_1
+0x4000436	          0x4129ed	                           sub r13d, ebp	       742	n_tty.c	FUNCTION_21	ELSE_3	ELSE_4
+0x4000439	    0x498987782200	          mov qword [r15 + 0x2278], rax 	       741	n_tty.c	FUNCTION_21	ELSE_3	ELSE_4
+0x4000440	          0x4963c5	                        movsxd rax, r13d	       742	n_tty.c	FUNCTION_21	ELSE_3	ELSE_4
+0x4000443	              0x5b	                                 pop rbx	       743	n_tty.c	FUNCTION_21	ELSE_3	ELSE_4
+0x4000444	              0x5d	                                 pop rbp	       743	n_tty.c	FUNCTION_21	ELSE_3	ELSE_4
+0x4000445	            0x415c	                                 pop r12	       743	n_tty.c	FUNCTION_21	ELSE_3	ELSE_4
+0x4000447	            0x415d	                                 pop r13	       743	n_tty.c	FUNCTION_21	ELSE_3	ELSE_4
+0x4000449	            0x415e	                                 pop r14	       743	n_tty.c	FUNCTION_21	ELSE_3	ELSE_4
+0x400044b	            0x415f	                                 pop r15	       743	n_tty.c	FUNCTION_21	ELSE_3	ELSE_4
+0x400044d	              0xc3	                                     ret	       743	n_tty.c	FUNCTION_21	ELSE_3	ELSE_4
+0x400044e	        0x488d5301	                      lea rdx, [rbx + 1]	       144	n_tty.c	FUNCTION_4
+0x4000452	    0x81e2ff0f0000	                          and edx, 0xfff	       144	n_tty.c	FUNCTION_4
+0x4000458	    0x450fb6b41760	  movzx r14d, byte [r15 + rdx + 0x1260] 	       144	n_tty.c	FUNCTION_4
+0x4000461	        0x4180fe81	                          cmp r14b, 0x81	       633	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000465	     0xf8484000000	                            je 0x40004ef	       633	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x400046b	            0x765e	                           jbe 0x40004cb	       633	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x400046d	        0x4180fe82	                          cmp r14b, 0x82	       633	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000471	     0xf84ce000000	                            je 0x4000545	       633	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000477	        0x4180feff	                          cmp r14b, 0xff	       633	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x400047b	     0xf8585000000	                           jne 0x4000506	       633	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000481	            0x85ed	                           test ebp, ebp	       679	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_6
+0x4000483	     0xf8431010000	                            je 0x40005ba	       679	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_6
+0x4000489	      0xbeff000000	                           mov esi, 0xff	       683	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_6
+0x400048e	          0x4c89e7	                            mov rdi, r12	       683	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_6
+0x4000491	          0x83ed01	                              sub ebp, 1	       685	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000494	      0xe800000000	                          call 0x4000499	       683	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_6
+0x4000499	        0x4883c302	                              add rbx, 2	       686	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x400049d	    0x418387702200	             add dword [r15 + 0x2270], 1	       684	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40004a5	        0x498b4720	            mov rax, qword [r15 + 0x20] 	       684	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40004a9	      0xe93cffffff	                           jmp 0x40003ea	       687	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40004ae	        0x400fb6fe	                          movzx edi, sil	       714	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	IF_9	CALL_10
+0x40004b2	            0x89ea	                            mov edx, ebp	       714	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	IF_9	CALL_10
+0x40004b4	          0x4c89e6	                            mov rsi, r12	       714	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	IF_9	CALL_10
+0x40004b7	      0xe824fdffff	                 call sym.do_output_char	       714	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	IF_9	CALL_10
+0x40004bc	            0x85c0	                           test eax, eax	       715	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	IF_9	IF_10
+0x40004be	     0xf885c010000	                            js 0x4000620	       715	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	IF_9	IF_10
+0x40004c4	            0x29c5	                            sub ebp, eax	       717	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	IF_9
+0x40004c6	      0xe95effffff	                           jmp 0x4000429	       717	n_tty.c	FUNCTION_21	WHILE_1	ELSE_1	IF_9
+0x40004cb	        0x4180fe80	                          cmp r14b, 0x80	       633	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40004cf	            0x7535	                           jne 0x4000506	       633	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40004d1	    0x418b97702200	          mov edx, dword [r15 + 0x2270] 	       672	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_5
+0x40004d8	            0x85d2	                           test edx, edx	       672	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_5
+0x40004da	            0x740a	                            je 0x40004e6	       672	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_5
+0x40004dc	          0x83ea01	                              sub edx, 1	       673	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_5
+0x40004df	    0x418997702200	          mov dword [r15 + 0x2270], edx 	       673	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_5
+0x40004e6	        0x4883c302	                              add rbx, 2	       674	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40004ea	      0xe9fbfeffff	                           jmp 0x40003ea	       675	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40004ef	    0x418b97702200	          mov edx, dword [r15 + 0x2270] 	       667	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40004f6	        0x4883c302	                              add rbx, 2	       668	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40004fa	    0x418997742200	          mov dword [r15 + 0x2274], edx 	       667	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000501	      0xe9e4feffff	                           jmp 0x40003ea	       669	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000506	          0x83fd01	                              cmp ebp, 1	       699	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_7
+0x4000509	     0xf8eab000000	                           jle 0x40005ba	       699	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_7
+0x400050f	      0xbe5e000000	                           mov esi, 0x5e	       703	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_7
+0x4000514	          0x4c89e7	                            mov rdi, r12	       703	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_7
+0x4000517	          0x83ed02	                              sub ebp, 2	       706	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x400051a	      0xe800000000	                          call 0x400051f	       703	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_7
+0x400051f	          0x4489f2	                           mov edx, r14d	       704	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_8
+0x4000522	          0x4c89e7	                            mov rdi, r12	       704	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_8
+0x4000525	        0x4883c302	                              add rbx, 2	       707	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000529	          0x83f240	                           xor edx, 0x40	       704	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_8
+0x400052c	           0xfb6f2	                           movzx esi, dl	       704	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_8
+0x400052f	      0xe800000000	                          call 0x4000534	       704	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	CALL_8
+0x4000534	    0x418387702200	             add dword [r15 + 0x2270], 2	       705	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x400053c	        0x498b4720	            mov rax, qword [r15 + 0x20] 	       705	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000540	      0xe9a5feffff	                           jmp 0x40003ea	       705	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000545	        0x488d5302	                      lea rdx, [rbx + 2]	       144	n_tty.c	FUNCTION_4
+0x4000549	    0x81e2ff0f0000	                          and edx, 0xfff	       144	n_tty.c	FUNCTION_4
+0x400054f	    0x410fb6941760	   movzx edx, byte [r15 + rdx + 0x1260] 	       144	n_tty.c	FUNCTION_4
+0x4000558	            0x84d2	                             test dl, dl	       649	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_2
+0x400055a	            0x7807	                            js 0x4000563	       649	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_2
+0x400055c	    0x410397742200	           add edx, dword [r15 + 0x2274]	       650	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_2
+0x4000563	          0x83e207	                              and edx, 7	       651	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000566	    0x41be08000000	                             mov r14d, 8	       651	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x400056c	          0x4129d6	                           sub r14d, edx	       651	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x400056f	          0x4139ee	                           cmp r14d, ebp	       653	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_3
+0x4000572	            0x7746	                            ja 0x40005ba	       653	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	IF_3
+0x4000574	          0x4429f5	                           sub ebp, r14d	       657	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x4000577	        0x4183ee01	                             sub r14d, 1	       658	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2
+0x400057b	        0x4183feff	            cmp r14d, 0xffffffffffffffff	       658	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2
+0x400057f	            0x742c	                            je 0x40005ad	       658	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2
+0x4000581	      0xbe08000000	                              mov esi, 8	       659	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2	CALL_5
+0x4000586	          0x4c89e7	                            mov rdi, r12	       659	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2	CALL_5
+0x4000589	      0xe800000000	                          call 0x400058e	       659	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2	CALL_5
+0x400058e	    0x418b87702200	          mov eax, dword [r15 + 0x2270] 	       660	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2	IF_4
+0x4000595	            0x85c0	                           test eax, eax	       660	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2	IF_4
+0x4000597	            0x74de	                            je 0x4000577	       660	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2	IF_4
+0x4000599	        0x4183ee01	                             sub r14d, 1	       658	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2
+0x400059d	          0x83e801	                              sub eax, 1	       661	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2	IF_4
+0x40005a0	        0x4183feff	            cmp r14d, 0xffffffffffffffff	       658	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2
+0x40005a4	    0x418987702200	          mov dword [r15 + 0x2270], eax 	       661	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2	IF_4
+0x40005ab	            0x75d4	                           jne 0x4000581	       658	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1	WHILE_2
+0x40005ad	        0x4883c303	                              add rbx, 3	       663	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40005b1	        0x498b4720	            mov rax, qword [r15 + 0x20] 	       663	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40005b5	      0xe930feffff	                           jmp 0x40003ea	       664	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40005ba	          0x4889c1	                            mov rcx, rax	       664	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40005bd	          0x4889d8	                            mov rax, rbx	       664	n_tty.c	FUNCTION_21	WHILE_1	IF_1	SWITCH_1
+0x40005c0	          0x4889ca	                            mov rdx, rcx	       731	n_tty.c	FUNCTION_21	WHILE_3
+0x40005c3	          0x4829c2	                            sub rdx, rax	       731	n_tty.c	FUNCTION_21	WHILE_3
+0x40005c6	    0x4881fadf0e00	                          cmp rdx, 0xedf	       731	n_tty.c	FUNCTION_21	WHILE_3
+0x40005cd	     0xf8663feffff	                           jbe 0x4000436	       731	n_tty.c	FUNCTION_21	WHILE_3
+0x40005d3	          0x4889c2	                            mov rdx, rax	       144	n_tty.c	FUNCTION_4
+0x40005d6	    0x81e2ff0f0000	                          and edx, 0xfff	       144	n_tty.c	FUNCTION_4
+0x40005dc	    0x4180bc176012	    cmp byte [r15 + rdx + 0x1260], 0xff 	       732	n_tty.c	FUNCTION_21	WHILE_3	IF_12	CALL_12
+0x40005e5	            0x7418	                            je 0x40005ff	       732	n_tty.c	FUNCTION_21	WHILE_3	IF_12	CALL_12
+0x40005e7	        0x4883c001	                              add rax, 1	       738	n_tty.c	FUNCTION_21	WHILE_3	ELSE_3	ELSE_4
+0x40005eb	          0x4889ca	                            mov rdx, rcx	       731	n_tty.c	FUNCTION_21	WHILE_3
+0x40005ee	          0x4829c2	                            sub rdx, rax	       731	n_tty.c	FUNCTION_21	WHILE_3
+0x40005f1	    0x4881fadf0e00	                          cmp rdx, 0xedf	       731	n_tty.c	FUNCTION_21	WHILE_3
+0x40005f8	            0x77d9	                            ja 0x40005d3	       731	n_tty.c	FUNCTION_21	WHILE_3
+0x40005fa	      0xe937feffff	                           jmp 0x4000436	       731	n_tty.c	FUNCTION_21	WHILE_3
+0x40005ff	        0x488d5001	                      lea rdx, [rax + 1]	       144	n_tty.c	FUNCTION_4
+0x4000603	        0x488d7003	                      lea rsi, [rax + 3]	       734	n_tty.c	FUNCTION_21	WHILE_3	IF_12	IF_13
+0x4000607	        0x4883c002	                              add rax, 2	       734	n_tty.c	FUNCTION_21	WHILE_3	IF_12	IF_13
+0x400060b	    0x81e2ff0f0000	                          and edx, 0xfff	       144	n_tty.c	FUNCTION_4
+0x4000611	    0x4180bc176012	    cmp byte [r15 + rdx + 0x1260], 0x82 	       734	n_tty.c	FUNCTION_21	WHILE_3	IF_12	IF_13
+0x400061a	        0x480f44c6	                          cmove rax, rsi	       734	n_tty.c	FUNCTION_21	WHILE_3	IF_12	IF_13
+0x400061e	            0xeba0	                           jmp 0x40005c0	       734	n_tty.c	FUNCTION_21	WHILE_3	IF_12	IF_13
+0x4000620	        0x498b4f20	            mov rcx, qword [r15 + 0x20] 	       734	n_tty.c	FUNCTION_21	WHILE_3	IF_12	IF_13
+0x4000624	            0xeb97	                           jmp 0x40005bd	       734	n_tty.c	FUNCTION_21	WHILE_3	IF_12	IF_13
+n_tty_init	CALL,1:functions,0:IF,0:SWITCH,0:FOR,0:DO,0:WHILE,0:ELSE,0	4
+0x4000040	        0x4080ffff	                           cmp dil, 0xff	       911	n_tty.c	FUNCTION_30	IF_1
+0x4000044	    0x488b86580200	           mov rax, qword [rsi + 0x258] 	       909	n_tty.c	FUNCTION_30
+0x400004b	            0x744f	                            je 0x400009c	       911	n_tty.c	FUNCTION_30	IF_1
+0x400004d	              0xf6	                                 invalid	       915	n_tty.c	FUNCTION_30	ELSE_1	IF_2	CALL_4

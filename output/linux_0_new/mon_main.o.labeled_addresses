@@ -1,0 +1,64 @@
+mon_submit_error	IF,1:FOR,0:functions,0:DO,0:ELSE,0:CALL,2:WHILE,0:SWITCH,0	14
+0x4000140	              0x55	                                push rbp	       124	mon_main.c	FUNCTION_6
+0x4000141	              0x53	                                push rbx	       124	mon_main.c	FUNCTION_6
+0x4000142	            0x89d5	                            mov ebp, edx	       124	mon_main.c	FUNCTION_6
+0x4000144	    0x488bbf800000	            mov rdi, qword [rdi + 0x80] 	       127	mon_main.c	FUNCTION_6
+0x400014b	          0x4889f3	                            mov rbx, rsi	       124	mon_main.c	FUNCTION_6
+0x400014e	          0x4885ff	                           test rdi, rdi	       128	mon_main.c	FUNCTION_6	IF_1
+0x4000151	            0x7405	                            je 0x4000158	       128	mon_main.c	FUNCTION_6	IF_1
+0x4000153	      0xe878ffffff	           call sym.mon_bus_submit_error	       129	mon_main.c	FUNCTION_6	CALL_1
+0x4000158	            0x89ea	                            mov edx, ebp	       130	mon_main.c	FUNCTION_6	CALL_2
+0x400015a	          0x4889de	                            mov rsi, rbx	       130	mon_main.c	FUNCTION_6	CALL_2
+0x400015d	    0x48c7c7000000	                              mov rdi, 0	       130	mon_main.c	FUNCTION_6	CALL_2
+0x4000164	              0x5b	                                 pop rbx	       131	mon_main.c	FUNCTION_6
+0x4000165	              0x5d	                                 pop rbp	       131	mon_main.c	FUNCTION_6
+0x4000166	      0xe965ffffff	            jmp sym.mon_bus_submit_error	       130	mon_main.c	FUNCTION_6	CALL_2
+mon_submit	IF,1:FOR,0:functions,0:DO,0:ELSE,0:CALL,2:WHILE,0:SWITCH,0	10
+0x40000a0	              0x53	                                push rbx	        97	mon_main.c	FUNCTION_4
+0x40000a1	    0x488bbf800000	            mov rdi, qword [rdi + 0x80] 	       100	mon_main.c	FUNCTION_4
+0x40000a8	          0x4889f3	                            mov rbx, rsi	        97	mon_main.c	FUNCTION_4
+0x40000ab	          0x4885ff	                           test rdi, rdi	       101	mon_main.c	FUNCTION_4	IF_1
+0x40000ae	            0x7405	                            je 0x40000b5	       101	mon_main.c	FUNCTION_4	IF_1
+0x40000b0	      0xe88bffffff	                 call sym.mon_bus_submit	       102	mon_main.c	FUNCTION_4	CALL_1
+0x40000b5	          0x4889de	                            mov rsi, rbx	       103	mon_main.c	FUNCTION_4	CALL_2
+0x40000b8	    0x48c7c7000000	                              mov rdi, 0	       103	mon_main.c	FUNCTION_4	CALL_2
+0x40000bf	              0x5b	                                 pop rbx	       104	mon_main.c	FUNCTION_4
+0x40000c0	      0xe97bffffff	                  jmp sym.mon_bus_submit	       103	mon_main.c	FUNCTION_4	CALL_2
+mon_bus_drop	IF,0:FOR,0:functions,0:DO,0:ELSE,0:CALL,2:WHILE,0:SWITCH,0	2
+0x4000210	        0x4883ef60	                           sub rdi, 0x60	       274	mon_main.c	FUNCTION_14	CALL_2
+0x4000214	      0xe900000000	                           jmp 0x4000219	       274	mon_main.c	FUNCTION_14	CALL_2
+mon_bus_lookup	IF,1:FOR,0:functions,1:DO,0:ELSE,0:CALL,0:WHILE,0:SWITCH,0	19
+0x4000560	            0x85ff	                           test edi, edi	       338	mon_main.c	FUNCTION_17	IF_1
+0x4000562	    0x48c7c0000000	                              mov rax, 0	       339	mon_main.c	FUNCTION_17	IF_1
+0x4000569	            0x7430	                            je 0x400059b	       338	mon_main.c	FUNCTION_17	IF_1
+0x400056b	    0x488b05000000	            mov rax, qword [0x04000572] 	       341	mon_main.c	FUNCTION_17	FUNCTION_1
+0x4000572	    0x483d00000000	                              cmp rax, 0	       341	mon_main.c	FUNCTION_17	FUNCTION_1
+0x4000578	            0x741f	                            je 0x4000599	       341	mon_main.c	FUNCTION_17	FUNCTION_1
+0x400057a	        0x488b5018	            mov rdx, qword [rax + 0x18] 	       343	mon_main.c	FUNCTION_17	FUNCTION_1	IF_1
+0x400057e	          0x3b7a10	            cmp edi, dword [rdx + 0x10] 	       343	mon_main.c	FUNCTION_17	FUNCTION_1	IF_1
+0x4000581	            0x750b	                           jne 0x400058e	       343	mon_main.c	FUNCTION_17	FUNCTION_1	IF_1
+0x4000583	            0xeb18	                           jmp 0x400059d	       343	mon_main.c	FUNCTION_17	FUNCTION_1	IF_1
+0x4000585	        0x488b5018	            mov rdx, qword [rax + 0x18] 	       343	mon_main.c	FUNCTION_17	FUNCTION_1	IF_1
+0x4000589	          0x3b7a10	            cmp edi, dword [rdx + 0x10] 	       343	mon_main.c	FUNCTION_17	FUNCTION_1	IF_1
+0x400058c	            0x740d	                            je 0x400059b	       343	mon_main.c	FUNCTION_17	FUNCTION_1	IF_1
+0x400058e	          0x488b00	                    mov rax, qword [rax]	       341	mon_main.c	FUNCTION_17	FUNCTION_1
+0x4000591	    0x483d00000000	                              cmp rax, 0	       341	mon_main.c	FUNCTION_17	FUNCTION_1
+0x4000597	            0x75ec	                           jne 0x4000585	       341	mon_main.c	FUNCTION_17	FUNCTION_1
+0x4000599	            0x31c0	                            xor eax, eax	       347	mon_main.c	FUNCTION_17
+0x400059b	            0xf3c3	                                     ret	       348	mon_main.c	FUNCTION_17
+0x400059d	            0xf3c3	                                     ret	       348	mon_main.c	FUNCTION_17
+mon_complete	IF,1:FOR,0:functions,0:DO,0:ELSE,0:CALL,2:WHILE,0:SWITCH,0	14
+0x40001e0	              0x55	                                push rbp	       151	mon_main.c	FUNCTION_8
+0x40001e1	              0x53	                                push rbx	       151	mon_main.c	FUNCTION_8
+0x40001e2	            0x89d5	                            mov ebp, edx	       151	mon_main.c	FUNCTION_8
+0x40001e4	    0x488bbf800000	            mov rdi, qword [rdi + 0x80] 	       154	mon_main.c	FUNCTION_8
+0x40001eb	          0x4889f3	                            mov rbx, rsi	       151	mon_main.c	FUNCTION_8
+0x40001ee	          0x4885ff	                           test rdi, rdi	       155	mon_main.c	FUNCTION_8	IF_1
+0x40001f1	            0x7405	                            je 0x40001f8	       155	mon_main.c	FUNCTION_8	IF_1
+0x40001f3	      0xe878ffffff	               call sym.mon_bus_complete	       156	mon_main.c	FUNCTION_8	CALL_1
+0x40001f8	            0x89ea	                            mov edx, ebp	       157	mon_main.c	FUNCTION_8	CALL_2
+0x40001fa	          0x4889de	                            mov rsi, rbx	       157	mon_main.c	FUNCTION_8	CALL_2
+0x40001fd	    0x48c7c7000000	                              mov rdi, 0	       157	mon_main.c	FUNCTION_8	CALL_2
+0x4000204	              0x5b	                                 pop rbx	       158	mon_main.c	FUNCTION_8
+0x4000205	              0x5d	                                 pop rbp	       158	mon_main.c	FUNCTION_8
+0x4000206	      0xe965ffffff	                jmp sym.mon_bus_complete	       157	mon_main.c	FUNCTION_8	CALL_2

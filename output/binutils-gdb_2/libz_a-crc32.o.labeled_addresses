@@ -1,0 +1,78 @@
+crc32_combine_	SWITCH,0:IF,4:CALL,6:WHILE,0:FOR,1:functions,0:ELSE,0:DO,1	64
+0x4000096	            0x4154	                                push r12	       376	crc32.c	FUNCTION_3
+0x4000098	              0x55	                                push rbp	       376	crc32.c	FUNCTION_3
+0x4000099	              0x53	                                push rbx	       376	crc32.c	FUNCTION_3
+0x400009a	    0x4881ec100200	                          sub rsp, 0x210	       376	crc32.c	FUNCTION_3
+0x40000a1	          0x4889fd	                            mov rbp, rdi	       376	crc32.c	FUNCTION_3
+0x40000a4	    0x64488b042528	                mov rax, qword fs:[0x28]	       376	crc32.c	FUNCTION_3
+0x40000ad	    0x488984240802	            mov qword [rsp + 0x208], rax	       376	crc32.c	FUNCTION_3
+0x40000b5	            0x31c0	                            xor eax, eax	       376	crc32.c	FUNCTION_3
+0x40000b7	          0x4885d2	                           test rdx, rdx	       383	crc32.c	FUNCTION_3	IF_1
+0x40000ba	     0xf8eba000000	                           jle 0x400017a	       383	crc32.c	FUNCTION_3	IF_1
+0x40000c0	          0x4989f4	                            mov r12, rsi	       383	crc32.c	FUNCTION_3	IF_1
+0x40000c3	          0x4889d3	                            mov rbx, rdx	       383	crc32.c	FUNCTION_3	IF_1
+0x40000c6	      0xb82083b8ed	                     mov eax, 0xedb88320	       387	crc32.c	FUNCTION_3
+0x40000cb	    0x488984240001	            mov qword [rsp + 0x100], rax	       387	crc32.c	FUNCTION_3
+0x40000d3	    0x488d84240001	                  lea rax, [rsp + 0x100]	       387	crc32.c	FUNCTION_3
+0x40000db	    0x488d94240801	                  lea rdx, [rsp + 0x108]	       387	crc32.c	FUNCTION_3
+0x40000e3	    0x480500010000	                          add rax, 0x100	       387	crc32.c	FUNCTION_3
+0x40000e9	      0xb901000000	                              mov ecx, 1	       388	crc32.c	FUNCTION_3
+0x40000ee	          0x48890a	                    mov qword [rdx], rcx	       390	crc32.c	FUNCTION_3	FOR_1
+0x40000f1	          0x4801c9	                            add rcx, rcx	       391	crc32.c	FUNCTION_3	FOR_1
+0x40000f4	        0x4883c208	                              add rdx, 8	       391	crc32.c	FUNCTION_3	FOR_1
+0x40000f8	          0x4839c2	                            cmp rdx, rax	       389	crc32.c	FUNCTION_3	FOR_1
+0x40000fb	            0x75f1	                           jne 0x40000ee	       389	crc32.c	FUNCTION_3	FOR_1
+0x40000fd	    0x488db4240001	                  lea rsi, [rsp + 0x100]	       395	crc32.c	FUNCTION_3	CALL_1
+0x4000105	          0x4889e7	                            mov rdi, rsp	       395	crc32.c	FUNCTION_3	CALL_1
+0x4000108	      0xe857ffffff	              call sym.gf2_matrix_square	       395	crc32.c	FUNCTION_3	CALL_1
+0x400010d	          0x4889e6	                            mov rsi, rsp	       398	crc32.c	FUNCTION_3	CALL_2
+0x4000110	    0x488dbc240001	                  lea rdi, [rsp + 0x100]	       398	crc32.c	FUNCTION_3	CALL_2
+0x4000118	      0xe847ffffff	              call sym.gf2_matrix_square	       398	crc32.c	FUNCTION_3	CALL_2
+0x400011d	    0x488db4240001	                  lea rsi, [rsp + 0x100]	       404	crc32.c	FUNCTION_3	DO_1	CALL_3
+0x4000125	          0x4889e7	                            mov rdi, rsp	       404	crc32.c	FUNCTION_3	DO_1	CALL_3
+0x4000128	      0xe837ffffff	              call sym.gf2_matrix_square	       404	crc32.c	FUNCTION_3	DO_1	CALL_3
+0x400012d	          0xf6c301	                              test bl, 1	       405	crc32.c	FUNCTION_3	DO_1	IF_2
+0x4000130	            0x740e	                            je 0x4000140	       405	crc32.c	FUNCTION_3	DO_1	IF_2
+0x4000132	          0x4889ee	                            mov rsi, rbp	       406	crc32.c	FUNCTION_3	DO_1	CALL_4
+0x4000135	          0x4889e7	                            mov rdi, rsp	       406	crc32.c	FUNCTION_3	DO_1	CALL_4
+0x4000138	      0xe803ffffff	               call sym.gf2_matrix_times	       406	crc32.c	FUNCTION_3	DO_1	CALL_4
+0x400013d	          0x4889c5	                            mov rbp, rax	       406	crc32.c	FUNCTION_3	DO_1	CALL_4
+0x4000140	          0x48d1fb	                              sar rbx, 1	       410	crc32.c	FUNCTION_3	DO_1	IF_3
+0x4000143	            0x742d	                            je 0x4000172	       410	crc32.c	FUNCTION_3	DO_1	IF_3
+0x4000145	          0x4889e6	                            mov rsi, rsp	       414	crc32.c	FUNCTION_3	DO_1	CALL_5
+0x4000148	    0x488dbc240001	                  lea rdi, [rsp + 0x100]	       414	crc32.c	FUNCTION_3	DO_1	CALL_5
+0x4000150	      0xe80fffffff	              call sym.gf2_matrix_square	       414	crc32.c	FUNCTION_3	DO_1	CALL_5
+0x4000155	          0xf6c301	                              test bl, 1	       415	crc32.c	FUNCTION_3	DO_1	IF_4
+0x4000158	            0x7413	                            je 0x400016d	       415	crc32.c	FUNCTION_3	DO_1	IF_4
+0x400015a	          0x4889ee	                            mov rsi, rbp	       416	crc32.c	FUNCTION_3	DO_1	CALL_6
+0x400015d	    0x488dbc240001	                  lea rdi, [rsp + 0x100]	       416	crc32.c	FUNCTION_3	DO_1	CALL_6
+0x4000165	      0xe8d6feffff	               call sym.gf2_matrix_times	       416	crc32.c	FUNCTION_3	DO_1	CALL_6
+0x400016a	          0x4889c5	                            mov rbp, rax	       416	crc32.c	FUNCTION_3	DO_1	CALL_6
+0x400016d	          0x48d1fb	                              sar rbx, 1	       420	crc32.c	FUNCTION_3	DO_1
+0x4000170	            0x75ab	                           jne 0x400011d	       420	crc32.c	FUNCTION_3	DO_1
+0x4000172	          0x4889e8	                            mov rax, rbp	       424	crc32.c	FUNCTION_3
+0x4000175	          0x4c31e0	                            xor rax, r12	       424	crc32.c	FUNCTION_3
+0x4000178	            0xeb03	                           jmp 0x400017d	       424	crc32.c	FUNCTION_3
+0x400017a	          0x4889f8	                            mov rax, rdi	       384	crc32.c	FUNCTION_3	IF_1
+0x400017d	    0x488bb4240802	           mov rsi, qword [rsp + 0x208] 	       425	crc32.c	FUNCTION_3
+0x4000185	    0x644833342528	                xor rsi, qword fs:[0x28]	       425	crc32.c	FUNCTION_3
+0x400018e	            0x7405	                            je 0x4000195	       425	crc32.c	FUNCTION_3
+0x4000190	      0xe800000000	                          call 0x4000195	       425	crc32.c	FUNCTION_3
+0x4000195	    0x4881c4100200	                          add rsp, 0x210	       425	crc32.c	FUNCTION_3
+0x400019c	              0x5b	                                 pop rbx	       425	crc32.c	FUNCTION_3
+0x400019d	              0x5d	                                 pop rbp	       425	crc32.c	FUNCTION_3
+0x400019e	            0x415c	                                 pop r12	       425	crc32.c	FUNCTION_3
+0x40001a0	              0xc3	                                     ret	       425	crc32.c	FUNCTION_3
+crc32_combine	SWITCH,0:IF,0:CALL,1:WHILE,0:FOR,0:functions,0:ELSE,0:DO,0	4
+0x400048f	        0x4883ec08	                              sub rsp, 8	       432	crc32.c	FUNCTION_4
+0x4000493	      0xe8fefbffff	                          call 0x4000096	       433	crc32.c	FUNCTION_4	CALL_1
+0x4000498	        0x4883c408	                              add rsp, 8	       434	crc32.c	FUNCTION_4
+0x400049c	              0xc3	                                     ret	       434	crc32.c	FUNCTION_4
+crc32_combine64	SWITCH,0:IF,0:CALL,1:WHILE,0:FOR,0:functions,0:ELSE,0:DO,0	4
+0x400049d	        0x4883ec08	                              sub rsp, 8	       440	crc32.c	FUNCTION_5
+0x40004a1	      0xe8f0fbffff	                          call 0x4000096	       441	crc32.c	FUNCTION_5	CALL_1
+0x40004a6	        0x4883c408	                              add rsp, 8	       442	crc32.c	FUNCTION_5
+0x40004aa	              0xc3	                                     ret	       442	crc32.c	FUNCTION_5
+get_crc_table	SWITCH,0:IF,1:CALL,1:WHILE,0:FOR,0:functions,0:ELSE,0:DO,0	2
+0x40001a1	      0xb800000000	                              mov eax, 0	       195	crc32.c	FUNCTION_2
+0x40001a6	              0xc3	                                     ret	       195	crc32.c	FUNCTION_2

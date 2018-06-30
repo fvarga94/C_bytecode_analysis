@@ -1,0 +1,135 @@
+misc_seq_stop	ELSE,0:IF,0:functions,0:WHILE,0:CALL,1:DO,0:FOR,0:SWITCH,0	2
+0x4000040	    0x48c7c7000000	                              mov rdi, 0	        80	misc.c	FUNCTION_3	CALL_1
+0x4000047	      0xe900000000	                           jmp 0x400004c	        80	misc.c	FUNCTION_3	CALL_1
+misc_seq_next	ELSE,0:IF,0:functions,0:WHILE,0:CALL,1:DO,0:FOR,0:SWITCH,0	3
+0x4000400	          0x4889f7	                            mov rdi, rsi	        74	misc.c	FUNCTION_2
+0x4000403	    0x48c7c6000000	                              mov rsi, 0	        75	misc.c	FUNCTION_2	CALL_1
+0x400040a	      0xe900000000	                           jmp 0x400040f	        75	misc.c	FUNCTION_2	CALL_1
+misc_devnode	ELSE,0:IF,2:functions,0:WHILE,0:CALL,2:DO,0:FOR,0:SWITCH,0	15
+0x4000240	          0x4885f6	                           test rsi, rsi	       260	misc.c	FUNCTION_8	IF_1
+0x4000243	    0x488b87980000	            mov rax, qword [rdi + 0x98] 	       260	misc.c	FUNCTION_8	IF_1
+0x400024a	            0x7409	                            je 0x4000255	       260	misc.c	FUNCTION_8	IF_1
+0x400024c	         0xfb75048	           movzx edx, word [rax + 0x48] 	       260	misc.c	FUNCTION_8	IF_1
+0x4000250	          0x6685d2	                             test dx, dx	       260	misc.c	FUNCTION_8	IF_1
+0x4000253	            0x7513	                           jne 0x4000268	       260	misc.c	FUNCTION_8	IF_1
+0x4000255	        0x488b7840	            mov rdi, qword [rax + 0x40] 	       262	misc.c	FUNCTION_8	IF_2
+0x4000259	          0x4885ff	                           test rdi, rdi	       262	misc.c	FUNCTION_8	IF_2
+0x400025c	            0x740f	                            je 0x400026d	       262	misc.c	FUNCTION_8	IF_2
+0x400025e	      0xbec0004001	                      mov esi, 0x14000c0	       263	misc.c	FUNCTION_8	CALL_2
+0x4000263	      0xe900000000	                           jmp 0x4000268	       263	misc.c	FUNCTION_8	CALL_2
+0x4000268	          0x668916	                      mov word [rsi], dx	       261	misc.c	FUNCTION_8	IF_1
+0x400026b	            0xebe8	                           jmp 0x4000255	       261	misc.c	FUNCTION_8	IF_1
+0x400026d	            0x31c0	                            xor eax, eax	       265	misc.c	FUNCTION_8
+0x400026f	              0xc3	                                     ret	       265	misc.c	FUNCTION_8
+misc_open	ELSE,0:IF,3:functions,2:WHILE,0:CALL,8:DO,0:FOR,0:SWITCH,0	92
+0x4000270	            0x4156	                                push r14	       101	misc.c	FUNCTION_5
+0x4000272	            0x4155	                                push r13	       101	misc.c	FUNCTION_5
+0x4000274	          0x4989fd	                            mov r13, rdi	       101	misc.c	FUNCTION_5
+0x4000277	            0x4154	                                push r12	       101	misc.c	FUNCTION_5
+0x4000279	              0x55	                                push rbp	       101	misc.c	FUNCTION_5
+0x400027a	          0x4989f4	                            mov r12, rsi	       101	misc.c	FUNCTION_5
+0x400027d	              0x53	                                push rbx	       101	misc.c	FUNCTION_5
+0x400027e	          0x8b6f4c	            mov ebp, dword [rdi + 0x4c] 	       102	misc.c	FUNCTION_5	CALL_1
+0x4000281	    0x48c7c7000000	                              mov rdi, 0	       107	misc.c	FUNCTION_5	CALL_2
+0x4000288	      0xe800000000	                          call 0x400028d	       107	misc.c	FUNCTION_5	CALL_2
+0x400028d	    0x488b05000000	            mov rax, qword [0x04000294] 	       109	misc.c	FUNCTION_5	FUNCTION_1
+0x4000294	    0x81e5ffff0f00	                        and ebp, 0xfffff	       102	misc.c	FUNCTION_5	CALL_1
+0x400029a	    0x483d00000000	                              cmp rax, 0	       109	misc.c	FUNCTION_5	FUNCTION_1
+0x40002a0	            0x7427	                            je 0x40002c9	       109	misc.c	FUNCTION_5	FUNCTION_1
+0x40002a2	          0x3b68e8	             cmp ebp, dword [rax - 0x18]	       110	misc.c	FUNCTION_5	FUNCTION_1	IF_1
+0x40002a5	        0x488d58e8	                   lea rbx, [rax - 0x18]	       110	misc.c	FUNCTION_5	FUNCTION_1	IF_1
+0x40002a9	            0x750e	                           jne 0x40002b9	       110	misc.c	FUNCTION_5	FUNCTION_1	IF_1
+0x40002ab	      0xe99d000000	                           jmp 0x400034d	       110	misc.c	FUNCTION_5	FUNCTION_1	IF_1
+0x40002b0	          0x3b68e8	             cmp ebp, dword [rax - 0x18]	       110	misc.c	FUNCTION_5	FUNCTION_1	IF_1
+0x40002b3	     0xf8494000000	                            je 0x400034d	       110	misc.c	FUNCTION_5	FUNCTION_1	IF_1
+0x40002b9	        0x488b4318	            mov rax, qword [rbx + 0x18] 	       109	misc.c	FUNCTION_5	FUNCTION_1
+0x40002bd	    0x483d00000000	                              cmp rax, 0	       109	misc.c	FUNCTION_5	FUNCTION_1
+0x40002c3	        0x488d58e8	                   lea rbx, [rax - 0x18]	       109	misc.c	FUNCTION_5	FUNCTION_1
+0x40002c7	            0x75e7	                           jne 0x40002b0	       109	misc.c	FUNCTION_5	FUNCTION_1
+0x40002c9	    0x48c7c7000000	                              mov rdi, 0	       117	misc.c	FUNCTION_5	IF_1	CALL_3
+0x40002d0	      0xe800000000	                          call 0x40002d5	       117	misc.c	FUNCTION_5	IF_1	CALL_3
+0x40002d5	            0x89e9	                            mov ecx, ebp	       118	misc.c	FUNCTION_5	IF_1	CALL_4
+0x40002d7	      0xba0a000000	                            mov edx, 0xa	       118	misc.c	FUNCTION_5	IF_1	CALL_4
+0x40002dc	    0x48c7c6000000	                              mov rsi, 0	       118	misc.c	FUNCTION_5	IF_1	CALL_4
+0x40002e3	      0xbf01000000	                              mov edi, 1	       118	misc.c	FUNCTION_5	IF_1	CALL_4
+0x40002e8	      0xe800000000	                          call 0x40002ed	       118	misc.c	FUNCTION_5	IF_1	CALL_4
+0x40002ed	    0x48c7c7000000	                              mov rdi, 0	       119	misc.c	FUNCTION_5	IF_1	CALL_5
+0x40002f4	      0xe800000000	                          call 0x40002f9	       119	misc.c	FUNCTION_5	IF_1	CALL_5
+0x40002f9	    0x488b05000000	            mov rax, qword [0x04000300] 	       121	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x4000300	    0x483d00000000	                              cmp rax, 0	       121	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x4000306	        0x488d58e8	                   lea rbx, [rax - 0x18]	       121	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x400030a	            0x7423	                            je 0x400032f	       121	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x400030c	          0x3968e8	            cmp dword [rax - 0x18], ebp 	       122	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x400030f	            0x752a	                           jne 0x400033b	       122	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x4000311	        0x488b4310	            mov rax, qword [rbx + 0x10] 	       123	misc.c	FUNCTION_5	FUNCTION_2	CALL_1
+0x4000315	          0x4885c0	                           test rax, rax	       123	misc.c	FUNCTION_5	FUNCTION_2	CALL_1
+0x4000318	            0x7415	                            je 0x400032f	       123	misc.c	FUNCTION_5	FUNCTION_2	CALL_1
+0x400031a	          0x488b38	                    mov rdi, qword [rax]	       123	misc.c	FUNCTION_5	FUNCTION_2	CALL_1
+0x400031d	      0xe800000000	                          call 0x4000322	       123	misc.c	FUNCTION_5	FUNCTION_2	CALL_1
+0x4000322	            0x84c0	                             test al, al	       123	misc.c	FUNCTION_5	FUNCTION_2	CALL_1
+0x4000324	            0x7409	                            je 0x400032f	       123	misc.c	FUNCTION_5	FUNCTION_2	CALL_1
+0x4000326	        0x4c8b7310	            mov r14, qword [rbx + 0x10] 	       123	misc.c	FUNCTION_5	FUNCTION_2	CALL_1
+0x400032a	          0x4d85f6	                           test r14, r14	       127	misc.c	FUNCTION_5	IF_1	IF_2
+0x400032d	            0x7548	                           jne 0x4000377	       127	misc.c	FUNCTION_5	IF_1	IF_2
+0x400032f	      0xbbedffffff	                     mov ebx, 0xffffffed	       104	misc.c	FUNCTION_5
+0x4000334	            0xeb78	                           jmp 0x40003ae	       104	misc.c	FUNCTION_5
+0x4000336	          0x3b68e8	             cmp ebp, dword [rax - 0x18]	       122	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x4000339	            0x74d6	                            je 0x4000311	       122	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x400033b	        0x488b4318	            mov rax, qword [rbx + 0x18] 	       121	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x400033f	    0x483d00000000	                              cmp rax, 0	       121	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x4000345	        0x488d58e8	                   lea rbx, [rax - 0x18]	       121	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x4000349	            0x75eb	                           jne 0x4000336	       121	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x400034b	            0xebe2	                           jmp 0x400032f	       121	misc.c	FUNCTION_5	IF_1	FUNCTION_2
+0x400034d	        0x488b4310	            mov rax, qword [rbx + 0x10] 	       111	misc.c	FUNCTION_5	FUNCTION_1	IF_1	CALL_1
+0x4000351	          0x4885c0	                           test rax, rax	       111	misc.c	FUNCTION_5	FUNCTION_1	IF_1	CALL_1
+0x4000354	     0xf846fffffff	                            je 0x40002c9	       111	misc.c	FUNCTION_5	FUNCTION_1	IF_1	CALL_1
+0x400035a	          0x488b38	                    mov rdi, qword [rax]	       111	misc.c	FUNCTION_5	FUNCTION_1	IF_1	CALL_1
+0x400035d	      0xe800000000	                          call 0x4000362	       111	misc.c	FUNCTION_5	FUNCTION_1	IF_1	CALL_1
+0x4000362	            0x84c0	                             test al, al	       111	misc.c	FUNCTION_5	FUNCTION_1	IF_1	CALL_1
+0x4000364	     0xf845fffffff	                            je 0x40002c9	       111	misc.c	FUNCTION_5	FUNCTION_1	IF_1	CALL_1
+0x400036a	        0x4c8b7310	            mov r14, qword [rbx + 0x10] 	       111	misc.c	FUNCTION_5	FUNCTION_1	IF_1	CALL_1
+0x400036e	          0x4d85f6	                           test r14, r14	       116	misc.c	FUNCTION_5	IF_1
+0x4000371	     0xf8452ffffff	                            je 0x40002c9	       116	misc.c	FUNCTION_5	IF_1
+0x4000377	      0x498b442428	            mov rax, qword [r12 + 0x28] 	       139	misc.c	FUNCTION_5	CALL_6
+0x400037c	    0x49899c24c800	             mov qword [r12 + 0xc8], rbx	       136	misc.c	FUNCTION_5
+0x4000384	          0x4885c0	                           test rax, rax	       139	misc.c	FUNCTION_5	CALL_6
+0x4000387	            0x7408	                            je 0x4000391	       139	misc.c	FUNCTION_5	CALL_6
+0x4000389	          0x488b38	                    mov rdi, qword [rax]	       139	misc.c	FUNCTION_5	CALL_6
+0x400038c	      0xe800000000	                          call 0x4000391	       139	misc.c	FUNCTION_5	CALL_6
+0x4000391	      0x4d89742428	             mov qword [r12 + 0x28], r14	       139	misc.c	FUNCTION_5	CALL_6
+0x4000396	        0x498b4678	            mov rax, qword [r14 + 0x78] 	       140	misc.c	FUNCTION_5	IF_3
+0x400039a	            0x31db	                            xor ebx, ebx	       138	misc.c	FUNCTION_5
+0x400039c	          0x4885c0	                           test rax, rax	       140	misc.c	FUNCTION_5	IF_3
+0x400039f	            0x740d	                            je 0x40003ae	       140	misc.c	FUNCTION_5	IF_3
+0x40003a1	          0x4c89e6	                            mov rsi, r12	       141	misc.c	FUNCTION_5	CALL_7
+0x40003a4	          0x4c89ef	                            mov rdi, r13	       141	misc.c	FUNCTION_5	CALL_7
+0x40003a7	      0xe800000000	                          call 0x40003ac	       141	misc.c	FUNCTION_5	CALL_7
+0x40003ac	            0x89c3	                            mov ebx, eax	       141	misc.c	FUNCTION_5	CALL_7
+0x40003ae	    0x48c7c7000000	                              mov rdi, 0	       143	misc.c	FUNCTION_5	CALL_8
+0x40003b5	      0xe800000000	                          call 0x40003ba	       143	misc.c	FUNCTION_5	CALL_8
+0x40003ba	            0x89d8	                            mov eax, ebx	       145	misc.c	FUNCTION_5
+0x40003bc	              0x5b	                                 pop rbx	       145	misc.c	FUNCTION_5
+0x40003bd	              0x5d	                                 pop rbp	       145	misc.c	FUNCTION_5
+0x40003be	            0x415c	                                 pop r12	       145	misc.c	FUNCTION_5
+0x40003c0	            0x415d	                                 pop r13	       145	misc.c	FUNCTION_5
+0x40003c2	            0x415e	                                 pop r14	       145	misc.c	FUNCTION_5
+0x40003c4	              0xc3	                                     ret	       145	misc.c	FUNCTION_5
+misc_seq_show	ELSE,0:IF,0:functions,0:WHILE,0:CALL,2:DO,0:FOR,0:SWITCH,0	9
+0x40003d0	        0x488b46f0	             mov rax, qword [rsi - 0x10]	        87	misc.c	FUNCTION_4	CALL_2
+0x40003d4	          0x8b56e8	             mov edx, dword [rsi - 0x18]	        87	misc.c	FUNCTION_4	CALL_2
+0x40003d7	    0x48c7c1000000	                              mov rcx, 0	        87	misc.c	FUNCTION_4	CALL_2
+0x40003de	    0x48c7c6000000	                              mov rsi, 0	        87	misc.c	FUNCTION_4	CALL_2
+0x40003e5	          0x4885c0	                           test rax, rax	        87	misc.c	FUNCTION_4	CALL_2
+0x40003e8	        0x480f45c8	                         cmovne rcx, rax	        87	misc.c	FUNCTION_4	CALL_2
+0x40003ec	      0xe800000000	                          call 0x40003f1	        87	misc.c	FUNCTION_4	CALL_2
+0x40003f1	            0x31c0	                            xor eax, eax	        89	misc.c	FUNCTION_4
+0x40003f3	              0xc3	                                     ret	        89	misc.c	FUNCTION_4
+misc_seq_start	ELSE,0:IF,0:functions,0:WHILE,0:CALL,2:DO,0:FOR,0:SWITCH,0	8
+0x4000410	              0x53	                                push rbx	        68	misc.c	FUNCTION_1
+0x4000411	    0x48c7c7000000	                              mov rdi, 0	        69	misc.c	FUNCTION_1	CALL_1
+0x4000418	          0x4889f3	                            mov rbx, rsi	        68	misc.c	FUNCTION_1
+0x400041b	      0xe800000000	                          call 0x4000420	        69	misc.c	FUNCTION_1	CALL_1
+0x4000420	          0x488b33	                    mov rsi, qword [rbx]	        70	misc.c	FUNCTION_1	CALL_2
+0x4000423	    0x48c7c7000000	                              mov rdi, 0	        70	misc.c	FUNCTION_1	CALL_2
+0x400042a	              0x5b	                                 pop rbx	        71	misc.c	FUNCTION_1
+0x400042b	      0xe900000000	                   jmp section_end..text	        70	misc.c	FUNCTION_1	CALL_2

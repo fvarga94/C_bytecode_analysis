@@ -1,0 +1,151 @@
+ieee80211_check_rate_mask	ELSE,0:WHILE,0:IF,3:functions,0:SWITCH,0:DO,0:CALL,3:FOR,0	33
+0x4001340	    0x488b87e00800	           mov rax, qword [rdi + 0x8e0] 	       276	rate.c	FUNCTION_11	IF_1	CALL_1
+0x4001347	    0x8b97b0080000	           mov edx, dword [rdi + 0x8b0] 	       273	rate.c	FUNCTION_11
+0x400134d	          0x4885c0	                           test rax, rax	       276	rate.c	FUNCTION_11	IF_1	CALL_1
+0x4001350	            0x741c	                            je 0x400136e	       276	rate.c	FUNCTION_11	IF_1	CALL_1
+0x4001352	            0x85d2	                           test edx, edx	       279	rate.c	FUNCTION_11	IF_2	CALL_2
+0x4001354	            0x741b	                            je 0x4001371	       279	rate.c	FUNCTION_11	IF_2	CALL_2
+0x4001356	              0x55	                                push rbp	       270	rate.c	FUNCTION_11
+0x4001357	              0x53	                                push rbx	       270	rate.c	FUNCTION_11
+0x4001358	            0x8b00	                    mov eax, dword [rax]	       282	rate.c	FUNCTION_11
+0x400135a	        0x488d1c87	                  lea rbx, [rdi + rax*4]	       282	rate.c	FUNCTION_11
+0x400135e	          0x4989c0	                             mov r8, rax	       282	rate.c	FUNCTION_11
+0x4001361	    0x8b8bb0040000	           mov ecx, dword [rbx + 0x4b0] 	       283	rate.c	FUNCTION_11
+0x4001367	            0x85ca	                           test edx, ecx	       286	rate.c	FUNCTION_11	IF_3
+0x4001369	            0x7409	                            je 0x4001374	       286	rate.c	FUNCTION_11	IF_3
+0x400136b	              0x5b	                                 pop rbx	       293	rate.c	FUNCTION_11
+0x400136c	              0x5d	                                 pop rbp	       293	rate.c	FUNCTION_11
+0x400136d	              0xc3	                                     ret	       293	rate.c	FUNCTION_11
+0x400136e	             0xf0b	                                     ud2	       293	rate.c	FUNCTION_11
+0x4001370	              0xc3	                                     ret	       276	rate.c	FUNCTION_11	IF_1	CALL_1
+0x4001371	             0xf0b	                                     ud2	       276	rate.c	FUNCTION_11	IF_1	CALL_1
+0x4001373	              0xc3	                                     ret	       279	rate.c	FUNCTION_11	IF_2	CALL_2
+0x4001374	    0x488bb7e00100	           mov rsi, qword [rdi + 0x1e0] 	       284	rate.c	FUNCTION_11
+0x400137b	        0x488b7638	            mov rsi, qword [rsi + 0x38] 	       284	rate.c	FUNCTION_11
+0x400137f	    0x488bacc6f800	    mov rbp, qword [rsi + rax*8 + 0xf8] 	       284	rate.c	FUNCTION_11
+0x4001387	    0x488db7f80100	                  lea rsi, [rdi + 0x1f8]	       289	rate.c	FUNCTION_11	CALL_3
+0x400138e	    0x48c7c7000000	                              mov rdi, 0	       289	rate.c	FUNCTION_11	CALL_3
+0x4001395	      0xe800000000	                          call 0x400139a	       289	rate.c	FUNCTION_11	CALL_3
+0x400139a	          0x8b4d18	            mov ecx, dword [rbp + 0x18] 	       292	rate.c	FUNCTION_11
+0x400139d	      0xb801000000	                              mov eax, 1	       292	rate.c	FUNCTION_11
+0x40013a2	            0xd3e0	                             shl eax, cl	       292	rate.c	FUNCTION_11
+0x40013a4	          0x83e801	                              sub eax, 1	       292	rate.c	FUNCTION_11
+0x40013a7	    0x8983b0040000	            mov dword [rbx + 0x4b0], eax	       292	rate.c	FUNCTION_11
+0x40013ad	            0xebbc	                           jmp 0x400136b	       292	rate.c	FUNCTION_11
+rate_idx_match_mcs_mask	ELSE,0:WHILE,0:IF,3:functions,0:SWITCH,0:DO,0:CALL,2:FOR,4	68
+0x4000040	           0xfb60f	                   movzx ecx, byte [rdi]	       439	rate.c	FUNCTION_17
+0x4000043	          0x8d5107	                      lea edx, [rcx + 7]	       439	rate.c	FUNCTION_17
+0x4000046	            0x84c9	                             test cl, cl	       439	rate.c	FUNCTION_17
+0x4000048	           0xf49d1	                         cmovns edx, ecx	       439	rate.c	FUNCTION_17
+0x400004b	            0x31c0	                            xor eax, eax	       444	rate.c	FUNCTION_17	IF_1
+0x400004d	          0xc0fa03	                               sar dl, 3	       439	rate.c	FUNCTION_17
+0x4000050	        0x440fbec2	                           movsx r8d, dl	       443	rate.c	FUNCTION_17	IF_1
+0x4000054	        0x4183f809	                              cmp r8d, 9	       443	rate.c	FUNCTION_17	IF_1
+0x4000058	     0xf8789000000	                            ja 0x40000e7	       443	rate.c	FUNCTION_17	IF_1
+0x400005e	            0x84d2	                             test dl, dl	       447	rate.c	FUNCTION_17	FOR_1
+0x4000060	            0x7843	                            js 0x40000a5	       447	rate.c	FUNCTION_17	FOR_1
+0x4000062	            0x89ca	                            mov edx, ecx	       440	rate.c	FUNCTION_17
+0x4000064	          0xc0fa07	                               sar dl, 7	       440	rate.c	FUNCTION_17
+0x4000067	          0xc0ea05	                               shr dl, 5	       440	rate.c	FUNCTION_17
+0x400006a	          0x8d0411	                    lea eax, [rcx + rdx]	       440	rate.c	FUNCTION_17
+0x400006d	          0x83e007	                              and eax, 7	       440	rate.c	FUNCTION_17
+0x4000070	            0x29d0	                            sub eax, edx	       440	rate.c	FUNCTION_17
+0x4000072	           0xfbec0	                           movsx eax, al	       440	rate.c	FUNCTION_17
+0x4000075	            0x85c0	                           test eax, eax	       448	rate.c	FUNCTION_17	FOR_1	FOR_2
+0x4000077	            0x781d	                            js 0x4000096	       448	rate.c	FUNCTION_17	FOR_1	FOR_2
+0x4000079	          0x4963d0	                         movsxd rdx, r8d	       449	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2	CALL_1
+0x400007c	         0xfb61416	             movzx edx, byte [rsi + rdx]	       449	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2	CALL_1
+0x4000080	        0x480fa3c2	                             bt rdx, rax	       449	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2	CALL_1
+0x4000084	            0x7308	                           jae 0x400008e	       449	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2	CALL_1
+0x4000086	            0xeb61	                           jmp 0x40000e9	       449	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2	CALL_1
+0x4000088	        0x480fa3c2	                             bt rdx, rax	       449	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2	CALL_1
+0x400008c	            0x725b	                            jb 0x40000e9	       449	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2	CALL_1
+0x400008e	          0x83e801	                              sub eax, 1	       448	rate.c	FUNCTION_17	FOR_1	FOR_2
+0x4000091	          0x83f8ff	             cmp eax, 0xffffffffffffffff	       448	rate.c	FUNCTION_17	FOR_1	FOR_2
+0x4000094	            0x75f2	                           jne 0x4000088	       448	rate.c	FUNCTION_17	FOR_1	FOR_2
+0x4000096	        0x4183e801	                              sub r8d, 1	       447	rate.c	FUNCTION_17	FOR_1
+0x400009a	      0xb807000000	                              mov eax, 7	       453	rate.c	FUNCTION_17	FOR_1
+0x400009f	        0x4183f8ff	             cmp r8d, 0xffffffffffffffff	       447	rate.c	FUNCTION_17	FOR_1
+0x40000a3	            0x75d4	                           jne 0x4000079	       447	rate.c	FUNCTION_17	FOR_1
+0x40000a5	           0xfbec1	                           movsx eax, cl	       457	rate.c	FUNCTION_17
+0x40000a8	          0x8d4808	                      lea ecx, [rax + 8]	       457	rate.c	FUNCTION_17
+0x40000ab	          0x83c001	                              add eax, 1	       457	rate.c	FUNCTION_17
+0x40000ae	           0xf49c8	                         cmovns ecx, eax	       457	rate.c	FUNCTION_17
+0x40000b1	              0x99	                                     cdq	       458	rate.c	FUNCTION_17
+0x40000b2	          0xc1ea1d	                           shr edx, 0x1d	       458	rate.c	FUNCTION_17
+0x40000b5	          0xc1f903	                              sar ecx, 3	       457	rate.c	FUNCTION_17
+0x40000b8	             0x1d0	                            add eax, edx	       458	rate.c	FUNCTION_17
+0x40000ba	          0x83e007	                              and eax, 7	       458	rate.c	FUNCTION_17
+0x40000bd	            0x29d0	                            sub eax, edx	       458	rate.c	FUNCTION_17
+0x40000bf	          0x83f909	                              cmp ecx, 9	       460	rate.c	FUNCTION_17	FOR_3
+0x40000c2	            0x7f21	                            jg 0x40000e5	       460	rate.c	FUNCTION_17	FOR_3
+0x40000c4	          0x4863d1	                         movsxd rdx, ecx	       460	rate.c	FUNCTION_17	FOR_3
+0x40000c7	         0xfb61416	             movzx edx, byte [rsi + rdx]	       460	rate.c	FUNCTION_17	FOR_3
+0x40000cb	        0x480fa3c2	                             bt rdx, rax	       462	rate.c	FUNCTION_17	FOR_3	FOR_4	IF_3	CALL_2
+0x40000cf	            0x7224	                            jb 0x40000f5	       462	rate.c	FUNCTION_17	FOR_3	FOR_4	IF_3	CALL_2
+0x40000d1	          0x83c001	                              add eax, 1	       461	rate.c	FUNCTION_17	FOR_3	FOR_4
+0x40000d4	          0x83f808	                              cmp eax, 8	       461	rate.c	FUNCTION_17	FOR_3	FOR_4
+0x40000d7	            0x75f2	                           jne 0x40000cb	       461	rate.c	FUNCTION_17	FOR_3	FOR_4
+0x40000d9	          0x83c101	                              add ecx, 1	       460	rate.c	FUNCTION_17	FOR_3
+0x40000dc	            0x31c0	                            xor eax, eax	       466	rate.c	FUNCTION_17	FOR_3
+0x40000de	          0x83f90a	                            cmp ecx, 0xa	       460	rate.c	FUNCTION_17	FOR_3
+0x40000e1	            0x75e1	                           jne 0x40000c4	       460	rate.c	FUNCTION_17	FOR_3
+0x40000e3	            0xf3c3	                                     ret	       460	rate.c	FUNCTION_17	FOR_3
+0x40000e5	            0x31c0	                            xor eax, eax	       444	rate.c	FUNCTION_17	IF_1
+0x40000e7	            0xf3c3	                                     ret	       469	rate.c	FUNCTION_17
+0x40000e9	        0x428d04c0	                   lea eax, [rax + r8*8]	       450	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2
+0x40000ed	            0x8807	                      mov byte [rdi], al	       450	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2
+0x40000ef	      0xb801000000	                              mov eax, 1	       451	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2
+0x40000f4	              0xc3	                                     ret	       451	rate.c	FUNCTION_17	FOR_1	FOR_2	IF_2
+0x40000f5	          0x8d04c8	                  lea eax, [rax + rcx*8]	       463	rate.c	FUNCTION_17	FOR_3	FOR_4	IF_3
+0x40000f8	            0x8807	                      mov byte [rdi], al	       463	rate.c	FUNCTION_17	FOR_3	FOR_4	IF_3
+0x40000fa	      0xb801000000	                              mov eax, 1	       464	rate.c	FUNCTION_17	FOR_3	FOR_4	IF_3
+0x40000ff	              0xc3	                                     ret	       464	rate.c	FUNCTION_17	FOR_3	FOR_4	IF_3
+ieee80211_try_rate_control_ops_get	ELSE,0:WHILE,0:IF,1:functions,1:SWITCH,0:DO,0:CALL,2:FOR,0	32
+0x4000100	          0x4885ff	                           test rdi, rdi	       167	rate.c	FUNCTION_6	IF_1
+0x4000103	            0x745d	                            je 0x4000162	       167	rate.c	FUNCTION_6	IF_1
+0x4000105	            0x4154	                                push r12	       163	rate.c	FUNCTION_6
+0x4000107	              0x55	                                push rbp	       163	rate.c	FUNCTION_6
+0x4000108	          0x4989fc	                            mov r12, rdi	       163	rate.c	FUNCTION_6
+0x400010b	              0x53	                                push rbx	       163	rate.c	FUNCTION_6
+0x400010c	    0x48c7c7000000	                              mov rdi, 0	       170	rate.c	FUNCTION_6	CALL_1
+0x4000113	      0xe800000000	                          call 0x4000118	       170	rate.c	FUNCTION_6	CALL_1
+0x4000118	    0x488b1d000000	            mov rbx, qword [0x0400011f] 	       171	rate.c	FUNCTION_6	FUNCTION_1
+0x400011f	    0x4881fb000000	                              cmp rbx, 0	       171	rate.c	FUNCTION_6	FUNCTION_1
+0x4000126	            0x750e	                           jne 0x4000136	       171	rate.c	FUNCTION_6	FUNCTION_1
+0x4000128	            0xeb34	                           jmp 0x400015e	       171	rate.c	FUNCTION_6	FUNCTION_1
+0x400012a	          0x488b1b	                    mov rbx, qword [rbx]	       171	rate.c	FUNCTION_6	FUNCTION_1
+0x400012d	    0x4881fb000000	                              cmp rbx, 0	       171	rate.c	FUNCTION_6	FUNCTION_1
+0x4000134	            0x7428	                            je 0x400015e	       171	rate.c	FUNCTION_6	FUNCTION_1
+0x4000136	        0x488b6b10	            mov rbp, qword [rbx + 0x10] 	       172	rate.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x400013a	          0x4c89e6	                            mov rsi, r12	       172	rate.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x400013d	        0x488b7d00	                    mov rdi, qword [rbp]	       172	rate.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x4000141	      0xe800000000	                          call 0x4000146	       172	rate.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x4000146	            0x85c0	                           test eax, eax	       172	rate.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x4000148	            0x75e0	                           jne 0x400012a	       172	rate.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x400014a	    0x48c7c7000000	                              mov rdi, 0	       177	rate.c	FUNCTION_6	CALL_2
+0x4000151	      0xe800000000	                          call 0x4000156	       177	rate.c	FUNCTION_6	CALL_2
+0x4000156	          0x4889e8	                            mov rax, rbp	       178	rate.c	FUNCTION_6
+0x4000159	              0x5b	                                 pop rbx	       179	rate.c	FUNCTION_6
+0x400015a	              0x5d	                                 pop rbp	       179	rate.c	FUNCTION_6
+0x400015b	            0x415c	                                 pop r12	       179	rate.c	FUNCTION_6
+0x400015d	              0xc3	                                     ret	       179	rate.c	FUNCTION_6
+0x400015e	            0x31ed	                            xor ebp, ebp	       165	rate.c	FUNCTION_6
+0x4000160	            0xebe8	                           jmp 0x400014a	       165	rate.c	FUNCTION_6
+0x4000162	            0x31c0	                            xor eax, eax	       168	rate.c	FUNCTION_6	IF_1
+0x4000164	              0xc3	                                     ret	       168	rate.c	FUNCTION_6	IF_1
+rate_control_deinitialize	ELSE,0:WHILE,0:IF,1:functions,0:SWITCH,0:DO,0:CALL,1:FOR,0	14
+0x40016a0	              0x53	                                push rbx	       985	rate.c	FUNCTION_29
+0x40016a1	    0x488b9f100800	           mov rbx, qword [rdi + 0x810] 	       988	rate.c	FUNCTION_29
+0x40016a8	          0x4885db	                           test rbx, rbx	       990	rate.c	FUNCTION_29	IF_1
+0x40016ab	            0x7424	                            je 0x40016d1	       990	rate.c	FUNCTION_29	IF_1
+0x40016ad	    0x48c787100800	              mov qword [rdi + 0x810], 0	       993	rate.c	FUNCTION_29
+0x40016b8	          0x488b03	                    mov rax, qword [rbx]	       259	rate.c	FUNCTION_10	CALL_1
+0x40016bb	        0x488b7b08	                mov rdi, qword [rbx + 8]	       259	rate.c	FUNCTION_10	CALL_1
+0x40016bf	        0x488b4010	            mov rax, qword [rax + 0x10] 	       259	rate.c	FUNCTION_10	CALL_1
+0x40016c3	      0xe800000000	                          call 0x40016c8	       259	rate.c	FUNCTION_10	CALL_1
+0x40016c8	          0x4889df	                            mov rdi, rbx	       266	rate.c	FUNCTION_10	CALL_3
+0x40016cb	              0x5b	                                 pop rbx	       995	rate.c	FUNCTION_29
+0x40016cc	      0xe900000000	                           jmp 0x40016d1	       266	rate.c	FUNCTION_10	CALL_3
+0x40016d1	              0x5b	                                 pop rbx	       995	rate.c	FUNCTION_29
+0x40016d2	              0xc3	                                     ret	       995	rate.c	FUNCTION_29

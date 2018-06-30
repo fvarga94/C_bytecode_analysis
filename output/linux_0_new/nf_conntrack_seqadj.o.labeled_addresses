@@ -1,0 +1,26 @@
+nf_conntrack_seqadj_init	DO,0:CALL,1:functions,0:WHILE,0:FOR,0:ELSE,0:IF,0:SWITCH,0	2
+0x40004b0	    0x48c7c7000000	                              mov rdi, 0	       242	nf_conntrack_seqadj.c	FUNCTION_8	CALL_1
+0x40004b7	      0xe900000000	                           jmp 0x40004bc	       242	nf_conntrack_seqadj.c	FUNCTION_8	CALL_1
+nf_conntrack_seqadj_fini	DO,0:CALL,1:functions,0:WHILE,0:FOR,0:ELSE,0:IF,0:SWITCH,0	2
+0x40004c0	    0x48c7c7000000	                              mov rdi, 0	       247	nf_conntrack_seqadj.c	FUNCTION_9	CALL_1
+0x40004c7	      0xe900000000	                   jmp section_end..text	       247	nf_conntrack_seqadj.c	FUNCTION_9	CALL_1
+nf_ct_seq_offset	DO,0:CALL,2:functions,0:WHILE,0:FOR,0:ELSE,0:IF,1:SWITCH,0	19
+0x4000090	    0x488b8fb80000	            mov rcx, qword [rdi + 0xb8] 	       221	nf_conntrack_seqadj.c	FUNCTION_7
+0x4000097	          0x4885c9	                           test rcx, rcx	        59	nf_conntrack_extend.h	FUNCTION_11	CALL_1
+0x400009a	            0x741f	                            je 0x40000bb	        59	nf_conntrack_extend.h	FUNCTION_11	CALL_1
+0x400009c	         0xfb64112	           movzx eax, byte [rcx + 0x12] 	        54	nf_conntrack_extend.h	FUNCTION_10
+0x40000a0	            0x84c0	                             test al, al	        59	nf_conntrack_extend.h	FUNCTION_11	CALL_1
+0x40000a2	            0x7417	                            je 0x40000bb	        59	nf_conntrack_extend.h	FUNCTION_11	CALL_1
+0x40000a4	          0x4801c8	                            add rax, rcx	       225	nf_conntrack_seqadj.c	FUNCTION_7	IF_1
+0x40000a7	            0x7412	                            je 0x40000bb	       225	nf_conntrack_seqadj.c	FUNCTION_7	IF_1
+0x40000a9	            0x89f6	                            mov esi, esi	       225	nf_conntrack_seqadj.c	FUNCTION_7	IF_1
+0x40000ab	        0x488d0c76	                  lea rcx, [rsi + rsi*2]	       225	nf_conntrack_seqadj.c	FUNCTION_7	IF_1
+0x40000af	        0x488d0488	                  lea rax, [rax + rcx*4]	       225	nf_conntrack_seqadj.c	FUNCTION_7	IF_1
+0x40000b3	            0x3910	                    cmp dword [rax], edx	       230	nf_conntrack_seqadj.c	FUNCTION_7
+0x40000b5	            0x7807	                            js 0x40000be	       230	nf_conntrack_seqadj.c	FUNCTION_7
+0x40000b7	          0x8b4004	                mov eax, dword [rax + 4]	       230	nf_conntrack_seqadj.c	FUNCTION_7
+0x40000ba	              0xc3	                                     ret	       230	nf_conntrack_seqadj.c	FUNCTION_7
+0x40000bb	            0x31c0	                            xor eax, eax	       226	nf_conntrack_seqadj.c	FUNCTION_7	IF_1
+0x40000bd	              0xc3	                                     ret	       226	nf_conntrack_seqadj.c	FUNCTION_7	IF_1
+0x40000be	          0x8b4008	                mov eax, dword [rax + 8]	       230	nf_conntrack_seqadj.c	FUNCTION_7
+0x40000c1	              0xc3	                                     ret	       230	nf_conntrack_seqadj.c	FUNCTION_7

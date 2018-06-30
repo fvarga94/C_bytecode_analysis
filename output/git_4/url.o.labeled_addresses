@@ -1,0 +1,256 @@
+url_decode	ELSE,0:WHILE,0:IF,0:FOR,0:SWITCH,0:functions,0:CALL,2:DO,0	7
+0x40004c0	              0x53	                                push rbx	        71	url.c	FUNCTION_4
+0x40004c1	          0x4889fb	                            mov rbx, rdi	        71	url.c	FUNCTION_4
+0x40004c4	      0xe800000000	                          call 0x40004c9	        72	url.c	FUNCTION_4	CALL_2
+0x40004c9	          0x4889df	                            mov rdi, rbx	        72	url.c	FUNCTION_4	CALL_2
+0x40004cc	            0x89c6	                            mov esi, eax	        72	url.c	FUNCTION_4	CALL_2
+0x40004ce	              0x5b	                                 pop rbx	        73	url.c	FUNCTION_4
+0x40004cf	      0xe92cfeffff	                  jmp sym.url_decode_mem	        72	url.c	FUNCTION_4	CALL_2
+is_url	ELSE,0:WHILE,1:IF,2:FOR,0:SWITCH,0:functions,0:CALL,2:DO,0	39
+0x4000290	          0x4885ff	                           test rdi, rdi	        22	url.c	FUNCTION_2	IF_1	CALL_1
+0x4000293	            0x744b	                            je 0x40002e0	        22	url.c	FUNCTION_2	IF_1	CALL_1
+0x4000295	        0x480fbe17	                   movsx rdx, byte [rdi]	        22	url.c	FUNCTION_2	IF_1	CALL_1
+0x4000299	            0x31c0	                            xor eax, eax	        29	url.c	FUNCTION_2
+0x400029b	            0x85d2	                           test edx, edx	        14	url.c	FUNCTION_1	CALL_1
+0x400029d	            0x7e43	                           jle 0x40002e2	        14	url.c	FUNCTION_1	CALL_1
+0x400029f	        0x4883c701	                              add rdi, 1	        22	url.c	FUNCTION_2	IF_1	CALL_1
+0x40002a3	    0xf68200000000	                      test byte [rdx], 6	        14	url.c	FUNCTION_1	CALL_1
+0x40002aa	            0x7436	                            je 0x40002e2	        14	url.c	FUNCTION_1	CALL_1
+0x40002ac	         0xf1f4000	                         nop dword [rax]	        14	url.c	FUNCTION_1	CALL_1
+0x40002b0	           0xfb617	                   movzx edx, byte [rdi]	        24	url.c	FUNCTION_2	WHILE_1
+0x40002b3	            0x84d2	                             test dl, dl	        24	url.c	FUNCTION_2	WHILE_1
+0x40002b5	            0x7431	                            je 0x40002e8	        24	url.c	FUNCTION_2	WHILE_1
+0x40002b7	          0x80fa3a	                            cmp dl, 0x3a	        24	url.c	FUNCTION_2	WHILE_1
+0x40002ba	            0x742c	                            je 0x40002e8	        24	url.c	FUNCTION_2	WHILE_1
+0x40002bc	           0xfbec2	                           movsx eax, dl	        25	url.c	FUNCTION_2	WHILE_1	IF_2	CALL_2
+0x40002bf	        0x4883c701	                              add rdi, 1	        25	url.c	FUNCTION_2	WHILE_1	IF_2	CALL_2
+0x40002c3	            0x85c0	                           test eax, eax	        14	url.c	FUNCTION_1	CALL_1
+0x40002c5	            0x7e0c	                           jle 0x40002d3	        14	url.c	FUNCTION_1	CALL_1
+0x40002c7	          0x4863c8	                         movsxd rcx, eax	        14	url.c	FUNCTION_1	CALL_1
+0x40002ca	    0xf68100000000	                      test byte [rcx], 6	        14	url.c	FUNCTION_1	CALL_1
+0x40002d1	            0x75dd	                           jne 0x40002b0	        14	url.c	FUNCTION_1	CALL_1
+0x40002d3	          0x83ea2d	                           sub edx, 0x2d	        16	url.c	FUNCTION_1
+0x40002d6	          0x80fa01	                               cmp dl, 1	        16	url.c	FUNCTION_1
+0x40002d9	            0x76d5	                           jbe 0x40002b0	        16	url.c	FUNCTION_1
+0x40002db	          0x83f82b	                           cmp eax, 0x2b	        16	url.c	FUNCTION_1
+0x40002de	            0x74d0	                            je 0x40002b0	        16	url.c	FUNCTION_1
+0x40002e0	            0x31c0	                            xor eax, eax	        29	url.c	FUNCTION_2
+0x40002e2	            0xf3c3	                                     ret	        30	url.c	FUNCTION_2
+0x40002e4	         0xf1f4000	                         nop dword [rax]	        30	url.c	FUNCTION_2
+0x40002e8	            0x31c0	                            xor eax, eax	        29	url.c	FUNCTION_2
+0x40002ea	          0x80fa3a	                            cmp dl, 0x3a	        29	url.c	FUNCTION_2
+0x40002ed	            0x75f3	                           jne 0x40002e2	        29	url.c	FUNCTION_2
+0x40002ef	        0x807f012f	                cmp byte [rdi + 1], 0x2f	        29	url.c	FUNCTION_2
+0x40002f3	            0x75ed	                           jne 0x40002e2	        29	url.c	FUNCTION_2
+0x40002f5	            0x31c0	                            xor eax, eax	        29	url.c	FUNCTION_2
+0x40002f7	        0x807f022f	                cmp byte [rdi + 2], 0x2f	        29	url.c	FUNCTION_2
+0x40002fb	           0xf94c0	                                 sete al	        29	url.c	FUNCTION_2
+0x40002fe	              0xc3	                                     ret	        29	url.c	FUNCTION_2
+url_decode_parameter_value	ELSE,0:WHILE,0:IF,0:FOR,0:SWITCH,0:functions,0:CALL,1:DO,0	18
+0x4000540	        0x4883ec28	                           sub rsp, 0x28	        96	url.c	FUNCTION_7
+0x4000544	      0xba00000000	                              mov edx, 0	        98	url.c	FUNCTION_7	CALL_1
+0x4000549	    0x41b801000000	                              mov r8d, 1	        98	url.c	FUNCTION_7	CALL_1
+0x400054f	          0x4889e1	                            mov rcx, rsp	        98	url.c	FUNCTION_7	CALL_1
+0x4000552	      0xbeffffffff	                     mov esi, 0xffffffff	        98	url.c	FUNCTION_7	CALL_1
+0x4000557	    0x48c704240000	                      mov qword [rsp], 0	        97	url.c	FUNCTION_7
+0x400055f	    0x64488b042528	                mov rax, qword fs:[0x28]	        96	url.c	FUNCTION_7
+0x4000568	      0x4889442418	             mov qword [rsp + 0x18], rax	        96	url.c	FUNCTION_7
+0x400056d	            0x31c0	                            xor eax, eax	        96	url.c	FUNCTION_7
+0x400056f	    0x48c744240800	                  mov qword [rsp + 8], 0	        97	url.c	FUNCTION_7
+0x4000578	    0x48c744241000	               mov qword [rsp + 0x10], 0	        97	url.c	FUNCTION_7
+0x4000581	      0xe8bafaffff	            call sym.url_decode_internal	        98	url.c	FUNCTION_7	CALL_1
+0x4000586	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	        99	url.c	FUNCTION_7
+0x400058b	    0x644833142528	                xor rdx, qword fs:[0x28]	        99	url.c	FUNCTION_7
+0x4000594	            0x7505	                           jne 0x400059b	        99	url.c	FUNCTION_7
+0x4000596	        0x4883c428	                           add rsp, 0x28	        99	url.c	FUNCTION_7
+0x400059a	              0xc3	                                     ret	        99	url.c	FUNCTION_7
+0x400059b	      0xe800000000	             call sym.end_url_with_slash	        99	url.c	FUNCTION_7
+url_decode_parameter_name	ELSE,0:WHILE,0:IF,0:FOR,0:SWITCH,0:functions,0:CALL,1:DO,0	18
+0x40004e0	        0x4883ec28	                           sub rsp, 0x28	        90	url.c	FUNCTION_6
+0x40004e4	      0xba00000000	                              mov edx, 0	        92	url.c	FUNCTION_6	CALL_1
+0x40004e9	    0x41b801000000	                              mov r8d, 1	        92	url.c	FUNCTION_6	CALL_1
+0x40004ef	          0x4889e1	                            mov rcx, rsp	        92	url.c	FUNCTION_6	CALL_1
+0x40004f2	      0xbeffffffff	                     mov esi, 0xffffffff	        92	url.c	FUNCTION_6	CALL_1
+0x40004f7	    0x48c704240000	                      mov qword [rsp], 0	        91	url.c	FUNCTION_6
+0x40004ff	    0x64488b042528	                mov rax, qword fs:[0x28]	        90	url.c	FUNCTION_6
+0x4000508	      0x4889442418	             mov qword [rsp + 0x18], rax	        90	url.c	FUNCTION_6
+0x400050d	            0x31c0	                            xor eax, eax	        90	url.c	FUNCTION_6
+0x400050f	    0x48c744240800	                  mov qword [rsp + 8], 0	        91	url.c	FUNCTION_6
+0x4000518	    0x48c744241000	               mov qword [rsp + 0x10], 0	        91	url.c	FUNCTION_6
+0x4000521	      0xe81afbffff	            call sym.url_decode_internal	        92	url.c	FUNCTION_6	CALL_1
+0x4000526	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	        93	url.c	FUNCTION_6
+0x400052b	    0x644833142528	                xor rdx, qword fs:[0x28]	        93	url.c	FUNCTION_6
+0x4000534	            0x7505	                           jne 0x400053b	        93	url.c	FUNCTION_6
+0x4000536	        0x4883c428	                           add rsp, 0x28	        93	url.c	FUNCTION_6
+0x400053a	              0xc3	                                     ret	        93	url.c	FUNCTION_6
+0x400053b	      0xe800000000	     call sym.url_decode_parameter_value	        93	url.c	FUNCTION_6
+url_decode_mem	ELSE,0:WHILE,0:IF,1:FOR,0:SWITCH,0:functions,0:CALL,3:DO,0	113
+0x4000300	            0x4156	                                push r14	        76	url.c	FUNCTION_5
+0x4000302	            0x4155	                                push r13	        76	url.c	FUNCTION_5
+0x4000304	          0x4863d6	                         movsxd rdx, esi	        76	url.c	FUNCTION_5
+0x4000307	            0x4154	                                push r12	        76	url.c	FUNCTION_5
+0x4000309	              0x55	                                push rbp	        76	url.c	FUNCTION_5
+0x400030a	      0xbe3a000000	                           mov esi, 0x3a	        78	url.c	FUNCTION_5	CALL_1
+0x400030f	              0x53	                                push rbx	        76	url.c	FUNCTION_5
+0x4000310	          0x4889fd	                            mov rbp, rdi	        76	url.c	FUNCTION_5
+0x4000313	          0x4989d4	                            mov r12, rdx	        76	url.c	FUNCTION_5
+0x4000316	        0x4883ec20	                           sub rsp, 0x20	        76	url.c	FUNCTION_5
+0x400031a	    0x64488b042528	                mov rax, qword fs:[0x28]	        76	url.c	FUNCTION_5
+0x4000323	      0x4889442418	             mov qword [rsp + 0x18], rax	        76	url.c	FUNCTION_5
+0x4000328	            0x31c0	                            xor eax, eax	        76	url.c	FUNCTION_5
+0x400032a	    0x48c704240000	                      mov qword [rsp], 0	        77	url.c	FUNCTION_5
+0x4000332	    0x48c744240800	                  mov qword [rsp + 8], 0	        77	url.c	FUNCTION_5
+0x400033b	          0x4989e5	                            mov r13, rsp	        77	url.c	FUNCTION_5
+0x400033e	    0x48c744241000	               mov qword [rsp + 0x10], 0	        77	url.c	FUNCTION_5
+0x4000347	      0xe800000000	                          call 0x400034c	        78	url.c	FUNCTION_5	CALL_1
+0x400034c	          0x4885c0	                           test rax, rax	        81	url.c	FUNCTION_5	IF_1
+0x400034f	     0xf84b4000000	                            je 0x4000409	        81	url.c	FUNCTION_5	IF_1
+0x4000355	          0x4839e8	                            cmp rax, rbp	        81	url.c	FUNCTION_5	IF_1
+0x4000358	          0x4889c3	                            mov rbx, rax	        81	url.c	FUNCTION_5	IF_1
+0x400035b	          0x4989e5	                            mov r13, rsp	        81	url.c	FUNCTION_5	IF_1
+0x400035e	     0xf86a5000000	                           jbe 0x4000409	        81	url.c	FUNCTION_5	IF_1
+0x4000364	          0x4989c6	                            mov r14, rax	        82	url.c	FUNCTION_5	IF_1	CALL_2
+0x4000367	          0x4889ee	                            mov rsi, rbp	        82	url.c	FUNCTION_5	IF_1	CALL_2
+0x400036a	          0x4889e7	                            mov rdi, rsp	        82	url.c	FUNCTION_5	IF_1	CALL_2
+0x400036d	          0x4929ee	                            sub r14, rbp	        82	url.c	FUNCTION_5	IF_1	CALL_2
+0x4000370	          0x4889dd	                            mov rbp, rbx	        83	url.c	FUNCTION_5	IF_1
+0x4000373	          0x4c89f2	                            mov rdx, r14	        82	url.c	FUNCTION_5	IF_1	CALL_2
+0x4000376	          0x4529f4	                          sub r12d, r14d	        83	url.c	FUNCTION_5	IF_1
+0x4000379	      0xe800000000	                          call 0x400037e	        82	url.c	FUNCTION_5	IF_1	CALL_2
+0x400037e	          0x4585e4	                         test r12d, r12d	        38	url.c	FUNCTION_3	WHILE_1
+0x4000381	     0xf858b000000	                           jne 0x4000412	        38	url.c	FUNCTION_3	WHILE_1
+0x4000387	    0x660f1f840000	                    nop word [rax + rax]	        38	url.c	FUNCTION_3	WHILE_1
+0x4000390	            0x31f6	                            xor esi, esi	        67	url.c	FUNCTION_3	CALL_6
+0x4000392	          0x4c89ef	                            mov rdi, r13	        67	url.c	FUNCTION_3	CALL_6
+0x4000395	      0xe800000000	                          call 0x400039a	        67	url.c	FUNCTION_3	CALL_6
+0x400039a	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	        87	url.c	FUNCTION_5
+0x400039f	    0x6448330c2528	                xor rcx, qword fs:[0x28]	        87	url.c	FUNCTION_5
+0x40003a8	     0xf850a010000	                           jne 0x40004b8	        87	url.c	FUNCTION_5
+0x40003ae	        0x4883c420	                           add rsp, 0x20	        87	url.c	FUNCTION_5
+0x40003b2	              0x5b	                                 pop rbx	        87	url.c	FUNCTION_5
+0x40003b3	              0x5d	                                 pop rbp	        87	url.c	FUNCTION_5
+0x40003b4	            0x415c	                                 pop r12	        87	url.c	FUNCTION_5
+0x40003b6	            0x415d	                                 pop r13	        87	url.c	FUNCTION_5
+0x40003b8	            0x415e	                                 pop r14	        87	url.c	FUNCTION_5
+0x40003ba	              0xc3	                                     ret	        87	url.c	FUNCTION_5
+0x40003bb	       0xf1f440000	                   nop dword [rax + rax]	        87	url.c	FUNCTION_5
+0x40003c0	      0x488b542408	                mov rdx, qword [rsp + 8]	       141	strbuf.h	FUNCTION_11
+0x40003c5	        0x4883e801	                              sub rax, 1	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x40003c9	          0x4839d0	                            cmp rax, rdx	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x40003cc	            0x7514	                           jne 0x40003e2	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x40003ce	            0x6690	                                     nop	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x40003d0	      0xbe01000000	                              mov esi, 1	       228	strbuf.h	FUNCTION_13	CALL_2
+0x40003d5	          0x4c89ef	                            mov rdi, r13	       228	strbuf.h	FUNCTION_13	CALL_2
+0x40003d8	      0xe800000000	                          call 0x40003dd	       228	strbuf.h	FUNCTION_13	CALL_2
+0x40003dd	      0x488b542408	                mov rdx, qword [rsp + 8]	       228	strbuf.h	FUNCTION_13	CALL_2
+0x40003e2	        0x488d4201	                      lea rax, [rdx + 1]	       229	strbuf.h	FUNCTION_13
+0x40003e6	        0x4883c501	                              add rbp, 1	        63	url.c	FUNCTION_3	WHILE_1
+0x40003ea	        0x4183ec01	                             sub r12d, 1	        64	url.c	FUNCTION_3	WHILE_1
+0x40003ee	      0x4889442408	                mov qword [rsp + 8], rax	       229	strbuf.h	FUNCTION_13
+0x40003f3	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       229	strbuf.h	FUNCTION_13
+0x40003f8	          0x881c10	                mov byte [rax + rdx], bl	       229	strbuf.h	FUNCTION_13
+0x40003fb	      0x488b442408	                mov rax, qword [rsp + 8]	       230	strbuf.h	FUNCTION_13
+0x4000400	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       230	strbuf.h	FUNCTION_13
+0x4000405	        0xc6040200	                 mov byte [rdx + rax], 0	       230	strbuf.h	FUNCTION_13
+0x4000409	          0x4585e4	                         test r12d, r12d	        38	url.c	FUNCTION_3	WHILE_1
+0x400040c	     0xf847effffff	                            je 0x4000390	        38	url.c	FUNCTION_3	WHILE_1
+0x4000412	         0xfb65d00	                   movzx ebx, byte [rbp]	        39	url.c	FUNCTION_3	WHILE_1
+0x4000416	            0x84db	                             test bl, bl	        41	url.c	FUNCTION_3	WHILE_1	IF_1
+0x4000418	     0xf8472ffffff	                            je 0x4000390	        41	url.c	FUNCTION_3	WHILE_1	IF_1
+0x400041e	          0x80fb25	                            cmp bl, 0x25	        49	url.c	FUNCTION_3	WHILE_1	IF_3
+0x4000421	            0x740d	                            je 0x4000430	        49	url.c	FUNCTION_3	WHILE_1	IF_3
+0x4000423	        0x488b0424	                    mov rax, qword [rsp]	        49	url.c	FUNCTION_3	WHILE_1	IF_3
+0x4000427	          0x4885c0	                           test rax, rax	       141	strbuf.h	FUNCTION_11
+0x400042a	            0x74a4	                            je 0x40003d0	       141	strbuf.h	FUNCTION_11
+0x400042c	            0xeb92	                           jmp 0x40003c0	       141	strbuf.h	FUNCTION_11
+0x400042e	            0x6690	                                     nop	       141	strbuf.h	FUNCTION_11
+0x4000430	         0xfb64501	               movzx eax, byte [rbp + 1]	      1273	cache.h	FUNCTION_44
+0x4000434	    0x440fbeb00000	                  movsx r14d, byte [rax]	      1273	cache.h	FUNCTION_44
+0x400043c	    0x41f7c6f0ffff	                   test r14d, 0xfffffff0	      1283	cache.h	FUNCTION_45	CALL_2
+0x4000443	            0x7512	                           jne 0x4000457	      1283	cache.h	FUNCTION_45	CALL_2
+0x4000445	         0xfb64502	               movzx eax, byte [rbp + 2]	      1273	cache.h	FUNCTION_44
+0x4000449	        0x41c1e604	                             shl r14d, 4	      1283	cache.h	FUNCTION_45	CALL_2
+0x400044d	     0xfbe80000000	                   movsx eax, byte [rax]	      1283	cache.h	FUNCTION_45	CALL_2
+0x4000454	          0x4109c6	                            or r14d, eax	      1283	cache.h	FUNCTION_45	CALL_2
+0x4000457	          0x4585f6	                         test r14d, r14d	        51	url.c	FUNCTION_3	WHILE_1	IF_3	IF_4
+0x400045a	            0x78c7	                            js 0x4000423	        51	url.c	FUNCTION_3	WHILE_1	IF_3	IF_4
+0x400045c	        0x488b0424	                    mov rax, qword [rsp]	        51	url.c	FUNCTION_3	WHILE_1	IF_3	IF_4
+0x4000460	          0x4885c0	                           test rax, rax	       141	strbuf.h	FUNCTION_11
+0x4000463	            0x7543	                           jne 0x40004a8	       141	strbuf.h	FUNCTION_11
+0x4000465	      0xbe01000000	                              mov esi, 1	       228	strbuf.h	FUNCTION_13	CALL_2
+0x400046a	          0x4c89ef	                            mov rdi, r13	       228	strbuf.h	FUNCTION_13	CALL_2
+0x400046d	      0xe800000000	                          call 0x4000472	       228	strbuf.h	FUNCTION_13	CALL_2
+0x4000472	      0x488b542408	                mov rdx, qword [rsp + 8]	       228	strbuf.h	FUNCTION_13	CALL_2
+0x4000477	        0x488d4201	                      lea rax, [rdx + 1]	       229	strbuf.h	FUNCTION_13
+0x400047b	        0x4883c503	                              add rbp, 3	        53	url.c	FUNCTION_3	WHILE_1	IF_3	IF_4
+0x400047f	        0x4183ec03	                             sub r12d, 3	        54	url.c	FUNCTION_3	WHILE_1	IF_3	IF_4
+0x4000483	      0x4889442408	                mov qword [rsp + 8], rax	       229	strbuf.h	FUNCTION_13
+0x4000488	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       229	strbuf.h	FUNCTION_13
+0x400048d	        0x44883410	              mov byte [rax + rdx], r14b	       229	strbuf.h	FUNCTION_13
+0x4000491	      0x488b442408	                mov rax, qword [rsp + 8]	       230	strbuf.h	FUNCTION_13
+0x4000496	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       230	strbuf.h	FUNCTION_13
+0x400049b	        0xc6040200	                 mov byte [rdx + rax], 0	       230	strbuf.h	FUNCTION_13
+0x400049f	      0xe965ffffff	                           jmp 0x4000409	       230	strbuf.h	FUNCTION_13
+0x40004a4	         0xf1f4000	                         nop dword [rax]	       230	strbuf.h	FUNCTION_13
+0x40004a8	      0x488b542408	                mov rdx, qword [rsp + 8]	       141	strbuf.h	FUNCTION_11
+0x40004ad	        0x4883e801	                              sub rax, 1	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x40004b1	          0x4839c2	                            cmp rdx, rax	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x40004b4	            0x75c1	                           jne 0x4000477	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x40004b6	            0xebad	                           jmp 0x4000465	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x40004b8	      0xe800000000	                          call 0x40004bd	        87	url.c	FUNCTION_5
+str_end_url_with_slash	ELSE,0:WHILE,0:IF,0:FOR,0:SWITCH,0:functions,0:CALL,3:DO,0	55
+0x4000630	              0x55	                                push rbp	       107	url.c	FUNCTION_9
+0x4000631	              0x53	                                push rbx	       107	url.c	FUNCTION_9
+0x4000632	          0x4889fd	                            mov rbp, rdi	       107	url.c	FUNCTION_9
+0x4000635	          0x4889f3	                            mov rbx, rsi	       107	url.c	FUNCTION_9
+0x4000638	        0x4883ec28	                           sub rsp, 0x28	       107	url.c	FUNCTION_9
+0x400063c	    0x64488b042528	                mov rax, qword fs:[0x28]	       107	url.c	FUNCTION_9
+0x4000645	      0x4889442418	             mov qword [rsp + 0x18], rax	       107	url.c	FUNCTION_9
+0x400064a	            0x31c0	                            xor eax, eax	       107	url.c	FUNCTION_9
+0x400064c	    0x48c704240000	                      mov qword [rsp], 0	       108	url.c	FUNCTION_9
+0x4000654	    0x48c744240800	                  mov qword [rsp + 8], 0	       108	url.c	FUNCTION_9
+0x400065d	    0x48c744241000	               mov qword [rsp + 0x10], 0	       108	url.c	FUNCTION_9
+0x4000666	      0xe800000000	                          call 0x400066b	       279	strbuf.h	FUNCTION_14	CALL_2
+0x400066b	          0x4889ee	                            mov rsi, rbp	       279	strbuf.h	FUNCTION_14	CALL_2
+0x400066e	          0x4889c2	                            mov rdx, rax	       279	strbuf.h	FUNCTION_14	CALL_2
+0x4000671	          0x4889e7	                            mov rdi, rsp	       279	strbuf.h	FUNCTION_14	CALL_2
+0x4000674	      0xe800000000	                          call 0x4000679	       279	strbuf.h	FUNCTION_14	CALL_2
+0x4000679	      0x488b442408	                mov rax, qword [rsp + 8]	       595	strbuf.h	FUNCTION_19	IF_1
+0x400067e	          0x4885c0	                           test rax, rax	       595	strbuf.h	FUNCTION_19	IF_1
+0x4000681	            0x7439	                            je 0x40006bc	       595	strbuf.h	FUNCTION_19	IF_1
+0x4000683	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       595	strbuf.h	FUNCTION_19	IF_1
+0x4000688	      0x807c02ff2f	         cmp byte [rdx + rax - 1], 0x2f 	       595	strbuf.h	FUNCTION_19	IF_1
+0x400068d	            0x742d	                            je 0x40006bc	       595	strbuf.h	FUNCTION_19	IF_1
+0x400068f	        0x488b0c24	                    mov rcx, qword [rsp]	       595	strbuf.h	FUNCTION_19	IF_1
+0x4000693	          0x4885c9	                           test rcx, rcx	       141	strbuf.h	FUNCTION_11
+0x4000696	            0x7458	                            je 0x40006f0	       141	strbuf.h	FUNCTION_11
+0x4000698	        0x4883e901	                              sub rcx, 1	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x400069c	          0x4839c8	                            cmp rax, rcx	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x400069f	            0x744f	                            je 0x40006f0	       227	strbuf.h	FUNCTION_13	IF_1	CALL_1
+0x40006a1	        0x488d4801	                      lea rcx, [rax + 1]	       229	strbuf.h	FUNCTION_13
+0x40006a5	      0x48894c2408	                mov qword [rsp + 8], rcx	       229	strbuf.h	FUNCTION_13
+0x40006aa	        0xc604022f	              mov byte [rdx + rax], 0x2f	       229	strbuf.h	FUNCTION_13
+0x40006ae	      0x488b442408	                mov rax, qword [rsp + 8]	       230	strbuf.h	FUNCTION_13
+0x40006b3	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       230	strbuf.h	FUNCTION_13
+0x40006b8	        0xc6040200	                 mov byte [rdx + rax], 0	       230	strbuf.h	FUNCTION_13
+0x40006bc	          0x488b3b	                    mov rdi, qword [rbx]	       110	url.c	FUNCTION_9	CALL_2
+0x40006bf	      0xe800000000	                          call 0x40006c4	       110	url.c	FUNCTION_9	CALL_2
+0x40006c4	            0x31f6	                            xor esi, esi	       111	url.c	FUNCTION_9	CALL_3
+0x40006c6	          0x4889e7	                            mov rdi, rsp	       111	url.c	FUNCTION_9	CALL_3
+0x40006c9	      0xe800000000	                          call 0x40006ce	       111	url.c	FUNCTION_9	CALL_3
+0x40006ce	          0x488903	                    mov qword [rbx], rax	       111	url.c	FUNCTION_9	CALL_3
+0x40006d1	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       112	url.c	FUNCTION_9
+0x40006d6	    0x644833042528	                xor rax, qword fs:[0x28]	       112	url.c	FUNCTION_9
+0x40006df	            0x7528	                           jne 0x4000709	       112	url.c	FUNCTION_9
+0x40006e1	        0x4883c428	                           add rsp, 0x28	       112	url.c	FUNCTION_9
+0x40006e5	              0x5b	                                 pop rbx	       112	url.c	FUNCTION_9
+0x40006e6	              0x5d	                                 pop rbp	       112	url.c	FUNCTION_9
+0x40006e7	              0xc3	                                     ret	       112	url.c	FUNCTION_9
+0x40006e8	     0xf1f84000000	                   nop dword [rax + rax]	       112	url.c	FUNCTION_9
+0x40006f0	      0xbe01000000	                              mov esi, 1	       228	strbuf.h	FUNCTION_13	CALL_2
+0x40006f5	          0x4889e7	                            mov rdi, rsp	       228	strbuf.h	FUNCTION_13	CALL_2
+0x40006f8	      0xe800000000	                          call 0x40006fd	       228	strbuf.h	FUNCTION_13	CALL_2
+0x40006fd	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       228	strbuf.h	FUNCTION_13	CALL_2
+0x4000702	      0x488b442408	                mov rax, qword [rsp + 8]	       228	strbuf.h	FUNCTION_13	CALL_2
+0x4000707	            0xeb98	                           jmp 0x40006a1	       228	strbuf.h	FUNCTION_13	CALL_2
+0x4000709	      0xe800000000	                          call 0x400070e	       112	url.c	FUNCTION_9

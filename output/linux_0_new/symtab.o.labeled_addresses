@@ -1,0 +1,47 @@
+symcmp	SWITCH,0:ELSE,0:IF,0:CALL,1:functions,0:FOR,0:WHILE,0:DO,0	3
+0x4000040	          0x4889f7	                            mov rdi, rsi	        27	symtab.c	FUNCTION_2
+0x4000043	          0x4889d6	                            mov rsi, rdx	        32	symtab.c	FUNCTION_2	CALL_1
+0x4000046	      0xe900000000	                           jmp 0x400004b	        32	symtab.c	FUNCTION_2	CALL_1
+symtab_init	SWITCH,0:ELSE,0:IF,1:CALL,1:functions,0:FOR,0:WHILE,0:DO,0	16
+0x4000090	              0x53	                                push rbx	        37	symtab.c	FUNCTION_3
+0x4000091	            0x89f2	                            mov edx, esi	        37	symtab.c	FUNCTION_3
+0x4000093	          0x4889fb	                            mov rbx, rdi	        37	symtab.c	FUNCTION_3
+0x4000096	    0x48c7c6000000	                              mov rsi, 0	        38	symtab.c	FUNCTION_3	CALL_1
+0x400009d	    0x48c7c7000000	                              mov rdi, 0	        38	symtab.c	FUNCTION_3	CALL_1
+0x40000a4	      0xe800000000	                          call 0x40000a9	        38	symtab.c	FUNCTION_3	CALL_1
+0x40000a9	          0x4885c0	                           test rax, rax	        39	symtab.c	FUNCTION_3	IF_1
+0x40000ac	          0x488903	                    mov qword [rbx], rax	        38	symtab.c	FUNCTION_3	CALL_1
+0x40000af	            0x740b	                            je 0x40000bc	        39	symtab.c	FUNCTION_3	IF_1
+0x40000b1	    0xc74308000000	                  mov dword [rbx + 8], 0	        41	symtab.c	FUNCTION_3
+0x40000b8	            0x31c0	                            xor eax, eax	        42	symtab.c	FUNCTION_3
+0x40000ba	              0x5b	                                 pop rbx	        43	symtab.c	FUNCTION_3
+0x40000bb	              0xc3	                                     ret	        43	symtab.c	FUNCTION_3
+0x40000bc	      0xb8f4ffffff	                     mov eax, 0xfffffff4	        40	symtab.c	FUNCTION_3	IF_1
+0x40000c1	              0x5b	                                 pop rbx	        43	symtab.c	FUNCTION_3
+0x40000c2	              0xc3	                                     ret	        43	symtab.c	FUNCTION_3
+symhash	SWITCH,0:ELSE,0:IF,0:CALL,1:functions,0:FOR,1:WHILE,0:DO,0	25
+0x4000050	              0x55	                                push rbp	        13	symtab.c	FUNCTION_1
+0x4000051	              0x53	                                push rbx	        13	symtab.c	FUNCTION_1
+0x4000052	          0x4889fd	                            mov rbp, rdi	        13	symtab.c	FUNCTION_1
+0x4000055	          0x4889f7	                            mov rdi, rsi	        20	symtab.c	FUNCTION_1	CALL_1
+0x4000058	          0x4889f3	                            mov rbx, rsi	        13	symtab.c	FUNCTION_1
+0x400005b	      0xe800000000	                          call 0x4000060	        20	symtab.c	FUNCTION_1	CALL_1
+0x4000060	            0x89c1	                            mov ecx, eax	        20	symtab.c	FUNCTION_1	CALL_1
+0x4000062	          0x4885c9	                           test rcx, rcx	        21	symtab.c	FUNCTION_1	FOR_1
+0x4000065	            0x7421	                            je 0x4000088	        21	symtab.c	FUNCTION_1	FOR_1
+0x4000067	          0x4801d9	                            add rcx, rbx	        21	symtab.c	FUNCTION_1	FOR_1
+0x400006a	            0x31c0	                            xor eax, eax	        21	symtab.c	FUNCTION_1	FOR_1
+0x400006c	           0xfbe13	                   movsx edx, byte [rbx]	        22	symtab.c	FUNCTION_1	FOR_1
+0x400006f	          0xc1c004	                              rol eax, 4	        22	symtab.c	FUNCTION_1	FOR_1
+0x4000072	        0x4883c301	                              add rbx, 1	        21	symtab.c	FUNCTION_1	FOR_1
+0x4000076	            0x31d0	                            xor eax, edx	        22	symtab.c	FUNCTION_1	FOR_1
+0x4000078	          0x4839cb	                            cmp rbx, rcx	        21	symtab.c	FUNCTION_1	FOR_1
+0x400007b	            0x75ef	                           jne 0x400006c	        21	symtab.c	FUNCTION_1	FOR_1
+0x400007d	          0x8b5508	                mov edx, dword [rbp + 8]	        23	symtab.c	FUNCTION_1
+0x4000080	              0x5b	                                 pop rbx	        24	symtab.c	FUNCTION_1
+0x4000081	              0x5d	                                 pop rbp	        24	symtab.c	FUNCTION_1
+0x4000082	          0x83ea01	                              sub edx, 1	        23	symtab.c	FUNCTION_1
+0x4000085	            0x21d0	                            and eax, edx	        23	symtab.c	FUNCTION_1
+0x4000087	              0xc3	                                     ret	        24	symtab.c	FUNCTION_1
+0x4000088	            0x31c0	                            xor eax, eax	        18	symtab.c	FUNCTION_1
+0x400008a	            0xebf1	                           jmp 0x400007d	        18	symtab.c	FUNCTION_1

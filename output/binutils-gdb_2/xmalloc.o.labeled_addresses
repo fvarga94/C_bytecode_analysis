@@ -1,0 +1,23 @@
+xmalloc	FOR,0:CALL,2:SWITCH,0:DO,0:IF,1:ELSE,0:WHILE,0:functions,0	8
+0x4000069	        0x4883ec08	                              sub rsp, 8	        58	xmalloc.c	FUNCTION_1
+0x400006d	      0xe800000000	                          call 0x4000072	        61	xmalloc.c	FUNCTION_1	CALL_1
+0x4000072	          0x4885c0	                           test rax, rax	        62	xmalloc.c	FUNCTION_1	IF_1
+0x4000075	            0x750a	                           jne 0x4000081	        62	xmalloc.c	FUNCTION_1	IF_1
+0x4000077	      0xbf00000000	                              mov edi, 0	        63	xmalloc.c	FUNCTION_1	CALL_2
+0x400007c	      0xe8bfffffff	         call sym.memory_error_and_abort	        63	xmalloc.c	FUNCTION_1	CALL_2
+0x4000081	        0x4883c408	                              add rsp, 8	        65	xmalloc.c	FUNCTION_1
+0x4000085	              0xc3	                                     ret	        65	xmalloc.c	FUNCTION_1
+xrealloc	FOR,0:CALL,3:SWITCH,0:DO,0:IF,1:ELSE,0:WHILE,0:functions,0	13
+0x4000086	        0x4883ec08	                              sub rsp, 8	        71	xmalloc.c	FUNCTION_2
+0x400008a	          0x4885ff	                           test rdi, rdi	        74	xmalloc.c	FUNCTION_2	CALL_2
+0x400008d	            0x7407	                            je 0x4000096	        74	xmalloc.c	FUNCTION_2	CALL_2
+0x400008f	      0xe800000000	                          call 0x4000094	        74	xmalloc.c	FUNCTION_2	CALL_2
+0x4000094	            0xeb08	                           jmp 0x400009e	        74	xmalloc.c	FUNCTION_2	CALL_2
+0x4000096	          0x4889f7	                            mov rdi, rsi	        74	xmalloc.c	FUNCTION_2	CALL_2
+0x4000099	      0xe800000000	                          call 0x400009e	        74	xmalloc.c	FUNCTION_2	CALL_2
+0x400009e	          0x4885c0	                           test rax, rax	        76	xmalloc.c	FUNCTION_2	IF_1
+0x40000a1	            0x750a	                           jne 0x40000ad	        76	xmalloc.c	FUNCTION_2	IF_1
+0x40000a3	      0xbf00000000	                              mov edi, 0	        77	xmalloc.c	FUNCTION_2	CALL_3
+0x40000a8	      0xe893ffffff	         call sym.memory_error_and_abort	        77	xmalloc.c	FUNCTION_2	CALL_3
+0x40000ad	        0x4883c408	                              add rsp, 8	        79	xmalloc.c	FUNCTION_2
+0x40000b1	              0xc3	                                     ret	        79	xmalloc.c	FUNCTION_2

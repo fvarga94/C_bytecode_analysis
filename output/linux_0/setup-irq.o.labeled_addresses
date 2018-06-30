@@ -1,0 +1,53 @@
+pci_assign_irq	IF,5:FOR,0:CALL,5:DO,0:ELSE,0:functions,0:WHILE,0:SWITCH,0	52
+0x4000040	              0x55	                                push rbp	        20	setup-irq.c	FUNCTION_1
+0x4000041	              0x53	                                push rbx	        20	setup-irq.c	FUNCTION_1
+0x4000042	          0x4889fb	                            mov rbx, rdi	        20	setup-irq.c	FUNCTION_1
+0x4000045	        0x4883ec10	                           sub rsp, 0x10	        20	setup-irq.c	FUNCTION_1
+0x4000049	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	        24	setup-irq.c	FUNCTION_1	CALL_1
+0x400004d	    0x65488b042528	                mov rax, qword gs:[0x28]	        20	setup-irq.c	FUNCTION_1
+0x4000056	      0x4889442408	                mov qword [rsp + 8], rax	        20	setup-irq.c	FUNCTION_1
+0x400005b	            0x31c0	                            xor eax, eax	        20	setup-irq.c	FUNCTION_1
+0x400005d	      0xe800000000	                          call 0x4000062	        24	setup-irq.c	FUNCTION_1	CALL_1
+0x4000062	    0x4883b8080300	              cmp qword [rax + 0x308], 0	        26	setup-irq.c	FUNCTION_1	IF_1
+0x400006a	            0x747d	                            je 0x40000e9	        26	setup-irq.c	FUNCTION_1	IF_1
+0x400006c	      0x488d542407	                      lea rdx, [rsp + 7]	        37	setup-irq.c	FUNCTION_1	CALL_3
+0x4000071	      0xbe3d000000	                           mov esi, 0x3d	        37	setup-irq.c	FUNCTION_1	CALL_3
+0x4000076	          0x4889df	                            mov rdi, rbx	        37	setup-irq.c	FUNCTION_1	CALL_3
+0x4000079	          0x4889c5	                            mov rbp, rax	        37	setup-irq.c	FUNCTION_1	CALL_3
+0x400007c	      0xe800000000	                          call 0x4000081	        37	setup-irq.c	FUNCTION_1	CALL_3
+0x4000081	       0xfb6442407	               movzx eax, byte [rsp + 7]	        39	setup-irq.c	FUNCTION_1	IF_2
+0x4000086	            0x3c04	                               cmp al, 4	        39	setup-irq.c	FUNCTION_1	IF_2
+0x4000088	            0x7644	                           jbe 0x40000ce	        39	setup-irq.c	FUNCTION_1	IF_2
+0x400008a	      0xc644240701	                   mov byte [rsp + 7], 1	        40	setup-irq.c	FUNCTION_1	IF_2
+0x400008f	    0x488b85000300	           mov rax, qword [rbp + 0x300] 	        44	setup-irq.c	FUNCTION_1	IF_3	IF_4
+0x4000096	      0xbeff000000	                           mov esi, 0xff	        44	setup-irq.c	FUNCTION_1	IF_3	IF_4
+0x400009b	          0x4885c0	                           test rax, rax	        44	setup-irq.c	FUNCTION_1	IF_3	IF_4
+0x400009e	            0x7410	                            je 0x40000b0	        44	setup-irq.c	FUNCTION_1	IF_3	IF_4
+0x40000a0	      0x488d742407	                      lea rsi, [rsp + 7]	        45	setup-irq.c	FUNCTION_1	IF_3	IF_4
+0x40000a5	          0x4889df	                            mov rdi, rbx	        45	setup-irq.c	FUNCTION_1	IF_3	IF_4
+0x40000a8	      0xe800000000	                          call 0x40000ad	        45	setup-irq.c	FUNCTION_1	IF_3	IF_4
+0x40000ad	           0xfb6f0	                           movzx esi, al	        45	setup-irq.c	FUNCTION_1	IF_3	IF_4
+0x40000b0	       0xfb6542407	               movzx edx, byte [rsp + 7]	        51	setup-irq.c	FUNCTION_1	IF_3
+0x40000b5	    0x488b85080300	           mov rax, qword [rbp + 0x308] 	        51	setup-irq.c	FUNCTION_1	IF_3
+0x40000bc	          0x4889df	                            mov rdi, rbx	        51	setup-irq.c	FUNCTION_1	IF_3
+0x40000bf	      0xe800000000	                          call 0x40000c4	        51	setup-irq.c	FUNCTION_1	IF_3
+0x40000c4	          0x83f8ff	             cmp eax, 0xffffffffffffffff	        52	setup-irq.c	FUNCTION_1	IF_3	IF_5
+0x40000c7	            0x7409	                            je 0x40000d2	        52	setup-irq.c	FUNCTION_1	IF_3	IF_5
+0x40000c9	           0xfb6d0	                           movzx edx, al	        52	setup-irq.c	FUNCTION_1	IF_3	IF_5
+0x40000cc	            0xeb08	                           jmp 0x40000d6	        52	setup-irq.c	FUNCTION_1	IF_3	IF_5
+0x40000ce	            0x84c0	                             test al, al	        42	setup-irq.c	FUNCTION_1	IF_3
+0x40000d0	            0x75bd	                           jne 0x400008f	        42	setup-irq.c	FUNCTION_1	IF_3
+0x40000d2	            0x31d2	                            xor edx, edx	        42	setup-irq.c	FUNCTION_1	IF_3
+0x40000d4	            0x31c0	                            xor eax, eax	        42	setup-irq.c	FUNCTION_1	IF_3
+0x40000d6	    0x898374030000	            mov dword [rbx + 0x374], eax	        55	setup-irq.c	FUNCTION_1
+0x40000dc	      0xbe3c000000	                           mov esi, 0x3c	        61	setup-irq.c	FUNCTION_1	CALL_5
+0x40000e1	          0x4889df	                            mov rdi, rbx	        61	setup-irq.c	FUNCTION_1	CALL_5
+0x40000e4	      0xe800000000	                          call 0x40000e9	        61	setup-irq.c	FUNCTION_1	CALL_5
+0x40000e9	      0x488b442408	                mov rax, qword [rsp + 8]	        62	setup-irq.c	FUNCTION_1
+0x40000ee	    0x654833042528	                xor rax, qword gs:[0x28]	        62	setup-irq.c	FUNCTION_1
+0x40000f7	            0x7507	                           jne 0x4000100	        62	setup-irq.c	FUNCTION_1
+0x40000f9	        0x4883c410	                           add rsp, 0x10	        62	setup-irq.c	FUNCTION_1
+0x40000fd	              0x5b	                                 pop rbx	        62	setup-irq.c	FUNCTION_1
+0x40000fe	              0x5d	                                 pop rbp	        62	setup-irq.c	FUNCTION_1
+0x40000ff	              0xc3	                                     ret	        62	setup-irq.c	FUNCTION_1
+0x4000100	      0xe800000000	                  call section_end..text	        62	setup-irq.c	FUNCTION_1

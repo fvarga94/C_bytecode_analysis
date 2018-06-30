@@ -1,0 +1,180 @@
+uhci_pci_reset_hc	functions,0:SWITCH,0:IF,0:DO,0:CALL,3:ELSE,0:WHILE,0:FOR,0	4
+0x40010f0	        0x488b7708	                mov rsi, qword [rdi + 8]	        29	uhci-pci.c	FUNCTION_25	CALL_3
+0x40010f4	    0x488bbfd0fdff	            mov rdi, qword [rdi - 0x230]	        29	uhci-pci.c	FUNCTION_25	CALL_3
+0x40010fb	    0x4881efa00000	                           sub rdi, 0xa0	        29	uhci-pci.c	FUNCTION_25	CALL_3
+0x4001102	      0xe900000000	                           jmp 0x4001107	        29	uhci-pci.c	FUNCTION_25	CALL_3
+uhci_set_next_interrupt	functions,0:SWITCH,0:IF,1:DO,0:CALL,3:ELSE,0:WHILE,0:FOR,0	12
+0x40003f0	              0x53	                                push rbx	        30	uhci-q.c	FUNCTION_54
+0x40003f1	    0x8b87c4000000	            mov eax, dword [rdi + 0xc4] 	        31	uhci-q.c	FUNCTION_54	IF_1
+0x40003f7	          0x4889fb	                            mov rbx, rdi	        30	uhci-q.c	FUNCTION_54
+0x40003fa	            0x85c0	                           test eax, eax	        31	uhci-q.c	FUNCTION_54	IF_1
+0x40003fc	            0x7413	                            je 0x4000411	        31	uhci-q.c	FUNCTION_54	IF_1
+0x40003fe	    0x488b35000000	            mov rsi, qword [0x04000405] 	        32	uhci-q.c	FUNCTION_54	CALL_2
+0x4000405	    0x488dbf90feff	                  lea rdi, [rdi - 0x170]	        32	uhci-q.c	FUNCTION_54	CALL_2
+0x400040c	      0xe800000000	                          call 0x4000411	        32	uhci-q.c	FUNCTION_54	CALL_2
+0x4000411	        0x488b4328	            mov rax, qword [rbx + 0x28] 	        33	uhci-q.c	FUNCTION_54	CALL_3
+0x4000415	    0x814804000000	           or dword [rax + 4], 0x1000000	        33	uhci-q.c	FUNCTION_54	CALL_3
+0x400041c	              0x5b	                                 pop rbx	        34	uhci-q.c	FUNCTION_54
+0x400041d	              0xc3	                                     ret	        34	uhci-q.c	FUNCTION_54
+uhci_shutdown	functions,0:SWITCH,0:IF,0:DO,0:CALL,3:ELSE,0:WHILE,0:FOR,0	3
+0x4001310	    0x488bbf380100	           mov rdi, qword [rdi + 0x138] 	       467	uhci-hcd.h	FUNCTION_34
+0x4001317	    0x4881c7300200	                          add rdi, 0x230	       467	uhci-hcd.h	FUNCTION_34
+0x400131e	            0xebb0	                    jmp sym.uhci_hc_died	       165	uhci-pci.c	FUNCTION_31	CALL_3
+uhci_hc_died	functions,0:SWITCH,0:IF,0:DO,0:CALL,3:ELSE,0:WHILE,0:FOR,0	15
+0x40012d0	              0x53	                                push rbx	       153	uhci-hcd.c	FUNCTION_3
+0x40012d1	    0x8b87c4000000	            mov eax, dword [rdi + 0xc4] 	       518	uhci-hcd.c	FUNCTION_14	IF_1
+0x40012d7	          0x4889fb	                            mov rbx, rdi	       153	uhci-hcd.c	FUNCTION_3
+0x40012da	            0x85c0	                           test eax, eax	       518	uhci-hcd.c	FUNCTION_14	IF_1
+0x40012dc	            0x7505	                           jne 0x40012e3	       518	uhci-hcd.c	FUNCTION_14	IF_1
+0x40012de	      0xe8cdffffff	call sym.uhci_get_current_frame_number.part.19	       518	uhci-hcd.c	FUNCTION_14	IF_1
+0x40012e3	    0x488b83a00100	           mov rax, qword [rbx + 0x1a0] 	       155	uhci-hcd.c	FUNCTION_3	CALL_2
+0x40012ea	          0x4889df	                            mov rdi, rbx	       155	uhci-hcd.c	FUNCTION_3	CALL_2
+0x40012ed	      0xe800000000	                          call 0x40012f2	       155	uhci-hcd.c	FUNCTION_3	CALL_2
+0x40012f2	          0x4889df	                            mov rdi, rbx	       156	uhci-hcd.c	FUNCTION_3	CALL_3
+0x40012f5	      0xe806efffff	                   call sym.finish_reset	       156	uhci-hcd.c	FUNCTION_3	CALL_3
+0x40012fa	    0x808bd0000000	                 or byte [rbx + 0xd0], 4	       157	uhci-hcd.c	FUNCTION_3
+0x4001301	    0x8383c0000000	               add dword [rbx + 0xc0], 1	       160	uhci-hcd.c	FUNCTION_3
+0x4001308	              0x5b	                                 pop rbx	       161	uhci-hcd.c	FUNCTION_3
+0x4001309	              0xc3	                                     ret	       161	uhci-hcd.c	FUNCTION_3
+uhci_check_bandwidth	functions,0:SWITCH,0:IF,3:DO,0:CALL,6:ELSE,1:WHILE,0:FOR,1	70
+0x4000080	         0xfbf4668	           movsx eax, word [rsi + 0x68] 	       629	uhci-q.c	FUNCTION_83	IF_1
+0x4000084	              0x55	                                push rbp	       624	uhci-q.c	FUNCTION_83
+0x4000085	              0x53	                                push rbx	       624	uhci-q.c	FUNCTION_83
+0x4000086	          0x6685c0	                             test ax, ax	       629	uhci-q.c	FUNCTION_83	IF_1
+0x4000089	            0x784d	                            js 0x40000d8	       629	uhci-q.c	FUNCTION_83	IF_1
+0x400008b	          0x8b4e64	            mov ecx, dword [rsi + 0x64] 	       630	uhci-q.c	FUNCTION_83	CALL_1
+0x400008e	          0x4863d0	                         movsxd rdx, eax	       612	uhci-q.c	FUNCTION_82
+0x4000091	    0x440fbf8c5758	  movsx r9d, word [rdi + rdx*2 + 0x158] 	       612	uhci-q.c	FUNCTION_82
+0x400009a	             0x1c8	                            add eax, ecx	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x400009c	          0x83f81f	                           cmp eax, 0x1f	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x400009f	            0x7f19	                            jg 0x40000ba	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x40000a1	          0x4863d0	                         movsxd rdx, eax	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x40000a4	     0xfbf94575801	  movsx edx, word [rdi + rdx*2 + 0x158] 	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x40000ac	          0x4139d1	                            cmp r9d, edx	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x40000af	        0x440f4cca	                          cmovl r9d, edx	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x40000b3	             0x1c8	                            add eax, ecx	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x40000b5	          0x83f81f	                           cmp eax, 0x1f	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x40000b8	            0x7ee7	                           jle 0x40000a1	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x40000ba	         0xfbf466a	           movsx eax, word [rsi + 0x6a] 	       647	uhci-q.c	FUNCTION_83	IF_3
+0x40000be	      0xba00000000	                              mov edx, 0	       653	uhci-q.c	FUNCTION_83
+0x40000c3	              0x5b	                                 pop rbx	       654	uhci-q.c	FUNCTION_83
+0x40000c4	              0x5d	                                 pop rbp	       654	uhci-q.c	FUNCTION_83
+0x40000c5	          0x4101c1	                            add r9d, eax	       647	uhci-q.c	FUNCTION_83	IF_3
+0x40000c8	      0xb8e4ffffff	                     mov eax, 0xffffffe4	       653	uhci-q.c	FUNCTION_83
+0x40000cd	    0x4181f9840300	                          cmp r9d, 0x384	       653	uhci-q.c	FUNCTION_83
+0x40000d4	           0xf4ec2	                         cmovle eax, edx	       653	uhci-q.c	FUNCTION_83
+0x40000d7	              0xc3	                                     ret	       654	uhci-q.c	FUNCTION_83
+0x40000d8	        0x448b4664	            mov r8d, dword [rsi + 0x64] 	       633	uhci-q.c	FUNCTION_83	ELSE_1	CALL_2
+0x40000dc	      0xbd20000000	                           mov ebp, 0x20	       633	uhci-q.c	FUNCTION_83	ELSE_1	CALL_2
+0x40000e1	        0x4183f820	                           cmp r8d, 0x20	       633	uhci-q.c	FUNCTION_83	ELSE_1	CALL_2
+0x40000e5	        0x410f4ee8	                         cmovle ebp, r8d	       633	uhci-q.c	FUNCTION_83	ELSE_1	CALL_2
+0x40000e9	            0x31c0	                            xor eax, eax	       635	uhci-q.c	FUNCTION_83	ELSE_1
+0x40000eb	        0x4183f81f	                           cmp r8d, 0x1f	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x40000ef	        0x66894668	               mov word [rsi + 0x68], ax	       635	uhci-q.c	FUNCTION_83	ELSE_1
+0x40000f3	    0x440fbf8f5801	          movsx r9d, word [rdi + 0x158] 	       612	uhci-q.c	FUNCTION_82
+0x40000fb	            0x7f1d	                            jg 0x400011a	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x40000fd	          0x4489c0	                            mov eax, r8d	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x4000100	          0x4863d0	                         movsxd rdx, eax	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x4000103	     0xfbf94575801	  movsx edx, word [rdi + rdx*2 + 0x158] 	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x400010b	          0x4139d1	                            cmp r9d, edx	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x400010e	        0x440f4cca	                          cmovl r9d, edx	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x4000112	          0x4401c0	                            add eax, r8d	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x4000115	          0x83f81f	                           cmp eax, 0x1f	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x4000118	            0x7ee6	                           jle 0x4000100	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x400011a	          0x83fd01	                              cmp ebp, 1	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+0x400011d	            0x7e9b	                           jle 0x40000ba	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+0x400011f	    0x488d9f5a0100	                  lea rbx, [rdi + 0x15a]	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+0x4000126	        0x458d5001	                      lea r10d, [r8 + 1]	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+0x400012a	    0x41bb01000000	                             mov r11d, 1	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+0x4000130	        0x4183fa1f	                          cmp r10d, 0x1f	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x4000134	           0xfbf13	                   movsx edx, word [rbx]	       612	uhci-q.c	FUNCTION_82
+0x4000137	          0x4489d0	                           mov eax, r10d	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x400013a	            0x7f18	                            jg 0x4000154	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x400013c	          0x4863c8	                         movsxd rcx, eax	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x400013f	     0xfbf8c4f5801	  movsx ecx, word [rdi + rcx*2 + 0x158] 	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x4000147	            0x39ca	                            cmp edx, ecx	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x4000149	           0xf4cd1	                          cmovl edx, ecx	       615	uhci-q.c	FUNCTION_82	CALL_1
+0x400014c	          0x4401c0	                            add eax, r8d	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x400014f	          0x83f81f	                           cmp eax, 0x1f	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x4000152	            0x7ee8	                           jle 0x400013c	       614	uhci-q.c	FUNCTION_82	FOR_1
+0x4000154	          0x4139d1	                            cmp r9d, edx	       639	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1	IF_2
+0x4000157	            0x7e08	                           jle 0x4000161	       639	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1	IF_2
+0x4000159	      0x6644895e68	             mov word [rsi + 0x68], r11w	       641	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1	IF_2
+0x400015e	          0x4189d1	                            mov r9d, edx	       641	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1	IF_2
+0x4000161	        0x4183c301	                             add r11d, 1	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+0x4000165	        0x4883c302	                              add rbx, 2	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+0x4000169	        0x4183c201	                             add r10d, 1	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+0x400016d	          0x4439dd	                           cmp ebp, r11d	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+0x4000170	            0x75be	                           jne 0x4000130	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+0x4000172	      0xe943ffffff	                           jmp 0x40000ba	       637	uhci-q.c	FUNCTION_83	ELSE_1	FOR_1
+uhci_reserve_bandwidth	functions,0:SWITCH,1:IF,0:DO,0:CALL,5:ELSE,0:WHILE,0:FOR,1	33
+0x4000180	         0xfbf4668	           movsx eax, word [rsi + 0x68] 	       665	uhci-q.c	FUNCTION_84	FOR_1
+0x4000184	      0x440fbf4e6a	           movsx r9d, word [rsi + 0x6a] 	       662	uhci-q.c	FUNCTION_84
+0x4000189	          0x83f81f	                           cmp eax, 0x1f	       665	uhci-q.c	FUNCTION_84	FOR_1
+0x400018c	          0x4589c8	                            mov r8d, r9d	       662	uhci-q.c	FUNCTION_84
+0x400018f	            0x7f5e	                            jg 0x40001ef	       665	uhci-q.c	FUNCTION_84	FOR_1
+0x4000191	    0x8b9754010000	           mov edx, dword [rdi + 0x154] 	       665	uhci-q.c	FUNCTION_84	FOR_1
+0x4000197	          0x4401ca	                            add edx, r9d	       665	uhci-q.c	FUNCTION_84	FOR_1
+0x400019a	          0x4863c8	                         movsxd rcx, eax	       665	uhci-q.c	FUNCTION_84	FOR_1
+0x400019d	    0x664401844f58	     add word [rdi + rcx*2 + 0x158], r8w	       666	uhci-q.c	FUNCTION_84	FOR_1
+0x40001a6	    0x899754010000	            mov dword [rdi + 0x154], edx	       667	uhci-q.c	FUNCTION_84	FOR_1
+0x40001ac	            0x89d1	                            mov ecx, edx	       667	uhci-q.c	FUNCTION_84	FOR_1
+0x40001ae	           0x34664	             add eax, dword [rsi + 0x64]	       665	uhci-q.c	FUNCTION_84	FOR_1
+0x40001b1	          0x4401ca	                            add edx, r9d	       665	uhci-q.c	FUNCTION_84	FOR_1
+0x40001b4	          0x83f81f	                           cmp eax, 0x1f	       665	uhci-q.c	FUNCTION_84	FOR_1
+0x40001b7	            0x7ee1	                           jle 0x400019a	       665	uhci-q.c	FUNCTION_84	FOR_1
+0x40001b9	          0x8d411f	                   lea eax, [rcx + 0x1f]	       669	uhci-q.c	FUNCTION_84	CALL_1
+0x40001bc	            0x85c9	                           test ecx, ecx	       669	uhci-q.c	FUNCTION_84	CALL_1
+0x40001be	           0xf48c8	                          cmovs ecx, eax	       669	uhci-q.c	FUNCTION_84	CALL_1
+0x40001c1	          0xc1f905	                              sar ecx, 5	       669	uhci-q.c	FUNCTION_84	CALL_1
+0x40001c4	    0x898f40feffff	            mov dword [rdi - 0x1c0], ecx	       669	uhci-q.c	FUNCTION_84	CALL_1
+0x40001ca	          0x8b4674	            mov eax, dword [rsi + 0x74] 	       671	uhci-q.c	FUNCTION_84	SWITCH_1
+0x40001cd	          0x83f801	                              cmp eax, 1	       671	uhci-q.c	FUNCTION_84	SWITCH_1
+0x40001d0	            0x7411	                            je 0x40001e3	       671	uhci-q.c	FUNCTION_84	SWITCH_1
+0x40001d2	          0x83f803	                              cmp eax, 3	       671	uhci-q.c	FUNCTION_84	SWITCH_1
+0x40001d5	            0x7507	                           jne 0x40001de	       671	uhci-q.c	FUNCTION_84	SWITCH_1
+0x40001d7	    0x838744feffff	              add dword [rdi - 0x1bc], 1	       673	uhci-q.c	FUNCTION_84	SWITCH_1	CALL_2
+0x40001de	        0x804e7c10	              or byte [rsi + 0x7c], 0x10	       681	uhci-q.c	FUNCTION_84
+0x40001e2	              0xc3	                                     ret	       681	uhci-q.c	FUNCTION_84
+0x40001e3	    0x838748feffff	              add dword [rdi - 0x1b8], 1	       677	uhci-q.c	FUNCTION_84	SWITCH_1	CALL_3
+0x40001ea	        0x804e7c10	              or byte [rsi + 0x7c], 0x10	       681	uhci-q.c	FUNCTION_84
+0x40001ee	              0xc3	                                     ret	       681	uhci-q.c	FUNCTION_84
+0x40001ef	    0x8b8f54010000	           mov ecx, dword [rdi + 0x154] 	       681	uhci-q.c	FUNCTION_84
+0x40001f5	            0xebc2	                           jmp 0x40001b9	       681	uhci-q.c	FUNCTION_84
+uhci_pci_configure_hc	functions,0:SWITCH,0:IF,1:DO,0:CALL,4:ELSE,0:WHILE,0:FOR,0	19
+0x4001090	              0x55	                                push rbp	        49	uhci-pci.c	FUNCTION_27
+0x4001091	              0x53	                                push rbx	        49	uhci-pci.c	FUNCTION_27
+0x4001092	      0xba00200000	                         mov edx, 0x2000	        53	uhci-pci.c	FUNCTION_27	CALL_3
+0x4001097	    0x488b9fd0fdff	            mov rbx, qword [rdi - 0x230]	        50	uhci-pci.c	FUNCTION_27	CALL_2
+0x400109e	      0xbec0000000	                           mov esi, 0xc0	        53	uhci-pci.c	FUNCTION_27	CALL_3
+0x40010a3	    0x488dab60ffff	                   lea rbp, [rbx - 0xa0]	        50	uhci-pci.c	FUNCTION_27	CALL_2
+0x40010aa	          0x4889ef	                            mov rdi, rbp	        53	uhci-pci.c	FUNCTION_27	CALL_3
+0x40010ad	      0xe800000000	                          call 0x40010b2	        53	uhci-pci.c	FUNCTION_27	CALL_3
+0x40010b2	    0x66817b9c8680	          cmp word [rbx - 0x64], 0x8086 	        56	uhci-pci.c	FUNCTION_27	IF_1
+0x40010b8	            0x7403	                            je 0x40010bd	        56	uhci-pci.c	FUNCTION_27	IF_1
+0x40010ba	              0x5b	                                 pop rbx	        58	uhci-pci.c	FUNCTION_27
+0x40010bb	              0x5d	                                 pop rbp	        58	uhci-pci.c	FUNCTION_27
+0x40010bc	              0xc3	                                     ret	        58	uhci-pci.c	FUNCTION_27
+0x40010bd	          0x4889ef	                            mov rdi, rbp	        57	uhci-pci.c	FUNCTION_27	CALL_4
+0x40010c0	            0x31d2	                            xor edx, edx	        57	uhci-pci.c	FUNCTION_27	CALL_4
+0x40010c2	      0xbec4000000	                           mov esi, 0xc4	        57	uhci-pci.c	FUNCTION_27	CALL_4
+0x40010c7	              0x5b	                                 pop rbx	        58	uhci-pci.c	FUNCTION_27
+0x40010c8	              0x5d	                                 pop rbp	        58	uhci-pci.c	FUNCTION_27
+0x40010c9	      0xe900000000	                           jmp 0x40010ce	        57	uhci-pci.c	FUNCTION_27	CALL_4
+uhci_pci_check_and_reset_hc	functions,0:SWITCH,0:IF,0:DO,0:CALL,3:ELSE,0:WHILE,0:FOR,0	4
+0x40010d0	        0x488b7708	                mov rsi, qword [rdi + 8]	        40	uhci-pci.c	FUNCTION_26	CALL_3
+0x40010d4	    0x488bbfd0fdff	            mov rdi, qword [rdi - 0x230]	        40	uhci-pci.c	FUNCTION_26	CALL_3
+0x40010db	    0x4881efa00000	                           sub rdi, 0xa0	        40	uhci-pci.c	FUNCTION_26	CALL_3
+0x40010e2	      0xe900000000	                           jmp 0x40010e7	        40	uhci-pci.c	FUNCTION_26	CALL_3
+check_and_reset_hc	functions,0:SWITCH,0:IF,1:DO,0:CALL,2:ELSE,0:WHILE,0:FOR,0	11
+0x4000260	              0x53	                                push rbx	       169	uhci-hcd.c	FUNCTION_4
+0x4000261	          0x4889fb	                            mov rbx, rdi	       169	uhci-hcd.c	FUNCTION_4
+0x4000264	    0x488b87a80100	           mov rax, qword [rdi + 0x1a8] 	       170	uhci-hcd.c	FUNCTION_4	IF_1	CALL_1
+0x400026b	      0xe800000000	                          call 0x4000270	       170	uhci-hcd.c	FUNCTION_4	IF_1	CALL_1
+0x4000270	            0x85c0	                           test eax, eax	       170	uhci-hcd.c	FUNCTION_4	IF_1	CALL_1
+0x4000272	            0x7502	                           jne 0x4000276	       170	uhci-hcd.c	FUNCTION_4	IF_1	CALL_1
+0x4000274	              0x5b	                                 pop rbx	       172	uhci-hcd.c	FUNCTION_4
+0x4000275	              0xc3	                                     ret	       172	uhci-hcd.c	FUNCTION_4
+0x4000276	          0x4889df	                            mov rdi, rbx	       171	uhci-hcd.c	FUNCTION_4	CALL_2
+0x4000279	              0x5b	                                 pop rbx	       172	uhci-hcd.c	FUNCTION_4
+0x400027a	            0xeb84	                    jmp sym.finish_reset	       171	uhci-hcd.c	FUNCTION_4	CALL_2

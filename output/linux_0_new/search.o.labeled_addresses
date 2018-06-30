@@ -1,0 +1,246 @@
+pci_do_find_bus	WHILE,0:functions,1:CALL,0:ELSE,0:SWITCH,0:DO,0:IF,1:FOR,0	27
+0x4000040	    0x4038b7e00000	              cmp byte [rdi + 0xe0], sil	       120	search.c	FUNCTION_2	IF_1
+0x4000047	            0x7433	                            je 0x400007c	       120	search.c	FUNCTION_2	IF_1
+0x4000049	            0x4154	                                push r12	       116	search.c	FUNCTION_2
+0x400004b	              0x55	                                push rbp	       116	search.c	FUNCTION_2
+0x400004c	        0x4c8d6718	                   lea r12, [rdi + 0x18]	       123	search.c	FUNCTION_2	FUNCTION_1
+0x4000050	              0x53	                                push rbx	       116	search.c	FUNCTION_2
+0x4000051	        0x488b5f18	            mov rbx, qword [rdi + 0x18] 	       123	search.c	FUNCTION_2	FUNCTION_1
+0x4000055	          0x4c39e3	                            cmp rbx, r12	       123	search.c	FUNCTION_2	FUNCTION_1
+0x4000058	            0x7426	                            je 0x4000080	       123	search.c	FUNCTION_2	FUNCTION_1
+0x400005a	        0x400fb6ee	                          movzx ebp, sil	       123	search.c	FUNCTION_2	FUNCTION_1
+0x400005e	            0xeb08	                           jmp 0x4000068	       123	search.c	FUNCTION_2	FUNCTION_1
+0x4000060	          0x488b1b	                    mov rbx, qword [rbx]	       123	search.c	FUNCTION_2	FUNCTION_1
+0x4000063	          0x4c39e3	                            cmp rbx, r12	       123	search.c	FUNCTION_2	FUNCTION_1
+0x4000066	            0x740f	                            je 0x4000077	       123	search.c	FUNCTION_2	FUNCTION_1
+0x4000068	            0x89ee	                            mov esi, ebp	       124	search.c	FUNCTION_2	FUNCTION_1	CALL_1
+0x400006a	          0x4889df	                            mov rdi, rbx	       124	search.c	FUNCTION_2	FUNCTION_1	CALL_1
+0x400006d	      0xe8ceffffff	                call sym.pci_do_find_bus	       124	search.c	FUNCTION_2	FUNCTION_1	CALL_1
+0x4000072	          0x4885c0	                           test rax, rax	       125	search.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000075	            0x74e9	                            je 0x4000060	       125	search.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000077	              0x5b	                                 pop rbx	       129	search.c	FUNCTION_2
+0x4000078	              0x5d	                                 pop rbp	       129	search.c	FUNCTION_2
+0x4000079	            0x415c	                                 pop r12	       129	search.c	FUNCTION_2
+0x400007b	              0xc3	                                     ret	       129	search.c	FUNCTION_2
+0x400007c	          0x4889f8	                            mov rax, rdi	       121	search.c	FUNCTION_2	IF_1
+0x400007f	              0xc3	                                     ret	       129	search.c	FUNCTION_2
+0x4000080	            0x31c0	                            xor eax, eax	       128	search.c	FUNCTION_2
+0x4000082	            0xebf3	                           jmp 0x4000077	       128	search.c	FUNCTION_2
+match_pci_dev_by_id	WHILE,0:functions,0:CALL,2:ELSE,0:SWITCH,0:DO,0:IF,1:FOR,0	37
+0x4000090	            0x8b16	                    mov edx, dword [rsi]	       197	pci.h	FUNCTION_27	IF_1
+0x4000092	          0x83faff	             cmp edx, 0xffffffffffffffff	       197	pci.h	FUNCTION_27	IF_1
+0x4000095	            0x740a	                            je 0x40000a1	       197	pci.h	FUNCTION_27	IF_1
+0x4000097	         0xfb74f9c	            movzx ecx, word [rdi - 0x64]	       197	pci.h	FUNCTION_27	IF_1
+0x400009b	            0x31c0	                            xor eax, eax	       250	search.c	FUNCTION_7
+0x400009d	            0x39ca	                            cmp edx, ecx	       197	pci.h	FUNCTION_27	IF_1
+0x400009f	            0x754c	                           jne 0x40000ed	       197	pci.h	FUNCTION_27	IF_1
+0x40000a1	          0x8b5604	                mov edx, dword [rsi + 4]	       198	pci.h	FUNCTION_27	IF_1
+0x40000a4	          0x83faff	             cmp edx, 0xffffffffffffffff	       197	pci.h	FUNCTION_27	IF_1
+0x40000a7	            0x740a	                            je 0x40000b3	       197	pci.h	FUNCTION_27	IF_1
+0x40000a9	         0xfb74f9e	            movzx ecx, word [rdi - 0x62]	       198	pci.h	FUNCTION_27	IF_1
+0x40000ad	            0x31c0	                            xor eax, eax	       250	search.c	FUNCTION_7
+0x40000af	            0x39ca	                            cmp edx, ecx	       198	pci.h	FUNCTION_27	IF_1
+0x40000b1	            0x753a	                           jne 0x40000ed	       198	pci.h	FUNCTION_27	IF_1
+0x40000b3	          0x8b5608	                mov edx, dword [rsi + 8]	       199	pci.h	FUNCTION_27	IF_1
+0x40000b6	          0x83faff	             cmp edx, 0xffffffffffffffff	       198	pci.h	FUNCTION_27	IF_1
+0x40000b9	            0x740a	                            je 0x40000c5	       198	pci.h	FUNCTION_27	IF_1
+0x40000bb	         0xfb74fa0	            movzx ecx, word [rdi - 0x60]	       199	pci.h	FUNCTION_27	IF_1
+0x40000bf	            0x31c0	                            xor eax, eax	       250	search.c	FUNCTION_7
+0x40000c1	            0x39ca	                            cmp edx, ecx	       199	pci.h	FUNCTION_27	IF_1
+0x40000c3	            0x7528	                           jne 0x40000ed	       199	pci.h	FUNCTION_27	IF_1
+0x40000c5	          0x8b560c	              mov edx, dword [rsi + 0xc]	       200	pci.h	FUNCTION_27	IF_1
+0x40000c8	          0x83faff	             cmp edx, 0xffffffffffffffff	       199	pci.h	FUNCTION_27	IF_1
+0x40000cb	            0x740a	                            je 0x40000d7	       199	pci.h	FUNCTION_27	IF_1
+0x40000cd	         0xfb74fa2	            movzx ecx, word [rdi - 0x5e]	       200	pci.h	FUNCTION_27	IF_1
+0x40000d1	            0x31c0	                            xor eax, eax	       250	search.c	FUNCTION_7
+0x40000d3	            0x39ca	                            cmp edx, ecx	       200	pci.h	FUNCTION_27	IF_1
+0x40000d5	            0x7516	                           jne 0x40000ed	       200	pci.h	FUNCTION_27	IF_1
+0x40000d7	          0x8b4610	            mov eax, dword [rsi + 0x10] 	       249	search.c	FUNCTION_7	IF_1
+0x40000da	          0x3347a4	             xor eax, dword [rdi - 0x5c]	       249	search.c	FUNCTION_7	IF_1
+0x40000dd	          0x854614	           test dword [rsi + 0x14], eax 	       249	search.c	FUNCTION_7	IF_1
+0x40000e0	           0xf94c0	                                 sete al	       249	search.c	FUNCTION_7	IF_1
+0x40000e3	            0x31d2	                            xor edx, edx	       249	search.c	FUNCTION_7	IF_1
+0x40000e5	          0x4885f6	                           test rsi, rsi	       249	search.c	FUNCTION_7	IF_1
+0x40000e8	           0xf95c2	                                setne dl	       249	search.c	FUNCTION_7	IF_1
+0x40000eb	            0x21d0	                            and eax, edx	       249	search.c	FUNCTION_7	IF_1
+0x40000ed	            0xf3c3	                                     ret	       251	search.c	FUNCTION_7
+pci_for_each_dma_alias	WHILE,0:functions,1:CALL,16:ELSE,2:SWITCH,1:DO,0:IF,9:FOR,1	93
+0x40004a0	            0x4156	                                push r14	        32	search.c	FUNCTION_1
+0x40004a2	            0x4155	                                push r13	        32	search.c	FUNCTION_1
+0x40004a4	            0x4154	                                push r12	        32	search.c	FUNCTION_1
+0x40004a6	              0x55	                                push rbp	        32	search.c	FUNCTION_1
+0x40004a7	          0x4889f5	                            mov rbp, rsi	        32	search.c	FUNCTION_1
+0x40004aa	              0x53	                                push rbx	        32	search.c	FUNCTION_1
+0x40004ab	        0x488b4710	            mov rax, qword [rdi + 0x10] 	        36	search.c	FUNCTION_1	CALL_2
+0x40004af	          0x4889fb	                            mov rbx, rdi	        32	search.c	FUNCTION_1
+0x40004b2	          0x4989d4	                            mov r12, rdx	        32	search.c	FUNCTION_1
+0x40004b5	     0xfb6b0e00000	           movzx esi, byte [rax + 0xe0] 	        36	search.c	FUNCTION_1	CALL_2
+0x40004bc	          0xc1e608	                              shl esi, 8	        36	search.c	FUNCTION_1	CALL_2
+0x40004bf	        0x660b7738	                or si, word [rdi + 0x38]	        36	search.c	FUNCTION_1	CALL_2
+0x40004c3	           0xfb7f6	                           movzx esi, si	        36	search.c	FUNCTION_1	CALL_2
+0x40004c6	      0xe800000000	                          call 0x40004cb	        36	search.c	FUNCTION_1	CALL_2
+0x40004cb	            0x85c0	                           test eax, eax	        37	search.c	FUNCTION_1	IF_1
+0x40004cd	          0x4189c5	                           mov r13d, eax	        36	search.c	FUNCTION_1	CALL_2
+0x40004d0	            0x756d	                           jne 0x400053f	        37	search.c	FUNCTION_1	IF_1
+0x40004d2	        0x488b7b58	            mov rdi, qword [rbx + 0x58] 	        44	search.c	FUNCTION_1	IF_2	CALL_3
+0x40004d6	          0x4885ff	                           test rdi, rdi	        44	search.c	FUNCTION_1	IF_2	CALL_3
+0x40004d9	     0xf859b000000	                           jne 0x400057a	        44	search.c	FUNCTION_1	IF_2	CALL_3
+0x40004df	        0x488b5b10	            mov rbx, qword [rbx + 0x10] 	        55	search.c	FUNCTION_1	FOR_1	CALL_4
+0x40004e3	      0x48837b1000	               cmp qword [rbx + 0x10], 0	        55	search.c	FUNCTION_1	FOR_1	CALL_4
+0x40004e8	            0x7455	                            je 0x400053f	        55	search.c	FUNCTION_1	FOR_1	CALL_4
+0x40004ea	        0x488b7b38	            mov rdi, qword [rbx + 0x38] 	        59	search.c	FUNCTION_1	FOR_1	IF_3
+0x40004ee	          0x4885ff	                           test rdi, rdi	        59	search.c	FUNCTION_1	FOR_1	IF_3
+0x40004f1	            0x74ec	                            je 0x40004df	        59	search.c	FUNCTION_1	FOR_1	IF_3
+0x40004f3	     0xfb7873e0600	          movzx eax, word [rdi + 0x63e] 	        65	search.c	FUNCTION_1	FOR_1	IF_4
+0x40004fa	          0xf6c402	                              test ah, 2	        65	search.c	FUNCTION_1	FOR_1	IF_4
+0x40004fd	            0x7540	                           jne 0x400053f	        65	search.c	FUNCTION_1	FOR_1	IF_4
+0x40004ff	        0x807f4c00	                cmp byte [rdi + 0x4c], 0	        77	search.c	FUNCTION_1	FOR_1	IF_5	CALL_5
+0x4000503	            0x7446	                            je 0x400054b	        77	search.c	FUNCTION_1	FOR_1	IF_5	CALL_5
+0x4000505	         0xfb74752	           movzx eax, word [rdi + 0x52] 	        78	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_6
+0x4000509	      0x25f0000000	                           and eax, 0xf0	        78	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_6
+0x400050e	          0xc1f804	                              sar eax, 4	        78	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_6
+0x4000511	          0x83f807	                              cmp eax, 7	        78	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_6
+0x4000514	            0x7454	                            je 0x400056a	        78	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_6
+0x4000516	          0x83f808	                              cmp eax, 8	        78	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_6
+0x4000519	            0x75c4	                           jne 0x40004df	        78	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_6
+0x400051b	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       105	search.c	FUNCTION_1	FOR_1	ELSE_1	ELSE_2	CALL_16
+0x400051f	     0xfb6b0e00000	           movzx esi, byte [rax + 0xe0] 	       104	search.c	FUNCTION_1	FOR_1	ELSE_1	ELSE_2	CALL_15
+0x4000526	          0xc1e608	                              shl esi, 8	       104	search.c	FUNCTION_1	FOR_1	ELSE_1	ELSE_2	CALL_15
+0x4000529	        0x660b7738	                or si, word [rdi + 0x38]	       104	search.c	FUNCTION_1	FOR_1	ELSE_1	ELSE_2	CALL_15
+0x400052d	           0xfb7f6	                           movzx esi, si	       104	search.c	FUNCTION_1	FOR_1	ELSE_1	ELSE_2	CALL_15
+0x4000530	          0x4c89e2	                            mov rdx, r12	       104	search.c	FUNCTION_1	FOR_1	ELSE_1	ELSE_2	CALL_15
+0x4000533	      0xe800000000	                          call 0x4000538	       104	search.c	FUNCTION_1	FOR_1	ELSE_1	ELSE_2	CALL_15
+0x4000538	            0x85c0	                           test eax, eax	       107	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_9
+0x400053a	            0x74a3	                            je 0x40004df	       107	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_9
+0x400053c	          0x4189c5	                           mov r13d, eax	       107	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_9
+0x400053f	              0x5b	                                 pop rbx	       113	search.c	FUNCTION_1
+0x4000540	          0x4489e8	                           mov eax, r13d	       113	search.c	FUNCTION_1
+0x4000543	              0x5d	                                 pop rbp	       113	search.c	FUNCTION_1
+0x4000544	            0x415c	                                 pop r12	       113	search.c	FUNCTION_1
+0x4000546	            0x415d	                                 pop r13	       113	search.c	FUNCTION_1
+0x4000548	            0x415e	                                 pop r14	       113	search.c	FUNCTION_1
+0x400054a	              0xc3	                                     ret	       113	search.c	FUNCTION_1
+0x400054b	            0xa820	                           test al, 0x20	        99	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_8
+0x400054d	            0x74cc	                            je 0x400051b	        99	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_8
+0x400054f	        0x488b4718	            mov rax, qword [rdi + 0x18] 	       101	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_8	CALL_13
+0x4000553	          0x4c89e2	                            mov rdx, r12	       100	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_8	CALL_12
+0x4000556	     0xfb6b0e00000	           movzx esi, byte [rax + 0xe0] 	       100	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_8	CALL_12
+0x400055d	          0xc1e608	                              shl esi, 8	       100	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_8	CALL_12
+0x4000560	           0xfb7f6	                           movzx esi, si	       100	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_8	CALL_12
+0x4000563	      0xe800000000	                          call 0x4000568	       100	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_8	CALL_12
+0x4000568	            0xebce	                           jmp 0x4000538	       100	search.c	FUNCTION_1	FOR_1	ELSE_1	IF_8	CALL_12
+0x400056a	        0x488b4718	            mov rax, qword [rdi + 0x18] 	        85	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_8
+0x400056e	     0xfb6b0e00000	           movzx esi, byte [rax + 0xe0] 	        84	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_7
+0x4000575	          0xc1e608	                              shl esi, 8	        84	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_7
+0x4000578	            0xebb3	                           jmp 0x400052d	        84	search.c	FUNCTION_1	FOR_1	IF_5	SWITCH_1	CALL_7
+0x400057a	      0xbeff000000	                           mov esi, 0xff	        47	search.c	FUNCTION_1	IF_2
+0x400057f	      0xe800000000	                          call 0x4000584	        47	search.c	FUNCTION_1	IF_2
+0x4000584	            0x3cff	                            cmp al, 0xff	        47	search.c	FUNCTION_1	IF_2
+0x4000586	        0x440fb6f0	                          movzx r14d, al	        47	search.c	FUNCTION_1	IF_2
+0x400058a	            0x7523	                           jne 0x40005af	        47	search.c	FUNCTION_1	IF_2
+0x400058c	      0xe94effffff	                           jmp 0x40004df	        47	search.c	FUNCTION_1	IF_2
+0x4000591	        0x488b7b58	            mov rdi, qword [rbx + 0x58] 	        47	search.c	FUNCTION_1	IF_2
+0x4000595	        0x498d5601	                      lea rdx, [r14 + 1]	        47	search.c	FUNCTION_1	IF_2
+0x4000599	      0xbeff000000	                           mov esi, 0xff	        47	search.c	FUNCTION_1	IF_2
+0x400059e	      0xe800000000	                          call 0x40005a3	        47	search.c	FUNCTION_1	IF_2
+0x40005a3	            0x3cff	                            cmp al, 0xff	        47	search.c	FUNCTION_1	IF_2
+0x40005a5	        0x440fb6f0	                          movzx r14d, al	        47	search.c	FUNCTION_1	IF_2
+0x40005a9	     0xf8430ffffff	                            je 0x40004df	        47	search.c	FUNCTION_1	IF_2
+0x40005af	        0x488b4310	            mov rax, qword [rbx + 0x10] 	        48	search.c	IF_2	CALL_2
+0x40005b3	          0x4c89e2	                            mov rdx, r12	        48	search.c	IF_2	CALL_2
+0x40005b6	          0x4889df	                            mov rdi, rbx	        48	search.c	IF_2	CALL_2
+0x40005b9	     0xfb6b0e00000	           movzx esi, byte [rax + 0xe0] 	        48	search.c	IF_2	CALL_2
+0x40005c0	        0x410fb6c6	                         movzx eax, r14b	        48	search.c	IF_2	CALL_2
+0x40005c4	          0xc1e608	                              shl esi, 8	        48	search.c	IF_2	CALL_2
+0x40005c7	             0x9c6	                             or esi, eax	        48	search.c	IF_2	CALL_2
+0x40005c9	           0xfb7f6	                           movzx esi, si	        48	search.c	IF_2	CALL_2
+0x40005cc	      0xe800000000	                          call 0x40005d1	        48	search.c	IF_2	CALL_2
+0x40005d1	            0x85c0	                           test eax, eax	        50	search.c	IF_2	IF_1
+0x40005d3	            0x74bc	                            je 0x4000591	        50	search.c	IF_2	IF_1
+0x40005d5	      0xe962ffffff	                           jmp 0x400053c	        50	search.c	IF_2	IF_1
+pci_get_domain_bus_and_slot	WHILE,0:functions,1:CALL,0:ELSE,0:SWITCH,0:DO,0:IF,0:FOR,0	39
+0x4000330	            0x4154	                                push r12	       231	search.c	FUNCTION_6
+0x4000332	              0x55	                                push rbp	       231	search.c	FUNCTION_6
+0x4000333	          0x4189d4	                           mov r12d, edx	       231	search.c	FUNCTION_6
+0x4000336	              0x53	                                push rbx	       231	search.c	FUNCTION_6
+0x4000337	            0x89f5	                            mov ebp, esi	       231	search.c	FUNCTION_6
+0x4000339	            0x89fb	                            mov ebx, edi	       231	search.c	FUNCTION_6
+0x400033b	        0x4883ec28	                           sub rsp, 0x28	       231	search.c	FUNCTION_6
+0x400033f	    0x65488b042528	                mov rax, qword gs:[0x28]	       231	search.c	FUNCTION_6
+0x4000348	      0x4889442420	             mov qword [rsp + 0x20], rax	       231	search.c	FUNCTION_6
+0x400034d	            0x31c0	                            xor eax, eax	       231	search.c	FUNCTION_6
+0x400034f	          0x4889c6	                            mov rsi, rax	       314	search.c	FUNCTION_9	CALL_1
+0x4000352	          0x4889e7	                            mov rdi, rsp	       314	search.c	FUNCTION_9	CALL_1
+0x4000355	    0x48c744241000	               mov qword [rsp + 0x10], 0	       307	search.c	FUNCTION_9
+0x400035e	    0x48c744241800	               mov qword [rsp + 0x18], 0	       307	search.c	FUNCTION_9
+0x4000367	    0xc70424ffffff	            mov dword [rsp], 0xffffffff 	       307	search.c	FUNCTION_9
+0x400036e	    0xc7442404ffff	        mov dword [rsp + 4], 0xffffffff 	       307	search.c	FUNCTION_9
+0x4000376	    0xc7442408ffff	        mov dword [rsp + 8], 0xffffffff 	       307	search.c	FUNCTION_9
+0x400037e	    0xc744240cffff	      mov dword [rsp + 0xc], 0xffffffff 	       307	search.c	FUNCTION_9
+0x4000386	      0xe875feffff	              call sym.pci_get_dev_by_id	       314	search.c	FUNCTION_9	CALL_1
+0x400038b	          0x4885c0	                           test rax, rax	       234	search.c	FUNCTION_6	FUNCTION_1
+0x400038e	            0x7420	                            je 0x40003b0	       234	search.c	FUNCTION_6	FUNCTION_1
+0x4000390	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       235	search.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x4000394	    0x488b8ad00000	            mov rcx, qword [rdx + 0xd0] 	        44	pci.h	
+0x400039b	            0x3b19	                    cmp ebx, dword [rcx]	       235	search.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x400039d	            0x75b0	                           jne 0x400034f	       235	search.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x400039f	     0xfb692e00000	           movzx edx, byte [rdx + 0xe0] 	       235	search.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x40003a6	            0x39ea	                            cmp edx, ebp	       235	search.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x40003a8	            0x75a5	                           jne 0x400034f	       235	search.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x40003aa	        0x44396038	           cmp dword [rax + 0x38], r12d 	       236	search.c	FUNCTION_6	FUNCTION_1	IF_1
+0x40003ae	            0x759f	                           jne 0x400034f	       236	search.c	FUNCTION_6	FUNCTION_1	IF_1
+0x40003b0	      0x488b5c2420	            mov rbx, qword [rsp + 0x20] 	       240	search.c	FUNCTION_6
+0x40003b5	    0x6548331c2528	                xor rbx, qword gs:[0x28]	       240	search.c	FUNCTION_6
+0x40003be	            0x7509	                           jne 0x40003c9	       240	search.c	FUNCTION_6
+0x40003c0	        0x4883c428	                           add rsp, 0x28	       240	search.c	FUNCTION_6
+0x40003c4	              0x5b	                                 pop rbx	       240	search.c	FUNCTION_6
+0x40003c5	              0x5d	                                 pop rbp	       240	search.c	FUNCTION_6
+0x40003c6	            0x415c	                                 pop r12	       240	search.c	FUNCTION_6
+0x40003c8	              0xc3	                                     ret	       240	search.c	FUNCTION_6
+0x40003c9	      0xe800000000	                          call 0x40003ce	       240	search.c	FUNCTION_6
+pci_get_class	WHILE,0:functions,0:CALL,1:ELSE,0:SWITCH,0:DO,0:IF,0:FOR,0	19
+0x40003d0	        0x4883ec28	                           sub rsp, 0x28	       354	search.c	FUNCTION_11
+0x40003d4	        0x897c2410	             mov dword [rsp + 0x10], edi	       355	search.c	FUNCTION_11
+0x40003d8	          0x4889e7	                            mov rdi, rsp	       364	search.c	FUNCTION_11	CALL_1
+0x40003db	    0x48c744241800	               mov qword [rsp + 0x18], 0	       355	search.c	FUNCTION_11
+0x40003e4	    0x65488b042528	                mov rax, qword gs:[0x28]	       354	search.c	FUNCTION_11
+0x40003ed	      0x4889442420	             mov qword [rsp + 0x20], rax	       354	search.c	FUNCTION_11
+0x40003f2	            0x31c0	                            xor eax, eax	       354	search.c	FUNCTION_11
+0x40003f4	    0xc70424ffffff	            mov dword [rsp], 0xffffffff 	       355	search.c	FUNCTION_11
+0x40003fb	    0xc7442404ffff	        mov dword [rsp + 4], 0xffffffff 	       355	search.c	FUNCTION_11
+0x4000403	    0xc7442408ffff	        mov dword [rsp + 8], 0xffffffff 	       355	search.c	FUNCTION_11
+0x400040b	    0xc744240cffff	      mov dword [rsp + 0xc], 0xffffffff 	       355	search.c	FUNCTION_11
+0x4000413	    0xc7442414ffff	     mov dword [rsp + 0x14], 0xffffffff 	       355	search.c	FUNCTION_11
+0x400041b	      0xe8e0fdffff	              call sym.pci_get_dev_by_id	       364	search.c	FUNCTION_11	CALL_1
+0x4000420	      0x488b542420	            mov rdx, qword [rsp + 0x20] 	       365	search.c	FUNCTION_11
+0x4000425	    0x654833142528	                xor rdx, qword gs:[0x28]	       365	search.c	FUNCTION_11
+0x400042e	            0x7505	                           jne 0x4000435	       365	search.c	FUNCTION_11
+0x4000430	        0x4883c428	                           add rsp, 0x28	       365	search.c	FUNCTION_11
+0x4000434	              0xc3	                                     ret	       365	search.c	FUNCTION_11
+0x4000435	      0xe800000000	                          call 0x400043a	       365	search.c	FUNCTION_11
+pci_find_bus	WHILE,1:functions,0:CALL,3:ELSE,0:SWITCH,0:DO,0:IF,2:FOR,0	25
+0x4000150	              0x55	                                push rbp	       141	search.c	FUNCTION_3
+0x4000151	            0x31d2	                            xor edx, edx	       142	search.c	FUNCTION_3
+0x4000153	              0x53	                                push rbx	       141	search.c	FUNCTION_3
+0x4000154	        0x400fb6ee	                          movzx ebp, sil	       148	search.c	FUNCTION_3	WHILE_1	CALL_3
+0x4000158	            0x89fb	                            mov ebx, edi	       141	search.c	FUNCTION_3
+0x400015a	          0x4889d7	                            mov rdi, rdx	       145	search.c	FUNCTION_3	WHILE_1	CALL_1
+0x400015d	      0xe800000000	                          call 0x4000162	       145	search.c	FUNCTION_3	WHILE_1	CALL_1
+0x4000162	          0x4885c0	                           test rax, rax	       145	search.c	FUNCTION_3	WHILE_1	CALL_1
+0x4000165	          0x4889c2	                            mov rdx, rax	       145	search.c	FUNCTION_3	WHILE_1	CALL_1
+0x4000168	            0x741d	                            je 0x4000187	       145	search.c	FUNCTION_3	WHILE_1	CALL_1
+0x400016a	    0x488b82d00000	            mov rax, qword [rdx + 0xd0] 	        44	pci.h	
+0x4000171	            0x3918	                    cmp dword [rax], ebx	       146	search.c	FUNCTION_3	WHILE_1	IF_1	CALL_2
+0x4000173	            0x75e5	                           jne 0x400015a	       146	search.c	FUNCTION_3	WHILE_1	IF_1	CALL_2
+0x4000175	            0x89ee	                            mov esi, ebp	       148	search.c	FUNCTION_3	WHILE_1	CALL_3
+0x4000177	          0x4889d7	                            mov rdi, rdx	       148	search.c	FUNCTION_3	WHILE_1	CALL_3
+0x400017a	      0xe8c1feffff	                call sym.pci_do_find_bus	       148	search.c	FUNCTION_3	WHILE_1	CALL_3
+0x400017f	          0x4885c0	                           test rax, rax	       149	search.c	FUNCTION_3	WHILE_1	IF_2
+0x4000182	            0x74d6	                            je 0x400015a	       149	search.c	FUNCTION_3	WHILE_1	IF_2
+0x4000184	              0x5b	                                 pop rbx	       153	search.c	FUNCTION_3
+0x4000185	              0x5d	                                 pop rbp	       153	search.c	FUNCTION_3
+0x4000186	              0xc3	                                     ret	       153	search.c	FUNCTION_3
+0x4000187	            0x31c0	                            xor eax, eax	       152	search.c	FUNCTION_3
+0x4000189	              0x5b	                                 pop rbx	       153	search.c	FUNCTION_3
+0x400018a	              0x5d	                                 pop rbp	       153	search.c	FUNCTION_3
+0x400018b	              0xc3	                                     ret	       153	search.c	FUNCTION_3

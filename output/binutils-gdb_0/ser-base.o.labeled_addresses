@@ -1,0 +1,256 @@
+ser_base_readchar	CALL,1:WHILE,0:IF,0:FOR,0:SWITCH,0:DO,0:ELSE,0:functions,0	2
+0x40006f0	      0xba00000000	                              mov edx, 0	       470	ser-base.c	FUNCTION_10	CALL_1
+0x40006f5	      0xe966ffffff	jmp sym.generic_readchar_serial__int_int____serial__int	       470	ser-base.c	FUNCTION_10	CALL_1
+ser_base_flush_input	CALL,0:WHILE,0:IF,1:FOR,0:SWITCH,0:DO,0:ELSE,1:functions,0	11
+0x4000780	          0x8b4728	            mov eax, dword [rdi + 0x28] 	       506	ser-base.c	FUNCTION_13	IF_1
+0x4000783	            0x85c0	                           test eax, eax	       506	ser-base.c	FUNCTION_13	IF_1
+0x4000785	            0x7819	                            js 0x40007a0	       506	ser-base.c	FUNCTION_13	IF_1
+0x4000787	        0x488d4738	                   lea rax, [rdi + 0x38]	       509	ser-base.c	FUNCTION_13	IF_1
+0x400078b	    0xc74728000000	               mov dword [rdi + 0x28], 0	       508	ser-base.c	FUNCTION_13	IF_1
+0x4000792	        0x48894730	             mov qword [rdi + 0x30], rax	       509	ser-base.c	FUNCTION_13	IF_1
+0x4000796	            0x31c0	                            xor eax, eax	       510	ser-base.c	FUNCTION_13	IF_1
+0x4000798	              0xc3	                                     ret	       510	ser-base.c	FUNCTION_13	IF_1
+0x4000799	     0xf1f80000000	                         nop dword [rax]	       510	ser-base.c	FUNCTION_13	IF_1
+0x40007a0	      0xb8ffffffff	                     mov eax, 0xffffffff	       513	ser-base.c	FUNCTION_13	ELSE_1
+0x40007a5	              0xc3	                                     ret	       514	ser-base.c	FUNCTION_13	ELSE_1
+generic_readchar	CALL,3:WHILE,0:IF,3:FOR,0:SWITCH,1:DO,0:ELSE,2:functions,0	44
+0x4000660	              0x55	                                push rbp	       428	ser-base.c	ELSE_2	FUNCTION_9
+0x4000661	              0x53	                                push rbx	       428	ser-base.c	ELSE_2	FUNCTION_9
+0x4000662	          0x4889fb	                            mov rbx, rdi	       428	ser-base.c	ELSE_2	FUNCTION_9
+0x4000665	        0x4883ec08	                              sub rsp, 8	       428	ser-base.c	ELSE_2	FUNCTION_9
+0x4000669	          0x8b4728	            mov eax, dword [rdi + 0x28] 	       430	ser-base.c	ELSE_2	FUNCTION_9	IF_1
+0x400066c	            0x85c0	                           test eax, eax	       430	ser-base.c	ELSE_2	FUNCTION_9	IF_1
+0x400066e	            0x7e40	                           jle 0x40006b0	       430	ser-base.c	ELSE_2	FUNCTION_9	IF_1
+0x4000670	        0x488b5730	            mov rdx, qword [rdi + 0x30] 	       432	ser-base.c	ELSE_2	FUNCTION_9	IF_1
+0x4000674	          0x83e801	                              sub eax, 1	       433	ser-base.c	ELSE_2	FUNCTION_9	IF_1
+0x4000677	           0xfb62a	                   movzx ebp, byte [rdx]	       432	ser-base.c	ELSE_2	FUNCTION_9	IF_1
+0x400067a	        0x4883c201	                              add rdx, 1	       434	ser-base.c	ELSE_2	FUNCTION_9	IF_1
+0x400067e	          0x894728	             mov dword [rdi + 0x28], eax	       433	ser-base.c	ELSE_2	FUNCTION_9	IF_1
+0x4000681	        0x48895730	             mov qword [rdi + 0x30], rdx	       434	ser-base.c	ELSE_2	FUNCTION_9	IF_1
+0x4000685	        0x837b08ff	 cmp dword [rbx + 8], 0xffffffffffffffff	       263	ser-base.c	ELSE_3	FUNCTION_6	IF_1
+0x4000689	            0x740d	                            je 0x4000698	       263	ser-base.c	ELSE_3	FUNCTION_6	IF_1
+0x400068b	      0xbe01000000	                              mov esi, 1	       263	ser-base.c	ELSE_3	FUNCTION_6	IF_1
+0x4000690	          0x4889df	                            mov rdi, rbx	       263	ser-base.c	ELSE_3	FUNCTION_6	IF_1
+0x4000693	      0xe8a8f9ffff	call sym.ser_base_read_error_fd_serial__int__clone.part.0	       263	ser-base.c	ELSE_3	FUNCTION_6	IF_1
+0x4000698	          0x4889df	                            mov rdi, rbx	       463	ser-base.c	FUNCTION_9	ELSE_2	CALL_3
+0x400069b	      0xe850fbffff	              call sym.reschedule_serial	       463	ser-base.c	FUNCTION_9	ELSE_2	CALL_3
+0x40006a0	        0x4883c408	                              add rsp, 8	       465	ser-base.c	FUNCTION_9	ELSE_2
+0x40006a4	            0x89e8	                            mov eax, ebp	       465	ser-base.c	FUNCTION_9	ELSE_2
+0x40006a6	              0x5b	                                 pop rbx	       465	ser-base.c	FUNCTION_9	ELSE_2
+0x40006a7	              0x5d	                                 pop rbp	       465	ser-base.c	FUNCTION_9	ELSE_2
+0x40006a8	              0xc3	                                     ret	       465	ser-base.c	FUNCTION_9	ELSE_2
+0x40006a9	     0xf1f80000000	                         nop dword [rax]	       465	ser-base.c	FUNCTION_9	ELSE_2
+0x40006b0	            0x85c0	                           test eax, eax	       436	ser-base.c	ELSE_2	FUNCTION_9	ELSE_1	IF_2
+0x40006b2	            0x89c5	                            mov ebp, eax	       436	ser-base.c	ELSE_2	FUNCTION_9	ELSE_1	IF_2
+0x40006b4	            0x75cf	                           jne 0x4000685	       436	ser-base.c	ELSE_2	FUNCTION_9	ELSE_1	IF_2
+0x40006b6	            0xffd2	                                call rdx	       443	ser-base.c	FUNCTION_9	CALL_1
+0x40006b8	            0x85c0	                           test eax, eax	       444	ser-base.c	FUNCTION_9	IF_3
+0x40006ba	            0x89c5	                            mov ebp, eax	       443	ser-base.c	FUNCTION_9	CALL_1
+0x40006bc	            0x79c7	                           jns 0x4000685	       444	ser-base.c	FUNCTION_9	IF_3
+0x40006be	          0x83f8fe	             cmp eax, 0xfffffffffffffffe	       446	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+0x40006c1	            0x7415	                            je 0x40006d8	       446	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+0x40006c3	          0x83f8ff	             cmp eax, 0xffffffffffffffff	       446	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+0x40006c6	            0x7405	                            je 0x40006cd	       446	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+0x40006c8	          0x83f8fd	             cmp eax, 0xfffffffffffffffd	       446	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+0x40006cb	            0x75b8	                           jne 0x4000685	       446	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+0x40006cd	          0x896b28	             mov dword [rbx + 0x28], ebp	       451	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+0x40006d0	            0xebb3	                           jmp 0x4000685	       452	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+0x40006d2	    0x660f1f440000	                    nop word [rax + rax]	       452	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+0x40006d8	    0xc74328000000	               mov dword [rbx + 0x28], 0	       454	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+0x40006df	            0xeba4	                           jmp 0x4000685	       455	ser-base.c	FUNCTION_9	IF_3	SWITCH_1
+handle_error_fd	CALL,1:WHILE,0:IF,0:FOR,0:SWITCH,0:DO,0:ELSE,0:functions,0	6
+0x40001d0	        0x837e08ff	 cmp dword [rsi + 8], 0xffffffffffffffff	       263	ser-base.c	ELSE_3	FUNCTION_6	IF_1
+0x40001d4	          0x4889f7	                            mov rdi, rsi	       323	ser-base.c	FUNCTION_7
+0x40001d7	            0x7407	                            je 0x40001e0	       263	ser-base.c	ELSE_3	FUNCTION_6	IF_1
+0x40001d9	            0x31f6	                            xor esi, esi	       263	ser-base.c	ELSE_3	FUNCTION_6	IF_1
+0x40001db	      0xe960feffff	jmp sym.ser_base_read_error_fd_serial__int__clone.part.0	       263	ser-base.c	ELSE_3	FUNCTION_6	IF_1
+0x40001e0	            0xf3c3	                                     ret	       263	ser-base.c	ELSE_3	FUNCTION_6	IF_1
+ser_base_write	CALL,1:WHILE,1:IF,2:FOR,0:SWITCH,0:DO,0:ELSE,0:functions,0	35
+0x4000700	          0x4885d2	                           test rdx, rdx	       479	ser-base.c	FUNCTION_11	WHILE_1
+0x4000703	            0x4154	                                push r12	       475	ser-base.c	FUNCTION_11
+0x4000705	          0x4989fc	                            mov r12, rdi	       475	ser-base.c	FUNCTION_11
+0x4000708	              0x55	                                push rbp	       475	ser-base.c	FUNCTION_11
+0x4000709	          0x4889f5	                            mov rbp, rsi	       475	ser-base.c	FUNCTION_11
+0x400070c	              0x53	                                push rbx	       475	ser-base.c	FUNCTION_11
+0x400070d	          0x4889d3	                            mov rbx, rdx	       475	ser-base.c	FUNCTION_11
+0x4000710	            0x742d	                            je 0x400073f	       479	ser-base.c	FUNCTION_11	WHILE_1
+0x4000712	    0x660f1f440000	                    nop word [rax + rax]	       479	ser-base.c	FUNCTION_11	WHILE_1
+0x4000718	      0xe800000000	                          call 0x400071d	       481	ser-base.c	FUNCTION_11	WHILE_1
+0x400071d	      0x498b442410	            mov rax, qword [r12 + 0x10] 	       483	ser-base.c	FUNCTION_11	WHILE_1	CALL_1
+0x4000722	          0x4889da	                            mov rdx, rbx	       483	ser-base.c	FUNCTION_11	WHILE_1	CALL_1
+0x4000725	          0x4889ee	                            mov rsi, rbp	       483	ser-base.c	FUNCTION_11	WHILE_1	CALL_1
+0x4000728	          0x4c89e7	                            mov rdi, r12	       483	ser-base.c	FUNCTION_11	WHILE_1	CALL_1
+0x400072b	    0xff90a0000000	                 call qword [rax + 0xa0]	       483	ser-base.c	FUNCTION_11	WHILE_1	CALL_1
+0x4000731	            0x85c0	                           test eax, eax	       485	ser-base.c	FUNCTION_11	WHILE_1	IF_1
+0x4000733	            0x781b	                            js 0x4000750	       485	ser-base.c	FUNCTION_11	WHILE_1	IF_1
+0x4000735	            0x4898	                                    cdqe	       491	ser-base.c	FUNCTION_11	WHILE_1
+0x4000737	          0x4801c5	                            add rbp, rax	       492	ser-base.c	FUNCTION_11	WHILE_1
+0x400073a	          0x4829c3	                            sub rbx, rax	       479	ser-base.c	FUNCTION_11	WHILE_1
+0x400073d	            0x75d9	                           jne 0x4000718	       479	ser-base.c	FUNCTION_11	WHILE_1
+0x400073f	              0x5b	                                 pop rbx	       495	ser-base.c	FUNCTION_11
+0x4000740	            0x31c0	                            xor eax, eax	       494	ser-base.c	FUNCTION_11
+0x4000742	              0x5d	                                 pop rbp	       495	ser-base.c	FUNCTION_11
+0x4000743	            0x415c	                                 pop r12	       495	ser-base.c	FUNCTION_11
+0x4000745	              0xc3	                                     ret	       495	ser-base.c	FUNCTION_11
+0x4000746	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       495	ser-base.c	FUNCTION_11
+0x4000750	      0xe800000000	                          call 0x4000755	       487	ser-base.c	FUNCTION_11	WHILE_1	IF_1	IF_2
+0x4000755	          0x833804	                      cmp dword [rax], 4	       487	ser-base.c	FUNCTION_11	WHILE_1	IF_1	IF_2
+0x4000758	            0x74be	                            je 0x4000718	       487	ser-base.c	FUNCTION_11	WHILE_1	IF_1	IF_2
+0x400075a	              0x5b	                                 pop rbx	       495	ser-base.c	FUNCTION_11
+0x400075b	      0xb801000000	                              mov eax, 1	       489	ser-base.c	FUNCTION_11	WHILE_1	IF_1
+0x4000760	              0x5d	                                 pop rbp	       495	ser-base.c	FUNCTION_11
+0x4000761	            0x415c	                                 pop r12	       495	ser-base.c	FUNCTION_11
+0x4000763	              0xc3	                                     ret	       495	ser-base.c	FUNCTION_11
+ser_base_raw	CALL,0:WHILE,0:IF,0:FOR,0:SWITCH,0:DO,0:ELSE,0:functions,0	1
+0x40007d0	            0xf3c3	                                     ret	       530	ser-base.c	FUNCTION_16
+ser_base_print_tty_state	CALL,0:WHILE,0:IF,0:FOR,0:SWITCH,0:DO,0:ELSE,0:functions,0	1
+0x4000810	            0xf3c3	                                     ret	       558	ser-base.c	FUNCTION_20
+ser_base_get_tty_state	CALL,0:WHILE,0:IF,0:FOR,0:SWITCH,0:DO,0:ELSE,0:functions,0	2
+0x40007e0	      0xbf04000000	                              mov edi, 4	       110	poison.h	FUNCTION_25
+0x40007e5	      0xe900000000	                           jmp 0x40007ea	       110	poison.h	FUNCTION_25
+ser_base_copy_tty_state	CALL,0:WHILE,0:IF,0:FOR,0:SWITCH,0:DO,0:ELSE,0:functions,0	2
+0x40007f0	      0xbf04000000	                              mov edi, 4	       110	poison.h	FUNCTION_25
+0x40007f5	      0xe900000000	                           jmp 0x40007fa	       110	poison.h	FUNCTION_25
+ser_base_async	CALL,9:WHILE,0:IF,5:FOR,0:SWITCH,1:DO,0:ELSE,1:functions,0	73
+0x4000850	              0x55	                                push rbp	       588	ser-base.c	FUNCTION_24
+0x4000851	              0x53	                                push rbx	       588	ser-base.c	FUNCTION_24
+0x4000852	          0x4889fb	                            mov rbx, rdi	       588	ser-base.c	FUNCTION_24
+0x4000855	        0x4883ec08	                              sub rsp, 8	       588	ser-base.c	FUNCTION_24
+0x4000859	            0x85f6	                           test esi, esi	       589	ser-base.c	FUNCTION_24	IF_1
+0x400085b	            0x7443	                            je 0x40008a0	       589	ser-base.c	FUNCTION_24	IF_1
+0x400085d	    0xc78744200000	   mov dword [rdi + 0x2044], 0xfffffffe 	       592	ser-base.c	FUNCTION_24	IF_1
+0x4000867	      0xe800000000	                          call 0x400086c	       593	ser-base.c	FUNCTION_24	IF_1	IF_2	CALL_1
+0x400086c	            0x85c0	                           test eax, eax	       593	ser-base.c	FUNCTION_24	IF_1	IF_2	CALL_1
+0x400086e	     0xf857c000000	                           jne 0x40008f0	       593	ser-base.c	FUNCTION_24	IF_1	IF_2	CALL_1
+0x4000874	          0x4889df	                            mov rdi, rbx	       596	ser-base.c	FUNCTION_24	IF_1	CALL_3
+0x4000877	      0xe874f9ffff	              call sym.reschedule_serial	       596	ser-base.c	FUNCTION_24	IF_1	CALL_3
+0x400087c	          0x8b7b08	                mov edi, dword [rbx + 8]	       598	ser-base.c	FUNCTION_24	IF_1	IF_3
+0x400087f	          0x83ffff	             cmp edi, 0xffffffffffffffff	       598	ser-base.c	FUNCTION_24	IF_1	IF_3
+0x4000882	            0x7454	                            je 0x40008d8	       598	ser-base.c	FUNCTION_24	IF_1	IF_3
+0x4000884	        0x4883c408	                              add rsp, 8	       622	ser-base.c	FUNCTION_24
+0x4000888	          0x4889da	                            mov rdx, rbx	       599	ser-base.c	FUNCTION_24	IF_1	CALL_4
+0x400088b	      0xbe00000000	                              mov esi, 0	       599	ser-base.c	FUNCTION_24	IF_1	CALL_4
+0x4000890	              0x5b	                                 pop rbx	       622	ser-base.c	FUNCTION_24
+0x4000891	              0x5d	                                 pop rbp	       622	ser-base.c	FUNCTION_24
+0x4000892	      0xe900000000	                           jmp 0x4000897	       599	ser-base.c	FUNCTION_24	IF_1	CALL_4
+0x4000897	    0x660f1f840000	                    nop word [rax + rax]	       599	ser-base.c	FUNCTION_24	IF_1	CALL_4
+0x40008a0	      0xe800000000	                          call 0x40008a5	       603	ser-base.c	FUNCTION_24	ELSE_1	IF_4	CALL_5
+0x40008a5	            0x85c0	                           test eax, eax	       603	ser-base.c	FUNCTION_24	ELSE_1	IF_4	CALL_5
+0x40008a7	            0x7577	                           jne 0x4000920	       603	ser-base.c	FUNCTION_24	ELSE_1	IF_4	CALL_5
+0x40008a9	    0x8bbb44200000	          mov edi, dword [rbx + 0x2044] 	       607	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+0x40008af	          0x83fffe	             cmp edi, 0xfffffffffffffffe	       607	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+0x40008b2	            0x740d	                            je 0x40008c1	       607	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+0x40008b4	          0x83ffff	             cmp edi, 0xffffffffffffffff	       607	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+0x40008b7	            0x7527	                           jne 0x40008e0	       607	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+0x40008b9	          0x8b7b04	                mov edi, dword [rbx + 4]	       610	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1	CALL_7
+0x40008bc	      0xe800000000	                          call 0x40008c1	       610	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1	CALL_7
+0x40008c1	          0x8b7b08	                mov edi, dword [rbx + 8]	       619	ser-base.c	FUNCTION_24	ELSE_1	IF_5
+0x40008c4	          0x83ffff	             cmp edi, 0xffffffffffffffff	       619	ser-base.c	FUNCTION_24	ELSE_1	IF_5
+0x40008c7	            0x740f	                            je 0x40008d8	       619	ser-base.c	FUNCTION_24	ELSE_1	IF_5
+0x40008c9	        0x4883c408	                              add rsp, 8	       622	ser-base.c	FUNCTION_24
+0x40008cd	              0x5b	                                 pop rbx	       622	ser-base.c	FUNCTION_24
+0x40008ce	              0x5d	                                 pop rbp	       622	ser-base.c	FUNCTION_24
+0x40008cf	      0xe900000000	                           jmp 0x40008d4	       620	ser-base.c	FUNCTION_24	ELSE_1	CALL_9
+0x40008d4	         0xf1f4000	                         nop dword [rax]	       620	ser-base.c	FUNCTION_24	ELSE_1	CALL_9
+0x40008d8	        0x4883c408	                              add rsp, 8	       622	ser-base.c	FUNCTION_24
+0x40008dc	              0x5b	                                 pop rbx	       622	ser-base.c	FUNCTION_24
+0x40008dd	              0x5d	                                 pop rbp	       622	ser-base.c	FUNCTION_24
+0x40008de	              0xc3	                                     ret	       622	ser-base.c	FUNCTION_24
+0x40008df	              0x90	                                     nop	       622	ser-base.c	FUNCTION_24
+0x40008e0	      0xe800000000	                          call 0x40008e5	       615	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1	CALL_8
+0x40008e5	            0xebda	                           jmp 0x40008c1	       616	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+0x40008e7	    0x660f1f840000	                    nop word [rax + rax]	       616	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+0x40008f0	          0x8b6b04	                mov ebp, dword [rbx + 4]	       594	ser-base.c	FUNCTION_24	IF_1	IF_2	CALL_2
+0x40008f3	      0xe800000000	                          call 0x40008f8	       594	ser-base.c	FUNCTION_24	IF_1	IF_2	CALL_2
+0x40008f8	          0x488b38	                    mov rdi, qword [rax]	       595	ser-base.c	FUNCTION_24	IF_1	IF_2
+0x40008fb	      0xbe00000000	                              mov esi, 0	       595	ser-base.c	FUNCTION_24	IF_1	IF_2
+0x4000900	            0x31c0	                            xor eax, eax	       595	ser-base.c	FUNCTION_24	IF_1	IF_2
+0x4000902	            0x89ea	                            mov edx, ebp	       595	ser-base.c	FUNCTION_24	IF_1	IF_2
+0x4000904	      0xe800000000	                          call 0x4000909	       595	ser-base.c	FUNCTION_24	IF_1	IF_2
+0x4000909	          0x4889df	                            mov rdi, rbx	       596	ser-base.c	FUNCTION_24	IF_1	CALL_3
+0x400090c	      0xe8dff8ffff	              call sym.reschedule_serial	       596	ser-base.c	FUNCTION_24	IF_1	CALL_3
+0x4000911	          0x8b7b08	                mov edi, dword [rbx + 8]	       598	ser-base.c	FUNCTION_24	IF_1	IF_3
+0x4000914	          0x83ffff	             cmp edi, 0xffffffffffffffff	       598	ser-base.c	FUNCTION_24	IF_1	IF_3
+0x4000917	     0xf8567ffffff	                           jne 0x4000884	       598	ser-base.c	FUNCTION_24	IF_1	IF_3
+0x400091d	            0xebb9	                           jmp 0x40008d8	       598	ser-base.c	FUNCTION_24	IF_1	IF_3
+0x400091f	              0x90	                                     nop	       598	ser-base.c	FUNCTION_24	IF_1	IF_3
+0x4000920	          0x8b6b04	                mov ebp, dword [rbx + 4]	       604	ser-base.c	FUNCTION_24	ELSE_1	IF_4	CALL_6
+0x4000923	      0xe800000000	                          call 0x4000928	       604	ser-base.c	FUNCTION_24	ELSE_1	IF_4	CALL_6
+0x4000928	          0x488b38	                    mov rdi, qword [rax]	       605	ser-base.c	FUNCTION_24	ELSE_1	IF_4
+0x400092b	      0xbe00000000	                              mov esi, 0	       605	ser-base.c	FUNCTION_24	ELSE_1	IF_4
+0x4000930	            0x31c0	                            xor eax, eax	       605	ser-base.c	FUNCTION_24	ELSE_1	IF_4
+0x4000932	            0x89ea	                            mov edx, ebp	       605	ser-base.c	FUNCTION_24	ELSE_1	IF_4
+0x4000934	      0xe800000000	                          call 0x4000939	       605	ser-base.c	FUNCTION_24	ELSE_1	IF_4
+0x4000939	    0x8bbb44200000	          mov edi, dword [rbx + 0x2044] 	       607	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+0x400093f	          0x83fffe	             cmp edi, 0xfffffffffffffffe	       607	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+0x4000942	     0xf856cffffff	                           jne 0x40008b4	       607	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+0x4000948	      0xe974ffffff	                           jmp 0x40008c1	       607	ser-base.c	FUNCTION_24	ELSE_1	SWITCH_1
+push_event	CALL,1:WHILE,0:IF,0:FOR,0:SWITCH,0:DO,0:ELSE,0:functions,0	2
+0x4000400	    0xc78744200000	   mov dword [rdi + 0x2044], 0xfffffffe 	       201	ser-base.c	FUNCTION_4
+0x400040a	      0xe921ffffff	jmp sym.run_async_handler_and_reschedule_serial	       202	ser-base.c	FUNCTION_4	CALL_1
+run_async_handler_and_reschedule	CALL,5:WHILE,0:IF,1:FOR,0:SWITCH,0:DO,0:ELSE,0:functions,0	25
+0x4000330	              0x55	                                push rbp	       129	ser-base.c	FUNCTION_2
+0x4000331	              0x53	                                push rbx	       129	ser-base.c	FUNCTION_2
+0x4000332	          0x4889fb	                            mov rbx, rdi	       129	ser-base.c	FUNCTION_2
+0x4000335	        0x4883ec08	                              sub rsp, 8	       129	ser-base.c	FUNCTION_2
+0x4000339	      0xe800000000	                          call 0x400033e	       134	ser-base.c	FUNCTION_2	CALL_1
+0x400033e	    0x488bb3482000	          mov rsi, qword [rbx + 0x2048] 	       137	ser-base.c	FUNCTION_2	CALL_2
+0x4000345	          0x4889df	                            mov rdi, rbx	       137	ser-base.c	FUNCTION_2	CALL_2
+0x4000348	    0xff9350200000	               call qword [rbx + 0x2050]	       137	ser-base.c	FUNCTION_2	CALL_2
+0x400034e	          0x4889df	                            mov rdi, rbx	       139	ser-base.c	FUNCTION_2	CALL_3
+0x4000351	      0xe800000000	                          call 0x4000356	       139	ser-base.c	FUNCTION_2	CALL_3
+0x4000356	          0x4889df	                            mov rdi, rbx	       140	ser-base.c	FUNCTION_2	CALL_4
+0x4000359	            0x89c5	                            mov ebp, eax	       139	ser-base.c	FUNCTION_2	CALL_3
+0x400035b	      0xe800000000	                          call 0x4000360	       140	ser-base.c	FUNCTION_2	CALL_4
+0x4000360	            0x85ed	                           test ebp, ebp	       143	ser-base.c	FUNCTION_2	IF_1
+0x4000362	            0x750c	                           jne 0x4000370	       143	ser-base.c	FUNCTION_2	IF_1
+0x4000364	        0x4883c408	                              add rsp, 8	       145	ser-base.c	FUNCTION_2
+0x4000368	              0x5b	                                 pop rbx	       145	ser-base.c	FUNCTION_2
+0x4000369	              0x5d	                                 pop rbp	       145	ser-base.c	FUNCTION_2
+0x400036a	              0xc3	                                     ret	       145	ser-base.c	FUNCTION_2
+0x400036b	       0xf1f440000	                   nop dword [rax + rax]	       145	ser-base.c	FUNCTION_2
+0x4000370	        0x4883c408	                              add rsp, 8	       145	ser-base.c	FUNCTION_2
+0x4000374	          0x4889df	                            mov rdi, rbx	       144	ser-base.c	FUNCTION_2	CALL_5
+0x4000377	              0x5b	                                 pop rbx	       145	ser-base.c	FUNCTION_2
+0x4000378	              0x5d	                                 pop rbp	       145	ser-base.c	FUNCTION_2
+0x4000379	      0xe972feffff	               jmp sym.reschedule_serial	       144	ser-base.c	FUNCTION_2	CALL_5
+ser_base_set_tty_state	CALL,0:WHILE,0:IF,0:FOR,0:SWITCH,0:DO,0:ELSE,0:functions,0	2
+0x4000800	            0x31c0	                            xor eax, eax	       552	ser-base.c	FUNCTION_19
+0x4000802	              0xc3	                                     ret	       552	ser-base.c	FUNCTION_19
+fd_event	CALL,2:WHILE,0:IF,4:FOR,0:SWITCH,0:DO,1:ELSE,3:functions,0	36
+0x4000380	            0x85ff	                           test edi, edi	       157	ser-base.c	FUNCTION_3	IF_1
+0x4000382	              0x53	                                push rbx	       155	ser-base.c	FUNCTION_3
+0x4000383	          0x4889f3	                            mov rbx, rsi	       155	ser-base.c	FUNCTION_3
+0x4000386	            0x7548	                           jne 0x40003d0	       157	ser-base.c	FUNCTION_3	IF_1
+0x4000388	          0x8b4628	            mov eax, dword [rsi + 0x28] 	       161	ser-base.c	FUNCTION_3	ELSE_1	IF_2
+0x400038b	            0x85c0	                           test eax, eax	       161	ser-base.c	FUNCTION_3	ELSE_1	IF_2
+0x400038d	            0x7413	                            je 0x40003a2	       161	ser-base.c	FUNCTION_3	ELSE_1	IF_2
+0x400038f	          0x4889df	                            mov rdi, rbx	       188	ser-base.c	FUNCTION_3	CALL_2
+0x4000392	              0x5b	                                 pop rbx	       189	ser-base.c	FUNCTION_3
+0x4000393	            0xeb9b	jmp sym.run_async_handler_and_reschedule_serial	       188	ser-base.c	FUNCTION_3	CALL_2
+0x4000395	           0xf1f00	                         nop dword [rax]	       188	ser-base.c	FUNCTION_3	CALL_2
+0x4000398	      0xe800000000	                          call 0x400039d	       172	ser-base.c	FUNCTION_3	ELSE_1	IF_2
+0x400039d	          0x833804	                      cmp dword [rax], 4	       172	ser-base.c	FUNCTION_3	ELSE_1	IF_2
+0x40003a0	            0x752e	                           jne 0x40003d0	       172	ser-base.c	FUNCTION_3	ELSE_1	IF_2
+0x40003a2	        0x488b4310	            mov rax, qword [rbx + 0x10] 	       170	ser-base.c	FUNCTION_3	ELSE_1	IF_2	DO_1	CALL_1
+0x40003a6	      0xbe00200000	                         mov esi, 0x2000	       170	ser-base.c	FUNCTION_3	ELSE_1	IF_2	DO_1	CALL_1
+0x40003ab	          0x4889df	                            mov rdi, rbx	       170	ser-base.c	FUNCTION_3	ELSE_1	IF_2	DO_1	CALL_1
+0x40003ae	    0xff9098000000	                 call qword [rax + 0x98]	       170	ser-base.c	FUNCTION_3	ELSE_1	IF_2	DO_1	CALL_1
+0x40003b4	            0x85c0	                           test eax, eax	       172	ser-base.c	FUNCTION_3	ELSE_1	IF_2
+0x40003b6	            0x78e0	                            js 0x4000398	       172	ser-base.c	FUNCTION_3	ELSE_1	IF_2
+0x40003b8	            0x7526	                           jne 0x40003e0	       174	ser-base.c	FUNCTION_3	ELSE_1	IF_2	IF_3
+0x40003ba	    0xc74328fdffff	     mov dword [rbx + 0x28], 0xfffffffd 	       176	ser-base.c	FUNCTION_3	ELSE_1	IF_2	IF_3
+0x40003c1	          0x4889df	                            mov rdi, rbx	       188	ser-base.c	FUNCTION_3	CALL_2
+0x40003c4	              0x5b	                                 pop rbx	       189	ser-base.c	FUNCTION_3
+0x40003c5	      0xe966ffffff	jmp sym.run_async_handler_and_reschedule_serial	       188	ser-base.c	FUNCTION_3	CALL_2
+0x40003ca	    0x660f1f440000	                    nop word [rax + rax]	       188	ser-base.c	FUNCTION_3	CALL_2
+0x40003d0	    0xc74328ffffff	     mov dword [rbx + 0x28], 0xffffffff 	       159	ser-base.c	FUNCTION_3	IF_1
+0x40003d7	          0x4889df	                            mov rdi, rbx	       188	ser-base.c	FUNCTION_3	CALL_2
+0x40003da	              0x5b	                                 pop rbx	       189	ser-base.c	FUNCTION_3
+0x40003db	      0xe950ffffff	jmp sym.run_async_handler_and_reschedule_serial	       188	ser-base.c	FUNCTION_3	CALL_2
+0x40003e0	          0x894328	             mov dword [rbx + 0x28], eax	       180	ser-base.c	FUNCTION_3	ELSE_1	IF_2	ELSE_2	IF_4
+0x40003e3	        0x488d4338	                   lea rax, [rbx + 0x38]	       181	ser-base.c	FUNCTION_3	ELSE_1	IF_2	ELSE_2	IF_4
+0x40003e7	          0x4889df	                            mov rdi, rbx	       188	ser-base.c	FUNCTION_3	CALL_2
+0x40003ea	        0x48894330	             mov qword [rbx + 0x30], rax	       181	ser-base.c	FUNCTION_3	ELSE_1	IF_2	ELSE_2	IF_4
+0x40003ee	              0x5b	                                 pop rbx	       189	ser-base.c	FUNCTION_3
+0x40003ef	      0xe93cffffff	jmp sym.run_async_handler_and_reschedule_serial	       188	ser-base.c	FUNCTION_3	CALL_2

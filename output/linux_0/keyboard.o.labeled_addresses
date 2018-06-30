@@ -1,0 +1,349 @@
+vt_get_kbd_mode_bit	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	7
+0x4003450	          0x4863ff	                         movsxd rdi, edi	        85	kbd_kern.h	FUNCTION_100
+0x4003453	            0x89f1	                            mov ecx, esi	      2209	keyboard.c	FUNCTION_96	CALL_1
+0x4003455	     0xfb684bf0000	           movzx eax, byte [rdi + rdi*4]	        85	kbd_kern.h	FUNCTION_100
+0x400345d	          0x83e01f	                           and eax, 0x1f	      2209	keyboard.c	FUNCTION_96	CALL_1
+0x4003460	            0xd3f8	                             sar eax, cl	      2209	keyboard.c	FUNCTION_96	CALL_1
+0x4003462	          0x83e001	                              and eax, 1	      2209	keyboard.c	FUNCTION_96	CALL_1
+0x4003465	              0xc3	                                     ret	      2210	keyboard.c	FUNCTION_96
+fn_hold	WHILE,0:SWITCH,0:CALL,2:FOR,0:IF,2:ELSE,1:functions,0:DO,0	10
+0x4000460	    0x803d00000000	                cmp byte [0x04000467], 0	       485	keyboard.c	FUNCTION_24	IF_1
+0x4000467	    0x488bbf880000	            mov rdi, qword [rdi + 0x88] 	       483	keyboard.c	FUNCTION_24
+0x400046e	            0x7518	                           jne 0x4000488	       485	keyboard.c	FUNCTION_24	IF_1
+0x4000470	          0x4885ff	                           test rdi, rdi	       485	keyboard.c	FUNCTION_24	IF_1
+0x4000473	            0x7413	                            je 0x4000488	       485	keyboard.c	FUNCTION_24	IF_1
+0x4000475	    0xf687d4010000	              test byte [rdi + 0x1d4], 1	       493	keyboard.c	FUNCTION_24	IF_2
+0x400047c	            0x7505	                           jne 0x4000483	       493	keyboard.c	FUNCTION_24	IF_2
+0x400047e	      0xe900000000	                           jmp 0x4000483	       496	keyboard.c	FUNCTION_24	CALL_2
+0x4000483	      0xe900000000	                           jmp 0x4000488	       494	keyboard.c	FUNCTION_24	CALL_1
+0x4000488	            0xf3c3	                                     ret	       494	keyboard.c	FUNCTION_24	CALL_1
+k_dead	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	6
+0x4001070	            0x84d2	                             test dl, dl	       672	keyboard.c	FUNCTION_44	IF_1
+0x4001072	            0x7402	                            je 0x4001076	       672	keyboard.c	FUNCTION_44	IF_1
+0x4001074	            0xf3c3	                                     ret	       672	keyboard.c	FUNCTION_44	IF_1
+0x4001076	        0x400fb6f6	                          movzx esi, sil	       695	keyboard.c	FUNCTION_47	CALL_1
+0x400107a	     0xfb6b6000000	                   movzx esi, byte [rsi]	       695	keyboard.c	FUNCTION_47	CALL_1
+0x4001081	            0xebbd	           jmp sym.k_deadunicode.part.18	       695	keyboard.c	FUNCTION_47	CALL_1
+k_dead2	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	5
+0x4001060	            0x84d2	                             test dl, dl	       672	keyboard.c	FUNCTION_44	IF_1
+0x4001062	            0x7402	                            je 0x4001066	       672	keyboard.c	FUNCTION_44	IF_1
+0x4001064	            0xf3c3	                                     ret	       672	keyboard.c	FUNCTION_44	IF_1
+0x4001066	        0x400fb6f6	                          movzx esi, sil	       672	keyboard.c	FUNCTION_44	IF_1
+0x400106a	            0xebd4	           jmp sym.k_deadunicode.part.18	       672	keyboard.c	FUNCTION_44	IF_1
+register_keyboard_notifier	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	3
+0x40000a0	          0x4889fe	                            mov rsi, rdi	       144	keyboard.c	FUNCTION_2
+0x40000a3	    0x48c7c7000000	                              mov rdi, 0	       145	keyboard.c	FUNCTION_2	CALL_1
+0x40000aa	      0xe900000000	                           jmp 0x40000af	       145	keyboard.c	FUNCTION_2	CALL_1
+k_cons	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,1:ELSE,0:functions,0:DO,0	5
+0x40002e0	            0x84d2	                             test dl, dl	       700	keyboard.c	FUNCTION_48	IF_1
+0x40002e2	            0x7402	                            je 0x40002e6	       700	keyboard.c	FUNCTION_48	IF_1
+0x40002e4	            0xf3c3	                                     ret	       700	keyboard.c	FUNCTION_48	IF_1
+0x40002e6	        0x400fb6fe	                          movzx edi, sil	       703	keyboard.c	FUNCTION_48	CALL_1
+0x40002ea	      0xe900000000	                           jmp 0x40002ef	       703	keyboard.c	FUNCTION_48	CALL_1
+kbd_rate	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	23
+0x40021b0	              0x53	                                push rbx	       293	keyboard.c	FUNCTION_12
+0x40021b1	    0x48c7c2000000	                              mov rdx, 0	       296	keyboard.c	FUNCTION_12	CALL_1
+0x40021b8	          0x4889fb	                            mov rbx, rdi	       293	keyboard.c	FUNCTION_12
+0x40021bb	        0x4883ec18	                           sub rsp, 0x18	       293	keyboard.c	FUNCTION_12
+0x40021bf	    0x65488b042528	                mov rax, qword gs:[0x28]	       293	keyboard.c	FUNCTION_12
+0x40021c8	      0x4889442410	             mov qword [rsp + 0x10], rax	       293	keyboard.c	FUNCTION_12
+0x40021cd	            0x31c0	                            xor eax, eax	       293	keyboard.c	FUNCTION_12
+0x40021cf	          0x488b07	                    mov rax, qword [rdi]	       294	keyboard.c	FUNCTION_12
+0x40021d2	          0x4889e6	                            mov rsi, rsp	       296	keyboard.c	FUNCTION_12	CALL_1
+0x40021d5	    0x48c7c7000000	                              mov rdi, 0	       296	keyboard.c	FUNCTION_12	CALL_1
+0x40021dc	    0x48c744240800	                  mov qword [rsp + 8], 0	       294	keyboard.c	FUNCTION_12
+0x40021e5	        0x48890424	                    mov qword [rsp], rax	       294	keyboard.c	FUNCTION_12
+0x40021e9	      0xe800000000	                          call 0x40021ee	       296	keyboard.c	FUNCTION_12	CALL_1
+0x40021ee	      0x488b442408	                mov rax, qword [rsp + 8]	       297	keyboard.c	FUNCTION_12
+0x40021f3	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       300	keyboard.c	FUNCTION_12
+0x40021f8	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       300	keyboard.c	FUNCTION_12
+0x4002201	          0x488903	                    mov qword [rbx], rax	       297	keyboard.c	FUNCTION_12
+0x4002204	            0x7508	                           jne 0x400220e	       300	keyboard.c	FUNCTION_12
+0x4002206	        0x4883c418	                           add rsp, 0x18	       300	keyboard.c	FUNCTION_12
+0x400220a	            0x31c0	                            xor eax, eax	       300	keyboard.c	FUNCTION_12
+0x400220c	              0x5b	                                 pop rbx	       300	keyboard.c	FUNCTION_12
+0x400220d	              0xc3	                                     ret	       300	keyboard.c	FUNCTION_12
+0x400220e	      0xe800000000	                          call 0x4002213	       300	keyboard.c	FUNCTION_12
+fn_inc_console	WHILE,0:SWITCH,0:CALL,2:FOR,1:IF,3:ELSE,0:functions,0:DO,0	25
+0x4000360	              0x55	                                push rbp	       543	keyboard.c	FUNCTION_29
+0x4000361	    0x8b2d00000000	            mov ebp, dword [0x04000367] 	       547	keyboard.c	FUNCTION_29	IF_1
+0x4000367	              0x53	                                push rbx	       543	keyboard.c	FUNCTION_29
+0x4000368	          0x83fdff	             cmp ebp, 0xffffffffffffffff	       544	keyboard.c	FUNCTION_29
+0x400036b	     0xf442d000000	           cmove ebp, dword [0x04000372]	       544	keyboard.c	FUNCTION_29
+0x4000372	          0x8d5d01	                      lea ebx, [rbp + 1]	       550	keyboard.c	FUNCTION_29	FOR_1
+0x4000375	            0xeb10	                           jmp 0x4000387	       550	keyboard.c	FUNCTION_29	FOR_1
+0x4000377	      0xe800000000	                          call 0x400037c	       553	keyboard.c	FUNCTION_29	FOR_1	IF_3	CALL_1
+0x400037c	            0x85c0	                           test eax, eax	       553	keyboard.c	FUNCTION_29	FOR_1	IF_3	CALL_1
+0x400037e	            0x751b	                           jne 0x400039b	       553	keyboard.c	FUNCTION_29	FOR_1	IF_3	CALL_1
+0x4000380	          0x83c301	                              add ebx, 1	       550	keyboard.c	FUNCTION_29	FOR_1
+0x4000383	            0x39dd	                            cmp ebp, ebx	       550	keyboard.c	FUNCTION_29	FOR_1
+0x4000385	            0x7414	                            je 0x400039b	       550	keyboard.c	FUNCTION_29	FOR_1
+0x4000387	          0x83fb3f	                           cmp ebx, 0x3f	       551	keyboard.c	FUNCTION_29	FOR_1	IF_2
+0x400038a	            0x89df	                            mov edi, ebx	       551	keyboard.c	FUNCTION_29	FOR_1	IF_2
+0x400038c	            0x75e9	                           jne 0x4000377	       551	keyboard.c	FUNCTION_29	FOR_1	IF_2
+0x400038e	            0x31ff	                            xor edi, edi	       551	keyboard.c	FUNCTION_29	FOR_1	IF_2
+0x4000390	            0x31db	                            xor ebx, ebx	       552	keyboard.c	FUNCTION_29	FOR_1	IF_2
+0x4000392	      0xe800000000	                          call 0x4000397	       553	keyboard.c	FUNCTION_29	FOR_1	IF_3	CALL_1
+0x4000397	            0x85c0	                           test eax, eax	       553	keyboard.c	FUNCTION_29	FOR_1	IF_3	CALL_1
+0x4000399	            0x74e5	                            je 0x4000380	       553	keyboard.c	FUNCTION_29	FOR_1	IF_3	CALL_1
+0x400039b	            0x89df	                            mov edi, ebx	       556	keyboard.c	FUNCTION_29	CALL_2
+0x400039d	              0x5b	                                 pop rbx	       557	keyboard.c	FUNCTION_29
+0x400039e	              0x5d	                                 pop rbp	       557	keyboard.c	FUNCTION_29
+0x400039f	      0xe900000000	                           jmp 0x40003a4	       556	keyboard.c	FUNCTION_29	CALL_2
+fn_compose	WHILE,0:SWITCH,0:CALL,0:FOR,0:IF,0:ELSE,0:functions,0:DO,0	2
+0x4000040	    0xc60500000000	                mov byte [0x04000047], 1	       592	keyboard.c	FUNCTION_36
+0x4000047	              0xc3	                                     ret	       592	keyboard.c	FUNCTION_36
+k_lowercase	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	2
+0x40002d0	    0x48c7c7000000	                              mov rdi, 0	       640	keyboard.c	FUNCTION_42	CALL_1
+0x40002d7	      0xe900000000	                           jmp 0x40002dc	       640	keyboard.c	FUNCTION_42	CALL_1
+vt_do_kdgkbmeta	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	8
+0x4003350	          0x4863ff	                         movsxd rdi, edi	        85	kbd_kern.h	FUNCTION_100
+0x4003353	     0xfb684bf0000	           movzx eax, byte [rdi + rdi*4]	        85	kbd_kern.h	FUNCTION_100
+0x400335b	          0x83e01f	                           and eax, 0x1f	      2139	keyboard.c	FUNCTION_92	CALL_1
+0x400335e	          0xc1f804	                              sar eax, 4	      2139	keyboard.c	FUNCTION_92	CALL_1
+0x4003361	          0x83f801	                              cmp eax, 1	      2139	keyboard.c	FUNCTION_92	CALL_1
+0x4003364	            0x19c0	                            sbb eax, eax	      2139	keyboard.c	FUNCTION_92	CALL_1
+0x4003366	          0x83c004	                              add eax, 4	      2139	keyboard.c	FUNCTION_92	CALL_1
+0x4003369	              0xc3	                                     ret	      2140	keyboard.c	FUNCTION_92
+kbd_disconnect	WHILE,0:SWITCH,0:CALL,3:FOR,0:IF,0:ELSE,0:functions,0:DO,0	8
+0x40002b0	              0x53	                                push rbx	      1530	keyboard.c	FUNCTION_81
+0x40002b1	          0x4889fb	                            mov rbx, rdi	      1530	keyboard.c	FUNCTION_81
+0x40002b4	      0xe800000000	                          call 0x40002b9	      1531	keyboard.c	FUNCTION_81	CALL_1
+0x40002b9	          0x4889df	                            mov rdi, rbx	      1532	keyboard.c	FUNCTION_81	CALL_2
+0x40002bc	      0xe800000000	                          call 0x40002c1	      1532	keyboard.c	FUNCTION_81	CALL_2
+0x40002c1	          0x4889df	                            mov rdi, rbx	      1533	keyboard.c	FUNCTION_81	CALL_3
+0x40002c4	              0x5b	                                 pop rbx	      1534	keyboard.c	FUNCTION_81
+0x40002c5	      0xe900000000	                           jmp 0x40002ca	      1533	keyboard.c	FUNCTION_81	CALL_3
+fn_lastcons	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	2
+0x40002f0	    0x8b3d00000000	            mov edi, dword [0x040002f6] 	       522	keyboard.c	FUNCTION_27	CALL_1
+0x40002f6	      0xe900000000	                           jmp 0x40002fb	       522	keyboard.c	FUNCTION_27	CALL_1
+kd_nosound	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	4
+0x40000c0	    0x48c7c2000000	                              mov rdx, 0	       251	keyboard.c	FUNCTION_9	CALL_1
+0x40000c7	    0x48c7c6000000	                              mov rsi, 0	       251	keyboard.c	FUNCTION_9	CALL_1
+0x40000ce	    0x48c7c7000000	                              mov rdi, 0	       251	keyboard.c	FUNCTION_9	CALL_1
+0x40000d5	      0xe900000000	                           jmp 0x40000da	       251	keyboard.c	FUNCTION_9	CALL_1
+vt_get_shift_state	WHILE,0:SWITCH,0:CALL,0:FOR,0:IF,0:ELSE,0:functions,0:DO,0	2
+0x40033c0	    0x8b0500000000	            mov eax, dword [0x040033c6] 	      2167	keyboard.c	FUNCTION_94
+0x40033c6	              0xc3	                                     ret	      2167	keyboard.c	FUNCTION_94
+fn_null	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	1
+0x4000580	      0xe94bffffff	           jmp sym.do_compute_shiftstate	       614	keyboard.c	FUNCTION_39	CALL_1
+fn_send_intr	WHILE,0:SWITCH,0:CALL,2:FOR,0:IF,0:ELSE,0:functions,0:DO,0	25
+0x40009f0	              0x53	                                push rbx	       560	keyboard.c	FUNCTION_30
+0x40009f1	    0x488b87800000	            mov rax, qword [rdi + 0x80] 	        21	tty_flip.h	FUNCTION_120
+0x40009f8	          0x4889fb	                            mov rbx, rdi	       560	keyboard.c	FUNCTION_30
+0x40009fb	        0xf6401801	               test byte [rax + 0x18], 1	        24	tty_flip.h	FUNCTION_120
+0x40009ff	            0x7418	                            je 0x4000a19	        24	tty_flip.h	FUNCTION_120
+0x4000a01	          0x4889df	                            mov rdi, rbx	        31	tty_flip.h	FUNCTION_120	CALL_3
+0x4000a04	      0xba01000000	                              mov edx, 1	        31	tty_flip.h	FUNCTION_120	CALL_3
+0x4000a09	            0x31f6	                            xor esi, esi	        31	tty_flip.h	FUNCTION_120	CALL_3
+0x4000a0b	      0xe800000000	                          call 0x4000a10	        31	tty_flip.h	FUNCTION_120	CALL_3
+0x4000a10	          0x4889df	                            mov rdi, rbx	       562	keyboard.c	FUNCTION_30	CALL_2
+0x4000a13	              0x5b	                                 pop rbx	       563	keyboard.c	FUNCTION_30
+0x4000a14	      0xe900000000	                           jmp 0x4000a19	       562	keyboard.c	FUNCTION_30	CALL_2
+0x4000a19	        0x48634808	            movsxd rcx, dword [rax + 8] 	        25	tty_flip.h	FUNCTION_120	IF_1
+0x4000a1d	        0x4863500c	          movsxd rdx, dword [rax + 0xc] 	        25	tty_flip.h	FUNCTION_120	IF_1
+0x4000a21	            0x39d1	                            cmp ecx, edx	        25	tty_flip.h	FUNCTION_120	IF_1
+0x4000a23	            0x7ddc	                           jge 0x4000a01	        25	tty_flip.h	FUNCTION_120	IF_1
+0x4000a25	      0x488d4c0820	            lea rcx, [rax + rcx + 0x20] 	        27	tty_flip.h	FUNCTION_120	IF_1	CALL_1
+0x4000a2a	          0x4889df	                            mov rdi, rbx	       562	keyboard.c	FUNCTION_30	CALL_2
+0x4000a2d	        0xc6041101	                 mov byte [rcx + rdx], 1	        27	tty_flip.h	FUNCTION_120	IF_1	CALL_1
+0x4000a31	        0x48635008	            movsxd rdx, dword [rax + 8] 	        28	tty_flip.h	FUNCTION_120	IF_1	CALL_2
+0x4000a35	          0x8d4a01	                      lea ecx, [rdx + 1]	        28	tty_flip.h	FUNCTION_120	IF_1	CALL_2
+0x4000a38	          0x894808	                mov dword [rax + 8], ecx	        28	tty_flip.h	FUNCTION_120	IF_1	CALL_2
+0x4000a3b	      0xc644102000	          mov byte [rax + rdx + 0x20], 0	        28	tty_flip.h	FUNCTION_120	IF_1	CALL_2
+0x4000a40	              0x5b	                                 pop rbx	       563	keyboard.c	FUNCTION_30
+0x4000a41	      0xe900000000	                           jmp 0x4000a46	       562	keyboard.c	FUNCTION_30	CALL_2
+fn_scroll_forw	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	2
+0x4000450	            0x31f6	                            xor esi, esi	       567	keyboard.c	FUNCTION_31	CALL_1
+0x4000452	      0xe900000000	                           jmp 0x4000457	       567	keyboard.c	FUNCTION_31	CALL_1
+do_compute_shiftstate	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,1:DO,0	42
+0x40004d0	              0x53	                                push rbx	       370	keyboard.c	FUNCTION_17
+0x40004d1	      0xbe00010000	                          mov esi, 0x100	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x40004d6	    0x48c7c7000000	                              mov rdi, 0	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x40004dd	    0xc70500000000	               mov dword [0x040004e7], 0	       373	keyboard.c	FUNCTION_17
+0x40004e7	    0x48c705000000	               mov qword [0x040004f2], 0	       374	keyboard.c	FUNCTION_17	CALL_1
+0x40004f2	    0xc60500000000	                mov byte [0x040004f9], 0	       374	keyboard.c	FUNCTION_17	CALL_1
+0x40004f9	      0xe800000000	                          call 0x40004fe	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x40004fe	      0x3dff000000	                           cmp eax, 0xff	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x4000503	            0x776e	                            ja 0x4000573	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x4000505	            0x89c2	                            mov edx, eax	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x4000507	      0xbb01000000	                              mov ebx, 1	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x400050c	            0xeb22	                           jmp 0x4000530	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x400050e	          0x83f80c	                            cmp eax, 0xc	       378	keyboard.c	FUNCTION_17	FUNCTION_1	IF_1	CALL_4
+0x4000511	            0x7437	                            je 0x400054a	       378	keyboard.c	FUNCTION_17	FUNCTION_1	IF_1	CALL_4
+0x4000513	          0x83c201	                              add edx, 1	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x4000516	      0xbe00010000	                          mov esi, 0x100	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x400051b	    0x48c7c7000000	                              mov rdi, 0	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x4000522	      0xe800000000	                          call 0x4000527	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x4000527	      0x3dff000000	                           cmp eax, 0xff	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x400052c	            0x89c2	                            mov edx, eax	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x400052e	            0x7743	                            ja 0x4000573	       376	keyboard.c	FUNCTION_17	FUNCTION_1
+0x4000530	    0x488b0d000000	            mov rcx, qword [0x04000537] 	       377	keyboard.c	FUNCTION_17	FUNCTION_1	CALL_2
+0x4000537	            0x89d0	                            mov eax, edx	       377	keyboard.c	FUNCTION_17	FUNCTION_1	CALL_2
+0x4000539	         0xfb70c41	           movzx ecx, word [rcx + rax*2]	       377	keyboard.c	FUNCTION_17	FUNCTION_1	CALL_2
+0x400053d	      0x6681f100f0	                          xor cx, 0xf000	       377	keyboard.c	FUNCTION_17	FUNCTION_1	CALL_2
+0x4000542	           0xfb6c5	                           movzx eax, ch	       378	keyboard.c	FUNCTION_17	FUNCTION_1	IF_1	CALL_4
+0x4000545	          0x83f807	                              cmp eax, 7	       378	keyboard.c	FUNCTION_17	FUNCTION_1	IF_1	CALL_4
+0x4000548	            0x75c4	                           jne 0x400050e	       378	keyboard.c	FUNCTION_17	FUNCTION_1	IF_1	CALL_4
+0x400054a	           0xfb6c9	                           movzx ecx, cl	       378	keyboard.c	FUNCTION_17	FUNCTION_1	IF_1	CALL_4
+0x400054d	        0x6683f908	                               cmp cx, 8	       382	keyboard.c	FUNCTION_17	FUNCTION_1	IF_2	CALL_6
+0x4000551	            0x7417	                            je 0x400056a	       382	keyboard.c	FUNCTION_17	FUNCTION_1	IF_2	CALL_6
+0x4000553	          0x4889d8	                            mov rax, rbx	       382	keyboard.c	FUNCTION_17	FUNCTION_1	IF_2	CALL_6
+0x4000556	          0x48d3e0	                             shl rax, cl	       382	keyboard.c	FUNCTION_17	FUNCTION_1	IF_2	CALL_6
+0x4000559	            0x89c9	                            mov ecx, ecx	       385	keyboard.c	FUNCTION_17	FUNCTION_1
+0x400055b	     0x90500000000	              or dword [0x04000561], eax	       386	keyboard.c	FUNCTION_17	FUNCTION_1	CALL_8
+0x4000561	    0x808100000000	                       add byte [rcx], 1	       385	keyboard.c	FUNCTION_17	FUNCTION_1
+0x4000568	            0xeba9	                           jmp 0x4000513	       385	keyboard.c	FUNCTION_17	FUNCTION_1
+0x400056a	      0xb801000000	                              mov eax, 1	       385	keyboard.c	FUNCTION_17	FUNCTION_1
+0x400056f	            0x31c9	                            xor ecx, ecx	       383	keyboard.c	FUNCTION_17	FUNCTION_1	CALL_7
+0x4000571	            0xebe6	                           jmp 0x4000559	       383	keyboard.c	FUNCTION_17	FUNCTION_1	CALL_7
+0x4000573	              0x5b	                                 pop rbx	       388	keyboard.c	FUNCTION_17
+0x4000574	              0xc3	                                     ret	       388	keyboard.c	FUNCTION_17
+fn_scroll_back	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	1
+0x4000440	      0xe900000000	                           jmp 0x4000445	       572	keyboard.c	FUNCTION_32	CALL_1
+k_self	WHILE,0:SWITCH,0:CALL,2:FOR,0:IF,0:ELSE,0:functions,0:DO,0	16
+0x4001140	              0x55	                                push rbp	       679	keyboard.c	FUNCTION_45
+0x4001141	              0x53	                                push rbx	       679	keyboard.c	FUNCTION_45
+0x4001142	          0x4889fd	                            mov rbp, rdi	       679	keyboard.c	FUNCTION_45
+0x4001145	            0x89d3	                            mov ebx, edx	       679	keyboard.c	FUNCTION_45
+0x4001147	        0x400fb6fe	                          movzx edi, sil	       680	keyboard.c	FUNCTION_45	CALL_2
+0x400114b	      0xe800000000	                          call 0x4001150	       680	keyboard.c	FUNCTION_45	CALL_2
+0x4001150	            0x84db	                             test bl, bl	       645	keyboard.c	FUNCTION_43	IF_1
+0x4001152	            0x7403	                            je 0x4001157	       645	keyboard.c	FUNCTION_43	IF_1
+0x4001154	              0x5b	                                 pop rbx	       681	keyboard.c	FUNCTION_45
+0x4001155	              0x5d	                                 pop rbp	       681	keyboard.c	FUNCTION_45
+0x4001156	              0xc3	                                     ret	       681	keyboard.c	FUNCTION_45
+0x4001157	          0x4889ef	                            mov rdi, rbp	       681	keyboard.c	FUNCTION_45
+0x400115a	            0x89c6	                            mov esi, eax	       681	keyboard.c	FUNCTION_45
+0x400115c	              0x5b	                                 pop rbx	       681	keyboard.c	FUNCTION_45
+0x400115d	              0x5d	                                 pop rbp	       681	keyboard.c	FUNCTION_45
+0x400115e	      0xe92dffffff	               jmp sym.k_unicode.part.17	       681	keyboard.c	FUNCTION_45
+k_ignore	WHILE,0:SWITCH,0:CALL,0:FOR,0:IF,0:ELSE,0:functions,0:DO,0	1
+0x4000050	            0xf3c3	                                     ret	       621	keyboard.c	FUNCTION_40
+kbd_propagate_led_state	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	24
+0x4000150	            0x31f7	                            xor edi, esi	      1006	keyboard.c	FUNCTION_60
+0x4000152	            0x4154	                                push r12	      1004	keyboard.c	FUNCTION_60
+0x4000154	          0x4189f4	                           mov r12d, esi	      1004	keyboard.c	FUNCTION_60
+0x4000157	              0x55	                                push rbp	      1004	keyboard.c	FUNCTION_60
+0x4000158	            0x89fd	                            mov ebp, edi	      1006	keyboard.c	FUNCTION_60
+0x400015a	              0x53	                                push rbx	      1004	keyboard.c	FUNCTION_60
+0x400015b	    0x48c7c3000000	                              mov rbx, 0	      1004	keyboard.c	FUNCTION_60
+0x4000162	          0x8b4340	            mov eax, dword [rbx + 0x40] 	      1012	keyboard.c	FUNCTION_60	FOR_1	IF_1
+0x4000165	            0x85c5	                           test ebp, eax	      1012	keyboard.c	FUNCTION_60	FOR_1	IF_1
+0x4000167	            0x7416	                            je 0x400017f	      1012	keyboard.c	FUNCTION_60	FOR_1	IF_1
+0x4000169	          0x4421e0	                           and eax, r12d	      1013	keyboard.c	FUNCTION_60	FOR_1	IF_1	CALL_2
+0x400016c	          0x4889df	                            mov rdi, rbx	      1013	keyboard.c	FUNCTION_60	FOR_1	IF_1	CALL_2
+0x400016f	          0x83f801	                              cmp eax, 1	      1013	keyboard.c	FUNCTION_60	FOR_1	IF_1	CALL_2
+0x4000172	            0x19f6	                            sbb esi, esi	      1013	keyboard.c	FUNCTION_60	FOR_1	IF_1	CALL_2
+0x4000174	            0xf7d6	                                 not esi	      1013	keyboard.c	FUNCTION_60	FOR_1	IF_1	CALL_2
+0x4000176	        0x400fb6f6	                          movzx esi, sil	      1013	keyboard.c	FUNCTION_60	FOR_1	IF_1	CALL_2
+0x400017a	      0xe800000000	                          call 0x400017f	      1013	keyboard.c	FUNCTION_60	FOR_1	IF_1	CALL_2
+0x400017f	        0x4883c348	                           add rbx, 0x48	      1013	keyboard.c	FUNCTION_60	FOR_1	IF_1	CALL_2
+0x4000183	    0x4881fb000000	                              cmp rbx, 0	      1009	keyboard.c	FUNCTION_60	FOR_1	CALL_1
+0x400018a	            0x75d6	                           jne 0x4000162	      1009	keyboard.c	FUNCTION_60	FOR_1	CALL_1
+0x400018c	              0x5b	                                 pop rbx	      1017	keyboard.c	FUNCTION_60
+0x400018d	              0x5d	                                 pop rbp	      1017	keyboard.c	FUNCTION_60
+0x400018e	            0x415c	                                 pop r12	      1017	keyboard.c	FUNCTION_60
+0x4000190	              0xc3	                                     ret	      1017	keyboard.c	FUNCTION_60
+fn_boot_it	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	1
+0x4000430	      0xe900000000	                           jmp 0x4000435	       587	keyboard.c	FUNCTION_35	CALL_1
+fn_dec_console	WHILE,0:SWITCH,0:CALL,2:FOR,1:IF,3:ELSE,0:functions,0:DO,0	25
+0x40003b0	              0x55	                                push rbp	       526	keyboard.c	FUNCTION_28
+0x40003b1	    0x8b2d00000000	            mov ebp, dword [0x040003b7] 	       530	keyboard.c	FUNCTION_28	IF_1
+0x40003b7	              0x53	                                push rbx	       526	keyboard.c	FUNCTION_28
+0x40003b8	          0x83fdff	             cmp ebp, 0xffffffffffffffff	       527	keyboard.c	FUNCTION_28
+0x40003bb	     0xf442d000000	           cmove ebp, dword [0x040003c2]	       527	keyboard.c	FUNCTION_28
+0x40003c2	          0x8d5dff	                      lea ebx, [rbp - 1]	       533	keyboard.c	FUNCTION_28	FOR_1
+0x40003c5	            0xeb10	                           jmp 0x40003d7	       533	keyboard.c	FUNCTION_28	FOR_1
+0x40003c7	      0xe800000000	                          call 0x40003cc	       536	keyboard.c	FUNCTION_28	FOR_1	IF_3	CALL_1
+0x40003cc	            0x85c0	                           test eax, eax	       536	keyboard.c	FUNCTION_28	FOR_1	IF_3	CALL_1
+0x40003ce	            0x7521	                           jne 0x40003f1	       536	keyboard.c	FUNCTION_28	FOR_1	IF_3	CALL_1
+0x40003d0	          0x83eb01	                              sub ebx, 1	       533	keyboard.c	FUNCTION_28	FOR_1
+0x40003d3	            0x39dd	                            cmp ebp, ebx	       533	keyboard.c	FUNCTION_28	FOR_1
+0x40003d5	            0x741a	                            je 0x40003f1	       533	keyboard.c	FUNCTION_28	FOR_1
+0x40003d7	          0x83fbff	             cmp ebx, 0xffffffffffffffff	       534	keyboard.c	FUNCTION_28	FOR_1	IF_2
+0x40003da	            0x89df	                            mov edi, ebx	       534	keyboard.c	FUNCTION_28	FOR_1	IF_2
+0x40003dc	            0x75e9	                           jne 0x40003c7	       534	keyboard.c	FUNCTION_28	FOR_1	IF_2
+0x40003de	      0xbf3e000000	                           mov edi, 0x3e	       534	keyboard.c	FUNCTION_28	FOR_1	IF_2
+0x40003e3	      0xbb3e000000	                           mov ebx, 0x3e	       535	keyboard.c	FUNCTION_28	FOR_1	IF_2
+0x40003e8	      0xe800000000	                          call 0x40003ed	       536	keyboard.c	FUNCTION_28	FOR_1	IF_3	CALL_1
+0x40003ed	            0x85c0	                           test eax, eax	       536	keyboard.c	FUNCTION_28	FOR_1	IF_3	CALL_1
+0x40003ef	            0x74df	                            je 0x40003d0	       536	keyboard.c	FUNCTION_28	FOR_1	IF_3	CALL_1
+0x40003f1	            0x89df	                            mov edi, ebx	       539	keyboard.c	FUNCTION_28	CALL_2
+0x40003f3	              0x5b	                                 pop rbx	       540	keyboard.c	FUNCTION_28
+0x40003f4	              0x5d	                                 pop rbp	       540	keyboard.c	FUNCTION_28
+0x40003f5	      0xe900000000	                           jmp 0x40003fa	       539	keyboard.c	FUNCTION_28	CALL_2
+setkeycode_helper	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	10
+0x40005b0	              0x53	                                push rbx	       198	keyboard.c	FUNCTION_6
+0x40005b1	        0x488b7f18	            mov rdi, qword [rdi + 0x18] 	       201	keyboard.c	FUNCTION_6	CALL_1
+0x40005b5	          0x4889f3	                            mov rbx, rsi	       198	keyboard.c	FUNCTION_6
+0x40005b8	      0xe800000000	                          call 0x40005bd	       201	keyboard.c	FUNCTION_6	CALL_1
+0x40005bd	            0x85c0	                           test eax, eax	       203	keyboard.c	FUNCTION_6
+0x40005bf	          0x894328	             mov dword [rbx + 0x28], eax	       201	keyboard.c	FUNCTION_6	CALL_1
+0x40005c2	           0xf94c0	                                 sete al	       203	keyboard.c	FUNCTION_6
+0x40005c5	           0xfb6c0	                           movzx eax, al	       203	keyboard.c	FUNCTION_6
+0x40005c8	              0x5b	                                 pop rbx	       204	keyboard.c	FUNCTION_6
+0x40005c9	              0xc3	                                     ret	       204	keyboard.c	FUNCTION_6
+vt_set_led_state	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	3
+0x40022b0	          0x4863ff	                         movsxd rdi, edi	      1137	keyboard.c	FUNCTION_70	CALL_1
+0x40022b3	    0x488dbcbf0000	                  lea rdi, [rdi + rdi*4]	      1137	keyboard.c	FUNCTION_70	CALL_1
+0x40022bb	            0xeb93	                     jmp sym.setledstate	      1137	keyboard.c	FUNCTION_70	CALL_1
+k_slock	WHILE,0:SWITCH,0:CALL,3:FOR,0:IF,2:ELSE,0:functions,0:DO,0	27
+0x4000ee0	              0x55	                                push rbp	       871	keyboard.c	FUNCTION_56
+0x4000ee1	              0x53	                                push rbx	       871	keyboard.c	FUNCTION_56
+0x4000ee2	        0x400fb6de	                          movzx ebx, sil	       872	keyboard.c	FUNCTION_56	CALL_1
+0x4000ee6	            0x89d5	                            mov ebp, edx	       871	keyboard.c	FUNCTION_56
+0x4000ee8	            0x89de	                            mov esi, ebx	       872	keyboard.c	FUNCTION_56	CALL_1
+0x4000eea	           0xfbed2	                           movsx edx, dl	       872	keyboard.c	FUNCTION_56	CALL_1
+0x4000eed	      0xe89efeffff	                        call sym.k_shift	       872	keyboard.c	FUNCTION_56	CALL_1
+0x4000ef2	          0x4084ed	                           test bpl, bpl	       873	keyboard.c	FUNCTION_56	IF_1
+0x4000ef5	            0x7531	                           jne 0x4000f28	       873	keyboard.c	FUNCTION_56	IF_1
+0x4000ef7	    0x803d00000000	                cmp byte [0x04000efe], 0	       873	keyboard.c	FUNCTION_56	IF_1
+0x4000efe	            0x7528	                           jne 0x4000f28	       873	keyboard.c	FUNCTION_56	IF_1
+0x4000f00	    0x488b15000000	            mov rdx, qword [0x04000f07] 	       876	keyboard.c	FUNCTION_56	CALL_2
+0x4000f07	            0x89d9	                            mov ecx, ebx	       120	kbd_kern.h	FUNCTION_107
+0x4000f09	      0xb801000000	                              mov eax, 1	       120	kbd_kern.h	FUNCTION_107
+0x4000f0e	            0xd3e0	                             shl eax, cl	       120	kbd_kern.h	FUNCTION_107
+0x4000f10	            0x89c1	                            mov ecx, eax	       120	kbd_kern.h	FUNCTION_107
+0x4000f12	          0x324201	                  xor al, byte [rdx + 1]	       120	kbd_kern.h	FUNCTION_107
+0x4000f15	          0x884201	                  mov byte [rdx + 1], al	       120	kbd_kern.h	FUNCTION_107
+0x4000f18	            0x3202	                      xor al, byte [rdx]	       878	keyboard.c	FUNCTION_56	IF_2
+0x4000f1a	           0xfb6c0	                           movzx eax, al	       878	keyboard.c	FUNCTION_56	IF_2
+0x4000f1d	    0x48833cc50000	                    cmp qword [rax*8], 0	       878	keyboard.c	FUNCTION_56	IF_2
+0x4000f26	            0x7403	                            je 0x4000f2b	       878	keyboard.c	FUNCTION_56	IF_2
+0x4000f28	              0x5b	                                 pop rbx	       882	keyboard.c	FUNCTION_56
+0x4000f29	              0x5d	                                 pop rbp	       882	keyboard.c	FUNCTION_56
+0x4000f2a	              0xc3	                                     ret	       882	keyboard.c	FUNCTION_56
+0x4000f2b	          0x884a01	                  mov byte [rdx + 1], cl	       120	kbd_kern.h	FUNCTION_107
+0x4000f2e	            0xebf8	                           jmp 0x4000f28	       120	kbd_kern.h	FUNCTION_107
+fn_show_mem	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	3
+0x40004a0	            0x31f6	                            xor esi, esi	       577	keyboard.c	FUNCTION_33	CALL_1
+0x40004a2	            0x31ff	                            xor edi, edi	       577	keyboard.c	FUNCTION_33	CALL_1
+0x40004a4	      0xe900000000	                           jmp 0x40004a9	       577	keyboard.c	FUNCTION_33	CALL_1
+vt_do_kdgkbmode	WHILE,0:SWITCH,1:CALL,0:FOR,0:IF,0:ELSE,0:functions,0:DO,0	11
+0x4003320	          0x4863ff	                         movsxd rdi, edi	      2115	keyboard.c	FUNCTION_91	SWITCH_1
+0x4003323	      0xb801000000	                              mov eax, 1	      2115	keyboard.c	FUNCTION_91	SWITCH_1
+0x4003328	     0xfb694bf0000	           movzx edx, byte [rdi + rdi*4]	      2115	keyboard.c	FUNCTION_91	SWITCH_1
+0x4003330	          0xc0ea04	                               shr dl, 4	      2115	keyboard.c	FUNCTION_91	SWITCH_1
+0x4003333	          0x83e207	                              and edx, 7	      2115	keyboard.c	FUNCTION_91	SWITCH_1
+0x4003336	          0x83ea01	                              sub edx, 1	      2115	keyboard.c	FUNCTION_91	SWITCH_1
+0x4003339	          0x80fa03	                               cmp dl, 3	      2115	keyboard.c	FUNCTION_91	SWITCH_1
+0x400333c	            0x770a	                            ja 0x4003348	      2115	keyboard.c	FUNCTION_91	SWITCH_1
+0x400333e	           0xfb6d2	                           movzx edx, dl	      2115	keyboard.c	FUNCTION_91	SWITCH_1
+0x4003341	    0x8b0495000000	                  mov eax, dword [rdx*4]	      2115	keyboard.c	FUNCTION_91	SWITCH_1
+0x4003348	            0xf3c3	                                     ret	      2127	keyboard.c	FUNCTION_91
+unregister_keyboard_notifier	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	3
+0x40000b0	          0x4889fe	                            mov rsi, rdi	       150	keyboard.c	FUNCTION_3
+0x40000b3	    0x48c7c7000000	                              mov rdi, 0	       151	keyboard.c	FUNCTION_3	CALL_1
+0x40000ba	      0xe900000000	                           jmp 0x40000bf	       151	keyboard.c	FUNCTION_3	CALL_1
+getkeycode_helper	WHILE,0:SWITCH,0:CALL,1:FOR,0:IF,0:ELSE,0:functions,0:DO,0	10
+0x4000590	              0x53	                                push rbx	       171	keyboard.c	FUNCTION_4
+0x4000591	        0x488b7f18	            mov rdi, qword [rdi + 0x18] 	       174	keyboard.c	FUNCTION_4	CALL_1
+0x4000595	          0x4889f3	                            mov rbx, rsi	       171	keyboard.c	FUNCTION_4
+0x4000598	      0xe800000000	                          call 0x400059d	       174	keyboard.c	FUNCTION_4	CALL_1
+0x400059d	            0x85c0	                           test eax, eax	       176	keyboard.c	FUNCTION_4
+0x400059f	          0x894328	             mov dword [rbx + 0x28], eax	       174	keyboard.c	FUNCTION_4	CALL_1
+0x40005a2	           0xf94c0	                                 sete al	       176	keyboard.c	FUNCTION_4
+0x40005a5	           0xfb6c0	                           movzx eax, al	       176	keyboard.c	FUNCTION_4
+0x40005a8	              0x5b	                                 pop rbx	       177	keyboard.c	FUNCTION_4
+0x40005a9	              0xc3	                                     ret	       177	keyboard.c	FUNCTION_4

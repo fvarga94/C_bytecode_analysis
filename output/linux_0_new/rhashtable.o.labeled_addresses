@@ -1,0 +1,101 @@
+rhltable_init	ELSE,0:FOR,0:functions,0:DO,0:SWITCH,0:CALL,1:IF,1:WHILE,0	11
+0x40010a0	          0x8b4610	            mov eax, dword [rsi + 0x10] 	      1058	rhashtable.c	FUNCTION_34	IF_1
+0x40010a3	            0x85c0	                           test eax, eax	      1058	rhashtable.c	FUNCTION_34	IF_1
+0x40010a5	            0x750f	                           jne 0x40010b6	      1058	rhashtable.c	FUNCTION_34	IF_1
+0x40010a7	              0x53	                                push rbx	      1054	rhashtable.c	FUNCTION_34
+0x40010a8	          0x4889fb	                            mov rbx, rdi	      1054	rhashtable.c	FUNCTION_34
+0x40010ab	      0xe800000000	                          call 0x40010b0	      1061	rhashtable.c	FUNCTION_34	CALL_1
+0x40010b0	        0xc6434001	                mov byte [rbx + 0x40], 1	      1062	rhashtable.c	FUNCTION_34
+0x40010b4	              0x5b	                                 pop rbx	      1064	rhashtable.c	FUNCTION_34
+0x40010b5	              0xc3	                                     ret	      1064	rhashtable.c	FUNCTION_34
+0x40010b6	      0xb8eaffffff	                     mov eax, 0xffffffea	      1064	rhashtable.c	FUNCTION_34
+0x40010bb	              0xc3	                                     ret	      1064	rhashtable.c	FUNCTION_34
+bucket_table_free_rcu	ELSE,0:FOR,0:functions,0:DO,0:SWITCH,0:CALL,2:IF,0:WHILE,0	2
+0x4000730	        0x4883ef30	                           sub rdi, 0x30	       113	rhashtable.c	FUNCTION_7	CALL_2
+0x4000734	            0xeb8a	               jmp sym.bucket_table_free	       113	rhashtable.c	FUNCTION_7	CALL_2
+rhashtable_destroy	ELSE,0:FOR,0:functions,0:DO,0:SWITCH,0:CALL,1:IF,0:WHILE,0	3
+0x4000850	            0x31d2	                            xor edx, edx	      1135	rhashtable.c	FUNCTION_37	CALL_1
+0x4000852	            0x31f6	                            xor esi, esi	      1135	rhashtable.c	FUNCTION_37	CALL_1
+0x4000854	      0xe9e7feffff	     jmp sym.rhashtable_free_and_destroy	      1135	rhashtable.c	FUNCTION_37	CALL_1
+rhashtable_free_and_destroy	ELSE,0:FOR,2:functions,0:DO,0:SWITCH,0:CALL,10:IF,1:WHILE,0	81
+0x4000740	            0x4157	                                push r15	      1104	rhashtable.c	FUNCTION_36
+0x4000742	            0x4156	                                push r14	      1104	rhashtable.c	FUNCTION_36
+0x4000744	            0x4155	                                push r13	      1104	rhashtable.c	FUNCTION_36
+0x4000746	            0x4154	                                push r12	      1104	rhashtable.c	FUNCTION_36
+0x4000748	          0x4989d4	                            mov r12, rdx	      1104	rhashtable.c	FUNCTION_36
+0x400074b	              0x55	                                push rbp	      1104	rhashtable.c	FUNCTION_36
+0x400074c	              0x53	                                push rbx	      1104	rhashtable.c	FUNCTION_36
+0x400074d	          0x4889fb	                            mov rbx, rdi	      1104	rhashtable.c	FUNCTION_36
+0x4000750	        0x4883c748	                           add rdi, 0x48	      1108	rhashtable.c	FUNCTION_36	CALL_1
+0x4000754	          0x4889f5	                            mov rbp, rsi	      1104	rhashtable.c	FUNCTION_36
+0x4000757	        0x4883ec10	                           sub rsp, 0x10	      1104	rhashtable.c	FUNCTION_36
+0x400075b	      0xe800000000	                          call 0x4000760	      1108	rhashtable.c	FUNCTION_36	CALL_1
+0x4000760	        0x488d4368	                   lea rax, [rbx + 0x68]	      1110	rhashtable.c	FUNCTION_36	CALL_2
+0x4000764	          0x4889c7	                            mov rdi, rax	      1110	rhashtable.c	FUNCTION_36	CALL_2
+0x4000767	      0x4889442408	                mov qword [rsp + 8], rax	      1110	rhashtable.c	FUNCTION_36	CALL_2
+0x400076c	      0xe800000000	                          call 0x4000771	      1110	rhashtable.c	FUNCTION_36	CALL_2
+0x4000771	          0x488b03	                    mov rax, qword [rbx]	      1111	rhashtable.c	FUNCTION_36
+0x4000774	          0x4885ed	                           test rbp, rbp	      1112	rhashtable.c	FUNCTION_36	IF_1
+0x4000777	        0x48890424	                    mov qword [rsp], rax	      1111	rhashtable.c	FUNCTION_36
+0x400077b	     0xf8484000000	                            je 0x4000805	      1112	rhashtable.c	FUNCTION_36	IF_1
+0x4000781	        0x488b0424	                    mov rax, qword [rsp]	      1113	rhashtable.c	FUNCTION_36	IF_1	FOR_1
+0x4000785	            0x8b08	                    mov ecx, dword [rax]	      1113	rhashtable.c	FUNCTION_36	IF_1	FOR_1
+0x4000787	            0x85c9	                           test ecx, ecx	      1113	rhashtable.c	FUNCTION_36	IF_1	FOR_1
+0x4000789	            0x747a	                            je 0x4000805	      1113	rhashtable.c	FUNCTION_36	IF_1	FOR_1
+0x400078b	          0x4531f6	                          xor r14d, r14d	      1113	rhashtable.c	FUNCTION_36	IF_1	FOR_1
+0x400078e	      0xe800000000	                          call 0x4000793	      1116	rhashtable.c	FUNCTION_36	IF_1	FOR_1	CALL_3
+0x4000793	        0x488b0c24	                    mov rcx, qword [rsp]	       430	rhashtable.h	FUNCTION_56	CALL_2
+0x4000797	          0x4489f0	                           mov eax, r14d	       430	rhashtable.h	FUNCTION_56	CALL_2
+0x400079a	          0x8b5104	                mov edx, dword [rcx + 4]	       430	rhashtable.h	FUNCTION_56	CALL_2
+0x400079d	    0x488d84c18000	          lea rax, [rcx + rax*8 + 0x80] 	       430	rhashtable.h	FUNCTION_56	CALL_2
+0x40007a5	            0x85d2	                           test edx, edx	       430	rhashtable.h	FUNCTION_56	CALL_2
+0x40007a7	     0xf858d000000	                           jne 0x400083a	       430	rhashtable.h	FUNCTION_56	CALL_2
+0x40007ad	          0x4c8b38	                    mov r15, qword [rax]	      1117	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2	CALL_4
+0x40007b0	        0x41f6c701	                            test r15b, 1	      1119	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2
+0x40007b4	            0x7542	                           jne 0x40007f8	      1119	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2
+0x40007b6	        0x41f6c701	                            test r15b, 1	      1117	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2	CALL_4
+0x40007ba	          0x4d8b2f	                    mov r13, qword [r15]	      1119	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2
+0x40007bd	            0x7539	                           jne 0x40007f8	      1117	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2	CALL_4
+0x40007bf	        0x807b4000	                cmp byte [rbx + 0x40], 0	      1073	rhashtable.c	FUNCTION_35	IF_1
+0x40007c3	            0x7461	                            je 0x4000826	      1073	rhashtable.c	FUNCTION_35	IF_1
+0x40007c5	         0xfb75316	           movzx edx, word [rbx + 0x16] 	      1082	rhashtable.c	FUNCTION_35	DO_1	CALL_5
+0x40007c9	          0x4c89ff	                            mov rdi, r15	      1080	rhashtable.c	FUNCTION_35	DO_1
+0x40007cc	        0x4d8b7f08	                mov r15, qword [r15 + 8]	      1081	rhashtable.c	FUNCTION_35	DO_1
+0x40007d0	          0x4c89e6	                            mov rsi, r12	      1082	rhashtable.c	FUNCTION_35	DO_1	CALL_5
+0x40007d3	          0x4829d7	                            sub rdi, rdx	      1082	rhashtable.c	FUNCTION_35	DO_1	CALL_5
+0x40007d6	      0xe800000000	                          call 0x40007db	      1082	rhashtable.c	FUNCTION_35	DO_1	CALL_5
+0x40007db	          0x4d85ff	                           test r15, r15	      1083	rhashtable.c	FUNCTION_35	DO_1
+0x40007de	            0x75e5	                           jne 0x40007c5	      1083	rhashtable.c	FUNCTION_35	DO_1
+0x40007e0	            0x31d2	                            xor edx, edx	      1123	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2
+0x40007e2	        0x41f6c501	                            test r13b, 1	      1123	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2
+0x40007e6	            0x7504	                           jne 0x40007ec	      1123	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2
+0x40007e8	        0x498b5500	                    mov rdx, qword [r13]	      1123	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2
+0x40007ec	          0x4d89ef	                            mov r15, r13	      1123	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2
+0x40007ef	          0x4989d5	                            mov r13, rdx	      1123	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2
+0x40007f2	        0x41f6c701	                            test r15b, 1	      1117	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2	CALL_4
+0x40007f6	            0x74c7	                            je 0x40007bf	      1117	rhashtable.c	FUNCTION_36	IF_1	FOR_1	FOR_2	CALL_4
+0x40007f8	        0x488b0424	                    mov rax, qword [rsp]	      1113	rhashtable.c	FUNCTION_36	IF_1	FOR_1
+0x40007fc	        0x4183c601	                             add r14d, 1	      1113	rhashtable.c	FUNCTION_36	IF_1	FOR_1
+0x4000800	          0x443930	                   cmp dword [rax], r14d	      1113	rhashtable.c	FUNCTION_36	IF_1	FOR_1
+0x4000803	            0x7789	                            ja 0x400078e	      1113	rhashtable.c	FUNCTION_36	IF_1	FOR_1
+0x4000805	        0x488b3c24	                    mov rdi, qword [rsp]	      1128	rhashtable.c	FUNCTION_36	CALL_9
+0x4000809	      0xe8b2feffff	              call sym.bucket_table_free	      1128	rhashtable.c	FUNCTION_36	CALL_9
+0x400080e	      0x488b7c2408	                mov rdi, qword [rsp + 8]	      1129	rhashtable.c	FUNCTION_36	CALL_10
+0x4000813	        0x4883c410	                           add rsp, 0x10	      1130	rhashtable.c	FUNCTION_36
+0x4000817	              0x5b	                                 pop rbx	      1130	rhashtable.c	FUNCTION_36
+0x4000818	              0x5d	                                 pop rbp	      1130	rhashtable.c	FUNCTION_36
+0x4000819	            0x415c	                                 pop r12	      1130	rhashtable.c	FUNCTION_36
+0x400081b	            0x415d	                                 pop r13	      1130	rhashtable.c	FUNCTION_36
+0x400081d	            0x415e	                                 pop r14	      1130	rhashtable.c	FUNCTION_36
+0x400081f	            0x415f	                                 pop r15	      1130	rhashtable.c	FUNCTION_36
+0x4000821	      0xe900000000	                           jmp 0x4000826	      1129	rhashtable.c	FUNCTION_36	CALL_10
+0x4000826	         0xfb75316	           movzx edx, word [rbx + 0x16] 	      1074	rhashtable.c	FUNCTION_35	IF_1	CALL_2
+0x400082a	          0x4c89ff	                            mov rdi, r15	      1074	rhashtable.c	FUNCTION_35	IF_1	CALL_2
+0x400082d	          0x4c89e6	                            mov rsi, r12	      1074	rhashtable.c	FUNCTION_35	IF_1	CALL_2
+0x4000830	          0x4829d7	                            sub rdi, rdx	      1074	rhashtable.c	FUNCTION_35	IF_1	CALL_2
+0x4000833	      0xe800000000	                          call 0x4000838	      1074	rhashtable.c	FUNCTION_35	IF_1	CALL_2
+0x4000838	            0xeba6	                           jmp 0x40007e0	      1074	rhashtable.c	FUNCTION_35	IF_1	CALL_2
+0x400083a	          0x4489f6	                           mov esi, r14d	       430	rhashtable.h	FUNCTION_56	CALL_2
+0x400083d	          0x4889cf	                            mov rdi, rcx	       430	rhashtable.h	FUNCTION_56	CALL_2
+0x4000840	      0xe800000000	                          call 0x4000845	       430	rhashtable.h	FUNCTION_56	CALL_2
+0x4000845	      0xe963ffffff	                           jmp 0x40007ad	       430	rhashtable.h	FUNCTION_56	CALL_2

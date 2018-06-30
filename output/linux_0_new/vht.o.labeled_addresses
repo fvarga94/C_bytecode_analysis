@@ -1,0 +1,252 @@
+ieee80211_get_vht_mask_from_cap	IF,0:ELSE,0:DO,0:WHILE,0:CALL,1:FOR,1:functions,0:SWITCH,1	27
+0x4000a80	           0xfb7ff	                           movzx edi, di	       583	vht.c	FUNCTION_14
+0x4000a83	            0x31c9	                            xor ecx, ecx	       583	vht.c	FUNCTION_14
+0x4000a85	    0x41b8ff030000	                          mov r8d, 0x3ff	       601	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000a8b	            0x31d2	                            xor edx, edx	       601	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000a8d	            0xeb1a	                           jmp 0x4000aa9	       601	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000a8f	            0x723a	                            jb 0x4000acb	       589	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000a91	        0x6683f802	                               cmp ax, 2	       601	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000a95	            0x89d0	                            mov eax, edx	       601	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000a97	        0x410f44c0	                          cmove eax, r8d	       601	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000a9b	        0x6689040e	                mov word [rsi + rcx], ax	       601	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000a9f	        0x4883c102	                              add rcx, 2	       601	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000aa3	        0x4883f910	                           cmp rcx, 0x10	       587	vht.c	FUNCTION_14	FOR_1
+0x4000aa7	            0x7420	                            je 0x4000ac9	       587	vht.c	FUNCTION_14	FOR_1
+0x4000aa9	            0x89f8	                            mov eax, edi	       589	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000aab	            0xd3f8	                             sar eax, cl	       589	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000aad	          0x83e003	                              and eax, 3	       589	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000ab0	        0x6683f801	                               cmp ax, 1	       589	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000ab4	            0x75d9	                           jne 0x4000a8f	       589	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000ab6	      0xb8ff010000	                          mov eax, 0x1ff	       594	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000abb	        0x6689040e	                mov word [rsi + rcx], ax	       594	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000abf	        0x4883c102	                              add rcx, 2	       594	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000ac3	        0x4883f910	                           cmp rcx, 0x10	       587	vht.c	FUNCTION_14	FOR_1
+0x4000ac7	            0x75e0	                           jne 0x4000aa9	       587	vht.c	FUNCTION_14	FOR_1
+0x4000ac9	            0xf3c3	                                     ret	       605	vht.c	FUNCTION_14
+0x4000acb	    0x41b9ff000000	                           mov r9d, 0xff	       591	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000ad1	      0x6644890c0e	               mov word [rsi + rcx], r9w	       591	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+0x4000ad6	            0xebc7	                           jmp 0x4000a9f	       592	vht.c	FUNCTION_14	FOR_1	SWITCH_1
+__ieee80211_vht_handle_opmode	IF,4:ELSE,0:DO,0:WHILE,0:CALL,3:FOR,0:functions,0:SWITCH,1	63
+0x4000890	              0x53	                                push rbx	       478	vht.c	FUNCTION_10
+0x4000891	        0x4883ec18	                           sub rsp, 0x18	       478	vht.c	FUNCTION_10
+0x4000895	    0x65488b042528	                mov rax, qword gs:[0x28]	       478	vht.c	FUNCTION_10
+0x400089e	      0x4889442410	             mov qword [rsp + 0x10], rax	       478	vht.c	FUNCTION_10
+0x40008a3	            0x31c0	                            xor eax, eax	       478	vht.c	FUNCTION_10
+0x40008a5	            0x84d2	                             test dl, dl	       485	vht.c	FUNCTION_10	IF_1
+0x40008a7	    0x48c704240000	                      mov qword [rsp], 0	       480	vht.c	FUNCTION_10
+0x40008af	    0x48c744240800	                  mov qword [rsp + 8], 0	       480	vht.c	FUNCTION_10
+0x40008b8	     0xf88bb000000	                            js 0x4000979	       485	vht.c	FUNCTION_10	IF_1
+0x40008be	            0x89d1	                            mov ecx, edx	       488	vht.c	FUNCTION_10
+0x40008c0	            0x31db	                            xor ebx, ebx	       481	vht.c	FUNCTION_10
+0x40008c2	          0x4989f8	                             mov r8, rdi	       481	vht.c	FUNCTION_10
+0x40008c5	          0x83e170	                           and ecx, 0x70	       488	vht.c	FUNCTION_10
+0x40008c8	          0xc0e904	                               shr cl, 4	       489	vht.c	FUNCTION_10
+0x40008cb	          0x83c101	                              add ecx, 1	       490	vht.c	FUNCTION_10
+0x40008ce	    0x3a8e58080000	              cmp cl, byte [rsi + 0x858]	       492	vht.c	FUNCTION_10	IF_2
+0x40008d4	            0x7416	                            je 0x40008ec	       492	vht.c	FUNCTION_10	IF_2
+0x40008d6	    0x888e58080000	              mov byte [rsi + 0x858], cl	       493	vht.c	FUNCTION_10	IF_2
+0x40008dc	        0x884c240c	                mov byte [rsp + 0xc], cl	       494	vht.c	FUNCTION_10	IF_2
+0x40008e0	      0xbb08000000	                              mov ebx, 8	       495	vht.c	FUNCTION_10	IF_2
+0x40008e5	    0xc70424040000	                      mov dword [rsp], 4	       496	vht.c	FUNCTION_10	IF_2
+0x40008ec	          0x83e203	                              and edx, 3	       499	vht.c	FUNCTION_10	SWITCH_1
+0x40008ef	          0x80fa02	                               cmp dl, 2	       499	vht.c	FUNCTION_10	SWITCH_1
+0x40008f2	     0xf8485000000	                            je 0x400097d	       499	vht.c	FUNCTION_10	SWITCH_1
+0x40008f8	          0x80fa03	                               cmp dl, 3	       499	vht.c	FUNCTION_10	SWITCH_1
+0x40008fb	            0x7470	                            je 0x400096d	       499	vht.c	FUNCTION_10	SWITCH_1
+0x40008fd	            0x31c0	                            xor eax, eax	       501	vht.c	FUNCTION_10	SWITCH_1
+0x40008ff	          0x80fa01	                               cmp dl, 1	       501	vht.c	FUNCTION_10	SWITCH_1
+0x4000902	           0xf94c0	                                 sete al	       501	vht.c	FUNCTION_10	SWITCH_1
+0x4000905	    0x8986d8070000	            mov dword [rsi + 0x7d8], eax	       501	vht.c	FUNCTION_10	SWITCH_1
+0x400090b	          0x4889f7	                            mov rdi, rsi	       514	vht.c	FUNCTION_10	CALL_1
+0x400090e	      0xe800000000	                          call 0x4000913	       514	vht.c	FUNCTION_10	CALL_1
+0x4000913	    0x3b865c080000	           cmp eax, dword [rsi + 0x85c] 	       515	vht.c	FUNCTION_10	IF_3
+0x4000919	            0x7449	                            je 0x4000964	       515	vht.c	FUNCTION_10	IF_3
+0x400091b	    0x89865c080000	            mov dword [rsi + 0x85c], eax	       516	vht.c	FUNCTION_10	IF_3
+0x4000921	          0x4889f7	                            mov rdi, rsi	       517	vht.c	FUNCTION_10	IF_3	CALL_2
+0x4000924	          0x83cb01	                               or ebx, 1	       518	vht.c	FUNCTION_10	IF_3
+0x4000927	      0xe800000000	                          call 0x400092c	       517	vht.c	FUNCTION_10	IF_3	CALL_2
+0x400092c	        0x830c2401	                       or dword [rsp], 1	       519	vht.c	FUNCTION_10	IF_3
+0x4000930	        0x89442408	                mov dword [rsp + 8], eax	       517	vht.c	FUNCTION_10	IF_3	CALL_2
+0x4000934	    0x498bb8d80100	            mov rdi, qword [r8 + 0x1d8] 	       523	vht.c	FUNCTION_10	IF_4	CALL_3
+0x400093b	        0x4883c640	                           add rsi, 0x40	       523	vht.c	FUNCTION_10	IF_4	CALL_3
+0x400093f	      0xb9c0004001	                      mov ecx, 0x14000c0	       523	vht.c	FUNCTION_10	IF_4	CALL_3
+0x4000944	          0x4889e2	                            mov rdx, rsp	       523	vht.c	FUNCTION_10	IF_4	CALL_3
+0x4000947	      0xe800000000	                          call 0x400094c	       523	vht.c	FUNCTION_10	IF_4	CALL_3
+0x400094c	            0x89d8	                            mov eax, ebx	       523	vht.c	FUNCTION_10	IF_4	CALL_3
+0x400094e	      0x488b5c2410	            mov rbx, qword [rsp + 0x10] 	       527	vht.c	FUNCTION_10
+0x4000953	    0x6548331c2528	                xor rbx, qword gs:[0x28]	       527	vht.c	FUNCTION_10
+0x400095c	            0x752b	                           jne 0x4000989	       527	vht.c	FUNCTION_10
+0x400095e	        0x4883c418	                           add rsp, 0x18	       527	vht.c	FUNCTION_10
+0x4000962	              0x5b	                                 pop rbx	       527	vht.c	FUNCTION_10
+0x4000963	              0xc3	                                     ret	       527	vht.c	FUNCTION_10
+0x4000964	          0x8b0424	                    mov eax, dword [rsp]	       522	vht.c	FUNCTION_10	IF_4
+0x4000967	            0x85c0	                           test eax, eax	       522	vht.c	FUNCTION_10	IF_4
+0x4000969	            0x74e1	                            je 0x400094c	       522	vht.c	FUNCTION_10	IF_4
+0x400096b	            0xebc7	                           jmp 0x4000934	       522	vht.c	FUNCTION_10	IF_4
+0x400096d	    0xc786d8070000	              mov dword [rsi + 0x7d8], 3	       510	vht.c	FUNCTION_10	SWITCH_1
+0x4000977	            0xeb92	                           jmp 0x400090b	       511	vht.c	FUNCTION_10	SWITCH_1
+0x4000979	            0x31c0	                            xor eax, eax	       486	vht.c	FUNCTION_10	IF_1
+0x400097b	            0xebd1	                           jmp 0x400094e	       486	vht.c	FUNCTION_10	IF_1
+0x400097d	    0xc786d8070000	              mov dword [rsi + 0x7d8], 2	       507	vht.c	FUNCTION_10	SWITCH_1
+0x4000987	            0xeb82	                           jmp 0x400090b	       508	vht.c	FUNCTION_10	SWITCH_1
+0x4000989	      0xe800000000	                          call 0x400098e	       527	vht.c	FUNCTION_10
+ieee80211_sta_set_rx_nss	IF,8:ELSE,0:DO,0:WHILE,0:CALL,3:FOR,1:functions,0:SWITCH,0	42
+0x40007f0	    0x80bf58080000	               cmp byte [rdi + 0x858], 0	       439	vht.c	FUNCTION_9	IF_1
+0x40007f7	            0x757e	                           jne 0x4000877	       439	vht.c	FUNCTION_9	IF_1
+0x40007f9	    0x80bf2e080000	               cmp byte [rdi + 0x82e], 0	       442	vht.c	FUNCTION_9	IF_2
+0x4000800	            0x7477	                            je 0x4000879	       442	vht.c	FUNCTION_9	IF_2
+0x4000802	    0x80bf31080000	               cmp byte [rdi + 0x831], 0	       436	vht.c	FUNCTION_9
+0x4000809	        0x400f95c6	                               setne sil	       436	vht.c	FUNCTION_9
+0x400080d	    0x80bf32080000	               cmp byte [rdi + 0x832], 1	       446	vht.c	FUNCTION_9	IF_2	IF_4
+0x4000814	        0x4080deff	                           sbb sil, 0xff	       446	vht.c	FUNCTION_9	IF_2	IF_4
+0x4000818	    0x80bf33080000	               cmp byte [rdi + 0x833], 1	       448	vht.c	FUNCTION_9	IF_2	IF_5
+0x400081f	        0x4080deff	                           sbb sil, 0xff	       448	vht.c	FUNCTION_9	IF_2	IF_5
+0x4000823	    0x80bf34080000	               cmp byte [rdi + 0x834], 1	       450	vht.c	FUNCTION_9	IF_2	IF_6
+0x400082a	        0x4080deff	                           sbb sil, 0xff	       450	vht.c	FUNCTION_9	IF_2	IF_6
+0x400082e	            0x31c0	                            xor eax, eax	       436	vht.c	FUNCTION_9
+0x4000830	    0x80bf44080000	               cmp byte [rdi + 0x844], 0	       454	vht.c	FUNCTION_9	IF_7
+0x4000837	            0x7427	                            je 0x4000860	       454	vht.c	FUNCTION_9	IF_7
+0x4000839	    0x440fb7874c08	          movzx r8d, word [rdi + 0x84c] 	       454	vht.c	FUNCTION_9	IF_7
+0x4000841	      0xb807000000	                              mov eax, 7	       460	vht.c	FUNCTION_9	IF_7	FOR_1
+0x4000846	          0x8d0c00	                    lea ecx, [rax + rax]	       463	vht.c	FUNCTION_9	IF_7	FOR_1	IF_8
+0x4000849	          0x4489c2	                            mov edx, r8d	       463	vht.c	FUNCTION_9	IF_7	FOR_1	IF_8
+0x400084c	            0xd3fa	                             sar edx, cl	       463	vht.c	FUNCTION_9	IF_7	FOR_1	IF_8
+0x400084e	          0x83e203	                              and edx, 3	       463	vht.c	FUNCTION_9	IF_7	FOR_1	IF_8
+0x4000851	          0x80fa03	                               cmp dl, 3	       463	vht.c	FUNCTION_9	IF_7	FOR_1	IF_8
+0x4000854	            0x7535	                           jne 0x400088b	       463	vht.c	FUNCTION_9	IF_7	FOR_1	IF_8
+0x4000856	          0x83e801	                              sub eax, 1	       460	vht.c	FUNCTION_9	IF_7	FOR_1
+0x4000859	          0x83f8ff	             cmp eax, 0xffffffffffffffff	       460	vht.c	FUNCTION_9	IF_7	FOR_1
+0x400085c	            0x75e8	                           jne 0x4000846	       460	vht.c	FUNCTION_9	IF_7	FOR_1
+0x400085e	            0x31c0	                            xor eax, eax	       436	vht.c	FUNCTION_9
+0x4000860	          0x4038f0	                             cmp al, sil	       471	vht.c	FUNCTION_9	CALL_2
+0x4000863	      0xba01000000	                              mov edx, 1	       471	vht.c	FUNCTION_9	CALL_2
+0x4000868	           0xf42c6	                          cmovb eax, esi	       471	vht.c	FUNCTION_9	CALL_2
+0x400086b	            0x84c0	                             test al, al	       471	vht.c	FUNCTION_9	CALL_2
+0x400086d	           0xf44c2	                          cmove eax, edx	       471	vht.c	FUNCTION_9	CALL_2
+0x4000870	    0x888758080000	              mov byte [rdi + 0x858], al	       472	vht.c	FUNCTION_9	CALL_3
+0x4000876	              0xc3	                                     ret	       472	vht.c	FUNCTION_9	CALL_3
+0x4000877	            0xf3c3	                                     ret	       472	vht.c	FUNCTION_9	CALL_3
+0x4000879	    0x80bf44080000	               cmp byte [rdi + 0x844], 0	       454	vht.c	FUNCTION_9	IF_7
+0x4000880	      0xb801000000	                              mov eax, 1	       454	vht.c	FUNCTION_9	IF_7
+0x4000885	            0x74e9	                            je 0x4000870	       454	vht.c	FUNCTION_9	IF_7
+0x4000887	            0x31f6	                            xor esi, esi	       436	vht.c	FUNCTION_9
+0x4000889	            0xebae	                           jmp 0x4000839	       436	vht.c	FUNCTION_9
+0x400088b	          0x83c001	                              add eax, 1	       464	vht.c	FUNCTION_9	IF_7	FOR_1	IF_8
+0x400088e	            0xebd0	                           jmp 0x4000860	       465	vht.c	FUNCTION_9	IF_7	FOR_1	IF_8
+ieee80211_process_mu_groups	IF,2:ELSE,0:DO,0:WHILE,0:CALL,5:FOR,0:functions,0:SWITCH,0	39
+0x4000990	    0x80bfa0090000	               cmp byte [rdi + 0x9a0], 0	       534	vht.c	FUNCTION_11	IF_1
+0x4000997	     0xf8480000000	                            je 0x4000a1d	       534	vht.c	FUNCTION_11	IF_1
+0x400099d	              0x55	                                push rbp	       531	vht.c	FUNCTION_11
+0x400099e	      0xba10000000	                           mov edx, 0x10	       537	vht.c	FUNCTION_11	IF_2	CALL_1
+0x40009a3	          0x4889e5	                            mov rbp, rsp	       531	vht.c	FUNCTION_11
+0x40009a6	            0x4155	                                push r13	       531	vht.c	FUNCTION_11
+0x40009a8	            0x4154	                                push r12	       531	vht.c	FUNCTION_11
+0x40009aa	          0x4989f4	                            mov r12, rsi	       531	vht.c	FUNCTION_11
+0x40009ad	              0x53	                                push rbx	       531	vht.c	FUNCTION_11
+0x40009ae	    0x488db7000900	                  lea rsi, [rdi + 0x900]	       537	vht.c	FUNCTION_11	IF_2	CALL_1
+0x40009b5	          0x4889fb	                            mov rbx, rdi	       537	vht.c	FUNCTION_11	IF_2	CALL_1
+0x40009b8	      0x498d7c2422	                   lea rdi, [r12 + 0x22]	       537	vht.c	FUNCTION_11	IF_2	CALL_1
+0x40009bd	      0xe800000000	                          call 0x40009c2	       537	vht.c	FUNCTION_11	IF_2	CALL_1
+0x40009c2	            0x85c0	                           test eax, eax	       537	vht.c	FUNCTION_11	IF_2	CALL_1
+0x40009c4	            0x751a	                           jne 0x40009e0	       537	vht.c	FUNCTION_11	IF_2	CALL_1
+0x40009c6	    0x488db3f80800	                  lea rsi, [rbx + 0x8f8]	       539	vht.c	FUNCTION_11	IF_2	CALL_2
+0x40009cd	      0x498d7c241a	                   lea rdi, [r12 + 0x1a]	       539	vht.c	FUNCTION_11	IF_2	CALL_2
+0x40009d2	      0xba08000000	                              mov edx, 8	       539	vht.c	FUNCTION_11	IF_2	CALL_2
+0x40009d7	      0xe800000000	                          call 0x40009dc	       539	vht.c	FUNCTION_11	IF_2	CALL_2
+0x40009dc	            0x85c0	                           test eax, eax	       538	vht.c	FUNCTION_11	IF_2
+0x40009de	            0x7437	                            je 0x4000a17	       538	vht.c	FUNCTION_11	IF_2
+0x40009e0	      0x498b44241a	            mov rax, qword [r12 + 0x1a] 	       543	vht.c	FUNCTION_11	CALL_3
+0x40009e5	          0x4889df	                            mov rdi, rbx	       550	vht.c	FUNCTION_11	CALL_5
+0x40009e8	      0xbe00008000	                       mov esi, 0x800000	       550	vht.c	FUNCTION_11	CALL_5
+0x40009ed	    0x488983f80800	            mov qword [rbx + 0x8f8], rax	       543	vht.c	FUNCTION_11	CALL_3
+0x40009f4	      0x498b442422	            mov rax, qword [r12 + 0x22] 	       546	vht.c	FUNCTION_11	CALL_4
+0x40009f9	      0x498b54242a	            mov rdx, qword [r12 + 0x2a] 	       546	vht.c	FUNCTION_11	CALL_4
+0x40009fe	    0x488983000900	            mov qword [rbx + 0x900], rax	       546	vht.c	FUNCTION_11	CALL_4
+0x4000a05	    0x488993080900	            mov qword [rbx + 0x908], rdx	       546	vht.c	FUNCTION_11	CALL_4
+0x4000a0c	              0x5b	                                 pop rbx	       551	vht.c	FUNCTION_11
+0x4000a0d	            0x415c	                                 pop r12	       551	vht.c	FUNCTION_11
+0x4000a0f	            0x415d	                                 pop r13	       551	vht.c	FUNCTION_11
+0x4000a11	              0x5d	                                 pop rbp	       551	vht.c	FUNCTION_11
+0x4000a12	      0xe900000000	                           jmp 0x4000a17	       550	vht.c	FUNCTION_11	CALL_5
+0x4000a17	              0x5b	                                 pop rbx	       551	vht.c	FUNCTION_11
+0x4000a18	            0x415c	                                 pop r12	       551	vht.c	FUNCTION_11
+0x4000a1a	            0x415d	                                 pop r13	       551	vht.c	FUNCTION_11
+0x4000a1c	              0x5d	                                 pop rbp	       551	vht.c	FUNCTION_11
+0x4000a1d	            0xf3c3	                                     ret	       551	vht.c	FUNCTION_11
+ieee80211_update_mu_groups	IF,1:ELSE,0:DO,0:WHILE,0:CALL,3:FOR,0:functions,0:SWITCH,0	18
+0x4000040	    0x80bf20010000	               cmp byte [rdi + 0x120], 0	       558	vht.c	FUNCTION_12	IF_1	CALL_1
+0x4000047	              0x55	                                push rbp	       555	vht.c	FUNCTION_12
+0x4000048	          0x4889e5	                            mov rbp, rsp	       555	vht.c	FUNCTION_12
+0x400004b	            0x4152	                                push r10	       555	vht.c	FUNCTION_12
+0x400004d	            0x7420	                            je 0x400006f	       558	vht.c	FUNCTION_12	IF_1	CALL_1
+0x400004f	          0x488b06	                    mov rax, qword [rsi]	       561	vht.c	FUNCTION_12	CALL_2
+0x4000052	            0x415a	                                 pop r10	       563	vht.c	FUNCTION_12
+0x4000054	              0x5d	                                 pop rbp	       563	vht.c	FUNCTION_12
+0x4000055	        0x48894778	             mov qword [rdi + 0x78], rax	       561	vht.c	FUNCTION_12	CALL_2
+0x4000059	          0x488b02	                    mov rax, qword [rdx]	       562	vht.c	FUNCTION_12	CALL_3
+0x400005c	        0x488b5208	                mov rdx, qword [rdx + 8]	       562	vht.c	FUNCTION_12	CALL_3
+0x4000060	    0x488987800000	             mov qword [rdi + 0x80], rax	       562	vht.c	FUNCTION_12	CALL_3
+0x4000067	    0x488997880000	             mov qword [rdi + 0x88], rdx	       562	vht.c	FUNCTION_12	CALL_3
+0x400006e	              0xc3	                                     ret	       563	vht.c	FUNCTION_12
+0x400006f	             0xf0b	                                     ud2	       563	vht.c	FUNCTION_12
+0x4000071	            0x415a	                                 pop r10	       563	vht.c	FUNCTION_12
+0x4000073	              0x5d	                                 pop rbp	       563	vht.c	FUNCTION_12
+0x4000074	              0xc3	                                     ret	       563	vht.c	FUNCTION_12
+ieee80211_vht_handle_opmode	IF,1:ELSE,0:DO,0:WHILE,0:CALL,3:FOR,0:functions,0:SWITCH,0	35
+0x4000a20	            0x4156	                                push r14	       569	vht.c	FUNCTION_13
+0x4000a22	            0x4155	                                push r13	       569	vht.c	FUNCTION_13
+0x4000a24	           0xfb6d2	                           movzx edx, dl	       573	vht.c	FUNCTION_13	CALL_1
+0x4000a27	            0x4154	                                push r12	       569	vht.c	FUNCTION_13
+0x4000a29	              0x55	                                push rbp	       569	vht.c	FUNCTION_13
+0x4000a2a	          0x4889f5	                            mov rbp, rsi	       569	vht.c	FUNCTION_13
+0x4000a2d	              0x53	                                push rbx	       569	vht.c	FUNCTION_13
+0x4000a2e	    0x4c8bafe00100	           mov r13, qword [rdi + 0x1e0] 	       570	vht.c	FUNCTION_13
+0x4000a35	            0x89ce	                            mov esi, ecx	       571	vht.c	FUNCTION_13
+0x4000a37	          0x4889fb	                            mov rbx, rdi	       569	vht.c	FUNCTION_13
+0x4000a3a	        0x498b4538	            mov rax, qword [r13 + 0x38] 	       571	vht.c	FUNCTION_13
+0x4000a3e	    0x4c8ba4f0f800	    mov r12, qword [rax + rsi*8 + 0xf8] 	       571	vht.c	FUNCTION_13
+0x4000a46	          0x4889ee	                            mov rsi, rbp	       573	vht.c	FUNCTION_13	CALL_1
+0x4000a49	      0xe800000000	                          call 0x4000a4e	       573	vht.c	FUNCTION_13	CALL_1
+0x4000a4e	            0x85c0	                           test eax, eax	       575	vht.c	FUNCTION_13	IF_1
+0x4000a50	            0x7509	                           jne 0x4000a5b	       575	vht.c	FUNCTION_13	IF_1
+0x4000a52	              0x5b	                                 pop rbx	       579	vht.c	FUNCTION_13
+0x4000a53	              0x5d	                                 pop rbp	       579	vht.c	FUNCTION_13
+0x4000a54	            0x415c	                                 pop r12	       579	vht.c	FUNCTION_13
+0x4000a56	            0x415d	                                 pop r13	       579	vht.c	FUNCTION_13
+0x4000a58	            0x415e	                                 pop r14	       579	vht.c	FUNCTION_13
+0x4000a5a	              0xc3	                                     ret	       579	vht.c	FUNCTION_13
+0x4000a5b	          0x4189c6	                           mov r14d, eax	       579	vht.c	FUNCTION_13
+0x4000a5e	          0x4889df	                            mov rdi, rbx	       576	vht.c	FUNCTION_13	IF_1	CALL_2
+0x4000a61	      0xe800000000	                          call 0x4000a66	       576	vht.c	FUNCTION_13	IF_1	CALL_2
+0x4000a66	          0x4489f1	                           mov ecx, r14d	       577	vht.c	FUNCTION_13	IF_1	CALL_3
+0x4000a69	          0x4889ea	                            mov rdx, rbp	       577	vht.c	FUNCTION_13	IF_1	CALL_3
+0x4000a6c	          0x4c89e6	                            mov rsi, r12	       577	vht.c	FUNCTION_13	IF_1	CALL_3
+0x4000a6f	              0x5b	                                 pop rbx	       579	vht.c	FUNCTION_13
+0x4000a70	          0x4c89ef	                            mov rdi, r13	       577	vht.c	FUNCTION_13	IF_1	CALL_3
+0x4000a73	              0x5d	                                 pop rbp	       579	vht.c	FUNCTION_13
+0x4000a74	            0x415c	                                 pop r12	       579	vht.c	FUNCTION_13
+0x4000a76	            0x415d	                                 pop r13	       579	vht.c	FUNCTION_13
+0x4000a78	            0x415e	                                 pop r14	       579	vht.c	FUNCTION_13
+0x4000a7a	      0xe900000000	                           jmp 0x4000a7f	       577	vht.c	FUNCTION_13	IF_1	CALL_3
+ieee80211_sta_cap_chan_bw	IF,4:ELSE,1:DO,0:WHILE,0:CALL,0:FOR,0:functions,0:SWITCH,0	21
+0x4000360	    0x80bf44080000	               cmp byte [rdi + 0x844], 0	       343	vht.c	FUNCTION_5	IF_1
+0x4000367	            0x751f	                           jne 0x4000388	       343	vht.c	FUNCTION_5	IF_1
+0x4000369	            0x31c0	                            xor eax, eax	       345	vht.c	FUNCTION_5	IF_1	IF_2
+0x400036b	    0x80bf2e080000	               cmp byte [rdi + 0x82e], 0	       344	vht.c	FUNCTION_5	IF_1	IF_2
+0x4000372	            0x7432	                            je 0x40003a6	       344	vht.c	FUNCTION_5	IF_1	IF_2
+0x4000374	     0xfb7872c0800	          movzx eax, word [rdi + 0x82c] 	       347	vht.c	FUNCTION_5	IF_1
+0x400037b	          0x83e002	                              and eax, 2	       347	vht.c	FUNCTION_5	IF_1
+0x400037e	        0x6683f801	                               cmp ax, 1	       347	vht.c	FUNCTION_5	IF_1
+0x4000382	            0x19c0	                            sbb eax, eax	       347	vht.c	FUNCTION_5	IF_1
+0x4000384	          0x83c002	                              add eax, 2	       347	vht.c	FUNCTION_5	IF_1
+0x4000387	              0xc3	                                     ret	       347	vht.c	FUNCTION_5	IF_1
+0x4000388	    0x8b9748080000	           mov edx, dword [rdi + 0x848] 	       351	vht.c	FUNCTION_5
+0x400038e	      0xb805000000	                              mov eax, 5	       354	vht.c	FUNCTION_5	IF_3
+0x4000393	          0x83e20c	                            and edx, 0xc	       351	vht.c	FUNCTION_5
+0x4000396	          0x83fa04	                              cmp edx, 4	       353	vht.c	FUNCTION_5	IF_3
+0x4000399	            0x740b	                            je 0x40003a6	       353	vht.c	FUNCTION_5	IF_3
+0x400039b	            0x31c0	                            xor eax, eax	       358	vht.c	FUNCTION_5
+0x400039d	          0x83fa08	                              cmp edx, 8	       358	vht.c	FUNCTION_5
+0x40003a0	           0xf94c0	                                 sete al	       358	vht.c	FUNCTION_5
+0x40003a3	          0x83c003	                              add eax, 3	       358	vht.c	FUNCTION_5
+0x40003a6	            0xf3c3	                                     ret	       359	vht.c	FUNCTION_5

@@ -1,0 +1,17 @@
+tcp_cleanup_ulp	CALL,3:ELSE,0:functions,0:DO,0:IF,2:FOR,0:SWITCH,0:WHILE,0	16
+0x4000180	    0x488b87500400	           mov rax, qword [rdi + 0x450] 	       126	tcp_ulp.c	FUNCTION_8	IF_1
+0x4000187	          0x4885c0	                           test rax, rax	       126	tcp_ulp.c	FUNCTION_8	IF_1
+0x400018a	            0x742c	                            je 0x40001b8	       126	tcp_ulp.c	FUNCTION_8	IF_1
+0x400018c	        0x488b5018	            mov rdx, qword [rax + 0x18] 	       129	tcp_ulp.c	FUNCTION_8	IF_2
+0x4000190	          0x4885d2	                           test rdx, rdx	       129	tcp_ulp.c	FUNCTION_8	IF_2
+0x4000193	            0x741a	                            je 0x40001af	       129	tcp_ulp.c	FUNCTION_8	IF_2
+0x4000195	              0x53	                                push rbx	       123	tcp_ulp.c	FUNCTION_8
+0x4000196	          0x4889fb	                            mov rbx, rdi	       123	tcp_ulp.c	FUNCTION_8
+0x4000199	      0xe800000000	                          call 0x400019e	       130	tcp_ulp.c	FUNCTION_8	CALL_2
+0x400019e	    0x488b83500400	           mov rax, qword [rbx + 0x450] 	       130	tcp_ulp.c	FUNCTION_8	CALL_2
+0x40001a5	              0x5b	                                 pop rbx	       132	tcp_ulp.c	FUNCTION_8
+0x40001a6	        0x488b7838	            mov rdi, qword [rax + 0x38] 	       131	tcp_ulp.c	FUNCTION_8	CALL_3
+0x40001aa	      0xe900000000	                           jmp 0x40001af	       131	tcp_ulp.c	FUNCTION_8	CALL_3
+0x40001af	        0x488b7838	            mov rdi, qword [rax + 0x38] 	       131	tcp_ulp.c	FUNCTION_8	CALL_3
+0x40001b3	      0xe900000000	                           jmp 0x40001b8	       131	tcp_ulp.c	FUNCTION_8	CALL_3
+0x40001b8	            0xf3c3	                                     ret	       131	tcp_ulp.c	FUNCTION_8	CALL_3

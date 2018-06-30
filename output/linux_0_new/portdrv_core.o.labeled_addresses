@@ -1,0 +1,98 @@
+pcie_port_service_register	DO,0:FOR,0:ELSE,0:IF,1:functions,0:SWITCH,0:CALL,1:WHILE,0	12
+0x40000c0	    0x803d00000000	                cmp byte [0x040000c7], 0	       488	portdrv_core.c	FUNCTION_17	IF_1
+0x40000c7	            0x752f	                           jne 0x40000f8	       488	portdrv_core.c	FUNCTION_17	IF_1
+0x40000c9	          0x488b07	                    mov rax, qword [rdi]	       491	portdrv_core.c	FUNCTION_17
+0x40000cc	    0x48c747480000	               mov qword [rdi + 0x48], 0	       492	portdrv_core.c	FUNCTION_17
+0x40000d4	        0x4883c740	                           add rdi, 0x40	       497	portdrv_core.c	FUNCTION_17	CALL_1
+0x40000d8	    0x48c747380000	               mov qword [rdi + 0x38], 0	       493	portdrv_core.c	FUNCTION_17
+0x40000e0	    0x48c747400000	               mov qword [rdi + 0x40], 0	       494	portdrv_core.c	FUNCTION_17
+0x40000e8	    0x48c747480000	               mov qword [rdi + 0x48], 0	       495	portdrv_core.c	FUNCTION_17
+0x40000f0	          0x488907	                    mov qword [rdi], rax	       491	portdrv_core.c	FUNCTION_17
+0x40000f3	      0xe900000000	                           jmp 0x40000f8	       497	portdrv_core.c	FUNCTION_17	CALL_1
+0x40000f8	      0xb8edffffff	                     mov eax, 0xffffffed	       498	portdrv_core.c	FUNCTION_17
+0x40000fd	              0xc3	                                     ret	       498	portdrv_core.c	FUNCTION_17
+pcie_port_probe_service	DO,0:FOR,0:ELSE,0:IF,3:functions,0:SWITCH,0:CALL,4:WHILE,0	26
+0x4000100	          0x4885ff	                           test rdi, rdi	       429	portdrv_core.c	FUNCTION_14	IF_1
+0x4000103	              0x55	                                push rbp	       424	portdrv_core.c	FUNCTION_14
+0x4000104	              0x53	                                push rbx	       424	portdrv_core.c	FUNCTION_14
+0x4000105	            0x743a	                            je 0x4000141	       429	portdrv_core.c	FUNCTION_14	IF_1
+0x4000107	    0x488b87880000	            mov rax, qword [rdi + 0x88] 	       429	portdrv_core.c	FUNCTION_14	IF_1
+0x400010e	          0x4885c0	                           test rax, rax	       429	portdrv_core.c	FUNCTION_14	IF_1
+0x4000111	            0x742e	                            je 0x4000141	       429	portdrv_core.c	FUNCTION_14	IF_1
+0x4000113	        0x4883f840	                           cmp rax, 0x40	       433	portdrv_core.c	FUNCTION_14	IF_2
+0x4000117	            0x7428	                            je 0x4000141	       433	portdrv_core.c	FUNCTION_14	IF_2
+0x4000119	        0x488b40c8	             mov rax, qword [rax - 0x38]	       433	portdrv_core.c	FUNCTION_14	IF_2
+0x400011d	          0x4885c0	                           test rax, rax	       433	portdrv_core.c	FUNCTION_14	IF_2
+0x4000120	            0x741f	                            je 0x4000141	       433	portdrv_core.c	FUNCTION_14	IF_2
+0x4000122	          0x4889fb	                            mov rbx, rdi	       433	portdrv_core.c	FUNCTION_14	IF_2
+0x4000125	        0x488d7fe0	                   lea rdi, [rdi - 0x20]	       437	portdrv_core.c	FUNCTION_14	CALL_3
+0x4000129	      0xe800000000	                          call 0x400012e	       437	portdrv_core.c	FUNCTION_14	CALL_3
+0x400012e	            0x85c0	                           test eax, eax	       438	portdrv_core.c	FUNCTION_14	IF_3
+0x4000130	            0x89c5	                            mov ebp, eax	       437	portdrv_core.c	FUNCTION_14	CALL_3
+0x4000132	            0x7508	                           jne 0x400013c	       438	portdrv_core.c	FUNCTION_14	IF_3
+0x4000134	          0x4889df	                            mov rdi, rbx	       441	portdrv_core.c	FUNCTION_14	CALL_4
+0x4000137	      0xe800000000	                          call 0x400013c	       441	portdrv_core.c	FUNCTION_14	CALL_4
+0x400013c	            0x89e8	                            mov eax, ebp	       443	portdrv_core.c	FUNCTION_14
+0x400013e	              0x5b	                                 pop rbx	       443	portdrv_core.c	FUNCTION_14
+0x400013f	              0x5d	                                 pop rbp	       443	portdrv_core.c	FUNCTION_14
+0x4000140	              0xc3	                                     ret	       443	portdrv_core.c	FUNCTION_14
+0x4000141	      0xbdedffffff	                     mov ebp, 0xffffffed	       430	portdrv_core.c	FUNCTION_14	IF_1
+0x4000146	            0xebf4	                           jmp 0x400013c	       430	portdrv_core.c	FUNCTION_14	IF_1
+pcie_port_device_remove	DO,0:FOR,0:ELSE,0:IF,0:functions,0:SWITCH,0:CALL,3:WHILE,0	11
+0x40006e0	              0x53	                                push rbx	       409	portdrv_core.c	FUNCTION_13
+0x40006e1	          0x4889fb	                            mov rbx, rdi	       409	portdrv_core.c	FUNCTION_13
+0x40006e4	    0x488dbfa00000	                   lea rdi, [rdi + 0xa0]	       410	portdrv_core.c	FUNCTION_13	CALL_1
+0x40006eb	    0x48c7c2000000	                              mov rdx, 0	       410	portdrv_core.c	FUNCTION_13	CALL_1
+0x40006f2	            0x31f6	                            xor esi, esi	       410	portdrv_core.c	FUNCTION_13	CALL_1
+0x40006f4	      0xe800000000	                          call 0x40006f9	       410	portdrv_core.c	FUNCTION_13	CALL_1
+0x40006f9	          0x4889df	                            mov rdi, rbx	       411	portdrv_core.c	FUNCTION_13	CALL_2
+0x40006fc	      0xe800000000	                          call 0x4000701	       411	portdrv_core.c	FUNCTION_13	CALL_2
+0x4000701	          0x4889df	                            mov rdi, rbx	       412	portdrv_core.c	FUNCTION_13	CALL_3
+0x4000704	              0x5b	                                 pop rbx	       413	portdrv_core.c	FUNCTION_13
+0x4000705	      0xe900000000	                   jmp section_end..text	       412	portdrv_core.c	FUNCTION_13	CALL_3
+pcie_port_remove_service	DO,0:FOR,0:ELSE,0:IF,2:functions,0:SWITCH,0:CALL,4:WHILE,0	21
+0x4000050	          0x4885ff	                           test rdi, rdi	       459	portdrv_core.c	FUNCTION_15	IF_1
+0x4000053	            0x7434	                            je 0x4000089	       459	portdrv_core.c	FUNCTION_15	IF_1
+0x4000055	    0x488b87880000	            mov rax, qword [rdi + 0x88] 	       459	portdrv_core.c	FUNCTION_15	IF_1
+0x400005c	          0x4885c0	                           test rax, rax	       459	portdrv_core.c	FUNCTION_15	IF_1
+0x400005f	            0x7428	                            je 0x4000089	       459	portdrv_core.c	FUNCTION_15	IF_1
+0x4000061	        0x4883f840	                           cmp rax, 0x40	       464	portdrv_core.c	FUNCTION_15	IF_2
+0x4000065	            0x7422	                            je 0x4000089	       464	portdrv_core.c	FUNCTION_15	IF_2
+0x4000067	        0x488b40d0	             mov rax, qword [rax - 0x30]	       464	portdrv_core.c	FUNCTION_15	IF_2
+0x400006b	          0x4885c0	                           test rax, rax	       464	portdrv_core.c	FUNCTION_15	IF_2
+0x400006e	            0x7419	                            je 0x4000089	       464	portdrv_core.c	FUNCTION_15	IF_2
+0x4000070	              0x53	                                push rbx	       455	portdrv_core.c	FUNCTION_15
+0x4000071	          0x4889fb	                            mov rbx, rdi	       455	portdrv_core.c	FUNCTION_15
+0x4000074	        0x488d7fe0	                   lea rdi, [rdi - 0x20]	       465	portdrv_core.c	FUNCTION_15	IF_2	CALL_3
+0x4000078	      0xe800000000	                          call 0x400007d	       465	portdrv_core.c	FUNCTION_15	IF_2	CALL_3
+0x400007d	          0x4889df	                            mov rdi, rbx	       466	portdrv_core.c	FUNCTION_15	IF_2	CALL_4
+0x4000080	      0xe800000000	                          call 0x4000085	       466	portdrv_core.c	FUNCTION_15	IF_2	CALL_4
+0x4000085	            0x31c0	                            xor eax, eax	       469	portdrv_core.c	FUNCTION_15
+0x4000087	              0x5b	                                 pop rbx	       469	portdrv_core.c	FUNCTION_15
+0x4000088	              0xc3	                                     ret	       469	portdrv_core.c	FUNCTION_15
+0x4000089	            0x31c0	                            xor eax, eax	       469	portdrv_core.c	FUNCTION_15
+0x400008b	              0xc3	                                     ret	       469	portdrv_core.c	FUNCTION_15
+pcie_port_service_unregister	DO,0:FOR,0:ELSE,0:IF,0:functions,0:SWITCH,0:CALL,1:WHILE,0	2
+0x4000150	        0x4883c740	                           add rdi, 0x40	       507	portdrv_core.c	FUNCTION_18	CALL_1
+0x4000154	      0xe900000000	                           jmp 0x4000159	       507	portdrv_core.c	FUNCTION_18	CALL_1
+remove_iter	DO,0:FOR,0:ELSE,0:IF,1:functions,0:SWITCH,0:CALL,1:WHILE,0	7
+0x40000a0	    0x4881bf800000	               cmp qword [rdi + 0x80], 0	       396	portdrv_core.c	FUNCTION_12	IF_1
+0x40000ab	            0x7403	                            je 0x40000b0	       396	portdrv_core.c	FUNCTION_12	IF_1
+0x40000ad	            0x31c0	                            xor eax, eax	       399	portdrv_core.c	FUNCTION_12
+0x40000af	              0xc3	                                     ret	       399	portdrv_core.c	FUNCTION_12
+0x40000b0	      0xe800000000	                          call 0x40000b5	       397	portdrv_core.c	FUNCTION_12	CALL_1
+0x40000b5	            0x31c0	                            xor eax, eax	       399	portdrv_core.c	FUNCTION_12
+0x40000b7	              0xc3	                                     ret	       399	portdrv_core.c	FUNCTION_12
+release_pcie_device	DO,0:FOR,0:ELSE,0:IF,0:functions,0:SWITCH,0:CALL,2:WHILE,0	2
+0x4000090	        0x4883ef20	                           sub rdi, 0x20	        31	portdrv_core.c	FUNCTION_1	CALL_2
+0x4000094	      0xe900000000	                           jmp 0x4000099	        31	portdrv_core.c	FUNCTION_1	CALL_2
+pcie_port_device_suspend	DO,0:FOR,0:ELSE,0:IF,0:functions,0:SWITCH,0:CALL,1:WHILE,0	3
+0x40006c0	    0x48c7c2000000	                              mov rdx, 0	       368	portdrv_core.c	FUNCTION_9	CALL_1
+0x40006c7	            0x31f6	                            xor esi, esi	       368	portdrv_core.c	FUNCTION_9	CALL_1
+0x40006c9	      0xe900000000	                           jmp 0x40006ce	       368	portdrv_core.c	FUNCTION_9	CALL_1
+pcie_port_shutdown_service	DO,0:FOR,0:ELSE,0:IF,0:functions,0:SWITCH,0:CALL,0:WHILE,0	1
+0x4000040	            0xf3c3	                                     ret	       480	portdrv_core.c	FUNCTION_16
+pcie_port_device_resume	DO,0:FOR,0:ELSE,0:IF,0:functions,0:SWITCH,0:CALL,1:WHILE,0	3
+0x40006d0	    0x48c7c2000000	                              mov rdx, 0	       390	portdrv_core.c	FUNCTION_11	CALL_1
+0x40006d7	            0x31f6	                            xor esi, esi	       390	portdrv_core.c	FUNCTION_11	CALL_1
+0x40006d9	      0xe900000000	                           jmp 0x40006de	       390	portdrv_core.c	FUNCTION_11	CALL_1

@@ -1,0 +1,45 @@
+hsu_dma_slave_config	CALL,3:functions,0:SWITCH,0:ELSE,0:DO,0:WHILE,0:FOR,0:IF,1	21
+0x40003c0	            0x8b06	                    mov eax, dword [rsi]	       352	hsu.c	FUNCTION_15	IF_1	CALL_2
+0x40003c2	          0x8d50ff	                      lea edx, [rax - 1]	       352	hsu.c	FUNCTION_15	IF_1	CALL_2
+0x40003c5	      0xb8eaffffff	                     mov eax, 0xffffffea	       353	hsu.c	FUNCTION_15	IF_1
+0x40003ca	          0x83fa01	                              cmp edx, 1	       352	hsu.c	FUNCTION_15	IF_1	CALL_2
+0x40003cd	            0x774e	                            ja 0x400041d	       352	hsu.c	FUNCTION_15	IF_1	CALL_2
+0x40003cf	          0x488b16	                    mov rdx, qword [rsi]	       355	hsu.c	FUNCTION_15	CALL_3
+0x40003d2	            0x31c0	                            xor eax, eax	       357	hsu.c	FUNCTION_15
+0x40003d4	    0x488997f00000	             mov qword [rdi + 0xf0], rdx	       355	hsu.c	FUNCTION_15	CALL_3
+0x40003db	        0x488b5608	                mov rdx, qword [rsi + 8]	       355	hsu.c	FUNCTION_15	CALL_3
+0x40003df	    0x488997f80000	             mov qword [rdi + 0xf8], rdx	       355	hsu.c	FUNCTION_15	CALL_3
+0x40003e6	        0x488b5610	            mov rdx, qword [rsi + 0x10] 	       355	hsu.c	FUNCTION_15	CALL_3
+0x40003ea	    0x488997000100	            mov qword [rdi + 0x100], rdx	       355	hsu.c	FUNCTION_15	CALL_3
+0x40003f1	        0x488b5618	            mov rdx, qword [rsi + 0x18] 	       355	hsu.c	FUNCTION_15	CALL_3
+0x40003f5	    0x488997080100	            mov qword [rdi + 0x108], rdx	       355	hsu.c	FUNCTION_15	CALL_3
+0x40003fc	        0x488b5620	            mov rdx, qword [rsi + 0x20] 	       355	hsu.c	FUNCTION_15	CALL_3
+0x4000400	    0x488997100100	            mov qword [rdi + 0x110], rdx	       355	hsu.c	FUNCTION_15	CALL_3
+0x4000407	        0x488b5628	            mov rdx, qword [rsi + 0x28] 	       355	hsu.c	FUNCTION_15	CALL_3
+0x400040b	    0x488997180100	            mov qword [rdi + 0x118], rdx	       355	hsu.c	FUNCTION_15	CALL_3
+0x4000412	        0x488b5630	            mov rdx, qword [rsi + 0x30] 	       355	hsu.c	FUNCTION_15	CALL_3
+0x4000416	    0x488997200100	            mov qword [rdi + 0x120], rdx	       355	hsu.c	FUNCTION_15	CALL_3
+0x400041d	            0xf3c3	                                     ret	       358	hsu.c	FUNCTION_15
+hsu_dma_remove	CALL,2:functions,0:SWITCH,0:ELSE,0:DO,0:WHILE,0:FOR,1:IF,0	22
+0x4000930	              0x55	                                push rbp	       482	hsu.c	FUNCTION_21
+0x4000931	              0x53	                                push rbx	       482	hsu.c	FUNCTION_21
+0x4000932	        0x488b6f20	            mov rbp, qword [rdi + 0x20] 	       483	hsu.c	FUNCTION_21
+0x4000936	          0x4889ef	                            mov rdi, rbp	       486	hsu.c	FUNCTION_21	CALL_1
+0x4000939	      0xe800000000	                          call 0x400093e	       486	hsu.c	FUNCTION_21	CALL_1
+0x400093e	    0x6683bd300100	               cmp word [rbp + 0x130], 0	       488	hsu.c	FUNCTION_21	FOR_1
+0x4000946	            0x742d	                            je 0x4000975	       488	hsu.c	FUNCTION_21	FOR_1
+0x4000948	            0x31db	                            xor ebx, ebx	       488	hsu.c	FUNCTION_21	FOR_1
+0x400094a	           0xfb7c3	                           movzx eax, bx	       491	hsu.c	FUNCTION_21	FOR_1	CALL_2
+0x400094d	          0x83c301	                              add ebx, 1	       488	hsu.c	FUNCTION_21	FOR_1
+0x4000950	        0x488d14c0	                  lea rdx, [rax + rax*8]	       491	hsu.c	FUNCTION_21	FOR_1	CALL_2
+0x4000954	        0x488d3c50	                  lea rdi, [rax + rdx*2]	       491	hsu.c	FUNCTION_21	FOR_1	CALL_2
+0x4000958	        0x48c1e704	                              shl rdi, 4	       491	hsu.c	FUNCTION_21	FOR_1	CALL_2
+0x400095c	    0x4803bd280100	            add rdi, qword [rbp + 0x128]	       491	hsu.c	FUNCTION_21	FOR_1	CALL_2
+0x4000963	        0x4883c758	                           add rdi, 0x58	       491	hsu.c	FUNCTION_21	FOR_1	CALL_2
+0x4000967	      0xe800000000	                          call 0x400096c	       491	hsu.c	FUNCTION_21	FOR_1	CALL_2
+0x400096c	    0x66399d300100	              cmp word [rbp + 0x130], bx	       488	hsu.c	FUNCTION_21	FOR_1
+0x4000973	            0x77d5	                            ja 0x400094a	       488	hsu.c	FUNCTION_21	FOR_1
+0x4000975	            0x31c0	                            xor eax, eax	       495	hsu.c	FUNCTION_21
+0x4000977	              0x5b	                                 pop rbx	       495	hsu.c	FUNCTION_21
+0x4000978	              0x5d	                                 pop rbp	       495	hsu.c	FUNCTION_21
+0x4000979	              0xc3	                                     ret	       495	hsu.c	FUNCTION_21

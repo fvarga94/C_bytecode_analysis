@@ -1,0 +1,54 @@
+zero_ctr	SWITCH,0:DO,0:WHILE,0:IF,1:CALL,0:functions,0:ELSE,0:FOR,0	8
+0x4000040	            0x85f6	                           test esi, esi	        20	dm-zero.c	FUNCTION_1	IF_1
+0x4000042	            0x750a	                           jne 0x400004e	        20	dm-zero.c	FUNCTION_1	IF_1
+0x4000044	    0xc74728010000	               mov dword [rdi + 0x28], 1	        28	dm-zero.c	FUNCTION_1
+0x400004b	            0x31c0	                            xor eax, eax	        30	dm-zero.c	FUNCTION_1
+0x400004d	              0xc3	                                     ret	        31	dm-zero.c	FUNCTION_1
+0x400004e	    0x48c747480000	               mov qword [rdi + 0x48], 0	        21	dm-zero.c	FUNCTION_1	IF_1
+0x4000056	      0xb8eaffffff	                     mov eax, 0xffffffea	        22	dm-zero.c	FUNCTION_1	IF_1
+0x400005b	              0xc3	                                     ret	        22	dm-zero.c	FUNCTION_1	IF_1
+zero_map	SWITCH,1:DO,0:WHILE,0:IF,1:CALL,3:functions,0:ELSE,0:FOR,0	27
+0x4000060	        0x4883ec08	                              sub rsp, 8	        37	dm-zero.c	FUNCTION_2
+0x4000064	          0x8b5610	            mov edx, dword [rsi + 0x10] 	        38	dm-zero.c	FUNCTION_2	SWITCH_1	CALL_1
+0x4000067	           0xfb6c2	                           movzx eax, dl	        38	dm-zero.c	FUNCTION_2	SWITCH_1	CALL_1
+0x400006a	            0x85c0	                           test eax, eax	        38	dm-zero.c	FUNCTION_2	SWITCH_1	CALL_1
+0x400006c	            0x741e	                            je 0x400008c	        38	dm-zero.c	FUNCTION_2	SWITCH_1	CALL_1
+0x400006e	          0x83f801	                              cmp eax, 1	        38	dm-zero.c	FUNCTION_2	SWITCH_1	CALL_1
+0x4000071	            0x750f	                           jne 0x4000082	        38	dm-zero.c	FUNCTION_2	SWITCH_1	CALL_1
+0x4000073	          0x4889f7	                            mov rdi, rsi	        53	dm-zero.c	FUNCTION_2	CALL_3
+0x4000076	      0xe800000000	                          call 0x400007b	        53	dm-zero.c	FUNCTION_2	CALL_3
+0x400007b	            0x31c0	                            xor eax, eax	        56	dm-zero.c	FUNCTION_2
+0x400007d	        0x4883c408	                              add rsp, 8	        57	dm-zero.c	FUNCTION_2
+0x4000081	              0xc3	                                     ret	        57	dm-zero.c	FUNCTION_2
+0x4000082	      0xb804000000	                              mov eax, 4	        50	dm-zero.c	FUNCTION_2	SWITCH_1
+0x4000087	        0x4883c408	                              add rsp, 8	        57	dm-zero.c	FUNCTION_2
+0x400008b	              0xc3	                                     ret	        57	dm-zero.c	FUNCTION_2
+0x400008c	    0x81e200000800	                        and edx, 0x80000	        40	dm-zero.c	FUNCTION_2	SWITCH_1	IF_1
+0x4000092	      0xb804000000	                              mov eax, 4	        42	dm-zero.c	FUNCTION_2	SWITCH_1	IF_1
+0x4000097	            0x75e4	                           jne 0x400007d	        40	dm-zero.c	FUNCTION_2	SWITCH_1	IF_1
+0x4000099	          0xff7638	                 push qword [rsi + 0x38]	       521	bio.h	FUNCTION_35	CALL_1
+0x400009c	          0xff7630	                 push qword [rsi + 0x30]	       521	bio.h	FUNCTION_35	CALL_1
+0x400009f	          0x4889f7	                            mov rdi, rsi	       521	bio.h	FUNCTION_35	CALL_1
+0x40000a2	          0xff7628	                 push qword [rsi + 0x28]	       521	bio.h	FUNCTION_35	CALL_1
+0x40000a5	      0x4889742418	             mov qword [rsp + 0x18], rsi	       521	bio.h	FUNCTION_35	CALL_1
+0x40000aa	      0xe800000000	                          call 0x40000af	       521	bio.h	FUNCTION_35	CALL_1
+0x40000af	        0x4883c418	                           add rsp, 0x18	       521	bio.h	FUNCTION_35	CALL_1
+0x40000b3	        0x488b3424	                    mov rsi, qword [rsp]	       521	bio.h	FUNCTION_35	CALL_1
+0x40000b7	            0xebba	                           jmp 0x4000073	       521	bio.h	FUNCTION_35	CALL_1
+dm_zero_exit	SWITCH,0:DO,0:WHILE,0:IF,0:CALL,1:functions,0:ELSE,0:FOR,0	4
+0x4000040	            0x85f6	                           test esi, esi	        20	dm-zero.c	FUNCTION_1	IF_1
+0x4000042	            0x750a	                           jne 0x400004e	        20	dm-zero.c	FUNCTION_1	IF_1
+0x4000044	    0xc74728010000	               mov dword [rdi + 0x28], 1	        28	dm-zero.c	FUNCTION_1
+0x400004b	              0x31	                                 invalid	        30	dm-zero.c	FUNCTION_1
+dm_zero_init	SWITCH,0:DO,0:WHILE,0:IF,1:CALL,2:functions,0:ELSE,0:FOR,0	11
+0x4000040	            0x85f6	                           test esi, esi	        20	dm-zero.c	FUNCTION_1	IF_1
+0x4000042	            0x750a	                           jne 0x400004e	        20	dm-zero.c	FUNCTION_1	IF_1
+0x4000044	    0xc74728010000	               mov dword [rdi + 0x28], 1	        28	dm-zero.c	FUNCTION_1
+0x400004b	            0x31c0	                            xor eax, eax	        30	dm-zero.c	FUNCTION_1
+0x400004d	              0xc3	                                     ret	        31	dm-zero.c	FUNCTION_1
+0x400004e	    0x48c747480000	               mov qword [rdi + 0x48], 0	        21	dm-zero.c	FUNCTION_1	IF_1
+0x4000056	      0xb8eaffffff	                     mov eax, 0xffffffea	        22	dm-zero.c	FUNCTION_1	IF_1
+0x400005b	              0xc3	                                     ret	        22	dm-zero.c	FUNCTION_1	IF_1
+0x400005c	         0xf1f4000	                         nop dword [rax]	        22	dm-zero.c	FUNCTION_1	IF_1
+0x4000060	        0x4883ec08	                              sub rsp, 8	        37	dm-zero.c	FUNCTION_2
+0x4000064	              0x8b	                                 invalid	        38	dm-zero.c	FUNCTION_2	SWITCH_1	CALL_1

@@ -1,0 +1,381 @@
+set_translate	WHILE,0:SWITCH,0:CALL,0:functions,0:IF,0:DO,0:ELSE,0:FOR,0	6
+0x40005b0	     0xfb786600100	          movzx eax, word [rsi + 0x160] 	       260	consolemap.c	FUNCTION_3
+0x40005b7	    0x893c85000000	                  mov dword [rax*4], edi	       260	consolemap.c	FUNCTION_3
+0x40005be	          0x4863c7	                         movsxd rax, edi	       261	consolemap.c	FUNCTION_3
+0x40005c1	        0x48c1e009	                              shl rax, 9	       261	consolemap.c	FUNCTION_3
+0x40005c5	    0x488d80000000	                          lea rax, [rax]	       261	consolemap.c	FUNCTION_3
+0x40005cc	              0xc3	                                     ret	       262	consolemap.c	FUNCTION_3
+conv_uni_to_pc	WHILE,0:SWITCH,0:CALL,0:functions,0:IF,6:DO,0:ELSE,3:FOR,0	45
+0x40008b0	    0x4881feffff00	                         cmp rsi, 0xffff	       816	consolemap.c	FUNCTION_22	IF_1
+0x40008b7	            0x7f7c	                            jg 0x4000935	       816	consolemap.c	FUNCTION_22	IF_1
+0x40008b9	        0x4883fe1f	                           cmp rsi, 0x1f	       818	consolemap.c	FUNCTION_22	ELSE_1	IF_2
+0x40008bd	            0x7e7c	                           jle 0x400093b	       818	consolemap.c	FUNCTION_22	ELSE_1	IF_2
+0x40008bf	    0x488d86f5dfff	                 lea rax, [rsi - 0x200b]	       820	consolemap.c	FUNCTION_22	ELSE_2	IF_3
+0x40008c6	        0x4883f804	                              cmp rax, 4	       820	consolemap.c	FUNCTION_22	ELSE_2	IF_3
+0x40008ca	            0x7675	                           jbe 0x4000941	       820	consolemap.c	FUNCTION_22	ELSE_2	IF_3
+0x40008cc	    0x4881fefffe00	                         cmp rsi, 0xfeff	       820	consolemap.c	FUNCTION_22	ELSE_2	IF_3
+0x40008d3	            0x746c	                            je 0x4000941	       820	consolemap.c	FUNCTION_22	ELSE_2	IF_3
+0x40008d5	          0x4889f0	                            mov rax, rsi	       827	consolemap.c	FUNCTION_22	ELSE_3	IF_4
+0x40008d8	    0x482500feffff	             and rax, 0xfffffffffffffe00	       827	consolemap.c	FUNCTION_22	ELSE_3	IF_4
+0x40008de	    0x483d00f00000	                         cmp rax, 0xf000	       827	consolemap.c	FUNCTION_22	ELSE_3	IF_4
+0x40008e4	            0x7447	                            je 0x400092d	       827	consolemap.c	FUNCTION_22	ELSE_3	IF_4
+0x40008e6	    0x488b87080300	           mov rax, qword [rdi + 0x308] 	       830	consolemap.c	FUNCTION_22	IF_5
+0x40008ed	          0x488b00	                    mov rax, qword [rax]	       830	consolemap.c	FUNCTION_22	IF_5
+0x40008f0	          0x4885c0	                           test rax, rax	       830	consolemap.c	FUNCTION_22	IF_5
+0x40008f3	            0x7452	                            je 0x4000947	       830	consolemap.c	FUNCTION_22	IF_5
+0x40008f5	          0x4889f2	                            mov rdx, rsi	       834	consolemap.c	FUNCTION_22	IF_6
+0x40008f8	        0x48c1fa0b	                            sar rdx, 0xb	       834	consolemap.c	FUNCTION_22	IF_6
+0x40008fc	        0x488b14d0	            mov rdx, qword [rax + rdx*8]	       834	consolemap.c	FUNCTION_22	IF_6
+0x4000900	          0x4885d2	                           test rdx, rdx	       834	consolemap.c	FUNCTION_22	IF_6
+0x4000903	            0x7430	                            je 0x4000935	       834	consolemap.c	FUNCTION_22	IF_6
+0x4000905	          0x4889f0	                            mov rax, rsi	       835	consolemap.c	FUNCTION_22	IF_6
+0x4000908	        0x48c1f806	                              sar rax, 6	       835	consolemap.c	FUNCTION_22	IF_6
+0x400090c	          0x83e01f	                           and eax, 0x1f	       835	consolemap.c	FUNCTION_22	IF_6
+0x400090f	        0x488b04c2	            mov rax, qword [rdx + rax*8]	       835	consolemap.c	FUNCTION_22	IF_6
+0x4000913	          0x4885c0	                           test rax, rax	       834	consolemap.c	FUNCTION_22	IF_6
+0x4000916	            0x741d	                            je 0x4000935	       834	consolemap.c	FUNCTION_22	IF_6
+0x4000918	          0x83e63f	                           and esi, 0x3f	       836	consolemap.c	FUNCTION_22	IF_6
+0x400091b	         0xfb70470	           movzx eax, word [rax + rsi*2]	       836	consolemap.c	FUNCTION_22	IF_6
+0x400091f	      0xbefcffffff	                     mov esi, 0xfffffffc	       839	consolemap.c	FUNCTION_22
+0x4000924	      0x3d00020000	                          cmp eax, 0x200	       839	consolemap.c	FUNCTION_22
+0x4000929	           0xf4dc6	                         cmovge eax, esi	       839	consolemap.c	FUNCTION_22
+0x400092c	              0xc3	                                     ret	       839	consolemap.c	FUNCTION_22
+0x400092d	            0x89f0	                            mov eax, esi	       828	consolemap.c	FUNCTION_22	ELSE_3	IF_4
+0x400092f	      0x25ff010000	                          and eax, 0x1ff	       828	consolemap.c	FUNCTION_22	ELSE_3	IF_4
+0x4000934	              0xc3	                                     ret	       828	consolemap.c	FUNCTION_22	ELSE_3	IF_4
+0x4000935	      0xb8fcffffff	                     mov eax, 0xfffffffc	       839	consolemap.c	FUNCTION_22
+0x400093a	              0xc3	                                     ret	       840	consolemap.c	FUNCTION_22
+0x400093b	      0xb8ffffffff	                     mov eax, 0xffffffff	       819	consolemap.c	FUNCTION_22	ELSE_1	IF_2
+0x4000940	              0xc3	                                     ret	       819	consolemap.c	FUNCTION_22	ELSE_1	IF_2
+0x4000941	      0xb8feffffff	                     mov eax, 0xfffffffe	       821	consolemap.c	FUNCTION_22	ELSE_2	IF_3
+0x4000946	              0xc3	                                     ret	       821	consolemap.c	FUNCTION_22	ELSE_2	IF_3
+0x4000947	      0xb8fdffffff	                     mov eax, 0xfffffffd	       831	consolemap.c	FUNCTION_22	IF_5
+0x400094c	              0xc3	                                     ret	       831	consolemap.c	FUNCTION_22	IF_5
+console_map_init	WHILE,0:SWITCH,0:CALL,2:functions,0:IF,1:DO,0:ELSE,0:FOR,1	21
+0x4000040	            0x89f0	                            mov eax, esi	       476	consolemap.c	FUNCTION_13
+0x4000042	            0x4155	                                push r13	       476	consolemap.c	FUNCTION_13
+0x4000044	            0x4154	                                push r12	       476	consolemap.c	FUNCTION_13
+0x4000046	        0x66c1e80b	                             shr ax, 0xb	       476	consolemap.c	FUNCTION_13
+0x400004a	              0x55	                                push rbp	       476	consolemap.c	FUNCTION_13
+0x400004b	              0x53	                                push rbx	       476	consolemap.c	FUNCTION_13
+0x400004c	           0xfb7c0	                           movzx eax, ax	       476	consolemap.c	FUNCTION_13
+0x400004f	          0x4989fc	                            mov r12, rdi	       476	consolemap.c	FUNCTION_13
+0x4000052	            0x89f3	                            mov ebx, esi	       476	consolemap.c	FUNCTION_13
+0x4000054	        0x4c8d2cc7	                  lea r13, [rdi + rax*8]	       476	consolemap.c	FUNCTION_13
+0x4000058	            0x89d5	                            mov ebp, edx	       476	consolemap.c	FUNCTION_13
+0x400005a	        0x498b4500	                    mov rax, qword [r13]	       480	consolemap.c	FUNCTION_13
+0x400005e	          0x4885c0	                           test rax, rax	       481	consolemap.c	FUNCTION_13	IF_1
+0x4000061	            0x743b	                            je 0x400009e	       481	consolemap.c	FUNCTION_13	IF_1
+0x4000063	            0x89da	                            mov edx, ebx	       488	consolemap.c	FUNCTION_13
+0x4000065	        0x66c1ea06	                               shr dx, 6	       488	consolemap.c	FUNCTION_13
+0x4000069	          0x83e21f	                           and edx, 0x1f	       488	consolemap.c	FUNCTION_13
+0x400006c	        0x4c8d2cd0	                  lea r13, [rax + rdx*8]	       488	consolemap.c	FUNCTION_13
+0x4000070	        0x498b4500	                    mov rax, qword [r13]	       488	consolemap.c	FUNCTION_13
+0x4000074	              0x48	                                 invalid	       489	consolemap.c	FUNCTION_13	IF_3
+0x4000075	              0x85	                                 invalid	       489	consolemap.c	FUNCTION_13	IF_3
+conv_uni_to_8bit	WHILE,0:SWITCH,0:CALL,0:functions,0:IF,1:DO,0:ELSE,0:FOR,1	18
+0x4000870	            0x31c0	                            xor eax, eax	       799	consolemap.c	FUNCTION_21
+0x4000872	            0xeb0c	                           jmp 0x4000880	       799	consolemap.c	FUNCTION_21
+0x4000874	        0x4883c001	                              add rax, 1	       799	consolemap.c	FUNCTION_21
+0x4000878	    0x483d00010000	                          cmp rax, 0x100	       801	consolemap.c	FUNCTION_21	FOR_1
+0x400087e	            0x741d	                            je 0x400089d	       801	consolemap.c	FUNCTION_21	FOR_1
+0x4000880	     0xfb794000000	             movzx edx, word [rax + rax]	       802	consolemap.c	FUNCTION_21	FOR_1	IF_1
+0x4000888	            0x39fa	                            cmp edx, edi	       802	consolemap.c	FUNCTION_21	FOR_1	IF_1
+0x400088a	            0x740f	                            je 0x400089b	       802	consolemap.c	FUNCTION_21	FOR_1	IF_1
+0x400088c	            0x89c1	                            mov ecx, eax	       802	consolemap.c	FUNCTION_21	FOR_1	IF_1
+0x400088e	          0x80cdf0	                             or ch, 0xf0	       802	consolemap.c	FUNCTION_21	FOR_1	IF_1
+0x4000891	            0x39ca	                            cmp edx, ecx	       802	consolemap.c	FUNCTION_21	FOR_1	IF_1
+0x4000893	            0x75df	                           jne 0x4000874	       802	consolemap.c	FUNCTION_21	FOR_1	IF_1
+0x4000895	            0x39c7	                            cmp edi, eax	       803	consolemap.c	FUNCTION_21	FOR_1	IF_1
+0x4000897	            0x75db	                           jne 0x4000874	       803	consolemap.c	FUNCTION_21	FOR_1	IF_1
+0x4000899	            0x89f8	                            mov eax, edi	       803	consolemap.c	FUNCTION_21	FOR_1	IF_1
+0x400089b	            0xf3c3	                                     ret	       806	consolemap.c	FUNCTION_21
+0x400089d	      0xb8ffffffff	                     mov eax, 0xffffffff	       805	consolemap.c	FUNCTION_21
+0x40008a2	              0xc3	                                     ret	       805	consolemap.c	FUNCTION_21
+conv_8bit_to_uni	WHILE,0:SWITCH,0:CALL,0:functions,0:IF,0:DO,0:ELSE,0:FOR,0	8
+0x4000850	        0x400fb6c7	                          movzx eax, dil	       794	consolemap.c	FUNCTION_20
+0x4000854	          0x4889c7	                            mov rdi, rax	       794	consolemap.c	FUNCTION_20
+0x4000857	     0xfb784000000	             movzx eax, word [rax + rax]	       795	consolemap.c	FUNCTION_20
+0x400085f	            0x89fa	                            mov edx, edi	       795	consolemap.c	FUNCTION_20
+0x4000861	          0x80cef0	                             or dh, 0xf0	       795	consolemap.c	FUNCTION_20
+0x4000864	            0x39d0	                            cmp eax, edx	       795	consolemap.c	FUNCTION_20
+0x4000866	           0xf44c7	                          cmove eax, edi	       795	consolemap.c	FUNCTION_20
+0x4000869	              0xc3	                                     ret	       796	consolemap.c	FUNCTION_20
+con_clear_unimap	WHILE,0:SWITCH,0:CALL,3:functions,0:IF,0:DO,0:ELSE,0:FOR,0	10
+0x40006f0	              0x53	                                push rbx	       527	consolemap.c	FUNCTION_15
+0x40006f1	          0x4889fb	                            mov rbx, rdi	       527	consolemap.c	FUNCTION_15
+0x40006f4	      0xe800000000	                          call 0x40006f9	       529	consolemap.c	FUNCTION_15	CALL_1
+0x40006f9	    0x488dbb080300	                  lea rdi, [rbx + 0x308]	       529	consolemap.c	FUNCTION_15	CALL_1
+0x4000700	      0xe8dbfdffff	     call sym.con_do_clear_unimap.isra.2	       530	consolemap.c	FUNCTION_15	CALL_2
+0x4000705	            0x89c3	                            mov ebx, eax	       530	consolemap.c	FUNCTION_15	CALL_2
+0x4000707	      0xe800000000	                          call 0x400070c	       531	consolemap.c	FUNCTION_15	CALL_3
+0x400070c	            0x89d8	                            mov eax, ebx	       533	consolemap.c	FUNCTION_15
+0x400070e	              0x5b	                                 pop rbx	       533	consolemap.c	FUNCTION_15
+0x400070f	              0xc3	                                     ret	       533	consolemap.c	FUNCTION_15
+con_release_unimap	WHILE,0:SWITCH,0:CALL,4:functions,0:IF,2:DO,0:ELSE,0:FOR,3	47
+0x4000190	    0x48393d000000	            cmp qword [0x04000197], rdi 	       401	consolemap.c	FUNCTION_10	IF_1
+0x4000197	            0x4157	                                push r15	       397	consolemap.c	FUNCTION_10
+0x4000199	          0x4989ff	                            mov r15, rdi	       397	consolemap.c	FUNCTION_10
+0x400019c	            0x4156	                                push r14	       397	consolemap.c	FUNCTION_10
+0x400019e	            0x4155	                                push r13	       397	consolemap.c	FUNCTION_10
+0x40001a0	            0x4154	                                push r12	       397	consolemap.c	FUNCTION_10
+0x40001a2	              0x55	                                push rbp	       397	consolemap.c	FUNCTION_10
+0x40001a3	              0x53	                                push rbx	       397	consolemap.c	FUNCTION_10
+0x40001a4	     0xf8490000000	                            je 0x400023a	       401	consolemap.c	FUNCTION_10	IF_1
+0x40001aa	    0x4d8db7000100	                  lea r14, [r15 + 0x100]	       401	consolemap.c	FUNCTION_10	IF_1
+0x40001b1	          0x4d89fc	                            mov r12, r15	       401	consolemap.c	FUNCTION_10	IF_1
+0x40001b4	        0x4d8b2c24	                    mov r13, qword [r12]	       403	consolemap.c	FUNCTION_10	FOR_1
+0x40001b8	          0x4d85ed	                           test r13, r13	       404	consolemap.c	FUNCTION_10	FOR_1	IF_2
+0x40001bb	            0x7423	                            je 0x40001e0	       404	consolemap.c	FUNCTION_10	FOR_1	IF_2
+0x40001bd	    0x498dad000100	                  lea rbp, [r13 + 0x100]	       404	consolemap.c	FUNCTION_10	FOR_1	IF_2
+0x40001c4	          0x4c89eb	                            mov rbx, r13	       404	consolemap.c	FUNCTION_10	FOR_1	IF_2
+0x40001c7	          0x488b3b	                    mov rdi, qword [rbx]	       406	consolemap.c	FUNCTION_10	FOR_1	IF_2	CALL_1
+0x40001ca	        0x4883c308	                              add rbx, 8	       406	consolemap.c	FUNCTION_10	FOR_1	IF_2	CALL_1
+0x40001ce	      0xe800000000	                          call 0x40001d3	       406	consolemap.c	FUNCTION_10	FOR_1	IF_2	CALL_1
+0x40001d3	          0x4839dd	                            cmp rbp, rbx	       405	consolemap.c	FUNCTION_10	FOR_1	IF_2	FOR_2
+0x40001d6	            0x75ef	                           jne 0x40001c7	       405	consolemap.c	FUNCTION_10	FOR_1	IF_2	FOR_2
+0x40001d8	          0x4c89ef	                            mov rdi, r13	       407	consolemap.c	FUNCTION_10	FOR_1	IF_2	CALL_2
+0x40001db	      0xe800000000	                          call 0x40001e0	       407	consolemap.c	FUNCTION_10	FOR_1	IF_2	CALL_2
+0x40001e0	    0x49c704240000	                      mov qword [r12], 0	       409	consolemap.c	FUNCTION_10	FOR_1
+0x40001e8	        0x4983c408	                              add r12, 8	       409	consolemap.c	FUNCTION_10	FOR_1
+0x40001ec	          0x4d39e6	                            cmp r14, r12	       402	consolemap.c	FUNCTION_10	FOR_1
+0x40001ef	            0x75c3	                           jne 0x40001b4	       402	consolemap.c	FUNCTION_10	FOR_1
+0x40001f1	    0x498d9f100100	                  lea rbx, [r15 + 0x110]	       402	consolemap.c	FUNCTION_10	FOR_1
+0x40001f8	    0x498daf300100	                  lea rbp, [r15 + 0x130]	       402	consolemap.c	FUNCTION_10	FOR_1
+0x40001ff	          0x488b3b	                    mov rdi, qword [rbx]	       412	consolemap.c	FUNCTION_10	FOR_3	CALL_3
+0x4000202	        0x4883c308	                              add rbx, 8	       412	consolemap.c	FUNCTION_10	FOR_3	CALL_3
+0x4000206	      0xe800000000	                          call 0x400020b	       412	consolemap.c	FUNCTION_10	FOR_3	CALL_3
+0x400020b	    0x48c743f80000	                  mov qword [rbx - 8], 0	       413	consolemap.c	FUNCTION_10	FOR_3
+0x4000213	          0x4839dd	                            cmp rbp, rbx	       411	consolemap.c	FUNCTION_10	FOR_3
+0x4000216	            0x75e7	                           jne 0x40001ff	       411	consolemap.c	FUNCTION_10	FOR_3
+0x4000218	    0x498bbf300100	           mov rdi, qword [r15 + 0x130] 	       415	consolemap.c	FUNCTION_10	CALL_4
+0x400021f	      0xe800000000	                          call 0x4000224	       415	consolemap.c	FUNCTION_10	CALL_4
+0x4000224	    0x49c787300100	              mov qword [r15 + 0x130], 0	       416	consolemap.c	FUNCTION_10
+0x400022f	              0x5b	                                 pop rbx	       417	consolemap.c	FUNCTION_10
+0x4000230	              0x5d	                                 pop rbp	       417	consolemap.c	FUNCTION_10
+0x4000231	            0x415c	                                 pop r12	       417	consolemap.c	FUNCTION_10
+0x4000233	            0x415d	                                 pop r13	       417	consolemap.c	FUNCTION_10
+0x4000235	            0x415e	                                 pop r14	       417	consolemap.c	FUNCTION_10
+0x4000237	            0x415f	                                 pop r15	       417	consolemap.c	FUNCTION_10
+0x4000239	              0xc3	                                     ret	       417	consolemap.c	FUNCTION_10
+0x400023a	    0x48c705000000	               mov qword [0x04000245], 0	       401	consolemap.c	FUNCTION_10	IF_1
+0x4000245	      0xe960ffffff	                           jmp 0x40001aa	       401	consolemap.c	FUNCTION_10	IF_1
+con_free_unimap	WHILE,0:SWITCH,0:CALL,2:functions,0:IF,2:DO,0:ELSE,0:FOR,0	15
+0x4000650	              0x53	                                push rbx	       421	consolemap.c	FUNCTION_11
+0x4000651	    0x488b87080300	           mov rax, qword [rdi + 0x308] 	       424	consolemap.c	FUNCTION_11
+0x4000658	          0x488b18	                    mov rbx, qword [rax]	       424	consolemap.c	FUNCTION_11
+0x400065b	          0x4885db	                           test rbx, rbx	       425	consolemap.c	FUNCTION_11	IF_1
+0x400065e	            0x7411	                            je 0x4000671	       425	consolemap.c	FUNCTION_11	IF_1
+0x4000660	    0x48c700000000	                      mov qword [rax], 0	       427	consolemap.c	FUNCTION_11
+0x4000667	    0x4883ab000100	              sub qword [rbx + 0x100], 1	       428	consolemap.c	FUNCTION_11	IF_2
+0x400066f	            0x7402	                            je 0x4000673	       428	consolemap.c	FUNCTION_11	IF_2
+0x4000671	              0x5b	                                 pop rbx	       432	consolemap.c	FUNCTION_11
+0x4000672	              0xc3	                                     ret	       432	consolemap.c	FUNCTION_11
+0x4000673	          0x4889df	                            mov rdi, rbx	       430	consolemap.c	FUNCTION_11	CALL_1
+0x4000676	      0xe815fbffff	             call sym.con_release_unimap	       430	consolemap.c	FUNCTION_11	CALL_1
+0x400067b	          0x4889df	                            mov rdi, rbx	       431	consolemap.c	FUNCTION_11	CALL_2
+0x400067e	              0x5b	                                 pop rbx	       432	consolemap.c	FUNCTION_11
+0x400067f	      0xe900000000	                           jmp 0x4000684	       431	consolemap.c	FUNCTION_11	CALL_2
+update_user_maps	WHILE,0:SWITCH,0:CALL,3:functions,0:IF,2:DO,0:ELSE,0:FOR,1	33
+0x4000a10	            0x4155	                                push r13	       298	consolemap.c	FUNCTION_5
+0x4000a12	          0x4531ed	                          xor r13d, r13d	       300	consolemap.c	FUNCTION_5
+0x4000a15	            0x4154	                                push r12	       298	consolemap.c	FUNCTION_5
+0x4000a17	              0x55	                                push rbp	       298	consolemap.c	FUNCTION_5
+0x4000a18	    0x48c7c5000000	                              mov rbp, 0	       298	consolemap.c	FUNCTION_5
+0x4000a1f	              0x53	                                push rbx	       298	consolemap.c	FUNCTION_5
+0x4000a20	            0x31db	                            xor ebx, ebx	       302	consolemap.c	FUNCTION_5	FOR_1
+0x4000a22	            0x89df	                            mov edi, ebx	       303	consolemap.c	FUNCTION_5	FOR_1	IF_1	CALL_1
+0x4000a24	      0xe800000000	                          call 0x4000a29	       303	consolemap.c	FUNCTION_5	FOR_1	IF_1	CALL_1
+0x4000a29	            0x85c0	                           test eax, eax	       303	consolemap.c	FUNCTION_5	FOR_1	IF_1	CALL_1
+0x4000a2b	            0x7430	                            je 0x4000a5d	       303	consolemap.c	FUNCTION_5	FOR_1	IF_1	CALL_1
+0x4000a2d	        0x488b7d00	                    mov rdi, qword [rbp]	       305	consolemap.c	FUNCTION_5	FOR_1
+0x4000a31	    0x488b87080300	           mov rax, qword [rdi + 0x308] 	       305	consolemap.c	FUNCTION_5	FOR_1
+0x4000a38	          0x4c8b20	                    mov r12, qword [rax]	       305	consolemap.c	FUNCTION_5	FOR_1
+0x4000a3b	          0x4d85e4	                           test r12, r12	       306	consolemap.c	FUNCTION_5	FOR_1	IF_2
+0x4000a3e	            0x741d	                            je 0x4000a5d	       306	consolemap.c	FUNCTION_5	FOR_1	IF_2
+0x4000a40	          0x4d39ec	                            cmp r12, r13	       306	consolemap.c	FUNCTION_5	FOR_1	IF_2
+0x4000a43	            0x7418	                            je 0x4000a5d	       306	consolemap.c	FUNCTION_5	FOR_1	IF_2
+0x4000a45	      0xba03000000	                              mov edx, 3	       307	consolemap.c	FUNCTION_5	FOR_1	IF_2	CALL_2
+0x4000a4a	          0x4c89e6	                            mov rsi, r12	       307	consolemap.c	FUNCTION_5	FOR_1	IF_2	CALL_2
+0x4000a4d	          0x4d89e5	                            mov r13, r12	       308	consolemap.c	FUNCTION_5	FOR_1	IF_2	CALL_3
+0x4000a50	      0xe8fbfeffff	             call sym.set_inverse_transl	       307	consolemap.c	FUNCTION_5	FOR_1	IF_2	CALL_2
+0x4000a55	          0x4c89e7	                            mov rdi, r12	       308	consolemap.c	FUNCTION_5	FOR_1	IF_2	CALL_3
+0x4000a58	      0xe853f8ffff	call sym.set_inverse_trans_unicode.isra.1	       308	consolemap.c	FUNCTION_5	FOR_1	IF_2	CALL_3
+0x4000a5d	          0x83c301	                              add ebx, 1	       302	consolemap.c	FUNCTION_5	FOR_1
+0x4000a60	        0x4883c528	                           add rbp, 0x28	       302	consolemap.c	FUNCTION_5	FOR_1
+0x4000a64	          0x83fb3f	                           cmp ebx, 0x3f	       302	consolemap.c	FUNCTION_5	FOR_1
+0x4000a67	            0x75b9	                           jne 0x4000a22	       302	consolemap.c	FUNCTION_5	FOR_1
+0x4000a69	              0x5b	                                 pop rbx	       312	consolemap.c	FUNCTION_5
+0x4000a6a	              0x5d	                                 pop rbp	       312	consolemap.c	FUNCTION_5
+0x4000a6b	            0x415c	                                 pop r12	       312	consolemap.c	FUNCTION_5
+0x4000a6d	            0x415d	                                 pop r13	       312	consolemap.c	FUNCTION_5
+0x4000a6f	              0xc3	                                     ret	       312	consolemap.c	FUNCTION_5
+con_set_unimap	WHILE,0:SWITCH,0:CALL,14:functions,0:IF,12:DO,0:ELSE,3:FOR,5	141
+0x4000ba0	            0x31c0	                            xor eax, eax	       542	consolemap.c	FUNCTION_16	IF_1
+0x4000ba2	          0x6685f6	                             test si, si	       541	consolemap.c	FUNCTION_16	IF_1
+0x4000ba5	            0x7501	                           jne 0x4000ba8	       541	consolemap.c	FUNCTION_16	IF_1
+0x4000ba7	              0xc3	                                     ret	       645	consolemap.c	FUNCTION_16
+0x4000ba8	            0x4157	                                push r15	       536	consolemap.c	FUNCTION_16
+0x4000baa	            0x4156	                                push r14	       536	consolemap.c	FUNCTION_16
+0x4000bac	            0x4155	                                push r13	       536	consolemap.c	FUNCTION_16
+0x4000bae	            0x4154	                                push r12	       536	consolemap.c	FUNCTION_16
+0x4000bb0	          0x4989fc	                            mov r12, rdi	       536	consolemap.c	FUNCTION_16
+0x4000bb3	              0x55	                                push rbp	       536	consolemap.c	FUNCTION_16
+0x4000bb4	              0x53	                                push rbx	       536	consolemap.c	FUNCTION_16
+0x4000bb5	          0x4889d7	                            mov rdi, rdx	       544	consolemap.c	FUNCTION_16	CALL_1
+0x4000bb8	        0x4883ec40	                           sub rsp, 0x40	       536	consolemap.c	FUNCTION_16
+0x4000bbc	        0x8974240c	              mov dword [rsp + 0xc], esi	       536	consolemap.c	FUNCTION_16
+0x4000bc0	           0xfb7f6	                           movzx esi, si	       544	consolemap.c	FUNCTION_16	CALL_1
+0x4000bc3	        0x48c1e602	                              shl rsi, 2	       544	consolemap.c	FUNCTION_16	CALL_1
+0x4000bc7	      0xe800000000	                          call 0x4000bcc	       544	consolemap.c	FUNCTION_16	CALL_1
+0x4000bcc	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       545	consolemap.c	FUNCTION_16	IF_2	CALL_2
+0x4000bd2	        0x48890424	                    mov qword [rsp], rax	       544	consolemap.c	FUNCTION_16	CALL_1
+0x4000bd6	     0xf87e5010000	                            ja 0x4000dc1	       545	consolemap.c	FUNCTION_16	IF_2	CALL_2
+0x4000bdc	      0xe800000000	                          call 0x4000be1	       548	consolemap.c	FUNCTION_16	CALL_4
+0x4000be1	    0x498b84240803	           mov rax, qword [r12 + 0x308] 	       551	consolemap.c	FUNCTION_16
+0x4000be9	    0x41bfeaffffff	                    mov r15d, 0xffffffea	       554	consolemap.c	FUNCTION_16	IF_3
+0x4000bef	          0x488b18	                    mov rbx, qword [rax]	       551	consolemap.c	FUNCTION_16
+0x4000bf2	          0x4885db	                           test rbx, rbx	       553	consolemap.c	FUNCTION_16	IF_3
+0x4000bf5	     0xf84e5000000	                            je 0x4000ce0	       553	consolemap.c	FUNCTION_16	IF_3
+0x4000bfb	    0x4883bb000100	              cmp qword [rbx + 0x100], 1	       559	consolemap.c	FUNCTION_16	IF_4
+0x4000c03	     0xf86f7000000	                           jbe 0x4000d00	       559	consolemap.c	FUNCTION_16	IF_4
+0x4000c09	    0x498d84240803	                  lea rax, [r12 + 0x308]	       559	consolemap.c	FUNCTION_16	IF_4
+0x4000c11	          0x4889c7	                            mov rdi, rax	       563	consolemap.c	FUNCTION_16	IF_4	CALL_5
+0x4000c14	      0x4889442410	             mov qword [rsp + 0x10], rax	       563	consolemap.c	FUNCTION_16	IF_4	CALL_5
+0x4000c19	      0xe8c2f8ffff	     call sym.con_do_clear_unimap.isra.2	       563	consolemap.c	FUNCTION_16	IF_4	CALL_5
+0x4000c1e	            0x85c0	                           test eax, eax	       564	consolemap.c	FUNCTION_16	IF_4	IF_5
+0x4000c20	          0x4189c7	                           mov r15d, eax	       563	consolemap.c	FUNCTION_16	IF_4	CALL_5
+0x4000c23	     0xf85b7000000	                           jne 0x4000ce0	       564	consolemap.c	FUNCTION_16	IF_4	IF_5
+0x4000c29	    0x498b84240803	           mov rax, qword [r12 + 0x308] 	       573	consolemap.c	FUNCTION_16	IF_4
+0x4000c31	    0x488d8b000100	                  lea rcx, [rbx + 0x100]	       573	consolemap.c	FUNCTION_16	IF_4
+0x4000c38	      0x48895c2418	             mov qword [rsp + 0x18], rbx	       573	consolemap.c	FUNCTION_16	IF_4
+0x4000c3d	          0x4531f6	                          xor r14d, r14d	       581	consolemap.c	FUNCTION_16	IF_4
+0x4000c40	      0x48895c2430	             mov qword [rsp + 0x30], rbx	       581	consolemap.c	FUNCTION_16	IF_4
+0x4000c45	      0x48894c2438	             mov qword [rsp + 0x38], rcx	       581	consolemap.c	FUNCTION_16	IF_4
+0x4000c4a	          0x488b00	                    mov rax, qword [rax]	       573	consolemap.c	FUNCTION_16	IF_4
+0x4000c4d	      0x4889442420	             mov qword [rsp + 0x20], rax	       573	consolemap.c	FUNCTION_16	IF_4
+0x4000c52	          0x4989c5	                            mov r13, rax	       581	consolemap.c	FUNCTION_16	IF_4
+0x4000c55	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       583	consolemap.c	FUNCTION_16	IF_4	FOR_1
+0x4000c5a	          0x4c8b38	                    mov r15, qword [rax]	       583	consolemap.c	FUNCTION_16	IF_4	FOR_1
+0x4000c5d	          0x4d85ff	                           test r15, r15	       584	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6
+0x4000c60	     0xf8473010000	                            je 0x4000dd9	       584	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6
+0x4000c66	    0x498d87000100	                  lea rax, [r15 + 0x100]	       584	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6
+0x4000c6d	      0x4889442428	             mov qword [rsp + 0x28], rax	       584	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6
+0x4000c72	          0x498b2f	                    mov rbp, qword [r15]	       586	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2
+0x4000c75	          0x4885ed	                           test rbp, rbp	       587	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7
+0x4000c78	     0xf8410010000	                            je 0x4000d8e	       587	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7
+0x4000c7e	        0x418d5e40	                   lea ebx, [r14 + 0x40]	       587	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7
+0x4000c82	            0xeb12	                           jmp 0x4000c96	       587	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7
+0x4000c84	        0x4183c601	                             add r14d, 1	       588	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3
+0x4000c88	        0x4883c502	                              add rbp, 2	       588	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3
+0x4000c8c	        0x664139de	                            cmp r14w, bx	       588	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3
+0x4000c90	     0xf84fc000000	                            je 0x4000d92	       588	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3
+0x4000c96	         0xfb75500	                   movzx edx, word [rbp]	       589	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8
+0x4000c9a	        0x6683faff	              cmp dx, 0xffffffffffffffff	       589	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8
+0x4000c9e	            0x74e4	                            je 0x4000c84	       589	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8
+0x4000ca0	        0x410fb7f6	                         movzx esi, r14w	       594	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	CALL_6
+0x4000ca4	          0x4c89ef	                            mov rdi, r13	       594	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	CALL_6
+0x4000ca7	      0xe894f3ffff	             call sym.con_insert_unipair	       594	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	CALL_6
+0x4000cac	            0x85c0	                           test eax, eax	       595	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9
+0x4000cae	            0x74d4	                            je 0x4000c84	       595	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9
+0x4000cb0	      0x488b5c2430	            mov rbx, qword [rsp + 0x30] 	       595	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9
+0x4000cb5	          0x4189c7	                           mov r15d, eax	       595	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9
+0x4000cb8	    0x488383000100	              add qword [rbx + 0x100], 1	       596	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9
+0x4000cc0	    0x498b84240803	           mov rax, qword [r12 + 0x308] 	       597	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9
+0x4000cc8	          0x488918	                    mov qword [rax], rbx	       597	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9
+0x4000ccb	      0x488b5c2420	            mov rbx, qword [rsp + 0x20] 	       598	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9	CALL_7
+0x4000cd0	          0x4889df	                            mov rdi, rbx	       598	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9	CALL_7
+0x4000cd3	      0xe8b8f4ffff	             call sym.con_release_unimap	       598	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9	CALL_7
+0x4000cd8	          0x4889df	                            mov rdi, rbx	       599	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9	CALL_8
+0x4000cdb	      0xe800000000	                          call 0x4000ce0	       599	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	IF_7	FOR_3	IF_8	IF_9	CALL_8
+0x4000ce0	      0xe800000000	                          call 0x4000ce5	       642	consolemap.c	FUNCTION_16	CALL_13
+0x4000ce5	        0x488b3c24	                    mov rdi, qword [rsp]	       643	consolemap.c	FUNCTION_16	CALL_14
+0x4000ce9	      0xe800000000	                          call 0x4000cee	       643	consolemap.c	FUNCTION_16	CALL_14
+0x4000cee	          0x4489f8	                           mov eax, r15d	       644	consolemap.c	FUNCTION_16
+0x4000cf1	        0x4883c440	                           add rsp, 0x40	       645	consolemap.c	FUNCTION_16
+0x4000cf5	              0x5b	                                 pop rbx	       645	consolemap.c	FUNCTION_16
+0x4000cf6	              0x5d	                                 pop rbp	       645	consolemap.c	FUNCTION_16
+0x4000cf7	            0x415c	                                 pop r12	       645	consolemap.c	FUNCTION_16
+0x4000cf9	            0x415d	                                 pop r13	       645	consolemap.c	FUNCTION_16
+0x4000cfb	            0x415e	                                 pop r14	       645	consolemap.c	FUNCTION_16
+0x4000cfd	            0x415f	                                 pop r15	       645	consolemap.c	FUNCTION_16
+0x4000cff	              0xc3	                                     ret	       645	consolemap.c	FUNCTION_16
+0x4000d00	    0x483b1d000000	            cmp rbx, qword [0x04000d07] 	       618	consolemap.c	FUNCTION_16	ELSE_2	ELSE_3	IF_10
+0x4000d07	     0xf84bc000000	                            je 0x4000dc9	       618	consolemap.c	FUNCTION_16	ELSE_2	ELSE_3	IF_10
+0x4000d0d	    0x498d84240803	                  lea rax, [r12 + 0x308]	       618	consolemap.c	FUNCTION_16	ELSE_2	ELSE_3	IF_10
+0x4000d15	      0x4889442410	             mov qword [rsp + 0x10], rax	       618	consolemap.c	FUNCTION_16	ELSE_2	ELSE_3	IF_10
+0x4000d1a	       0xfb744240c	            movzx eax, word [rsp + 0xc] 	       618	consolemap.c	FUNCTION_16	ELSE_2	ELSE_3	IF_10
+0x4000d1f	        0x488b0c24	                    mov rcx, qword [rsp]	       618	consolemap.c	FUNCTION_16	ELSE_2	ELSE_3	IF_10
+0x4000d23	          0x4531ff	                          xor r15d, r15d	       537	consolemap.c	FUNCTION_16
+0x4000d26	          0x4989cd	                            mov r13, rcx	       625	consolemap.c	FUNCTION_16	FOR_4
+0x4000d29	          0x83e801	                              sub eax, 1	       625	consolemap.c	FUNCTION_16	FOR_4
+0x4000d2c	           0xfb7c0	                           movzx eax, ax	       625	consolemap.c	FUNCTION_16	FOR_4
+0x4000d2f	      0x488d6c8104	              lea rbp, [rcx + rax*4 + 4]	       625	consolemap.c	FUNCTION_16	FOR_4
+0x4000d34	      0x410fb75502	               movzx edx, word [r13 + 2]	       626	consolemap.c	FUNCTION_16	FOR_4	CALL_9
+0x4000d39	      0x410fb77500	                   movzx esi, word [r13]	       626	consolemap.c	FUNCTION_16	FOR_4	CALL_9
+0x4000d3e	          0x4889df	                            mov rdi, rbx	       626	consolemap.c	FUNCTION_16	FOR_4	CALL_9
+0x4000d41	      0xe8faf2ffff	             call sym.con_insert_unipair	       626	consolemap.c	FUNCTION_16	FOR_4	CALL_9
+0x4000d46	            0x85c0	                           test eax, eax	       626	consolemap.c	FUNCTION_16	FOR_4	CALL_9
+0x4000d48	        0x440f45f8	                        cmovne r15d, eax	       626	consolemap.c	FUNCTION_16	FOR_4	CALL_9
+0x4000d4c	        0x4983c504	                              add r13, 4	       625	consolemap.c	FUNCTION_16	FOR_4
+0x4000d50	          0x4939ed	                            cmp r13, rbp	       625	consolemap.c	FUNCTION_16	FOR_4
+0x4000d53	            0x75df	                           jne 0x4000d34	       625	consolemap.c	FUNCTION_16	FOR_4
+0x4000d55	      0x488b7c2410	            mov rdi, qword [rsp + 0x10] 	       634	consolemap.c	FUNCTION_16	IF_12	CALL_10
+0x4000d5a	          0x4889de	                            mov rsi, rbx	       634	consolemap.c	FUNCTION_16	IF_12	CALL_10
+0x4000d5d	      0xe82ef6ffff	        call sym.con_unify_unimap.isra.3	       634	consolemap.c	FUNCTION_16	IF_12	CALL_10
+0x4000d62	            0x85c0	                           test eax, eax	       634	consolemap.c	FUNCTION_16	IF_12	CALL_10
+0x4000d64	     0xf8576ffffff	                           jne 0x4000ce0	       634	consolemap.c	FUNCTION_16	IF_12	CALL_10
+0x4000d6a	            0x31ed	                            xor ebp, ebp	       634	consolemap.c	FUNCTION_16	IF_12	CALL_10
+0x4000d6c	            0x89ea	                            mov edx, ebp	       638	consolemap.c	FUNCTION_16	CALL_11
+0x4000d6e	          0x4889de	                            mov rsi, rbx	       638	consolemap.c	FUNCTION_16	CALL_11
+0x4000d71	          0x4c89e7	                            mov rdi, r12	       638	consolemap.c	FUNCTION_16	CALL_11
+0x4000d74	          0x83c501	                              add ebp, 1	       637	consolemap.c	FUNCTION_16	FOR_5
+0x4000d77	      0xe8d4fbffff	             call sym.set_inverse_transl	       638	consolemap.c	FUNCTION_16	CALL_11
+0x4000d7c	          0x83fd04	                              cmp ebp, 4	       637	consolemap.c	FUNCTION_16	FOR_5
+0x4000d7f	            0x75eb	                           jne 0x4000d6c	       637	consolemap.c	FUNCTION_16	FOR_5
+0x4000d81	          0x4889df	                            mov rdi, rbx	       639	consolemap.c	FUNCTION_16	CALL_12
+0x4000d84	      0xe827f5ffff	call sym.set_inverse_trans_unicode.isra.1	       639	consolemap.c	FUNCTION_16	CALL_12
+0x4000d89	      0xe952ffffff	                           jmp 0x4000ce0	       639	consolemap.c	FUNCTION_16	CALL_12
+0x4000d8e	        0x4183c640	                          add r14d, 0x40	       606	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	ELSE_1
+0x4000d92	        0x4983c708	                              add r15, 8	       606	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2	ELSE_1
+0x4000d96	      0x4c3b7c2428	            cmp r15, qword [rsp + 0x28] 	       585	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2
+0x4000d9b	     0xf85d1feffff	                           jne 0x4000c72	       585	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2
+0x4000da1	    0x488344241808	               add qword [rsp + 0x18], 8	       585	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2
+0x4000da7	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       585	consolemap.c	FUNCTION_16	IF_4	FOR_1	IF_6	FOR_2
+0x4000dac	      0x483b442438	            cmp rax, qword [rsp + 0x38] 	       582	consolemap.c	FUNCTION_16	IF_4	FOR_1
+0x4000db1	     0xf859efeffff	                           jne 0x4000c55	       582	consolemap.c	FUNCTION_16	IF_4	FOR_1
+0x4000db7	      0x488b5c2420	            mov rbx, qword [rsp + 0x20] 	       617	consolemap.c	FUNCTION_16	IF_4	ELSE_2
+0x4000dbc	      0xe959ffffff	                           jmp 0x4000d1a	       617	consolemap.c	FUNCTION_16	IF_4	ELSE_2
+0x4000dc1	          0x8b0424	                    mov eax, dword [rsp]	       546	consolemap.c	FUNCTION_16	CALL_3
+0x4000dc4	      0xe928ffffff	                           jmp 0x4000cf1	       546	consolemap.c	FUNCTION_16	CALL_3
+0x4000dc9	    0x48c705000000	               mov qword [0x04000dd4], 0	       619	consolemap.c	FUNCTION_16	ELSE_2	ELSE_3	IF_10
+0x4000dd4	      0xe934ffffff	                           jmp 0x4000d0d	       619	consolemap.c	FUNCTION_16	ELSE_2	ELSE_3	IF_10
+0x4000dd9	    0x664181c60008	                         add r14w, 0x800	       611	consolemap.c	FUNCTION_16	IF_4	FOR_1	ELSE_2
+0x4000ddf	            0xebc0	                           jmp 0x4000da1	       611	consolemap.c	FUNCTION_16	IF_4	FOR_1	ELSE_2
+con_copy_unimap	WHILE,0:SWITCH,0:CALL,1:functions,0:IF,2:DO,0:ELSE,0:FOR,0	26
+0x4000690	    0x488b86080300	           mov rax, qword [rsi + 0x308] 	       718	consolemap.c	FUNCTION_18	IF_1
+0x4000697	            0x4154	                                push r12	       715	consolemap.c	FUNCTION_18
+0x4000699	              0x55	                                push rbp	       715	consolemap.c	FUNCTION_18
+0x400069a	              0x53	                                push rbx	       715	consolemap.c	FUNCTION_18
+0x400069b	          0x488b10	                    mov rdx, qword [rax]	       718	consolemap.c	FUNCTION_18	IF_1
+0x400069e	          0x4885d2	                           test rdx, rdx	       718	consolemap.c	FUNCTION_18	IF_1
+0x40006a1	            0x743e	                            je 0x40006e1	       718	consolemap.c	FUNCTION_18	IF_1
+0x40006a3	    0x488b87080300	           mov rax, qword [rdi + 0x308] 	       720	consolemap.c	FUNCTION_18	IF_2
+0x40006aa	          0x4531e4	                          xor r12d, r12d	       721	consolemap.c	FUNCTION_18	IF_2
+0x40006ad	          0x483b10	                    cmp rdx, qword [rax]	       720	consolemap.c	FUNCTION_18	IF_2
+0x40006b0	            0x7427	                            je 0x40006d9	       720	consolemap.c	FUNCTION_18	IF_2
+0x40006b2	          0x4889f5	                            mov rbp, rsi	       720	consolemap.c	FUNCTION_18	IF_2
+0x40006b5	          0x4889fb	                            mov rbx, rdi	       720	consolemap.c	FUNCTION_18	IF_2
+0x40006b8	      0xe800000000	                          call 0x40006bd	       722	consolemap.c	FUNCTION_18	CALL_1
+0x40006bd	    0x488b85080300	           mov rax, qword [rbp + 0x308] 	       723	consolemap.c	FUNCTION_18
+0x40006c4	          0x488b10	                    mov rdx, qword [rax]	       723	consolemap.c	FUNCTION_18
+0x40006c7	    0x488382000100	              add qword [rdx + 0x100], 1	       724	consolemap.c	FUNCTION_18
+0x40006cf	    0x488b83080300	           mov rax, qword [rbx + 0x308] 	       725	consolemap.c	FUNCTION_18
+0x40006d6	          0x488910	                    mov qword [rax], rdx	       725	consolemap.c	FUNCTION_18
+0x40006d9	          0x4489e0	                           mov eax, r12d	       727	consolemap.c	FUNCTION_18
+0x40006dc	              0x5b	                                 pop rbx	       727	consolemap.c	FUNCTION_18
+0x40006dd	              0x5d	                                 pop rbp	       727	consolemap.c	FUNCTION_18
+0x40006de	            0x415c	                                 pop r12	       727	consolemap.c	FUNCTION_18
+0x40006e0	              0xc3	                                     ret	       727	consolemap.c	FUNCTION_18
+0x40006e1	    0x41bceaffffff	                    mov r12d, 0xffffffea	       719	consolemap.c	FUNCTION_18	IF_1
+0x40006e7	            0xebf0	                           jmp 0x40006d9	       719	consolemap.c	FUNCTION_18	IF_1

@@ -1,0 +1,53 @@
+usb_acpi_power_manageable	CALL,2:ELSE,1:FOR,0:IF,1:functions,0:WHILE,0:SWITCH,0:DO,0	8
+0x4000060	          0x83c601	                              add esi, 1	        31	usb-acpi.c	FUNCTION_1	CALL_1
+0x4000063	      0xe800000000	                          call 0x4000068	        31	usb-acpi.c	FUNCTION_1	CALL_1
+0x4000068	          0x4885c0	                           test rax, rax	        33	usb-acpi.c	FUNCTION_1	IF_1
+0x400006b	            0x7408	                            je 0x4000075	        33	usb-acpi.c	FUNCTION_1	IF_1
+0x400006d	          0x4889c7	                            mov rdi, rax	        34	usb-acpi.c	FUNCTION_1	CALL_2
+0x4000070	      0xe900000000	                           jmp 0x4000075	        34	usb-acpi.c	FUNCTION_1	CALL_2
+0x4000075	            0x31c0	                            xor eax, eax	        37	usb-acpi.c	FUNCTION_1
+0x4000077	              0xc3	                                     ret	        37	usb-acpi.c	FUNCTION_1
+usb_acpi_set_power_state	CALL,5:ELSE,2:FOR,0:IF,4:functions,0:WHILE,0:SWITCH,0:DO,0	29
+0x4000080	            0x4154	                                push r12	        53	usb-acpi.c	FUNCTION_2
+0x4000082	              0x55	                                push rbp	        53	usb-acpi.c	FUNCTION_2
+0x4000083	          0x4189d4	                           mov r12d, edx	        53	usb-acpi.c	FUNCTION_2
+0x4000086	              0x53	                                push rbx	        53	usb-acpi.c	FUNCTION_2
+0x4000087	          0x4889fd	                            mov rbp, rdi	        53	usb-acpi.c	FUNCTION_2
+0x400008a	            0x89f3	                            mov ebx, esi	        53	usb-acpi.c	FUNCTION_2
+0x400008c	      0xe800000000	                          call 0x4000091	        54	usb-acpi.c	FUNCTION_2	CALL_1
+0x4000091	          0x4885c0	                           test rax, rax	        61	usb-acpi.c	FUNCTION_2	IF_1
+0x4000094	            0x7425	                            je 0x40000bb	        61	usb-acpi.c	FUNCTION_2	IF_1
+0x4000096	          0x8d7301	                      lea esi, [rbx + 1]	        61	usb-acpi.c	FUNCTION_2	IF_1
+0x4000099	          0x4889ef	                            mov rdi, rbp	        65	usb-acpi.c	FUNCTION_2	CALL_2
+0x400009c	      0xe800000000	                          call 0x40000a1	        65	usb-acpi.c	FUNCTION_2	CALL_2
+0x40000a1	          0x4885c0	                           test rax, rax	        66	usb-acpi.c	FUNCTION_2	IF_2
+0x40000a4	            0x741f	                            je 0x40000c5	        66	usb-acpi.c	FUNCTION_2	IF_2
+0x40000a6	        0x4180fc01	                             cmp r12b, 1	        69	usb-acpi.c	FUNCTION_2	IF_3
+0x40000aa	          0x4889c7	                            mov rdi, rax	        74	usb-acpi.c	FUNCTION_2	CALL_3
+0x40000ad	              0x5b	                                 pop rbx	        81	usb-acpi.c	FUNCTION_2
+0x40000ae	              0x5d	                                 pop rbp	        81	usb-acpi.c	FUNCTION_2
+0x40000af	            0x415c	                                 pop r12	        81	usb-acpi.c	FUNCTION_2
+0x40000b1	            0x19f6	                            sbb esi, esi	        69	usb-acpi.c	FUNCTION_2	IF_3
+0x40000b3	          0x83e604	                              and esi, 4	        69	usb-acpi.c	FUNCTION_2	IF_3
+0x40000b6	      0xe900000000	                           jmp 0x40000bb	        74	usb-acpi.c	FUNCTION_2	CALL_3
+0x40000bb	      0xb8edffffff	                     mov eax, 0xffffffed	        62	usb-acpi.c	FUNCTION_2	IF_1
+0x40000c0	              0x5b	                                 pop rbx	        81	usb-acpi.c	FUNCTION_2
+0x40000c1	              0x5d	                                 pop rbp	        81	usb-acpi.c	FUNCTION_2
+0x40000c2	            0x415c	                                 pop r12	        81	usb-acpi.c	FUNCTION_2
+0x40000c4	              0xc3	                                     ret	        81	usb-acpi.c	FUNCTION_2
+0x40000c5	      0xb8eaffffff	                     mov eax, 0xffffffea	        67	usb-acpi.c	FUNCTION_2	IF_2
+0x40000ca	            0xebf4	                           jmp 0x40000c0	        67	usb-acpi.c	FUNCTION_2	IF_2
+usb_acpi_unregister	CALL,1:ELSE,0:FOR,0:IF,0:functions,0:WHILE,0:SWITCH,0:DO,0	2
+0x4000330	    0x48c7c7000000	                              mov rdi, 0	       243	usb-acpi.c	FUNCTION_8	CALL_1
+0x4000337	      0xe900000000	                   jmp section_end..text	       243	usb-acpi.c	FUNCTION_8	CALL_1
+usb_acpi_register	CALL,1:ELSE,0:FOR,0:IF,0:functions,0:WHILE,0:SWITCH,0:DO,0	2
+0x4000320	    0x48c7c7000000	                              mov rdi, 0	       238	usb-acpi.c	FUNCTION_7	CALL_1
+0x4000327	      0xe900000000	                           jmp 0x400032c	       238	usb-acpi.c	FUNCTION_7	CALL_1
+usb_acpi_bus_match	CALL,2:ELSE,0:FOR,0:IF,0:functions,0:WHILE,0:SWITCH,0:DO,0	7
+0x4000040	        0x488b5758	            mov rdx, qword [rdi + 0x58] 	       226	usb-acpi.c	FUNCTION_6
+0x4000044	    0x4881fa000000	                              cmp rdx, 0	       227	usb-acpi.c	FUNCTION_6	CALL_2
+0x400004b	           0xf94c1	                                 sete cl	       227	usb-acpi.c	FUNCTION_6	CALL_2
+0x400004e	    0x4881fa000000	                              cmp rdx, 0	       227	usb-acpi.c	FUNCTION_6	CALL_2
+0x4000055	           0xf94c0	                                 sete al	       227	usb-acpi.c	FUNCTION_6	CALL_2
+0x4000058	             0x9c8	                             or eax, ecx	       227	usb-acpi.c	FUNCTION_6	CALL_2
+0x400005a	              0xc3	                                     ret	       228	usb-acpi.c	FUNCTION_6

@@ -1,0 +1,118 @@
+acpi_ev_has_default_handler	DO,0:WHILE,1:ELSE,0:CALL,1:functions,0:IF,3:FOR,0:SWITCH,0	21
+0x4000040	              0x53	                                push rbx	       120	evhandler.c	FUNCTION_2
+0x4000041	          0x4088f3	                             mov bl, sil	       120	evhandler.c	FUNCTION_2
+0x4000044	      0xe800000000	                          call 0x4000049	       126	evhandler.c	FUNCTION_2	CALL_1
+0x4000049	            0x31d2	                            xor edx, edx	       144	evhandler.c	FUNCTION_2
+0x400004b	          0x4885c0	                           test rax, rax	       127	evhandler.c	FUNCTION_2	IF_1
+0x400004e	            0x7420	                            je 0x4000070	       127	evhandler.c	FUNCTION_2	IF_1
+0x4000050	        0x488b4020	            mov rax, qword [rax + 0x20] 	       128	evhandler.c	FUNCTION_2	IF_1
+0x4000054	          0x4885c0	                           test rax, rax	       132	evhandler.c	FUNCTION_2	IF_1	WHILE_1
+0x4000057	            0x7411	                            je 0x400006a	       132	evhandler.c	FUNCTION_2	IF_1	WHILE_1
+0x4000059	          0x38580d	                cmp byte [rax + 0xd], bl	       133	evhandler.c	FUNCTION_2	IF_1	WHILE_1	IF_2
+0x400005c	            0x7506	                           jne 0x4000064	       133	evhandler.c	FUNCTION_2	IF_1	WHILE_1	IF_2
+0x400005e	        0xf6400e01	                test byte [rax + 0xe], 1	       134	evhandler.c	FUNCTION_2	IF_1	WHILE_1	IF_2	IF_3
+0x4000062	            0x750a	                           jne 0x400006e	       134	evhandler.c	FUNCTION_2	IF_1	WHILE_1	IF_2	IF_3
+0x4000064	        0x488b4038	            mov rax, qword [rax + 0x38] 	       140	evhandler.c	FUNCTION_2	IF_1	WHILE_1
+0x4000068	            0xebea	                           jmp 0x4000054	       140	evhandler.c	FUNCTION_2	IF_1	WHILE_1
+0x400006a	            0x31d2	                            xor edx, edx	       144	evhandler.c	FUNCTION_2
+0x400006c	            0xeb02	                           jmp 0x4000070	       144	evhandler.c	FUNCTION_2
+0x400006e	            0xb201	                               mov dl, 1	       136	evhandler.c	FUNCTION_2	IF_1	WHILE_1	IF_2	IF_3
+0x4000070	            0x88d0	                              mov al, dl	       145	evhandler.c	FUNCTION_2
+0x4000072	              0x5b	                                 pop rbx	       145	evhandler.c	FUNCTION_2
+0x4000073	              0xc3	                                     ret	       145	evhandler.c	FUNCTION_2
+acpi_ev_find_region_handler	DO,0:WHILE,1:ELSE,0:CALL,0:functions,0:IF,1:FOR,0:SWITCH,0	10
+0x4000074	          0x4885f6	                           test rsi, rsi	       294	evhandler.c	FUNCTION_4	WHILE_1
+0x4000077	            0x740c	                            je 0x4000085	       294	evhandler.c	FUNCTION_4	WHILE_1
+0x4000079	        0x40387e0d	               cmp byte [rsi + 0xd], dil	       298	evhandler.c	FUNCTION_4	WHILE_1	IF_1
+0x400007d	            0x7409	                            je 0x4000088	       298	evhandler.c	FUNCTION_4	WHILE_1	IF_1
+0x400007f	        0x488b7638	            mov rsi, qword [rsi + 0x38] 	       304	evhandler.c	FUNCTION_4	WHILE_1
+0x4000083	            0xebef	     jmp sym.acpi_ev_find_region_handler	       304	evhandler.c	FUNCTION_4	WHILE_1
+0x4000085	            0x31c0	                            xor eax, eax	       307	evhandler.c	FUNCTION_4
+0x4000087	              0xc3	                                     ret	       307	evhandler.c	FUNCTION_4
+0x4000088	          0x4889f0	                            mov rax, rsi	       307	evhandler.c	FUNCTION_4
+0x400008b	              0xc3	                                     ret	       308	evhandler.c	FUNCTION_4
+acpi_ev_install_handler	DO,0:WHILE,0:ELSE,0:CALL,8:functions,0:IF,7:FOR,0:SWITCH,0	49
+0x400008c	          0x4885d2	                           test rdx, rdx	       180	evhandler.c	FUNCTION_3	IF_1
+0x400008f	            0x747f	                            je 0x4000110	       180	evhandler.c	FUNCTION_3	IF_1
+0x4000091	              0x55	                                push rbp	       167	evhandler.c	FUNCTION_3
+0x4000092	              0x53	                                push rbx	       167	evhandler.c	FUNCTION_3
+0x4000093	          0x4889d3	                            mov rbx, rdx	       167	evhandler.c	FUNCTION_3
+0x4000096	      0xe800000000	                          call 0x400009b	       186	evhandler.c	FUNCTION_3	CALL_2
+0x400009b	          0x4885c0	                           test rax, rax	       187	evhandler.c	FUNCTION_3	IF_2
+0x400009e	            0x7466	                            je 0x4000106	       187	evhandler.c	FUNCTION_3	IF_2
+0x40000a0	          0x8a4809	                  mov cl, byte [rax + 9]	       195	evhandler.c	FUNCTION_3	IF_3
+0x40000a3	          0x8d51fa	                      lea edx, [rcx - 6]	       195	evhandler.c	FUNCTION_3	IF_3
+0x40000a6	          0x80e2fb	                            and dl, 0xfb	       195	evhandler.c	FUNCTION_3	IF_3
+0x40000a9	            0x7409	                            je 0x40000b4	       195	evhandler.c	FUNCTION_3	IF_3
+0x40000ab	    0x483b05000000	            cmp rax, qword [0x040000b2] 	       196	evhandler.c	FUNCTION_3	IF_3
+0x40000b2	            0x752d	                           jne 0x40000e1	       196	evhandler.c	FUNCTION_3	IF_3
+0x40000b4	          0x4889c7	                            mov rdi, rax	       202	evhandler.c	FUNCTION_3	CALL_3
+0x40000b7	      0xe800000000	                          call 0x40000bc	       202	evhandler.c	FUNCTION_3	CALL_3
+0x40000bc	          0x4885c0	                           test rax, rax	       203	evhandler.c	FUNCTION_3	IF_4
+0x40000bf	          0x4889c5	                            mov rbp, rax	       202	evhandler.c	FUNCTION_3	CALL_3
+0x40000c2	            0x741d	                            je 0x40000e1	       203	evhandler.c	FUNCTION_3	IF_4
+0x40000c4	        0x80780906	                   cmp byte [rax + 9], 6	       212	evhandler.c	FUNCTION_3	IF_5
+0x40000c8	            0x751b	                           jne 0x40000e5	       212	evhandler.c	FUNCTION_3	IF_5
+0x40000ca	         0xfb67b0d	            movzx edi, byte [rbx + 0xd] 	       216	evhandler.c	FUNCTION_3	IF_5
+0x40000ce	        0x488b7020	            mov rsi, qword [rax + 0x20] 	       216	evhandler.c	FUNCTION_3	IF_5
+0x40000d2	      0xe800000000	                          call 0x40000d7	       216	evhandler.c	FUNCTION_3	IF_5
+0x40000d7	          0x4885c0	                           test rax, rax	       221	evhandler.c	FUNCTION_3	IF_5	IF_6
+0x40000da	      0xba06400000	                         mov edx, 0x4006	       240	evhandler.c	FUNCTION_3	IF_5	IF_6
+0x40000df	            0x752a	                           jne 0x400010b	       221	evhandler.c	FUNCTION_3	IF_5	IF_6
+0x40000e1	            0x31d2	                            xor edx, edx	       247	evhandler.c	FUNCTION_3	IF_5
+0x40000e3	            0xeb26	                           jmp 0x400010b	       247	evhandler.c	FUNCTION_3	IF_5
+0x40000e5	          0x8a430d	                mov al, byte [rbx + 0xd]	       252	evhandler.c	FUNCTION_3	IF_7
+0x40000e8	          0x38450d	                cmp byte [rbp + 0xd], al	       252	evhandler.c	FUNCTION_3	IF_7
+0x40000eb	            0x75f4	                           jne 0x40000e1	       252	evhandler.c	FUNCTION_3	IF_7
+0x40000ed	          0x4889ef	                            mov rdi, rbp	       264	evhandler.c	FUNCTION_3	CALL_7
+0x40000f0	            0x31f6	                            xor esi, esi	       264	evhandler.c	FUNCTION_3	CALL_7
+0x40000f2	      0xe800000000	                          call 0x40000f7	       264	evhandler.c	FUNCTION_3	CALL_7
+0x40000f7	          0x4889ee	                            mov rsi, rbp	       268	evhandler.c	FUNCTION_3	CALL_8
+0x40000fa	          0x4889df	                            mov rdi, rbx	       268	evhandler.c	FUNCTION_3	CALL_8
+0x40000fd	            0x31d2	                            xor edx, edx	       268	evhandler.c	FUNCTION_3	CALL_8
+0x40000ff	              0x5b	                                 pop rbx	       270	evhandler.c	FUNCTION_3
+0x4000100	              0x5d	                                 pop rbp	       270	evhandler.c	FUNCTION_3
+0x4000101	      0xe900000000	                           jmp 0x4000106	       268	evhandler.c	FUNCTION_3	CALL_8
+0x4000106	      0xba01100000	                         mov edx, 0x1001	       188	evhandler.c	FUNCTION_3	IF_2
+0x400010b	            0x89d0	                            mov eax, edx	       270	evhandler.c	FUNCTION_3
+0x400010d	              0x5b	                                 pop rbx	       270	evhandler.c	FUNCTION_3
+0x400010e	              0x5d	                                 pop rbp	       270	evhandler.c	FUNCTION_3
+0x400010f	              0xc3	                                     ret	       270	evhandler.c	FUNCTION_3
+0x4000110	            0x31d2	                            xor edx, edx	       247	evhandler.c	FUNCTION_3	IF_5
+0x4000112	            0x89d0	                            mov eax, edx	       270	evhandler.c	FUNCTION_3
+0x4000114	              0xc3	                                     ret	       270	evhandler.c	FUNCTION_3
+acpi_ev_install_region_handlers	DO,0:WHILE,0:ELSE,0:CALL,7:functions,0:IF,1:FOR,1:SWITCH,1	34
+0x4000343	            0x4154	                                push r12	        46	evhandler.c	FUNCTION_1
+0x4000345	              0x55	                                push rbp	        46	evhandler.c	FUNCTION_1
+0x4000346	      0xbf01000000	                              mov edi, 1	        52	evhandler.c	FUNCTION_1	CALL_2
+0x400034b	              0x53	                                push rbx	        46	evhandler.c	FUNCTION_1
+0x400034c	      0xe800000000	                          call 0x4000351	        52	evhandler.c	FUNCTION_1	CALL_2
+0x4000351	            0x85c0	                           test eax, eax	        53	evhandler.c	FUNCTION_1	IF_1	CALL_3
+0x4000353	            0x754f	                           jne 0x40003a4	        53	evhandler.c	FUNCTION_1	IF_1	CALL_3
+0x4000355	            0x31ed	                            xor ebp, ebp	        53	evhandler.c	FUNCTION_1	IF_1	CALL_3
+0x4000357	    0x41bc01000000	                             mov r12d, 1	        53	evhandler.c	FUNCTION_1	IF_1	CALL_3
+0x400035d	     0xfb6b5000000	                   movzx esi, byte [rbp]	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x4000364	    0x488b3d000000	            mov rdi, qword [0x0400036b] 	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x400036b	          0x4531c0	                            xor r8d, r8d	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x400036e	            0x31c9	                            xor ecx, ecx	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x4000370	            0x31d2	                            xor edx, edx	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x4000372	      0xe800000000	                          call 0x4000377	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x4000377	          0x83f819	                           cmp eax, 0x19	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x400037a	            0x89c3	                            mov ebx, eax	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x400037c	            0x771a	                            ja 0x4000398	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x400037e	          0x4c89e0	                            mov rax, r12	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x4000381	            0x88d9	                              mov cl, bl	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x4000383	          0x48d3e0	                             shl rax, cl	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x4000386	      0xa981000002	                     test eax, 0x2000081	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x400038b	            0x740b	                            je 0x4000398	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x400038d	          0x48ffc5	                                 inc rbp	        77	evhandler.c	FUNCTION_1	FOR_1	CALL_5
+0x4000390	        0x4883fd04	                              cmp rbp, 4	        76	evhandler.c	FUNCTION_1	FOR_1
+0x4000394	            0x75c7	                           jne 0x400035d	        76	evhandler.c	FUNCTION_1	FOR_1
+0x4000396	            0x31db	                            xor ebx, ebx	        76	evhandler.c	FUNCTION_1	FOR_1
+0x4000398	      0xbf01000000	                              mov edi, 1	        99	evhandler.c	FUNCTION_1	CALL_6
+0x400039d	      0xe800000000	                          call 0x40003a2	        99	evhandler.c	FUNCTION_1	CALL_6
+0x40003a2	            0x89d8	                            mov eax, ebx	       100	evhandler.c	FUNCTION_1	CALL_7
+0x40003a4	              0x5b	                                 pop rbx	       101	evhandler.c	FUNCTION_1
+0x40003a5	              0x5d	                                 pop rbp	       101	evhandler.c	FUNCTION_1
+0x40003a6	            0x415c	                                 pop r12	       101	evhandler.c	FUNCTION_1
+0x40003a8	              0xc3	                                     ret	       101	evhandler.c	FUNCTION_1

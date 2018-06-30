@@ -1,0 +1,235 @@
+sbitmap_any_bit_clear	ELSE,0:functions,0:SWITCH,0:FOR,1:CALL,1:DO,0:IF,1:WHILE,0	32
+0x4000390	          0x8b4708	                mov eax, dword [rdi + 8]	       192	sbitmap.c	FUNCTION_7	FOR_1
+0x4000393	            0x85c0	                           test eax, eax	       192	sbitmap.c	FUNCTION_7	FOR_1
+0x4000395	            0x7443	                            je 0x40003da	       192	sbitmap.c	FUNCTION_7	FOR_1
+0x4000397	            0x4154	                                push r12	       189	sbitmap.c	FUNCTION_7
+0x4000399	          0x4989fc	                            mov r12, rdi	       189	sbitmap.c	FUNCTION_7
+0x400039c	              0x55	                                push rbp	       189	sbitmap.c	FUNCTION_7
+0x400039d	            0x31ed	                            xor ebp, ebp	       189	sbitmap.c	FUNCTION_7
+0x400039f	              0x53	                                push rbx	       189	sbitmap.c	FUNCTION_7
+0x40003a0	            0xeb0a	                           jmp 0x40003ac	       189	sbitmap.c	FUNCTION_7
+0x40003a2	          0x83c501	                              add ebp, 1	       192	sbitmap.c	FUNCTION_7	FOR_1
+0x40003a5	      0x41396c2408	                cmp dword [r12 + 8], ebp	       192	sbitmap.c	FUNCTION_7	FOR_1
+0x40003aa	            0x7627	                           jbe 0x40003d3	       192	sbitmap.c	FUNCTION_7	FOR_1
+0x40003ac	            0x89eb	                            mov ebx, ebp	       193	sbitmap.c	FUNCTION_7	FOR_1
+0x40003ae	        0x48c1e306	                              shl rbx, 6	       193	sbitmap.c	FUNCTION_7	FOR_1
+0x40003b2	      0x49035c2410	             add rbx, qword [r12 + 0x10]	       193	sbitmap.c	FUNCTION_7	FOR_1
+0x40003b7	        0x488b7308	                mov rsi, qword [rbx + 8]	       196	sbitmap.c	FUNCTION_7	FOR_1	CALL_1
+0x40003bb	          0x4889df	                            mov rdi, rbx	       196	sbitmap.c	FUNCTION_7	FOR_1	CALL_1
+0x40003be	      0xe800000000	                          call 0x40003c3	       196	sbitmap.c	FUNCTION_7	FOR_1	CALL_1
+0x40003c3	        0x483b4308	                cmp rax, qword [rbx + 8]	       197	sbitmap.c	FUNCTION_7	FOR_1	IF_1
+0x40003c7	            0x73d9	                           jae 0x40003a2	       197	sbitmap.c	FUNCTION_7	FOR_1	IF_1
+0x40003c9	              0x5b	                                 pop rbx	       201	sbitmap.c	FUNCTION_7
+0x40003ca	      0xb801000000	                              mov eax, 1	       198	sbitmap.c	FUNCTION_7	FOR_1	IF_1
+0x40003cf	              0x5d	                                 pop rbp	       201	sbitmap.c	FUNCTION_7
+0x40003d0	            0x415c	                                 pop r12	       201	sbitmap.c	FUNCTION_7
+0x40003d2	              0xc3	                                     ret	       201	sbitmap.c	FUNCTION_7
+0x40003d3	              0x5b	                                 pop rbx	       201	sbitmap.c	FUNCTION_7
+0x40003d4	            0x31c0	                            xor eax, eax	       200	sbitmap.c	FUNCTION_7
+0x40003d6	              0x5d	                                 pop rbp	       201	sbitmap.c	FUNCTION_7
+0x40003d7	            0x415c	                                 pop r12	       201	sbitmap.c	FUNCTION_7
+0x40003d9	              0xc3	                                     ret	       201	sbitmap.c	FUNCTION_7
+0x40003da	            0x31c0	                            xor eax, eax	       200	sbitmap.c	FUNCTION_7
+0x40003dc	              0xc3	                                     ret	       201	sbitmap.c	FUNCTION_7
+sbitmap_queue_min_shallow_depth	ELSE,0:functions,0:SWITCH,0:FOR,0:CALL,1:DO,0:IF,0:WHILE,0	3
+0x4000950	          0x897734	             mov dword [rdi + 0x34], esi	       434	sbitmap.c	FUNCTION_18
+0x4000953	            0x8b37	                    mov esi, dword [rdi]	       435	sbitmap.c	FUNCTION_18	CALL_1
+0x4000955	      0xe926ffffff	 jmp sym.sbitmap_queue_update_wake_batch	       435	sbitmap.c	FUNCTION_18	CALL_1
+sbitmap_queue_resize	ELSE,0:functions,0:SWITCH,0:FOR,0:CALL,2:DO,0:IF,0:WHILE,0	27
+0x40008f0	          0x4189f2	                           mov r10d, esi	       366	sbitmap.c	FUNCTION_15
+0x40008f3	          0x4989fb	                            mov r11, rdi	       366	sbitmap.c	FUNCTION_15
+0x40008f6	      0xe885ffffff	call sym.sbitmap_queue_update_wake_batch	       367	sbitmap.c	FUNCTION_15	CALL_1
+0x40008fb	          0x8b4f04	                mov ecx, dword [rdi + 4]	        69	sbitmap.c	FUNCTION_2
+0x40008fe	      0xbe01000000	                              mov esi, 1	        69	sbitmap.c	FUNCTION_2
+0x4000903	            0x31d2	                            xor edx, edx	        73	sbitmap.c	FUNCTION_2	CALL_1
+0x4000905	          0x448917	                   mov dword [rdi], r10d	        72	sbitmap.c	FUNCTION_2
+0x4000908	            0xd3e6	                             shl esi, cl	        69	sbitmap.c	FUNCTION_2
+0x400090a	      0x428d4416ff	                lea eax, [rsi + r10 - 1]	        73	sbitmap.c	FUNCTION_2	CALL_1
+0x400090f	            0xf7f6	                                 div esi	        73	sbitmap.c	FUNCTION_2	CALL_1
+0x4000911	            0x85c0	                           test eax, eax	        75	sbitmap.c	FUNCTION_2	FOR_1
+0x4000913	          0x894708	                mov dword [rdi + 8], eax	        73	sbitmap.c	FUNCTION_2	CALL_1
+0x4000916	            0x742d	                            je 0x4000945	        75	sbitmap.c	FUNCTION_2	FOR_1
+0x4000918	        0x488b4f10	            mov rcx, qword [rdi + 0x10] 	        75	sbitmap.c	FUNCTION_2	FOR_1
+0x400091c	            0x31d2	                            xor edx, edx	        75	sbitmap.c	FUNCTION_2	FOR_1
+0x400091e	            0x89d0	                            mov eax, edx	        76	sbitmap.c	FUNCTION_2	FOR_1	CALL_2
+0x4000920	          0x4489d7	                           mov edi, r10d	        76	sbitmap.c	FUNCTION_2	FOR_1	CALL_2
+0x4000923	        0x48c1e006	                              shl rax, 6	        76	sbitmap.c	FUNCTION_2	FOR_1	CALL_2
+0x4000927	          0x4439d6	                           cmp esi, r10d	        76	sbitmap.c	FUNCTION_2	FOR_1	CALL_2
+0x400092a	        0x480f46fe	                         cmovbe rdi, rsi	        76	sbitmap.c	FUNCTION_2	FOR_1	CALL_2
+0x400092e	          0x83c201	                              add edx, 1	        75	sbitmap.c	FUNCTION_2	FOR_1
+0x4000931	      0x48897c0108	          mov qword [rcx + rax + 8], rdi	        76	sbitmap.c	FUNCTION_2	FOR_1	CALL_2
+0x4000936	        0x498b4b10	            mov rcx, qword [r11 + 0x10] 	        77	sbitmap.c	FUNCTION_2	FOR_1
+0x400093a	      0x442b540108	         sub r10d, dword [rcx + rax + 8]	        77	sbitmap.c	FUNCTION_2	FOR_1
+0x400093f	        0x413b5308	                cmp edx, dword [r11 + 8]	        75	sbitmap.c	FUNCTION_2	FOR_1
+0x4000943	            0x72d9	                            jb 0x400091e	        75	sbitmap.c	FUNCTION_2	FOR_1
+0x4000945	            0xf3c3	                                     ret	        75	sbitmap.c	FUNCTION_2	FOR_1
+sbitmap_get	ELSE,0:functions,0:SWITCH,0:FOR,1:CALL,3:DO,0:IF,2:WHILE,0	60
+0x4000250	            0x4156	                                push r14	       115	sbitmap.c	FUNCTION_4
+0x4000252	            0x4155	                                push r13	       115	sbitmap.c	FUNCTION_4
+0x4000254	          0x83f201	                              xor edx, 1	       115	sbitmap.c	FUNCTION_4
+0x4000257	            0x4154	                                push r12	       115	sbitmap.c	FUNCTION_4
+0x4000259	              0x55	                                push rbp	       115	sbitmap.c	FUNCTION_4
+0x400025a	          0x4189f4	                           mov r12d, esi	       119	sbitmap.c	FUNCTION_4	CALL_1
+0x400025d	              0x53	                                push rbx	       115	sbitmap.c	FUNCTION_4
+0x400025e	          0x8b4f04	                mov ecx, dword [rdi + 4]	       119	sbitmap.c	FUNCTION_4	CALL_1
+0x4000261	          0x8b4708	                mov eax, dword [rdi + 8]	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x4000264	          0x41d3ec	                            shr r12d, cl	       119	sbitmap.c	FUNCTION_4	CALL_1
+0x4000267	            0x85c0	                           test eax, eax	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x4000269	            0x7461	                            je 0x40002cc	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x400026b	          0x4989fd	                            mov r13, rdi	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x400026e	           0xfb6da	                           movzx ebx, dl	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x4000271	          0x4531f6	                          xor r14d, r14d	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x4000274	      0xbd01000000	                              mov ebp, 1	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x4000279	            0xeb0e	                           jmp 0x4000289	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x400027b	          0x4489e6	                           mov esi, r12d	       133	sbitmap.c	FUNCTION_4	FOR_1
+0x400027e	        0x4183c601	                             add r14d, 1	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x4000282	            0xd3e6	                             shl esi, cl	       133	sbitmap.c	FUNCTION_4	FOR_1
+0x4000284	          0x4439f0	                           cmp eax, r14d	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x4000287	            0x7643	                           jbe 0x40002cc	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x4000289	          0x4489e7	                           mov edi, r12d	       123	sbitmap.c	FUNCTION_4	FOR_1
+0x400028c	            0x89ea	                            mov edx, ebp	       122	sbitmap.c	FUNCTION_4	FOR_1	CALL_2
+0x400028e	        0x48c1e706	                              shl rdi, 6	       123	sbitmap.c	FUNCTION_4	FOR_1
+0x4000292	        0x49037d10	             add rdi, qword [r13 + 0x10]	       123	sbitmap.c	FUNCTION_4	FOR_1
+0x4000296	            0xd3e2	                             shl edx, cl	       122	sbitmap.c	FUNCTION_4	FOR_1	CALL_2
+0x4000298	          0x83ea01	                              sub edx, 1	       122	sbitmap.c	FUNCTION_4	FOR_1	CALL_2
+0x400029b	            0x89d9	                            mov ecx, ebx	       122	sbitmap.c	FUNCTION_4	FOR_1	CALL_2
+0x400029d	            0x21f2	                            and edx, esi	       122	sbitmap.c	FUNCTION_4	FOR_1	CALL_2
+0x400029f	        0x488b7708	                mov rsi, qword [rdi + 8]	       122	sbitmap.c	FUNCTION_4	FOR_1	CALL_2
+0x40002a3	      0xe818ffffff	             call sym.__sbitmap_get_word	       122	sbitmap.c	FUNCTION_4	FOR_1	CALL_2
+0x40002a8	          0x83f8ff	             cmp eax, 0xffffffffffffffff	       126	sbitmap.c	FUNCTION_4	FOR_1	IF_1
+0x40002ab	            0x752d	                           jne 0x40002da	       126	sbitmap.c	FUNCTION_4	FOR_1	IF_1
+0x40002ad	        0x418b4508	                mov eax, dword [r13 + 8]	       135	sbitmap.c	FUNCTION_4	FOR_1	IF_2
+0x40002b1	        0x4183c401	                             add r12d, 1	       132	sbitmap.c	FUNCTION_4	FOR_1
+0x40002b5	        0x418b4d04	                mov ecx, dword [r13 + 4]	       133	sbitmap.c	FUNCTION_4	FOR_1
+0x40002b9	          0x4139c4	                           cmp r12d, eax	       135	sbitmap.c	FUNCTION_4	FOR_1	IF_2
+0x40002bc	            0x72bd	                            jb 0x400027b	       135	sbitmap.c	FUNCTION_4	FOR_1	IF_2
+0x40002be	        0x4183c601	                             add r14d, 1	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x40002c2	          0x4531e4	                          xor r12d, r12d	       136	sbitmap.c	FUNCTION_4	FOR_1	IF_2
+0x40002c5	            0x31f6	                            xor esi, esi	       137	sbitmap.c	FUNCTION_4	FOR_1	IF_2
+0x40002c7	          0x4439f0	                           cmp eax, r14d	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x40002ca	            0x77bd	                            ja 0x4000289	       121	sbitmap.c	FUNCTION_4	FOR_1
+0x40002cc	              0x5b	                                 pop rbx	       142	sbitmap.c	FUNCTION_4
+0x40002cd	      0xb8ffffffff	                     mov eax, 0xffffffff	       137	sbitmap.c	FUNCTION_4	FOR_1	IF_2
+0x40002d2	              0x5d	                                 pop rbp	       142	sbitmap.c	FUNCTION_4
+0x40002d3	            0x415c	                                 pop r12	       142	sbitmap.c	FUNCTION_4
+0x40002d5	            0x415d	                                 pop r13	       142	sbitmap.c	FUNCTION_4
+0x40002d7	            0x415e	                                 pop r14	       142	sbitmap.c	FUNCTION_4
+0x40002d9	              0xc3	                                     ret	       142	sbitmap.c	FUNCTION_4
+0x40002da	        0x418b4d04	                mov ecx, dword [r13 + 4]	       127	sbitmap.c	FUNCTION_4	FOR_1	IF_1
+0x40002de	              0x5b	                                 pop rbx	       142	sbitmap.c	FUNCTION_4
+0x40002df	              0x5d	                                 pop rbp	       142	sbitmap.c	FUNCTION_4
+0x40002e0	          0x41d3e4	                            shl r12d, cl	       127	sbitmap.c	FUNCTION_4	FOR_1	IF_1
+0x40002e3	          0x4401e0	                           add eax, r12d	       127	sbitmap.c	FUNCTION_4	FOR_1	IF_1
+0x40002e6	            0x415c	                                 pop r12	       142	sbitmap.c	FUNCTION_4
+0x40002e8	            0x415d	                                 pop r13	       142	sbitmap.c	FUNCTION_4
+0x40002ea	            0x415e	                                 pop r14	       142	sbitmap.c	FUNCTION_4
+0x40002ec	              0xc3	                                     ret	       142	sbitmap.c	FUNCTION_4
+sbitmap_any_bit_set	ELSE,0:functions,0:SWITCH,0:FOR,1:CALL,0:DO,0:IF,1:WHILE,0	19
+0x4000090	          0x8b5708	                mov edx, dword [rdi + 8]	       180	sbitmap.c	FUNCTION_6	FOR_1
+0x4000093	            0x85d2	                           test edx, edx	       180	sbitmap.c	FUNCTION_6	FOR_1
+0x4000095	            0x7425	                            je 0x40000bc	       180	sbitmap.c	FUNCTION_6	FOR_1
+0x4000097	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       181	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x400009b	        0x48833800	                      cmp qword [rax], 0	       181	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x400009f	            0x751e	                           jne 0x40000bf	       181	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x40000a1	          0x83ea01	                              sub edx, 1	       181	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x40000a4	        0x48c1e206	                              shl rdx, 6	       181	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x40000a8	          0x4801c2	                            add rdx, rax	       181	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x40000ab	            0xeb0a	                           jmp 0x40000b7	       181	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x40000ad	        0x4883c040	                           add rax, 0x40	       181	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x40000b1	        0x48833800	                      cmp qword [rax], 0	       181	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x40000b5	            0x7508	                           jne 0x40000bf	       181	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x40000b7	          0x4839d0	                            cmp rax, rdx	       180	sbitmap.c	FUNCTION_6	FOR_1
+0x40000ba	            0x75f1	                           jne 0x40000ad	       180	sbitmap.c	FUNCTION_6	FOR_1
+0x40000bc	            0x31c0	                            xor eax, eax	       184	sbitmap.c	FUNCTION_6
+0x40000be	              0xc3	                                     ret	       184	sbitmap.c	FUNCTION_6
+0x40000bf	      0xb801000000	                              mov eax, 1	       182	sbitmap.c	FUNCTION_6	FOR_1	IF_1
+0x40000c4	              0xc3	                                     ret	       185	sbitmap.c	FUNCTION_6
+sbitmap_get_shallow	ELSE,0:functions,0:SWITCH,0:FOR,1:CALL,4:DO,0:IF,2:WHILE,0	61
+0x40002f0	            0x4156	                                push r14	       147	sbitmap.c	FUNCTION_5
+0x40002f2	            0x4155	                                push r13	       147	sbitmap.c	FUNCTION_5
+0x40002f4	            0x4154	                                push r12	       147	sbitmap.c	FUNCTION_5
+0x40002f6	              0x55	                                push rbp	       147	sbitmap.c	FUNCTION_5
+0x40002f7	              0x53	                                push rbx	       147	sbitmap.c	FUNCTION_5
+0x40002f8	          0x8b4f04	                mov ecx, dword [rdi + 4]	       151	sbitmap.c	FUNCTION_5	CALL_1
+0x40002fb	            0x89f3	                            mov ebx, esi	       151	sbitmap.c	FUNCTION_5	CALL_1
+0x40002fd	          0x8b4708	                mov eax, dword [rdi + 8]	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x4000300	            0xd3eb	                             shr ebx, cl	       151	sbitmap.c	FUNCTION_5	CALL_1
+0x4000302	            0x85c0	                           test eax, eax	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x4000304	            0x746a	                            je 0x4000370	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x4000306	          0x4989fc	                            mov r12, rdi	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x4000309	          0x4989d6	                            mov r14, rdx	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x400030c	          0x4531ed	                          xor r13d, r13d	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x400030f	      0xbd01000000	                              mov ebp, 1	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x4000314	            0xeb0d	                           jmp 0x4000323	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x4000316	            0x89de	                            mov esi, ebx	       164	sbitmap.c	FUNCTION_5	FOR_1
+0x4000318	        0x4183c501	                             add r13d, 1	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x400031c	            0xd3e6	                             shl esi, cl	       164	sbitmap.c	FUNCTION_5	FOR_1
+0x400031e	          0x4439e8	                           cmp eax, r13d	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x4000321	            0x764d	                           jbe 0x4000370	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x4000323	            0x89df	                            mov edi, ebx	       155	sbitmap.c	FUNCTION_5	FOR_1	CALL_3
+0x4000325	            0x89ea	                            mov edx, ebp	       154	sbitmap.c	FUNCTION_5	FOR_1	CALL_2
+0x4000327	        0x48c1e706	                              shl rdi, 6	       155	sbitmap.c	FUNCTION_5	FOR_1	CALL_3
+0x400032b	      0x49037c2410	             add rdi, qword [r12 + 0x10]	       155	sbitmap.c	FUNCTION_5	FOR_1	CALL_3
+0x4000330	            0xd3e2	                             shl edx, cl	       154	sbitmap.c	FUNCTION_5	FOR_1	CALL_2
+0x4000332	          0x83ea01	                              sub edx, 1	       154	sbitmap.c	FUNCTION_5	FOR_1	CALL_2
+0x4000335	      0xb901000000	                              mov ecx, 1	       154	sbitmap.c	FUNCTION_5	FOR_1	CALL_2
+0x400033a	            0x21f2	                            and edx, esi	       154	sbitmap.c	FUNCTION_5	FOR_1	CALL_2
+0x400033c	          0x4c89f6	                            mov rsi, r14	       154	sbitmap.c	FUNCTION_5	FOR_1	CALL_2
+0x400033f	        0x4c397708	                cmp qword [rdi + 8], r14	       154	sbitmap.c	FUNCTION_5	FOR_1	CALL_2
+0x4000343	      0x480f467708	             cmovbe rsi, qword [rdi + 8]	       154	sbitmap.c	FUNCTION_5	FOR_1	CALL_2
+0x4000348	      0xe873feffff	             call sym.__sbitmap_get_word	       154	sbitmap.c	FUNCTION_5	FOR_1	CALL_2
+0x400034d	          0x83f8ff	             cmp eax, 0xffffffffffffffff	       157	sbitmap.c	FUNCTION_5	FOR_1	IF_1
+0x4000350	            0x752c	                           jne 0x400037e	       157	sbitmap.c	FUNCTION_5	FOR_1	IF_1
+0x4000352	      0x418b442408	                mov eax, dword [r12 + 8]	       166	sbitmap.c	FUNCTION_5	FOR_1	IF_2
+0x4000357	          0x83c301	                              add ebx, 1	       163	sbitmap.c	FUNCTION_5	FOR_1
+0x400035a	      0x418b4c2404	                mov ecx, dword [r12 + 4]	       164	sbitmap.c	FUNCTION_5	FOR_1
+0x400035f	            0x39c3	                            cmp ebx, eax	       166	sbitmap.c	FUNCTION_5	FOR_1	IF_2
+0x4000361	            0x72b3	                            jb 0x4000316	       166	sbitmap.c	FUNCTION_5	FOR_1	IF_2
+0x4000363	        0x4183c501	                             add r13d, 1	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x4000367	            0x31db	                            xor ebx, ebx	       167	sbitmap.c	FUNCTION_5	FOR_1	IF_2
+0x4000369	            0x31f6	                            xor esi, esi	       168	sbitmap.c	FUNCTION_5	FOR_1	IF_2
+0x400036b	          0x4439e8	                           cmp eax, r13d	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x400036e	            0x77b3	                            ja 0x4000323	       153	sbitmap.c	FUNCTION_5	FOR_1
+0x4000370	              0x5b	                                 pop rbx	       173	sbitmap.c	FUNCTION_5
+0x4000371	      0xb8ffffffff	                     mov eax, 0xffffffff	       168	sbitmap.c	FUNCTION_5	FOR_1	IF_2
+0x4000376	              0x5d	                                 pop rbp	       173	sbitmap.c	FUNCTION_5
+0x4000377	            0x415c	                                 pop r12	       173	sbitmap.c	FUNCTION_5
+0x4000379	            0x415d	                                 pop r13	       173	sbitmap.c	FUNCTION_5
+0x400037b	            0x415e	                                 pop r14	       173	sbitmap.c	FUNCTION_5
+0x400037d	              0xc3	                                     ret	       173	sbitmap.c	FUNCTION_5
+0x400037e	      0x418b4c2404	                mov ecx, dword [r12 + 4]	       158	sbitmap.c	FUNCTION_5	FOR_1	IF_1
+0x4000383	            0xd3e3	                             shl ebx, cl	       158	sbitmap.c	FUNCTION_5	FOR_1	IF_1
+0x4000385	             0x1d8	                            add eax, ebx	       158	sbitmap.c	FUNCTION_5	FOR_1	IF_1
+0x4000387	              0x5b	                                 pop rbx	       173	sbitmap.c	FUNCTION_5
+0x4000388	              0x5d	                                 pop rbp	       173	sbitmap.c	FUNCTION_5
+0x4000389	            0x415c	                                 pop r12	       173	sbitmap.c	FUNCTION_5
+0x400038b	            0x415d	                                 pop r13	       173	sbitmap.c	FUNCTION_5
+0x400038d	            0x415e	                                 pop r14	       173	sbitmap.c	FUNCTION_5
+0x400038f	              0xc3	                                     ret	       173	sbitmap.c	FUNCTION_5
+sbitmap_show	ELSE,0:functions,0:SWITCH,0:FOR,0:CALL,5:DO,0:IF,0:WHILE,0	26
+0x4000420	              0x55	                                push rbp	       218	sbitmap.c	FUNCTION_9
+0x4000421	              0x53	                                push rbx	       218	sbitmap.c	FUNCTION_9
+0x4000422	          0x4889f3	                            mov rbx, rsi	       218	sbitmap.c	FUNCTION_9
+0x4000425	            0x8b17	                    mov edx, dword [rdi]	       219	sbitmap.c	FUNCTION_9	CALL_1
+0x4000427	          0x4889fd	                            mov rbp, rdi	       218	sbitmap.c	FUNCTION_9
+0x400042a	    0x48c7c6000000	                              mov rsi, 0	       219	sbitmap.c	FUNCTION_9	CALL_1
+0x4000431	          0x4889df	                            mov rdi, rbx	       219	sbitmap.c	FUNCTION_9	CALL_1
+0x4000434	      0xe800000000	                          call 0x4000439	       219	sbitmap.c	FUNCTION_9	CALL_1
+0x4000439	          0x4889ef	                            mov rdi, rbp	       220	sbitmap.c	FUNCTION_9	CALL_3
+0x400043c	      0xe800000000	                          call 0x4000441	       220	sbitmap.c	FUNCTION_9	CALL_3
+0x4000441	          0x4889df	                            mov rdi, rbx	       220	sbitmap.c	FUNCTION_9	CALL_3
+0x4000444	            0x89c2	                            mov edx, eax	       220	sbitmap.c	FUNCTION_9	CALL_3
+0x4000446	    0x48c7c6000000	                              mov rsi, 0	       220	sbitmap.c	FUNCTION_9	CALL_3
+0x400044d	      0xe800000000	                          call 0x4000452	       220	sbitmap.c	FUNCTION_9	CALL_3
+0x4000452	          0x8b4d04	                mov ecx, dword [rbp + 4]	       221	sbitmap.c	FUNCTION_9	CALL_4
+0x4000455	      0xba01000000	                              mov edx, 1	       221	sbitmap.c	FUNCTION_9	CALL_4
+0x400045a	          0x4889df	                            mov rdi, rbx	       221	sbitmap.c	FUNCTION_9	CALL_4
+0x400045d	    0x48c7c6000000	                              mov rsi, 0	       221	sbitmap.c	FUNCTION_9	CALL_4
+0x4000464	            0xd3e2	                             shl edx, cl	       221	sbitmap.c	FUNCTION_9	CALL_4
+0x4000466	      0xe800000000	                          call 0x400046b	       221	sbitmap.c	FUNCTION_9	CALL_4
+0x400046b	          0x8b5508	                mov edx, dword [rbp + 8]	       222	sbitmap.c	FUNCTION_9	CALL_5
+0x400046e	          0x4889df	                            mov rdi, rbx	       222	sbitmap.c	FUNCTION_9	CALL_5
+0x4000471	    0x48c7c6000000	                              mov rsi, 0	       222	sbitmap.c	FUNCTION_9	CALL_5
+0x4000478	              0x5b	                                 pop rbx	       223	sbitmap.c	FUNCTION_9
+0x4000479	              0x5d	                                 pop rbp	       223	sbitmap.c	FUNCTION_9
+0x400047a	      0xe900000000	                           jmp 0x400047f	       222	sbitmap.c	FUNCTION_9	CALL_5

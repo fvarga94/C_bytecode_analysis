@@ -1,0 +1,75 @@
+acpi_ev_remove_all_sci_handlers	IF,1:FOR,0:SWITCH,0:CALL,6:functions,0:WHILE,1:DO,0:ELSE,0	25
+0x40000dc	     0xfb73d000000	           movzx edi, word [0x040000e3] 	       192	evsci.c	FUNCTION_5
+0x40000e3	              0x55	                                push rbp	       183	evsci.c	FUNCTION_5
+0x40000e4	    0x48c7c6000000	                              mov rsi, 0	       192	evsci.c	FUNCTION_5
+0x40000eb	              0x53	                                push rbx	       183	evsci.c	FUNCTION_5
+0x40000ec	      0xe800000000	                          call 0x40000f1	       192	evsci.c	FUNCTION_5
+0x40000f1	    0x48833d000000	               cmp qword [0x040000f9], 0	       196	evsci.c	FUNCTION_5	IF_1
+0x40000f9	            0x89c3	                            mov ebx, eax	       192	evsci.c	FUNCTION_5
+0x40000fb	            0x743b	                            je 0x4000138	       196	evsci.c	FUNCTION_5	IF_1
+0x40000fd	    0x488b3d000000	            mov rdi, qword [0x04000104] 	       200	evsci.c	FUNCTION_5	CALL_3
+0x4000104	      0xe800000000	                          call 0x4000109	       200	evsci.c	FUNCTION_5	CALL_3
+0x4000109	          0x4889c5	                            mov rbp, rax	       200	evsci.c	FUNCTION_5	CALL_3
+0x400010c	    0x488b3d000000	            mov rdi, qword [0x04000113] 	       204	evsci.c	FUNCTION_5	WHILE_1
+0x4000113	          0x4885ff	                           test rdi, rdi	       204	evsci.c	FUNCTION_5	WHILE_1
+0x4000116	            0x7411	                            je 0x4000129	       204	evsci.c	FUNCTION_5	WHILE_1
+0x4000118	          0x488b07	                    mov rax, qword [rdi]	       206	evsci.c	FUNCTION_5	WHILE_1
+0x400011b	    0x488905000000	            mov qword [0x04000122], rax 	       206	evsci.c	FUNCTION_5	WHILE_1
+0x4000122	      0xe800000000	                          call 0x4000127	        62	aclinuxex.h	FUNCTION_8	CALL_1
+0x4000127	            0xebe3	                           jmp 0x400010c	        62	aclinuxex.h	FUNCTION_8	CALL_1
+0x4000129	    0x488b3d000000	            mov rdi, qword [0x04000130] 	       210	evsci.c	FUNCTION_5	CALL_5
+0x4000130	          0x4889ee	                            mov rsi, rbp	       210	evsci.c	FUNCTION_5	CALL_5
+0x4000133	      0xe800000000	                          call 0x4000138	       210	evsci.c	FUNCTION_5	CALL_5
+0x4000138	            0x89d8	                            mov eax, ebx	       212	evsci.c	FUNCTION_5
+0x400013a	              0x5b	                                 pop rbx	       212	evsci.c	FUNCTION_5
+0x400013b	              0x5d	                                 pop rbp	       212	evsci.c	FUNCTION_5
+0x400013c	              0xc3	                                     ret	       212	evsci.c	FUNCTION_5
+acpi_ev_install_sci_handler	IF,0:FOR,0:SWITCH,0:CALL,3:functions,0:WHILE,0:DO,0:ELSE,0	4
+0x40000c2	     0xfb73d000000	           movzx edi, word [0x040000c9] 	       156	evsci.c	FUNCTION_4
+0x40000c9	    0x488b15000000	            mov rdx, qword [0x040000d0] 	       156	evsci.c	FUNCTION_4
+0x40000d0	    0x48c7c6000000	                              mov rsi, 0	       156	evsci.c	FUNCTION_4
+0x40000d7	      0xe900000000	 jmp sym.acpi_ev_remove_all_sci_handlers	       156	evsci.c	FUNCTION_4
+acpi_ev_sci_dispatch	IF,1:FOR,0:SWITCH,0:CALL,4:functions,0:WHILE,1:DO,0:ELSE,0	26
+0x4000040	            0x4154	                                push r12	        32	evsci.c	FUNCTION_1
+0x4000042	              0x55	                                push rbp	        32	evsci.c	FUNCTION_1
+0x4000043	            0x31ed	                            xor ebp, ebp	        42	evsci.c	FUNCTION_1	IF_1
+0x4000045	    0x48833d000000	               cmp qword [0x0400004d], 0	        41	evsci.c	FUNCTION_1	IF_1
+0x400004d	              0x53	                                push rbx	        32	evsci.c	FUNCTION_1
+0x400004e	            0x743e	                            je 0x400008e	        41	evsci.c	FUNCTION_1	IF_1
+0x4000050	    0x488b3d000000	            mov rdi, qword [0x04000057] 	        45	evsci.c	FUNCTION_1	CALL_2
+0x4000057	      0xe800000000	                          call 0x400005c	        45	evsci.c	FUNCTION_1	CALL_2
+0x400005c	    0x488b1d000000	            mov rbx, qword [0x04000063] 	        49	evsci.c	FUNCTION_1
+0x4000063	          0x4989c4	                            mov r12, rax	        45	evsci.c	FUNCTION_1	CALL_2
+0x4000066	          0x4885db	                           test rbx, rbx	        50	evsci.c	FUNCTION_1	WHILE_1
+0x4000069	            0x7414	                            je 0x400007f	        50	evsci.c	FUNCTION_1	WHILE_1
+0x400006b	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	        54	evsci.c	FUNCTION_1	WHILE_1	CALL_3
+0x400006f	        0x488b4308	                mov rax, qword [rbx + 8]	        54	evsci.c	FUNCTION_1	WHILE_1	CALL_3
+0x4000073	      0xe800000000	                          call 0x4000078	        54	evsci.c	FUNCTION_1	WHILE_1	CALL_3
+0x4000078	          0x488b1b	                    mov rbx, qword [rbx]	        56	evsci.c	FUNCTION_1	WHILE_1
+0x400007b	             0x9c5	                             or ebp, eax	        54	evsci.c	FUNCTION_1	WHILE_1	CALL_3
+0x400007d	            0xebe7	                           jmp 0x4000066	        54	evsci.c	FUNCTION_1	WHILE_1	CALL_3
+0x400007f	    0x488b3d000000	            mov rdi, qword [0x04000086] 	        59	evsci.c	FUNCTION_1	CALL_4
+0x4000086	          0x4c89e6	                            mov rsi, r12	        59	evsci.c	FUNCTION_1	CALL_4
+0x4000089	      0xe800000000	                          call 0x400008e	        59	evsci.c	FUNCTION_1	CALL_4
+0x400008e	            0x89e8	                            mov eax, ebp	        61	evsci.c	FUNCTION_1
+0x4000090	              0x5b	                                 pop rbx	        61	evsci.c	FUNCTION_1
+0x4000091	              0x5d	                                 pop rbp	        61	evsci.c	FUNCTION_1
+0x4000092	            0x415c	                                 pop r12	        61	evsci.c	FUNCTION_1
+0x4000094	              0xc3	                                     ret	        61	evsci.c	FUNCTION_1
+acpi_ev_sci_xrupt_handler	IF,0:FOR,0:SWITCH,0:CALL,5:functions,0:WHILE,0:DO,0:ELSE,0	14
+0x4000095	              0x53	                                push rbx	        77	evsci.c	FUNCTION_2
+0x4000096	              0x50	                                push rax	        77	evsci.c	FUNCTION_2
+0x4000097	        0x48893c24	                    mov qword [rsp], rdi	        77	evsci.c	FUNCTION_2
+0x400009b	      0xe800000000	                          call 0x40000a0	        92	evsci.c	FUNCTION_2	CALL_2
+0x40000a0	        0x488b3c24	                    mov rdi, qword [rsp]	        98	evsci.c	FUNCTION_2	CALL_3
+0x40000a4	            0x89c3	                            mov ebx, eax	        92	evsci.c	FUNCTION_2	CALL_2
+0x40000a6	      0xe800000000	                          call 0x40000ab	        98	evsci.c	FUNCTION_2	CALL_3
+0x40000ab	             0x9c3	                             or ebx, eax	        98	evsci.c	FUNCTION_2	CALL_3
+0x40000ad	      0xe800000000	                          call 0x40000b2	       102	evsci.c	FUNCTION_2	CALL_4
+0x40000b2	    0xff0500000000	                  inc dword [0x040000b8]	       104	evsci.c	FUNCTION_2
+0x40000b8	             0x9d8	                             or eax, ebx	       105	evsci.c	FUNCTION_2	CALL_5
+0x40000ba	              0x5a	                                 pop rdx	       106	evsci.c	FUNCTION_2
+0x40000bb	              0x5b	                                 pop rbx	       106	evsci.c	FUNCTION_2
+0x40000bc	              0xc3	                                     ret	       106	evsci.c	FUNCTION_2
+acpi_ev_gpe_xrupt_handler	IF,0:FOR,0:SWITCH,0:CALL,3:functions,0:WHILE,0:DO,0:ELSE,0	1
+0x40000bd	      0xe900000000	     jmp sym.acpi_ev_install_sci_handler	       134	evsci.c	FUNCTION_3	CALL_2

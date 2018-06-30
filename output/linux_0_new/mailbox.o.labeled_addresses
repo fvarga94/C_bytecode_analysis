@@ -1,0 +1,52 @@
+mbox_chan_received_data	CALL,1:WHILE,0:functions,0:SWITCH,0:ELSE,0:IF,1:FOR,0:DO,0	6
+0x4000040	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	       156	mailbox.c	FUNCTION_5	IF_1
+0x4000044	        0x488b4720	            mov rax, qword [rdi + 0x20] 	       156	mailbox.c	FUNCTION_5	IF_1
+0x4000048	          0x4885c0	                           test rax, rax	       156	mailbox.c	FUNCTION_5	IF_1
+0x400004b	            0x7405	                            je 0x4000052	       156	mailbox.c	FUNCTION_5	IF_1
+0x400004d	      0xe900000000	                           jmp 0x4000052	       157	mailbox.c	FUNCTION_5	CALL_1
+0x4000052	            0xf3c3	                                     ret	       157	mailbox.c	FUNCTION_5	CALL_1
+of_mbox_index_xlate	CALL,1:WHILE,0:functions,0:SWITCH,0:ELSE,0:IF,1:FOR,0:DO,0	10
+0x4000080	        0x4863560c	          movsxd rdx, dword [rsi + 0xc] 	       433	mailbox.c	FUNCTION_13
+0x4000084	    0x48c7c0eaffff	             mov rax, 0xffffffffffffffea	       436	mailbox.c	FUNCTION_13	CALL_1
+0x400008b	          0x3b5718	            cmp edx, dword [rdi + 0x18] 	       435	mailbox.c	FUNCTION_13	IF_1
+0x400008e	            0x7d16	                           jge 0x40000a6	       435	mailbox.c	FUNCTION_13	IF_1
+0x4000090	    0x488d04d50000	                        lea rax, [rdx*8]	       438	mailbox.c	FUNCTION_13
+0x4000098	        0x48c1e208	                              shl rdx, 8	       438	mailbox.c	FUNCTION_13
+0x400009c	          0x4829c2	                            sub rdx, rax	       438	mailbox.c	FUNCTION_13
+0x400009f	          0x4889d0	                            mov rax, rdx	       438	mailbox.c	FUNCTION_13
+0x40000a2	        0x48034710	             add rax, qword [rdi + 0x10]	       438	mailbox.c	FUNCTION_13
+0x40000a6	            0xf3c3	                                     ret	       439	mailbox.c	FUNCTION_13
+mbox_request_channel	CALL,25:WHILE,0:functions,0:SWITCH,0:ELSE,0:IF,8:FOR,0:DO,0	11
+0x4000350	          0x488b07	                    mov rax, qword [rdi]	       305	mailbox.c	FUNCTION_10
+0x4000353	          0x4885c0	                           test rax, rax	       312	mailbox.c	FUNCTION_10	IF_1
+0x4000356	            0x7422	                            je 0x400037a	       312	mailbox.c	FUNCTION_10	IF_1
+0x4000358	    0x4883b8500200	              cmp qword [rax + 0x250], 0	       312	mailbox.c	FUNCTION_10	IF_1
+0x4000360	            0x7418	                            je 0x400037a	       312	mailbox.c	FUNCTION_10	IF_1
+0x4000362	    0x48c7c7000000	                              mov rdi, 0	       317	mailbox.c	FUNCTION_10	CALL_3
+0x4000369	      0xe800000000	                          call 0x400036e	       317	mailbox.c	FUNCTION_10	CALL_3
+0x400036e	    0x48c7c7000000	                              mov rdi, 0	       322	mailbox.c	FUNCTION_10	IF_2	CALL_6
+0x4000375	      0xe800000000	                          call 0x400037a	       322	mailbox.c	FUNCTION_10	IF_2	CALL_6
+0x400037a	    0x48c7c0edffff	             mov rax, 0xffffffffffffffed	       370	mailbox.c	FUNCTION_10
+0x4000381	              0xc3	                                     ret	       370	mailbox.c	FUNCTION_10
+mbox_client_peek_data	CALL,1:WHILE,0:functions,0:SWITCH,0:ELSE,0:IF,1:FOR,0:DO,0	8
+0x4000060	          0x488b07	                    mov rax, qword [rdi]	       220	mailbox.c	FUNCTION_8	IF_1
+0x4000063	        0x488b4008	                mov rax, qword [rax + 8]	       220	mailbox.c	FUNCTION_8	IF_1
+0x4000067	        0x488b4020	            mov rax, qword [rax + 0x20] 	       220	mailbox.c	FUNCTION_8	IF_1
+0x400006b	          0x4885c0	                           test rax, rax	       220	mailbox.c	FUNCTION_8	IF_1
+0x400006e	            0x7405	                            je 0x4000075	       220	mailbox.c	FUNCTION_8	IF_1
+0x4000070	      0xe900000000	                           jmp 0x4000075	       221	mailbox.c	FUNCTION_8	CALL_1
+0x4000075	            0x31c0	                            xor eax, eax	       224	mailbox.c	FUNCTION_8
+0x4000077	              0xc3	                                     ret	       224	mailbox.c	FUNCTION_8
+mbox_request_channel_byname	CALL,6:WHILE,0:functions,1:SWITCH,0:ELSE,0:IF,2:FOR,0:DO,0	12
+0x40000b0	          0x488b3f	                    mov rdi, qword [rdi]	       376	mailbox.c	FUNCTION_11
+0x40000b3	    0x48c7c2000000	                              mov rdx, 0	       382	mailbox.c	FUNCTION_11	IF_1	CALL_1
+0x40000ba	    0x4883bf500200	              cmp qword [rdi + 0x250], 0	       381	mailbox.c	FUNCTION_11	IF_1
+0x40000c2	            0x7414	                            je 0x40000d8	       381	mailbox.c	FUNCTION_11	IF_1
+0x40000c4	    0x48c7c6000000	                              mov rsi, 0	       387	mailbox.c	FUNCTION_11	IF_2	CALL_4
+0x40000cb	      0xe800000000	                          call 0x40000d0	       387	mailbox.c	FUNCTION_11	IF_2	CALL_4
+0x40000d0	    0x48c7c0eaffff	             mov rax, 0xffffffffffffffea	       399	mailbox.c	FUNCTION_11
+0x40000d7	              0xc3	                                     ret	       399	mailbox.c	FUNCTION_11
+0x40000d8	    0x48c7c6000000	                              mov rsi, 0	       382	mailbox.c	FUNCTION_11	IF_1	CALL_1
+0x40000df	      0xe800000000	                          call 0x40000e4	       382	mailbox.c	FUNCTION_11	IF_1	CALL_1
+0x40000e4	    0x48c7c0eaffff	             mov rax, 0xffffffffffffffea	       399	mailbox.c	FUNCTION_11
+0x40000eb	              0xc3	                                     ret	       399	mailbox.c	FUNCTION_11

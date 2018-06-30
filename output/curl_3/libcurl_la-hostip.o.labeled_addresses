@@ -1,0 +1,811 @@
+Curl_mk_dnscache	IF,0:ELSE,0:WHILE,0:FOR,0:CALL,1:SWITCH,0:functions,0:DO,0	5
+0x40009b0	    0x488b0d000000	            mov rcx, qword [0x040009b7] 	       840	hostip.c	FUNCTION_18	CALL_1
+0x40009b7	    0x488b15000000	            mov rdx, qword [0x040009be] 	       840	hostip.c	FUNCTION_18	CALL_1
+0x40009be	    0x4c8d052bf7ff	                lea r8, sym.freednsentry	       840	hostip.c	FUNCTION_18	CALL_1
+0x40009c5	      0xbe07000000	                              mov esi, 7	       840	hostip.c	FUNCTION_18	CALL_1
+0x40009ca	      0xe900000000	                           jmp 0x40009cf	       840	hostip.c	FUNCTION_18	CALL_1
+Curl_hostcache_prune	IF,3:ELSE,0:WHILE,0:FOR,0:CALL,4:SWITCH,0:functions,0:DO,0	37
+0x4000310	              0x53	                                push rbx	       263	hostip.c	FUNCTION_8
+0x4000311	        0x4883ec30	                           sub rsp, 0x30	       263	hostip.c	FUNCTION_8
+0x4000315	    0x64488b042528	                mov rax, qword fs:[0x28]	       263	hostip.c	FUNCTION_8
+0x400031e	      0x4889442428	             mov qword [rsp + 0x28], rax	       263	hostip.c	FUNCTION_8
+0x4000323	            0x31c0	                            xor eax, eax	       263	hostip.c	FUNCTION_8
+0x4000325	    0x4883bf880700	cmp qword [rdi + 0x788], 0xffffffffffffffff	       266	hostip.c	FUNCTION_8	IF_1
+0x400032d	            0x7475	                            je 0x40003a4	       266	hostip.c	FUNCTION_8	IF_1
+0x400032f	    0x4883bf980000	               cmp qword [rdi + 0x98], 0	       266	hostip.c	FUNCTION_8	IF_1
+0x4000337	          0x4889fb	                            mov rbx, rdi	       266	hostip.c	FUNCTION_8	IF_1
+0x400033a	            0x7468	                            je 0x40003a4	       266	hostip.c	FUNCTION_8	IF_1
+0x400033c	    0x4883bfb80000	               cmp qword [rdi + 0xb8], 0	       271	hostip.c	FUNCTION_8	IF_2
+0x4000344	            0x740f	                            je 0x4000355	       271	hostip.c	FUNCTION_8	IF_2
+0x4000346	      0xba02000000	                              mov edx, 2	       272	hostip.c	FUNCTION_8	CALL_1
+0x400034b	      0xbe03000000	                              mov esi, 3	       272	hostip.c	FUNCTION_8	CALL_1
+0x4000350	      0xe800000000	                          call 0x4000355	       272	hostip.c	FUNCTION_8	CALL_1
+0x4000355	      0x488d7c2408	                      lea rdi, [rsp + 8]	       274	hostip.c	FUNCTION_8	CALL_2
+0x400035a	      0xe800000000	                          call 0x400035f	       274	hostip.c	FUNCTION_8	CALL_2
+0x400035f	    0x488b83880700	           mov rax, qword [rbx + 0x788] 	       250	hostip.c	FUNCTION_7
+0x4000366	    0x488bbb980000	            mov rdi, qword [rbx + 0x98] 	       277	hostip.c	FUNCTION_8	CALL_3
+0x400036d	      0x488d742410	                   lea rsi, [rsp + 0x10]	       253	hostip.c	FUNCTION_7	CALL_1
+0x4000372	    0x488d15c7fcff	lea rdx, sym.hostcache_timestamp_remove 	       253	hostip.c	FUNCTION_7	CALL_1
+0x4000379	      0x4889442410	             mov qword [rsp + 0x10], rax	       250	hostip.c	FUNCTION_7
+0x400037e	      0x488b442408	                mov rax, qword [rsp + 8]	       251	hostip.c	FUNCTION_7
+0x4000383	      0x4889442418	             mov qword [rsp + 0x18], rax	       251	hostip.c	FUNCTION_7
+0x4000388	      0xe800000000	                          call 0x400038d	       253	hostip.c	FUNCTION_7	CALL_1
+0x400038d	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       281	hostip.c	FUNCTION_8	IF_3
+0x4000395	            0x740d	                            je 0x40003a4	       281	hostip.c	FUNCTION_8	IF_3
+0x4000397	      0xbe03000000	                              mov esi, 3	       282	hostip.c	FUNCTION_8	CALL_4
+0x400039c	          0x4889df	                            mov rdi, rbx	       282	hostip.c	FUNCTION_8	CALL_4
+0x400039f	      0xe800000000	                          call 0x40003a4	       282	hostip.c	FUNCTION_8	CALL_4
+0x40003a4	      0x488b442428	            mov rax, qword [rsp + 0x28] 	       283	hostip.c	FUNCTION_8
+0x40003a9	    0x644833042528	                xor rax, qword fs:[0x28]	       283	hostip.c	FUNCTION_8
+0x40003b2	            0x7506	                           jne 0x40003ba	       283	hostip.c	FUNCTION_8
+0x40003b4	        0x4883c430	                           add rsp, 0x30	       283	hostip.c	FUNCTION_8
+0x40003b8	              0x5b	                                 pop rbx	       283	hostip.c	FUNCTION_8
+0x40003b9	              0xc3	                                     ret	       283	hostip.c	FUNCTION_8
+0x40003ba	      0xe800000000	                          call 0x40003bf	       283	hostip.c	FUNCTION_8
+Curl_resolv_timeout	IF,10:ELSE,3:WHILE,0:FOR,0:CALL,19:SWITCH,0:functions,0:DO,0	7
+0x4000910	          0x4d85c0	                             test r8, r8	       677	hostip.c	FUNCTION_15	IF_1
+0x4000913	    0x48c701000000	                      mov qword [rcx], 0	       675	hostip.c	FUNCTION_15
+0x400091a	            0x780c	                            js 0x4000928	       677	hostip.c	FUNCTION_15	IF_1
+0x400091c	      0xe9dffdffff	                     jmp sym.Curl_resolv	       752	hostip.c	FUNCTION_15	CALL_11
+0x4000921	     0xf1f80000000	                         nop dword [rax]	       752	hostip.c	FUNCTION_15	CALL_11
+0x4000928	      0xb8feffffff	                     mov eax, 0xfffffffe	       800	hostip.c	FUNCTION_15
+0x400092d	              0xc3	                                     ret	       800	hostip.c	FUNCTION_15
+Curl_loadhostpairs	IF,24:ELSE,2:WHILE,1:FOR,1:CALL,32:SWITCH,0:functions,0:DO,0	268
+0x4000a40	            0x4157	                                push r15	       865	hostip.c	FUNCTION_20
+0x4000a42	            0x4156	                                push r14	       865	hostip.c	FUNCTION_20
+0x4000a44	            0x4155	                                push r13	       865	hostip.c	FUNCTION_20
+0x4000a46	            0x4154	                                push r12	       865	hostip.c	FUNCTION_20
+0x4000a48	              0x55	                                push rbp	       865	hostip.c	FUNCTION_20
+0x4000a49	              0x53	                                push rbx	       865	hostip.c	FUNCTION_20
+0x4000a4a	          0x4889fd	                            mov rbp, rdi	       865	hostip.c	FUNCTION_20
+0x4000a4d	    0x4881ec880100	                          sub rsp, 0x188	       865	hostip.c	FUNCTION_20
+0x4000a54	    0x488b9f400b00	           mov rbx, qword [rdi + 0xb40] 	       870	hostip.c	FUNCTION_20	FOR_1
+0x4000a5b	    0x64488b042528	                mov rax, qword fs:[0x28]	       865	hostip.c	FUNCTION_20
+0x4000a64	    0x488984247801	            mov qword [rsp + 0x178], rax	       865	hostip.c	FUNCTION_20
+0x4000a6c	            0x31c0	                            xor eax, eax	       865	hostip.c	FUNCTION_20
+0x4000a6e	    0xc74424240000	               mov dword [rsp + 0x24], 0	       868	hostip.c	FUNCTION_20
+0x4000a76	          0x4885db	                           test rbx, rbx	       870	hostip.c	FUNCTION_20	FOR_1
+0x4000a79	     0xf8421010000	                            je 0x4000ba0	       870	hostip.c	FUNCTION_20	FOR_1
+0x4000a7f	      0x488d442428	                   lea rax, [rsp + 0x28]	       928	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_11
+0x4000a84	      0x4c8d742470	                   lea r14, [rsp + 0x70]	        53	string3.h	FUNCTION_21	CALL_3
+0x4000a89	      0x4889442418	             mov qword [rsp + 0x18], rax	       928	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_11
+0x4000a8e	      0x488d442430	                   lea rax, [rsp + 0x30]	        53	string3.h	FUNCTION_21	CALL_3
+0x4000a93	      0x4889442410	             mov qword [rsp + 0x10], rax	        53	string3.h	FUNCTION_21	CALL_3
+0x4000a98	            0xeb2f	                           jmp 0x4000ac9	        53	string3.h	FUNCTION_21	CALL_3
+0x4000a9a	    0x660f1f440000	                    nop word [rax + rax]	        53	string3.h	FUNCTION_21	CALL_3
+0x4000aa0	    0x488d35000000	                   lea rsi, [0x04000aa7]	       992	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_18	CALL_19
+0x4000aa7	          0x4889ef	                            mov rdi, rbp	       992	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_18	CALL_19
+0x4000aaa	          0x4c89fa	                            mov rdx, r15	       992	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_18	CALL_19
+0x4000aad	            0x31c0	                            xor eax, eax	       992	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_18	CALL_19
+0x4000aaf	      0xe800000000	                          call 0x4000ab4	       992	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_18	CALL_19
+0x4000ab4	          0x4c89ef	                            mov rdi, r13	       994	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_18	CALL_20
+0x4000ab7	      0xe800000000	                          call 0x4000abc	       994	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_18	CALL_20
+0x4000abc	        0x488b5b08	                mov rbx, qword [rbx + 8]	       870	hostip.c	FUNCTION_20	FOR_1
+0x4000ac0	          0x4885db	                           test rbx, rbx	       870	hostip.c	FUNCTION_20	FOR_1
+0x4000ac3	     0xf84d7000000	                            je 0x4000ba0	       870	hostip.c	FUNCTION_20	FOR_1
+0x4000ac9	          0x4c8b3b	                    mov r15, qword [rbx]	       871	hostip.c	FUNCTION_20	FOR_1	IF_1
+0x4000acc	          0x4d85ff	                           test r15, r15	       871	hostip.c	FUNCTION_20	FOR_1	IF_1
+0x4000acf	            0x74eb	                            je 0x4000abc	       871	hostip.c	FUNCTION_20	FOR_1	IF_1
+0x4000ad1	        0x41803f2d	                    cmp byte [r15], 0x2d	       873	hostip.c	FUNCTION_20	FOR_1	IF_2
+0x4000ad5	     0xf8485000000	                            je 0x4000b60	       873	hostip.c	FUNCTION_20	FOR_1	IF_2
+0x4000adb	      0xbe3a000000	                           mov esi, 0x3a	       919	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_9
+0x4000ae0	          0x4c89ff	                            mov rdi, r15	       919	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_9
+0x4000ae3	      0xe800000000	                          call 0x4000ae8	       919	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_9
+0x4000ae8	          0x4885c0	                           test rax, rax	       920	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_7
+0x4000aeb	          0x4989c4	                            mov r12, rax	       919	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_9
+0x4000aee	     0xf84ec000000	                            je 0x4000be0	       920	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_7
+0x4000af4	          0x4889c2	                            mov rdx, rax	       921	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_7
+0x4000af7	          0x4531ed	                          xor r13d, r13d	       906	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000afa	          0x4c29fa	                            sub rdx, r15	       921	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_7
+0x4000afd	    0x4881faff0000	                           cmp rdx, 0xff	       920	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_7
+0x4000b04	            0x7f9a	                            jg 0x4000aa0	       920	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_7
+0x4000b06	          0x4c89fe	                            mov rsi, r15	        53	string3.h	FUNCTION_21	CALL_3
+0x4000b09	      0xb900010000	                          mov ecx, 0x100	        53	string3.h	FUNCTION_21	CALL_3
+0x4000b0e	          0x4c89f7	                            mov rdi, r14	        53	string3.h	FUNCTION_21	CALL_3
+0x4000b11	      0xe800000000	                          call 0x4000b16	        53	string3.h	FUNCTION_21	CALL_3
+0x4000b16	          0x4c89e0	                            mov rax, r12	       925	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000b19	          0x482b03	                    sub rax, qword [rbx]	       925	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000b1c	      0x4d8d7c2401	                      lea r15, [r12 + 1]	       927	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000b21	      0x488b742418	            mov rsi, qword [rsp + 0x18] 	       928	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_11
+0x4000b26	      0xba0a000000	                            mov edx, 0xa	       928	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_11
+0x4000b2b	          0x4c89ff	                            mov rdi, r15	       928	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_11
+0x4000b2e	      0xc644047000	          mov byte [rsp + rax + 0x70], 0	       925	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000b33	      0xe800000000	                          call 0x4000b38	       928	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_11
+0x4000b38	    0x483dffff0000	                         cmp rax, 0xffff	       929	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_8
+0x4000b3e	            0x7715	                            ja 0x4000b55	       929	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_8
+0x4000b40	      0x4c8b642428	            mov r12, qword [rsp + 0x28] 	       929	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_8
+0x4000b45	          0x4d39e7	                            cmp r15, r12	       929	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_8
+0x4000b48	            0x740b	                            je 0x4000b55	       929	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_8
+0x4000b4a	      0x41803c243a	                    cmp byte [r12], 0x3a	       929	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_8
+0x4000b4f	     0xf841b010000	                            je 0x4000c70	       929	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_8
+0x4000b55	          0x4c8b3b	                    mov r15, qword [rbx]	       929	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_8
+0x4000b58	      0xe943ffffff	                           jmp 0x4000aa0	       974	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_15
+0x4000b5d	           0xf1f00	                         nop dword [rax]	       974	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_15
+0x4000b60	      0x488d4c2424	                   lea rcx, [rsp + 0x24]	       877	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_1
+0x4000b65	        0x498d7f01	                      lea rdi, [r15 + 1]	       877	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_1
+0x4000b69	    0x488d35000000	                   lea rsi, [0x04000b70]	       877	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_1
+0x4000b70	            0x31c0	                            xor eax, eax	       877	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_1
+0x4000b72	          0x4c89f2	                            mov rdx, r14	       877	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_1
+0x4000b75	      0xe800000000	                          call 0x4000b7a	       877	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_1
+0x4000b7a	          0x83f802	                              cmp eax, 2	       877	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_1
+0x4000b7d	            0x7471	                            je 0x4000bf0	       877	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_1
+0x4000b7f	          0x488b13	                    mov rdx, qword [rbx]	       878	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_2
+0x4000b82	    0x488d35000000	                   lea rsi, [0x04000b89]	       878	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_2
+0x4000b89	            0x31c0	                            xor eax, eax	       878	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_2
+0x4000b8b	          0x4889ef	                            mov rdi, rbp	       878	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_2
+0x4000b8e	      0xe800000000	                          call 0x4000b93	       878	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_3	CALL_2
+0x4000b93	        0x488b5b08	                mov rbx, qword [rbx + 8]	       870	hostip.c	FUNCTION_20	FOR_1
+0x4000b97	          0x4885db	                           test rbx, rbx	       870	hostip.c	FUNCTION_20	FOR_1
+0x4000b9a	     0xf8529ffffff	                           jne 0x4000ac9	       870	hostip.c	FUNCTION_20	FOR_1
+0x4000ba0	    0x48c785400b00	              mov qword [rbp + 0xb40], 0	      1048	hostip.c	FUNCTION_20
+0x4000bab	            0x31c0	                            xor eax, eax	      1050	hostip.c	FUNCTION_20
+0x4000bad	    0x488b8c247801	           mov rcx, qword [rsp + 0x178] 	      1051	hostip.c	FUNCTION_20
+0x4000bb5	    0x6448330c2528	                xor rcx, qword fs:[0x28]	      1051	hostip.c	FUNCTION_20
+0x4000bbe	     0xf8516030000	                           jne 0x4000eda	      1051	hostip.c	FUNCTION_20
+0x4000bc4	    0x4881c4880100	                          add rsp, 0x188	      1051	hostip.c	FUNCTION_20
+0x4000bcb	              0x5b	                                 pop rbx	      1051	hostip.c	FUNCTION_20
+0x4000bcc	              0x5d	                                 pop rbp	      1051	hostip.c	FUNCTION_20
+0x4000bcd	            0x415c	                                 pop r12	      1051	hostip.c	FUNCTION_20
+0x4000bcf	            0x415d	                                 pop r13	      1051	hostip.c	FUNCTION_20
+0x4000bd1	            0x415e	                                 pop r14	      1051	hostip.c	FUNCTION_20
+0x4000bd3	            0x415f	                                 pop r15	      1051	hostip.c	FUNCTION_20
+0x4000bd5	              0xc3	                                     ret	      1051	hostip.c	FUNCTION_20
+0x4000bd6	    0x662e0f1f8400	                 nop word cs:[rax + rax]	      1051	hostip.c	FUNCTION_20
+0x4000be0	          0x4531ed	                          xor r13d, r13d	       906	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000be3	      0xe9b8feffff	                           jmp 0x4000aa0	       906	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000be8	     0xf1f84000000	                   nop dword [rax + rax]	       906	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000bf0	        0x8b742424	            mov esi, dword [rsp + 0x24] 	       884	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_3
+0x4000bf4	          0x4c89f7	                            mov rdi, r14	       884	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_3
+0x4000bf7	      0xe864f4ffff	            call sym.create_hostcache_id	       884	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_3
+0x4000bfc	          0x4885c0	                           test rax, rax	       886	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_4
+0x4000bff	          0x4989c4	                            mov r12, rax	       884	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_3
+0x4000c02	     0xf84af020000	                            je 0x4000eb7	       886	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_4
+0x4000c08	          0x4889c7	                            mov rdi, rax	       890	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_4
+0x4000c0b	      0xe800000000	                          call 0x4000c10	       890	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_4
+0x4000c10	    0x4883bdb80000	               cmp qword [rbp + 0xb8], 0	       892	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_5
+0x4000c18	          0x4989c5	                            mov r13, rax	       890	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_4
+0x4000c1b	            0x7412	                            je 0x4000c2f	       892	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_5
+0x4000c1d	      0xba02000000	                              mov edx, 2	       893	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_5
+0x4000c22	      0xbe03000000	                              mov esi, 3	       893	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_5
+0x4000c27	          0x4889ef	                            mov rdi, rbp	       893	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_5
+0x4000c2a	      0xe800000000	                          call 0x4000c2f	       893	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_5
+0x4000c2f	    0x488bbd980000	            mov rdi, qword [rbp + 0x98] 	       896	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_6
+0x4000c36	        0x498d5501	                      lea rdx, [r13 + 1]	       896	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_6
+0x4000c3a	          0x4c89e6	                            mov rsi, r12	       896	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_6
+0x4000c3d	      0xe800000000	                          call 0x4000c42	       896	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_6
+0x4000c42	    0x4883bdb80000	               cmp qword [rbp + 0xb8], 0	       898	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_6
+0x4000c4a	            0x740d	                            je 0x4000c59	       898	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_6
+0x4000c4c	      0xbe03000000	                              mov esi, 3	       899	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_7
+0x4000c51	          0x4889ef	                            mov rdi, rbp	       899	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_7
+0x4000c54	      0xe800000000	                          call 0x4000c59	       899	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_7
+0x4000c59	    0x488b05000000	            mov rax, qword [0x04000c60] 	       902	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_8
+0x4000c60	          0x4c89e7	                            mov rdi, r12	       902	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_8
+0x4000c63	            0xff10	                        call qword [rax]	       902	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_8
+0x4000c65	      0xe952feffff	                           jmp 0x4000abc	       902	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_8
+0x4000c6a	    0x660f1f440000	                    nop word [rax + rax]	       902	hostip.c	FUNCTION_20	FOR_1	IF_2	CALL_8
+0x4000c70	        0x89442424	             mov dword [rsp + 0x24], eax	       932	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000c74	      0x498d442401	                      lea rax, [r12 + 1]	       933	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000c79	    0x48c704240000	                      mov qword [rsp], 0	       906	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000c81	      0x4889442408	                mov qword [rsp + 8], rax	       933	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000c86	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       933	hostip.c	FUNCTION_20	FOR_1	ELSE_1
+0x4000c90	      0x41803c2400	                       cmp byte [r12], 0	       935	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1
+0x4000c95	     0xf849c000000	                            je 0x4000d37	       935	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1
+0x4000c9b	      0x4d8d7c2401	                      lea r15, [r12 + 1]	       939	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1
+0x4000ca0	      0xbe2c000000	                           mov esi, 0x2c	       940	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_12
+0x4000ca5	          0x4c89ff	                            mov rdi, r15	       940	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_12
+0x4000ca8	      0xe800000000	                          call 0x4000cad	       940	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_12
+0x4000cad	          0x4885c0	                           test rax, rax	       941	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_9
+0x4000cb0	     0xf84b2010000	                            je 0x4000e68	       941	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_9
+0x4000cb6	      0x4889442428	             mov qword [rsp + 0x28], rax	       943	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1
+0x4000cbb	    0x41807c24015b	                cmp byte [r12 + 1], 0x5b	       946	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10
+0x4000cc1	          0x4889c2	                            mov rdx, rax	       946	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10
+0x4000cc4	     0xf8476010000	                            je 0x4000e40	       946	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10
+0x4000cca	          0x4c29fa	                            sub rdx, r15	       954	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_12
+0x4000ccd	          0x4989d4	                            mov r12, rdx	       954	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_12
+0x4000cd0	     0xf8462010000	                            je 0x4000e38	       954	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_12
+0x4000cd6	        0x4883fa3f	                           cmp rdx, 0x3f	       957	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_13
+0x4000cda	     0xf8775feffff	                            ja 0x4000b55	       957	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_13
+0x4000ce0	          0x4c89fe	                            mov rsi, r15	        53	string3.h	FUNCTION_21	CALL_3
+0x4000ce3	      0x4c8b7c2410	            mov r15, qword [rsp + 0x10] 	        53	string3.h	FUNCTION_21	CALL_3
+0x4000ce8	      0xb940000000	                           mov ecx, 0x40	        53	string3.h	FUNCTION_21	CALL_3
+0x4000ced	          0x4c89ff	                            mov rdi, r15	        53	string3.h	FUNCTION_21	CALL_3
+0x4000cf0	      0xe800000000	                          call 0x4000cf5	        53	string3.h	FUNCTION_21	CALL_3
+0x4000cf5	        0x8b742424	            mov esi, dword [rsp + 0x24] 	       971	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_17
+0x4000cf9	          0x4c89ff	                            mov rdi, r15	       971	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_17
+0x4000cfc	    0x42c644243000	          mov byte [rsp + r12 + 0x30], 0	       961	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1
+0x4000d02	      0xe800000000	                          call 0x4000d07	       971	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_17
+0x4000d07	          0x4885c0	                           test rax, rax	       972	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_15
+0x4000d0a	     0xf84b1010000	                            je 0x4000ec1	       972	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_15
+0x4000d10	      0x48833c2400	                      cmp qword [rsp], 0	       977	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_16
+0x4000d15	     0xf8465010000	                            je 0x4000e80	       977	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_16
+0x4000d1b	        0x488b0c24	                    mov rcx, qword [rsp]	       978	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_16
+0x4000d1f	      0x4c8b642428	            mov r12, qword [rsp + 0x28] 	       978	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_16
+0x4000d24	        0x48890424	                    mov qword [rsp], rax	       978	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_16
+0x4000d28	        0x48894128	             mov qword [rcx + 0x28], rax	       978	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_16
+0x4000d2c	      0x41803c2400	                       cmp byte [r12], 0	       935	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1
+0x4000d31	     0xf8564ffffff	                           jne 0x4000c9b	       935	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1
+0x4000d37	          0x4d85ed	                           test r13, r13	       986	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_17
+0x4000d3a	     0xf8415feffff	                            je 0x4000b55	       986	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_17
+0x4000d40	        0x8b742424	            mov esi, dword [rsp + 0x24] 	       999	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_21
+0x4000d44	          0x4c89f7	                            mov rdi, r14	       999	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_21
+0x4000d47	      0xe814f3ffff	            call sym.create_hostcache_id	       999	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_21
+0x4000d4c	          0x4885c0	                           test rax, rax	      1001	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_19
+0x4000d4f	          0x4989c4	                            mov r12, rax	       999	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_21
+0x4000d52	     0xf8457010000	                            je 0x4000eaf	      1001	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_19
+0x4000d58	          0x4c89e7	                            mov rdi, r12	      1005	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_23
+0x4000d5b	      0xe800000000	                          call 0x4000d60	      1005	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_23
+0x4000d60	    0x4883bdb80000	               cmp qword [rbp + 0xb8], 0	      1007	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_20
+0x4000d68	          0x4989c7	                            mov r15, rax	      1005	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_23
+0x4000d6b	            0x7412	                            je 0x4000d7f	      1007	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_20
+0x4000d6d	      0xba02000000	                              mov edx, 2	      1008	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_24
+0x4000d72	      0xbe03000000	                              mov esi, 3	      1008	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_24
+0x4000d77	          0x4889ef	                            mov rdi, rbp	      1008	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_24
+0x4000d7a	      0xe800000000	                          call 0x4000d7f	      1008	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_24
+0x4000d7f	    0x488bbd980000	            mov rdi, qword [rbp + 0x98] 	      1011	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_25
+0x4000d86	        0x4983c701	                              add r15, 1	      1011	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_25
+0x4000d8a	          0x4c89e6	                            mov rsi, r12	      1011	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_25
+0x4000d8d	          0x4c89fa	                            mov rdx, r15	      1011	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_25
+0x4000d90	      0xe800000000	                          call 0x4000d95	      1011	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_25
+0x4000d95	          0x4885c0	                           test rax, rax	      1013	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21
+0x4000d98	            0x742a	                            je 0x4000dc4	      1013	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21
+0x4000d9a	        0x8b4c2424	            mov ecx, dword [rsp + 0x24] 	      1014	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21	CALL_26
+0x4000d9e	    0x488d35000000	                   lea rsi, [0x04000da5]	      1014	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21	CALL_26
+0x4000da5	          0x4c89f2	                            mov rdx, r14	      1014	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21	CALL_26
+0x4000da8	          0x4889ef	                            mov rdi, rbp	      1014	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21	CALL_26
+0x4000dab	            0x31c0	                            xor eax, eax	      1014	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21	CALL_26
+0x4000dad	      0xe800000000	                          call 0x4000db2	      1014	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21	CALL_26
+0x4000db2	    0x488bbd980000	            mov rdi, qword [rbp + 0x98] 	      1023	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21	CALL_27
+0x4000db9	          0x4c89fa	                            mov rdx, r15	      1023	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21	CALL_27
+0x4000dbc	          0x4c89e6	                            mov rsi, r12	      1023	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21	CALL_27
+0x4000dbf	      0xe800000000	                          call 0x4000dc4	      1023	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_21	CALL_27
+0x4000dc4	    0x488b05000000	            mov rax, qword [0x04000dcb] 	      1026	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_28
+0x4000dcb	          0x4c89e7	                            mov rdi, r12	      1026	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_28
+0x4000dce	            0xff10	                        call qword [rax]	      1026	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_28
+0x4000dd0	        0x8b4c2424	            mov ecx, dword [rsp + 0x24] 	      1029	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_29
+0x4000dd4	          0x4c89f2	                            mov rdx, r14	      1029	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_29
+0x4000dd7	          0x4c89ee	                            mov rsi, r13	      1029	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_29
+0x4000dda	          0x4889ef	                            mov rdi, rbp	      1029	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_29
+0x4000ddd	      0xe800000000	                          call 0x4000de2	      1029	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_29
+0x4000de2	          0x4885c0	                           test rax, rax	      1030	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_22
+0x4000de5	     0xf84ad000000	                            je 0x4000e98	      1030	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_22
+0x4000deb	      0x4883681001	               sub qword [rax + 0x10], 1	      1034	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_22
+0x4000df0	    0x4883bdb80000	               cmp qword [rbp + 0xb8], 0	      1037	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_23
+0x4000df8	    0x48c740080000	                  mov qword [rax + 8], 0	      1031	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_22
+0x4000e00	            0x740d	                            je 0x4000e0f	      1037	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_23
+0x4000e02	      0xbe03000000	                              mov esi, 3	      1038	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_30
+0x4000e07	          0x4889ef	                            mov rdi, rbp	      1038	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_30
+0x4000e0a	      0xe800000000	                          call 0x4000e0f	      1038	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_30
+0x4000e0f	      0x4c8b442408	                 mov r8, qword [rsp + 8]	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e14	        0x8b4c2424	            mov ecx, dword [rsp + 0x24] 	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e18	    0x488d35000000	                   lea rsi, [0x04000e1f]	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e1f	          0x4c89f2	                            mov rdx, r14	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e22	          0x4889ef	                            mov rdi, rbp	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e25	            0x31c0	                            xor eax, eax	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e27	      0xe800000000	                          call 0x4000e2c	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e2c	      0xe98bfcffff	                           jmp 0x4000abc	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e31	     0xf1f80000000	                         nop dword [rax]	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e38	          0x4989c4	                            mov r12, rax	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e3b	      0xe950feffff	                           jmp 0x4000c90	      1044	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_32
+0x4000e40	          0x4c39f8	                            cmp rax, r15	       947	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10	IF_11
+0x4000e43	     0xf840cfdffff	                            je 0x4000b55	       947	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10	IF_11
+0x4000e49	        0x8078ff5d	                cmp byte [rax - 1], 0x5d	       947	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10	IF_11
+0x4000e4d	     0xf8502fdffff	                           jne 0x4000b55	       947	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10	IF_11
+0x4000e53	      0x4d8d7c2402	                      lea r15, [r12 + 2]	       949	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10
+0x4000e58	        0x488d50ff	                      lea rdx, [rax - 1]	       950	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10
+0x4000e5c	      0xe969feffff	                           jmp 0x4000cca	       950	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10
+0x4000e61	     0xf1f80000000	                         nop dword [rax]	       950	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_10
+0x4000e68	          0x4c89ff	                            mov rdi, r15	       942	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_13
+0x4000e6b	      0xe800000000	                          call 0x4000e70	       942	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_13
+0x4000e70	          0x4c01f8	                            add rax, r15	       942	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_13
+0x4000e73	      0xe93efeffff	                           jmp 0x4000cb6	       942	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_13
+0x4000e78	     0xf1f84000000	                   nop dword [rax + rax]	       942	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_13
+0x4000e80	      0x4c8b642428	            mov r12, qword [rsp + 0x28] 	       942	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	CALL_13
+0x4000e85	        0x48890424	                    mov qword [rsp], rax	       977	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_16
+0x4000e89	          0x4989c5	                            mov r13, rax	       977	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_16
+0x4000e8c	      0xe9fffdffff	                           jmp 0x4000c90	       977	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_16
+0x4000e91	     0xf1f80000000	                         nop dword [rax]	       977	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_16
+0x4000e98	    0x4883bdb80000	               cmp qword [rbp + 0xb8], 0	      1037	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_23
+0x4000ea0	            0x740d	                            je 0x4000eaf	      1037	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_23
+0x4000ea2	      0xbe03000000	                              mov esi, 3	      1038	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_30
+0x4000ea7	          0x4889ef	                            mov rdi, rbp	      1038	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_30
+0x4000eaa	      0xe800000000	                          call 0x4000eaf	      1038	hostip.c	FUNCTION_20	FOR_1	ELSE_1	CALL_30
+0x4000eaf	          0x4c89ef	                            mov rdi, r13	      1041	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_24	CALL_31
+0x4000eb2	      0xe800000000	                          call 0x4000eb7	      1041	hostip.c	FUNCTION_20	FOR_1	ELSE_1	IF_24	CALL_31
+0x4000eb7	      0xb81b000000	                           mov eax, 0x1b	       887	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_4
+0x4000ebc	      0xe9ecfcffff	                           jmp 0x4000bad	       887	hostip.c	FUNCTION_20	FOR_1	IF_2	IF_4
+0x4000ec1	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       973	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_15	CALL_18
+0x4000ec6	    0x488d35000000	                   lea rsi, [0x04000ecd]	       973	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_15	CALL_18
+0x4000ecd	          0x4889ef	                            mov rdi, rbp	       973	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_15	CALL_18
+0x4000ed0	      0xe800000000	                          call 0x4000ed5	       973	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_15	CALL_18
+0x4000ed5	      0xe97bfcffff	                           jmp 0x4000b55	       973	hostip.c	FUNCTION_20	FOR_1	ELSE_1	WHILE_1	IF_15	CALL_18
+0x4000eda	      0xe800000000	                  call section_end..data	      1051	hostip.c	FUNCTION_20
+Curl_global_host_cache_init	IF,2:ELSE,0:WHILE,0:FOR,0:CALL,1:SWITCH,0:functions,0:DO,0	21
+0x4000210	    0x8b0500000000	            mov eax, dword [0x04000216] 	       130	hostip.c	FUNCTION_1	IF_1
+0x4000216	            0x85c0	                           test eax, eax	       130	hostip.c	FUNCTION_1	IF_1
+0x4000218	            0x740e	                            je 0x4000228	       130	hostip.c	FUNCTION_1	IF_1
+0x400021a	    0x488d05000000	                   lea rax, [0x04000221]	       136	hostip.c	FUNCTION_1
+0x4000221	              0xc3	                                     ret	       137	hostip.c	FUNCTION_1
+0x4000222	    0x660f1f440000	                    nop word [rax + rax]	       137	hostip.c	FUNCTION_1
+0x4000228	        0x4883ec08	                              sub rsp, 8	       128	hostip.c	FUNCTION_1
+0x400022c	    0x488b15000000	            mov rdx, qword [0x04000233] 	       131	hostip.c	FUNCTION_1	IF_1	CALL_1
+0x4000233	    0x488b0d000000	            mov rcx, qword [0x0400023a] 	       131	hostip.c	FUNCTION_1	IF_1	CALL_1
+0x400023a	    0x4c8d05affeff	                lea r8, sym.freednsentry	       131	hostip.c	FUNCTION_1	IF_1	CALL_1
+0x4000241	    0x488d3d000000	                   lea rdi, [0x04000248]	       131	hostip.c	FUNCTION_1	IF_1	CALL_1
+0x4000248	      0xbe07000000	                              mov esi, 7	       131	hostip.c	FUNCTION_1	IF_1	CALL_1
+0x400024d	      0xe800000000	                          call 0x4000252	       131	hostip.c	FUNCTION_1	IF_1	CALL_1
+0x4000252	            0x89c2	                            mov edx, eax	       131	hostip.c	FUNCTION_1	IF_1	CALL_1
+0x4000254	            0x31c0	                            xor eax, eax	       136	hostip.c	FUNCTION_1
+0x4000256	            0x85d2	                           test edx, edx	       133	hostip.c	FUNCTION_1	IF_1	IF_2
+0x4000258	            0x7511	                           jne 0x400026b	       133	hostip.c	FUNCTION_1	IF_1	IF_2
+0x400025a	    0x488d05000000	                   lea rax, [0x04000261]	       136	hostip.c	FUNCTION_1
+0x4000261	    0xc70500000000	               mov dword [0x0400026b], 1	       134	hostip.c	FUNCTION_1	IF_1	IF_2
+0x400026b	        0x4883c408	                              add rsp, 8	       137	hostip.c	FUNCTION_1
+0x400026f	              0xc3	                                     ret	       137	hostip.c	FUNCTION_1
+Curl_shuffle_addr	IF,4:ELSE,2:WHILE,0:FOR,3:CALL,7:SWITCH,0:functions,0:DO,0	114
+0x4000440	          0x488b06	                    mov rax, qword [rsi]	       385	hostip.c	FUNCTION_11	CALL_1
+0x4000443	          0x4885c0	                           test rax, rax	       156	hostip.c	FUNCTION_3	WHILE_1
+0x4000446	     0xf8482010000	                            je 0x40005ce	       156	hostip.c	FUNCTION_3	WHILE_1
+0x400044c	            0x4157	                                push r15	       383	hostip.c	FUNCTION_11
+0x400044e	            0x4156	                                push r14	       383	hostip.c	FUNCTION_11
+0x4000450	          0x4531ff	                          xor r15d, r15d	       156	hostip.c	FUNCTION_3	WHILE_1
+0x4000453	            0x4155	                                push r13	       383	hostip.c	FUNCTION_11
+0x4000455	            0x4154	                                push r12	       383	hostip.c	FUNCTION_11
+0x4000457	              0x55	                                push rbp	       383	hostip.c	FUNCTION_11
+0x4000458	              0x53	                                push rbx	       383	hostip.c	FUNCTION_11
+0x4000459	        0x4883ec28	                           sub rsp, 0x28	       383	hostip.c	FUNCTION_11
+0x400045d	            0xeb04	                           jmp 0x4000463	       383	hostip.c	FUNCTION_11
+0x400045f	              0x90	                                     nop	       383	hostip.c	FUNCTION_11
+0x4000460	          0x4c63fb	                         movsxd r15, ebx	       158	hostip.c	FUNCTION_3	WHILE_1
+0x4000463	        0x488b4028	            mov rax, qword [rax + 0x28] 	       157	hostip.c	FUNCTION_3	WHILE_1
+0x4000467	        0x418d5f01	                      lea ebx, [r15 + 1]	       158	hostip.c	FUNCTION_3	WHILE_1
+0x400046b	          0x4885c0	                           test rax, rax	       156	hostip.c	FUNCTION_3	WHILE_1
+0x400046e	            0x75f0	                           jne 0x4000460	       156	hostip.c	FUNCTION_3	WHILE_1
+0x4000470	          0x83fb01	                              cmp ebx, 1	       387	hostip.c	FUNCTION_11	IF_1
+0x4000473	     0xf8435010000	                            je 0x40005ae	       387	hostip.c	FUNCTION_11	IF_1
+0x4000479	          0x4889f5	                            mov rbp, rsi	       387	hostip.c	FUNCTION_11	IF_1
+0x400047c	    0x488d35000000	                   lea rsi, [0x04000483]	       389	hostip.c	FUNCTION_11	IF_1	CALL_2
+0x4000483	            0x89da	                            mov edx, ebx	       389	hostip.c	FUNCTION_11	IF_1	CALL_2
+0x4000485	        0x48893c24	                    mov qword [rsp], rdi	       389	hostip.c	FUNCTION_11	IF_1	CALL_2
+0x4000489	          0x4c63e3	                         movsxd r12, ebx	       391	hostip.c	FUNCTION_11	IF_1	CALL_3
+0x400048c	      0xe800000000	                          call 0x4000491	       389	hostip.c	FUNCTION_11	IF_1	CALL_2
+0x4000491	    0x4c8b2d000000	            mov r13, qword [0x04000498] 	       391	hostip.c	FUNCTION_11	IF_1	CALL_3
+0x4000498	    0x4a8d04e50000	                        lea rax, [r12*8]	       391	hostip.c	FUNCTION_11	IF_1	CALL_3
+0x40004a0	      0x4889442408	                mov qword [rsp + 8], rax	       391	hostip.c	FUNCTION_11	IF_1	CALL_3
+0x40004a5	          0x4889c7	                            mov rdi, rax	       391	hostip.c	FUNCTION_11	IF_1	CALL_3
+0x40004a8	        0x41ff5500	                        call qword [r13]	       391	hostip.c	FUNCTION_11	IF_1	CALL_3
+0x40004ac	          0x4989c6	                            mov r14, rax	       391	hostip.c	FUNCTION_11	IF_1	CALL_3
+0x40004af	      0xb81b000000	                           mov eax, 0x1b	       429	hostip.c	FUNCTION_11	IF_1	ELSE_2
+0x40004b4	          0x4d85f6	                           test r14, r14	       392	hostip.c	FUNCTION_11	IF_1	IF_2
+0x40004b7	     0xf84f1000000	                            je 0x40005ae	       392	hostip.c	FUNCTION_11	IF_1	IF_2
+0x40004bd	        0x488b4500	                    mov rax, qword [rbp]	       398	hostip.c	FUNCTION_11	IF_1	IF_2
+0x40004c1	    0x4a8d14a50000	                        lea rdx, [r12*4]	       395	hostip.c	FUNCTION_11	IF_1	IF_2
+0x40004c9	          0x4c89f1	                            mov rcx, r14	       395	hostip.c	FUNCTION_11	IF_1	IF_2
+0x40004cc	          0x498906	                    mov qword [r14], rax	       398	hostip.c	FUNCTION_11	IF_1	IF_2
+0x40004cf	        0x418d47ff	                      lea eax, [r15 - 1]	       398	hostip.c	FUNCTION_11	IF_1	IF_2
+0x40004d3	      0x4d8d64c608	              lea r12, [r14 + rax*8 + 8]	       398	hostip.c	FUNCTION_11	IF_1	IF_2
+0x40004d8	          0x4c89f0	                            mov rax, r14	       398	hostip.c	FUNCTION_11	IF_1	IF_2
+0x40004db	       0xf1f440000	                   nop dword [rax + rax]	       398	hostip.c	FUNCTION_11	IF_1	IF_2
+0x40004e0	          0x488b30	                    mov rsi, qword [rax]	       400	hostip.c	FUNCTION_11	IF_1	IF_2	FOR_1
+0x40004e3	        0x4883c008	                              add rax, 8	       400	hostip.c	FUNCTION_11	IF_1	IF_2	FOR_1
+0x40004e7	        0x488b7628	            mov rsi, qword [rsi + 0x28] 	       400	hostip.c	FUNCTION_11	IF_1	IF_2	FOR_1
+0x40004eb	          0x488930	                    mov qword [rax], rsi	       400	hostip.c	FUNCTION_11	IF_1	IF_2	FOR_1
+0x40004ee	          0x4939c4	                            cmp r12, rax	       399	hostip.c	FUNCTION_11	IF_1	IF_2	FOR_1
+0x40004f1	            0x75ed	                           jne 0x40004e0	       399	hostip.c	FUNCTION_11	IF_1	IF_2	FOR_1
+0x40004f3	      0x48894c2418	             mov qword [rsp + 0x18], rcx	       399	hostip.c	FUNCTION_11	IF_1	IF_2	FOR_1
+0x40004f8	          0x4889d7	                            mov rdi, rdx	       403	hostip.c	FUNCTION_11	IF_1	IF_2	CALL_4
+0x40004fb	      0x4889542410	             mov qword [rsp + 0x10], rdx	       403	hostip.c	FUNCTION_11	IF_1	IF_2	CALL_4
+0x4000500	        0x41ff5500	                        call qword [r13]	       403	hostip.c	FUNCTION_11	IF_1	IF_2	CALL_4
+0x4000504	          0x4885c0	                           test rax, rax	       404	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x4000507	          0x4989c5	                            mov r13, rax	       403	hostip.c	FUNCTION_11	IF_1	IF_2	CALL_4
+0x400050a	     0xf84b0000000	                            je 0x40005c0	       404	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x4000510	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       406	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	CALL_5
+0x4000515	        0x488b3c24	                    mov rdi, qword [rsp]	       406	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	CALL_5
+0x4000519	          0x4889c6	                            mov rsi, rax	       406	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	CALL_5
+0x400051c	      0xe800000000	                          call 0x4000521	       406	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	CALL_5
+0x4000521	            0x85c0	                           test eax, eax	       406	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	CALL_5
+0x4000523	            0x7570	                           jne 0x4000595	       406	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	CALL_5
+0x4000525	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	       406	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	CALL_5
+0x400052a	      0x4b8d7cbd00	                  lea rdi, [r13 + r15*4]	       406	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	CALL_5
+0x400052f	        0x4b8d34fe	                  lea rsi, [r14 + r15*8]	       406	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	CALL_5
+0x4000533	       0xf1f440000	                   nop dword [rax + rax]	       406	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	CALL_5
+0x4000538	            0x8b07	                    mov eax, dword [rdi]	       409	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x400053a	            0x31d2	                            xor edx, edx	       409	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x400053c	          0x4c8b16	                    mov r10, qword [rsi]	       410	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x400053f	        0x4883ef04	                              sub rdi, 4	       410	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x4000543	        0x4883ee08	                              sub rsi, 8	       410	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x4000547	            0xf7f3	                                 div ebx	       409	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x4000549	          0x83eb01	                              sub ebx, 1	       409	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x400054c	            0x89d2	                            mov edx, edx	       409	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x400054e	        0x498d04d6	                  lea rax, [r14 + rdx*8]	       409	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x4000552	          0x488b10	                    mov rdx, qword [rax]	       409	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x4000555	          0x4c8910	                    mov qword [rax], r10	       410	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x4000558	        0x48895608	                mov qword [rsi + 8], rdx	       411	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x400055c	          0x83fb01	                              cmp ebx, 1	       408	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x400055f	            0x75d7	                           jne 0x4000538	       408	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x4000561	     0xf1f80000000	                         nop dword [rax]	       408	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_2
+0x4000568	          0x488b01	                    mov rax, qword [rcx]	       416	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_3
+0x400056b	        0x488b5108	                mov rdx, qword [rcx + 8]	       416	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_3
+0x400056f	        0x4883c108	                              add rcx, 8	       416	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_3
+0x4000573	          0x4939cc	                            cmp r12, rcx	       415	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_3
+0x4000576	        0x48895028	             mov qword [rax + 0x28], rdx	       416	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_3
+0x400057a	            0x75ec	                           jne 0x4000568	       415	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4	FOR_3
+0x400057c	      0x488b442408	                mov rax, qword [rsp + 8]	       419	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4
+0x4000581	      0x498b4406f8	          mov rax, qword [r14 + rax - 8]	       419	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4
+0x4000586	    0x48c740280000	               mov qword [rax + 0x28], 0	       419	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4
+0x400058e	          0x498b06	                    mov rax, qword [r14]	       420	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4
+0x4000591	        0x48894500	                    mov qword [rbp], rax	       420	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	IF_4
+0x4000595	    0x488b1d000000	            mov rbx, qword [0x0400059c] 	       422	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	CALL_6
+0x400059c	          0x4c89ef	                            mov rdi, r13	       422	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	CALL_6
+0x400059f	            0xff13	                        call qword [rbx]	       422	hostip.c	FUNCTION_11	IF_1	IF_2	IF_3	CALL_6
+0x40005a1	            0x31c0	                            xor eax, eax	       384	hostip.c	FUNCTION_11
+0x40005a3	          0x890424	                    mov dword [rsp], eax	       384	hostip.c	FUNCTION_11
+0x40005a6	          0x4c89f7	                            mov rdi, r14	       426	hostip.c	FUNCTION_11	IF_1	IF_2	CALL_7
+0x40005a9	            0xff13	                        call qword [rbx]	       426	hostip.c	FUNCTION_11	IF_1	IF_2	CALL_7
+0x40005ab	          0x8b0424	                    mov eax, dword [rsp]	       426	hostip.c	FUNCTION_11	IF_1	IF_2	CALL_7
+0x40005ae	        0x4883c428	                           add rsp, 0x28	       432	hostip.c	FUNCTION_11	ELSE_2
+0x40005b2	              0x5b	                                 pop rbx	       432	hostip.c	FUNCTION_11	ELSE_2
+0x40005b3	              0x5d	                                 pop rbp	       432	hostip.c	FUNCTION_11	ELSE_2
+0x40005b4	            0x415c	                                 pop r12	       432	hostip.c	FUNCTION_11	ELSE_2
+0x40005b6	            0x415d	                                 pop r13	       432	hostip.c	FUNCTION_11	ELSE_2
+0x40005b8	            0x415e	                                 pop r14	       432	hostip.c	FUNCTION_11	ELSE_2
+0x40005ba	            0x415f	                                 pop r15	       432	hostip.c	FUNCTION_11	ELSE_2
+0x40005bc	              0xc3	                                     ret	       432	hostip.c	FUNCTION_11	ELSE_2
+0x40005bd	           0xf1f00	                         nop dword [rax]	       432	hostip.c	FUNCTION_11	ELSE_2
+0x40005c0	      0xb81b000000	                           mov eax, 0x1b	       425	hostip.c	FUNCTION_11	IF_1	IF_2	ELSE_1
+0x40005c5	    0x488b1d000000	            mov rbx, qword [0x040005cc] 	       425	hostip.c	FUNCTION_11	IF_1	IF_2	ELSE_1
+0x40005cc	            0xebd5	                           jmp 0x40005a3	       425	hostip.c	FUNCTION_11	IF_1	IF_2	ELSE_1
+0x40005ce	            0x31c0	                            xor eax, eax	       384	hostip.c	FUNCTION_11
+0x40005d0	              0xc3	                                     ret	       384	hostip.c	FUNCTION_11
+Curl_printable_address	IF,0:ELSE,0:WHILE,0:FOR,0:CALL,2:SWITCH,1:functions,0:DO,0	22
+0x40002c0	          0x8b4704	                mov eax, dword [rdi + 4]	       180	hostip.c	FUNCTION_4	SWITCH_1
+0x40002c3	          0x4989f0	                             mov r8, rsi	       172	hostip.c	FUNCTION_4
+0x40002c6	          0x83f802	                              cmp eax, 2	       180	hostip.c	FUNCTION_4	SWITCH_1
+0x40002c9	            0x742d	                            je 0x40002f8	       180	hostip.c	FUNCTION_4	SWITCH_1
+0x40002cb	          0x83f80a	                            cmp eax, 0xa	       180	hostip.c	FUNCTION_4	SWITCH_1
+0x40002ce	            0x7520	                           jne 0x40002f0	       180	hostip.c	FUNCTION_4	SWITCH_1
+0x40002d0	        0x488b7720	            mov rsi, qword [rdi + 0x20] 	       189	hostip.c	FUNCTION_4	SWITCH_1
+0x40002d4	            0x89d1	                            mov ecx, edx	       190	hostip.c	FUNCTION_4	SWITCH_1	CALL_2
+0x40002d6	      0xbf0a000000	                            mov edi, 0xa	       190	hostip.c	FUNCTION_4	SWITCH_1	CALL_2
+0x40002db	          0x4c89c2	                             mov rdx, r8	       190	hostip.c	FUNCTION_4	SWITCH_1	CALL_2
+0x40002de	        0x4883c608	                              add rsi, 8	       189	hostip.c	FUNCTION_4	SWITCH_1
+0x40002e2	      0xe900000000	                           jmp 0x40002e7	       190	hostip.c	FUNCTION_4	SWITCH_1	CALL_2
+0x40002e7	    0x660f1f840000	                    nop word [rax + rax]	       190	hostip.c	FUNCTION_4	SWITCH_1	CALL_2
+0x40002f0	            0x31c0	                            xor eax, eax	       197	hostip.c	FUNCTION_4
+0x40002f2	              0xc3	                                     ret	       197	hostip.c	FUNCTION_4
+0x40002f3	       0xf1f440000	                   nop dword [rax + rax]	       197	hostip.c	FUNCTION_4
+0x40002f8	        0x488b7720	            mov rsi, qword [rdi + 0x20] 	       183	hostip.c	FUNCTION_4	SWITCH_1
+0x40002fc	            0x89d1	                            mov ecx, edx	       184	hostip.c	FUNCTION_4	SWITCH_1	CALL_1
+0x40002fe	      0xbf02000000	                              mov edi, 2	       184	hostip.c	FUNCTION_4	SWITCH_1	CALL_1
+0x4000303	          0x4c89c2	                             mov rdx, r8	       184	hostip.c	FUNCTION_4	SWITCH_1	CALL_1
+0x4000306	        0x4883c604	                              add rsi, 4	       183	hostip.c	FUNCTION_4	SWITCH_1
+0x400030a	      0xe900000000	                           jmp 0x400030f	       184	hostip.c	FUNCTION_4	SWITCH_1	CALL_1
+Curl_hostcache_clean	IF,2:ELSE,0:WHILE,0:FOR,0:CALL,3:SWITCH,0:functions,0:DO,0	30
+0x40009d0	          0x4885ff	                           test rdi, rdi	       854	hostip.c	FUNCTION_19	IF_1
+0x40009d3	            0x745b	                            je 0x4000a30	       854	hostip.c	FUNCTION_19	IF_1
+0x40009d5	              0x55	                                push rbp	       853	hostip.c	FUNCTION_19
+0x40009d6	              0x53	                                push rbx	       853	hostip.c	FUNCTION_19
+0x40009d7	          0x4889f5	                            mov rbp, rsi	       853	hostip.c	FUNCTION_19
+0x40009da	          0x4889fb	                            mov rbx, rdi	       853	hostip.c	FUNCTION_19
+0x40009dd	        0x4883ec08	                              sub rsp, 8	       853	hostip.c	FUNCTION_19
+0x40009e1	    0x4883bfb80000	               cmp qword [rdi + 0xb8], 0	       854	hostip.c	FUNCTION_19	IF_1
+0x40009e9	            0x740f	                            je 0x40009fa	       854	hostip.c	FUNCTION_19	IF_1
+0x40009eb	      0xba02000000	                              mov edx, 2	       855	hostip.c	FUNCTION_19	CALL_1
+0x40009f0	      0xbe03000000	                              mov esi, 3	       855	hostip.c	FUNCTION_19	CALL_1
+0x40009f5	      0xe800000000	                          call 0x40009fa	       855	hostip.c	FUNCTION_19	CALL_1
+0x40009fa	          0x4889ef	                            mov rdi, rbp	       857	hostip.c	FUNCTION_19	CALL_2
+0x40009fd	      0xe800000000	                          call 0x4000a02	       857	hostip.c	FUNCTION_19	CALL_2
+0x4000a02	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       859	hostip.c	FUNCTION_19	IF_2
+0x4000a0a	            0x7414	                            je 0x4000a20	       859	hostip.c	FUNCTION_19	IF_2
+0x4000a0c	        0x4883c408	                              add rsp, 8	       861	hostip.c	FUNCTION_19
+0x4000a10	          0x4889df	                            mov rdi, rbx	       860	hostip.c	FUNCTION_19	CALL_3
+0x4000a13	      0xbe03000000	                              mov esi, 3	       860	hostip.c	FUNCTION_19	CALL_3
+0x4000a18	              0x5b	                                 pop rbx	       861	hostip.c	FUNCTION_19
+0x4000a19	              0x5d	                                 pop rbp	       861	hostip.c	FUNCTION_19
+0x4000a1a	      0xe900000000	                           jmp 0x4000a1f	       860	hostip.c	FUNCTION_19	CALL_3
+0x4000a1f	              0x90	                                     nop	       860	hostip.c	FUNCTION_19	CALL_3
+0x4000a20	        0x4883c408	                              add rsp, 8	       861	hostip.c	FUNCTION_19
+0x4000a24	              0x5b	                                 pop rbx	       861	hostip.c	FUNCTION_19
+0x4000a25	              0x5d	                                 pop rbp	       861	hostip.c	FUNCTION_19
+0x4000a26	              0xc3	                                     ret	       861	hostip.c	FUNCTION_19
+0x4000a27	    0x660f1f840000	                    nop word [rax + rax]	       861	hostip.c	FUNCTION_19
+0x4000a30	          0x4889f7	                            mov rdi, rsi	       857	hostip.c	FUNCTION_19	CALL_2
+0x4000a33	      0xe900000000	                           jmp 0x4000a38	       857	hostip.c	FUNCTION_19	CALL_2
+Curl_resolv_unlock	IF,2:ELSE,0:WHILE,0:FOR,0:CALL,3:SWITCH,0:functions,0:DO,0	36
+0x4000930	          0x4885ff	                           test rdi, rdi	       811	hostip.c	FUNCTION_16	IF_1
+0x4000933	            0x746b	                            je 0x40009a0	       811	hostip.c	FUNCTION_16	IF_1
+0x4000935	              0x55	                                push rbp	       810	hostip.c	FUNCTION_16
+0x4000936	              0x53	                                push rbx	       810	hostip.c	FUNCTION_16
+0x4000937	          0x4889f5	                            mov rbp, rsi	       810	hostip.c	FUNCTION_16
+0x400093a	          0x4889fb	                            mov rbx, rdi	       810	hostip.c	FUNCTION_16
+0x400093d	        0x4883ec08	                              sub rsp, 8	       810	hostip.c	FUNCTION_16
+0x4000941	    0x4883bfb80000	               cmp qword [rdi + 0xb8], 0	       811	hostip.c	FUNCTION_16	IF_1
+0x4000949	            0x740f	                            je 0x400095a	       811	hostip.c	FUNCTION_16	IF_1
+0x400094b	      0xba02000000	                              mov edx, 2	       812	hostip.c	FUNCTION_16	CALL_1
+0x4000950	      0xbe03000000	                              mov esi, 3	       812	hostip.c	FUNCTION_16	CALL_1
+0x4000955	      0xe800000000	                          call 0x400095a	       812	hostip.c	FUNCTION_16	CALL_1
+0x400095a	      0x48836d1001	               sub qword [rbp + 0x10], 1	       829	hostip.c	FUNCTION_17	IF_1
+0x400095f	            0x741f	                            je 0x4000980	       829	hostip.c	FUNCTION_17	IF_1
+0x4000961	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       816	hostip.c	FUNCTION_16	IF_2
+0x4000969	            0x7427	                            je 0x4000992	       816	hostip.c	FUNCTION_16	IF_2
+0x400096b	        0x4883c408	                              add rsp, 8	       818	hostip.c	FUNCTION_16
+0x400096f	          0x4889df	                            mov rdi, rbx	       817	hostip.c	FUNCTION_16	CALL_3
+0x4000972	      0xbe03000000	                              mov esi, 3	       817	hostip.c	FUNCTION_16	CALL_3
+0x4000977	              0x5b	                                 pop rbx	       818	hostip.c	FUNCTION_16
+0x4000978	              0x5d	                                 pop rbp	       818	hostip.c	FUNCTION_16
+0x4000979	      0xe900000000	                           jmp 0x400097e	       817	hostip.c	FUNCTION_16	CALL_3
+0x400097e	            0x6690	                                     nop	       817	hostip.c	FUNCTION_16	CALL_3
+0x4000980	          0x4889ef	                            mov rdi, rbp	       817	hostip.c	FUNCTION_16	CALL_3
+0x4000983	      0xe848f7ffff	            call sym.freednsentry.part.0	       817	hostip.c	FUNCTION_16	CALL_3
+0x4000988	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       816	hostip.c	FUNCTION_16	IF_2
+0x4000990	            0x75d9	                           jne 0x400096b	       816	hostip.c	FUNCTION_16	IF_2
+0x4000992	        0x4883c408	                              add rsp, 8	       818	hostip.c	FUNCTION_16
+0x4000996	              0x5b	                                 pop rbx	       818	hostip.c	FUNCTION_16
+0x4000997	              0x5d	                                 pop rbp	       818	hostip.c	FUNCTION_16
+0x4000998	            0xf3c3	                                     ret	       818	hostip.c	FUNCTION_16
+0x400099a	    0x660f1f440000	                    nop word [rax + rax]	       818	hostip.c	FUNCTION_16
+0x40009a0	      0x48836e1001	               sub qword [rsi + 0x10], 1	       829	hostip.c	FUNCTION_17	IF_1
+0x40009a5	            0x75f1	                           jne 0x4000998	       829	hostip.c	FUNCTION_17	IF_1
+0x40009a7	          0x4889f7	                            mov rdi, rsi	       829	hostip.c	FUNCTION_17	IF_1
+0x40009aa	      0xe921f7ffff	             jmp sym.freednsentry.part.0	       829	hostip.c	FUNCTION_17	IF_1
+Curl_cache_addr	IF,6:ELSE,0:WHILE,0:FOR,0:CALL,10:SWITCH,0:functions,0:DO,0	79
+0x40005e0	            0x4155	                                push r13	       448	hostip.c	ELSE_2	FUNCTION_12
+0x40005e2	            0x4154	                                push r12	       448	hostip.c	ELSE_2	FUNCTION_12
+0x40005e4	          0x4989fd	                            mov r13, rdi	       448	hostip.c	ELSE_2	FUNCTION_12
+0x40005e7	              0x55	                                push rbp	       448	hostip.c	ELSE_2	FUNCTION_12
+0x40005e8	              0x53	                                push rbx	       448	hostip.c	ELSE_2	FUNCTION_12
+0x40005e9	            0x89cd	                            mov ebp, ecx	       448	hostip.c	ELSE_2	FUNCTION_12
+0x40005eb	          0x4889d3	                            mov rbx, rdx	       448	hostip.c	ELSE_2	FUNCTION_12
+0x40005ee	        0x4883ec18	                           sub rsp, 0x18	       448	hostip.c	ELSE_2	FUNCTION_12
+0x40005f2	    0x80bfd10a0000	               cmp byte [rdi + 0xad1], 0	       455	hostip.c	ELSE_2	FUNCTION_12	IF_1
+0x40005f9	      0x4889742408	                mov qword [rsp + 8], rsi	       448	hostip.c	ELSE_2	FUNCTION_12
+0x40005fe	            0x7412	                            je 0x4000612	       455	hostip.c	ELSE_2	FUNCTION_12	IF_1
+0x4000600	      0x488d742408	                      lea rsi, [rsp + 8]	       456	hostip.c	ELSE_2	FUNCTION_12	IF_1	CALL_1
+0x4000605	      0xe800000000	                          call 0x400060a	       456	hostip.c	ELSE_2	FUNCTION_12	IF_1	CALL_1
+0x400060a	            0x85c0	                           test eax, eax	       457	hostip.c	ELSE_2	FUNCTION_12	IF_1	IF_2
+0x400060c	     0xf84ba000000	                            je 0x40006cc	       457	hostip.c	ELSE_2	FUNCTION_12	IF_1	IF_2
+0x4000612	            0x89ee	                            mov esi, ebp	       462	hostip.c	ELSE_2	FUNCTION_12	CALL_2
+0x4000614	          0x4889df	                            mov rdi, rbx	       462	hostip.c	ELSE_2	FUNCTION_12	CALL_2
+0x4000617	      0xe844faffff	            call sym.create_hostcache_id	       462	hostip.c	ELSE_2	FUNCTION_12	CALL_2
+0x400061c	          0x4885c0	                           test rax, rax	       464	hostip.c	ELSE_2	FUNCTION_12	IF_3
+0x400061f	          0x4989c4	                            mov r12, rax	       462	hostip.c	ELSE_2	FUNCTION_12	CALL_2
+0x4000622	     0xf84a4000000	                            je 0x40006cc	       464	hostip.c	ELSE_2	FUNCTION_12	IF_3
+0x4000628	          0x4889c7	                            mov rdi, rax	       466	hostip.c	ELSE_2	FUNCTION_12	CALL_3
+0x400062b	      0xe800000000	                          call 0x4000630	       466	hostip.c	ELSE_2	FUNCTION_12	CALL_3
+0x4000630	          0x4889c5	                            mov rbp, rax	       466	hostip.c	ELSE_2	FUNCTION_12	CALL_3
+0x4000633	    0x488b05000000	            mov rax, qword [0x0400063a] 	       469	hostip.c	ELSE_2	FUNCTION_12	CALL_4
+0x400063a	      0xbe18000000	                           mov esi, 0x18	       469	hostip.c	ELSE_2	FUNCTION_12	CALL_4
+0x400063f	      0xbf01000000	                              mov edi, 1	       469	hostip.c	ELSE_2	FUNCTION_12	CALL_4
+0x4000644	            0xff10	                        call qword [rax]	       469	hostip.c	ELSE_2	FUNCTION_12	CALL_4
+0x4000646	          0x4885c0	                           test rax, rax	       470	hostip.c	ELSE_2	FUNCTION_12	IF_4
+0x4000649	          0x4889c3	                            mov rbx, rax	       469	hostip.c	ELSE_2	FUNCTION_12	CALL_4
+0x400064c	            0x7472	                            je 0x40006c0	       470	hostip.c	ELSE_2	FUNCTION_12	IF_4
+0x400064e	    0x48c740100100	               mov qword [rax + 0x10], 1	       475	hostip.c	ELSE_2	FUNCTION_12
+0x4000656	      0x488b442408	                mov rax, qword [rsp + 8]	       476	hostip.c	ELSE_2	FUNCTION_12
+0x400065b	        0x488d7b08	                      lea rdi, [rbx + 8]	       477	hostip.c	ELSE_2	FUNCTION_12	CALL_6
+0x400065f	          0x488903	                    mov qword [rbx], rax	       476	hostip.c	ELSE_2	FUNCTION_12
+0x4000662	      0xe800000000	                          call 0x4000667	       477	hostip.c	ELSE_2	FUNCTION_12	CALL_6
+0x4000667	      0x48837b0800	                  cmp qword [rbx + 8], 0	       478	hostip.c	ELSE_2	FUNCTION_12	IF_5
+0x400066c	            0x7442	                            je 0x40006b0	       478	hostip.c	ELSE_2	FUNCTION_12	IF_5
+0x400066e	    0x498bbd980000	            mov rdi, qword [r13 + 0x98] 	       482	hostip.c	ELSE_2	FUNCTION_12	CALL_7
+0x4000675	        0x488d5501	                      lea rdx, [rbp + 1]	       482	hostip.c	ELSE_2	FUNCTION_12	CALL_7
+0x4000679	          0x4889d9	                            mov rcx, rbx	       482	hostip.c	ELSE_2	FUNCTION_12	CALL_7
+0x400067c	          0x4c89e6	                            mov rsi, r12	       482	hostip.c	ELSE_2	FUNCTION_12	CALL_7
+0x400067f	      0xe800000000	                          call 0x4000684	       482	hostip.c	ELSE_2	FUNCTION_12	CALL_7
+0x4000684	          0x4885c0	                           test rax, rax	       484	hostip.c	ELSE_2	FUNCTION_12	IF_6
+0x4000687	          0x4889c5	                            mov rbp, rax	       482	hostip.c	ELSE_2	FUNCTION_12	CALL_7
+0x400068a	            0x7454	                            je 0x40006e0	       484	hostip.c	ELSE_2	FUNCTION_12	IF_6
+0x400068c	      0x4883401001	               add qword [rax + 0x10], 1	       491	hostip.c	ELSE_2	FUNCTION_12
+0x4000691	    0x488b05000000	            mov rax, qword [0x04000698] 	       494	hostip.c	ELSE_2	FUNCTION_12	CALL_10
+0x4000698	          0x4c89e7	                            mov rdi, r12	       494	hostip.c	ELSE_2	FUNCTION_12	CALL_10
+0x400069b	            0xff10	                        call qword [rax]	       494	hostip.c	ELSE_2	FUNCTION_12	CALL_10
+0x400069d	          0x4889e8	                            mov rax, rbp	       496	hostip.c	ELSE_2	FUNCTION_12
+0x40006a0	        0x4883c418	                           add rsp, 0x18	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006a4	              0x5b	                                 pop rbx	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006a5	              0x5d	                                 pop rbp	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006a6	            0x415c	                                 pop r12	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006a8	            0x415d	                                 pop r13	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006aa	              0xc3	                                     ret	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006ab	       0xf1f440000	                   nop dword [rax + rax]	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006b0	    0x48c743080100	                  mov qword [rbx + 8], 1	       479	hostip.c	ELSE_2	FUNCTION_12	IF_5
+0x40006b8	            0xebb4	                           jmp 0x400066e	       479	hostip.c	ELSE_2	FUNCTION_12	IF_5
+0x40006ba	    0x660f1f440000	                    nop word [rax + rax]	       479	hostip.c	ELSE_2	FUNCTION_12	IF_5
+0x40006c0	    0x488b05000000	            mov rax, qword [0x040006c7] 	       471	hostip.c	ELSE_2	FUNCTION_12	IF_4	CALL_5
+0x40006c7	          0x4c89e7	                            mov rdi, r12	       471	hostip.c	ELSE_2	FUNCTION_12	IF_4	CALL_5
+0x40006ca	            0xff10	                        call qword [rax]	       471	hostip.c	ELSE_2	FUNCTION_12	IF_4	CALL_5
+0x40006cc	        0x4883c418	                           add rsp, 0x18	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006d0	            0x31c0	                            xor eax, eax	       472	hostip.c	ELSE_2	FUNCTION_12	IF_4
+0x40006d2	              0x5b	                                 pop rbx	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006d3	              0x5d	                                 pop rbp	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006d4	            0x415c	                                 pop r12	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006d6	            0x415d	                                 pop r13	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006d8	              0xc3	                                     ret	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006d9	     0xf1f80000000	                         nop dword [rax]	       497	hostip.c	ELSE_2	FUNCTION_12
+0x40006e0	    0x488b2d000000	            mov rbp, qword [0x040006e7] 	       485	hostip.c	ELSE_2	FUNCTION_12	IF_6	CALL_8
+0x40006e7	          0x4889df	                            mov rdi, rbx	       485	hostip.c	ELSE_2	FUNCTION_12	IF_6	CALL_8
+0x40006ea	          0xff5500	                        call qword [rbp]	       485	hostip.c	ELSE_2	FUNCTION_12	IF_6	CALL_8
+0x40006ed	          0x4c89e7	                            mov rdi, r12	       486	hostip.c	ELSE_2	FUNCTION_12	IF_6	CALL_9
+0x40006f0	          0xff5500	                        call qword [rbp]	       486	hostip.c	ELSE_2	FUNCTION_12	IF_6	CALL_9
+0x40006f3	            0x31c0	                            xor eax, eax	       487	hostip.c	ELSE_2	FUNCTION_12	IF_6
+0x40006f5	            0xeba9	                           jmp 0x40006a0	       487	hostip.c	ELSE_2	FUNCTION_12	IF_6
+Curl_global_host_cache_dtor	IF,1:ELSE,0:WHILE,0:FOR,0:CALL,1:SWITCH,0:functions,0:DO,0	11
+0x4000270	    0x8b0500000000	            mov eax, dword [0x04000276] 	       144	hostip.c	FUNCTION_2	IF_1
+0x4000276	            0x85c0	                           test eax, eax	       144	hostip.c	FUNCTION_2	IF_1
+0x4000278	            0x7506	                           jne 0x4000280	       144	hostip.c	FUNCTION_2	IF_1
+0x400027a	              0xc3	                                     ret	       148	hostip.c	FUNCTION_2
+0x400027b	       0xf1f440000	                   nop dword [rax + rax]	       148	hostip.c	FUNCTION_2
+0x4000280	    0x488d3d000000	                   lea rdi, [0x04000287]	       145	hostip.c	FUNCTION_2	IF_1	CALL_1
+0x4000287	        0x4883ec08	                              sub rsp, 8	       143	hostip.c	FUNCTION_2
+0x400028b	      0xe800000000	                          call 0x4000290	       145	hostip.c	FUNCTION_2	IF_1	CALL_1
+0x4000290	    0xc70500000000	               mov dword [0x0400029a], 0	       146	hostip.c	FUNCTION_2	IF_1
+0x400029a	        0x4883c408	                              add rsp, 8	       148	hostip.c	FUNCTION_2
+0x400029e	              0xc3	                                     ret	       148	hostip.c	FUNCTION_2
+Curl_fetch_addr	IF,3:ELSE,0:WHILE,0:FOR,0:CALL,3:SWITCH,0:functions,0:DO,0	35
+0x40003c0	            0x4155	                                push r13	       352	hostip.c	FUNCTION_10
+0x40003c2	            0x4154	                                push r12	       352	hostip.c	FUNCTION_10
+0x40003c4	          0x4189d5	                           mov r13d, edx	       352	hostip.c	FUNCTION_10
+0x40003c7	              0x55	                                push rbp	       352	hostip.c	FUNCTION_10
+0x40003c8	              0x53	                                push rbx	       352	hostip.c	FUNCTION_10
+0x40003c9	          0x4889fd	                            mov rbp, rdi	       352	hostip.c	FUNCTION_10
+0x40003cc	          0x4989f4	                            mov r12, rsi	       352	hostip.c	FUNCTION_10
+0x40003cf	        0x4883ec08	                              sub rsp, 8	       352	hostip.c	FUNCTION_10
+0x40003d3	          0x488b1f	                    mov rbx, qword [rdi]	       353	hostip.c	FUNCTION_10
+0x40003d6	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       356	hostip.c	FUNCTION_10	IF_1
+0x40003de	          0x4889df	                            mov rdi, rbx	       356	hostip.c	FUNCTION_10	IF_1
+0x40003e1	            0x7413	                            je 0x40003f6	       356	hostip.c	FUNCTION_10	IF_1
+0x40003e3	      0xba02000000	                              mov edx, 2	       357	hostip.c	FUNCTION_10	CALL_1
+0x40003e8	      0xbe03000000	                              mov esi, 3	       357	hostip.c	FUNCTION_10	CALL_1
+0x40003ed	      0xe800000000	                          call 0x40003f2	       357	hostip.c	FUNCTION_10	CALL_1
+0x40003f2	        0x488b7d00	                    mov rdi, qword [rbp]	       357	hostip.c	FUNCTION_10	CALL_1
+0x40003f6	          0x4489ea	                           mov edx, r13d	       359	hostip.c	FUNCTION_10	CALL_2
+0x40003f9	          0x4c89e6	                            mov rsi, r12	       359	hostip.c	FUNCTION_10	CALL_2
+0x40003fc	      0xe80ffdffff	              call sym.fetch_addr.isra.1	       359	hostip.c	FUNCTION_10	CALL_2
+0x4000401	          0x4885c0	                           test rax, rax	       361	hostip.c	FUNCTION_10	IF_2
+0x4000404	          0x4889c5	                            mov rbp, rax	       359	hostip.c	FUNCTION_10	CALL_2
+0x4000407	            0x7405	                            je 0x400040e	       361	hostip.c	FUNCTION_10	IF_2
+0x4000409	      0x4883401001	               add qword [rax + 0x10], 1	       362	hostip.c	FUNCTION_10	IF_2
+0x400040e	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       364	hostip.c	FUNCTION_10	IF_3
+0x4000416	            0x740d	                            je 0x4000425	       364	hostip.c	FUNCTION_10	IF_3
+0x4000418	      0xbe03000000	                              mov esi, 3	       365	hostip.c	FUNCTION_10	CALL_3
+0x400041d	          0x4889df	                            mov rdi, rbx	       365	hostip.c	FUNCTION_10	CALL_3
+0x4000420	      0xe800000000	                          call 0x4000425	       365	hostip.c	FUNCTION_10	CALL_3
+0x4000425	        0x4883c408	                              add rsp, 8	       368	hostip.c	FUNCTION_10
+0x4000429	          0x4889e8	                            mov rax, rbp	       368	hostip.c	FUNCTION_10
+0x400042c	              0x5b	                                 pop rbx	       368	hostip.c	FUNCTION_10
+0x400042d	              0x5d	                                 pop rbp	       368	hostip.c	FUNCTION_10
+0x400042e	            0x415c	                                 pop r12	       368	hostip.c	FUNCTION_10
+0x4000430	            0x415d	                                 pop r13	       368	hostip.c	FUNCTION_10
+0x4000432	              0xc3	                                     ret	       368	hostip.c	FUNCTION_10
+Curl_resolv	IF,14:ELSE,3:WHILE,0:FOR,0:CALL,15:SWITCH,0:functions,0:DO,0	133
+0x4000700	            0x4157	                                push r15	       524	hostip.c	FUNCTION_13
+0x4000702	            0x4156	                                push r14	       524	hostip.c	FUNCTION_13
+0x4000704	          0x4189d7	                           mov r15d, edx	       524	hostip.c	FUNCTION_13
+0x4000707	            0x4155	                                push r13	       524	hostip.c	FUNCTION_13
+0x4000709	            0x4154	                                push r12	       524	hostip.c	FUNCTION_13
+0x400070b	          0x4989f6	                            mov r14, rsi	       524	hostip.c	FUNCTION_13
+0x400070e	              0x55	                                push rbp	       524	hostip.c	FUNCTION_13
+0x400070f	              0x53	                                push rbx	       524	hostip.c	FUNCTION_13
+0x4000710	          0x4989fc	                            mov r12, rdi	       524	hostip.c	FUNCTION_13
+0x4000713	          0x4989cd	                            mov r13, rcx	       524	hostip.c	FUNCTION_13
+0x4000716	        0x4883ec38	                           sub rsp, 0x38	       524	hostip.c	FUNCTION_13
+0x400071a	          0x488b1f	                    mov rbx, qword [rdi]	       526	hostip.c	FUNCTION_13
+0x400071d	    0x48c701000000	                      mov qword [rcx], 0	       530	hostip.c	FUNCTION_13
+0x4000724	    0x64488b042528	                mov rax, qword fs:[0x28]	       524	hostip.c	FUNCTION_13
+0x400072d	      0x4889442428	             mov qword [rsp + 0x28], rax	       524	hostip.c	FUNCTION_13
+0x4000732	            0x31c0	                            xor eax, eax	       524	hostip.c	FUNCTION_13
+0x4000734	    0x48c744242000	               mov qword [rsp + 0x20], 0	       525	hostip.c	FUNCTION_13
+0x400073d	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       532	hostip.c	FUNCTION_13	IF_1
+0x4000745	            0x7412	                            je 0x4000759	       532	hostip.c	FUNCTION_13	IF_1
+0x4000747	      0xba02000000	                              mov edx, 2	       533	hostip.c	FUNCTION_13	CALL_1
+0x400074c	      0xbe03000000	                              mov esi, 3	       533	hostip.c	FUNCTION_13	CALL_1
+0x4000751	          0x4889df	                            mov rdi, rbx	       533	hostip.c	FUNCTION_13	CALL_1
+0x4000754	      0xe800000000	                          call 0x4000759	       533	hostip.c	FUNCTION_13	CALL_1
+0x4000759	        0x498b3c24	                    mov rdi, qword [r12]	       535	hostip.c	FUNCTION_13	CALL_2
+0x400075d	          0x4489fa	                           mov edx, r15d	       535	hostip.c	FUNCTION_13	CALL_2
+0x4000760	          0x4c89f6	                            mov rsi, r14	       535	hostip.c	FUNCTION_13	CALL_2
+0x4000763	      0xe8a8f9ffff	              call sym.fetch_addr.isra.1	       535	hostip.c	FUNCTION_13	CALL_2
+0x4000768	          0x4885c0	                           test rax, rax	       537	hostip.c	FUNCTION_13	IF_2
+0x400076b	      0x4889442420	             mov qword [rsp + 0x20], rax	       535	hostip.c	FUNCTION_13	CALL_2
+0x4000770	            0x746e	                            je 0x40007e0	       537	hostip.c	FUNCTION_13	IF_2
+0x4000772	    0x488d35000000	                   lea rsi, [0x04000779]	       538	hostip.c	FUNCTION_13	IF_2	CALL_3
+0x4000779	            0x31c0	                            xor eax, eax	       538	hostip.c	FUNCTION_13	IF_2	CALL_3
+0x400077b	          0x4c89f2	                            mov rdx, r14	       538	hostip.c	FUNCTION_13	IF_2	CALL_3
+0x400077e	          0x4889df	                            mov rdi, rbx	       538	hostip.c	FUNCTION_13	IF_2	CALL_3
+0x4000781	            0x31ed	                            xor ebp, ebp	       540	hostip.c	FUNCTION_13	IF_2
+0x4000783	      0xe800000000	                          call 0x4000788	       538	hostip.c	FUNCTION_13	IF_2	CALL_3
+0x4000788	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       539	hostip.c	FUNCTION_13	IF_2
+0x400078d	      0x4883401001	               add qword [rax + 0x10], 1	       539	hostip.c	FUNCTION_13	IF_2
+0x4000792	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       543	hostip.c	FUNCTION_13	IF_3
+0x400079a	            0x7417	                            je 0x40007b3	       543	hostip.c	FUNCTION_13	IF_3
+0x400079c	      0xbe03000000	                              mov esi, 3	       544	hostip.c	FUNCTION_13	CALL_4
+0x40007a1	          0x4889df	                            mov rdi, rbx	       544	hostip.c	FUNCTION_13	CALL_4
+0x40007a4	      0xe800000000	                          call 0x40007a9	       544	hostip.c	FUNCTION_13	CALL_4
+0x40007a9	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       544	hostip.c	FUNCTION_13	CALL_4
+0x40007ae	          0x4885c0	                           test rax, rax	       546	hostip.c	FUNCTION_13	IF_4
+0x40007b1	            0x743c	                            je 0x40007ef	       546	hostip.c	FUNCTION_13	IF_4
+0x40007b3	        0x49894500	                    mov qword [r13], rax	       611	hostip.c	FUNCTION_13	ELSE_3
+0x40007b7	            0x89e8	                            mov eax, ebp	       613	hostip.c	FUNCTION_13	ELSE_3
+0x40007b9	      0x488b4c2428	            mov rcx, qword [rsp + 0x28] 	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007be	    0x6448330c2528	                xor rcx, qword fs:[0x28]	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007c7	     0xf853c010000	                           jne 0x4000909	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007cd	        0x4883c438	                           add rsp, 0x38	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007d1	              0x5b	                                 pop rbx	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007d2	              0x5d	                                 pop rbp	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007d3	            0x415c	                                 pop r12	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007d5	            0x415d	                                 pop r13	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007d7	            0x415e	                                 pop r14	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007d9	            0x415f	                                 pop r15	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007db	              0xc3	                                     ret	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007dc	         0xf1f4000	                         nop dword [rax]	       614	hostip.c	FUNCTION_13	ELSE_3
+0x40007e0	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       543	hostip.c	FUNCTION_13	IF_3
+0x40007e8	      0xbdffffffff	                     mov ebp, 0xffffffff	       528	hostip.c	FUNCTION_13
+0x40007ed	            0x75ad	                           jne 0x400079c	       543	hostip.c	FUNCTION_13	IF_3
+0x40007ef	          0x4c89e7	                            mov rdi, r12	       554	hostip.c	FUNCTION_13	IF_4	IF_5	CALL_5
+0x40007f2	      0xe800000000	                          call 0x40007f7	       554	hostip.c	FUNCTION_13	IF_4	IF_5	CALL_5
+0x40007f7	            0x84c0	                             test al, al	       554	hostip.c	FUNCTION_13	IF_4	IF_5	CALL_5
+0x40007f9	     0xf8400010000	                            je 0x40008ff	       554	hostip.c	FUNCTION_13	IF_4	IF_5	CALL_5
+0x40007ff	    0x4883bb000b00	              cmp qword [rbx + 0xb00], 0	       558	hostip.c	FUNCTION_13	IF_4	IF_6
+0x4000807	            0x743d	                            je 0x4000846	       558	hostip.c	FUNCTION_13	IF_4	IF_6
+0x4000809	      0xbe01000000	                              mov esi, 1	       560	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_6
+0x400080e	          0x4889df	                            mov rdi, rbx	       560	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_6
+0x4000811	      0xe800000000	                          call 0x4000816	       560	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_6
+0x4000816	            0x31f6	                            xor esi, esi	       561	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_7
+0x4000818	    0x488b93080b00	           mov rdx, qword [rbx + 0xb08] 	       561	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_7
+0x400081f	    0x488bbb984e00	          mov rdi, qword [rbx + 0x4e98] 	       561	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_7
+0x4000826	    0xff93000b0000	                call qword [rbx + 0xb00]	       561	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_7
+0x400082c	            0x31f6	                            xor esi, esi	       563	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_8
+0x400082e	          0x4889df	                            mov rdi, rbx	       563	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_8
+0x4000831	        0x89442408	                mov dword [rsp + 8], eax	       561	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_7
+0x4000835	      0xe800000000	                          call 0x400083a	       563	hostip.c	FUNCTION_13	IF_4	IF_6	CALL_8
+0x400083a	        0x8b442408	                mov eax, dword [rsp + 8]	       564	hostip.c	FUNCTION_13	IF_4	IF_6	IF_7
+0x400083e	            0x85c0	                           test eax, eax	       564	hostip.c	FUNCTION_13	IF_4	IF_6	IF_7
+0x4000840	     0xf85b9000000	                           jne 0x40008ff	       564	hostip.c	FUNCTION_13	IF_4	IF_6	IF_7
+0x4000846	      0x488d4c241c	                   lea rcx, [rsp + 0x1c]	       571	hostip.c	FUNCTION_13	IF_4	CALL_9
+0x400084b	          0x4489fa	                           mov edx, r15d	       571	hostip.c	FUNCTION_13	IF_4	CALL_9
+0x400084e	          0x4c89f6	                            mov rsi, r14	       571	hostip.c	FUNCTION_13	IF_4	CALL_9
+0x4000851	          0x4c89e7	                            mov rdi, r12	       571	hostip.c	FUNCTION_13	IF_4	CALL_9
+0x4000854	      0xe800000000	                          call 0x4000859	       571	hostip.c	FUNCTION_13	IF_4	CALL_9
+0x4000859	          0x4885c0	                           test rax, rax	       579	hostip.c	FUNCTION_13	IF_4	IF_8
+0x400085c	      0x4889442408	                mov qword [rsp + 8], rax	       571	hostip.c	FUNCTION_13	IF_4	CALL_9
+0x4000861	            0x7470	                            je 0x40008d3	       579	hostip.c	FUNCTION_13	IF_4	IF_8
+0x4000863	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       594	hostip.c	FUNCTION_13	IF_4	ELSE_2	IF_12
+0x400086b	            0x7412	                            je 0x400087f	       594	hostip.c	FUNCTION_13	IF_4	ELSE_2	IF_12
+0x400086d	      0xba02000000	                              mov edx, 2	       595	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_12
+0x4000872	      0xbe03000000	                              mov esi, 3	       595	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_12
+0x4000877	          0x4889df	                            mov rdi, rbx	       595	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_12
+0x400087a	      0xe800000000	                          call 0x400087f	       595	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_12
+0x400087f	      0x488b742408	                mov rsi, qword [rsp + 8]	       598	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_13
+0x4000884	          0x4489f9	                           mov ecx, r15d	       598	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_13
+0x4000887	          0x4c89f2	                            mov rdx, r14	       598	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_13
+0x400088a	          0x4889df	                            mov rdi, rbx	       598	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_13
+0x400088d	      0xe800000000	                          call 0x4000892	       598	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_13
+0x4000892	    0x4883bbb80000	               cmp qword [rbx + 0xb8], 0	       600	hostip.c	FUNCTION_13	IF_4	ELSE_2	IF_13
+0x400089a	      0x4889442420	             mov qword [rsp + 0x20], rax	       598	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_13
+0x400089f	            0x7412	                            je 0x40008b3	       600	hostip.c	FUNCTION_13	IF_4	ELSE_2	IF_13
+0x40008a1	      0xbe03000000	                              mov esi, 3	       601	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_14
+0x40008a6	          0x4889df	                            mov rdi, rbx	       601	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_14
+0x40008a9	      0xe800000000	                          call 0x40008ae	       601	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_14
+0x40008ae	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       601	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_14
+0x40008b3	          0x4885c0	                           test rax, rax	       603	hostip.c	FUNCTION_13	IF_4	ELSE_2	IF_14
+0x40008b6	            0x7407	                            je 0x40008bf	       603	hostip.c	FUNCTION_13	IF_4	ELSE_2	IF_14
+0x40008b8	            0x31ed	                            xor ebp, ebp	       607	hostip.c	FUNCTION_13	IF_4	ELSE_2	ELSE_3
+0x40008ba	      0xe9f4feffff	                           jmp 0x40007b3	       607	hostip.c	FUNCTION_13	IF_4	ELSE_2	ELSE_3
+0x40008bf	      0x488b7c2408	                mov rdi, qword [rsp + 8]	       605	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_15
+0x40008c4	      0xe800000000	                          call 0x40008c9	       605	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_15
+0x40008c9	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       605	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_15
+0x40008ce	      0xe9e0feffff	                           jmp 0x40007b3	       605	hostip.c	FUNCTION_13	IF_4	ELSE_2	CALL_15
+0x40008d3	        0x8b44241c	            mov eax, dword [rsp + 0x1c] 	       580	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9
+0x40008d7	            0x85c0	                           test eax, eax	       580	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9
+0x40008d9	            0x74ee	                            je 0x40008c9	       580	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9
+0x40008db	      0x488d742420	                   lea rsi, [rsp + 0x20]	       584	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9	CALL_11
+0x40008e0	          0x4c89e7	                            mov rdi, r12	       584	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9	CALL_11
+0x40008e3	      0xe800000000	                          call 0x40008e8	       584	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9	CALL_11
+0x40008e8	            0x85c0	                           test eax, eax	       585	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9	IF_10
+0x40008ea	            0x7513	                           jne 0x40008ff	       585	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9	IF_10
+0x40008ec	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       587	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9	IF_11
+0x40008f1	            0x31ed	                            xor ebp, ebp	       588	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9	IF_11
+0x40008f3	          0x4885c0	                           test rax, rax	       588	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9	IF_11
+0x40008f6	        0x400f94c5	                                sete bpl	       588	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9	IF_11
+0x40008fa	      0xe9b4feffff	                           jmp 0x40007b3	       588	hostip.c	FUNCTION_13	IF_4	IF_8	IF_9	IF_11
+0x40008ff	      0xb8ffffffff	                     mov eax, 0xffffffff	       555	hostip.c	FUNCTION_13	IF_4	IF_5
+0x4000904	      0xe9b0feffff	                           jmp 0x40007b9	       555	hostip.c	FUNCTION_13	IF_4	IF_5
+0x4000909	      0xe800000000	                          call 0x400090e	       614	hostip.c	FUNCTION_13	ELSE_3

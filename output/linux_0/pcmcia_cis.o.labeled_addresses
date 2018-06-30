@@ -1,0 +1,238 @@
+pcmcia_do_loop_tuple	FOR,0:ELSE,0:SWITCH,0:DO,0:CALL,1:functions,0:IF,0:WHILE,0	6
+0x40002d0	          0x4889d0	                            mov rax, rdx	       304	pcmcia_cis.c	FUNCTION_6
+0x40002d3	          0x4889fe	                            mov rsi, rdi	       304	pcmcia_cis.c	FUNCTION_6
+0x40002d6	        0x488b5208	                mov rdx, qword [rdx + 8]	       307	pcmcia_cis.c	FUNCTION_6	CALL_1
+0x40002da	        0x488b4810	            mov rcx, qword [rax + 0x10] 	       307	pcmcia_cis.c	FUNCTION_6	CALL_1
+0x40002de	          0x488b38	                    mov rdi, qword [rax]	       307	pcmcia_cis.c	FUNCTION_6	CALL_1
+0x40002e1	      0xe900000000	                           jmp 0x40002e6	       307	pcmcia_cis.c	FUNCTION_6	CALL_1
+pcmcia_do_get_mac	FOR,1:ELSE,0:SWITCH,0:DO,0:CALL,2:functions,0:IF,3:WHILE,0	33
+0x40002f0	        0x4883ec08	                              sub rsp, 8	       403	pcmcia_cis.c	FUNCTION_10
+0x40002f4	        0x488b4e20	            mov rcx, qword [rsi + 0x20] 	       407	pcmcia_cis.c	FUNCTION_10	IF_1
+0x40002f8	      0xb8eaffffff	                     mov eax, 0xffffffea	       408	pcmcia_cis.c	FUNCTION_10	IF_1
+0x40002fd	          0x803904	                       cmp byte [rcx], 4	       407	pcmcia_cis.c	FUNCTION_10	IF_1
+0x4000300	            0x7530	                           jne 0x4000332	       407	pcmcia_cis.c	FUNCTION_10	IF_1
+0x4000302	        0x807e1807	                cmp byte [rsi + 0x18], 7	       409	pcmcia_cis.c	FUNCTION_10	IF_2
+0x4000306	            0x764c	                           jbe 0x4000354	       409	pcmcia_cis.c	FUNCTION_10	IF_2
+0x4000308	        0x80790106	                   cmp byte [rcx + 1], 6	       415	pcmcia_cis.c	FUNCTION_10	IF_3
+0x400030c	            0x7529	                           jne 0x4000337	       415	pcmcia_cis.c	FUNCTION_10	IF_3
+0x400030e	            0x31c0	                            xor eax, eax	       415	pcmcia_cis.c	FUNCTION_10	IF_3
+0x4000310	            0xeb04	                           jmp 0x4000316	       415	pcmcia_cis.c	FUNCTION_10	IF_3
+0x4000312	        0x488b4e20	            mov rcx, qword [rsi + 0x20] 	       415	pcmcia_cis.c	FUNCTION_10	IF_3
+0x4000316	       0xfb67c0102	        movzx edi, byte [rcx + rax + 2] 	       420	pcmcia_cis.c	FUNCTION_10	FOR_1
+0x400031b	    0x488b8ad80200	           mov rcx, qword [rdx + 0x2d8] 	       420	pcmcia_cis.c	FUNCTION_10	FOR_1
+0x4000322	        0x40883c01	               mov byte [rcx + rax], dil	       420	pcmcia_cis.c	FUNCTION_10	FOR_1
+0x4000326	        0x4883c001	                              add rax, 1	       420	pcmcia_cis.c	FUNCTION_10	FOR_1
+0x400032a	        0x4883f806	                              cmp rax, 6	       419	pcmcia_cis.c	FUNCTION_10	FOR_1
+0x400032e	            0x75e2	                           jne 0x4000312	       419	pcmcia_cis.c	FUNCTION_10	FOR_1
+0x4000330	            0x31c0	                            xor eax, eax	       421	pcmcia_cis.c	FUNCTION_10
+0x4000332	        0x4883c408	                              add rsp, 8	       422	pcmcia_cis.c	FUNCTION_10
+0x4000336	              0xc3	                                     ret	       422	pcmcia_cis.c	FUNCTION_10
+0x4000337	    0x4881c7b80000	                           add rdi, 0xb8	       416	pcmcia_cis.c	FUNCTION_10	IF_3	CALL_2
+0x400033e	    0x48c7c6000000	                              mov rsi, 0	       416	pcmcia_cis.c	FUNCTION_10	IF_3	CALL_2
+0x4000345	        0x89442404	                mov dword [rsp + 4], eax	       416	pcmcia_cis.c	FUNCTION_10	IF_3	CALL_2
+0x4000349	      0xe800000000	                          call 0x400034e	       416	pcmcia_cis.c	FUNCTION_10	IF_3	CALL_2
+0x400034e	        0x8b442404	                mov eax, dword [rsp + 4]	       417	pcmcia_cis.c	FUNCTION_10	IF_3
+0x4000352	            0xebde	                           jmp 0x4000332	       417	pcmcia_cis.c	FUNCTION_10	IF_3
+0x4000354	    0x4881c7b80000	                           add rdi, 0xb8	       410	pcmcia_cis.c	FUNCTION_10	IF_2	CALL_1
+0x400035b	    0x48c7c6000000	                              mov rsi, 0	       410	pcmcia_cis.c	FUNCTION_10	IF_2	CALL_1
+0x4000362	        0x89442404	                mov dword [rsp + 4], eax	       410	pcmcia_cis.c	FUNCTION_10	IF_2	CALL_1
+0x4000366	      0xe800000000	                          call 0x400036b	       410	pcmcia_cis.c	FUNCTION_10	IF_2	CALL_1
+0x400036b	        0x8b442404	                mov eax, dword [rsp + 4]	       412	pcmcia_cis.c	FUNCTION_10	IF_2
+0x400036f	            0xebc1	                           jmp 0x4000332	       412	pcmcia_cis.c	FUNCTION_10	IF_2
+pcmcia_do_loop_config	FOR,0:ELSE,2:SWITCH,0:DO,0:CALL,4:functions,0:IF,16:WHILE,0	150
+0x4000040	          0x4c8b02	                     mov r8, qword [rdx]	       160	pcmcia_cis.c	FUNCTION_4
+0x4000043	          0x4989d2	                            mov r10, rdx	       158	pcmcia_cis.c	FUNCTION_4
+0x4000046	           0xfb616	                   movzx edx, byte [rsi]	       170	pcmcia_cis.c	FUNCTION_4
+0x4000049	          0x4989f1	                             mov r9, rsi	       158	pcmcia_cis.c	FUNCTION_4
+0x400004c	          0x498b00	                     mov rax, qword [r8]	       164	pcmcia_cis.c	FUNCTION_4
+0x400004f	        0x458b5874	            mov r11d, dword [r8 + 0x74] 	       163	pcmcia_cis.c	FUNCTION_4
+0x4000053	         0xfb64010	           movzx eax, byte [rax + 0x10] 	       164	pcmcia_cis.c	FUNCTION_4
+0x4000057	        0x4189507c	              mov dword [r8 + 0x7c], edx	       170	pcmcia_cis.c	FUNCTION_4
+0x400005b	        0xf6460201	                  test byte [rsi + 2], 1	       171	pcmcia_cis.c	FUNCTION_4	IF_1
+0x400005f	            0x743c	                            je 0x400009d	       171	pcmcia_cis.c	FUNCTION_4	IF_1
+0x4000061	          0x488b16	                    mov rdx, qword [rsi]	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x4000064	    0x498dba940100	                  lea rdi, [r10 + 0x194]	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x400006b	    0x498d8a8c0100	                  lea rcx, [r10 + 0x18c]	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x4000072	        0x4883e7f8	             and rdi, 0xfffffffffffffff8	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x4000076	    0x4989928c0100	            mov qword [r10 + 0x18c], rdx	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x400007d	    0x488b966c0100	           mov rdx, qword [rsi + 0x16c] 	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x4000084	          0x4829f9	                            sub rcx, rdi	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x4000087	          0x4829ce	                            sub rsi, rcx	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x400008a	    0x81c174010000	                          add ecx, 0x174	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x4000090	          0xc1e903	                              shr ecx, 3	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x4000093	    0x498992f80200	            mov qword [r10 + 0x2f8], rdx	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x400009a	          0xf348a5	  rep movsq qword [rdi], qword ptr [rsi]	       172	pcmcia_cis.c	FUNCTION_4	IF_1
+0x400009d	    0x41f7c3000100	                        test r11d, 0x100	       175	pcmcia_cis.c	FUNCTION_4	IF_2
+0x40000a4	            0x7424	                            je 0x40000ca	       175	pcmcia_cis.c	FUNCTION_4	IF_2
+0x40000a6	      0x41f6410801	                   test byte [r9 + 8], 1	       176	pcmcia_cis.c	FUNCTION_4	IF_2	IF_3
+0x40000ab	           0xfb6c8	                           movzx ecx, al	       164	pcmcia_cis.c	FUNCTION_4
+0x40000ae	     0xf84b9010000	                            je 0x400026d	       176	pcmcia_cis.c	FUNCTION_4	IF_2	IF_3
+0x40000b4	      0xba5917b7d1	                     mov edx, 0xd1b71759	       177	pcmcia_cis.c	FUNCTION_4	IF_2	IF_3	IF_4
+0x40000b9	            0x89d0	                            mov eax, edx	       177	pcmcia_cis.c	FUNCTION_4	IF_2	IF_3	IF_4
+0x40000bb	        0x41f7610c	                    mul dword [r9 + 0xc]	       177	pcmcia_cis.c	FUNCTION_4	IF_2	IF_3	IF_4
+0x40000bf	          0xc1ea0d	                            shr edx, 0xd	       177	pcmcia_cis.c	FUNCTION_4	IF_2	IF_3	IF_4
+0x40000c2	            0x39d1	                            cmp ecx, edx	       177	pcmcia_cis.c	FUNCTION_4	IF_2	IF_3	IF_4
+0x40000c4	     0xf85ca010000	                           jne 0x4000294	       177	pcmcia_cis.c	FUNCTION_4	IF_2	IF_3	IF_4
+0x40000ca	    0x41f7c3000200	                        test r11d, 0x200	       186	pcmcia_cis.c	FUNCTION_4	IF_7
+0x40000d1	            0x741d	                            je 0x40000f0	       186	pcmcia_cis.c	FUNCTION_4	IF_7
+0x40000d3	      0x41f6412801	                test byte [r9 + 0x28], 1	       187	pcmcia_cis.c	FUNCTION_4	IF_7	IF_8
+0x40000d8	     0xf84bc010000	                            je 0x400029a	       187	pcmcia_cis.c	FUNCTION_4	IF_7	IF_8
+0x40000de	      0xba5917b7d1	                     mov edx, 0xd1b71759	       188	pcmcia_cis.c	FUNCTION_4	IF_7	IF_8
+0x40000e3	            0x89d0	                            mov eax, edx	       188	pcmcia_cis.c	FUNCTION_4	IF_7	IF_8
+0x40000e5	        0x41f7612c	                   mul dword [r9 + 0x2c]	       188	pcmcia_cis.c	FUNCTION_4	IF_7	IF_8
+0x40000e9	          0xc1ea0d	                            shr edx, 0xd	       188	pcmcia_cis.c	FUNCTION_4	IF_7	IF_8
+0x40000ec	        0x41895070	              mov dword [r8 + 0x70], edx	       188	pcmcia_cis.c	FUNCTION_4	IF_7	IF_8
+0x40000f0	    0x41f7c3000400	                        test r11d, 0x400	       195	pcmcia_cis.c	FUNCTION_4	IF_10
+0x40000f7	            0x740c	                            je 0x4000105	       195	pcmcia_cis.c	FUNCTION_4	IF_10
+0x40000f9	      0x41f6410308	                   test byte [r9 + 3], 8	       195	pcmcia_cis.c	FUNCTION_4	IF_10
+0x40000fe	            0x7405	                            je 0x4000105	       195	pcmcia_cis.c	FUNCTION_4	IF_10
+0x4000100	      0x4183487402	                 or dword [r8 + 0x74], 2	       196	pcmcia_cis.c	FUNCTION_4	IF_10
+0x4000105	    0x41f7c3000800	                        test r11d, 0x800	       200	pcmcia_cis.c	FUNCTION_4	IF_11
+0x400010c	     0xf84db000000	                            je 0x40001ed	       200	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000112	    0x4180b9810000	                 cmp byte [r9 + 0x81], 0	       201	pcmcia_cis.c	FUNCTION_4	IF_11
+0x400011a	    0x498d920c0200	                  lea rdx, [r10 + 0x20c]	       201	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000121	    0x498d81800000	                    lea rax, [r9 + 0x80]	       201	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000128	        0x480f44c2	                          cmove rax, rdx	       201	pcmcia_cis.c	FUNCTION_4	IF_11
+0x400012c	        0x498b5038	              mov rdx, qword [r8 + 0x38]	       204	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000130	    0x48c742080000	                  mov qword [rdx + 8], 0	       204	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000138	    0x48c702000000	                      mov qword [rdx], 0	       204	pcmcia_cis.c	FUNCTION_4	IF_11
+0x400013f	        0x498b5040	              mov rdx, qword [r8 + 0x40]	       205	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000143	    0x48c742080000	                  mov qword [rdx + 8], 0	       205	pcmcia_cis.c	FUNCTION_4	IF_11
+0x400014b	    0x48c702000000	                      mov qword [rdx], 0	       205	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000152	        0x80780100	                   cmp byte [rax + 1], 0	       206	pcmcia_cis.c	FUNCTION_4	IF_11	IF_12
+0x4000156	     0xf8438010000	                            je 0x4000294	       206	pcmcia_cis.c	FUNCTION_4	IF_11	IF_12
+0x400015c	        0x498b5038	              mov rdx, qword [r8 + 0x38]	       209	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000160	      0x48836218e7	and qword [rdx + 0x18], 0xffffffffffffffe7	       209	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000165	      0xba08000000	                              mov edx, 8	       134	pcmcia_cis.c	FUNCTION_3	IF_1
+0x400016a	           0xfb608	                   movzx ecx, byte [rax]	       211	pcmcia_cis.c	FUNCTION_4	IF_11	CALL_2
+0x400016d	          0xf6c120	                           test cl, 0x20	       134	pcmcia_cis.c	FUNCTION_3	IF_1
+0x4000170	            0x740a	                            je 0x400017c	       134	pcmcia_cis.c	FUNCTION_3	IF_1
+0x4000172	          0x4889ca	                            mov rdx, rcx	       136	pcmcia_cis.c	FUNCTION_3	IF_2
+0x4000175	        0x48c1ea02	                              shr rdx, 2	       136	pcmcia_cis.c	FUNCTION_3	IF_2
+0x4000179	          0x83e210	                           and edx, 0x10	       136	pcmcia_cis.c	FUNCTION_3	IF_2
+0x400017c	        0x498b4838	              mov rcx, qword [r8 + 0x38]	       210	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000180	        0x48095118	              or qword [rcx + 0x18], rdx	       210	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000184	            0x31d2	                            xor edx, edx	       202	pcmcia_cis.c	FUNCTION_4	IF_11
+0x4000186	        0x80780101	                   cmp byte [rax + 1], 1	       212	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x400018a	            0x763b	                           jbe 0x40001c7	       212	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x400018c	        0x498b4838	              mov rcx, qword [r8 + 0x38]	       217	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x4000190	          0x8b7808	                mov edi, dword [rax + 8]	       216	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x4000193	          0x397810	            cmp dword [rax + 0x10], edi 	       216	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x4000196	        0x498b5040	              mov rdx, qword [r8 + 0x40]	       217	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x400019a	        0x488b4918	            mov rcx, qword [rcx + 0x18] 	       217	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x400019e	        0x48894a18	             mov qword [rdx + 0x18], rcx	       217	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001a2	           0xf96c1	                                setbe cl	       217	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001a5	        0x498b7040	              mov rsi, qword [r8 + 0x40]	       218	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001a9	           0xfb6c9	                           movzx ecx, cl	       218	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001ac	           0xf97c2	                                 seta dl	       218	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001af	        0x488d0cc8	                  lea rcx, [rax + rcx*8]	       218	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001b3	           0xfb6d2	                           movzx edx, dl	       218	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001b6	          0x8b7904	                mov edi, dword [rcx + 4]	       218	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001b9	          0x48893e	                    mov qword [rsi], rdi	       218	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001bc	          0x8b7908	                mov edi, dword [rcx + 8]	       219	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001bf	        0x498b7040	              mov rsi, qword [r8 + 0x40]	       219	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001c3	        0x48897e08	                mov qword [rsi + 8], rdi	       219	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001c7	        0x488d14d0	                  lea rdx, [rax + rdx*8]	       219	pcmcia_cis.c	FUNCTION_4	IF_11	IF_13
+0x40001cb	        0x498b4838	              mov rcx, qword [r8 + 0x38]	       221	pcmcia_cis.c	FUNCTION_4	IF_11
+0x40001cf	          0x8b7a04	                mov edi, dword [rdx + 4]	       221	pcmcia_cis.c	FUNCTION_4	IF_11
+0x40001d2	          0x488939	                    mov qword [rcx], rdi	       221	pcmcia_cis.c	FUNCTION_4	IF_11
+0x40001d5	          0x8b7a08	                mov edi, dword [rdx + 8]	       222	pcmcia_cis.c	FUNCTION_4	IF_11
+0x40001d8	        0x498b4838	              mov rcx, qword [r8 + 0x38]	       222	pcmcia_cis.c	FUNCTION_4	IF_11
+0x40001dc	        0x48897908	                mov qword [rcx + 8], rdi	       222	pcmcia_cis.c	FUNCTION_4	IF_11
+0x40001e0	           0xfb600	                   movzx eax, byte [rax]	       223	pcmcia_cis.c	FUNCTION_4	IF_11
+0x40001e3	          0x83e01f	                           and eax, 0x1f	       223	pcmcia_cis.c	FUNCTION_4	IF_11
+0x40001e6	    0x418980840000	              mov dword [r8 + 0x84], eax	       223	pcmcia_cis.c	FUNCTION_4	IF_11
+0x40001ed	    0x4181e3001000	                        and r11d, 0x1000	       227	pcmcia_cis.c	FUNCTION_4	IF_14
+0x40001f4	            0x745d	                            je 0x4000253	       227	pcmcia_cis.c	FUNCTION_4	IF_14
+0x40001f6	    0x4180b90d0100	                cmp byte [r9 + 0x10d], 0	       229	pcmcia_cis.c	FUNCTION_4	IF_14
+0x40001fe	    0x498d910c0100	                   lea rdx, [r9 + 0x10c]	       229	pcmcia_cis.c	FUNCTION_4	IF_14
+0x4000205	    0x498d82980200	                  lea rax, [r10 + 0x298]	       229	pcmcia_cis.c	FUNCTION_4	IF_14
+0x400020c	        0x480f45c2	                         cmovne rax, rdx	       229	pcmcia_cis.c	FUNCTION_4	IF_14
+0x4000210	        0x498b5048	              mov rdx, qword [r8 + 0x48]	       231	pcmcia_cis.c	FUNCTION_4	IF_14
+0x4000214	    0x48c742080000	                  mov qword [rdx + 8], 0	       231	pcmcia_cis.c	FUNCTION_4	IF_14
+0x400021c	    0x48c702000000	                      mov qword [rdx], 0	       231	pcmcia_cis.c	FUNCTION_4	IF_14
+0x4000223	        0x80780100	                   cmp byte [rax + 1], 0	       232	pcmcia_cis.c	FUNCTION_4	IF_14	IF_15
+0x4000227	            0x746b	                            je 0x4000294	       232	pcmcia_cis.c	FUNCTION_4	IF_14	IF_15
+0x4000229	          0x8b780c	              mov edi, dword [rax + 0xc]	       235	pcmcia_cis.c	FUNCTION_4	IF_14
+0x400022c	        0x498b5048	              mov rdx, qword [r8 + 0x48]	       235	pcmcia_cis.c	FUNCTION_4	IF_14
+0x4000230	          0x48893a	                    mov qword [rdx], rdi	       235	pcmcia_cis.c	FUNCTION_4	IF_14
+0x4000233	          0x8b7804	                mov edi, dword [rax + 4]	       236	pcmcia_cis.c	FUNCTION_4	IF_14
+0x4000236	        0x498b5048	              mov rdx, qword [r8 + 0x48]	       236	pcmcia_cis.c	FUNCTION_4	IF_14
+0x400023a	        0x48897a08	                mov qword [rdx + 8], rdi	       236	pcmcia_cis.c	FUNCTION_4	IF_14
+0x400023e	        0x498b5048	              mov rdx, qword [r8 + 0x48]	       237	pcmcia_cis.c	FUNCTION_4	IF_14	IF_16
+0x4000242	    0x48817a08ff0f	              cmp qword [rdx + 8], 0xfff	       237	pcmcia_cis.c	FUNCTION_4	IF_14	IF_16
+0x400024a	            0x7617	                           jbe 0x4000263	       237	pcmcia_cis.c	FUNCTION_4	IF_14	IF_16
+0x400024c	          0x8b4008	                mov eax, dword [rax + 8]	       239	pcmcia_cis.c	FUNCTION_4	IF_14
+0x400024f	        0x49894068	              mov qword [r8 + 0x68], rax	       239	pcmcia_cis.c	FUNCTION_4	IF_14
+0x4000253	        0x498b7210	            mov rsi, qword [r10 + 0x10] 	       247	pcmcia_cis.c	FUNCTION_4	CALL_4
+0x4000257	        0x498b4208	                mov rax, qword [r10 + 8]	       247	pcmcia_cis.c	FUNCTION_4	CALL_4
+0x400025b	          0x4c89c7	                             mov rdi, r8	       247	pcmcia_cis.c	FUNCTION_4	CALL_4
+0x400025e	      0xe900000000	                           jmp 0x4000263	       247	pcmcia_cis.c	FUNCTION_4	CALL_4
+0x4000263	    0x48c742080010	            mov qword [rdx + 8], 0x1000 	       238	pcmcia_cis.c	FUNCTION_4	IF_14	IF_16
+0x400026b	            0xebdf	                           jmp 0x400024c	       238	pcmcia_cis.c	FUNCTION_4	IF_14	IF_16
+0x400026d	    0x41f682940100	              test byte [r10 + 0x194], 1	       179	pcmcia_cis.c	FUNCTION_4	IF_2	ELSE_1	IF_5
+0x4000275	     0xf844ffeffff	                            je 0x40000ca	       179	pcmcia_cis.c	FUNCTION_4	IF_2	ELSE_1	IF_5
+0x400027b	      0xba5917b7d1	                     mov edx, 0xd1b71759	       180	pcmcia_cis.c	FUNCTION_4	IF_2	ELSE_1	IF_5	IF_6
+0x4000280	            0x89d0	                            mov eax, edx	       180	pcmcia_cis.c	FUNCTION_4	IF_2	ELSE_1	IF_5	IF_6
+0x4000282	    0x41f7a2980100	                 mul dword [r10 + 0x198]	       180	pcmcia_cis.c	FUNCTION_4	IF_2	ELSE_1	IF_5	IF_6
+0x4000289	          0xc1ea0d	                            shr edx, 0xd	       180	pcmcia_cis.c	FUNCTION_4	IF_2	ELSE_1	IF_5	IF_6
+0x400028c	            0x39d1	                            cmp ecx, edx	       180	pcmcia_cis.c	FUNCTION_4	IF_2	ELSE_1	IF_5	IF_6
+0x400028e	     0xf8436feffff	                            je 0x40000ca	       180	pcmcia_cis.c	FUNCTION_4	IF_2	ELSE_1	IF_5	IF_6
+0x4000294	      0xb8edffffff	                     mov eax, 0xffffffed	       248	pcmcia_cis.c	FUNCTION_4
+0x4000299	              0xc3	                                     ret	       248	pcmcia_cis.c	FUNCTION_4
+0x400029a	    0x41f682b40100	              test byte [r10 + 0x1b4], 1	       189	pcmcia_cis.c	FUNCTION_4	IF_7	ELSE_2	IF_9
+0x40002a2	     0xf8448feffff	                            je 0x40000f0	       189	pcmcia_cis.c	FUNCTION_4	IF_7	ELSE_2	IF_9
+0x40002a8	      0xba5917b7d1	                     mov edx, 0xd1b71759	       190	pcmcia_cis.c	FUNCTION_4	IF_7	ELSE_2	IF_9
+0x40002ad	            0x89d0	                            mov eax, edx	       190	pcmcia_cis.c	FUNCTION_4	IF_7	ELSE_2	IF_9
+0x40002af	    0x41f7a2b80100	                 mul dword [r10 + 0x1b8]	       190	pcmcia_cis.c	FUNCTION_4	IF_7	ELSE_2	IF_9
+0x40002b6	          0xc1ea0d	                            shr edx, 0xd	       190	pcmcia_cis.c	FUNCTION_4	IF_7	ELSE_2	IF_9
+0x40002b9	    0x41f7c3000400	                        test r11d, 0x400	       195	pcmcia_cis.c	FUNCTION_4	IF_10
+0x40002c0	        0x41895070	              mov dword [r8 + 0x70], edx	       190	pcmcia_cis.c	FUNCTION_4	IF_7	ELSE_2	IF_9
+0x40002c4	     0xf843bfeffff	                            je 0x4000105	       195	pcmcia_cis.c	FUNCTION_4	IF_10
+0x40002ca	      0xe92afeffff	                           jmp 0x40000f9	       195	pcmcia_cis.c	FUNCTION_4	IF_10
+pcmcia_get_mac_from_cis	FOR,0:ELSE,0:SWITCH,0:DO,0:CALL,1:functions,0:IF,0:WHILE,0	20
+0x40007b0	        0x4883ec20	                           sub rsp, 0x20	       434	pcmcia_cis.c	FUNCTION_11
+0x40007b4	            0x31c9	                            xor ecx, ecx	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x40007b6	      0xba22000000	                           mov edx, 0x22	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x40007bb	      0x4889742408	                mov qword [rsp + 8], rsi	       328	pcmcia_cis.c	FUNCTION_7
+0x40007c0	         0xfb67711	           movzx esi, byte [rdi + 0x11] 	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x40007c4	    0x49c7c1000000	                               mov r9, 0	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x40007cb	        0x48893c24	                    mov qword [rsp], rdi	       328	pcmcia_cis.c	FUNCTION_7
+0x40007cf	          0x488b3f	                    mov rdi, qword [rdi]	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x40007d2	          0x4989e0	                             mov r8, rsp	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x40007d5	    0x65488b042528	                mov rax, qword gs:[0x28]	       434	pcmcia_cis.c	FUNCTION_11
+0x40007de	      0x4889442418	             mov qword [rsp + 0x18], rax	       434	pcmcia_cis.c	FUNCTION_11
+0x40007e3	            0x31c0	                            xor eax, eax	       434	pcmcia_cis.c	FUNCTION_11
+0x40007e5	    0x48c744241000	               mov qword [rsp + 0x10], 0	       328	pcmcia_cis.c	FUNCTION_7
+0x40007ee	      0xe800000000	                          call 0x40007f3	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x40007f3	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	       436	pcmcia_cis.c	FUNCTION_11
+0x40007f8	    0x654833142528	                xor rdx, qword gs:[0x28]	       436	pcmcia_cis.c	FUNCTION_11
+0x4000801	            0x7505	                           jne 0x4000808	       436	pcmcia_cis.c	FUNCTION_11
+0x4000803	        0x4883c420	                           add rsp, 0x20	       436	pcmcia_cis.c	FUNCTION_11
+0x4000807	              0xc3	                                     ret	       436	pcmcia_cis.c	FUNCTION_11
+0x4000808	      0xe800000000	                  call section_end..text	       436	pcmcia_cis.c	FUNCTION_11
+pcmcia_get_tuple	FOR,0:ELSE,0:SWITCH,0:DO,0:CALL,1:functions,0:IF,0:WHILE,0	24
+0x4000730	        0x4883ec30	                           sub rsp, 0x30	       379	pcmcia_cis.c	FUNCTION_9
+0x4000734	    0x48c702000000	                      mov qword [rdx], 0	       385	pcmcia_cis.c	FUNCTION_9
+0x400073b	            0x31c9	                            xor ecx, ecx	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x400073d	      0x4889542408	                mov qword [rsp + 8], rdx	       380	pcmcia_cis.c	FUNCTION_9
+0x4000742	        0x400fb6d6	                          movzx edx, sil	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x4000746	         0xfb67711	           movzx esi, byte [rdi + 0x11] 	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x400074a	      0x48897c2410	             mov qword [rsp + 0x10], rdi	       328	pcmcia_cis.c	FUNCTION_7
+0x400074f	          0x488b3f	                    mov rdi, qword [rdi]	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x4000752	      0x4c8d442410	                    lea r8, [rsp + 0x10]	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x4000757	    0x49c7c1000000	                               mov r9, 0	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x400075e	    0x48c704240000	                      mov qword [rsp], 0	       380	pcmcia_cis.c	FUNCTION_9
+0x4000766	      0x4889642418	             mov qword [rsp + 0x18], rsp	       328	pcmcia_cis.c	FUNCTION_7
+0x400076b	    0x65488b042528	                mov rax, qword gs:[0x28]	       379	pcmcia_cis.c	FUNCTION_9
+0x4000774	      0x4889442428	             mov qword [rsp + 0x28], rax	       379	pcmcia_cis.c	FUNCTION_9
+0x4000779	            0x31c0	                            xor eax, eax	       379	pcmcia_cis.c	FUNCTION_9
+0x400077b	    0x48c744242000	               mov qword [rsp + 0x20], 0	       328	pcmcia_cis.c	FUNCTION_7
+0x4000784	      0xe800000000	                          call 0x4000789	       333	pcmcia_cis.c	FUNCTION_7	CALL_1
+0x4000789	      0x488b4c2428	            mov rcx, qword [rsp + 0x28] 	       389	pcmcia_cis.c	FUNCTION_9
+0x400078e	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       389	pcmcia_cis.c	FUNCTION_9
+0x4000797	        0x488b0424	                    mov rax, qword [rsp]	       389	pcmcia_cis.c	FUNCTION_9
+0x400079b	            0x7505	                           jne 0x40007a2	       389	pcmcia_cis.c	FUNCTION_9
+0x400079d	        0x4883c430	                           add rsp, 0x30	       389	pcmcia_cis.c	FUNCTION_9
+0x40007a1	              0xc3	                                     ret	       389	pcmcia_cis.c	FUNCTION_9
+0x40007a2	      0xe800000000	                          call 0x40007a7	       389	pcmcia_cis.c	FUNCTION_9

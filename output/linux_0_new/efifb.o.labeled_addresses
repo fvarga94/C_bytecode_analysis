@@ -1,0 +1,105 @@
+efifb_fixup_resources	IF,5:WHILE,0:functions,0:SWITCH,0:ELSE,0:CALL,1:FOR,1:DO,0	71
+0x4000170	            0x4155	                                push r13	       428	efifb.c	FUNCTION_8
+0x4000172	            0x4154	                                push r12	       428	efifb.c	FUNCTION_8
+0x4000174	              0x55	                                push rbp	       428	efifb.c	FUNCTION_8
+0x4000175	              0x53	                                push rbx	       428	efifb.c	FUNCTION_8
+0x4000176	        0x4883ec10	                           sub rsp, 0x10	       428	efifb.c	FUNCTION_8
+0x400017a	    0x65488b042528	                mov rax, qword gs:[0x28]	       428	efifb.c	FUNCTION_8
+0x4000183	      0x4889442408	                mov qword [rsp + 8], rax	       428	efifb.c	FUNCTION_8
+0x4000188	            0x31c0	                            xor eax, eax	       428	efifb.c	FUNCTION_8
+0x400018a	    0x48833d000000	               cmp qword [0x04000192], 0	       433	efifb.c	FUNCTION_8	IF_1
+0x4000192	            0x741f	                            je 0x40001b3	       433	efifb.c	FUNCTION_8	IF_1
+0x4000194	      0x488b442408	                mov rax, qword [rsp + 8]	       453	efifb.c	FUNCTION_8
+0x4000199	    0x654833042528	                xor rax, qword gs:[0x28]	       453	efifb.c	FUNCTION_8
+0x40001a2	     0xf85ee000000	                           jne 0x4000296	       453	efifb.c	FUNCTION_8
+0x40001a8	        0x4883c410	                           add rsp, 0x10	       453	efifb.c	FUNCTION_8
+0x40001ac	              0x5b	                                 pop rbx	       453	efifb.c	FUNCTION_8
+0x40001ad	              0x5d	                                 pop rbp	       453	efifb.c	FUNCTION_8
+0x40001ae	            0x415c	                                 pop r12	       453	efifb.c	FUNCTION_8
+0x40001b0	            0x415d	                                 pop r13	       453	efifb.c	FUNCTION_8
+0x40001b2	              0xc3	                                     ret	       453	efifb.c	FUNCTION_8
+0x40001b3	    0x803d00000000	            cmp byte [0x040001ba], 0x70 	       433	efifb.c	FUNCTION_8	IF_1
+0x40001ba	            0x75d8	                           jne 0x4000194	       433	efifb.c	FUNCTION_8	IF_1
+0x40001bc	    0xf60500000000	               test byte [0x040001c3], 2	       436	efifb.c	FUNCTION_8	IF_2
+0x40001c3	          0x4889fb	                            mov rbx, rdi	       436	efifb.c	FUNCTION_8	IF_2
+0x40001c6	    0x448b25000000	           mov r12d, dword [0x040001cd] 	       429	efifb.c	FUNCTION_8
+0x40001cd	            0x740d	                            je 0x40001dc	       436	efifb.c	FUNCTION_8	IF_2
+0x40001cf	    0x8b0500000000	            mov eax, dword [0x040001d5] 	       437	efifb.c	FUNCTION_8	IF_2
+0x40001d5	        0x48c1e020	                           shl rax, 0x20	       437	efifb.c	FUNCTION_8	IF_2
+0x40001d9	          0x4909c4	                             or r12, rax	       437	efifb.c	FUNCTION_8	IF_2
+0x40001dc	          0x4d85e4	                           test r12, r12	       439	efifb.c	FUNCTION_8	IF_3
+0x40001df	            0x74b3	                            je 0x4000194	       439	efifb.c	FUNCTION_8	IF_3
+0x40001e1	    0x8b1500000000	            mov edx, dword [0x040001e7] 	       448	efifb.c	FUNCTION_8	FOR_1	IF_5
+0x40001e7	    0x488d83900300	                  lea rax, [rbx + 0x390]	       448	efifb.c	FUNCTION_8	FOR_1	IF_5
+0x40001ee	            0x31ed	                            xor ebp, ebp	       430	efifb.c	FUNCTION_8
+0x40001f0	      0x498d5414ff	                lea rdx, [r12 + rdx - 1]	       448	efifb.c	FUNCTION_8	FOR_1	IF_5
+0x40001f5	            0xeb0c	                           jmp 0x4000203	       448	efifb.c	FUNCTION_8	FOR_1	IF_5
+0x40001f7	          0x83c501	                              add ebp, 1	       442	efifb.c	FUNCTION_8	FOR_1
+0x40001fa	        0x4883c040	                           add rax, 0x40	       442	efifb.c	FUNCTION_8	FOR_1
+0x40001fe	          0x83fd06	                              cmp ebp, 6	       442	efifb.c	FUNCTION_8	FOR_1
+0x4000201	            0x7491	                            je 0x4000194	       442	efifb.c	FUNCTION_8	FOR_1
+0x4000203	    0x48f700000200	                 test qword [rax], 0x200	       445	efifb.c	FUNCTION_8	FOR_1	IF_4
+0x400020a	            0x74eb	                            je 0x40001f7	       445	efifb.c	FUNCTION_8	FOR_1	IF_4
+0x400020c	        0x4c8b68e8	             mov r13, qword [rax - 0x18]	       448	efifb.c	FUNCTION_8	FOR_1	IF_5
+0x4000210	          0x4d39ec	                            cmp r12, r13	       448	efifb.c	FUNCTION_8	FOR_1	IF_5
+0x4000213	            0x72e2	                            jb 0x40001f7	       448	efifb.c	FUNCTION_8	FOR_1	IF_5
+0x4000215	        0x483950f0	            cmp qword [rax - 0x10], rdx 	       448	efifb.c	FUNCTION_8	FOR_1	IF_5
+0x4000219	            0x72dc	                            jb 0x40001f7	       448	efifb.c	FUNCTION_8	FOR_1	IF_5
+0x400021b	      0x488d542406	                      lea rdx, [rsp + 6]	       412	efifb.c	FUNCTION_7	CALL_1
+0x4000220	      0xbe04000000	                              mov esi, 4	       412	efifb.c	FUNCTION_7	CALL_1
+0x4000225	          0x4889df	                            mov rdi, rbx	       412	efifb.c	FUNCTION_7	CALL_1
+0x4000228	    0x48891d000000	            mov qword [0x0400022f], rbx 	       410	efifb.c	FUNCTION_7
+0x400022f	      0xe800000000	                          call 0x4000234	       412	efifb.c	FUNCTION_7	CALL_1
+0x4000234	      0xf644240602	                  test byte [rsp + 6], 2	       413	efifb.c	FUNCTION_7	IF_1
+0x4000239	            0x743a	                            je 0x4000275	       413	efifb.c	FUNCTION_7	IF_1
+0x400023b	          0x4863c5	                         movsxd rax, ebp	       421	efifb.c	FUNCTION_7
+0x400023e	    0x488dbba00000	                   lea rdi, [rbx + 0xa0]	       424	efifb.c	FUNCTION_7	CALL_3
+0x4000245	          0x4d29ec	                            sub r12, r13	       422	efifb.c	FUNCTION_7
+0x4000248	        0x48c1e006	                              shl rax, 6	       421	efifb.c	FUNCTION_7
+0x400024c	            0x89ea	                            mov edx, ebp	       424	efifb.c	FUNCTION_7	CALL_3
+0x400024e	    0x48c7c6000000	                              mov rsi, 0	       424	efifb.c	FUNCTION_7	CALL_3
+0x4000255	    0x488d84037803	           lea rax, [rbx + rax + 0x378] 	       421	efifb.c	FUNCTION_7
+0x400025d	    0x4c8925000000	            mov qword [0x04000264], r12 	       422	efifb.c	FUNCTION_7
+0x4000264	    0x488905000000	            mov qword [0x0400026b], rax 	       421	efifb.c	FUNCTION_7
+0x400026b	      0xe800000000	                          call 0x4000270	       424	efifb.c	FUNCTION_7	CALL_3
+0x4000270	      0xe91fffffff	                           jmp 0x4000194	       424	efifb.c	FUNCTION_7	CALL_3
+0x4000275	    0x488dbba00000	                   lea rdi, [rbx + 0xa0]	       415	efifb.c	FUNCTION_7	IF_1	CALL_2
+0x400027c	            0x89ea	                            mov edx, ebp	       415	efifb.c	FUNCTION_7	IF_1	CALL_2
+0x400027e	    0x48c7c6000000	                              mov rsi, 0	       415	efifb.c	FUNCTION_7	IF_1	CALL_2
+0x4000285	    0xc60500000000	                mov byte [0x0400028c], 1	       414	efifb.c	FUNCTION_7	IF_1
+0x400028c	      0xe800000000	                          call 0x4000291	       415	efifb.c	FUNCTION_7	IF_1	CALL_2
+0x4000291	      0xe9fefeffff	                           jmp 0x4000194	       415	efifb.c	FUNCTION_7	IF_1	CALL_2
+0x4000296	      0xe800000000	                          call 0x400029b	       453	efifb.c	FUNCTION_8
+efifb_destroy	IF,2:WHILE,0:functions,0:SWITCH,0:ELSE,0:CALL,3:FOR,0:DO,0	16
+0x4000120	              0x53	                                push rbx	        70	efifb.c	FUNCTION_2
+0x4000121	          0x4889fb	                            mov rbx, rdi	        70	efifb.c	FUNCTION_2
+0x4000124	    0x488bbf280300	           mov rdi, qword [rdi + 0x328] 	        71	efifb.c	FUNCTION_2	IF_1
+0x400012b	          0x4885ff	                           test rdi, rdi	        71	efifb.c	FUNCTION_2	IF_1
+0x400012e	            0x7405	                            je 0x4000135	        71	efifb.c	FUNCTION_2	IF_1
+0x4000130	      0xe800000000	                          call 0x4000135	        72	efifb.c	FUNCTION_2	CALL_1
+0x4000135	    0x803d00000000	                cmp byte [0x0400013c], 0	        73	efifb.c	FUNCTION_2	IF_2
+0x400013c	            0x741b	                            je 0x4000159	        73	efifb.c	FUNCTION_2	IF_2
+0x400013e	    0x488b83580300	           mov rax, qword [rbx + 0x358] 	        74	efifb.c	FUNCTION_2	IF_2	CALL_2
+0x4000145	    0x48c7c7000000	                              mov rdi, 0	        74	efifb.c	FUNCTION_2	IF_2	CALL_2
+0x400014c	        0x488b5010	            mov rdx, qword [rax + 0x10] 	        74	efifb.c	FUNCTION_2	IF_2	CALL_2
+0x4000150	        0x488b7008	                mov rsi, qword [rax + 8]	        74	efifb.c	FUNCTION_2	IF_2	CALL_2
+0x4000154	      0xe800000000	                          call 0x4000159	        74	efifb.c	FUNCTION_2	IF_2	CALL_2
+0x4000159	    0x488dbb600200	                  lea rdi, [rbx + 0x260]	        76	efifb.c	FUNCTION_2	CALL_3
+0x4000160	              0x5b	                                 pop rbx	        77	efifb.c	FUNCTION_2
+0x4000161	      0xe900000000	                           jmp 0x4000166	        76	efifb.c	FUNCTION_2	CALL_3
+efifb_remove	IF,0:WHILE,0:functions,0:SWITCH,0:ELSE,0:CALL,4:FOR,0:DO,0	15
+0x4000040	              0x55	                                push rbp	       402	efifb.c	CALL_2
+0x4000041	              0x53	                                push rbx	       402	efifb.c	CALL_2
+0x4000042	          0x4889fb	                            mov rbx, rdi	       402	efifb.c	CALL_2
+0x4000045	    0x488bafa80000	            mov rbp, qword [rdi + 0xa8] 	       402	efifb.c	CALL_2
+0x400004c	          0x4889ef	                            mov rdi, rbp	       402	efifb.c	CALL_2
+0x400004f	      0xe800000000	                          call 0x4000054	       387	efifb.c	FUNCTION_6	CALL_2
+0x4000054	        0x488d7b20	                   lea rdi, [rbx + 0x20]	       388	efifb.c	FUNCTION_6	CALL_3
+0x4000058	    0x48c7c6000000	                              mov rsi, 0	       388	efifb.c	FUNCTION_6	CALL_3
+0x400005f	      0xe800000000	                          call 0x4000064	       388	efifb.c	FUNCTION_6	CALL_3
+0x4000064	          0x4889ef	                            mov rdi, rbp	       389	efifb.c	FUNCTION_6	CALL_4
+0x4000067	      0xe800000000	                          call 0x400006c	       389	efifb.c	FUNCTION_6	CALL_4
+0x400006c	            0x31c0	                            xor eax, eax	       392	efifb.c	FUNCTION_6
+0x400006e	              0x5b	                                 pop rbx	       392	efifb.c	FUNCTION_6
+0x400006f	              0x5d	                                 pop rbp	       392	efifb.c	FUNCTION_6
+0x4000070	              0xc3	                                     ret	       392	efifb.c	FUNCTION_6

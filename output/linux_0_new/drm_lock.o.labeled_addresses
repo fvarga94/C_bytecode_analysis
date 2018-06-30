@@ -1,0 +1,31 @@
+drm_legacy_lock_release	IF,2:CALL,5:SWITCH,0:functions,0:WHILE,0:FOR,0:ELSE,0:DO,0	30
+0x4000590	              0x53	                                push rbx	       336	drm_lock.c	FUNCTION_9
+0x4000591	      0x48837f5000	               cmp qword [rdi + 0x50], 0	       340	drm_lock.c	FUNCTION_9	IF_1
+0x4000596	    0x488b9ec80000	            mov rbx, qword [rsi + 0xc8] 	       337	drm_lock.c	FUNCTION_9
+0x400059d	            0x741d	                            je 0x40005bc	       340	drm_lock.c	FUNCTION_9	IF_1
+0x400059f	    0x4883bb580100	              cmp qword [rbx + 0x158], 0	       331	drm_lock.c	FUNCTION_8	CALL_1
+0x40005a7	            0x7413	                            je 0x40005bc	       331	drm_lock.c	FUNCTION_8	CALL_1
+0x40005a9	        0x488b5308	                mov rdx, qword [rbx + 8]	       329	drm_lock.c	FUNCTION_8
+0x40005ad	        0x488b4238	            mov rax, qword [rdx + 0x38] 	       330	drm_lock.c	FUNCTION_8
+0x40005b1	          0x4885c0	                           test rax, rax	       330	drm_lock.c	FUNCTION_8
+0x40005b4	            0x7406	                            je 0x40005bc	       330	drm_lock.c	FUNCTION_8
+0x40005b6	            0x8b08	                    mov ecx, dword [rax]	       331	drm_lock.c	FUNCTION_8	CALL_1
+0x40005b8	            0x85c9	                           test ecx, ecx	       330	drm_lock.c	FUNCTION_8
+0x40005ba	            0x7802	                            js 0x40005be	       330	drm_lock.c	FUNCTION_8
+0x40005bc	              0x5b	                                 pop rbx	       349	drm_lock.c	FUNCTION_9
+0x40005bd	              0xc3	                                     ret	       349	drm_lock.c	FUNCTION_9
+0x40005be	        0x483b5a40	            cmp rbx, qword [rdx + 0x40] 	       331	drm_lock.c	FUNCTION_8	CALL_1
+0x40005c2	            0x75f8	                           jne 0x40005bc	       331	drm_lock.c	FUNCTION_8	CALL_1
+0x40005c4	            0x8b08	                    mov ecx, dword [rax]	       344	drm_lock.c	FUNCTION_9	IF_2	CALL_2
+0x40005c6	          0x4889f2	                            mov rdx, rsi	       344	drm_lock.c	FUNCTION_9	IF_2	CALL_2
+0x40005c9	      0xbf01000000	                              mov edi, 1	       344	drm_lock.c	FUNCTION_9	IF_2	CALL_2
+0x40005ce	    0x48c7c6000000	                              mov rsi, 0	       344	drm_lock.c	FUNCTION_9	IF_2	CALL_2
+0x40005d5	    0x81e1ffffff3f	                     and ecx, 0x3fffffff	       344	drm_lock.c	FUNCTION_9	IF_2	CALL_2
+0x40005db	      0xe800000000	                          call 0x40005e0	       344	drm_lock.c	FUNCTION_9	IF_2	CALL_2
+0x40005e0	        0x488b7b08	                mov rdi, qword [rbx + 8]	       347	drm_lock.c	FUNCTION_9	IF_2	CALL_5
+0x40005e4	              0x5b	                                 pop rbx	       349	drm_lock.c	FUNCTION_9
+0x40005e5	        0x488b4738	            mov rax, qword [rdi + 0x38] 	       347	drm_lock.c	FUNCTION_9	IF_2	CALL_5
+0x40005e9	        0x4883c738	                           add rdi, 0x38	       346	drm_lock.c	FUNCTION_9	IF_2	CALL_4
+0x40005ed	            0x8b30	                    mov esi, dword [rax]	       347	drm_lock.c	FUNCTION_9	IF_2	CALL_5
+0x40005ef	    0x81e6ffffff3f	                     and esi, 0x3fffffff	       346	drm_lock.c	FUNCTION_9	IF_2	CALL_4
+0x40005f5	      0xe946faffff	            jmp sym.drm_legacy_lock_free	       346	drm_lock.c	FUNCTION_9	IF_2	CALL_4

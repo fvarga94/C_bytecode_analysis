@@ -1,0 +1,527 @@
+pci_msi_vec_count	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,1:CALL,1:WHILE,0	22
+0x4000180	        0x4883ec10	                           sub rsp, 0x10	       866	msi.c	FUNCTION_36
+0x4000184	         0xfb6774d	           movzx esi, byte [rdi + 0x4d] 	       870	msi.c	FUNCTION_36	IF_1
+0x4000188	    0x65488b042528	                mov rax, qword gs:[0x28]	       866	msi.c	FUNCTION_36
+0x4000191	      0x4889442408	                mov qword [rsp + 8], rax	       866	msi.c	FUNCTION_36
+0x4000196	            0x31c0	                            xor eax, eax	       866	msi.c	FUNCTION_36
+0x4000198	      0xb8eaffffff	                     mov eax, 0xffffffea	       866	msi.c	FUNCTION_36
+0x400019d	          0x4084f6	                           test sil, sil	       870	msi.c	FUNCTION_36	IF_1
+0x40001a0	            0x741e	                            je 0x40001c0	       870	msi.c	FUNCTION_36	IF_1
+0x40001a2	      0x488d542406	                      lea rdx, [rsp + 6]	       873	msi.c	FUNCTION_36	CALL_1
+0x40001a7	          0x83c602	                              add esi, 2	       873	msi.c	FUNCTION_36	CALL_1
+0x40001aa	      0xe800000000	                          call 0x40001af	       873	msi.c	FUNCTION_36	CALL_1
+0x40001af	       0xfb74c2406	               movzx ecx, word [rsp + 6]	       874	msi.c	FUNCTION_36
+0x40001b4	      0xb801000000	                              mov eax, 1	       876	msi.c	FUNCTION_36
+0x40001b9	          0x83e10e	                            and ecx, 0xe	       874	msi.c	FUNCTION_36
+0x40001bc	            0xd1f9	                              sar ecx, 1	       874	msi.c	FUNCTION_36
+0x40001be	            0xd3e0	                             shl eax, cl	       876	msi.c	FUNCTION_36
+0x40001c0	      0x488b542408	                mov rdx, qword [rsp + 8]	       877	msi.c	FUNCTION_36
+0x40001c5	    0x654833142528	                xor rdx, qword gs:[0x28]	       877	msi.c	FUNCTION_36
+0x40001ce	            0x7505	                           jne 0x40001d5	       877	msi.c	FUNCTION_36
+0x40001d0	        0x4883c410	                           add rsp, 0x10	       877	msi.c	FUNCTION_36
+0x40001d4	              0xc3	                                     ret	       877	msi.c	FUNCTION_36
+0x40001d5	      0xe800000000	                          call 0x40001da	       877	msi.c	FUNCTION_36
+arch_setup_msi_irq	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,2:CALL,2:WHILE,0	25
+0x4000710	              0x55	                                push rbp	        64	msi.c	FUNCTION_1
+0x4000711	              0x53	                                push rbx	        64	msi.c	FUNCTION_1
+0x4000712	        0x488b4710	            mov rax, qword [rdi + 0x10] 	        65	msi.c	FUNCTION_1
+0x4000716	    0x488b98c80000	            mov rbx, qword [rax + 0xc8] 	        65	msi.c	FUNCTION_1
+0x400071d	          0x4885db	                           test rbx, rbx	        68	msi.c	FUNCTION_1	IF_1
+0x4000720	            0x742e	                            je 0x4000750	        68	msi.c	FUNCTION_1	IF_1
+0x4000722	        0x488b4328	            mov rax, qword [rbx + 0x28] 	        68	msi.c	FUNCTION_1	IF_1
+0x4000726	          0x4885c0	                           test rax, rax	        68	msi.c	FUNCTION_1	IF_1
+0x4000729	            0x7425	                            je 0x4000750	        68	msi.c	FUNCTION_1	IF_1
+0x400072b	          0x4889f5	                            mov rbp, rsi	        68	msi.c	FUNCTION_1	IF_1
+0x400072e	          0x4889fe	                            mov rsi, rdi	        68	msi.c	FUNCTION_1	IF_1
+0x4000731	          0x4889df	                            mov rdi, rbx	        71	msi.c	FUNCTION_1	CALL_1
+0x4000734	          0x4889ea	                            mov rdx, rbp	        71	msi.c	FUNCTION_1	CALL_1
+0x4000737	      0xe800000000	                          call 0x400073c	        71	msi.c	FUNCTION_1	CALL_1
+0x400073c	            0x85c0	                           test eax, eax	        72	msi.c	FUNCTION_1	IF_2
+0x400073e	            0x780d	                            js 0x400074d	        72	msi.c	FUNCTION_1	IF_2
+0x4000740	          0x8b7d10	            mov edi, dword [rbp + 0x10] 	        75	msi.c	FUNCTION_1	CALL_2
+0x4000743	          0x4889de	                            mov rsi, rbx	        75	msi.c	FUNCTION_1	CALL_2
+0x4000746	      0xe800000000	                          call 0x400074b	        75	msi.c	FUNCTION_1	CALL_2
+0x400074b	            0x31c0	                            xor eax, eax	        77	msi.c	FUNCTION_1
+0x400074d	              0x5b	                                 pop rbx	        78	msi.c	FUNCTION_1
+0x400074e	              0x5d	                                 pop rbp	        78	msi.c	FUNCTION_1
+0x400074f	              0xc3	                                     ret	        78	msi.c	FUNCTION_1
+0x4000750	      0xb8eaffffff	                     mov eax, 0xffffffea	        69	msi.c	FUNCTION_1	IF_1
+0x4000755	            0xebf6	                           jmp 0x400074d	        69	msi.c	FUNCTION_1	IF_1
+pci_enable_msi	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,1:CALL,1:WHILE,0	8
+0x4001430	            0x31c9	                            xor ecx, ecx	      1074	msi.c	FUNCTION_46	CALL_1
+0x4001432	      0xba01000000	                              mov edx, 1	      1074	msi.c	FUNCTION_46	CALL_1
+0x4001437	      0xbe01000000	                              mov esi, 1	      1074	msi.c	FUNCTION_46	CALL_1
+0x400143c	      0xe80ffcffff	         call sym.__pci_enable_msi_range	      1074	msi.c	FUNCTION_46	CALL_1
+0x4001441	      0xba00000000	                              mov edx, 0	      1074	msi.c	FUNCTION_46	CALL_1
+0x4001446	            0x85c0	                           test eax, eax	      1074	msi.c	FUNCTION_46	CALL_1
+0x4001448	           0xf4fc2	                          cmovg eax, edx	      1074	msi.c	FUNCTION_46	CALL_1
+0x400144b	              0xc3	                                     ret	      1078	msi.c	FUNCTION_46
+pci_irq_vector	SWITCH,0:ELSE,1:DO,0:functions,1:FOR,0:IF,4:CALL,4:WHILE,0	38
+0x4000110	     0xfb6873a0600	          movzx eax, byte [rdi + 0x63a] 	      1210	msi.c	FUNCTION_51	IF_1
+0x4000117	            0xa808	                              test al, 8	      1210	msi.c	FUNCTION_51	IF_1
+0x4000119	            0x7432	                            je 0x400014d	      1210	msi.c	FUNCTION_51	IF_1
+0x400011b	    0x488b97900200	           mov rdx, qword [rdi + 0x290] 	      1214	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x4000122	    0x4881c7900200	                          add rdi, 0x290	      1214	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x4000129	          0x4839d7	                            cmp rdi, rdx	      1214	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x400012c	            0x7417	                            je 0x4000145	      1214	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x400012e	            0x31c9	                            xor ecx, ecx	      1215	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x4000130	            0x85f6	                           test esi, esi	      1215	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x4000132	            0x7506	                           jne 0x400013a	      1215	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x4000134	            0xeb3c	                           jmp 0x4000172	      1215	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x4000136	            0x39f1	                            cmp ecx, esi	      1215	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x4000138	            0x7438	                            je 0x4000172	      1215	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x400013a	          0x488b12	                    mov rdx, qword [rdx]	      1214	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x400013d	          0x83c101	                              add ecx, 1	      1217	msi.c	FUNCTION_51	FUNCTION_1	IF_1
+0x4000140	          0x4839fa	                            cmp rdx, rdi	      1214	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x4000143	            0x75f1	                           jne 0x4000136	      1214	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x4000145	             0xf0b	                                     ud2	      1214	msi.c	FUNCTION_51	IF_1	FUNCTION_1
+0x4000147	      0xb8eaffffff	                     mov eax, 0xffffffea	      1220	msi.c	FUNCTION_51	IF_1
+0x400014c	              0xc3	                                     ret	      1220	msi.c	FUNCTION_51	IF_1
+0x400014d	            0xa804	                              test al, 4	      1223	msi.c	FUNCTION_51	IF_2
+0x400014f	            0x750d	                           jne 0x400015e	      1223	msi.c	FUNCTION_51	IF_2
+0x4000151	            0x85f6	                           test esi, esi	      1229	msi.c	FUNCTION_51	ELSE_1	IF_4	CALL_4
+0x4000153	            0x7521	                           jne 0x4000176	      1229	msi.c	FUNCTION_51	ELSE_1	IF_4	CALL_4
+0x4000155	    0x8b8774030000	           mov eax, dword [rdi + 0x374] 	      1233	msi.c	FUNCTION_51
+0x400015b	             0x1f0	                            add eax, esi	      1233	msi.c	FUNCTION_51
+0x400015d	              0xc3	                                     ret	      1234	msi.c	FUNCTION_51
+0x400015e	    0x488b87900200	           mov rax, qword [rdi + 0x290] 	      1226	msi.c	FUNCTION_51	IF_2	IF_3	CALL_3
+0x4000165	          0x3b7014	            cmp esi, dword [rax + 0x14] 	      1226	msi.c	FUNCTION_51	IF_2	IF_3	CALL_3
+0x4000168	            0x72eb	                            jb 0x4000155	      1226	msi.c	FUNCTION_51	IF_2	IF_3	CALL_3
+0x400016a	             0xf0b	                                     ud2	      1226	msi.c	FUNCTION_51	IF_2	IF_3	CALL_3
+0x400016c	      0xb8eaffffff	                     mov eax, 0xffffffea	      1227	msi.c	FUNCTION_51	IF_2	IF_3
+0x4000171	              0xc3	                                     ret	      1227	msi.c	FUNCTION_51	IF_2	IF_3
+0x4000172	          0x8b4210	            mov eax, dword [rdx + 0x10] 	      1216	msi.c	FUNCTION_51	FUNCTION_1	IF_1
+0x4000175	              0xc3	                                     ret	      1216	msi.c	FUNCTION_51	FUNCTION_1	IF_1
+0x4000176	             0xf0b	                                     ud2	      1216	msi.c	FUNCTION_51	FUNCTION_1	IF_1
+0x4000178	      0xb8eaffffff	                     mov eax, 0xffffffea	      1230	msi.c	FUNCTION_51	ELSE_1	IF_4
+0x400017d	              0xc3	                                     ret	      1230	msi.c	FUNCTION_51	ELSE_1	IF_4
+pci_no_msi	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,0:WHILE,0	2
+0x4001d00	    0xc70500000000	               mov dword [0x04001d0a], 0	      1007	msi.c	FUNCTION_43
+0x4001d0a	              0xc3	                                     ret	      1007	msi.c	FUNCTION_43
+pci_msi_get_device_domain	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,1:CALL,4:WHILE,0	19
+0x4001da0	        0x4883ec10	                           sub rsp, 0x10	      1516	msi.c	FUNCTION_66
+0x4001da4	    0x48c7c6000000	                              mov rsi, 0	      1520	msi.c	FUNCTION_66	CALL_2
+0x4001dab	    0x65488b042528	                mov rax, qword gs:[0x28]	      1516	msi.c	FUNCTION_66
+0x4001db4	      0x4889442408	                mov qword [rsp + 8], rax	      1516	msi.c	FUNCTION_66
+0x4001db9	            0x31c0	                            xor eax, eax	      1516	msi.c	FUNCTION_66
+0x4001dbb	        0x488b4710	            mov rax, qword [rdi + 0x10] 	      1518	msi.c	FUNCTION_66	CALL_1
+0x4001dbf	      0x488d542404	                      lea rdx, [rsp + 4]	      1520	msi.c	FUNCTION_66	CALL_2
+0x4001dc4	     0xfb680e00000	           movzx eax, byte [rax + 0xe0] 	      1518	msi.c	FUNCTION_66	CALL_1
+0x4001dcb	          0xc1e008	                              shl eax, 8	      1518	msi.c	FUNCTION_66	CALL_1
+0x4001dce	           0xb4738	              or eax, dword [rdi + 0x38]	      1518	msi.c	FUNCTION_66	CALL_1
+0x4001dd1	        0x89442404	                mov dword [rsp + 4], eax	      1518	msi.c	FUNCTION_66	CALL_1
+0x4001dd5	      0xe800000000	                          call 0x4001dda	      1520	msi.c	FUNCTION_66	CALL_2
+0x4001dda	      0x488b4c2408	                mov rcx, qword [rsp + 8]	      1525	msi.c	FUNCTION_66
+0x4001ddf	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      1525	msi.c	FUNCTION_66
+0x4001de8	            0x7507	                           jne 0x4001df1	      1525	msi.c	FUNCTION_66
+0x4001dea	            0x31c0	                            xor eax, eax	      1525	msi.c	FUNCTION_66
+0x4001dec	        0x4883c410	                           add rsp, 0x10	      1525	msi.c	FUNCTION_66
+0x4001df0	              0xc3	                                     ret	      1525	msi.c	FUNCTION_66
+0x4001df1	      0xe800000000	                  call section_end..text	      1525	msi.c	FUNCTION_66
+pci_msi_domain_calc_hwirq	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,2:WHILE,0	12
+0x4001d10	        0x488b4710	            mov rax, qword [rdi + 0x10] 	      1328	msi.c	FUNCTION_57	CALL_1
+0x4001d14	         0xfb74e3e	           movzx ecx, word [rsi + 0x3e] 	      1327	msi.c	FUNCTION_57
+0x4001d18	     0xfb690e00000	           movzx edx, byte [rax + 0xe0] 	      1327	msi.c	FUNCTION_57
+0x4001d1f	    0x488b80d00000	            mov rax, qword [rax + 0xd0] 	        44	pci.h	
+0x4001d26	            0x8b00	                    mov eax, dword [rax]	      1327	msi.c	FUNCTION_57
+0x4001d28	          0xc1e208	                              shl edx, 8	      1327	msi.c	FUNCTION_57
+0x4001d2b	           0xb5738	              or edx, dword [rdi + 0x38]	      1327	msi.c	FUNCTION_57
+0x4001d2e	          0xc1e01b	                           shl eax, 0x1b	      1327	msi.c	FUNCTION_57
+0x4001d31	          0x4809c8	                             or rax, rcx	      1327	msi.c	FUNCTION_57
+0x4001d34	          0xc1e20b	                            shl edx, 0xb	      1327	msi.c	FUNCTION_57
+0x4001d37	          0x4809d0	                             or rax, rdx	      1327	msi.c	FUNCTION_57
+0x4001d3a	              0xc3	                                     ret	      1330	msi.c	FUNCTION_57
+default_teardown_msi_irqs	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,1:IF,1:CALL,2:WHILE,0	28
+0x4000850	            0x4154	                                push r12	       121	msi.c	FUNCTION_4
+0x4000852	              0x55	                                push rbp	       121	msi.c	FUNCTION_4
+0x4000853	    0x4c8da7900200	                  lea r12, [rdi + 0x290]	       125	msi.c	FUNCTION_4	CALL_1
+0x400085a	              0x53	                                push rbx	       121	msi.c	FUNCTION_4
+0x400085b	    0x488baf900200	           mov rbp, qword [rdi + 0x290] 	       125	msi.c	FUNCTION_4	CALL_1
+0x4000862	          0x4c39e5	                            cmp rbp, r12	       125	msi.c	FUNCTION_4	CALL_1
+0x4000865	            0x742d	                            je 0x4000894	       125	msi.c	FUNCTION_4	CALL_1
+0x4000867	          0x8b7d10	            mov edi, dword [rbp + 0x10] 	       126	msi.c	FUNCTION_4	IF_1
+0x400086a	            0x85ff	                           test edi, edi	       126	msi.c	FUNCTION_4	IF_1
+0x400086c	            0x741d	                            je 0x400088b	       126	msi.c	FUNCTION_4	IF_1
+0x400086e	          0x8b4514	            mov eax, dword [rbp + 0x14] 	       127	msi.c	FUNCTION_4	IF_1	FOR_1
+0x4000871	            0x85c0	                           test eax, eax	       127	msi.c	FUNCTION_4	IF_1	FOR_1
+0x4000873	            0x7416	                            je 0x400088b	       127	msi.c	FUNCTION_4	IF_1	FOR_1
+0x4000875	            0x31db	                            xor ebx, ebx	       127	msi.c	FUNCTION_4	IF_1	FOR_1
+0x4000877	            0xeb03	                           jmp 0x400087c	       127	msi.c	FUNCTION_4	IF_1	FOR_1
+0x4000879	          0x8b7d10	            mov edi, dword [rbp + 0x10] 	       127	msi.c	FUNCTION_4	IF_1	FOR_1
+0x400087c	             0x1df	                            add edi, ebx	       128	msi.c	FUNCTION_4	IF_1	FOR_1
+0x400087e	          0x83c301	                              add ebx, 1	       127	msi.c	FUNCTION_4	IF_1	FOR_1
+0x4000881	      0xe800000000	                          call 0x4000886	       128	msi.c	FUNCTION_4	IF_1	FOR_1
+0x4000886	          0x395d14	            cmp dword [rbp + 0x14], ebx 	       127	msi.c	FUNCTION_4	IF_1	FOR_1
+0x4000889	            0x77ee	                            ja 0x4000879	       127	msi.c	FUNCTION_4	IF_1	FOR_1
+0x400088b	        0x488b6d00	                    mov rbp, qword [rbp]	       125	msi.c	FUNCTION_4	CALL_1
+0x400088f	          0x4c39e5	                            cmp rbp, r12	       125	msi.c	FUNCTION_4	CALL_1
+0x4000892	            0x75d3	                           jne 0x4000867	       125	msi.c	FUNCTION_4	CALL_1
+0x4000894	              0x5b	                                 pop rbx	       129	msi.c	FUNCTION_4
+0x4000895	              0x5d	                                 pop rbp	       129	msi.c	FUNCTION_4
+0x4000896	            0x415c	                                 pop r12	       129	msi.c	FUNCTION_4
+0x4000898	              0xc3	                                     ret	       129	msi.c	FUNCTION_4
+msi_verify_entries	SWITCH,0:ELSE,0:DO,0:functions,1:FOR,0:IF,0:CALL,0:WHILE,0	21
+0x4000240	    0x488b87900200	           mov rax, qword [rdi + 0x290] 	       578	msi.c	FUNCTION_29	FUNCTION_1
+0x4000247	    0x488d8f900200	                  lea rcx, [rdi + 0x290]	       578	msi.c	FUNCTION_29	FUNCTION_1
+0x400024e	          0x4839c8	                            cmp rax, rcx	       578	msi.c	FUNCTION_29	FUNCTION_1
+0x4000251	            0x741d	                            je 0x4000270	       578	msi.c	FUNCTION_29	FUNCTION_1
+0x4000253	     0xfb697390600	          movzx edx, byte [rdi + 0x639] 	       578	msi.c	FUNCTION_29	FUNCTION_1
+0x400025a	          0x83e220	                           and edx, 0x20	       578	msi.c	FUNCTION_29	FUNCTION_1
+0x400025d	            0x84d2	                             test dl, dl	       579	msi.c	FUNCTION_29	FUNCTION_1	IF_1
+0x400025f	            0x7407	                            je 0x4000268	       579	msi.c	FUNCTION_29	FUNCTION_1	IF_1
+0x4000261	          0x8b7024	            mov esi, dword [rax + 0x24] 	       579	msi.c	FUNCTION_29	FUNCTION_1	IF_1
+0x4000264	            0x85f6	                           test esi, esi	       579	msi.c	FUNCTION_29	FUNCTION_1	IF_1
+0x4000266	            0x750b	                           jne 0x4000273	       579	msi.c	FUNCTION_29	FUNCTION_1	IF_1
+0x4000268	          0x488b00	                    mov rax, qword [rax]	       578	msi.c	FUNCTION_29	FUNCTION_1
+0x400026b	          0x4839c8	                            cmp rax, rcx	       578	msi.c	FUNCTION_29	FUNCTION_1
+0x400026e	            0x75ed	                           jne 0x400025d	       578	msi.c	FUNCTION_29	FUNCTION_1
+0x4000270	            0x31c0	                            xor eax, eax	       585	msi.c	FUNCTION_29
+0x4000272	              0xc3	                                     ret	       586	msi.c	FUNCTION_29
+0x4000273	    0x4881c7a00000	                           add rdi, 0xa0	       581	msi.c	FUNCTION_29	FUNCTION_1	CALL_1
+0x400027a	    0x48c7c6000000	                              mov rsi, 0	       581	msi.c	FUNCTION_29	FUNCTION_1	CALL_1
+0x4000281	      0xe800000000	                          call 0x4000286	       581	msi.c	FUNCTION_29	FUNCTION_1	CALL_1
+0x4000286	      0xb8fbffffff	                     mov eax, 0xfffffffb	       583	msi.c	FUNCTION_29	FUNCTION_1
+0x400028b	              0xc3	                                     ret	       583	msi.c	FUNCTION_29	FUNCTION_1
+pci_msi_domain_check_cap	SWITCH,0:ELSE,1:DO,0:functions,0:FOR,0:IF,2:CALL,3:WHILE,0	18
+0x4000080	    0x488b82f00100	           mov rax, qword [rdx + 0x1f0] 	      1351	msi.c	FUNCTION_59	CALL_2
+0x4000087	        0xf6403c01	               test byte [rax + 0x3c], 1	      1334	msi.c	FUNCTION_58
+0x400008b	            0x7410	                            je 0x400009d	      1334	msi.c	FUNCTION_58
+0x400008d	            0x8b06	                    mov eax, dword [rsi]	      1357	msi.c	FUNCTION_59	ELSE_1	IF_2
+0x400008f	          0x83e008	                              and eax, 8	      1357	msi.c	FUNCTION_59	ELSE_1	IF_2
+0x4000092	          0x83f801	                              cmp eax, 1	      1358	msi.c	FUNCTION_59	ELSE_1	IF_2
+0x4000095	            0x19c0	                            sbb eax, eax	      1358	msi.c	FUNCTION_59	ELSE_1	IF_2
+0x4000097	      0x25f4fdffff	                     and eax, 0xfffffdf4	      1358	msi.c	FUNCTION_59	ELSE_1	IF_2
+0x400009c	              0xc3	                                     ret	      1358	msi.c	FUNCTION_59	ELSE_1	IF_2
+0x400009d	        0x83781401	               cmp dword [rax + 0x14], 1	      1334	msi.c	FUNCTION_58
+0x40000a1	            0x760c	                           jbe 0x40000af	      1334	msi.c	FUNCTION_58
+0x40000a3	            0x8b06	                    mov eax, dword [rsi]	      1356	msi.c	FUNCTION_59	IF_1
+0x40000a5	          0xc1e802	                              shr eax, 2	      1356	msi.c	FUNCTION_59	IF_1
+0x40000a8	          0x83f001	                              xor eax, 1	      1356	msi.c	FUNCTION_59	IF_1
+0x40000ab	          0x83e001	                              and eax, 1	      1356	msi.c	FUNCTION_59	IF_1
+0x40000ae	              0xc3	                                     ret	      1361	msi.c	FUNCTION_59
+0x40000af	            0x31c0	                            xor eax, eax	      1360	msi.c	FUNCTION_59
+0x40000b1	              0xc3	                                     ret	      1360	msi.c	FUNCTION_59
+msi_desc_to_pci_sysdata	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,1:WHILE,0	4
+0x4000060	        0x488b4718	            mov rax, qword [rdi + 0x18] 	      1295	msi.c	FUNCTION_55
+0x4000064	    0x488b8070ffff	             mov rax, qword [rax - 0x90]	      1295	msi.c	FUNCTION_55
+0x400006b	    0x488b80d00000	            mov rax, qword [rax + 0xd0] 	      1295	msi.c	FUNCTION_55
+0x4000072	              0xc3	                                     ret	      1296	msi.c	FUNCTION_55
+pci_msix_vec_count	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,1:CALL,1:WHILE,0	20
+0x40001e0	        0x4883ec10	                           sub rsp, 0x10	       924	msi.c	FUNCTION_39
+0x40001e4	         0xfb6774e	           movzx esi, byte [rdi + 0x4e] 	       927	msi.c	FUNCTION_39	IF_1
+0x40001e8	    0x65488b042528	                mov rax, qword gs:[0x28]	       924	msi.c	FUNCTION_39
+0x40001f1	      0x4889442408	                mov qword [rsp + 8], rax	       924	msi.c	FUNCTION_39
+0x40001f6	            0x31c0	                            xor eax, eax	       924	msi.c	FUNCTION_39
+0x40001f8	      0xb8eaffffff	                     mov eax, 0xffffffea	       924	msi.c	FUNCTION_39
+0x40001fd	          0x4084f6	                           test sil, sil	       927	msi.c	FUNCTION_39	IF_1
+0x4000200	            0x741a	                            je 0x400021c	       927	msi.c	FUNCTION_39	IF_1
+0x4000202	      0x488d542406	                      lea rdx, [rsp + 6]	       930	msi.c	FUNCTION_39	CALL_1
+0x4000207	          0x83c602	                              add esi, 2	       930	msi.c	FUNCTION_39	CALL_1
+0x400020a	      0xe800000000	                          call 0x400020f	       930	msi.c	FUNCTION_39	CALL_1
+0x400020f	       0xfb7442406	               movzx eax, word [rsp + 6]	       931	msi.c	FUNCTION_39
+0x4000214	      0x25ff070000	                          and eax, 0x7ff	       931	msi.c	FUNCTION_39
+0x4000219	          0x83c001	                              add eax, 1	       931	msi.c	FUNCTION_39
+0x400021c	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       932	msi.c	FUNCTION_39
+0x4000221	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       932	msi.c	FUNCTION_39
+0x400022a	            0x7505	                           jne 0x4000231	       932	msi.c	FUNCTION_39
+0x400022c	        0x4883c410	                           add rsp, 0x10	       932	msi.c	FUNCTION_39
+0x4000230	              0xc3	                                     ret	       932	msi.c	FUNCTION_39
+0x4000231	      0xe800000000	                          call 0x4000236	       932	msi.c	FUNCTION_39
+pci_msi_domain_get_msi_rid	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,5:WHILE,0	20
+0x4001d40	        0x4883ec10	                           sub rsp, 0x10	      1493	msi.c	FUNCTION_65
+0x4001d44	          0x4889f7	                            mov rdi, rsi	      1493	msi.c	FUNCTION_65
+0x4001d47	    0x65488b042528	                mov rax, qword gs:[0x28]	      1493	msi.c	FUNCTION_65
+0x4001d50	      0x4889442408	                mov qword [rsp + 8], rax	      1493	msi.c	FUNCTION_65
+0x4001d55	            0x31c0	                            xor eax, eax	      1493	msi.c	FUNCTION_65
+0x4001d57	        0x488b4610	            mov rax, qword [rsi + 0x10] 	      1495	msi.c	FUNCTION_65	CALL_1
+0x4001d5b	      0x488d542404	                      lea rdx, [rsp + 4]	      1497	msi.c	FUNCTION_65	CALL_2
+0x4001d60	     0xfb680e00000	           movzx eax, byte [rax + 0xe0] 	      1495	msi.c	FUNCTION_65	CALL_1
+0x4001d67	          0xc1e008	                              shl eax, 8	      1495	msi.c	FUNCTION_65	CALL_1
+0x4001d6a	           0xb4638	              or eax, dword [rsi + 0x38]	      1495	msi.c	FUNCTION_65	CALL_1
+0x4001d6d	    0x48c7c6000000	                              mov rsi, 0	      1497	msi.c	FUNCTION_65	CALL_2
+0x4001d74	        0x89442404	                mov dword [rsp + 4], eax	      1495	msi.c	FUNCTION_65	CALL_1
+0x4001d78	      0xe800000000	                          call 0x4001d7d	      1497	msi.c	FUNCTION_65	CALL_2
+0x4001d7d	      0x488b4c2408	                mov rcx, qword [rsp + 8]	      1504	msi.c	FUNCTION_65
+0x4001d82	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      1504	msi.c	FUNCTION_65
+0x4001d8b	        0x8b442404	                mov eax, dword [rsp + 4]	      1504	msi.c	FUNCTION_65
+0x4001d8f	            0x7505	                           jne 0x4001d96	      1504	msi.c	FUNCTION_65
+0x4001d91	        0x4883c410	                           add rsp, 0x10	      1504	msi.c	FUNCTION_65
+0x4001d95	              0xc3	                                     ret	      1504	msi.c	FUNCTION_65
+0x4001d96	      0xe800000000	                          call 0x4001d9b	      1504	msi.c	FUNCTION_65
+pci_free_irq_vectors	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,2:WHILE,0	6
+0x4001690	              0x53	                                push rbx	      1197	msi.c	FUNCTION_50
+0x4001691	          0x4889fb	                            mov rbx, rdi	      1197	msi.c	FUNCTION_50
+0x4001694	      0xe800000000	                          call 0x4001699	      1198	msi.c	FUNCTION_50	CALL_1
+0x4001699	          0x4889df	                            mov rdi, rbx	      1199	msi.c	FUNCTION_50	CALL_2
+0x400169c	              0x5b	                                 pop rbx	      1200	msi.c	FUNCTION_50
+0x400169d	      0xe9cefeffff	                 jmp sym.pci_disable_msi	      1199	msi.c	FUNCTION_50	CALL_2
+pci_msi_enabled	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,0:WHILE,0	2
+0x4000040	    0x8b0500000000	            mov eax, dword [0x04000046] 	      1019	msi.c	FUNCTION_44
+0x4000046	              0xc3	                                     ret	      1019	msi.c	FUNCTION_44
+arch_restore_msi_irqs	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,1:WHILE,0	18
+0x4001a30	            0x4154	                                push r12	       155	msi.c	FUNCTION_7
+0x4001a32	              0x55	                                push rbp	       155	msi.c	FUNCTION_7
+0x4001a33	    0x4c8da7900200	                  lea r12, [rdi + 0x290]	       263	msi.c	FUNCTION_17	CALL_1
+0x4001a3a	              0x53	                                push rbx	       155	msi.c	FUNCTION_7
+0x4001a3b	    0x488b9f900200	           mov rbx, qword [rdi + 0x290] 	       263	msi.c	FUNCTION_17	CALL_1
+0x4001a42	          0x4c39e3	                            cmp rbx, r12	       263	msi.c	FUNCTION_17	CALL_1
+0x4001a45	            0x7416	                            je 0x4001a5d	       263	msi.c	FUNCTION_17	CALL_1
+0x4001a47	          0x4889fd	                            mov rbp, rdi	       263	msi.c	FUNCTION_17	CALL_1
+0x4001a4a	          0x8b7310	            mov esi, dword [rbx + 0x10] 	       264	msi.c	FUNCTION_17	CALL_2
+0x4001a4d	          0x4889ef	                            mov rdi, rbp	       264	msi.c	FUNCTION_17	CALL_2
+0x4001a50	      0xe83bffffff	        call sym.default_restore_msi_irq	       264	msi.c	FUNCTION_17	CALL_2
+0x4001a55	          0x488b1b	                    mov rbx, qword [rbx]	       263	msi.c	FUNCTION_17	CALL_1
+0x4001a58	          0x4c39e3	                            cmp rbx, r12	       263	msi.c	FUNCTION_17	CALL_1
+0x4001a5b	            0x75ed	                           jne 0x4001a4a	       263	msi.c	FUNCTION_17	CALL_1
+0x4001a5d	              0x5b	                                 pop rbx	       157	msi.c	FUNCTION_7
+0x4001a5e	              0x5d	                                 pop rbp	       157	msi.c	FUNCTION_7
+0x4001a5f	            0x415c	                                 pop r12	       157	msi.c	FUNCTION_7
+0x4001a61	              0xc3	                                     ret	       157	msi.c	FUNCTION_7
+arch_teardown_msi_irqs	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,1:WHILE,0	1
+0x40008a0	            0xebae	       jmp sym.default_teardown_msi_irqs	       133	msi.c	FUNCTION_5	CALL_1
+pci_msi_unmask_irq	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,1:WHILE,0	2
+0x4001730	            0x31f6	                            xor esi, esi	       255	msi.c	FUNCTION_16	CALL_1
+0x4001732	      0xe979ffffff	                jmp sym.msi_set_mask_bit	       255	msi.c	FUNCTION_16	CALL_1
+get_msi_id_cb	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,1:CALL,2:WHILE,0	14
+0x40000e0	            0x8b02	                    mov eax, dword [rdx]	      1474	msi.c	FUNCTION_64	CALL_1
+0x40000e2	        0x488b4f10	            mov rcx, qword [rdi + 0x10] 	      1476	msi.c	FUNCTION_64	IF_1	CALL_2
+0x40000e6	          0xc1e808	                              shr eax, 8	      1474	msi.c	FUNCTION_64	CALL_1
+0x40000e9	    0x3881e0000000	               cmp byte [rcx + 0xe0], al	      1476	msi.c	FUNCTION_64	IF_1	CALL_2
+0x40000ef	            0x7408	                            je 0x40000f9	      1476	msi.c	FUNCTION_64	IF_1	CALL_2
+0x40000f1	           0xfb7f6	                           movzx esi, si	      1477	msi.c	FUNCTION_64	IF_1
+0x40000f4	            0x8932	                    mov dword [rdx], esi	      1477	msi.c	FUNCTION_64	IF_1
+0x40000f6	            0x31c0	                            xor eax, eax	      1480	msi.c	FUNCTION_64
+0x40000f8	              0xc3	                                     ret	      1480	msi.c	FUNCTION_64
+0x40000f9	            0x89f1	                            mov ecx, esi	      1476	msi.c	FUNCTION_64	IF_1	CALL_2
+0x40000fb	          0xc1e908	                              shr ecx, 8	      1476	msi.c	FUNCTION_64	IF_1	CALL_2
+0x40000fe	            0x38c1	                              cmp cl, al	      1476	msi.c	FUNCTION_64	IF_1	CALL_2
+0x4000100	            0x75ef	                           jne 0x40000f1	      1476	msi.c	FUNCTION_64	IF_1	CALL_2
+0x4000102	            0xebf2	                           jmp 0x40000f6	      1476	msi.c	FUNCTION_64	IF_1	CALL_2
+pci_msi_mask_irq	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,1:WHILE,0	2
+0x4001720	      0xbe01000000	                              mov esi, 1	       245	msi.c	FUNCTION_15	CALL_1
+0x4001725	            0xeb89	                jmp sym.msi_set_mask_bit	       245	msi.c	FUNCTION_15	CALL_1
+__pci_msi_desc_mask_irq	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,1:CALL,2:WHILE,0	20
+0x4001010	    0x8b0d00000000	            mov ecx, dword [0x04001016] 	       177	msi.c	FUNCTION_9	IF_1
+0x4001016	            0x31c0	                            xor eax, eax	       178	msi.c	FUNCTION_9	IF_1
+0x4001018	            0x85c9	                           test ecx, ecx	       177	msi.c	FUNCTION_9	IF_1
+0x400101a	            0x7506	                           jne 0x4001022	       177	msi.c	FUNCTION_9	IF_1
+0x400101c	        0x807f3c00	                cmp byte [rdi + 0x3c], 0	       177	msi.c	FUNCTION_9	IF_1
+0x4001020	            0x7801	                            js 0x4001023	       177	msi.c	FUNCTION_9	IF_1
+0x4001022	              0xc3	                                     ret	       186	msi.c	FUNCTION_9
+0x4001023	              0x53	                                push rbx	       174	msi.c	FUNCTION_9
+0x4001024	            0xf7d6	                                 not esi	       180	msi.c	FUNCTION_9
+0x4001026	          0x237738	             and esi, dword [rdi + 0x38]	       180	msi.c	FUNCTION_9
+0x4001029	            0x89f3	                            mov ebx, esi	       181	msi.c	FUNCTION_9
+0x400102b	         0xfb67748	           movzx esi, byte [rdi + 0x48] 	       182	msi.c	FUNCTION_9	CALL_2
+0x400102f	        0x488b7f18	            mov rdi, qword [rdi + 0x18] 	       182	msi.c	FUNCTION_9	CALL_2
+0x4001033	             0x9d3	                             or ebx, edx	       181	msi.c	FUNCTION_9
+0x4001035	            0x89da	                            mov edx, ebx	       182	msi.c	FUNCTION_9	CALL_2
+0x4001037	    0x4881efa00000	                           sub rdi, 0xa0	       182	msi.c	FUNCTION_9	CALL_2
+0x400103e	      0xe800000000	                          call 0x4001043	       182	msi.c	FUNCTION_9	CALL_2
+0x4001043	            0x89d8	                            mov eax, ebx	       185	msi.c	FUNCTION_9
+0x4001045	              0x5b	                                 pop rbx	       186	msi.c	FUNCTION_9
+0x4001046	              0xc3	                                     ret	       186	msi.c	FUNCTION_9
+pci_msi_create_irq_domain	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,5:CALL,6:WHILE,0	58
+0x4000390	              0x53	                                push rbx	      1434	msi.c	FUNCTION_63
+0x4000391	            0x8b06	                    mov eax, dword [rsi]	      1437	msi.c	FUNCTION_63	IF_1	CALL_1
+0x4000393	            0xa840	                           test al, 0x40	      1437	msi.c	FUNCTION_63	IF_1	CALL_1
+0x4000395	     0xf8590000000	                           jne 0x400042b	      1437	msi.c	FUNCTION_63	IF_1	CALL_1
+0x400039b	            0xa801	                              test al, 1	      1440	msi.c	FUNCTION_63	IF_2
+0x400039d	            0x741d	                            je 0x40003bc	      1440	msi.c	FUNCTION_63	IF_2
+0x400039f	        0x488b4e08	                mov rcx, qword [rsi + 8]	      1393	msi.c	FUNCTION_61
+0x40003a3	          0x4885c9	                           test rcx, rcx	      1395	msi.c	FUNCTION_61	IF_1
+0x40003a6	            0x7461	                            je 0x4000409	      1395	msi.c	FUNCTION_61	IF_1
+0x40003a8	      0x4883791800	               cmp qword [rcx + 0x18], 0	      1400	msi.c	FUNCTION_61	ELSE_1	IF_3
+0x40003ad	     0xf8484000000	                            je 0x4000437	      1400	msi.c	FUNCTION_61	ELSE_1	IF_3
+0x40003b3	      0x4883793800	               cmp qword [rcx + 0x38], 0	      1402	msi.c	FUNCTION_61	ELSE_1	IF_4
+0x40003b8	            0x7459	                            je 0x4000413	      1402	msi.c	FUNCTION_61	ELSE_1	IF_4
+0x40003ba	            0x8b06	                    mov eax, dword [rsi]	      1402	msi.c	FUNCTION_61	ELSE_1	IF_4
+0x40003bc	            0xa802	                              test al, 2	      1442	msi.c	FUNCTION_63	IF_3
+0x40003be	            0x7524	                           jne 0x40003e4	      1442	msi.c	FUNCTION_63	IF_3
+0x40003c0	          0x83c830	                            or eax, 0x30	      1447	msi.c	FUNCTION_63	IF_4
+0x40003c3	            0x8906	                    mov dword [rsi], eax	      1447	msi.c	FUNCTION_63	IF_4
+0x40003c5	      0xe800000000	                          call 0x40003ca	      1449	msi.c	FUNCTION_63	CALL_5
+0x40003ca	          0x4885c0	                           test rax, rax	      1450	msi.c	FUNCTION_63	IF_5
+0x40003cd	          0x4889c3	                            mov rbx, rax	      1449	msi.c	FUNCTION_63	CALL_5
+0x40003d0	            0x740d	                            je 0x40003df	      1450	msi.c	FUNCTION_63	IF_5
+0x40003d2	      0xbe02000000	                              mov esi, 2	      1453	msi.c	FUNCTION_63	CALL_6
+0x40003d7	          0x4889c7	                            mov rdi, rax	      1453	msi.c	FUNCTION_63	CALL_6
+0x40003da	      0xe800000000	                          call 0x40003df	      1453	msi.c	FUNCTION_63	CALL_6
+0x40003df	          0x4889d8	                            mov rax, rbx	      1455	msi.c	FUNCTION_63
+0x40003e2	              0x5b	                                 pop rbx	      1455	msi.c	FUNCTION_63
+0x40003e3	              0xc3	                                     ret	      1455	msi.c	FUNCTION_63
+0x40003e4	        0x488b4610	            mov rax, qword [rsi + 0x10] 	      1455	msi.c	FUNCTION_63
+0x40003e8	          0x4885c0	                           test rax, rax	      1411	msi.c	FUNCTION_62	CALL_1
+0x40003eb	            0x746e	                            je 0x400045b	      1411	msi.c	FUNCTION_62	CALL_1
+0x40003ed	    0x4883b8d80000	               cmp qword [rax + 0xd8], 0	      1412	msi.c	FUNCTION_62	IF_1
+0x40003f5	            0x7457	                            je 0x400044e	      1412	msi.c	FUNCTION_62	IF_1
+0x40003f7	      0x4883783800	               cmp qword [rax + 0x38], 0	      1414	msi.c	FUNCTION_62	IF_2
+0x40003fc	            0x7446	                            je 0x4000444	      1414	msi.c	FUNCTION_62	IF_2
+0x40003fe	      0x4883784800	               cmp qword [rax + 0x48], 0	      1416	msi.c	FUNCTION_62	IF_3
+0x4000403	            0x741a	                            je 0x400041f	      1416	msi.c	FUNCTION_62	IF_3
+0x4000405	            0x8b06	                    mov eax, dword [rsi]	      1416	msi.c	FUNCTION_62	IF_3
+0x4000407	            0xebb7	                           jmp 0x40003c0	      1416	msi.c	FUNCTION_62	IF_3
+0x4000409	    0x48c746080000	                  mov qword [rsi + 8], 0	      1396	msi.c	FUNCTION_61	IF_1
+0x4000411	            0xeba9	                           jmp 0x40003bc	      1396	msi.c	FUNCTION_61	IF_1
+0x4000413	    0x48c741380000	               mov qword [rcx + 0x38], 0	      1403	msi.c	FUNCTION_61	ELSE_1	IF_4
+0x400041b	            0x8b06	                    mov eax, dword [rsi]	      1403	msi.c	FUNCTION_61	ELSE_1	IF_4
+0x400041d	            0xeb9d	                           jmp 0x40003bc	      1403	msi.c	FUNCTION_61	ELSE_1	IF_4
+0x400041f	    0x48c740480000	               mov qword [rax + 0x48], 0	      1417	msi.c	FUNCTION_62	IF_3
+0x4000427	            0x8b06	                    mov eax, dword [rsi]	      1417	msi.c	FUNCTION_62	IF_3
+0x4000429	            0xeb95	                           jmp 0x40003c0	      1417	msi.c	FUNCTION_62	IF_3
+0x400042b	             0xf0b	                                     ud2	      1417	msi.c	FUNCTION_62	IF_3
+0x400042d	          0x83e0bf	                     and eax, 0xffffffbf	      1438	msi.c	FUNCTION_63	IF_1
+0x4000430	            0x8906	                    mov dword [rsi], eax	      1438	msi.c	FUNCTION_63	IF_1
+0x4000432	      0xe964ffffff	                           jmp 0x400039b	      1438	msi.c	FUNCTION_63	IF_1
+0x4000437	    0x48c741180000	               mov qword [rcx + 0x18], 0	      1401	msi.c	FUNCTION_61	ELSE_1	IF_3
+0x400043f	      0xe96fffffff	                           jmp 0x40003b3	      1401	msi.c	FUNCTION_61	ELSE_1	IF_3
+0x4000444	    0x48c740380000	               mov qword [rax + 0x38], 0	      1415	msi.c	FUNCTION_62	IF_2
+0x400044c	            0xebb0	                           jmp 0x40003fe	      1415	msi.c	FUNCTION_62	IF_2
+0x400044e	    0x48c780d80000	               mov qword [rax + 0xd8], 0	      1413	msi.c	FUNCTION_62	IF_1
+0x4000459	            0xeb9c	                           jmp 0x40003f7	      1413	msi.c	FUNCTION_62	IF_1
+0x400045b	             0xf0b	                                     ud2	      1413	msi.c	FUNCTION_62	IF_1
+pci_alloc_irq_vectors_affinity	SWITCH,0:ELSE,1:DO,0:functions,0:FOR,0:IF,9:CALL,4:WHILE,0	96
+0x4001450	            0x4157	                                push r15	      1153	msi.c	FUNCTION_49
+0x4001452	            0x4156	                                push r14	      1153	msi.c	FUNCTION_49
+0x4001454	          0x4189d6	                           mov r14d, edx	      1153	msi.c	FUNCTION_49
+0x4001457	            0x4155	                                push r13	      1153	msi.c	FUNCTION_49
+0x4001459	          0x4189cd	                           mov r13d, ecx	      1153	msi.c	FUNCTION_49
+0x400145c	          0x83e108	                              and ecx, 8	      1157	msi.c	FUNCTION_49	IF_1
+0x400145f	            0x4154	                                push r12	      1153	msi.c	FUNCTION_49
+0x4001461	          0x4989fc	                            mov r12, rdi	      1153	msi.c	FUNCTION_49
+0x4001464	              0x55	                                push rbp	      1153	msi.c	FUNCTION_49
+0x4001465	            0x89f5	                            mov ebp, esi	      1153	msi.c	FUNCTION_49
+0x4001467	              0x53	                                push rbx	      1153	msi.c	FUNCTION_49
+0x4001468	          0x4c89c3	                             mov rbx, r8	      1153	msi.c	FUNCTION_49
+0x400146b	            0x7443	                            je 0x40014b0	      1157	msi.c	FUNCTION_49	IF_1
+0x400146d	          0x4d85c0	                             test r8, r8	      1159	msi.c	FUNCTION_49	IF_1	IF_2
+0x4001470	    0x48c7c0000000	                              mov rax, 0	      1159	msi.c	FUNCTION_49	IF_1	IF_2
+0x4001477	        0x480f44d8	                          cmove rbx, rax	      1159	msi.c	FUNCTION_49	IF_1	IF_2
+0x400147b	        0x41f6c504	                            test r13b, 4	      1165	msi.c	FUNCTION_49	IF_4
+0x400147f	      0xbee4ffffff	                     mov esi, 0xffffffe4	      1155	msi.c	FUNCTION_49
+0x4001484	            0x7535	                           jne 0x40014bb	      1165	msi.c	FUNCTION_49	IF_4
+0x4001486	        0x41f6c502	                            test r13b, 2	      1172	msi.c	FUNCTION_49	IF_6
+0x400148a	            0x7573	                           jne 0x40014ff	      1172	msi.c	FUNCTION_49	IF_6
+0x400148c	          0x83fd01	                              cmp ebp, 1	      1180	msi.c	FUNCTION_49	IF_8	IF_9
+0x400148f	            0x89f0	                            mov eax, esi	      1186	msi.c	FUNCTION_49
+0x4001491	            0x7512	                           jne 0x40014a5	      1180	msi.c	FUNCTION_49	IF_8	IF_9
+0x4001493	        0x4183e501	                             and r13d, 1	      1180	msi.c	FUNCTION_49	IF_8	IF_9
+0x4001497	            0x740c	                            je 0x40014a5	      1180	msi.c	FUNCTION_49	IF_8	IF_9
+0x4001499	    0x418b94247403	           mov edx, dword [r12 + 0x374] 	      1180	msi.c	FUNCTION_49	IF_8	IF_9
+0x40014a1	            0x85d2	                           test edx, edx	      1180	msi.c	FUNCTION_49	IF_8	IF_9
+0x40014a3	            0x757f	                           jne 0x4001524	      1180	msi.c	FUNCTION_49	IF_8	IF_9
+0x40014a5	              0x5b	                                 pop rbx	      1187	msi.c	FUNCTION_49
+0x40014a6	              0x5d	                                 pop rbp	      1187	msi.c	FUNCTION_49
+0x40014a7	            0x415c	                                 pop r12	      1187	msi.c	FUNCTION_49
+0x40014a9	            0x415d	                                 pop r13	      1187	msi.c	FUNCTION_49
+0x40014ab	            0x415e	                                 pop r14	      1187	msi.c	FUNCTION_49
+0x40014ad	            0x415f	                                 pop r15	      1187	msi.c	FUNCTION_49
+0x40014af	              0xc3	                                     ret	      1187	msi.c	FUNCTION_49
+0x40014b0	          0x4d85c0	                             test r8, r8	      1161	msi.c	FUNCTION_49	ELSE_1	IF_3	CALL_1
+0x40014b3	            0x74c6	                            je 0x400147b	      1161	msi.c	FUNCTION_49	ELSE_1	IF_3	CALL_1
+0x40014b5	             0xf0b	                                     ud2	      1161	msi.c	FUNCTION_49	ELSE_1	IF_3	CALL_1
+0x40014b7	            0x31db	                            xor ebx, ebx	      1162	msi.c	FUNCTION_49	ELSE_1	IF_3
+0x40014b9	            0xebc0	                           jmp 0x400147b	      1162	msi.c	FUNCTION_49	ELSE_1	IF_3
+0x40014bb	          0x4139ee	                           cmp r14d, ebp	      1087	msi.c	FUNCTION_47	IF_1
+0x40014be	          0x4489f6	                           mov esi, r14d	      1166	msi.c	FUNCTION_49	IF_4	CALL_2
+0x40014c1	            0x7d32	                           jge 0x40014f5	      1087	msi.c	FUNCTION_47	IF_1
+0x40014c3	      0xe98a000000	                           jmp 0x4001552	      1087	msi.c	FUNCTION_47	IF_1
+0x40014c8	          0x4889da	                            mov rdx, rbx	      1092	msi.c	FUNCTION_47	FOR_1	IF_2	CALL_1
+0x40014cb	            0x89ef	                            mov edi, ebp	      1092	msi.c	FUNCTION_47	FOR_1	IF_2	CALL_1
+0x40014cd	      0xe800000000	                          call 0x40014d2	      1092	msi.c	FUNCTION_47	FOR_1	IF_2	CALL_1
+0x40014d2	            0x39c5	                            cmp ebp, eax	      1093	msi.c	FUNCTION_47	FOR_1	IF_2	IF_3
+0x40014d4	          0x4189c7	                           mov r15d, eax	      1092	msi.c	FUNCTION_47	FOR_1	IF_2	CALL_1
+0x40014d7	            0x7f62	                            jg 0x400153b	      1093	msi.c	FUNCTION_47	FOR_1	IF_2	IF_3
+0x40014d9	            0x31f6	                            xor esi, esi	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x40014db	          0x4889d9	                            mov rcx, rbx	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x40014de	          0x4489fa	                           mov edx, r15d	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x40014e1	          0x4c89e7	                            mov rdi, r12	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x40014e4	      0xe847f5ffff	              call sym.__pci_enable_msix	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x40014e9	            0x85c0	                           test eax, eax	      1098	msi.c	FUNCTION_47	FOR_1	IF_4
+0x40014eb	            0x89c6	                            mov esi, eax	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x40014ed	            0x7456	                            je 0x4001545	      1098	msi.c	FUNCTION_47	FOR_1	IF_4
+0x40014ef	            0x7895	                            js 0x4001486	      1101	msi.c	FUNCTION_47	FOR_1	IF_5
+0x40014f1	            0x39c5	                            cmp ebp, eax	      1103	msi.c	FUNCTION_47	FOR_1	IF_6
+0x40014f3	            0x7f46	                            jg 0x400153b	      1103	msi.c	FUNCTION_47	FOR_1	IF_6
+0x40014f5	          0x4885db	                           test rbx, rbx	      1091	msi.c	FUNCTION_47	FOR_1	IF_2
+0x40014f8	            0x75ce	                           jne 0x40014c8	      1091	msi.c	FUNCTION_47	FOR_1	IF_2
+0x40014fa	          0x4189f7	                           mov r15d, esi	      1091	msi.c	FUNCTION_47	FOR_1	IF_2
+0x40014fd	            0xebda	                           jmp 0x40014d9	      1091	msi.c	FUNCTION_47	FOR_1	IF_2
+0x40014ff	            0x89ee	                            mov esi, ebp	      1173	msi.c	FUNCTION_49	IF_6	CALL_3
+0x4001501	          0x4889d9	                            mov rcx, rbx	      1173	msi.c	FUNCTION_49	IF_6	CALL_3
+0x4001504	          0x4489f2	                           mov edx, r14d	      1173	msi.c	FUNCTION_49	IF_6	CALL_3
+0x4001507	          0x4c89e7	                            mov rdi, r12	      1173	msi.c	FUNCTION_49	IF_6	CALL_3
+0x400150a	      0xe841fbffff	         call sym.__pci_enable_msi_range	      1173	msi.c	FUNCTION_49	IF_6	CALL_3
+0x400150f	            0x85c0	                           test eax, eax	      1174	msi.c	FUNCTION_49	IF_6	IF_7
+0x4001511	            0x89c6	                            mov esi, eax	      1173	msi.c	FUNCTION_49	IF_6	CALL_3
+0x4001513	     0xf8e73ffffff	                           jle 0x400148c	      1174	msi.c	FUNCTION_49	IF_6	IF_7
+0x4001519	              0x5b	                                 pop rbx	      1187	msi.c	FUNCTION_49
+0x400151a	              0x5d	                                 pop rbp	      1187	msi.c	FUNCTION_49
+0x400151b	            0x415c	                                 pop r12	      1187	msi.c	FUNCTION_49
+0x400151d	            0x415d	                                 pop r13	      1187	msi.c	FUNCTION_49
+0x400151f	            0x415e	                                 pop r14	      1187	msi.c	FUNCTION_49
+0x4001521	            0x415f	                                 pop r15	      1187	msi.c	FUNCTION_49
+0x4001523	              0xc3	                                     ret	      1187	msi.c	FUNCTION_49
+0x4001524	      0xbe01000000	                              mov esi, 1	      1181	msi.c	FUNCTION_49	IF_8	IF_9	CALL_4
+0x4001529	          0x4c89e7	                            mov rdi, r12	      1181	msi.c	FUNCTION_49	IF_8	IF_9	CALL_4
+0x400152c	      0xe800000000	                          call 0x4001531	      1181	msi.c	FUNCTION_49	IF_8	IF_9	CALL_4
+0x4001531	      0xb801000000	                              mov eax, 1	      1182	msi.c	FUNCTION_49	IF_8	IF_9
+0x4001536	      0xe96affffff	                           jmp 0x40014a5	      1182	msi.c	FUNCTION_49	IF_8	IF_9
+0x400153b	      0xbee4ffffff	                     mov esi, 0xffffffe4	      1094	msi.c	FUNCTION_47	FOR_1	IF_2	IF_3
+0x4001540	      0xe941ffffff	                           jmp 0x4001486	      1094	msi.c	FUNCTION_47	FOR_1	IF_2	IF_3
+0x4001545	          0x4585ff	                         test r15d, r15d	      1168	msi.c	FUNCTION_49	IF_4	IF_5
+0x4001548	            0x7e12	                           jle 0x400155c	      1168	msi.c	FUNCTION_49	IF_4	IF_5
+0x400154a	          0x4489f8	                           mov eax, r15d	      1168	msi.c	FUNCTION_49	IF_4	IF_5
+0x400154d	      0xe953ffffff	                           jmp 0x40014a5	      1168	msi.c	FUNCTION_49	IF_4	IF_5
+0x4001552	      0xbedeffffff	                     mov esi, 0xffffffde	      1088	msi.c	FUNCTION_47	IF_1
+0x4001557	      0xe92affffff	                           jmp 0x4001486	      1088	msi.c	FUNCTION_47	IF_1
+0x400155c	          0x4489fe	                           mov esi, r15d	      1088	msi.c	FUNCTION_47	IF_1
+0x400155f	      0xe922ffffff	                           jmp 0x4001486	      1088	msi.c	FUNCTION_47	IF_1
+pci_enable_msix_range	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,0:CALL,1:WHILE,0	36
+0x4000ea0	            0x39ca	                            cmp edx, ecx	      1087	msi.c	FUNCTION_47	IF_1
+0x4000ea2	            0x7f42	                            jg 0x4000ee6	      1087	msi.c	FUNCTION_47	IF_1
+0x4000ea4	            0x4155	                                push r13	      1127	msi.c	FUNCTION_48
+0x4000ea6	          0x4989fd	                            mov r13, rdi	      1127	msi.c	FUNCTION_48
+0x4000ea9	            0x4154	                                push r12	      1127	msi.c	FUNCTION_48
+0x4000eab	          0x4989f4	                            mov r12, rsi	      1127	msi.c	FUNCTION_48
+0x4000eae	              0x55	                                push rbp	      1127	msi.c	FUNCTION_48
+0x4000eaf	            0x89d5	                            mov ebp, edx	      1127	msi.c	FUNCTION_48
+0x4000eb1	              0x53	                                push rbx	      1127	msi.c	FUNCTION_48
+0x4000eb2	            0x89cb	                            mov ebx, ecx	      1127	msi.c	FUNCTION_48
+0x4000eb4	            0xeb08	                           jmp 0x4000ebe	      1127	msi.c	FUNCTION_48
+0x4000eb6	            0x781b	                            js 0x4000ed3	      1101	msi.c	FUNCTION_47	FOR_1	IF_5
+0x4000eb8	            0x39c5	                            cmp ebp, eax	      1103	msi.c	FUNCTION_47	FOR_1	IF_6
+0x4000eba	            0x89c3	                            mov ebx, eax	      1103	msi.c	FUNCTION_47	FOR_1	IF_6
+0x4000ebc	            0x7f1c	                            jg 0x4000eda	      1103	msi.c	FUNCTION_47	FOR_1	IF_6
+0x4000ebe	            0x31c9	                            xor ecx, ecx	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x4000ec0	            0x89da	                            mov edx, ebx	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x4000ec2	          0x4c89e6	                            mov rsi, r12	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x4000ec5	          0x4c89ef	                            mov rdi, r13	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x4000ec8	      0xe863fbffff	              call sym.__pci_enable_msix	      1097	msi.c	FUNCTION_47	FOR_1	CALL_2
+0x4000ecd	            0x85c0	                           test eax, eax	      1098	msi.c	FUNCTION_47	FOR_1	IF_4
+0x4000ecf	            0x75e5	                           jne 0x4000eb6	      1098	msi.c	FUNCTION_47	FOR_1	IF_4
+0x4000ed1	            0x89d8	                            mov eax, ebx	      1098	msi.c	FUNCTION_47	FOR_1	IF_4
+0x4000ed3	              0x5b	                                 pop rbx	      1129	msi.c	FUNCTION_48
+0x4000ed4	              0x5d	                                 pop rbp	      1129	msi.c	FUNCTION_48
+0x4000ed5	            0x415c	                                 pop r12	      1129	msi.c	FUNCTION_48
+0x4000ed7	            0x415d	                                 pop r13	      1129	msi.c	FUNCTION_48
+0x4000ed9	              0xc3	                                     ret	      1129	msi.c	FUNCTION_48
+0x4000eda	              0x5b	                                 pop rbx	      1129	msi.c	FUNCTION_48
+0x4000edb	      0xb8e4ffffff	                     mov eax, 0xffffffe4	      1104	msi.c	FUNCTION_47	FOR_1	IF_6
+0x4000ee0	              0x5d	                                 pop rbp	      1129	msi.c	FUNCTION_48
+0x4000ee1	            0x415c	                                 pop r12	      1129	msi.c	FUNCTION_48
+0x4000ee3	            0x415d	                                 pop r13	      1129	msi.c	FUNCTION_48
+0x4000ee5	              0xc3	                                     ret	      1129	msi.c	FUNCTION_48
+0x4000ee6	      0xb8deffffff	                     mov eax, 0xffffffde	      1088	msi.c	FUNCTION_47	IF_1
+0x4000eeb	              0xc3	                                     ret	      1129	msi.c	FUNCTION_48
+pci_msi_domain_handle_error	SWITCH,0:ELSE,0:DO,0:functions,0:FOR,0:IF,1:CALL,1:WHILE,0	10
+0x40000c0	        0xf6463c01	               test byte [rsi + 0x3c], 1	      1334	msi.c	FUNCTION_58
+0x40000c4	            0x89d0	                            mov eax, edx	      1334	msi.c	FUNCTION_58
+0x40000c6	            0x7512	                           jne 0x40000da	      1334	msi.c	FUNCTION_58
+0x40000c8	        0x837e1401	               cmp dword [rsi + 0x14], 1	      1367	msi.c	FUNCTION_60	IF_1	CALL_1
+0x40000cc	            0x760a	                           jbe 0x40000d8	      1367	msi.c	FUNCTION_60	IF_1	CALL_1
+0x40000ce	          0x83fae4	             cmp edx, 0xffffffffffffffe4	      1367	msi.c	FUNCTION_60	IF_1	CALL_1
+0x40000d1	      0xb801000000	                              mov eax, 1	      1368	msi.c	FUNCTION_60	IF_1
+0x40000d6	            0x7402	                            je 0x40000da	      1367	msi.c	FUNCTION_60	IF_1	CALL_1
+0x40000d8	            0x89d0	                            mov eax, edx	      1367	msi.c	FUNCTION_60	IF_1	CALL_1
+0x40000da	            0xf3c3	                                     ret	      1371	msi.c	FUNCTION_60

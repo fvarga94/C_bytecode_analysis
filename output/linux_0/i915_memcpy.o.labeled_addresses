@@ -1,0 +1,63 @@
+i915_memcpy_from_wc	IF,3:functions,0:FOR,0:CALL,4:ELSE,0:DO,0:WHILE,0:SWITCH,0	62
+0x4000040	          0x4889f0	                            mov rax, rsi	        83	i915_memcpy.c	FUNCTION_2	IF_1	CALL_1
+0x4000043	          0x4809d0	                             or rax, rdx	        83	i915_memcpy.c	FUNCTION_2	IF_1	CALL_1
+0x4000046	          0x4809f8	                             or rax, rdi	        83	i915_memcpy.c	FUNCTION_2	IF_1	CALL_1
+0x4000049	            0xa80f	                            test al, 0xf	        83	i915_memcpy.c	FUNCTION_2	IF_1	CALL_1
+0x400004b	     0xf85ba000000	                           jne 0x400010b	        83	i915_memcpy.c	FUNCTION_2	IF_1	CALL_1
+0x4000051	      0xe9b5000000	                           jmp 0x400010b	        83	i915_memcpy.c	FUNCTION_2	IF_1	CALL_1
+0x4000056	            0x4154	                                push r12	        82	i915_memcpy.c	FUNCTION_2
+0x4000058	          0x4989d4	                            mov r12, rdx	        82	i915_memcpy.c	FUNCTION_2
+0x400005b	              0x55	                                push rbp	        82	i915_memcpy.c	FUNCTION_2
+0x400005c	              0x53	                                push rbx	        82	i915_memcpy.c	FUNCTION_2
+0x400005d	          0x4885d2	                           test rdx, rdx	        88	i915_memcpy.c	FUNCTION_2	IF_2	IF_3	CALL_3
+0x4000060	     0xf84a8000000	                            je 0x400010e	        88	i915_memcpy.c	FUNCTION_2	IF_2	IF_3	CALL_3
+0x4000066	          0x4889fb	                            mov rbx, rdi	        88	i915_memcpy.c	FUNCTION_2	IF_2	IF_3	CALL_3
+0x4000069	          0x4889f5	                            mov rbp, rsi	        88	i915_memcpy.c	FUNCTION_2	IF_2	IF_3	CALL_3
+0x400006c	      0xe800000000	                          call 0x4000071	        35	i915_memcpy.c	FUNCTION_1	CALL_1
+0x4000071	          0x4c89e2	                            mov rdx, r12	        37	i915_memcpy.c	FUNCTION_1
+0x4000074	        0x48c1ea04	                              shr rdx, 4	        37	i915_memcpy.c	FUNCTION_1
+0x4000078	        0x4883fa03	                              cmp rdx, 3	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x400007c	            0x765a	                           jbe 0x40000d8	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x400007e	          0x4889d6	                            mov rsi, rdx	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x4000081	          0x4889d9	                            mov rcx, rbx	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x4000084	          0x4889e8	                            mov rax, rbp	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x4000087	      0x660f382a00	            movntdqa xmm0, xmmword [rax]	        39	i915_memcpy.c	FUNCTION_1	WHILE_1	CALL_2
+0x400008c	    0x660f382a4810	     movntdqa xmm1, xmmword [rax + 0x10]	        39	i915_memcpy.c	FUNCTION_1	WHILE_1	CALL_2
+0x4000092	    0x660f382a5020	     movntdqa xmm2, xmmword [rax + 0x20]	        39	i915_memcpy.c	FUNCTION_1	WHILE_1	CALL_2
+0x4000098	    0x660f382a5830	     movntdqa xmm3, xmmword [rax + 0x30]	        39	i915_memcpy.c	FUNCTION_1	WHILE_1	CALL_2
+0x400009e	           0xf2901	              movaps xmmword [rcx], xmm0	        39	i915_memcpy.c	FUNCTION_1	WHILE_1	CALL_2
+0x40000a1	         0xf294910	       movaps xmmword [rcx + 0x10], xmm1	        39	i915_memcpy.c	FUNCTION_1	WHILE_1	CALL_2
+0x40000a5	         0xf295120	       movaps xmmword [rcx + 0x20], xmm2	        39	i915_memcpy.c	FUNCTION_1	WHILE_1	CALL_2
+0x40000a9	         0xf295930	       movaps xmmword [rcx + 0x30], xmm3	        39	i915_memcpy.c	FUNCTION_1	WHILE_1	CALL_2
+0x40000ad	        0x4883ee04	                              sub rsi, 4	        50	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000b1	        0x4883c040	                           add rax, 0x40	        48	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000b5	        0x4883c140	                           add rcx, 0x40	        49	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000b9	        0x4883fe03	                              cmp rsi, 3	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000bd	            0x77c8	                            ja 0x4000087	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000bf	        0x488d42fc	                      lea rax, [rdx - 4]	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000c3	          0x83e203	                              and edx, 3	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000c6	        0x48c1e802	                              shr rax, 2	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000ca	        0x4883c001	                              add rax, 1	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000ce	        0x48c1e006	                              shl rax, 6	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000d2	          0x4801c5	                            add rbp, rax	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000d5	          0x4801c3	                            add rbx, rax	        38	i915_memcpy.c	FUNCTION_1	WHILE_1
+0x40000d8	          0x4885d2	                           test rdx, rdx	        52	i915_memcpy.c	FUNCTION_1	WHILE_2
+0x40000db	        0x488d42ff	                      lea rax, [rdx - 1]	        52	i915_memcpy.c	FUNCTION_1	WHILE_2
+0x40000df	            0x741b	                            je 0x40000fc	        52	i915_memcpy.c	FUNCTION_1	WHILE_2
+0x40000e1	    0x660f382a4500	            movntdqa xmm0, xmmword [rbp]	        53	i915_memcpy.c	FUNCTION_1	WHILE_2	CALL_3
+0x40000e7	           0xf2903	              movaps xmmword [rbx], xmm0	        53	i915_memcpy.c	FUNCTION_1	WHILE_2	CALL_3
+0x40000ea	        0x4883e801	                              sub rax, 1	        52	i915_memcpy.c	FUNCTION_1	WHILE_2
+0x40000ee	        0x4883c510	                           add rbp, 0x10	        56	i915_memcpy.c	FUNCTION_1	WHILE_2
+0x40000f2	        0x4883c310	                           add rbx, 0x10	        57	i915_memcpy.c	FUNCTION_1	WHILE_2
+0x40000f6	        0x4883f8ff	             cmp rax, 0xffffffffffffffff	        52	i915_memcpy.c	FUNCTION_1	WHILE_2
+0x40000fa	            0x75e5	                           jne 0x40000e1	        52	i915_memcpy.c	FUNCTION_1	WHILE_2
+0x40000fc	      0xe800000000	                          call 0x4000101	        60	i915_memcpy.c	FUNCTION_1	CALL_4
+0x4000101	      0xb801000000	                              mov eax, 1	        90	i915_memcpy.c	FUNCTION_2	IF_2
+0x4000106	              0x5b	                                 pop rbx	        95	i915_memcpy.c	FUNCTION_2
+0x4000107	              0x5d	                                 pop rbp	        95	i915_memcpy.c	FUNCTION_2
+0x4000108	            0x415c	                                 pop r12	        95	i915_memcpy.c	FUNCTION_2
+0x400010a	              0xc3	                                     ret	        95	i915_memcpy.c	FUNCTION_2
+0x400010b	            0x31c0	                            xor eax, eax	        94	i915_memcpy.c	FUNCTION_2
+0x400010d	              0xc3	                                     ret	        94	i915_memcpy.c	FUNCTION_2
+0x400010e	      0xb801000000	                              mov eax, 1	        90	i915_memcpy.c	FUNCTION_2	IF_2
+0x4000113	            0xebf1	                           jmp 0x4000106	        90	i915_memcpy.c	FUNCTION_2	IF_2

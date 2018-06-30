@@ -1,0 +1,156 @@
+acpi_ut_set_integer_width	FOR,0:functions,0:IF,1:WHILE,0:DO,0:SWITCH,0:ELSE,1:CALL,0	10
+0x40000b9	        0x4080ff01	                              cmp dil, 1	       126	utmisc.c	FUNCTION_4	IF_1
+0x40000bd	            0x7716	                            ja 0x40000d5	       126	utmisc.c	FUNCTION_4	IF_1
+0x40000bf	    0xc60500000000	            mov byte [0x040000c6], 0x20 	       130	utmisc.c	FUNCTION_4	IF_1
+0x40000c6	    0xc60500000000	                mov byte [0x040000cd], 8	       131	utmisc.c	FUNCTION_4	IF_1
+0x40000cd	    0xc60500000000	                mov byte [0x040000d4], 4	       132	utmisc.c	FUNCTION_4	IF_1
+0x40000d4	              0xc3	                                     ret	       132	utmisc.c	FUNCTION_4	IF_1
+0x40000d5	    0xc60500000000	            mov byte [0x040000dc], 0x40 	       136	utmisc.c	FUNCTION_4	ELSE_1
+0x40000dc	    0xc60500000000	            mov byte [0x040000e3], 0x10 	       137	utmisc.c	FUNCTION_4	ELSE_1
+0x40000e3	    0xc60500000000	                mov byte [0x040000ea], 8	       138	utmisc.c	FUNCTION_4	ELSE_1
+0x40000ea	              0xc3	                                     ret	       138	utmisc.c	FUNCTION_4	ELSE_1
+acpi_ut_dword_byte_swap	FOR,0:functions,0:IF,0:WHILE,0:DO,0:SWITCH,0:ELSE,0:CALL,1	25
+0x400006e	              0x51	                                push rcx	        86	utmisc.c	FUNCTION_3
+0x400006f	            0x31c9	                            xor ecx, ecx	       100	utmisc.c	FUNCTION_3
+0x4000071	    0x65488b042528	                mov rax, qword gs:[0x28]	        86	utmisc.c	FUNCTION_3
+0x400007a	        0x48890424	                    mov qword [rsp], rax	        86	utmisc.c	FUNCTION_3
+0x400007e	            0x31c0	                            xor eax, eax	        86	utmisc.c	FUNCTION_3
+0x4000080	            0x89f8	                            mov eax, edi	       100	utmisc.c	FUNCTION_3
+0x4000082	          0xc1e818	                           shr eax, 0x18	       100	utmisc.c	FUNCTION_3
+0x4000085	            0x88c1	                              mov cl, al	       100	utmisc.c	FUNCTION_3
+0x4000087	            0x89f8	                            mov eax, edi	       101	utmisc.c	FUNCTION_3
+0x4000089	          0xc1e810	                           shr eax, 0x10	       101	utmisc.c	FUNCTION_3
+0x400008c	            0x88c5	                              mov ch, al	       101	utmisc.c	FUNCTION_3
+0x400008e	          0x4889f8	                            mov rax, rdi	       102	utmisc.c	FUNCTION_3
+0x4000091	          0xc1e718	                           shl edi, 0x18	       103	utmisc.c	FUNCTION_3
+0x4000094	           0xfb6c4	                           movzx eax, ah	       102	utmisc.c	FUNCTION_3
+0x4000097	          0xc1e010	                           shl eax, 0x10	       102	utmisc.c	FUNCTION_3
+0x400009a	            0x89c2	                            mov edx, eax	       102	utmisc.c	FUNCTION_3
+0x400009c	           0xfb7c1	                           movzx eax, cx	       102	utmisc.c	FUNCTION_3
+0x400009f	             0x9d0	                             or eax, edx	       103	utmisc.c	FUNCTION_3
+0x40000a1	             0x9f8	                             or eax, edi	       103	utmisc.c	FUNCTION_3
+0x40000a3	        0x488b3424	                    mov rsi, qword [rsp]	       106	utmisc.c	FUNCTION_3
+0x40000a7	    0x654833342528	                xor rsi, qword gs:[0x28]	       106	utmisc.c	FUNCTION_3
+0x40000b0	            0x7405	                            je 0x40000b7	       106	utmisc.c	FUNCTION_3
+0x40000b2	      0xe800000000	                          call 0x40000b7	       106	utmisc.c	FUNCTION_3
+0x40000b7	              0x5a	                                 pop rdx	       106	utmisc.c	FUNCTION_3
+0x40000b8	              0xc3	                                     ret	       106	utmisc.c	FUNCTION_3
+acpi_ut_is_pci_root_bridge	FOR,0:functions,0:IF,1:WHILE,0:DO,0:SWITCH,0:ELSE,0:CALL,2	15
+0x4000040	              0x53	                                push rbx	        27	utmisc.c	FUNCTION_1
+0x4000041	    0x48c7c6000000	                              mov rsi, 0	        33	utmisc.c	FUNCTION_1	IF_1	CALL_1
+0x4000048	          0x4889fb	                            mov rbx, rdi	        27	utmisc.c	FUNCTION_1
+0x400004b	      0xe800000000	                          call 0x4000050	        33	utmisc.c	FUNCTION_1	IF_1	CALL_1
+0x4000050	            0x85c0	                           test eax, eax	        33	utmisc.c	FUNCTION_1	IF_1	CALL_1
+0x4000052	            0xb201	                               mov dl, 1	        33	utmisc.c	FUNCTION_1	IF_1	CALL_1
+0x4000054	            0x7414	                            je 0x400006a	        33	utmisc.c	FUNCTION_1	IF_1	CALL_1
+0x4000056	    0x48c7c6000000	                              mov rsi, 0	        35	utmisc.c	FUNCTION_1	IF_1	CALL_2
+0x400005d	          0x4889df	                            mov rdi, rbx	        35	utmisc.c	FUNCTION_1	IF_1	CALL_2
+0x4000060	      0xe800000000	                          call 0x4000065	        35	utmisc.c	FUNCTION_1	IF_1	CALL_2
+0x4000065	            0x85c0	                           test eax, eax	        36	utmisc.c	FUNCTION_1	IF_1
+0x4000067	           0xf94c2	                                 sete dl	        36	utmisc.c	FUNCTION_1	IF_1
+0x400006a	            0x88d0	                              mov al, dl	        40	utmisc.c	FUNCTION_1
+0x400006c	              0x5b	                                 pop rbx	        40	utmisc.c	FUNCTION_1
+0x400006d	              0xc3	                                     ret	        40	utmisc.c	FUNCTION_1
+acpi_ut_create_update_state_and_push	FOR,0:functions,0:IF,2:WHILE,0:DO,0:SWITCH,0:ELSE,0:CALL,3	19
+0x40000eb	            0x31c9	                            xor ecx, ecx	       168	utmisc.c	FUNCTION_5	IF_1
+0x40000ed	          0x4885ff	                           test rdi, rdi	       167	utmisc.c	FUNCTION_5	IF_1
+0x40000f0	            0x7427	                            je 0x4000119	       167	utmisc.c	FUNCTION_5	IF_1
+0x40000f2	              0x53	                                push rbx	       160	utmisc.c	FUNCTION_5
+0x40000f3	           0xfb7f6	                           movzx esi, si	       171	utmisc.c	FUNCTION_5	CALL_2
+0x40000f6	          0x4889d3	                            mov rbx, rdx	       171	utmisc.c	FUNCTION_5	CALL_2
+0x40000f9	      0xe800000000	                          call 0x40000fe	       171	utmisc.c	FUNCTION_5	CALL_2
+0x40000fe	          0x4885c0	                           test rax, rax	       172	utmisc.c	FUNCTION_5	IF_2
+0x4000101	      0xb904000000	                              mov ecx, 4	       173	utmisc.c	FUNCTION_5	IF_2
+0x4000106	            0x740d	                            je 0x4000115	       172	utmisc.c	FUNCTION_5	IF_2
+0x4000108	          0x4889c6	                            mov rsi, rax	       176	utmisc.c	FUNCTION_5	CALL_3
+0x400010b	          0x4889df	                            mov rdi, rbx	       176	utmisc.c	FUNCTION_5	CALL_3
+0x400010e	      0xe800000000	                          call 0x4000113	       176	utmisc.c	FUNCTION_5	CALL_3
+0x4000113	            0x31c9	                            xor ecx, ecx	       177	utmisc.c	FUNCTION_5
+0x4000115	            0x89c8	                            mov eax, ecx	       178	utmisc.c	FUNCTION_5
+0x4000117	              0x5b	                                 pop rbx	       178	utmisc.c	FUNCTION_5
+0x4000118	              0xc3	                                     ret	       178	utmisc.c	FUNCTION_5
+0x4000119	            0x89c8	                            mov eax, ecx	       178	utmisc.c	FUNCTION_5
+0x400011b	              0xc3	                                     ret	       178	utmisc.c	FUNCTION_5
+acpi_ut_walk_package_tree	FOR,0:functions,0:IF,6:WHILE,3:DO,0:SWITCH,0:ELSE,1:CALL,20	82
+0x400011c	            0x4155	                                push r13	       199	utmisc.c	FUNCTION_6
+0x400011e	            0x4154	                                push r12	       199	utmisc.c	FUNCTION_6
+0x4000120	          0x4989d4	                            mov r12, rdx	       199	utmisc.c	FUNCTION_6
+0x4000123	              0x55	                                push rbp	       199	utmisc.c	FUNCTION_6
+0x4000124	              0x53	                                push rbx	       199	utmisc.c	FUNCTION_6
+0x4000125	            0x31d2	                            xor edx, edx	       208	utmisc.c	FUNCTION_6	CALL_2
+0x4000127	          0x4989cd	                            mov r13, rcx	       199	utmisc.c	FUNCTION_6
+0x400012a	        0x4883ec10	                           sub rsp, 0x10	       199	utmisc.c	FUNCTION_6
+0x400012e	    0x65488b042528	                mov rax, qword gs:[0x28]	       199	utmisc.c	FUNCTION_6
+0x4000137	      0x4889442408	                mov qword [rsp + 8], rax	       199	utmisc.c	FUNCTION_6
+0x400013c	            0x31c0	                            xor eax, eax	       199	utmisc.c	FUNCTION_6
+0x400013e	    0x48c704240000	                      mov qword [rsp], 0	       201	utmisc.c	FUNCTION_6
+0x4000146	      0xe800000000	                          call 0x400014b	       208	utmisc.c	FUNCTION_6	CALL_2
+0x400014b	          0x4885c0	                           test rax, rax	       209	utmisc.c	FUNCTION_6	IF_1
+0x400014e	          0x4889c3	                            mov rbx, rax	       209	utmisc.c	FUNCTION_6	IF_1
+0x4000151	     0xf84bb000000	                            je 0x4000212	       209	utmisc.c	FUNCTION_6	IF_1
+0x4000157	        0x488b4318	            mov rax, qword [rbx + 0x18] 	       219	utmisc.c	FUNCTION_6	WHILE_1
+0x400015b	          0x8b5310	            mov edx, dword [rbx + 0x10] 	       219	utmisc.c	FUNCTION_6	WHILE_1
+0x400015e	        0x488b4018	            mov rax, qword [rax + 0x18] 	       219	utmisc.c	FUNCTION_6	WHILE_1
+0x4000162	        0x488d04d0	                  lea rax, [rax + rdx*8]	       219	utmisc.c	FUNCTION_6	WHILE_1
+0x4000166	          0x488b28	                    mov rbp, qword [rax]	       218	utmisc.c	FUNCTION_6	WHILE_1
+0x4000169	        0x48894330	             mov qword [rbx + 0x30], rax	       220	utmisc.c	FUNCTION_6	WHILE_1
+0x400016d	          0x4885ed	                           test rbp, rbp	       231	utmisc.c	FUNCTION_6	WHILE_1	IF_2
+0x4000170	            0x7408	                            je 0x400017a	       231	utmisc.c	FUNCTION_6	WHILE_1	IF_2
+0x4000172	    0x66817d080e04	               cmp word [rbp + 8], 0x40e	       233	utmisc.c	FUNCTION_6	WHILE_1	IF_2
+0x4000178	            0x7443	                            je 0x40001bd	       233	utmisc.c	FUNCTION_6	WHILE_1	IF_2
+0x400017a	            0x31ff	                            xor edi, edi	       235	utmisc.c	FUNCTION_6	WHILE_1	IF_2
+0x400017c	          0x4c89e9	                            mov rcx, r13	       235	utmisc.c	FUNCTION_6	WHILE_1	IF_2
+0x400017f	          0x4889da	                            mov rdx, rbx	       235	utmisc.c	FUNCTION_6	WHILE_1	IF_2
+0x4000182	          0x4889ee	                            mov rsi, rbp	       235	utmisc.c	FUNCTION_6	WHILE_1	IF_2
+0x4000185	      0xe800000000	                          call 0x400018a	       235	utmisc.c	FUNCTION_6	WHILE_1	IF_2
+0x400018a	            0x85c0	                           test eax, eax	       238	utmisc.c	FUNCTION_6	WHILE_1	IF_2	IF_3	CALL_6
+0x400018c	     0xf8585000000	                           jne 0x4000217	       238	utmisc.c	FUNCTION_6	WHILE_1	IF_2	IF_3	CALL_6
+0x4000192	        0x488b4318	            mov rax, qword [rbx + 0x18] 	       244	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2
+0x4000196	          0xff4310	                  inc dword [rbx + 0x10]	       270	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2
+0x4000199	          0x8b402c	            mov eax, dword [rax + 0x2c] 	       243	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2
+0x400019c	          0x394310	            cmp dword [rbx + 0x10], eax 	       243	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2
+0x400019f	            0x72b6	                            jb 0x4000157	       243	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2
+0x40001a1	          0x4889df	                            mov rdi, rbx	       252	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2	CALL_8
+0x40001a4	      0xe800000000	                          call 0x40001a9	       252	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2	CALL_8
+0x40001a9	          0x4889e7	                            mov rdi, rsp	       253	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2	CALL_9
+0x40001ac	      0xe800000000	                          call 0x40001b1	       253	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2	CALL_9
+0x40001b1	          0x4885c0	                           test rax, rax	       257	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2	IF_4
+0x40001b4	          0x4889c3	                            mov rbx, rax	       253	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2	CALL_9
+0x40001b7	            0x75d9	                           jne 0x4000192	       257	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2	IF_4
+0x40001b9	            0x31c0	                            xor eax, eax	       263	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2	IF_4	CALL_10
+0x40001bb	            0xeb5a	                           jmp 0x4000217	       263	utmisc.c	FUNCTION_6	WHILE_1	IF_2	WHILE_2	IF_4	CALL_10
+0x40001bd	          0x4c89e9	                            mov rcx, r13	       275	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1
+0x40001c0	          0x4889da	                            mov rdx, rbx	       275	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1
+0x40001c3	          0x4889ee	                            mov rsi, rbp	       275	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1
+0x40001c6	      0xbf01000000	                              mov edi, 1	       275	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1
+0x40001cb	      0xe800000000	                          call 0x40001d0	       275	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1
+0x40001d0	            0x85c0	                           test eax, eax	       278	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_5	CALL_12
+0x40001d2	            0x7543	                           jne 0x4000217	       278	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_5	CALL_12
+0x40001d4	          0x4889de	                            mov rsi, rbx	       286	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	CALL_14
+0x40001d7	          0x4889e7	                            mov rdi, rsp	       286	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	CALL_14
+0x40001da	      0xe800000000	                          call 0x40001df	       286	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	CALL_14
+0x40001df	        0x488b7330	            mov rsi, qword [rbx + 0x30] 	       288	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	CALL_15
+0x40001e3	            0x31d2	                            xor edx, edx	       287	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1
+0x40001e5	          0x4889ef	                            mov rdi, rbp	       287	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1
+0x40001e8	      0xe800000000	                          call 0x40001ed	       287	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1
+0x40001ed	          0x4885c0	                           test rax, rax	       291	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_6
+0x40001f0	          0x4889c3	                            mov rbx, rax	       287	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1
+0x40001f3	     0xf855effffff	                           jne 0x4000157	       291	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_6
+0x40001f9	      0x48833c2400	                      cmp qword [rsp], 0	       295	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_6	WHILE_3
+0x40001fe	            0x7412	                            je 0x4000212	       295	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_6	WHILE_3
+0x4000200	          0x4889e7	                            mov rdi, rsp	       296	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_6	WHILE_3
+0x4000203	      0xe800000000	                          call 0x4000208	       296	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_6	WHILE_3
+0x4000208	          0x4889c7	                            mov rdi, rax	       299	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_6	WHILE_3	CALL_17
+0x400020b	      0xe800000000	                          call 0x4000210	       299	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_6	WHILE_3	CALL_17
+0x4000210	            0xebe7	                           jmp 0x40001f9	       299	utmisc.c	FUNCTION_6	WHILE_1	ELSE_1	IF_6	WHILE_3	CALL_17
+0x4000212	      0xb804000000	                              mov eax, 4	       210	utmisc.c	FUNCTION_6	IF_1	CALL_3
+0x4000217	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       311	utmisc.c	FUNCTION_6
+0x400021c	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       311	utmisc.c	FUNCTION_6
+0x4000225	            0x7405	                            je 0x400022c	       311	utmisc.c	FUNCTION_6
+0x4000227	      0xe800000000	                          call 0x400022c	       311	utmisc.c	FUNCTION_6
+0x400022c	        0x4883c410	                           add rsp, 0x10	       311	utmisc.c	FUNCTION_6
+0x4000230	              0x5b	                                 pop rbx	       311	utmisc.c	FUNCTION_6
+0x4000231	              0x5d	                                 pop rbp	       311	utmisc.c	FUNCTION_6
+0x4000232	            0x415c	                                 pop r12	       311	utmisc.c	FUNCTION_6
+0x4000234	            0x415d	                                 pop r13	       311	utmisc.c	FUNCTION_6
+0x4000236	              0xc3	                                     ret	       311	utmisc.c	FUNCTION_6

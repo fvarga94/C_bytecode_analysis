@@ -1,0 +1,82 @@
+do_restart_poll	FOR,0:IF,2:SWITCH,0:DO,0:CALL,1:WHILE,0:ELSE,0:functions,0	31
+0x40016f0	              0x53	                                push rbx	      1015	select.c	FUNCTION_29
+0x40016f1	          0x4889fb	                            mov rbx, rdi	      1015	select.c	FUNCTION_29
+0x40016f4	            0x31d2	                            xor edx, edx	      1015	select.c	FUNCTION_29
+0x40016f6	        0x4883ec18	                           sub rsp, 0x18	      1015	select.c	FUNCTION_29
+0x40016fa	        0x488b7f08	                mov rdi, qword [rdi + 8]	      1016	select.c	FUNCTION_29
+0x40016fe	          0x8b7310	            mov esi, dword [rbx + 0x10] 	      1017	select.c	FUNCTION_29
+0x4001701	    0x65488b042528	                mov rax, qword gs:[0x28]	      1015	select.c	FUNCTION_29
+0x400170a	      0x4889442410	             mov qword [rsp + 0x10], rax	      1015	select.c	FUNCTION_29
+0x400170f	            0x31c0	                            xor eax, eax	      1015	select.c	FUNCTION_29
+0x4001711	          0x8b4314	            mov eax, dword [rbx + 0x14] 	      1021	select.c	FUNCTION_29	IF_1
+0x4001714	            0x85c0	                           test eax, eax	      1021	select.c	FUNCTION_29	IF_1
+0x4001716	            0x7414	                            je 0x400172c	      1021	select.c	FUNCTION_29	IF_1
+0x4001718	        0x488b4318	            mov rax, qword [rbx + 0x18] 	      1022	select.c	FUNCTION_29	IF_1
+0x400171c	          0x4889e2	                            mov rdx, rsp	      1024	select.c	FUNCTION_29	IF_1
+0x400171f	        0x48890424	                    mov qword [rsp], rax	      1022	select.c	FUNCTION_29	IF_1
+0x4001723	        0x488b4320	            mov rax, qword [rbx + 0x20] 	      1023	select.c	FUNCTION_29	IF_1
+0x4001727	      0x4889442408	                mov qword [rsp + 8], rax	      1023	select.c	FUNCTION_29	IF_1
+0x400172c	      0xe8eff9ffff	                    call sym.do_sys_poll	      1027	select.c	FUNCTION_29	CALL_1
+0x4001731	          0x83f8fc	             cmp eax, 0xfffffffffffffffc	      1029	select.c	FUNCTION_29	IF_2
+0x4001734	            0x7418	                            je 0x400174e	      1029	select.c	FUNCTION_29	IF_2
+0x4001736	            0x4898	                                    cdqe	      1029	select.c	FUNCTION_29	IF_2
+0x4001738	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	      1034	select.c	FUNCTION_29
+0x400173d	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      1034	select.c	FUNCTION_29
+0x4001746	            0x7516	                           jne 0x400175e	      1034	select.c	FUNCTION_29
+0x4001748	        0x4883c418	                           add rsp, 0x18	      1034	select.c	FUNCTION_29
+0x400174c	              0x5b	                                 pop rbx	      1034	select.c	FUNCTION_29
+0x400174d	              0xc3	                                     ret	      1034	select.c	FUNCTION_29
+0x400174e	    0x48c703000000	                      mov qword [rbx], 0	      1030	select.c	FUNCTION_29	IF_2
+0x4001755	    0x48c7c0fcfdff	             mov rax, 0xfffffffffffffdfc	      1030	select.c	FUNCTION_29	IF_2
+0x400175c	            0xebda	                           jmp 0x4001738	      1030	select.c	FUNCTION_29	IF_2
+0x400175e	      0xe800000000	                          call 0x4001763	      1034	select.c	FUNCTION_29
+poll_freewait	FOR,1:IF,0:SWITCH,0:DO,1:CALL,3:WHILE,1:ELSE,0:functions,0	49
+0x4000200	            0x4156	                                push r14	       162	select.c	FUNCTION_6
+0x4000202	            0x4155	                                push r13	       162	select.c	FUNCTION_6
+0x4000204	          0x4531f6	                          xor r14d, r14d	       162	select.c	FUNCTION_6
+0x4000207	            0x4154	                                push r12	       162	select.c	FUNCTION_6
+0x4000209	              0x55	                                push rbp	       162	select.c	FUNCTION_6
+0x400020a	        0x4c8d6f30	                   lea r13, [rdi + 0x30]	       162	select.c	FUNCTION_6
+0x400020e	              0x53	                                push rbx	       162	select.c	FUNCTION_6
+0x400020f	          0x8b4728	            mov eax, dword [rdi + 0x28] 	       165	select.c	FUNCTION_6	FOR_1
+0x4000212	          0x4889fd	                            mov rbp, rdi	       165	select.c	FUNCTION_6	FOR_1
+0x4000215	        0x4c8b6710	            mov r12, qword [rdi + 0x10] 	       163	select.c	FUNCTION_6
+0x4000219	            0x85c0	                           test eax, eax	       165	select.c	FUNCTION_6	FOR_1
+0x400021b	            0x7e29	                           jle 0x4000246	       165	select.c	FUNCTION_6	FOR_1
+0x400021d	          0x4963de	                        movsxd rbx, r14d	       166	select.c	FUNCTION_6	CALL_1
+0x4000220	        0x4183c601	                             add r14d, 1	       165	select.c	FUNCTION_6	FOR_1
+0x4000224	        0x48c1e306	                              shl rbx, 6	       166	select.c	FUNCTION_6	CALL_1
+0x4000228	          0x4c01eb	                            add rbx, r13	       166	select.c	FUNCTION_6	CALL_1
+0x400022b	        0x488b7b38	            mov rdi, qword [rbx + 0x38] 	       157	select.c	FUNCTION_5	CALL_1
+0x400022f	        0x488d7310	                   lea rsi, [rbx + 0x10]	       157	select.c	FUNCTION_5	CALL_1
+0x4000233	      0xe800000000	                          call 0x4000238	       157	select.c	FUNCTION_5	CALL_1
+0x4000238	          0x488b3b	                    mov rdi, qword [rbx]	       158	select.c	FUNCTION_5	CALL_2
+0x400023b	      0xe800000000	                          call 0x4000240	       158	select.c	FUNCTION_5	CALL_2
+0x4000240	        0x44397528	           cmp dword [rbp + 0x28], r14d 	       165	select.c	FUNCTION_6	FOR_1
+0x4000244	            0x7fd7	                            jg 0x400021d	       165	select.c	FUNCTION_6	FOR_1
+0x4000246	          0x4d85e4	                           test r12, r12	       167	select.c	FUNCTION_6	WHILE_1
+0x4000249	            0x7440	                            je 0x400028b	       167	select.c	FUNCTION_6	WHILE_1
+0x400024b	      0x498b5c2408	                mov rbx, qword [r12 + 8]	       171	select.c	FUNCTION_6	WHILE_1
+0x4000250	      0x498d6c2410	                   lea rbp, [r12 + 0x10]	       171	select.c	FUNCTION_6	WHILE_1
+0x4000255	        0x4883eb40	                           sub rbx, 0x40	       173	select.c	FUNCTION_6	WHILE_1	DO_1
+0x4000259	        0x488b7b38	            mov rdi, qword [rbx + 0x38] 	       157	select.c	FUNCTION_5	CALL_1
+0x400025d	        0x488d7310	                   lea rsi, [rbx + 0x10]	       157	select.c	FUNCTION_5	CALL_1
+0x4000261	      0xe800000000	                          call 0x4000266	       157	select.c	FUNCTION_5	CALL_1
+0x4000266	          0x488b3b	                    mov rdi, qword [rbx]	       158	select.c	FUNCTION_5	CALL_2
+0x4000269	      0xe800000000	                          call 0x400026e	       158	select.c	FUNCTION_5	CALL_2
+0x400026e	          0x4839dd	                            cmp rbp, rbx	       175	select.c	FUNCTION_6	WHILE_1	DO_1
+0x4000271	            0x72e2	                            jb 0x4000255	       175	select.c	FUNCTION_6	WHILE_1	DO_1
+0x4000273	        0x498b1c24	                    mov rbx, qword [r12]	       177	select.c	FUNCTION_6	WHILE_1
+0x4000277	            0x31f6	                            xor esi, esi	       178	select.c	FUNCTION_6	WHILE_1	CALL_3
+0x4000279	          0x4c89e7	                            mov rdi, r12	       178	select.c	FUNCTION_6	WHILE_1	CALL_3
+0x400027c	      0xe800000000	                          call 0x4000281	       178	select.c	FUNCTION_6	WHILE_1	CALL_3
+0x4000281	          0x4885db	                           test rbx, rbx	       167	select.c	FUNCTION_6	WHILE_1
+0x4000284	            0x7405	                            je 0x400028b	       167	select.c	FUNCTION_6	WHILE_1
+0x4000286	          0x4989dc	                            mov r12, rbx	       167	select.c	FUNCTION_6	WHILE_1
+0x4000289	            0xebc0	                           jmp 0x400024b	       167	select.c	FUNCTION_6	WHILE_1
+0x400028b	              0x5b	                                 pop rbx	       180	select.c	FUNCTION_6
+0x400028c	              0x5d	                                 pop rbp	       180	select.c	FUNCTION_6
+0x400028d	            0x415c	                                 pop r12	       180	select.c	FUNCTION_6
+0x400028f	            0x415d	                                 pop r13	       180	select.c	FUNCTION_6
+0x4000291	            0x415e	                                 pop r14	       180	select.c	FUNCTION_6
+0x4000293	              0xc3	                                     ret	       180	select.c	FUNCTION_6

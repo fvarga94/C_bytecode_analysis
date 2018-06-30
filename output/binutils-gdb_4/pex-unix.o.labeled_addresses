@@ -1,0 +1,224 @@
+pex_unix_open_write	functions,0:WHILE,0:DO,0:CALL,1:IF,0:FOR,0:ELSE,0:SWITCH,0	8
+0x40000d0	          0x83f901	                              cmp ecx, 1	       357	pex-unix.c	FUNCTION_7	CALL_1
+0x40000d3	          0x4889f7	                            mov rdi, rsi	       354	pex-unix.c	FUNCTION_7
+0x40000d6	      0xbab6010000	                          mov edx, 0x1b6	        59	fcntl2.h	FUNCTION_19	CALL_13
+0x40000db	            0x19f6	                            sbb esi, esi	       357	pex-unix.c	FUNCTION_7	CALL_1
+0x40000dd	            0x31c0	                            xor eax, eax	        59	fcntl2.h	FUNCTION_19	CALL_13
+0x40000df	    0x81e600feffff	                     and esi, 0xfffffe00	       357	pex-unix.c	FUNCTION_7	CALL_1
+0x40000e5	    0x81c641040000	                          add esi, 0x441	       357	pex-unix.c	FUNCTION_7	CALL_1
+0x40000eb	      0xe900000000	                   jmp sym.pex_unix_wait	        59	fcntl2.h	FUNCTION_19	CALL_13
+pex_init	functions,0:WHILE,0:DO,0:CALL,1:IF,0:FOR,0:ELSE,0:SWITCH,0	2
+0x40005e0	      0xb900000000	                              mov ecx, 0	       337	pex-unix.c	FUNCTION_5	CALL_1
+0x40005e5	      0xe900000000	                              jmp str.wr	       337	pex-unix.c	FUNCTION_5	CALL_1
+pex_unix_pipe	functions,0:WHILE,0:DO,0:CALL,1:IF,0:FOR,0:ELSE,0:SWITCH,0	2
+0x40000a0	          0x4889f7	                            mov rdi, rsi	       753	pex-unix.c	FUNCTION_15	CALL_1
+0x40000a3	      0xe900000000	                           jmp 0x40000a8	       753	pex-unix.c	FUNCTION_15	CALL_1
+pex_unix_exec_child	functions,0:WHILE,0:DO,0:CALL,25:IF,22:FOR,1:ELSE,1:SWITCH,1	176
+0x4000300	              0x53	                                push rbx	       594	pex-unix.c	FUNCTION_13
+0x4000301	      0xbbffffffff	                     mov ebx, 0xffffffff	       609	pex-unix.c	FUNCTION_13
+0x4000306	        0x4883ec50	                           sub rsp, 0x50	       594	pex-unix.c	FUNCTION_13
+0x400030a	    0x488b05000000	            mov rax, qword [0x04000311] 	       606	pex-unix.c	FUNCTION_13
+0x4000311	    0xc74424480100	               mov dword [rsp + 0x48], 1	       608	pex-unix.c	FUNCTION_13
+0x4000319	      0x48897c2418	             mov qword [rsp + 0x18], rdi	       594	pex-unix.c	FUNCTION_13
+0x400031e	      0x4889542420	             mov qword [rsp + 0x20], rdx	       594	pex-unix.c	FUNCTION_13
+0x4000323	      0x48894c2438	             mov qword [rsp + 0x38], rcx	       594	pex-unix.c	FUNCTION_13
+0x4000328	      0x4889442410	             mov qword [rsp + 0x10], rax	       606	pex-unix.c	FUNCTION_13
+0x400032d	            0x89f0	                            mov eax, esi	       654	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13
+0x400032f	          0x83e602	                              and esi, 2	       668	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16
+0x4000332	          0x83e008	                              and eax, 8	       654	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13
+0x4000335	      0x4c89442430	              mov qword [rsp + 0x30], r8	       594	pex-unix.c	FUNCTION_13
+0x400033a	      0x44894c240c	              mov dword [rsp + 0xc], r9d	       594	pex-unix.c	FUNCTION_13
+0x400033f	    0xc744244c0000	               mov dword [rsp + 0x4c], 0	       610	pex-unix.c	FUNCTION_13	FOR_1
+0x4000347	        0x89442428	             mov dword [rsp + 0x28], eax	       654	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13
+0x400034b	        0x8974242c	             mov dword [rsp + 0x2c], esi	       668	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16
+0x400034f	        0x8b44244c	            mov eax, dword [rsp + 0x4c] 	       610	pex-unix.c	FUNCTION_13	FOR_1
+0x4000353	          0x83f803	                              cmp eax, 3	       610	pex-unix.c	FUNCTION_13	FOR_1
+0x4000356	     0xf8e6c010000	                           jle 0x40004c8	       610	pex-unix.c	FUNCTION_13	FOR_1
+0x400035c	          0x83fbff	             cmp ebx, 0xffffffffffffffff	       619	pex-unix.c	FUNCTION_13	SWITCH_1
+0x400035f	     0xf843b010000	                            je 0x40004a0	       619	pex-unix.c	FUNCTION_13	SWITCH_1
+0x4000365	            0x85db	                           test ebx, ebx	       619	pex-unix.c	FUNCTION_13	SWITCH_1
+0x4000367	     0xf85e3000000	                           jne 0x4000450	       619	pex-unix.c	FUNCTION_13	SWITCH_1
+0x400036d	        0x8b7c240c	              mov edi, dword [rsp + 0xc]	       628	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2
+0x4000371	            0x85ff	                           test edi, edi	       628	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2
+0x4000373	     0xf85c7010000	                           jne 0x4000540	       628	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2
+0x4000379	      0x837c246001	               cmp dword [rsp + 0x60], 1	       635	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5
+0x400037e	            0x7427	                            je 0x40003a7	       635	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5
+0x4000380	        0x8b7c2460	            mov edi, dword [rsp + 0x60] 	       637	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5	IF_6	CALL_7
+0x4000384	      0xbe01000000	                              mov esi, 1	       637	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5	IF_6	CALL_7
+0x4000389	      0xe800000000	                          call 0x400038e	       637	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5	IF_6	CALL_7
+0x400038e	            0x85c0	                           test eax, eax	       637	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5	IF_6	CALL_7
+0x4000390	     0xf8829020000	                            js 0x40005bf	       637	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5	IF_6	CALL_7
+0x4000396	        0x8b7c2460	            mov edi, dword [rsp + 0x60] 	       639	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5	IF_7	CALL_9
+0x400039a	      0xe800000000	                          call 0x400039f	       639	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5	IF_7	CALL_9
+0x400039f	            0x85c0	                           test eax, eax	       639	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5	IF_7	CALL_9
+0x40003a1	     0xf88b9010000	                            js 0x4000560	       639	pex-unix.c	FUNCTION_13	SWITCH_1	IF_5	IF_7	CALL_9
+0x40003a7	      0x837c246802	               cmp dword [rsp + 0x68], 2	       642	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8
+0x40003ac	            0x7427	                            je 0x40003d5	       642	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8
+0x40003ae	        0x8b7c2468	            mov edi, dword [rsp + 0x68] 	       644	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8	IF_9	CALL_11
+0x40003b2	      0xbe02000000	                              mov esi, 2	       644	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8	IF_9	CALL_11
+0x40003b7	      0xe800000000	                          call 0x40003bc	       644	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8	IF_9	CALL_11
+0x40003bc	            0x85c0	                           test eax, eax	       644	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8	IF_9	CALL_11
+0x40003be	     0xf88fb010000	                            js 0x40005bf	       644	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8	IF_9	CALL_11
+0x40003c4	        0x8b7c2468	            mov edi, dword [rsp + 0x68] 	       646	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8	IF_10	CALL_13
+0x40003c8	      0xe800000000	                          call 0x40003cd	       646	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8	IF_10	CALL_13
+0x40003cd	            0x85c0	                           test eax, eax	       646	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8	IF_10	CALL_13
+0x40003cf	     0xf888b010000	                            js 0x4000560	       646	pex-unix.c	FUNCTION_13	SWITCH_1	IF_8	IF_10	CALL_13
+0x40003d5	        0x8b742470	            mov esi, dword [rsp + 0x70] 	       649	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11
+0x40003d9	            0x85f6	                           test esi, esi	       649	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11
+0x40003db	            0x7811	                            js 0x40003ee	       649	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11
+0x40003dd	        0x8b7c2470	            mov edi, dword [rsp + 0x70] 	       651	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	IF_12	CALL_15
+0x40003e1	      0xe800000000	                          call 0x40003e6	       651	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	IF_12	CALL_15
+0x40003e6	            0x85c0	                           test eax, eax	       651	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	IF_12	CALL_15
+0x40003e8	     0xf8872010000	                            js 0x4000560	       651	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	IF_12	CALL_15
+0x40003ee	        0x8b4c2428	            mov ecx, dword [rsp + 0x28] 	       654	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13
+0x40003f2	            0x85c9	                           test ecx, ecx	       654	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13
+0x40003f4	     0xf85ae010000	                           jne 0x40005a8	       654	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13
+0x40003fa	      0x488b442430	            mov rax, qword [rsp + 0x30] 	       660	pex-unix.c	FUNCTION_13	SWITCH_1	IF_15
+0x40003ff	          0x4885c0	                           test rax, rax	       660	pex-unix.c	FUNCTION_13	SWITCH_1	IF_15
+0x4000402	            0x7407	                            je 0x400040b	       660	pex-unix.c	FUNCTION_13	SWITCH_1	IF_15
+0x4000404	    0x488905000000	            mov qword [0x0400040b], rax 	       665	pex-unix.c	FUNCTION_13	SWITCH_1	IF_15
+0x400040b	        0x8b54242c	            mov edx, dword [rsp + 0x2c] 	       668	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16
+0x400040f	      0x488b5c2420	            mov rbx, qword [rsp + 0x20] 	       670	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_19
+0x4000414	      0x488b742438	            mov rsi, qword [rsp + 0x38] 	       670	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_19
+0x4000419	            0x85d2	                           test edx, edx	       668	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16
+0x400041b	          0x4889df	                            mov rdi, rbx	       670	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_19
+0x400041e	     0xf845c010000	                            je 0x4000580	       668	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16
+0x4000424	      0xe800000000	                          call 0x4000429	       670	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_19
+0x4000429	      0xe800000000	                          call 0x400042e	       671	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_20
+0x400042e	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	       671	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_20
+0x4000433	      0xba00000000	                              mov edx, 0	       671	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_20
+0x4000438	          0x4889de	                            mov rsi, rbx	       671	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_20
+0x400043b	        0x488b7908	                mov rdi, qword [rcx + 8]	       671	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_20
+0x400043f	            0x8b08	                    mov ecx, dword [rax]	       671	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_20
+0x4000441	      0xe88afdffff	         call sym.pex_child_error.isra.2	       671	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_20
+0x4000446	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       671	pex-unix.c	FUNCTION_13	SWITCH_1	IF_16	CALL_20
+0x4000450	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       690	pex-unix.c	FUNCTION_13	SWITCH_1
+0x4000455	    0x488905000000	            mov qword [0x0400045c], rax 	       690	pex-unix.c	FUNCTION_13	SWITCH_1
+0x400045c	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       692	pex-unix.c	FUNCTION_13	SWITCH_1	IF_17
+0x4000460	            0x85c0	                           test eax, eax	       692	pex-unix.c	FUNCTION_13	SWITCH_1	IF_17
+0x4000462	     0xf8598000000	                           jne 0x4000500	       692	pex-unix.c	FUNCTION_13	SWITCH_1	IF_17
+0x4000468	      0x837c246001	               cmp dword [rsp + 0x60], 1	       701	pex-unix.c	FUNCTION_13	SWITCH_1	IF_19
+0x400046d	            0x7411	                            je 0x4000480	       701	pex-unix.c	FUNCTION_13	SWITCH_1	IF_19
+0x400046f	        0x8b7c2460	            mov edi, dword [rsp + 0x60] 	       703	pex-unix.c	FUNCTION_13	SWITCH_1	IF_19	IF_20	CALL_24
+0x4000473	      0xe800000000	                          call 0x4000478	       703	pex-unix.c	FUNCTION_13	SWITCH_1	IF_19	IF_20	CALL_24
+0x4000478	            0x85c0	                           test eax, eax	       703	pex-unix.c	FUNCTION_13	SWITCH_1	IF_19	IF_20	CALL_24
+0x400047a	     0xf8891000000	                            js 0x4000511	       703	pex-unix.c	FUNCTION_13	SWITCH_1	IF_19	IF_20	CALL_24
+0x4000480	      0x837c246802	               cmp dword [rsp + 0x68], 2	       710	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21
+0x4000485	            0x740d	                            je 0x4000494	       710	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21
+0x4000487	        0x8b7c2468	            mov edi, dword [rsp + 0x68] 	       712	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22	CALL_25
+0x400048b	      0xe800000000	                          call 0x4000490	       712	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22	CALL_25
+0x4000490	            0x85c0	                           test eax, eax	       712	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22	CALL_25
+0x4000492	            0x787d	                            js 0x4000511	       712	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22	CALL_25
+0x4000494	            0x89d8	                            mov eax, ebx	       712	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22	CALL_25
+0x4000496	        0x4883c450	                           add rsp, 0x50	       722	pex-unix.c	FUNCTION_13
+0x400049a	              0x5b	                                 pop rbx	       722	pex-unix.c	FUNCTION_13
+0x400049b	              0xc3	                                     ret	       722	pex-unix.c	FUNCTION_13
+0x400049c	         0xf1f4000	                         nop dword [rax]	       722	pex-unix.c	FUNCTION_13
+0x40004a0	      0xe800000000	                          call 0x40004a5	       622	pex-unix.c	FUNCTION_13	SWITCH_1
+0x40004a5	    0x488b94248000	            mov rdx, qword [rsp + 0x80] 	       622	pex-unix.c	FUNCTION_13	SWITCH_1
+0x40004ad	            0x8b00	                    mov eax, dword [rax]	       622	pex-unix.c	FUNCTION_13	SWITCH_1
+0x40004af	            0x8902	                    mov dword [rdx], eax	       622	pex-unix.c	FUNCTION_13	SWITCH_1
+0x40004b1	      0x488b442478	            mov rax, qword [rsp + 0x78] 	       623	pex-unix.c	FUNCTION_13	SWITCH_1
+0x40004b6	    0x48c700000000	                      mov qword [rax], 0	       623	pex-unix.c	FUNCTION_13	SWITCH_1
+0x40004bd	        0x4883c450	                           add rsp, 0x50	       722	pex-unix.c	FUNCTION_13
+0x40004c1	            0x89d8	                            mov eax, ebx	       624	pex-unix.c	FUNCTION_13	SWITCH_1
+0x40004c3	              0x5b	                                 pop rbx	       722	pex-unix.c	FUNCTION_13
+0x40004c4	              0xc3	                                     ret	       722	pex-unix.c	FUNCTION_13
+0x40004c5	           0xf1f00	                         nop dword [rax]	       722	pex-unix.c	FUNCTION_13
+0x40004c8	      0xe800000000	                          call 0x40004cd	       612	pex-unix.c	FUNCTION_13	FOR_1	CALL_1
+0x40004cd	            0x85c0	                           test eax, eax	       613	pex-unix.c	FUNCTION_13	FOR_1	IF_1
+0x40004cf	            0x89c3	                            mov ebx, eax	       612	pex-unix.c	FUNCTION_13	FOR_1	CALL_1
+0x40004d1	     0xf8985feffff	                           jns 0x400035c	       613	pex-unix.c	FUNCTION_13	FOR_1	IF_1
+0x40004d7	        0x8b7c2448	            mov edi, dword [rsp + 0x48] 	       615	pex-unix.c	FUNCTION_13	FOR_1	CALL_2
+0x40004db	      0xe800000000	                          call 0x40004e0	       615	pex-unix.c	FUNCTION_13	FOR_1	CALL_2
+0x40004e0	        0x8b442448	            mov eax, dword [rsp + 0x48] 	       616	pex-unix.c	FUNCTION_13	FOR_1
+0x40004e4	             0x1c0	                            add eax, eax	       616	pex-unix.c	FUNCTION_13	FOR_1
+0x40004e6	        0x89442448	             mov dword [rsp + 0x48], eax	       616	pex-unix.c	FUNCTION_13	FOR_1
+0x40004ea	        0x8b44244c	            mov eax, dword [rsp + 0x4c] 	       610	pex-unix.c	FUNCTION_13	FOR_1
+0x40004ee	          0x83c001	                              add eax, 1	       610	pex-unix.c	FUNCTION_13	FOR_1
+0x40004f1	        0x8944244c	             mov dword [rsp + 0x4c], eax	       610	pex-unix.c	FUNCTION_13	FOR_1
+0x40004f5	      0xe955feffff	                           jmp 0x400034f	       610	pex-unix.c	FUNCTION_13	FOR_1
+0x40004fa	    0x660f1f440000	                    nop word [rax + rax]	       610	pex-unix.c	FUNCTION_13	FOR_1
+0x4000500	        0x8b7c240c	              mov edi, dword [rsp + 0xc]	       694	pex-unix.c	FUNCTION_13	SWITCH_1	IF_17	IF_18	CALL_23
+0x4000504	      0xe800000000	                          call 0x4000509	       694	pex-unix.c	FUNCTION_13	SWITCH_1	IF_17	IF_18	CALL_23
+0x4000509	            0x85c0	                           test eax, eax	       694	pex-unix.c	FUNCTION_13	SWITCH_1	IF_17	IF_18	CALL_23
+0x400050b	     0xf8957ffffff	                           jns 0x4000468	       694	pex-unix.c	FUNCTION_13	SWITCH_1	IF_17	IF_18	CALL_23
+0x4000511	      0xe800000000	                          call 0x4000516	       714	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22
+0x4000516	    0x488b8c248000	            mov rcx, qword [rsp + 0x80] 	       714	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22
+0x400051e	            0x8b00	                    mov eax, dword [rax]	       714	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22
+0x4000520	            0x8901	                    mov dword [rcx], eax	       714	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22
+0x4000522	      0x488b442478	            mov rax, qword [rsp + 0x78] 	       715	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22
+0x4000527	    0x48c700000000	                      mov qword [rax], 0	       715	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22
+0x400052e	      0xb8ffffffff	                     mov eax, 0xffffffff	       716	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22
+0x4000533	      0xe95effffff	                           jmp 0x4000496	       716	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22
+0x4000538	     0xf1f84000000	                   nop dword [rax + rax]	       716	pex-unix.c	FUNCTION_13	SWITCH_1	IF_21	IF_22
+0x4000540	        0x8b7c240c	              mov edi, dword [rsp + 0xc]	       630	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2	IF_3	CALL_3
+0x4000544	            0x31f6	                            xor esi, esi	       630	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2	IF_3	CALL_3
+0x4000546	      0xe800000000	                          call 0x400054b	       630	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2	IF_3	CALL_3
+0x400054b	            0x85c0	                           test eax, eax	       630	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2	IF_3	CALL_3
+0x400054d	            0x7870	                            js 0x40005bf	       630	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2	IF_3	CALL_3
+0x400054f	        0x8b7c240c	              mov edi, dword [rsp + 0xc]	       632	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2	IF_4	CALL_5
+0x4000553	      0xe800000000	                          call 0x4000558	       632	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2	IF_4	CALL_5
+0x4000558	            0x85c0	                           test eax, eax	       632	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2	IF_4	CALL_5
+0x400055a	     0xf8919feffff	                           jns 0x4000379	       632	pex-unix.c	FUNCTION_13	SWITCH_1	IF_2	IF_4	CALL_5
+0x4000560	      0xe800000000	                          call 0x4000565	       652	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	CALL_16
+0x4000565	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	       652	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	CALL_16
+0x400056a	      0x488b742420	            mov rsi, qword [rsp + 0x20] 	       652	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	CALL_16
+0x400056f	      0xba00000000	                              mov edx, 0	       652	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	CALL_16
+0x4000574	        0x488b7908	                mov rdi, qword [rcx + 8]	       652	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	CALL_16
+0x4000578	            0x8b08	                    mov ecx, dword [rax]	       652	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	CALL_16
+0x400057a	      0xe851fcffff	         call sym.pex_child_error.isra.2	       652	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	CALL_16
+0x400057f	              0x90	                                     nop	       652	pex-unix.c	FUNCTION_13	SWITCH_1	IF_11	CALL_16
+0x4000580	      0xe800000000	                          call 0x4000585	       675	pex-unix.c	FUNCTION_13	SWITCH_1	ELSE_1	CALL_21
+0x4000585	      0xe800000000	                          call 0x400058a	       676	pex-unix.c	FUNCTION_13	SWITCH_1	ELSE_1	CALL_22
+0x400058a	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	       676	pex-unix.c	FUNCTION_13	SWITCH_1	ELSE_1	CALL_22
+0x400058f	      0xba00000000	                              mov edx, 0	       676	pex-unix.c	FUNCTION_13	SWITCH_1	ELSE_1	CALL_22
+0x4000594	          0x4889de	                            mov rsi, rbx	       676	pex-unix.c	FUNCTION_13	SWITCH_1	ELSE_1	CALL_22
+0x4000597	        0x488b7908	                mov rdi, qword [rcx + 8]	       676	pex-unix.c	FUNCTION_13	SWITCH_1	ELSE_1	CALL_22
+0x400059b	            0x8b08	                    mov ecx, dword [rax]	       676	pex-unix.c	FUNCTION_13	SWITCH_1	ELSE_1	CALL_22
+0x400059d	      0xe82efcffff	         call sym.pex_child_error.isra.2	       676	pex-unix.c	FUNCTION_13	SWITCH_1	ELSE_1	CALL_22
+0x40005a2	    0x660f1f440000	                    nop word [rax + rax]	       676	pex-unix.c	FUNCTION_13	SWITCH_1	ELSE_1	CALL_22
+0x40005a8	      0xbe02000000	                              mov esi, 2	       656	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	IF_14	CALL_17
+0x40005ad	      0xbf01000000	                              mov edi, 1	       656	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	IF_14	CALL_17
+0x40005b2	      0xe800000000	                          call 0x40005b7	       656	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	IF_14	CALL_17
+0x40005b7	            0x85c0	                           test eax, eax	       656	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	IF_14	CALL_17
+0x40005b9	     0xf893bfeffff	                           jns 0x40003fa	       656	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	IF_14	CALL_17
+0x40005bf	      0xe800000000	                          call 0x40005c4	       657	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	CALL_18
+0x40005c4	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	       657	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	CALL_18
+0x40005c9	      0x488b742420	            mov rsi, qword [rsp + 0x20] 	       657	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	CALL_18
+0x40005ce	      0xba00000000	                              mov edx, 0	       657	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	CALL_18
+0x40005d3	        0x488b7908	                mov rdi, qword [rcx + 8]	       657	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	CALL_18
+0x40005d7	            0x8b08	                    mov ecx, dword [rax]	       657	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	CALL_18
+0x40005d9	      0xe8f2fbffff	         call sym.pex_child_error.isra.2	       657	pex-unix.c	FUNCTION_13	SWITCH_1	IF_13	CALL_18
+pex_unix_open_read	functions,0:WHILE,0:DO,0:CALL,1:IF,0:FOR,0:ELSE,0:SWITCH,0	4
+0x40000c0	          0x4889f7	                            mov rdi, rsi	       345	pex-unix.c	FUNCTION_6
+0x40000c3	            0x31c0	                            xor eax, eax	        53	fcntl2.h	FUNCTION_19	IF_2	CALL_9
+0x40000c5	            0x31f6	                            xor esi, esi	        53	fcntl2.h	FUNCTION_19	IF_2	CALL_9
+0x40000c7	      0xe900000000	                           jmp 0x40000cc	        53	fcntl2.h	FUNCTION_19	IF_2	CALL_9
+pex_unix_cleanup	functions,0:WHILE,1:DO,0:CALL,1:IF,0:FOR,0:ELSE,0:SWITCH,0	1
+0x4000040	            0xf3c3	                                     ret	       776	pex-unix.c	FUNCTION_18
+pex_unix_fdopenr	functions,0:WHILE,0:DO,0:CALL,1:IF,0:FOR,0:ELSE,0:SWITCH,0	3
+0x4000090	            0x89f7	                            mov edi, esi	       761	pex-unix.c	FUNCTION_16
+0x4000092	      0xbe00000000	                              mov esi, 0	       762	pex-unix.c	FUNCTION_16	CALL_1
+0x4000097	      0xe900000000	                           jmp 0x400009c	       762	pex-unix.c	FUNCTION_16	CALL_1
+pex_unix_fdopenw	functions,0:WHILE,0:DO,0:CALL,2:IF,1:FOR,0:ELSE,0:SWITCH,0	17
+0x4000050	              0x53	                                push rbx	       768	pex-unix.c	FUNCTION_17
+0x4000051	            0x89f3	                            mov ebx, esi	       768	pex-unix.c	FUNCTION_17
+0x4000053	            0x31c0	                            xor eax, eax	       769	pex-unix.c	FUNCTION_17	IF_1	CALL_1
+0x4000055	      0xba01000000	                              mov edx, 1	       769	pex-unix.c	FUNCTION_17	IF_1	CALL_1
+0x400005a	      0xbe02000000	                              mov esi, 2	       769	pex-unix.c	FUNCTION_17	IF_1	CALL_1
+0x400005f	            0x89df	                            mov edi, ebx	       769	pex-unix.c	FUNCTION_17	IF_1	CALL_1
+0x4000061	      0xe800000000	                          call 0x4000066	       769	pex-unix.c	FUNCTION_17	IF_1	CALL_1
+0x4000066	            0x85c0	                           test eax, eax	       769	pex-unix.c	FUNCTION_17	IF_1	CALL_1
+0x4000068	            0x7816	                            js 0x4000080	       769	pex-unix.c	FUNCTION_17	IF_1	CALL_1
+0x400006a	            0x89df	                            mov edi, ebx	       771	pex-unix.c	FUNCTION_17	CALL_2
+0x400006c	      0xbe00000000	                              mov esi, 0	       771	pex-unix.c	FUNCTION_17	CALL_2
+0x4000071	              0x5b	                                 pop rbx	       772	pex-unix.c	FUNCTION_17
+0x4000072	      0xe900000000	                           jmp 0x4000077	       771	pex-unix.c	FUNCTION_17	CALL_2
+0x4000077	    0x660f1f840000	                    nop word [rax + rax]	       771	pex-unix.c	FUNCTION_17	CALL_2
+0x4000080	            0x31c0	                            xor eax, eax	       772	pex-unix.c	FUNCTION_17
+0x4000082	              0x5b	                                 pop rbx	       772	pex-unix.c	FUNCTION_17
+0x4000083	              0xc3	                                     ret	       772	pex-unix.c	FUNCTION_17
+pex_unix_close	functions,0:WHILE,0:DO,0:CALL,1:IF,0:FOR,0:ELSE,0:SWITCH,0	2
+0x40000b0	            0x89f7	                            mov edi, esi	       366	pex-unix.c	FUNCTION_8	CALL_1
+0x40000b2	      0xe900000000	                           jmp 0x40000b7	       366	pex-unix.c	FUNCTION_8	CALL_1

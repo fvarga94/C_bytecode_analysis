@@ -1,0 +1,48 @@
+nfs3_proc_setacls	functions,0:FOR,0:IF,0:DO,0:SWITCH,0:CALL,1:ELSE,0:WHILE,0	5
+0x4000840	      0xe8fbf7ffff	            call sym.__nfs3_proc_setacls	       249	nfs3acl.c	FUNCTION_6	CALL_1
+0x4000845	      0xba00000000	                              mov edx, 0	       250	nfs3acl.c	FUNCTION_6
+0x400084a	          0x83f8a1	             cmp eax, 0xffffffffffffffa1	       250	nfs3acl.c	FUNCTION_6
+0x400084d	           0xf44c2	                          cmove eax, edx	       250	nfs3acl.c	FUNCTION_6
+0x4000850	              0xc3	                                     ret	       252	nfs3acl.c	FUNCTION_6
+nfs3_listxattr	functions,0:FOR,0:IF,2:DO,0:SWITCH,0:CALL,3:ELSE,0:WHILE,0	41
+0x4000950	            0x4154	                                push r12	       321	nfs3acl.c	FUNCTION_9
+0x4000952	              0x55	                                push rbp	       321	nfs3acl.c	FUNCTION_9
+0x4000953	          0x4989d0	                             mov r8, rdx	       326	nfs3acl.c	FUNCTION_9	CALL_2
+0x4000956	              0x53	                                push rbx	       321	nfs3acl.c	FUNCTION_9
+0x4000957	          0x4889f1	                            mov rcx, rsi	       326	nfs3acl.c	FUNCTION_9	CALL_2
+0x400095a	          0x4889f5	                            mov rbp, rsi	       321	nfs3acl.c	FUNCTION_9
+0x400095d	          0x4989d4	                            mov r12, rdx	       321	nfs3acl.c	FUNCTION_9
+0x4000960	      0xbe00800000	                         mov esi, 0x8000	       326	nfs3acl.c	FUNCTION_9	CALL_2
+0x4000965	    0x48c7c2000000	                              mov rdx, 0	       326	nfs3acl.c	FUNCTION_9	CALL_2
+0x400096c	        0x4883ec10	                           sub rsp, 0x10	       321	nfs3acl.c	FUNCTION_9
+0x4000970	        0x488b5f30	            mov rbx, qword [rdi + 0x30] 	       321	nfs3acl.c	FUNCTION_9
+0x4000974	          0x4989e1	                             mov r9, rsp	       326	nfs3acl.c	FUNCTION_9	CALL_2
+0x4000977	    0x48c704240000	                      mov qword [rsp], 0	       323	nfs3acl.c	FUNCTION_9
+0x400097f	    0x65488b042528	                mov rax, qword gs:[0x28]	       321	nfs3acl.c	FUNCTION_9
+0x4000988	      0x4889442408	                mov qword [rsp + 8], rax	       321	nfs3acl.c	FUNCTION_9
+0x400098d	            0x31c0	                            xor eax, eax	       321	nfs3acl.c	FUNCTION_9
+0x400098f	          0x4889df	                            mov rdi, rbx	       326	nfs3acl.c	FUNCTION_9	CALL_2
+0x4000992	      0xe809faffff	              call sym.nfs3_list_one_acl	       326	nfs3acl.c	FUNCTION_9	CALL_2
+0x4000997	            0x85c0	                           test eax, eax	       328	nfs3acl.c	FUNCTION_9	IF_1
+0x4000999	            0x741b	                            je 0x40009b6	       328	nfs3acl.c	FUNCTION_9	IF_1
+0x400099b	            0x4898	                                    cdqe	       334	nfs3acl.c	FUNCTION_9	IF_2
+0x400099d	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       336	nfs3acl.c	FUNCTION_9
+0x40009a2	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       336	nfs3acl.c	FUNCTION_9
+0x40009ab	            0x7530	                           jne 0x40009dd	       336	nfs3acl.c	FUNCTION_9
+0x40009ad	        0x4883c410	                           add rsp, 0x10	       336	nfs3acl.c	FUNCTION_9
+0x40009b1	              0x5b	                                 pop rbx	       336	nfs3acl.c	FUNCTION_9
+0x40009b2	              0x5d	                                 pop rbp	       336	nfs3acl.c	FUNCTION_9
+0x40009b3	            0x415c	                                 pop r12	       336	nfs3acl.c	FUNCTION_9
+0x40009b5	              0xc3	                                     ret	       336	nfs3acl.c	FUNCTION_9
+0x40009b6	          0x4989e1	                             mov r9, rsp	       331	nfs3acl.c	FUNCTION_9	CALL_3
+0x40009b9	          0x4d89e0	                             mov r8, r12	       331	nfs3acl.c	FUNCTION_9	CALL_3
+0x40009bc	          0x4889e9	                            mov rcx, rbp	       331	nfs3acl.c	FUNCTION_9	CALL_3
+0x40009bf	    0x48c7c2000000	                              mov rdx, 0	       331	nfs3acl.c	FUNCTION_9	CALL_3
+0x40009c6	      0xbe00400000	                         mov esi, 0x4000	       331	nfs3acl.c	FUNCTION_9	CALL_3
+0x40009cb	          0x4889df	                            mov rdi, rbx	       331	nfs3acl.c	FUNCTION_9	CALL_3
+0x40009ce	      0xe8cdf9ffff	              call sym.nfs3_list_one_acl	       331	nfs3acl.c	FUNCTION_9	CALL_3
+0x40009d3	            0x85c0	                           test eax, eax	       333	nfs3acl.c	FUNCTION_9	IF_2
+0x40009d5	            0x75c4	                           jne 0x400099b	       333	nfs3acl.c	FUNCTION_9	IF_2
+0x40009d7	        0x488b0424	                    mov rax, qword [rsp]	       335	nfs3acl.c	FUNCTION_9
+0x40009db	            0xebc0	                           jmp 0x400099d	       335	nfs3acl.c	FUNCTION_9
+0x40009dd	      0xe800000000	                  call section_end..text	       336	nfs3acl.c	FUNCTION_9

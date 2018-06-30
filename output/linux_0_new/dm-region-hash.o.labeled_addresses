@@ -1,0 +1,63 @@
+dm_rh_get_region_size	IF,0:SWITCH,0:FOR,0:DO,0:ELSE,0:functions,0:CALL,0:WHILE,0	2
+0x4000090	            0x8b07	                    mov eax, dword [rdi]	       148	dm-region-hash.c	FUNCTION_6
+0x4000092	              0xc3	                                     ret	       149	dm-region-hash.c	FUNCTION_6
+dm_rh_region_to_sector	IF,0:SWITCH,0:FOR,0:DO,0:ELSE,0:functions,0:CALL,0:WHILE,0	4
+0x4000040	          0x8b4f04	                mov ecx, dword [rdi + 4]	       123	dm-region-hash.c	FUNCTION_2
+0x4000043	          0x4889f0	                            mov rax, rsi	       123	dm-region-hash.c	FUNCTION_2
+0x4000046	          0x48d3e0	                             shl rax, cl	       123	dm-region-hash.c	FUNCTION_2
+0x4000049	              0xc3	                                     ret	       124	dm-region-hash.c	FUNCTION_2
+dm_rh_flush	IF,0:SWITCH,0:FOR,0:DO,0:ELSE,0:functions,0:CALL,1:WHILE,0	4
+0x40001a0	        0x488b7f08	                mov rdi, qword [rdi + 8]	       685	dm-region-hash.c	FUNCTION_27	CALL_1
+0x40001a4	          0x488b07	                    mov rax, qword [rdi]	       685	dm-region-hash.c	FUNCTION_27	CALL_1
+0x40001a7	        0x488b4060	            mov rax, qword [rax + 0x60] 	       685	dm-region-hash.c	FUNCTION_27	CALL_1
+0x40001ab	      0xe900000000	                       jmp sym.dm_rh_dec	       685	dm-region-hash.c	FUNCTION_27	CALL_1
+dm_rh_get_region_key	IF,0:SWITCH,0:FOR,0:DO,0:ELSE,0:functions,0:CALL,0:WHILE,0	2
+0x4000080	        0x488b4708	                mov rax, qword [rdi + 8]	       142	dm-region-hash.c	FUNCTION_5
+0x4000084	              0xc3	                                     ret	       143	dm-region-hash.c	FUNCTION_5
+dm_rh_dirty_log	IF,0:SWITCH,0:FOR,0:DO,0:ELSE,0:functions,0:CALL,0:WHILE,0	2
+0x40000a0	        0x488b4708	                mov rax, qword [rdi + 8]	       261	dm-region-hash.c	FUNCTION_9
+0x40000a4	              0xc3	                                     ret	       262	dm-region-hash.c	FUNCTION_9
+dm_rh_region_context	IF,0:SWITCH,0:FOR,0:DO,0:ELSE,0:functions,0:CALL,0:WHILE,0	3
+0x4000070	          0x488b07	                    mov rax, qword [rdi]	       136	dm-region-hash.c	FUNCTION_4
+0x4000073	    0x488b80e80000	            mov rax, qword [rax + 0xe8] 	       136	dm-region-hash.c	FUNCTION_4
+0x400007a	              0xc3	                                     ret	       137	dm-region-hash.c	FUNCTION_4
+dm_rh_stop_recovery	IF,0:SWITCH,0:FOR,1:DO,0:ELSE,0:functions,0:CALL,1:WHILE,0	18
+0x40007d0	          0x8b4778	            mov eax, dword [rdi + 0x78] 	       705	dm-region-hash.c	FUNCTION_29	FOR_1
+0x40007d3	            0x85c0	                           test eax, eax	       705	dm-region-hash.c	FUNCTION_29	FOR_1
+0x40007d5	            0x7424	                            je 0x40007fb	       705	dm-region-hash.c	FUNCTION_29	FOR_1
+0x40007d7	            0x4154	                                push r12	       701	dm-region-hash.c	FUNCTION_29
+0x40007d9	    0x4c8da7880000	                   lea r12, [rdi + 0x88]	       701	dm-region-hash.c	FUNCTION_29
+0x40007e0	              0x55	                                push rbp	       701	dm-region-hash.c	FUNCTION_29
+0x40007e1	          0x4889fd	                            mov rbp, rdi	       701	dm-region-hash.c	FUNCTION_29
+0x40007e4	              0x53	                                push rbx	       701	dm-region-hash.c	FUNCTION_29
+0x40007e5	            0x31db	                            xor ebx, ebx	       701	dm-region-hash.c	FUNCTION_29
+0x40007e7	          0x4c89e7	                            mov rdi, r12	       706	dm-region-hash.c	FUNCTION_29	CALL_1
+0x40007ea	          0x83c301	                              add ebx, 1	       705	dm-region-hash.c	FUNCTION_29	FOR_1
+0x40007ed	      0xe800000000	                          call 0x40007f2	       706	dm-region-hash.c	FUNCTION_29	CALL_1
+0x40007f2	          0x395d78	            cmp dword [rbp + 0x78], ebx 	       705	dm-region-hash.c	FUNCTION_29	FOR_1
+0x40007f5	            0x77f0	                            ja 0x40007e7	       705	dm-region-hash.c	FUNCTION_29	FOR_1
+0x40007f7	              0x5b	                                 pop rbx	       707	dm-region-hash.c	FUNCTION_29
+0x40007f8	              0x5d	                                 pop rbp	       707	dm-region-hash.c	FUNCTION_29
+0x40007f9	            0x415c	                                 pop r12	       707	dm-region-hash.c	FUNCTION_29
+0x40007fb	            0xf3c3	                                     ret	       707	dm-region-hash.c	FUNCTION_29
+dm_rh_start_recovery	IF,0:SWITCH,0:FOR,1:DO,0:ELSE,0:functions,0:CALL,2:WHILE,0	20
+0x4000790	            0x4154	                                push r12	       711	dm-region-hash.c	FUNCTION_30
+0x4000792	              0x55	                                push rbp	       711	dm-region-hash.c	FUNCTION_30
+0x4000793	    0x4c8da7880000	                   lea r12, [rdi + 0x88]	       711	dm-region-hash.c	FUNCTION_30
+0x400079a	              0x53	                                push rbx	       711	dm-region-hash.c	FUNCTION_30
+0x400079b	          0x8b4778	            mov eax, dword [rdi + 0x78] 	       714	dm-region-hash.c	FUNCTION_30	FOR_1
+0x400079e	            0x31db	                            xor ebx, ebx	       714	dm-region-hash.c	FUNCTION_30	FOR_1
+0x40007a0	          0x4889fd	                            mov rbp, rdi	       711	dm-region-hash.c	FUNCTION_30
+0x40007a3	            0x85c0	                           test eax, eax	       714	dm-region-hash.c	FUNCTION_30	FOR_1
+0x40007a5	            0x7410	                            je 0x40007b7	       714	dm-region-hash.c	FUNCTION_30	FOR_1
+0x40007a7	          0x4c89e7	                            mov rdi, r12	       715	dm-region-hash.c	FUNCTION_30	CALL_1
+0x40007aa	          0x83c301	                              add ebx, 1	       714	dm-region-hash.c	FUNCTION_30	FOR_1
+0x40007ad	      0xe800000000	                          call 0x40007b2	       715	dm-region-hash.c	FUNCTION_30	CALL_1
+0x40007b2	          0x395d78	            cmp dword [rbp + 0x78], ebx 	       714	dm-region-hash.c	FUNCTION_30	FOR_1
+0x40007b5	            0x77f0	                            ja 0x40007a7	       714	dm-region-hash.c	FUNCTION_30	FOR_1
+0x40007b7	              0x5b	                                 pop rbx	       718	dm-region-hash.c	FUNCTION_30
+0x40007b8	    0x488bbde80000	            mov rdi, qword [rbp + 0xe8] 	       717	dm-region-hash.c	FUNCTION_30	CALL_2
+0x40007bf	    0x488b85000100	           mov rax, qword [rbp + 0x100] 	       717	dm-region-hash.c	FUNCTION_30	CALL_2
+0x40007c6	              0x5d	                                 pop rbp	       718	dm-region-hash.c	FUNCTION_30
+0x40007c7	            0x415c	                                 pop r12	       718	dm-region-hash.c	FUNCTION_30
+0x40007c9	      0xe900000000	                           jmp 0x40007ce	       717	dm-region-hash.c	FUNCTION_30	CALL_2

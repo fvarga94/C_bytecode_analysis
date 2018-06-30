@@ -1,0 +1,1162 @@
+iova_domain_flush_tlb	ELSE,0:IF,0:DO,0:WHILE,0:CALL,2:SWITCH,0:FOR,0:functions,0	10
+0x4001690	              0x53	                                push rbx	      1737	amd_iommu.c	FUNCTION_78
+0x4001691	    0x488d9fc0feff	                  lea rbx, [rdi - 0x140]	      1732	amd_iommu.c	FUNCTION_77	CALL_1
+0x4001698	            0x31c9	                            xor ecx, ecx	      1264	amd_iommu.c	FUNCTION_58	CALL_1
+0x400169a	    0x48baffffffff	         movabs rdx, 0x7fffffffffffffff 	      1264	amd_iommu.c	FUNCTION_58	CALL_1
+0x40016a4	            0x31f6	                            xor esi, esi	      1264	amd_iommu.c	FUNCTION_58	CALL_1
+0x40016a6	          0x4889df	                            mov rdi, rbx	      1264	amd_iommu.c	FUNCTION_58	CALL_1
+0x40016a9	      0xe802feffff	           call sym.__domain_flush_pages	      1264	amd_iommu.c	FUNCTION_58	CALL_1
+0x40016ae	          0x4889df	                            mov rdi, rbx	      1733	amd_iommu.c	FUNCTION_77	CALL_2
+0x40016b1	              0x5b	                                 pop rbx	      1743	amd_iommu.c	FUNCTION_78
+0x40016b2	      0xe939f7ffff	           jmp sym.domain_flush_complete	      1733	amd_iommu.c	FUNCTION_77	CALL_2
+amd_iommu_capable	ELSE,0:IF,0:DO,0:WHILE,0:CALL,0:SWITCH,1:FOR,0:functions,0	6
+0x4000260	            0x31c0	                            xor eax, eax	      3052	amd_iommu.c	FUNCTION_126
+0x4000262	          0x83ff02	                              cmp edi, 2	      3052	amd_iommu.c	FUNCTION_126
+0x4000265	            0x7709	                            ja 0x4000270	      3052	amd_iommu.c	FUNCTION_126
+0x4000267	            0x89ff	                            mov edi, edi	      3052	amd_iommu.c	FUNCTION_126
+0x4000269	     0xfb687000000	                   movzx eax, byte [rdi]	      3052	amd_iommu.c	FUNCTION_126
+0x4000270	            0xf3c3	                                     ret	      3063	amd_iommu.c	FUNCTION_126
+unmap_sg	ELSE,0:IF,1:DO,0:WHILE,0:CALL,6:SWITCH,0:FOR,0:functions,0	37
+0x4002b70	            0x4156	                                push r14	      2571	amd_iommu.c	FUNCTION_107
+0x4002b72	            0x4155	                                push r13	      2571	amd_iommu.c	FUNCTION_107
+0x4002b74	          0x4189d6	                           mov r14d, edx	      2571	amd_iommu.c	FUNCTION_107
+0x4002b77	            0x4154	                                push r12	      2571	amd_iommu.c	FUNCTION_107
+0x4002b79	              0x55	                                push rbp	      2571	amd_iommu.c	FUNCTION_107
+0x4002b7a	          0x4989fc	                            mov r12, rdi	      2571	amd_iommu.c	FUNCTION_107
+0x4002b7d	              0x53	                                push rbx	      2571	amd_iommu.c	FUNCTION_107
+0x4002b7e	          0x4989f5	                            mov r13, rsi	      2571	amd_iommu.c	FUNCTION_107
+0x4002b81	      0xe84affffff	                     call sym.get_domain	      2577	amd_iommu.c	FUNCTION_107	CALL_1
+0x4002b86	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      2578	amd_iommu.c	FUNCTION_107	IF_1	CALL_2
+0x4002b8c	            0x773f	                            ja 0x4002bcd	      2578	amd_iommu.c	FUNCTION_107	IF_1	CALL_2
+0x4002b8e	        0x498b6d10	            mov rbp, qword [r13 + 0x10] 	      2581	amd_iommu.c	FUNCTION_107	CALL_3
+0x4002b92	          0x4889c3	                            mov rbx, rax	      2581	amd_iommu.c	FUNCTION_107	CALL_3
+0x4002b95	    0x4881e500f0ff	             and rbp, 0xfffffffffffff000	      2581	amd_iommu.c	FUNCTION_107	CALL_3
+0x4002b9c	    0x4883b8b00000	               cmp qword [rax + 0xb0], 1	       200	amd_iommu.c	FUNCTION_6	CALL_1
+0x4002ba4	            0x7530	                           jne 0x4002bd6	       200	amd_iommu.c	FUNCTION_6	CALL_1
+0x4002ba6	          0x4489f2	                           mov edx, r14d	      2583	amd_iommu.c	FUNCTION_107	CALL_5
+0x4002ba9	          0x4c89ee	                            mov rsi, r13	      2583	amd_iommu.c	FUNCTION_107	CALL_5
+0x4002bac	          0x4c89e7	                            mov rdi, r12	      2583	amd_iommu.c	FUNCTION_107	CALL_5
+0x4002baf	      0xe88cd8ffff	                   call sym.sg_num_pages	      2583	amd_iommu.c	FUNCTION_107	CALL_5
+0x4002bb4	          0x4889ee	                            mov rsi, rbp	      2585	amd_iommu.c	FUNCTION_107	CALL_6
+0x4002bb7	          0x4889df	                            mov rdi, rbx	      2585	amd_iommu.c	FUNCTION_107	CALL_6
+0x4002bba	          0xc1e00c	                            shl eax, 0xc	      2585	amd_iommu.c	FUNCTION_107	CALL_6
+0x4002bbd	              0x5b	                                 pop rbx	      2586	amd_iommu.c	FUNCTION_107
+0x4002bbe	              0x5d	                                 pop rbp	      2586	amd_iommu.c	FUNCTION_107
+0x4002bbf	            0x415c	                                 pop r12	      2586	amd_iommu.c	FUNCTION_107
+0x4002bc1	            0x415d	                                 pop r13	      2586	amd_iommu.c	FUNCTION_107
+0x4002bc3	            0x415e	                                 pop r14	      2586	amd_iommu.c	FUNCTION_107
+0x4002bc5	          0x4863d0	                         movsxd rdx, eax	      2585	amd_iommu.c	FUNCTION_107	CALL_6
+0x4002bc8	      0xe9f3eaffff	          jmp sym.__unmap_single.isra.17	      2585	amd_iommu.c	FUNCTION_107	CALL_6
+0x4002bcd	              0x5b	                                 pop rbx	      2586	amd_iommu.c	FUNCTION_107
+0x4002bce	              0x5d	                                 pop rbp	      2586	amd_iommu.c	FUNCTION_107
+0x4002bcf	            0x415c	                                 pop r12	      2586	amd_iommu.c	FUNCTION_107
+0x4002bd1	            0x415d	                                 pop r13	      2586	amd_iommu.c	FUNCTION_107
+0x4002bd3	            0x415e	                                 pop r14	      2586	amd_iommu.c	FUNCTION_107
+0x4002bd5	              0xc3	                                     ret	      2586	amd_iommu.c	FUNCTION_107
+0x4002bd6	      0xe865e0ffff	       call sym.to_dma_ops_domain.part.8	      2586	amd_iommu.c	FUNCTION_107
+amd_iommu_is_attach_deferred	ELSE,0:IF,0:DO,0:WHILE,0:CALL,0:SWITCH,0:FOR,0:functions,0	3
+0x4000280	    0x488b86480200	           mov rax, qword [rsi + 0x248] 	      3141	amd_iommu.c	FUNCTION_130
+0x4000287	         0xfb64039	           movzx eax, byte [rax + 0x39] 	      3141	amd_iommu.c	FUNCTION_130
+0x400028b	              0xc3	                                     ret	      3142	amd_iommu.c	FUNCTION_130
+amd_iommu_flush_iotlb_all	ELSE,0:IF,0:DO,0:WHILE,0:CALL,3:SWITCH,0:FOR,0:functions,0	10
+0x4001660	              0x53	                                push rbx	      3145	amd_iommu.c	FUNCTION_131
+0x4001661	        0x488d5fe0	                   lea rbx, [rdi - 0x20]	       195	amd_iommu.c	FUNCTION_5	CALL_1
+0x4001665	      0xb901000000	                              mov ecx, 1	      1270	amd_iommu.c	FUNCTION_59	CALL_1
+0x400166a	    0x48baffffffff	         movabs rdx, 0x7fffffffffffffff 	      1270	amd_iommu.c	FUNCTION_59	CALL_1
+0x4001674	            0x31f6	                            xor esi, esi	      1270	amd_iommu.c	FUNCTION_59	CALL_1
+0x4001676	          0x4889df	                            mov rdi, rbx	      1270	amd_iommu.c	FUNCTION_59	CALL_1
+0x4001679	      0xe832feffff	           call sym.__domain_flush_pages	      1270	amd_iommu.c	FUNCTION_59	CALL_1
+0x400167e	          0x4889df	                            mov rdi, rbx	      3149	amd_iommu.c	FUNCTION_131	CALL_3
+0x4001681	              0x5b	                                 pop rbx	      3150	amd_iommu.c	FUNCTION_131
+0x4001682	      0xe969f7ffff	           jmp sym.domain_flush_complete	      3149	amd_iommu.c	FUNCTION_131	CALL_3
+iommu_flush_all_caches	ELSE,1:IF,1:DO,0:WHILE,0:CALL,5:SWITCH,0:FOR,0:functions,0	80
+0x4004630	      0x4c8d542408	                      lea r10, [rsp + 8]	      1167	amd_iommu.c	FUNCTION_53
+0x4004635	        0x4883e4f0	             and rsp, 0xfffffffffffffff0	      1167	amd_iommu.c	FUNCTION_53
+0x4004639	        0x41ff72f8	                    push qword [r10 - 8]	      1167	amd_iommu.c	FUNCTION_53
+0x400463d	              0x55	                                push rbp	      1167	amd_iommu.c	FUNCTION_53
+0x400463e	          0x4889e5	                            mov rbp, rsp	      1167	amd_iommu.c	FUNCTION_53
+0x4004641	            0x4154	                                push r12	      1167	amd_iommu.c	FUNCTION_53
+0x4004643	            0x4152	                                push r10	      1167	amd_iommu.c	FUNCTION_53
+0x4004645	              0x53	                                push rbx	      1167	amd_iommu.c	FUNCTION_53
+0x4004646	          0x4989fc	                            mov r12, rdi	      1167	amd_iommu.c	FUNCTION_53
+0x4004649	        0x4883ec28	                           sub rsp, 0x28	      1167	amd_iommu.c	FUNCTION_53
+0x400464d	    0x65488b042528	                mov rax, qword gs:[0x28]	      1167	amd_iommu.c	FUNCTION_53
+0x4004656	        0x488945d8	             mov qword [rbp - 0x28], rax	      1167	amd_iommu.c	FUNCTION_53
+0x400465a	            0x31c0	                            xor eax, eax	      1167	amd_iommu.c	FUNCTION_53
+0x400465c	        0xf6474308	               test byte [rdi + 0x43], 8	        84	amd_iommu_proto.h	FUNCTION_249	IF_1
+0x4004660	            0x7457	                            je 0x40046b9	        84	amd_iommu_proto.h	FUNCTION_249	IF_1
+0x4004662	        0xf6474840	           test byte [rdi + 0x48], 0x40 	      1168	amd_iommu.c	FUNCTION_53	IF_1	CALL_1
+0x4004666	            0x7451	                            je 0x40046b9	      1168	amd_iommu.c	FUNCTION_53	IF_1	CALL_1
+0x4004668	        0x488d75c0	                   lea rsi, [rbp - 0x40]	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x400466c	    0x48c745c00000	               mov qword [rbp - 0x40], 0	       997	amd_iommu.c	FUNCTION_41	CALL_1
+0x4004674	    0x48c745c80000	               mov qword [rbp - 0x38], 0	       997	amd_iommu.c	FUNCTION_41	CALL_1
+0x400467c	    0xc745c4000000	      mov dword [rbp - 0x3c], 0x80000000	       998	amd_iommu.c	FUNCTION_41	CALL_2
+0x4004683	      0xe898c9ffff	call sym.iommu_queue_command_sync.constprop.30	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x4004688	    0x4180bc249900	                cmp byte [r12 + 0x99], 0	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4004691	     0xf85c6000000	                           jne 0x400475d	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4004697	        0x488b45d8	             mov rax, qword [rbp - 0x28]	      1175	amd_iommu.c	FUNCTION_53
+0x400469b	    0x654833042528	                xor rax, qword gs:[0x28]	      1175	amd_iommu.c	FUNCTION_53
+0x40046a4	     0xf85d7000000	                           jne 0x4004781	      1175	amd_iommu.c	FUNCTION_53
+0x40046aa	        0x4883c428	                           add rsp, 0x28	      1175	amd_iommu.c	FUNCTION_53
+0x40046ae	              0x5b	                                 pop rbx	      1175	amd_iommu.c	FUNCTION_53
+0x40046af	            0x415a	                                 pop r10	      1175	amd_iommu.c	FUNCTION_53
+0x40046b1	            0x415c	                                 pop r12	      1175	amd_iommu.c	FUNCTION_53
+0x40046b3	              0x5d	                                 pop rbp	      1175	amd_iommu.c	FUNCTION_53
+0x40046b4	        0x498d62f8	                      lea rsp, [r10 - 8]	      1175	amd_iommu.c	FUNCTION_53
+0x40046b8	              0xc3	                                     ret	      1175	amd_iommu.c	FUNCTION_53
+0x40046b9	            0x31db	                            xor ebx, ebx	      1175	amd_iommu.c	FUNCTION_53
+0x40046bb	            0x89de	                            mov esi, ebx	      1114	amd_iommu.c	FUNCTION_48	CALL_1
+0x40046bd	          0x4c89e7	                            mov rdi, r12	      1114	amd_iommu.c	FUNCTION_48	CALL_1
+0x40046c0	          0x83c301	                              add ebx, 1	      1113	amd_iommu.c	FUNCTION_48	FOR_1
+0x40046c3	      0xe8c8d0ffff	                call sym.iommu_flush_dte	      1114	amd_iommu.c	FUNCTION_48	CALL_1
+0x40046c8	    0x81fb00000100	                        cmp ebx, 0x10000	      1113	amd_iommu.c	FUNCTION_48	FOR_1
+0x40046ce	            0x75eb	                           jne 0x40046bb	      1113	amd_iommu.c	FUNCTION_48	FOR_1
+0x40046d0	    0x4180bc249900	                cmp byte [r12 + 0x99], 0	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x40046d9	     0xf8595000000	                           jne 0x4004774	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x40046df	            0x31db	                            xor ebx, ebx	        84	amd_iommu_proto.h	FUNCTION_249	IF_1
+0x40046e1	        0x488d75c0	                   lea rsi, [rbp - 0x40]	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x40046e5	          0x895dc0	             mov dword [rbp - 0x40], ebx	      1004	amd_iommu.c	FUNCTION_42
+0x40046e8	          0x4c89e7	                            mov rdi, r12	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x40046eb	          0x83c301	                              add ebx, 1	      1160	amd_iommu.c	FUNCTION_52	FOR_1
+0x40046ee	    0x48c745c80000	               mov qword [rbp - 0x38], 0	      1003	amd_iommu.c	FUNCTION_42	CALL_1
+0x40046f6	    0xc745c4000000	      mov dword [rbp - 0x3c], 0x50000000	      1005	amd_iommu.c	FUNCTION_42	CALL_2
+0x40046fd	      0xe81ec9ffff	call sym.iommu_queue_command_sync.constprop.30	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x4004702	    0x81fb00000100	                        cmp ebx, 0x10000	      1160	amd_iommu.c	FUNCTION_52	FOR_1
+0x4004708	            0x75d7	                           jne 0x40046e1	      1160	amd_iommu.c	FUNCTION_52	FOR_1
+0x400470a	    0x4180bc249900	                cmp byte [r12 + 0x99], 0	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4004713	            0x7555	                           jne 0x400476a	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4004715	            0x31db	                            xor ebx, ebx	        84	amd_iommu_proto.h	FUNCTION_249	IF_1
+0x4004717	            0x89d8	                            mov eax, ebx	       903	amd_iommu.c	FUNCTION_36	CALL_5
+0x4004719	        0x488d75c0	                   lea rsi, [rbp - 0x40]	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x400471d	          0x4c89e7	                            mov rdi, r12	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x4004720	       0xd00000030	                      or eax, 0x30000000	       903	amd_iommu.c	FUNCTION_36	CALL_5
+0x4004725	          0x83c301	                              add ebx, 1	      1127	amd_iommu.c	FUNCTION_49	FOR_1
+0x4004728	    0x48c745c00000	               mov qword [rbp - 0x40], 0	       899	amd_iommu.c	FUNCTION_36	CALL_2
+0x4004730	    0xc745ccffffff	      mov dword [rbp - 0x34], 0x7fffffff	       902	amd_iommu.c	FUNCTION_36	CALL_4
+0x4004737	          0x8945c4	             mov dword [rbp - 0x3c], eax	       903	amd_iommu.c	FUNCTION_36	CALL_5
+0x400473a	    0xc745c803f0ff	     mov dword [rbp - 0x38], 0xfffff003 	       907	amd_iommu.c	FUNCTION_36	IF_3
+0x4004741	      0xe8dac8ffff	call sym.iommu_queue_command_sync.constprop.30	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x4004746	    0x81fb00000100	                        cmp ebx, 0x10000	      1127	amd_iommu.c	FUNCTION_49	FOR_1
+0x400474c	            0x75c9	                           jne 0x4004717	      1127	amd_iommu.c	FUNCTION_49	FOR_1
+0x400474e	    0x4180bc249900	                cmp byte [r12 + 0x99], 0	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4004757	     0xf843affffff	                            je 0x4004697	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x400475d	          0x4c89e7	                            mov rdi, r12	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4004760	      0xe83bc5ffff	  call sym.iommu_completion_wait.part.14	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4004765	      0xe92dffffff	                           jmp 0x4004697	      1175	amd_iommu.c	FUNCTION_53
+0x400476a	          0x4c89e7	                            mov rdi, r12	      1175	amd_iommu.c	FUNCTION_53
+0x400476d	      0xe82ec5ffff	  call sym.iommu_completion_wait.part.14	      1175	amd_iommu.c	FUNCTION_53
+0x4004772	            0xeba1	                           jmp 0x4004715	      1175	amd_iommu.c	FUNCTION_53
+0x4004774	          0x4c89e7	                            mov rdi, r12	      1175	amd_iommu.c	FUNCTION_53
+0x4004777	      0xe824c5ffff	  call sym.iommu_completion_wait.part.14	      1175	amd_iommu.c	FUNCTION_53
+0x400477c	      0xe95effffff	                           jmp 0x40046df	      1175	amd_iommu.c	FUNCTION_53
+0x4004781	      0xe800000000	                  call section_end..text	      1175	amd_iommu.c	FUNCTION_53
+clear_dte_entry	ELSE,0:IF,0:DO,0:WHILE,0:CALL,1:SWITCH,0:FOR,0:functions,0	9
+0x4000320	    0x488b15000000	            mov rdx, qword [0x04000327] 	      1876	amd_iommu.c	FUNCTION_83
+0x4000327	           0xfb7c7	                           movzx eax, di	      1876	amd_iommu.c	FUNCTION_83
+0x400032a	           0xfb7ff	                           movzx edi, di	      1879	amd_iommu.c	FUNCTION_83	CALL_1
+0x400032d	        0x48c1e005	                              shl rax, 5	      1876	amd_iommu.c	FUNCTION_83
+0x4000331	    0x48c704020300	                mov qword [rdx + rax], 3	      1876	amd_iommu.c	FUNCTION_83
+0x4000339	    0x480305000000	             add rax, qword [0x04000340]	      1877	amd_iommu.c	FUNCTION_83
+0x4000340	    0x48ba00000000	               movabs rdx, 0x3ff00000000	      1877	amd_iommu.c	FUNCTION_83
+0x400034a	        0x48215008	                and qword [rax + 8], rdx	      1877	amd_iommu.c	FUNCTION_83
+0x400034e	      0xe900000000	                           jmp 0x4000353	      1879	amd_iommu.c	FUNCTION_83	CALL_1
+amd_iommu_unmap	ELSE,0:IF,1:DO,0:WHILE,0:CALL,4:SWITCH,0:FOR,0:functions,0	28
+0x4000bf0	          0x8b4774	            mov eax, dword [rdi + 0x74] 	      3020	amd_iommu.c	FUNCTION_124	IF_1
+0x4000bf3	            0x85c0	                           test eax, eax	      3020	amd_iommu.c	FUNCTION_124	IF_1
+0x4000bf5	            0x7503	                           jne 0x4000bfa	      3020	amd_iommu.c	FUNCTION_124	IF_1
+0x4000bf7	            0x31c0	                            xor eax, eax	      3020	amd_iommu.c	FUNCTION_124	IF_1
+0x4000bf9	              0xc3	                                     ret	      3020	amd_iommu.c	FUNCTION_124	IF_1
+0x4000bfa	            0x4155	                                push r13	      3016	amd_iommu.c	FUNCTION_124
+0x4000bfc	            0x4154	                                push r12	      3016	amd_iommu.c	FUNCTION_124
+0x4000bfe	        0x4c8d6fe0	                   lea r13, [rdi - 0x20]	      3023	amd_iommu.c	FUNCTION_124	CALL_2
+0x4000c02	              0x55	                                push rbp	      3016	amd_iommu.c	FUNCTION_124
+0x4000c03	              0x53	                                push rbx	      3016	amd_iommu.c	FUNCTION_124
+0x4000c04	        0x488d5f50	                   lea rbx, [rdi + 0x50]	      3023	amd_iommu.c	FUNCTION_124	CALL_2
+0x4000c08	          0x4989d4	                            mov r12, rdx	      3023	amd_iommu.c	FUNCTION_124	CALL_2
+0x4000c0b	          0x4889f5	                            mov rbp, rsi	      3023	amd_iommu.c	FUNCTION_124	CALL_2
+0x4000c0e	          0x4889df	                            mov rdi, rbx	      3023	amd_iommu.c	FUNCTION_124	CALL_2
+0x4000c11	      0xe800000000	                          call 0x4000c16	      3023	amd_iommu.c	FUNCTION_124	CALL_2
+0x4000c16	          0x4c89e2	                            mov rdx, r12	      3024	amd_iommu.c	FUNCTION_124	CALL_3
+0x4000c19	          0x4889ee	                            mov rsi, rbp	      3024	amd_iommu.c	FUNCTION_124	CALL_3
+0x4000c1c	          0x4c89ef	                            mov rdi, r13	      3024	amd_iommu.c	FUNCTION_124	CALL_3
+0x4000c1f	      0xe8ccfeffff	               call sym.iommu_unmap_page	      3024	amd_iommu.c	FUNCTION_124	CALL_3
+0x4000c24	          0x4889df	                            mov rdi, rbx	      3025	amd_iommu.c	FUNCTION_124	CALL_4
+0x4000c27	          0x4889c5	                            mov rbp, rax	      3024	amd_iommu.c	FUNCTION_124	CALL_3
+0x4000c2a	      0xe800000000	                          call 0x4000c2f	      3025	amd_iommu.c	FUNCTION_124	CALL_4
+0x4000c2f	          0x4889e8	                            mov rax, rbp	      3027	amd_iommu.c	FUNCTION_124
+0x4000c32	              0x5b	                                 pop rbx	      3028	amd_iommu.c	FUNCTION_124
+0x4000c33	              0x5d	                                 pop rbp	      3028	amd_iommu.c	FUNCTION_124
+0x4000c34	            0x415c	                                 pop r12	      3028	amd_iommu.c	FUNCTION_124
+0x4000c36	            0x415d	                                 pop r13	      3028	amd_iommu.c	FUNCTION_124
+0x4000c38	              0xc3	                                     ret	      3028	amd_iommu.c	FUNCTION_124
+amd_iommu_unregister_ppr_notifier	ELSE,0:IF,0:DO,0:WHILE,0:CALL,1:SWITCH,0:FOR,0:functions,0	3
+0x4000800	          0x4889fe	                            mov rsi, rdi	      3198	amd_iommu.c	FUNCTION_134
+0x4000803	    0x48c7c7000000	                              mov rdi, 0	      3199	amd_iommu.c	FUNCTION_134	CALL_1
+0x400080a	      0xe900000000	                           jmp 0x400080f	      3199	amd_iommu.c	FUNCTION_134	CALL_1
+amd_iommu_get_v2_domain	ELSE,0:IF,2:DO,0:WHILE,0:CALL,2:SWITCH,0:FOR,0:functions,0	11
+0x4002b40	    0x4881c7a00000	                           add rdi, 0xa0	      3488	amd_iommu.c	FUNCTION_148	CALL_1
+0x4002b47	      0xe884ffffff	                     call sym.get_domain	      3488	amd_iommu.c	FUNCTION_148	CALL_1
+0x4002b4c	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      3489	amd_iommu.c	FUNCTION_148	IF_1	CALL_2
+0x4002b52	            0x7715	                            ja 0x4002b69	      3489	amd_iommu.c	FUNCTION_148	IF_1	CALL_2
+0x4002b54	    0xf680b0000000	               test byte [rax + 0xb0], 8	      3496	amd_iommu.c	FUNCTION_148
+0x4002b5b	        0x488d5020	                   lea rdx, [rax + 0x20]	      3496	amd_iommu.c	FUNCTION_148
+0x4002b5f	      0xb800000000	                              mov eax, 0	      3496	amd_iommu.c	FUNCTION_148
+0x4002b64	        0x480f45c2	                         cmovne rax, rdx	      3496	amd_iommu.c	FUNCTION_148
+0x4002b68	              0xc3	                                     ret	      3496	amd_iommu.c	FUNCTION_148
+0x4002b69	            0x31c0	                            xor eax, eax	      3490	amd_iommu.c	FUNCTION_148	IF_1
+0x4002b6b	              0xc3	                                     ret	      3497	amd_iommu.c	FUNCTION_148
+free_gcr3_tbl_level1	ELSE,0:IF,1:DO,0:WHILE,0:CALL,2:SWITCH,0:FOR,1:functions,0	21
+0x4000750	              0x55	                                push rbp	      1689	amd_iommu.c	FUNCTION_74
+0x4000751	    0x488daf001000	                 lea rbp, [rdi + 0x1000]	      1689	amd_iommu.c	FUNCTION_74
+0x4000758	              0x53	                                push rbx	      1689	amd_iommu.c	FUNCTION_74
+0x4000759	          0x4889fb	                            mov rbx, rdi	      1689	amd_iommu.c	FUNCTION_74
+0x400075c	            0xeb09	                           jmp 0x4000767	      1689	amd_iommu.c	FUNCTION_74
+0x400075e	        0x4883c308	                              add rbx, 8	      1689	amd_iommu.c	FUNCTION_74
+0x4000762	          0x4839eb	                            cmp rbx, rbp	      1693	amd_iommu.c	FUNCTION_74	FOR_1
+0x4000765	            0x7427	                            je 0x400078e	      1693	amd_iommu.c	FUNCTION_74	FOR_1
+0x4000767	          0x488b3b	                    mov rdi, qword [rbx]	      1694	amd_iommu.c	FUNCTION_74	FOR_1	IF_1
+0x400076a	        0x40f6c701	                             test dil, 1	      1694	amd_iommu.c	FUNCTION_74	FOR_1	IF_1
+0x400076e	            0x74ee	                            je 0x400075e	      1694	amd_iommu.c	FUNCTION_74	FOR_1	IF_1
+0x4000770	    0x4881e700f0ff	             and rdi, 0xfffffffffffff000	      1699	amd_iommu.c	FUNCTION_74	FOR_1	CALL_2
+0x4000777	    0x48033d000000	             add rdi, qword [0x0400077e]	      1699	amd_iommu.c	FUNCTION_74	FOR_1	CALL_2
+0x400077e	            0x31f6	                            xor esi, esi	      1699	amd_iommu.c	FUNCTION_74	FOR_1	CALL_2
+0x4000780	        0x4883c308	                              add rbx, 8	      1699	amd_iommu.c	FUNCTION_74	FOR_1	CALL_2
+0x4000784	      0xe800000000	                          call 0x4000789	      1699	amd_iommu.c	FUNCTION_74	FOR_1	CALL_2
+0x4000789	          0x4839eb	                            cmp rbx, rbp	      1693	amd_iommu.c	FUNCTION_74	FOR_1
+0x400078c	            0x75d9	                           jne 0x4000767	      1693	amd_iommu.c	FUNCTION_74	FOR_1
+0x400078e	              0x5b	                                 pop rbx	      1701	amd_iommu.c	FUNCTION_74
+0x400078f	              0x5d	                                 pop rbp	      1701	amd_iommu.c	FUNCTION_74
+0x4000790	              0xc3	                                     ret	      1701	amd_iommu.c	FUNCTION_74
+amd_iommu_complete_ppr	ELSE,0:IF,0:DO,0:WHILE,0:CALL,3:SWITCH,0:FOR,0:functions,0	40
+0x4001400	      0x4c8d542408	                      lea r10, [rsp + 8]	      3469	amd_iommu.c	FUNCTION_147
+0x4001405	        0x4883e4f0	             and rsp, 0xfffffffffffffff0	      3469	amd_iommu.c	FUNCTION_147
+0x4001409	        0x41ff72f8	                    push qword [r10 - 8]	      3469	amd_iommu.c	FUNCTION_147
+0x400140d	              0x55	                                push rbp	      3469	amd_iommu.c	FUNCTION_147
+0x400140e	          0x4889e5	                            mov rbp, rsp	      3469	amd_iommu.c	FUNCTION_147
+0x4001411	            0x4152	                                push r10	      3469	amd_iommu.c	FUNCTION_147
+0x4001413	        0x4883ec28	                           sub rsp, 0x28	      3469	amd_iommu.c	FUNCTION_147
+0x4001417	    0x4c8b87e80200	            mov r8, qword [rdi + 0x2e8] 	       319	amd_iommu.c	FUNCTION_12
+0x400141e	    0x488b3d000000	            mov rdi, qword [0x04001425] 	      3475	amd_iommu.c	FUNCTION_147
+0x4001425	    0x65488b042528	                mov rax, qword gs:[0x28]	      3469	amd_iommu.c	FUNCTION_147
+0x400142e	        0x488945e8	             mov qword [rbp - 0x18], rax	      3469	amd_iommu.c	FUNCTION_147
+0x4001432	            0x31c0	                            xor eax, eax	      3469	amd_iommu.c	FUNCTION_147
+0x4001434	      0xb800000070	                     mov eax, 0x70000000	      3469	amd_iommu.c	FUNCTION_147
+0x4001439	      0x450fb74820	            movzx r9d, word [r8 + 0x20] 	      3475	amd_iommu.c	FUNCTION_147
+0x400143e	      0x450fb64030	            movzx r8d, byte [r8 + 0x30] 	      3478	amd_iommu.c	FUNCTION_147
+0x4001443	          0x4584c0	                           test r8b, r8b	       985	amd_iommu.c	FUNCTION_40	IF_1
+0x4001446	        0x4a8b3ccf	             mov rdi, qword [rdi + r9*8]	      3475	amd_iommu.c	FUNCTION_147
+0x400144a	    0x48c745d80000	               mov qword [rbp - 0x28], 0	       982	amd_iommu.c	FUNCTION_40	CALL_1
+0x4001452	        0x44894dd0	             mov dword [rbp - 0x30], r9d	       984	amd_iommu.c	FUNCTION_40
+0x4001456	            0x740e	                            je 0x4001466	       985	amd_iommu.c	FUNCTION_40	IF_1
+0x4001458	            0x89f0	                            mov eax, esi	       985	amd_iommu.c	FUNCTION_40	IF_1
+0x400145a	    0xc745d8040000	               mov dword [rbp - 0x28], 4	       987	amd_iommu.c	FUNCTION_40	IF_1
+0x4001461	       0xd00000070	                      or eax, 0x70000000	       987	amd_iommu.c	FUNCTION_40	IF_1
+0x4001466	          0xc1e20c	                            shl edx, 0xc	       990	amd_iommu.c	FUNCTION_40
+0x4001469	    0x81e1ff010000	                          and ecx, 0x1ff	       990	amd_iommu.c	FUNCTION_40
+0x400146f	        0x488d75d0	                   lea rsi, [rbp - 0x30]	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x4001473	           0xfb7d2	                           movzx edx, dx	       990	amd_iommu.c	FUNCTION_40
+0x4001476	          0x8945d4	             mov dword [rbp - 0x2c], eax	       992	amd_iommu.c	FUNCTION_40	CALL_2
+0x4001479	             0x9d1	                             or ecx, edx	       990	amd_iommu.c	FUNCTION_40
+0x400147b	          0x894ddc	             mov dword [rbp - 0x24], ecx	       990	amd_iommu.c	FUNCTION_40
+0x400147e	      0xe89dfbffff	call sym.iommu_queue_command_sync.constprop.30	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x4001483	        0x488b75e8	             mov rsi, qword [rbp - 0x18]	      3481	amd_iommu.c	FUNCTION_147
+0x4001487	    0x654833342528	                xor rsi, qword gs:[0x28]	      3481	amd_iommu.c	FUNCTION_147
+0x4001490	            0x750c	                           jne 0x400149e	      3481	amd_iommu.c	FUNCTION_147
+0x4001492	        0x4883c428	                           add rsp, 0x28	      3481	amd_iommu.c	FUNCTION_147
+0x4001496	            0x415a	                                 pop r10	      3481	amd_iommu.c	FUNCTION_147
+0x4001498	              0x5d	                                 pop rbp	      3481	amd_iommu.c	FUNCTION_147
+0x4001499	        0x498d62f8	                      lea rsp, [r10 - 8]	      3481	amd_iommu.c	FUNCTION_147
+0x400149d	              0xc3	                                     ret	      3481	amd_iommu.c	FUNCTION_147
+0x400149e	      0xe800000000	                          call 0x40014a3	      3481	amd_iommu.c	FUNCTION_147
+iommu_flush_dte	ELSE,0:IF,0:DO,0:WHILE,0:CALL,2:SWITCH,0:FOR,0:functions,0	25
+0x4001790	      0x4c8d542408	                      lea r10, [rsp + 8]	      1101	amd_iommu.c	FUNCTION_47
+0x4001795	        0x4883e4f0	             and rsp, 0xfffffffffffffff0	      1101	amd_iommu.c	FUNCTION_47
+0x4001799	           0xfb7f6	                           movzx esi, si	       875	amd_iommu.c	FUNCTION_35
+0x400179c	        0x41ff72f8	                    push qword [r10 - 8]	      1101	amd_iommu.c	FUNCTION_47
+0x40017a0	              0x55	                                push rbp	      1101	amd_iommu.c	FUNCTION_47
+0x40017a1	          0x4889e5	                            mov rbp, rsp	      1101	amd_iommu.c	FUNCTION_47
+0x40017a4	            0x4152	                                push r10	      1101	amd_iommu.c	FUNCTION_47
+0x40017a6	        0x4883ec28	                           sub rsp, 0x28	      1101	amd_iommu.c	FUNCTION_47
+0x40017aa	          0x8975d0	             mov dword [rbp - 0x30], esi	       875	amd_iommu.c	FUNCTION_35
+0x40017ad	        0x488d75d0	                   lea rsi, [rbp - 0x30]	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x40017b1	    0x65488b042528	                mov rax, qword gs:[0x28]	      1101	amd_iommu.c	FUNCTION_47
+0x40017ba	        0x488945e8	             mov qword [rbp - 0x18], rax	      1101	amd_iommu.c	FUNCTION_47
+0x40017be	            0x31c0	                            xor eax, eax	      1101	amd_iommu.c	FUNCTION_47
+0x40017c0	    0x48c745d80000	               mov qword [rbp - 0x28], 0	       874	amd_iommu.c	FUNCTION_35	CALL_1
+0x40017c8	    0xc745d4000000	      mov dword [rbp - 0x2c], 0x20000000	       876	amd_iommu.c	FUNCTION_35	CALL_2
+0x40017cf	      0xe84cf8ffff	call sym.iommu_queue_command_sync.constprop.30	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x40017d4	        0x488b55e8	             mov rdx, qword [rbp - 0x18]	      1107	amd_iommu.c	FUNCTION_47
+0x40017d8	    0x654833142528	                xor rdx, qword gs:[0x28]	      1107	amd_iommu.c	FUNCTION_47
+0x40017e1	            0x750c	                           jne 0x40017ef	      1107	amd_iommu.c	FUNCTION_47
+0x40017e3	        0x4883c428	                           add rsp, 0x28	      1107	amd_iommu.c	FUNCTION_47
+0x40017e7	            0x415a	                                 pop r10	      1107	amd_iommu.c	FUNCTION_47
+0x40017e9	              0x5d	                                 pop rbp	      1107	amd_iommu.c	FUNCTION_47
+0x40017ea	        0x498d62f8	                      lea rsp, [r10 - 8]	      1107	amd_iommu.c	FUNCTION_47
+0x40017ee	              0xc3	                                     ret	      1107	amd_iommu.c	FUNCTION_47
+0x40017ef	      0xe800000000	                          call 0x40017f4	      1107	amd_iommu.c	FUNCTION_47
+amd_iommu_device_group	ELSE,0:IF,1:DO,0:WHILE,0:CALL,3:SWITCH,0:FOR,0:functions,0	98
+0x40027f0	    0x4881bf800000	               cmp qword [rdi + 0x80], 0	      2235	amd_iommu.c	FUNCTION_96	IF_1	CALL_1
+0x40027fb	     0xf8468010000	                            je 0x4002969	      2235	amd_iommu.c	FUNCTION_96	IF_1	CALL_1
+0x4002801	            0x4156	                                push r14	      2234	amd_iommu.c	FUNCTION_96
+0x4002803	            0x4155	                                push r13	      2234	amd_iommu.c	FUNCTION_96
+0x4002805	    0x4c8b2d000000	            mov r13, qword [0x0400280c] 	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x400280c	            0x4154	                                push r12	      2234	amd_iommu.c	FUNCTION_96
+0x400280e	              0x55	                                push rbp	      2234	amd_iommu.c	FUNCTION_96
+0x400280f	              0x53	                                push rbx	      2234	amd_iommu.c	FUNCTION_96
+0x4002810	    0x4981fd000000	                              cmp r13, 0	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x4002817	     0xf8424010000	                            je 0x4002941	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x400281d	          0x4889fd	                            mov rbp, rdi	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x4002820	          0x4531e4	                          xor r12d, r12d	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x4002823	    0x488b9d580200	           mov rbx, qword [rbp + 0x258] 	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x400282a	          0x4889df	                            mov rdi, rbx	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x400282d	      0xe800000000	                          call 0x4002832	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x4002832	        0x488d7bf0	                   lea rdi, [rbx - 0x10]	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x4002836	            0x84c0	                             test al, al	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x4002838	        0x490f44fc	                          cmove rdi, r12	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x400283c	      0xe800000000	                          call 0x4002841	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x4002841	    0x488b9d580200	           mov rbx, qword [rbp + 0x258] 	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x4002848	          0x4989c6	                            mov r14, rax	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x400284b	          0x4889df	                            mov rdi, rbx	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x400284e	        0x4883eb10	                           sub rbx, 0x10	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x4002852	      0xe800000000	                          call 0x4002857	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x4002857	            0x84c0	                             test al, al	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x4002859	        0x490f44dc	                          cmove rbx, r12	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x400285d	          0x4d85f6	                           test r14, r14	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x4002860	    0x488b9b880000	            mov rbx, qword [rbx + 0x88] 	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x4002867	     0xf84c3000000	                            je 0x4002930	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x400286d	        0x41803e00	                       cmp byte [r14], 0	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x4002871	     0xf84b9000000	                            je 0x4002930	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x4002877	          0x4885db	                           test rbx, rbx	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x400287a	    0x498db5100100	                  lea rsi, [r13 + 0x110]	       151	amd_iommu.c	FUNCTION_1	CALL_5
+0x4002881	          0x4c89f7	                            mov rdi, r14	       151	amd_iommu.c	FUNCTION_1	CALL_5
+0x4002884	     0xf849d000000	                            je 0x4002927	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x400288a	          0x803b00	                       cmp byte [rbx], 0	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x400288d	     0xf8494000000	                            je 0x4002927	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x4002893	      0x41807d1000	                cmp byte [r13 + 0x10], 0	       153	amd_iommu.c	FUNCTION_1	IF_3
+0x4002898	     0xf8489000000	                            je 0x4002927	       153	amd_iommu.c	FUNCTION_1	IF_3
+0x400289e	      0xe800000000	                          call 0x40028a3	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40028a3	            0x85c0	                           test eax, eax	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40028a5	     0xf8585000000	                           jne 0x4002930	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40028ab	        0x498d7510	                   lea rsi, [r13 + 0x10]	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40028af	          0x4889df	                            mov rdi, rbx	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40028b2	      0xe800000000	                          call 0x40028b7	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40028b7	            0x85c0	                           test eax, eax	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40028b9	            0x7575	                           jne 0x4002930	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40028bb	    0x488b05000000	            mov rax, qword [0x040028c2] 	       335	amd_iommu.c	FUNCTION_13	FUNCTION_1
+0x40028c2	    0x410fb7951a01	          movzx edx, word [r13 + 0x11a] 	       175	amd_iommu.c	FUNCTION_3	FUNCTION_1	IF_1
+0x40028ca	    0x483d00000000	                              cmp rax, 0	       335	amd_iommu.c	FUNCTION_13	FUNCTION_1
+0x40028d0	            0x750d	                           jne 0x40028df	       335	amd_iommu.c	FUNCTION_13	FUNCTION_1
+0x40028d2	            0xeb32	                           jmp 0x4002906	       335	amd_iommu.c	FUNCTION_13	FUNCTION_1
+0x40028d4	          0x488b00	                    mov rax, qword [rax]	       335	amd_iommu.c	FUNCTION_13	FUNCTION_1
+0x40028d7	    0x483d00000000	                              cmp rax, 0	       335	amd_iommu.c	FUNCTION_13	FUNCTION_1
+0x40028dd	            0x7427	                            je 0x4002906	       335	amd_iommu.c	FUNCTION_13	FUNCTION_1
+0x40028df	    0x6639901a0100	              cmp word [rax + 0x11a], dx	       336	amd_iommu.c	FUNCTION_13	FUNCTION_1	IF_1
+0x40028e6	            0x75ec	                           jne 0x40028d4	       336	amd_iommu.c	FUNCTION_13	FUNCTION_1	IF_1
+0x40028e8	    0x488b88200100	           mov rcx, qword [rax + 0x120] 	       336	amd_iommu.c	FUNCTION_13	FUNCTION_1	IF_1
+0x40028ef	          0x4885c9	                           test rcx, rcx	       336	amd_iommu.c	FUNCTION_13	FUNCTION_1	IF_1
+0x40028f2	            0x74e0	                            je 0x40028d4	       336	amd_iommu.c	FUNCTION_13	FUNCTION_1	IF_1
+0x40028f4	    0x49898d200100	            mov qword [r13 + 0x120], rcx	       337	amd_iommu.c	FUNCTION_13	FUNCTION_1	IF_1
+0x40028fb	          0x488b00	                    mov rax, qword [rax]	       335	amd_iommu.c	FUNCTION_13	FUNCTION_1
+0x40028fe	    0x483d00000000	                              cmp rax, 0	       335	amd_iommu.c	FUNCTION_13	FUNCTION_1
+0x4002904	            0x75d9	                           jne 0x40028df	       335	amd_iommu.c	FUNCTION_13	FUNCTION_1
+0x4002906	    0x498bbd200100	           mov rdi, qword [r13 + 0x120] 	       340	amd_iommu.c	FUNCTION_13	IF_2
+0x400290d	          0x4885ff	                           test rdi, rdi	       340	amd_iommu.c	FUNCTION_13	IF_2
+0x4002910	            0x743f	                            je 0x4002951	       340	amd_iommu.c	FUNCTION_13	IF_2
+0x4002912	      0xe800000000	                          call 0x4002917	       343	amd_iommu.c	FUNCTION_13	CALL_4
+0x4002917	    0x498b85200100	           mov rax, qword [r13 + 0x120] 	       343	amd_iommu.c	FUNCTION_13	CALL_4
+0x400291e	              0x5b	                                 pop rbx	      2239	amd_iommu.c	FUNCTION_96
+0x400291f	              0x5d	                                 pop rbp	      2239	amd_iommu.c	FUNCTION_96
+0x4002920	            0x415c	                                 pop r12	      2239	amd_iommu.c	FUNCTION_96
+0x4002922	            0x415d	                                 pop r13	      2239	amd_iommu.c	FUNCTION_96
+0x4002924	            0x415e	                                 pop r14	      2239	amd_iommu.c	FUNCTION_96
+0x4002926	              0xc3	                                     ret	      2239	amd_iommu.c	FUNCTION_96
+0x4002927	      0xe800000000	                          call 0x400292c	       154	amd_iommu.c	FUNCTION_1	CALL_6
+0x400292c	            0x85c0	                           test eax, eax	       172	amd_iommu.c	FUNCTION_3	FUNCTION_1	IF_1	CALL_1
+0x400292e	            0x748b	                            je 0x40028bb	       172	amd_iommu.c	FUNCTION_3	FUNCTION_1	IF_1	CALL_1
+0x4002930	        0x4d8b6d00	                    mov r13, qword [r13]	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x4002934	    0x4981fd000000	                              cmp r13, 0	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x400293b	     0xf85e2feffff	                           jne 0x4002823	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x4002941	              0x5b	                                 pop rbx	      2239	amd_iommu.c	FUNCTION_96
+0x4002942	    0x48c7c0eaffff	             mov rax, 0xffffffffffffffea	       333	amd_iommu.c	FUNCTION_13	CALL_2
+0x4002949	              0x5d	                                 pop rbp	      2239	amd_iommu.c	FUNCTION_96
+0x400294a	            0x415c	                                 pop r12	      2239	amd_iommu.c	FUNCTION_96
+0x400294c	            0x415d	                                 pop r13	      2239	amd_iommu.c	FUNCTION_96
+0x400294e	            0x415e	                                 pop r14	      2239	amd_iommu.c	FUNCTION_96
+0x4002950	              0xc3	                                     ret	      2239	amd_iommu.c	FUNCTION_96
+0x4002951	          0x4889ef	                            mov rdi, rbp	       341	amd_iommu.c	FUNCTION_13	CALL_3
+0x4002954	      0xe800000000	                          call 0x4002959	       341	amd_iommu.c	FUNCTION_13	CALL_3
+0x4002959	    0x498985200100	            mov qword [r13 + 0x120], rax	       341	amd_iommu.c	FUNCTION_13	CALL_3
+0x4002960	              0x5b	                                 pop rbx	      2239	amd_iommu.c	FUNCTION_96
+0x4002961	              0x5d	                                 pop rbp	      2239	amd_iommu.c	FUNCTION_96
+0x4002962	            0x415c	                                 pop r12	      2239	amd_iommu.c	FUNCTION_96
+0x4002964	            0x415d	                                 pop r13	      2239	amd_iommu.c	FUNCTION_96
+0x4002966	            0x415e	                                 pop r14	      2239	amd_iommu.c	FUNCTION_96
+0x4002968	              0xc3	                                     ret	      2239	amd_iommu.c	FUNCTION_96
+0x4002969	      0xe900000000	                           jmp 0x400296e	      2236	amd_iommu.c	FUNCTION_96	CALL_2
+amd_iommu_detach_device	ELSE,0:IF,5:DO,0:WHILE,0:CALL,5:SWITCH,0:FOR,0:functions,0	97
+0x4003630	            0x4157	                                push r15	      2928	amd_iommu.c	FUNCTION_121
+0x4003632	            0x4156	                                push r14	      2928	amd_iommu.c	FUNCTION_121
+0x4003634	          0x4889f7	                            mov rdi, rsi	      2933	amd_iommu.c	FUNCTION_121	IF_1	CALL_1
+0x4003637	            0x4155	                                push r13	      2928	amd_iommu.c	FUNCTION_121
+0x4003639	            0x4154	                                push r12	      2928	amd_iommu.c	FUNCTION_121
+0x400363b	              0x55	                                push rbp	      2928	amd_iommu.c	FUNCTION_121
+0x400363c	              0x53	                                push rbx	      2928	amd_iommu.c	FUNCTION_121
+0x400363d	          0x4889f5	                            mov rbp, rsi	      2928	amd_iommu.c	FUNCTION_121
+0x4003640	    0x4c8bae480200	           mov r13, qword [rsi + 0x248] 	      2929	amd_iommu.c	FUNCTION_121
+0x4003647	      0xe824f3ffff	                   call sym.check_device	      2933	amd_iommu.c	FUNCTION_121	IF_1	CALL_1
+0x400364c	            0x84c0	                             test al, al	      2933	amd_iommu.c	FUNCTION_121	IF_1	CALL_1
+0x400364e	            0x750b	                           jne 0x400365b	      2933	amd_iommu.c	FUNCTION_121	IF_1	CALL_1
+0x4003650	              0x5b	                                 pop rbx	      2954	amd_iommu.c	FUNCTION_121
+0x4003651	              0x5d	                                 pop rbp	      2954	amd_iommu.c	FUNCTION_121
+0x4003652	            0x415c	                                 pop r12	      2954	amd_iommu.c	FUNCTION_121
+0x4003654	            0x415d	                                 pop r13	      2954	amd_iommu.c	FUNCTION_121
+0x4003656	            0x415e	                                 pop r14	      2954	amd_iommu.c	FUNCTION_121
+0x4003658	            0x415f	                                 pop r15	      2954	amd_iommu.c	FUNCTION_121
+0x400365a	              0xc3	                                     ret	      2954	amd_iommu.c	FUNCTION_121
+0x400365b	    0x4881bd800000	               cmp qword [rbp + 0x80], 0	       185	amd_iommu.c	FUNCTION_4	IF_1	CALL_1
+0x4003666	     0xf8406010000	                            je 0x4003772	       185	amd_iommu.c	FUNCTION_4	IF_1	CALL_1
+0x400366c	    0x4c8b35000000	            mov r14, qword [0x04003673] 	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x4003673	    0x4981fe000000	                              cmp r14, 0	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x400367a	            0x74d4	                            je 0x4003650	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x400367c	          0x4531e4	                          xor r12d, r12d	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x400367f	    0x488b9d580200	           mov rbx, qword [rbp + 0x258] 	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x4003686	          0x4889df	                            mov rdi, rbx	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x4003689	      0xe800000000	                          call 0x400368e	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x400368e	        0x488d7bf0	                   lea rdi, [rbx - 0x10]	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x4003692	            0x84c0	                             test al, al	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x4003694	        0x490f44fc	                          cmove rdi, r12	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x4003698	      0xe800000000	                          call 0x400369d	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x400369d	    0x488b9d580200	           mov rbx, qword [rbp + 0x258] 	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40036a4	          0x4989c7	                            mov r15, rax	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x40036a7	          0x4889df	                            mov rdi, rbx	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40036aa	        0x4883eb10	                           sub rbx, 0x10	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40036ae	      0xe800000000	                          call 0x40036b3	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40036b3	            0x84c0	                             test al, al	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40036b5	        0x490f44dc	                          cmove rbx, r12	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40036b9	          0x4d85ff	                           test r15, r15	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x40036bc	    0x488b9b880000	            mov rbx, qword [rbx + 0x88] 	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40036c3	     0xf848e000000	                            je 0x4003757	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x40036c9	        0x41803f00	                       cmp byte [r15], 0	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x40036cd	     0xf8484000000	                            je 0x4003757	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x40036d3	          0x4885db	                           test rbx, rbx	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x40036d6	    0x498db6100100	                  lea rsi, [r14 + 0x110]	       151	amd_iommu.c	FUNCTION_1	CALL_5
+0x40036dd	          0x4c89ff	                            mov rdi, r15	       151	amd_iommu.c	FUNCTION_1	CALL_5
+0x40036e0	            0x746c	                            je 0x400374e	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x40036e2	          0x803b00	                       cmp byte [rbx], 0	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x40036e5	            0x7467	                            je 0x400374e	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x40036e7	      0x41807e1000	                cmp byte [r14 + 0x10], 0	       153	amd_iommu.c	FUNCTION_1	IF_3
+0x40036ec	            0x7460	                            je 0x400374e	       153	amd_iommu.c	FUNCTION_1	IF_3
+0x40036ee	      0xe800000000	                          call 0x40036f3	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40036f3	            0x85c0	                           test eax, eax	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40036f5	            0x7560	                           jne 0x4003757	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40036f7	        0x498d7610	                   lea rsi, [r14 + 0x10]	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40036fb	          0x4889df	                            mov rdi, rbx	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x40036fe	      0xe800000000	                          call 0x4003703	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4003703	            0x85c0	                           test eax, eax	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4003705	            0x7550	                           jne 0x4003757	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4003707	    0x410fb79e1a01	          movzx ebx, word [r14 + 0x11a] 	       175	amd_iommu.c	FUNCTION_3	FUNCTION_1	IF_1
+0x400370f	      0x49837d1800	               cmp qword [r13 + 0x18], 0	      2940	amd_iommu.c	FUNCTION_121	IF_3
+0x4003714	            0x7408	                            je 0x400371e	      2940	amd_iommu.c	FUNCTION_121	IF_3
+0x4003716	          0x4889ef	                            mov rdi, rbp	      2941	amd_iommu.c	FUNCTION_121	CALL_3
+0x4003719	      0xe892e2ffff	                  call sym.detach_device	      2941	amd_iommu.c	FUNCTION_121	CALL_3
+0x400371e	    0x488b05000000	            mov rax, qword [0x04003725] 	      2943	amd_iommu.c	FUNCTION_121
+0x4003725	        0x488b3cd8	            mov rdi, qword [rax + rbx*8]	      2943	amd_iommu.c	FUNCTION_121
+0x4003729	          0x4885ff	                           test rdi, rdi	      2944	amd_iommu.c	FUNCTION_121	IF_4
+0x400372c	     0xf841effffff	                            je 0x4003650	      2944	amd_iommu.c	FUNCTION_121	IF_4
+0x4003732	    0x80bf99000000	                cmp byte [rdi + 0x99], 0	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4003739	     0xf8411ffffff	                            je 0x4003650	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x400373f	              0x5b	                                 pop rbx	      2954	amd_iommu.c	FUNCTION_121
+0x4003740	              0x5d	                                 pop rbp	      2954	amd_iommu.c	FUNCTION_121
+0x4003741	            0x415c	                                 pop r12	      2954	amd_iommu.c	FUNCTION_121
+0x4003743	            0x415d	                                 pop r13	      2954	amd_iommu.c	FUNCTION_121
+0x4003745	            0x415e	                                 pop r14	      2954	amd_iommu.c	FUNCTION_121
+0x4003747	            0x415f	                                 pop r15	      2954	amd_iommu.c	FUNCTION_121
+0x4003749	      0xe952d5ffff	   jmp sym.iommu_completion_wait.part.14	      2954	amd_iommu.c	FUNCTION_121
+0x400374e	      0xe800000000	                          call 0x4003753	       154	amd_iommu.c	FUNCTION_1	CALL_6
+0x4003753	            0x85c0	                           test eax, eax	       172	amd_iommu.c	FUNCTION_3	FUNCTION_1	IF_1	CALL_1
+0x4003755	            0x74b0	                            je 0x4003707	       172	amd_iommu.c	FUNCTION_3	FUNCTION_1	IF_1	CALL_1
+0x4003757	          0x4d8b36	                    mov r14, qword [r14]	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x400375a	    0x4981fe000000	                              cmp r14, 0	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x4003761	     0xf8518ffffff	                           jne 0x400367f	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x4003767	              0x5b	                                 pop rbx	      2954	amd_iommu.c	FUNCTION_121
+0x4003768	              0x5d	                                 pop rbp	      2954	amd_iommu.c	FUNCTION_121
+0x4003769	            0x415c	                                 pop r12	      2954	amd_iommu.c	FUNCTION_121
+0x400376b	            0x415d	                                 pop r13	      2954	amd_iommu.c	FUNCTION_121
+0x400376d	            0x415e	                                 pop r14	      2954	amd_iommu.c	FUNCTION_121
+0x400376f	            0x415f	                                 pop r15	      2954	amd_iommu.c	FUNCTION_121
+0x4003771	              0xc3	                                     ret	      2954	amd_iommu.c	FUNCTION_121
+0x4003772	    0x488b8570ffff	             mov rax, qword [rbp - 0x90]	       163	amd_iommu.c	FUNCTION_2	CALL_2
+0x4003779	     0xfb698e00000	           movzx ebx, byte [rax + 0xe0] 	       186	amd_iommu.c	FUNCTION_4	CALL_2
+0x4003780	          0xc1e308	                              shl ebx, 8	       186	amd_iommu.c	FUNCTION_4	CALL_2
+0x4003783	        0x660b5d98	                or bx, word [rbp - 0x68]	       186	amd_iommu.c	FUNCTION_4	CALL_2
+0x4003787	           0xfb7db	                           movzx ebx, bx	       186	amd_iommu.c	FUNCTION_4	CALL_2
+0x400378a	            0xeb83	                           jmp 0x400370f	       186	amd_iommu.c	FUNCTION_4	CALL_2
+__flush_pasid	ELSE,0:IF,3:DO,0:WHILE,0:CALL,5:SWITCH,0:FOR,1:functions,1	121
+0x4001070	      0x4c8d542408	                      lea r10, [rsp + 8]	      3273	amd_iommu.c	FUNCTION_137
+0x4001075	        0x4883e4f0	             and rsp, 0xfffffffffffffff0	      3273	amd_iommu.c	FUNCTION_137
+0x4001079	        0x41ff72f8	                    push qword [r10 - 8]	      3273	amd_iommu.c	FUNCTION_137
+0x400107d	              0x55	                                push rbp	      3273	amd_iommu.c	FUNCTION_137
+0x400107e	          0x4889e5	                            mov rbp, rsp	      3273	amd_iommu.c	FUNCTION_137
+0x4001081	            0x4157	                                push r15	      3273	amd_iommu.c	FUNCTION_137
+0x4001083	            0x4156	                                push r14	      3273	amd_iommu.c	FUNCTION_137
+0x4001085	            0x4155	                                push r13	      3273	amd_iommu.c	FUNCTION_137
+0x4001087	            0x4154	                                push r12	      3273	amd_iommu.c	FUNCTION_137
+0x4001089	            0x4152	                                push r10	      3273	amd_iommu.c	FUNCTION_137
+0x400108b	              0x53	                                push rbx	      3273	amd_iommu.c	FUNCTION_137
+0x400108c	        0x4883ec30	                           sub rsp, 0x30	      3273	amd_iommu.c	FUNCTION_137
+0x4001090	    0x65488b042528	                mov rax, qword gs:[0x28]	      3273	amd_iommu.c	FUNCTION_137
+0x4001099	        0x488945c8	             mov qword [rbp - 0x38], rax	      3273	amd_iommu.c	FUNCTION_137
+0x400109d	            0x31c0	                            xor eax, eax	      3273	amd_iommu.c	FUNCTION_137
+0x400109f	    0xf687b0000000	               test byte [rdi + 0xb0], 8	      3278	amd_iommu.c	FUNCTION_137	IF_1
+0x40010a6	      0xb8eaffffff	                     mov eax, 0xffffffea	      3279	amd_iommu.c	FUNCTION_137	IF_1
+0x40010ab	            0x7476	                            je 0x4001123	      3278	amd_iommu.c	FUNCTION_137	IF_1
+0x40010ad	    0x4881e200f0ff	             and rdx, 0xfffffffffffff000	       946	amd_iommu.c	FUNCTION_38
+0x40010b4	          0x4189f7	                           mov r15d, esi	       946	amd_iommu.c	FUNCTION_38
+0x40010b7	          0x8975b0	             mov dword [rbp - 0x50], esi	       948	amd_iommu.c	FUNCTION_38
+0x40010ba	          0x4889d6	                            mov rsi, rdx	       951	amd_iommu.c	FUNCTION_38	CALL_3
+0x40010bd	          0x4889fb	                            mov rbx, rdi	       951	amd_iommu.c	FUNCTION_38	CALL_3
+0x40010c0	          0x4189cd	                           mov r13d, ecx	       951	amd_iommu.c	FUNCTION_38	CALL_3
+0x40010c3	        0x48c1ee20	                           shr rsi, 0x20	       951	amd_iommu.c	FUNCTION_38	CALL_3
+0x40010c7	            0x84c9	                             test cl, cl	       954	amd_iommu.c	FUNCTION_38	IF_1
+0x40010c9	     0xfb787900000	           movzx eax, word [rdi + 0x90] 	       949	amd_iommu.c	FUNCTION_38
+0x40010d0	          0x8955a0	             mov dword [rbp - 0x60], edx	       950	amd_iommu.c	FUNCTION_38	CALL_2
+0x40010d3	          0x8975ac	             mov dword [rbp - 0x54], esi	       951	amd_iommu.c	FUNCTION_38	CALL_3
+0x40010d6	          0x8975bc	             mov dword [rbp - 0x44], esi	       951	amd_iommu.c	FUNCTION_38	CALL_3
+0x40010d9	     0xf842d010000	                            je 0x400120c	       954	amd_iommu.c	FUNCTION_38	IF_1
+0x40010df	          0x83ca07	                               or edx, 7	       955	amd_iommu.c	FUNCTION_38	IF_1
+0x40010e2	          0x8955b8	             mov dword [rbp - 0x48], edx	       955	amd_iommu.c	FUNCTION_38	IF_1
+0x40010e5	       0xd00000030	                      or eax, 0x30000000	       956	amd_iommu.c	FUNCTION_38	CALL_4
+0x40010ea	          0x4531e4	                          xor r12d, r12d	       956	amd_iommu.c	FUNCTION_38	CALL_4
+0x40010ed	          0x8945b4	             mov dword [rbp - 0x4c], eax	       956	amd_iommu.c	FUNCTION_38	CALL_4
+0x40010f0	            0xeb04	                           jmp 0x40010f6	       956	amd_iommu.c	FUNCTION_38	CALL_4
+0x40010f2	        0x4983c401	                              add r12, 1	       956	amd_iommu.c	FUNCTION_38	CALL_4
+0x40010f6	      0xe800000000	                          call 0x40010fb	      3287	amd_iommu.c	FUNCTION_137	FOR_1	CALL_2
+0x40010fb	          0x4139c4	                           cmp r12d, eax	      3287	amd_iommu.c	FUNCTION_137	FOR_1	CALL_2
+0x40010fe	            0x7d4b	                           jge 0x400114b	      3287	amd_iommu.c	FUNCTION_137	FOR_1	CALL_2
+0x4001100	          0x4963c4	                        movsxd rax, r12d	      3288	amd_iommu.c	FUNCTION_137	FOR_1	IF_2
+0x4001103	    0x8b8483c00000	    mov eax, dword [rbx + rax*4 + 0xc0] 	      3288	amd_iommu.c	FUNCTION_137	FOR_1	IF_2
+0x400110a	            0x85c0	                           test eax, eax	      3288	amd_iommu.c	FUNCTION_137	FOR_1	IF_2
+0x400110c	            0x74e4	                            je 0x40010f2	      3288	amd_iommu.c	FUNCTION_137	FOR_1	IF_2
+0x400110e	    0x4a8b3ce50000	                  mov rdi, qword [r12*8]	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x4001116	        0x488d75b0	                   lea rsi, [rbp - 0x50]	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x400111a	      0xe801ffffff	call sym.iommu_queue_command_sync.constprop.30	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x400111f	            0x85c0	                           test eax, eax	      3292	amd_iommu.c	FUNCTION_137	FOR_1	IF_3
+0x4001121	            0x74cf	                            je 0x40010f2	      3292	amd_iommu.c	FUNCTION_137	FOR_1	IF_3
+0x4001123	        0x488b4dc8	             mov rcx, qword [rbp - 0x38]	      3330	amd_iommu.c	FUNCTION_137
+0x4001127	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      3330	amd_iommu.c	FUNCTION_137
+0x4001130	     0xf85e1000000	                           jne 0x4001217	      3330	amd_iommu.c	FUNCTION_137
+0x4001136	        0x4883c430	                           add rsp, 0x30	      3330	amd_iommu.c	FUNCTION_137
+0x400113a	              0x5b	                                 pop rbx	      3330	amd_iommu.c	FUNCTION_137
+0x400113b	            0x415a	                                 pop r10	      3330	amd_iommu.c	FUNCTION_137
+0x400113d	            0x415c	                                 pop r12	      3330	amd_iommu.c	FUNCTION_137
+0x400113f	            0x415d	                                 pop r13	      3330	amd_iommu.c	FUNCTION_137
+0x4001141	            0x415e	                                 pop r14	      3330	amd_iommu.c	FUNCTION_137
+0x4001143	            0x415f	                                 pop r15	      3330	amd_iommu.c	FUNCTION_137
+0x4001145	              0x5d	                                 pop rbp	      3330	amd_iommu.c	FUNCTION_137
+0x4001146	        0x498d62f8	                      lea rsp, [r10 - 8]	      3330	amd_iommu.c	FUNCTION_137
+0x400114a	              0xc3	                                     ret	      3330	amd_iommu.c	FUNCTION_137
+0x400114b	          0x4889df	                            mov rdi, rbx	      3297	amd_iommu.c	FUNCTION_137	CALL_4
+0x400114e	        0x4c8d7310	                   lea r14, [rbx + 0x10]	      3300	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x4001152	      0xe899fcffff	          call sym.domain_flush_complete	      3297	amd_iommu.c	FUNCTION_137	CALL_4
+0x4001157	        0x4c8b6310	            mov r12, qword [rbx + 0x10] 	      3300	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x400115b	          0x4d39f4	                            cmp r12, r14	      3300	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x400115e	     0xf8499000000	                            je 0x40011fd	      3300	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x4001164	          0x4c89f8	                            mov rax, r15	       967	amd_iommu.c	FUNCTION_39
+0x4001167	        0x450fb6ff	                        movzx r15d, r15b	       970	amd_iommu.c	FUNCTION_39
+0x400116b	           0xfb6c4	                           movzx eax, ah	       967	amd_iommu.c	FUNCTION_39
+0x400116e	        0x41c1e710	                          shl r15d, 0x10	       970	amd_iommu.c	FUNCTION_39
+0x4001172	          0xc1e010	                           shl eax, 0x10	       967	amd_iommu.c	FUNCTION_39
+0x4001175	        0x44897da4	            mov dword [rbp - 0x5c], r15d	       970	amd_iommu.c	FUNCTION_39
+0x4001179	          0x8945a8	             mov dword [rbp - 0x58], eax	       967	amd_iommu.c	FUNCTION_39
+0x400117c	          0x8b45a0	             mov eax, dword [rbp - 0x60]	       972	amd_iommu.c	FUNCTION_39
+0x400117f	          0x4189c7	                           mov r15d, eax	       972	amd_iommu.c	FUNCTION_39
+0x4001182	          0x83c805	                               or eax, 5	       975	amd_iommu.c	FUNCTION_39	IF_1
+0x4001185	        0x4183cf04	                              or r15d, 4	       972	amd_iommu.c	FUNCTION_39
+0x4001189	          0x8945a0	             mov dword [rbp - 0x60], eax	       975	amd_iommu.c	FUNCTION_39	IF_1
+0x400118c	            0xeb09	                           jmp 0x4001197	       975	amd_iommu.c	FUNCTION_39	IF_1
+0x400118e	        0x4d8b2424	                    mov r12, qword [r12]	      3300	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x4001192	          0x4d39f4	                            cmp r12, r14	      3300	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x4001195	            0x7466	                            je 0x40011fd	      3300	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x4001197	    0x41807c242800	                cmp byte [r12 + 0x28], 0	      3308	amd_iommu.c	FUNCTION_137	FUNCTION_1	IF_1
+0x400119d	            0x74ef	                            je 0x400118e	      3308	amd_iommu.c	FUNCTION_137	FUNCTION_1	IF_1
+0x400119f	    0x410fb77c2420	           movzx edi, word [r12 + 0x20] 	      3312	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x40011a5	    0x488b35000000	            mov rsi, qword [0x040011ac] 	      3312	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x40011ac	          0x8b4dac	             mov ecx, dword [rbp - 0x54]	       973	amd_iommu.c	FUNCTION_39	CALL_3
+0x40011af	          0x4889f8	                            mov rax, rdi	      3312	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x40011b2	        0x488b3cfe	            mov rdi, qword [rsi + rdi*8]	      3312	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x40011b6	      0x418b74242c	            mov esi, dword [r12 + 0x2c] 	       968	amd_iommu.c	FUNCTION_39
+0x40011bb	        0x44897db8	            mov dword [rbp - 0x48], r15d	       972	amd_iommu.c	FUNCTION_39
+0x40011bf	          0x894dbc	             mov dword [rbp - 0x44], ecx	       973	amd_iommu.c	FUNCTION_39	CALL_3
+0x40011c2	          0xc1e618	                           shl esi, 0x18	       968	amd_iommu.c	FUNCTION_39
+0x40011c5	             0x9c6	                             or esi, eax	       968	amd_iommu.c	FUNCTION_39
+0x40011c7	           0xb75a8	              or esi, dword [rbp - 0x58]	       968	amd_iommu.c	FUNCTION_39
+0x40011ca	           0xb45a4	              or eax, dword [rbp - 0x5c]	       970	amd_iommu.c	FUNCTION_39
+0x40011cd	          0x4584ed	                         test r13b, r13b	       974	amd_iommu.c	FUNCTION_39	IF_1
+0x40011d0	          0x8975b0	             mov dword [rbp - 0x50], esi	       968	amd_iommu.c	FUNCTION_39
+0x40011d3	            0x7406	                            je 0x40011db	       974	amd_iommu.c	FUNCTION_39	IF_1
+0x40011d5	          0x8b55a0	             mov edx, dword [rbp - 0x60]	       975	amd_iommu.c	FUNCTION_39	IF_1
+0x40011d8	          0x8955b8	             mov dword [rbp - 0x48], edx	       975	amd_iommu.c	FUNCTION_39	IF_1
+0x40011db	        0x488d75b0	                   lea rsi, [rbp - 0x50]	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x40011df	       0xd00000040	                      or eax, 0x40000000	       976	amd_iommu.c	FUNCTION_39	CALL_4
+0x40011e4	          0x8945b4	             mov dword [rbp - 0x4c], eax	       976	amd_iommu.c	FUNCTION_39	CALL_4
+0x40011e7	      0xe834feffff	call sym.iommu_queue_command_sync.constprop.30	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x40011ec	            0x85c0	                           test eax, eax	      3318	amd_iommu.c	FUNCTION_137	FUNCTION_1	IF_2
+0x40011ee	     0xf852fffffff	                           jne 0x4001123	      3318	amd_iommu.c	FUNCTION_137	FUNCTION_1	IF_2
+0x40011f4	        0x4d8b2424	                    mov r12, qword [r12]	      3300	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x40011f8	          0x4d39f4	                            cmp r12, r14	      3300	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x40011fb	            0x759a	                           jne 0x4001197	      3300	amd_iommu.c	FUNCTION_137	FUNCTION_1
+0x40011fd	          0x4889df	                            mov rdi, rbx	      3323	amd_iommu.c	FUNCTION_137	CALL_5
+0x4001200	      0xe8ebfbffff	          call sym.domain_flush_complete	      3323	amd_iommu.c	FUNCTION_137	CALL_5
+0x4001205	            0x31c0	                            xor eax, eax	      3325	amd_iommu.c	FUNCTION_137
+0x4001207	      0xe917ffffff	                           jmp 0x4001123	      3325	amd_iommu.c	FUNCTION_137
+0x400120c	          0x83ca06	                               or edx, 6	       953	amd_iommu.c	FUNCTION_38
+0x400120f	          0x8955b8	             mov dword [rbp - 0x48], edx	       953	amd_iommu.c	FUNCTION_38
+0x4001212	      0xe9cefeffff	                           jmp 0x40010e5	       953	amd_iommu.c	FUNCTION_38
+0x4001217	      0xe800000000	                          call 0x400121c	      3330	amd_iommu.c	FUNCTION_137
+free_coherent	ELSE,0:IF,1:DO,0:WHILE,0:CALL,6:SWITCH,0:FOR,0:functions,0	33
+0x4002f30	            0x4156	                                push r14	      2631	amd_iommu.c	FUNCTION_109
+0x4002f32	            0x4155	                                push r13	      2631	amd_iommu.c	FUNCTION_109
+0x4002f34	          0x4989ce	                            mov r14, rcx	      2631	amd_iommu.c	FUNCTION_109
+0x4002f37	            0x4154	                                push r12	      2631	amd_iommu.c	FUNCTION_109
+0x4002f39	              0x55	                                push rbp	      2631	amd_iommu.c	FUNCTION_109
+0x4002f3a	          0x4989d4	                            mov r12, rdx	      2631	amd_iommu.c	FUNCTION_109
+0x4002f3d	              0x53	                                push rbx	      2631	amd_iommu.c	FUNCTION_109
+0x4002f3e	          0x4889f3	                            mov rbx, rsi	      2631	amd_iommu.c	FUNCTION_109
+0x4002f41	          0x4889fd	                            mov rbp, rdi	      2631	amd_iommu.c	FUNCTION_109
+0x4002f44	    0x4881c3ff0f00	                          add rbx, 0xfff	      2634	amd_iommu.c	FUNCTION_109	CALL_2
+0x4002f4b	          0x4d89c5	                             mov r13, r8	      2631	amd_iommu.c	FUNCTION_109
+0x4002f4e	    0x4881e300f0ff	             and rbx, 0xfffffffffffff000	      2634	amd_iommu.c	FUNCTION_109	CALL_2
+0x4002f55	      0xe876fbffff	                     call sym.get_domain	      2632	amd_iommu.c	FUNCTION_109	CALL_1
+0x4002f5a	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      2636	amd_iommu.c	FUNCTION_109	IF_1	CALL_3
+0x4002f60	            0x7718	                            ja 0x4002f7a	      2636	amd_iommu.c	FUNCTION_109	IF_1	CALL_3
+0x4002f62	    0x4883b8b00000	               cmp qword [rax + 0xb0], 1	       200	amd_iommu.c	FUNCTION_6	CALL_1
+0x4002f6a	            0x752a	                           jne 0x4002f96	       200	amd_iommu.c	FUNCTION_6	CALL_1
+0x4002f6c	          0x4889da	                            mov rdx, rbx	      2639	amd_iommu.c	FUNCTION_109	IF_1	CALL_5
+0x4002f6f	          0x4c89f6	                            mov rsi, r14	      2639	amd_iommu.c	FUNCTION_109	IF_1	CALL_5
+0x4002f72	          0x4889c7	                            mov rdi, rax	      2639	amd_iommu.c	FUNCTION_109	IF_1	CALL_5
+0x4002f75	      0xe846e7ffff	         call sym.__unmap_single.isra.17	      2639	amd_iommu.c	FUNCTION_109	IF_1	CALL_5
+0x4002f7a	          0x4d89e8	                             mov r8, r13	      2642	amd_iommu.c	FUNCTION_109	CALL_6
+0x4002f7d	          0x4c89f1	                            mov rcx, r14	      2642	amd_iommu.c	FUNCTION_109	CALL_6
+0x4002f80	          0x4c89e2	                            mov rdx, r12	      2642	amd_iommu.c	FUNCTION_109	CALL_6
+0x4002f83	          0x4889de	                            mov rsi, rbx	      2642	amd_iommu.c	FUNCTION_109	CALL_6
+0x4002f86	          0x4889ef	                            mov rdi, rbp	      2642	amd_iommu.c	FUNCTION_109	CALL_6
+0x4002f89	              0x5b	                                 pop rbx	      2643	amd_iommu.c	FUNCTION_109
+0x4002f8a	              0x5d	                                 pop rbp	      2643	amd_iommu.c	FUNCTION_109
+0x4002f8b	            0x415c	                                 pop r12	      2643	amd_iommu.c	FUNCTION_109
+0x4002f8d	            0x415d	                                 pop r13	      2643	amd_iommu.c	FUNCTION_109
+0x4002f8f	            0x415e	                                 pop r14	      2643	amd_iommu.c	FUNCTION_109
+0x4002f91	      0xe900000000	                           jmp 0x4002f96	      2642	amd_iommu.c	FUNCTION_109	CALL_6
+0x4002f96	      0xe8a5dcffff	       call sym.to_dma_ops_domain.part.8	      2642	amd_iommu.c	FUNCTION_109	CALL_6
+amd_iommu_iotlb_range_add	ELSE,0:IF,0:DO,0:WHILE,0:CALL,0:SWITCH,0:FOR,0:functions,0	1
+0x4000290	            0xf3c3	                                     ret	      3154	amd_iommu.c	FUNCTION_132
+amd_iommu_mapping_error	ELSE,0:IF,0:DO,0:WHILE,0:CALL,0:SWITCH,0:FOR,0:functions,0	4
+0x4000250	            0x31c0	                            xor eax, eax	      2658	amd_iommu.c	FUNCTION_111
+0x4000252	          0x4885f6	                           test rsi, rsi	      2658	amd_iommu.c	FUNCTION_111
+0x4000255	           0xf94c0	                                 sete al	      2658	amd_iommu.c	FUNCTION_111
+0x4000258	              0xc3	                                     ret	      2659	amd_iommu.c	FUNCTION_111
+amd_iommu_iova_to_phys	ELSE,0:IF,2:DO,0:WHILE,0:CALL,3:SWITCH,0:FOR,0:functions,0	38
+0x4000a60	              0x53	                                push rbx	      3032	amd_iommu.c	FUNCTION_125
+0x4000a61	        0x4883ec10	                           sub rsp, 0x10	      3032	amd_iommu.c	FUNCTION_125
+0x4000a65	        0x448b4774	            mov r8d, dword [rdi + 0x74] 	      3037	amd_iommu.c	FUNCTION_125	IF_1
+0x4000a69	    0x65488b042528	                mov rax, qword gs:[0x28]	      3032	amd_iommu.c	FUNCTION_125
+0x4000a72	      0x4889442408	                mov qword [rsp + 8], rax	      3032	amd_iommu.c	FUNCTION_125
+0x4000a77	            0x31c0	                            xor eax, eax	      3032	amd_iommu.c	FUNCTION_125
+0x4000a79	          0x4889f0	                            mov rax, rsi	      3038	amd_iommu.c	FUNCTION_125	IF_1
+0x4000a7c	          0x4585c0	                           test r8d, r8d	      3037	amd_iommu.c	FUNCTION_125	IF_1
+0x4000a7f	            0x7516	                           jne 0x4000a97	      3037	amd_iommu.c	FUNCTION_125	IF_1
+0x4000a81	      0x488b542408	                mov rdx, qword [rsp + 8]	      3049	amd_iommu.c	FUNCTION_125
+0x4000a86	    0x654833142528	                xor rdx, qword gs:[0x28]	      3049	amd_iommu.c	FUNCTION_125
+0x4000a8f	            0x754f	                           jne 0x4000ae0	      3049	amd_iommu.c	FUNCTION_125
+0x4000a91	        0x4883c410	                           add rsp, 0x10	      3049	amd_iommu.c	FUNCTION_125
+0x4000a95	              0x5b	                                 pop rbx	      3049	amd_iommu.c	FUNCTION_125
+0x4000a96	              0xc3	                                     ret	      3049	amd_iommu.c	FUNCTION_125
+0x4000a97	          0x4889f3	                            mov rbx, rsi	      3049	amd_iommu.c	FUNCTION_125
+0x4000a9a	        0x488d7778	                   lea rsi, [rdi + 0x78]	      3049	amd_iommu.c	FUNCTION_125
+0x4000a9e	          0x4889e1	                            mov rcx, rsp	      3040	amd_iommu.c	FUNCTION_125	CALL_2
+0x4000aa1	          0x4889c2	                            mov rdx, rax	      3040	amd_iommu.c	FUNCTION_125	CALL_2
+0x4000aa4	          0x4489c7	                            mov edi, r8d	      3040	amd_iommu.c	FUNCTION_125	CALL_2
+0x4000aa7	      0xe844feffff	               call sym.fetch_pte.isra.6	      3040	amd_iommu.c	FUNCTION_125	CALL_2
+0x4000aac	          0x4885c0	                           test rax, rax	      3042	amd_iommu.c	FUNCTION_125	IF_2	CALL_3
+0x4000aaf	            0x742b	                            je 0x4000adc	      3042	amd_iommu.c	FUNCTION_125	IF_2	CALL_3
+0x4000ab1	          0x488b10	                    mov rdx, qword [rax]	      3042	amd_iommu.c	FUNCTION_125	IF_2	CALL_3
+0x4000ab4	          0x4889d0	                            mov rax, rdx	      3042	amd_iommu.c	FUNCTION_125	IF_2	CALL_3
+0x4000ab7	          0x83e001	                              and eax, 1	      3042	amd_iommu.c	FUNCTION_125	IF_2	CALL_3
+0x4000aba	            0x74c5	                            je 0x4000a81	      3042	amd_iommu.c	FUNCTION_125	IF_2	CALL_3
+0x4000abc	        0x488b0424	                    mov rax, qword [rsp]	      3048	amd_iommu.c	FUNCTION_125
+0x4000ac0	    0x48b900f0ffff	             movabs rcx, 0xffffffffff000	      3046	amd_iommu.c	FUNCTION_125
+0x4000aca	          0x4821d1	                            and rcx, rdx	      3046	amd_iommu.c	FUNCTION_125
+0x4000acd	          0x4831cb	                            xor rbx, rcx	      3048	amd_iommu.c	FUNCTION_125
+0x4000ad0	        0x4883e801	                              sub rax, 1	      3048	amd_iommu.c	FUNCTION_125
+0x4000ad4	          0x4821d8	                            and rax, rbx	      3048	amd_iommu.c	FUNCTION_125
+0x4000ad7	          0x4831c8	                            xor rax, rcx	      3048	amd_iommu.c	FUNCTION_125
+0x4000ada	            0xeba5	                           jmp 0x4000a81	      3048	amd_iommu.c	FUNCTION_125
+0x4000adc	            0x31c0	                            xor eax, eax	      3043	amd_iommu.c	FUNCTION_125	IF_2
+0x4000ade	            0xeba1	                           jmp 0x4000a81	      3043	amd_iommu.c	FUNCTION_125	IF_2
+0x4000ae0	      0xe800000000	                          call 0x4000ae5	      3049	amd_iommu.c	FUNCTION_125
+amd_iommu_dma_supported	ELSE,0:IF,1:DO,0:WHILE,0:CALL,2:SWITCH,0:FOR,0:functions,0	12
+0x4002ab0	              0x53	                                push rbx	      2650	amd_iommu.c	FUNCTION_110
+0x4002ab1	          0x4889fb	                            mov rbx, rdi	      2650	amd_iommu.c	FUNCTION_110
+0x4002ab4	      0xe800000000	                          call 0x4002ab9	      2651	amd_iommu.c	FUNCTION_110	IF_1	CALL_1
+0x4002ab9	            0x85c0	                           test eax, eax	      2651	amd_iommu.c	FUNCTION_110	IF_1	CALL_1
+0x4002abb	            0x7502	                           jne 0x4002abf	      2651	amd_iommu.c	FUNCTION_110	IF_1	CALL_1
+0x4002abd	              0x5b	                                 pop rbx	      2654	amd_iommu.c	FUNCTION_110
+0x4002abe	              0xc3	                                     ret	      2654	amd_iommu.c	FUNCTION_110
+0x4002abf	          0x4889df	                            mov rdi, rbx	      2653	amd_iommu.c	FUNCTION_110	CALL_2
+0x4002ac2	      0xe8a9feffff	                   call sym.check_device	      2653	amd_iommu.c	FUNCTION_110	CALL_2
+0x4002ac7	           0xfb6c0	                           movzx eax, al	      2653	amd_iommu.c	FUNCTION_110	CALL_2
+0x4002aca	              0x5b	                                 pop rbx	      2654	amd_iommu.c	FUNCTION_110
+0x4002acb	              0xc3	                                     ret	      2654	amd_iommu.c	FUNCTION_110
+check_device	ELSE,0:IF,4:DO,0:WHILE,0:CALL,1:SWITCH,0:FOR,0:functions,0	85
+0x4002970	          0x4885ff	                           test rdi, rdi	       383	amd_iommu.c	FUNCTION_16	IF_1
+0x4002973	     0xf8411010000	                            je 0x4002a8a	       383	amd_iommu.c	FUNCTION_16	IF_1
+0x4002979	    0x4883bf100200	              cmp qword [rdi + 0x210], 0	       383	amd_iommu.c	FUNCTION_16	IF_1
+0x4002981	     0xf8403010000	                            je 0x4002a8a	       383	amd_iommu.c	FUNCTION_16	IF_1
+0x4002987	            0x4156	                                push r14	       380	amd_iommu.c	FUNCTION_16
+0x4002989	            0x4155	                                push r13	       380	amd_iommu.c	FUNCTION_16
+0x400298b	            0x4154	                                push r12	       380	amd_iommu.c	FUNCTION_16
+0x400298d	              0x55	                                push rbp	       380	amd_iommu.c	FUNCTION_16
+0x400298e	              0x53	                                push rbx	       380	amd_iommu.c	FUNCTION_16
+0x400298f	    0x4881bf800000	               cmp qword [rdi + 0x80], 0	       185	amd_iommu.c	FUNCTION_4	IF_1	CALL_1
+0x400299a	     0xf84ed000000	                            je 0x4002a8d	       185	amd_iommu.c	FUNCTION_4	IF_1	CALL_1
+0x40029a0	    0x4c8b2d000000	            mov r13, qword [0x040029a7] 	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x40029a7	    0x4981fd000000	                              cmp r13, 0	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x40029ae	     0xf84cb000000	                            je 0x4002a7f	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x40029b4	          0x4889fd	                            mov rbp, rdi	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x40029b7	          0x4531e4	                          xor r12d, r12d	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x40029ba	    0x488b9d580200	           mov rbx, qword [rbp + 0x258] 	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x40029c1	          0x4889df	                            mov rdi, rbx	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x40029c4	      0xe800000000	                          call 0x40029c9	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x40029c9	        0x488d7bf0	                   lea rdi, [rbx - 0x10]	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x40029cd	            0x84c0	                             test al, al	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x40029cf	        0x490f44fc	                          cmove rdi, r12	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x40029d3	      0xe800000000	                          call 0x40029d8	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x40029d8	    0x488b9d580200	           mov rbx, qword [rbp + 0x258] 	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40029df	          0x4989c6	                            mov r14, rax	       144	amd_iommu.c	FUNCTION_1	CALL_2
+0x40029e2	          0x4889df	                            mov rdi, rbx	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40029e5	        0x4883eb10	                           sub rbx, 0x10	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40029e9	      0xe800000000	                          call 0x40029ee	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40029ee	            0x84c0	                             test al, al	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40029f0	        0x490f44dc	                          cmove rbx, r12	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40029f4	          0x4d85f6	                           test r14, r14	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x40029f7	    0x488b9b880000	            mov rbx, qword [rbx + 0x88] 	       145	amd_iommu.c	FUNCTION_1	CALL_4
+0x40029fe	            0x746e	                            je 0x4002a6e	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x4002a00	        0x41803e00	                       cmp byte [r14], 0	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x4002a04	            0x7468	                            je 0x4002a6e	       147	amd_iommu.c	FUNCTION_1	IF_1
+0x4002a06	          0x4885db	                           test rbx, rbx	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x4002a09	    0x498db5100100	                  lea rsi, [r13 + 0x110]	       151	amd_iommu.c	FUNCTION_1	CALL_5
+0x4002a10	          0x4c89f7	                            mov rdi, r14	       151	amd_iommu.c	FUNCTION_1	CALL_5
+0x4002a13	            0x7450	                            je 0x4002a65	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x4002a15	          0x803b00	                       cmp byte [rbx], 0	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x4002a18	            0x744b	                            je 0x4002a65	       150	amd_iommu.c	FUNCTION_1	IF_2
+0x4002a1a	      0x41807d1000	                cmp byte [r13 + 0x10], 0	       153	amd_iommu.c	FUNCTION_1	IF_3
+0x4002a1f	            0x7444	                            je 0x4002a65	       153	amd_iommu.c	FUNCTION_1	IF_3
+0x4002a21	      0xe800000000	                          call 0x4002a26	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4002a26	            0x85c0	                           test eax, eax	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4002a28	            0x7544	                           jne 0x4002a6e	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4002a2a	        0x498d7510	                   lea rsi, [r13 + 0x10]	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4002a2e	          0x4889df	                            mov rdi, rbx	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4002a31	      0xe800000000	                          call 0x4002a36	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4002a36	            0x85c0	                           test eax, eax	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4002a38	            0x7534	                           jne 0x4002a6e	       156	amd_iommu.c	FUNCTION_1	CALL_8
+0x4002a3a	    0x410fb7851a01	          movzx eax, word [r13 + 0x11a] 	       175	amd_iommu.c	FUNCTION_3	FUNCTION_1	IF_1
+0x4002a42	     0xfb715000000	           movzx edx, word [0x04002a49] 	       391	amd_iommu.c	FUNCTION_16	IF_3
+0x4002a49	            0x39c2	                            cmp edx, eax	       391	amd_iommu.c	FUNCTION_16	IF_3
+0x4002a4b	            0x7c32	                            jl 0x4002a7f	       391	amd_iommu.c	FUNCTION_16	IF_3
+0x4002a4d	    0x488b15000000	            mov rdx, qword [0x04002a54] 	       394	amd_iommu.c	FUNCTION_16	IF_4
+0x4002a54	              0x5b	                                 pop rbx	       398	amd_iommu.c	FUNCTION_16
+0x4002a55	              0x5d	                                 pop rbp	       398	amd_iommu.c	FUNCTION_16
+0x4002a56	      0x48833cc200	              cmp qword [rdx + rax*8], 0	       394	amd_iommu.c	FUNCTION_16	IF_4
+0x4002a5b	            0x415c	                                 pop r12	       398	amd_iommu.c	FUNCTION_16
+0x4002a5d	            0x415d	                                 pop r13	       398	amd_iommu.c	FUNCTION_16
+0x4002a5f	            0x415e	                                 pop r14	       398	amd_iommu.c	FUNCTION_16
+0x4002a61	           0xf95c0	                                setne al	       394	amd_iommu.c	FUNCTION_16	IF_4
+0x4002a64	              0xc3	                                     ret	       398	amd_iommu.c	FUNCTION_16
+0x4002a65	      0xe800000000	                          call 0x4002a6a	       154	amd_iommu.c	FUNCTION_1	CALL_6
+0x4002a6a	            0x85c0	                           test eax, eax	       172	amd_iommu.c	FUNCTION_3	FUNCTION_1	IF_1	CALL_1
+0x4002a6c	            0x74cc	                            je 0x4002a3a	       172	amd_iommu.c	FUNCTION_3	FUNCTION_1	IF_1	CALL_1
+0x4002a6e	        0x4d8b6d00	                    mov r13, qword [r13]	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x4002a72	    0x4981fd000000	                              cmp r13, 0	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x4002a79	     0xf853bffffff	                           jne 0x40029ba	       171	amd_iommu.c	FUNCTION_3	FUNCTION_1
+0x4002a7f	              0x5b	                                 pop rbx	       398	amd_iommu.c	FUNCTION_16
+0x4002a80	            0x31c0	                            xor eax, eax	       384	amd_iommu.c	FUNCTION_16	IF_1
+0x4002a82	              0x5d	                                 pop rbp	       398	amd_iommu.c	FUNCTION_16
+0x4002a83	            0x415c	                                 pop r12	       398	amd_iommu.c	FUNCTION_16
+0x4002a85	            0x415d	                                 pop r13	       398	amd_iommu.c	FUNCTION_16
+0x4002a87	            0x415e	                                 pop r14	       398	amd_iommu.c	FUNCTION_16
+0x4002a89	              0xc3	                                     ret	       398	amd_iommu.c	FUNCTION_16
+0x4002a8a	            0x31c0	                            xor eax, eax	       384	amd_iommu.c	FUNCTION_16	IF_1
+0x4002a8c	              0xc3	                                     ret	       398	amd_iommu.c	FUNCTION_16
+0x4002a8d	    0x488b8770ffff	             mov rax, qword [rdi - 0x90]	       163	amd_iommu.c	FUNCTION_2	CALL_2
+0x4002a94	     0xfb680e00000	           movzx eax, byte [rax + 0xe0] 	       186	amd_iommu.c	FUNCTION_4	CALL_2
+0x4002a9b	          0xc1e008	                              shl eax, 8	       186	amd_iommu.c	FUNCTION_4	CALL_2
+0x4002a9e	        0x660b4798	                or ax, word [rdi - 0x68]	       186	amd_iommu.c	FUNCTION_4	CALL_2
+0x4002aa2	           0xfb7c0	                           movzx eax, ax	       186	amd_iommu.c	FUNCTION_4	CALL_2
+0x4002aa5	            0xeb9b	                           jmp 0x4002a42	       186	amd_iommu.c	FUNCTION_4	CALL_2
+amd_iommu_register_ppr_notifier	ELSE,0:IF,0:DO,0:WHILE,0:CALL,1:SWITCH,0:FOR,0:functions,0	3
+0x40007f0	          0x4889fe	                            mov rsi, rdi	      3192	amd_iommu.c	FUNCTION_133
+0x40007f3	    0x48c7c7000000	                              mov rdi, 0	      3193	amd_iommu.c	FUNCTION_133	CALL_1
+0x40007fa	      0xe900000000	                           jmp 0x40007ff	      3193	amd_iommu.c	FUNCTION_133	CALL_1
+amd_iommu_int_handler	ELSE,0:IF,0:DO,0:WHILE,0:CALL,0:SWITCH,0:FOR,0:functions,0	2
+0x4004620	      0xb802000000	                              mov eax, 2	       817	amd_iommu.c	FUNCTION_31
+0x4004625	              0xc3	                                     ret	       817	amd_iommu.c	FUNCTION_31
+map_page	ELSE,1:IF,2:DO,0:WHILE,0:CALL,6:SWITCH,0:FOR,0:functions,0	38
+0x4002eb0	    0x482b35000000	             sub rsi, qword [0x04002eb7]	      2422	amd_iommu.c	FUNCTION_103	CALL_1
+0x4002eb7	            0x4155	                                push r13	      2421	amd_iommu.c	FUNCTION_103
+0x4002eb9	            0x4154	                                push r12	      2421	amd_iommu.c	FUNCTION_103
+0x4002ebb	              0x55	                                push rbp	      2421	amd_iommu.c	FUNCTION_103
+0x4002ebc	          0x4989fc	                            mov r12, rdi	      2421	amd_iommu.c	FUNCTION_103
+0x4002ebf	              0x53	                                push rbx	      2421	amd_iommu.c	FUNCTION_103
+0x4002ec0	          0x4489c5	                            mov ebp, r8d	      2421	amd_iommu.c	FUNCTION_103
+0x4002ec3	          0x4889cb	                            mov rbx, rcx	      2421	amd_iommu.c	FUNCTION_103
+0x4002ec6	        0x48c1fe06	                              sar rsi, 6	      2422	amd_iommu.c	FUNCTION_103	CALL_1
+0x4002eca	        0x48c1e60c	                            shl rsi, 0xc	      2422	amd_iommu.c	FUNCTION_103	CALL_1
+0x4002ece	        0x4c8d2c16	                    lea r13, [rsi + rdx]	      2422	amd_iommu.c	FUNCTION_103	CALL_1
+0x4002ed2	      0xe8f9fbffff	                     call sym.get_domain	      2427	amd_iommu.c	FUNCTION_103	CALL_2
+0x4002ed7	        0x4883f8ea	             cmp rax, 0xffffffffffffffea	      2428	amd_iommu.c	FUNCTION_103	IF_1	CALL_3
+0x4002edb	            0x7433	                            je 0x4002f10	      2428	amd_iommu.c	FUNCTION_103	IF_1	CALL_3
+0x4002edd	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      2430	amd_iommu.c	FUNCTION_103	ELSE_1	IF_2	CALL_4
+0x4002ee3	            0x7735	                            ja 0x4002f1a	      2430	amd_iommu.c	FUNCTION_103	ELSE_1	IF_2	CALL_4
+0x4002ee5	    0x4883b8b00000	               cmp qword [rax + 0xb0], 1	       200	amd_iommu.c	FUNCTION_6	CALL_1
+0x4002eed	    0x498b94241002	           mov rdx, qword [r12 + 0x210] 	      2433	amd_iommu.c	FUNCTION_103
+0x4002ef5	          0x4c8b02	                     mov r8, qword [rdx]	      2433	amd_iommu.c	FUNCTION_103
+0x4002ef8	            0x7524	                           jne 0x4002f1e	       200	amd_iommu.c	FUNCTION_6	CALL_1
+0x4002efa	            0x89e9	                            mov ecx, ebp	      2436	amd_iommu.c	FUNCTION_103	CALL_6
+0x4002efc	          0x4889da	                            mov rdx, rbx	      2436	amd_iommu.c	FUNCTION_103	CALL_6
+0x4002eff	          0x4c89ee	                            mov rsi, r13	      2436	amd_iommu.c	FUNCTION_103	CALL_6
+0x4002f02	              0x5b	                                 pop rbx	      2437	amd_iommu.c	FUNCTION_103
+0x4002f03	              0x5d	                                 pop rbp	      2437	amd_iommu.c	FUNCTION_103
+0x4002f04	            0x415c	                                 pop r12	      2437	amd_iommu.c	FUNCTION_103
+0x4002f06	            0x415d	                                 pop r13	      2437	amd_iommu.c	FUNCTION_103
+0x4002f08	          0x4889c7	                            mov rdi, rax	      2436	amd_iommu.c	FUNCTION_103	CALL_6
+0x4002f0b	      0xe970f3ffff	            jmp sym.__map_single.isra.23	      2436	amd_iommu.c	FUNCTION_103	CALL_6
+0x4002f10	          0x4c89e8	                            mov rax, r13	      2429	amd_iommu.c	FUNCTION_103	IF_1
+0x4002f13	              0x5b	                                 pop rbx	      2437	amd_iommu.c	FUNCTION_103
+0x4002f14	              0x5d	                                 pop rbp	      2437	amd_iommu.c	FUNCTION_103
+0x4002f15	            0x415c	                                 pop r12	      2437	amd_iommu.c	FUNCTION_103
+0x4002f17	            0x415d	                                 pop r13	      2437	amd_iommu.c	FUNCTION_103
+0x4002f19	              0xc3	                                     ret	      2437	amd_iommu.c	FUNCTION_103
+0x4002f1a	            0x31c0	                            xor eax, eax	      2431	amd_iommu.c	FUNCTION_103	ELSE_1	IF_2
+0x4002f1c	            0xebf5	                           jmp 0x4002f13	      2431	amd_iommu.c	FUNCTION_103	ELSE_1	IF_2
+0x4002f1e	      0xe81dddffff	       call sym.to_dma_ops_domain.part.8	      2431	amd_iommu.c	FUNCTION_103	ELSE_1	IF_2
+domain_flush_complete	ELSE,0:IF,1:DO,0:WHILE,0:CALL,2:SWITCH,0:FOR,1:functions,0	25
+0x4000df0	            0x4154	                                push r12	      1274	amd_iommu.c	FUNCTION_60
+0x4000df2	          0x4989fc	                            mov r12, rdi	      1274	amd_iommu.c	FUNCTION_60
+0x4000df5	              0x55	                                push rbp	      1274	amd_iommu.c	FUNCTION_60
+0x4000df6	              0x53	                                push rbx	      1274	amd_iommu.c	FUNCTION_60
+0x4000df7	            0x31db	                            xor ebx, ebx	      1277	amd_iommu.c	FUNCTION_60	FOR_1	CALL_1
+0x4000df9	            0xeb04	                           jmp 0x4000dff	      1277	amd_iommu.c	FUNCTION_60	FOR_1	CALL_1
+0x4000dfb	        0x4883c301	                              add rbx, 1	      1277	amd_iommu.c	FUNCTION_60	FOR_1	CALL_1
+0x4000dff	      0xe800000000	                          call 0x4000e04	      1277	amd_iommu.c	FUNCTION_60	FOR_1	CALL_1
+0x4000e04	            0x39c3	                            cmp ebx, eax	      1277	amd_iommu.c	FUNCTION_60	FOR_1	CALL_1
+0x4000e06	          0x4863eb	                         movsxd rbp, ebx	      1277	amd_iommu.c	FUNCTION_60	FOR_1	CALL_1
+0x4000e09	            0x7d29	                           jge 0x4000e34	      1277	amd_iommu.c	FUNCTION_60	FOR_1	CALL_1
+0x4000e0b	          0x4d85e4	                           test r12, r12	      1278	amd_iommu.c	FUNCTION_60	FOR_1	IF_1
+0x4000e0e	            0x740c	                            je 0x4000e1c	      1278	amd_iommu.c	FUNCTION_60	FOR_1	IF_1
+0x4000e10	    0x418b84acc000	    mov eax, dword [r12 + rbp*4 + 0xc0] 	      1278	amd_iommu.c	FUNCTION_60	FOR_1	IF_1
+0x4000e18	            0x85c0	                           test eax, eax	      1278	amd_iommu.c	FUNCTION_60	FOR_1	IF_1
+0x4000e1a	            0x74df	                            je 0x4000dfb	      1278	amd_iommu.c	FUNCTION_60	FOR_1	IF_1
+0x4000e1c	    0x488b3cdd0000	                  mov rdi, qword [rbx*8]	      1285	amd_iommu.c	FUNCTION_60	FOR_1	CALL_2
+0x4000e24	    0x80bf99000000	                cmp byte [rdi + 0x99], 0	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4000e2b	            0x74ce	                            je 0x4000dfb	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4000e2d	      0xe86efeffff	  call sym.iommu_completion_wait.part.14	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4000e32	            0xebc7	                           jmp 0x4000dfb	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4000e34	              0x5b	                                 pop rbx	      1287	amd_iommu.c	FUNCTION_60
+0x4000e35	              0x5d	                                 pop rbp	      1287	amd_iommu.c	FUNCTION_60
+0x4000e36	            0x415c	                                 pop r12	      1287	amd_iommu.c	FUNCTION_60
+0x4000e38	              0xc3	                                     ret	      1287	amd_iommu.c	FUNCTION_60
+amd_iommu_put_resv_regions	ELSE,0:IF,0:DO,0:WHILE,0:CALL,2:SWITCH,0:FOR,0:functions,0	16
+0x40002a0	          0x488b3e	                    mov rdi, qword [rsi]	      3120	amd_iommu.c	FUNCTION_128	CALL_1
+0x40002a3	              0x55	                                push rbp	      3117	amd_iommu.c	FUNCTION_128
+0x40002a4	              0x53	                                push rbx	      3117	amd_iommu.c	FUNCTION_128
+0x40002a5	          0x4839fe	                            cmp rsi, rdi	      3120	amd_iommu.c	FUNCTION_128	CALL_1
+0x40002a8	          0x488b1f	                    mov rbx, qword [rdi]	      3120	amd_iommu.c	FUNCTION_128	CALL_1
+0x40002ab	            0x7416	                            je 0x40002c3	      3120	amd_iommu.c	FUNCTION_128	CALL_1
+0x40002ad	          0x4889f5	                            mov rbp, rsi	      3120	amd_iommu.c	FUNCTION_128	CALL_1
+0x40002b0	      0xe800000000	                          call 0x40002b5	      3121	amd_iommu.c	FUNCTION_128	CALL_2
+0x40002b5	          0x4889d8	                            mov rax, rbx	      3120	amd_iommu.c	FUNCTION_128	CALL_1
+0x40002b8	          0x4889df	                            mov rdi, rbx	      3120	amd_iommu.c	FUNCTION_128	CALL_1
+0x40002bb	          0x488b1b	                    mov rbx, qword [rbx]	      3120	amd_iommu.c	FUNCTION_128	CALL_1
+0x40002be	          0x4839c5	                            cmp rbp, rax	      3120	amd_iommu.c	FUNCTION_128	CALL_1
+0x40002c1	            0x75ed	                           jne 0x40002b0	      3120	amd_iommu.c	FUNCTION_128	CALL_1
+0x40002c3	              0x5b	                                 pop rbx	      3122	amd_iommu.c	FUNCTION_128
+0x40002c4	              0x5d	                                 pop rbp	      3122	amd_iommu.c	FUNCTION_128
+0x40002c5	              0xc3	                                     ret	      3122	amd_iommu.c	FUNCTION_128
+amd_iommu_device_info	ELSE,0:IF,7:DO,0:WHILE,0:CALL,9:SWITCH,0:FOR,0:functions,0	61
+0x4000810	          0x4885ff	                           test rdi, rdi	      3518	amd_iommu.c	FUNCTION_150	IF_1
+0x4000813	     0xf84bc000000	                            je 0x40008d5	      3518	amd_iommu.c	FUNCTION_150	IF_1
+0x4000819	          0x4885f6	                           test rsi, rsi	      3518	amd_iommu.c	FUNCTION_150	IF_1
+0x400081c	     0xf84b3000000	                            je 0x40008d5	      3518	amd_iommu.c	FUNCTION_150	IF_1
+0x4000822	            0x4154	                                push r12	      3514	amd_iommu.c	FUNCTION_150
+0x4000824	              0x55	                                push rbp	      3514	amd_iommu.c	FUNCTION_150
+0x4000825	          0x4889fd	                            mov rbp, rdi	      3514	amd_iommu.c	FUNCTION_150
+0x4000828	              0x53	                                push rbx	      3514	amd_iommu.c	FUNCTION_150
+0x4000829	          0x4889f3	                            mov rbx, rsi	      3514	amd_iommu.c	FUNCTION_150
+0x400082c	      0xe800000000	                          call 0x4000831	      3521	amd_iommu.c	FUNCTION_150	IF_2	CALL_1
+0x4000831	            0x84c0	                             test al, al	      3521	amd_iommu.c	FUNCTION_150	IF_2	CALL_1
+0x4000833	     0xf84a2000000	                            je 0x40008db	      3521	amd_iommu.c	FUNCTION_150	IF_2	CALL_1
+0x4000839	    0x48c703000000	                      mov qword [rbx], 0	      3524	amd_iommu.c	FUNCTION_150	CALL_2
+0x4000840	      0xbe0f000000	                            mov esi, 0xf	      3526	amd_iommu.c	FUNCTION_150	CALL_3
+0x4000845	          0x4889ef	                            mov rdi, rbp	      3526	amd_iommu.c	FUNCTION_150	CALL_3
+0x4000848	      0xe800000000	                          call 0x400084d	      3526	amd_iommu.c	FUNCTION_150	CALL_3
+0x400084d	            0x85c0	                           test eax, eax	      3527	amd_iommu.c	FUNCTION_150	IF_3
+0x400084f	            0x7404	                            je 0x4000855	      3527	amd_iommu.c	FUNCTION_150	IF_3
+0x4000851	        0x834b0401	                   or dword [rbx + 4], 1	      3528	amd_iommu.c	FUNCTION_150	IF_3
+0x4000855	      0xbe13000000	                           mov esi, 0x13	      3530	amd_iommu.c	FUNCTION_150	CALL_4
+0x400085a	          0x4889ef	                            mov rdi, rbp	      3530	amd_iommu.c	FUNCTION_150	CALL_4
+0x400085d	      0xe800000000	                          call 0x4000862	      3530	amd_iommu.c	FUNCTION_150	CALL_4
+0x4000862	            0x85c0	                           test eax, eax	      3531	amd_iommu.c	FUNCTION_150	IF_4
+0x4000864	            0x7404	                            je 0x400086a	      3531	amd_iommu.c	FUNCTION_150	IF_4
+0x4000866	        0x834b0402	                   or dword [rbx + 4], 2	      3532	amd_iommu.c	FUNCTION_150	IF_4
+0x400086a	      0xbe1b000000	                           mov esi, 0x1b	      3534	amd_iommu.c	FUNCTION_150	CALL_5
+0x400086f	          0x4889ef	                            mov rdi, rbp	      3534	amd_iommu.c	FUNCTION_150	CALL_5
+0x4000872	      0xe800000000	                          call 0x4000877	      3534	amd_iommu.c	FUNCTION_150	CALL_5
+0x4000877	            0x85c0	                           test eax, eax	      3535	amd_iommu.c	FUNCTION_150	IF_5
+0x4000879	            0x7507	                           jne 0x4000882	      3535	amd_iommu.c	FUNCTION_150	IF_5
+0x400087b	            0x31c0	                            xor eax, eax	      3551	amd_iommu.c	FUNCTION_150
+0x400087d	              0x5b	                                 pop rbx	      3552	amd_iommu.c	FUNCTION_150
+0x400087e	              0x5d	                                 pop rbp	      3552	amd_iommu.c	FUNCTION_150
+0x400087f	            0x415c	                                 pop r12	      3552	amd_iommu.c	FUNCTION_150
+0x4000881	              0xc3	                                     ret	      3552	amd_iommu.c	FUNCTION_150
+0x4000882	    0x8b0500000000	            mov eax, dword [0x04000888] 	      3539	amd_iommu.c	FUNCTION_150	IF_5	CALL_6
+0x4000888	    0x41bc01000000	                             mov r12d, 1	      3539	amd_iommu.c	FUNCTION_150	IF_5	CALL_6
+0x400088e	          0x4889ef	                            mov rdi, rbp	      3542	amd_iommu.c	FUNCTION_150	IF_5	CALL_8
+0x4000891	        0x8d4cc009	              lea ecx, [rax + rax*8 + 9]	      3539	amd_iommu.c	FUNCTION_150	IF_5	CALL_6
+0x4000895	      0xb800001000	                       mov eax, 0x100000	      3539	amd_iommu.c	FUNCTION_150	IF_5	CALL_6
+0x400089a	          0x41d3e4	                            shl r12d, cl	      3539	amd_iommu.c	FUNCTION_150	IF_5	CALL_6
+0x400089d	    0x4181fc000010	                      cmp r12d, 0x100000	      3539	amd_iommu.c	FUNCTION_150	IF_5	CALL_6
+0x40008a4	        0x440f4fe0	                         cmovg r12d, eax	      3539	amd_iommu.c	FUNCTION_150	IF_5	CALL_6
+0x40008a8	        0x834b0404	                   or dword [rbx + 4], 4	      3541	amd_iommu.c	FUNCTION_150	IF_5
+0x40008ac	      0xe800000000	                          call 0x40008b1	      3542	amd_iommu.c	FUNCTION_150	IF_5	CALL_8
+0x40008b1	          0x4139c4	                           cmp r12d, eax	      3542	amd_iommu.c	FUNCTION_150	IF_5	CALL_8
+0x40008b4	          0x4889ef	                            mov rdi, rbp	      3544	amd_iommu.c	FUNCTION_150	IF_5	CALL_9
+0x40008b7	        0x440f4fe0	                         cmovg r12d, eax	      3542	amd_iommu.c	FUNCTION_150	IF_5	CALL_8
+0x40008bb	          0x448923	                   mov dword [rbx], r12d	      3542	amd_iommu.c	FUNCTION_150	IF_5	CALL_8
+0x40008be	      0xe800000000	                          call 0x40008c3	      3544	amd_iommu.c	FUNCTION_150	IF_5	CALL_9
+0x40008c3	            0xa802	                              test al, 2	      3545	amd_iommu.c	FUNCTION_150	IF_5	IF_6
+0x40008c5	            0x7404	                            je 0x40008cb	      3545	amd_iommu.c	FUNCTION_150	IF_5	IF_6
+0x40008c7	        0x834b0408	                   or dword [rbx + 4], 8	      3546	amd_iommu.c	FUNCTION_150	IF_5	IF_6
+0x40008cb	            0xa804	                              test al, 4	      3547	amd_iommu.c	FUNCTION_150	IF_5	IF_7
+0x40008cd	            0x74ac	                            je 0x400087b	      3547	amd_iommu.c	FUNCTION_150	IF_5	IF_7
+0x40008cf	        0x834b0410	                or dword [rbx + 4], 0x10	      3548	amd_iommu.c	FUNCTION_150	IF_5	IF_7
+0x40008d3	            0xeba6	                           jmp 0x400087b	      3548	amd_iommu.c	FUNCTION_150	IF_5	IF_7
+0x40008d5	      0xb8eaffffff	                     mov eax, 0xffffffea	      3519	amd_iommu.c	FUNCTION_150	IF_1
+0x40008da	              0xc3	                                     ret	      3552	amd_iommu.c	FUNCTION_150
+0x40008db	      0xb8eaffffff	                     mov eax, 0xffffffea	      3519	amd_iommu.c	FUNCTION_150	IF_1
+0x40008e0	            0xeb9b	                           jmp 0x400087d	      3519	amd_iommu.c	FUNCTION_150	IF_1
+amd_iommu_map	ELSE,0:IF,3:DO,0:WHILE,0:CALL,4:SWITCH,0:FOR,0:functions,0	38
+0x4002440	          0x8b4774	            mov eax, dword [rdi + 0x74] 	      2999	amd_iommu.c	FUNCTION_123	IF_1
+0x4002443	            0x85c0	                           test eax, eax	      2999	amd_iommu.c	FUNCTION_123	IF_1
+0x4002445	            0x745b	                            je 0x40024a2	      2999	amd_iommu.c	FUNCTION_123	IF_1
+0x4002447	            0x4157	                                push r15	      2994	amd_iommu.c	FUNCTION_123
+0x4002449	            0x4156	                                push r14	      2994	amd_iommu.c	FUNCTION_123
+0x400244b	          0x4589c7	                           mov r15d, r8d	      3005	amd_iommu.c	FUNCTION_123	IF_3
+0x400244e	            0x4155	                                push r13	      2994	amd_iommu.c	FUNCTION_123
+0x4002450	            0x4154	                                push r12	      2994	amd_iommu.c	FUNCTION_123
+0x4002452	        0x4c8d67e0	                   lea r12, [rdi - 0x20]	      2994	amd_iommu.c	FUNCTION_123
+0x4002456	              0x55	                                push rbp	      2994	amd_iommu.c	FUNCTION_123
+0x4002457	              0x53	                                push rbx	      2994	amd_iommu.c	FUNCTION_123
+0x4002458	        0x488d5f50	                   lea rbx, [rdi + 0x50]	      3007	amd_iommu.c	FUNCTION_123	CALL_2
+0x400245c	          0x4989ce	                            mov r14, rcx	      3007	amd_iommu.c	FUNCTION_123	CALL_2
+0x400245f	          0x4989d5	                            mov r13, rdx	      3007	amd_iommu.c	FUNCTION_123	CALL_2
+0x4002462	          0x4889f5	                            mov rbp, rsi	      3007	amd_iommu.c	FUNCTION_123	CALL_2
+0x4002465	          0x4889df	                            mov rdi, rbx	      3007	amd_iommu.c	FUNCTION_123	CALL_2
+0x4002468	        0x4183e703	                             and r15d, 3	      3005	amd_iommu.c	FUNCTION_123	IF_3
+0x400246c	      0xe800000000	                          call 0x4002471	      3007	amd_iommu.c	FUNCTION_123	CALL_2
+0x4002471	          0x4589f8	                           mov r8d, r15d	      3008	amd_iommu.c	FUNCTION_123	CALL_3
+0x4002474	          0x4c89f1	                            mov rcx, r14	      3008	amd_iommu.c	FUNCTION_123	CALL_3
+0x4002477	          0x4c89ea	                            mov rdx, r13	      3008	amd_iommu.c	FUNCTION_123	CALL_3
+0x400247a	          0x4889ee	                            mov rsi, rbp	      3008	amd_iommu.c	FUNCTION_123	CALL_3
+0x400247d	          0x4c89e7	                            mov rdi, r12	      3008	amd_iommu.c	FUNCTION_123	CALL_3
+0x4002480	    0x41b9c0004001	                      mov r9d, 0x14000c0	      3008	amd_iommu.c	FUNCTION_123	CALL_3
+0x4002486	      0xe865faffff	                 call sym.iommu_map_page	      3008	amd_iommu.c	FUNCTION_123	CALL_3
+0x400248b	          0x4889df	                            mov rdi, rbx	      3009	amd_iommu.c	FUNCTION_123	CALL_4
+0x400248e	            0x89c5	                            mov ebp, eax	      3008	amd_iommu.c	FUNCTION_123	CALL_3
+0x4002490	      0xe800000000	                          call 0x4002495	      3009	amd_iommu.c	FUNCTION_123	CALL_4
+0x4002495	            0x89e8	                            mov eax, ebp	      3011	amd_iommu.c	FUNCTION_123
+0x4002497	              0x5b	                                 pop rbx	      3012	amd_iommu.c	FUNCTION_123
+0x4002498	              0x5d	                                 pop rbp	      3012	amd_iommu.c	FUNCTION_123
+0x4002499	            0x415c	                                 pop r12	      3012	amd_iommu.c	FUNCTION_123
+0x400249b	            0x415d	                                 pop r13	      3012	amd_iommu.c	FUNCTION_123
+0x400249d	            0x415e	                                 pop r14	      3012	amd_iommu.c	FUNCTION_123
+0x400249f	            0x415f	                                 pop r15	      3012	amd_iommu.c	FUNCTION_123
+0x40024a1	              0xc3	                                     ret	      3012	amd_iommu.c	FUNCTION_123
+0x40024a2	      0xb8eaffffff	                     mov eax, 0xffffffea	      3000	amd_iommu.c	FUNCTION_123	IF_1
+0x40024a7	              0xc3	                                     ret	      3000	amd_iommu.c	FUNCTION_123	IF_1
+amd_iommu_attach_device	ELSE,1:IF,5:DO,0:WHILE,0:CALL,6:SWITCH,0:FOR,0:functions,0	39
+0x40030c0	            0x4154	                                push r12	      2958	amd_iommu.c	FUNCTION_122
+0x40030c2	              0x55	                                push rbp	      2958	amd_iommu.c	FUNCTION_122
+0x40030c3	        0x4c8d67e0	                   lea r12, [rdi - 0x20]	       195	amd_iommu.c	FUNCTION_5	CALL_1
+0x40030c7	              0x53	                                push rbx	      2958	amd_iommu.c	FUNCTION_122
+0x40030c8	          0x4889f7	                            mov rdi, rsi	      2964	amd_iommu.c	FUNCTION_122	IF_1	CALL_2
+0x40030cb	          0x4889f3	                            mov rbx, rsi	      2958	amd_iommu.c	FUNCTION_122
+0x40030ce	      0xe89df8ffff	                   call sym.check_device	      2964	amd_iommu.c	FUNCTION_122	IF_1	CALL_2
+0x40030d3	            0x84c0	                             test al, al	      2964	amd_iommu.c	FUNCTION_122	IF_1	CALL_2
+0x40030d5	            0x7456	                            je 0x400312d	      2964	amd_iommu.c	FUNCTION_122	IF_1	CALL_2
+0x40030d7	    0x488b83480200	           mov rax, qword [rbx + 0x248] 	      2967	amd_iommu.c	FUNCTION_122
+0x40030de	    0x488b15000000	            mov rdx, qword [0x040030e5] 	      2969	amd_iommu.c	FUNCTION_122
+0x40030e5	         0xfb74820	           movzx ecx, word [rax + 0x20] 	      2969	amd_iommu.c	FUNCTION_122
+0x40030e9	        0x488b2cca	            mov rbp, qword [rdx + rcx*8]	      2969	amd_iommu.c	FUNCTION_122
+0x40030ed	          0x4885ed	                           test rbp, rbp	      2970	amd_iommu.c	FUNCTION_122	IF_2
+0x40030f0	            0x743b	                            je 0x400312d	      2970	amd_iommu.c	FUNCTION_122	IF_2
+0x40030f2	      0x4883781800	               cmp qword [rax + 0x18], 0	      2973	amd_iommu.c	FUNCTION_122	IF_3
+0x40030f7	            0x7408	                            je 0x4003101	      2973	amd_iommu.c	FUNCTION_122	IF_3
+0x40030f9	          0x4889df	                            mov rdi, rbx	      2974	amd_iommu.c	FUNCTION_122	CALL_3
+0x40030fc	      0xe8afe8ffff	                  call sym.detach_device	      2974	amd_iommu.c	FUNCTION_122	CALL_3
+0x4003101	          0x4889df	                            mov rdi, rbx	      2976	amd_iommu.c	FUNCTION_122	CALL_4
+0x4003104	          0x4c89e6	                            mov rsi, r12	      2976	amd_iommu.c	FUNCTION_122	CALL_4
+0x4003107	      0xe894eaffff	                  call sym.attach_device	      2976	amd_iommu.c	FUNCTION_122	CALL_4
+0x400310c	    0x80bd99000000	                cmp byte [rbp + 0x99], 0	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4003113	            0x89c3	                            mov ebx, eax	      2976	amd_iommu.c	FUNCTION_122	CALL_4
+0x4003115	            0x7507	                           jne 0x400311e	      1078	amd_iommu.c	FUNCTION_46	IF_1
+0x4003117	            0x89d8	                            mov eax, ebx	      2990	amd_iommu.c	FUNCTION_122
+0x4003119	              0x5b	                                 pop rbx	      2990	amd_iommu.c	FUNCTION_122
+0x400311a	              0x5d	                                 pop rbp	      2990	amd_iommu.c	FUNCTION_122
+0x400311b	            0x415c	                                 pop r12	      2990	amd_iommu.c	FUNCTION_122
+0x400311d	              0xc3	                                     ret	      2990	amd_iommu.c	FUNCTION_122
+0x400311e	          0x4889ef	                            mov rdi, rbp	      2990	amd_iommu.c	FUNCTION_122
+0x4003121	      0xe87adbffff	  call sym.iommu_completion_wait.part.14	      2990	amd_iommu.c	FUNCTION_122
+0x4003126	            0x89d8	                            mov eax, ebx	      2990	amd_iommu.c	FUNCTION_122
+0x4003128	              0x5b	                                 pop rbx	      2990	amd_iommu.c	FUNCTION_122
+0x4003129	              0x5d	                                 pop rbp	      2990	amd_iommu.c	FUNCTION_122
+0x400312a	            0x415c	                                 pop r12	      2990	amd_iommu.c	FUNCTION_122
+0x400312c	              0xc3	                                     ret	      2990	amd_iommu.c	FUNCTION_122
+0x400312d	      0xbbeaffffff	                     mov ebx, 0xffffffea	      2965	amd_iommu.c	FUNCTION_122	IF_1
+0x4003132	            0xebe3	                           jmp 0x4003117	      2965	amd_iommu.c	FUNCTION_122	IF_1
+unmap_page	ELSE,0:IF,1:DO,0:WHILE,0:CALL,4:SWITCH,0:FOR,0:functions,0	19
+0x4002be0	              0x55	                                push rbp	      2444	amd_iommu.c	FUNCTION_104
+0x4002be1	              0x53	                                push rbx	      2444	amd_iommu.c	FUNCTION_104
+0x4002be2	          0x4889d5	                            mov rbp, rdx	      2444	amd_iommu.c	FUNCTION_104
+0x4002be5	          0x4889f3	                            mov rbx, rsi	      2444	amd_iommu.c	FUNCTION_104
+0x4002be8	      0xe8e3feffff	                     call sym.get_domain	      2448	amd_iommu.c	FUNCTION_104	CALL_1
+0x4002bed	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      2449	amd_iommu.c	FUNCTION_104	IF_1	CALL_2
+0x4002bf3	            0x771a	                            ja 0x4002c0f	      2449	amd_iommu.c	FUNCTION_104	IF_1	CALL_2
+0x4002bf5	    0x4883b8b00000	               cmp qword [rax + 0xb0], 1	       200	amd_iommu.c	FUNCTION_6	CALL_1
+0x4002bfd	            0x7513	                           jne 0x4002c12	       200	amd_iommu.c	FUNCTION_6	CALL_1
+0x4002bff	          0x4889ea	                            mov rdx, rbp	      2454	amd_iommu.c	FUNCTION_104	CALL_4
+0x4002c02	          0x4889de	                            mov rsi, rbx	      2454	amd_iommu.c	FUNCTION_104	CALL_4
+0x4002c05	          0x4889c7	                            mov rdi, rax	      2454	amd_iommu.c	FUNCTION_104	CALL_4
+0x4002c08	              0x5b	                                 pop rbx	      2455	amd_iommu.c	FUNCTION_104
+0x4002c09	              0x5d	                                 pop rbp	      2455	amd_iommu.c	FUNCTION_104
+0x4002c0a	      0xe9b1eaffff	          jmp sym.__unmap_single.isra.17	      2454	amd_iommu.c	FUNCTION_104	CALL_4
+0x4002c0f	              0x5b	                                 pop rbx	      2455	amd_iommu.c	FUNCTION_104
+0x4002c10	              0x5d	                                 pop rbp	      2455	amd_iommu.c	FUNCTION_104
+0x4002c11	              0xc3	                                     ret	      2455	amd_iommu.c	FUNCTION_104
+0x4002c12	      0xe829e0ffff	       call sym.to_dma_ops_domain.part.8	      2455	amd_iommu.c	FUNCTION_104
+__last_alias	ELSE,0:IF,0:DO,0:WHILE,0:CALL,0:SWITCH,0:FOR,0:functions,0	3
+0x4000040	          0x668932	                      mov word [rdx], si	       238	amd_iommu.c	FUNCTION_9
+0x4000043	            0x31c0	                            xor eax, eax	       240	amd_iommu.c	FUNCTION_9
+0x4000045	              0xc3	                                     ret	       240	amd_iommu.c	FUNCTION_9
+__domain_flush_pages	ELSE,0:IF,1:DO,0:WHILE,0:CALL,4:SWITCH,0:FOR,1:functions,1	113
+0x40014b0	      0x4c8d542408	                      lea r10, [rsp + 8]	      1226	amd_iommu.c	FUNCTION_56
+0x40014b5	        0x4883e4f0	             and rsp, 0xfffffffffffffff0	      1226	amd_iommu.c	FUNCTION_56
+0x40014b9	        0x41ff72f8	                    push qword [r10 - 8]	      1226	amd_iommu.c	FUNCTION_56
+0x40014bd	              0x55	                                push rbp	      1226	amd_iommu.c	FUNCTION_56
+0x40014be	          0x4889e5	                            mov rbp, rsp	      1226	amd_iommu.c	FUNCTION_56
+0x40014c1	            0x4157	                                push r15	      1226	amd_iommu.c	FUNCTION_56
+0x40014c3	            0x4156	                                push r14	      1226	amd_iommu.c	FUNCTION_56
+0x40014c5	          0x4989f6	                            mov r14, rsi	      1226	amd_iommu.c	FUNCTION_56
+0x40014c8	    0x81e6ff0f0000	                          and esi, 0xfff	        39	iommu-helper.h	FUNCTION_254	CALL_1
+0x40014ce	            0x4155	                                push r13	      1226	amd_iommu.c	FUNCTION_56
+0x40014d0	    0x4c8dbc32ff0f	            lea r15, [rdx + rsi + 0xfff]	        39	iommu-helper.h	FUNCTION_254	CALL_1
+0x40014d8	            0x4154	                                push r12	      1226	amd_iommu.c	FUNCTION_56
+0x40014da	            0x4152	                                push r10	      1226	amd_iommu.c	FUNCTION_56
+0x40014dc	              0x53	                                push rbx	      1226	amd_iommu.c	FUNCTION_56
+0x40014dd	          0x4989fc	                            mov r12, rdi	      1226	amd_iommu.c	FUNCTION_56
+0x40014e0	        0x4883ec40	                           sub rsp, 0x40	      1226	amd_iommu.c	FUNCTION_56
+0x40014e4	    0x65488b042528	                mov rax, qword gs:[0x28]	      1226	amd_iommu.c	FUNCTION_56
+0x40014ed	        0x488945c8	             mov qword [rbp - 0x38], rax	      1226	amd_iommu.c	FUNCTION_56
+0x40014f1	            0x31c0	                            xor eax, eax	      1226	amd_iommu.c	FUNCTION_56
+0x40014f3	    0x4981ffff1f00	                         cmp r15, 0x1fff	       888	amd_iommu.c	FUNCTION_36	IF_1
+0x40014fa	     0xfb787900000	           movzx eax, word [rdi + 0x90] 	      1231	amd_iommu.c	FUNCTION_56	CALL_1
+0x4001501	     0xf861c010000	                           jbe 0x4001623	       888	amd_iommu.c	FUNCTION_36	IF_1
+0x4001507	       0xd00000030	                      or eax, 0x30000000	       903	amd_iommu.c	FUNCTION_36	CALL_5
+0x400150c	    0x48c745a00000	               mov qword [rbp - 0x60], 0	       899	amd_iommu.c	FUNCTION_36	CALL_2
+0x4001514	    0xc745acffffff	      mov dword [rbp - 0x54], 0x7fffffff	       902	amd_iommu.c	FUNCTION_36	CALL_4
+0x400151b	          0x8945a4	             mov dword [rbp - 0x5c], eax	       903	amd_iommu.c	FUNCTION_36	CALL_5
+0x400151e	    0xc745a801f0ff	      mov dword [rbp - 0x58], 0xfffff001	       905	amd_iommu.c	FUNCTION_36	IF_2
+0x4001525	            0x85c9	                           test ecx, ecx	       906	amd_iommu.c	FUNCTION_36	IF_3
+0x4001527	            0x7404	                            je 0x400152d	       906	amd_iommu.c	FUNCTION_36	IF_3
+0x4001529	        0x834da802	                or dword [rbp - 0x58], 2	       907	amd_iommu.c	FUNCTION_36	IF_3
+0x400152d	            0x31db	                            xor ebx, ebx	      1226	amd_iommu.c	FUNCTION_56
+0x400152f	          0x4531ed	                          xor r13d, r13d	      1226	amd_iommu.c	FUNCTION_56
+0x4001532	            0xeb04	                           jmp 0x4001538	      1226	amd_iommu.c	FUNCTION_56
+0x4001534	        0x4883c301	                              add rbx, 1	      1226	amd_iommu.c	FUNCTION_56
+0x4001538	      0xe800000000	                          call 0x400153d	      1233	amd_iommu.c	FUNCTION_56	FOR_1	CALL_2
+0x400153d	            0x39c3	                            cmp ebx, eax	      1233	amd_iommu.c	FUNCTION_56	FOR_1	CALL_2
+0x400153f	            0x7d25	                           jge 0x4001566	      1233	amd_iommu.c	FUNCTION_56	FOR_1	CALL_2
+0x4001541	          0x4863c3	                         movsxd rax, ebx	      1234	amd_iommu.c	FUNCTION_56	FOR_1	IF_1
+0x4001544	    0x418b8484c000	    mov eax, dword [r12 + rax*4 + 0xc0] 	      1234	amd_iommu.c	FUNCTION_56	FOR_1	IF_1
+0x400154c	            0x85c0	                           test eax, eax	      1234	amd_iommu.c	FUNCTION_56	FOR_1	IF_1
+0x400154e	            0x74e4	                            je 0x4001534	      1234	amd_iommu.c	FUNCTION_56	FOR_1	IF_1
+0x4001550	    0x488b3cdd0000	                  mov rdi, qword [rbx*8]	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x4001558	        0x488d75a0	                   lea rsi, [rbp - 0x60]	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x400155c	      0xe8bffaffff	call sym.iommu_queue_command_sync.constprop.30	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x4001561	          0x4109c5	                            or r13d, eax	      1241	amd_iommu.c	FUNCTION_56	FOR_1	CALL_3
+0x4001564	            0xebce	                           jmp 0x4001534	      1241	amd_iommu.c	FUNCTION_56	FOR_1	CALL_3
+0x4001566	      0x498b5c2410	            mov rbx, qword [r12 + 0x10] 	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x400156b	        0x4983c410	                           add r12, 0x10	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x400156f	          0x4c39e3	                            cmp rbx, r12	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x4001572	            0x7472	                            je 0x40015e6	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x4001574	    0x4981e600f0ff	             and r14, 0xfffffffffffff000	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x400157b	          0x4c89f0	                            mov rax, r14	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x400157e	        0x48c1e820	                           shr rax, 0x20	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x4001582	        0x48894590	             mov qword [rbp - 0x70], rax	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x4001586	            0xeb08	                           jmp 0x4001590	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x4001588	          0x488b1b	                    mov rbx, qword [rbx]	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x400158b	          0x4c39e3	                            cmp rbx, r12	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x400158e	            0x7456	                            je 0x40015e6	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x4001590	        0x807b2800	                cmp byte [rbx + 0x28], 0	      1246	amd_iommu.c	FUNCTION_56	FUNCTION_1	IF_1
+0x4001594	            0x74f2	                            je 0x4001588	      1246	amd_iommu.c	FUNCTION_56	FUNCTION_1	IF_1
+0x4001596	         0xfb77b20	           movzx edi, word [rbx + 0x20] 	      1246	amd_iommu.c	FUNCTION_56	FUNCTION_1	IF_1
+0x400159a	          0x8b4b2c	            mov ecx, dword [rbx + 0x2c] 	      1246	amd_iommu.c	FUNCTION_56	FUNCTION_1	IF_1
+0x400159d	    0x488b35000000	            mov rsi, qword [0x040015a4] 	      1188	amd_iommu.c	FUNCTION_54
+0x40015a4	          0xc1e118	                           shl ecx, 0x18	       932	amd_iommu.c	FUNCTION_37
+0x40015a7	          0x4889f8	                            mov rax, rdi	       932	amd_iommu.c	FUNCTION_37
+0x40015aa	        0x488b3cfe	            mov rdi, qword [rsi + rdi*8]	      1188	amd_iommu.c	FUNCTION_54
+0x40015ae	        0x488d75b0	                   lea rsi, [rbp - 0x50]	       930	amd_iommu.c	FUNCTION_37	CALL_2
+0x40015b2	             0x9c1	                             or ecx, eax	       932	amd_iommu.c	FUNCTION_37
+0x40015b4	    0x4981ffff1f00	                         cmp r15, 0x1fff	       919	amd_iommu.c	FUNCTION_37	IF_1
+0x40015bb	          0x894db0	             mov dword [rbp - 0x50], ecx	       932	amd_iommu.c	FUNCTION_37
+0x40015be	            0x764f	                           jbe 0x400160f	       919	amd_iommu.c	FUNCTION_37	IF_1
+0x40015c0	       0xd00000040	                      or eax, 0x40000000	       936	amd_iommu.c	FUNCTION_37	CALL_5
+0x40015c5	    0xc745bcffffff	      mov dword [rbp - 0x44], 0x7fffffff	       935	amd_iommu.c	FUNCTION_37	CALL_4
+0x40015cc	    0xc745b801f0ff	      mov dword [rbp - 0x48], 0xfffff001	       938	amd_iommu.c	FUNCTION_37	IF_2
+0x40015d3	          0x8945b4	             mov dword [rbp - 0x4c], eax	       936	amd_iommu.c	FUNCTION_37	CALL_5
+0x40015d6	      0xe845faffff	call sym.iommu_queue_command_sync.constprop.30	      1065	amd_iommu.c	FUNCTION_45	CALL_1
+0x40015db	          0x488b1b	                    mov rbx, qword [rbx]	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x40015de	          0x4109c5	                            or r13d, eax	      1249	amd_iommu.c	FUNCTION_56	FUNCTION_1	CALL_1
+0x40015e1	          0x4c39e3	                            cmp rbx, r12	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x40015e4	            0x75aa	                           jne 0x4001590	      1244	amd_iommu.c	FUNCTION_56	FUNCTION_1
+0x40015e6	          0x4585ed	                         test r13d, r13d	      1252	amd_iommu.c	FUNCTION_56	CALL_4
+0x40015e9	            0x7561	                           jne 0x400164c	      1252	amd_iommu.c	FUNCTION_56	CALL_4
+0x40015eb	        0x488b45c8	             mov rax, qword [rbp - 0x38]	      1253	amd_iommu.c	FUNCTION_56
+0x40015ef	    0x654833042528	                xor rax, qword gs:[0x28]	      1253	amd_iommu.c	FUNCTION_56
+0x40015f8	            0x7556	                           jne 0x4001650	      1253	amd_iommu.c	FUNCTION_56
+0x40015fa	        0x4883c440	                           add rsp, 0x40	      1253	amd_iommu.c	FUNCTION_56
+0x40015fe	              0x5b	                                 pop rbx	      1253	amd_iommu.c	FUNCTION_56
+0x40015ff	            0x415a	                                 pop r10	      1253	amd_iommu.c	FUNCTION_56
+0x4001601	            0x415c	                                 pop r12	      1253	amd_iommu.c	FUNCTION_56
+0x4001603	            0x415d	                                 pop r13	      1253	amd_iommu.c	FUNCTION_56
+0x4001605	            0x415e	                                 pop r14	      1253	amd_iommu.c	FUNCTION_56
+0x4001607	            0x415f	                                 pop r15	      1253	amd_iommu.c	FUNCTION_56
+0x4001609	              0x5d	                                 pop rbp	      1253	amd_iommu.c	FUNCTION_56
+0x400160a	        0x498d62f8	                      lea rsp, [r10 - 8]	      1253	amd_iommu.c	FUNCTION_56
+0x400160e	              0xc3	                                     ret	      1253	amd_iommu.c	FUNCTION_56
+0x400160f	          0x8b5590	             mov edx, dword [rbp - 0x70]	       935	amd_iommu.c	FUNCTION_37	CALL_4
+0x4001612	       0xd00000040	                      or eax, 0x40000000	       936	amd_iommu.c	FUNCTION_37	CALL_5
+0x4001617	        0x448975b8	            mov dword [rbp - 0x48], r14d	       934	amd_iommu.c	FUNCTION_37	CALL_3
+0x400161b	          0x8945b4	             mov dword [rbp - 0x4c], eax	       936	amd_iommu.c	FUNCTION_37	CALL_5
+0x400161e	          0x8955bc	             mov dword [rbp - 0x44], edx	       935	amd_iommu.c	FUNCTION_37	CALL_4
+0x4001621	            0xebb3	                           jmp 0x40015d6	       935	amd_iommu.c	FUNCTION_37	CALL_4
+0x4001623	          0x4c89f2	                            mov rdx, r14	       897	amd_iommu.c	FUNCTION_36
+0x4001626	       0xd00000030	                      or eax, 0x30000000	       903	amd_iommu.c	FUNCTION_36	CALL_5
+0x400162b	    0x48c745a00000	               mov qword [rbp - 0x60], 0	       899	amd_iommu.c	FUNCTION_36	CALL_2
+0x4001633	    0x4881e200f0ff	             and rdx, 0xfffffffffffff000	       897	amd_iommu.c	FUNCTION_36
+0x400163a	          0x8945a4	             mov dword [rbp - 0x5c], eax	       903	amd_iommu.c	FUNCTION_36	CALL_5
+0x400163d	          0x8955a8	             mov dword [rbp - 0x58], edx	       901	amd_iommu.c	FUNCTION_36	CALL_3
+0x4001640	        0x48c1ea20	                           shr rdx, 0x20	       902	amd_iommu.c	FUNCTION_36	CALL_4
+0x4001644	          0x8955ac	             mov dword [rbp - 0x54], edx	       902	amd_iommu.c	FUNCTION_36	CALL_4
+0x4001647	      0xe9d9feffff	                           jmp 0x4001525	       902	amd_iommu.c	FUNCTION_36	CALL_4
+0x400164c	             0xf0b	                                     ud2	       902	amd_iommu.c	FUNCTION_36	CALL_4
+0x400164e	            0xeb9b	                           jmp 0x40015eb	      1253	amd_iommu.c	FUNCTION_56
+0x4001650	      0xe800000000	                          call 0x4001655	      1253	amd_iommu.c	FUNCTION_56

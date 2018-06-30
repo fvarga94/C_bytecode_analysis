@@ -1,0 +1,43 @@
+sb_init_dio_done_wq	IF,2:FOR,0:WHILE,0:CALL,2:DO,0:functions,0:ELSE,0:SWITCH,0	23
+0x4000980	              0x53	                                push rbx	       621	direct-io.c	FUNCTION_17
+0x4000981	    0x4c8d8fd80300	                   lea r9, [rdi + 0x3d8]	       623	direct-io.c	FUNCTION_17	CALL_1
+0x4000988	          0x4531c0	                            xor r8d, r8d	       623	direct-io.c	FUNCTION_17	CALL_1
+0x400098b	            0x31c9	                            xor ecx, ecx	       623	direct-io.c	FUNCTION_17	CALL_1
+0x400098d	            0x31d2	                            xor edx, edx	       623	direct-io.c	FUNCTION_17	CALL_1
+0x400098f	          0x4889fb	                            mov rbx, rdi	       621	direct-io.c	FUNCTION_17
+0x4000992	      0xbe08000000	                              mov esi, 8	       623	direct-io.c	FUNCTION_17	CALL_1
+0x4000997	    0x48c7c7000000	                              mov rdi, 0	       623	direct-io.c	FUNCTION_17	CALL_1
+0x400099e	      0xe800000000	                          call 0x40009a3	       623	direct-io.c	FUNCTION_17	CALL_1
+0x40009a3	          0x4885c0	                           test rax, rax	       626	direct-io.c	FUNCTION_17	IF_1
+0x40009a6	            0x741e	                            je 0x40009c6	       626	direct-io.c	FUNCTION_17	IF_1
+0x40009a8	          0x4889c7	                            mov rdi, rax	       626	direct-io.c	FUNCTION_17	IF_1
+0x40009ab	            0x31c0	                            xor eax, eax	       365	atomic-instrumented.h	FUNCTION_114	SWITCH_1	CALL_6
+0x40009ad	    0xf0480fb1bba8	   lock cmpxchg qword [rbx + 0x4a8], rdi	       365	atomic-instrumented.h	FUNCTION_114	SWITCH_1	CALL_6
+0x40009b6	            0x31db	                            xor ebx, ebx	       635	direct-io.c	FUNCTION_17
+0x40009b8	          0x4885c0	                           test rax, rax	       633	direct-io.c	FUNCTION_17	IF_2
+0x40009bb	            0x7405	                            je 0x40009c2	       633	direct-io.c	FUNCTION_17	IF_2
+0x40009bd	      0xe800000000	                          call 0x40009c2	       634	direct-io.c	FUNCTION_17	CALL_2
+0x40009c2	            0x89d8	                            mov eax, ebx	       636	direct-io.c	FUNCTION_17
+0x40009c4	              0x5b	                                 pop rbx	       636	direct-io.c	FUNCTION_17
+0x40009c5	              0xc3	                                     ret	       636	direct-io.c	FUNCTION_17
+0x40009c6	      0xbbf4ffffff	                     mov ebx, 0xfffffff4	       627	direct-io.c	FUNCTION_17	IF_1
+0x40009cb	            0xebf5	                           jmp 0x40009c2	       627	direct-io.c	FUNCTION_17	IF_1
+__blockdev_direct_IO	IF,0:FOR,0:WHILE,0:CALL,4:DO,0:functions,0:ELSE,0:SWITCH,0	6
+0x40033b0	    0x488b82800000	            mov rax, qword [rdx + 0x80] 	      1413	direct-io.c	FUNCTION_28	CALL_1
+0x40033b7	         0xf184840	            prefetcht0 byte [rax + 0x40]	      1413	direct-io.c	FUNCTION_28	CALL_1
+0x40033bb	    0x488b82880000	            mov rax, qword [rdx + 0x88] 	      1414	direct-io.c	FUNCTION_28	CALL_2
+0x40033c2	           0xf1808	                   prefetcht0 byte [rax]	      1414	direct-io.c	FUNCTION_28	CALL_2
+0x40033c5	         0xf184840	            prefetcht0 byte [rax + 0x40]	      1415	direct-io.c	FUNCTION_28	CALL_3
+0x40033c9	      0xe902d6ffff	           jmp sym.do_blockdev_direct_IO	      1417	direct-io.c	FUNCTION_28	CALL_4
+dio_aio_complete_work	IF,0:FOR,0:WHILE,0:CALL,2:DO,0:functions,0:ELSE,0:SWITCH,0	4
+0x4000970	        0x4883ef78	                           sub rdi, 0x78	       341	direct-io.c	FUNCTION_6	CALL_2
+0x4000974	      0xba03000000	                              mov edx, 3	       341	direct-io.c	FUNCTION_6	CALL_2
+0x4000979	            0x31f6	                            xor esi, esi	       341	direct-io.c	FUNCTION_6	CALL_2
+0x400097b	      0xe9c0fcffff	                    jmp sym.dio_complete	       341	direct-io.c	FUNCTION_6	CALL_2
+dio_end_io	IF,1:FOR,0:WHILE,0:CALL,2:DO,0:functions,0:ELSE,1:SWITCH,0	6
+0x4000950	        0x488b4750	            mov rax, qword [rdi + 0x50] 	       420	direct-io.c	FUNCTION_9	IF_1
+0x4000954	          0x8b4040	            mov eax, dword [rax + 0x40] 	       420	direct-io.c	FUNCTION_9	IF_1
+0x4000957	            0x85c0	                           test eax, eax	       420	direct-io.c	FUNCTION_9	IF_1
+0x4000959	            0x7505	                           jne 0x4000960	       420	direct-io.c	FUNCTION_9	IF_1
+0x400095b	      0xe9e0f6ffff	                  jmp sym.dio_bio_end_io	       423	direct-io.c	FUNCTION_9	CALL_2
+0x4000960	      0xe9dbfeffff	                 jmp sym.dio_bio_end_aio	       421	direct-io.c	FUNCTION_9	CALL_1

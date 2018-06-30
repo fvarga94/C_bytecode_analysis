@@ -1,0 +1,42 @@
+dup_cloexec	IF,0:FOR,0:ELSE,0:DO,0:WHILE,0:functions,0:SWITCH,0:CALL,1	7
+0x40000a0	        0x4883ec08	                              sub rsp, 8	        81	cloexec.c	FUNCTION_2
+0x40000a4	      0xba00000000	                              mov edx, 0	        82	cloexec.c	FUNCTION_2	CALL_1
+0x40000a9	      0xbe06040000	                          mov esi, 0x406	        82	cloexec.c	FUNCTION_2	CALL_1
+0x40000ae	      0xb800000000	                              mov eax, 0	        82	cloexec.c	FUNCTION_2	CALL_1
+0x40000b3	      0xe800000000	                          call 0x40000b8	        82	cloexec.c	FUNCTION_2	CALL_1
+0x40000b8	        0x4883c408	                              add rsp, 8	        83	cloexec.c	FUNCTION_2
+0x40000bc	              0xc3	                                     ret	        83	cloexec.c	FUNCTION_2
+set_cloexec_flag	IF,4:FOR,0:ELSE,0:DO,0:WHILE,0:functions,0:SWITCH,0:CALL,3	33
+0x4000040	              0x55	                                push rbp	        40	cloexec.c	FUNCTION_1
+0x4000041	              0x53	                                push rbx	        40	cloexec.c	FUNCTION_1
+0x4000042	        0x4883ec08	                              sub rsp, 8	        40	cloexec.c	FUNCTION_1
+0x4000046	            0x89fb	                            mov ebx, edi	        40	cloexec.c	FUNCTION_1
+0x4000048	            0x89f5	                            mov ebp, esi	        40	cloexec.c	FUNCTION_1
+0x400004a	      0xba00000000	                              mov edx, 0	        43	cloexec.c	FUNCTION_1	CALL_1
+0x400004f	      0xbe01000000	                              mov esi, 1	        43	cloexec.c	FUNCTION_1	CALL_1
+0x4000054	      0xb800000000	                              mov eax, 0	        43	cloexec.c	FUNCTION_1	CALL_1
+0x4000059	      0xe800000000	                          call 0x400005e	        43	cloexec.c	FUNCTION_1	CALL_1
+0x400005e	            0x85c0	                           test eax, eax	        45	cloexec.c	FUNCTION_1	IF_1
+0x4000060	            0x7832	                            js 0x4000094	        45	cloexec.c	FUNCTION_1	IF_1
+0x4000062	            0x89c1	                            mov ecx, eax	        45	cloexec.c	FUNCTION_1	IF_1
+0x4000064	            0x89c2	                            mov edx, eax	        47	cloexec.c	FUNCTION_1	IF_1
+0x4000066	          0x83ca01	                               or edx, 1	        47	cloexec.c	FUNCTION_1	IF_1
+0x4000069	          0x83e0fe	                     and eax, 0xfffffffe	        47	cloexec.c	FUNCTION_1	IF_1
+0x400006c	          0x4084ed	                           test bpl, bpl	        47	cloexec.c	FUNCTION_1	IF_1
+0x400006f	           0xf44d0	                          cmove edx, eax	        47	cloexec.c	FUNCTION_1	IF_1
+0x4000072	      0xb800000000	                              mov eax, 0	        51	cloexec.c	FUNCTION_1	IF_1	IF_2
+0x4000077	            0x39ca	                            cmp edx, ecx	        49	cloexec.c	FUNCTION_1	IF_1	IF_2
+0x4000079	            0x741e	                            je 0x4000099	        49	cloexec.c	FUNCTION_1	IF_1	IF_2
+0x400007b	      0xbe02000000	                              mov esi, 2	        50	cloexec.c	FUNCTION_1	IF_1	IF_2	CALL_2
+0x4000080	            0x89df	                            mov edi, ebx	        50	cloexec.c	FUNCTION_1	IF_1	IF_2	CALL_2
+0x4000082	      0xe800000000	                          call 0x4000087	        50	cloexec.c	FUNCTION_1	IF_1	IF_2	CALL_2
+0x4000087	          0x83f8ff	             cmp eax, 0xffffffffffffffff	        50	cloexec.c	FUNCTION_1	IF_1	IF_2	CALL_2
+0x400008a	           0xf94c0	                                 sete al	        50	cloexec.c	FUNCTION_1	IF_1	IF_2	CALL_2
+0x400008d	           0xfb6c0	                           movzx eax, al	        50	cloexec.c	FUNCTION_1	IF_1	IF_2	CALL_2
+0x4000090	            0xf7d8	                                 neg eax	        50	cloexec.c	FUNCTION_1	IF_1	IF_2	CALL_2
+0x4000092	            0xeb05	                           jmp 0x4000099	        50	cloexec.c	FUNCTION_1	IF_1	IF_2	CALL_2
+0x4000094	      0xb8ffffffff	                     mov eax, 0xffffffff	        54	cloexec.c	FUNCTION_1
+0x4000099	        0x4883c408	                              add rsp, 8	        72	cloexec.c	FUNCTION_1
+0x400009d	              0x5b	                                 pop rbx	        72	cloexec.c	FUNCTION_1
+0x400009e	              0x5d	                                 pop rbp	        72	cloexec.c	FUNCTION_1
+0x400009f	              0xc3	                                     ret	        72	cloexec.c	FUNCTION_1

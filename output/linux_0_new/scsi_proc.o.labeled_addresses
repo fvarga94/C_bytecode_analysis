@@ -1,0 +1,305 @@
+proc_scsi_open	FOR,0:ELSE,0:WHILE,0:IF,0:CALL,1:functions,0:SWITCH,0:DO,0	3
+0x40000a0	          0x4889f7	                            mov rdi, rsi	       436	scsi_proc.c	FUNCTION_18
+0x40000a3	    0x48c7c6000000	                              mov rsi, 0	       441	scsi_proc.c	FUNCTION_18	CALL_1
+0x40000aa	      0xe900000000	                           jmp 0x40000af	       441	scsi_proc.c	FUNCTION_18	CALL_1
+scsi_proc_hostdir_rm	FOR,0:ELSE,0:WHILE,0:IF,2:CALL,3:functions,0:SWITCH,0:DO,0	18
+0x40006d0	    0x4883bfb00000	               cmp qword [rdi + 0xb0], 0	       122	scsi_proc.c	FUNCTION_5	IF_1
+0x40006d8	            0x744e	                            je 0x4000728	       122	scsi_proc.c	FUNCTION_5	IF_1
+0x40006da	              0x53	                                push rbx	       121	scsi_proc.c	FUNCTION_5
+0x40006db	          0x4889fb	                            mov rbx, rdi	       121	scsi_proc.c	FUNCTION_5
+0x40006de	    0x48c7c7000000	                              mov rdi, 0	       125	scsi_proc.c	FUNCTION_5	CALL_1
+0x40006e5	      0xe800000000	                          call 0x40006ea	       125	scsi_proc.c	FUNCTION_5	CALL_1
+0x40006ea	    0x80abfa000000	                sub byte [rbx + 0xfa], 1	       126	scsi_proc.c	FUNCTION_5	IF_2
+0x40006f1	            0x7528	                           jne 0x400071b	       126	scsi_proc.c	FUNCTION_5	IF_2
+0x40006f3	    0x4883bbd80000	               cmp qword [rbx + 0xd8], 0	       126	scsi_proc.c	FUNCTION_5	IF_2
+0x40006fb	            0x741e	                            je 0x400071b	       126	scsi_proc.c	FUNCTION_5	IF_2
+0x40006fd	    0x488bbbd00000	            mov rdi, qword [rbx + 0xd0] 	       127	scsi_proc.c	FUNCTION_5	IF_2	CALL_2
+0x4000704	    0x488b35000000	            mov rsi, qword [0x0400070b] 	       127	scsi_proc.c	FUNCTION_5	IF_2	CALL_2
+0x400070b	      0xe800000000	                          call 0x4000710	       127	scsi_proc.c	FUNCTION_5	IF_2	CALL_2
+0x4000710	    0x48c783d80000	               mov qword [rbx + 0xd8], 0	       128	scsi_proc.c	FUNCTION_5	IF_2
+0x400071b	              0x5b	                                 pop rbx	       131	scsi_proc.c	FUNCTION_5
+0x400071c	    0x48c7c7000000	                              mov rdi, 0	       130	scsi_proc.c	FUNCTION_5	CALL_3
+0x4000723	      0xe900000000	                           jmp 0x4000728	       130	scsi_proc.c	FUNCTION_5	CALL_3
+0x4000728	            0xf3c3	                                     ret	       130	scsi_proc.c	FUNCTION_5	CALL_3
+scsi_proc_host_add	FOR,0:ELSE,0:WHILE,0:IF,2:CALL,3:functions,0:SWITCH,0:DO,0	36
+0x4000730	              0x55	                                push rbp	       139	scsi_proc.c	FUNCTION_6
+0x4000731	              0x53	                                push rbx	       139	scsi_proc.c	FUNCTION_6
+0x4000732	        0x4883ec18	                           sub rsp, 0x18	       139	scsi_proc.c	FUNCTION_6
+0x4000736	    0x488baf980000	            mov rbp, qword [rdi + 0x98] 	       140	scsi_proc.c	FUNCTION_6
+0x400073d	    0x65488b042528	                mov rax, qword gs:[0x28]	       139	scsi_proc.c	FUNCTION_6
+0x4000746	      0x4889442410	             mov qword [rsp + 0x10], rax	       139	scsi_proc.c	FUNCTION_6
+0x400074b	            0x31c0	                            xor eax, eax	       139	scsi_proc.c	FUNCTION_6
+0x400074d	    0x4883bdd80000	               cmp qword [rbp + 0xd8], 0	       144	scsi_proc.c	FUNCTION_6	IF_1
+0x4000755	            0x743f	                            je 0x4000796	       144	scsi_proc.c	FUNCTION_6	IF_1
+0x4000757	    0x8b9728010000	           mov edx, dword [rdi + 0x128] 	       147	scsi_proc.c	FUNCTION_6	CALL_1
+0x400075d	          0x4889fb	                            mov rbx, rdi	       147	scsi_proc.c	FUNCTION_6	CALL_1
+0x4000760	      0x488d7c2406	                      lea rdi, [rsp + 6]	       147	scsi_proc.c	FUNCTION_6	CALL_1
+0x4000765	    0x48c7c6000000	                              mov rsi, 0	       147	scsi_proc.c	FUNCTION_6	CALL_1
+0x400076c	      0xe800000000	                          call 0x4000771	       147	scsi_proc.c	FUNCTION_6	CALL_1
+0x4000771	    0x488b95d80000	            mov rdx, qword [rbp + 0xd8] 	       148	scsi_proc.c	FUNCTION_6	CALL_2
+0x4000778	      0x488d7c2406	                      lea rdi, [rsp + 6]	       148	scsi_proc.c	FUNCTION_6	CALL_2
+0x400077d	          0x4989d8	                             mov r8, rbx	       148	scsi_proc.c	FUNCTION_6	CALL_2
+0x4000780	    0x48c7c1000000	                              mov rcx, 0	       148	scsi_proc.c	FUNCTION_6	CALL_2
+0x4000787	      0xbea4010000	                          mov esi, 0x1a4	       148	scsi_proc.c	FUNCTION_6	CALL_2
+0x400078c	      0xe800000000	                          call 0x4000791	       148	scsi_proc.c	FUNCTION_6	CALL_2
+0x4000791	          0x4885c0	                           test rax, rax	       150	scsi_proc.c	FUNCTION_6	IF_2
+0x4000794	            0x741c	                            je 0x40007b2	       150	scsi_proc.c	FUNCTION_6	IF_2
+0x4000796	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       154	scsi_proc.c	FUNCTION_6
+0x400079b	    0x654833042528	                xor rax, qword gs:[0x28]	       154	scsi_proc.c	FUNCTION_6
+0x40007a4	            0x7507	                           jne 0x40007ad	       154	scsi_proc.c	FUNCTION_6
+0x40007a6	        0x4883c418	                           add rsp, 0x18	       154	scsi_proc.c	FUNCTION_6
+0x40007aa	              0x5b	                                 pop rbx	       154	scsi_proc.c	FUNCTION_6
+0x40007ab	              0x5d	                                 pop rbp	       154	scsi_proc.c	FUNCTION_6
+0x40007ac	              0xc3	                                     ret	       154	scsi_proc.c	FUNCTION_6
+0x40007ad	      0xe800000000	                          call 0x40007b2	       154	scsi_proc.c	FUNCTION_6
+0x40007b2	    0x488b8dd00000	            mov rcx, qword [rbp + 0xd0] 	       151	scsi_proc.c	FUNCTION_6	IF_2	CALL_3
+0x40007b9	    0x8b9328010000	           mov edx, dword [rbx + 0x128] 	       151	scsi_proc.c	FUNCTION_6	IF_2	CALL_3
+0x40007bf	    0x48c7c6000000	                              mov rsi, 0	       151	scsi_proc.c	FUNCTION_6	IF_2	CALL_3
+0x40007c6	    0x48c7c7000000	                              mov rdi, 0	       151	scsi_proc.c	FUNCTION_6	IF_2	CALL_3
+0x40007cd	      0xe800000000	                          call 0x40007d2	       151	scsi_proc.c	FUNCTION_6	IF_2	CALL_3
+0x40007d2	            0xebc2	                           jmp 0x4000796	       151	scsi_proc.c	FUNCTION_6	IF_2	CALL_3
+always_match	FOR,0:ELSE,0:WHILE,0:IF,0:CALL,0:functions,0:SWITCH,0:DO,0	2
+0x4000060	      0xb801000000	                              mov eax, 1	       378	scsi_proc.c	FUNCTION_12
+0x4000065	              0xc3	                                     ret	       378	scsi_proc.c	FUNCTION_12
+scsi_seq_next	FOR,0:ELSE,0:WHILE,0:IF,0:CALL,1:functions,0:SWITCH,0:DO,0	16
+0x4000240	              0x55	                                push rbp	       402	scsi_proc.c	FUNCTION_15
+0x4000241	              0x53	                                push rbx	       402	scsi_proc.c	FUNCTION_15
+0x4000242	    0x48c7c1000000	                              mov rcx, 0	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x4000249	        0x48830201	                      add qword [rdx], 1	       403	scsi_proc.c	FUNCTION_15
+0x400024d	          0x4889f3	                            mov rbx, rsi	       402	scsi_proc.c	FUNCTION_15
+0x4000250	            0x31d2	                            xor edx, edx	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x4000252	      0x4883477801	               add qword [rdi + 0x78], 1	       404	scsi_proc.c	FUNCTION_15
+0x4000257	    0x48c7c7000000	                              mov rdi, 0	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x400025e	      0xe800000000	                          call 0x4000263	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x4000263	          0x4889df	                            mov rdi, rbx	       384	scsi_proc.c	FUNCTION_13	CALL_2
+0x4000266	          0x4889c5	                            mov rbp, rax	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x4000269	      0xe800000000	                          call 0x400026e	       384	scsi_proc.c	FUNCTION_13	CALL_2
+0x400026e	          0x4889e8	                            mov rax, rbp	       406	scsi_proc.c	FUNCTION_15
+0x4000271	              0x5b	                                 pop rbx	       406	scsi_proc.c	FUNCTION_15
+0x4000272	              0x5d	                                 pop rbp	       406	scsi_proc.c	FUNCTION_15
+0x4000273	              0xc3	                                     ret	       406	scsi_proc.c	FUNCTION_15
+scsi_exit_procfs	FOR,0:ELSE,0:WHILE,0:IF,0:CALL,2:functions,0:SWITCH,0:DO,0	6
+0x4000860	            0x31f6	                            xor esi, esi	       481	scsi_proc.c	FUNCTION_20	CALL_1
+0x4000862	    0x48c7c7000000	                              mov rdi, 0	       481	scsi_proc.c	FUNCTION_20	CALL_1
+0x4000869	      0xe800000000	                          call 0x400086e	       481	scsi_proc.c	FUNCTION_20	CALL_1
+0x400086e	            0x31f6	                            xor esi, esi	       482	scsi_proc.c	FUNCTION_20	CALL_2
+0x4000870	    0x48c7c7000000	                              mov rdi, 0	       482	scsi_proc.c	FUNCTION_20	CALL_2
+0x4000877	      0xe900000000	                   jmp section_end..text	       482	scsi_proc.c	FUNCTION_20	CALL_2
+scsi_proc_host_rm	FOR,0:ELSE,0:WHILE,0:IF,1:CALL,2:functions,0:SWITCH,0:DO,0	24
+0x40007e0	              0x53	                                push rbx	       161	scsi_proc.c	FUNCTION_7
+0x40007e1	        0x4883ec18	                           sub rsp, 0x18	       161	scsi_proc.c	FUNCTION_7
+0x40007e5	    0x65488b042528	                mov rax, qword gs:[0x28]	       161	scsi_proc.c	FUNCTION_7
+0x40007ee	      0x4889442410	             mov qword [rsp + 0x10], rax	       161	scsi_proc.c	FUNCTION_7
+0x40007f3	            0x31c0	                            xor eax, eax	       161	scsi_proc.c	FUNCTION_7
+0x40007f5	    0x488b87980000	            mov rax, qword [rdi + 0x98] 	       164	scsi_proc.c	FUNCTION_7	IF_1
+0x40007fc	    0x4883b8d80000	               cmp qword [rax + 0xd8], 0	       164	scsi_proc.c	FUNCTION_7	IF_1
+0x4000804	            0x7432	                            je 0x4000838	       164	scsi_proc.c	FUNCTION_7	IF_1
+0x4000806	    0x8b9728010000	           mov edx, dword [rdi + 0x128] 	       167	scsi_proc.c	FUNCTION_7	CALL_1
+0x400080c	          0x4889fb	                            mov rbx, rdi	       167	scsi_proc.c	FUNCTION_7	CALL_1
+0x400080f	      0x488d7c2406	                      lea rdi, [rsp + 6]	       167	scsi_proc.c	FUNCTION_7	CALL_1
+0x4000814	    0x48c7c6000000	                              mov rsi, 0	       167	scsi_proc.c	FUNCTION_7	CALL_1
+0x400081b	      0xe800000000	                          call 0x4000820	       167	scsi_proc.c	FUNCTION_7	CALL_1
+0x4000820	    0x488b83980000	            mov rax, qword [rbx + 0x98] 	       168	scsi_proc.c	FUNCTION_7	CALL_2
+0x4000827	      0x488d7c2406	                      lea rdi, [rsp + 6]	       168	scsi_proc.c	FUNCTION_7	CALL_2
+0x400082c	    0x488bb0d80000	            mov rsi, qword [rax + 0xd8] 	       168	scsi_proc.c	FUNCTION_7	CALL_2
+0x4000833	      0xe800000000	                          call 0x4000838	       168	scsi_proc.c	FUNCTION_7	CALL_2
+0x4000838	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       169	scsi_proc.c	FUNCTION_7
+0x400083d	    0x654833042528	                xor rax, qword gs:[0x28]	       169	scsi_proc.c	FUNCTION_7
+0x4000846	            0x7506	                           jne 0x400084e	       169	scsi_proc.c	FUNCTION_7
+0x4000848	        0x4883c418	                           add rsp, 0x18	       169	scsi_proc.c	FUNCTION_7
+0x400084c	              0x5b	                                 pop rbx	       169	scsi_proc.c	FUNCTION_7
+0x400084d	              0xc3	                                     ret	       169	scsi_proc.c	FUNCTION_7
+0x400084e	      0xe800000000	                          call 0x4000853	       169	scsi_proc.c	FUNCTION_7
+proc_scsi_show	FOR,0:ELSE,0:WHILE,0:IF,0:CALL,1:functions,0:SWITCH,0:DO,0	4
+0x4000040	        0x488b7778	            mov rsi, qword [rdi + 0x78] 	        76	scsi_proc.c	FUNCTION_2
+0x4000044	    0x488b86980000	            mov rax, qword [rsi + 0x98] 	        77	scsi_proc.c	FUNCTION_2	CALL_1
+0x400004b	    0x488b80b00000	            mov rax, qword [rax + 0xb0] 	        77	scsi_proc.c	FUNCTION_2	CALL_1
+0x4000052	      0xe900000000	                           jmp 0x4000057	        77	scsi_proc.c	FUNCTION_2	CALL_1
+scsi_seq_start	FOR,0:ELSE,0:WHILE,1:IF,1:CALL,1:functions,0:SWITCH,0:DO,0	29
+0x4000530	            0x4155	                                push r13	       389	scsi_proc.c	FUNCTION_14
+0x4000532	          0x4989fd	                            mov r13, rdi	       389	scsi_proc.c	FUNCTION_14
+0x4000535	            0x4154	                                push r12	       389	scsi_proc.c	FUNCTION_14
+0x4000537	              0x55	                                push rbp	       389	scsi_proc.c	FUNCTION_14
+0x4000538	            0x31ed	                            xor ebp, ebp	       390	scsi_proc.c	FUNCTION_14
+0x400053a	              0x53	                                push rbx	       389	scsi_proc.c	FUNCTION_14
+0x400053b	          0x4c8b26	                    mov r12, qword [rsi]	       389	scsi_proc.c	FUNCTION_14
+0x400053e	            0xeb11	                           jmp 0x4000551	       393	scsi_proc.c	FUNCTION_14	WHILE_1	CALL_1
+0x4000540	          0x4d85e4	                           test r12, r12	       394	scsi_proc.c	FUNCTION_14	WHILE_1	IF_1
+0x4000543	            0x7434	                            je 0x4000579	       394	scsi_proc.c	FUNCTION_14	WHILE_1	IF_1
+0x4000545	      0x4983457801	               add qword [r13 + 0x78], 1	       396	scsi_proc.c	FUNCTION_14	WHILE_1
+0x400054a	        0x4983ec01	                              sub r12, 1	       396	scsi_proc.c	FUNCTION_14	WHILE_1
+0x400054e	          0x4889dd	                            mov rbp, rbx	       396	scsi_proc.c	FUNCTION_14	WHILE_1
+0x4000551	            0x31d2	                            xor edx, edx	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x4000553	    0x48c7c1000000	                              mov rcx, 0	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x400055a	          0x4889ee	                            mov rsi, rbp	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x400055d	    0x48c7c7000000	                              mov rdi, 0	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x4000564	      0xe800000000	                          call 0x4000569	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x4000569	          0x4889ef	                            mov rdi, rbp	       384	scsi_proc.c	FUNCTION_13	CALL_2
+0x400056c	          0x4889c3	                            mov rbx, rax	       382	scsi_proc.c	FUNCTION_13	CALL_1
+0x400056f	      0xe800000000	                          call 0x4000574	       384	scsi_proc.c	FUNCTION_13	CALL_2
+0x4000574	          0x4885db	                           test rbx, rbx	       393	scsi_proc.c	FUNCTION_14	WHILE_1	CALL_1
+0x4000577	            0x75c7	                           jne 0x4000540	       393	scsi_proc.c	FUNCTION_14	WHILE_1	CALL_1
+0x4000579	          0x4889d8	                            mov rax, rbx	       399	scsi_proc.c	FUNCTION_14
+0x400057c	              0x5b	                                 pop rbx	       399	scsi_proc.c	FUNCTION_14
+0x400057d	              0x5d	                                 pop rbp	       399	scsi_proc.c	FUNCTION_14
+0x400057e	            0x415c	                                 pop r12	       399	scsi_proc.c	FUNCTION_14
+0x4000580	            0x415d	                                 pop r13	       399	scsi_proc.c	FUNCTION_14
+0x4000582	              0xc3	                                     ret	       399	scsi_proc.c	FUNCTION_14
+scsi_seq_stop	FOR,0:ELSE,0:WHILE,0:IF,0:CALL,1:functions,0:SWITCH,0:DO,0	2
+0x4000280	          0x4889f7	                            mov rdi, rsi	       410	scsi_proc.c	FUNCTION_16	CALL_1
+0x4000283	      0xe900000000	                           jmp 0x4000288	       410	scsi_proc.c	FUNCTION_16	CALL_1
+scsi_init_procfs	FOR,0:ELSE,0:WHILE,0:IF,2:CALL,3:functions,0:SWITCH,0:DO,0	19
+0x4000040	        0x488b7778	            mov rsi, qword [rdi + 0x78] 	        76	scsi_proc.c	FUNCTION_2
+0x4000044	    0x488b86980000	            mov rax, qword [rsi + 0x98] 	        77	scsi_proc.c	FUNCTION_2	CALL_1
+0x400004b	    0x488b80b00000	            mov rax, qword [rax + 0xb0] 	        77	scsi_proc.c	FUNCTION_2	CALL_1
+0x4000052	      0xe900000000	                           jmp 0x4000057	        77	scsi_proc.c	FUNCTION_2	CALL_1
+0x4000057	    0x660f1f840000	                    nop word [rax + rax]	        77	scsi_proc.c	FUNCTION_2	CALL_1
+0x4000060	      0xb801000000	                              mov eax, 1	       378	scsi_proc.c	FUNCTION_12
+0x4000065	              0xc3	                                     ret	       378	scsi_proc.c	FUNCTION_12
+0x4000066	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       378	scsi_proc.c	FUNCTION_12
+0x4000070	              0x53	                                push rbx	        81	scsi_proc.c	FUNCTION_3
+0x4000071	          0x4889f3	                            mov rbx, rsi	        81	scsi_proc.c	FUNCTION_3
+0x4000074	      0xe800000000	                          call 0x4000079	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x4000079	          0x4889df	                            mov rdi, rbx	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x400007c	      0xb900400000	                         mov ecx, 0x4000	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x4000081	          0x4889c2	                            mov rdx, rax	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x4000084	              0x5b	                                 pop rbx	        84	scsi_proc.c	FUNCTION_3
+0x4000085	    0x48c7c6000000	                              mov rsi, 0	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x400008c	      0xe900000000	                           jmp 0x4000091	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x4000091	               0xf	                                 invalid	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x4000092	              0x1f	                                 invalid	        82	scsi_proc.c	FUNCTION_3	CALL_2
+proc_scsi_host_open	FOR,0:ELSE,0:WHILE,0:IF,0:CALL,2:functions,0:SWITCH,0:DO,0	9
+0x4000070	              0x53	                                push rbx	        81	scsi_proc.c	FUNCTION_3
+0x4000071	          0x4889f3	                            mov rbx, rsi	        81	scsi_proc.c	FUNCTION_3
+0x4000074	      0xe800000000	                          call 0x4000079	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x4000079	          0x4889df	                            mov rdi, rbx	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x400007c	      0xb900400000	                         mov ecx, 0x4000	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x4000081	          0x4889c2	                            mov rdx, rax	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x4000084	              0x5b	                                 pop rbx	        84	scsi_proc.c	FUNCTION_3
+0x4000085	    0x48c7c6000000	                              mov rsi, 0	        82	scsi_proc.c	FUNCTION_3	CALL_2
+0x400008c	      0xe900000000	                           jmp 0x4000091	        82	scsi_proc.c	FUNCTION_3	CALL_2
+scsi_seq_show	FOR,0:ELSE,0:WHILE,0:IF,1:CALL,2:functions,0:SWITCH,0:DO,0	97
+0x40000b0	            0x4154	                                push r12	       414	scsi_proc.c	FUNCTION_17
+0x40000b2	              0x55	                                push rbp	       414	scsi_proc.c	FUNCTION_17
+0x40000b3	          0x4989f4	                            mov r12, rsi	       414	scsi_proc.c	FUNCTION_17
+0x40000b6	              0x53	                                push rbx	       414	scsi_proc.c	FUNCTION_17
+0x40000b7	      0x48837f7800	               cmp qword [rdi + 0x78], 0	       415	scsi_proc.c	FUNCTION_17	IF_1
+0x40000bc	          0x4889fd	                            mov rbp, rdi	       414	scsi_proc.c	FUNCTION_17
+0x40000bf	     0xf8456010000	                            je 0x400021b	       415	scsi_proc.c	FUNCTION_17	IF_1
+0x40000c5	          0x4c89e7	                            mov rdi, r12	       184	scsi_proc.c	FUNCTION_8	IF_1	CALL_1
+0x40000c8	      0xe800000000	                          call 0x40000cd	       184	scsi_proc.c	FUNCTION_8	IF_1	CALL_1
+0x40000cd	            0x85c0	                           test eax, eax	       184	scsi_proc.c	FUNCTION_8	IF_1	CALL_1
+0x40000cf	            0x7507	                           jne 0x40000d8	       184	scsi_proc.c	FUNCTION_8	IF_1	CALL_1
+0x40000d1	              0x5b	                                 pop rbx	       419	scsi_proc.c	FUNCTION_17
+0x40000d2	            0x31c0	                            xor eax, eax	       419	scsi_proc.c	FUNCTION_17
+0x40000d4	              0x5d	                                 pop rbp	       419	scsi_proc.c	FUNCTION_17
+0x40000d5	            0x415c	                                 pop r12	       419	scsi_proc.c	FUNCTION_17
+0x40000d7	              0xc3	                                     ret	       419	scsi_proc.c	FUNCTION_17
+0x40000d8	    0x498b842488fe	            mov rax, qword [r12 - 0x178]	       188	scsi_proc.c	FUNCTION_8	CALL_3
+0x40000e0	    0x418b8c240cff	             mov ecx, dword [r12 - 0xf4]	       188	scsi_proc.c	FUNCTION_8	CALL_3
+0x40000e8	    0x48c7c6000000	                              mov rsi, 0	       188	scsi_proc.c	FUNCTION_8	CALL_3
+0x40000ef	    0x4d8b8c2410ff	              mov r9, qword [r12 - 0xf0]	       188	scsi_proc.c	FUNCTION_8	CALL_3
+0x40000f7	    0x458b842408ff	             mov r8d, dword [r12 - 0xf8]	       188	scsi_proc.c	FUNCTION_8	CALL_3
+0x40000ff	          0x4889ef	                            mov rdi, rbp	       188	scsi_proc.c	FUNCTION_8	CALL_3
+0x4000102	            0x31db	                            xor ebx, ebx	       188	scsi_proc.c	FUNCTION_8	CALL_3
+0x4000104	    0x8b9028010000	           mov edx, dword [rax + 0x128] 	       188	scsi_proc.c	FUNCTION_8	CALL_3
+0x400010a	      0xe800000000	                          call 0x400010f	       188	scsi_proc.c	FUNCTION_8	CALL_3
+0x400010f	    0x498b842460ff	             mov rax, qword [r12 - 0xa0]	       192	scsi_proc.c	FUNCTION_8	FOR_1	IF_2
+0x4000117	         0xfbe3418	             movsx esi, byte [rax + rbx]	       192	scsi_proc.c	FUNCTION_8	FOR_1	IF_2
+0x400011b	        0x4080fe1f	                           cmp sil, 0x1f	       192	scsi_proc.c	FUNCTION_8	FOR_1	IF_2
+0x400011f	            0x7f05	                            jg 0x4000126	       192	scsi_proc.c	FUNCTION_8	FOR_1	IF_2
+0x4000121	      0xbe20000000	                           mov esi, 0x20	       195	scsi_proc.c	FUNCTION_8	FOR_1	CALL_5
+0x4000126	          0x4889ef	                            mov rdi, rbp	       195	scsi_proc.c	FUNCTION_8	FOR_1	CALL_5
+0x4000129	        0x4883c301	                              add rbx, 1	       195	scsi_proc.c	FUNCTION_8	FOR_1	CALL_5
+0x400012d	      0xe800000000	                          call 0x4000132	       195	scsi_proc.c	FUNCTION_8	FOR_1	CALL_5
+0x4000132	        0x4883fb08	                              cmp rbx, 8	       191	scsi_proc.c	FUNCTION_8	FOR_1
+0x4000136	            0x75d7	                           jne 0x400010f	       191	scsi_proc.c	FUNCTION_8	FOR_1
+0x4000138	    0x48c7c6000000	                              mov rsi, 0	       198	scsi_proc.c	FUNCTION_8	CALL_6
+0x400013f	          0x4889ef	                            mov rdi, rbp	       198	scsi_proc.c	FUNCTION_8	CALL_6
+0x4000142	            0x31db	                            xor ebx, ebx	       198	scsi_proc.c	FUNCTION_8	CALL_6
+0x4000144	      0xe800000000	                          call 0x4000149	       198	scsi_proc.c	FUNCTION_8	CALL_6
+0x4000149	    0x498b842468ff	             mov rax, qword [r12 - 0x98]	       200	scsi_proc.c	FUNCTION_8	FOR_2	IF_3
+0x4000151	         0xfbe3418	             movsx esi, byte [rax + rbx]	       200	scsi_proc.c	FUNCTION_8	FOR_2	IF_3
+0x4000155	        0x4080fe1f	                           cmp sil, 0x1f	       200	scsi_proc.c	FUNCTION_8	FOR_2	IF_3
+0x4000159	            0x7f05	                            jg 0x4000160	       200	scsi_proc.c	FUNCTION_8	FOR_2	IF_3
+0x400015b	      0xbe20000000	                           mov esi, 0x20	       203	scsi_proc.c	FUNCTION_8	FOR_2	CALL_8
+0x4000160	          0x4889ef	                            mov rdi, rbp	       203	scsi_proc.c	FUNCTION_8	FOR_2	CALL_8
+0x4000163	        0x4883c301	                              add rbx, 1	       203	scsi_proc.c	FUNCTION_8	FOR_2	CALL_8
+0x4000167	      0xe800000000	                          call 0x400016c	       203	scsi_proc.c	FUNCTION_8	FOR_2	CALL_8
+0x400016c	        0x4883fb10	                           cmp rbx, 0x10	       199	scsi_proc.c	FUNCTION_8	FOR_2
+0x4000170	            0x75d7	                           jne 0x4000149	       199	scsi_proc.c	FUNCTION_8	FOR_2
+0x4000172	    0x48c7c6000000	                              mov rsi, 0	       206	scsi_proc.c	FUNCTION_8	CALL_9
+0x4000179	          0x4889ef	                            mov rdi, rbp	       206	scsi_proc.c	FUNCTION_8	CALL_9
+0x400017c	            0x31db	                            xor ebx, ebx	       206	scsi_proc.c	FUNCTION_8	CALL_9
+0x400017e	      0xe800000000	                          call 0x4000183	       206	scsi_proc.c	FUNCTION_8	CALL_9
+0x4000183	    0x498b842470ff	             mov rax, qword [r12 - 0x90]	       208	scsi_proc.c	FUNCTION_8	FOR_3	IF_4
+0x400018b	         0xfbe3418	             movsx esi, byte [rax + rbx]	       208	scsi_proc.c	FUNCTION_8	FOR_3	IF_4
+0x400018f	        0x4080fe1f	                           cmp sil, 0x1f	       208	scsi_proc.c	FUNCTION_8	FOR_3	IF_4
+0x4000193	            0x7f05	                            jg 0x400019a	       208	scsi_proc.c	FUNCTION_8	FOR_3	IF_4
+0x4000195	      0xbe20000000	                           mov esi, 0x20	       211	scsi_proc.c	FUNCTION_8	FOR_3	CALL_11
+0x400019a	          0x4889ef	                            mov rdi, rbp	       211	scsi_proc.c	FUNCTION_8	FOR_3	CALL_11
+0x400019d	        0x4883c301	                              add rbx, 1	       211	scsi_proc.c	FUNCTION_8	FOR_3	CALL_11
+0x40001a1	      0xe800000000	                          call 0x40001a6	       211	scsi_proc.c	FUNCTION_8	FOR_3	CALL_11
+0x40001a6	        0x4883fb04	                              cmp rbx, 4	       207	scsi_proc.c	FUNCTION_8	FOR_3
+0x40001aa	            0x75d7	                           jne 0x4000183	       207	scsi_proc.c	FUNCTION_8	FOR_3
+0x40001ac	      0xbe0a000000	                            mov esi, 0xa	       214	scsi_proc.c	FUNCTION_8	CALL_12
+0x40001b1	          0x4889ef	                            mov rdi, rbp	       214	scsi_proc.c	FUNCTION_8	CALL_12
+0x40001b4	      0xe800000000	                          call 0x40001b9	       214	scsi_proc.c	FUNCTION_8	CALL_12
+0x40001b9	    0x410fb6bc2428	            movzx edi, byte [r12 - 0xd8]	       216	scsi_proc.c	FUNCTION_8	CALL_14
+0x40001c2	      0xe800000000	                          call 0x40001c7	       216	scsi_proc.c	FUNCTION_8	CALL_14
+0x40001c7	    0x48c7c6000000	                              mov rsi, 0	       216	scsi_proc.c	FUNCTION_8	CALL_14
+0x40001ce	          0x4889c2	                            mov rdx, rax	       216	scsi_proc.c	FUNCTION_8	CALL_14
+0x40001d1	          0x4889ef	                            mov rdi, rbp	       216	scsi_proc.c	FUNCTION_8	CALL_14
+0x40001d4	      0xe800000000	                          call 0x40001d9	       216	scsi_proc.c	FUNCTION_8	CALL_14
+0x40001d9	    0x410fbe942429	            movsx edx, byte [r12 - 0xd7]	       218	scsi_proc.c	FUNCTION_8
+0x40001e2	    0x48c7c6000000	                              mov rsi, 0	       217	scsi_proc.c	FUNCTION_8	CALL_15
+0x40001e9	          0x4889ef	                            mov rdi, rbp	       217	scsi_proc.c	FUNCTION_8	CALL_15
+0x40001ec	          0x80fa01	                               cmp dl, 1	       217	scsi_proc.c	FUNCTION_8	CALL_15
+0x40001ef	           0xf9fc0	                                 setg al	       217	scsi_proc.c	FUNCTION_8	CALL_15
+0x40001f2	           0xfb6c0	                           movzx eax, al	       217	scsi_proc.c	FUNCTION_8	CALL_15
+0x40001f5	            0x29c2	                            sub edx, eax	       217	scsi_proc.c	FUNCTION_8	CALL_15
+0x40001f7	      0xe800000000	                          call 0x40001fc	       217	scsi_proc.c	FUNCTION_8	CALL_15
+0x40001fc	    0x4180bc2429ff	                cmp byte [r12 - 0xd7], 2	       219	scsi_proc.c	FUNCTION_8	IF_5
+0x4000205	            0x7425	                            je 0x400022c	       219	scsi_proc.c	FUNCTION_8	IF_5
+0x4000207	          0x4889ef	                            mov rdi, rbp	       222	scsi_proc.c	FUNCTION_8	CALL_17
+0x400020a	      0xbe0a000000	                            mov esi, 0xa	       222	scsi_proc.c	FUNCTION_8	CALL_17
+0x400020f	      0xe800000000	                          call 0x4000214	       222	scsi_proc.c	FUNCTION_8	CALL_17
+0x4000214	            0x31c0	                            xor eax, eax	       419	scsi_proc.c	FUNCTION_17
+0x4000216	              0x5b	                                 pop rbx	       419	scsi_proc.c	FUNCTION_17
+0x4000217	              0x5d	                                 pop rbp	       419	scsi_proc.c	FUNCTION_17
+0x4000218	            0x415c	                                 pop r12	       419	scsi_proc.c	FUNCTION_17
+0x400021a	              0xc3	                                     ret	       419	scsi_proc.c	FUNCTION_17
+0x400021b	    0x48c7c6000000	                              mov rsi, 0	       416	scsi_proc.c	FUNCTION_17	CALL_1
+0x4000222	      0xe800000000	                          call 0x4000227	       416	scsi_proc.c	FUNCTION_17	CALL_1
+0x4000227	      0xe999feffff	                           jmp 0x40000c5	       416	scsi_proc.c	FUNCTION_17	CALL_1
+0x400022c	    0x48c7c6000000	                              mov rsi, 0	       220	scsi_proc.c	FUNCTION_8	CALL_16
+0x4000233	          0x4889ef	                            mov rdi, rbp	       220	scsi_proc.c	FUNCTION_8	CALL_16
+0x4000236	      0xe800000000	                          call 0x400023b	       220	scsi_proc.c	FUNCTION_8	CALL_16
+0x400023b	      0xe991feffff	                           jmp 0x40000d1	       220	scsi_proc.c	FUNCTION_8	CALL_16
+scsi_proc_hostdir_add	FOR,0:ELSE,0:WHILE,0:IF,3:CALL,4:functions,0:SWITCH,0:DO,0	26
+0x4000650	    0x4883bfb00000	               cmp qword [rdi + 0xb0], 0	       103	scsi_proc.c	FUNCTION_4	IF_1
+0x4000658	            0x746c	                            je 0x40006c6	       103	scsi_proc.c	FUNCTION_4	IF_1
+0x400065a	              0x53	                                push rbx	       102	scsi_proc.c	FUNCTION_4
+0x400065b	          0x4889fb	                            mov rbx, rdi	       102	scsi_proc.c	FUNCTION_4
+0x400065e	    0x48c7c7000000	                              mov rdi, 0	       106	scsi_proc.c	FUNCTION_4	CALL_1
+0x4000665	      0xe800000000	                          call 0x400066a	       106	scsi_proc.c	FUNCTION_4	CALL_1
+0x400066a	     0xfb683fa0000	           movzx eax, byte [rbx + 0xfa] 	       107	scsi_proc.c	FUNCTION_4	IF_2
+0x4000671	          0x8d5001	                      lea edx, [rax + 1]	       107	scsi_proc.c	FUNCTION_4	IF_2
+0x4000674	            0x84c0	                             test al, al	       107	scsi_proc.c	FUNCTION_4	IF_2
+0x4000676	    0x8893fa000000	               mov byte [rbx + 0xfa], dl	       107	scsi_proc.c	FUNCTION_4	IF_2
+0x400067c	            0x740d	                            je 0x400068b	       107	scsi_proc.c	FUNCTION_4	IF_2
+0x400067e	              0x5b	                                 pop rbx	       114	scsi_proc.c	FUNCTION_4
+0x400067f	    0x48c7c7000000	                              mov rdi, 0	       113	scsi_proc.c	FUNCTION_4	CALL_4
+0x4000686	      0xe900000000	                           jmp 0x400068b	       113	scsi_proc.c	FUNCTION_4	CALL_4
+0x400068b	    0x488bbbd00000	            mov rdi, qword [rbx + 0xd0] 	       108	scsi_proc.c	FUNCTION_4	IF_2	CALL_2
+0x4000692	    0x488b35000000	            mov rsi, qword [0x04000699] 	       108	scsi_proc.c	FUNCTION_4	IF_2	CALL_2
+0x4000699	      0xe800000000	                          call 0x400069e	       108	scsi_proc.c	FUNCTION_4	IF_2	CALL_2
+0x400069e	          0x4885c0	                           test rax, rax	       109	scsi_proc.c	FUNCTION_4	IF_2	IF_3
+0x40006a1	    0x488983d80000	             mov qword [rbx + 0xd8], rax	       108	scsi_proc.c	FUNCTION_4	IF_2	CALL_2
+0x40006a8	            0x75d4	                           jne 0x400067e	       109	scsi_proc.c	FUNCTION_4	IF_2	IF_3
+0x40006aa	    0x488b93d00000	            mov rdx, qword [rbx + 0xd0] 	       110	scsi_proc.c	FUNCTION_4	IF_2	IF_3	CALL_3
+0x40006b1	    0x48c7c6000000	                              mov rsi, 0	       110	scsi_proc.c	FUNCTION_4	IF_2	IF_3	CALL_3
+0x40006b8	    0x48c7c7000000	                              mov rdi, 0	       110	scsi_proc.c	FUNCTION_4	IF_2	IF_3	CALL_3
+0x40006bf	      0xe800000000	                          call 0x40006c4	       110	scsi_proc.c	FUNCTION_4	IF_2	IF_3	CALL_3
+0x40006c4	            0xebb8	                           jmp 0x400067e	       110	scsi_proc.c	FUNCTION_4	IF_2	IF_3	CALL_3
+0x40006c6	            0xf3c3	                                     ret	       110	scsi_proc.c	FUNCTION_4	IF_2	IF_3	CALL_3

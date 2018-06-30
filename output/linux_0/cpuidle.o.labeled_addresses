@@ -1,0 +1,183 @@
+cpuidle_reflect	FOR,0:WHILE,0:functions,0:DO,0:IF,1:CALL,1:SWITCH,0:ELSE,0	8
+0x4000840	    0x488b05000000	            mov rax, qword [0x04000847] 	       317	cpuidle.c	FUNCTION_13	IF_1
+0x4000847	        0x488b4040	            mov rax, qword [rax + 0x40] 	       317	cpuidle.c	FUNCTION_13	IF_1
+0x400084b	          0x4885c0	                           test rax, rax	       317	cpuidle.c	FUNCTION_13	IF_1
+0x400084e	            0x7409	                            je 0x4000859	       317	cpuidle.c	FUNCTION_13	IF_1
+0x4000850	            0x85f6	                           test esi, esi	       317	cpuidle.c	FUNCTION_13	IF_1
+0x4000852	            0x7805	                            js 0x4000859	       317	cpuidle.c	FUNCTION_13	IF_1
+0x4000854	      0xe900000000	                           jmp 0x4000859	       318	cpuidle.c	FUNCTION_13	CALL_1
+0x4000859	            0xf3c3	                                     ret	       318	cpuidle.c	FUNCTION_13	CALL_1
+cpuidle_pause	FOR,0:WHILE,0:functions,0:DO,0:IF,0:CALL,3:SWITCH,0:ELSE,0	5
+0x4000a00	    0x48c7c7000000	                              mov rdi, 0	       375	cpuidle.c	FUNCTION_18	CALL_1
+0x4000a07	      0xe800000000	                          call 0x4000a0c	       375	cpuidle.c	FUNCTION_18	CALL_1
+0x4000a0c	      0xe800000000	                          call 0x4000a11	       376	cpuidle.c	FUNCTION_18	CALL_2
+0x4000a11	    0x48c7c7000000	                              mov rdi, 0	       377	cpuidle.c	FUNCTION_18	CALL_3
+0x4000a18	      0xe900000000	                           jmp 0x4000a1d	       377	cpuidle.c	FUNCTION_18	CALL_3
+disable_cpuidle	FOR,0:WHILE,0:functions,0:DO,0:IF,0:CALL,0:SWITCH,0:ELSE,0	2
+0x4000320	    0xc70500000000	               mov dword [0x0400032a], 1	        45	cpuidle.c	FUNCTION_2
+0x400032a	              0xc3	                                     ret	        45	cpuidle.c	FUNCTION_2
+cpuidle_register	FOR,0:WHILE,0:functions,1:DO,0:IF,1:CALL,2:SWITCH,0:ELSE,0	44
+0x4000970	            0x4156	                                push r14	       618	cpuidle.c	FUNCTION_28
+0x4000972	            0x4155	                                push r13	       618	cpuidle.c	FUNCTION_28
+0x4000974	            0x4154	                                push r12	       618	cpuidle.c	FUNCTION_28
+0x4000976	              0x55	                                push rbp	       618	cpuidle.c	FUNCTION_28
+0x4000977	          0x4989fc	                            mov r12, rdi	       618	cpuidle.c	FUNCTION_28
+0x400097a	              0x53	                                push rbx	       618	cpuidle.c	FUNCTION_28
+0x400097b	      0xe800000000	                          call 0x4000980	       622	cpuidle.c	FUNCTION_28	CALL_1
+0x4000980	            0x85c0	                           test eax, eax	       623	cpuidle.c	FUNCTION_28	IF_1
+0x4000982	          0x4189c6	                           mov r14d, eax	       622	cpuidle.c	FUNCTION_28	CALL_1
+0x4000985	            0x756a	                           jne 0x40009f1	       623	cpuidle.c	FUNCTION_28	IF_1
+0x4000987	    0x49c7c5000000	                              mov r13, 0	       629	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_1
+0x400098e	      0xbbffffffff	                     mov ebx, 0xffffffff	       629	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_1
+0x4000993	            0xeb1c	                           jmp 0x40009b1	       629	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_1
+0x4000995	          0x4863c3	                         movsxd rax, ebx	       629	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_1
+0x4000998	          0x4c89ef	                            mov rdi, r13	       629	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_1
+0x400099b	    0x48033cc50000	                  add rdi, qword [rax*8]	       629	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_1
+0x40009a3	          0x895f04	                mov dword [rdi + 4], ebx	       630	cpuidle.c	FUNCTION_28	FUNCTION_1
+0x40009a6	      0xe800000000	                          call 0x40009ab	       641	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_2
+0x40009ab	            0x85c0	                           test eax, eax	       642	cpuidle.c	FUNCTION_28	FUNCTION_1	IF_2
+0x40009ad	            0x89c5	                            mov ebp, eax	       641	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_2
+0x40009af	            0x7525	                           jne 0x40009d6	       642	cpuidle.c	FUNCTION_28	FUNCTION_1	IF_2
+0x40009b1	    0x498bb424e003	           mov rsi, qword [r12 + 0x3e0] 	       628	cpuidle.c	FUNCTION_28	FUNCTION_1
+0x40009b9	            0x89df	                            mov edi, ebx	       628	cpuidle.c	FUNCTION_28	FUNCTION_1
+0x40009bb	      0xe800000000	                          call 0x40009c0	       628	cpuidle.c	FUNCTION_28	FUNCTION_1
+0x40009c0	    0x3b0500000000	            cmp eax, dword [0x040009c6] 	       628	cpuidle.c	FUNCTION_28	FUNCTION_1
+0x40009c6	            0x89c3	                            mov ebx, eax	       628	cpuidle.c	FUNCTION_28	FUNCTION_1
+0x40009c8	            0x72cb	                            jb 0x4000995	       628	cpuidle.c	FUNCTION_28	FUNCTION_1
+0x40009ca	              0x5b	                                 pop rbx	       652	cpuidle.c	FUNCTION_28
+0x40009cb	          0x4489f0	                           mov eax, r14d	       652	cpuidle.c	FUNCTION_28
+0x40009ce	              0x5d	                                 pop rbp	       652	cpuidle.c	FUNCTION_28
+0x40009cf	            0x415c	                                 pop r12	       652	cpuidle.c	FUNCTION_28
+0x40009d1	            0x415d	                                 pop r13	       652	cpuidle.c	FUNCTION_28
+0x40009d3	            0x415e	                                 pop r14	       652	cpuidle.c	FUNCTION_28
+0x40009d5	              0xc3	                                     ret	       652	cpuidle.c	FUNCTION_28
+0x40009d6	            0x89de	                            mov esi, ebx	       645	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_3
+0x40009d8	    0x48c7c7000000	                              mov rdi, 0	       645	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_3
+0x40009df	          0x4189ee	                           mov r14d, ebp	       641	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_2
+0x40009e2	      0xe800000000	                          call 0x40009e7	       645	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_3
+0x40009e7	          0x4c89e7	                            mov rdi, r12	       647	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_4
+0x40009ea	      0xe800000000	                          call 0x40009ef	       647	cpuidle.c	FUNCTION_28	FUNCTION_1	CALL_4
+0x40009ef	            0xebd9	                           jmp 0x40009ca	       648	cpuidle.c	FUNCTION_28	FUNCTION_1
+0x40009f1	    0x48c7c7000000	                              mov rdi, 0	       624	cpuidle.c	FUNCTION_28	IF_1	CALL_2
+0x40009f8	      0xe800000000	                          call 0x40009fd	       624	cpuidle.c	FUNCTION_28	IF_1	CALL_2
+0x40009fd	            0xebcb	                           jmp 0x40009ca	       625	cpuidle.c	FUNCTION_28	IF_1
+cpuidle_latency_notify	FOR,0:WHILE,0:functions,0:DO,0:IF,0:CALL,1:SWITCH,0:ELSE,0	3
+0x4000040	      0xe800000000	                          call 0x4000045	       666	cpuidle.c	FUNCTION_29	CALL_1
+0x4000045	      0xb801000000	                              mov eax, 1	       668	cpuidle.c	FUNCTION_29
+0x400004a	              0xc3	                                     ret	       668	cpuidle.c	FUNCTION_29
+cpuidle_unregister	FOR,0:WHILE,0:functions,1:DO,0:IF,0:CALL,1:SWITCH,0:ELSE,0	26
+0x4000910	              0x55	                                push rbp	       592	cpuidle.c	FUNCTION_27
+0x4000911	              0x53	                                push rbx	       592	cpuidle.c	FUNCTION_27
+0x4000912	          0x4889fd	                            mov rbp, rdi	       592	cpuidle.c	FUNCTION_27
+0x4000915	      0xb8ffffffff	                     mov eax, 0xffffffff	       596	cpuidle.c	FUNCTION_27	FUNCTION_1
+0x400091a	    0x48c7c3000000	                              mov rbx, 0	       597	cpuidle.c	FUNCTION_27	FUNCTION_1	CALL_1
+0x4000921	        0x4883ec08	                              sub rsp, 8	       592	cpuidle.c	FUNCTION_27
+0x4000925	    0x488bb5e00300	           mov rsi, qword [rbp + 0x3e0] 	       596	cpuidle.c	FUNCTION_27	FUNCTION_1
+0x400092c	            0x89c7	                            mov edi, eax	       596	cpuidle.c	FUNCTION_27	FUNCTION_1
+0x400092e	      0xe800000000	                          call 0x4000933	       596	cpuidle.c	FUNCTION_27	FUNCTION_1
+0x4000933	    0x3b0500000000	            cmp eax, dword [0x04000939] 	       596	cpuidle.c	FUNCTION_27	FUNCTION_1
+0x4000939	            0x7324	                           jae 0x400095f	       596	cpuidle.c	FUNCTION_27	FUNCTION_1
+0x400093b	          0x4863d0	                         movsxd rdx, eax	       597	cpuidle.c	FUNCTION_27	FUNCTION_1	CALL_1
+0x400093e	          0x4889df	                            mov rdi, rbx	       566	cpuidle.c	FUNCTION_26	IF_1
+0x4000941	    0x48033cd50000	                  add rdi, qword [rdx*8]	       566	cpuidle.c	FUNCTION_26	IF_1
+0x4000949	            0x74da	                            je 0x4000925	       566	cpuidle.c	FUNCTION_26	IF_1
+0x400094b	          0xf60701	                      test byte [rdi], 1	       566	cpuidle.c	FUNCTION_26	IF_1
+0x400094e	            0x74d5	                            je 0x4000925	       566	cpuidle.c	FUNCTION_26	IF_1
+0x4000950	        0x89442404	                mov dword [rsp + 4], eax	       566	cpuidle.c	FUNCTION_26	IF_1
+0x4000954	      0xe857ffffff	call sym.cpuidle_unregister_device.part.11	       566	cpuidle.c	FUNCTION_26	IF_1
+0x4000959	        0x8b442404	                mov eax, dword [rsp + 4]	       566	cpuidle.c	FUNCTION_26	IF_1
+0x400095d	            0xebc6	                           jmp 0x4000925	       566	cpuidle.c	FUNCTION_26	IF_1
+0x400095f	        0x4883c408	                              add rsp, 8	       602	cpuidle.c	FUNCTION_27
+0x4000963	          0x4889ef	                            mov rdi, rbp	       601	cpuidle.c	FUNCTION_27	CALL_1
+0x4000966	              0x5b	                                 pop rbx	       602	cpuidle.c	FUNCTION_27
+0x4000967	              0x5d	                                 pop rbp	       602	cpuidle.c	FUNCTION_27
+0x4000968	      0xe900000000	                           jmp 0x400096d	       601	cpuidle.c	FUNCTION_27	CALL_1
+cpuidle_play_dead	FOR,1:WHILE,0:functions,0:DO,0:IF,2:CALL,3:SWITCH,0:ELSE,0	25
+0x4000370	              0x53	                                push rbx	        60	cpuidle.c	FUNCTION_4
+0x4000371	    0x65488b1d0000	         mov rbx, qword gs:[0x04000379] 	        61	cpuidle.c	FUNCTION_4	CALL_1
+0x4000379	          0x4889df	                            mov rdi, rbx	        62	cpuidle.c	FUNCTION_4	CALL_2
+0x400037c	      0xe800000000	                          call 0x4000381	        62	cpuidle.c	FUNCTION_4	CALL_2
+0x4000381	          0x4885c0	                           test rax, rax	        65	cpuidle.c	FUNCTION_4	IF_1
+0x4000384	            0x7434	                            je 0x40003ba	        65	cpuidle.c	FUNCTION_4	IF_1
+0x4000386	    0x8bb0d8030000	           mov esi, dword [rax + 0x3d8] 	        69	cpuidle.c	FUNCTION_4	FOR_1
+0x400038c	          0x83ee01	                              sub esi, 1	        69	cpuidle.c	FUNCTION_4	FOR_1
+0x400038f	            0x790a	                           jns 0x400039b	        69	cpuidle.c	FUNCTION_4	FOR_1
+0x4000391	            0xeb27	                           jmp 0x40003ba	        69	cpuidle.c	FUNCTION_4	FOR_1
+0x4000393	          0x83ee01	                              sub esi, 1	        69	cpuidle.c	FUNCTION_4	FOR_1
+0x4000396	          0x83feff	             cmp esi, 0xffffffffffffffff	        69	cpuidle.c	FUNCTION_4	FOR_1
+0x4000399	            0x741f	                            je 0x40003ba	        69	cpuidle.c	FUNCTION_4	FOR_1
+0x400039b	          0x4863d6	                         movsxd rdx, esi	        70	cpuidle.c	FUNCTION_4	FOR_1	IF_2
+0x400039e	      0x488d545203	              lea rdx, [rdx + rdx*2 + 3]	        70	cpuidle.c	FUNCTION_4	FOR_1	IF_2
+0x40003a3	        0x48c1e205	                              shl rdx, 5	        70	cpuidle.c	FUNCTION_4	FOR_1	IF_2
+0x40003a7	      0x488b541008	         mov rdx, qword [rax + rdx + 8] 	        70	cpuidle.c	FUNCTION_4	FOR_1	IF_2
+0x40003ac	          0x4885d2	                           test rdx, rdx	        70	cpuidle.c	FUNCTION_4	FOR_1	IF_2
+0x40003af	            0x74e2	                            je 0x4000393	        70	cpuidle.c	FUNCTION_4	FOR_1	IF_2
+0x40003b1	          0x4889df	                            mov rdi, rbx	        71	cpuidle.c	FUNCTION_4	FOR_1	IF_2
+0x40003b4	              0x5b	                                 pop rbx	        74	cpuidle.c	FUNCTION_4
+0x40003b5	      0xe900000000	                           jmp 0x40003ba	        71	cpuidle.c	FUNCTION_4	FOR_1	IF_2
+0x40003ba	      0xb8edffffff	                     mov eax, 0xffffffed	        74	cpuidle.c	FUNCTION_4
+0x40003bf	              0x5b	                                 pop rbx	        74	cpuidle.c	FUNCTION_4
+0x40003c0	              0xc3	                                     ret	        74	cpuidle.c	FUNCTION_4
+cpuidle_select	FOR,0:WHILE,0:functions,0:DO,0:IF,0:CALL,1:SWITCH,0:ELSE,0	3
+0x4000820	    0x488b05000000	            mov rax, qword [0x04000827] 	       286	cpuidle.c	FUNCTION_11	CALL_1
+0x4000827	        0x488b4038	            mov rax, qword [rax + 0x38] 	       286	cpuidle.c	FUNCTION_11	CALL_1
+0x400082b	      0xe900000000	                   jmp sym.cpuidle_enter	       286	cpuidle.c	FUNCTION_11	CALL_1
+cpuidle_not_available	FOR,0:WHILE,0:functions,0:DO,0:IF,0:CALL,0:SWITCH,0:ELSE,0	18
+0x4000330	    0x8b0d00000000	            mov ecx, dword [0x04000336] 	        51	cpuidle.c	FUNCTION_3
+0x4000336	      0xb801000000	                              mov eax, 1	        51	cpuidle.c	FUNCTION_3
+0x400033b	            0x85c9	                           test ecx, ecx	        51	cpuidle.c	FUNCTION_3
+0x400033d	            0x7525	                           jne 0x4000364	        51	cpuidle.c	FUNCTION_3
+0x400033f	    0x8b1500000000	            mov edx, dword [0x04000345] 	        51	cpuidle.c	FUNCTION_3
+0x4000345	            0x85d2	                           test edx, edx	        51	cpuidle.c	FUNCTION_3
+0x4000347	            0x741b	                            je 0x4000364	        51	cpuidle.c	FUNCTION_3
+0x4000349	          0x4885ff	                           test rdi, rdi	        51	cpuidle.c	FUNCTION_3
+0x400034c	           0xf94c2	                                 sete dl	        51	cpuidle.c	FUNCTION_3
+0x400034f	          0x4885f6	                           test rsi, rsi	        51	cpuidle.c	FUNCTION_3
+0x4000352	           0xf94c0	                                 sete al	        51	cpuidle.c	FUNCTION_3
+0x4000355	             0x8d0	                               or al, dl	        51	cpuidle.c	FUNCTION_3
+0x4000357	            0x750b	                           jne 0x4000364	        51	cpuidle.c	FUNCTION_3
+0x4000359	           0xfb606	                   movzx eax, byte [rsi]	        51	cpuidle.c	FUNCTION_3
+0x400035c	            0xd0e8	                               shr al, 1	        51	cpuidle.c	FUNCTION_3
+0x400035e	          0x83f001	                              xor eax, 1	        51	cpuidle.c	FUNCTION_3
+0x4000361	          0x83e001	                              and eax, 1	        51	cpuidle.c	FUNCTION_3
+0x4000364	            0xf3c3	                                     ret	        52	cpuidle.c	FUNCTION_3
+cpuidle_resume	FOR,0:WHILE,0:functions,0:DO,0:IF,0:CALL,3:SWITCH,0:ELSE,0	8
+0x4000a20	    0x48c7c7000000	                              mov rdi, 0	       383	cpuidle.c	FUNCTION_19	CALL_1
+0x4000a27	      0xe800000000	                          call 0x4000a2c	       383	cpuidle.c	FUNCTION_19	CALL_1
+0x4000a2c	    0x8b0500000000	            mov eax, dword [0x04000a32] 	       326	cpuidle.c	FUNCTION_14	IF_1
+0x4000a32	            0x85c0	                           test eax, eax	       326	cpuidle.c	FUNCTION_14	IF_1
+0x4000a34	            0x740a	                            je 0x4000a40	       326	cpuidle.c	FUNCTION_14	IF_1
+0x4000a36	    0xc70500000000	               mov dword [0x04000a40], 1	       329	cpuidle.c	FUNCTION_14	IF_1
+0x4000a40	    0x48c7c7000000	                              mov rdi, 0	       385	cpuidle.c	FUNCTION_19	CALL_3
+0x4000a47	      0xe900000000	                   jmp section_end..text	       385	cpuidle.c	FUNCTION_19	CALL_3
+cpuidle_find_deepest_state	FOR,0:WHILE,0:functions,0:DO,0:IF,0:CALL,1:SWITCH,0:ELSE,0	25
+0x40003f0	    0x8b8fd8030000	           mov ecx, dword [rdi + 0x3d8] 	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x40003f6	          0x83f901	                              cmp ecx, 1	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x40003f9	            0x7e3f	                           jle 0x400043a	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x40003fb	    0x4881c7b80000	                           add rdi, 0xb8	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x4000402	        0x4883c638	                           add rsi, 0x38	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x4000406	            0x31c0	                            xor eax, eax	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x4000408	          0x4531c9	                            xor r9d, r9d	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x400040b	      0xba01000000	                              mov edx, 1	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x4000410	          0x803f00	                       cmp byte [rdi], 0	        89	cpuidle.c	FUNCTION_5	FOR_1	IF_1
+0x4000413	            0x7514	                           jne 0x4000429	        89	cpuidle.c	FUNCTION_5	FOR_1	IF_1
+0x4000415	        0x48833e00	                      cmp qword [rsi], 0	        89	cpuidle.c	FUNCTION_5	FOR_1	IF_1
+0x4000419	            0x750e	                           jne 0x4000429	        89	cpuidle.c	FUNCTION_5	FOR_1	IF_1
+0x400041b	        0x448b47f4	              mov r8d, dword [rdi - 0xc]	        89	cpuidle.c	FUNCTION_5	FOR_1	IF_1
+0x400041f	          0x4539c8	                            cmp r8d, r9d	        89	cpuidle.c	FUNCTION_5	FOR_1	IF_1
+0x4000422	            0x7605	                           jbe 0x4000429	        89	cpuidle.c	FUNCTION_5	FOR_1	IF_1
+0x4000424	            0x89d0	                            mov eax, edx	        89	cpuidle.c	FUNCTION_5	FOR_1	IF_1
+0x4000426	          0x4589c1	                            mov r9d, r8d	        89	cpuidle.c	FUNCTION_5	FOR_1	IF_1
+0x4000429	          0x83c201	                              add edx, 1	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x400042c	        0x4883c760	                           add rdi, 0x60	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x4000430	        0x4883c628	                           add rsi, 0x28	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x4000434	            0x39ca	                            cmp edx, ecx	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x4000436	            0x75d8	                           jne 0x4000410	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x4000438	            0xf3c3	                                     ret	        85	cpuidle.c	FUNCTION_5	FOR_1
+0x400043a	            0x31c0	                            xor eax, eax	        83	cpuidle.c	FUNCTION_5
+0x400043c	              0xc3	                                     ret	       128	cpuidle.c	FUNCTION_7
+cpuidle_enter	FOR,0:WHILE,0:functions,0:DO,0:IF,1:CALL,3:SWITCH,0:ELSE,0	4
+0x4000830	          0x4889f8	                            mov rax, rdi	       301	cpuidle.c	FUNCTION_12
+0x4000833	          0x4889f7	                            mov rdi, rsi	       301	cpuidle.c	FUNCTION_12
+0x4000836	          0x4889c6	                            mov rsi, rax	       304	cpuidle.c	FUNCTION_12	CALL_3
+0x4000839	      0xe922fdffff	             jmp sym.cpuidle_enter_state	       304	cpuidle.c	FUNCTION_12	CALL_3

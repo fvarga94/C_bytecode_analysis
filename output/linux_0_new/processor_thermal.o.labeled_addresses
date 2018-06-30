@@ -1,0 +1,183 @@
+processor_get_cur_state	DO,0:SWITCH,0:FOR,0:functions,0:IF,3:ELSE,0:CALL,2:WHILE,0	43
+0x40001e0	    0x488b87f00200	           mov rax, qword [rdi + 0x2f0] 	       219	processor_thermal.c	FUNCTION_14
+0x40001e7	          0x4885c0	                           test rax, rax	       222	processor_thermal.c	FUNCTION_14	IF_1
+0x40001ea	            0x7475	                            je 0x4000261	       222	processor_thermal.c	FUNCTION_14	IF_1
+0x40001ec	            0x4155	                                push r13	       218	processor_thermal.c	FUNCTION_14
+0x40001ee	            0x4154	                                push r12	       218	processor_thermal.c	FUNCTION_14
+0x40001f0	              0x55	                                push rbp	       218	processor_thermal.c	FUNCTION_14
+0x40001f1	              0x53	                                push rbx	       218	processor_thermal.c	FUNCTION_14
+0x40001f2	    0x488ba8480200	           mov rbp, qword [rax + 0x248] 	       218	processor_thermal.c	FUNCTION_14
+0x40001f9	          0x4885ed	                           test rbp, rbp	       226	processor_thermal.c	FUNCTION_14	IF_2
+0x40001fc	            0x745c	                            je 0x400025a	       226	processor_thermal.c	FUNCTION_14	IF_2
+0x40001fe	    0x8b0500000000	            mov eax, dword [0x04000204] 	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x4000204	          0x4889f3	                            mov rbx, rsi	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x4000207	            0x85c0	                           test eax, eax	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x4000209	            0x7520	                           jne 0x400022b	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x400020b	            0x31d2	                            xor edx, edx	       218	processor_thermal.c	FUNCTION_14
+0x400020d	          0x488913	                    mov qword [rbx], rdx	       229	processor_thermal.c	FUNCTION_14	CALL_2
+0x4000210	            0x31c0	                            xor eax, eax	       232	processor_thermal.c	FUNCTION_14
+0x4000212	        0xf6452004	               test byte [rbp + 0x20], 4	       230	processor_thermal.c	FUNCTION_14	IF_3
+0x4000216	            0x740c	                            je 0x4000224	       230	processor_thermal.c	FUNCTION_14	IF_3
+0x4000218	    0x8b8d80020000	           mov ecx, dword [rbp + 0x280] 	       231	processor_thermal.c	FUNCTION_14	IF_3
+0x400021e	          0x4801ca	                            add rdx, rcx	       231	processor_thermal.c	FUNCTION_14	IF_3
+0x4000221	          0x488913	                    mov qword [rbx], rdx	       231	processor_thermal.c	FUNCTION_14	IF_3
+0x4000224	              0x5b	                                 pop rbx	       233	processor_thermal.c	FUNCTION_14
+0x4000225	              0x5d	                                 pop rbp	       233	processor_thermal.c	FUNCTION_14
+0x4000226	            0x415c	                                 pop r12	       233	processor_thermal.c	FUNCTION_14
+0x4000228	            0x415d	                                 pop r13	       233	processor_thermal.c	FUNCTION_14
+0x400022a	              0xc3	                                     ret	       233	processor_thermal.c	FUNCTION_14
+0x400022b	        0x448b6d10	           mov r13d, dword [rbp + 0x10] 	       229	processor_thermal.c	FUNCTION_14	CALL_2
+0x400022f	          0x4489ef	                           mov edi, r13d	       229	processor_thermal.c	FUNCTION_14	CALL_2
+0x4000232	      0xe8e9feffff	         call sym.cpu_has_cpufreq.part.3	       229	processor_thermal.c	FUNCTION_14	CALL_2
+0x4000237	            0x85c0	                           test eax, eax	       116	processor_thermal.c	FUNCTION_5	IF_1	CALL_1
+0x4000239	            0x74d0	                            je 0x400020b	       116	processor_thermal.c	FUNCTION_5	IF_1	CALL_1
+0x400023b	          0x4489ef	                           mov edi, r13d	       119	processor_thermal.c	FUNCTION_5
+0x400023e	    0x49c7c4000000	                              mov r12, 0	       119	processor_thermal.c	FUNCTION_5
+0x4000245	      0xe8f6fdffff	         call sym.phys_package_first_cpu	       119	processor_thermal.c	FUNCTION_5
+0x400024a	            0x4898	                                    cdqe	       119	processor_thermal.c	FUNCTION_5
+0x400024c	    0x488b04c50000	                  mov rax, qword [rax*8]	       119	processor_thermal.c	FUNCTION_5
+0x4000254	        0x4a631420	           movsxd rdx, dword [rax + r12]	       119	processor_thermal.c	FUNCTION_5
+0x4000258	            0xebb3	                           jmp 0x400020d	       119	processor_thermal.c	FUNCTION_5
+0x400025a	      0xb8eaffffff	                     mov eax, 0xffffffea	       223	processor_thermal.c	FUNCTION_14	IF_1
+0x400025f	            0xebc3	                           jmp 0x4000224	       223	processor_thermal.c	FUNCTION_14	IF_1
+0x4000261	      0xb8eaffffff	                     mov eax, 0xffffffea	       223	processor_thermal.c	FUNCTION_14	IF_1
+0x4000266	              0xc3	                                     ret	       233	processor_thermal.c	FUNCTION_14
+acpi_processor_max_state	DO,0:SWITCH,0:FOR,0:functions,0:IF,1:ELSE,0:CALL,1:WHILE,0	18
+0x4000170	    0x8b0500000000	            mov eax, dword [0x04000176] 	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x4000176	              0x53	                                push rbx	       184	processor_thermal.c	FUNCTION_12
+0x4000177	          0x4889fb	                            mov rbx, rdi	       184	processor_thermal.c	FUNCTION_12
+0x400017a	            0x85c0	                           test eax, eax	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x400017c	            0x7514	                           jne 0x4000192	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x400017e	            0x31c0	                            xor eax, eax	       109	processor_thermal.c	FUNCTION_4	IF_1
+0x4000180	        0xf6432004	               test byte [rbx + 0x20], 4	       192	processor_thermal.c	FUNCTION_12	IF_1
+0x4000184	            0x740a	                            je 0x4000190	       192	processor_thermal.c	FUNCTION_12	IF_1
+0x4000186	    0x8b93a8020000	           mov edx, dword [rbx + 0x2a8] 	       193	processor_thermal.c	FUNCTION_12	IF_1
+0x400018c	        0x8d4410ff	                lea eax, [rax + rdx - 1]	       193	processor_thermal.c	FUNCTION_12	IF_1
+0x4000190	              0x5b	                                 pop rbx	       196	processor_thermal.c	FUNCTION_12
+0x4000191	              0xc3	                                     ret	       196	processor_thermal.c	FUNCTION_12
+0x4000192	          0x8b7f10	            mov edi, dword [rdi + 0x10] 	       196	processor_thermal.c	FUNCTION_12
+0x4000195	      0xe886ffffff	         call sym.cpu_has_cpufreq.part.3	       196	processor_thermal.c	FUNCTION_12
+0x400019a	            0x85c0	                           test eax, eax	       108	processor_thermal.c	FUNCTION_4	IF_1	CALL_1
+0x400019c	            0x74e0	                            je 0x400017e	       108	processor_thermal.c	FUNCTION_4	IF_1	CALL_1
+0x400019e	      0xb803000000	                              mov eax, 3	       111	processor_thermal.c	FUNCTION_4
+0x40001a3	            0xebdb	                           jmp 0x4000180	       111	processor_thermal.c	FUNCTION_4
+processor_set_cur_state	DO,0:SWITCH,0:FOR,0:functions,0:IF,5:ELSE,1:CALL,7:WHILE,0	63
+0x4000320	    0x488b87f00200	           mov rax, qword [rdi + 0x2f0] 	       239	processor_thermal.c	FUNCTION_15
+0x4000327	          0x4885c0	                           test rax, rax	       244	processor_thermal.c	FUNCTION_15	IF_1
+0x400032a	     0xf84aa000000	                            je 0x40003da	       244	processor_thermal.c	FUNCTION_15	IF_1
+0x4000330	            0x4154	                                push r12	       238	processor_thermal.c	FUNCTION_15
+0x4000332	              0x55	                                push rbp	       238	processor_thermal.c	FUNCTION_15
+0x4000333	              0x53	                                push rbx	       238	processor_thermal.c	FUNCTION_15
+0x4000334	    0x488ba8480200	           mov rbp, qword [rax + 0x248] 	       238	processor_thermal.c	FUNCTION_15
+0x400033b	          0x4885ed	                           test rbp, rbp	       248	processor_thermal.c	FUNCTION_15	IF_2
+0x400033e	     0xf848f000000	                            je 0x40003d3	       248	processor_thermal.c	FUNCTION_15	IF_2
+0x4000344	    0x8b1500000000	            mov edx, dword [0x0400034a] 	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x400034a	          0x4889f3	                            mov rbx, rsi	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x400034d	            0x85d2	                           test edx, edx	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x400034f	            0x753f	                           jne 0x4000390	        77	processor_thermal.c	FUNCTION_2	IF_1	CALL_1
+0x4000351	          0x4531e4	                          xor r12d, r12d	       109	processor_thermal.c	FUNCTION_4	IF_1
+0x4000354	          0x4889ef	                            mov rdi, rbp	       253	processor_thermal.c	FUNCTION_15	IF_3	CALL_3
+0x4000357	      0xe814feffff	       call sym.acpi_processor_max_state	       253	processor_thermal.c	FUNCTION_15	IF_3	CALL_3
+0x400035c	            0x4898	                                    cdqe	       253	processor_thermal.c	FUNCTION_15	IF_3	CALL_3
+0x400035e	          0x4839d8	                            cmp rax, rbx	       253	processor_thermal.c	FUNCTION_15	IF_3	CALL_3
+0x4000361	            0x7270	                            jb 0x40003d3	       253	processor_thermal.c	FUNCTION_15	IF_3	CALL_3
+0x4000363	          0x4963c4	                        movsxd rax, r12d	       256	processor_thermal.c	FUNCTION_15	IF_4
+0x4000366	          0x4839c3	                            cmp rbx, rax	       256	processor_thermal.c	FUNCTION_15	IF_4
+0x4000369	            0x7739	                            ja 0x40003a4	       256	processor_thermal.c	FUNCTION_15	IF_4
+0x400036b	          0x4531e4	                          xor r12d, r12d	       241	processor_thermal.c	FUNCTION_15
+0x400036e	        0xf6452004	               test byte [rbp + 0x20], 4	       257	processor_thermal.c	FUNCTION_15	IF_4	IF_5
+0x4000372	            0x740a	                            je 0x400037e	       257	processor_thermal.c	FUNCTION_15	IF_4	IF_5
+0x4000374	    0x8b8580020000	           mov eax, dword [rbp + 0x280] 	       257	processor_thermal.c	FUNCTION_15	IF_4	IF_5
+0x400037a	            0x85c0	                           test eax, eax	       257	processor_thermal.c	FUNCTION_15	IF_4	IF_5
+0x400037c	            0x7544	                           jne 0x40003c2	       257	processor_thermal.c	FUNCTION_15	IF_4	IF_5
+0x400037e	          0x8b7d10	            mov edi, dword [rbp + 0x10] 	       259	processor_thermal.c	FUNCTION_15	IF_4	CALL_5
+0x4000381	            0x89de	                            mov esi, ebx	       259	processor_thermal.c	FUNCTION_15	IF_4	CALL_5
+0x4000383	      0xe8e8feffff	          call sym.cpufreq_set_cur_state	       259	processor_thermal.c	FUNCTION_15	IF_4	CALL_5
+0x4000388	          0x4489e0	                           mov eax, r12d	       259	processor_thermal.c	FUNCTION_15	IF_4	CALL_5
+0x400038b	              0x5b	                                 pop rbx	       266	processor_thermal.c	FUNCTION_15
+0x400038c	              0x5d	                                 pop rbp	       266	processor_thermal.c	FUNCTION_15
+0x400038d	            0x415c	                                 pop r12	       266	processor_thermal.c	FUNCTION_15
+0x400038f	              0xc3	                                     ret	       266	processor_thermal.c	FUNCTION_15
+0x4000390	          0x8b7d10	            mov edi, dword [rbp + 0x10] 	       266	processor_thermal.c	FUNCTION_15
+0x4000393	      0xe888fdffff	         call sym.cpu_has_cpufreq.part.3	       266	processor_thermal.c	FUNCTION_15
+0x4000398	            0x85c0	                           test eax, eax	       108	processor_thermal.c	FUNCTION_4	IF_1	CALL_1
+0x400039a	            0x74b5	                            je 0x4000351	       108	processor_thermal.c	FUNCTION_4	IF_1	CALL_1
+0x400039c	    0x41bc03000000	                             mov r12d, 3	       111	processor_thermal.c	FUNCTION_4
+0x40003a2	            0xebb0	                           jmp 0x4000354	       111	processor_thermal.c	FUNCTION_4
+0x40003a4	          0x8b7d10	            mov edi, dword [rbp + 0x10] 	       261	processor_thermal.c	FUNCTION_15	ELSE_1	CALL_6
+0x40003a7	          0x4489e6	                           mov esi, r12d	       261	processor_thermal.c	FUNCTION_15	ELSE_1	CALL_6
+0x40003aa	      0xe8c1feffff	          call sym.cpufreq_set_cur_state	       261	processor_thermal.c	FUNCTION_15	ELSE_1	CALL_6
+0x40003af	            0x89de	                            mov esi, ebx	       262	processor_thermal.c	FUNCTION_15	ELSE_1	CALL_7
+0x40003b1	          0x4889ef	                            mov rdi, rbp	       262	processor_thermal.c	FUNCTION_15	ELSE_1	CALL_7
+0x40003b4	            0x31d2	                            xor edx, edx	       262	processor_thermal.c	FUNCTION_15	ELSE_1	CALL_7
+0x40003b6	              0x5b	                                 pop rbx	       266	processor_thermal.c	FUNCTION_15
+0x40003b7	          0x4429e6	                           sub esi, r12d	       262	processor_thermal.c	FUNCTION_15	ELSE_1	CALL_7
+0x40003ba	              0x5d	                                 pop rbp	       266	processor_thermal.c	FUNCTION_15
+0x40003bb	            0x415c	                                 pop r12	       266	processor_thermal.c	FUNCTION_15
+0x40003bd	      0xe900000000	                           jmp 0x40003c2	       262	processor_thermal.c	FUNCTION_15	ELSE_1	CALL_7
+0x40003c2	            0x31d2	                            xor edx, edx	       258	processor_thermal.c	FUNCTION_15	IF_4	CALL_4
+0x40003c4	            0x31f6	                            xor esi, esi	       258	processor_thermal.c	FUNCTION_15	IF_4	CALL_4
+0x40003c6	          0x4889ef	                            mov rdi, rbp	       258	processor_thermal.c	FUNCTION_15	IF_4	CALL_4
+0x40003c9	      0xe800000000	                          call 0x40003ce	       258	processor_thermal.c	FUNCTION_15	IF_4	CALL_4
+0x40003ce	          0x4189c4	                           mov r12d, eax	       258	processor_thermal.c	FUNCTION_15	IF_4	CALL_4
+0x40003d1	            0xebab	                           jmp 0x400037e	       258	processor_thermal.c	FUNCTION_15	IF_4	CALL_4
+0x40003d3	      0xb8eaffffff	                     mov eax, 0xffffffea	       245	processor_thermal.c	FUNCTION_15	IF_1
+0x40003d8	            0xebb1	                           jmp 0x400038b	       245	processor_thermal.c	FUNCTION_15	IF_1
+0x40003da	      0xb8eaffffff	                     mov eax, 0xffffffea	       245	processor_thermal.c	FUNCTION_15	IF_1
+0x40003df	              0xc3	                                     ret	       266	processor_thermal.c	FUNCTION_15
+acpi_thermal_cpufreq_init	DO,0:SWITCH,0:FOR,0:functions,0:IF,1:ELSE,0:CALL,1:WHILE,0	7
+0x40003e0	      0xbe01000000	                              mov esi, 1	       148	processor_thermal.c	FUNCTION_7	CALL_1
+0x40003e5	    0x48c7c7000000	                              mov rdi, 0	       148	processor_thermal.c	FUNCTION_7	CALL_1
+0x40003ec	      0xe800000000	                          call 0x40003f1	       148	processor_thermal.c	FUNCTION_7	CALL_1
+0x40003f1	            0x85c0	                           test eax, eax	       150	processor_thermal.c	FUNCTION_7	IF_1
+0x40003f3	            0x750a	                           jne 0x40003ff	       150	processor_thermal.c	FUNCTION_7	IF_1
+0x40003f5	    0xc70500000000	               mov dword [0x040003ff], 1	       151	processor_thermal.c	FUNCTION_7	IF_1
+0x40003ff	            0xf3c3	                                     ret	       151	processor_thermal.c	FUNCTION_7	IF_1
+phys_package_first_cpu	DO,0:SWITCH,0:FOR,0:functions,0:IF,1:ELSE,0:CALL,3:WHILE,0	21
+0x4000040	          0x4863ff	                         movsxd rdi, edi	        66	processor_thermal.c	FUNCTION_1	CALL_1
+0x4000043	              0x55	                                push rbp	        64	processor_thermal.c	FUNCTION_1
+0x4000044	              0x53	                                push rbx	        64	processor_thermal.c	FUNCTION_1
+0x4000045	    0x488b04fd0000	                  mov rax, qword [rdi*8]	        66	processor_thermal.c	FUNCTION_1	CALL_1
+0x400004d	    0x48c7c3000000	                              mov rbx, 0	        66	processor_thermal.c	FUNCTION_1	CALL_1
+0x4000054	     0xfb7ac18da00	     movzx ebp, word [rax + rbx + 0xda] 	        66	processor_thermal.c	FUNCTION_1	CALL_1
+0x400005c	      0xb8ffffffff	                     mov eax, 0xffffffff	        68	processor_thermal.c	FUNCTION_1	CALL_2
+0x4000061	            0xeb15	                           jmp 0x4000078	        68	processor_thermal.c	FUNCTION_1	CALL_2
+0x4000063	          0x4863d0	                         movsxd rdx, eax	        69	processor_thermal.c	FUNCTION_1	IF_1	CALL_3
+0x4000066	    0x488b14d50000	                  mov rdx, qword [rdx*8]	        69	processor_thermal.c	FUNCTION_1	IF_1	CALL_3
+0x400006e	    0x663bac1ada00	        cmp bp, word [rdx + rbx + 0xda] 	        69	processor_thermal.c	FUNCTION_1	IF_1	CALL_3
+0x4000076	            0x7418	                            je 0x4000090	        69	processor_thermal.c	FUNCTION_1	IF_1	CALL_3
+0x4000078	    0x48c7c6000000	                              mov rsi, 0	        68	processor_thermal.c	FUNCTION_1	CALL_2
+0x400007f	            0x89c7	                            mov edi, eax	        68	processor_thermal.c	FUNCTION_1	CALL_2
+0x4000081	      0xe800000000	                          call 0x4000086	        68	processor_thermal.c	FUNCTION_1	CALL_2
+0x4000086	    0x3b0500000000	            cmp eax, dword [0x0400008c] 	        68	processor_thermal.c	FUNCTION_1	CALL_2
+0x400008c	            0x72d5	                            jb 0x4000063	        68	processor_thermal.c	FUNCTION_1	CALL_2
+0x400008e	            0x31c0	                            xor eax, eax	        71	processor_thermal.c	FUNCTION_1
+0x4000090	              0x5b	                                 pop rbx	        72	processor_thermal.c	FUNCTION_1
+0x4000091	              0x5d	                                 pop rbp	        72	processor_thermal.c	FUNCTION_1
+0x4000092	              0xc3	                                     ret	        72	processor_thermal.c	FUNCTION_1
+acpi_thermal_cpufreq_exit	DO,0:SWITCH,0:FOR,0:functions,0:IF,1:ELSE,0:CALL,1:WHILE,0	8
+0x4000410	    0x8b0500000000	            mov eax, dword [0x04000416] 	       156	processor_thermal.c	FUNCTION_8	IF_1
+0x4000416	            0x85c0	                           test eax, eax	       156	processor_thermal.c	FUNCTION_8	IF_1
+0x4000418	            0x7411	                            je 0x400042b	       156	processor_thermal.c	FUNCTION_8	IF_1
+0x400041a	      0xbe01000000	                              mov esi, 1	       157	processor_thermal.c	FUNCTION_8	IF_1	CALL_1
+0x400041f	    0x48c7c7000000	                              mov rdi, 0	       157	processor_thermal.c	FUNCTION_8	IF_1	CALL_1
+0x4000426	      0xe800000000	                          call 0x400042b	       157	processor_thermal.c	FUNCTION_8	IF_1	CALL_1
+0x400042b	    0xc70500000000	               mov dword [0x04000435], 0	       161	processor_thermal.c	FUNCTION_8
+0x4000435	              0xc3	                                     ret	       161	processor_thermal.c	FUNCTION_8
+processor_get_max_state	DO,0:SWITCH,0:FOR,0:functions,0:IF,2:ELSE,0:CALL,2:WHILE,0	16
+0x40001b0	    0x488b87f00200	           mov rax, qword [rdi + 0x2f0] 	       201	processor_thermal.c	FUNCTION_13
+0x40001b7	          0x4885c0	                           test rax, rax	       204	processor_thermal.c	FUNCTION_13	IF_1
+0x40001ba	            0x741e	                            je 0x40001da	       204	processor_thermal.c	FUNCTION_13	IF_1
+0x40001bc	    0x488bb8480200	           mov rdi, qword [rax + 0x248] 	       204	processor_thermal.c	FUNCTION_13	IF_1
+0x40001c3	          0x4885ff	                           test rdi, rdi	       208	processor_thermal.c	FUNCTION_13	IF_2
+0x40001c6	            0x7412	                            je 0x40001da	       208	processor_thermal.c	FUNCTION_13	IF_2
+0x40001c8	              0x53	                                push rbx	       200	processor_thermal.c	FUNCTION_13
+0x40001c9	          0x4889f3	                            mov rbx, rsi	       200	processor_thermal.c	FUNCTION_13
+0x40001cc	      0xe89fffffff	       call sym.acpi_processor_max_state	       211	processor_thermal.c	FUNCTION_13	CALL_2
+0x40001d1	            0x4898	                                    cdqe	       211	processor_thermal.c	FUNCTION_13	CALL_2
+0x40001d3	          0x488903	                    mov qword [rbx], rax	       211	processor_thermal.c	FUNCTION_13	CALL_2
+0x40001d6	            0x31c0	                            xor eax, eax	       212	processor_thermal.c	FUNCTION_13
+0x40001d8	              0x5b	                                 pop rbx	       213	processor_thermal.c	FUNCTION_13
+0x40001d9	              0xc3	                                     ret	       213	processor_thermal.c	FUNCTION_13
+0x40001da	      0xb8eaffffff	                     mov eax, 0xffffffea	       205	processor_thermal.c	FUNCTION_13	IF_1
+0x40001df	              0xc3	                                     ret	       205	processor_thermal.c	FUNCTION_13	IF_1

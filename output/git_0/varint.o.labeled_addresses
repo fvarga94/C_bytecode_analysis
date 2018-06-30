@@ -1,0 +1,92 @@
+decode_varint	FOR,0:IF,1:SWITCH,0:CALL,1:WHILE,1:DO,0:ELSE,0:functions,0	45
+0x4000040	              0x55	                                push rbp	         5	varint.c	FUNCTION_1
+0x4000041	          0x4889e5	                            mov rbp, rsp	         5	varint.c	FUNCTION_1
+0x4000044	        0x48897dd8	             mov qword [rbp - 0x28], rdi	         5	varint.c	FUNCTION_1
+0x4000048	        0x488b45d8	             mov rax, qword [rbp - 0x28]	         6	varint.c	FUNCTION_1
+0x400004c	          0x488b00	                    mov rax, qword [rax]	         6	varint.c	FUNCTION_1
+0x400004f	        0x488945f0	             mov qword [rbp - 0x10], rax	         6	varint.c	FUNCTION_1
+0x4000053	        0x488b45f0	             mov rax, qword [rbp - 0x10]	         7	varint.c	FUNCTION_1
+0x4000057	        0x488d5001	                      lea rdx, [rax + 1]	         7	varint.c	FUNCTION_1
+0x400005b	        0x488955f0	             mov qword [rbp - 0x10], rdx	         7	varint.c	FUNCTION_1
+0x400005f	           0xfb600	                   movzx eax, byte [rax]	         7	varint.c	FUNCTION_1
+0x4000062	          0x8845ef	               mov byte [rbp - 0x11], al	         7	varint.c	FUNCTION_1
+0x4000065	         0xfb645ef	            movzx eax, byte [rbp - 0x11]	         8	varint.c	FUNCTION_1
+0x4000069	          0x83e07f	                           and eax, 0x7f	         8	varint.c	FUNCTION_1
+0x400006c	        0x488945f8	                mov qword [rbp - 8], rax	         8	varint.c	FUNCTION_1
+0x4000070	            0xeb51	                           jmp 0x40000c3	         9	varint.c	FUNCTION_1	WHILE_1
+0x4000072	      0x488345f801	                  add qword [rbp - 8], 1	        10	varint.c	FUNCTION_1	WHILE_1
+0x4000077	      0x48837df800	                  cmp qword [rbp - 8], 0	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x400007c	            0x7413	                            je 0x4000091	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x400007e	    0x48b800000000	          movabs rax, 0xfe00000000000000	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x4000088	        0x482345f8	                and rax, qword [rbp - 8]	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x400008c	          0x4885c0	                           test rax, rax	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x400008f	            0x7407	                            je 0x4000098	        11	varint.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x4000091	      0xb800000000	                              mov eax, 0	        12	varint.c	FUNCTION_1	WHILE_1	IF_1
+0x4000096	            0xeb42	                           jmp 0x40000da	        12	varint.c	FUNCTION_1	WHILE_1	IF_1
+0x4000098	        0x488b45f0	             mov rax, qword [rbp - 0x10]	        13	varint.c	FUNCTION_1	WHILE_1
+0x400009c	        0x488d5001	                      lea rdx, [rax + 1]	        13	varint.c	FUNCTION_1	WHILE_1
+0x40000a0	        0x488955f0	             mov qword [rbp - 0x10], rdx	        13	varint.c	FUNCTION_1	WHILE_1
+0x40000a4	           0xfb600	                   movzx eax, byte [rax]	        13	varint.c	FUNCTION_1	WHILE_1
+0x40000a7	          0x8845ef	               mov byte [rbp - 0x11], al	        13	varint.c	FUNCTION_1	WHILE_1
+0x40000aa	        0x488b45f8	                mov rax, qword [rbp - 8]	        14	varint.c	FUNCTION_1	WHILE_1
+0x40000ae	        0x48c1e007	                              shl rax, 7	        14	varint.c	FUNCTION_1	WHILE_1
+0x40000b2	          0x4889c2	                            mov rdx, rax	        14	varint.c	FUNCTION_1	WHILE_1
+0x40000b5	         0xfb645ef	            movzx eax, byte [rbp - 0x11]	        14	varint.c	FUNCTION_1	WHILE_1
+0x40000b9	          0x83e07f	                           and eax, 0x7f	        14	varint.c	FUNCTION_1	WHILE_1
+0x40000bc	          0x4801d0	                            add rax, rdx	        14	varint.c	FUNCTION_1	WHILE_1
+0x40000bf	        0x488945f8	                mov qword [rbp - 8], rax	        14	varint.c	FUNCTION_1	WHILE_1
+0x40000c3	         0xfb645ef	            movzx eax, byte [rbp - 0x11]	         9	varint.c	FUNCTION_1	WHILE_1
+0x40000c7	            0x84c0	                             test al, al	         9	varint.c	FUNCTION_1	WHILE_1
+0x40000c9	            0x78a7	                            js 0x4000072	         9	varint.c	FUNCTION_1	WHILE_1
+0x40000cb	        0x488b45d8	             mov rax, qword [rbp - 0x28]	        16	varint.c	FUNCTION_1
+0x40000cf	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	        16	varint.c	FUNCTION_1
+0x40000d3	          0x488910	                    mov qword [rax], rdx	        16	varint.c	FUNCTION_1
+0x40000d6	        0x488b45f8	                mov rax, qword [rbp - 8]	        17	varint.c	FUNCTION_1
+0x40000da	              0x5d	                                 pop rbp	        18	varint.c	FUNCTION_1
+0x40000db	              0xc3	                                     ret	        18	varint.c	FUNCTION_1
+encode_varint	FOR,0:IF,1:SWITCH,0:CALL,1:WHILE,1:DO,0:ELSE,0:functions,0	45
+0x40000dc	              0x55	                                push rbp	        21	varint.c	FUNCTION_2
+0x40000dd	          0x4889e5	                            mov rbp, rsp	        21	varint.c	FUNCTION_2
+0x40000e0	        0x4883ec40	                           sub rsp, 0x40	        21	varint.c	FUNCTION_2
+0x40000e4	        0x48897dc8	             mov qword [rbp - 0x38], rdi	        21	varint.c	FUNCTION_2
+0x40000e8	        0x488975c0	             mov qword [rbp - 0x40], rsi	        21	varint.c	FUNCTION_2
+0x40000ec	    0x64488b042528	                mov rax, qword fs:[0x28]	        21	varint.c	FUNCTION_2
+0x40000f5	        0x488945f8	                mov qword [rbp - 8], rax	        21	varint.c	FUNCTION_2
+0x40000f9	            0x31c0	                            xor eax, eax	        21	varint.c	FUNCTION_2
+0x40000fb	    0xc745dc0f0000	            mov dword [rbp - 0x24], 0xf 	        23	varint.c	FUNCTION_2
+0x4000102	        0x488b45c8	             mov rax, qword [rbp - 0x38]	        24	varint.c	FUNCTION_2
+0x4000106	          0x83e07f	                           and eax, 0x7f	        24	varint.c	FUNCTION_2
+0x4000109	            0x89c2	                            mov edx, eax	        24	varint.c	FUNCTION_2
+0x400010b	          0x8b45dc	             mov eax, dword [rbp - 0x24]	        24	varint.c	FUNCTION_2
+0x400010e	        0x885405e0	         mov byte [rbp + rax - 0x20], dl	        24	varint.c	FUNCTION_2
+0x4000112	            0xeb19	                           jmp 0x400012d	        25	varint.c	FUNCTION_2	WHILE_1
+0x4000114	        0x836ddc01	               sub dword [rbp - 0x24], 1	        26	varint.c	FUNCTION_2	WHILE_1
+0x4000118	      0x48836dc801	               sub qword [rbp - 0x38], 1	        26	varint.c	FUNCTION_2	WHILE_1
+0x400011d	        0x488b45c8	             mov rax, qword [rbp - 0x38]	        26	varint.c	FUNCTION_2	WHILE_1
+0x4000121	          0x83c880	                      or eax, 0xffffff80	        26	varint.c	FUNCTION_2	WHILE_1
+0x4000124	            0x89c2	                            mov edx, eax	        26	varint.c	FUNCTION_2	WHILE_1
+0x4000126	          0x8b45dc	             mov eax, dword [rbp - 0x24]	        26	varint.c	FUNCTION_2	WHILE_1
+0x4000129	        0x885405e0	         mov byte [rbp + rax - 0x20], dl	        26	varint.c	FUNCTION_2	WHILE_1
+0x400012d	      0x48c16dc807	               shr qword [rbp - 0x38], 7	        25	varint.c	FUNCTION_2	WHILE_1
+0x4000132	      0x48837dc800	               cmp qword [rbp - 0x38], 0	        25	varint.c	FUNCTION_2	WHILE_1
+0x4000137	            0x75db	                           jne 0x4000114	        25	varint.c	FUNCTION_2	WHILE_1
+0x4000139	      0x48837dc000	               cmp qword [rbp - 0x40], 0	        27	varint.c	FUNCTION_2	IF_1
+0x400013e	            0x7424	                            je 0x4000164	        27	varint.c	FUNCTION_2	IF_1
+0x4000140	          0x8b45dc	             mov eax, dword [rbp - 0x24]	        28	varint.c	FUNCTION_2	CALL_1
+0x4000143	      0xba10000000	                           mov edx, 0x10	        28	varint.c	FUNCTION_2	CALL_1
+0x4000148	          0x4829c2	                            sub rdx, rax	        28	varint.c	FUNCTION_2	CALL_1
+0x400014b	          0x8b45dc	             mov eax, dword [rbp - 0x24]	        28	varint.c	FUNCTION_2	CALL_1
+0x400014e	        0x488d4de0	                   lea rcx, [rbp - 0x20]	        28	varint.c	FUNCTION_2	CALL_1
+0x4000152	          0x4801c1	                            add rcx, rax	        28	varint.c	FUNCTION_2	CALL_1
+0x4000155	        0x488b45c0	             mov rax, qword [rbp - 0x40]	        28	varint.c	FUNCTION_2	CALL_1
+0x4000159	          0x4889ce	                            mov rsi, rcx	        28	varint.c	FUNCTION_2	CALL_1
+0x400015c	          0x4889c7	                            mov rdi, rax	        28	varint.c	FUNCTION_2	CALL_1
+0x400015f	      0xe800000000	                          call 0x4000164	        28	varint.c	FUNCTION_2	CALL_1
+0x4000164	      0xb810000000	                           mov eax, 0x10	        29	varint.c	FUNCTION_2
+0x4000169	          0x2b45dc	             sub eax, dword [rbp - 0x24]	        29	varint.c	FUNCTION_2
+0x400016c	        0x488b75f8	                mov rsi, qword [rbp - 8]	        30	varint.c	FUNCTION_2
+0x4000170	    0x644833342528	                xor rsi, qword fs:[0x28]	        30	varint.c	FUNCTION_2
+0x4000179	            0x7405	                            je 0x4000180	        30	varint.c	FUNCTION_2
+0x400017b	      0xe800000000	                          call 0x4000180	        30	varint.c	FUNCTION_2
+0x4000180	              0xc9	                                   leave	        30	varint.c	FUNCTION_2
+0x4000181	              0xc3	                                     ret	        30	varint.c	FUNCTION_2

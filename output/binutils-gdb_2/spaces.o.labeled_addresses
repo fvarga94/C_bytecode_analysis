@@ -1,0 +1,32 @@
+spaces	DO,0:SWITCH,0:functions,0:IF,2:WHILE,0:FOR,1:ELSE,0:CALL,2	31
+0x4000040	              0x53	                                push rbx	        49	spaces.c	FUNCTION_1
+0x4000041	            0x89fb	                            mov ebx, edi	        49	spaces.c	FUNCTION_1
+0x4000043	    0x393d00000000	            cmp dword [0x04000049], edi 	        54	spaces.c	FUNCTION_1	IF_1
+0x4000049	            0x7d46	                           jge 0x4000091	        54	spaces.c	FUNCTION_1	IF_1
+0x400004b	    0x488b3d000000	            mov rdi, qword [0x04000052] 	        56	spaces.c	FUNCTION_1	IF_1	CALL_1
+0x4000052	      0xe800000000	                          call 0x4000057	        56	spaces.c	FUNCTION_1	IF_1	CALL_1
+0x4000057	          0x8d7b01	                      lea edi, [rbx + 1]	        57	spaces.c	FUNCTION_1	IF_1	CALL_2
+0x400005a	          0x4863ff	                         movsxd rdi, edi	        57	spaces.c	FUNCTION_1	IF_1	CALL_2
+0x400005d	      0xe800000000	                          call 0x4000062	        57	spaces.c	FUNCTION_1	IF_1	CALL_2
+0x4000062	    0x488905000000	            mov qword [0x04000069], rax 	        57	spaces.c	FUNCTION_1	IF_1	CALL_2
+0x4000069	          0x4885c0	                           test rax, rax	        58	spaces.c	FUNCTION_1	IF_1	IF_2
+0x400006c	            0x7439	                            je 0x40000a7	        58	spaces.c	FUNCTION_1	IF_1	IF_2
+0x400006e	          0x4863cb	                         movsxd rcx, ebx	        60	spaces.c	FUNCTION_1	IF_1	FOR_1
+0x4000071	          0x4801c1	                            add rcx, rax	        60	spaces.c	FUNCTION_1	IF_1	FOR_1
+0x4000074	          0x4839c8	                            cmp rax, rcx	        60	spaces.c	FUNCTION_1	IF_1	FOR_1
+0x4000077	            0x740f	                            je 0x4000088	        60	spaces.c	FUNCTION_1	IF_1	FOR_1
+0x4000079	          0x4889ca	                            mov rdx, rcx	        60	spaces.c	FUNCTION_1	IF_1	FOR_1
+0x400007c	        0x4883ea01	                              sub rdx, 1	        62	spaces.c	FUNCTION_1	IF_1	FOR_1
+0x4000080	          0xc60220	                    mov byte [rdx], 0x20	        62	spaces.c	FUNCTION_1	IF_1	FOR_1
+0x4000083	          0x4839d0	                            cmp rax, rdx	        60	spaces.c	FUNCTION_1	IF_1	FOR_1
+0x4000086	            0x75f4	                           jne 0x400007c	        60	spaces.c	FUNCTION_1	IF_1	FOR_1
+0x4000088	    0x891d00000000	            mov dword [0x0400008e], ebx 	        64	spaces.c	FUNCTION_1	IF_1
+0x400008e	          0xc60100	                       mov byte [rcx], 0	        65	spaces.c	FUNCTION_1	IF_1
+0x4000091	    0x486305000000	         movsxd rax, dword [0x04000098] 	        67	spaces.c	FUNCTION_1
+0x4000098	          0x4863db	                         movsxd rbx, ebx	        67	spaces.c	FUNCTION_1
+0x400009b	          0x4829d8	                            sub rax, rbx	        67	spaces.c	FUNCTION_1
+0x400009e	    0x480305000000	             add rax, qword [0x040000a5]	        67	spaces.c	FUNCTION_1
+0x40000a5	            0xeb05	                           jmp 0x40000ac	        67	spaces.c	FUNCTION_1
+0x40000a7	      0xb800000000	                              mov eax, 0	        59	spaces.c	FUNCTION_1	IF_1	IF_2
+0x40000ac	              0x5b	                                 pop rbx	        68	spaces.c	FUNCTION_1
+0x40000ad	              0xc3	                                     ret	        68	spaces.c	FUNCTION_1

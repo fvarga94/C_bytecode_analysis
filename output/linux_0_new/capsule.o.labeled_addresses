@@ -1,0 +1,70 @@
+efi_capsule_pending	IF,2:SWITCH,0:ELSE,0:FOR,0:DO,0:functions,0:CALL,0:WHILE,0	8
+0x4000460	     0xfb605000000	           movzx eax, byte [0x04000467] 	        54	capsule.c	FUNCTION_1	IF_1
+0x4000467	            0x84c0	                             test al, al	        54	capsule.c	FUNCTION_1	IF_1
+0x4000469	            0x740d	                            je 0x4000478	        54	capsule.c	FUNCTION_1	IF_1
+0x400046b	          0x4885ff	                           test rdi, rdi	        57	capsule.c	FUNCTION_1	IF_2
+0x400046e	            0x7408	                            je 0x4000478	        57	capsule.c	FUNCTION_1	IF_2
+0x4000470	    0x8b1500000000	            mov edx, dword [0x04000476] 	        58	capsule.c	FUNCTION_1	IF_2
+0x4000476	            0x8917	                    mov dword [rdi], edx	        58	capsule.c	FUNCTION_1	IF_2
+0x4000478	            0xf3c3	                                     ret	        61	capsule.c	FUNCTION_1
+efi_capsule_supported	IF,3:SWITCH,0:ELSE,0:FOR,0:DO,0:functions,0:CALL,3:WHILE,0	46
+0x4000040	      0x4c8d542408	                      lea r10, [rsp + 8]	        88	capsule.c	FUNCTION_2
+0x4000045	        0x4883e4f0	             and rsp, 0xfffffffffffffff0	        88	capsule.c	FUNCTION_2
+0x4000049	        0x41ff72f8	                    push qword [r10 - 8]	        88	capsule.c	FUNCTION_2
+0x400004d	              0x55	                                push rbp	        88	capsule.c	FUNCTION_2
+0x400004e	          0x4889e5	                            mov rbp, rsp	        88	capsule.c	FUNCTION_2
+0x4000051	            0x4152	                                push r10	        88	capsule.c	FUNCTION_2
+0x4000053	              0x53	                                push rbx	        88	capsule.c	FUNCTION_2
+0x4000054	        0x4883ec40	                           sub rsp, 0x40	        88	capsule.c	FUNCTION_2
+0x4000058	    0x65488b042528	                mov rax, qword gs:[0x28]	        88	capsule.c	FUNCTION_2
+0x4000061	        0x488945e8	             mov qword [rbp - 0x18], rax	        88	capsule.c	FUNCTION_2
+0x4000065	            0x31c0	                            xor eax, eax	        88	capsule.c	FUNCTION_2
+0x4000067	        0x488d45c0	                   lea rax, [rbp - 0x40]	        90	capsule.c	FUNCTION_2
+0x400006b	    0xf7c2fffffcff	                    test edx, 0xfffcffff	        94	capsule.c	FUNCTION_2	IF_1
+0x4000071	        0x488945b8	             mov qword [rbp - 0x48], rax	        90	capsule.c	FUNCTION_2
+0x4000075	      0xb8eaffffff	                     mov eax, 0xffffffea	        95	capsule.c	FUNCTION_2	IF_1
+0x400007a	            0x7546	                           jne 0x40000c2	        94	capsule.c	FUNCTION_2	IF_1
+0x400007c	        0x48897dc0	             mov qword [rbp - 0x40], rdi	        98	capsule.c	FUNCTION_2	CALL_1
+0x4000080	        0x488975c8	             mov qword [rbp - 0x38], rsi	        98	capsule.c	FUNCTION_2	CALL_1
+0x4000084	          0x4889cb	                            mov rbx, rcx	        98	capsule.c	FUNCTION_2	CALL_1
+0x4000087	          0x8955d4	             mov dword [rbp - 0x2c], edx	        99	capsule.c	FUNCTION_2
+0x400008a	    0xc745d81c0000	           mov dword [rbp - 0x28], 0x1c 	        97	capsule.c	FUNCTION_2
+0x4000091	          0x4c89c1	                             mov rcx, r8	       101	capsule.c	FUNCTION_2	CALL_2
+0x4000094	    0xc745d01c0000	           mov dword [rbp - 0x30], 0x1c 	        97	capsule.c	FUNCTION_2
+0x400009b	        0x488d55b0	                   lea rdx, [rbp - 0x50]	       101	capsule.c	FUNCTION_2	CALL_2
+0x400009f	      0xbe01000000	                              mov esi, 1	       101	capsule.c	FUNCTION_2	CALL_2
+0x40000a4	        0x488d7db8	                   lea rdi, [rbp - 0x48]	       101	capsule.c	FUNCTION_2	CALL_2
+0x40000a8	    0x488b05000000	            mov rax, qword [0x040000af] 	       101	capsule.c	FUNCTION_2	CALL_2
+0x40000af	      0xe800000000	                          call 0x40000b4	       101	capsule.c	FUNCTION_2	CALL_2
+0x40000b4	          0x4885c0	                           test rax, rax	       102	capsule.c	FUNCTION_2	IF_2
+0x40000b7	            0x7525	                           jne 0x40000de	       102	capsule.c	FUNCTION_2	IF_2
+0x40000b9	        0x48395db0	            cmp qword [rbp - 0x50], rbx 	       108	capsule.c	FUNCTION_2
+0x40000bd	            0x19c0	                            sbb eax, eax	       108	capsule.c	FUNCTION_2
+0x40000bf	          0x83e0e4	                     and eax, 0xffffffe4	       108	capsule.c	FUNCTION_2
+0x40000c2	        0x488b5de8	             mov rbx, qword [rbp - 0x18]	       109	capsule.c	FUNCTION_2
+0x40000c6	    0x6548331c2528	                xor rbx, qword gs:[0x28]	       109	capsule.c	FUNCTION_2
+0x40000cf	            0x7517	                           jne 0x40000e8	       109	capsule.c	FUNCTION_2
+0x40000d1	        0x4883c440	                           add rsp, 0x40	       109	capsule.c	FUNCTION_2
+0x40000d5	              0x5b	                                 pop rbx	       109	capsule.c	FUNCTION_2
+0x40000d6	            0x415a	                                 pop r10	       109	capsule.c	FUNCTION_2
+0x40000d8	              0x5d	                                 pop rbp	       109	capsule.c	FUNCTION_2
+0x40000d9	        0x498d62f8	                      lea rsp, [r10 - 8]	       109	capsule.c	FUNCTION_2
+0x40000dd	              0xc3	                                     ret	       109	capsule.c	FUNCTION_2
+0x40000de	          0x4889c7	                            mov rdi, rax	       103	capsule.c	FUNCTION_2	CALL_3
+0x40000e1	      0xe800000000	                          call 0x40000e6	       103	capsule.c	FUNCTION_2	CALL_3
+0x40000e6	            0xebda	                           jmp 0x40000c2	       103	capsule.c	FUNCTION_2	CALL_3
+0x40000e8	      0xe800000000	                          call 0x40000ed	       109	capsule.c	FUNCTION_2
+capsule_reboot_notify	IF,0:SWITCH,0:ELSE,0:FOR,0:DO,0:functions,0:CALL,2:WHILE,0	7
+0x40000f0	    0x48c7c7000000	                              mov rdi, 0	       290	capsule.c	FUNCTION_6	CALL_1
+0x40000f7	      0xe800000000	                          call 0x40000fc	       290	capsule.c	FUNCTION_6	CALL_1
+0x40000fc	    0x48c7c7000000	                              mov rdi, 0	       292	capsule.c	FUNCTION_6	CALL_2
+0x4000103	    0xc60500000000	                mov byte [0x0400010a], 1	       291	capsule.c	FUNCTION_6
+0x400010a	      0xe800000000	                          call 0x400010f	       292	capsule.c	FUNCTION_6	CALL_2
+0x400010f	            0x31c0	                            xor eax, eax	       295	capsule.c	FUNCTION_6
+0x4000111	              0xc3	                                     ret	       295	capsule.c	FUNCTION_6
+capsule_reboot_register	IF,0:SWITCH,0:ELSE,0:FOR,0:DO,0:functions,0:CALL,1:WHILE,0	5
+0x4000040	      0x4c8d542408	                      lea r10, [rsp + 8]	        88	capsule.c	FUNCTION_2
+0x4000045	        0x4883e4f0	             and rsp, 0xfffffffffffffff0	        88	capsule.c	FUNCTION_2
+0x4000049	              0x41	                                 invalid	        88	capsule.c	FUNCTION_2
+0x400004a	              0xff	                                 invalid	        88	capsule.c	FUNCTION_2
+0x400004b	              0x72	                                 invalid	        88	capsule.c	FUNCTION_2

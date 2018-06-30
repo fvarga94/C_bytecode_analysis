@@ -1,0 +1,53 @@
+fw_platform_size_show	DO,0:CALL,2:ELSE,0:SWITCH,0:functions,0:FOR,0:IF,0:WHILE,0	12
+0x40000a0	    0x488b05000000	            mov rax, qword [0x040000a7] 	       241	efi.c	FUNCTION_9	IF_1	CALL_1
+0x40000a7	          0x4889d7	                            mov rdi, rdx	       241	efi.c	FUNCTION_9	IF_1	CALL_1
+0x40000aa	    0x48c7c6000000	                              mov rsi, 0	       241	efi.c	FUNCTION_9	IF_1	CALL_1
+0x40000b1	        0x48c1e805	                              shr rax, 5	       241	efi.c	FUNCTION_9	IF_1	CALL_1
+0x40000b5	          0x83e001	                              and eax, 1	       242	efi.c	FUNCTION_9	CALL_3
+0x40000b8	        0x4883f801	                              cmp rax, 1	       242	efi.c	FUNCTION_9	CALL_3
+0x40000bc	            0x19d2	                            sbb edx, edx	       242	efi.c	FUNCTION_9	CALL_3
+0x40000be	          0x83e2e0	                     and edx, 0xffffffe0	       242	efi.c	FUNCTION_9	CALL_3
+0x40000c1	          0x83c240	                           add edx, 0x40	       242	efi.c	FUNCTION_9	CALL_3
+0x40000c4	      0xe800000000	                          call 0x40000c9	       244	efi.c	FUNCTION_9	CALL_4
+0x40000c9	            0x4898	                                    cdqe	       244	efi.c	FUNCTION_9	CALL_4
+0x40000cb	              0xc3	                                     ret	       244	efi.c	FUNCTION_9	CALL_4
+efi_runtime_disabled	DO,0:CALL,0:ELSE,0:SWITCH,0:functions,0:FOR,0:IF,0:WHILE,0	2
+0x4000320	     0xfb605000000	           movzx eax, byte [0x04000327] 	       343	efi.c	FUNCTION_13	IF_2	CALL_3
+0x4000327	              0xc3	                                     ret	       344	efi.c	FUNCTION_13	IF_2
+efivar_ssdt_setup	DO,0:CALL,4:ELSE,1:SWITCH,0:functions,0:FOR,0:IF,1:WHILE,0	16
+0x400009e	               0x0	                      add byte [rax], al	       241	efi.c	FUNCTION_9	IF_1	CALL_1
+0x40000a0	    0x488b05000000	            mov rax, qword [0x040000a7] 	       241	efi.c	FUNCTION_9	IF_1	CALL_1
+0x40000a7	          0x4889d7	                            mov rdi, rdx	       241	efi.c	FUNCTION_9	IF_1	CALL_1
+0x40000aa	    0x48c7c6000000	                              mov rsi, 0	       241	efi.c	FUNCTION_9	IF_1	CALL_1
+0x40000b1	        0x48c1e805	                              shr rax, 5	       241	efi.c	FUNCTION_9	IF_1	CALL_1
+0x40000b5	          0x83e001	                              and eax, 1	       242	efi.c	FUNCTION_9	CALL_3
+0x40000b8	        0x4883f801	                              cmp rax, 1	       242	efi.c	FUNCTION_9	CALL_3
+0x40000bc	            0x19d2	                            sbb edx, edx	       242	efi.c	FUNCTION_9	CALL_3
+0x40000be	          0x83e2e0	                     and edx, 0xffffffe0	       242	efi.c	FUNCTION_9	CALL_3
+0x40000c1	          0x83c240	                           add edx, 0x40	       242	efi.c	FUNCTION_9	CALL_3
+0x40000c4	      0xe800000000	                          call 0x40000c9	       244	efi.c	FUNCTION_9	CALL_4
+0x40000c9	            0x4898	                                    cdqe	       244	efi.c	FUNCTION_9	CALL_4
+0x40000cb	              0xc3	                                     ret	       244	efi.c	FUNCTION_9	CALL_4
+0x40000cc	         0xf1f4000	                         nop dword [rax]	       244	efi.c	FUNCTION_9	CALL_4
+0x40000d0	              0x48	                                 invalid	       246	efi.c	FUNCTION_9
+0x40000d1	              0x89	                                 invalid	       246	efi.c	FUNCTION_9
+setup_noefi	DO,0:CALL,0:ELSE,0:SWITCH,0:functions,0:FOR,0:IF,0:WHILE,0	3
+0x4000040	    0x4881fe000000	                              cmp rsi, 0	        90	efi.c	FUNCTION_1
+0x4000047	            0x7417	                            je 0x4000060	        92	efi.c	FUNCTION_1
+0x4000049	              0x48	                                 invalid	        92	efi.c	FUNCTION_1
+efi_is_table_address	DO,0:CALL,1:ELSE,0:SWITCH,0:functions,0:FOR,1:IF,2:WHILE,0	15
+0x4000490	        0x4883ffff	             cmp rdi, 0xffffffffffffffff	       303	efi.c	FUNCTION_11	FUNCTION_1	IF_3	CALL_7
+0x4000494	            0x7424	                            je 0x40004ba	       307	efi.c	FUNCTION_11	FUNCTION_1	CALL_8
+0x4000496	    0x48c7c0000000	                              mov rax, 0	       307	efi.c	FUNCTION_11	FUNCTION_1	CALL_8
+0x400049d	    0x48c7c2000000	                              mov rdx, 0	       309	efi.c	FUNCTION_11	FUNCTION_1	IF_4	CALL_9
+0x40004a4	            0xeb07	                           jmp 0x40004ad	       309	efi.c	FUNCTION_11	FUNCTION_1	IF_4	CALL_9
+0x40004a6	          0x488b10	                    mov rdx, qword [rax]	       309	efi.c	FUNCTION_11	FUNCTION_1	IF_4	CALL_9
+0x40004a9	        0x4883c008	                              add rax, 8	       309	efi.c	FUNCTION_11	FUNCTION_1	IF_4	CALL_9
+0x40004ad	          0x483b3a	                    cmp rdi, qword [rdx]	       316	efi.c	FUNCTION_11	FUNCTION_1	CALL_10
+0x40004b0	            0x740b	                            je 0x40004bd	       316	efi.c	FUNCTION_11	FUNCTION_1	CALL_10
+0x40004b2	    0x483d00000000	                              cmp rax, 0	       316	efi.c	FUNCTION_11	FUNCTION_1	CALL_10
+0x40004b8	            0x75ec	                           jne 0x40004a6	       283	efi.c	FUNCTION_11	FUNCTION_1
+0x40004ba	            0x31c0	                            xor eax, eax	       319	efi.c	FUNCTION_11	FUNCTION_1	CALL_11
+0x40004bc	              0xc3	                                     ret	       319	efi.c	FUNCTION_11	FUNCTION_1	CALL_11
+0x40004bd	      0xb801000000	                              mov eax, 1	       319	efi.c	FUNCTION_11	FUNCTION_1	CALL_11
+0x40004c2	              0xc3	                                     ret	       283	efi.c	FUNCTION_11	FUNCTION_1

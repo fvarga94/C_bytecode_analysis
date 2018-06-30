@@ -1,0 +1,198 @@
+edac_set_report_status	ELSE,0:CALL,0:IF,1:functions,0:WHILE,0:DO,0:FOR,0:SWITCH,0	4
+0x4000050	          0x83ff02	                              cmp edi, 2	        68	edac_mc.c	FUNCTION_2	IF_1
+0x4000053	            0x7706	                            ja 0x400005b	        68	edac_mc.c	FUNCTION_2	IF_1
+0x4000055	    0x893d00000000	            mov dword [0x0400005b], edi 	        71	edac_mc.c	FUNCTION_2	IF_1
+0x400005b	            0xf3c3	                                     ret	        71	edac_mc.c	FUNCTION_2	IF_1
+edac_get_report_status	ELSE,0:CALL,0:IF,0:functions,0:WHILE,0:DO,0:FOR,0:SWITCH,0	2
+0x4000040	    0x8b0500000000	            mov eax, dword [0x04000046] 	        63	edac_mc.c	FUNCTION_1
+0x4000046	              0xc3	                                     ret	        63	edac_mc.c	FUNCTION_1
+edac_get_owner	ELSE,0:CALL,0:IF,0:functions,0:WHILE,0:DO,0:FOR,0:SWITCH,0	2
+0x4000060	    0x488b05000000	            mov rax, qword [0x04000067] 	       708	edac_mc.c	FUNCTION_22
+0x4000067	              0xc3	                                     ret	       708	edac_mc.c	FUNCTION_22
+edac_mc_find	ELSE,0:CALL,2:IF,0:functions,1:WHILE,0:DO,0:FOR,0:SWITCH,0	26
+0x40001f0	              0x55	                                push rbp	       682	edac_mc.c	FUNCTION_21
+0x40001f1	              0x53	                                push rbx	       682	edac_mc.c	FUNCTION_21
+0x40001f2	            0x89fd	                            mov ebp, edi	       682	edac_mc.c	FUNCTION_21
+0x40001f4	    0x48c7c7000000	                              mov rdi, 0	       686	edac_mc.c	FUNCTION_21	CALL_1
+0x40001fb	      0xe800000000	                          call 0x4000200	       686	edac_mc.c	FUNCTION_21	CALL_1
+0x4000200	    0x488b15000000	            mov rdx, qword [0x04000207] 	       688	edac_mc.c	FUNCTION_21	FUNCTION_1
+0x4000207	    0x4881fa000000	                              cmp rdx, 0	       688	edac_mc.c	FUNCTION_21	FUNCTION_1
+0x400020e	            0x7438	                            je 0x4000248	       688	edac_mc.c	FUNCTION_21	FUNCTION_1
+0x4000210	          0x3b6a60	            cmp ebp, dword [rdx + 0x60] 	       691	edac_mc.c	FUNCTION_21	FUNCTION_1	IF_1
+0x4000213	    0x488d9a28fdff	                  lea rbx, [rdx - 0x2d8]	       689	edac_mc.c	FUNCTION_21	FUNCTION_1	CALL_1
+0x400021a	            0x7f0e	                            jg 0x400022a	       691	edac_mc.c	FUNCTION_21	FUNCTION_1	IF_1
+0x400021c	            0xeb18	                           jmp 0x4000236	       691	edac_mc.c	FUNCTION_21	FUNCTION_1	IF_1
+0x400021e	          0x396a60	            cmp dword [rdx + 0x60], ebp 	       691	edac_mc.c	FUNCTION_21	FUNCTION_1	IF_1
+0x4000221	    0x488d9a28fdff	                  lea rbx, [rdx - 0x2d8]	       689	edac_mc.c	FUNCTION_21	FUNCTION_1	CALL_1
+0x4000228	            0x7d0c	                           jge 0x4000236	       691	edac_mc.c	FUNCTION_21	FUNCTION_1	IF_1
+0x400022a	          0x488b12	                    mov rdx, qword [rdx]	       688	edac_mc.c	FUNCTION_21	FUNCTION_1
+0x400022d	    0x4881fa000000	                              cmp rdx, 0	       688	edac_mc.c	FUNCTION_21	FUNCTION_1
+0x4000234	            0x75e8	                           jne 0x400021e	       688	edac_mc.c	FUNCTION_21	FUNCTION_1
+0x4000236	    0x48c7c7000000	                              mov rdi, 0	       700	edac_mc.c	FUNCTION_21	CALL_2
+0x400023d	      0xe800000000	                          call 0x4000242	       700	edac_mc.c	FUNCTION_21	CALL_2
+0x4000242	          0x4889d8	                            mov rax, rbx	       702	edac_mc.c	FUNCTION_21
+0x4000245	              0x5b	                                 pop rbx	       702	edac_mc.c	FUNCTION_21
+0x4000246	              0x5d	                                 pop rbp	       702	edac_mc.c	FUNCTION_21
+0x4000247	              0xc3	                                     ret	       702	edac_mc.c	FUNCTION_21
+0x4000248	            0x31db	                            xor ebx, ebx	       683	edac_mc.c	FUNCTION_21
+0x400024a	            0xebea	                           jmp 0x4000236	       683	edac_mc.c	FUNCTION_21
+_edac_mc_free	ELSE,0:CALL,7:IF,4:functions,0:WHILE,0:DO,0:FOR,3:SWITCH,0	63
+0x4000070	            0x4157	                                push r15	       278	edac_mc.c	FUNCTION_11
+0x4000072	            0x4156	                                push r14	       278	edac_mc.c	FUNCTION_11
+0x4000074	          0x4989fe	                            mov r14, rdi	       278	edac_mc.c	FUNCTION_11
+0x4000077	            0x4155	                                push r13	       278	edac_mc.c	FUNCTION_11
+0x4000079	            0x4154	                                push r12	       278	edac_mc.c	FUNCTION_11
+0x400007b	              0x55	                                push rbp	       278	edac_mc.c	FUNCTION_11
+0x400007c	              0x53	                                push rbx	       278	edac_mc.c	FUNCTION_11
+0x400007d	    0x8baf64030000	           mov ebp, dword [rdi + 0x364] 	       281	edac_mc.c	FUNCTION_11
+0x4000083	    0x448ba74c0300	          mov r12d, dword [rdi + 0x34c] 	       282	edac_mc.c	FUNCTION_11
+0x400008a	    0x448bbf480300	          mov r15d, dword [rdi + 0x348] 	       283	edac_mc.c	FUNCTION_11
+0x4000091	    0x488bbf680300	           mov rdi, qword [rdi + 0x368] 	       285	edac_mc.c	FUNCTION_11	IF_1
+0x4000098	          0x4885ff	                           test rdi, rdi	       285	edac_mc.c	FUNCTION_11	IF_1
+0x400009b	            0x7425	                            je 0x40000c2	       285	edac_mc.c	FUNCTION_11	IF_1
+0x400009d	            0x85ed	                           test ebp, ebp	       286	edac_mc.c	FUNCTION_11	IF_1	FOR_1
+0x400009f	            0x741c	                            je 0x40000bd	       286	edac_mc.c	FUNCTION_11	IF_1	FOR_1
+0x40000a1	            0x31db	                            xor ebx, ebx	       286	edac_mc.c	FUNCTION_11	IF_1	FOR_1
+0x40000a3	          0x4863c3	                         movsxd rax, ebx	       287	edac_mc.c	FUNCTION_11	IF_1	CALL_1
+0x40000a6	          0x83c301	                              add ebx, 1	       286	edac_mc.c	FUNCTION_11	IF_1	FOR_1
+0x40000a9	        0x488b3cc7	            mov rdi, qword [rdi + rax*8]	       287	edac_mc.c	FUNCTION_11	IF_1	CALL_1
+0x40000ad	      0xe800000000	                          call 0x40000b2	       287	edac_mc.c	FUNCTION_11	IF_1	CALL_1
+0x40000b2	            0x39eb	                            cmp ebx, ebp	       286	edac_mc.c	FUNCTION_11	IF_1	FOR_1
+0x40000b4	    0x498bbe680300	           mov rdi, qword [r14 + 0x368] 	       286	edac_mc.c	FUNCTION_11	IF_1	FOR_1
+0x40000bb	            0x75e6	                           jne 0x40000a3	       286	edac_mc.c	FUNCTION_11	IF_1	FOR_1
+0x40000bd	      0xe800000000	                          call 0x40000c2	       288	edac_mc.c	FUNCTION_11	IF_1	CALL_2
+0x40000c2	    0x498bbe400300	           mov rdi, qword [r14 + 0x340] 	       290	edac_mc.c	FUNCTION_11	IF_2
+0x40000c9	          0x4885ff	                           test rdi, rdi	       290	edac_mc.c	FUNCTION_11	IF_2
+0x40000cc	            0x7464	                            je 0x4000132	       290	edac_mc.c	FUNCTION_11	IF_2
+0x40000ce	          0x4585ff	                         test r15d, r15d	       291	edac_mc.c	FUNCTION_11	IF_2	FOR_2
+0x40000d1	            0x745a	                            je 0x400012d	       291	edac_mc.c	FUNCTION_11	IF_2	FOR_2
+0x40000d3	          0x4531ed	                          xor r13d, r13d	       291	edac_mc.c	FUNCTION_11	IF_2	FOR_2
+0x40000d6	          0x4963c5	                        movsxd rax, r13d	       292	edac_mc.c	FUNCTION_11	IF_2	FOR_2
+0x40000d9	        0x488b2cc7	            mov rbp, qword [rdi + rax*8]	       292	edac_mc.c	FUNCTION_11	IF_2	FOR_2
+0x40000dd	          0x4885ed	                           test rbp, rbp	       293	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3
+0x40000e0	            0x7442	                            je 0x4000124	       293	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3
+0x40000e2	    0x488bbd080300	           mov rdi, qword [rbp + 0x308] 	       294	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4
+0x40000e9	          0x4885ff	                           test rdi, rdi	       294	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4
+0x40000ec	            0x7427	                            je 0x4000115	       294	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4
+0x40000ee	          0x4585e4	                         test r12d, r12d	       295	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	FOR_3
+0x40000f1	            0x741d	                            je 0x4000110	       295	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	FOR_3
+0x40000f3	            0x31db	                            xor ebx, ebx	       295	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	FOR_3
+0x40000f5	          0x4863c3	                         movsxd rax, ebx	       296	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	CALL_3
+0x40000f8	          0x83c301	                              add ebx, 1	       295	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	FOR_3
+0x40000fb	        0x488b3cc7	            mov rdi, qword [rdi + rax*8]	       296	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	CALL_3
+0x40000ff	      0xe800000000	                          call 0x4000104	       296	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	CALL_3
+0x4000104	          0x4439e3	                           cmp ebx, r12d	       295	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	FOR_3
+0x4000107	    0x488bbd080300	           mov rdi, qword [rbp + 0x308] 	       295	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	FOR_3
+0x400010e	            0x75e5	                           jne 0x40000f5	       295	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	FOR_3
+0x4000110	      0xe800000000	                          call 0x4000115	       297	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	IF_4	CALL_4
+0x4000115	          0x4889ef	                            mov rdi, rbp	       299	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	CALL_5
+0x4000118	      0xe800000000	                          call 0x400011d	       299	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	CALL_5
+0x400011d	    0x498bbe400300	           mov rdi, qword [r14 + 0x340] 	       299	edac_mc.c	FUNCTION_11	IF_2	FOR_2	IF_3	CALL_5
+0x4000124	        0x4183c501	                             add r13d, 1	       291	edac_mc.c	FUNCTION_11	IF_2	FOR_2
+0x4000128	          0x4539ef	                          cmp r15d, r13d	       291	edac_mc.c	FUNCTION_11	IF_2	FOR_2
+0x400012b	            0x75a9	                           jne 0x40000d6	       291	edac_mc.c	FUNCTION_11	IF_2	FOR_2
+0x400012d	      0xe800000000	                          call 0x4000132	       302	edac_mc.c	FUNCTION_11	IF_2	CALL_6
+0x4000132	              0x5b	                                 pop rbx	       305	edac_mc.c	FUNCTION_11
+0x4000133	          0x4c89f7	                            mov rdi, r14	       304	edac_mc.c	FUNCTION_11	CALL_7
+0x4000136	              0x5d	                                 pop rbp	       305	edac_mc.c	FUNCTION_11
+0x4000137	            0x415c	                                 pop r12	       305	edac_mc.c	FUNCTION_11
+0x4000139	            0x415d	                                 pop r13	       305	edac_mc.c	FUNCTION_11
+0x400013b	            0x415e	                                 pop r14	       305	edac_mc.c	FUNCTION_11
+0x400013d	            0x415f	                                 pop r15	       305	edac_mc.c	FUNCTION_11
+0x400013f	      0xe900000000	                           jmp 0x4000144	       304	edac_mc.c	FUNCTION_11	CALL_7
+edac_mc_free	ELSE,0:CALL,4:IF,1:functions,0:WHILE,0:DO,0:FOR,0:SWITCH,0	4
+0x4000150	        0xf6474c02	               test byte [rdi + 0x4c], 2	       511	edac_mc.c	FUNCTION_13	IF_1	CALL_2
+0x4000154	            0x7405	                            je 0x400015b	       511	edac_mc.c	FUNCTION_13	IF_1	CALL_2
+0x4000156	      0xe900000000	                           jmp 0x400015b	       517	edac_mc.c	FUNCTION_13	CALL_4
+0x400015b	      0xe910ffffff	                   jmp sym._edac_mc_free	       512	edac_mc.c	FUNCTION_13	IF_1	CALL_3
+find_mci_by_dev	ELSE,0:CALL,3:IF,0:functions,0:WHILE,0:DO,0:FOR,0:SWITCH,0	21
+0x4000190	              0x53	                                push rbx	       561	edac_mc.c	FUNCTION_16
+0x4000191	          0x4889fb	                            mov rbx, rdi	       561	edac_mc.c	FUNCTION_16
+0x4000194	    0x48c7c7000000	                              mov rdi, 0	       564	edac_mc.c	FUNCTION_16	CALL_1
+0x400019b	      0xe800000000	                          call 0x40001a0	       564	edac_mc.c	FUNCTION_16	CALL_1
+0x40001a0	    0x488b05000000	            mov rax, qword [0x040001a7] 	       543	edac_mc.c	FUNCTION_15	FUNCTION_1
+0x40001a7	    0x483d00000000	                              cmp rax, 0	       543	edac_mc.c	FUNCTION_15	FUNCTION_1
+0x40001ad	            0x750d	                           jne 0x40001bc	       543	edac_mc.c	FUNCTION_15	FUNCTION_1
+0x40001af	            0xeb1d	                           jmp 0x40001ce	       543	edac_mc.c	FUNCTION_15	FUNCTION_1
+0x40001b1	          0x488b00	                    mov rax, qword [rax]	       543	edac_mc.c	FUNCTION_15	FUNCTION_1
+0x40001b4	    0x483d00000000	                              cmp rax, 0	       543	edac_mc.c	FUNCTION_15	FUNCTION_1
+0x40001ba	            0x7412	                            je 0x40001ce	       543	edac_mc.c	FUNCTION_15	FUNCTION_1
+0x40001bc	    0x483b98980000	            cmp rbx, qword [rax + 0x98] 	       546	edac_mc.c	FUNCTION_15	FUNCTION_1	IF_1
+0x40001c3	            0x75ec	                           jne 0x40001b1	       546	edac_mc.c	FUNCTION_15	FUNCTION_1	IF_1
+0x40001c5	    0x488d9828fdff	                  lea rbx, [rax - 0x2d8]	       544	edac_mc.c	FUNCTION_15	FUNCTION_1	CALL_1
+0x40001cc	            0xeb02	                           jmp 0x40001d0	       544	edac_mc.c	FUNCTION_15	FUNCTION_1	CALL_1
+0x40001ce	            0x31db	                            xor ebx, ebx	       550	edac_mc.c	FUNCTION_15
+0x40001d0	    0x48c7c7000000	                              mov rdi, 0	       566	edac_mc.c	FUNCTION_16	CALL_3
+0x40001d7	      0xe800000000	                          call 0x40001dc	       566	edac_mc.c	FUNCTION_16	CALL_3
+0x40001dc	          0x4889d8	                            mov rax, rbx	       569	edac_mc.c	FUNCTION_16
+0x40001df	              0x5b	                                 pop rbx	       569	edac_mc.c	FUNCTION_16
+0x40001e0	              0xc3	                                     ret	       569	edac_mc.c	FUNCTION_16
+edac_mc_reset_delay_period	ELSE,0:CALL,2:IF,0:functions,1:WHILE,0:DO,0:FOR,0:SWITCH,0	24
+0x4001a60	              0x55	                                push rbp	       604	edac_mc.c	FUNCTION_18
+0x4001a61	              0x53	                                push rbx	       604	edac_mc.c	FUNCTION_18
+0x4001a62	          0x4889fd	                            mov rbp, rdi	       604	edac_mc.c	FUNCTION_18
+0x4001a65	    0x48c7c7000000	                              mov rdi, 0	       608	edac_mc.c	FUNCTION_18	CALL_1
+0x4001a6c	      0xe800000000	                          call 0x4001a71	       608	edac_mc.c	FUNCTION_18	CALL_1
+0x4001a71	    0x488b1d000000	            mov rbx, qword [0x04001a78] 	       610	edac_mc.c	FUNCTION_18	FUNCTION_1
+0x4001a78	    0x4881fb000000	                              cmp rbx, 0	       610	edac_mc.c	FUNCTION_18	FUNCTION_1
+0x4001a7f	            0x750e	                           jne 0x4001a8f	       610	edac_mc.c	FUNCTION_18	FUNCTION_1
+0x4001a81	            0xeb33	                           jmp 0x4001ab6	       610	edac_mc.c	FUNCTION_18	FUNCTION_1
+0x4001a83	          0x488b1b	                    mov rbx, qword [rbx]	       610	edac_mc.c	FUNCTION_18	FUNCTION_1
+0x4001a86	    0x4881fb000000	                              cmp rbx, 0	       610	edac_mc.c	FUNCTION_18	FUNCTION_1
+0x4001a8d	            0x7427	                            je 0x4001ab6	       610	edac_mc.c	FUNCTION_18	FUNCTION_1
+0x4001a8f	    0x81bbf8030000	         cmp dword [rbx + 0x3f8], 0x201 	       613	edac_mc.c	FUNCTION_18	FUNCTION_1	IF_1
+0x4001a99	            0x75e8	                           jne 0x4001a83	       613	edac_mc.c	FUNCTION_18	FUNCTION_1	IF_1
+0x4001a9b	    0x488dbb300100	                  lea rdi, [rbx + 0x130]	       614	edac_mc.c	FUNCTION_18	FUNCTION_1	CALL_2
+0x4001aa2	          0x4889ee	                            mov rsi, rbp	       614	edac_mc.c	FUNCTION_18	FUNCTION_1	CALL_2
+0x4001aa5	      0xe800000000	                          call 0x4001aaa	       614	edac_mc.c	FUNCTION_18	FUNCTION_1	CALL_2
+0x4001aaa	          0x488b1b	                    mov rbx, qword [rbx]	       610	edac_mc.c	FUNCTION_18	FUNCTION_1
+0x4001aad	    0x4881fb000000	                              cmp rbx, 0	       610	edac_mc.c	FUNCTION_18	FUNCTION_1
+0x4001ab4	            0x75d9	                           jne 0x4001a8f	       610	edac_mc.c	FUNCTION_18	FUNCTION_1
+0x4001ab6	              0x5b	                                 pop rbx	       617	edac_mc.c	FUNCTION_18
+0x4001ab7	              0x5d	                                 pop rbp	       617	edac_mc.c	FUNCTION_18
+0x4001ab8	    0x48c7c7000000	                              mov rdi, 0	       616	edac_mc.c	FUNCTION_18	CALL_2
+0x4001abf	      0xe900000000	                   jmp section_end..text	       616	edac_mc.c	FUNCTION_18	CALL_2
+edac_dimm_info_location	ELSE,0:CALL,1:IF,1:functions,0:WHILE,0:DO,0:FOR,1:SWITCH,0	43
+0x4001390	            0x4157	                                push r15	       121	edac_mc.c	FUNCTION_5
+0x4001392	            0x4156	                                push r14	       121	edac_mc.c	FUNCTION_5
+0x4001394	            0x4155	                                push r13	       121	edac_mc.c	FUNCTION_5
+0x4001396	            0x4154	                                push r12	       121	edac_mc.c	FUNCTION_5
+0x4001398	              0x55	                                push rbp	       121	edac_mc.c	FUNCTION_5
+0x4001399	              0x53	                                push rbx	       121	edac_mc.c	FUNCTION_5
+0x400139a	    0x4c8bbf000300	           mov r15, qword [rdi + 0x300] 	       122	edac_mc.c	FUNCTION_5
+0x40013a1	    0x418b87500300	           mov eax, dword [r15 + 0x350] 	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013a8	            0x85c0	                           test eax, eax	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013aa	            0x7461	                            je 0x400140d	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013ac	          0x4989fc	                            mov r12, rdi	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013af	          0x4989f6	                            mov r14, rsi	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013b2	          0x4189d5	                           mov r13d, edx	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013b5	            0x31db	                            xor ebx, ebx	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013b7	            0x31ed	                            xor ebp, ebp	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013b9	            0xeb10	                           jmp 0x40013cb	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013bb	          0x8d4301	                      lea eax, [rbx + 1]	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013be	        0x4883c301	                              add rbx, 1	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013c2	    0x413987500300	           cmp dword [r15 + 0x350], eax 	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013c9	            0x7640	                           jbe 0x400140b	       126	edac_mc.c	FUNCTION_5	FOR_1
+0x40013cb	    0x498b87580300	           mov rax, qword [r15 + 0x358] 	       128	edac_mc.c	FUNCTION_5	FOR_1
+0x40013d2	        0x488d145b	                  lea rdx, [rbx + rbx*2]	       128	edac_mc.c	FUNCTION_5	FOR_1
+0x40013d6	    0x458b849cf002	   mov r8d, dword [r12 + rbx*4 + 0x2f0] 	       127	edac_mc.c	FUNCTION_5	FOR_1	CALL_1
+0x40013de	          0x4489ee	                           mov esi, r13d	       127	edac_mc.c	FUNCTION_5	FOR_1	CALL_1
+0x40013e1	          0x4c89f7	                            mov rdi, r14	       127	edac_mc.c	FUNCTION_5	FOR_1	CALL_1
+0x40013e4	        0x488d1490	                  lea rdx, [rax + rdx*4]	       128	edac_mc.c	FUNCTION_5	FOR_1
+0x40013e8	            0x8b02	                    mov eax, dword [rdx]	       127	edac_mc.c	FUNCTION_5	FOR_1	CALL_1
+0x40013ea	    0x48c7c2000000	                              mov rdx, 0	       127	edac_mc.c	FUNCTION_5	FOR_1	CALL_1
+0x40013f1	    0x488b0cc50000	                  mov rcx, qword [rax*8]	       127	edac_mc.c	FUNCTION_5	FOR_1	CALL_1
+0x40013f9	      0xe800000000	                          call 0x40013fe	       127	edac_mc.c	FUNCTION_5	FOR_1	CALL_1
+0x40013fe	          0x4863d0	                         movsxd rdx, eax	       130	edac_mc.c	FUNCTION_5	FOR_1
+0x4001401	             0x1c5	                            add ebp, eax	       132	edac_mc.c	FUNCTION_5	FOR_1
+0x4001403	          0x4901d6	                            add r14, rdx	       130	edac_mc.c	FUNCTION_5	FOR_1
+0x4001406	          0x4129c5	                           sub r13d, eax	       133	edac_mc.c	FUNCTION_5	FOR_1	IF_1
+0x4001409	            0x75b0	                           jne 0x40013bb	       133	edac_mc.c	FUNCTION_5	FOR_1	IF_1
+0x400140b	            0x89e8	                            mov eax, ebp	       133	edac_mc.c	FUNCTION_5	FOR_1	IF_1
+0x400140d	              0x5b	                                 pop rbx	       138	edac_mc.c	FUNCTION_5
+0x400140e	              0x5d	                                 pop rbp	       138	edac_mc.c	FUNCTION_5
+0x400140f	            0x415c	                                 pop r12	       138	edac_mc.c	FUNCTION_5
+0x4001411	            0x415d	                                 pop r13	       138	edac_mc.c	FUNCTION_5
+0x4001413	            0x415e	                                 pop r14	       138	edac_mc.c	FUNCTION_5
+0x4001415	            0x415f	                                 pop r15	       138	edac_mc.c	FUNCTION_5
+0x4001417	              0xc3	                                     ret	       138	edac_mc.c	FUNCTION_5

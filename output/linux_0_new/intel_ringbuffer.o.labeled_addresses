@@ -1,0 +1,1680 @@
+gen7_render_ring_flush	functions,0:DO,0:IF,3:ELSE,0:CALL,7:WHILE,0:FOR,0:SWITCH,0	40
+0x4001c10	            0x4154	                                push r12	       283	intel_ringbuffer.c	FUNCTION_8
+0x4001c12	              0x55	                                push rbp	       283	intel_ringbuffer.c	FUNCTION_8
+0x4001c13	          0x4889fd	                            mov rbp, rdi	       283	intel_ringbuffer.c	FUNCTION_8
+0x4001c16	              0x53	                                push rbx	       283	intel_ringbuffer.c	FUNCTION_8
+0x4001c17	        0x488b4778	            mov rax, qword [rdi + 0x78] 	       285	intel_ringbuffer.c	FUNCTION_8	CALL_1
+0x4001c1b	    0x488b80980100	           mov rax, qword [rax + 0x198] 	       285	intel_ringbuffer.c	FUNCTION_8	CALL_1
+0x4001c22	        0x488b4008	                mov rax, qword [rax + 8]	       284	intel_ringbuffer.c	FUNCTION_8
+0x4001c26	    0x448da0800000	                  lea r12d, [rax + 0x80]	       284	intel_ringbuffer.c	FUNCTION_8
+0x4001c2d	            0x89f0	                            mov eax, esi	       302	intel_ringbuffer.c	FUNCTION_8	IF_1
+0x4001c2f	          0x83e002	                              and eax, 2	       302	intel_ringbuffer.c	FUNCTION_8	IF_1
+0x4001c32	          0x83f801	                              cmp eax, 1	       306	intel_ringbuffer.c	FUNCTION_8	IF_1
+0x4001c35	            0x19db	                            sbb ebx, ebx	       306	intel_ringbuffer.c	FUNCTION_8	IF_1
+0x4001c37	    0x81e35fefffff	                     and ebx, 0xffffef5f	       306	intel_ringbuffer.c	FUNCTION_8	IF_1
+0x4001c3d	    0x81c3a1101000	                       add ebx, 0x1010a1	       306	intel_ringbuffer.c	FUNCTION_8	IF_1
+0x4001c43	          0x83e601	                              and esi, 1	       308	intel_ringbuffer.c	FUNCTION_8	IF_2
+0x4001c46	            0x7530	                           jne 0x4001c78	       308	intel_ringbuffer.c	FUNCTION_8	IF_2
+0x4001c48	      0xbe04000000	                              mov esi, 4	       330	intel_ringbuffer.c	FUNCTION_8	CALL_3
+0x4001c4d	          0x4889ef	                            mov rdi, rbp	       330	intel_ringbuffer.c	FUNCTION_8	CALL_3
+0x4001c50	      0xe800000000	                          call 0x4001c55	       330	intel_ringbuffer.c	FUNCTION_8	CALL_3
+0x4001c55	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       331	intel_ringbuffer.c	FUNCTION_8	IF_3	CALL_4
+0x4001c5b	            0x7716	                            ja 0x4001c73	       331	intel_ringbuffer.c	FUNCTION_8	IF_3	CALL_4
+0x4001c5d	    0xc7000200007a	            mov dword [rax], 0x7a000002 	       334	intel_ringbuffer.c	FUNCTION_8	CALL_6
+0x4001c63	          0x895804	                mov dword [rax + 4], ebx	       335	intel_ringbuffer.c	FUNCTION_8
+0x4001c66	        0x44896008	               mov dword [rax + 8], r12d	       336	intel_ringbuffer.c	FUNCTION_8
+0x4001c6a	    0xc7400c000000	                mov dword [rax + 0xc], 0	       337	intel_ringbuffer.c	FUNCTION_8
+0x4001c71	            0x31c0	                            xor eax, eax	       340	intel_ringbuffer.c	FUNCTION_8
+0x4001c73	              0x5b	                                 pop rbx	       341	intel_ringbuffer.c	FUNCTION_8
+0x4001c74	              0x5d	                                 pop rbp	       341	intel_ringbuffer.c	FUNCTION_8
+0x4001c75	            0x415c	                                 pop r12	       341	intel_ringbuffer.c	FUNCTION_8
+0x4001c77	              0xc3	                                     ret	       341	intel_ringbuffer.c	FUNCTION_8
+0x4001c78	      0xbe04000000	                              mov esi, 4	       268	intel_ringbuffer.c	FUNCTION_7	CALL_1
+0x4001c7d	    0x81cb1e4c0501	                       or ebx, 0x1054c1e	       322	intel_ringbuffer.c	FUNCTION_8	IF_2
+0x4001c83	      0xe800000000	                          call 0x4001c88	       268	intel_ringbuffer.c	FUNCTION_7	CALL_1
+0x4001c88	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       269	intel_ringbuffer.c	FUNCTION_7	IF_1	CALL_2
+0x4001c8e	            0x77b8	                            ja 0x4001c48	       269	intel_ringbuffer.c	FUNCTION_7	IF_1	CALL_2
+0x4001c90	    0xc7000200007a	            mov dword [rax], 0x7a000002 	       272	intel_ringbuffer.c	FUNCTION_7	CALL_4
+0x4001c96	    0xc74004020010	          mov dword [rax + 4], 0x100002 	       273	intel_ringbuffer.c	FUNCTION_7
+0x4001c9d	    0xc74008000000	                  mov dword [rax + 8], 0	       274	intel_ringbuffer.c	FUNCTION_7
+0x4001ca4	    0xc7400c000000	                mov dword [rax + 0xc], 0	       275	intel_ringbuffer.c	FUNCTION_7
+0x4001cab	            0xeb9b	                           jmp 0x4001c48	       275	intel_ringbuffer.c	FUNCTION_7
+intel_init_ring_buffer	functions,0:DO,0:IF,3:ELSE,0:CALL,9:WHILE,0:FOR,0:SWITCH,0	39
+0x40017f0	            0x4154	                                push r12	      1316	intel_ringbuffer.c	FUNCTION_48
+0x40017f2	              0x55	                                push rbp	      1316	intel_ringbuffer.c	FUNCTION_48
+0x40017f3	          0x4889fd	                            mov rbp, rdi	      1316	intel_ringbuffer.c	FUNCTION_48
+0x40017f6	              0x53	                                push rbx	      1316	intel_ringbuffer.c	FUNCTION_48
+0x40017f7	      0xe800000000	                          call 0x40017fc	      1320	intel_ringbuffer.c	FUNCTION_48	CALL_1
+0x40017fc	          0x4889ef	                            mov rdi, rbp	      1322	intel_ringbuffer.c	FUNCTION_48	CALL_2
+0x40017ff	      0xe800000000	                          call 0x4001804	      1322	intel_ringbuffer.c	FUNCTION_48	CALL_2
+0x4001804	            0x85c0	                           test eax, eax	      1323	intel_ringbuffer.c	FUNCTION_48	IF_1
+0x4001806	            0x89c3	                            mov ebx, eax	      1322	intel_ringbuffer.c	FUNCTION_48	CALL_2
+0x4001808	            0x7544	                           jne 0x400184e	      1323	intel_ringbuffer.c	FUNCTION_48	IF_1
+0x400180a	      0xbe00000200	                        mov esi, 0x20000	      1326	intel_ringbuffer.c	FUNCTION_48	CALL_3
+0x400180f	          0x4889ef	                            mov rdi, rbp	      1326	intel_ringbuffer.c	FUNCTION_48	CALL_3
+0x4001812	      0xe800000000	                          call 0x4001817	      1326	intel_ringbuffer.c	FUNCTION_48	CALL_3
+0x4001817	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1327	intel_ringbuffer.c	FUNCTION_48	IF_2	CALL_4
+0x400181d	          0x4989c4	                            mov r12, rax	      1326	intel_ringbuffer.c	FUNCTION_48	CALL_3
+0x4001820	            0x89c3	                            mov ebx, eax	      1328	intel_ringbuffer.c	FUNCTION_48	IF_2	CALL_5
+0x4001822	            0x772a	                            ja 0x400184e	      1327	intel_ringbuffer.c	FUNCTION_48	IF_2	CALL_4
+0x4001824	        0x488b7500	                    mov rsi, qword [rbp]	      1333	intel_ringbuffer.c	FUNCTION_48	CALL_6
+0x4001828	      0xba00100000	                         mov edx, 0x1000	      1333	intel_ringbuffer.c	FUNCTION_48	CALL_6
+0x400182d	          0x4889c7	                            mov rdi, rax	      1333	intel_ringbuffer.c	FUNCTION_48	CALL_6
+0x4001830	      0xe800000000	                          call 0x4001835	      1333	intel_ringbuffer.c	FUNCTION_48	CALL_6
+0x4001835	            0x85c0	                           test eax, eax	      1334	intel_ringbuffer.c	FUNCTION_48	IF_3
+0x4001837	            0x89c3	                            mov ebx, eax	      1333	intel_ringbuffer.c	FUNCTION_48	CALL_6
+0x4001839	            0x750b	                           jne 0x4001846	      1334	intel_ringbuffer.c	FUNCTION_48	IF_3
+0x400183b	        0x4c896530	            mov qword [rbp + 0x30], r12 	      1338	intel_ringbuffer.c	FUNCTION_48
+0x400183f	            0x31c0	                            xor eax, eax	      1340	intel_ringbuffer.c	FUNCTION_48
+0x4001841	              0x5b	                                 pop rbx	      1347	intel_ringbuffer.c	FUNCTION_48
+0x4001842	              0x5d	                                 pop rbp	      1347	intel_ringbuffer.c	FUNCTION_48
+0x4001843	            0x415c	                                 pop r12	      1347	intel_ringbuffer.c	FUNCTION_48
+0x4001845	              0xc3	                                     ret	      1347	intel_ringbuffer.c	FUNCTION_48
+0x4001846	          0x4c89e7	                            mov rdi, r12	      1343	intel_ringbuffer.c	FUNCTION_48	CALL_8
+0x4001849	      0xe800000000	                          call 0x400184e	      1343	intel_ringbuffer.c	FUNCTION_48	CALL_8
+0x400184e	          0x4889ef	                            mov rdi, rbp	      1345	intel_ringbuffer.c	FUNCTION_48	CALL_9
+0x4001851	      0xe800000000	                          call 0x4001856	      1345	intel_ringbuffer.c	FUNCTION_48	CALL_9
+0x4001856	            0x89d8	                            mov eax, ebx	      1346	intel_ringbuffer.c	FUNCTION_48
+0x4001858	              0x5b	                                 pop rbx	      1347	intel_ringbuffer.c	FUNCTION_48
+0x4001859	              0x5d	                                 pop rbp	      1347	intel_ringbuffer.c	FUNCTION_48
+0x400185a	            0x415c	                                 pop r12	      1347	intel_ringbuffer.c	FUNCTION_48
+0x400185c	              0xc3	                                     ret	      1347	intel_ringbuffer.c	FUNCTION_48
+gen5_seqno_barrier	functions,0:DO,0:IF,0:ELSE,0:CALL,1:WHILE,0:FOR,0:SWITCH,0	3
+0x4001040	      0xbefa000000	                           mov esi, 0xfa	       780	intel_ringbuffer.c	FUNCTION_22	CALL_1
+0x4001045	      0xbf7d000000	                           mov edi, 0x7d	       780	intel_ringbuffer.c	FUNCTION_22	CALL_1
+0x400104a	      0xe900000000	                           jmp 0x400104f	       780	intel_ringbuffer.c	FUNCTION_22	CALL_1
+gen6_irq_disable	functions,0:DO,0:IF,0:ELSE,0:CALL,1:WHILE,0:FOR,0:SWITCH,0	17
+0x4001060	              0x55	                                push rbp	       886	intel_ringbuffer.c	FUNCTION_32
+0x4001061	              0x53	                                push rbx	       886	intel_ringbuffer.c	FUNCTION_32
+0x4001062	          0x4889fb	                            mov rbx, rdi	       886	intel_ringbuffer.c	FUNCTION_32
+0x4001065	          0x488b2f	                    mov rbp, qword [rdi]	       887	intel_ringbuffer.c	FUNCTION_32
+0x4001068	          0x8b4f24	            mov ecx, dword [rdi + 0x24] 	       889	intel_ringbuffer.c	FUNCTION_32
+0x400106b	    0x8b97a0010000	           mov edx, dword [rdi + 0x1a0] 	       889	intel_ringbuffer.c	FUNCTION_32
+0x4001071	    0x8db1a8000000	                   lea esi, [rcx + 0xa8]	       889	intel_ringbuffer.c	FUNCTION_32
+0x4001077	          0x4889ef	                            mov rdi, rbp	       889	intel_ringbuffer.c	FUNCTION_32
+0x400107a	    0x488b85180800	           mov rax, qword [rbp + 0x818] 	       889	intel_ringbuffer.c	FUNCTION_32
+0x4001081	            0xf7d2	                                 not edx	       889	intel_ringbuffer.c	FUNCTION_32
+0x4001083	      0xb901000000	                              mov ecx, 1	       889	intel_ringbuffer.c	FUNCTION_32
+0x4001088	      0xe800000000	                          call 0x400108d	       889	intel_ringbuffer.c	FUNCTION_32
+0x400108d	    0x8bb3a4010000	           mov esi, dword [rbx + 0x1a4] 	       890	intel_ringbuffer.c	FUNCTION_32	CALL_1
+0x4001093	          0x4889ef	                            mov rdi, rbp	       890	intel_ringbuffer.c	FUNCTION_32	CALL_1
+0x4001096	              0x5b	                                 pop rbx	       891	intel_ringbuffer.c	FUNCTION_32
+0x4001097	              0x5d	                                 pop rbp	       891	intel_ringbuffer.c	FUNCTION_32
+0x4001098	      0xe900000000	                           jmp 0x400109d	       890	intel_ringbuffer.c	FUNCTION_32	CALL_1
+i915_emit_bb_start	functions,0:DO,0:IF,1:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	17
+0x4001cb0	              0x55	                                push rbp	       997	intel_ringbuffer.c	FUNCTION_37
+0x4001cb1	              0x53	                                push rbx	       997	intel_ringbuffer.c	FUNCTION_37
+0x4001cb2	          0x4889f5	                            mov rbp, rsi	       997	intel_ringbuffer.c	FUNCTION_37
+0x4001cb5	      0xbe02000000	                              mov esi, 2	      1000	intel_ringbuffer.c	FUNCTION_37	CALL_1
+0x4001cba	            0x89cb	                            mov ebx, ecx	       997	intel_ringbuffer.c	FUNCTION_37
+0x4001cbc	      0xe800000000	                          call 0x4001cc1	      1000	intel_ringbuffer.c	FUNCTION_37	CALL_1
+0x4001cc1	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1001	intel_ringbuffer.c	FUNCTION_37	IF_1	CALL_2
+0x4001cc7	            0x7713	                            ja 0x4001cdc	      1001	intel_ringbuffer.c	FUNCTION_37	IF_1	CALL_2
+0x4001cc9	          0x83e301	                              and ebx, 1	      1001	intel_ringbuffer.c	FUNCTION_37	IF_1	CALL_2
+0x4001ccc	    0xc70080008018	            mov dword [rax], 0x18800080 	      1004	intel_ringbuffer.c	FUNCTION_37
+0x4001cd2	          0x83f301	                              xor ebx, 1	      1004	intel_ringbuffer.c	FUNCTION_37
+0x4001cd5	             0x9eb	                             or ebx, ebp	      1005	intel_ringbuffer.c	FUNCTION_37
+0x4001cd7	          0x895804	                mov dword [rax + 4], ebx	      1005	intel_ringbuffer.c	FUNCTION_37
+0x4001cda	            0x31c0	                            xor eax, eax	      1009	intel_ringbuffer.c	FUNCTION_37
+0x4001cdc	              0x5b	                                 pop rbx	      1010	intel_ringbuffer.c	FUNCTION_37
+0x4001cdd	              0x5d	                                 pop rbp	      1010	intel_ringbuffer.c	FUNCTION_37
+0x4001cde	              0xc3	                                     ret	      1010	intel_ringbuffer.c	FUNCTION_37
+init_render_ring	functions,0:DO,0:IF,8:ELSE,0:CALL,9:WHILE,0:FOR,0:SWITCH,0	94
+0x4000d00	              0x55	                                push rbp	       614	intel_ringbuffer.c	FUNCTION_15
+0x4000d01	              0x53	                                push rbx	       614	intel_ringbuffer.c	FUNCTION_15
+0x4000d02	          0x4889fd	                            mov rbp, rdi	       614	intel_ringbuffer.c	FUNCTION_15
+0x4000d05	          0x488b1f	                    mov rbx, qword [rdi]	       615	intel_ringbuffer.c	FUNCTION_15
+0x4000d08	      0xe813faffff	               call sym.init_ring_common	       616	intel_ringbuffer.c	FUNCTION_15	CALL_1
+0x4000d0d	            0x85c0	                           test eax, eax	       617	intel_ringbuffer.c	FUNCTION_15	IF_1
+0x4000d0f	            0x753e	                           jne 0x4000d4f	       617	intel_ringbuffer.c	FUNCTION_15	IF_1
+0x4000d11	     0xfb7835a0600	          movzx eax, word [rbx + 0x65a] 	       621	intel_ringbuffer.c	FUNCTION_15	IF_2
+0x4000d18	            0xa838	                           test al, 0x38	       621	intel_ringbuffer.c	FUNCTION_15	IF_2
+0x4000d1a	     0xf85e6000000	                           jne 0x4000e06	       621	intel_ringbuffer.c	FUNCTION_15	IF_2
+0x4000d20	            0xa860	                           test al, 0x60	       630	intel_ringbuffer.c	FUNCTION_15	IF_3
+0x4000d22	     0xf850b010000	                           jne 0x4000e33	       630	intel_ringbuffer.c	FUNCTION_15	IF_3
+0x4000d28	            0xa820	                           test al, 0x20	       635	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000d2a	            0x7526	                           jne 0x4000d52	       635	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000d2c	            0xa840	                           test al, 0x40	       640	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000d2e	     0xf8531010000	                           jne 0x4000e65	       640	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000d34	            0xa860	                           test al, 0x60	       655	intel_ringbuffer.c	FUNCTION_15	IF_7
+0x4000d36	            0x7574	                           jne 0x4000dac	       655	intel_ringbuffer.c	FUNCTION_15	IF_7
+0x4000d38	    0x80bb5c060000	               cmp byte [rbx + 0x65c], 5	       658	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000d3f	     0xf8792000000	                            ja 0x4000dd7	       658	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000d45	          0x4889ef	                            mov rdi, rbp	       661	intel_ringbuffer.c	FUNCTION_15	CALL_9
+0x4000d48	              0x5b	                                 pop rbx	       662	intel_ringbuffer.c	FUNCTION_15
+0x4000d49	              0x5d	                                 pop rbp	       662	intel_ringbuffer.c	FUNCTION_15
+0x4000d4a	      0xe900000000	                           jmp 0x4000d4f	       661	intel_ringbuffer.c	FUNCTION_15	CALL_9
+0x4000d4f	              0x5b	                                 pop rbx	       662	intel_ringbuffer.c	FUNCTION_15
+0x4000d50	              0x5d	                                 pop rbp	       662	intel_ringbuffer.c	FUNCTION_15
+0x4000d51	              0xc3	                                     ret	       662	intel_ringbuffer.c	FUNCTION_15
+0x4000d52	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       636	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000d59	      0xb901000000	                              mov ecx, 1	       636	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000d5e	      0xba00200020	                     mov edx, 0x20002000	       636	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000d63	      0xbe20250000	                         mov esi, 0x2520	       636	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000d68	          0x4889df	                            mov rdi, rbx	       636	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000d6b	      0xe800000000	                          call 0x4000d70	       636	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000d70	     0xfb7835a0600	          movzx eax, word [rbx + 0x65a] 	       640	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000d77	            0xa840	                           test al, 0x40	       640	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000d79	     0xf85e6000000	                           jne 0x4000e65	       640	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000d7f	            0xa820	                           test al, 0x20	       645	intel_ringbuffer.c	FUNCTION_15	IF_6
+0x4000d81	            0x74b1	                            je 0x4000d34	       645	intel_ringbuffer.c	FUNCTION_15	IF_6
+0x4000d83	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       651	intel_ringbuffer.c	FUNCTION_15	IF_6
+0x4000d8a	      0xb901000000	                              mov ecx, 1	       651	intel_ringbuffer.c	FUNCTION_15	IF_6
+0x4000d8f	      0xba00002000	                       mov edx, 0x200000	       651	intel_ringbuffer.c	FUNCTION_15	IF_6
+0x4000d94	      0xbe20210000	                         mov esi, 0x2120	       651	intel_ringbuffer.c	FUNCTION_15	IF_6
+0x4000d99	          0x4889df	                            mov rdi, rbx	       651	intel_ringbuffer.c	FUNCTION_15	IF_6
+0x4000d9c	      0xe800000000	                          call 0x4000da1	       651	intel_ringbuffer.c	FUNCTION_15	IF_6
+0x4000da1	     0xfb7835a0600	          movzx eax, word [rbx + 0x65a] 	       651	intel_ringbuffer.c	FUNCTION_15	IF_6
+0x4000da8	            0xa860	                           test al, 0x60	       655	intel_ringbuffer.c	FUNCTION_15	IF_7
+0x4000daa	            0x748c	                            je 0x4000d38	       655	intel_ringbuffer.c	FUNCTION_15	IF_7
+0x4000dac	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       656	intel_ringbuffer.c	FUNCTION_15	CALL_8
+0x4000db3	      0xb901000000	                              mov ecx, 1	       656	intel_ringbuffer.c	FUNCTION_15	CALL_8
+0x4000db8	      0xba80008000	                       mov edx, 0x800080	       656	intel_ringbuffer.c	FUNCTION_15	CALL_8
+0x4000dbd	      0xbec0200000	                         mov esi, 0x20c0	       656	intel_ringbuffer.c	FUNCTION_15	CALL_8
+0x4000dc2	          0x4889df	                            mov rdi, rbx	       656	intel_ringbuffer.c	FUNCTION_15	CALL_8
+0x4000dc5	      0xe800000000	                          call 0x4000dca	       656	intel_ringbuffer.c	FUNCTION_15	CALL_8
+0x4000dca	    0x80bb5c060000	               cmp byte [rbx + 0x65c], 5	       658	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000dd1	     0xf866effffff	                           jbe 0x4000d45	       658	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000dd7	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       659	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000dda	    0x8b95a0010000	           mov edx, dword [rbp + 0x1a0] 	       659	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000de0	          0x4889df	                            mov rdi, rbx	       659	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000de3	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       659	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000dea	    0x8db1a8000000	                   lea esi, [rcx + 0xa8]	       659	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000df0	            0xf7d2	                                 not edx	       659	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000df2	      0xb901000000	                              mov ecx, 1	       659	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000df7	      0xe800000000	                          call 0x4000dfc	       659	intel_ringbuffer.c	FUNCTION_15	IF_8
+0x4000dfc	          0x4889ef	                            mov rdi, rbp	       661	intel_ringbuffer.c	FUNCTION_15	CALL_9
+0x4000dff	              0x5b	                                 pop rbx	       662	intel_ringbuffer.c	FUNCTION_15
+0x4000e00	              0x5d	                                 pop rbp	       662	intel_ringbuffer.c	FUNCTION_15
+0x4000e01	      0xe900000000	                           jmp 0x4000e06	       661	intel_ringbuffer.c	FUNCTION_15	CALL_9
+0x4000e06	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       622	intel_ringbuffer.c	FUNCTION_15	CALL_2
+0x4000e0d	      0xb901000000	                              mov ecx, 1	       622	intel_ringbuffer.c	FUNCTION_15	CALL_2
+0x4000e12	      0xba40004000	                       mov edx, 0x400040	       622	intel_ringbuffer.c	FUNCTION_15	CALL_2
+0x4000e17	      0xbe9c200000	                         mov esi, 0x209c	       622	intel_ringbuffer.c	FUNCTION_15	CALL_2
+0x4000e1c	          0x4889df	                            mov rdi, rbx	       622	intel_ringbuffer.c	FUNCTION_15	CALL_2
+0x4000e1f	      0xe800000000	                          call 0x4000e24	       622	intel_ringbuffer.c	FUNCTION_15	CALL_2
+0x4000e24	     0xfb7835a0600	          movzx eax, word [rbx + 0x65a] 	       622	intel_ringbuffer.c	FUNCTION_15	CALL_2
+0x4000e2b	            0xa860	                           test al, 0x60	       630	intel_ringbuffer.c	FUNCTION_15	IF_3
+0x4000e2d	     0xf84f5feffff	                            je 0x4000d28	       630	intel_ringbuffer.c	FUNCTION_15	IF_3
+0x4000e33	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       631	intel_ringbuffer.c	FUNCTION_15	CALL_3
+0x4000e3a	      0xb901000000	                              mov ecx, 1	       631	intel_ringbuffer.c	FUNCTION_15	CALL_3
+0x4000e3f	      0xba00400040	                     mov edx, 0x40004000	       631	intel_ringbuffer.c	FUNCTION_15	CALL_3
+0x4000e44	      0xbe9c200000	                         mov esi, 0x209c	       631	intel_ringbuffer.c	FUNCTION_15	CALL_3
+0x4000e49	          0x4889df	                            mov rdi, rbx	       631	intel_ringbuffer.c	FUNCTION_15	CALL_3
+0x4000e4c	      0xe800000000	                          call 0x4000e51	       631	intel_ringbuffer.c	FUNCTION_15	CALL_3
+0x4000e51	     0xfb7835a0600	          movzx eax, word [rbx + 0x65a] 	       631	intel_ringbuffer.c	FUNCTION_15	CALL_3
+0x4000e58	            0xa820	                           test al, 0x20	       635	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000e5a	     0xf84ccfeffff	                            je 0x4000d2c	       635	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000e60	      0xe9edfeffff	                           jmp 0x4000d52	       635	intel_ringbuffer.c	FUNCTION_15	IF_4
+0x4000e65	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       641	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000e6c	      0xb901000000	                              mov ecx, 1	       641	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000e71	      0xba00280028	                     mov edx, 0x28002800	       641	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000e76	      0xbe9c220000	                         mov esi, 0x229c	       641	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000e7b	          0x4889df	                            mov rdi, rbx	       641	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000e7e	      0xe800000000	                          call 0x4000e83	       641	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000e83	     0xfb7835a0600	          movzx eax, word [rbx + 0x65a] 	       641	intel_ringbuffer.c	FUNCTION_15	IF_5
+0x4000e8a	      0xe9f0feffff	                           jmp 0x4000d7f	       641	intel_ringbuffer.c	FUNCTION_15	IF_5
+intel_init_bsd_ring_buffer	functions,0:DO,0:IF,3:ELSE,2:CALL,2:WHILE,0:FOR,0:SWITCH,0	25
+0x40025c0	          0x4c8b0f	                     mov r9, qword [rdi]	      2071	intel_ringbuffer.c	FUNCTION_70
+0x40025c3	          0x4989f8	                             mov r8, rdi	      2070	intel_ringbuffer.c	FUNCTION_70
+0x40025c6	          0x4889fe	                            mov rsi, rdi	      2073	intel_ringbuffer.c	FUNCTION_70	CALL_1
+0x40025c9	          0x4c89cf	                             mov rdi, r9	      2073	intel_ringbuffer.c	FUNCTION_70	CALL_1
+0x40025cc	      0xe82fddffff	      call sym.intel_ring_default_vfuncs	      2073	intel_ringbuffer.c	FUNCTION_70	CALL_1
+0x40025d1	    0x4180b95c0600	                cmp byte [r9 + 0x65c], 5	      2075	intel_ringbuffer.c	FUNCTION_70	IF_1
+0x40025d9	            0x7633	                           jbe 0x400260e	      2075	intel_ringbuffer.c	FUNCTION_70	IF_1
+0x40025db	    0x41f6815a0600	           test byte [r9 + 0x65a], 0x20 	      2077	intel_ringbuffer.c	FUNCTION_70	IF_1	IF_2
+0x40025e3	            0x740b	                            je 0x40025f0	      2077	intel_ringbuffer.c	FUNCTION_70	IF_1	IF_2
+0x40025e5	    0x49c780d80100	               mov qword [r8 + 0x1d8], 0	      2078	intel_ringbuffer.c	FUNCTION_70	IF_1	IF_2
+0x40025f0	    0x49c780000200	               mov qword [r8 + 0x200], 0	      2079	intel_ringbuffer.c	FUNCTION_70	IF_1
+0x40025fb	    0x41c780a40100	         mov dword [r8 + 0x1a4], 0x1000 	      2080	intel_ringbuffer.c	FUNCTION_70	IF_1
+0x4002606	          0x4c89c7	                             mov rdi, r8	      2090	intel_ringbuffer.c	FUNCTION_70	CALL_2
+0x4002609	      0xe9e2f1ffff	          jmp sym.intel_init_ring_buffer	      2090	intel_ringbuffer.c	FUNCTION_70	CALL_2
+0x400260e	    0x41c740240040	          mov dword [r8 + 0x24], 0x4000 	      2082	intel_ringbuffer.c	FUNCTION_70	ELSE_1
+0x4002616	    0x49c780000200	               mov qword [r8 + 0x200], 0	      2083	intel_ringbuffer.c	FUNCTION_70	ELSE_1
+0x4002621	          0x4c89c7	                             mov rdi, r8	      2090	intel_ringbuffer.c	FUNCTION_70	CALL_2
+0x4002624	    0x410fb7815a06	           movzx eax, word [r9 + 0x65a] 	      2084	intel_ringbuffer.c	FUNCTION_70	ELSE_1	IF_3
+0x400262c	          0x83e010	                           and eax, 0x10	      2084	intel_ringbuffer.c	FUNCTION_70	ELSE_1	IF_3
+0x400262f	        0x6683f801	                               cmp ax, 1	      2085	intel_ringbuffer.c	FUNCTION_70	ELSE_1	IF_3
+0x4002633	            0x19c0	                            sbb eax, eax	      2085	intel_ringbuffer.c	FUNCTION_70	ELSE_1	IF_3
+0x4002635	      0x25e0ffff01	                      and eax, 0x1ffffe0	      2085	intel_ringbuffer.c	FUNCTION_70	ELSE_1	IF_3
+0x400263a	          0x83c020	                           add eax, 0x20	      2085	intel_ringbuffer.c	FUNCTION_70	ELSE_1	IF_3
+0x400263d	    0x418980a40100	             mov dword [r8 + 0x1a4], eax	      2085	intel_ringbuffer.c	FUNCTION_70	ELSE_1	IF_3
+0x4002644	      0xe9a7f1ffff	          jmp sym.intel_init_ring_buffer	      2090	intel_ringbuffer.c	FUNCTION_70	CALL_2
+gen6_sema_emit_breadcrumb	functions,0:DO,0:IF,0:ELSE,0:CALL,2:WHILE,0:FOR,0:SWITCH,0	19
+0x4000100	        0x488b4778	            mov rax, qword [rdi + 0x78] 	       734	intel_ringbuffer.c	FUNCTION_20	CALL_2
+0x4000104	              0x53	                                push rbx	       733	intel_ringbuffer.c	FUNCTION_20
+0x4000105	          0x4889fb	                            mov rbx, rdi	       733	intel_ringbuffer.c	FUNCTION_20
+0x4000108	    0x488b80700200	           mov rax, qword [rax + 0x270] 	       734	intel_ringbuffer.c	FUNCTION_20	CALL_2
+0x400010f	      0xe800000000	                          call 0x4000114	       734	intel_ringbuffer.c	FUNCTION_20	CALL_2
+0x4000114	    0xc70001008010	            mov dword [rax], 0x10800001 	       721	intel_ringbuffer.c	FUNCTION_19
+0x400011a	    0xc74004c00000	               mov dword [rax + 4], 0xc0	       722	intel_ringbuffer.c	FUNCTION_19
+0x4000121	        0x4883c010	                           add rax, 0x10	       724	intel_ringbuffer.c	FUNCTION_19
+0x4000125	    0x8b93b0010000	           mov edx, dword [rbx + 0x1b0] 	       723	intel_ringbuffer.c	FUNCTION_19
+0x400012b	    0xc740fc000000	         mov dword [rax - 4], 0x1000000 	       724	intel_ringbuffer.c	FUNCTION_19
+0x4000132	          0x8950f8	                mov dword [rax - 8], edx	       723	intel_ringbuffer.c	FUNCTION_19
+0x4000135	    0x488b93800000	            mov rdx, qword [rbx + 0x80] 	       723	intel_ringbuffer.c	FUNCTION_19
+0x400013c	        0x482b4208	                sub rax, qword [rdx + 8]	       726	intel_ringbuffer.c	FUNCTION_19	CALL_1
+0x4000140	          0x8b5230	            mov edx, dword [rdx + 0x30] 	       726	intel_ringbuffer.c	FUNCTION_19	CALL_1
+0x4000143	          0x83ea01	                              sub edx, 1	       726	intel_ringbuffer.c	FUNCTION_19	CALL_1
+0x4000146	            0x21d0	                            and eax, edx	       726	intel_ringbuffer.c	FUNCTION_19	CALL_1
+0x4000148	    0x8983bc010000	            mov dword [rbx + 0x1bc], eax	       726	intel_ringbuffer.c	FUNCTION_19	CALL_1
+0x400014e	              0x5b	                                 pop rbx	       735	intel_ringbuffer.c	FUNCTION_20
+0x400014f	              0xc3	                                     ret	       735	intel_ringbuffer.c	FUNCTION_20
+gen6_irq_enable	functions,0:DO,0:IF,0:ELSE,0:CALL,1:WHILE,0:FOR,0:SWITCH,0	18
+0x40010b0	              0x55	                                push rbp	       875	intel_ringbuffer.c	FUNCTION_31
+0x40010b1	              0x53	                                push rbx	       875	intel_ringbuffer.c	FUNCTION_31
+0x40010b2	          0x4889fb	                            mov rbx, rdi	       875	intel_ringbuffer.c	FUNCTION_31
+0x40010b5	    0x8b97a4010000	           mov edx, dword [rdi + 0x1a4] 	       878	intel_ringbuffer.c	FUNCTION_31
+0x40010bb	     0xb97a0010000	             or edx, dword [rdi + 0x1a0]	       878	intel_ringbuffer.c	FUNCTION_31
+0x40010c1	          0x488b2f	                    mov rbp, qword [rdi]	       876	intel_ringbuffer.c	FUNCTION_31
+0x40010c4	          0x8b4f24	            mov ecx, dword [rdi + 0x24] 	       878	intel_ringbuffer.c	FUNCTION_31
+0x40010c7	    0x488b85180800	           mov rax, qword [rbp + 0x818] 	       878	intel_ringbuffer.c	FUNCTION_31
+0x40010ce	    0x8db1a8000000	                   lea esi, [rcx + 0xa8]	       878	intel_ringbuffer.c	FUNCTION_31
+0x40010d4	          0x4889ef	                            mov rdi, rbp	       878	intel_ringbuffer.c	FUNCTION_31
+0x40010d7	            0xf7d2	                                 not edx	       878	intel_ringbuffer.c	FUNCTION_31
+0x40010d9	      0xb901000000	                              mov ecx, 1	       878	intel_ringbuffer.c	FUNCTION_31
+0x40010de	      0xe800000000	                          call 0x40010e3	       878	intel_ringbuffer.c	FUNCTION_31
+0x40010e3	    0x8bb3a4010000	           mov esi, dword [rbx + 0x1a4] 	       881	intel_ringbuffer.c	FUNCTION_31	CALL_1
+0x40010e9	          0x4889ef	                            mov rdi, rbp	       881	intel_ringbuffer.c	FUNCTION_31	CALL_1
+0x40010ec	              0x5b	                                 pop rbx	       882	intel_ringbuffer.c	FUNCTION_31
+0x40010ed	              0x5d	                                 pop rbp	       882	intel_ringbuffer.c	FUNCTION_31
+0x40010ee	      0xe900000000	                           jmp 0x40010f3	       881	intel_ringbuffer.c	FUNCTION_31	CALL_1
+hsw_vebox_irq_enable	functions,0:DO,0:IF,0:ELSE,0:CALL,1:WHILE,0:FOR,0:SWITCH,0	17
+0x40011e0	              0x55	                                push rbp	       895	intel_ringbuffer.c	FUNCTION_33
+0x40011e1	              0x53	                                push rbx	       895	intel_ringbuffer.c	FUNCTION_33
+0x40011e2	          0x4889fb	                            mov rbx, rdi	       895	intel_ringbuffer.c	FUNCTION_33
+0x40011e5	          0x488b2f	                    mov rbp, qword [rdi]	       896	intel_ringbuffer.c	FUNCTION_33
+0x40011e8	          0x8b4f24	            mov ecx, dword [rdi + 0x24] 	       898	intel_ringbuffer.c	FUNCTION_33
+0x40011eb	    0x8b97a4010000	           mov edx, dword [rdi + 0x1a4] 	       898	intel_ringbuffer.c	FUNCTION_33
+0x40011f1	    0x8db1a8000000	                   lea esi, [rcx + 0xa8]	       898	intel_ringbuffer.c	FUNCTION_33
+0x40011f7	          0x4889ef	                            mov rdi, rbp	       898	intel_ringbuffer.c	FUNCTION_33
+0x40011fa	    0x488b85180800	           mov rax, qword [rbp + 0x818] 	       898	intel_ringbuffer.c	FUNCTION_33
+0x4001201	            0xf7d2	                                 not edx	       898	intel_ringbuffer.c	FUNCTION_33
+0x4001203	      0xb901000000	                              mov ecx, 1	       898	intel_ringbuffer.c	FUNCTION_33
+0x4001208	      0xe800000000	                          call 0x400120d	       898	intel_ringbuffer.c	FUNCTION_33
+0x400120d	    0x8bb3a4010000	           mov esi, dword [rbx + 0x1a4] 	       899	intel_ringbuffer.c	FUNCTION_33	CALL_1
+0x4001213	          0x4889ef	                            mov rdi, rbp	       899	intel_ringbuffer.c	FUNCTION_33	CALL_1
+0x4001216	              0x5b	                                 pop rbx	       900	intel_ringbuffer.c	FUNCTION_33
+0x4001217	              0x5d	                                 pop rbp	       900	intel_ringbuffer.c	FUNCTION_33
+0x4001218	      0xe900000000	                           jmp 0x400121d	       899	intel_ringbuffer.c	FUNCTION_33	CALL_1
+gen6_ring_flush	functions,0:DO,0:IF,2:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	18
+0x4002420	              0x53	                                push rbx	      1850	intel_ringbuffer.c	FUNCTION_63
+0x4002421	            0x89f3	                            mov ebx, esi	      1850	intel_ringbuffer.c	FUNCTION_63
+0x4002423	      0xbe04000000	                              mov esi, 4	      1853	intel_ringbuffer.c	FUNCTION_63	CALL_1
+0x4002428	      0xe800000000	                          call 0x400242d	      1853	intel_ringbuffer.c	FUNCTION_63	CALL_1
+0x400242d	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1854	intel_ringbuffer.c	FUNCTION_63	IF_1	CALL_2
+0x4002433	            0x772d	                            ja 0x4002462	      1854	intel_ringbuffer.c	FUNCTION_63	IF_1	CALL_2
+0x4002435	          0x83e301	                              and ebx, 1	      1872	intel_ringbuffer.c	FUNCTION_63	IF_2
+0x4002438	    0xc74004040100	              mov dword [rax + 4], 0x104	      1875	intel_ringbuffer.c	FUNCTION_63
+0x400243f	    0xc74008000000	                  mov dword [rax + 8], 0	      1876	intel_ringbuffer.c	FUNCTION_63
+0x4002446	          0x83fb01	                              cmp ebx, 1	      1873	intel_ringbuffer.c	FUNCTION_63	IF_2
+0x4002449	    0xc7400c000000	                mov dword [rax + 0xc], 0	      1877	intel_ringbuffer.c	FUNCTION_63
+0x4002450	            0x19d2	                            sbb edx, edx	      1873	intel_ringbuffer.c	FUNCTION_63	IF_2
+0x4002452	    0x81e20000fcff	                     and edx, 0xfffc0000	      1873	intel_ringbuffer.c	FUNCTION_63	IF_2
+0x4002458	    0x81c201402413	                     add edx, 0x13244001	      1873	intel_ringbuffer.c	FUNCTION_63	IF_2
+0x400245e	            0x8910	                    mov dword [rax], edx	      1874	intel_ringbuffer.c	FUNCTION_63
+0x4002460	            0x31c0	                            xor eax, eax	      1880	intel_ringbuffer.c	FUNCTION_63
+0x4002462	              0x5b	                                 pop rbx	      1881	intel_ringbuffer.c	FUNCTION_63
+0x4002463	              0xc3	                                     ret	      1881	intel_ringbuffer.c	FUNCTION_63
+i9xx_irq_disable	functions,0:DO,0:IF,0:ELSE,0:CALL,0:WHILE,0:FOR,0:SWITCH,0	10
+0x40001d0	          0x488b07	                    mov rax, qword [rdi]	       833	intel_ringbuffer.c	FUNCTION_27
+0x40001d3	      0xb901000000	                              mov ecx, 1	       836	intel_ringbuffer.c	FUNCTION_27
+0x40001d8	      0xbea8200000	                         mov esi, 0x20a8	       836	intel_ringbuffer.c	FUNCTION_27
+0x40001dd	    0x8b9060480000	          mov edx, dword [rax + 0x4860] 	       835	intel_ringbuffer.c	FUNCTION_27
+0x40001e3	     0xb97a4010000	             or edx, dword [rdi + 0x1a4]	       835	intel_ringbuffer.c	FUNCTION_27
+0x40001e9	          0x4889c7	                            mov rdi, rax	       836	intel_ringbuffer.c	FUNCTION_27
+0x40001ec	    0x4c8b80180800	            mov r8, qword [rax + 0x818] 	       836	intel_ringbuffer.c	FUNCTION_27
+0x40001f3	    0x899060480000	          mov dword [rax + 0x4860], edx 	       835	intel_ringbuffer.c	FUNCTION_27
+0x40001f9	      0xe800000000	                          call 0x40001fe	       836	intel_ringbuffer.c	FUNCTION_27
+0x40001fe	            0xf3c3	                                     ret	       836	intel_ringbuffer.c	FUNCTION_27
+intel_engine_cleanup	functions,0:DO,0:IF,1:ELSE,0:CALL,6:WHILE,0:FOR,0:SWITCH,0	36
+0x4001860	              0x55	                                push rbp	      1350	intel_ringbuffer.c	FUNCTION_49
+0x4001861	              0x53	                                push rbx	      1350	intel_ringbuffer.c	FUNCTION_49
+0x4001862	          0x4889fb	                            mov rbx, rdi	      1350	intel_ringbuffer.c	FUNCTION_49
+0x4001865	          0x488b2f	                    mov rbp, qword [rdi]	      1351	intel_ringbuffer.c	FUNCTION_49
+0x4001868	    0x80bd5c060000	               cmp byte [rbp + 0x65c], 2	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x400186f	            0x7747	                            ja 0x40018b8	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x4001871	        0x488b7b30	            mov rdi, qword [rbx + 0x30] 	      1356	intel_ringbuffer.c	FUNCTION_49	CALL_2
+0x4001875	      0xe800000000	                          call 0x400187a	      1356	intel_ringbuffer.c	FUNCTION_49	CALL_2
+0x400187a	        0x488b7b30	            mov rdi, qword [rbx + 0x30] 	      1357	intel_ringbuffer.c	FUNCTION_49	CALL_3
+0x400187e	      0xe800000000	                          call 0x4001883	      1357	intel_ringbuffer.c	FUNCTION_49	CALL_3
+0x4001883	    0x488b83400200	           mov rax, qword [rbx + 0x240] 	      1359	intel_ringbuffer.c	FUNCTION_49	IF_1
+0x400188a	          0x4885c0	                           test rax, rax	      1359	intel_ringbuffer.c	FUNCTION_49	IF_1
+0x400188d	            0x7408	                            je 0x4001897	      1359	intel_ringbuffer.c	FUNCTION_49	IF_1
+0x400188f	          0x4889df	                            mov rdi, rbx	      1360	intel_ringbuffer.c	FUNCTION_49	CALL_4
+0x4001892	      0xe800000000	                          call 0x4001897	      1360	intel_ringbuffer.c	FUNCTION_49	CALL_4
+0x4001897	          0x4889df	                            mov rdi, rbx	      1362	intel_ringbuffer.c	FUNCTION_49	CALL_5
+0x400189a	      0xe800000000	                          call 0x400189f	      1362	intel_ringbuffer.c	FUNCTION_49	CALL_5
+0x400189f	          0x8b4310	            mov eax, dword [rbx + 0x10] 	      1364	intel_ringbuffer.c	FUNCTION_49
+0x40018a2	          0x4889df	                            mov rdi, rbx	      1365	intel_ringbuffer.c	FUNCTION_49	CALL_6
+0x40018a5	    0x48c784c57846	    mov qword [rbp + rax*8 + 0x4678], 0 	      1364	intel_ringbuffer.c	FUNCTION_49
+0x40018b1	              0x5b	                                 pop rbx	      1366	intel_ringbuffer.c	FUNCTION_49
+0x40018b2	              0x5d	                                 pop rbp	      1366	intel_ringbuffer.c	FUNCTION_49
+0x40018b3	      0xe900000000	                           jmp 0x40018b8	      1365	intel_ringbuffer.c	FUNCTION_49	CALL_6
+0x40018b8	          0x8b4f24	            mov ecx, dword [rdi + 0x24] 	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018bb	    0x488b85f80700	           mov rax, qword [rbp + 0x7f8] 	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018c2	      0xba01000000	                              mov edx, 1	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018c7	          0x4889ef	                            mov rdi, rbp	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018ca	    0x8db19c000000	                   lea esi, [rcx + 0x9c]	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018d0	      0xe800000000	                          call 0x40018d5	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018d5	          0xf6c402	                              test ah, 2	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018d8	            0x7597	                           jne 0x4001871	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018da	    0x48c7c6000000	                              mov rsi, 0	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018e1	    0x48c7c7000000	                              mov rdi, 0	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018e8	      0xe800000000	                          call 0x40018ed	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018ed	             0xf0b	                                     ud2	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+0x40018ef	            0xeb80	                           jmp 0x4001871	      1353	intel_ringbuffer.c	FUNCTION_49	CALL_1
+intel_init_vebox_ring_buffer	functions,0:DO,0:IF,0:ELSE,0:CALL,2:WHILE,0:FOR,0:SWITCH,0	10
+0x4002680	          0x4989f8	                             mov r8, rdi	      2106	intel_ringbuffer.c	FUNCTION_72
+0x4002683	          0x4889fe	                            mov rsi, rdi	      2109	intel_ringbuffer.c	FUNCTION_72	CALL_1
+0x4002686	          0x488b3f	                    mov rdi, qword [rdi]	      2109	intel_ringbuffer.c	FUNCTION_72	CALL_1
+0x4002689	      0xe872dcffff	      call sym.intel_ring_default_vfuncs	      2109	intel_ringbuffer.c	FUNCTION_72	CALL_1
+0x400268e	    0x49c780000200	               mov qword [r8 + 0x200], 0	      2111	intel_ringbuffer.c	FUNCTION_72
+0x4002699	    0x41c780a40100	          mov dword [r8 + 0x1a4], 0x400 	      2112	intel_ringbuffer.c	FUNCTION_72
+0x40026a4	          0x4c89c7	                             mov rdi, r8	      2116	intel_ringbuffer.c	FUNCTION_72	CALL_2
+0x40026a7	    0x49c780a80100	               mov qword [r8 + 0x1a8], 0	      2113	intel_ringbuffer.c	FUNCTION_72
+0x40026b2	    0x49c780b00100	               mov qword [r8 + 0x1b0], 0	      2114	intel_ringbuffer.c	FUNCTION_72
+0x40026bd	      0xe92ef1ffff	          jmp sym.intel_init_ring_buffer	      2116	intel_ringbuffer.c	FUNCTION_72	CALL_2
+intel_ring_free	functions,0:DO,0:IF,0:ELSE,0:CALL,3:WHILE,0:FOR,0:SWITCH,0	12
+0x40017c0	              0x55	                                push rbp	      1154	intel_ringbuffer.c	FUNCTION_43
+0x40017c1	              0x53	                                push rbx	      1154	intel_ringbuffer.c	FUNCTION_43
+0x40017c2	          0x4889fb	                            mov rbx, rdi	      1154	intel_ringbuffer.c	FUNCTION_43
+0x40017c5	          0x488b3f	                    mov rdi, qword [rdi]	      1155	intel_ringbuffer.c	FUNCTION_43
+0x40017c8	    0x488bafa00000	            mov rbp, qword [rdi + 0xa0] 	      1155	intel_ringbuffer.c	FUNCTION_43
+0x40017cf	      0xe800000000	                          call 0x40017d4	      1157	intel_ringbuffer.c	FUNCTION_43	CALL_1
+0x40017d4	          0x4889ef	                            mov rdi, rbp	      1158	intel_ringbuffer.c	FUNCTION_43	CALL_2
+0x40017d7	      0xe800000000	                          call 0x40017dc	      1158	intel_ringbuffer.c	FUNCTION_43	CALL_2
+0x40017dc	          0x4889df	                            mov rdi, rbx	      1160	intel_ringbuffer.c	FUNCTION_43	CALL_3
+0x40017df	              0x5b	                                 pop rbx	      1161	intel_ringbuffer.c	FUNCTION_43
+0x40017e0	              0x5d	                                 pop rbp	      1161	intel_ringbuffer.c	FUNCTION_43
+0x40017e1	      0xe900000000	                           jmp 0x40017e6	      1160	intel_ringbuffer.c	FUNCTION_43	CALL_3
+gen6_ring_sync_to	functions,0:DO,0:IF,1:ELSE,0:CALL,5:WHILE,0:FOR,0:SWITCH,0	33
+0x4002320	            0x4154	                                push r12	       739	intel_ringbuffer.c	FUNCTION_21
+0x4002322	              0x55	                                push rbp	       739	intel_ringbuffer.c	FUNCTION_21
+0x4002323	          0x4989f4	                            mov r12, rsi	       739	intel_ringbuffer.c	FUNCTION_21
+0x4002326	              0x53	                                push rbx	       739	intel_ringbuffer.c	FUNCTION_21
+0x4002327	        0x488b5778	            mov rdx, qword [rdi + 0x78] 	       743	intel_ringbuffer.c	FUNCTION_21
+0x400232b	          0x4889fd	                            mov rbp, rdi	       739	intel_ringbuffer.c	FUNCTION_21
+0x400232e	        0x488b4678	            mov rax, qword [rsi + 0x78] 	       743	intel_ringbuffer.c	FUNCTION_21
+0x4002332	          0x8b5214	            mov edx, dword [rdx + 0x14] 	       743	intel_ringbuffer.c	FUNCTION_21
+0x4002335	    0x8b9c90480200	   mov ebx, dword [rax + rdx*4 + 0x248] 	       743	intel_ringbuffer.c	FUNCTION_21
+0x400233c	    0x81fb00000300	                        cmp ebx, 0x30000	       746	intel_ringbuffer.c	FUNCTION_21	CALL_1
+0x4002342	            0x7440	                            je 0x4002384	       746	intel_ringbuffer.c	FUNCTION_21	CALL_1
+0x4002344	      0xbe04000000	                              mov esi, 4	       748	intel_ringbuffer.c	FUNCTION_21	CALL_2
+0x4002349	          0x4889ef	                            mov rdi, rbp	       748	intel_ringbuffer.c	FUNCTION_21	CALL_2
+0x400234c	      0xe800000000	                          call 0x4002351	       748	intel_ringbuffer.c	FUNCTION_21	CALL_2
+0x4002351	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       749	intel_ringbuffer.c	FUNCTION_21	IF_1	CALL_3
+0x4002357	            0x7726	                            ja 0x400237f	       749	intel_ringbuffer.c	FUNCTION_21	IF_1	CALL_3
+0x4002359	    0x81cb0100140b	                       or ebx, 0xb140001	       752	intel_ringbuffer.c	FUNCTION_21
+0x400235f	            0x8918	                    mov dword [rax], ebx	       752	intel_ringbuffer.c	FUNCTION_21
+0x4002361	    0x418b9424b001	           mov edx, dword [r12 + 0x1b0] 	       757	intel_ringbuffer.c	FUNCTION_21
+0x4002369	    0xc74008000000	                  mov dword [rax + 8], 0	       758	intel_ringbuffer.c	FUNCTION_21
+0x4002370	    0xc7400c000000	                mov dword [rax + 0xc], 0	       759	intel_ringbuffer.c	FUNCTION_21
+0x4002377	          0x83ea01	                              sub edx, 1	       757	intel_ringbuffer.c	FUNCTION_21
+0x400237a	          0x895004	                mov dword [rax + 4], edx	       757	intel_ringbuffer.c	FUNCTION_21
+0x400237d	            0x31c0	                            xor eax, eax	       762	intel_ringbuffer.c	FUNCTION_21
+0x400237f	              0x5b	                                 pop rbx	       763	intel_ringbuffer.c	FUNCTION_21
+0x4002380	              0x5d	                                 pop rbp	       763	intel_ringbuffer.c	FUNCTION_21
+0x4002381	            0x415c	                                 pop r12	       763	intel_ringbuffer.c	FUNCTION_21
+0x4002383	              0xc3	                                     ret	       763	intel_ringbuffer.c	FUNCTION_21
+0x4002384	    0x48c7c6000000	                              mov rsi, 0	       746	intel_ringbuffer.c	FUNCTION_21	CALL_1
+0x400238b	    0x48c7c7000000	                              mov rdi, 0	       746	intel_ringbuffer.c	FUNCTION_21	CALL_1
+0x4002392	      0xe800000000	                          call 0x4002397	       746	intel_ringbuffer.c	FUNCTION_21	CALL_1
+0x4002397	             0xf0b	                                     ud2	       746	intel_ringbuffer.c	FUNCTION_21	CALL_1
+0x4002399	            0xeba9	                           jmp 0x4002344	       746	intel_ringbuffer.c	FUNCTION_21	CALL_1
+gen6_bsd_set_default_submission	functions,0:DO,0:IF,0:ELSE,0:CALL,1:WHILE,0:FOR,0:SWITCH,0	5
+0x40002d0	    0x48c787300200	              mov qword [rdi + 0x230], 0	      1968	intel_ringbuffer.c	FUNCTION_66
+0x40002db	    0x48c787c80100	              mov qword [rdi + 0x1c8], 0	      1970	intel_ringbuffer.c	FUNCTION_66
+0x40002e6	    0x48c787d00100	              mov qword [rdi + 0x1d0], 0	      1971	intel_ringbuffer.c	FUNCTION_66
+0x40002f1	    0x48c787200200	              mov qword [rdi + 0x220], 0	      1977	intel_ringbuffer.c	FUNCTION_67
+0x40002fc	              0xc3	                                     ret	      1977	intel_ringbuffer.c	FUNCTION_67
+gen6_bsd_ring_flush	functions,0:DO,0:IF,2:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	18
+0x40023d0	              0x53	                                push rbx	      1772	intel_ringbuffer.c	FUNCTION_60
+0x40023d1	            0x89f3	                            mov ebx, esi	      1772	intel_ringbuffer.c	FUNCTION_60
+0x40023d3	      0xbe04000000	                              mov esi, 4	      1775	intel_ringbuffer.c	FUNCTION_60	CALL_1
+0x40023d8	      0xe800000000	                          call 0x40023dd	      1775	intel_ringbuffer.c	FUNCTION_60	CALL_1
+0x40023dd	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1776	intel_ringbuffer.c	FUNCTION_60	IF_1	CALL_2
+0x40023e3	            0x772d	                            ja 0x4002412	      1776	intel_ringbuffer.c	FUNCTION_60	IF_1	CALL_2
+0x40023e5	          0x83e301	                              and ebx, 1	      1794	intel_ringbuffer.c	FUNCTION_60	IF_2
+0x40023e8	    0xc74004040100	              mov dword [rax + 4], 0x104	      1798	intel_ringbuffer.c	FUNCTION_60
+0x40023ef	    0xc74008000000	                  mov dword [rax + 8], 0	      1799	intel_ringbuffer.c	FUNCTION_60
+0x40023f6	          0x83fb01	                              cmp ebx, 1	      1795	intel_ringbuffer.c	FUNCTION_60	IF_2
+0x40023f9	    0xc7400c000000	                mov dword [rax + 0xc], 0	      1800	intel_ringbuffer.c	FUNCTION_60
+0x4002400	            0x19d2	                            sbb edx, edx	      1795	intel_ringbuffer.c	FUNCTION_60	IF_2
+0x4002402	    0x81e280fffbff	                     and edx, 0xfffbff80	      1795	intel_ringbuffer.c	FUNCTION_60	IF_2
+0x4002408	    0x81c281402413	                     add edx, 0x13244081	      1795	intel_ringbuffer.c	FUNCTION_60	IF_2
+0x400240e	            0x8910	                    mov dword [rax], edx	      1797	intel_ringbuffer.c	FUNCTION_60
+0x4002410	            0x31c0	                            xor eax, eax	      1802	intel_ringbuffer.c	FUNCTION_60
+0x4002412	              0x5b	                                 pop rbx	      1803	intel_ringbuffer.c	FUNCTION_60
+0x4002413	              0xc3	                                     ret	      1803	intel_ringbuffer.c	FUNCTION_60
+i965_emit_bb_start	functions,0:DO,0:IF,1:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	19
+0x4001de0	              0x55	                                push rbp	       915	intel_ringbuffer.c	FUNCTION_35
+0x4001de1	              0x53	                                push rbx	       915	intel_ringbuffer.c	FUNCTION_35
+0x4001de2	          0x4889f5	                            mov rbp, rsi	       915	intel_ringbuffer.c	FUNCTION_35
+0x4001de5	      0xbe02000000	                              mov esi, 2	       918	intel_ringbuffer.c	FUNCTION_35	CALL_1
+0x4001dea	            0x89cb	                            mov ebx, ecx	       915	intel_ringbuffer.c	FUNCTION_35
+0x4001dec	      0xe800000000	                          call 0x4001df1	       918	intel_ringbuffer.c	FUNCTION_35	CALL_1
+0x4001df1	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       919	intel_ringbuffer.c	FUNCTION_35	IF_1	CALL_2
+0x4001df7	            0x771b	                            ja 0x4001e14	       919	intel_ringbuffer.c	FUNCTION_35	IF_1	CALL_2
+0x4001df9	          0x83e301	                              and ebx, 1	       922	intel_ringbuffer.c	FUNCTION_35
+0x4001dfc	          0x896804	                mov dword [rax + 4], ebp	       924	intel_ringbuffer.c	FUNCTION_35
+0x4001dff	          0x83fb01	                              cmp ebx, 1	       922	intel_ringbuffer.c	FUNCTION_35
+0x4001e02	            0x19d2	                            sbb edx, edx	       922	intel_ringbuffer.c	FUNCTION_35
+0x4001e04	    0x81e200010000	                          and edx, 0x100	       922	intel_ringbuffer.c	FUNCTION_35
+0x4001e0a	    0x81c280008018	                     add edx, 0x18800080	       922	intel_ringbuffer.c	FUNCTION_35
+0x4001e10	            0x8910	                    mov dword [rax], edx	       922	intel_ringbuffer.c	FUNCTION_35
+0x4001e12	            0x31c0	                            xor eax, eax	       927	intel_ringbuffer.c	FUNCTION_35
+0x4001e14	              0x5b	                                 pop rbx	       928	intel_ringbuffer.c	FUNCTION_35
+0x4001e15	              0x5d	                                 pop rbp	       928	intel_ringbuffer.c	FUNCTION_35
+0x4001e16	              0xc3	                                     ret	       928	intel_ringbuffer.c	FUNCTION_35
+intel_legacy_submission_resume	functions,0:DO,0:IF,0:ELSE,0:CALL,1:WHILE,0:FOR,0:SWITCH,0	17
+0x4001900	    0x488d8f784600	                 lea rcx, [rdi + 0x4678]	      1369	intel_ringbuffer.c	FUNCTION_50
+0x4001907	    0x4881c7b84600	                         add rdi, 0x46b8	      1369	intel_ringbuffer.c	FUNCTION_50
+0x400190e	          0x488b01	                    mov rax, qword [rcx]	      1374	intel_ringbuffer.c	FUNCTION_50
+0x4001911	          0x4885c0	                           test rax, rax	      1374	intel_ringbuffer.c	FUNCTION_50
+0x4001914	            0x7425	                            je 0x400193b	      1374	intel_ringbuffer.c	FUNCTION_50
+0x4001916	        0x488b4030	            mov rax, qword [rax + 0x30] 	      1375	intel_ringbuffer.c	FUNCTION_50	CALL_1
+0x400191a	          0x8b7030	            mov esi, dword [rax + 0x30] 	        64	intel_ringbuffer.c	FUNCTION_2
+0x400191d	    0xc74024000000	               mov dword [rax + 0x24], 0	      1066	intel_ringbuffer.c	FUNCTION_39
+0x4001924	    0xc74020000000	               mov dword [rax + 0x20], 0	      1067	intel_ringbuffer.c	FUNCTION_39
+0x400192b	    0xc74028000000	               mov dword [rax + 0x28], 0	      1068	intel_ringbuffer.c	FUNCTION_39
+0x4001932	          0x8d56ff	                      lea edx, [rsi - 1]	        64	intel_ringbuffer.c	FUNCTION_2
+0x4001935	          0x83e2c0	                     and edx, 0xffffffc0	        64	intel_ringbuffer.c	FUNCTION_2
+0x4001938	          0x89502c	             mov dword [rax + 0x2c], edx	        64	intel_ringbuffer.c	FUNCTION_2
+0x400193b	        0x4883c108	                              add rcx, 8	        64	intel_ringbuffer.c	FUNCTION_2
+0x400193f	          0x4839f9	                            cmp rcx, rdi	      1374	intel_ringbuffer.c	FUNCTION_50
+0x4001942	            0x75ca	                           jne 0x400190e	      1374	intel_ringbuffer.c	FUNCTION_50
+0x4001944	            0xf3c3	                                     ret	      1376	intel_ringbuffer.c	FUNCTION_50
+bsd_ring_flush	functions,0:DO,0:IF,1:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	8
+0x40023a0	      0xbe02000000	                              mov esi, 2	       863	intel_ringbuffer.c	FUNCTION_30	CALL_1
+0x40023a5	      0xe800000000	                          call 0x40023aa	       863	intel_ringbuffer.c	FUNCTION_30	CALL_1
+0x40023aa	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       864	intel_ringbuffer.c	FUNCTION_30	IF_1	CALL_2
+0x40023b0	            0x770f	                            ja 0x40023c1	       864	intel_ringbuffer.c	FUNCTION_30	IF_1	CALL_2
+0x40023b2	    0xc70000000002	              mov dword [rax], 0x2000000	       867	intel_ringbuffer.c	FUNCTION_30
+0x40023b8	    0xc74004000000	                  mov dword [rax + 4], 0	       868	intel_ringbuffer.c	FUNCTION_30
+0x40023bf	            0x31c0	                            xor eax, eax	       870	intel_ringbuffer.c	FUNCTION_30
+0x40023c1	            0xf3c3	                                     ret	       871	intel_ringbuffer.c	FUNCTION_30
+intel_ring_cacheline_align	functions,0:DO,0:IF,2:ELSE,0:CALL,4:WHILE,1:FOR,0:SWITCH,0	24
+0x4002470	    0x488b87800000	            mov rax, qword [rdi + 0x80] 	      1715	intel_ringbuffer.c	FUNCTION_58
+0x4002477	              0x53	                                push rbx	      1714	intel_ringbuffer.c	FUNCTION_58
+0x4002478	          0x8b5828	            mov ebx, dword [rax + 0x28] 	      1715	intel_ringbuffer.c	FUNCTION_58
+0x400247b	          0x83e33f	                           and ebx, 0x3f	      1715	intel_ringbuffer.c	FUNCTION_58
+0x400247e	        0x48c1eb02	                              shr rbx, 2	      1715	intel_ringbuffer.c	FUNCTION_58
+0x4002482	          0x4885db	                           test rbx, rbx	      1718	intel_ringbuffer.c	FUNCTION_58	IF_1
+0x4002485	            0x7504	                           jne 0x400248b	      1718	intel_ringbuffer.c	FUNCTION_58	IF_1
+0x4002487	            0x31c0	                            xor eax, eax	      1719	intel_ringbuffer.c	FUNCTION_58	IF_1
+0x4002489	              0x5b	                                 pop rbx	      1732	intel_ringbuffer.c	FUNCTION_58
+0x400248a	              0xc3	                                     ret	      1732	intel_ringbuffer.c	FUNCTION_58
+0x400248b	      0xbe10000000	                           mov esi, 0x10	      1722	intel_ringbuffer.c	FUNCTION_58	CALL_1
+0x4002490	            0x29de	                            sub esi, ebx	      1722	intel_ringbuffer.c	FUNCTION_58	CALL_1
+0x4002492	      0xe800000000	                          call 0x4002497	      1722	intel_ringbuffer.c	FUNCTION_58	CALL_1
+0x4002497	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1723	intel_ringbuffer.c	FUNCTION_58	IF_2	CALL_2
+0x400249d	            0x77ea	                            ja 0x4002489	      1723	intel_ringbuffer.c	FUNCTION_58	IF_2	CALL_2
+0x400249f	      0xba0f000000	                            mov edx, 0xf	      1723	intel_ringbuffer.c	FUNCTION_58	IF_2	CALL_2
+0x40024a4	            0x29da	                            sub edx, ebx	      1723	intel_ringbuffer.c	FUNCTION_58	IF_2	CALL_2
+0x40024a6	      0x488d549004	              lea rdx, [rax + rdx*4 + 4]	      1723	intel_ringbuffer.c	FUNCTION_58	IF_2	CALL_2
+0x40024ab	        0x4883c004	                              add rax, 4	      1727	intel_ringbuffer.c	FUNCTION_58	WHILE_1
+0x40024af	    0xc740fc000000	                  mov dword [rax - 4], 0	      1727	intel_ringbuffer.c	FUNCTION_58	WHILE_1
+0x40024b6	          0x4839c2	                            cmp rdx, rax	      1726	intel_ringbuffer.c	FUNCTION_58	WHILE_1
+0x40024b9	            0x75f0	                           jne 0x40024ab	      1726	intel_ringbuffer.c	FUNCTION_58	WHILE_1
+0x40024bb	            0x31c0	                            xor eax, eax	      1719	intel_ringbuffer.c	FUNCTION_58	IF_1
+0x40024bd	            0xebca	                           jmp 0x4002489	      1719	intel_ringbuffer.c	FUNCTION_58	IF_1
+wait_for_space	functions,1:DO,0:IF,3:ELSE,0:CALL,7:WHILE,0:FOR,0:SWITCH,0	57
+0x40004f0	          0x8b4730	            mov eax, dword [rdi + 0x30] 	        55	intel_ringbuffer.c	FUNCTION_1
+0x40004f3	        0x448b4728	            mov r8d, dword [rdi + 0x28] 	        62	intel_ringbuffer.c	FUNCTION_2	CALL_1
+0x40004f7	          0x8d50ff	                      lea edx, [rax - 1]	        55	intel_ringbuffer.c	FUNCTION_1
+0x40004fa	          0x8b4720	            mov eax, dword [rdi + 0x20] 	        55	intel_ringbuffer.c	FUNCTION_1
+0x40004fd	          0x8d48c0	                   lea ecx, [rax - 0x40]	        55	intel_ringbuffer.c	FUNCTION_1
+0x4000500	            0x31c0	                            xor eax, eax	      1594	intel_ringbuffer.c	FUNCTION_55	IF_1
+0x4000502	          0x4429c1	                            sub ecx, r8d	        55	intel_ringbuffer.c	FUNCTION_1
+0x4000505	            0x21d1	                            and ecx, edx	        55	intel_ringbuffer.c	FUNCTION_1
+0x4000507	            0x39ce	                            cmp esi, ecx	      1593	intel_ringbuffer.c	FUNCTION_55	IF_1	CALL_2
+0x4000509	          0x894f2c	             mov dword [rdi + 0x2c], ecx	        64	intel_ringbuffer.c	FUNCTION_2
+0x400050c	            0x7679	                           jbe 0x4000587	      1593	intel_ringbuffer.c	FUNCTION_55	IF_1	CALL_2
+0x400050e	              0x55	                                push rbp	      1587	intel_ringbuffer.c	FUNCTION_55
+0x400050f	              0x53	                                push rbx	      1587	intel_ringbuffer.c	FUNCTION_55
+0x4000510	        0x488d4f10	                   lea rcx, [rdi + 0x10]	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x4000514	        0x488b4710	            mov rax, qword [rdi + 0x10] 	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x4000518	          0x4889fd	                            mov rbp, rdi	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x400051b	          0x4839c1	                            cmp rcx, rax	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x400051e	    0x488d98f8fdff	                  lea rbx, [rax - 0x208]	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x4000525	            0x7515	                           jne 0x400053c	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x4000527	            0xeb60	                           jmp 0x4000589	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x4000529	    0x488b83080200	           mov rax, qword [rbx + 0x208] 	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x4000530	          0x4839c1	                            cmp rcx, rax	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x4000533	    0x488d98f8fdff	                  lea rbx, [rax - 0x208]	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x400053a	            0x744d	                            je 0x4000589	      1596	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1
+0x400053c	          0x8b40b0	             mov eax, dword [rax - 0x50]	      1598	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1	IF_1	CALL_1
+0x400053f	          0x83e840	                           sub eax, 0x40	      1598	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1	IF_1	CALL_1
+0x4000542	          0x4429c0	                            sub eax, r8d	      1598	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1	IF_1	CALL_1
+0x4000545	            0x21d0	                            and eax, edx	      1598	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1	IF_1	CALL_1
+0x4000547	            0x39c6	                            cmp esi, eax	      1598	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1	IF_1	CALL_1
+0x4000549	            0x77de	                            ja 0x4000529	      1598	intel_ringbuffer.c	FUNCTION_55	FUNCTION_1	IF_1	CALL_1
+0x400054b	    0x48baffffffff	         movabs rdx, 0x7fffffffffffffff 	      1606	intel_ringbuffer.c	FUNCTION_55	CALL_4
+0x4000555	      0xbe03000000	                              mov esi, 3	      1606	intel_ringbuffer.c	FUNCTION_55	CALL_4
+0x400055a	          0x4889df	                            mov rdi, rbx	      1606	intel_ringbuffer.c	FUNCTION_55	CALL_4
+0x400055d	      0xe800000000	                          call 0x4000562	      1606	intel_ringbuffer.c	FUNCTION_55	CALL_4
+0x4000562	          0x4885c0	                           test rax, rax	      1609	intel_ringbuffer.c	FUNCTION_55	IF_3
+0x4000565	            0x781e	                            js 0x4000585	      1609	intel_ringbuffer.c	FUNCTION_55	IF_3
+0x4000567	          0x4889df	                            mov rdi, rbx	      1612	intel_ringbuffer.c	FUNCTION_55	CALL_5
+0x400056a	      0xe800000000	                          call 0x400056f	      1612	intel_ringbuffer.c	FUNCTION_55	CALL_5
+0x400056f	          0x8b4520	            mov eax, dword [rbp + 0x20] 	        64	intel_ringbuffer.c	FUNCTION_2
+0x4000572	          0x8b7d30	            mov edi, dword [rbp + 0x30] 	        64	intel_ringbuffer.c	FUNCTION_2
+0x4000575	          0x83e840	                           sub eax, 0x40	        64	intel_ringbuffer.c	FUNCTION_2
+0x4000578	          0x2b4528	             sub eax, dword [rbp + 0x28]	        64	intel_ringbuffer.c	FUNCTION_2
+0x400057b	          0x8d57ff	                      lea edx, [rdi - 1]	        64	intel_ringbuffer.c	FUNCTION_2
+0x400057e	            0x21d0	                            and eax, edx	        64	intel_ringbuffer.c	FUNCTION_2
+0x4000580	          0x89452c	            mov dword [rbp + 0x2c], eax 	        64	intel_ringbuffer.c	FUNCTION_2
+0x4000583	            0x31c0	                            xor eax, eax	      1616	intel_ringbuffer.c	FUNCTION_55
+0x4000585	              0x5b	                                 pop rbx	      1617	intel_ringbuffer.c	FUNCTION_55
+0x4000586	              0x5d	                                 pop rbp	      1617	intel_ringbuffer.c	FUNCTION_55
+0x4000587	            0xf3c3	                                     ret	      1617	intel_ringbuffer.c	FUNCTION_55
+0x4000589	    0x48c7c6000000	                              mov rsi, 0	      1603	intel_ringbuffer.c	FUNCTION_55	IF_2	CALL_3
+0x4000590	    0x48c7c7000000	                              mov rdi, 0	      1603	intel_ringbuffer.c	FUNCTION_55	IF_2	CALL_3
+0x4000597	      0xe800000000	                          call 0x400059c	      1603	intel_ringbuffer.c	FUNCTION_55	IF_2	CALL_3
+0x400059c	             0xf0b	                                     ud2	      1603	intel_ringbuffer.c	FUNCTION_55	IF_2	CALL_3
+0x400059e	      0xb8e4ffffff	                     mov eax, 0xffffffe4	      1604	intel_ringbuffer.c	FUNCTION_55	IF_2
+0x40005a3	              0x5b	                                 pop rbx	      1617	intel_ringbuffer.c	FUNCTION_55
+0x40005a4	              0x5d	                                 pop rbp	      1617	intel_ringbuffer.c	FUNCTION_55
+0x40005a5	            0xebe0	                           jmp 0x4000587	      1617	intel_ringbuffer.c	FUNCTION_55
+i8xx_irq_enable	functions,0:DO,0:IF,0:ELSE,0:CALL,1:WHILE,0:FOR,0:SWITCH,0	23
+0x4000200	              0x55	                                push rbp	       841	intel_ringbuffer.c	FUNCTION_28
+0x4000201	              0x53	                                push rbx	       841	intel_ringbuffer.c	FUNCTION_28
+0x4000202	          0x4889fd	                            mov rbp, rdi	       841	intel_ringbuffer.c	FUNCTION_28
+0x4000205	          0x488b1f	                    mov rbx, qword [rdi]	       842	intel_ringbuffer.c	FUNCTION_28
+0x4000208	    0x8b97a4010000	           mov edx, dword [rdi + 0x1a4] 	       844	intel_ringbuffer.c	FUNCTION_28
+0x400020e	      0xb901000000	                              mov ecx, 1	       845	intel_ringbuffer.c	FUNCTION_28
+0x4000213	      0xbea8200000	                         mov esi, 0x20a8	       845	intel_ringbuffer.c	FUNCTION_28
+0x4000218	            0xf7d2	                                 not edx	       844	intel_ringbuffer.c	FUNCTION_28
+0x400021a	    0x239360480000	           and edx, dword [rbx + 0x4860]	       844	intel_ringbuffer.c	FUNCTION_28
+0x4000220	    0x488b83100800	           mov rax, qword [rbx + 0x810] 	       845	intel_ringbuffer.c	FUNCTION_28
+0x4000227	          0x4889df	                            mov rdi, rbx	       845	intel_ringbuffer.c	FUNCTION_28
+0x400022a	    0x899360480000	          mov dword [rbx + 0x4860], edx 	       844	intel_ringbuffer.c	FUNCTION_28
+0x4000230	           0xfb7d2	                           movzx edx, dx	       845	intel_ringbuffer.c	FUNCTION_28
+0x4000233	      0xe800000000	                          call 0x4000238	       845	intel_ringbuffer.c	FUNCTION_28
+0x4000238	          0x8b7524	            mov esi, dword [rbp + 0x24] 	       846	intel_ringbuffer.c	FUNCTION_28	CALL_1
+0x400023b	    0x488b83f00700	           mov rax, qword [rbx + 0x7f0] 	       846	intel_ringbuffer.c	FUNCTION_28	CALL_1
+0x4000242	          0x4889df	                            mov rdi, rbx	       846	intel_ringbuffer.c	FUNCTION_28	CALL_1
+0x4000245	            0x31d2	                            xor edx, edx	       846	intel_ringbuffer.c	FUNCTION_28	CALL_1
+0x4000247	    0x81c6a8000000	                           add esi, 0xa8	       846	intel_ringbuffer.c	FUNCTION_28	CALL_1
+0x400024d	      0xe800000000	                          call 0x4000252	       846	intel_ringbuffer.c	FUNCTION_28	CALL_1
+0x4000252	              0x5b	                                 pop rbx	       847	intel_ringbuffer.c	FUNCTION_28
+0x4000253	              0x5d	                                 pop rbp	       847	intel_ringbuffer.c	FUNCTION_28
+0x4000254	              0xc3	                                     ret	       847	intel_ringbuffer.c	FUNCTION_28
+intel_ring_default_vfuncs	functions,0:DO,0:IF,5:ELSE,3:CALL,3:WHILE,0:FOR,0:SWITCH,0	79
+0x4000300	          0x8b4e28	            mov ecx, dword [rsi + 0x28] 	      1946	intel_ringbuffer.c	FUNCTION_65
+0x4000303	      0xb801000000	                              mov eax, 1	      1946	intel_ringbuffer.c	FUNCTION_65
+0x4000308	            0xd3e0	                             shl eax, cl	      1946	intel_ringbuffer.c	FUNCTION_65
+0x400030a	    0x8986a4010000	            mov dword [rsi + 0x1a4], eax	      1946	intel_ringbuffer.c	FUNCTION_65
+0x4000310	     0xfb6875c0600	          movzx eax, byte [rdi + 0x65c] 	      1948	intel_ringbuffer.c	FUNCTION_65	IF_1
+0x4000317	            0x3c05	                               cmp al, 5	      1948	intel_ringbuffer.c	FUNCTION_65	IF_1
+0x4000319	     0xf863f010000	                           jbe 0x400045e	      1948	intel_ringbuffer.c	FUNCTION_65	IF_1
+0x400031f	    0x48c786a80100	              mov qword [rsi + 0x1a8], 0	      1949	intel_ringbuffer.c	FUNCTION_65	IF_1
+0x400032a	    0x48c786b00100	              mov qword [rsi + 0x1b0], 0	      1950	intel_ringbuffer.c	FUNCTION_65	IF_1
+0x4000335	    0x48c786380200	              mov qword [rsi + 0x238], 0	      1951	intel_ringbuffer.c	FUNCTION_65	IF_1
+0x4000340	    0xf6875a060000	          test byte [rdi + 0x65a], 0x40 	      1888	intel_ringbuffer.c	FUNCTION_64	IF_1
+0x4000347	            0x7450	                            je 0x4000399	      1888	intel_ringbuffer.c	FUNCTION_64	IF_1
+0x4000349	    0x48c786680200	              mov qword [rsi + 0x268], 0	      1892	intel_ringbuffer.c	FUNCTION_64
+0x4000354	    0x48c786700200	              mov qword [rsi + 0x270], 0	      1893	intel_ringbuffer.c	FUNCTION_64
+0x400035f	            0x31c0	                            xor eax, eax	      1893	intel_ringbuffer.c	FUNCTION_64
+0x4000361	          0x8b5614	            mov edx, dword [rsi + 0x14] 	      1930	intel_ringbuffer.c	FUNCTION_64	FOR_1	IF_2
+0x4000364	            0x39c2	                            cmp edx, eax	      1930	intel_ringbuffer.c	FUNCTION_64	FOR_1	IF_2
+0x4000366	     0xf84e6000000	                            je 0x4000452	      1930	intel_ringbuffer.c	FUNCTION_64	FOR_1	IF_2
+0x400036c	          0x4863c8	                         movsxd rcx, eax	      1934	intel_ringbuffer.c	FUNCTION_64	FOR_1	ELSE_1
+0x400036f	        0x488d1491	                  lea rdx, [rcx + rdx*4]	      1934	intel_ringbuffer.c	FUNCTION_64	FOR_1	ELSE_1
+0x4000373	    0x8b0cd5000000	                  mov ecx, dword [rdx*8]	      1934	intel_ringbuffer.c	FUNCTION_64	FOR_1	ELSE_1
+0x400037a	    0x8b14d5000000	                  mov edx, dword [rdx*8]	      1935	intel_ringbuffer.c	FUNCTION_64	FOR_1	ELSE_1
+0x4000381	    0x898c86480200	    mov dword [rsi + rax*4 + 0x248], ecx	      1938	intel_ringbuffer.c	FUNCTION_64	FOR_1
+0x4000388	    0x899486580200	    mov dword [rsi + rax*4 + 0x258], edx	      1939	intel_ringbuffer.c	FUNCTION_64	FOR_1
+0x400038f	        0x4883c001	                              add rax, 1	      1939	intel_ringbuffer.c	FUNCTION_64	FOR_1
+0x4000393	        0x4883f804	                              cmp rax, 4	      1901	intel_ringbuffer.c	FUNCTION_64	FOR_1
+0x4000397	            0x75c8	                           jne 0x4000361	      1901	intel_ringbuffer.c	FUNCTION_64	FOR_1
+0x4000399	    0x48c786b80100	              mov qword [rsi + 0x1b8], 0	      1989	intel_ringbuffer.c	FUNCTION_68
+0x40003a4	    0x48c786c00100	              mov qword [rsi + 0x1c0], 0	      1990	intel_ringbuffer.c	FUNCTION_68
+0x40003af	    0x48c786e00100	              mov qword [rsi + 0x1e0], 0	      1992	intel_ringbuffer.c	FUNCTION_68
+0x40003ba	    0x48c786e80100	              mov qword [rsi + 0x1e8], 0	      1993	intel_ringbuffer.c	FUNCTION_68
+0x40003c5	    0x48c786f00100	              mov qword [rsi + 0x1f0], 0	      1995	intel_ringbuffer.c	FUNCTION_68
+0x40003d0	    0x48c786100200	              mov qword [rsi + 0x210], 0	      1997	intel_ringbuffer.c	FUNCTION_68
+0x40003db	    0xc78618020000	              mov dword [rsi + 0x218], 4	      1998	intel_ringbuffer.c	FUNCTION_68
+0x40003e5	    0xf6875a060000	          test byte [rdi + 0x65a], 0x40 	      1999	intel_ringbuffer.c	FUNCTION_68	IF_1
+0x40003ec	            0x7425	                            je 0x4000413	      1999	intel_ringbuffer.c	FUNCTION_68	IF_1
+0x40003ee	    0x48c786100200	              mov qword [rsi + 0x210], 0	      2002	intel_ringbuffer.c	FUNCTION_68	IF_1
+0x40003f9	     0xfb6875e0600	          movzx eax, byte [rdi + 0x65e] 	      2004	intel_ringbuffer.c	FUNCTION_68	IF_1
+0x4000400	          0x83e801	                              sub eax, 1	      2004	intel_ringbuffer.c	FUNCTION_68	IF_1
+0x4000403	            0xa801	                              test al, 1	      2006	intel_ringbuffer.c	FUNCTION_68	IF_1	IF_2
+0x4000405	          0x8d1440	                  lea edx, [rax + rax*2]	      2005	intel_ringbuffer.c	FUNCTION_68	IF_1
+0x4000408	            0x747c	                            je 0x4000486	      2006	intel_ringbuffer.c	FUNCTION_68	IF_1	IF_2
+0x400040a	          0x83c205	                              add edx, 5	      2007	intel_ringbuffer.c	FUNCTION_68	IF_1	IF_2
+0x400040d	    0x899618020000	            mov dword [rsi + 0x218], edx	      2007	intel_ringbuffer.c	FUNCTION_68	IF_1	IF_2
+0x4000413	    0x48c786d80100	              mov qword [rsi + 0x1d8], 0	      2010	intel_ringbuffer.c	FUNCTION_68
+0x400041e	     0xfb6875c0600	          movzx eax, byte [rdi + 0x65c] 	      2012	intel_ringbuffer.c	FUNCTION_68	IF_3
+0x4000425	            0x3c05	                               cmp al, 5	      2012	intel_ringbuffer.c	FUNCTION_68	IF_3
+0x4000427	     0xf878f000000	                            ja 0x40004bc	      2012	intel_ringbuffer.c	FUNCTION_68	IF_3
+0x400042d	            0x3c03	                               cmp al, 3	      2014	intel_ringbuffer.c	FUNCTION_68	ELSE_1	IF_4
+0x400042f	            0x777f	                            ja 0x40004b0	      2014	intel_ringbuffer.c	FUNCTION_68	ELSE_1	IF_4
+0x4000431	    0xf68764060000	              test byte [rdi + 0x664], 6	      2017	intel_ringbuffer.c	FUNCTION_68	ELSE_2	IF_5
+0x4000438	    0x48c7c2000000	                              mov rdx, 0	      2017	intel_ringbuffer.c	FUNCTION_68	ELSE_2	IF_5
+0x400043f	    0x48c7c0000000	                              mov rax, 0	      2017	intel_ringbuffer.c	FUNCTION_68	ELSE_2	IF_5
+0x4000446	        0x480f45c2	                         cmovne rax, rdx	      2017	intel_ringbuffer.c	FUNCTION_68	ELSE_2	IF_5
+0x400044a	    0x488986080200	            mov qword [rsi + 0x208], rax	      2017	intel_ringbuffer.c	FUNCTION_68	ELSE_2	IF_5
+0x4000451	              0xc3	                                     ret	      2017	intel_ringbuffer.c	FUNCTION_68	ELSE_2	IF_5
+0x4000452	            0x31d2	                            xor edx, edx	      1932	intel_ringbuffer.c	FUNCTION_64	FOR_1	IF_2
+0x4000454	      0xb900000300	                        mov ecx, 0x30000	      1931	intel_ringbuffer.c	FUNCTION_64	FOR_1	IF_2
+0x4000459	      0xe923ffffff	                           jmp 0x4000381	      1931	intel_ringbuffer.c	FUNCTION_64	FOR_1	IF_2
+0x400045e	            0x7531	                           jne 0x4000491	      1952	intel_ringbuffer.c	FUNCTION_65	ELSE_1	IF_2
+0x4000460	    0x48c786a80100	              mov qword [rsi + 0x1a8], 0	      1953	intel_ringbuffer.c	FUNCTION_65	ELSE_1	IF_2
+0x400046b	    0x48c786b00100	              mov qword [rsi + 0x1b0], 0	      1954	intel_ringbuffer.c	FUNCTION_65	ELSE_1	IF_2
+0x4000476	    0x48c786380200	              mov qword [rsi + 0x238], 0	      1955	intel_ringbuffer.c	FUNCTION_65	ELSE_1	IF_2
+0x4000481	      0xe9bafeffff	                           jmp 0x4000340	      1955	intel_ringbuffer.c	FUNCTION_65	ELSE_1	IF_2
+0x4000486	          0x83c204	                              add edx, 4	      2005	intel_ringbuffer.c	FUNCTION_68	IF_1
+0x4000489	    0x899618020000	            mov dword [rsi + 0x218], edx	      2005	intel_ringbuffer.c	FUNCTION_68	IF_1
+0x400048f	            0xeb82	                           jmp 0x4000413	      2005	intel_ringbuffer.c	FUNCTION_68	IF_1
+0x4000491	            0x3c02	                               cmp al, 2	      1956	intel_ringbuffer.c	FUNCTION_65	ELSE_2	IF_3
+0x4000493	            0x7633	                           jbe 0x40004c8	      1956	intel_ringbuffer.c	FUNCTION_65	ELSE_2	IF_3
+0x4000495	    0x48c786a80100	              mov qword [rsi + 0x1a8], 0	      1957	intel_ringbuffer.c	FUNCTION_65	ELSE_2	IF_3
+0x40004a0	    0x48c786b00100	              mov qword [rsi + 0x1b0], 0	      1958	intel_ringbuffer.c	FUNCTION_65	ELSE_2	IF_3
+0x40004ab	      0xe990feffff	                           jmp 0x4000340	      1958	intel_ringbuffer.c	FUNCTION_65	ELSE_2	IF_3
+0x40004b0	    0x48c786080200	              mov qword [rsi + 0x208], 0	      2015	intel_ringbuffer.c	FUNCTION_68	ELSE_1	IF_4
+0x40004bb	              0xc3	                                     ret	      2015	intel_ringbuffer.c	FUNCTION_68	ELSE_1	IF_4
+0x40004bc	    0x48c786080200	              mov qword [rsi + 0x208], 0	      2013	intel_ringbuffer.c	FUNCTION_68	IF_3
+0x40004c7	              0xc3	                                     ret	      2013	intel_ringbuffer.c	FUNCTION_68	IF_3
+0x40004c8	    0x48c786a80100	              mov qword [rsi + 0x1a8], 0	      1960	intel_ringbuffer.c	FUNCTION_65	ELSE_3
+0x40004d3	    0x48c786b00100	              mov qword [rsi + 0x1b0], 0	      1961	intel_ringbuffer.c	FUNCTION_65	ELSE_3
+0x40004de	      0xe95dfeffff	                           jmp 0x4000340	      1961	intel_ringbuffer.c	FUNCTION_65	ELSE_3
+gen4_render_ring_flush	functions,0:DO,0:IF,3:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	24
+0x4001ab0	          0x83e601	                              and esi, 1	       123	intel_ringbuffer.c	FUNCTION_4	IF_1
+0x4001ab3	              0x53	                                push rbx	        91	intel_ringbuffer.c	FUNCTION_4
+0x4001ab4	      0xbb00000002	                      mov ebx, 0x2000000	       122	intel_ringbuffer.c	FUNCTION_4
+0x4001ab9	            0x7415	                            je 0x4001ad0	       123	intel_ringbuffer.c	FUNCTION_4	IF_1
+0x4001abb	        0x488b4768	            mov rax, qword [rdi + 0x68] 	       125	intel_ringbuffer.c	FUNCTION_4	IF_1	IF_2
+0x4001abf	      0xbb22000002	                      mov ebx, 0x2000022	       126	intel_ringbuffer.c	FUNCTION_4	IF_1	IF_2
+0x4001ac4	    0xf78064060000	       test dword [rax + 0x664], 0x6000 	       125	intel_ringbuffer.c	FUNCTION_4	IF_1	IF_2
+0x4001ace	            0x741f	                            je 0x4001aef	       125	intel_ringbuffer.c	FUNCTION_4	IF_1	IF_2
+0x4001ad0	      0xbe02000000	                              mov esi, 2	       129	intel_ringbuffer.c	FUNCTION_4	CALL_1
+0x4001ad5	      0xe800000000	                          call 0x4001ada	       129	intel_ringbuffer.c	FUNCTION_4	CALL_1
+0x4001ada	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       130	intel_ringbuffer.c	FUNCTION_4	IF_3	CALL_2
+0x4001ae0	            0x770b	                            ja 0x4001aed	       130	intel_ringbuffer.c	FUNCTION_4	IF_3	CALL_2
+0x4001ae2	            0x8918	                    mov dword [rax], ebx	       133	intel_ringbuffer.c	FUNCTION_4
+0x4001ae4	    0xc74004000000	                  mov dword [rax + 4], 0	       134	intel_ringbuffer.c	FUNCTION_4
+0x4001aeb	            0x31c0	                            xor eax, eax	       137	intel_ringbuffer.c	FUNCTION_4
+0x4001aed	              0x5b	                                 pop rbx	       138	intel_ringbuffer.c	FUNCTION_4
+0x4001aee	              0xc3	                                     ret	       138	intel_ringbuffer.c	FUNCTION_4
+0x4001aef	     0xfb7805a0600	          movzx eax, word [rax + 0x65a] 	       125	intel_ringbuffer.c	FUNCTION_4	IF_1	IF_2
+0x4001af6	          0x83e010	                           and eax, 0x10	       125	intel_ringbuffer.c	FUNCTION_4	IF_1	IF_2
+0x4001af9	        0x6683f801	                               cmp ax, 1	       124	intel_ringbuffer.c	FUNCTION_4	IF_1
+0x4001afd	            0x19db	                            sbb ebx, ebx	       124	intel_ringbuffer.c	FUNCTION_4	IF_1
+0x4001aff	          0x83e3e0	                     and ebx, 0xffffffe0	       124	intel_ringbuffer.c	FUNCTION_4	IF_1
+0x4001b02	    0x81c322000002	                      add ebx, 0x2000022	       124	intel_ringbuffer.c	FUNCTION_4	IF_1
+0x4001b08	            0xebc6	                           jmp 0x4001ad0	       124	intel_ringbuffer.c	FUNCTION_4	IF_1
+hsw_vebox_irq_disable	functions,0:DO,0:IF,0:ELSE,0:CALL,1:WHILE,0:FOR,0:SWITCH,0	16
+0x40011a0	              0x55	                                push rbp	       904	intel_ringbuffer.c	FUNCTION_34
+0x40011a1	              0x53	                                push rbx	       904	intel_ringbuffer.c	FUNCTION_34
+0x40011a2	          0x4889fd	                            mov rbp, rdi	       904	intel_ringbuffer.c	FUNCTION_34
+0x40011a5	          0x488b1f	                    mov rbx, qword [rdi]	       905	intel_ringbuffer.c	FUNCTION_34
+0x40011a8	          0x8b5724	            mov edx, dword [rdi + 0x24] 	       907	intel_ringbuffer.c	FUNCTION_34
+0x40011ab	      0xb901000000	                              mov ecx, 1	       907	intel_ringbuffer.c	FUNCTION_34
+0x40011b0	    0x8db2a8000000	                   lea esi, [rdx + 0xa8]	       907	intel_ringbuffer.c	FUNCTION_34
+0x40011b6	          0x4889df	                            mov rdi, rbx	       907	intel_ringbuffer.c	FUNCTION_34
+0x40011b9	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       907	intel_ringbuffer.c	FUNCTION_34
+0x40011c0	      0xbaffffffff	                     mov edx, 0xffffffff	       907	intel_ringbuffer.c	FUNCTION_34
+0x40011c5	      0xe800000000	                          call 0x40011ca	       907	intel_ringbuffer.c	FUNCTION_34
+0x40011ca	    0x8bb5a4010000	           mov esi, dword [rbp + 0x1a4] 	       908	intel_ringbuffer.c	FUNCTION_34	CALL_1
+0x40011d0	          0x4889df	                            mov rdi, rbx	       908	intel_ringbuffer.c	FUNCTION_34	CALL_1
+0x40011d3	              0x5b	                                 pop rbx	       909	intel_ringbuffer.c	FUNCTION_34
+0x40011d4	              0x5d	                                 pop rbp	       909	intel_ringbuffer.c	FUNCTION_34
+0x40011d5	      0xe900000000	                           jmp 0x40011da	       908	intel_ringbuffer.c	FUNCTION_34	CALL_1
+init_ring_common	functions,0:DO,0:IF,6:ELSE,1:CALL,19:WHILE,0:FOR,0:SWITCH,0	353
+0x4000720	            0x4157	                                push r15	       447	intel_ringbuffer.c	FUNCTION_12
+0x4000722	            0x4156	                                push r14	       447	intel_ringbuffer.c	FUNCTION_12
+0x4000724	      0xbeff010000	                          mov esi, 0x1ff	       452	intel_ringbuffer.c	FUNCTION_12	CALL_1
+0x4000729	            0x4155	                                push r13	       447	intel_ringbuffer.c	FUNCTION_12
+0x400072b	            0x4154	                                push r12	       447	intel_ringbuffer.c	FUNCTION_12
+0x400072d	              0x55	                                push rbp	       447	intel_ringbuffer.c	FUNCTION_12
+0x400072e	              0x53	                                push rbx	       447	intel_ringbuffer.c	FUNCTION_12
+0x400072f	          0x4889fd	                            mov rbp, rdi	       447	intel_ringbuffer.c	FUNCTION_12
+0x4000732	        0x4883ec10	                           sub rsp, 0x10	       447	intel_ringbuffer.c	FUNCTION_12
+0x4000736	          0x488b1f	                    mov rbx, qword [rdi]	       448	intel_ringbuffer.c	FUNCTION_12
+0x4000739	        0x4c8b6730	            mov r12, qword [rdi + 0x30] 	       449	intel_ringbuffer.c	FUNCTION_12
+0x400073d	          0x4889df	                            mov rdi, rbx	       452	intel_ringbuffer.c	FUNCTION_12	CALL_1
+0x4000740	      0xe800000000	                          call 0x4000745	       452	intel_ringbuffer.c	FUNCTION_12	CALL_1
+0x4000745	          0x4889ef	                            mov rdi, rbp	       454	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_2
+0x4000748	      0xe863feffff	                      call sym.stop_ring	       454	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_2
+0x400074d	            0x84c0	                             test al, al	       454	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_2
+0x400074f	     0xf84d5010000	                            je 0x400092a	       454	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_2
+0x4000755	    0xf6837b060000	              test byte [rbx + 0x67b], 1	       477	intel_ringbuffer.c	FUNCTION_12	IF_3
+0x400075c	     0xf8404030000	                            je 0x4000a66	       477	intel_ringbuffer.c	FUNCTION_12	IF_3
+0x4000762	        0x488b7d00	                    mov rdi, qword [rbp]	       477	intel_ringbuffer.c	FUNCTION_12	IF_3
+0x4000766	    0x488b87684700	          mov rax, qword [rdi + 0x4768] 	       348	intel_ringbuffer.c	FUNCTION_9
+0x400076d	    0x80bf5c060000	               cmp byte [rdi + 0x65c], 3	       349	intel_ringbuffer.c	FUNCTION_9	IF_1
+0x4000774	          0x488b00	                    mov rax, qword [rax]	       348	intel_ringbuffer.c	FUNCTION_9
+0x4000777	            0x89c2	                            mov edx, eax	       348	intel_ringbuffer.c	FUNCTION_9
+0x4000779	     0xf8797010000	                            ja 0x4000916	       349	intel_ringbuffer.c	FUNCTION_9	IF_1
+0x400077f	    0x488b87180800	           mov rax, qword [rdi + 0x818] 	       351	intel_ringbuffer.c	FUNCTION_9
+0x4000786	      0xb901000000	                              mov ecx, 1	       351	intel_ringbuffer.c	FUNCTION_9
+0x400078b	      0xbe80200000	                         mov esi, 0x2080	       351	intel_ringbuffer.c	FUNCTION_9
+0x4000790	      0xe800000000	                          call 0x4000795	       351	intel_ringbuffer.c	FUNCTION_9
+0x4000795	          0x4889ef	                            mov rdi, rbp	       482	intel_ringbuffer.c	FUNCTION_12	CALL_8
+0x4000798	      0xe800000000	                          call 0x400079d	       482	intel_ringbuffer.c	FUNCTION_12	CALL_8
+0x400079d	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       485	intel_ringbuffer.c	FUNCTION_12
+0x40007a0	      0xba01000000	                              mov edx, 1	       485	intel_ringbuffer.c	FUNCTION_12
+0x40007a5	          0x4889df	                            mov rdi, rbx	       485	intel_ringbuffer.c	FUNCTION_12
+0x40007a8	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       485	intel_ringbuffer.c	FUNCTION_12
+0x40007af	          0x8d7134	                   lea esi, [rcx + 0x34]	       485	intel_ringbuffer.c	FUNCTION_12
+0x40007b2	      0xe800000000	                          call 0x40007b7	       485	intel_ringbuffer.c	FUNCTION_12
+0x40007b7	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       491	intel_ringbuffer.c	FUNCTION_12	CALL_9
+0x40007ba	        0x498b1424	                    mov rdx, qword [r12]	       491	intel_ringbuffer.c	FUNCTION_12	CALL_9
+0x40007be	          0x4889df	                            mov rdi, rbx	       491	intel_ringbuffer.c	FUNCTION_12	CALL_9
+0x40007c1	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       491	intel_ringbuffer.c	FUNCTION_12	CALL_9
+0x40007c8	          0x8d7138	                   lea esi, [rcx + 0x38]	       491	intel_ringbuffer.c	FUNCTION_12	CALL_9
+0x40007cb	        0x488b5208	                mov rdx, qword [rdx + 8]	       220	i915_vma.h	FUNCTION_205	CALL_8
+0x40007cf	      0xb901000000	                              mov ecx, 1	       491	intel_ringbuffer.c	FUNCTION_12	CALL_9
+0x40007d4	      0xe800000000	                          call 0x40007d9	       491	intel_ringbuffer.c	FUNCTION_12	CALL_9
+0x40007d9	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       494	intel_ringbuffer.c	FUNCTION_12	IF_4
+0x40007dc	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       494	intel_ringbuffer.c	FUNCTION_12	IF_4
+0x40007e3	      0xba01000000	                              mov edx, 1	       494	intel_ringbuffer.c	FUNCTION_12	IF_4
+0x40007e8	          0x4889df	                            mov rdi, rbx	       494	intel_ringbuffer.c	FUNCTION_12	IF_4
+0x40007eb	          0x8d7134	                   lea esi, [rcx + 0x34]	       494	intel_ringbuffer.c	FUNCTION_12	IF_4
+0x40007ee	      0xe800000000	                          call 0x40007f3	       494	intel_ringbuffer.c	FUNCTION_12	IF_4
+0x40007f3	            0x85c0	                           test eax, eax	       494	intel_ringbuffer.c	FUNCTION_12	IF_4
+0x40007f5	     0xf8568030000	                           jne 0x4000b63	       494	intel_ringbuffer.c	FUNCTION_12	IF_4
+0x40007fb	      0x418b542420	            mov edx, dword [r12 + 0x20] 	        62	intel_ringbuffer.c	FUNCTION_2	CALL_1
+0x4000800	      0x418b4c2430	            mov ecx, dword [r12 + 0x30] 	        64	intel_ringbuffer.c	FUNCTION_2
+0x4000805	          0x4889df	                            mov rdi, rbx	       499	intel_ringbuffer.c	FUNCTION_12
+0x4000808	          0x8d42c0	                   lea eax, [rdx - 0x40]	        64	intel_ringbuffer.c	FUNCTION_2
+0x400080b	      0x412b442428	             sub eax, dword [r12 + 0x28]	        64	intel_ringbuffer.c	FUNCTION_2
+0x4000810	          0x83e901	                              sub ecx, 1	        64	intel_ringbuffer.c	FUNCTION_2
+0x4000813	            0x21c8	                            and eax, ecx	        64	intel_ringbuffer.c	FUNCTION_2
+0x4000815	      0x418944242c	             mov dword [r12 + 0x2c], eax	        64	intel_ringbuffer.c	FUNCTION_2
+0x400081a	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       499	intel_ringbuffer.c	FUNCTION_12
+0x400081d	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       499	intel_ringbuffer.c	FUNCTION_12
+0x4000824	          0x8d7134	                   lea esi, [rcx + 0x34]	       499	intel_ringbuffer.c	FUNCTION_12
+0x4000827	      0xb901000000	                              mov ecx, 1	       499	intel_ringbuffer.c	FUNCTION_12
+0x400082c	      0xe800000000	                          call 0x4000831	       499	intel_ringbuffer.c	FUNCTION_12
+0x4000831	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       500	intel_ringbuffer.c	FUNCTION_12
+0x4000834	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       500	intel_ringbuffer.c	FUNCTION_12
+0x400083b	          0x4889df	                            mov rdi, rbx	       500	intel_ringbuffer.c	FUNCTION_12
+0x400083e	      0x418b542424	            mov edx, dword [r12 + 0x24] 	       500	intel_ringbuffer.c	FUNCTION_12
+0x4000843	          0x8d7130	                   lea esi, [rcx + 0x30]	       500	intel_ringbuffer.c	FUNCTION_12
+0x4000846	      0xb901000000	                              mov ecx, 1	       500	intel_ringbuffer.c	FUNCTION_12
+0x400084b	      0xe800000000	                          call 0x4000850	       500	intel_ringbuffer.c	FUNCTION_12
+0x4000850	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       501	intel_ringbuffer.c	FUNCTION_12
+0x4000853	      0xba01000000	                              mov edx, 1	       501	intel_ringbuffer.c	FUNCTION_12
+0x4000858	          0x4889df	                            mov rdi, rbx	       501	intel_ringbuffer.c	FUNCTION_12
+0x400085b	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       501	intel_ringbuffer.c	FUNCTION_12
+0x4000862	          0x8d7130	                   lea esi, [rcx + 0x30]	       501	intel_ringbuffer.c	FUNCTION_12
+0x4000865	      0xe800000000	                          call 0x400086a	       501	intel_ringbuffer.c	FUNCTION_12
+0x400086a	      0x418b7c2430	            mov edi, dword [r12 + 0x30] 	       503	intel_ringbuffer.c	FUNCTION_12	CALL_12
+0x400086f	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       503	intel_ringbuffer.c	FUNCTION_12	CALL_12
+0x4000872	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       503	intel_ringbuffer.c	FUNCTION_12	CALL_12
+0x4000879	    0x8d9700f0ffff	                 lea edx, [rdi - 0x1000]	       503	intel_ringbuffer.c	FUNCTION_12	CALL_12
+0x400087f	          0x8d713c	                   lea esi, [rcx + 0x3c]	       503	intel_ringbuffer.c	FUNCTION_12	CALL_12
+0x4000882	          0x4889df	                            mov rdi, rbx	       503	intel_ringbuffer.c	FUNCTION_12	CALL_12
+0x4000885	      0xb901000000	                              mov ecx, 1	       503	intel_ringbuffer.c	FUNCTION_12	CALL_12
+0x400088a	          0x83ca01	                               or edx, 1	       503	intel_ringbuffer.c	FUNCTION_12	CALL_12
+0x400088d	      0xe800000000	                          call 0x4000892	       503	intel_ringbuffer.c	FUNCTION_12	CALL_12
+0x4000892	          0x8b4524	            mov eax, dword [rbp + 0x24] 	       503	intel_ringbuffer.c	FUNCTION_12	CALL_12
+0x4000895	            0x6a00	                                  push 0	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000897	      0xba01000000	                              mov edx, 1	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x400089c	    0x41b932000000	                           mov r9d, 0x32	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x40008a2	    0x41b802000000	                              mov r8d, 2	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x40008a8	      0xb901000000	                              mov ecx, 1	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x40008ad	          0x4889df	                            mov rdi, rbx	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x40008b0	          0x8d703c	                   lea esi, [rax + 0x3c]	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x40008b3	      0xe800000000	                          call 0x40008b8	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x40008b8	            0x85c0	                           test eax, eax	       506	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_14
+0x40008ba	              0x5a	                                 pop rdx	       506	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_14
+0x40008bb	     0xf8537030000	                           jne 0x4000bf8	       506	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_14
+0x40008c1	          0x4889ef	                            mov rdi, rbp	       522	intel_ringbuffer.c	FUNCTION_12	CALL_17
+0x40008c4	          0x4531e4	                          xor r12d, r12d	       450	intel_ringbuffer.c	FUNCTION_12
+0x40008c7	      0xe800000000	                          call 0x40008cc	       522	intel_ringbuffer.c	FUNCTION_12	CALL_17
+0x40008cc	    0x80bb5c060000	               cmp byte [rbx + 0x65c], 2	       524	intel_ringbuffer.c	FUNCTION_12	IF_6
+0x40008d3	            0x7622	                           jbe 0x40008f7	       524	intel_ringbuffer.c	FUNCTION_12	IF_6
+0x40008d5	          0x8b7524	            mov esi, dword [rbp + 0x24] 	       525	intel_ringbuffer.c	FUNCTION_12	CALL_18
+0x40008d8	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       525	intel_ringbuffer.c	FUNCTION_12	CALL_18
+0x40008df	      0xb901000000	                              mov ecx, 1	       525	intel_ringbuffer.c	FUNCTION_12	CALL_18
+0x40008e4	      0xba00000001	                      mov edx, 0x1000000	       525	intel_ringbuffer.c	FUNCTION_12	CALL_18
+0x40008e9	          0x4889df	                            mov rdi, rbx	       525	intel_ringbuffer.c	FUNCTION_12	CALL_18
+0x40008ec	    0x81c69c000000	                           add esi, 0x9c	       525	intel_ringbuffer.c	FUNCTION_12	CALL_18
+0x40008f2	      0xe800000000	                          call 0x40008f7	       525	intel_ringbuffer.c	FUNCTION_12	CALL_18
+0x40008f7	          0x4889df	                            mov rdi, rbx	       528	intel_ringbuffer.c	FUNCTION_12	CALL_19
+0x40008fa	      0xbeff010000	                          mov esi, 0x1ff	       528	intel_ringbuffer.c	FUNCTION_12	CALL_19
+0x40008ff	      0xe800000000	                          call 0x4000904	       528	intel_ringbuffer.c	FUNCTION_12	CALL_19
+0x4000904	        0x4883c410	                           add rsp, 0x10	       531	intel_ringbuffer.c	FUNCTION_12
+0x4000908	          0x4489e0	                           mov eax, r12d	       531	intel_ringbuffer.c	FUNCTION_12
+0x400090b	              0x5b	                                 pop rbx	       531	intel_ringbuffer.c	FUNCTION_12
+0x400090c	              0x5d	                                 pop rbp	       531	intel_ringbuffer.c	FUNCTION_12
+0x400090d	            0x415c	                                 pop r12	       531	intel_ringbuffer.c	FUNCTION_12
+0x400090f	            0x415d	                                 pop r13	       531	intel_ringbuffer.c	FUNCTION_12
+0x4000911	            0x415e	                                 pop r14	       531	intel_ringbuffer.c	FUNCTION_12
+0x4000913	            0x415f	                                 pop r15	       531	intel_ringbuffer.c	FUNCTION_12
+0x4000915	              0xc3	                                     ret	       531	intel_ringbuffer.c	FUNCTION_12
+0x4000916	          0x4889c2	                            mov rdx, rax	       350	intel_ringbuffer.c	FUNCTION_9	IF_1
+0x4000919	        0x48c1ea1c	                           shr rdx, 0x1c	       350	intel_ringbuffer.c	FUNCTION_9	IF_1
+0x400091d	    0x81e2f0000000	                           and edx, 0xf0	       350	intel_ringbuffer.c	FUNCTION_9	IF_1
+0x4000923	             0x9c2	                             or edx, eax	       350	intel_ringbuffer.c	FUNCTION_9	IF_1
+0x4000925	      0xe955feffff	                           jmp 0x400077f	       350	intel_ringbuffer.c	FUNCTION_9	IF_1
+0x400092a	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400092d	      0xba01000000	                              mov edx, 1	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000932	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000939	        0x4c8d6d08	                      lea r13, [rbp + 8]	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400093d	          0x8d7738	                   lea esi, [rdi + 0x38]	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000940	          0x4889df	                            mov rdi, rbx	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000943	      0xe800000000	                          call 0x4000948	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000948	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400094b	          0x4189c6	                           mov r14d, eax	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400094e	      0xba01000000	                              mov edx, 1	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000953	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400095a	          0x8d7730	                   lea esi, [rdi + 0x30]	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400095d	          0x4889df	                            mov rdi, rbx	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000960	      0xe800000000	                          call 0x4000965	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000965	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000968	          0x890424	                    mov dword [rsp], eax	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400096b	      0xba01000000	                              mov edx, 1	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000970	          0x4889df	                            mov rdi, rbx	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000973	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400097a	          0x8d7134	                   lea esi, [rcx + 0x34]	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400097d	      0xe800000000	                          call 0x4000982	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000982	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000985	          0x4189c7	                           mov r15d, eax	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000988	      0xba01000000	                              mov edx, 1	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400098d	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000994	          0x8d773c	                   lea esi, [rdi + 0x3c]	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x4000997	          0x4889df	                            mov rdi, rbx	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400099a	      0xe800000000	                          call 0x400099f	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x400099f	            0x4156	                                push r14	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x40009a1	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x40009a6	    0x48c7c6000000	                              mov rsi, 0	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x40009ad	          0x4589f8	                           mov r8d, r15d	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x40009b0	            0x89c1	                            mov ecx, eax	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x40009b2	          0x4c89ea	                            mov rdx, r13	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x40009b5	      0xbf02000000	                              mov edi, 2	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x40009ba	      0xe800000000	                          call 0x40009bf	       456	intel_ringbuffer.c	FUNCTION_12	IF_1	CALL_3
+0x40009bf	          0x4889ef	                            mov rdi, rbp	       464	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_4
+0x40009c2	      0xe8e9fbffff	                      call sym.stop_ring	       464	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_4
+0x40009c7	            0x84c0	                             test al, al	       464	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_4
+0x40009c9	              0x5e	                                 pop rsi	       464	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_4
+0x40009ca	     0xf8585fdffff	                           jne 0x4000755	       464	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_4
+0x40009d0	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009d3	      0xba01000000	                              mov edx, 1	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009d8	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009df	          0x8d7738	                   lea esi, [rdi + 0x38]	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009e2	          0x4889df	                            mov rdi, rbx	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009e5	      0xe800000000	                          call 0x40009ea	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009ea	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009ed	          0x4189c7	                           mov r15d, eax	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009f0	      0xba01000000	                              mov edx, 1	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009f5	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009fc	          0x8d7730	                   lea esi, [rdi + 0x30]	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x40009ff	          0x4889df	                            mov rdi, rbx	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a02	      0xe800000000	                          call 0x4000a07	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a07	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a0a	          0x4189c6	                           mov r14d, eax	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a0d	      0xba01000000	                              mov edx, 1	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a12	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a19	          0x8d7734	                   lea esi, [rdi + 0x34]	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a1c	          0x4889df	                            mov rdi, rbx	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a1f	      0xe800000000	                          call 0x4000a24	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a24	          0x8b7524	            mov esi, dword [rbp + 0x24] 	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a27	          0x4189c4	                           mov r12d, eax	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a2a	      0xba01000000	                              mov edx, 1	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a2f	          0x4889df	                            mov rdi, rbx	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a32	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a39	          0x83c63c	                           add esi, 0x3c	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a3c	      0xe800000000	                          call 0x4000a41	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a41	          0x4489e1	                           mov ecx, r12d	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a44	          0x4589f9	                           mov r9d, r15d	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a47	          0x4589f0	                           mov r8d, r14d	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a4a	            0x89c2	                            mov edx, eax	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a4c	          0x4c89ee	                            mov rsi, r13	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a4f	    0x48c7c7000000	                              mov rdi, 0	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a56	      0xe800000000	                          call 0x4000a5b	       465	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2	CALL_5
+0x4000a5b	    0x41bcfbffffff	                    mov r12d, 0xfffffffb	       472	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2
+0x4000a61	      0xe991feffff	                           jmp 0x40008f7	       473	intel_ringbuffer.c	FUNCTION_12	IF_1	IF_2
+0x4000a66	        0x4c8b6d00	                    mov r13, qword [rbp]	       356	intel_ringbuffer.c	FUNCTION_10
+0x4000a6a	    0x410fb7855a06	          movzx eax, word [r13 + 0x65a] 	       362	intel_ringbuffer.c	FUNCTION_10	IF_1
+0x4000a72	            0xa840	                           test al, 0x40	       362	intel_ringbuffer.c	FUNCTION_10	IF_1
+0x4000a74	     0xf851f010000	                           jne 0x4000b99	       362	intel_ringbuffer.c	FUNCTION_10	IF_1
+0x4000a7a	            0xa820	                           test al, 0x20	       383	intel_ringbuffer.c	FUNCTION_10	ELSE_1	IF_2
+0x4000a7c	          0x8b4524	            mov eax, dword [rbp + 0x24] 	       384	intel_ringbuffer.c	FUNCTION_10	ELSE_1	IF_2	CALL_2
+0x4000a7f	    0x448db0802000	                lea r14d, [rax + 0x2080]	       384	intel_ringbuffer.c	FUNCTION_10	ELSE_1	IF_2	CALL_2
+0x4000a86	            0x7507	                           jne 0x4000a8f	       383	intel_ringbuffer.c	FUNCTION_10	ELSE_1	IF_2
+0x4000a88	    0x448db0800000	                  lea r14d, [rax + 0x80]	       386	intel_ringbuffer.c	FUNCTION_10	ELSE_2	CALL_3
+0x4000a8f	    0x4180bd5c0600	               cmp byte [r13 + 0x65c], 5	       389	intel_ringbuffer.c	FUNCTION_10	IF_3
+0x4000a97	     0xf8734010000	                            ja 0x4000bd1	       389	intel_ringbuffer.c	FUNCTION_10	IF_3
+0x4000a9d	    0x8b9578010000	           mov edx, dword [rbp + 0x178] 	       392	intel_ringbuffer.c	FUNCTION_10
+0x4000aa3	    0x498b85180800	           mov rax, qword [r13 + 0x818] 	       392	intel_ringbuffer.c	FUNCTION_10
+0x4000aaa	      0xb901000000	                              mov ecx, 1	       392	intel_ringbuffer.c	FUNCTION_10
+0x4000aaf	          0x4489f6	                           mov esi, r14d	       392	intel_ringbuffer.c	FUNCTION_10
+0x4000ab2	          0x4c89ef	                            mov rdi, r13	       392	intel_ringbuffer.c	FUNCTION_10
+0x4000ab5	      0xe800000000	                          call 0x4000aba	       392	intel_ringbuffer.c	FUNCTION_10
+0x4000aba	            0x31d2	                            xor edx, edx	       393	intel_ringbuffer.c	FUNCTION_10
+0x4000abc	    0x498b85f80700	           mov rax, qword [r13 + 0x7f8] 	       393	intel_ringbuffer.c	FUNCTION_10
+0x4000ac3	          0x4489f6	                           mov esi, r14d	       393	intel_ringbuffer.c	FUNCTION_10
+0x4000ac6	          0x4c89ef	                            mov rdi, r13	       393	intel_ringbuffer.c	FUNCTION_10
+0x4000ac9	      0xe800000000	                          call 0x4000ace	       393	intel_ringbuffer.c	FUNCTION_10
+0x4000ace	    0x41f6855a0600	          test byte [r13 + 0x65a], 0x60 	       396	intel_ringbuffer.c	FUNCTION_10	IF_4
+0x4000ad6	     0xf84b9fcffff	                            je 0x4000795	       396	intel_ringbuffer.c	FUNCTION_10	IF_4
+0x4000adc	          0x8b7524	            mov esi, dword [rbp + 0x24] 	       397	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_5
+0x4000adf	    0x498b85f80700	           mov rax, qword [r13 + 0x7f8] 	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000ae6	      0xba01000000	                              mov edx, 1	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000aeb	          0x4c89ef	                            mov rdi, r13	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000aee	    0x448db6c00000	                  lea r14d, [rsi + 0xc0]	       397	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_5
+0x4000af5	    0x81c69c000000	                           add esi, 0x9c	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000afb	      0xe800000000	                          call 0x4000b00	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000b00	          0xf6c402	                              test ah, 2	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000b03	     0xf84d7010000	                            je 0x4000ce0	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000b09	    0x498b85180800	           mov rax, qword [r13 + 0x818] 	       402	intel_ringbuffer.c	FUNCTION_10	IF_4
+0x4000b10	      0xb901000000	                              mov ecx, 1	       402	intel_ringbuffer.c	FUNCTION_10	IF_4
+0x4000b15	      0xba20022002	                      mov edx, 0x2200220	       402	intel_ringbuffer.c	FUNCTION_10	IF_4
+0x4000b1a	          0x4489f6	                           mov esi, r14d	       402	intel_ringbuffer.c	FUNCTION_10	IF_4
+0x4000b1d	          0x4c89ef	                            mov rdi, r13	       402	intel_ringbuffer.c	FUNCTION_10	IF_4
+0x4000b20	      0xe800000000	                          call 0x4000b25	       402	intel_ringbuffer.c	FUNCTION_10	IF_4
+0x4000b25	            0x6a00	                                  push 0	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000b27	            0x31c9	                            xor ecx, ecx	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000b29	    0x41b9e8030000	                          mov r9d, 0x3e8	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000b2f	    0x41b802000000	                              mov r8d, 2	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000b35	      0xba20000000	                           mov edx, 0x20	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000b3a	          0x4489f6	                           mov esi, r14d	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000b3d	          0x4c89ef	                            mov rdi, r13	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000b40	      0xe800000000	                          call 0x4000b45	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000b45	            0x85c0	                           test eax, eax	       405	intel_ringbuffer.c	FUNCTION_10	IF_4	IF_5	CALL_8
+0x4000b47	              0x59	                                 pop rcx	       405	intel_ringbuffer.c	FUNCTION_10	IF_4	IF_5	CALL_8
+0x4000b48	     0xf8447fcffff	                            je 0x4000795	       405	intel_ringbuffer.c	FUNCTION_10	IF_4	IF_5	CALL_8
+0x4000b4e	        0x488d7508	                      lea rsi, [rbp + 8]	       408	intel_ringbuffer.c	FUNCTION_10	IF_4	IF_5	CALL_9
+0x4000b52	    0x48c7c7000000	                              mov rdi, 0	       408	intel_ringbuffer.c	FUNCTION_10	IF_4	IF_5	CALL_9
+0x4000b59	      0xe800000000	                          call 0x4000b5e	       408	intel_ringbuffer.c	FUNCTION_10	IF_4	IF_5	CALL_9
+0x4000b5e	      0xe932fcffff	                           jmp 0x4000795	       408	intel_ringbuffer.c	FUNCTION_10	IF_4	IF_5	CALL_9
+0x4000b63	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b66	          0x4889df	                            mov rdi, rbx	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b69	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b70	      0xba01000000	                              mov edx, 1	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b75	          0x8d7134	                   lea esi, [rcx + 0x34]	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b78	      0xe800000000	                          call 0x4000b7d	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b7d	        0x488d5508	                      lea rdx, [rbp + 8]	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b81	            0x89c1	                            mov ecx, eax	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b83	    0x48c7c6000000	                              mov rsi, 0	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b8a	      0xbf02000000	                              mov edi, 2	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b8f	      0xe800000000	                          call 0x4000b94	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b94	      0xe962fcffff	                           jmp 0x40007fb	       495	intel_ringbuffer.c	FUNCTION_12	IF_4	CALL_10
+0x4000b99	          0x8b4510	            mov eax, dword [rbp + 0x10] 	       363	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000b9c	    0x41be80410000	                        mov r14d, 0x4180	       377	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000ba2	          0x83f802	                              cmp eax, 2	       363	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000ba5	     0xf84e4feffff	                            je 0x4000a8f	       363	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000bab	          0x83f806	                              cmp eax, 6	       363	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000bae	    0x41be80430000	                        mov r14d, 0x4380	       380	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000bb4	     0xf84d5feffff	                            je 0x4000a8f	       363	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000bba	          0x83f801	                              cmp eax, 1	       371	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000bbd	    0x41be80400000	                        mov r14d, 0x4080	       371	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000bc3	      0xb880420000	                         mov eax, 0x4280	       371	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000bc8	        0x440f44f0	                         cmove r14d, eax	       371	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000bcc	      0xe9befeffff	                           jmp 0x4000a8f	       371	intel_ringbuffer.c	FUNCTION_10	IF_1	SWITCH_1
+0x4000bd1	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       390	intel_ringbuffer.c	FUNCTION_10	CALL_4
+0x4000bd4	    0x498b85180800	           mov rax, qword [r13 + 0x818] 	       390	intel_ringbuffer.c	FUNCTION_10	CALL_4
+0x4000bdb	      0xb901000000	                              mov ecx, 1	       390	intel_ringbuffer.c	FUNCTION_10	CALL_4
+0x4000be0	      0xbaffffffff	                     mov edx, 0xffffffff	       390	intel_ringbuffer.c	FUNCTION_10	CALL_4
+0x4000be5	    0x8db798000000	                   lea esi, [rdi + 0x98]	       390	intel_ringbuffer.c	FUNCTION_10	CALL_4
+0x4000beb	          0x4c89ef	                            mov rdi, r13	       390	intel_ringbuffer.c	FUNCTION_10	CALL_4
+0x4000bee	      0xe800000000	                          call 0x4000bf3	       390	intel_ringbuffer.c	FUNCTION_10	CALL_4
+0x4000bf3	      0xe9a5feffff	                           jmp 0x4000a9d	       390	intel_ringbuffer.c	FUNCTION_10	CALL_4
+0x4000bf8	        0x498b0424	                    mov rax, qword [r12]	       390	intel_ringbuffer.c	FUNCTION_10	CALL_4
+0x4000bfc	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000bff	      0xba01000000	                              mov edx, 1	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c04	        0x4c8b5008	                mov r10, qword [rax + 8]	       220	i915_vma.h	FUNCTION_205	CALL_8
+0x4000c08	          0x8d7738	                   lea esi, [rdi + 0x38]	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c0b	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c12	          0x4889df	                            mov rdi, rbx	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c15	      0x4c89542408	                mov qword [rsp + 8], r10	       220	i915_vma.h	FUNCTION_205	CALL_8
+0x4000c1a	      0xe800000000	                          call 0x4000c1f	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c1f	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c22	      0x458b6c2424	           mov r13d, dword [r12 + 0x24] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c27	          0x4189c6	                           mov r14d, eax	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c2a	      0xba01000000	                              mov edx, 1	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c2f	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c36	          0x8d7730	                   lea esi, [rdi + 0x30]	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c39	          0x4889df	                            mov rdi, rbx	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c3c	      0xe800000000	                          call 0x4000c41	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c41	      0x458b4c2420	            mov r9d, dword [r12 + 0x20] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c46	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c49	          0x4189c7	                           mov r15d, eax	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c4c	      0xba01000000	                              mov edx, 1	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c51	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c58	      0x44894c2404	                mov dword [rsp + 4], r9d	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c5d	          0x8d7734	                   lea esi, [rdi + 0x34]	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c60	          0x4889df	                            mov rdi, rbx	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c63	      0xe800000000	                          call 0x4000c68	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c68	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c6b	          0x890424	                    mov dword [rsp], eax	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c6e	      0xba01000000	                              mov edx, 1	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c73	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c7a	          0x8d773c	                   lea esi, [rdi + 0x3c]	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c7d	          0x4889df	                            mov rdi, rbx	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c80	      0xe800000000	                          call 0x4000c85	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c85	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c88	          0x4189c4	                           mov r12d, eax	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c8b	      0xba01000000	                              mov edx, 1	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c90	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c97	          0x8d773c	                   lea esi, [rdi + 0x3c]	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c9a	          0x4889df	                            mov rdi, rbx	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000c9d	      0xe800000000	                          call 0x4000ca2	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000ca2	      0x4c8b542408	                mov r10, qword [rsp + 8]	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000ca7	          0x4489e1	                           mov ecx, r12d	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000caa	        0x488d7508	                      lea rsi, [rbp + 8]	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000cae	          0x83e101	                              and ecx, 1	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000cb1	            0x89c2	                            mov edx, eax	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000cb3	    0x48c7c7000000	                              mov rdi, 0	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000cba	    0x41bcfbffffff	                    mov r12d, 0xfffffffb	       518	intel_ringbuffer.c	FUNCTION_12	IF_5
+0x4000cc0	            0x4152	                                push r10	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000cc2	            0x4156	                                push r14	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000cc4	            0x4155	                                push r13	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000cc6	            0x4157	                                push r15	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000cc8	      0x448b4c2424	            mov r9d, dword [rsp + 0x24] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000ccd	      0x448b442420	            mov r8d, dword [rsp + 0x20] 	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000cd2	      0xe800000000	                          call 0x4000cd7	       509	intel_ringbuffer.c	FUNCTION_12	IF_5	CALL_15
+0x4000cd7	        0x4883c420	                           add rsp, 0x20	       519	intel_ringbuffer.c	FUNCTION_12	IF_5
+0x4000cdb	      0xe917fcffff	                           jmp 0x40008f7	       519	intel_ringbuffer.c	FUNCTION_12	IF_5
+0x4000ce0	    0x48c7c6000000	                              mov rsi, 0	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000ce7	    0x48c7c7000000	                              mov rdi, 0	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000cee	      0xe800000000	                          call 0x4000cf3	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000cf3	             0xf0b	                                     ud2	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+0x4000cf5	      0xe90ffeffff	                           jmp 0x4000b09	       400	intel_ringbuffer.c	FUNCTION_10	IF_4	CALL_6
+gen2_render_ring_flush	functions,0:DO,0:IF,2:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	14
+0x4001a80	          0x83e601	                              and esi, 1	        75	intel_ringbuffer.c	FUNCTION_3	IF_1
+0x4001a83	              0x53	                                push rbx	        70	intel_ringbuffer.c	FUNCTION_3
+0x4001a84	          0x83fe01	                              cmp esi, 1	        76	intel_ringbuffer.c	FUNCTION_3	IF_1
+0x4001a87	      0xbe02000000	                              mov esi, 2	        78	intel_ringbuffer.c	FUNCTION_3	CALL_1
+0x4001a8c	            0x19db	                            sbb ebx, ebx	        76	intel_ringbuffer.c	FUNCTION_3	IF_1
+0x4001a8e	    0x81c301000002	                      add ebx, 0x2000001	        76	intel_ringbuffer.c	FUNCTION_3	IF_1
+0x4001a94	      0xe800000000	                          call 0x4001a99	        78	intel_ringbuffer.c	FUNCTION_3	CALL_1
+0x4001a99	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	        79	intel_ringbuffer.c	FUNCTION_3	IF_2	CALL_2
+0x4001a9f	            0x770b	                            ja 0x4001aac	        79	intel_ringbuffer.c	FUNCTION_3	IF_2	CALL_2
+0x4001aa1	            0x8918	                    mov dword [rax], ebx	        82	intel_ringbuffer.c	FUNCTION_3
+0x4001aa3	    0xc74004000000	                  mov dword [rax + 4], 0	        83	intel_ringbuffer.c	FUNCTION_3
+0x4001aaa	            0x31c0	                            xor eax, eax	        86	intel_ringbuffer.c	FUNCTION_3
+0x4001aac	              0x5b	                                 pop rbx	        87	intel_ringbuffer.c	FUNCTION_3
+0x4001aad	              0xc3	                                     ret	        87	intel_ringbuffer.c	FUNCTION_3
+hsw_emit_bb_start	functions,0:DO,0:IF,1:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	24
+0x4001a30	              0x55	                                push rbp	      1809	intel_ringbuffer.c	FUNCTION_61
+0x4001a31	              0x53	                                push rbx	      1809	intel_ringbuffer.c	FUNCTION_61
+0x4001a32	          0x4889f5	                            mov rbp, rsi	      1809	intel_ringbuffer.c	FUNCTION_61
+0x4001a35	      0xbe02000000	                              mov esi, 2	      1812	intel_ringbuffer.c	FUNCTION_61	CALL_1
+0x4001a3a	            0x89cb	                            mov ebx, ecx	      1809	intel_ringbuffer.c	FUNCTION_61
+0x4001a3c	      0xe800000000	                          call 0x4001a41	      1812	intel_ringbuffer.c	FUNCTION_61	CALL_1
+0x4001a41	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1813	intel_ringbuffer.c	FUNCTION_61	IF_1	CALL_2
+0x4001a47	            0x772a	                            ja 0x4001a73	      1813	intel_ringbuffer.c	FUNCTION_61	IF_1	CALL_2
+0x4001a49	            0x89da	                            mov edx, ebx	      1816	intel_ringbuffer.c	FUNCTION_61
+0x4001a4b	          0x896804	                mov dword [rax + 4], ebp	      1821	intel_ringbuffer.c	FUNCTION_61
+0x4001a4e	          0x83e201	                              and edx, 1	      1816	intel_ringbuffer.c	FUNCTION_61
+0x4001a51	          0x83fa01	                              cmp edx, 1	      1816	intel_ringbuffer.c	FUNCTION_61
+0x4001a54	            0x19d2	                            sbb edx, edx	      1816	intel_ringbuffer.c	FUNCTION_61
+0x4001a56	          0xc1e308	                              shl ebx, 8	      1819	intel_ringbuffer.c	FUNCTION_61
+0x4001a59	    0x81e200210000	                         and edx, 0x2100	      1816	intel_ringbuffer.c	FUNCTION_61
+0x4001a5f	            0x89d9	                            mov ecx, ebx	      1819	intel_ringbuffer.c	FUNCTION_61
+0x4001a61	    0x81c200008018	                     add edx, 0x18800000	      1816	intel_ringbuffer.c	FUNCTION_61
+0x4001a67	    0x81e100040000	                          and ecx, 0x400	      1819	intel_ringbuffer.c	FUNCTION_61
+0x4001a6d	             0x9d1	                             or ecx, edx	      1816	intel_ringbuffer.c	FUNCTION_61
+0x4001a6f	            0x8908	                    mov dword [rax], ecx	      1816	intel_ringbuffer.c	FUNCTION_61
+0x4001a71	            0x31c0	                            xor eax, eax	      1824	intel_ringbuffer.c	FUNCTION_61
+0x4001a73	              0x5b	                                 pop rbx	      1825	intel_ringbuffer.c	FUNCTION_61
+0x4001a74	              0x5d	                                 pop rbp	      1825	intel_ringbuffer.c	FUNCTION_61
+0x4001a75	              0xc3	                                     ret	      1825	intel_ringbuffer.c	FUNCTION_61
+gen6_emit_bb_start	functions,0:DO,0:IF,1:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	19
+0x4001e20	              0x55	                                push rbp	      1831	intel_ringbuffer.c	FUNCTION_62
+0x4001e21	              0x53	                                push rbx	      1831	intel_ringbuffer.c	FUNCTION_62
+0x4001e22	          0x4889f5	                            mov rbp, rsi	      1831	intel_ringbuffer.c	FUNCTION_62
+0x4001e25	      0xbe02000000	                              mov esi, 2	      1834	intel_ringbuffer.c	FUNCTION_62	CALL_1
+0x4001e2a	            0x89cb	                            mov ebx, ecx	      1831	intel_ringbuffer.c	FUNCTION_62
+0x4001e2c	      0xe800000000	                          call 0x4001e31	      1834	intel_ringbuffer.c	FUNCTION_62	CALL_1
+0x4001e31	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1835	intel_ringbuffer.c	FUNCTION_62	IF_1	CALL_2
+0x4001e37	            0x771b	                            ja 0x4001e54	      1835	intel_ringbuffer.c	FUNCTION_62	IF_1	CALL_2
+0x4001e39	          0x83e301	                              and ebx, 1	      1838	intel_ringbuffer.c	FUNCTION_62
+0x4001e3c	          0x896804	                mov dword [rax + 4], ebp	      1841	intel_ringbuffer.c	FUNCTION_62
+0x4001e3f	          0x83fb01	                              cmp ebx, 1	      1838	intel_ringbuffer.c	FUNCTION_62
+0x4001e42	            0x19d2	                            sbb edx, edx	      1838	intel_ringbuffer.c	FUNCTION_62
+0x4001e44	    0x81e200010000	                          and edx, 0x100	      1838	intel_ringbuffer.c	FUNCTION_62
+0x4001e4a	    0x81c200008018	                     add edx, 0x18800000	      1838	intel_ringbuffer.c	FUNCTION_62
+0x4001e50	            0x8910	                    mov dword [rax], edx	      1838	intel_ringbuffer.c	FUNCTION_62
+0x4001e52	            0x31c0	                            xor eax, eax	      1844	intel_ringbuffer.c	FUNCTION_62
+0x4001e54	              0x5b	                                 pop rbx	      1845	intel_ringbuffer.c	FUNCTION_62
+0x4001e55	              0x5d	                                 pop rbp	      1845	intel_ringbuffer.c	FUNCTION_62
+0x4001e56	              0xc3	                                     ret	      1845	intel_ringbuffer.c	FUNCTION_62
+i8xx_irq_disable	functions,0:DO,0:IF,0:ELSE,0:CALL,0:WHILE,0:FOR,0:SWITCH,0	11
+0x4000260	          0x488b07	                    mov rax, qword [rdi]	       852	intel_ringbuffer.c	FUNCTION_29
+0x4000263	      0xb901000000	                              mov ecx, 1	       855	intel_ringbuffer.c	FUNCTION_29
+0x4000268	      0xbea8200000	                         mov esi, 0x20a8	       855	intel_ringbuffer.c	FUNCTION_29
+0x400026d	    0x8b9060480000	          mov edx, dword [rax + 0x4860] 	       854	intel_ringbuffer.c	FUNCTION_29
+0x4000273	     0xb97a4010000	             or edx, dword [rdi + 0x1a4]	       854	intel_ringbuffer.c	FUNCTION_29
+0x4000279	          0x4889c7	                            mov rdi, rax	       855	intel_ringbuffer.c	FUNCTION_29
+0x400027c	    0x4c8b80100800	            mov r8, qword [rax + 0x810] 	       855	intel_ringbuffer.c	FUNCTION_29
+0x4000283	    0x899060480000	          mov dword [rax + 0x4860], edx 	       854	intel_ringbuffer.c	FUNCTION_29
+0x4000289	           0xfb7d2	                           movzx edx, dx	       855	intel_ringbuffer.c	FUNCTION_29
+0x400028c	      0xe800000000	                          call 0x4000291	       855	intel_ringbuffer.c	FUNCTION_29
+0x4000291	            0xf3c3	                                     ret	       855	intel_ringbuffer.c	FUNCTION_29
+intel_init_blt_ring_buffer	functions,0:DO,0:IF,0:ELSE,0:CALL,2:WHILE,0:FOR,0:SWITCH,0	8
+0x4002650	          0x4989f8	                             mov r8, rdi	      2094	intel_ringbuffer.c	FUNCTION_71
+0x4002653	          0x4889fe	                            mov rsi, rdi	      2097	intel_ringbuffer.c	FUNCTION_71	CALL_1
+0x4002656	          0x488b3f	                    mov rdi, qword [rdi]	      2097	intel_ringbuffer.c	FUNCTION_71	CALL_1
+0x4002659	      0xe8a2dcffff	      call sym.intel_ring_default_vfuncs	      2097	intel_ringbuffer.c	FUNCTION_71	CALL_1
+0x400265e	    0x49c780000200	               mov qword [r8 + 0x200], 0	      2099	intel_ringbuffer.c	FUNCTION_71
+0x4002669	    0x41c780a40100	       mov dword [r8 + 0x1a4], 0x400000 	      2100	intel_ringbuffer.c	FUNCTION_71
+0x4002674	          0x4c89c7	                             mov rdi, r8	      2102	intel_ringbuffer.c	FUNCTION_71	CALL_2
+0x4002677	      0xe974f1ffff	          jmp sym.intel_init_ring_buffer	      2102	intel_ringbuffer.c	FUNCTION_71	CALL_2
+gen6_render_ring_flush	functions,0:DO,0:IF,4:ELSE,0:CALL,7:WHILE,0:FOR,0:SWITCH,0	64
+0x4001b10	            0x4155	                                push r13	       213	intel_ringbuffer.c	FUNCTION_6
+0x4001b12	            0x4154	                                push r12	       213	intel_ringbuffer.c	FUNCTION_6
+0x4001b14	          0x4189f4	                           mov r12d, esi	       213	intel_ringbuffer.c	FUNCTION_6
+0x4001b17	              0x55	                                push rbp	       213	intel_ringbuffer.c	FUNCTION_6
+0x4001b18	              0x53	                                push rbx	       213	intel_ringbuffer.c	FUNCTION_6
+0x4001b19	      0xbe06000000	                              mov esi, 6	       184	intel_ringbuffer.c	FUNCTION_5	CALL_2
+0x4001b1e	        0x488b4778	            mov rax, qword [rdi + 0x78] 	       215	intel_ringbuffer.c	FUNCTION_6	CALL_1
+0x4001b22	          0x4989fd	                            mov r13, rdi	       213	intel_ringbuffer.c	FUNCTION_6
+0x4001b25	    0x488b80980100	           mov rax, qword [rax + 0x198] 	       213	intel_ringbuffer.c	FUNCTION_6
+0x4001b2c	        0x488b5808	                mov rbx, qword [rax + 8]	       214	intel_ringbuffer.c	FUNCTION_6
+0x4001b30	      0xe800000000	                          call 0x4001b35	       184	intel_ringbuffer.c	FUNCTION_5	CALL_2
+0x4001b35	          0x83eb80	             sub ebx, 0xffffffffffffff80	       214	intel_ringbuffer.c	FUNCTION_6
+0x4001b38	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       185	intel_ringbuffer.c	FUNCTION_5	IF_1	CALL_3
+0x4001b3e	     0xf87b5000000	                            ja 0x4001bf9	       185	intel_ringbuffer.c	FUNCTION_5	IF_1	CALL_3
+0x4001b44	            0x89dd	                            mov ebp, ebx	       190	intel_ringbuffer.c	FUNCTION_5
+0x4001b46	    0xc7000300007a	            mov dword [rax], 0x7a000003 	       188	intel_ringbuffer.c	FUNCTION_5	CALL_5
+0x4001b4c	    0xc74004020010	          mov dword [rax + 4], 0x100002 	       189	intel_ringbuffer.c	FUNCTION_5
+0x4001b53	          0x83cd04	                               or ebp, 4	       190	intel_ringbuffer.c	FUNCTION_5
+0x4001b56	    0xc7400c000000	                mov dword [rax + 0xc], 0	       191	intel_ringbuffer.c	FUNCTION_5
+0x4001b5d	    0xc74010000000	               mov dword [rax + 0x10], 0	       192	intel_ringbuffer.c	FUNCTION_5
+0x4001b64	          0x896808	                mov dword [rax + 8], ebp	       190	intel_ringbuffer.c	FUNCTION_5
+0x4001b67	    0xc74014000000	               mov dword [rax + 0x14], 0	       193	intel_ringbuffer.c	FUNCTION_5
+0x4001b6e	      0xbe06000000	                              mov esi, 6	       196	intel_ringbuffer.c	FUNCTION_5	CALL_7
+0x4001b73	          0x4c89ef	                            mov rdi, r13	       196	intel_ringbuffer.c	FUNCTION_5	CALL_7
+0x4001b76	      0xe800000000	                          call 0x4001b7b	       196	intel_ringbuffer.c	FUNCTION_5	CALL_7
+0x4001b7b	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       197	intel_ringbuffer.c	FUNCTION_5	IF_2	CALL_8
+0x4001b81	            0x7776	                            ja 0x4001bf9	       197	intel_ringbuffer.c	FUNCTION_5	IF_2	CALL_8
+0x4001b83	    0xc7000300007a	            mov dword [rax], 0x7a000003 	       200	intel_ringbuffer.c	FUNCTION_5	CALL_10
+0x4001b89	    0xc74004004000	            mov dword [rax + 4], 0x4000 	       201	intel_ringbuffer.c	FUNCTION_5
+0x4001b90	          0x896808	                mov dword [rax + 8], ebp	       202	intel_ringbuffer.c	FUNCTION_5
+0x4001b93	    0xc7400c000000	                mov dword [rax + 0xc], 0	       203	intel_ringbuffer.c	FUNCTION_5
+0x4001b9a	    0xc74010000000	               mov dword [rax + 0x10], 0	       204	intel_ringbuffer.c	FUNCTION_5
+0x4001ba1	    0xc74014000000	               mov dword [rax + 0x14], 0	       205	intel_ringbuffer.c	FUNCTION_5
+0x4001ba8	          0x4489e5	                           mov ebp, r12d	       235	intel_ringbuffer.c	FUNCTION_6	IF_2
+0x4001bab	      0xbe04000000	                              mov esi, 4	       250	intel_ringbuffer.c	FUNCTION_6	CALL_3
+0x4001bb0	          0x4c89ef	                            mov rdi, r13	       250	intel_ringbuffer.c	FUNCTION_6	CALL_3
+0x4001bb3	          0xc1e51e	                           shl ebp, 0x1e	       235	intel_ringbuffer.c	FUNCTION_6	IF_2
+0x4001bb6	          0xc1fd1f	                           sar ebp, 0x1f	       235	intel_ringbuffer.c	FUNCTION_6	IF_2
+0x4001bb9	    0x81e501101000	                       and ebp, 0x101001	       235	intel_ringbuffer.c	FUNCTION_6	IF_2
+0x4001bbf	            0x89e8	                            mov eax, ebp	       247	intel_ringbuffer.c	FUNCTION_6	IF_3
+0x4001bc1	       0xd1c4c1400	                        or eax, 0x144c1c	       247	intel_ringbuffer.c	FUNCTION_6	IF_3
+0x4001bc6	        0x4183e401	                             and r12d, 1	       247	intel_ringbuffer.c	FUNCTION_6	IF_3
+0x4001bca	           0xf45e8	                         cmovne ebp, eax	       247	intel_ringbuffer.c	FUNCTION_6	IF_3
+0x4001bcd	      0xe800000000	                          call 0x4001bd2	       250	intel_ringbuffer.c	FUNCTION_6	CALL_3
+0x4001bd2	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       251	intel_ringbuffer.c	FUNCTION_6	IF_4	CALL_4
+0x4001bd8	            0x7718	                            ja 0x4001bf2	       251	intel_ringbuffer.c	FUNCTION_6	IF_4	CALL_4
+0x4001bda	          0x83cb04	                               or ebx, 4	       256	intel_ringbuffer.c	FUNCTION_6
+0x4001bdd	    0xc7000200007a	            mov dword [rax], 0x7a000002 	       254	intel_ringbuffer.c	FUNCTION_6	CALL_6
+0x4001be3	          0x896804	                mov dword [rax + 4], ebp	       255	intel_ringbuffer.c	FUNCTION_6
+0x4001be6	          0x895808	                mov dword [rax + 8], ebx	       256	intel_ringbuffer.c	FUNCTION_6
+0x4001be9	    0xc7400c000000	                mov dword [rax + 0xc], 0	       257	intel_ringbuffer.c	FUNCTION_6
+0x4001bf0	            0x31c0	                            xor eax, eax	       260	intel_ringbuffer.c	FUNCTION_6
+0x4001bf2	              0x5b	                                 pop rbx	       261	intel_ringbuffer.c	FUNCTION_6
+0x4001bf3	              0x5d	                                 pop rbp	       261	intel_ringbuffer.c	FUNCTION_6
+0x4001bf4	            0x415c	                                 pop r12	       261	intel_ringbuffer.c	FUNCTION_6
+0x4001bf6	            0x415d	                                 pop r13	       261	intel_ringbuffer.c	FUNCTION_6
+0x4001bf8	              0xc3	                                     ret	       261	intel_ringbuffer.c	FUNCTION_6
+0x4001bf9	            0x85c0	                           test eax, eax	       221	intel_ringbuffer.c	FUNCTION_6	IF_1
+0x4001bfb	            0x74ab	                            je 0x4001ba8	       221	intel_ringbuffer.c	FUNCTION_6	IF_1
+0x4001bfd	              0x5b	                                 pop rbx	       261	intel_ringbuffer.c	FUNCTION_6
+0x4001bfe	              0x5d	                                 pop rbp	       261	intel_ringbuffer.c	FUNCTION_6
+0x4001bff	            0x415c	                                 pop r12	       261	intel_ringbuffer.c	FUNCTION_6
+0x4001c01	            0x415d	                                 pop r13	       261	intel_ringbuffer.c	FUNCTION_6
+0x4001c03	              0xc3	                                     ret	       261	intel_ringbuffer.c	FUNCTION_6
+i830_emit_bb_start	functions,0:DO,0:IF,5:ELSE,0:CALL,14:WHILE,0:FOR,0:SWITCH,0	62
+0x4001ce0	            0x4156	                                push r14	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001ce2	            0x4155	                                push r13	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001ce4	          0x4989fe	                            mov r14, rdi	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001ce7	            0x4154	                                push r12	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001ce9	              0x55	                                push rbp	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001cea	          0x4989f4	                            mov r12, rsi	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001ced	              0x53	                                push rbx	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001cee	        0x488b4778	            mov rax, qword [rdi + 0x78] 	       939	intel_ringbuffer.c	FUNCTION_36	CALL_1
+0x4001cf2	      0xbe06000000	                              mov esi, 6	       941	intel_ringbuffer.c	FUNCTION_36	CALL_2
+0x4001cf7	            0x89d3	                            mov ebx, edx	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001cf9	            0x89cd	                            mov ebp, ecx	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001cfb	    0x488b80980100	           mov rax, qword [rax + 0x198] 	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001d02	        0x4c8b6808	                mov r13, qword [rax + 8]	       938	intel_ringbuffer.c	FUNCTION_36
+0x4001d06	      0xe800000000	                          call 0x4001d0b	       941	intel_ringbuffer.c	FUNCTION_36	CALL_2
+0x4001d0b	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       942	intel_ringbuffer.c	FUNCTION_36	IF_1	CALL_3
+0x4001d11	     0xf87b6000000	                            ja 0x4001dcd	       942	intel_ringbuffer.c	FUNCTION_36	IF_1	CALL_3
+0x4001d17	        0x40f6c502	                             test bpl, 2	       954	intel_ringbuffer.c	FUNCTION_36	IF_2
+0x4001d1b	    0xc70003003050	            mov dword [rax], 0x50300003 	       946	intel_ringbuffer.c	FUNCTION_36
+0x4001d21	    0xc740040010f0	         mov dword [rax + 4], 0x3f01000 	       947	intel_ringbuffer.c	FUNCTION_36
+0x4001d28	    0xc74008040002	           mov dword [rax + 8], 0x20004 	       948	intel_ringbuffer.c	FUNCTION_36
+0x4001d2f	        0x4489680c	             mov dword [rax + 0xc], r13d	       949	intel_ringbuffer.c	FUNCTION_36
+0x4001d33	    0xc74010efbead	     mov dword [rax + 0x10], 0xdeadbeef 	       950	intel_ringbuffer.c	FUNCTION_36
+0x4001d3a	    0xc74014000000	               mov dword [rax + 0x14], 0	       951	intel_ringbuffer.c	FUNCTION_36
+0x4001d41	            0x7561	                           jne 0x4001da4	       954	intel_ringbuffer.c	FUNCTION_36	IF_2
+0x4001d43	    0x81fb00000400	                        cmp ebx, 0x40000	       955	intel_ringbuffer.c	FUNCTION_36	IF_2	IF_3
+0x4001d49	      0xb8e4ffffff	                     mov eax, 0xffffffe4	       956	intel_ringbuffer.c	FUNCTION_36	IF_2	IF_3
+0x4001d4e	            0x777d	                            ja 0x4001dcd	       955	intel_ringbuffer.c	FUNCTION_36	IF_2	IF_3
+0x4001d50	      0xbe08000000	                              mov esi, 8	       958	intel_ringbuffer.c	FUNCTION_36	IF_2	CALL_6
+0x4001d55	          0x4c89f7	                            mov rdi, r14	       958	intel_ringbuffer.c	FUNCTION_36	IF_2	CALL_6
+0x4001d58	      0xe800000000	                          call 0x4001d5d	       958	intel_ringbuffer.c	FUNCTION_36	IF_2	CALL_6
+0x4001d5d	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       959	intel_ringbuffer.c	FUNCTION_36	IF_2	IF_4	CALL_7
+0x4001d63	            0x7768	                            ja 0x4001dcd	       959	intel_ringbuffer.c	FUNCTION_36	IF_2	IF_4	CALL_7
+0x4001d65	    0x81c3ff0f0000	                          add ebx, 0xfff	       968	intel_ringbuffer.c	FUNCTION_36	IF_2	CALL_9
+0x4001d6b	        0x44896014	            mov dword [rax + 0x14], r12d	       971	intel_ringbuffer.c	FUNCTION_36	IF_2
+0x4001d6f	    0xc7000400f050	            mov dword [rax], 0x50f00004 	       966	intel_ringbuffer.c	FUNCTION_36	IF_2
+0x4001d75	          0xc1eb0c	                            shr ebx, 0xc	       968	intel_ringbuffer.c	FUNCTION_36	IF_2	CALL_9
+0x4001d78	    0xc740040010cc	         mov dword [rax + 4], 0x3cc1000 	       967	intel_ringbuffer.c	FUNCTION_36	IF_2
+0x4001d7f	        0x4489680c	             mov dword [rax + 0xc], r13d	       969	intel_ringbuffer.c	FUNCTION_36	IF_2
+0x4001d83	          0xc1e310	                           shl ebx, 0x10	       968	intel_ringbuffer.c	FUNCTION_36	IF_2	CALL_9
+0x4001d86	    0xc74010001000	         mov dword [rax + 0x10], 0x1000 	       970	intel_ringbuffer.c	FUNCTION_36	IF_2
+0x4001d8d	    0xc74018000000	      mov dword [rax + 0x18], 0x2000000 	       973	intel_ringbuffer.c	FUNCTION_36	IF_2
+0x4001d94	          0x80cf10	                             or bh, 0x10	       968	intel_ringbuffer.c	FUNCTION_36	IF_2	CALL_9
+0x4001d97	    0xc7401c000000	               mov dword [rax + 0x1c], 0	       974	intel_ringbuffer.c	FUNCTION_36	IF_2
+0x4001d9e	          0x4589ec	                          mov r12d, r13d	       974	intel_ringbuffer.c	FUNCTION_36	IF_2
+0x4001da1	          0x895808	                mov dword [rax + 8], ebx	       968	intel_ringbuffer.c	FUNCTION_36	IF_2	CALL_9
+0x4001da4	      0xbe02000000	                              mov esi, 2	       981	intel_ringbuffer.c	FUNCTION_36	CALL_11
+0x4001da9	          0x4c89f7	                            mov rdi, r14	       981	intel_ringbuffer.c	FUNCTION_36	CALL_11
+0x4001dac	      0xe800000000	                          call 0x4001db1	       981	intel_ringbuffer.c	FUNCTION_36	CALL_11
+0x4001db1	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       982	intel_ringbuffer.c	FUNCTION_36	IF_5	CALL_12
+0x4001db7	            0x7714	                            ja 0x4001dcd	       982	intel_ringbuffer.c	FUNCTION_36	IF_5	CALL_12
+0x4001db9	          0x83e501	                              and ebp, 1	       982	intel_ringbuffer.c	FUNCTION_36	IF_5	CALL_12
+0x4001dbc	    0xc70080008018	            mov dword [rax], 0x18800080 	       985	intel_ringbuffer.c	FUNCTION_36
+0x4001dc2	          0x83f501	                              xor ebp, 1	       985	intel_ringbuffer.c	FUNCTION_36
+0x4001dc5	          0x4409e5	                            or ebp, r12d	       986	intel_ringbuffer.c	FUNCTION_36
+0x4001dc8	          0x896804	                mov dword [rax + 4], ebp	       986	intel_ringbuffer.c	FUNCTION_36
+0x4001dcb	            0x31c0	                            xor eax, eax	       990	intel_ringbuffer.c	FUNCTION_36
+0x4001dcd	              0x5b	                                 pop rbx	       991	intel_ringbuffer.c	FUNCTION_36
+0x4001dce	              0x5d	                                 pop rbp	       991	intel_ringbuffer.c	FUNCTION_36
+0x4001dcf	            0x415c	                                 pop r12	       991	intel_ringbuffer.c	FUNCTION_36
+0x4001dd1	            0x415d	                                 pop r13	       991	intel_ringbuffer.c	FUNCTION_36
+0x4001dd3	            0x415e	                                 pop r14	       991	intel_ringbuffer.c	FUNCTION_36
+0x4001dd5	              0xc3	                                     ret	       991	intel_ringbuffer.c	FUNCTION_36
+intel_ring_wait_for_space	functions,0:DO,0:IF,3:ELSE,0:CALL,6:WHILE,0:FOR,0:SWITCH,0	14
+0x4001950	          0x8b5728	            mov edx, dword [rdi + 0x28] 	      1622	intel_ringbuffer.c	FUNCTION_56	IF_1	CALL_2
+0x4001953	          0x8b4734	            mov eax, dword [rdi + 0x34] 	      1622	intel_ringbuffer.c	FUNCTION_56	IF_1	CALL_2
+0x4001956	            0x29d0	                            sub eax, edx	      1622	intel_ringbuffer.c	FUNCTION_56	IF_1	CALL_2
+0x4001958	            0x39f0	                            cmp eax, esi	      1622	intel_ringbuffer.c	FUNCTION_56	IF_1	CALL_2
+0x400195a	            0x7208	                            jb 0x4001964	      1622	intel_ringbuffer.c	FUNCTION_56	IF_1	CALL_2
+0x400195c	          0x3b772c	            cmp esi, dword [rdi + 0x2c] 	      1625	intel_ringbuffer.c	FUNCTION_56	IF_2	CALL_3
+0x400195f	            0x770d	                            ja 0x400196e	      1625	intel_ringbuffer.c	FUNCTION_56	IF_2	CALL_3
+0x4001961	            0x31c0	                            xor eax, eax	      1633	intel_ringbuffer.c	FUNCTION_56
+0x4001963	              0xc3	                                     ret	      1633	intel_ringbuffer.c	FUNCTION_56
+0x4001964	            0x29d6	                            sub esi, edx	      1623	intel_ringbuffer.c	FUNCTION_56	IF_1
+0x4001966	           0x37730	             add esi, dword [rdi + 0x30]	      1623	intel_ringbuffer.c	FUNCTION_56	IF_1
+0x4001969	          0x3b772c	            cmp esi, dword [rdi + 0x2c] 	      1625	intel_ringbuffer.c	FUNCTION_56	IF_2	CALL_3
+0x400196c	            0x76f3	                           jbe 0x4001961	      1625	intel_ringbuffer.c	FUNCTION_56	IF_2	CALL_3
+0x400196e	      0xe97debffff	                  jmp sym.wait_for_space	      1626	intel_ringbuffer.c	FUNCTION_56	IF_2	CALL_4
+reset_ring_common	functions,0:DO,0:IF,5:ELSE,1:CALL,10:WHILE,0:FOR,0:SWITCH,0	96
+0x4000ed0	            0x4156	                                push r14	       535	intel_ringbuffer.c	FUNCTION_13
+0x4000ed2	            0x4155	                                push r13	       535	intel_ringbuffer.c	FUNCTION_13
+0x4000ed4	            0x4154	                                push r12	       535	intel_ringbuffer.c	FUNCTION_13
+0x4000ed6	              0x55	                                push rbp	       535	intel_ringbuffer.c	FUNCTION_13
+0x4000ed7	          0x4889f5	                            mov rbp, rsi	       535	intel_ringbuffer.c	FUNCTION_13
+0x4000eda	              0x53	                                push rbx	       535	intel_ringbuffer.c	FUNCTION_13
+0x4000edb	          0x4889fb	                            mov rbx, rdi	       535	intel_ringbuffer.c	FUNCTION_13
+0x4000ede	          0x488b3f	                    mov rdi, qword [rdi]	       542	intel_ringbuffer.c	FUNCTION_13	CALL_1
+0x4000ee1	      0xbeff010000	                          mov esi, 0x1ff	       542	intel_ringbuffer.c	FUNCTION_13	CALL_1
+0x4000ee6	      0xe800000000	                          call 0x4000eeb	       542	intel_ringbuffer.c	FUNCTION_13	CALL_1
+0x4000eeb	          0x4885ed	                           test rbp, rbp	       558	intel_ringbuffer.c	FUNCTION_13	IF_1
+0x4000eee	     0xf8414010000	                            je 0x4001008	       558	intel_ringbuffer.c	FUNCTION_13	IF_1
+0x4000ef4	          0x8b5310	            mov edx, dword [rbx + 0x10] 	       563	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000ef7	        0x488b4570	            mov rax, qword [rbp + 0x70] 	       560	intel_ringbuffer.c	FUNCTION_13	IF_1
+0x4000efb	        0x4c8b6568	            mov r12, qword [rbp + 0x68] 	       559	intel_ringbuffer.c	FUNCTION_13	IF_1
+0x4000eff	        0x488d1492	                  lea rdx, [rdx + rdx*4]	       563	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f03	      0x488b54d070	    mov rdx, qword [rax + rdx*8 + 0x70] 	       563	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f08	          0x4885d2	                           test rdx, rdx	       563	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f0b	            0x7428	                            je 0x4000f35	       563	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f0d	        0x488b5208	                mov rdx, qword [rdx + 8]	       564	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f11	    0x498b84241808	           mov rax, qword [r12 + 0x818] 	       564	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f19	      0xb901000000	                              mov ecx, 1	       564	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f1e	      0xbe80210000	                         mov esi, 0x2180	       564	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f23	          0x4c89e7	                            mov rdi, r12	       564	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f26	    0x81ca0d010000	                           or edx, 0x10d	       564	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f2c	      0xe800000000	                          call 0x4000f31	       564	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f31	        0x488b4570	            mov rax, qword [rbp + 0x70] 	       564	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_2
+0x4000f35	        0x4c8b6810	            mov r13, qword [rax + 0x10] 	       572	intel_ringbuffer.c	FUNCTION_13	IF_1
+0x4000f39	          0x4d85ed	                           test r13, r13	       572	intel_ringbuffer.c	FUNCTION_13	IF_1
+0x4000f3c	     0xf84e5000000	                            je 0x4001027	       572	intel_ringbuffer.c	FUNCTION_13	IF_1
+0x4000f42	          0x8b4b24	            mov ecx, dword [rbx + 0x24] 	       576	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_4
+0x4000f45	    0x458bb5f80600	          mov r14d, dword [r13 + 0x6f8] 	       574	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3
+0x4000f4c	      0xbaffffffff	                     mov edx, 0xffffffff	       576	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_4
+0x4000f51	    0x498b84241808	           mov rax, qword [r12 + 0x818] 	       576	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_4
+0x4000f59	          0x4c89e7	                            mov rdi, r12	       576	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_4
+0x4000f5c	    0x8db120020000	                  lea esi, [rcx + 0x220]	       576	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_4
+0x4000f62	      0xb901000000	                              mov ecx, 1	       576	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_4
+0x4000f67	        0x41c1e60a	                           shl r14d, 0xa	       574	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3
+0x4000f6b	      0xe800000000	                          call 0x4000f70	       576	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_4
+0x4000f70	          0x8b7b24	            mov edi, dword [rbx + 0x24] 	       577	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_5
+0x4000f73	    0x498b84241808	           mov rax, qword [r12 + 0x818] 	       577	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_5
+0x4000f7b	      0xb901000000	                              mov ecx, 1	       577	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_5
+0x4000f80	          0x4489f2	                           mov edx, r14d	       577	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_5
+0x4000f83	    0x8db728020000	                  lea esi, [rdi + 0x228]	       577	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_5
+0x4000f89	          0x4c89e7	                            mov rdi, r12	       577	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_5
+0x4000f8c	      0xe800000000	                          call 0x4000f91	       577	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_5
+0x4000f91	          0x8b4324	            mov eax, dword [rbx + 0x24] 	       577	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_5
+0x4000f94	            0x6a00	                                  push 0	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000f96	            0x31c9	                            xor ecx, ecx	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000f98	      0xba01000000	                              mov edx, 1	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000f9d	    0x41b90a000000	                            mov r9d, 0xa	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000fa3	    0x41b802000000	                              mov r8d, 2	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000fa9	          0x4c89e7	                            mov rdi, r12	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000fac	    0x8db028020000	                  lea esi, [rax + 0x228]	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000fb2	      0xe800000000	                          call 0x4000fb7	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000fb7	            0x85c0	                           test eax, eax	       580	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	IF_4	CALL_6
+0x4000fb9	              0x5a	                                 pop rdx	       580	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	IF_4	CALL_6
+0x4000fba	            0x753e	                           jne 0x4000ffa	       580	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	IF_4	CALL_6
+0x4000fbc	          0x8b4b10	            mov ecx, dword [rbx + 0x10] 	       586	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_10
+0x4000fbf	    0x48c7c0feffff	             mov rax, 0xfffffffffffffffe	       586	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_10
+0x4000fc6	          0x48d3c0	                             rol rax, cl	       586	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_10
+0x4000fc9	            0x89c0	                            mov eax, eax	       586	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_10
+0x4000fcb	    0x492185e00600	            and qword [r13 + 0x6e0], rax	       586	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_10
+0x4000fd2	        0x837d58fb	cmp dword [rbp + 0x58], 0xfffffffffffffffb	       590	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_5
+0x4000fd6	            0x7409	                            je 0x4000fe1	       590	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_5
+0x4000fd8	              0x5b	                                 pop rbx	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000fd9	              0x5d	                                 pop rbp	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000fda	            0x415c	                                 pop r12	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000fdc	            0x415d	                                 pop r13	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000fde	            0x415e	                                 pop r14	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000fe0	              0xc3	                                     ret	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000fe1	    0x488b85800000	            mov rax, qword [rbp + 0x80] 	       591	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_5
+0x4000fe8	    0x8b95b8010000	           mov edx, dword [rbp + 0x1b8] 	       591	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_5
+0x4000fee	          0x895020	             mov dword [rax + 0x20], edx	       591	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_5
+0x4000ff1	              0x5b	                                 pop rbx	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000ff2	              0x5d	                                 pop rbp	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000ff3	            0x415c	                                 pop r12	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000ff5	            0x415d	                                 pop r13	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000ff7	            0x415e	                                 pop r14	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000ff9	              0xc3	                                     ret	       596	intel_ringbuffer.c	FUNCTION_13
+0x4000ffa	    0x48c7c7000000	                              mov rdi, 0	       584	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_9
+0x4001001	      0xe800000000	                          call 0x4001006	       584	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_9
+0x4001006	            0xebb4	                           jmp 0x4000fbc	       584	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3	CALL_9
+0x4001008	    0x48c783300300	              mov qword [rbx + 0x330], 0	       593	intel_ringbuffer.c	FUNCTION_13	ELSE_1
+0x4001013	    0x48c783380300	              mov qword [rbx + 0x338], 0	       594	intel_ringbuffer.c	FUNCTION_13	ELSE_1
+0x400101e	              0x5b	                                 pop rbx	       596	intel_ringbuffer.c	FUNCTION_13
+0x400101f	              0x5d	                                 pop rbp	       596	intel_ringbuffer.c	FUNCTION_13
+0x4001020	            0x415c	                                 pop r12	       596	intel_ringbuffer.c	FUNCTION_13
+0x4001022	            0x415d	                                 pop r13	       596	intel_ringbuffer.c	FUNCTION_13
+0x4001024	            0x415e	                                 pop r14	       596	intel_ringbuffer.c	FUNCTION_13
+0x4001026	              0xc3	                                     ret	       596	intel_ringbuffer.c	FUNCTION_13
+0x4001027	          0x488b03	                    mov rax, qword [rbx]	       572	intel_ringbuffer.c	FUNCTION_13	IF_1
+0x400102a	    0x4c8ba8c85f00	          mov r13, qword [rax + 0x5fc8] 	       572	intel_ringbuffer.c	FUNCTION_13	IF_1
+0x4001031	          0x4d85ed	                           test r13, r13	       573	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3
+0x4001034	            0x749c	                            je 0x4000fd2	       573	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3
+0x4001036	      0xe907ffffff	                           jmp 0x4000f42	       573	intel_ringbuffer.c	FUNCTION_13	IF_1	IF_3
+gen5_irq_disable	functions,0:DO,0:IF,0:ELSE,0:CALL,1:WHILE,0:FOR,0:SWITCH,0	3
+0x4001050	    0x8bb7a4010000	           mov esi, dword [rdi + 0x1a4] 	       817	intel_ringbuffer.c	FUNCTION_25	CALL_1
+0x4001056	          0x488b3f	                    mov rdi, qword [rdi]	       817	intel_ringbuffer.c	FUNCTION_25	CALL_1
+0x4001059	      0xe900000000	                           jmp 0x400105e	       817	intel_ringbuffer.c	FUNCTION_25	CALL_1
+intel_init_render_ring_buffer	functions,0:DO,0:IF,11:ELSE,4:CALL,4:WHILE,0:FOR,0:SWITCH,0	56
+0x40024c0	              0x55	                                push rbp	      2023	intel_ringbuffer.c	ELSE_3	FUNCTION_69
+0x40024c1	              0x53	                                push rbx	      2023	intel_ringbuffer.c	ELSE_3	FUNCTION_69
+0x40024c2	          0x4889fe	                            mov rsi, rdi	      2027	intel_ringbuffer.c	ELSE_3	FUNCTION_69	CALL_1
+0x40024c5	          0x488b2f	                    mov rbp, qword [rdi]	      2024	intel_ringbuffer.c	ELSE_3	FUNCTION_69
+0x40024c8	          0x4889fb	                            mov rbx, rdi	      2023	intel_ringbuffer.c	ELSE_3	FUNCTION_69
+0x40024cb	          0x4889ef	                            mov rdi, rbp	      2027	intel_ringbuffer.c	ELSE_3	FUNCTION_69	CALL_1
+0x40024ce	      0xe82ddeffff	      call sym.intel_ring_default_vfuncs	      2027	intel_ringbuffer.c	ELSE_3	FUNCTION_69	CALL_1
+0x40024d3	    0xf68579060000	              test byte [rbp + 0x679], 2	      2029	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_1
+0x40024da	            0x740a	                            je 0x40024e6	      2029	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_1
+0x40024dc	    0xc783a0010000	          mov dword [rbx + 0x1a0], 0x20 	      2030	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_1
+0x40024e6	     0xfb6855c0600	          movzx eax, byte [rbp + 0x65c] 	      2032	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_2
+0x40024ed	            0x3c05	                               cmp al, 5	      2032	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_2
+0x40024ef	            0x7661	                           jbe 0x4002552	      2032	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_2
+0x40024f1	    0x48c783f80100	              mov qword [rbx + 0x1f8], 0	      2033	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_2
+0x40024fc	    0x48c783000200	              mov qword [rbx + 0x200], 0	      2034	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_2
+0x4002507	    0xf6855a060000	          test byte [rbp + 0x65a], 0x20 	      2035	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_2	IF_3
+0x400250e	            0x7558	                           jne 0x4002568	      2035	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_2	IF_3
+0x4002510	    0xf68566060000	              test byte [rbp + 0x666], 8	      2047	intel_ringbuffer.c	FUNCTION_69	ELSE_3	IF_6
+0x4002517	            0x740b	                            je 0x4002524	      2047	intel_ringbuffer.c	FUNCTION_69	ELSE_3	IF_6
+0x4002519	    0x48c783080200	              mov qword [rbx + 0x208], 0	      2048	intel_ringbuffer.c	FUNCTION_69	ELSE_3	IF_6
+0x4002524	    0x48c783b80100	              mov qword [rbx + 0x1b8], 0	      2050	intel_ringbuffer.c	FUNCTION_69	ELSE_3
+0x400252f	          0x4889df	                            mov rdi, rbx	      2052	intel_ringbuffer.c	FUNCTION_69	ELSE_3	CALL_2
+0x4002532	      0xe8b9f2ffff	         call sym.intel_init_ring_buffer	      2052	intel_ringbuffer.c	FUNCTION_69	ELSE_3	CALL_2
+0x4002537	            0x85c0	                           test eax, eax	      2053	intel_ringbuffer.c	FUNCTION_69	ELSE_3	IF_7
+0x4002539	            0x7514	                           jne 0x400254f	      2053	intel_ringbuffer.c	FUNCTION_69	ELSE_3	IF_7
+0x400253b	    0x80bd5c060000	               cmp byte [rbp + 0x65c], 5	      2056	intel_ringbuffer.c	FUNCTION_69	ELSE_3	IF_8
+0x4002542	            0x775b	                            ja 0x400259f	      2056	intel_ringbuffer.c	FUNCTION_69	ELSE_3	IF_8
+0x4002544	            0x31c0	                            xor eax, eax	      2066	intel_ringbuffer.c	FUNCTION_69	ELSE_3
+0x4002546	    0xf68564060000	              test byte [rbp + 0x664], 6	      2060	intel_ringbuffer.c	FUNCTION_69	ELSE_3	ELSE_4	IF_10
+0x400254d	            0x755f	                           jne 0x40025ae	      2060	intel_ringbuffer.c	FUNCTION_69	ELSE_3	ELSE_4	IF_10
+0x400254f	              0x5b	                                 pop rbx	      2067	intel_ringbuffer.c	FUNCTION_69	ELSE_3
+0x4002550	              0x5d	                                 pop rbp	      2067	intel_ringbuffer.c	FUNCTION_69	ELSE_3
+0x4002551	              0xc3	                                     ret	      2067	intel_ringbuffer.c	FUNCTION_69	ELSE_3
+0x4002552	    0xf6855a060000	          test byte [rbp + 0x65a], 0x10 	      2037	intel_ringbuffer.c	ELSE_3	FUNCTION_69	ELSE_1	IF_4
+0x4002559	            0x741a	                            je 0x4002575	      2037	intel_ringbuffer.c	ELSE_3	FUNCTION_69	ELSE_1	IF_4
+0x400255b	    0x48c783000200	              mov qword [rbx + 0x200], 0	      2038	intel_ringbuffer.c	ELSE_3	FUNCTION_69	ELSE_1	IF_4
+0x4002566	            0xeba8	                           jmp 0x4002510	      2038	intel_ringbuffer.c	ELSE_3	FUNCTION_69	ELSE_1	IF_4
+0x4002568	    0x48c783000200	              mov qword [rbx + 0x200], 0	      2036	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_2	IF_3
+0x4002573	            0xeb9b	                           jmp 0x4002510	      2036	intel_ringbuffer.c	ELSE_3	FUNCTION_69	IF_2	IF_3
+0x4002575	            0x3c03	                               cmp al, 3	      2041	intel_ringbuffer.c	ELSE_3	FUNCTION_69	ELSE_2	IF_5
+0x4002577	    0x48c7c2000000	                              mov rdx, 0	      2041	intel_ringbuffer.c	ELSE_3	FUNCTION_69	ELSE_2	IF_5
+0x400257e	    0x48c7c0000000	                              mov rax, 0	      2041	intel_ringbuffer.c	ELSE_3	FUNCTION_69	ELSE_2	IF_5
+0x4002585	        0x480f46c2	                         cmovbe rax, rdx	      2041	intel_ringbuffer.c	ELSE_3	FUNCTION_69	ELSE_2	IF_5
+0x4002589	    0xc783a4010000	              mov dword [rbx + 0x1a4], 2	      2044	intel_ringbuffer.c	FUNCTION_69	ELSE_2	ELSE_3
+0x4002593	    0x488983000200	            mov qword [rbx + 0x200], rax	      2041	intel_ringbuffer.c	ELSE_3	FUNCTION_69	ELSE_2	IF_5
+0x400259a	      0xe971ffffff	                           jmp 0x4002510	      2041	intel_ringbuffer.c	ELSE_3	FUNCTION_69	ELSE_2	IF_5
+0x400259f	          0x4889df	                            mov rdi, rbx	      2057	intel_ringbuffer.c	FUNCTION_69	ELSE_3	IF_8	CALL_3
+0x40025a2	      0xbe00100000	                         mov esi, 0x1000	      2057	intel_ringbuffer.c	FUNCTION_69	ELSE_3	IF_8	CALL_3
+0x40025a7	              0x5b	                                 pop rbx	      2067	intel_ringbuffer.c	FUNCTION_69	ELSE_3
+0x40025a8	              0x5d	                                 pop rbp	      2067	intel_ringbuffer.c	FUNCTION_69	ELSE_3
+0x40025a9	      0xe900000000	                           jmp 0x40025ae	      2057	intel_ringbuffer.c	FUNCTION_69	ELSE_3	IF_8	CALL_3
+0x40025ae	          0x4889df	                            mov rdi, rbx	      2061	intel_ringbuffer.c	FUNCTION_69	ELSE_3	ELSE_4	IF_10	CALL_4
+0x40025b1	      0xbe00000400	                        mov esi, 0x40000	      2061	intel_ringbuffer.c	FUNCTION_69	ELSE_3	ELSE_4	IF_10	CALL_4
+0x40025b6	              0x5b	                                 pop rbx	      2067	intel_ringbuffer.c	FUNCTION_69	ELSE_3
+0x40025b7	              0x5d	                                 pop rbp	      2067	intel_ringbuffer.c	FUNCTION_69	ELSE_3
+0x40025b8	      0xe900000000	                           jmp 0x40025bd	      2061	intel_ringbuffer.c	FUNCTION_69	ELSE_3	ELSE_4	IF_10	CALL_4
+stop_ring	functions,0:DO,0:IF,3:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	92
+0x40005b0	            0x4154	                                push r12	       414	intel_ringbuffer.c	FUNCTION_11
+0x40005b2	              0x55	                                push rbp	       414	intel_ringbuffer.c	FUNCTION_11
+0x40005b3	          0x4889fd	                            mov rbp, rdi	       414	intel_ringbuffer.c	FUNCTION_11
+0x40005b6	              0x53	                                push rbx	       414	intel_ringbuffer.c	FUNCTION_11
+0x40005b7	          0x488b1f	                    mov rbx, qword [rdi]	       415	intel_ringbuffer.c	FUNCTION_11
+0x40005ba	    0x80bb5c060000	               cmp byte [rbx + 0x65c], 2	       417	intel_ringbuffer.c	FUNCTION_11	IF_1
+0x40005c1	            0x7654	                           jbe 0x4000617	       417	intel_ringbuffer.c	FUNCTION_11	IF_1
+0x40005c3	          0x8b5724	            mov edx, dword [rdi + 0x24] 	       418	intel_ringbuffer.c	FUNCTION_11	IF_1	CALL_1
+0x40005c6	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       418	intel_ringbuffer.c	FUNCTION_11	IF_1	CALL_1
+0x40005cd	      0xb901000000	                              mov ecx, 1	       418	intel_ringbuffer.c	FUNCTION_11	IF_1	CALL_1
+0x40005d2	          0x4889df	                            mov rdi, rbx	       418	intel_ringbuffer.c	FUNCTION_11	IF_1	CALL_1
+0x40005d5	    0x8db29c000000	                   lea esi, [rdx + 0x9c]	       418	intel_ringbuffer.c	FUNCTION_11	IF_1	CALL_1
+0x40005db	      0xba00010001	                      mov edx, 0x1000100	       418	intel_ringbuffer.c	FUNCTION_11	IF_1	CALL_1
+0x40005e0	      0xe800000000	                          call 0x40005e5	       418	intel_ringbuffer.c	FUNCTION_11	IF_1	CALL_1
+0x40005e5	          0x8b4524	            mov eax, dword [rbp + 0x24] 	       418	intel_ringbuffer.c	FUNCTION_11	IF_1	CALL_1
+0x40005e8	            0x6a00	                                  push 0	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x40005ea	      0xba00020000	                          mov edx, 0x200	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x40005ef	    0x41b9e8030000	                          mov r9d, 0x3e8	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x40005f5	    0x41b802000000	                              mov r8d, 2	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x40005fb	      0xb900020000	                          mov ecx, 0x200	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000600	          0x4889df	                            mov rdi, rbx	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000603	    0x8db09c000000	                   lea esi, [rax + 0x9c]	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x4000609	      0xe800000000	                          call 0x400060e	       191	intel_uncore.h	FUNCTION_219	CALL_1
+0x400060e	            0x85c0	                           test eax, eax	       419	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	CALL_2
+0x4000610	              0x5a	                                 pop rdx	       419	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	CALL_2
+0x4000611	     0xf85b1000000	                           jne 0x40006c8	       419	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	CALL_2
+0x4000617	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       435	intel_ringbuffer.c	FUNCTION_11
+0x400061a	    0x4c8ba3180800	           mov r12, qword [rbx + 0x818] 	       435	intel_ringbuffer.c	FUNCTION_11
+0x4000621	      0xba01000000	                              mov edx, 1	       435	intel_ringbuffer.c	FUNCTION_11
+0x4000626	          0x4889df	                            mov rdi, rbx	       435	intel_ringbuffer.c	FUNCTION_11
+0x4000629	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       435	intel_ringbuffer.c	FUNCTION_11
+0x4000630	          0x8d7130	                   lea esi, [rcx + 0x30]	       435	intel_ringbuffer.c	FUNCTION_11
+0x4000633	      0xe800000000	                          call 0x4000638	       435	intel_ringbuffer.c	FUNCTION_11
+0x4000638	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       435	intel_ringbuffer.c	FUNCTION_11
+0x400063b	            0x89c2	                            mov edx, eax	       435	intel_ringbuffer.c	FUNCTION_11
+0x400063d	          0x4889df	                            mov rdi, rbx	       435	intel_ringbuffer.c	FUNCTION_11
+0x4000640	          0x8d7134	                   lea esi, [rcx + 0x34]	       435	intel_ringbuffer.c	FUNCTION_11
+0x4000643	      0xb901000000	                              mov ecx, 1	       435	intel_ringbuffer.c	FUNCTION_11
+0x4000648	      0xe800000000	                          call 0x400064d	       435	intel_ringbuffer.c	FUNCTION_11
+0x400064d	          0x8b5524	            mov edx, dword [rbp + 0x24] 	       437	intel_ringbuffer.c	FUNCTION_11
+0x4000650	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       437	intel_ringbuffer.c	FUNCTION_11
+0x4000657	      0xb901000000	                              mov ecx, 1	       437	intel_ringbuffer.c	FUNCTION_11
+0x400065c	          0x4889df	                            mov rdi, rbx	       437	intel_ringbuffer.c	FUNCTION_11
+0x400065f	          0x8d7234	                   lea esi, [rdx + 0x34]	       437	intel_ringbuffer.c	FUNCTION_11
+0x4000662	            0x31d2	                            xor edx, edx	       437	intel_ringbuffer.c	FUNCTION_11
+0x4000664	      0xe800000000	                          call 0x4000669	       437	intel_ringbuffer.c	FUNCTION_11
+0x4000669	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       438	intel_ringbuffer.c	FUNCTION_11
+0x400066c	            0x31d2	                            xor edx, edx	       438	intel_ringbuffer.c	FUNCTION_11
+0x400066e	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       438	intel_ringbuffer.c	FUNCTION_11
+0x4000675	      0xb901000000	                              mov ecx, 1	       438	intel_ringbuffer.c	FUNCTION_11
+0x400067a	          0x8d7730	                   lea esi, [rdi + 0x30]	       438	intel_ringbuffer.c	FUNCTION_11
+0x400067d	          0x4889df	                            mov rdi, rbx	       438	intel_ringbuffer.c	FUNCTION_11
+0x4000680	      0xe800000000	                          call 0x4000685	       438	intel_ringbuffer.c	FUNCTION_11
+0x4000685	          0x8b4d24	            mov ecx, dword [rbp + 0x24] 	       441	intel_ringbuffer.c	FUNCTION_11
+0x4000688	            0x31d2	                            xor edx, edx	       441	intel_ringbuffer.c	FUNCTION_11
+0x400068a	    0x488b83180800	           mov rax, qword [rbx + 0x818] 	       441	intel_ringbuffer.c	FUNCTION_11
+0x4000691	          0x4889df	                            mov rdi, rbx	       441	intel_ringbuffer.c	FUNCTION_11
+0x4000694	          0x8d713c	                   lea esi, [rcx + 0x3c]	       441	intel_ringbuffer.c	FUNCTION_11
+0x4000697	      0xb901000000	                              mov ecx, 1	       441	intel_ringbuffer.c	FUNCTION_11
+0x400069c	      0xe800000000	                          call 0x40006a1	       441	intel_ringbuffer.c	FUNCTION_11
+0x40006a1	          0x8b7524	            mov esi, dword [rbp + 0x24] 	       443	intel_ringbuffer.c	FUNCTION_11
+0x40006a4	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       443	intel_ringbuffer.c	FUNCTION_11
+0x40006ab	      0xba01000000	                              mov edx, 1	       443	intel_ringbuffer.c	FUNCTION_11
+0x40006b0	          0x4889df	                            mov rdi, rbx	       443	intel_ringbuffer.c	FUNCTION_11
+0x40006b3	          0x83c634	                           add esi, 0x34	       443	intel_ringbuffer.c	FUNCTION_11
+0x40006b6	      0xe800000000	                          call 0x40006bb	       443	intel_ringbuffer.c	FUNCTION_11
+0x40006bb	      0xa9fcff1f00	                      test eax, 0x1ffffc	       443	intel_ringbuffer.c	FUNCTION_11
+0x40006c0	           0xf94c0	                                 sete al	       443	intel_ringbuffer.c	FUNCTION_11
+0x40006c3	              0x5b	                                 pop rbx	       444	intel_ringbuffer.c	FUNCTION_11
+0x40006c4	              0x5d	                                 pop rbp	       444	intel_ringbuffer.c	FUNCTION_11
+0x40006c5	            0x415c	                                 pop r12	       444	intel_ringbuffer.c	FUNCTION_11
+0x40006c7	              0xc3	                                     ret	       444	intel_ringbuffer.c	FUNCTION_11
+0x40006c8	        0x488d7508	                      lea rsi, [rbp + 8]	       424	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	CALL_4
+0x40006cc	    0x48c7c7000000	                              mov rdi, 0	       424	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	CALL_4
+0x40006d3	      0xe800000000	                          call 0x40006d8	       424	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	CALL_4
+0x40006d8	          0x8b5524	            mov edx, dword [rbp + 0x24] 	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x40006db	          0x4889df	                            mov rdi, rbx	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x40006de	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x40006e5	          0x8d7234	                   lea esi, [rdx + 0x34]	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x40006e8	      0xba01000000	                              mov edx, 1	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x40006ed	      0xe800000000	                          call 0x40006f2	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x40006f2	          0x8b7d24	            mov edi, dword [rbp + 0x24] 	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x40006f5	          0x4189c4	                           mov r12d, eax	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x40006f8	      0xba01000000	                              mov edx, 1	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x40006fd	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x4000704	          0x8d7730	                   lea esi, [rdi + 0x30]	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x4000707	          0x4889df	                            mov rdi, rbx	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x400070a	      0xe800000000	                          call 0x400070f	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x400070f	          0x4139c4	                           cmp r12d, eax	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x4000712	     0xf84fffeffff	                            je 0x4000617	       430	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x4000718	            0x31c0	                            xor eax, eax	       431	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+0x400071a	            0xeba7	                           jmp 0x40006c3	       431	intel_ringbuffer.c	FUNCTION_11	IF_1	IF_2	IF_3
+intel_ring_pin	functions,0:DO,0:IF,8:ELSE,2:CALL,12:WHILE,0:FOR,0:SWITCH,0	71
+0x4001530	            0x4155	                                push r13	      1017	intel_ringbuffer.c	FUNCTION_38
+0x4001532	            0x4154	                                push r12	      1017	intel_ringbuffer.c	FUNCTION_38
+0x4001534	            0x89d0	                            mov eax, edx	      1029	intel_ringbuffer.c	FUNCTION_38	IF_1
+0x4001536	              0x55	                                push rbp	      1017	intel_ringbuffer.c	FUNCTION_38
+0x4001537	              0x53	                                push rbx	      1017	intel_ringbuffer.c	FUNCTION_38
+0x4001538	       0xd40040000	                           or eax, 0x440	      1029	intel_ringbuffer.c	FUNCTION_38	IF_1
+0x400153d	     0xfb6b6790600	          movzx esi, byte [rsi + 0x679] 	      1018	intel_ringbuffer.c	FUNCTION_38
+0x4001544	          0x4c8b2f	                    mov r13, qword [rdi]	      1019	intel_ringbuffer.c	FUNCTION_38
+0x4001547	          0x4889fd	                            mov rbp, rdi	      1017	intel_ringbuffer.c	FUNCTION_38
+0x400154a	      0xbb40000000	                           mov ebx, 0x40	      1029	intel_ringbuffer.c	FUNCTION_38	IF_1
+0x400154f	    0x498bbda00000	            mov rdi, qword [r13 + 0xa0] 	      1030	intel_ringbuffer.c	FUNCTION_38	IF_2
+0x4001556	        0x40c0ee02	                              shr sil, 2	      1018	intel_ringbuffer.c	FUNCTION_38
+0x400155a	          0x83f601	                              xor esi, 1	      1018	intel_ringbuffer.c	FUNCTION_38
+0x400155d	          0x83e601	                              and esi, 1	      1018	intel_ringbuffer.c	FUNCTION_38
+0x4001560	            0x85d2	                           test edx, edx	      1029	intel_ringbuffer.c	FUNCTION_38	IF_1
+0x4001562	           0xf45d8	                         cmovne ebx, eax	      1029	intel_ringbuffer.c	FUNCTION_38	IF_1
+0x4001565	          0x4189f4	                           mov r12d, esi	      1018	intel_ringbuffer.c	FUNCTION_38
+0x4001568	            0x89d8	                            mov eax, ebx	      1031	intel_ringbuffer.c	FUNCTION_38	IF_2
+0x400156a	          0x83c802	                               or eax, 2	      1031	intel_ringbuffer.c	FUNCTION_38	IF_2
+0x400156d	    0x4883bf180100	              cmp qword [rdi + 0x118], 0	      1031	intel_ringbuffer.c	FUNCTION_38	IF_2
+0x4001575	           0xf45d8	                         cmovne ebx, eax	      1031	intel_ringbuffer.c	FUNCTION_38	IF_2
+0x4001578	    0x498b85f80000	            mov rax, qword [r13 + 0xf8] 	      1033	intel_ringbuffer.c	FUNCTION_38	IF_3
+0x400157f	            0xa840	                           test al, 0x40	      1033	intel_ringbuffer.c	FUNCTION_38	IF_3
+0x4001581	            0x751f	                           jne 0x40015a2	      1033	intel_ringbuffer.c	FUNCTION_38	IF_3
+0x4001583	          0xf6c302	                              test bl, 2	      1034	intel_ringbuffer.c	FUNCTION_38	IF_3	IF_4
+0x4001586	      0xbe01000000	                              mov esi, 1	      1037	intel_ringbuffer.c	FUNCTION_38	IF_3	CALL_3
+0x400158b	            0x7505	                           jne 0x4001592	      1034	intel_ringbuffer.c	FUNCTION_38	IF_3	IF_4
+0x400158d	          0x4584e4	                         test r12b, r12b	      1034	intel_ringbuffer.c	FUNCTION_38	IF_3	IF_4
+0x4001590	            0x746d	                            je 0x40015ff	      1034	intel_ringbuffer.c	FUNCTION_38	IF_3	IF_4
+0x4001592	      0xe800000000	                          call 0x4001597	      1035	intel_ringbuffer.c	FUNCTION_38	IF_3	CALL_2
+0x4001597	            0x85c0	                           test eax, eax	      1038	intel_ringbuffer.c	FUNCTION_38	IF_3	IF_5	CALL_4
+0x4001599	            0x7553	                           jne 0x40015ee	      1038	intel_ringbuffer.c	FUNCTION_38	IF_3	IF_5	CALL_4
+0x400159b	    0x498b85f80000	            mov rax, qword [r13 + 0xf8] 	      1038	intel_ringbuffer.c	FUNCTION_38	IF_3	IF_5	CALL_4
+0x40015a2	            0x89d9	                            mov ecx, ebx	      1042	intel_ringbuffer.c	FUNCTION_38	CALL_5
+0x40015a4	        0x4883c001	                              add rax, 1	       301	i915_vma.h	FUNCTION_210	IF_1	CALL_4
+0x40015a8	          0x4889ca	                            mov rdx, rcx	       301	i915_vma.h	FUNCTION_210	IF_1	CALL_4
+0x40015ab	    0x498985f80000	             mov qword [r13 + 0xf8], rax	       301	i915_vma.h	FUNCTION_210	IF_1	CALL_4
+0x40015b2	          0x4831c2	                            xor rdx, rax	       301	i915_vma.h	FUNCTION_210	IF_1	CALL_4
+0x40015b5	    0x81e2e0000000	                           and edx, 0xe0	       301	i915_vma.h	FUNCTION_210	IF_1	CALL_4
+0x40015bb	            0x7549	                           jne 0x4001606	       301	i915_vma.h	FUNCTION_210	IF_1	CALL_4
+0x40015bd	          0xf6c402	                              test ah, 2	      1046	intel_ringbuffer.c	FUNCTION_38	IF_7	CALL_7
+0x40015c0	            0x7533	                           jne 0x40015f5	      1046	intel_ringbuffer.c	FUNCTION_38	IF_7	CALL_7
+0x40015c2	    0x498bbda00000	            mov rdi, qword [r13 + 0xa0] 	      1049	intel_ringbuffer.c	FUNCTION_38	CALL_9
+0x40015c9	        0x410fb6f4	                         movzx esi, r12b	      1049	intel_ringbuffer.c	FUNCTION_38	CALL_9
+0x40015cd	      0xe800000000	                          call 0x40015d2	      1049	intel_ringbuffer.c	FUNCTION_38	CALL_9
+0x40015d2	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1050	intel_ringbuffer.c	FUNCTION_38	IF_8	CALL_10
+0x40015d8	            0x7748	                            ja 0x4001622	      1050	intel_ringbuffer.c	FUNCTION_38	IF_8	CALL_10
+0x40015da	    0x498b95a00000	            mov rdx, qword [r13 + 0xa0] 	      1053	intel_ringbuffer.c	FUNCTION_38
+0x40015e1	    0x83829c010000	              add dword [rdx + 0x19c], 1	      1053	intel_ringbuffer.c	FUNCTION_38
+0x40015e8	        0x48894508	                mov qword [rbp + 8], rax	      1055	intel_ringbuffer.c	FUNCTION_38
+0x40015ec	            0x31c0	                            xor eax, eax	      1056	intel_ringbuffer.c	FUNCTION_38
+0x40015ee	              0x5b	                                 pop rbx	      1061	intel_ringbuffer.c	FUNCTION_38
+0x40015ef	              0x5d	                                 pop rbp	      1061	intel_ringbuffer.c	FUNCTION_38
+0x40015f0	            0x415c	                                 pop r12	      1061	intel_ringbuffer.c	FUNCTION_38
+0x40015f2	            0x415d	                                 pop r13	      1061	intel_ringbuffer.c	FUNCTION_38
+0x40015f4	              0xc3	                                     ret	      1061	intel_ringbuffer.c	FUNCTION_38
+0x40015f5	          0x4c89ef	                            mov rdi, r13	      1047	intel_ringbuffer.c	FUNCTION_38	CALL_8
+0x40015f8	      0xe800000000	                          call 0x40015fd	      1047	intel_ringbuffer.c	FUNCTION_38	CALL_8
+0x40015fd	            0xebd3	                           jmp 0x40015d2	      1047	intel_ringbuffer.c	FUNCTION_38	CALL_8
+0x40015ff	      0xe800000000	                          call 0x4001604	      1037	intel_ringbuffer.c	FUNCTION_38	IF_3	CALL_3
+0x4001604	            0xeb91	                           jmp 0x4001597	      1037	intel_ringbuffer.c	FUNCTION_38	IF_3	CALL_3
+0x4001606	            0x31f6	                            xor esi, esi	       307	i915_vma.h	FUNCTION_210	CALL_9
+0x4001608	      0xba00100000	                         mov edx, 0x1000	       307	i915_vma.h	FUNCTION_210	CALL_9
+0x400160d	          0x4c89ef	                            mov rdi, r13	       307	i915_vma.h	FUNCTION_210	CALL_9
+0x4001610	      0xe800000000	                          call 0x4001615	       307	i915_vma.h	FUNCTION_210	CALL_9
+0x4001615	            0x85c0	                           test eax, eax	      1043	intel_ringbuffer.c	FUNCTION_38	IF_6	CALL_6
+0x4001617	            0x75d5	                           jne 0x40015ee	      1043	intel_ringbuffer.c	FUNCTION_38	IF_6	CALL_6
+0x4001619	    0x498b85f80000	            mov rax, qword [r13 + 0xf8] 	      1043	intel_ringbuffer.c	FUNCTION_38	IF_6	CALL_6
+0x4001620	            0xeb9b	                           jmp 0x40015bd	      1043	intel_ringbuffer.c	FUNCTION_38	IF_6	CALL_6
+0x4001622	    0x4983adf80000	               sub qword [r13 + 0xf8], 1	       328	i915_vma.h	FUNCTION_214
+0x400162a	            0xebc2	                           jmp 0x40015ee	      1060	intel_ringbuffer.c	FUNCTION_38	CALL_12
+gen6_signal	functions,0:DO,0:IF,3:ELSE,0:CALL,4:WHILE,0:FOR,0:SWITCH,0	30
+0x4000040	          0x4889f0	                            mov rax, rsi	       665	intel_ringbuffer.c	FUNCTION_16
+0x4000043	        0x488b7768	            mov rsi, qword [rdi + 0x68] 	       666	intel_ringbuffer.c	FUNCTION_16
+0x4000047	          0x4531d2	                          xor r10d, r10d	       669	intel_ringbuffer.c	FUNCTION_16
+0x400004a	    0x41b80f000000	                            mov r8d, 0xf	       674	intel_ringbuffer.c	FUNCTION_16	IF_1	CALL_1
+0x4000050	    0x488d96784600	                 lea rdx, [rsi + 0x4678]	       674	intel_ringbuffer.c	FUNCTION_16	IF_1	CALL_1
+0x4000057	    0x4881c6b84600	                         add rsi, 0x46b8	       674	intel_ringbuffer.c	FUNCTION_16	IF_1	CALL_1
+0x400005e	          0x488b0a	                    mov rcx, qword [rdx]	       671	intel_ringbuffer.c	FUNCTION_16
+0x4000061	          0x4885c9	                           test rcx, rcx	       671	intel_ringbuffer.c	FUNCTION_16
+0x4000064	            0x7433	                            je 0x4000099	       671	intel_ringbuffer.c	FUNCTION_16
+0x4000066	          0x8b4914	            mov ecx, dword [rcx + 0x14] 	       674	intel_ringbuffer.c	FUNCTION_16	IF_1	CALL_1
+0x4000069	        0x490fa3c8	                              bt r8, rcx	       674	intel_ringbuffer.c	FUNCTION_16	IF_1	CALL_1
+0x400006d	            0x732a	                           jae 0x4000099	       674	intel_ringbuffer.c	FUNCTION_16	IF_1	CALL_1
+0x400006f	        0x4c8b4f78	              mov r9, qword [rdi + 0x78]	       677	intel_ringbuffer.c	FUNCTION_16
+0x4000073	    0x418b8c895802	    mov ecx, dword [r9 + rcx*4 + 0x258] 	       677	intel_ringbuffer.c	FUNCTION_16
+0x400007b	            0x85c9	                           test ecx, ecx	       678	intel_ringbuffer.c	FUNCTION_16	IF_2	CALL_2
+0x400007d	            0x741a	                            je 0x4000099	       678	intel_ringbuffer.c	FUNCTION_16	IF_2	CALL_2
+0x400007f	    0xc70001000011	            mov dword [rax], 0x11000001 	       679	intel_ringbuffer.c	FUNCTION_16	IF_2	CALL_3
+0x4000085	          0x894804	                mov dword [rax + 4], ecx	       680	intel_ringbuffer.c	FUNCTION_16	IF_2	CALL_4
+0x4000088	        0x4183c201	                             add r10d, 1	       682	intel_ringbuffer.c	FUNCTION_16	IF_2
+0x400008c	    0x8b8fb0010000	           mov ecx, dword [rdi + 0x1b0] 	       681	intel_ringbuffer.c	FUNCTION_16	IF_2
+0x4000092	        0x4883c00c	                            add rax, 0xc	       681	intel_ringbuffer.c	FUNCTION_16	IF_2
+0x4000096	          0x8948fc	                mov dword [rax - 4], ecx	       681	intel_ringbuffer.c	FUNCTION_16	IF_2
+0x4000099	        0x4883c208	                              add rdx, 8	       681	intel_ringbuffer.c	FUNCTION_16	IF_2
+0x400009d	          0x4839f2	                            cmp rdx, rsi	       671	intel_ringbuffer.c	FUNCTION_16
+0x40000a0	            0x75bc	                           jne 0x400005e	       671	intel_ringbuffer.c	FUNCTION_16
+0x40000a2	        0x4183e201	                             and r10d, 1	       685	intel_ringbuffer.c	FUNCTION_16	IF_3
+0x40000a6	            0x740a	                            je 0x40000b2	       685	intel_ringbuffer.c	FUNCTION_16	IF_3
+0x40000a8	    0xc70000000000	                      mov dword [rax], 0	       686	intel_ringbuffer.c	FUNCTION_16	IF_3
+0x40000ae	        0x4883c004	                              add rax, 4	       686	intel_ringbuffer.c	FUNCTION_16	IF_3
+0x40000b2	            0xf3c3	                                     ret	       689	intel_ringbuffer.c	FUNCTION_16
+i9xx_submit_request	functions,0:DO,0:IF,0:ELSE,0:CALL,2:WHILE,0:FOR,0:SWITCH,0	18
+0x4000e90	              0x55	                                push rbp	       710	intel_ringbuffer.c	FUNCTION_18
+0x4000e91	              0x53	                                push rbx	       710	intel_ringbuffer.c	FUNCTION_18
+0x4000e92	          0x4889fb	                            mov rbx, rdi	       710	intel_ringbuffer.c	FUNCTION_18
+0x4000e95	        0x488b6f68	            mov rbp, qword [rdi + 0x68] 	       711	intel_ringbuffer.c	FUNCTION_18
+0x4000e99	      0xe800000000	                          call 0x4000e9e	       713	intel_ringbuffer.c	FUNCTION_18	CALL_1
+0x4000e9e	    0x488b8b800000	            mov rcx, qword [rbx + 0x80] 	       715	intel_ringbuffer.c	FUNCTION_18
+0x4000ea5	    0x8b93bc010000	           mov edx, dword [rbx + 0x1bc] 	       715	intel_ringbuffer.c	FUNCTION_18
+0x4000eab	    0x488b85180800	           mov rax, qword [rbp + 0x818] 	       715	intel_ringbuffer.c	FUNCTION_18
+0x4000eb2	          0x4889ef	                            mov rdi, rbp	       715	intel_ringbuffer.c	FUNCTION_18
+0x4000eb5	          0x895124	             mov dword [rcx + 0x24], edx	       824	intel_ringbuffer.h	FUNCTION_259
+0x4000eb8	        0x488b4b78	            mov rcx, qword [rbx + 0x78] 	       715	intel_ringbuffer.c	FUNCTION_18
+0x4000ebc	          0x8b7124	            mov esi, dword [rcx + 0x24] 	       715	intel_ringbuffer.c	FUNCTION_18
+0x4000ebf	      0xb901000000	                              mov ecx, 1	       715	intel_ringbuffer.c	FUNCTION_18
+0x4000ec4	          0x83c630	                           add esi, 0x30	       715	intel_ringbuffer.c	FUNCTION_18
+0x4000ec7	      0xe800000000	                          call 0x4000ecc	       715	intel_ringbuffer.c	FUNCTION_18
+0x4000ecc	              0x5b	                                 pop rbx	       717	intel_ringbuffer.c	FUNCTION_18
+0x4000ecd	              0x5d	                                 pop rbp	       717	intel_ringbuffer.c	FUNCTION_18
+0x4000ece	              0xc3	                                     ret	       717	intel_ringbuffer.c	FUNCTION_18
+gen5_irq_enable	functions,0:DO,0:IF,0:ELSE,0:CALL,1:WHILE,0:FOR,0:SWITCH,0	3
+0x40010a0	    0x8bb7a4010000	           mov esi, dword [rdi + 0x1a4] 	       811	intel_ringbuffer.c	FUNCTION_24	CALL_1
+0x40010a6	          0x488b3f	                    mov rdi, qword [rdi]	       811	intel_ringbuffer.c	FUNCTION_24	CALL_1
+0x40010a9	      0xe900000000	                           jmp 0x40010ae	       811	intel_ringbuffer.c	FUNCTION_24	CALL_1

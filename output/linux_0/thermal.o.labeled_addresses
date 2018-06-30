@@ -1,0 +1,999 @@
+acpi_thermal_suspend	WHILE,0:functions,0:FOR,0:ELSE,0:IF,0:CALL,1:DO,0:SWITCH,0	4
+0x4000400	    0x488b3d000000	            mov rdi, qword [0x04000407] 	      1137	thermal.c	FUNCTION_27	CALL_1
+0x4000407	      0xe800000000	                          call 0x400040c	      1137	thermal.c	FUNCTION_27	CALL_1
+0x400040c	            0x31c0	                            xor eax, eax	      1139	thermal.c	FUNCTION_27
+0x400040e	              0xc3	                                     ret	      1139	thermal.c	FUNCTION_27
+acpi_thermal_exit	WHILE,0:functions,0:FOR,0:ELSE,0:IF,0:CALL,2:DO,0:SWITCH,0	7
+0x4000040	    0x488b87280300	           mov rax, qword [rdi + 0x328] 	       549	thermal.c	FUNCTION_8
+0x4000047	          0x4885c0	                           test rax, rax	       551	thermal.c	FUNCTION_8	IF_1
+0x400004a	            0x7413	                            je 0x400005f	       551	thermal.c	FUNCTION_8	IF_1
+0x400004c	    0x8b8048050000	           mov eax, dword [rax + 0x548] 	       554	thermal.c	FUNCTION_8
+0x4000052	            0x85c0	                           test eax, eax	       554	thermal.c	FUNCTION_8
+0x4000054	           0xf95c0	                                setne al	       554	thermal.c	FUNCTION_8
+0x4000057	               0xf	                                 invalid	       554	thermal.c	FUNCTION_8
+thermal_get_trip_temp	WHILE,0:functions,0:FOR,1:ELSE,0:IF,8:CALL,4:DO,0:SWITCH,0	61
+0x4000100	    0x488bbf280300	           mov rdi, qword [rdi + 0x328] 	       638	thermal.c	FUNCTION_11
+0x4000107	          0x4885ff	                           test rdi, rdi	       641	thermal.c	FUNCTION_11	IF_1
+0x400010a	            0x744f	                            je 0x400015b	       641	thermal.c	FUNCTION_11	IF_1
+0x400010c	            0x89f0	                            mov eax, esi	       641	thermal.c	FUNCTION_11	IF_1
+0x400010e	          0xc1e81f	                           shr eax, 0x1f	       641	thermal.c	FUNCTION_11	IF_1
+0x4000111	            0x84c0	                             test al, al	       641	thermal.c	FUNCTION_11	IF_1
+0x4000113	            0x7546	                           jne 0x400015b	       641	thermal.c	FUNCTION_11	IF_1
+0x4000115	        0xf6473801	               test byte [rdi + 0x38], 1	       644	thermal.c	FUNCTION_11	IF_2
+0x4000119	            0x7407	                            je 0x4000122	       644	thermal.c	FUNCTION_11	IF_2
+0x400011b	            0x85f6	                           test esi, esi	       645	thermal.c	FUNCTION_11	IF_2	IF_3
+0x400011d	            0x745d	                            je 0x400017c	       645	thermal.c	FUNCTION_11	IF_2	IF_3
+0x400011f	          0x83ee01	                              sub esi, 1	       651	thermal.c	FUNCTION_11	IF_2
+0x4000122	        0xf6474801	               test byte [rdi + 0x48], 1	       654	thermal.c	FUNCTION_11	IF_4
+0x4000126	            0x7407	                            je 0x400012f	       654	thermal.c	FUNCTION_11	IF_4
+0x4000128	            0x85f6	                           test esi, esi	       655	thermal.c	FUNCTION_11	IF_4	IF_5
+0x400012a	            0x7462	                            je 0x400018e	       655	thermal.c	FUNCTION_11	IF_4	IF_5
+0x400012c	          0x83ee01	                              sub esi, 1	       661	thermal.c	FUNCTION_11	IF_4
+0x400012f	        0xf6475801	               test byte [rdi + 0x58], 1	       664	thermal.c	FUNCTION_11	IF_6
+0x4000133	            0x752c	                           jne 0x4000161	       664	thermal.c	FUNCTION_11	IF_6
+0x4000135	            0x31c0	                            xor eax, eax	       637	thermal.c	FUNCTION_11
+0x4000137	          0x4863c8	                         movsxd rcx, eax	       675	thermal.c	FUNCTION_11	FOR_1
+0x400013a	        0x4c8d0449	                   lea r8, [rcx + rcx*2]	       675	thermal.c	FUNCTION_11	FOR_1
+0x400013e	        0x4a8d0c81	                   lea rcx, [rcx + r8*4]	       675	thermal.c	FUNCTION_11	FOR_1
+0x4000142	        0x488d0ccf	                  lea rcx, [rdi + rcx*8]	       675	thermal.c	FUNCTION_11	FOR_1
+0x4000146	    0xf681d8000000	               test byte [rcx + 0xd8], 1	       674	thermal.c	FUNCTION_11	FOR_1
+0x400014d	            0x740c	                            je 0x400015b	       674	thermal.c	FUNCTION_11	FOR_1
+0x400014f	            0x39c6	                            cmp esi, eax	       676	thermal.c	FUNCTION_11	FOR_1	IF_8
+0x4000151	            0x744d	                            je 0x40001a0	       676	thermal.c	FUNCTION_11	FOR_1	IF_8
+0x4000153	          0x83c001	                              add eax, 1	       675	thermal.c	FUNCTION_11	FOR_1
+0x4000156	          0x83f80a	                            cmp eax, 0xa	       674	thermal.c	FUNCTION_11	FOR_1
+0x4000159	            0x75dc	                           jne 0x4000137	       674	thermal.c	FUNCTION_11	FOR_1
+0x400015b	      0xb8eaffffff	                     mov eax, 0xffffffea	       642	thermal.c	FUNCTION_11	IF_1
+0x4000160	              0xc3	                                     ret	       686	thermal.c	FUNCTION_11
+0x4000161	            0x85f6	                           test esi, esi	       665	thermal.c	FUNCTION_11	IF_6	IF_7
+0x4000163	            0x7405	                            je 0x400016a	       665	thermal.c	FUNCTION_11	IF_6	IF_7
+0x4000165	          0x83ee01	                              sub esi, 1	       671	thermal.c	FUNCTION_11	IF_6
+0x4000168	            0xebcb	                           jmp 0x4000135	       671	thermal.c	FUNCTION_11	IF_6
+0x400016a	        0x488b4760	            mov rax, qword [rdi + 0x60] 	       666	thermal.c	FUNCTION_11	IF_6	IF_7	CALL_3
+0x400016e	    0x2b874c050000	            sub eax, dword [rdi + 0x54c]	       666	thermal.c	FUNCTION_11	IF_6	IF_7	CALL_3
+0x4000174	          0x6bc064	                     imul eax, eax, 0x64	       666	thermal.c	FUNCTION_11	IF_6	IF_7	CALL_3
+0x4000177	            0x8902	                    mov dword [rdx], eax	       666	thermal.c	FUNCTION_11	IF_6	IF_7	CALL_3
+0x4000179	            0x31c0	                            xor eax, eax	       669	thermal.c	FUNCTION_11	IF_6	IF_7
+0x400017b	              0xc3	                                     ret	       669	thermal.c	FUNCTION_11	IF_6	IF_7
+0x400017c	        0x488b4740	            mov rax, qword [rdi + 0x40] 	       646	thermal.c	FUNCTION_11	IF_2	IF_3	CALL_1
+0x4000180	    0x2b874c050000	            sub eax, dword [rdi + 0x54c]	       646	thermal.c	FUNCTION_11	IF_2	IF_3	CALL_1
+0x4000186	          0x6bc064	                     imul eax, eax, 0x64	       646	thermal.c	FUNCTION_11	IF_2	IF_3	CALL_1
+0x4000189	            0x8902	                    mov dword [rdx], eax	       646	thermal.c	FUNCTION_11	IF_2	IF_3	CALL_1
+0x400018b	            0x31c0	                            xor eax, eax	       649	thermal.c	FUNCTION_11	IF_2	IF_3
+0x400018d	              0xc3	                                     ret	       649	thermal.c	FUNCTION_11	IF_2	IF_3
+0x400018e	        0x488b4750	            mov rax, qword [rdi + 0x50] 	       656	thermal.c	FUNCTION_11	IF_4	IF_5	CALL_2
+0x4000192	    0x2b874c050000	            sub eax, dword [rdi + 0x54c]	       656	thermal.c	FUNCTION_11	IF_4	IF_5	CALL_2
+0x4000198	          0x6bc064	                     imul eax, eax, 0x64	       656	thermal.c	FUNCTION_11	IF_4	IF_5	CALL_2
+0x400019b	            0x8902	                    mov dword [rdx], eax	       656	thermal.c	FUNCTION_11	IF_4	IF_5	CALL_2
+0x400019d	            0x31c0	                            xor eax, eax	       659	thermal.c	FUNCTION_11	IF_4	IF_5
+0x400019f	              0xc3	                                     ret	       659	thermal.c	FUNCTION_11	IF_4	IF_5
+0x40001a0	    0x488b81e00000	            mov rax, qword [rcx + 0xe0] 	       677	thermal.c	FUNCTION_11	FOR_1	IF_8	CALL_4
+0x40001a7	    0x2b874c050000	            sub eax, dword [rdi + 0x54c]	       677	thermal.c	FUNCTION_11	FOR_1	IF_8	CALL_4
+0x40001ad	          0x6bc064	                     imul eax, eax, 0x64	       677	thermal.c	FUNCTION_11	FOR_1	IF_8	CALL_4
+0x40001b0	            0x8902	                    mov dword [rdx], eax	       677	thermal.c	FUNCTION_11	FOR_1	IF_8	CALL_4
+0x40001b2	            0x31c0	                            xor eax, eax	       680	thermal.c	FUNCTION_11	FOR_1	IF_8
+0x40001b4	              0xc3	                                     ret	       680	thermal.c	FUNCTION_11	FOR_1	IF_8
+acpi_thermal_cooling_device_cb	WHILE,0:functions,0:FOR,4:ELSE,3:IF,13:CALL,12:DO,0:SWITCH,0	169
+0x4000f00	            0x4157	                                push r15	       771	thermal.c	FUNCTION_15
+0x4000f02	            0x4156	                                push r14	       771	thermal.c	FUNCTION_15
+0x4000f04	            0x4155	                                push r13	       771	thermal.c	FUNCTION_15
+0x4000f06	            0x4154	                                push r12	       771	thermal.c	FUNCTION_15
+0x4000f08	              0x55	                                push rbp	       771	thermal.c	FUNCTION_15
+0x4000f09	              0x53	                                push rbx	       771	thermal.c	FUNCTION_15
+0x4000f0a	        0x4883ec30	                           sub rsp, 0x30	       771	thermal.c	FUNCTION_15
+0x4000f0e	    0x4c8ba7280300	           mov r12, qword [rdi + 0x328] 	       773	thermal.c	FUNCTION_15
+0x4000f15	    0x488baef00200	           mov rbp, qword [rsi + 0x2f0] 	       772	thermal.c	FUNCTION_15
+0x4000f1c	    0x65488b0c2528	                mov rcx, qword gs:[0x28]	       771	thermal.c	FUNCTION_15
+0x4000f25	      0x48894c2428	             mov qword [rsp + 0x28], rcx	       771	thermal.c	FUNCTION_15
+0x4000f2a	            0x31c9	                            xor ecx, ecx	       771	thermal.c	FUNCTION_15
+0x4000f2c	        0x48893c24	                    mov qword [rsp], rdi	       771	thermal.c	FUNCTION_15
+0x4000f30	      0x4889742408	                mov qword [rsp + 8], rsi	       771	thermal.c	FUNCTION_15
+0x4000f35	    0x450fb66c2438	          movzx r13d, byte [r12 + 0x38] 	       782	thermal.c	FUNCTION_15	IF_1
+0x4000f3b	        0x88542417	               mov byte [rsp + 0x17], dl	       771	thermal.c	FUNCTION_15
+0x4000f3f	          0x41f7d5	                                not r13d	       782	thermal.c	FUNCTION_15	IF_1
+0x4000f42	          0x4489e8	                           mov eax, r13d	       782	thermal.c	FUNCTION_15	IF_1
+0x4000f45	          0x83e001	                              and eax, 1	       782	thermal.c	FUNCTION_15	IF_1
+0x4000f48	    0x41f644244801	               test byte [r12 + 0x48], 1	       785	thermal.c	FUNCTION_15	IF_2
+0x4000f4e	     0xf85fb010000	                           jne 0x400114f	       785	thermal.c	FUNCTION_15	IF_2
+0x4000f54	            0xf7d8	                                 neg eax	       782	thermal.c	FUNCTION_15	IF_1
+0x4000f56	          0x4189c5	                           mov r13d, eax	       782	thermal.c	FUNCTION_15	IF_1
+0x4000f59	    0x41f644245801	               test byte [r12 + 0x58], 1	       788	thermal.c	FUNCTION_15	IF_3
+0x4000f5f	     0xf84a2000000	                            je 0x4001007	       788	thermal.c	FUNCTION_15	IF_3
+0x4000f65	    0x418b8c248000	            mov ecx, dword [r12 + 0x80] 	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000f6d	          0x4489e8	                           mov eax, r13d	       789	thermal.c	FUNCTION_15	IF_3
+0x4000f70	          0x83c001	                              add eax, 1	       789	thermal.c	FUNCTION_15	IF_3
+0x4000f73	          0x4189c5	                           mov r13d, eax	       789	thermal.c	FUNCTION_15	IF_3
+0x4000f76	            0x85c9	                           test ecx, ecx	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000f78	     0xf8489000000	                            je 0x4001007	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000f7e	    0x4d8db4248800	                   lea r14, [r12 + 0x88]	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000f86	          0x4531ff	                          xor r15d, r15d	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000f89	      0x488d5c2420	                   lea rbx, [rsp + 0x20]	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000f8e	            0xeb12	                           jmp 0x4000fa2	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000f90	        0x4183c701	                             add r15d, 1	       791	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000f94	        0x4983c608	                              add r14, 8	       791	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000f98	    0x4539bc248000	           cmp dword [r12 + 0x80], r15d 	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000fa0	            0x7665	                           jbe 0x4001007	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4000fa2	          0x498b3e	                    mov rdi, qword [r14]	       793	thermal.c	FUNCTION_15	IF_3	FOR_1	CALL_1
+0x4000fa5	          0x4889de	                            mov rsi, rbx	       793	thermal.c	FUNCTION_15	IF_3	FOR_1	CALL_1
+0x4000fa8	      0xe800000000	                          call 0x4000fad	       793	thermal.c	FUNCTION_15	IF_3	FOR_1	CALL_1
+0x4000fad	            0x85c0	                           test eax, eax	       794	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_4	CALL_2
+0x4000faf	            0x75df	                           jne 0x4000f90	       794	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_4	CALL_2
+0x4000fb1	      0x483b6c2420	            cmp rbp, qword [rsp + 0x20] 	       794	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_4	CALL_2
+0x4000fb6	            0x75d8	                           jne 0x4000f90	       794	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_4	CALL_2
+0x4000fb8	      0x807c241700	                cmp byte [rsp + 0x17], 0	       796	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_5
+0x4000fbd	     0xf84bb010000	                            je 0x400117e	       796	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_5
+0x4000fc3	      0x488b542408	                mov rdx, qword [rsp + 8]	       797	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_5
+0x4000fc8	        0x488b3c24	                    mov rdi, qword [rsp]	       797	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_5
+0x4000fcc	    0x41b8ffffffff	                     mov r8d, 0xffffffff	       797	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_5
+0x4000fd2	          0x4531c9	                            xor r9d, r9d	       797	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_5
+0x4000fd5	          0x4c89c1	                             mov rcx, r8	       797	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_5
+0x4000fd8	          0x4489ee	                           mov esi, r13d	       797	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_5
+0x4000fdb	      0xe800000000	                          call 0x4000fe0	       797	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_5
+0x4000fe0	            0x85c0	                           test eax, eax	       806	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_6
+0x4000fe2	            0x74ac	                            je 0x4000f90	       806	thermal.c	FUNCTION_15	IF_3	FOR_1	IF_6
+0x4000fe4	      0x488b4c2428	            mov rcx, qword [rsp + 0x28] 	       856	thermal.c	FUNCTION_15
+0x4000fe9	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       856	thermal.c	FUNCTION_15
+0x4000ff2	     0xf85a4010000	                           jne 0x400119c	       856	thermal.c	FUNCTION_15
+0x4000ff8	        0x4883c430	                           add rsp, 0x30	       856	thermal.c	FUNCTION_15
+0x4000ffc	              0x5b	                                 pop rbx	       856	thermal.c	FUNCTION_15
+0x4000ffd	              0x5d	                                 pop rbp	       856	thermal.c	FUNCTION_15
+0x4000ffe	            0x415c	                                 pop r12	       856	thermal.c	FUNCTION_15
+0x4001000	            0x415d	                                 pop r13	       856	thermal.c	FUNCTION_15
+0x4001002	            0x415e	                                 pop r14	       856	thermal.c	FUNCTION_15
+0x4001004	            0x415f	                                 pop r15	       856	thermal.c	FUNCTION_15
+0x4001006	              0xc3	                                     ret	       856	thermal.c	FUNCTION_15
+0x4001007	    0x498d9c24f000	                   lea rbx, [r12 + 0xf0]	       856	thermal.c	FUNCTION_15
+0x400100f	          0x4531f6	                          xor r14d, r14d	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4001012	      0x4c89642418	             mov qword [rsp + 0x18], r12	       790	thermal.c	FUNCTION_15	IF_3	FOR_1
+0x4001017	          0x4963c6	                        movsxd rax, r14d	       812	thermal.c	FUNCTION_15	FOR_2	IF_7
+0x400101a	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	       812	thermal.c	FUNCTION_15	FOR_2	IF_7
+0x400101f	        0x488d1440	                  lea rdx, [rax + rax*2]	       812	thermal.c	FUNCTION_15	FOR_2	IF_7
+0x4001023	        0x488d0490	                  lea rax, [rax + rdx*4]	       812	thermal.c	FUNCTION_15	FOR_2	IF_7
+0x4001027	    0xf684c1d80000	      test byte [rcx + rax*8 + 0xd8], 1 	       812	thermal.c	FUNCTION_15	FOR_2	IF_7
+0x400102f	     0xf845f010000	                            je 0x4001194	       812	thermal.c	FUNCTION_15	FOR_2	IF_7
+0x4001035	          0x8b43f8	                mov eax, dword [rbx - 8]	       815	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x4001038	        0x4183c501	                             add r13d, 1	       814	thermal.c	FUNCTION_15	FOR_2
+0x400103c	          0x4531ff	                          xor r15d, r15d	       815	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x400103f	          0x4989dc	                            mov r12, rbx	       815	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x4001042	            0x85c0	                           test eax, eax	       815	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x4001044	            0x7510	                           jne 0x4001056	       815	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x4001046	            0xeb65	                           jmp 0x40010ad	       815	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x4001048	        0x4183c701	                             add r15d, 1	       817	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x400104c	        0x4983c408	                              add r12, 8	       817	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x4001050	        0x44397bf8	               cmp dword [rbx - 8], r15d	       815	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x4001054	            0x7657	                           jbe 0x40010ad	       815	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x4001056	        0x498b3c24	                    mov rdi, qword [r12]	       819	thermal.c	FUNCTION_15	FOR_2	FOR_3	CALL_5
+0x400105a	      0x488d742420	                   lea rsi, [rsp + 0x20]	       819	thermal.c	FUNCTION_15	FOR_2	FOR_3	CALL_5
+0x400105f	      0xe800000000	                          call 0x4001064	       819	thermal.c	FUNCTION_15	FOR_2	FOR_3	CALL_5
+0x4001064	            0x85c0	                           test eax, eax	       820	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_8	CALL_6
+0x4001066	            0x75e0	                           jne 0x4001048	       820	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_8	CALL_6
+0x4001068	      0x483b6c2420	            cmp rbp, qword [rsp + 0x20] 	       820	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_8	CALL_6
+0x400106d	            0x75d9	                           jne 0x4001048	       820	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_8	CALL_6
+0x400106f	      0x807c241700	                cmp byte [rsp + 0x17], 0	       822	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_9
+0x4001074	     0xf84b8000000	                            je 0x4001132	       822	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_9
+0x400107a	      0x488b542408	                mov rdx, qword [rsp + 8]	       823	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_9	CALL_7
+0x400107f	        0x488b3c24	                    mov rdi, qword [rsp]	       823	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_9	CALL_7
+0x4001083	    0x41b8ffffffff	                     mov r8d, 0xffffffff	       823	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_9	CALL_7
+0x4001089	          0x4531c9	                            xor r9d, r9d	       823	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_9	CALL_7
+0x400108c	          0x4c89c1	                             mov rcx, r8	       823	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_9	CALL_7
+0x400108f	          0x4489ee	                           mov esi, r13d	       823	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_9	CALL_7
+0x4001092	      0xe800000000	                          call 0x4001097	       823	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_9	CALL_7
+0x4001097	            0x85c0	                           test eax, eax	       830	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_10
+0x4001099	     0xf8545ffffff	                           jne 0x4000fe4	       830	thermal.c	FUNCTION_15	FOR_2	FOR_3	IF_10
+0x400109f	        0x4183c701	                             add r15d, 1	       817	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x40010a3	        0x4983c408	                              add r12, 8	       817	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x40010a7	        0x44397bf8	               cmp dword [rbx - 8], r15d	       815	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x40010ab	            0x77a9	                            ja 0x4001056	       815	thermal.c	FUNCTION_15	FOR_2	FOR_3
+0x40010ad	        0x4183c601	                             add r14d, 1	       811	thermal.c	FUNCTION_15	FOR_2
+0x40010b1	        0x4883c368	                           add rbx, 0x68	       811	thermal.c	FUNCTION_15	FOR_2
+0x40010b5	        0x4183fe0a	                           cmp r14d, 0xa	       811	thermal.c	FUNCTION_15	FOR_2
+0x40010b9	     0xf8558ffffff	                           jne 0x4001017	       811	thermal.c	FUNCTION_15	FOR_2
+0x40010bf	      0x4c8b642418	            mov r12, qword [rsp + 0x18] 	       811	thermal.c	FUNCTION_15	FOR_2
+0x40010c4	    0x418b9424e804	           mov edx, dword [r12 + 0x4e8] 	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010cc	            0x85d2	                           test edx, edx	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010ce	            0x7478	                            je 0x4001148	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010d0	    0x4d8dac24f004	                  lea r13, [r12 + 0x4f0]	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010d8	          0x4531f6	                          xor r14d, r14d	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010db	      0x488d5c2420	                   lea rbx, [rsp + 0x20]	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010e0	    0x440fb67c2417	          movzx r15d, byte [rsp + 0x17] 	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010e6	            0xeb12	                           jmp 0x40010fa	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010e8	        0x4183c601	                             add r14d, 1	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010ec	        0x4983c508	                              add r13, 8	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010f0	    0x4539b424e804	          cmp dword [r12 + 0x4e8], r14d 	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010f8	            0x764e	                           jbe 0x4001148	       835	thermal.c	FUNCTION_15	FOR_4
+0x40010fa	        0x498b7d00	                    mov rdi, qword [r13]	       837	thermal.c	FUNCTION_15	FOR_4	CALL_9
+0x40010fe	          0x4889de	                            mov rsi, rbx	       837	thermal.c	FUNCTION_15	FOR_4	CALL_9
+0x4001101	      0xe800000000	                          call 0x4001106	       837	thermal.c	FUNCTION_15	FOR_4	CALL_9
+0x4001106	            0x85c0	                           test eax, eax	       838	thermal.c	FUNCTION_15	FOR_4	IF_11	CALL_10
+0x4001108	            0x75de	                           jne 0x40010e8	       838	thermal.c	FUNCTION_15	FOR_4	IF_11	CALL_10
+0x400110a	      0x483b6c2420	            cmp rbp, qword [rsp + 0x20] 	       838	thermal.c	FUNCTION_15	FOR_4	IF_11	CALL_10
+0x400110f	            0x75d7	                           jne 0x40010e8	       838	thermal.c	FUNCTION_15	FOR_4	IF_11	CALL_10
+0x4001111	          0x4584ff	                         test r15b, r15b	       839	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_12
+0x4001114	            0x7547	                           jne 0x400115d	       839	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_12
+0x4001116	      0x488b542408	                mov rdx, qword [rsp + 8]	       846	thermal.c	FUNCTION_15	FOR_4	IF_11	ELSE_3	CALL_12
+0x400111b	        0x488b3c24	                    mov rdi, qword [rsp]	       846	thermal.c	FUNCTION_15	FOR_4	IF_11	ELSE_3	CALL_12
+0x400111f	      0xbeffffffff	                     mov esi, 0xffffffff	       846	thermal.c	FUNCTION_15	FOR_4	IF_11	ELSE_3	CALL_12
+0x4001124	      0xe800000000	                          call 0x4001129	       846	thermal.c	FUNCTION_15	FOR_4	IF_11	ELSE_3	CALL_12
+0x4001129	            0x85c0	                           test eax, eax	       849	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_13
+0x400112b	            0x74bb	                            je 0x40010e8	       849	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_13
+0x400112d	      0xe9b2feffff	                           jmp 0x4000fe4	       849	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_13
+0x4001132	      0x488b542408	                mov rdx, qword [rsp + 8]	       828	thermal.c	FUNCTION_15	FOR_2	FOR_3	ELSE_2	CALL_8
+0x4001137	        0x488b3c24	                    mov rdi, qword [rsp]	       828	thermal.c	FUNCTION_15	FOR_2	FOR_3	ELSE_2	CALL_8
+0x400113b	          0x4489ee	                           mov esi, r13d	       828	thermal.c	FUNCTION_15	FOR_2	FOR_3	ELSE_2	CALL_8
+0x400113e	      0xe800000000	                          call 0x4001143	       828	thermal.c	FUNCTION_15	FOR_2	FOR_3	ELSE_2	CALL_8
+0x4001143	      0xe94fffffff	                           jmp 0x4001097	       828	thermal.c	FUNCTION_15	FOR_2	FOR_3	ELSE_2	CALL_8
+0x4001148	            0x31c0	                            xor eax, eax	       835	thermal.c	FUNCTION_15	FOR_4
+0x400114a	      0xe995feffff	                           jmp 0x4000fe4	       835	thermal.c	FUNCTION_15	FOR_4
+0x400114f	    0x41bd01000000	                             mov r13d, 1	       786	thermal.c	FUNCTION_15	IF_2
+0x4001155	          0x4129c5	                           sub r13d, eax	       786	thermal.c	FUNCTION_15	IF_2
+0x4001158	      0xe9fcfdffff	                           jmp 0x4000f59	       786	thermal.c	FUNCTION_15	IF_2
+0x400115d	      0x488b542408	                mov rdx, qword [rsp + 8]	       840	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_12	CALL_11
+0x4001162	        0x488b3c24	                    mov rdi, qword [rsp]	       840	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_12	CALL_11
+0x4001166	    0x41b8ffffffff	                     mov r8d, 0xffffffff	       840	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_12	CALL_11
+0x400116c	          0x4531c9	                            xor r9d, r9d	       840	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_12	CALL_11
+0x400116f	          0x4c89c1	                             mov rcx, r8	       840	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_12	CALL_11
+0x4001172	      0xbeffffffff	                     mov esi, 0xffffffff	       840	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_12	CALL_11
+0x4001177	      0xe800000000	                          call 0x400117c	       840	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_12	CALL_11
+0x400117c	            0xebab	                           jmp 0x4001129	       840	thermal.c	FUNCTION_15	FOR_4	IF_11	IF_12	CALL_11
+0x400117e	      0x488b542408	                mov rdx, qword [rsp + 8]	       803	thermal.c	FUNCTION_15	IF_3	FOR_1	ELSE_1
+0x4001183	        0x488b3c24	                    mov rdi, qword [rsp]	       803	thermal.c	FUNCTION_15	IF_3	FOR_1	ELSE_1
+0x4001187	          0x4489ee	                           mov esi, r13d	       803	thermal.c	FUNCTION_15	IF_3	FOR_1	ELSE_1
+0x400118a	      0xe800000000	                          call 0x400118f	       803	thermal.c	FUNCTION_15	IF_3	FOR_1	ELSE_1
+0x400118f	      0xe94cfeffff	                           jmp 0x4000fe0	       803	thermal.c	FUNCTION_15	IF_3	FOR_1	ELSE_1
+0x4001194	          0x4989cc	                            mov r12, rcx	       803	thermal.c	FUNCTION_15	IF_3	FOR_1	ELSE_1
+0x4001197	      0xe928ffffff	                           jmp 0x40010c4	       803	thermal.c	FUNCTION_15	IF_3	FOR_1	ELSE_1
+0x400119c	      0xe800000000	                          call 0x40011a1	       856	thermal.c	FUNCTION_15
+thermal_get_temp	WHILE,0:functions,0:FOR,0:ELSE,0:IF,2:CALL,2:DO,0:SWITCH,0	19
+0x4000530	              0x55	                                push rbp	       530	thermal.c	FUNCTION_7
+0x4000531	              0x53	                                push rbx	       530	thermal.c	FUNCTION_7
+0x4000532	    0x488b9f280300	           mov rbx, qword [rdi + 0x328] 	       531	thermal.c	FUNCTION_7
+0x4000539	          0x4885db	                           test rbx, rbx	       534	thermal.c	FUNCTION_7	IF_1
+0x400053c	            0x7422	                            je 0x4000560	       534	thermal.c	FUNCTION_7	IF_1
+0x400053e	          0x4889df	                            mov rdi, rbx	       537	thermal.c	FUNCTION_7	CALL_1
+0x4000541	          0x4889f5	                            mov rbp, rsi	       537	thermal.c	FUNCTION_7	CALL_1
+0x4000544	      0xe867ffffff	   call sym.acpi_thermal_get_temperature	       537	thermal.c	FUNCTION_7	CALL_1
+0x4000549	            0x85c0	                           test eax, eax	       538	thermal.c	FUNCTION_7	IF_2
+0x400054b	            0x7510	                           jne 0x400055d	       538	thermal.c	FUNCTION_7	IF_2
+0x400054d	        0x488b5310	            mov rdx, qword [rbx + 0x10] 	       541	thermal.c	FUNCTION_7	CALL_2
+0x4000551	    0x2b934c050000	            sub edx, dword [rbx + 0x54c]	       541	thermal.c	FUNCTION_7	CALL_2
+0x4000557	          0x6bd264	                     imul edx, edx, 0x64	       541	thermal.c	FUNCTION_7	CALL_2
+0x400055a	          0x895500	                    mov dword [rbp], edx	       541	thermal.c	FUNCTION_7	CALL_2
+0x400055d	              0x5b	                                 pop rbx	       544	thermal.c	FUNCTION_7
+0x400055e	              0x5d	                                 pop rbp	       544	thermal.c	FUNCTION_7
+0x400055f	              0xc3	                                     ret	       544	thermal.c	FUNCTION_7
+0x4000560	      0xb8eaffffff	                     mov eax, 0xffffffea	       535	thermal.c	FUNCTION_7	IF_1
+0x4000565	            0xebf6	                           jmp 0x400055d	       535	thermal.c	FUNCTION_7	IF_1
+thermal_get_crit_temp	WHILE,0:functions,0:FOR,0:ELSE,1:IF,1:CALL,1:DO,0:SWITCH,0	11
+0x40001c0	    0x488b97280300	           mov rdx, qword [rdi + 0x328] 	       691	thermal.c	FUNCTION_12
+0x40001c7	        0xf6423801	               test byte [rdx + 0x38], 1	       693	thermal.c	FUNCTION_12	IF_1
+0x40001cb	            0x7412	                            je 0x40001df	       693	thermal.c	FUNCTION_12	IF_1
+0x40001cd	        0x488b4240	            mov rax, qword [rdx + 0x40] 	       694	thermal.c	FUNCTION_12	IF_1	CALL_1
+0x40001d1	    0x2b824c050000	            sub eax, dword [rdx + 0x54c]	       694	thermal.c	FUNCTION_12	IF_1	CALL_1
+0x40001d7	          0x6bc064	                     imul eax, eax, 0x64	       694	thermal.c	FUNCTION_12	IF_1	CALL_1
+0x40001da	            0x8906	                    mov dword [rsi], eax	       694	thermal.c	FUNCTION_12	IF_1	CALL_1
+0x40001dc	            0x31c0	                            xor eax, eax	       697	thermal.c	FUNCTION_12	IF_1
+0x40001de	              0xc3	                                     ret	       697	thermal.c	FUNCTION_12	IF_1
+0x40001df	      0xb8eaffffff	                     mov eax, 0xffffffea	       699	thermal.c	FUNCTION_12	ELSE_1
+0x40001e4	              0xc3	                                     ret	       700	thermal.c	FUNCTION_12	ELSE_1
+thermal_get_trip_type	WHILE,0:functions,0:FOR,1:ELSE,0:IF,8:CALL,0:DO,0:SWITCH,0	48
+0x4000070	    0x488bbf280300	           mov rdi, qword [rdi + 0x328] 	       593	thermal.c	FUNCTION_10
+0x4000077	          0x4885ff	                           test rdi, rdi	       596	thermal.c	FUNCTION_10	IF_1
+0x400007a	            0x744c	                            je 0x40000c8	       596	thermal.c	FUNCTION_10	IF_1
+0x400007c	            0x89f0	                            mov eax, esi	       596	thermal.c	FUNCTION_10	IF_1
+0x400007e	          0xc1e81f	                           shr eax, 0x1f	       596	thermal.c	FUNCTION_10	IF_1
+0x4000081	            0x84c0	                             test al, al	       596	thermal.c	FUNCTION_10	IF_1
+0x4000083	            0x7543	                           jne 0x40000c8	       596	thermal.c	FUNCTION_10	IF_1
+0x4000085	        0xf6473801	               test byte [rdi + 0x38], 1	       599	thermal.c	FUNCTION_10	IF_2
+0x4000089	            0x7407	                            je 0x4000092	       599	thermal.c	FUNCTION_10	IF_2
+0x400008b	            0x85f6	                           test esi, esi	       600	thermal.c	FUNCTION_10	IF_2	IF_3
+0x400008d	            0x7451	                            je 0x40000e0	       600	thermal.c	FUNCTION_10	IF_2	IF_3
+0x400008f	          0x83ee01	                              sub esi, 1	       604	thermal.c	FUNCTION_10	IF_2
+0x4000092	        0xf6474801	               test byte [rdi + 0x48], 1	       607	thermal.c	FUNCTION_10	IF_4
+0x4000096	            0x7407	                            je 0x400009f	       607	thermal.c	FUNCTION_10	IF_4
+0x4000098	            0x85f6	                           test esi, esi	       608	thermal.c	FUNCTION_10	IF_4	IF_5
+0x400009a	            0x744d	                            je 0x40000e9	       608	thermal.c	FUNCTION_10	IF_4	IF_5
+0x400009c	          0x83ee01	                              sub esi, 1	       612	thermal.c	FUNCTION_10	IF_4
+0x400009f	        0xf6475801	               test byte [rdi + 0x58], 1	       615	thermal.c	FUNCTION_10	IF_6
+0x40000a3	            0x7529	                           jne 0x40000ce	       615	thermal.c	FUNCTION_10	IF_6
+0x40000a5	            0x31c0	                            xor eax, eax	       592	thermal.c	FUNCTION_10
+0x40000a7	          0x4863c8	                         movsxd rcx, eax	       624	thermal.c	FUNCTION_10	FOR_1
+0x40000aa	        0x4c8d0449	                   lea r8, [rcx + rcx*2]	       624	thermal.c	FUNCTION_10	FOR_1
+0x40000ae	        0x4a8d0c81	                   lea rcx, [rcx + r8*4]	       624	thermal.c	FUNCTION_10	FOR_1
+0x40000b2	    0xf684cfd80000	      test byte [rdi + rcx*8 + 0xd8], 1 	       623	thermal.c	FUNCTION_10	FOR_1
+0x40000ba	            0x740c	                            je 0x40000c8	       623	thermal.c	FUNCTION_10	FOR_1
+0x40000bc	            0x39c6	                            cmp esi, eax	       625	thermal.c	FUNCTION_10	FOR_1	IF_8
+0x40000be	            0x7432	                            je 0x40000f2	       625	thermal.c	FUNCTION_10	FOR_1	IF_8
+0x40000c0	          0x83c001	                              add eax, 1	       624	thermal.c	FUNCTION_10	FOR_1
+0x40000c3	          0x83f80a	                            cmp eax, 0xa	       623	thermal.c	FUNCTION_10	FOR_1
+0x40000c6	            0x75df	                           jne 0x40000a7	       623	thermal.c	FUNCTION_10	FOR_1
+0x40000c8	      0xb8eaffffff	                     mov eax, 0xffffffea	       597	thermal.c	FUNCTION_10	IF_1
+0x40000cd	              0xc3	                                     ret	       633	thermal.c	FUNCTION_10
+0x40000ce	            0x85f6	                           test esi, esi	       616	thermal.c	FUNCTION_10	IF_6	IF_7
+0x40000d0	            0x7405	                            je 0x40000d7	       616	thermal.c	FUNCTION_10	IF_6	IF_7
+0x40000d2	          0x83ee01	                              sub esi, 1	       620	thermal.c	FUNCTION_10	IF_6
+0x40000d5	            0xebce	                           jmp 0x40000a5	       620	thermal.c	FUNCTION_10	IF_6
+0x40000d7	    0xc70201000000	                      mov dword [rdx], 1	       617	thermal.c	FUNCTION_10	IF_6	IF_7
+0x40000dd	            0x31c0	                            xor eax, eax	       618	thermal.c	FUNCTION_10	IF_6	IF_7
+0x40000df	              0xc3	                                     ret	       618	thermal.c	FUNCTION_10	IF_6	IF_7
+0x40000e0	    0xc70203000000	                      mov dword [rdx], 3	       601	thermal.c	FUNCTION_10	IF_2	IF_3
+0x40000e6	            0x31c0	                            xor eax, eax	       602	thermal.c	FUNCTION_10	IF_2	IF_3
+0x40000e8	              0xc3	                                     ret	       602	thermal.c	FUNCTION_10	IF_2	IF_3
+0x40000e9	    0xc70202000000	                      mov dword [rdx], 2	       609	thermal.c	FUNCTION_10	IF_4	IF_5
+0x40000ef	            0x31c0	                            xor eax, eax	       610	thermal.c	FUNCTION_10	IF_4	IF_5
+0x40000f1	              0xc3	                                     ret	       610	thermal.c	FUNCTION_10	IF_4	IF_5
+0x40000f2	    0xc70200000000	                      mov dword [rdx], 0	       626	thermal.c	FUNCTION_10	FOR_1	IF_8
+0x40000f8	            0x31c0	                            xor eax, eax	       627	thermal.c	FUNCTION_10	FOR_1	IF_8
+0x40000fa	              0xc3	                                     ret	       627	thermal.c	FUNCTION_10	FOR_1	IF_8
+acpi_thermal_get_temperature	WHILE,0:functions,0:FOR,0:ELSE,0:IF,2:CALL,3:DO,0:SWITCH,0	32
+0x40004b0	              0x53	                                push rbx	       198	thermal.c	FUNCTION_1
+0x40004b1	        0x4883ec10	                           sub rsp, 0x10	       198	thermal.c	FUNCTION_1
+0x40004b5	    0x65488b042528	                mov rax, qword gs:[0x28]	       198	thermal.c	FUNCTION_1
+0x40004be	      0x4889442408	                mov qword [rsp + 8], rax	       198	thermal.c	FUNCTION_1
+0x40004c3	            0x31c0	                            xor eax, eax	       198	thermal.c	FUNCTION_1
+0x40004c5	          0x4885ff	                           test rdi, rdi	       202	thermal.c	FUNCTION_1	IF_1
+0x40004c8	            0x744e	                            je 0x4000518	       202	thermal.c	FUNCTION_1	IF_1
+0x40004ca	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       205	thermal.c	FUNCTION_1
+0x40004ce	          0x4889fb	                            mov rbx, rdi	       205	thermal.c	FUNCTION_1
+0x40004d1	            0x31d2	                            xor edx, edx	       207	thermal.c	FUNCTION_1	CALL_1
+0x40004d3	          0x4889e1	                            mov rcx, rsp	       207	thermal.c	FUNCTION_1	CALL_1
+0x40004d6	    0x48c7c6000000	                              mov rsi, 0	       207	thermal.c	FUNCTION_1	CALL_1
+0x40004dd	        0x48894718	             mov qword [rdi + 0x18], rax	       205	thermal.c	FUNCTION_1
+0x40004e1	          0x488b07	                    mov rax, qword [rdi]	       207	thermal.c	FUNCTION_1	CALL_1
+0x40004e4	        0x488b7808	                mov rdi, qword [rax + 8]	       207	thermal.c	FUNCTION_1	CALL_1
+0x40004e8	      0xe800000000	                          call 0x40004ed	       207	thermal.c	FUNCTION_1	CALL_1
+0x40004ed	            0x85c0	                           test eax, eax	       208	thermal.c	FUNCTION_1	IF_2	CALL_2
+0x40004ef	            0x7520	                           jne 0x4000511	       208	thermal.c	FUNCTION_1	IF_2	CALL_2
+0x40004f1	        0x488b0424	                    mov rax, qword [rsp]	       211	thermal.c	FUNCTION_1
+0x40004f5	        0x48894310	             mov qword [rbx + 0x10], rax	       211	thermal.c	FUNCTION_1
+0x40004f9	            0x31c0	                            xor eax, eax	       215	thermal.c	FUNCTION_1
+0x40004fb	      0x488b542408	                mov rdx, qword [rsp + 8]	       216	thermal.c	FUNCTION_1
+0x4000500	    0x654833142528	                xor rdx, qword gs:[0x28]	       216	thermal.c	FUNCTION_1
+0x4000509	            0x7514	                           jne 0x400051f	       216	thermal.c	FUNCTION_1
+0x400050b	        0x4883c410	                           add rsp, 0x10	       216	thermal.c	FUNCTION_1
+0x400050f	              0x5b	                                 pop rbx	       216	thermal.c	FUNCTION_1
+0x4000510	              0xc3	                                     ret	       216	thermal.c	FUNCTION_1
+0x4000511	      0xb8edffffff	                     mov eax, 0xffffffed	       209	thermal.c	FUNCTION_1	IF_2
+0x4000516	            0xebe3	                           jmp 0x40004fb	       209	thermal.c	FUNCTION_1	IF_2
+0x4000518	      0xb8eaffffff	                     mov eax, 0xffffffea	       203	thermal.c	FUNCTION_1	IF_1
+0x400051d	            0xebdc	                           jmp 0x40004fb	       203	thermal.c	FUNCTION_1	IF_1
+0x400051f	      0xe800000000	                          call 0x4000524	       216	thermal.c	FUNCTION_1
+acpi_thermal_bind_cooling_device	WHILE,0:functions,0:FOR,0:ELSE,0:IF,0:CALL,1:DO,0:SWITCH,0	2
+0x40011c0	      0xba01000000	                              mov edx, 1	       862	thermal.c	FUNCTION_16	CALL_1
+0x40011c5	      0xe936fdffff	  jmp sym.acpi_thermal_cooling_device_cb	       862	thermal.c	FUNCTION_16	CALL_1
+thermal_nocrt	WHILE,0:functions,0:FOR,0:ELSE,0:IF,0:CALL,1:DO,0:SWITCH,0	6
+0x4000570	        0x488b7708	                mov rsi, qword [rdi + 8]	      1188	thermal.c	FUNCTION_30	CALL_1
+0x4000574	    0x48c7c7000000	                              mov rdi, 0	      1188	thermal.c	FUNCTION_30	CALL_1
+0x400057b	      0xe800000000	                          call 0x4000580	      1188	thermal.c	FUNCTION_30	CALL_1
+0x4000580	    0xc70500000000	               mov dword [0x0400058a], 1	      1190	thermal.c	FUNCTION_30
+0x400058a	            0x31c0	                            xor eax, eax	      1192	thermal.c	FUNCTION_30
+0x400058c	              0xc3	                                     ret	      1192	thermal.c	FUNCTION_30
+acpi_thermal_remove	WHILE,0:functions,0:FOR,0:ELSE,0:IF,1:CALL,5:DO,0:SWITCH,0	30
+0x4000e70	          0x4885ff	                           test rdi, rdi	      1122	thermal.c	FUNCTION_26	IF_1	CALL_1
+0x4000e73	            0x747d	                            je 0x4000ef2	      1122	thermal.c	FUNCTION_26	IF_1	CALL_1
+0x4000e75	    0x4883bf480200	              cmp qword [rdi + 0x248], 0	      1122	thermal.c	FUNCTION_26	IF_1	CALL_1
+0x4000e7d	            0x7473	                            je 0x4000ef2	      1122	thermal.c	FUNCTION_26	IF_1	CALL_1
+0x4000e7f	              0x53	                                push rbx	      1119	thermal.c	FUNCTION_26
+0x4000e80	          0x4889fb	                            mov rbx, rdi	      1119	thermal.c	FUNCTION_26
+0x4000e83	    0x488b3d000000	            mov rdi, qword [0x04000e8a] 	      1125	thermal.c	FUNCTION_26	CALL_2
+0x4000e8a	      0xe800000000	                          call 0x4000e8f	      1125	thermal.c	FUNCTION_26	CALL_2
+0x4000e8f	    0x488b9b480200	           mov rbx, qword [rbx + 0x248] 	      1125	thermal.c	FUNCTION_26	CALL_2
+0x4000e96	    0x48c7c6000000	                              mov rsi, 0	       942	thermal.c	FUNCTION_19	CALL_1
+0x4000e9d	          0x488b03	                    mov rax, qword [rbx]	       942	thermal.c	FUNCTION_19	CALL_1
+0x4000ea0	    0x488db8600200	                  lea rdi, [rax + 0x260]	       942	thermal.c	FUNCTION_19	CALL_1
+0x4000ea7	      0xe800000000	                          call 0x4000eac	       942	thermal.c	FUNCTION_19	CALL_1
+0x4000eac	    0x488b83400500	           mov rax, qword [rbx + 0x540] 	       943	thermal.c	FUNCTION_19	CALL_2
+0x4000eb3	    0x48c7c6000000	                              mov rsi, 0	       943	thermal.c	FUNCTION_19	CALL_2
+0x4000eba	        0x488d7828	                   lea rdi, [rax + 0x28]	       943	thermal.c	FUNCTION_19	CALL_2
+0x4000ebe	      0xe800000000	                          call 0x4000ec3	       943	thermal.c	FUNCTION_19	CALL_2
+0x4000ec3	    0x488bbb400500	           mov rdi, qword [rbx + 0x540] 	       944	thermal.c	FUNCTION_19	CALL_3
+0x4000eca	      0xe800000000	                          call 0x4000ecf	       944	thermal.c	FUNCTION_19	CALL_3
+0x4000ecf	          0x488b03	                    mov rax, qword [rbx]	       946	thermal.c	FUNCTION_19	CALL_4
+0x4000ed2	    0x48c783400500	              mov qword [rbx + 0x540], 0	       945	thermal.c	FUNCTION_19
+0x4000edd	        0x488b7808	                mov rdi, qword [rax + 8]	       946	thermal.c	FUNCTION_19	CALL_4
+0x4000ee1	      0xe800000000	                          call 0x4000ee6	       946	thermal.c	FUNCTION_19	CALL_4
+0x4000ee6	          0x4889df	                            mov rdi, rbx	      1129	thermal.c	FUNCTION_26	CALL_5
+0x4000ee9	      0xe800000000	                          call 0x4000eee	      1129	thermal.c	FUNCTION_26	CALL_5
+0x4000eee	            0x31c0	                            xor eax, eax	      1130	thermal.c	FUNCTION_26
+0x4000ef0	              0x5b	                                 pop rbx	      1131	thermal.c	FUNCTION_26
+0x4000ef1	              0xc3	                                     ret	      1131	thermal.c	FUNCTION_26
+0x4000ef2	      0xb8eaffffff	                     mov eax, 0xffffffea	      1123	thermal.c	FUNCTION_26	IF_1
+0x4000ef7	              0xc3	                                     ret	      1123	thermal.c	FUNCTION_26	IF_1
+acpi_thermal_unbind_cooling_device	WHILE,0:functions,0:FOR,0:ELSE,0:IF,0:CALL,1:DO,0:SWITCH,0	2
+0x40011b0	            0x31d2	                            xor edx, edx	       869	thermal.c	FUNCTION_17	CALL_1
+0x40011b2	      0xe949fdffff	  jmp sym.acpi_thermal_cooling_device_cb	       869	thermal.c	FUNCTION_17	CALL_1
+acpi_thermal_check_fn	WHILE,0:functions,0:FOR,0:ELSE,0:IF,0:CALL,2:DO,0:SWITCH,0	6
+0x40013d0	          0x8b47f8	                mov eax, dword [rdi - 8]	       520	thermal.c	FUNCTION_6	IF_1
+0x40013d3	            0x85c0	                           test eax, eax	       520	thermal.c	FUNCTION_6	IF_1
+0x40013d5	            0x7502	                           jne 0x40013d9	       520	thermal.c	FUNCTION_6	IF_1
+0x40013d7	            0xf3c3	                                     ret	       520	thermal.c	FUNCTION_6	IF_1
+0x40013d9	    0x4881ef500500	                          sub rdi, 0x550	       520	thermal.c	FUNCTION_6	IF_1
+0x40013e0	      0xe97bfeffff	       jmp sym.acpi_thermal_check.part.6	       520	thermal.c	FUNCTION_6	IF_1
+thermal_get_mode	WHILE,0:functions,0:FOR,0:ELSE,0:IF,1:CALL,0:DO,0:SWITCH,0	12
+0x4000040	    0x488b87280300	           mov rax, qword [rdi + 0x328] 	       549	thermal.c	FUNCTION_8
+0x4000047	          0x4885c0	                           test rax, rax	       551	thermal.c	FUNCTION_8	IF_1
+0x400004a	            0x7413	                            je 0x400005f	       551	thermal.c	FUNCTION_8	IF_1
+0x400004c	    0x8b8048050000	           mov eax, dword [rax + 0x548] 	       554	thermal.c	FUNCTION_8
+0x4000052	            0x85c0	                           test eax, eax	       554	thermal.c	FUNCTION_8
+0x4000054	           0xf95c0	                                setne al	       554	thermal.c	FUNCTION_8
+0x4000057	           0xfb6c0	                           movzx eax, al	       554	thermal.c	FUNCTION_8
+0x400005a	            0x8906	                    mov dword [rsi], eax	       554	thermal.c	FUNCTION_8
+0x400005c	            0x31c0	                            xor eax, eax	       557	thermal.c	FUNCTION_8
+0x400005e	              0xc3	                                     ret	       557	thermal.c	FUNCTION_8
+0x400005f	      0xb8eaffffff	                     mov eax, 0xffffffea	       552	thermal.c	FUNCTION_8	IF_1
+0x4000064	              0xc3	                                     ret	       558	thermal.c	FUNCTION_8
+thermal_get_trend	WHILE,0:functions,0:FOR,0:ELSE,3:IF,6:CALL,3:DO,0:SWITCH,0	55
+0x40001f0	              0x55	                                push rbp	       704	thermal.c	ELSE_1	FUNCTION_13
+0x40001f1	              0x53	                                push rbx	       704	thermal.c	ELSE_1	FUNCTION_13
+0x40001f2	          0x4989d3	                            mov r11, rdx	       704	thermal.c	ELSE_1	FUNCTION_13
+0x40001f5	          0x4989fa	                            mov r10, rdi	       704	thermal.c	ELSE_1	FUNCTION_13
+0x40001f8	            0x89f3	                            mov ebx, esi	       704	thermal.c	ELSE_1	FUNCTION_13
+0x40001fa	        0x4883ec10	                           sub rsp, 0x10	       704	thermal.c	ELSE_1	FUNCTION_13
+0x40001fe	    0x4c8b8f280300	            mov r9, qword [rdi + 0x328] 	       705	thermal.c	ELSE_1	FUNCTION_13
+0x4000205	          0x4889e2	                            mov rdx, rsp	       709	thermal.c	ELSE_1	FUNCTION_13	IF_1	CALL_1
+0x4000208	    0x65488b042528	                mov rax, qword gs:[0x28]	       704	thermal.c	ELSE_1	FUNCTION_13
+0x4000211	      0x4889442408	                mov qword [rsp + 8], rax	       704	thermal.c	ELSE_1	FUNCTION_13
+0x4000216	            0x31c0	                            xor eax, eax	       704	thermal.c	ELSE_1	FUNCTION_13
+0x4000218	      0xe853feffff	          call sym.thermal_get_trip_type	       709	thermal.c	ELSE_1	FUNCTION_13	IF_1	CALL_1
+0x400021d	            0x85c0	                           test eax, eax	       709	thermal.c	ELSE_1	FUNCTION_13	IF_1	CALL_1
+0x400021f	            0x757e	                           jne 0x400029f	       709	thermal.c	ELSE_1	FUNCTION_13	IF_1	CALL_1
+0x4000221	          0x8b1424	                    mov edx, dword [rsp]	       712	thermal.c	ELSE_1	FUNCTION_13	IF_2
+0x4000224	            0x85d2	                           test edx, edx	       712	thermal.c	ELSE_1	FUNCTION_13	IF_2
+0x4000226	            0x744d	                            je 0x4000275	       712	thermal.c	ELSE_1	FUNCTION_13	IF_2
+0x4000228	        0x498b5110	              mov rdx, qword [r9 + 0x10]	       732	thermal.c	FUNCTION_13	ELSE_1
+0x400022c	          0x4889d1	                            mov rcx, rdx	       732	thermal.c	FUNCTION_13	ELSE_1
+0x400022f	        0x492b5160	              sub rdx, qword [r9 + 0x60]	       732	thermal.c	FUNCTION_13	ELSE_1
+0x4000233	        0x492b4918	              sub rcx, qword [r9 + 0x18]	       732	thermal.c	FUNCTION_13	ELSE_1
+0x4000237	      0x410faf4968	             imul ecx, dword [r9 + 0x68]	       732	thermal.c	FUNCTION_13	ELSE_1
+0x400023c	      0x410faf5170	             imul edx, dword [r9 + 0x70]	       732	thermal.c	FUNCTION_13	ELSE_1
+0x4000241	             0x1ca	                            add edx, ecx	       732	thermal.c	FUNCTION_13	ELSE_1
+0x4000243	          0x83fa00	                              cmp edx, 0	       736	thermal.c	FUNCTION_13	ELSE_1	IF_5
+0x4000246	            0x7e1e	                           jle 0x4000266	       736	thermal.c	FUNCTION_13	ELSE_1	IF_5
+0x4000248	    0x41c703010000	                      mov dword [r11], 1	       737	thermal.c	FUNCTION_13	ELSE_1	IF_5
+0x400024f	      0x488b742408	                mov rsi, qword [rsp + 8]	       743	thermal.c	FUNCTION_13	ELSE_1	ELSE_3
+0x4000254	    0x654833342528	                xor rsi, qword gs:[0x28]	       743	thermal.c	FUNCTION_13	ELSE_1	ELSE_3
+0x400025d	            0x7547	                           jne 0x40002a6	       743	thermal.c	FUNCTION_13	ELSE_1	ELSE_3
+0x400025f	        0x4883c410	                           add rsp, 0x10	       743	thermal.c	FUNCTION_13	ELSE_1	ELSE_3
+0x4000263	              0x5b	                                 pop rbx	       743	thermal.c	FUNCTION_13	ELSE_1	ELSE_3
+0x4000264	              0x5d	                                 pop rbp	       743	thermal.c	FUNCTION_13	ELSE_1	ELSE_3
+0x4000265	              0xc3	                                     ret	       743	thermal.c	FUNCTION_13	ELSE_1	ELSE_3
+0x4000266	          0x83fa01	                              cmp edx, 1	       739	thermal.c	FUNCTION_13	ELSE_1	ELSE_2	IF_6
+0x4000269	            0x19d2	                            sbb edx, edx	       739	thermal.c	FUNCTION_13	ELSE_1	ELSE_2	IF_6
+0x400026b	            0xf7d2	                                 not edx	       739	thermal.c	FUNCTION_13	ELSE_1	ELSE_2	IF_6
+0x400026d	          0x83e202	                              and edx, 2	       739	thermal.c	FUNCTION_13	ELSE_1	ELSE_2	IF_6
+0x4000270	          0x418913	                    mov dword [r11], edx	       739	thermal.c	FUNCTION_13	ELSE_1	ELSE_2	IF_6
+0x4000273	            0xebda	                           jmp 0x400024f	       739	thermal.c	FUNCTION_13	ELSE_1	ELSE_2	IF_6
+0x4000275	      0x488d542404	                      lea rdx, [rsp + 4]	       716	thermal.c	ELSE_1	FUNCTION_13	IF_2	IF_3	CALL_3
+0x400027a	            0x89de	                            mov esi, ebx	       716	thermal.c	ELSE_1	FUNCTION_13	IF_2	IF_3	CALL_3
+0x400027c	          0x4c89d7	                            mov rdi, r10	       716	thermal.c	ELSE_1	FUNCTION_13	IF_2	IF_3	CALL_3
+0x400027f	        0x498b6910	              mov rbp, qword [r9 + 0x10]	       714	thermal.c	ELSE_1	FUNCTION_13	IF_2	CALL_2
+0x4000283	    0x458b894c0500	            mov r9d, dword [r9 + 0x54c] 	       714	thermal.c	ELSE_1	FUNCTION_13	IF_2	CALL_2
+0x400028a	      0xe871feffff	          call sym.thermal_get_trip_temp	       716	thermal.c	ELSE_1	FUNCTION_13	IF_2	IF_3	CALL_3
+0x400028f	            0x85c0	                           test eax, eax	       716	thermal.c	ELSE_1	FUNCTION_13	IF_2	IF_3	CALL_3
+0x4000291	            0x750c	                           jne 0x400029f	       716	thermal.c	ELSE_1	FUNCTION_13	IF_2	IF_3	CALL_3
+0x4000293	          0x4429cd	                            sub ebp, r9d	       719	thermal.c	ELSE_1	FUNCTION_13	IF_2	IF_4
+0x4000296	          0x6bed64	                     imul ebp, ebp, 0x64	       719	thermal.c	ELSE_1	FUNCTION_13	IF_2	IF_4
+0x4000299	        0x3b6c2404	                cmp ebp, dword [rsp + 4]	       719	thermal.c	ELSE_1	FUNCTION_13	IF_2	IF_4
+0x400029d	            0x7fa9	                            jg 0x4000248	       719	thermal.c	ELSE_1	FUNCTION_13	IF_2	IF_4
+0x400029f	      0xb8eaffffff	                     mov eax, 0xffffffea	       710	thermal.c	ELSE_1	FUNCTION_13	IF_1
+0x40002a4	            0xeba9	                           jmp 0x400024f	       710	thermal.c	ELSE_1	FUNCTION_13	IF_1
+0x40002a6	      0xe800000000	                          call 0x40002ab	       743	thermal.c	FUNCTION_13	ELSE_1	ELSE_3
+thermal_set_mode	WHILE,0:functions,0:FOR,0:ELSE,2:IF,4:CALL,3:DO,0:SWITCH,0	29
+0x4001360	              0x53	                                push rbx	       562	thermal.c	FUNCTION_9
+0x4001361	    0x488b9f280300	           mov rbx, qword [rdi + 0x328] 	       563	thermal.c	FUNCTION_9
+0x4001368	          0x4885db	                           test rbx, rbx	       566	thermal.c	FUNCTION_9	IF_1
+0x400136b	            0x7409	                            je 0x4001376	       566	thermal.c	FUNCTION_9	IF_1
+0x400136d	          0x83fe01	                              cmp esi, 1	       572	thermal.c	FUNCTION_9	IF_2
+0x4001370	            0x740b	                            je 0x400137d	       572	thermal.c	FUNCTION_9	IF_2
+0x4001372	            0x85f6	                           test esi, esi	       574	thermal.c	FUNCTION_9	ELSE_1	IF_3
+0x4001374	            0x742a	                            je 0x40013a0	       574	thermal.c	FUNCTION_9	ELSE_1	IF_3
+0x4001376	      0xb8eaffffff	                     mov eax, 0xffffffea	       567	thermal.c	FUNCTION_9	IF_1
+0x400137b	              0x5b	                                 pop rbx	       588	thermal.c	FUNCTION_9
+0x400137c	              0xc3	                                     ret	       588	thermal.c	FUNCTION_9
+0x400137d	    0x83bb48050000	              cmp dword [rbx + 0x548], 1	       580	thermal.c	FUNCTION_9	ELSE_2	IF_4
+0x4001384	            0x7504	                           jne 0x400138a	       580	thermal.c	FUNCTION_9	ELSE_2	IF_4
+0x4001386	            0x31c0	                            xor eax, eax	       587	thermal.c	FUNCTION_9
+0x4001388	              0x5b	                                 pop rbx	       588	thermal.c	FUNCTION_9
+0x4001389	              0xc3	                                     ret	       588	thermal.c	FUNCTION_9
+0x400138a	    0xc78348050000	              mov dword [rbx + 0x548], 1	       581	thermal.c	FUNCTION_9	ELSE_2	IF_4
+0x4001394	          0x4889df	                            mov rdi, rbx	       581	thermal.c	FUNCTION_9	ELSE_2	IF_4
+0x4001397	      0xe8c4feffff	      call sym.acpi_thermal_check.part.6	       581	thermal.c	FUNCTION_9	ELSE_2	IF_4
+0x400139c	            0x31c0	                            xor eax, eax	       587	thermal.c	FUNCTION_9
+0x400139e	            0xebe8	                           jmp 0x4001388	       587	thermal.c	FUNCTION_9
+0x40013a0	    0x48c7c7000000	                              mov rdi, 0	       576	thermal.c	FUNCTION_9	ELSE_1	IF_3	CALL_1
+0x40013a7	      0xe800000000	                          call 0x40013ac	       576	thermal.c	FUNCTION_9	ELSE_1	IF_3	CALL_1
+0x40013ac	    0x83bb48050000	              cmp dword [rbx + 0x548], 0	       580	thermal.c	FUNCTION_9	ELSE_2	IF_4
+0x40013b3	            0x74d1	                            je 0x4001386	       580	thermal.c	FUNCTION_9	ELSE_2	IF_4
+0x40013b5	    0xc78348050000	              mov dword [rbx + 0x548], 0	       581	thermal.c	FUNCTION_9	ELSE_2	IF_4
+0x40013bf	            0x31c0	                            xor eax, eax	       587	thermal.c	FUNCTION_9
+0x40013c1	              0x5b	                                 pop rbx	       588	thermal.c	FUNCTION_9
+0x40013c2	              0xc3	                                     ret	       588	thermal.c	FUNCTION_9
+acpi_thermal_trips_update	WHILE,0:functions,0:FOR,1:ELSE,14:IF,36:CALL,47:DO,0:SWITCH,0	489
+0x4000590	            0x4157	                                push r15	       282	thermal.c	FUNCTION_4
+0x4000592	            0x4156	                                push r14	       282	thermal.c	FUNCTION_4
+0x4000594	          0x4989fe	                            mov r14, rdi	       282	thermal.c	FUNCTION_4
+0x4000597	            0x4155	                                push r13	       282	thermal.c	FUNCTION_4
+0x4000599	            0x4154	                                push r12	       282	thermal.c	FUNCTION_4
+0x400059b	          0x4189f4	                           mov r12d, esi	       282	thermal.c	FUNCTION_4
+0x400059e	              0x55	                                push rbp	       282	thermal.c	FUNCTION_4
+0x400059f	              0x53	                                push rbx	       282	thermal.c	FUNCTION_4
+0x40005a0	    0x4881ec880000	                           sub rsp, 0x88	       282	thermal.c	FUNCTION_4
+0x40005a7	    0x65488b042528	                mov rax, qword gs:[0x28]	       282	thermal.c	FUNCTION_4
+0x40005b0	    0x488984248000	             mov qword [rsp + 0x80], rax	       282	thermal.c	FUNCTION_4
+0x40005b8	            0x31c0	                            xor eax, eax	       282	thermal.c	FUNCTION_4
+0x40005ba	          0x83e601	                              and esi, 1	       290	thermal.c	FUNCTION_4	IF_1
+0x40005bd	     0xf85f8050000	                           jne 0x4000bbb	       290	thermal.c	FUNCTION_4	IF_1
+0x40005c3	        0x41f6c402	                            test r12b, 2	       331	thermal.c	FUNCTION_4	IF_8
+0x40005c7	     0xf85c2050000	                           jne 0x4000b8f	       331	thermal.c	FUNCTION_4	IF_8
+0x40005cd	        0x41f6c404	                            test r12b, 4	       348	thermal.c	FUNCTION_4	IF_10
+0x40005d1	            0x740d	                            je 0x40005e0	       348	thermal.c	FUNCTION_4	IF_10
+0x40005d3	      0x410fb64658	           movzx eax, byte [r14 + 0x58] 	       348	thermal.c	FUNCTION_4	IF_10
+0x40005d8	            0xa801	                              test al, 1	       348	thermal.c	FUNCTION_4	IF_10
+0x40005da	     0xf8555020000	                           jne 0x4000835	       348	thermal.c	FUNCTION_4	IF_10
+0x40005e0	            0x31db	                            xor ebx, ebx	       286	thermal.c	FUNCTION_4
+0x40005e2	        0x4183fc1f	                          cmp r12d, 0x1f	       348	thermal.c	FUNCTION_4	IF_10
+0x40005e6	     0xf8444020000	                            je 0x4000830	       348	thermal.c	FUNCTION_4	IF_10
+0x40005ec	          0x4489e0	                           mov eax, r12d	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x40005ef	          0x83e010	                           and eax, 0x10	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x40005f2	        0x89442404	                mov dword [rsp + 4], eax	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x40005f6	     0xf8510030000	                           jne 0x400090c	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x40005fc	        0x41f6c414	                         test r12b, 0x14	       409	thermal.c	FUNCTION_4	IF_21
+0x4000600	      0x4489642410	            mov dword [rsp + 0x10], r12d	       409	thermal.c	FUNCTION_4	IF_21
+0x4000605	     0xf8521040000	                           jne 0x4000a2c	       409	thermal.c	FUNCTION_4	IF_21
+0x400060b	          0x4489e0	                           mov eax, r12d	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x400060e	    0x4d8daee80000	                   lea r13, [r14 + 0xe8]	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x4000615	            0x31ed	                            xor ebp, ebp	       409	thermal.c	FUNCTION_4	IF_21
+0x4000617	          0xc1e803	                              shr eax, 3	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x400061a	      0x4c8d7c2420	                   lea r15, [rsp + 0x20]	       454	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_34
+0x400061f	          0x83e001	                              and eax, 1	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x4000622	        0x88442416	               mov byte [rsp + 0x16], al	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x4000626	      0xe983000000	                           jmp 0x40006ae	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x400062b	          0x4584c9	                           test r9b, r9b	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x400062e	     0xf84cb000000	                            je 0x40006ff	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x4000634	          0x498b06	                    mov rax, qword [r14]	       424	thermal.c	FUNCTION_4	FOR_1	IF_24	CALL_29
+0x4000637	      0x4c8d44247b	                    lea r8, [rsp + 0x7b]	       424	thermal.c	FUNCTION_4	FOR_1	IF_24	CALL_29
+0x400063c	      0x488d4c2418	                   lea rcx, [rsp + 0x18]	       424	thermal.c	FUNCTION_4	FOR_1	IF_24	CALL_29
+0x4000641	            0x31d2	                            xor edx, edx	       424	thermal.c	FUNCTION_4	FOR_1	IF_24	CALL_29
+0x4000643	      0x44884c2417	              mov byte [rsp + 0x17], r9b	       424	thermal.c	FUNCTION_4	FOR_1	IF_24	CALL_29
+0x4000648	          0x4c89c6	                             mov rsi, r8	       424	thermal.c	FUNCTION_4	FOR_1	IF_24	CALL_29
+0x400064b	      0x4c89442408	                 mov qword [rsp + 8], r8	       424	thermal.c	FUNCTION_4	FOR_1	IF_24	CALL_29
+0x4000650	        0x488b7808	                mov rdi, qword [rax + 8]	       424	thermal.c	FUNCTION_4	FOR_1	IF_24	CALL_29
+0x4000654	      0xe800000000	                          call 0x4000659	       424	thermal.c	FUNCTION_4	FOR_1	IF_24	CALL_29
+0x4000659	            0x85c0	                           test eax, eax	       426	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	CALL_30
+0x400065b	      0x4c8b442408	                 mov r8, qword [rsp + 8]	       426	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	CALL_30
+0x4000660	    0x440fb64c2417	           movzx r9d, byte [rsp + 0x17] 	       426	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	CALL_30
+0x4000666	     0xf85ac060000	                           jne 0x4000d18	       426	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	CALL_30
+0x400066c	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       447	thermal.c	FUNCTION_4	FOR_1	IF_24	ELSE_13
+0x4000671	        0x8b4c2404	                mov ecx, dword [rsp + 4]	       453	thermal.c	FUNCTION_4	FOR_1	IF_29
+0x4000675	      0xc644247d4c	            mov byte [rsp + 0x7d], 0x4c 	       452	thermal.c	FUNCTION_4	FOR_1
+0x400067a	        0x498945f8	                mov qword [r13 - 8], rax	       447	thermal.c	FUNCTION_4	FOR_1	IF_24	ELSE_13
+0x400067e	        0x488d045b	                  lea rax, [rbx + rbx*2]	       448	thermal.c	FUNCTION_4	FOR_1	IF_24	ELSE_13
+0x4000682	        0x488d0483	                  lea rax, [rbx + rax*4]	       448	thermal.c	FUNCTION_4	FOR_1	IF_24	ELSE_13
+0x4000686	    0x41808cc6d800	         or byte [r14 + rax*8 + 0xd8], 1	       448	thermal.c	FUNCTION_4	FOR_1	IF_24	ELSE_13
+0x400068f	            0x85c9	                           test ecx, ecx	       453	thermal.c	FUNCTION_4	FOR_1	IF_29
+0x4000691	     0xf8518010000	                           jne 0x40007af	       453	thermal.c	FUNCTION_4	FOR_1	IF_29
+0x4000697	      0xf644241018	           test byte [rsp + 0x10], 0x18 	       472	thermal.c	FUNCTION_4	FOR_1	IF_32
+0x400069c	     0xf85be000000	                           jne 0x4000760	       472	thermal.c	FUNCTION_4	FOR_1	IF_32
+0x40006a2	          0x83c501	                              add ebp, 1	       415	thermal.c	FUNCTION_4	FOR_1
+0x40006a5	        0x4983c568	                           add r13, 0x68	       415	thermal.c	FUNCTION_4	FOR_1
+0x40006a9	          0x83fd0a	                            cmp ebp, 0xa	       415	thermal.c	FUNCTION_4	FOR_1
+0x40006ac	            0x7467	                            je 0x4000715	       415	thermal.c	FUNCTION_4	FOR_1
+0x40006ae	          0x8d4530	                   lea eax, [rbp + 0x30]	       416	thermal.c	FUNCTION_4	FOR_1
+0x40006b1	          0x4863dd	                         movsxd rbx, ebp	       417	thermal.c	FUNCTION_4	FOR_1
+0x40006b4	      0xc644247b5f	            mov byte [rsp + 0x7b], 0x5f 	       416	thermal.c	FUNCTION_4	FOR_1
+0x40006b9	      0xc644247c41	            mov byte [rsp + 0x7c], 0x41 	       416	thermal.c	FUNCTION_4	FOR_1
+0x40006be	      0xc644247d43	            mov byte [rsp + 0x7d], 0x43 	       416	thermal.c	FUNCTION_4	FOR_1
+0x40006c3	        0x8844247e	               mov byte [rsp + 0x7e], al	       416	thermal.c	FUNCTION_4	FOR_1
+0x40006c7	        0x488d045b	                  lea rax, [rbx + rbx*2]	       417	thermal.c	FUNCTION_4	FOR_1
+0x40006cb	      0xc644247f00	                mov byte [rsp + 0x7f], 0	       416	thermal.c	FUNCTION_4	FOR_1
+0x40006d0	        0x488d0483	                  lea rax, [rbx + rax*4]	       417	thermal.c	FUNCTION_4	FOR_1
+0x40006d4	    0x450fb68cc6d8	   movzx r9d, byte [r14 + rax*8 + 0xd8] 	       417	thermal.c	FUNCTION_4	FOR_1
+0x40006dd	        0x4183e101	                              and r9d, 1	       417	thermal.c	FUNCTION_4	FOR_1
+0x40006e1	    0x833d00000000	cmp dword [0x040006e8], 0xffffffffffffffff	       419	thermal.c	FUNCTION_4	FOR_1	IF_23
+0x40006e8	            0x742b	                            je 0x4000715	       419	thermal.c	FUNCTION_4	FOR_1	IF_23
+0x40006ea	        0x4183fc1f	                          cmp r12d, 0x1f	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x40006ee	     0xf8440ffffff	                            je 0x4000634	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x40006f4	      0x807c241600	                cmp byte [rsp + 0x16], 0	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x40006f9	     0xf852cffffff	                           jne 0x400062b	       422	thermal.c	FUNCTION_4	FOR_1	IF_24
+0x40006ff	        0x8b542404	                mov edx, dword [rsp + 4]	       453	thermal.c	FUNCTION_4	FOR_1	IF_29
+0x4000703	      0xc644247d4c	            mov byte [rsp + 0x7d], 0x4c 	       452	thermal.c	FUNCTION_4	FOR_1
+0x4000708	            0x85d2	                           test edx, edx	       453	thermal.c	FUNCTION_4	FOR_1	IF_29
+0x400070a	            0x7440	                            je 0x400074c	       453	thermal.c	FUNCTION_4	FOR_1	IF_29
+0x400070c	          0x4584c9	                           test r9b, r9b	       453	thermal.c	FUNCTION_4	FOR_1	IF_29
+0x400070f	     0xf8595000000	                           jne 0x40007aa	       453	thermal.c	FUNCTION_4	FOR_1	IF_29
+0x4000715	        0x8b442404	                mov eax, dword [rsp + 4]	       480	thermal.c	FUNCTION_4	IF_35
+0x4000719	            0x85c0	                           test eax, eax	       480	thermal.c	FUNCTION_4	IF_35
+0x400071b	     0xf854e030000	                           jne 0x4000a6f	       480	thermal.c	FUNCTION_4	IF_35
+0x4000721	            0x31c0	                            xor eax, eax	       493	thermal.c	FUNCTION_4
+0x4000723	    0x488b8c248000	            mov rcx, qword [rsp + 0x80] 	       493	thermal.c	FUNCTION_4
+0x400072b	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       493	thermal.c	FUNCTION_4
+0x4000734	     0xf8503070000	                           jne 0x4000e3d	       493	thermal.c	FUNCTION_4
+0x400073a	    0x4881c4880000	                           add rsp, 0x88	       493	thermal.c	FUNCTION_4
+0x4000741	              0x5b	                                 pop rbx	       493	thermal.c	FUNCTION_4
+0x4000742	              0x5d	                                 pop rbp	       493	thermal.c	FUNCTION_4
+0x4000743	            0x415c	                                 pop r12	       493	thermal.c	FUNCTION_4
+0x4000745	            0x415d	                                 pop r13	       493	thermal.c	FUNCTION_4
+0x4000747	            0x415e	                                 pop r14	       493	thermal.c	FUNCTION_4
+0x4000749	            0x415f	                                 pop r15	       493	thermal.c	FUNCTION_4
+0x400074b	              0xc3	                                     ret	       493	thermal.c	FUNCTION_4
+0x400074c	          0x4489c8	                            mov eax, r9d	       417	thermal.c	FUNCTION_4	FOR_1
+0x400074f	      0xf644241018	           test byte [rsp + 0x10], 0x18 	       472	thermal.c	FUNCTION_4	FOR_1	IF_32
+0x4000754	            0x750f	                           jne 0x4000765	       472	thermal.c	FUNCTION_4	FOR_1	IF_32
+0x4000756	            0x84c0	                             test al, al	       476	thermal.c	FUNCTION_4	FOR_1	IF_34
+0x4000758	     0xf8544ffffff	                           jne 0x40006a2	       476	thermal.c	FUNCTION_4	FOR_1	IF_34
+0x400075e	            0xebb5	                           jmp 0x4000715	       476	thermal.c	FUNCTION_4	FOR_1	IF_34
+0x4000760	      0xb801000000	                              mov eax, 1	       472	thermal.c	FUNCTION_4	FOR_1	IF_32
+0x4000765	          0x4138c1	                             cmp r9b, al	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x4000768	            0x74ec	                            je 0x4000756	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x400076a	        0x4183fc1f	                          cmp r12d, 0x1f	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x400076e	            0x74e6	                            je 0x4000756	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x4000770	    0x49c7c0000000	                               mov r8, 0	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x4000777	    0x48c7c1000000	                              mov rcx, 0	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x400077e	      0xba01000000	                              mov edx, 1	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x4000783	      0xbeda010000	                          mov esi, 0x1da	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x4000788	    0x48c7c7000000	                              mov rdi, 0	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x400078f	      0xe800000000	                          call 0x4000794	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x4000794	        0x488d045b	                  lea rax, [rbx + rbx*2]	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x4000798	        0x488d0483	                  lea rax, [rbx + rax*4]	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x400079c	    0x410fb684c6d8	   movzx eax, byte [r14 + rax*8 + 0xd8] 	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x40007a5	          0x83e001	                              and eax, 1	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x40007a8	            0xebac	                           jmp 0x4000756	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x40007aa	      0x4c8d44247b	                    lea r8, [rsp + 0x7b]	       474	thermal.c	FUNCTION_4	FOR_1	IF_32	IF_33
+0x40007af	            0x31c0	                            xor eax, eax	       454	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_34
+0x40007b1	      0xb90b000000	                            mov ecx, 0xb	       454	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_34
+0x40007b6	          0x4c89ff	                            mov rdi, r15	       454	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_34
+0x40007b9	          0xf348ab	              rep stosq qword [rdi], rax	       454	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_34
+0x40007bc	          0x498b06	                    mov rax, qword [r14]	       455	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_35
+0x40007bf	            0x31d2	                            xor edx, edx	       455	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_35
+0x40007c1	          0x4c89f9	                            mov rcx, r15	       455	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_35
+0x40007c4	          0x4c89c6	                             mov rsi, r8	       455	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_35
+0x40007c7	      0x44884c2408	                 mov byte [rsp + 8], r9b	       455	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_35
+0x40007cc	        0x488b7808	                mov rdi, qword [rax + 8]	       455	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_35
+0x40007d0	      0xe800000000	                          call 0x40007d5	       455	thermal.c	FUNCTION_4	FOR_1	IF_29	CALL_35
+0x40007d5	            0x85c0	                           test eax, eax	       457	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30	CALL_36
+0x40007d7	    0x440fb64c2408	               movzx r9d, byte [rsp + 8]	       457	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30	CALL_36
+0x40007dd	     0xf8530060000	                           jne 0x4000e13	       457	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30	CALL_36
+0x40007e3	        0x488d045b	                  lea rax, [rbx + rbx*2]	       463	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14
+0x40007e7	        0x488d0483	                  lea rax, [rbx + rax*4]	       463	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14
+0x40007eb	    0x41808cc6d800	         or byte [r14 + rax*8 + 0xd8], 1	       463	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14
+0x40007f4	      0xba58000000	                           mov edx, 0x58	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x40007f9	          0x4c89fe	                            mov rsi, r15	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x40007fc	          0x4c89ef	                            mov rdi, r13	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x40007ff	      0x44884c2408	                 mov byte [rsp + 8], r9b	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x4000804	      0xe800000000	                          call 0x4000809	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x4000809	            0x85c0	                           test eax, eax	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x400080b	    0x440fb64c2408	               movzx r9d, byte [rsp + 8]	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x4000811	     0xf8525040000	                           jne 0x4000c3c	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x4000817	        0x488d045b	                  lea rax, [rbx + rbx*2]	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x400081b	        0x488d0483	                  lea rax, [rbx + rax*4]	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x400081f	    0x410fb684c6d8	   movzx eax, byte [r14 + rax*8 + 0xd8] 	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x4000828	          0x83e001	                              and eax, 1	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x400082b	      0xe91fffffff	                           jmp 0x400074f	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x4000830	      0x410fb64658	           movzx eax, byte [r14 + 0x58] 	       465	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_38
+0x4000835	            0x89c3	                            mov ebx, eax	       350	thermal.c	FUNCTION_4	IF_10
+0x4000837	    0x8b0500000000	            mov eax, dword [0x0400083d] 	       351	thermal.c	FUNCTION_4	IF_10	IF_11
+0x400083d	          0x83e301	                              and ebx, 1	       350	thermal.c	FUNCTION_4	IF_10
+0x4000840	          0x83f8ff	             cmp eax, 0xffffffffffffffff	       351	thermal.c	FUNCTION_4	IF_10	IF_11
+0x4000843	     0xf849c040000	                            je 0x4000ce5	       351	thermal.c	FUNCTION_4	IF_10	IF_11
+0x4000849	            0x85c0	                           test eax, eax	       353	thermal.c	FUNCTION_4	IF_10	ELSE_5	IF_12
+0x400084b	     0xf8e3b050000	                           jle 0x4000d8c	       353	thermal.c	FUNCTION_4	IF_10	ELSE_5	IF_12
+0x4000851	          0x8d0480	                  lea eax, [rax + rax*4]	       354	thermal.c	FUNCTION_4	IF_10	ELSE_5	IF_12	CALL_12
+0x4000854	    0x8d8400ac0a00	           lea eax, [rax + rax + 0xaac] 	       354	thermal.c	FUNCTION_4	IF_10	ELSE_5	IF_12	CALL_12
+0x400085b	            0x4898	                                    cdqe	       354	thermal.c	FUNCTION_4	IF_10	ELSE_5	IF_12	CALL_12
+0x400085d	      0x4889442418	             mov qword [rsp + 0x18], rax	       354	thermal.c	FUNCTION_4	IF_10	ELSE_5	IF_12	CALL_12
+0x4000862	      0x41804e5801	                 or byte [r14 + 0x58], 1	       365	thermal.c	FUNCTION_4	IF_10	ELSE_7
+0x4000867	        0x4183fc1f	                          cmp r12d, 0x1f	       366	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14
+0x400086b	        0x49894660	             mov qword [r14 + 0x60], rax	       364	thermal.c	FUNCTION_4	IF_10	ELSE_7
+0x400086f	     0xf8577fdffff	                           jne 0x40005ec	       366	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14
+0x4000875	          0x498b06	                    mov rax, qword [r14]	       367	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_15
+0x4000878	      0x488d4c2418	                   lea rcx, [rsp + 0x18]	       367	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_15
+0x400087d	            0x31d2	                            xor edx, edx	       367	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_15
+0x400087f	    0x48c7c6000000	                              mov rsi, 0	       367	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_15
+0x4000886	        0x488b7808	                mov rdi, qword [rax + 8]	       367	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_15
+0x400088a	      0xe800000000	                          call 0x400088f	       367	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_15
+0x400088f	            0x85c0	                           test eax, eax	       370	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	IF_15	CALL_16
+0x4000891	     0xf8449050000	                            je 0x4000de0	       370	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	IF_15	CALL_16
+0x4000897	      0x41806658fe	             and byte [r14 + 0x58], 0xfe	       371	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	IF_15
+0x400089c	          0x498b06	                    mov rax, qword [r14]	       374	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_17
+0x400089f	      0x488d4c2418	                   lea rcx, [rsp + 0x18]	       374	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_17
+0x40008a4	            0x31d2	                            xor edx, edx	       374	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_17
+0x40008a6	    0x48c7c6000000	                              mov rsi, 0	       374	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_17
+0x40008ad	        0x488b7808	                mov rdi, qword [rax + 8]	       374	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_17
+0x40008b1	      0xe800000000	                          call 0x40008b6	       374	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_17
+0x40008b6	            0x85c0	                           test eax, eax	       377	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	IF_16	CALL_18
+0x40008b8	     0xf8414050000	                            je 0x4000dd2	       377	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	IF_16	CALL_18
+0x40008be	      0x41806658fe	             and byte [r14 + 0x58], 0xfe	       378	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	IF_16
+0x40008c3	          0x498b06	                    mov rax, qword [r14]	       381	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_19
+0x40008c6	      0x488d4c2418	                   lea rcx, [rsp + 0x18]	       381	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_19
+0x40008cb	            0x31d2	                            xor edx, edx	       381	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_19
+0x40008cd	    0x48c7c6000000	                              mov rsi, 0	       381	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_19
+0x40008d4	        0x488b7808	                mov rdi, qword [rax + 8]	       381	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_19
+0x40008d8	      0xe800000000	                          call 0x40008dd	       381	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	CALL_19
+0x40008dd	            0x85c0	                           test eax, eax	       384	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	IF_17	CALL_20
+0x40008df	     0xf84df040000	                            je 0x4000dc4	       384	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	IF_17	CALL_20
+0x40008e5	      0x41806658fe	             and byte [r14 + 0x58], 0xfe	       385	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	IF_17
+0x40008ea	      0x410fb64658	           movzx eax, byte [r14 + 0x58] 	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x40008ef	            0xa801	                              test al, 1	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x40008f1	     0xf85f7040000	                           jne 0x4000dee	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x40008f7	    0xc74424101f00	           mov dword [rsp + 0x10], 0x1f 	       409	thermal.c	FUNCTION_4	IF_21
+0x40008ff	    0xc74424041000	               mov dword [rsp + 4], 0x10	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x4000907	      0xe925010000	                           jmp 0x4000a31	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x400090c	      0x41f6465801	               test byte [r14 + 0x58], 1	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x4000911	     0xf84e5fcffff	                            je 0x40005fc	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x4000917	      0x488d6c2420	                   lea rbp, [rsp + 0x20]	       392	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_21
+0x400091c	            0x31c0	                            xor eax, eax	       392	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_21
+0x400091e	      0xb90b000000	                            mov ecx, 0xb	       392	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_21
+0x4000923	            0x31d2	                            xor edx, edx	       393	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_22
+0x4000925	    0x48c7c6000000	                              mov rsi, 0	       393	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_22
+0x400092c	          0x4889ef	                            mov rdi, rbp	       392	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_21
+0x400092f	          0xf348ab	              rep stosq qword [rdi], rax	       392	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_21
+0x4000932	          0x498b06	                    mov rax, qword [r14]	       393	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_22
+0x4000935	          0x4889e9	                            mov rcx, rbp	       393	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_22
+0x4000938	        0x488b7808	                mov rdi, qword [rax + 8]	       393	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_22
+0x400093c	      0xe800000000	                          call 0x4000941	       393	thermal.c	FUNCTION_4	ELSE_10	IF_18	CALL_22
+0x4000941	            0x85c0	                           test eax, eax	       395	thermal.c	FUNCTION_4	ELSE_10	IF_18	IF_19	CALL_23
+0x4000943	     0xf850a050000	                           jne 0x4000e53	       395	thermal.c	FUNCTION_4	ELSE_10	IF_18	IF_19	CALL_23
+0x4000949	      0x41804e5801	                 or byte [r14 + 0x58], 1	       400	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11
+0x400094e	    0x4d8dae800000	                   lea r13, [r14 + 0x80]	       402	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_25
+0x4000955	      0xba58000000	                           mov edx, 0x58	       402	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_25
+0x400095a	          0x4889ee	                            mov rsi, rbp	       402	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_25
+0x400095d	          0x4c89ef	                            mov rdi, r13	       402	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_25
+0x4000960	      0xe800000000	                          call 0x4000965	       402	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_25
+0x4000965	            0x85c0	                           test eax, eax	       402	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_25
+0x4000967	     0xf848ffcffff	                            je 0x40005fc	       402	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_25
+0x400096d	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x4000972	        0x4183fc1f	                          cmp r12d, 0x1f	       406	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_27
+0x4000976	    0xc74424101f00	           mov dword [rsp + 0x10], 0x1f 	       409	thermal.c	FUNCTION_4	IF_21
+0x400097e	    0x498986800000	             mov qword [r14 + 0x80], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x4000985	      0x488b442428	            mov rax, qword [rsp + 0x28] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x400098a	    0x498986880000	             mov qword [r14 + 0x88], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x4000991	      0x488b442430	            mov rax, qword [rsp + 0x30] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x4000996	    0x498986900000	             mov qword [r14 + 0x90], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x400099d	      0x488b442438	            mov rax, qword [rsp + 0x38] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009a2	    0x498986980000	             mov qword [r14 + 0x98], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009a9	      0x488b442440	            mov rax, qword [rsp + 0x40] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009ae	    0x498986a00000	             mov qword [r14 + 0xa0], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009b5	      0x488b442448	            mov rax, qword [rsp + 0x48] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009ba	    0x498986a80000	             mov qword [r14 + 0xa8], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009c1	      0x488b442450	            mov rax, qword [rsp + 0x50] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009c6	    0x498986b00000	             mov qword [r14 + 0xb0], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009cd	      0x488b442458	            mov rax, qword [rsp + 0x58] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009d2	    0x498986b80000	             mov qword [r14 + 0xb8], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009d9	      0x488b442460	            mov rax, qword [rsp + 0x60] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009de	    0x498986c00000	             mov qword [r14 + 0xc0], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009e5	      0x488b442468	            mov rax, qword [rsp + 0x68] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009ea	    0x498986c80000	             mov qword [r14 + 0xc8], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009f1	      0x488b442470	            mov rax, qword [rsp + 0x70] 	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009f6	    0x498986d00000	             mov qword [r14 + 0xd0], rax	       404	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_26
+0x40009fd	     0xf8408fcffff	                            je 0x400060b	       406	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_27
+0x4000a03	    0x49c7c0000000	                               mov r8, 0	       406	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_27
+0x4000a0a	    0x48c7c1000000	                              mov rcx, 0	       406	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_27
+0x4000a11	      0xba01000000	                              mov edx, 1	       406	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_27
+0x4000a16	      0xbe96010000	                          mov esi, 0x196	       406	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_27
+0x4000a1b	    0x48c7c7000000	                              mov rdi, 0	       406	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_27
+0x4000a22	      0xe800000000	                          call 0x4000a27	       406	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_27
+0x4000a27	      0xe9d0fbffff	                           jmp 0x40005fc	       406	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_27
+0x4000a2c	      0x410fb64658	           movzx eax, byte [r14 + 0x58] 	       406	thermal.c	FUNCTION_4	ELSE_10	IF_18	ELSE_11	IF_20	CALL_27
+0x4000a31	          0x83e001	                              and eax, 1	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a34	            0x39d8	                            cmp eax, ebx	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a36	     0xf84cffbffff	                            je 0x400060b	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a3c	        0x4183fc1f	                          cmp r12d, 0x1f	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a40	     0xf84c5fbffff	                            je 0x400060b	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a46	    0x49c7c0000000	                               mov r8, 0	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a4d	    0x48c7c1000000	                              mov rcx, 0	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a54	      0xba01000000	                              mov edx, 1	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a59	      0xbe9b010000	                          mov esi, 0x19b	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a5e	    0x48c7c7000000	                              mov rdi, 0	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a65	      0xe800000000	                          call 0x4000a6a	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a6a	      0xe99cfbffff	                           jmp 0x400060b	       411	thermal.c	FUNCTION_4	IF_21	CALL_28
+0x4000a6f	          0x498b06	                    mov rax, qword [r14]	       481	thermal.c	FUNCTION_4	IF_35	CALL_42
+0x4000a72	    0x48c7c6000000	                              mov rsi, 0	       481	thermal.c	FUNCTION_4	IF_35	CALL_42
+0x4000a79	        0x488b7808	                mov rdi, qword [rax + 8]	       481	thermal.c	FUNCTION_4	IF_35	CALL_42
+0x4000a7d	      0xe800000000	                          call 0x4000a82	       481	thermal.c	FUNCTION_4	IF_35	CALL_42
+0x4000a82	            0x84c0	                             test al, al	       481	thermal.c	FUNCTION_4	IF_35	CALL_42
+0x4000a84	     0xf8497fcffff	                            je 0x4000721	       481	thermal.c	FUNCTION_4	IF_35	CALL_42
+0x4000a8a	      0x488d5c2420	                   lea rbx, [rsp + 0x20]	       482	thermal.c	FUNCTION_4	IF_35	CALL_43
+0x4000a8f	            0x31c0	                            xor eax, eax	       482	thermal.c	FUNCTION_4	IF_35	CALL_43
+0x4000a91	      0xb90b000000	                            mov ecx, 0xb	       482	thermal.c	FUNCTION_4	IF_35	CALL_43
+0x4000a96	            0x31d2	                            xor edx, edx	       483	thermal.c	FUNCTION_4	IF_35	CALL_44
+0x4000a98	    0x48c7c6000000	                              mov rsi, 0	       483	thermal.c	FUNCTION_4	IF_35	CALL_44
+0x4000a9f	          0x4889df	                            mov rdi, rbx	       482	thermal.c	FUNCTION_4	IF_35	CALL_43
+0x4000aa2	          0xf348ab	              rep stosq qword [rdi], rax	       482	thermal.c	FUNCTION_4	IF_35	CALL_43
+0x4000aa5	          0x498b06	                    mov rax, qword [r14]	       483	thermal.c	FUNCTION_4	IF_35	CALL_44
+0x4000aa8	          0x4889d9	                            mov rcx, rbx	       483	thermal.c	FUNCTION_4	IF_35	CALL_44
+0x4000aab	        0x488b7808	                mov rdi, qword [rax + 8]	       483	thermal.c	FUNCTION_4	IF_35	CALL_44
+0x4000aaf	      0xe800000000	                          call 0x4000ab4	       483	thermal.c	FUNCTION_4	IF_35	CALL_44
+0x4000ab4	            0x85c0	                           test eax, eax	       485	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_45
+0x4000ab6	     0xf8565fcffff	                           jne 0x4000721	       485	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_45
+0x4000abc	    0x498dbee80400	                  lea rdi, [r14 + 0x4e8]	       486	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_46
+0x4000ac3	      0xba58000000	                           mov edx, 0x58	       486	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_46
+0x4000ac8	          0x4889de	                            mov rsi, rbx	       486	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_46
+0x4000acb	      0xe800000000	                          call 0x4000ad0	       486	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_46
+0x4000ad0	            0x85c0	                           test eax, eax	       486	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_46
+0x4000ad2	     0xf8449fcffff	                            je 0x4000721	       486	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_46
+0x4000ad8	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000add	        0x4183fc1f	                          cmp r12d, 0x1f	       488	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_47
+0x4000ae1	    0x498986e80400	            mov qword [r14 + 0x4e8], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000ae8	      0x488b442428	            mov rax, qword [rsp + 0x28] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000aed	    0x498986f00400	            mov qword [r14 + 0x4f0], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000af4	      0x488b442430	            mov rax, qword [rsp + 0x30] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000af9	    0x498986f80400	            mov qword [r14 + 0x4f8], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b00	      0x488b442438	            mov rax, qword [rsp + 0x38] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b05	    0x498986000500	            mov qword [r14 + 0x500], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b0c	      0x488b442440	            mov rax, qword [rsp + 0x40] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b11	    0x498986080500	            mov qword [r14 + 0x508], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b18	      0x488b442448	            mov rax, qword [rsp + 0x48] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b1d	    0x498986100500	            mov qword [r14 + 0x510], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b24	      0x488b442450	            mov rax, qword [rsp + 0x50] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b29	    0x498986180500	            mov qword [r14 + 0x518], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b30	      0x488b442458	            mov rax, qword [rsp + 0x58] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b35	    0x498986200500	            mov qword [r14 + 0x520], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b3c	      0x488b442460	            mov rax, qword [rsp + 0x60] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b41	    0x498986280500	            mov qword [r14 + 0x528], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b48	      0x488b442468	            mov rax, qword [rsp + 0x68] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b4d	    0x498986300500	            mov qword [r14 + 0x530], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b54	      0x488b442470	            mov rax, qword [rsp + 0x70] 	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b59	    0x498986380500	            mov qword [r14 + 0x538], rax	       487	thermal.c	FUNCTION_4	IF_35	IF_36
+0x4000b60	     0xf84bbfbffff	                            je 0x4000721	       488	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_47
+0x4000b66	    0x49c7c0000000	                               mov r8, 0	       488	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_47
+0x4000b6d	    0x48c7c1000000	                              mov rcx, 0	       488	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_47
+0x4000b74	      0xba01000000	                              mov edx, 1	       488	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_47
+0x4000b79	      0xbee8010000	                          mov esi, 0x1e8	       488	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_47
+0x4000b7e	    0x48c7c7000000	                              mov rdi, 0	       488	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_47
+0x4000b85	      0xe800000000	                          call 0x4000b8a	       488	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_47
+0x4000b8a	      0xe992fbffff	                           jmp 0x4000721	       488	thermal.c	FUNCTION_4	IF_35	IF_36	CALL_47
+0x4000b8f	          0x498b06	                    mov rax, qword [r14]	       332	thermal.c	FUNCTION_4	IF_8	CALL_8
+0x4000b92	      0x488d4c2418	                   lea rcx, [rsp + 0x18]	       332	thermal.c	FUNCTION_4	IF_8	CALL_8
+0x4000b97	            0x31d2	                            xor edx, edx	       332	thermal.c	FUNCTION_4	IF_8	CALL_8
+0x4000b99	    0x48c7c6000000	                              mov rsi, 0	       332	thermal.c	FUNCTION_4	IF_8	CALL_8
+0x4000ba0	        0x488b7808	                mov rdi, qword [rax + 8]	       332	thermal.c	FUNCTION_4	IF_8	CALL_8
+0x4000ba4	      0xe800000000	                          call 0x4000ba9	       332	thermal.c	FUNCTION_4	IF_8	CALL_8
+0x4000ba9	            0x85c0	                           test eax, eax	       334	thermal.c	FUNCTION_4	IF_8	IF_9	CALL_9
+0x4000bab	     0xf8454010000	                            je 0x4000d05	       334	thermal.c	FUNCTION_4	IF_8	IF_9	CALL_9
+0x4000bb1	      0x41806648fe	             and byte [r14 + 0x48], 0xfe	       335	thermal.c	FUNCTION_4	IF_8	IF_9
+0x4000bb6	      0xe912faffff	                           jmp 0x40005cd	       335	thermal.c	FUNCTION_4	IF_8	IF_9
+0x4000bbb	          0x488b07	                    mov rax, qword [rdi]	       291	thermal.c	FUNCTION_4	IF_1	CALL_1
+0x4000bbe	      0x488d4c2418	                   lea rcx, [rsp + 0x18]	       291	thermal.c	FUNCTION_4	IF_1	CALL_1
+0x4000bc3	            0x31d2	                            xor edx, edx	       291	thermal.c	FUNCTION_4	IF_1	CALL_1
+0x4000bc5	    0x48c7c6000000	                              mov rsi, 0	       291	thermal.c	FUNCTION_4	IF_1	CALL_1
+0x4000bcc	        0x488b7808	                mov rdi, qword [rax + 8]	       291	thermal.c	FUNCTION_4	IF_1	CALL_1
+0x4000bd0	      0xe800000000	                          call 0x4000bd5	       291	thermal.c	FUNCTION_4	IF_1	CALL_1
+0x4000bd5	      0x488b742418	            mov rsi, qword [rsp + 0x18] 	       293	thermal.c	FUNCTION_4	IF_1
+0x4000bda	            0x85c0	                           test eax, eax	       300	thermal.c	FUNCTION_4	IF_1	IF_2	CALL_2
+0x4000bdc	        0x49897640	             mov qword [r14 + 0x40], rsi	       293	thermal.c	FUNCTION_4	IF_1
+0x4000be0	     0xf8515010000	                           jne 0x4000cfb	       300	thermal.c	FUNCTION_4	IF_1	IF_2	CALL_2
+0x4000be6	    0x4881feac0a00	                          cmp rsi, 0xaac	       304	thermal.c	FUNCTION_4	IF_1	ELSE_1	IF_3
+0x4000bed	     0xf86fc000000	                           jbe 0x4000cef	       304	thermal.c	FUNCTION_4	IF_1	ELSE_1	IF_3
+0x4000bf3	      0x41804e3801	                 or byte [r14 + 0x38], 1	       309	thermal.c	FUNCTION_4	IF_1	ELSE_2
+0x4000bf8	      0x410fb64638	           movzx eax, byte [r14 + 0x38] 	       314	thermal.c	FUNCTION_4	IF_1	IF_4
+0x4000bfd	            0xa801	                              test al, 1	       314	thermal.c	FUNCTION_4	IF_1	IF_4
+0x4000bff	     0xf84bef9ffff	                            je 0x40005c3	       314	thermal.c	FUNCTION_4	IF_1	IF_4
+0x4000c05	    0x8b3500000000	            mov esi, dword [0x04000c0b] 	       315	thermal.c	FUNCTION_4	IF_1	IF_4	IF_5
+0x4000c0b	          0x83feff	             cmp esi, 0xffffffffffffffff	       315	thermal.c	FUNCTION_4	IF_1	IF_4	IF_5
+0x4000c0e	     0xf84a4010000	                            je 0x4000db8	       315	thermal.c	FUNCTION_4	IF_1	IF_4	IF_5
+0x4000c14	            0x85f6	                           test esi, esi	       317	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6
+0x4000c16	     0xf8ea7f9ffff	                           jle 0x40005c3	       317	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6
+0x4000c1c	          0x8d04b6	                  lea eax, [rsi + rsi*4]	       318	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6	CALL_6
+0x4000c1f	    0x8d9c00ac0a00	           lea ebx, [rax + rax + 0xaac] 	       318	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6	CALL_6
+0x4000c26	          0x4863db	                         movsxd rbx, ebx	       318	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6	CALL_6
+0x4000c29	        0x493b5e40	            cmp rbx, qword [r14 + 0x40] 	       322	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6	IF_7
+0x4000c2d	     0xf870f020000	                            ja 0x4000e42	       322	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6	IF_7
+0x4000c33	        0x49895e40	             mov qword [r14 + 0x40], rbx	       325	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6
+0x4000c37	      0xe987f9ffff	                           jmp 0x40005c3	       325	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6
+0x4000c3c	          0x498b07	                    mov rax, qword [r15]	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c3f	        0x4183fc1f	                          cmp r12d, 0x1f	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000c43	      0x44884c2408	                 mov byte [rsp + 8], r9b	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000c48	        0x49894500	                    mov qword [r13], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c4c	        0x498b4708	                mov rax, qword [r15 + 8]	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c50	        0x49894508	                mov qword [r13 + 8], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c54	        0x498b4710	            mov rax, qword [r15 + 0x10] 	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c58	        0x49894510	             mov qword [r13 + 0x10], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c5c	        0x498b4718	            mov rax, qword [r15 + 0x18] 	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c60	        0x49894518	             mov qword [r13 + 0x18], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c64	        0x498b4720	            mov rax, qword [r15 + 0x20] 	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c68	        0x49894520	             mov qword [r13 + 0x20], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c6c	        0x498b4728	            mov rax, qword [r15 + 0x28] 	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c70	        0x49894528	             mov qword [r13 + 0x28], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c74	        0x498b4730	            mov rax, qword [r15 + 0x30] 	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c78	        0x49894530	             mov qword [r13 + 0x30], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c7c	        0x498b4738	            mov rax, qword [r15 + 0x38] 	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c80	        0x49894538	             mov qword [r13 + 0x38], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c84	        0x498b4740	            mov rax, qword [r15 + 0x40] 	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c88	        0x49894540	             mov qword [r13 + 0x40], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c8c	        0x498b4748	            mov rax, qword [r15 + 0x48] 	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c90	        0x49894548	             mov qword [r13 + 0x48], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c94	        0x498b4750	            mov rax, qword [r15 + 0x50] 	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c98	        0x49894550	             mov qword [r13 + 0x50], rax	       467	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_39
+0x4000c9c	     0xf84f2faffff	                            je 0x4000794	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000ca2	    0x49c7c0000000	                               mov r8, 0	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000ca9	    0x48c7c1000000	                              mov rcx, 0	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000cb0	      0xba01000000	                              mov edx, 1	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000cb5	      0xbed5010000	                          mov esi, 0x1d5	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000cba	    0x48c7c7000000	                              mov rdi, 0	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000cc1	      0xe800000000	                          call 0x4000cc6	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000cc6	        0x488d045b	                  lea rax, [rbx + rbx*2]	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000cca	    0x440fb64c2408	               movzx r9d, byte [rsp + 8]	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000cd0	        0x488d0483	                  lea rax, [rbx + rax*4]	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000cd4	    0x410fb684c6d8	   movzx eax, byte [r14 + rax*8 + 0xd8] 	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000cdd	          0x83e001	                              and eax, 1	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000ce0	      0xe96afaffff	                           jmp 0x400074f	       469	thermal.c	FUNCTION_4	FOR_1	IF_29	ELSE_14	IF_31	CALL_40
+0x4000ce5	      0x41806658fe	             and byte [r14 + 0x58], 0xfe	       362	thermal.c	FUNCTION_4	IF_10	IF_13
+0x4000cea	      0xe9fdf8ffff	                           jmp 0x40005ec	       362	thermal.c	FUNCTION_4	IF_10	IF_13
+0x4000cef	    0x48c7c7000000	                              mov rdi, 0	       305	thermal.c	FUNCTION_4	IF_1	ELSE_1	IF_3	CALL_4
+0x4000cf6	      0xe800000000	                          call 0x4000cfb	       305	thermal.c	FUNCTION_4	IF_1	ELSE_1	IF_3	CALL_4
+0x4000cfb	      0x41806638fe	             and byte [r14 + 0x38], 0xfe	       307	thermal.c	FUNCTION_4	IF_1	ELSE_1	IF_3
+0x4000d00	      0xe9f3feffff	                           jmp 0x4000bf8	       307	thermal.c	FUNCTION_4	IF_1	ELSE_1	IF_3
+0x4000d05	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       339	thermal.c	FUNCTION_4	IF_8	ELSE_4
+0x4000d0a	      0x41804e4801	                 or byte [r14 + 0x48], 1	       340	thermal.c	FUNCTION_4	IF_8	ELSE_4
+0x4000d0f	        0x49894650	             mov qword [r14 + 0x50], rax	       339	thermal.c	FUNCTION_4	IF_8	ELSE_4
+0x4000d13	      0xe9b5f8ffff	                           jmp 0x40005cd	       339	thermal.c	FUNCTION_4	IF_8	ELSE_4
+0x4000d18	        0x488d045b	                  lea rax, [rbx + rbx*2]	       427	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25
+0x4000d1c	        0x488d0483	                  lea rax, [rbx + rax*4]	       427	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25
+0x4000d20	    0x4180a4c6d800	     and byte [r14 + rax*8 + 0xd8], 0xfe	       427	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25
+0x4000d29	            0x85ed	                           test ebp, ebp	       428	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_26
+0x4000d2b	     0xf84e4f9ffff	                            je 0x4000715	       428	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_26
+0x4000d31	    0x8b0500000000	            mov eax, dword [0x04000d37] 	       430	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_27
+0x4000d37	            0x85c0	                           test eax, eax	       430	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_27
+0x4000d39	     0xf8ed6f9ffff	                           jle 0x4000715	       430	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_27
+0x4000d3f	          0x83fd01	                              cmp ebp, 1	       432	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_28
+0x4000d42	     0xf84b3000000	                            je 0x4000dfb	       432	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_28
+0x4000d48	          0x8d55ff	                      lea edx, [rbp - 1]	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d4b	          0x8d0480	                  lea eax, [rax + rax*4]	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d4e	          0x4863d2	                         movsxd rdx, edx	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d51	        0x488d0c52	                  lea rcx, [rdx + rdx*2]	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d55	        0x488d0c8a	                  lea rcx, [rdx + rcx*4]	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d59	    0x8d9400ac0a00	           lea edx, [rax + rax + 0xaac] 	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d60	          0x8d45fe	                      lea eax, [rbp - 2]	       443	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d63	            0x4898	                                    cdqe	       443	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d65	          0x4863d2	                         movsxd rdx, edx	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d68	        0x488d3440	                  lea rsi, [rax + rax*2]	       443	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d6c	        0x488d04b0	                  lea rax, [rax + rsi*4]	       443	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d70	    0x498b84c6e000	    mov rax, qword [r14 + rax*8 + 0xe0] 	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d78	          0x4839c2	                            cmp rdx, rax	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d7b	        0x480f47d0	                          cmova rdx, rax	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d7f	    0x498994cee000	     mov qword [r14 + rcx*8 + 0xe0], rdx	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d87	      0xe989f9ffff	                           jmp 0x4000715	       440	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	ELSE_12
+0x4000d8c	          0x498b06	                    mov rax, qword [r14]	       357	thermal.c	FUNCTION_4	IF_10	ELSE_6	CALL_13
+0x4000d8f	      0x488d4c2418	                   lea rcx, [rsp + 0x18]	       357	thermal.c	FUNCTION_4	IF_10	ELSE_6	CALL_13
+0x4000d94	            0x31d2	                            xor edx, edx	       357	thermal.c	FUNCTION_4	IF_10	ELSE_6	CALL_13
+0x4000d96	    0x48c7c6000000	                              mov rsi, 0	       357	thermal.c	FUNCTION_4	IF_10	ELSE_6	CALL_13
+0x4000d9d	        0x488b7808	                mov rdi, qword [rax + 8]	       357	thermal.c	FUNCTION_4	IF_10	ELSE_6	CALL_13
+0x4000da1	      0xe800000000	                          call 0x4000da6	       357	thermal.c	FUNCTION_4	IF_10	ELSE_6	CALL_13
+0x4000da6	            0x85c0	                           test eax, eax	       361	thermal.c	FUNCTION_4	IF_10	IF_13	CALL_14
+0x4000da8	     0xf8537ffffff	                           jne 0x4000ce5	       361	thermal.c	FUNCTION_4	IF_10	IF_13	CALL_14
+0x4000dae	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       361	thermal.c	FUNCTION_4	IF_10	IF_13	CALL_14
+0x4000db3	      0xe9aafaffff	                           jmp 0x4000862	       361	thermal.c	FUNCTION_4	IF_10	IF_13	CALL_14
+0x4000db8	          0x83e0fe	                     and eax, 0xfffffffe	       316	thermal.c	FUNCTION_4	IF_1	IF_4	IF_5
+0x4000dbb	        0x41884638	               mov byte [r14 + 0x38], al	       316	thermal.c	FUNCTION_4	IF_1	IF_4	IF_5
+0x4000dbf	      0xe9fff7ffff	                           jmp 0x40005c3	       316	thermal.c	FUNCTION_4	IF_1	IF_4	IF_5
+0x4000dc4	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       387	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	ELSE_10
+0x4000dc9	        0x49894678	             mov qword [r14 + 0x78], rax	       387	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	ELSE_10
+0x4000dcd	      0xe918fbffff	                           jmp 0x40008ea	       387	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	ELSE_10
+0x4000dd2	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       380	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	ELSE_9
+0x4000dd7	        0x49894670	             mov qword [r14 + 0x70], rax	       380	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	ELSE_9
+0x4000ddb	      0xe9e3faffff	                           jmp 0x40008c3	       380	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	ELSE_9
+0x4000de0	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       373	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	ELSE_8
+0x4000de5	        0x49894668	             mov qword [r14 + 0x68], rax	       373	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	ELSE_8
+0x4000de9	      0xe9aefaffff	                           jmp 0x400089c	       373	thermal.c	FUNCTION_4	IF_10	ELSE_7	IF_14	ELSE_8
+0x4000dee	    0xc74424041000	               mov dword [rsp + 4], 0x10	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x4000df6	      0xe91cfbffff	                           jmp 0x4000917	       391	thermal.c	FUNCTION_4	ELSE_10	IF_18
+0x4000dfb	          0x8d0480	                  lea eax, [rax + rax*4]	       433	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_28
+0x4000dfe	    0x8d8400ac0a00	           lea eax, [rax + rax + 0xaac] 	       433	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_28
+0x4000e05	            0x4898	                                    cdqe	       433	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_28
+0x4000e07	    0x498986e00000	             mov qword [r14 + 0xe0], rax	       433	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_28
+0x4000e0e	      0xe902f9ffff	                           jmp 0x4000715	       433	thermal.c	FUNCTION_4	FOR_1	IF_24	IF_25	IF_28
+0x4000e13	            0x89ee	                            mov esi, ebp	       458	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30	CALL_37
+0x4000e15	    0x48c7c7000000	                              mov rdi, 0	       458	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30	CALL_37
+0x4000e1c	      0xe800000000	                          call 0x4000e21	       458	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30	CALL_37
+0x4000e21	        0x488d045b	                  lea rax, [rbx + rbx*2]	       460	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30
+0x4000e25	    0x440fb64c2408	               movzx r9d, byte [rsp + 8]	       460	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30
+0x4000e2b	        0x488d0483	                  lea rax, [rbx + rax*4]	       460	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30
+0x4000e2f	    0x4180a4c6d800	     and byte [r14 + rax*8 + 0xd8], 0xfe	       460	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30
+0x4000e38	      0xe9b7f9ffff	                           jmp 0x40007f4	       460	thermal.c	FUNCTION_4	FOR_1	IF_29	IF_30
+0x4000e3d	      0xe800000000	                          call 0x4000e42	       493	thermal.c	FUNCTION_4
+0x4000e42	    0x48c7c7000000	                              mov rdi, 0	       323	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6	IF_7	CALL_7
+0x4000e49	      0xe800000000	                          call 0x4000e4e	       323	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6	IF_7	CALL_7
+0x4000e4e	      0xe9e0fdffff	                           jmp 0x4000c33	       323	thermal.c	FUNCTION_4	IF_1	IF_4	ELSE_3	IF_6	IF_7	CALL_7
+0x4000e53	    0x48c7c7000000	                              mov rdi, 0	       396	thermal.c	FUNCTION_4	ELSE_10	IF_18	IF_19	CALL_24
+0x4000e5a	      0xe800000000	                          call 0x4000e5f	       396	thermal.c	FUNCTION_4	ELSE_10	IF_18	IF_19	CALL_24
+0x4000e5f	      0x41806658fe	             and byte [r14 + 0x58], 0xfe	       397	thermal.c	FUNCTION_4	ELSE_10	IF_18	IF_19
+0x4000e64	      0xe9e5faffff	                           jmp 0x400094e	       397	thermal.c	FUNCTION_4	ELSE_10	IF_18	IF_19

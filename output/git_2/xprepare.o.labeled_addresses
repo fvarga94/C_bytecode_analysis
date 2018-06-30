@@ -1,503 +1,795 @@
-xdl_free_env	SWITCH,0:WHILE,0:DO,0:CALL,2:functions,0:FOR,0:ELSE,0:IF,0	7
+xdl_free_env	WHILE,0:functions,0:SWITCH,0:CALL,2:DO,0:FOR,0:IF,0:ELSE,0	8
 0x4000cd0	              0x53	                                push rbx	       315	xprepare.c	FUNCTION_7
 0x4000cd1	          0x4889fb	                            mov rbx, rdi	       315	xprepare.c	FUNCTION_7
 0x4000cd4	    0x488dbf880000	                   lea rdi, [rdi + 0x88]	       317	xprepare.c	FUNCTION_7	CALL_1
-0x4000cdb	      0xe840f4ffff	                   call sym.xdl_free_ctx	       317	xprepare.c	FUNCTION_7	CALL_1
+0x4000cdb	      0xe833f4ffff	                   call sym.xdl_free_ctx	       317	xprepare.c	FUNCTION_7	CALL_1
 0x4000ce0	          0x4889df	                            mov rdi, rbx	       318	xprepare.c	FUNCTION_7	CALL_2
-0x4000ce3	              0x5b	                                 pop rbx	       319	xprepare.c	FUNCTION_7
-0x4000ce4	      0xe937f4ffff	                    jmp sym.xdl_free_ctx	       318	xprepare.c	FUNCTION_7	CALL_2
-xdl_free_classifier	SWITCH,0:WHILE,0:DO,0:CALL,3:functions,0:FOR,0:ELSE,0:IF,0	9
-0x4000170	              0x53	                                push rbx	       102	xprepare.c	FUNCTION_2
-0x4000171	          0x4889fb	                            mov rbx, rdi	       102	xprepare.c	FUNCTION_2
-0x4000174	        0x488b7f50	            mov rdi, qword [rdi + 0x50] 	       104	xprepare.c	FUNCTION_2	CALL_1
-0x4000178	      0xe800000000	                          call 0x400017d	       104	xprepare.c	FUNCTION_2	CALL_1
-0x400017d	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	       105	xprepare.c	FUNCTION_2	CALL_2
-0x4000181	      0xe800000000	                          call 0x4000186	       105	xprepare.c	FUNCTION_2	CALL_2
-0x4000186	        0x488d7b18	                   lea rdi, [rbx + 0x18]	       106	xprepare.c	FUNCTION_2	CALL_3
-0x400018a	              0x5b	                                 pop rbx	       107	xprepare.c	FUNCTION_2
-0x400018b	      0xe900000000	          jmp sym.xdl_prepare_ctx.isra.0	       106	xprepare.c	FUNCTION_2	CALL_3
-xdl_clean_mmatch	SWITCH,0:WHILE,0:DO,0:CALL,0:functions,0:FOR,2:ELSE,4:IF,8	66
+0x4000ce3	      0xe82bf4ffff	                   call sym.xdl_free_ctx	       318	xprepare.c	FUNCTION_7	CALL_2
+0x4000ce8	              0x5b	                                 pop rbx	       319	xprepare.c	FUNCTION_7
+0x4000ce9	              0xc3	                                     ret	       319	xprepare.c	FUNCTION_7
+xdl_clean_mmatch	WHILE,0:functions,0:SWITCH,0:CALL,0:DO,0:FOR,2:IF,8:ELSE,4	61
 0x4000040	          0x4989f0	                             mov r8, rsi	       332	xprepare.c	FUNCTION_8	IF_1
-0x4000043	        0x488d469c	                   lea rax, [rsi - 0x64]	       333	xprepare.c	FUNCTION_8	IF_1
-0x4000047	          0x4929d0	                             sub r8, rdx	       332	xprepare.c	FUNCTION_8	IF_1
+0x4000043	          0x4929d0	                             sub r8, rdx	       332	xprepare.c	FUNCTION_8	IF_1
+0x4000046	        0x488d469c	                   lea rax, [rsi - 0x64]	       333	xprepare.c	FUNCTION_8	IF_1
 0x400004a	        0x4983f865	                            cmp r8, 0x65	       333	xprepare.c	FUNCTION_8	IF_1
-0x400004e	          0x4989c8	                             mov r8, rcx	       334	xprepare.c	FUNCTION_8	IF_2
-0x4000051	        0x480f4dd0	                         cmovge rdx, rax	       333	xprepare.c	FUNCTION_8	IF_1
-0x4000055	        0x488d4664	                   lea rax, [rsi + 0x64]	       335	xprepare.c	FUNCTION_8	IF_2
-0x4000059	          0x4929f0	                             sub r8, rsi	       334	xprepare.c	FUNCTION_8	IF_2
+0x400004e	        0x480f4dd0	                         cmovge rdx, rax	       333	xprepare.c	FUNCTION_8	IF_1
+0x4000052	          0x4989c8	                             mov r8, rcx	       334	xprepare.c	FUNCTION_8	IF_2
+0x4000055	          0x4929f0	                             sub r8, rsi	       334	xprepare.c	FUNCTION_8	IF_2
+0x4000058	        0x488d4664	                   lea rax, [rsi + 0x64]	       335	xprepare.c	FUNCTION_8	IF_2
 0x400005c	        0x4983f865	                            cmp r8, 0x65	       335	xprepare.c	FUNCTION_8	IF_2
 0x4000060	        0x480f4dc8	                         cmovge rcx, rax	       335	xprepare.c	FUNCTION_8	IF_2
 0x4000064	        0x488d46ff	                      lea rax, [rsi - 1]	       343	xprepare.c	FUNCTION_8	FOR_1
 0x4000068	          0x4839c2	                            cmp rdx, rax	       343	xprepare.c	FUNCTION_8	FOR_1
-0x400006b	     0xf8f9f000000	                            jg 0x4000110	       343	xprepare.c	FUNCTION_8	FOR_1
+0x400006b	     0xf8f95000000	                            jg 0x4000106	       343	xprepare.c	FUNCTION_8	FOR_1
 0x4000071	    0x41ba01000000	                             mov r10d, 1	       343	xprepare.c	FUNCTION_8	FOR_1
-0x4000077	          0x4531c9	                            xor r9d, r9d	       343	xprepare.c	FUNCTION_8	FOR_1
-0x400007a	            0xeb11	                           jmp 0x400008d	       343	xprepare.c	FUNCTION_8	FOR_1
-0x400007c	         0xf1f4000	                         nop dword [rax]	       343	xprepare.c	FUNCTION_8	FOR_1
-0x4000080	        0x4883e801	                              sub rax, 1	       343	xprepare.c	FUNCTION_8	FOR_1
-0x4000084	        0x4983c101	                               add r9, 1	       345	xprepare.c	FUNCTION_8	FOR_1	IF_3
-0x4000088	          0x4839c2	                            cmp rdx, rax	       343	xprepare.c	FUNCTION_8	FOR_1
-0x400008b	            0x7f1d	                            jg 0x40000aa	       343	xprepare.c	FUNCTION_8	FOR_1
-0x400008d	      0x440fb60407	             movzx r8d, byte [rdi + rax]	       344	xprepare.c	FUNCTION_8	FOR_1	IF_3
-0x4000092	          0x4584c0	                           test r8b, r8b	       344	xprepare.c	FUNCTION_8	FOR_1	IF_3
-0x4000095	            0x74e9	                            je 0x4000080	       344	xprepare.c	FUNCTION_8	FOR_1	IF_3
-0x4000097	        0x4180f802	                              cmp r8b, 2	       346	xprepare.c	FUNCTION_8	FOR_1	ELSE_1	IF_4
-0x400009b	            0x750d	                           jne 0x40000aa	       346	xprepare.c	FUNCTION_8	FOR_1	ELSE_1	IF_4
-0x400009d	        0x4883e801	                              sub rax, 1	       346	xprepare.c	FUNCTION_8	FOR_1	ELSE_1	IF_4
-0x40000a1	        0x4983c201	                              add r10, 1	       347	xprepare.c	FUNCTION_8	FOR_1	ELSE_1	IF_4
-0x40000a5	          0x4839c2	                            cmp rdx, rax	       343	xprepare.c	FUNCTION_8	FOR_1
-0x40000a8	            0x7ee3	                           jle 0x400008d	       343	xprepare.c	FUNCTION_8	FOR_1
-0x40000aa	            0x31c0	                            xor eax, eax	       358	xprepare.c	FUNCTION_8	IF_5
-0x40000ac	          0x4d85c9	                             test r9, r9	       357	xprepare.c	FUNCTION_8	IF_5
-0x40000af	            0x7461	                            je 0x4000112	       357	xprepare.c	FUNCTION_8	IF_5
-0x40000b1	        0x4883c601	                              add rsi, 1	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000b5	          0x4839f1	                            cmp rcx, rsi	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000b8	            0x7c58	                            jl 0x4000112	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000ba	      0xba01000000	                              mov edx, 1	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000bf	          0x4531c0	                            xor r8d, r8d	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000c2	            0xeb11	                           jmp 0x40000d5	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000c4	         0xf1f4000	                         nop dword [rax]	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000c8	        0x4883c601	                              add rsi, 1	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000cc	        0x4983c001	                               add r8, 1	       361	xprepare.c	FUNCTION_8	FOR_2	IF_6
-0x40000d0	          0x4839f1	                            cmp rcx, rsi	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000d3	            0x7c19	                            jl 0x40000ee	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000d5	         0xfb60437	             movzx eax, byte [rdi + rsi]	       360	xprepare.c	FUNCTION_8	FOR_2	IF_6
-0x40000d9	            0x84c0	                             test al, al	       360	xprepare.c	FUNCTION_8	FOR_2	IF_6
-0x40000db	            0x74eb	                            je 0x40000c8	       360	xprepare.c	FUNCTION_8	FOR_2	IF_6
-0x40000dd	            0x3c02	                               cmp al, 2	       362	xprepare.c	FUNCTION_8	FOR_2	ELSE_3	IF_7
-0x40000df	            0x750d	                           jne 0x40000ee	       362	xprepare.c	FUNCTION_8	FOR_2	ELSE_3	IF_7
-0x40000e1	        0x4883c601	                              add rsi, 1	       362	xprepare.c	FUNCTION_8	FOR_2	ELSE_3	IF_7
-0x40000e5	        0x4883c201	                              add rdx, 1	       363	xprepare.c	FUNCTION_8	FOR_2	ELSE_3	IF_7
-0x40000e9	          0x4839f1	                            cmp rcx, rsi	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000ec	            0x7de7	                           jge 0x40000d5	       359	xprepare.c	FUNCTION_8	FOR_2
-0x40000ee	            0x31c0	                            xor eax, eax	       358	xprepare.c	FUNCTION_8	IF_5
-0x40000f0	          0x4d85c0	                             test r8, r8	       371	xprepare.c	FUNCTION_8	IF_8
-0x40000f3	            0x741d	                            je 0x4000112	       371	xprepare.c	FUNCTION_8	IF_8
-0x40000f5	          0x4901d2	                            add r10, rdx	       374	xprepare.c	FUNCTION_8
-0x40000f8	          0x4d01c1	                              add r9, r8	       376	xprepare.c	FUNCTION_8
-0x40000fb	    0x4a8d04950000	                        lea rax, [r10*4]	       376	xprepare.c	FUNCTION_8
-0x4000103	          0x4d01ca	                             add r10, r9	       376	xprepare.c	FUNCTION_8
-0x4000106	          0x4c39d0	                            cmp rax, r10	       376	xprepare.c	FUNCTION_8
-0x4000109	           0xf9cc0	                                 setl al	       376	xprepare.c	FUNCTION_8
-0x400010c	           0xfb6c0	                           movzx eax, al	       376	xprepare.c	FUNCTION_8
-0x400010f	              0xc3	                                     ret	       376	xprepare.c	FUNCTION_8
-0x4000110	            0x31c0	                            xor eax, eax	       358	xprepare.c	FUNCTION_8	IF_5
-0x4000112	            0xf3c3	                                     ret	       377	xprepare.c	FUNCTION_8
-xdl_prepare_env	SWITCH,0:WHILE,0:DO,0:CALL,19:functions,0:FOR,0:ELSE,0:IF,5	400
-0x4000630	            0x4157	                                push r15	       263	xprepare.c	FUNCTION_6
-0x4000632	            0x4156	                                push r14	       263	xprepare.c	FUNCTION_6
-0x4000634	          0x4989fe	                            mov r14, rdi	       263	xprepare.c	FUNCTION_6
-0x4000637	            0x4155	                                push r13	       263	xprepare.c	FUNCTION_6
-0x4000639	            0x4154	                                push r12	       263	xprepare.c	FUNCTION_6
-0x400063b	    0x41bc14000000	                          mov r12d, 0x14	       276	xprepare.c	FUNCTION_6	CALL_2
-0x4000641	              0x55	                                push rbp	       263	xprepare.c	FUNCTION_6
-0x4000642	              0x53	                                push rbx	       263	xprepare.c	FUNCTION_6
-0x4000643	          0x4889cb	                            mov rbx, rcx	       263	xprepare.c	FUNCTION_6
-0x4000646	      0xb90e000000	                            mov ecx, 0xe	        90	string3.h	FUNCTION_15	CALL_6
-0x400064b	          0x4989f7	                            mov r15, rsi	       263	xprepare.c	FUNCTION_6
-0x400064e	          0x4889d5	                            mov rbp, rdx	       263	xprepare.c	FUNCTION_6
-0x4000651	    0x4881eca80000	                           sub rsp, 0xa8	       263	xprepare.c	FUNCTION_6
-0x4000658	    0x64488b042528	                mov rax, qword fs:[0x28]	       263	xprepare.c	FUNCTION_6
-0x4000661	    0x488984249800	             mov qword [rsp + 0x98], rax	       263	xprepare.c	FUNCTION_6
-0x4000669	            0x31c0	                            xor eax, eax	       263	xprepare.c	FUNCTION_6
-0x400066b	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	        90	string3.h	FUNCTION_15	CALL_6
-0x4000670	          0xf348ab	              rep stosq qword [rdi], rax	        90	string3.h	FUNCTION_15	CALL_6
-0x4000673	          0x488b02	                    mov rax, qword [rdx]	       276	xprepare.c	FUNCTION_6	CALL_2
-0x4000676	          0x4c89f7	                            mov rdi, r14	       279	xprepare.c	FUNCTION_6	CALL_3
-0x4000679	      0x2500c00000	                         and eax, 0xc000	       276	xprepare.c	FUNCTION_6	CALL_2
-0x400067e	    0x483d00800000	                         cmp rax, 0x8000	       276	xprepare.c	FUNCTION_6	CALL_2
-0x4000684	      0xb800010000	                          mov eax, 0x100	       276	xprepare.c	FUNCTION_6	CALL_2
-0x4000689	        0x4c0f45e0	                         cmovne r12, rax	       276	xprepare.c	FUNCTION_6	CALL_2
-0x400068d	          0x4c89e6	                            mov rsi, r12	       279	xprepare.c	FUNCTION_6	CALL_3
-0x4000690	      0xe800000000	                          call 0x4000695	       279	xprepare.c	FUNCTION_6	CALL_3
-0x4000695	          0x4c89ff	                            mov rdi, r15	       280	xprepare.c	FUNCTION_6	CALL_4
-0x4000698	          0x4c89e6	                            mov rsi, r12	       280	xprepare.c	FUNCTION_6	CALL_4
-0x400069b	        0x4c8d6801	                      lea r13, [rax + 1]	       279	xprepare.c	FUNCTION_6	CALL_3
-0x400069f	      0xe800000000	                          call 0x40006a4	       280	xprepare.c	FUNCTION_6	CALL_4
-0x40006a4	        0x4883c001	                              add rax, 1	       280	xprepare.c	FUNCTION_6	CALL_4
-0x40006a8	          0x4889c7	                            mov rdi, rax	       280	xprepare.c	FUNCTION_6	CALL_4
-0x40006ab	      0x4889442408	                mov qword [rsp + 8], rax	       280	xprepare.c	FUNCTION_6	CALL_4
-0x40006b0	        0x488b4500	                    mov rax, qword [rbp]	       282	xprepare.c	FUNCTION_6	IF_1	CALL_5
-0x40006b4	          0x4889c2	                            mov rdx, rax	       282	xprepare.c	FUNCTION_6	IF_1	CALL_5
-0x40006b7	    0x81e200c00000	                         and edx, 0xc000	       282	xprepare.c	FUNCTION_6	IF_1	CALL_5
-0x40006bd	    0x4881fa008000	                         cmp rdx, 0x8000	       282	xprepare.c	FUNCTION_6	IF_1	CALL_5
-0x40006c4	     0xf84c5000000	                            je 0x400078f	       282	xprepare.c	FUNCTION_6	IF_1	CALL_5
-0x40006ca	      0x498d543d00	                    lea rdx, [r13 + rdi]	       283	xprepare.c	FUNCTION_6	IF_1	CALL_6
-0x40006cf	    0x488984248800	             mov qword [rsp + 0x88], rax	        72	xprepare.c	FUNCTION_1
-0x40006d7	        0x4c8d6201	                      lea r12, [rdx + 1]	       283	xprepare.c	FUNCTION_6	IF_1	CALL_6
-0x40006db	      0x4889542410	             mov qword [rsp + 0x10], rdx	       283	xprepare.c	FUNCTION_6	IF_1	CALL_6
-0x40006e0	          0x4489e7	                           mov edi, r12d	        74	xprepare.c	FUNCTION_1	CALL_1
-0x40006e3	      0xe800000000	                          call 0x40006e8	        74	xprepare.c	FUNCTION_1	CALL_1
-0x40006e8	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x40006ed	            0x89c1	                            mov ecx, eax	        75	xprepare.c	FUNCTION_1
-0x40006ef	      0xbe01000000	                              mov esi, 1	        75	xprepare.c	FUNCTION_1
-0x40006f4	            0xd3e6	                             shl esi, cl	        75	xprepare.c	FUNCTION_1
-0x40006f6	        0x89442420	             mov dword [rsp + 0x20], eax	        74	xprepare.c	FUNCTION_1	CALL_1
-0x40006fa	      0x488d442438	                   lea rax, [rsp + 0x38]	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x40006ff	          0x4863f6	                         movsxd rsi, esi	        75	xprepare.c	FUNCTION_1
-0x4000702	        0x4883c204	                              add rdx, 4	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x4000706	          0x4d85e4	                           test r12, r12	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x4000709	      0x4889742428	             mov qword [rsp + 0x28], rsi	        75	xprepare.c	FUNCTION_1
-0x400070e	        0x490f49d4	                         cmovns rdx, r12	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x4000712	      0xbe38000000	                           mov esi, 0x38	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x4000717	          0x4889c7	                            mov rdi, rax	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x400071a	        0x48c1fa02	                              sar rdx, 2	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x400071e	      0x4889442418	             mov qword [rsp + 0x18], rax	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x4000723	        0x4883c201	                              add rdx, 1	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x4000727	      0xe800000000	                          call 0x400072c	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x400072c	            0x85c0	                           test eax, eax	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x400072e	     0xf8830050000	                            js 0x4000c64	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
-0x4000734	      0x488b442428	            mov rax, qword [rsp + 0x28] 	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
-0x4000739	      0xbe01000000	                              mov esi, 1	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
-0x400073e	    0x488d3cc50000	                        lea rdi, [rax*8]	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
-0x4000746	      0xe800000000	                          call 0x400074b	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
-0x400074b	          0x4885c0	                           test rax, rax	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
-0x400074e	      0x4889442430	             mov qword [rsp + 0x30], rax	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
-0x4000753	     0xf8464050000	                            je 0x4000cbd	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
-0x4000759	    0x4a8d3ce50000	                        lea rdi, [r12*8]	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
-0x4000761	      0x4889442410	             mov qword [rsp + 0x10], rax	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
-0x4000766	      0x4c89642478	             mov qword [rsp + 0x78], r12	        88	xprepare.c	FUNCTION_1
-0x400076b	      0xe800000000	                          call 0x4000770	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
-0x4000770	          0x4885c0	                           test rax, rax	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
-0x4000773	      0x4889442470	             mov qword [rsp + 0x70], rax	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
-0x4000778	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
-0x400077d	     0xf8432050000	                            je 0x4000cb5	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
-0x4000783	    0x48c784248000	               mov qword [rsp + 0x80], 0	        96	xprepare.c	FUNCTION_1
-0x400078f	      0x4c8d442420	                    lea r8, [rsp + 0x20]	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
-0x4000794	          0x4989d9	                             mov r9, rbx	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
-0x4000797	          0x4889e9	                            mov rcx, rbp	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
-0x400079a	          0x4c89ea	                            mov rdx, r13	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
-0x400079d	          0x4c89f6	                            mov rsi, r14	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
-0x40007a0	      0xbf01000000	                              mov edi, 1	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
-0x40007a5	      0xe8e6f9ffff	         call sym.xdl_prepare_ctx.isra.0	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
-0x40007aa	            0x85c0	                           test eax, eax	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
-0x40007ac	     0xf88a8040000	                            js 0x4000c5a	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
-0x40007b2	    0x4c8da3880000	                   lea r12, [rbx + 0x88]	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
-0x40007b9	      0x488b542408	                mov rdx, qword [rsp + 8]	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
-0x40007be	      0x4c8d442420	                    lea r8, [rsp + 0x20]	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
-0x40007c3	          0x4889e9	                            mov rcx, rbp	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
-0x40007c6	          0x4c89fe	                            mov rsi, r15	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
-0x40007c9	      0xbf02000000	                              mov edi, 2	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
-0x40007ce	          0x4d89e1	                             mov r9, r12	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
-0x40007d1	      0xe8baf9ffff	         call sym.xdl_prepare_ctx.isra.0	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
-0x40007d6	            0x85c0	                           test eax, eax	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
-0x40007d8	     0xf8874040000	                            js 0x4000c52	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
-0x40007de	        0x488b5500	                    mov rdx, qword [rbp]	       298	xprepare.c	FUNCTION_6	IF_4	CALL_12
-0x40007e2	    0x81e200c00000	                         and edx, 0xc000	       298	xprepare.c	FUNCTION_6	IF_4	CALL_12
-0x40007e8	    0x488d8200c0ff	                 lea rax, [rdx - 0x4000]	       298	xprepare.c	FUNCTION_6	IF_4	CALL_12
-0x40007ef	    0x48a90080ffff	            test rax, 0xffffffffffff8000	       298	xprepare.c	FUNCTION_6	IF_4	CALL_12
-0x40007f5	            0x7549	                           jne 0x4000840	       298	xprepare.c	FUNCTION_6	IF_4	CALL_12
-0x40007f7	            0x31ed	                            xor ebp, ebp	       311	xprepare.c	FUNCTION_6
-0x40007f9	    0x4881fa008000	                         cmp rdx, 0x8000	       308	xprepare.c	FUNCTION_6	IF_5	CALL_18
-0x4000800	            0x740a	                            je 0x400080c	       308	xprepare.c	FUNCTION_6	IF_5	CALL_18
-0x4000802	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	       309	xprepare.c	FUNCTION_6	CALL_19
-0x4000807	      0xe864f9ffff	            call sym.xdl_free_classifier	       309	xprepare.c	FUNCTION_6	CALL_19
-0x400080c	    0x488b9c249800	            mov rbx, qword [rsp + 0x98] 	       312	xprepare.c	FUNCTION_6
-0x4000814	    0x6448331c2528	                xor rbx, qword fs:[0x28]	       312	xprepare.c	FUNCTION_6
-0x400081d	            0x89e8	                            mov eax, ebp	       312	xprepare.c	FUNCTION_6
-0x400081f	     0xf85a4040000	                           jne 0x4000cc9	       312	xprepare.c	FUNCTION_6
-0x4000825	    0x4881c4a80000	                           add rsp, 0xa8	       312	xprepare.c	FUNCTION_6
-0x400082c	              0x5b	                                 pop rbx	       312	xprepare.c	FUNCTION_6
-0x400082d	              0x5d	                                 pop rbp	       312	xprepare.c	FUNCTION_6
-0x400082e	            0x415c	                                 pop r12	       312	xprepare.c	FUNCTION_6
-0x4000830	            0x415d	                                 pop r13	       312	xprepare.c	FUNCTION_6
-0x4000832	            0x415e	                                 pop r14	       312	xprepare.c	FUNCTION_6
-0x4000834	            0x415f	                                 pop r15	       312	xprepare.c	FUNCTION_6
-0x4000836	              0xc3	                                     ret	       312	xprepare.c	FUNCTION_6
-0x4000837	    0x660f1f840000	                    nop word [rax + rax]	       312	xprepare.c	FUNCTION_6
-0x4000840	    0x4c8b8bc00000	              mov r9, qword [rbx + 0xc0]	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
-0x4000847	        0x4c8b7b38	            mov r15, qword [rbx + 0x38] 	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
-0x400084b	        0x4c8b4360	              mov r8, qword [rbx + 0x60]	       452	xprepare.c	FUNCTION_10
-0x400084f	    0x488bbbe80000	            mov rdi, qword [rbx + 0xe8] 	       453	xprepare.c	FUNCTION_10
-0x4000856	          0x4d39f9	                             cmp r9, r15	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
-0x4000859	          0x4c89fe	                            mov rsi, r15	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
-0x400085c	        0x490f4ef1	                          cmovle rsi, r9	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
-0x4000860	          0x4885f6	                           test rsi, rsi	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
-0x4000863	     0xf8e10040000	                           jle 0x4000c79	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
-0x4000869	          0x488b17	                    mov rdx, qword [rdi]	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x400086c	          0x498b00	                     mov rax, qword [r8]	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x400086f	        0x488b4018	            mov rax, qword [rax + 0x18] 	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x4000873	        0x48394218	            cmp qword [rdx + 0x18], rax 	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x4000877	     0xf8516040000	                           jne 0x4000c93	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x400087d	            0x31c0	                            xor eax, eax	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x400087f	            0xeb1d	                           jmp 0x400089e	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x4000881	     0xf1f80000000	                         nop dword [rax]	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x4000888	        0x498b0cc0	             mov rcx, qword [r8 + rax*8]	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x400088c	        0x488b14c7	            mov rdx, qword [rdi + rax*8]	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x4000890	        0x488b5218	            mov rdx, qword [rdx + 0x18] 	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x4000894	        0x48395118	            cmp qword [rcx + 0x18], rdx 	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x4000898	     0xf8542030000	                           jne 0x4000be0	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
-0x400089e	        0x4883c001	                              add rax, 1	       455	xprepare.c	FUNCTION_10	FOR_1
-0x40008a2	          0x4839c6	                            cmp rsi, rax	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
-0x40008a5	            0x75e1	                           jne 0x4000888	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
-0x40008a7	    0x4889b3d80000	             mov qword [rbx + 0xd8], rsi	       459	xprepare.c	FUNCTION_10
-0x40008ae	        0x48897350	             mov qword [rbx + 0x50], rsi	       459	xprepare.c	FUNCTION_10
-0x40008b2	            0x31c0	                            xor eax, eax	       463	xprepare.c	FUNCTION_10	FOR_2
-0x40008b4	          0x4c89cf	                             mov rdi, r9	       468	xprepare.c	FUNCTION_10
-0x40008b7	          0x4c89fa	                            mov rdx, r15	       467	xprepare.c	FUNCTION_10
-0x40008ba	      0xbe01000000	                              mov esi, 1	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
-0x40008bf	          0x4829c7	                            sub rdi, rax	       468	xprepare.c	FUNCTION_10
-0x40008c2	          0x4829c2	                            sub rdx, rax	       467	xprepare.c	FUNCTION_10
-0x40008c5	          0x4889f8	                            mov rax, rdi	       468	xprepare.c	FUNCTION_10
-0x40008c8	        0x4883ea01	                              sub rdx, 1	       467	xprepare.c	FUNCTION_10
-0x40008cc	      0x4b8d7c3902	                 lea rdi, [r9 + r15 + 2]	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
-0x40008d1	        0x4883e801	                              sub rax, 1	       468	xprepare.c	FUNCTION_10
-0x40008d5	        0x48895358	             mov qword [rbx + 0x58], rdx	       467	xprepare.c	FUNCTION_10
-0x40008d9	    0x488983e00000	             mov qword [rbx + 0xe0], rax	       468	xprepare.c	FUNCTION_10
-0x40008e0	      0xe800000000	                          call 0x40008e5	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
-0x40008e5	          0x4885c0	                           test rax, rax	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
-0x40008e8	          0x4989c5	                            mov r13, rax	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
-0x40008eb	     0xf8459030000	                            je 0x4000c4a	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
-0x40008f1	          0x4c89ff	                            mov rdi, r15	       399	xprepare.c	FUNCTION_9	IF_2	CALL_3
-0x40008f4	      0x4e8d743801	                lea r14, [rax + r15 + 1]	       397	xprepare.c	FUNCTION_9
-0x40008f9	      0xe800000000	                          call 0x40008fe	       399	xprepare.c	FUNCTION_9	IF_2	CALL_3
-0x40008fe	      0xba00040000	                          mov edx, 0x400	       399	xprepare.c	FUNCTION_9	IF_2	CALL_3
-0x4000903	    0x483d00040000	                          cmp rax, 0x400	       399	xprepare.c	FUNCTION_9	IF_2	CALL_3
-0x4000909	        0x488b4b60	            mov rcx, qword [rbx + 0x60] 	       401	xprepare.c	FUNCTION_9	FOR_1
-0x400090d	        0x480f4fc2	                          cmovg rax, rdx	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000911	        0x488b5350	            mov rdx, qword [rbx + 0x50] 	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000915	        0x488d34d1	                  lea rsi, [rcx + rdx*8]	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000919	        0x488b4b58	            mov rcx, qword [rbx + 0x58] 	       401	xprepare.c	FUNCTION_9	FOR_1
-0x400091d	          0x4839ca	                            cmp rdx, rcx	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000920	            0x7f5e	                            jg 0x4000980	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000922	      0x4c8b4c2470	              mov r9, qword [rsp + 0x70]	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000927	          0x4c01ea	                            add rdx, r13	       401	xprepare.c	FUNCTION_9	FOR_1
-0x400092a	      0x4d8d440d01	                 lea r8, [r13 + rcx + 1]	       401	xprepare.c	FUNCTION_9	FOR_1
-0x400092f	            0xeb2a	                           jmp 0x400095b	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000931	     0xf1f80000000	                         nop dword [rax]	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000938	        0x488b7930	            mov rdi, qword [rcx + 0x30] 	       403	xprepare.c	FUNCTION_9	FOR_1
-0x400093c	            0x31c9	                            xor ecx, ecx	       404	xprepare.c	FUNCTION_9	FOR_1
-0x400093e	          0x4885ff	                           test rdi, rdi	       404	xprepare.c	FUNCTION_9	FOR_1
-0x4000941	            0x7409	                            je 0x400094c	       404	xprepare.c	FUNCTION_9	FOR_1
-0x4000943	          0x4839f8	                            cmp rax, rdi	       404	xprepare.c	FUNCTION_9	FOR_1
-0x4000946	           0xf9ec1	                                setle cl	       404	xprepare.c	FUNCTION_9	FOR_1
-0x4000949	          0x83c101	                              add ecx, 1	       404	xprepare.c	FUNCTION_9	FOR_1
-0x400094c	            0x880a	                      mov byte [rdx], cl	       404	xprepare.c	FUNCTION_9	FOR_1
-0x400094e	        0x4883c201	                              add rdx, 1	       404	xprepare.c	FUNCTION_9	FOR_1
-0x4000952	        0x4883c608	                              add rsi, 8	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000956	          0x4939d0	                             cmp r8, rdx	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000959	            0x7425	                            je 0x4000980	       401	xprepare.c	FUNCTION_9	FOR_1
-0x400095b	          0x488b0e	                    mov rcx, qword [rsi]	       402	xprepare.c	FUNCTION_9	FOR_1
-0x400095e	        0x488b4918	            mov rcx, qword [rcx + 0x18] 	       402	xprepare.c	FUNCTION_9	FOR_1
-0x4000962	        0x498b0cc9	             mov rcx, qword [r9 + rcx*8]	       402	xprepare.c	FUNCTION_9	FOR_1
-0x4000966	          0x4885c9	                           test rcx, rcx	       403	xprepare.c	FUNCTION_9	FOR_1
-0x4000969	            0x75cd	                           jne 0x4000938	       403	xprepare.c	FUNCTION_9	FOR_1
-0x400096b	            0x31c9	                            xor ecx, ecx	       404	xprepare.c	FUNCTION_9	FOR_1
-0x400096d	        0x4883c201	                              add rdx, 1	       404	xprepare.c	FUNCTION_9	FOR_1
-0x4000971	        0x4883c608	                              add rsi, 8	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000975	          0x884aff	                  mov byte [rdx - 1], cl	       404	xprepare.c	FUNCTION_9	FOR_1
-0x4000978	          0x4939d0	                             cmp r8, rdx	       401	xprepare.c	FUNCTION_9	FOR_1
-0x400097b	            0x75de	                           jne 0x400095b	       401	xprepare.c	FUNCTION_9	FOR_1
-0x400097d	           0xf1f00	                         nop dword [rax]	       401	xprepare.c	FUNCTION_9	FOR_1
-0x4000980	    0x488bbbc00000	            mov rdi, qword [rbx + 0xc0] 	       407	xprepare.c	FUNCTION_9	IF_3	CALL_4
-0x4000987	      0xe800000000	                          call 0x400098c	       407	xprepare.c	FUNCTION_9	IF_3	CALL_4
-0x400098c	    0x488bb3d80000	            mov rsi, qword [rbx + 0xd8] 	       409	xprepare.c	FUNCTION_9	FOR_2
-0x4000993	    0x483d00040000	                          cmp rax, 0x400	       409	xprepare.c	FUNCTION_9	FOR_2
-0x4000999	      0xba00040000	                          mov edx, 0x400	       409	xprepare.c	FUNCTION_9	FOR_2
-0x400099e	    0x4c8b83e00000	              mov r8, qword [rbx + 0xe0]	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009a5	        0x480f4fc2	                          cmovg rax, rdx	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009a9	    0x488b93e80000	            mov rdx, qword [rbx + 0xe8] 	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009b0	      0x4889742408	                mov qword [rsp + 8], rsi	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009b5	          0x4939f0	                             cmp r8, rsi	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009b8	        0x4c8d3cf2	                  lea r15, [rdx + rsi*8]	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009bc	            0x7c72	                            jl 0x4000a30	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009be	      0x488b742408	                mov rsi, qword [rsp + 8]	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009c3	      0x4c8b4c2470	              mov r9, qword [rsp + 0x70]	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009c8	      0x4b8d4c0601	                 lea rcx, [r14 + r8 + 1]	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009cd	          0x4c89ff	                            mov rdi, r15	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009d0	        0x498d1436	                    lea rdx, [r14 + rsi]	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009d4	            0xeb2f	                           jmp 0x4000a05	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009d6	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       409	xprepare.c	FUNCTION_9	FOR_2
-0x40009e0	        0x4c8b6628	            mov r12, qword [rsi + 0x28] 	       411	xprepare.c	FUNCTION_9	FOR_2
-0x40009e4	            0x31f6	                            xor esi, esi	       412	xprepare.c	FUNCTION_9	FOR_2
-0x40009e6	          0x4d85e4	                           test r12, r12	       412	xprepare.c	FUNCTION_9	FOR_2
-0x40009e9	            0x740a	                            je 0x40009f5	       412	xprepare.c	FUNCTION_9	FOR_2
-0x40009eb	          0x4c39e0	                            cmp rax, r12	       412	xprepare.c	FUNCTION_9	FOR_2
-0x40009ee	        0x400f9ec6	                               setle sil	       412	xprepare.c	FUNCTION_9	FOR_2
-0x40009f2	          0x83c601	                              add esi, 1	       412	xprepare.c	FUNCTION_9	FOR_2
-0x40009f5	          0x408832	                     mov byte [rdx], sil	       412	xprepare.c	FUNCTION_9	FOR_2
-0x40009f8	        0x4883c201	                              add rdx, 1	       412	xprepare.c	FUNCTION_9	FOR_2
-0x40009fc	        0x4883c708	                              add rdi, 8	       409	xprepare.c	FUNCTION_9	FOR_2
-0x4000a00	          0x4839ca	                            cmp rdx, rcx	       409	xprepare.c	FUNCTION_9	FOR_2
-0x4000a03	            0x742b	                            je 0x4000a30	       409	xprepare.c	FUNCTION_9	FOR_2
-0x4000a05	          0x488b37	                    mov rsi, qword [rdi]	       410	xprepare.c	FUNCTION_9	FOR_2
-0x4000a08	        0x488b7618	            mov rsi, qword [rsi + 0x18] 	       410	xprepare.c	FUNCTION_9	FOR_2
-0x4000a0c	        0x498b34f1	             mov rsi, qword [r9 + rsi*8]	       410	xprepare.c	FUNCTION_9	FOR_2
-0x4000a10	          0x4885f6	                           test rsi, rsi	       411	xprepare.c	FUNCTION_9	FOR_2
-0x4000a13	            0x75cb	                           jne 0x40009e0	       411	xprepare.c	FUNCTION_9	FOR_2
-0x4000a15	            0x31f6	                            xor esi, esi	       412	xprepare.c	FUNCTION_9	FOR_2
-0x4000a17	        0x4883c201	                              add rdx, 1	       412	xprepare.c	FUNCTION_9	FOR_2
-0x4000a1b	        0x4883c708	                              add rdi, 8	       409	xprepare.c	FUNCTION_9	FOR_2
-0x4000a1f	        0x408872ff	                 mov byte [rdx - 1], sil	       412	xprepare.c	FUNCTION_9	FOR_2
-0x4000a23	          0x4839ca	                            cmp rdx, rcx	       409	xprepare.c	FUNCTION_9	FOR_2
-0x4000a26	            0x75dd	                           jne 0x4000a05	       409	xprepare.c	FUNCTION_9	FOR_2
-0x4000a28	     0xf1f84000000	                   nop dword [rax + rax]	       409	xprepare.c	FUNCTION_9	FOR_2
-0x4000a30	        0x4c8b6350	            mov r12, qword [rbx + 0x50] 	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a34	        0x488b4b58	            mov rcx, qword [rbx + 0x58] 	       416	xprepare.c	FUNCTION_9	FOR_3
-0x4000a38	        0x488b4360	            mov rax, qword [rbx + 0x60] 	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a3c	          0x4939cc	                            cmp r12, rcx	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a3f	    0x4a8d14e50000	                        lea rdx, [r12*8]	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a47	     0xf8f21020000	                            jg 0x4000c6e	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a4d	          0x4c89e6	                            mov rsi, r12	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a50	          0x4531ff	                          xor r15d, r15d	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a53	          0x48f7de	                                 neg rsi	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a56	        0x4c8d1cf2	                  lea r11, [rdx + rsi*8]	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a5a	          0x4c01d8	                            add rax, r11	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a5d	      0x4889442408	                mov qword [rsp + 8], rax	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a62	            0xeb22	                           jmp 0x4000a86	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a64	         0xf1f4000	                         nop dword [rax]	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a68	            0x3c02	                               cmp al, 2	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000a6a	     0xf8400010000	                            je 0x4000b70	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000a70	        0x488b4368	            mov rax, qword [rbx + 0x68] 	       423	xprepare.c	FUNCTION_9	FOR_3	ELSE_1
-0x4000a74	      0x42c6042001	                 mov byte [rax + r12], 1	       423	xprepare.c	FUNCTION_9	FOR_3	ELSE_1
-0x4000a79	        0x488b4b58	            mov rcx, qword [rbx + 0x58] 	       416	xprepare.c	FUNCTION_9	FOR_3
-0x4000a7d	        0x4983c401	                              add r12, 1	       416	xprepare.c	FUNCTION_9	FOR_3
-0x4000a81	          0x4c39e1	                            cmp rcx, r12	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a84	            0x7c3b	                            jl 0x4000ac1	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000a86	    0x430fb6442500	             movzx eax, byte [r13 + r12]	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000a8c	            0x3c01	                               cmp al, 1	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000a8e	            0x75d8	                           jne 0x4000a68	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000a90	        0x488b4370	            mov rax, qword [rbx + 0x70] 	       419	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000a94	        0x4e8924f8	            mov qword [rax + r15*8], r12	       419	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000a98	      0x488b442408	                mov rax, qword [rsp + 8]	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000a9d	        0x4a8b04e0	            mov rax, qword [rax + r12*8]	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000aa1	        0x4983c401	                              add r12, 1	       416	xprepare.c	FUNCTION_9	FOR_3
-0x4000aa5	        0x488b5018	            mov rdx, qword [rax + 0x18] 	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000aa9	    0x488b83800000	            mov rax, qword [rbx + 0x80] 	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000ab0	        0x4a8914f8	            mov qword [rax + r15*8], rdx	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000ab4	        0x488b4b58	            mov rcx, qword [rbx + 0x58] 	       416	xprepare.c	FUNCTION_9	FOR_3
-0x4000ab8	        0x4983c701	                              add r15, 1	       421	xprepare.c	FUNCTION_9	FOR_3	IF_4
-0x4000abc	          0x4c39e1	                            cmp rcx, r12	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000abf	            0x7dc5	                           jge 0x4000a86	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000ac1	    0x4c8b9bd80000	            mov r11, qword [rbx + 0xd8] 	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000ac8	    0x488b83e80000	            mov rax, qword [rbx + 0xe8] 	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000acf	    0x4c8b83e00000	              mov r8, qword [rbx + 0xe0]	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000ad6	        0x4a8d04d8	                  lea rax, [rax + r11*8]	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000ada	      0x4c895c2408	                mov qword [rsp + 8], r11	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000adf	      0x488b7c2408	                mov rdi, qword [rsp + 8]	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000ae4	        0x4c897b78	             mov qword [rbx + 0x78], r15	       425	xprepare.c	FUNCTION_9	ELSE_1
-0x4000ae8	          0x4939f8	                             cmp r8, rdi	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000aeb	     0xf8cc0000000	                            jl 0x4000bb1	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000af1	          0x4889fa	                            mov rdx, rdi	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000af4	          0x4531e4	                          xor r12d, r12d	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000af7	          0x48f7da	                                 neg rdx	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000afa	        0x4c8d3cd0	                  lea r15, [rax + rdx*8]	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000afe	            0xeb33	                           jmp 0x4000b33	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000b00	            0x3c02	                               cmp al, 2	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b02	     0xf8488000000	                            je 0x4000b90	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b08	    0x488b83f00000	            mov rax, qword [rbx + 0xf0] 	       435	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	ELSE_2
-0x4000b0f	      0x488b7c2408	                mov rdi, qword [rsp + 8]	       435	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	ELSE_2
-0x4000b14	        0xc6043801	                 mov byte [rax + rdi], 1	       435	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	ELSE_2
-0x4000b18	    0x488344240801	                  add qword [rsp + 8], 1	       428	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000b1e	    0x4c8b83e00000	              mov r8, qword [rbx + 0xe0]	       428	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000b25	      0x488b442408	                mov rax, qword [rsp + 8]	       428	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000b2a	          0x4939c0	                             cmp r8, rax	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000b2d	     0xf8c85000000	                            jl 0x4000bb8	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000b33	      0x488b442408	                mov rax, qword [rsp + 8]	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b38	      0x410fb60406	             movzx eax, byte [r14 + rax]	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b3d	            0x3c01	                               cmp al, 1	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b3f	            0x75bf	                           jne 0x4000b00	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b41	    0x488b83f80000	            mov rax, qword [rbx + 0xf8] 	       431	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b48	      0x488b7c2408	                mov rdi, qword [rsp + 8]	       431	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b4d	        0x4a893ce0	            mov qword [rax + r12*8], rdi	       431	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b51	        0x498b04ff	            mov rax, qword [r15 + rdi*8]	       432	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b55	        0x488b5018	            mov rdx, qword [rax + 0x18] 	       432	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b59	    0x488b83080100	           mov rax, qword [rbx + 0x108] 	       432	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b60	        0x4a8914e0	            mov qword [rax + r12*8], rdx	       432	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b64	        0x4983c401	                              add r12, 1	       433	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b68	            0xebae	                           jmp 0x4000b18	       433	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b6a	    0x660f1f440000	                    nop word [rax + rax]	       433	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
-0x4000b70	        0x488b5350	            mov rdx, qword [rbx + 0x50] 	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
-0x4000b74	          0x4c89e6	                            mov rsi, r12	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
-0x4000b77	          0x4c89ef	                            mov rdi, r13	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
-0x4000b7a	      0xe8c1f4ffff	               call sym.xdl_clean_mmatch	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
-0x4000b7f	            0x85c0	                           test eax, eax	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
-0x4000b81	     0xf85e9feffff	                           jne 0x4000a70	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
-0x4000b87	      0xe904ffffff	                           jmp 0x4000a90	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
-0x4000b8c	         0xf1f4000	                         nop dword [rax]	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
-0x4000b90	    0x488b93d80000	            mov rdx, qword [rbx + 0xd8] 	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
-0x4000b97	      0x488b742408	                mov rsi, qword [rsp + 8]	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
-0x4000b9c	          0x4c89c1	                             mov rcx, r8	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
-0x4000b9f	          0x4c89f7	                            mov rdi, r14	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
-0x4000ba2	      0xe899f4ffff	               call sym.xdl_clean_mmatch	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
-0x4000ba7	            0x85c0	                           test eax, eax	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
-0x4000ba9	     0xf8559ffffff	                           jne 0x4000b08	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
-0x4000baf	            0xeb90	                           jmp 0x4000b41	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
-0x4000bb1	          0x4531e4	                          xor r12d, r12d	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000bb4	         0xf1f4000	                         nop dword [rax]	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
-0x4000bb8	    0x4c89a3000100	            mov qword [rbx + 0x100], r12	       437	xprepare.c	FUNCTION_9
-0x4000bbf	          0x4c89ef	                            mov rdi, r13	       439	xprepare.c	FUNCTION_9	CALL_7
-0x4000bc2	      0xe800000000	                          call 0x4000bc7	       439	xprepare.c	FUNCTION_9	CALL_7
-0x4000bc7	        0x488b5500	                    mov rdx, qword [rbp]	       439	xprepare.c	FUNCTION_9	CALL_7
-0x4000bcb	    0x81e200c00000	                         and edx, 0xc000	       439	xprepare.c	FUNCTION_9	CALL_7
-0x4000bd1	      0xe921fcffff	                           jmp 0x40007f7	       439	xprepare.c	FUNCTION_9	CALL_7
-0x4000bd6	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       439	xprepare.c	FUNCTION_9	CALL_7
-0x4000be0	          0x4829c6	                            sub rsi, rax	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000be3	    0x488983d80000	             mov qword [rbx + 0xd8], rax	       459	xprepare.c	FUNCTION_10
-0x4000bea	        0x48894350	             mov qword [rbx + 0x50], rax	       459	xprepare.c	FUNCTION_10
-0x4000bee	          0x4885f6	                           test rsi, rsi	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000bf1	      0x4b8d4cf8f8	               lea rcx, [r8 + r15*8 - 8]	       461	xprepare.c	FUNCTION_10
-0x4000bf6	      0x4a8d54cff8	               lea rdx, [rdi + r9*8 - 8]	       462	xprepare.c	FUNCTION_10
-0x4000bfb	     0xf8eb1fcffff	                           jle 0x40008b2	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000c01	          0x488b3a	                    mov rdi, qword [rdx]	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c04	          0x488b01	                    mov rax, qword [rcx]	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c07	        0x488b4018	            mov rax, qword [rax + 0x18] 	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c0b	        0x48394718	            cmp qword [rdi + 0x18], rax 	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c0f	      0xb800000000	                              mov eax, 0	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000c14	            0x741e	                            je 0x4000c34	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c16	      0xe999fcffff	                           jmp 0x40008b4	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c1b	       0xf1f440000	                   nop dword [rax + rax]	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c20	          0x4c8b01	                     mov r8, qword [rcx]	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c23	          0x488b3a	                    mov rdi, qword [rdx]	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c26	        0x488b7f18	            mov rdi, qword [rdi + 0x18] 	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c2a	        0x49397818	              cmp qword [r8 + 0x18], rdi	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c2e	     0xf8580fcffff	                           jne 0x40008b4	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
-0x4000c34	        0x4883c001	                              add rax, 1	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000c38	        0x4883e908	                              sub rcx, 8	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000c3c	        0x4883ea08	                              sub rdx, 8	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000c40	          0x4839f0	                            cmp rax, rsi	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000c43	            0x7cdb	                            jl 0x4000c20	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000c45	      0xe96afcffff	                           jmp 0x40008b4	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000c4a	          0x4c89e7	                            mov rdi, r12	       302	xprepare.c	FUNCTION_6	IF_4	CALL_15
-0x4000c4d	      0xe8cef4ffff	                   call sym.xdl_free_ctx	       302	xprepare.c	FUNCTION_6	IF_4	CALL_15
-0x4000c52	          0x4889df	                            mov rdi, rbx	       303	xprepare.c	FUNCTION_6	IF_4	CALL_16
-0x4000c55	      0xe8c6f4ffff	                   call sym.xdl_free_ctx	       303	xprepare.c	FUNCTION_6	IF_4	CALL_16
-0x4000c5a	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	       304	xprepare.c	FUNCTION_6	IF_4	CALL_17
-0x4000c5f	      0xe80cf5ffff	            call sym.xdl_free_classifier	       304	xprepare.c	FUNCTION_6	IF_4	CALL_17
-0x4000c64	      0xbdffffffff	                     mov ebp, 0xffffffff	       305	xprepare.c	FUNCTION_6	IF_4
-0x4000c69	      0xe99efbffff	                           jmp 0x400080c	       305	xprepare.c	FUNCTION_6	IF_4
-0x4000c6e	          0x4c89f8	                            mov rax, r15	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000c71	          0x4531ff	                          xor r15d, r15d	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000c74	      0xe966feffff	                           jmp 0x4000adf	       415	xprepare.c	FUNCTION_9	FOR_3
-0x4000c79	    0x48c783d80000	               mov qword [rbx + 0xd8], 0	       459	xprepare.c	FUNCTION_10
-0x4000c84	    0x48c743500000	               mov qword [rbx + 0x50], 0	       459	xprepare.c	FUNCTION_10
-0x4000c8c	            0x31c0	                            xor eax, eax	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000c8e	      0xe921fcffff	                           jmp 0x40008b4	       463	xprepare.c	FUNCTION_10	FOR_2
-0x4000c93	    0x48c783d80000	               mov qword [rbx + 0xd8], 0	       459	xprepare.c	FUNCTION_10
-0x4000c9e	    0x48c743500000	               mov qword [rbx + 0x50], 0	       459	xprepare.c	FUNCTION_10
-0x4000ca6	      0x4b8d4cf8f8	               lea rcx, [r8 + r15*8 - 8]	       461	xprepare.c	FUNCTION_10
-0x4000cab	      0x4a8d54cff8	               lea rdx, [rdi + r9*8 - 8]	       462	xprepare.c	FUNCTION_10
-0x4000cb0	      0xe94cffffff	                           jmp 0x4000c01	       462	xprepare.c	FUNCTION_10
-0x4000cb5	          0x4889d7	                            mov rdi, rdx	        91	xprepare.c	FUNCTION_1	IF_3	CALL_7
-0x4000cb8	      0xe800000000	                          call 0x4000cbd	        91	xprepare.c	FUNCTION_1	IF_3	CALL_7
-0x4000cbd	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	        92	xprepare.c	FUNCTION_1	IF_3	CALL_8
-0x4000cc2	      0xe800000000	                          call 0x4000cc7	        92	xprepare.c	FUNCTION_1	IF_3	CALL_8
-0x4000cc7	            0xeb9b	                           jmp 0x4000c64	        92	xprepare.c	FUNCTION_1	IF_3	CALL_8
-0x4000cc9	      0xe800000000	                          call 0x4000cce	       312	xprepare.c	FUNCTION_6
-xdl_free_ctx	SWITCH,0:WHILE,0:DO,0:CALL,6:functions,0:FOR,0:ELSE,0:IF,0	16
-0x4000120	              0x53	                                push rbx	       251	xprepare.c	FUNCTION_5
-0x4000121	          0x4889fb	                            mov rbx, rdi	       251	xprepare.c	FUNCTION_5
-0x4000124	        0x488b7f48	            mov rdi, qword [rdi + 0x48] 	       253	xprepare.c	FUNCTION_5	CALL_1
-0x4000128	      0xe800000000	                          call 0x400012d	       253	xprepare.c	FUNCTION_5	CALL_1
-0x400012d	        0x488b7b70	            mov rdi, qword [rbx + 0x70] 	       254	xprepare.c	FUNCTION_5	CALL_2
-0x4000131	      0xe800000000	                          call 0x4000136	       254	xprepare.c	FUNCTION_5	CALL_2
-0x4000136	        0x488b4368	            mov rax, qword [rbx + 0x68] 	       255	xprepare.c	FUNCTION_5	CALL_3
-0x400013a	        0x488d78ff	                      lea rdi, [rax - 1]	       255	xprepare.c	FUNCTION_5	CALL_3
-0x400013e	      0xe800000000	                          call 0x4000143	       255	xprepare.c	FUNCTION_5	CALL_3
-0x4000143	    0x488bbb800000	            mov rdi, qword [rbx + 0x80] 	       256	xprepare.c	FUNCTION_5	CALL_4
-0x400014a	      0xe800000000	                          call 0x400014f	       256	xprepare.c	FUNCTION_5	CALL_4
-0x400014f	        0x488b7b60	            mov rdi, qword [rbx + 0x60] 	       257	xprepare.c	FUNCTION_5	CALL_5
-0x4000153	      0xe800000000	                          call 0x4000158	       257	xprepare.c	FUNCTION_5	CALL_5
-0x4000158	          0x4889df	                            mov rdi, rbx	       258	xprepare.c	FUNCTION_5	CALL_6
-0x400015b	              0x5b	                                 pop rbx	       259	xprepare.c	FUNCTION_5
-0x400015c	      0xe900000000	                           jmp 0x4000161	       258	xprepare.c	FUNCTION_5	CALL_6
+0x4000077	    0x41b900000000	                              mov r9d, 0	       343	xprepare.c	FUNCTION_8	FOR_1
+0x400007d	      0x440fb60407	             movzx r8d, byte [rdi + rax]	       344	xprepare.c	FUNCTION_8	FOR_1	IF_3
+0x4000082	          0x4584c0	                           test r8b, r8b	       344	xprepare.c	FUNCTION_8	FOR_1	IF_3
+0x4000085	            0x7506	                           jne 0x400008d	       344	xprepare.c	FUNCTION_8	FOR_1	IF_3
+0x4000087	        0x4983c101	                               add r9, 1	       345	xprepare.c	FUNCTION_8	FOR_1	IF_3
+0x400008b	            0xeb0a	                           jmp 0x4000097	       345	xprepare.c	FUNCTION_8	FOR_1	IF_3
+0x400008d	        0x4180f802	                              cmp r8b, 2	       346	xprepare.c	FUNCTION_8	FOR_1	ELSE_1	IF_4
+0x4000091	            0x750d	                           jne 0x40000a0	       346	xprepare.c	FUNCTION_8	FOR_1	ELSE_1	IF_4
+0x4000093	        0x4983c201	                              add r10, 1	       347	xprepare.c	FUNCTION_8	FOR_1	ELSE_1	IF_4
+0x4000097	        0x4883e801	                              sub rax, 1	       347	xprepare.c	FUNCTION_8	FOR_1	ELSE_1	IF_4
+0x400009b	          0x4839c2	                            cmp rdx, rax	       343	xprepare.c	FUNCTION_8	FOR_1
+0x400009e	            0x7edd	                           jle 0x400007d	       343	xprepare.c	FUNCTION_8	FOR_1
+0x40000a0	      0xb800000000	                              mov eax, 0	       358	xprepare.c	FUNCTION_8	IF_5
+0x40000a5	          0x4d85c9	                             test r9, r9	       357	xprepare.c	FUNCTION_8	IF_5
+0x40000a8	            0x7467	                            je 0x4000111	       357	xprepare.c	FUNCTION_8	IF_5
+0x40000aa	        0x4883c601	                              add rsi, 1	       359	xprepare.c	FUNCTION_8	FOR_2
+0x40000ae	          0x4839f1	                            cmp rcx, rsi	       359	xprepare.c	FUNCTION_8	FOR_2
+0x40000b1	            0x7c59	                            jl 0x400010c	       359	xprepare.c	FUNCTION_8	FOR_2
+0x40000b3	    0x41b801000000	                              mov r8d, 1	       359	xprepare.c	FUNCTION_8	FOR_2
+0x40000b9	    0x41bb00000000	                             mov r11d, 0	       359	xprepare.c	FUNCTION_8	FOR_2
+0x40000bf	          0x4889f2	                            mov rdx, rsi	       359	xprepare.c	FUNCTION_8	FOR_2
+0x40000c2	         0xfb60437	             movzx eax, byte [rdi + rsi]	       360	xprepare.c	FUNCTION_8	FOR_2	IF_6
+0x40000c6	            0x84c0	                             test al, al	       360	xprepare.c	FUNCTION_8	FOR_2	IF_6
+0x40000c8	            0x7506	                           jne 0x40000d0	       360	xprepare.c	FUNCTION_8	FOR_2	IF_6
+0x40000ca	        0x4983c301	                              add r11, 1	       361	xprepare.c	FUNCTION_8	FOR_2	IF_6
+0x40000ce	            0xeb08	                           jmp 0x40000d8	       361	xprepare.c	FUNCTION_8	FOR_2	IF_6
+0x40000d0	            0x3c02	                               cmp al, 2	       362	xprepare.c	FUNCTION_8	FOR_2	ELSE_3	IF_7
+0x40000d2	            0x750d	                           jne 0x40000e1	       362	xprepare.c	FUNCTION_8	FOR_2	ELSE_3	IF_7
+0x40000d4	        0x4983c001	                               add r8, 1	       363	xprepare.c	FUNCTION_8	FOR_2	ELSE_3	IF_7
+0x40000d8	        0x488d7201	                      lea rsi, [rdx + 1]	       363	xprepare.c	FUNCTION_8	FOR_2	ELSE_3	IF_7
+0x40000dc	          0x4839f1	                            cmp rcx, rsi	       359	xprepare.c	FUNCTION_8	FOR_2
+0x40000df	            0x7dde	                           jge 0x40000bf	       359	xprepare.c	FUNCTION_8	FOR_2
+0x40000e1	      0xb800000000	                              mov eax, 0	       372	xprepare.c	FUNCTION_8	IF_8
+0x40000e6	          0x4d85db	                           test r11, r11	       371	xprepare.c	FUNCTION_8	IF_8
+0x40000e9	            0x7426	                            je 0x4000111	       371	xprepare.c	FUNCTION_8	IF_8
+0x40000eb	          0x4d01c2	                             add r10, r8	       374	xprepare.c	FUNCTION_8
+0x40000ee	    0x4a8d04950000	                        lea rax, [r10*4]	       376	xprepare.c	FUNCTION_8
+0x40000f6	          0x4d01d9	                             add r9, r11	       376	xprepare.c	FUNCTION_8
+0x40000f9	          0x4d01ca	                             add r10, r9	       376	xprepare.c	FUNCTION_8
+0x40000fc	          0x4c39d0	                            cmp rax, r10	       376	xprepare.c	FUNCTION_8
+0x40000ff	           0xf9cc0	                                 setl al	       376	xprepare.c	FUNCTION_8
+0x4000102	           0xfb6c0	                           movzx eax, al	       376	xprepare.c	FUNCTION_8
+0x4000105	              0xc3	                                     ret	       376	xprepare.c	FUNCTION_8
+0x4000106	      0xb800000000	                              mov eax, 0	       358	xprepare.c	FUNCTION_8	IF_5
+0x400010b	              0xc3	                                     ret	       358	xprepare.c	FUNCTION_8	IF_5
+0x400010c	      0xb800000000	                              mov eax, 0	       372	xprepare.c	FUNCTION_8	IF_8
+0x4000111	            0xf3c3	                                     ret	       377	xprepare.c	FUNCTION_8
+xdl_prepare_ctx	WHILE,0:functions,0:SWITCH,0:CALL,22:DO,0:FOR,1:IF,12:ELSE,1	283
+0x4000176	            0x4157	                                push r15	       161	xprepare.c	FUNCTION_4
+0x4000178	            0x4156	                                push r14	       161	xprepare.c	FUNCTION_4
+0x400017a	            0x4155	                                push r13	       161	xprepare.c	FUNCTION_4
+0x400017c	            0x4154	                                push r12	       161	xprepare.c	FUNCTION_4
+0x400017e	              0x55	                                push rbp	       161	xprepare.c	FUNCTION_4
+0x400017f	              0x53	                                push rbx	       161	xprepare.c	FUNCTION_4
+0x4000180	        0x4883ec78	                           sub rsp, 0x78	       161	xprepare.c	FUNCTION_4
+0x4000184	        0x897c2434	             mov dword [rsp + 0x34], edi	       161	xprepare.c	FUNCTION_4
+0x4000188	          0x4889f5	                            mov rbp, rsi	       161	xprepare.c	FUNCTION_4
+0x400018b	          0x4889d3	                            mov rbx, rdx	       161	xprepare.c	FUNCTION_4
+0x400018e	      0x4889542410	             mov qword [rsp + 0x10], rdx	       161	xprepare.c	FUNCTION_4
+0x4000193	          0x4989cf	                            mov r15, rcx	       161	xprepare.c	FUNCTION_4
+0x4000196	          0x4d89c6	                             mov r14, r8	       161	xprepare.c	FUNCTION_4
+0x4000199	      0x4c894c2440	              mov qword [rsp + 0x40], r9	       161	xprepare.c	FUNCTION_4
+0x400019e	    0x64488b342528	                mov rsi, qword fs:[0x28]	       161	xprepare.c	FUNCTION_4
+0x40001a7	      0x4889742468	             mov qword [rsp + 0x68], rsi	       161	xprepare.c	FUNCTION_4
+0x40001ac	            0x31f6	                            xor esi, esi	       161	xprepare.c	FUNCTION_4
+0x40001ae	      0x4c894c2418	              mov qword [rsp + 0x18], r9	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001b3	        0x488d5203	                      lea rdx, [rdx + 3]	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001b7	          0x4885db	                           test rbx, rbx	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001ba	        0x480f49d3	                         cmovns rdx, rbx	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001be	        0x48c1fa02	                              sar rdx, 2	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001c2	        0x4883c201	                              add rdx, 1	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001c6	      0xbe20000000	                           mov esi, 0x20	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001cb	          0x4c89cf	                             mov rdi, r9	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001ce	      0xe800000000	                          call 0x40001d3	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001d3	            0x85c0	                           test eax, eax	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001d5	     0xf8870030000	                            js 0x400054b	       179	xprepare.c	FUNCTION_4	IF_1	CALL_1
+0x40001db	    0x488d3cdd0000	                        lea rdi, [rbx*8]	       181	xprepare.c	FUNCTION_4	IF_2	CALL_2
+0x40001e3	      0xe800000000	                          call 0x40001e8	       181	xprepare.c	FUNCTION_4	IF_2	CALL_2
+0x40001e8	        0x48890424	                    mov qword [rsp], rax	       181	xprepare.c	FUNCTION_4	IF_2	CALL_2
+0x40001ec	          0x4885c0	                           test rax, rax	       181	xprepare.c	FUNCTION_4	IF_2	CALL_2
+0x40001ef	     0xf8474030000	                            je 0x4000569	       181	xprepare.c	FUNCTION_4	IF_2	CALL_2
+0x40001f5	          0x498b07	                    mov rax, qword [r15]	       184	xprepare.c	FUNCTION_4	IF_3	CALL_3
+0x40001f8	      0x2500c00000	                         and eax, 0xc000	       184	xprepare.c	FUNCTION_4	IF_3	CALL_3
+0x40001fd	    0x483d00800000	                         cmp rax, 0x8000	       184	xprepare.c	FUNCTION_4	IF_3	CALL_3
+0x4000203	            0x7443	                            je 0x4000248	       184	xprepare.c	FUNCTION_4	IF_3	CALL_3
+0x4000205	            0x89df	                            mov edi, ebx	       187	xprepare.c	FUNCTION_4	ELSE_1	CALL_4
+0x4000207	      0xe800000000	                          call 0x400020c	       187	xprepare.c	FUNCTION_4	ELSE_1	CALL_4
+0x400020c	            0x89c1	                            mov ecx, eax	       187	xprepare.c	FUNCTION_4	ELSE_1	CALL_4
+0x400020e	        0x89442430	             mov dword [rsp + 0x30], eax	       187	xprepare.c	FUNCTION_4	ELSE_1	CALL_4
+0x4000212	      0xb801000000	                              mov eax, 1	       189	xprepare.c	FUNCTION_4	ELSE_1	IF_4	CALL_5
+0x4000217	            0xd3e0	                             shl eax, cl	       189	xprepare.c	FUNCTION_4	ELSE_1	IF_4	CALL_5
+0x4000219	          0x4863d8	                         movsxd rbx, eax	       189	xprepare.c	FUNCTION_4	ELSE_1	IF_4	CALL_5
+0x400021c	        0x48c1e303	                              shl rbx, 3	       189	xprepare.c	FUNCTION_4	ELSE_1	IF_4	CALL_5
+0x4000220	          0x4889df	                            mov rdi, rbx	       189	xprepare.c	FUNCTION_4	ELSE_1	IF_4	CALL_5
+0x4000223	      0xe800000000	                          call 0x4000228	       189	xprepare.c	FUNCTION_4	ELSE_1	IF_4	CALL_5
+0x4000228	      0x4889442420	             mov qword [rsp + 0x20], rax	       189	xprepare.c	FUNCTION_4	ELSE_1	IF_4	CALL_5
+0x400022d	          0x4885c0	                           test rax, rax	       189	xprepare.c	FUNCTION_4	ELSE_1	IF_4	CALL_5
+0x4000230	     0xf8449030000	                            je 0x400057f	       189	xprepare.c	FUNCTION_4	ELSE_1	IF_4	CALL_5
+0x4000236	          0x4889da	                            mov rdx, rbx	        90	string3.h	FUNCTION_15	CALL_6
+0x4000239	      0xbe00000000	                              mov esi, 0	        90	string3.h	FUNCTION_15	CALL_6
+0x400023e	          0x4889c7	                            mov rdi, rax	        90	string3.h	FUNCTION_15	CALL_6
+0x4000241	      0xe800000000	                          call 0x4000246	        90	string3.h	FUNCTION_15	CALL_6
+0x4000246	            0xeb11	                           jmp 0x4000259	        90	string3.h	FUNCTION_15	CALL_6
+0x4000248	    0x48c744242000	               mov qword [rsp + 0x20], 0	       176	xprepare.c	FUNCTION_4
+0x4000251	    0xc74424300000	               mov dword [rsp + 0x30], 0	       185	xprepare.c	FUNCTION_4	IF_3
+0x4000259	      0x488d742458	                   lea rsi, [rsp + 0x58]	       195	xprepare.c	FUNCTION_4	IF_5	CALL_7
+0x400025e	          0x4889ef	                            mov rdi, rbp	       195	xprepare.c	FUNCTION_4	IF_5	CALL_7
+0x4000261	      0xe800000000	                          call 0x4000266	       195	xprepare.c	FUNCTION_4	IF_5	CALL_7
+0x4000266	      0x4889442460	             mov qword [rsp + 0x60], rax	       195	xprepare.c	FUNCTION_4	IF_5	CALL_7
+0x400026b	          0x4885c0	                           test rax, rax	       195	xprepare.c	FUNCTION_4	IF_5	CALL_7
+0x400026e	     0xf8427020000	                            je 0x400049b	       195	xprepare.c	FUNCTION_4	IF_5	CALL_7
+0x4000274	      0x4803442458	             add rax, qword [rsp + 0x58]	       196	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x4000279	      0x4889442408	                mov qword [rsp + 8], rax	       196	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x400027e	      0xb801000000	                              mov eax, 1	       152	xprepare.c	FUNCTION_3	CALL_5
+0x4000283	       0xfb64c2430	           movzx ecx, byte [rsp + 0x30] 	       152	xprepare.c	FUNCTION_3	CALL_5
+0x4000288	          0x48d3e0	                             shl rax, cl	       152	xprepare.c	FUNCTION_3	CALL_5
+0x400028b	        0x4883e801	                              sub rax, 1	       152	xprepare.c	FUNCTION_3	CALL_5
+0x400028f	      0x4889442428	             mov qword [rsp + 0x28], rax	       152	xprepare.c	FUNCTION_3	CALL_5
+0x4000294	    0x41bd00000000	                             mov r13d, 0	       196	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x400029a	        0x498d4618	                   lea rax, [r14 + 0x18]	       126	xprepare.c	FUNCTION_3	IF_2	IF_3	CALL_3
+0x400029e	      0x4889442448	             mov qword [rsp + 0x48], rax	       126	xprepare.c	FUNCTION_3	IF_2	IF_3	CALL_3
+0x40002a3	      0xe9de010000	                           jmp 0x4000486	       196	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x40002a8	          0x498b17	                    mov rdx, qword [r15]	       198	xprepare.c	FUNCTION_4	IF_5	FOR_1	CALL_8
+0x40002ab	      0x488b742408	                mov rsi, qword [rsp + 8]	       198	xprepare.c	FUNCTION_4	IF_5	FOR_1	CALL_8
+0x40002b0	      0x488d7c2460	                   lea rdi, [rsp + 0x60]	       198	xprepare.c	FUNCTION_4	IF_5	FOR_1	CALL_8
+0x40002b5	      0xe800000000	                          call 0x40002ba	       198	xprepare.c	FUNCTION_4	IF_5	FOR_1	CALL_8
+0x40002ba	          0x4889c5	                            mov rbp, rax	       198	xprepare.c	FUNCTION_4	IF_5	FOR_1	CALL_8
+0x40002bd	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       199	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6
+0x40002c2	          0x4c39e8	                            cmp rax, r13	       199	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6
+0x40002c5	            0x7f26	                            jg 0x40002ed	       199	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6
+0x40002c7	          0x4801c0	                            add rax, rax	       200	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6
+0x40002ca	      0x4889442410	             mov qword [rsp + 0x10], rax	       200	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6
+0x40002cf	    0x488d34c50000	                        lea rsi, [rax*8]	       201	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6	IF_7	CALL_9
+0x40002d7	        0x488b3c24	                    mov rdi, qword [rsp]	       201	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6	IF_7	CALL_9
+0x40002db	      0xe800000000	                          call 0x40002e0	       201	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6	IF_7	CALL_9
+0x40002e0	          0x4885c0	                           test rax, rax	       201	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6	IF_7	CALL_9
+0x40002e3	     0xf84a3020000	                            je 0x400058c	       201	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6	IF_7	CALL_9
+0x40002e9	        0x48890424	                    mov qword [rsp], rax	       203	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_6
+0x40002ed	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	       205	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_8	CALL_10
+0x40002f2	      0xe800000000	                          call 0x40002f7	       205	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_8	CALL_10
+0x40002f7	          0x4889c3	                            mov rbx, rax	       205	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_8	CALL_10
+0x40002fa	          0x4885c0	                           test rax, rax	       205	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_8	CALL_10
+0x40002fd	     0xf8496020000	                            je 0x4000599	       205	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_8	CALL_10
+0x4000303	        0x4c896008	                mov qword [rax + 8], r12	       207	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x4000307	      0x488b442460	            mov rax, qword [rsp + 0x60] 	       208	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x400030c	          0x4c29e0	                            sub rax, r12	       208	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x400030f	        0x48894310	             mov qword [rbx + 0x10], rax	       208	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x4000313	        0x48896b18	             mov qword [rbx + 0x18], rbp	       209	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x4000317	        0x488b0424	                    mov rax, qword [rsp]	       210	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x400031b	        0x4a891ce8	            mov qword [rax + r13*8], rbx	       210	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x400031f	          0x498b07	                    mov rax, qword [r15]	       212	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_9	CALL_11
+0x4000322	      0x2500c00000	                         and eax, 0xc000	       212	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_9	CALL_11
+0x4000327	    0x483d00800000	                         cmp rax, 0x8000	       212	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_9	CALL_11
+0x400032d	     0xf844f010000	                            je 0x4000482	       212	xprepare.c	FUNCTION_4	IF_5	FOR_1	IF_9	CALL_11
+0x4000333	        0x488b4308	                mov rax, qword [rbx + 8]	       117	xprepare.c	FUNCTION_3
+0x4000337	      0x4889442438	             mov qword [rsp + 0x38], rax	       117	xprepare.c	FUNCTION_3
+0x400033c	        0x488b4318	            mov rax, qword [rbx + 0x18] 	       118	xprepare.c	FUNCTION_3	CALL_1
+0x4000340	          0x418b0e	                    mov ecx, dword [r14]	       118	xprepare.c	FUNCTION_3	CALL_1
+0x4000343	          0x4989c4	                            mov r12, rax	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000346	          0x49d3ec	                             shr r12, cl	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000349	          0x4c01e0	                            add rax, r12	       119	xprepare.c	FUNCTION_3	FOR_1
+0x400034c	    0x41bc01000000	                             mov r12d, 1	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000352	          0x49d3e4	                             shl r12, cl	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000355	        0x4983ec01	                              sub r12, 1	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000359	          0x4921c4	                            and r12, rax	       119	xprepare.c	FUNCTION_3	FOR_1
+0x400035c	        0x498b4610	            mov rax, qword [r14 + 0x10] 	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000360	        0x4a8b2ce0	            mov rbp, qword [rax + r12*8]	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000364	          0x4885ed	                           test rbp, rbp	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000367	            0x743b	                            je 0x40003a4	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000369	        0x488b4318	            mov rax, qword [rbx + 0x18] 	       120	xprepare.c	FUNCTION_3	FOR_1	IF_1
+0x400036d	        0x48394508	                cmp qword [rbp + 8], rax	       120	xprepare.c	FUNCTION_3	FOR_1	IF_1
+0x4000371	            0x751d	                           jne 0x4000390	       120	xprepare.c	FUNCTION_3	FOR_1	IF_1
+0x4000373	        0x488b4b10	            mov rcx, qword [rbx + 0x10] 	       121	xprepare.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x4000377	        0x488b5308	                mov rdx, qword [rbx + 8]	       121	xprepare.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x400037b	        0x488b7518	            mov rsi, qword [rbp + 0x18] 	       121	xprepare.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x400037f	        0x488b7d10	            mov rdi, qword [rbp + 0x10] 	       121	xprepare.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x4000383	        0x4d8b4668	              mov r8, qword [r14 + 0x68]	       121	xprepare.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x4000387	      0xe800000000	                          call 0x400038c	       121	xprepare.c	FUNCTION_3	FOR_1	IF_1	CALL_2
+0x400038c	            0x85c0	                           test eax, eax	       120	xprepare.c	FUNCTION_3	FOR_1	IF_1
+0x400038e	            0x750b	                           jne 0x400039b	       120	xprepare.c	FUNCTION_3	FOR_1	IF_1
+0x4000390	        0x488b6d00	                    mov rbp, qword [rbp]	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000394	          0x4885ed	                           test rbp, rbp	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000397	            0x75d0	                           jne 0x4000369	       119	xprepare.c	FUNCTION_3	FOR_1
+0x4000399	            0xeb09	                           jmp 0x40003a4	       119	xprepare.c	FUNCTION_3	FOR_1
+0x400039b	          0x4885ed	                           test rbp, rbp	       125	xprepare.c	FUNCTION_3	IF_2
+0x400039e	     0xf859e000000	                           jne 0x4000442	       125	xprepare.c	FUNCTION_3	IF_2
+0x40003a4	      0x488b7c2448	            mov rdi, qword [rsp + 0x48] 	       126	xprepare.c	FUNCTION_3	IF_2	IF_3	CALL_3
+0x40003a9	      0xe800000000	                          call 0x40003ae	       126	xprepare.c	FUNCTION_3	IF_2	IF_3	CALL_3
+0x40003ae	          0x4889c5	                            mov rbp, rax	       126	xprepare.c	FUNCTION_3	IF_2	IF_3	CALL_3
+0x40003b1	          0x4885c0	                           test rax, rax	       126	xprepare.c	FUNCTION_3	IF_2	IF_3	CALL_3
+0x40003b4	     0xf8436020000	                            je 0x40005f0	       126	xprepare.c	FUNCTION_3	IF_2	IF_3	CALL_3
+0x40003ba	        0x498b4660	            mov rax, qword [r14 + 0x60] 	       130	xprepare.c	FUNCTION_3	IF_2
+0x40003be	        0x488d5001	                      lea rdx, [rax + 1]	       130	xprepare.c	FUNCTION_3	IF_2
+0x40003c2	        0x49895660	             mov qword [r14 + 0x60], rdx	       130	xprepare.c	FUNCTION_3	IF_2
+0x40003c6	        0x48894520	            mov qword [rbp + 0x20], rax 	       130	xprepare.c	FUNCTION_3	IF_2
+0x40003ca	        0x498b4658	            mov rax, qword [r14 + 0x58] 	       131	xprepare.c	FUNCTION_3	IF_2	IF_4
+0x40003ce	        0x49394660	            cmp qword [r14 + 0x60], rax 	       131	xprepare.c	FUNCTION_3	IF_2	IF_4
+0x40003d2	            0x7e25	                           jle 0x40003f9	       131	xprepare.c	FUNCTION_3	IF_2	IF_4
+0x40003d4	        0x488d1400	                    lea rdx, [rax + rax]	       132	xprepare.c	FUNCTION_3	IF_2	IF_4
+0x40003d8	        0x49895658	             mov qword [r14 + 0x58], rdx	       132	xprepare.c	FUNCTION_3	IF_2	IF_4
+0x40003dc	        0x48c1e004	                              shl rax, 4	       133	xprepare.c	FUNCTION_3	IF_2	IF_4	IF_5	CALL_4
+0x40003e0	          0x4889c6	                            mov rsi, rax	       133	xprepare.c	FUNCTION_3	IF_2	IF_4	IF_5	CALL_4
+0x40003e3	        0x498b7e50	            mov rdi, qword [r14 + 0x50] 	       133	xprepare.c	FUNCTION_3	IF_2	IF_4	IF_5	CALL_4
+0x40003e7	      0xe800000000	                          call 0x40003ec	       133	xprepare.c	FUNCTION_3	IF_2	IF_4	IF_5	CALL_4
+0x40003ec	          0x4885c0	                           test rax, rax	       133	xprepare.c	FUNCTION_3	IF_2	IF_4	IF_5	CALL_4
+0x40003ef	     0xf84fb010000	                            je 0x40005f0	       133	xprepare.c	FUNCTION_3	IF_2	IF_4	IF_5	CALL_4
+0x40003f5	        0x49894650	             mov qword [r14 + 0x50], rax	       137	xprepare.c	FUNCTION_3	IF_2	IF_4
+0x40003f9	        0x488b5520	            mov rdx, qword [rbp + 0x20] 	       139	xprepare.c	FUNCTION_3	IF_2
+0x40003fd	        0x498b4650	            mov rax, qword [r14 + 0x50] 	       139	xprepare.c	FUNCTION_3	IF_2
+0x4000401	        0x48892cd0	            mov qword [rax + rdx*8], rbp	       139	xprepare.c	FUNCTION_3	IF_2
+0x4000405	      0x488b442438	            mov rax, qword [rsp + 0x38] 	       140	xprepare.c	FUNCTION_3	IF_2
+0x400040a	        0x48894510	            mov qword [rbp + 0x10], rax 	       140	xprepare.c	FUNCTION_3	IF_2
+0x400040e	        0x488b4310	            mov rax, qword [rbx + 0x10] 	       141	xprepare.c	FUNCTION_3	IF_2
+0x4000412	        0x48894518	            mov qword [rbp + 0x18], rax 	       141	xprepare.c	FUNCTION_3	IF_2
+0x4000416	        0x488b4318	            mov rax, qword [rbx + 0x18] 	       142	xprepare.c	FUNCTION_3	IF_2
+0x400041a	        0x48894508	                mov qword [rbp + 8], rax	       142	xprepare.c	FUNCTION_3	IF_2
+0x400041e	    0x48c745300000	               mov qword [rbp + 0x30], 0	       143	xprepare.c	FUNCTION_3	IF_2
+0x4000426	    0x48c745280000	               mov qword [rbp + 0x28], 0	       143	xprepare.c	FUNCTION_3	IF_2
+0x400042e	        0x498b4610	            mov rax, qword [r14 + 0x10] 	       144	xprepare.c	FUNCTION_3	IF_2
+0x4000432	        0x4a8b04e0	            mov rax, qword [rax + r12*8]	       144	xprepare.c	FUNCTION_3	IF_2
+0x4000436	        0x48894500	                    mov qword [rbp], rax	       144	xprepare.c	FUNCTION_3	IF_2
+0x400043a	        0x498b4610	            mov rax, qword [r14 + 0x10] 	       145	xprepare.c	FUNCTION_3	IF_2
+0x400043e	        0x4a892ce0	            mov qword [rax + r12*8], rbp	       145	xprepare.c	FUNCTION_3	IF_2
+0x4000442	      0x837c243401	               cmp dword [rsp + 0x34], 1	       148	xprepare.c	FUNCTION_3
+0x4000447	            0x7507	                           jne 0x4000450	       148	xprepare.c	FUNCTION_3
+0x4000449	      0x4883452801	               add qword [rbp + 0x28], 1	       148	xprepare.c	FUNCTION_3
+0x400044e	            0xeb05	                           jmp 0x4000455	       148	xprepare.c	FUNCTION_3
+0x4000450	      0x4883453001	               add qword [rbp + 0x30], 1	       148	xprepare.c	FUNCTION_3
+0x4000455	        0x488b4520	            mov rax, qword [rbp + 0x20] 	       150	xprepare.c	FUNCTION_3
+0x4000459	        0x48894318	             mov qword [rbx + 0x18], rax	       150	xprepare.c	FUNCTION_3
+0x400045d	          0x4889c2	                            mov rdx, rax	       153	xprepare.c	FUNCTION_3
+0x4000460	       0xfb64c2430	           movzx ecx, byte [rsp + 0x30] 	       153	xprepare.c	FUNCTION_3
+0x4000465	          0x48d3ea	                             shr rdx, cl	       153	xprepare.c	FUNCTION_3
+0x4000468	          0x4801d0	                            add rax, rdx	       153	xprepare.c	FUNCTION_3
+0x400046b	      0x4823442428	             and rax, qword [rsp + 0x28]	       153	xprepare.c	FUNCTION_3
+0x4000470	      0x488b742420	            mov rsi, qword [rsp + 0x20] 	       153	xprepare.c	FUNCTION_3
+0x4000475	        0x488d04c6	                  lea rax, [rsi + rax*8]	       153	xprepare.c	FUNCTION_3
+0x4000479	          0x488b10	                    mov rdx, qword [rax]	       153	xprepare.c	FUNCTION_3
+0x400047c	          0x488913	                    mov qword [rbx], rdx	       153	xprepare.c	FUNCTION_3
+0x400047f	          0x488918	                    mov qword [rax], rbx	       154	xprepare.c	FUNCTION_3
+0x4000482	        0x4983c501	                              add r13, 1	       154	xprepare.c	FUNCTION_3
+0x4000486	          0x4c89ed	                            mov rbp, r13	       154	xprepare.c	FUNCTION_3
+0x4000489	      0x4c8b642460	            mov r12, qword [rsp + 0x60] 	       196	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x400048e	      0x4c39642408	                cmp qword [rsp + 8], r12	       196	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x4000493	     0xf870ffeffff	                            ja 0x40002a8	       196	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x4000499	            0xeb05	                           jmp 0x40004a0	       196	xprepare.c	FUNCTION_4	IF_5	FOR_1
+0x400049b	      0xbd00000000	                              mov ebp, 0	       194	xprepare.c	FUNCTION_4
+0x40004a0	        0x4c8d6502	                      lea r12, [rbp + 2]	       218	xprepare.c	FUNCTION_4	IF_10	CALL_13
+0x40004a4	          0x4c89e7	                            mov rdi, r12	       218	xprepare.c	FUNCTION_4	IF_10	CALL_13
+0x40004a7	      0xe800000000	                          call 0x40004ac	       218	xprepare.c	FUNCTION_4	IF_10	CALL_13
+0x40004ac	          0x4889c3	                            mov rbx, rax	       218	xprepare.c	FUNCTION_4	IF_10	CALL_13
+0x40004af	          0x4885c0	                           test rax, rax	       218	xprepare.c	FUNCTION_4	IF_10	CALL_13
+0x40004b2	     0xf84ee000000	                            je 0x40005a6	       218	xprepare.c	FUNCTION_4	IF_10	CALL_13
+0x40004b8	          0x4c89e2	                            mov rdx, r12	        90	string3.h	FUNCTION_15	CALL_6
+0x40004bb	      0xbe00000000	                              mov esi, 0	        90	string3.h	FUNCTION_15	CALL_6
+0x40004c0	          0x4889c7	                            mov rdi, rax	        90	string3.h	FUNCTION_15	CALL_6
+0x40004c3	      0xe800000000	                          call 0x40004c8	        90	string3.h	FUNCTION_15	CALL_6
+0x40004c8	    0x4c8d2ced0800	                    lea r13, [rbp*8 + 8]	       222	xprepare.c	FUNCTION_4	IF_11	CALL_15
+0x40004d0	          0x4c89ef	                            mov rdi, r13	       222	xprepare.c	FUNCTION_4	IF_11	CALL_15
+0x40004d3	      0xe800000000	                          call 0x40004d8	       222	xprepare.c	FUNCTION_4	IF_11	CALL_15
+0x40004d8	          0x4989c4	                            mov r12, rax	       222	xprepare.c	FUNCTION_4	IF_11	CALL_15
+0x40004db	          0x4885c0	                           test rax, rax	       222	xprepare.c	FUNCTION_4	IF_11	CALL_15
+0x40004de	     0xf84c8000000	                            je 0x40005ac	       222	xprepare.c	FUNCTION_4	IF_11	CALL_15
+0x40004e4	          0x4c89ef	                            mov rdi, r13	       224	xprepare.c	FUNCTION_4	IF_12	CALL_16
+0x40004e7	      0xe800000000	                          call 0x40004ec	       224	xprepare.c	FUNCTION_4	IF_12	CALL_16
+0x40004ec	          0x4885c0	                           test rax, rax	       224	xprepare.c	FUNCTION_4	IF_12	CALL_16
+0x40004ef	     0xf84b7000000	                            je 0x40005ac	       224	xprepare.c	FUNCTION_4	IF_12	CALL_16
+0x40004f5	      0x488b742440	            mov rsi, qword [rsp + 0x40] 	       227	xprepare.c	FUNCTION_4
+0x40004fa	        0x48896e38	             mov qword [rsi + 0x38], rbp	       227	xprepare.c	FUNCTION_4
+0x40004fe	        0x488b0c24	                    mov rcx, qword [rsp]	       228	xprepare.c	FUNCTION_4
+0x4000502	        0x48894e60	             mov qword [rsi + 0x60], rcx	       228	xprepare.c	FUNCTION_4
+0x4000506	        0x8b4c2430	            mov ecx, dword [rsp + 0x30] 	       229	xprepare.c	FUNCTION_4
+0x400050a	          0x894e40	             mov dword [rsi + 0x40], ecx	       229	xprepare.c	FUNCTION_4
+0x400050d	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	       230	xprepare.c	FUNCTION_4
+0x4000512	        0x48894e48	             mov qword [rsi + 0x48], rcx	       230	xprepare.c	FUNCTION_4
+0x4000516	        0x4883c301	                              add rbx, 1	       231	xprepare.c	FUNCTION_4
+0x400051a	        0x48895e68	             mov qword [rsi + 0x68], rbx	       231	xprepare.c	FUNCTION_4
+0x400051e	        0x4c896670	             mov qword [rsi + 0x70], r12	       232	xprepare.c	FUNCTION_4
+0x4000522	    0x48c746780000	               mov qword [rsi + 0x78], 0	       233	xprepare.c	FUNCTION_4
+0x400052a	    0x488986800000	             mov qword [rsi + 0x80], rax	       234	xprepare.c	FUNCTION_4
+0x4000531	    0x48c746500000	               mov qword [rsi + 0x50], 0	       235	xprepare.c	FUNCTION_4
+0x4000539	        0x4883ed01	                              sub rbp, 1	       236	xprepare.c	FUNCTION_4
+0x400053d	        0x48896e58	             mov qword [rsi + 0x58], rbp	       236	xprepare.c	FUNCTION_4
+0x4000541	      0xb800000000	                              mov eax, 0	       238	xprepare.c	FUNCTION_4
+0x4000546	      0xe993000000	                           jmp 0x40005de	       238	xprepare.c	FUNCTION_4
+0x400054b	    0x41bc00000000	                             mov r12d, 0	       174	xprepare.c	FUNCTION_4
+0x4000551	      0xbb00000000	                              mov ebx, 0	       175	xprepare.c	FUNCTION_4
+0x4000556	    0x48c744242000	               mov qword [rsp + 0x20], 0	       176	xprepare.c	FUNCTION_4
+0x400055f	    0x48c704240000	                      mov qword [rsp], 0	       177	xprepare.c	FUNCTION_4
+0x4000567	            0xeb43	                           jmp 0x40005ac	       177	xprepare.c	FUNCTION_4
+0x4000569	    0x41bc00000000	                             mov r12d, 0	       174	xprepare.c	FUNCTION_4
+0x400056f	      0xbb00000000	                              mov ebx, 0	       175	xprepare.c	FUNCTION_4
+0x4000574	    0x48c744242000	               mov qword [rsp + 0x20], 0	       176	xprepare.c	FUNCTION_4
+0x400057d	            0xeb2d	                           jmp 0x40005ac	       176	xprepare.c	FUNCTION_4
+0x400057f	    0x41bc00000000	                             mov r12d, 0	       174	xprepare.c	FUNCTION_4
+0x4000585	      0xbb00000000	                              mov ebx, 0	       175	xprepare.c	FUNCTION_4
+0x400058a	            0xeb20	                           jmp 0x40005ac	       175	xprepare.c	FUNCTION_4
+0x400058c	    0x41bc00000000	                             mov r12d, 0	       174	xprepare.c	FUNCTION_4
+0x4000592	      0xbb00000000	                              mov ebx, 0	       175	xprepare.c	FUNCTION_4
+0x4000597	            0xeb13	                           jmp 0x40005ac	       175	xprepare.c	FUNCTION_4
+0x4000599	    0x41bc00000000	                             mov r12d, 0	       174	xprepare.c	FUNCTION_4
+0x400059f	      0xbb00000000	                              mov ebx, 0	       175	xprepare.c	FUNCTION_4
+0x40005a4	            0xeb06	                           jmp 0x40005ac	       175	xprepare.c	FUNCTION_4
+0x40005a6	    0x41bc00000000	                             mov r12d, 0	       174	xprepare.c	FUNCTION_4
+0x40005ac	          0x4c89e7	                            mov rdi, r12	       242	xprepare.c	FUNCTION_4	CALL_18
+0x40005af	      0xe800000000	                          call 0x40005b4	       242	xprepare.c	FUNCTION_4	CALL_18
+0x40005b4	          0x4889df	                            mov rdi, rbx	       243	xprepare.c	FUNCTION_4	CALL_19
+0x40005b7	      0xe800000000	                          call 0x40005bc	       243	xprepare.c	FUNCTION_4	CALL_19
+0x40005bc	      0x488b7c2420	            mov rdi, qword [rsp + 0x20] 	       244	xprepare.c	FUNCTION_4	CALL_20
+0x40005c1	      0xe800000000	                          call 0x40005c6	       244	xprepare.c	FUNCTION_4	CALL_20
+0x40005c6	        0x488b3c24	                    mov rdi, qword [rsp]	       245	xprepare.c	FUNCTION_4	CALL_21
+0x40005ca	      0xe800000000	                          call 0x40005cf	       245	xprepare.c	FUNCTION_4	CALL_21
+0x40005cf	      0x488b7c2440	            mov rdi, qword [rsp + 0x40] 	       246	xprepare.c	FUNCTION_4	CALL_22
+0x40005d4	      0xe800000000	                          call 0x40005d9	       246	xprepare.c	FUNCTION_4	CALL_22
+0x40005d9	      0xb8ffffffff	                     mov eax, 0xffffffff	       247	xprepare.c	FUNCTION_4
+0x40005de	      0x488b4c2468	            mov rcx, qword [rsp + 0x68] 	       248	xprepare.c	FUNCTION_4
+0x40005e3	    0x6448330c2528	                xor rcx, qword fs:[0x28]	       248	xprepare.c	FUNCTION_4
+0x40005ec	            0x7414	                            je 0x4000602	       248	xprepare.c	FUNCTION_4
+0x40005ee	            0xeb0d	                           jmp 0x40005fd	       248	xprepare.c	FUNCTION_4
+0x40005f0	    0x41bc00000000	                             mov r12d, 0	       174	xprepare.c	FUNCTION_4
+0x40005f6	      0xbb00000000	                              mov ebx, 0	       175	xprepare.c	FUNCTION_4
+0x40005fb	            0xebaf	                           jmp 0x40005ac	       175	xprepare.c	FUNCTION_4
+0x40005fd	      0xe800000000	                          call 0x4000602	       248	xprepare.c	FUNCTION_4
+0x4000602	        0x4883c478	                           add rsp, 0x78	       248	xprepare.c	FUNCTION_4
+0x4000606	              0x5b	                                 pop rbx	       248	xprepare.c	FUNCTION_4
+0x4000607	              0x5d	                                 pop rbp	       248	xprepare.c	FUNCTION_4
+0x4000608	            0x415c	                                 pop r12	       248	xprepare.c	FUNCTION_4
+0x400060a	            0x415d	                                 pop r13	       248	xprepare.c	FUNCTION_4
+0x400060c	            0x415e	                                 pop r14	       248	xprepare.c	FUNCTION_4
+0x400060e	            0x415f	                                 pop r15	       248	xprepare.c	FUNCTION_4
+0x4000610	              0xc3	                                     ret	       248	xprepare.c	FUNCTION_4
+xdl_free_classifier	WHILE,0:functions,0:SWITCH,0:CALL,3:DO,0:FOR,0:IF,0:ELSE,0	10
+0x4000155	              0x53	                                push rbx	       102	xprepare.c	FUNCTION_2
+0x4000156	          0x4889fb	                            mov rbx, rdi	       102	xprepare.c	FUNCTION_2
+0x4000159	        0x488b7f50	            mov rdi, qword [rdi + 0x50] 	       104	xprepare.c	FUNCTION_2	CALL_1
+0x400015d	      0xe800000000	                          call 0x4000162	       104	xprepare.c	FUNCTION_2	CALL_1
+0x4000162	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	       105	xprepare.c	FUNCTION_2	CALL_2
+0x4000166	      0xe800000000	                          call 0x400016b	       105	xprepare.c	FUNCTION_2	CALL_2
+0x400016b	        0x488d7b18	                   lea rdi, [rbx + 0x18]	       106	xprepare.c	FUNCTION_2	CALL_3
+0x400016f	      0xe800000000	                          call 0x4000174	       106	xprepare.c	FUNCTION_2	CALL_3
+0x4000174	              0x5b	                                 pop rbx	       107	xprepare.c	FUNCTION_2
+0x4000175	              0xc3	                                     ret	       107	xprepare.c	FUNCTION_2
+xdl_free_ctx	WHILE,0:functions,0:SWITCH,0:CALL,6:DO,0:FOR,0:IF,0:ELSE,0	17
+0x4000113	              0x53	                                push rbx	       251	xprepare.c	FUNCTION_5
+0x4000114	          0x4889fb	                            mov rbx, rdi	       251	xprepare.c	FUNCTION_5
+0x4000117	        0x488b7f48	            mov rdi, qword [rdi + 0x48] 	       253	xprepare.c	FUNCTION_5	CALL_1
+0x400011b	      0xe800000000	                          call 0x4000120	       253	xprepare.c	FUNCTION_5	CALL_1
+0x4000120	        0x488b7b70	            mov rdi, qword [rbx + 0x70] 	       254	xprepare.c	FUNCTION_5	CALL_2
+0x4000124	      0xe800000000	                          call 0x4000129	       254	xprepare.c	FUNCTION_5	CALL_2
+0x4000129	        0x488b4368	            mov rax, qword [rbx + 0x68] 	       255	xprepare.c	FUNCTION_5	CALL_3
+0x400012d	        0x488d78ff	                      lea rdi, [rax - 1]	       255	xprepare.c	FUNCTION_5	CALL_3
+0x4000131	      0xe800000000	                          call 0x4000136	       255	xprepare.c	FUNCTION_5	CALL_3
+0x4000136	    0x488bbb800000	            mov rdi, qword [rbx + 0x80] 	       256	xprepare.c	FUNCTION_5	CALL_4
+0x400013d	      0xe800000000	                          call 0x4000142	       256	xprepare.c	FUNCTION_5	CALL_4
+0x4000142	        0x488b7b60	            mov rdi, qword [rbx + 0x60] 	       257	xprepare.c	FUNCTION_5	CALL_5
+0x4000146	      0xe800000000	                          call 0x400014b	       257	xprepare.c	FUNCTION_5	CALL_5
+0x400014b	          0x4889df	                            mov rdi, rbx	       258	xprepare.c	FUNCTION_5	CALL_6
+0x400014e	      0xe800000000	                          call 0x4000153	       258	xprepare.c	FUNCTION_5	CALL_6
+0x4000153	              0x5b	                                 pop rbx	       259	xprepare.c	FUNCTION_5
+0x4000154	              0xc3	                                     ret	       259	xprepare.c	FUNCTION_5
+xdl_prepare_env	WHILE,0:functions,0:SWITCH,0:CALL,19:DO,0:FOR,0:IF,5:ELSE,0	410
+0x4000611	            0x4157	                                push r15	       263	xprepare.c	FUNCTION_6
+0x4000613	            0x4156	                                push r14	       263	xprepare.c	FUNCTION_6
+0x4000615	            0x4155	                                push r13	       263	xprepare.c	FUNCTION_6
+0x4000617	            0x4154	                                push r12	       263	xprepare.c	FUNCTION_6
+0x4000619	              0x55	                                push rbp	       263	xprepare.c	FUNCTION_6
+0x400061a	              0x53	                                push rbx	       263	xprepare.c	FUNCTION_6
+0x400061b	    0x4881eca80000	                           sub rsp, 0xa8	       263	xprepare.c	FUNCTION_6
+0x4000622	          0x4989fa	                            mov r10, rdi	       263	xprepare.c	FUNCTION_6
+0x4000625	      0x48897c2408	                mov qword [rsp + 8], rdi	       263	xprepare.c	FUNCTION_6
+0x400062a	          0x4989f7	                            mov r15, rsi	       263	xprepare.c	FUNCTION_6
+0x400062d	      0x4889742410	             mov qword [rsp + 0x10], rsi	       263	xprepare.c	FUNCTION_6
+0x4000632	          0x4989d4	                            mov r12, rdx	       263	xprepare.c	FUNCTION_6
+0x4000635	          0x4889cb	                            mov rbx, rcx	       263	xprepare.c	FUNCTION_6
+0x4000638	    0x64488b042528	                mov rax, qword fs:[0x28]	       263	xprepare.c	FUNCTION_6
+0x4000641	    0x488984249800	             mov qword [rsp + 0x98], rax	       263	xprepare.c	FUNCTION_6
+0x4000649	            0x31c0	                            xor eax, eax	       263	xprepare.c	FUNCTION_6
+0x400064b	      0x488d542420	                   lea rdx, [rsp + 0x20]	        90	string3.h	FUNCTION_15	CALL_6
+0x4000650	      0xb90e000000	                            mov ecx, 0xe	        90	string3.h	FUNCTION_15	CALL_6
+0x4000655	          0x4889d7	                            mov rdi, rdx	        90	string3.h	FUNCTION_15	CALL_6
+0x4000658	          0xf348ab	              rep stosq qword [rdi], rax	        90	string3.h	FUNCTION_15	CALL_6
+0x400065b	        0x498b0424	                    mov rax, qword [r12]	       276	xprepare.c	FUNCTION_6	CALL_2
+0x400065f	      0x2500c00000	                         and eax, 0xc000	       276	xprepare.c	FUNCTION_6	CALL_2
+0x4000664	    0x483d00800000	                         cmp rax, 0x8000	       276	xprepare.c	FUNCTION_6	CALL_2
+0x400066a	      0xb800010000	                          mov eax, 0x100	       276	xprepare.c	FUNCTION_6	CALL_2
+0x400066f	      0xbd14000000	                           mov ebp, 0x14	       276	xprepare.c	FUNCTION_6	CALL_2
+0x4000674	        0x480f45e8	                         cmovne rbp, rax	       276	xprepare.c	FUNCTION_6	CALL_2
+0x4000678	          0x4889ee	                            mov rsi, rbp	       279	xprepare.c	FUNCTION_6	CALL_3
+0x400067b	          0x4c89d7	                            mov rdi, r10	       279	xprepare.c	FUNCTION_6	CALL_3
+0x400067e	      0xe800000000	                          call 0x4000683	       279	xprepare.c	FUNCTION_6	CALL_3
+0x4000683	        0x4c8d7001	                      lea r14, [rax + 1]	       279	xprepare.c	FUNCTION_6	CALL_3
+0x4000687	          0x4889ee	                            mov rsi, rbp	       280	xprepare.c	FUNCTION_6	CALL_4
+0x400068a	          0x4c89ff	                            mov rdi, r15	       280	xprepare.c	FUNCTION_6	CALL_4
+0x400068d	      0xe800000000	                          call 0x4000692	       280	xprepare.c	FUNCTION_6	CALL_4
+0x4000692	        0x4c8d7801	                      lea r15, [rax + 1]	       280	xprepare.c	FUNCTION_6	CALL_4
+0x4000696	        0x498b0424	                    mov rax, qword [r12]	       282	xprepare.c	FUNCTION_6	IF_1	CALL_5
+0x400069a	          0x4889c2	                            mov rdx, rax	       282	xprepare.c	FUNCTION_6	IF_1	CALL_5
+0x400069d	    0x81e200c00000	                         and edx, 0xc000	       282	xprepare.c	FUNCTION_6	IF_1	CALL_5
+0x40006a3	    0x4881fa008000	                         cmp rdx, 0x8000	       282	xprepare.c	FUNCTION_6	IF_1	CALL_5
+0x40006aa	     0xf84da000000	                            je 0x400078a	       282	xprepare.c	FUNCTION_6	IF_1	CALL_5
+0x40006b0	        0x4b8d2c3e	                    lea rbp, [r14 + r15]	       283	xprepare.c	FUNCTION_6	IF_1	CALL_6
+0x40006b4	        0x4c8d6d01	                      lea r13, [rbp + 1]	       283	xprepare.c	FUNCTION_6	IF_1	CALL_6
+0x40006b8	    0x488984248800	             mov qword [rsp + 0x88], rax	        72	xprepare.c	FUNCTION_1
+0x40006c0	          0x4489ef	                           mov edi, r13d	        74	xprepare.c	FUNCTION_1	CALL_1
+0x40006c3	      0xe800000000	                          call 0x40006c8	        74	xprepare.c	FUNCTION_1	CALL_1
+0x40006c8	        0x89442420	             mov dword [rsp + 0x20], eax	        74	xprepare.c	FUNCTION_1	CALL_1
+0x40006cc	      0xba01000000	                              mov edx, 1	        75	xprepare.c	FUNCTION_1
+0x40006d1	            0x89c1	                            mov ecx, eax	        75	xprepare.c	FUNCTION_1
+0x40006d3	            0xd3e2	                             shl edx, cl	        75	xprepare.c	FUNCTION_1
+0x40006d5	          0x4863d2	                         movsxd rdx, edx	        75	xprepare.c	FUNCTION_1
+0x40006d8	      0x4889542428	             mov qword [rsp + 0x28], rdx	        75	xprepare.c	FUNCTION_1
+0x40006dd	        0x488d5504	                      lea rdx, [rbp + 4]	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
+0x40006e1	          0x4d85ed	                           test r13, r13	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
+0x40006e4	        0x490f49d5	                         cmovns rdx, r13	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
+0x40006e8	        0x48c1fa02	                              sar rdx, 2	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
+0x40006ec	        0x4883c201	                              add rdx, 1	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
+0x40006f0	      0xbe38000000	                           mov esi, 0x38	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
+0x40006f5	      0x488d7c2438	                   lea rdi, [rsp + 0x38]	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
+0x40006fa	      0xe800000000	                          call 0x40006ff	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
+0x40006ff	            0x85c0	                           test eax, eax	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
+0x4000701	     0xf880a050000	                            js 0x4000c11	        77	xprepare.c	FUNCTION_1	IF_1	CALL_2
+0x4000707	      0x488b442428	            mov rax, qword [rsp + 0x28] 	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
+0x400070c	        0x48c1e003	                              shl rax, 3	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
+0x4000710	      0x4889442418	             mov qword [rsp + 0x18], rax	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
+0x4000715	          0x4889c7	                            mov rdi, rax	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
+0x4000718	      0xe800000000	                          call 0x400071d	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
+0x400071d	          0x4889c5	                            mov rbp, rax	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
+0x4000720	      0x4889442430	             mov qword [rsp + 0x30], rax	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
+0x4000725	          0x4885c0	                           test rax, rax	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
+0x4000728	            0x750f	                           jne 0x4000739	        81	xprepare.c	FUNCTION_1	IF_2	CALL_3
+0x400072a	      0x488d7c2438	                   lea rdi, [rsp + 0x38]	        83	xprepare.c	FUNCTION_1	IF_2	CALL_4
+0x400072f	      0xe800000000	                          call 0x4000734	        83	xprepare.c	FUNCTION_1	IF_2	CALL_4
+0x4000734	      0xe9d8040000	                           jmp 0x4000c11	        83	xprepare.c	FUNCTION_1	IF_2	CALL_4
+0x4000739	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	        90	string3.h	FUNCTION_15	CALL_6
+0x400073e	      0xbe00000000	                              mov esi, 0	        90	string3.h	FUNCTION_15	CALL_6
+0x4000743	          0x4889c7	                            mov rdi, rax	        90	string3.h	FUNCTION_15	CALL_6
+0x4000746	      0xe800000000	                          call 0x400074b	        90	string3.h	FUNCTION_15	CALL_6
+0x400074b	      0x4c896c2478	             mov qword [rsp + 0x78], r13	        88	xprepare.c	FUNCTION_1
+0x4000750	    0x4a8d3ced0000	                        lea rdi, [r13*8]	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
+0x4000758	      0xe800000000	                          call 0x400075d	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
+0x400075d	      0x4889442470	             mov qword [rsp + 0x70], rax	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
+0x4000762	          0x4885c0	                           test rax, rax	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
+0x4000765	            0x7517	                           jne 0x400077e	        89	xprepare.c	FUNCTION_1	IF_3	CALL_6
+0x4000767	          0x4889ef	                            mov rdi, rbp	        91	xprepare.c	FUNCTION_1	IF_3	CALL_7
+0x400076a	      0xe800000000	                          call 0x400076f	        91	xprepare.c	FUNCTION_1	IF_3	CALL_7
+0x400076f	      0x488d7c2438	                   lea rdi, [rsp + 0x38]	        92	xprepare.c	FUNCTION_1	IF_3	CALL_8
+0x4000774	      0xe800000000	                          call 0x4000779	        92	xprepare.c	FUNCTION_1	IF_3	CALL_8
+0x4000779	      0xe993040000	                           jmp 0x4000c11	        92	xprepare.c	FUNCTION_1	IF_3	CALL_8
+0x400077e	    0x48c784248000	               mov qword [rsp + 0x80], 0	        96	xprepare.c	FUNCTION_1
+0x400078a	          0x4989d9	                             mov r9, rbx	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
+0x400078d	      0x4c8d442420	                    lea r8, [rsp + 0x20]	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
+0x4000792	          0x4c89e1	                            mov rcx, r12	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
+0x4000795	          0x4c89f2	                            mov rdx, r14	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
+0x4000798	      0x488b742408	                mov rsi, qword [rsp + 8]	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
+0x400079d	      0xbf01000000	                              mov edi, 1	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
+0x40007a2	      0xe8cff9ffff	                call sym.xdl_prepare_ctx	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
+0x40007a7	            0x85c0	                           test eax, eax	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
+0x40007a9	            0x7914	                           jns 0x40007bf	       286	xprepare.c	FUNCTION_6	IF_2	CALL_7
+0x40007ab	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	       288	xprepare.c	FUNCTION_6	IF_2	CALL_8
+0x40007b0	      0xe8a0f9ffff	            call sym.xdl_free_classifier	       288	xprepare.c	FUNCTION_6	IF_2	CALL_8
+0x40007b5	      0xb8ffffffff	                     mov eax, 0xffffffff	       289	xprepare.c	FUNCTION_6	IF_2
+0x40007ba	      0xe936040000	                           jmp 0x4000bf5	       289	xprepare.c	FUNCTION_6	IF_2
+0x40007bf	    0x488dab880000	                   lea rbp, [rbx + 0x88]	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
+0x40007c6	          0x4989e9	                             mov r9, rbp	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
+0x40007c9	      0x4c8d442420	                    lea r8, [rsp + 0x20]	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
+0x40007ce	          0x4c89e1	                            mov rcx, r12	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
+0x40007d1	          0x4c89fa	                            mov rdx, r15	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
+0x40007d4	      0x488b742410	            mov rsi, qword [rsp + 0x10] 	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
+0x40007d9	      0xbf02000000	                              mov edi, 2	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
+0x40007de	      0xe893f9ffff	                call sym.xdl_prepare_ctx	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
+0x40007e3	            0x85c0	                           test eax, eax	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
+0x40007e5	            0x791c	                           jns 0x4000803	       291	xprepare.c	FUNCTION_6	IF_3	CALL_9
+0x40007e7	          0x4889df	                            mov rdi, rbx	       293	xprepare.c	FUNCTION_6	IF_3	CALL_10
+0x40007ea	      0xe824f9ffff	                   call sym.xdl_free_ctx	       293	xprepare.c	FUNCTION_6	IF_3	CALL_10
+0x40007ef	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	       294	xprepare.c	FUNCTION_6	IF_3	CALL_11
+0x40007f4	      0xe85cf9ffff	            call sym.xdl_free_classifier	       294	xprepare.c	FUNCTION_6	IF_3	CALL_11
+0x40007f9	      0xb8ffffffff	                     mov eax, 0xffffffff	       295	xprepare.c	FUNCTION_6	IF_3
+0x40007fe	      0xe9f2030000	                           jmp 0x4000bf5	       295	xprepare.c	FUNCTION_6	IF_3
+0x4000803	        0x498b0424	                    mov rax, qword [r12]	       298	xprepare.c	FUNCTION_6	IF_4	CALL_12
+0x4000807	      0x2500c00000	                         and eax, 0xc000	       298	xprepare.c	FUNCTION_6	IF_4	CALL_12
+0x400080c	    0x482d00400000	                         sub rax, 0x4000	       298	xprepare.c	FUNCTION_6	IF_4	CALL_12
+0x4000812	    0x48a9ffbfffff	            test rax, 0xffffffffffffbfff	       298	xprepare.c	FUNCTION_6	IF_4	CALL_12
+0x4000818	     0xf84b0030000	                            je 0x4000bce	       298	xprepare.c	FUNCTION_6	IF_4	CALL_12
+0x400081e	        0x4c8b4360	              mov r8, qword [rbx + 0x60]	       452	xprepare.c	FUNCTION_10
+0x4000822	    0x488bbbe80000	            mov rdi, qword [rbx + 0xe8] 	       453	xprepare.c	FUNCTION_10
+0x4000829	    0x4c8b8bc00000	              mov r9, qword [rbx + 0xc0]	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
+0x4000830	        0x4c8b7338	            mov r14, qword [rbx + 0x38] 	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
+0x4000834	          0x4d39f1	                             cmp r9, r14	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
+0x4000837	          0x4c89f6	                            mov rsi, r14	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
+0x400083a	        0x490f4ef1	                          cmovle rsi, r9	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
+0x400083e	          0x4885f6	                           test rsi, rsi	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
+0x4000841	     0xf8ef8030000	                           jle 0x4000c3f	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
+0x4000847	          0x498b10	                     mov rdx, qword [r8]	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x400084a	          0x488b07	                    mov rax, qword [rdi]	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x400084d	        0x488b4018	            mov rax, qword [rax + 0x18] 	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x4000851	        0x48394218	            cmp qword [rdx + 0x18], rax 	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x4000855	     0xf85bd030000	                           jne 0x4000c18	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x400085b	      0xb800000000	                              mov eax, 0	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x4000860	            0xeb12	                           jmp 0x4000874	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x4000862	        0x498b0cc0	             mov rcx, qword [r8 + rax*8]	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x4000866	        0x488b14c7	            mov rdx, qword [rdi + rax*8]	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x400086a	        0x488b5218	            mov rdx, qword [rdx + 0x18] 	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x400086e	        0x48395118	            cmp qword [rcx + 0x18], rdx 	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x4000872	            0x750e	                           jne 0x4000882	       456	xprepare.c	FUNCTION_10	FOR_1	IF_1
+0x4000874	        0x4883c001	                              add rax, 1	       455	xprepare.c	FUNCTION_10	FOR_1
+0x4000878	          0x4839c6	                            cmp rsi, rax	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
+0x400087b	            0x75e5	                           jne 0x4000862	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
+0x400087d	      0xe91d040000	                           jmp 0x4000c9f	       454	xprepare.c	FUNCTION_10	FOR_1	CALL_1
+0x4000882	    0x488983d80000	             mov qword [rbx + 0xd8], rax	       459	xprepare.c	FUNCTION_10
+0x4000889	        0x48894350	             mov qword [rbx + 0x50], rax	       459	xprepare.c	FUNCTION_10
+0x400088d	      0x4c89742408	                mov qword [rsp + 8], r14	       461	xprepare.c	FUNCTION_10
+0x4000892	      0x4b8d4cf0f8	               lea rcx, [r8 + r14*8 - 8]	       461	xprepare.c	FUNCTION_10
+0x4000897	      0x4a8d54cff8	               lea rdx, [rdi + r9*8 - 8]	       462	xprepare.c	FUNCTION_10
+0x400089c	          0x4829c6	                            sub rsi, rax	       463	xprepare.c	FUNCTION_10	FOR_2
+0x400089f	          0x4885f6	                           test rsi, rsi	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008a2	            0x7e3a	                           jle 0x40008de	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008a4	          0x488b39	                    mov rdi, qword [rcx]	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008a7	          0x488b02	                    mov rax, qword [rdx]	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008aa	        0x488b4018	            mov rax, qword [rax + 0x18] 	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008ae	        0x48394718	            cmp qword [rdi + 0x18], rax 	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008b2	            0x7531	                           jne 0x40008e5	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008b4	      0xb800000000	                              mov eax, 0	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008b9	            0xeb10	                           jmp 0x40008cb	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008bb	          0x4c8b01	                     mov r8, qword [rcx]	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008be	          0x488b3a	                    mov rdi, qword [rdx]	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008c1	        0x488b7f18	            mov rdi, qword [rdi + 0x18] 	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008c5	        0x49397818	              cmp qword [r8 + 0x18], rdi	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008c9	            0x751f	                           jne 0x40008ea	       464	xprepare.c	FUNCTION_10	FOR_2	IF_2
+0x40008cb	        0x4883c001	                              add rax, 1	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008cf	        0x4883e908	                              sub rcx, 8	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008d3	        0x4883ea08	                              sub rdx, 8	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008d7	          0x4839f0	                            cmp rax, rsi	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008da	            0x7cdf	                            jl 0x40008bb	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008dc	            0xeb0c	                           jmp 0x40008ea	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008de	      0xb800000000	                              mov eax, 0	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008e3	            0xeb05	                           jmp 0x40008ea	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008e5	      0xb800000000	                              mov eax, 0	       463	xprepare.c	FUNCTION_10	FOR_2
+0x40008ea	          0x4c89f2	                            mov rdx, r14	       467	xprepare.c	FUNCTION_10
+0x40008ed	          0x4829c2	                            sub rdx, rax	       467	xprepare.c	FUNCTION_10
+0x40008f0	        0x4883ea01	                              sub rdx, 1	       467	xprepare.c	FUNCTION_10
+0x40008f4	        0x48895358	             mov qword [rbx + 0x58], rdx	       467	xprepare.c	FUNCTION_10
+0x40008f8	          0x4c89ce	                             mov rsi, r9	       468	xprepare.c	FUNCTION_10
+0x40008fb	          0x4829c6	                            sub rsi, rax	       468	xprepare.c	FUNCTION_10
+0x40008fe	          0x4889f0	                            mov rax, rsi	       468	xprepare.c	FUNCTION_10
+0x4000901	        0x4883e801	                              sub rax, 1	       468	xprepare.c	FUNCTION_10
+0x4000905	    0x488983e00000	             mov qword [rbx + 0xe0], rax	       468	xprepare.c	FUNCTION_10
+0x400090c	      0x4f8d7c3102	                 lea r15, [r9 + r14 + 2]	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
+0x4000911	          0x4c89ff	                            mov rdi, r15	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
+0x4000914	      0xe800000000	                          call 0x4000919	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
+0x4000919	          0x4989c5	                            mov r13, rax	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
+0x400091c	          0x4885c0	                           test rax, rax	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
+0x400091f	     0xf8456030000	                            je 0x4000c7b	       391	xprepare.c	FUNCTION_9	IF_1	CALL_1
+0x4000925	          0x4c89fa	                            mov rdx, r15	        90	string3.h	FUNCTION_15	CALL_6
+0x4000928	      0xbe00000000	                              mov esi, 0	        90	string3.h	FUNCTION_15	CALL_6
+0x400092d	          0x4889c7	                            mov rdi, rax	        90	string3.h	FUNCTION_15	CALL_6
+0x4000930	      0xe800000000	                          call 0x4000935	        90	string3.h	FUNCTION_15	CALL_6
+0x4000935	      0x488b442408	                mov rax, qword [rsp + 8]	       397	xprepare.c	FUNCTION_9
+0x400093a	      0x4d8d7c0501	                lea r15, [r13 + rax + 1]	       397	xprepare.c	FUNCTION_9
+0x400093f	          0x4c89f7	                            mov rdi, r14	       399	xprepare.c	FUNCTION_9	IF_2	CALL_3
+0x4000942	      0xe800000000	                          call 0x4000947	       399	xprepare.c	FUNCTION_9	IF_2	CALL_3
+0x4000947	    0x483d00040000	                          cmp rax, 0x400	       399	xprepare.c	FUNCTION_9	IF_2	CALL_3
+0x400094d	      0xba00040000	                          mov edx, 0x400	       399	xprepare.c	FUNCTION_9	IF_2	CALL_3
+0x4000952	        0x480f4fc2	                          cmovg rax, rdx	       399	xprepare.c	FUNCTION_9	IF_2	CALL_3
+0x4000956	        0x488b5350	            mov rdx, qword [rbx + 0x50] 	       401	xprepare.c	FUNCTION_9	FOR_1
+0x400095a	        0x488b4b60	            mov rcx, qword [rbx + 0x60] 	       401	xprepare.c	FUNCTION_9	FOR_1
+0x400095e	    0x488d3cd50000	                        lea rdi, [rdx*8]	       401	xprepare.c	FUNCTION_9	FOR_1
+0x4000966	        0x4c8b4b58	              mov r9, qword [rbx + 0x58]	       401	xprepare.c	FUNCTION_9	FOR_1
+0x400096a	          0x4939d1	                             cmp r9, rdx	       401	xprepare.c	FUNCTION_9	FOR_1
+0x400096d	            0x7c56	                            jl 0x40009c5	       401	xprepare.c	FUNCTION_9	FOR_1
+0x400096f	      0x4c8b542470	            mov r10, qword [rsp + 0x70] 	       402	xprepare.c	FUNCTION_9	FOR_1
+0x4000974	      0x498d741500	                    lea rsi, [r13 + rdx]	       402	xprepare.c	FUNCTION_9	FOR_1
+0x4000979	          0x4989d0	                             mov r8, rdx	       402	xprepare.c	FUNCTION_9	FOR_1
+0x400097c	          0x49f7d8	                                  neg r8	       402	xprepare.c	FUNCTION_9	FOR_1
+0x400097f	        0x4e8d04c7	                    lea r8, [rdi + r8*8]	       402	xprepare.c	FUNCTION_9	FOR_1
+0x4000983	          0x4901c8	                             add r8, rcx	       402	xprepare.c	FUNCTION_9	FOR_1
+0x4000986	        0x498b0cd0	             mov rcx, qword [r8 + rdx*8]	       402	xprepare.c	FUNCTION_9	FOR_1
+0x400098a	        0x488b4918	            mov rcx, qword [rcx + 0x18] 	       402	xprepare.c	FUNCTION_9	FOR_1
+0x400098e	        0x498b0cca	            mov rcx, qword [r10 + rcx*8]	       402	xprepare.c	FUNCTION_9	FOR_1
+0x4000992	          0x4885c9	                           test rcx, rcx	       403	xprepare.c	FUNCTION_9	FOR_1
+0x4000995	     0xf84c6020000	                            je 0x4000c61	       403	xprepare.c	FUNCTION_9	FOR_1
+0x400099b	        0x488b7930	            mov rdi, qword [rcx + 0x30] 	       403	xprepare.c	FUNCTION_9	FOR_1
+0x400099f	          0x4989f3	                            mov r11, rsi	       404	xprepare.c	FUNCTION_9	FOR_1
+0x40009a2	      0xb900000000	                              mov ecx, 0	       404	xprepare.c	FUNCTION_9	FOR_1
+0x40009a7	          0x4885ff	                           test rdi, rdi	       404	xprepare.c	FUNCTION_9	FOR_1
+0x40009aa	            0x7409	                            je 0x40009b5	       404	xprepare.c	FUNCTION_9	FOR_1
+0x40009ac	          0x4839f8	                            cmp rax, rdi	       404	xprepare.c	FUNCTION_9	FOR_1
+0x40009af	           0xf9ec1	                                setle cl	       404	xprepare.c	FUNCTION_9	FOR_1
+0x40009b2	          0x83c101	                              add ecx, 1	       404	xprepare.c	FUNCTION_9	FOR_1
+0x40009b5	          0x41880b	                      mov byte [r11], cl	       404	xprepare.c	FUNCTION_9	FOR_1
+0x40009b8	        0x4883c201	                              add rdx, 1	       401	xprepare.c	FUNCTION_9	FOR_1
+0x40009bc	        0x4883c601	                              add rsi, 1	       401	xprepare.c	FUNCTION_9	FOR_1
+0x40009c0	          0x4939d1	                             cmp r9, rdx	       401	xprepare.c	FUNCTION_9	FOR_1
+0x40009c3	            0x7dc1	                           jge 0x4000986	       401	xprepare.c	FUNCTION_9	FOR_1
+0x40009c5	    0x488bbbc00000	            mov rdi, qword [rbx + 0xc0] 	       407	xprepare.c	FUNCTION_9	IF_3	CALL_4
+0x40009cc	      0xe800000000	                          call 0x40009d1	       407	xprepare.c	FUNCTION_9	IF_3	CALL_4
+0x40009d1	    0x483d00040000	                          cmp rax, 0x400	       407	xprepare.c	FUNCTION_9	IF_3	CALL_4
+0x40009d7	      0xba00040000	                          mov edx, 0x400	       407	xprepare.c	FUNCTION_9	IF_3	CALL_4
+0x40009dc	        0x480f4fc2	                          cmovg rax, rdx	       407	xprepare.c	FUNCTION_9	IF_3	CALL_4
+0x40009e0	    0x488b93d80000	            mov rdx, qword [rbx + 0xd8] 	       409	xprepare.c	FUNCTION_9	FOR_2
+0x40009e7	    0x488b8be80000	            mov rcx, qword [rbx + 0xe8] 	       409	xprepare.c	FUNCTION_9	FOR_2
+0x40009ee	    0x488d3cd50000	                        lea rdi, [rdx*8]	       409	xprepare.c	FUNCTION_9	FOR_2
+0x40009f6	    0x4c8b8be00000	              mov r9, qword [rbx + 0xe0]	       409	xprepare.c	FUNCTION_9	FOR_2
+0x40009fd	          0x4c39ca	                             cmp rdx, r9	       409	xprepare.c	FUNCTION_9	FOR_2
+0x4000a00	            0x7f55	                            jg 0x4000a57	       409	xprepare.c	FUNCTION_9	FOR_2
+0x4000a02	      0x4c8b542470	            mov r10, qword [rsp + 0x70] 	       410	xprepare.c	FUNCTION_9	FOR_2
+0x4000a07	        0x498d3417	                    lea rsi, [r15 + rdx]	       410	xprepare.c	FUNCTION_9	FOR_2
+0x4000a0b	          0x4989d0	                             mov r8, rdx	       410	xprepare.c	FUNCTION_9	FOR_2
+0x4000a0e	          0x49f7d8	                                  neg r8	       410	xprepare.c	FUNCTION_9	FOR_2
+0x4000a11	        0x4e8d04c7	                    lea r8, [rdi + r8*8]	       410	xprepare.c	FUNCTION_9	FOR_2
+0x4000a15	          0x4901c8	                             add r8, rcx	       410	xprepare.c	FUNCTION_9	FOR_2
+0x4000a18	        0x498b0cd0	             mov rcx, qword [r8 + rdx*8]	       410	xprepare.c	FUNCTION_9	FOR_2
+0x4000a1c	        0x488b4918	            mov rcx, qword [rcx + 0x18] 	       410	xprepare.c	FUNCTION_9	FOR_2
+0x4000a20	        0x498b0cca	            mov rcx, qword [r10 + rcx*8]	       410	xprepare.c	FUNCTION_9	FOR_2
+0x4000a24	          0x4885c9	                           test rcx, rcx	       411	xprepare.c	FUNCTION_9	FOR_2
+0x4000a27	     0xf8441020000	                            je 0x4000c6e	       411	xprepare.c	FUNCTION_9	FOR_2
+0x4000a2d	        0x488b7928	            mov rdi, qword [rcx + 0x28] 	       411	xprepare.c	FUNCTION_9	FOR_2
+0x4000a31	          0x4989f3	                            mov r11, rsi	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000a34	      0xb900000000	                              mov ecx, 0	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000a39	          0x4885ff	                           test rdi, rdi	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000a3c	            0x7409	                            je 0x4000a47	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000a3e	          0x4839f8	                            cmp rax, rdi	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000a41	           0xf9ec1	                                setle cl	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000a44	          0x83c101	                              add ecx, 1	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000a47	          0x41880b	                      mov byte [r11], cl	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000a4a	        0x4883c201	                              add rdx, 1	       409	xprepare.c	FUNCTION_9	FOR_2
+0x4000a4e	        0x4883c601	                              add rsi, 1	       409	xprepare.c	FUNCTION_9	FOR_2
+0x4000a52	          0x4c39ca	                             cmp rdx, r9	       409	xprepare.c	FUNCTION_9	FOR_2
+0x4000a55	            0x7ec1	                           jle 0x4000a18	       409	xprepare.c	FUNCTION_9	FOR_2
+0x4000a57	        0x488b6b50	            mov rbp, qword [rbx + 0x50] 	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a5b	        0x488b4360	            mov rax, qword [rbx + 0x60] 	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a5f	    0x488d14ed0000	                        lea rdx, [rbp*8]	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a67	        0x488b4b58	            mov rcx, qword [rbx + 0x58] 	       416	xprepare.c	FUNCTION_9	FOR_3
+0x4000a6b	          0x4839cd	                            cmp rbp, rcx	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a6e	     0xf8f85000000	                            jg 0x4000af9	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a74	          0x4889ee	                            mov rsi, rbp	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a77	          0x48f7de	                                 neg rsi	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a7a	        0x488d14f2	                  lea rdx, [rdx + rsi*8]	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a7e	          0x4801d0	                            add rax, rdx	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a81	      0x4889442410	             mov qword [rsp + 0x10], rax	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a86	    0x41be00000000	                             mov r14d, 0	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000a8c	      0x48896c2408	                mov qword [rsp + 8], rbp	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000a91	    0x410fb6442d00	             movzx eax, byte [r13 + rbp]	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000a97	            0x3c01	                               cmp al, 1	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000a99	            0x7417	                            je 0x4000ab2	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000a9b	            0x3c02	                               cmp al, 2	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000a9d	            0x753e	                           jne 0x4000add	       417	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000a9f	        0x488b5350	            mov rdx, qword [rbx + 0x50] 	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
+0x4000aa3	          0x4889ee	                            mov rsi, rbp	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
+0x4000aa6	          0x4c89ef	                            mov rdi, r13	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
+0x4000aa9	      0xe892f5ffff	               call sym.xdl_clean_mmatch	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
+0x4000aae	            0x85c0	                           test eax, eax	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
+0x4000ab0	            0x752b	                           jne 0x4000add	       418	xprepare.c	FUNCTION_9	FOR_3	IF_4	CALL_5
+0x4000ab2	        0x488b4370	            mov rax, qword [rbx + 0x70] 	       419	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000ab6	        0x4a892cf0	            mov qword [rax + r14*8], rbp	       419	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000aba	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000abf	      0x488b742408	                mov rsi, qword [rsp + 8]	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000ac4	        0x488b04f0	            mov rax, qword [rax + rsi*8]	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000ac8	        0x488b5018	            mov rdx, qword [rax + 0x18] 	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000acc	    0x488b83800000	            mov rax, qword [rbx + 0x80] 	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000ad3	        0x4a8914f0	            mov qword [rax + r14*8], rdx	       420	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000ad7	        0x4983c601	                              add r14, 1	       421	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000adb	            0xeb0d	                           jmp 0x4000aea	       421	xprepare.c	FUNCTION_9	FOR_3	IF_4
+0x4000add	        0x488b4368	            mov rax, qword [rbx + 0x68] 	       423	xprepare.c	FUNCTION_9	FOR_3	ELSE_1
+0x4000ae1	      0x488b742408	                mov rsi, qword [rsp + 8]	       423	xprepare.c	FUNCTION_9	FOR_3	ELSE_1
+0x4000ae6	        0xc6043001	                 mov byte [rax + rsi], 1	       423	xprepare.c	FUNCTION_9	FOR_3	ELSE_1
+0x4000aea	        0x4883c501	                              add rbp, 1	       416	xprepare.c	FUNCTION_9	FOR_3
+0x4000aee	        0x488b4b58	            mov rcx, qword [rbx + 0x58] 	       416	xprepare.c	FUNCTION_9	FOR_3
+0x4000af2	          0x4839e9	                            cmp rcx, rbp	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000af5	            0x7d95	                           jge 0x4000a8c	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000af7	            0xeb06	                           jmp 0x4000aff	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000af9	    0x41be00000000	                             mov r14d, 0	       415	xprepare.c	FUNCTION_9	FOR_3
+0x4000aff	        0x4c897378	             mov qword [rbx + 0x78], r14	       425	xprepare.c	FUNCTION_9	ELSE_1
+0x4000b03	    0x488babd80000	            mov rbp, qword [rbx + 0xd8] 	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b0a	    0x488b83e80000	            mov rax, qword [rbx + 0xe8] 	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b11	    0x488d14ed0000	                        lea rdx, [rbp*8]	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b19	    0x488b8be00000	            mov rcx, qword [rbx + 0xe0] 	       428	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b20	          0x4839e9	                            cmp rcx, rbp	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b23	     0xf8c90000000	                            jl 0x4000bb9	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b29	          0x4889ee	                            mov rsi, rbp	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b2c	          0x48f7de	                                 neg rsi	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b2f	        0x488d14f2	                  lea rdx, [rdx + rsi*8]	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b33	          0x4801d0	                            add rax, rdx	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b36	      0x4889442410	             mov qword [rsp + 0x10], rax	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b3b	    0x41be00000000	                             mov r14d, 0	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000b41	      0x48896c2408	                mov qword [rsp + 8], rbp	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b46	      0x410fb6042f	             movzx eax, byte [r15 + rbp]	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b4b	            0x3c01	                               cmp al, 1	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b4d	            0x741a	                            je 0x4000b69	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b4f	            0x3c02	                               cmp al, 2	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b51	            0x7544	                           jne 0x4000b97	       429	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b53	    0x488b93d80000	            mov rdx, qword [rbx + 0xd8] 	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
+0x4000b5a	          0x4889ee	                            mov rsi, rbp	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
+0x4000b5d	          0x4c89ff	                            mov rdi, r15	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
+0x4000b60	      0xe8dbf4ffff	               call sym.xdl_clean_mmatch	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
+0x4000b65	            0x85c0	                           test eax, eax	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
+0x4000b67	            0x752e	                           jne 0x4000b97	       430	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5	CALL_6
+0x4000b69	    0x488b83f80000	            mov rax, qword [rbx + 0xf8] 	       431	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b70	        0x4a892cf0	            mov qword [rax + r14*8], rbp	       431	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b74	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       432	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b79	      0x488b742408	                mov rsi, qword [rsp + 8]	       432	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b7e	        0x488b04f0	            mov rax, qword [rax + rsi*8]	       432	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b82	        0x488b5018	            mov rdx, qword [rax + 0x18] 	       432	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b86	    0x488b83080100	           mov rax, qword [rbx + 0x108] 	       432	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b8d	        0x4a8914f0	            mov qword [rax + r14*8], rdx	       432	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b91	        0x4983c601	                              add r14, 1	       433	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b95	            0xeb10	                           jmp 0x4000ba7	       433	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	IF_5
+0x4000b97	    0x488b83f00000	            mov rax, qword [rbx + 0xf0] 	       435	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	ELSE_2
+0x4000b9e	      0x488b742408	                mov rsi, qword [rsp + 8]	       435	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	ELSE_2
+0x4000ba3	        0xc6043001	                 mov byte [rax + rsi], 1	       435	xprepare.c	FUNCTION_9	ELSE_1	FOR_4	ELSE_2
+0x4000ba7	        0x4883c501	                              add rbp, 1	       428	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000bab	    0x488b8be00000	            mov rcx, qword [rbx + 0xe0] 	       428	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000bb2	          0x4839e9	                            cmp rcx, rbp	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000bb5	            0x7d8a	                           jge 0x4000b41	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000bb7	            0xeb06	                           jmp 0x4000bbf	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000bb9	    0x41be00000000	                             mov r14d, 0	       427	xprepare.c	FUNCTION_9	ELSE_1	FOR_4
+0x4000bbf	    0x4c89b3000100	            mov qword [rbx + 0x100], r14	       437	xprepare.c	FUNCTION_9
+0x4000bc6	          0x4c89ef	                            mov rdi, r13	       439	xprepare.c	FUNCTION_9	CALL_7
+0x4000bc9	      0xe800000000	                          call 0x4000bce	       439	xprepare.c	FUNCTION_9	CALL_7
+0x4000bce	        0x498b1424	                    mov rdx, qword [r12]	       308	xprepare.c	FUNCTION_6	IF_5	CALL_18
+0x4000bd2	    0x81e200c00000	                         and edx, 0xc000	       308	xprepare.c	FUNCTION_6	IF_5	CALL_18
+0x4000bd8	      0xb800000000	                              mov eax, 0	       311	xprepare.c	FUNCTION_6
+0x4000bdd	    0x4881fa008000	                         cmp rdx, 0x8000	       308	xprepare.c	FUNCTION_6	IF_5	CALL_18
+0x4000be4	            0x740f	                            je 0x4000bf5	       308	xprepare.c	FUNCTION_6	IF_5	CALL_18
+0x4000be6	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	       309	xprepare.c	FUNCTION_6	CALL_19
+0x4000beb	      0xe865f5ffff	            call sym.xdl_free_classifier	       309	xprepare.c	FUNCTION_6	CALL_19
+0x4000bf0	      0xb800000000	                              mov eax, 0	       311	xprepare.c	FUNCTION_6
+0x4000bf5	    0x488b9c249800	            mov rbx, qword [rsp + 0x98] 	       312	xprepare.c	FUNCTION_6
+0x4000bfd	    0x6448331c2528	                xor rbx, qword fs:[0x28]	       312	xprepare.c	FUNCTION_6
+0x4000c06	     0xf84b2000000	                            je 0x4000cbe	       312	xprepare.c	FUNCTION_6
+0x4000c0c	      0xe9a8000000	                           jmp 0x4000cb9	       312	xprepare.c	FUNCTION_6
+0x4000c11	      0xb8ffffffff	                     mov eax, 0xffffffff	       284	xprepare.c	FUNCTION_6	IF_1
+0x4000c16	            0xebdd	                           jmp 0x4000bf5	       284	xprepare.c	FUNCTION_6	IF_1
+0x4000c18	    0x48c783d80000	               mov qword [rbx + 0xd8], 0	       459	xprepare.c	FUNCTION_10
+0x4000c23	    0x48c743500000	               mov qword [rbx + 0x50], 0	       459	xprepare.c	FUNCTION_10
+0x4000c2b	      0x4c89742408	                mov qword [rsp + 8], r14	       461	xprepare.c	FUNCTION_10
+0x4000c30	      0x4b8d4cf0f8	               lea rcx, [r8 + r14*8 - 8]	       461	xprepare.c	FUNCTION_10
+0x4000c35	      0x4a8d54cff8	               lea rdx, [rdi + r9*8 - 8]	       462	xprepare.c	FUNCTION_10
+0x4000c3a	      0xe965fcffff	                           jmp 0x40008a4	       462	xprepare.c	FUNCTION_10
+0x4000c3f	    0x48c783d80000	               mov qword [rbx + 0xd8], 0	       459	xprepare.c	FUNCTION_10
+0x4000c4a	    0x48c743500000	               mov qword [rbx + 0x50], 0	       459	xprepare.c	FUNCTION_10
+0x4000c52	      0x4c89742408	                mov qword [rsp + 8], r14	       461	xprepare.c	FUNCTION_10
+0x4000c57	      0xb800000000	                              mov eax, 0	       463	xprepare.c	FUNCTION_10	FOR_2
+0x4000c5c	      0xe989fcffff	                           jmp 0x40008ea	       463	xprepare.c	FUNCTION_10	FOR_2
+0x4000c61	          0x4989f3	                            mov r11, rsi	       404	xprepare.c	FUNCTION_9	FOR_1
+0x4000c64	      0xb900000000	                              mov ecx, 0	       404	xprepare.c	FUNCTION_9	FOR_1
+0x4000c69	      0xe947fdffff	                           jmp 0x40009b5	       404	xprepare.c	FUNCTION_9	FOR_1
+0x4000c6e	          0x4989f3	                            mov r11, rsi	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000c71	      0xb900000000	                              mov ecx, 0	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000c76	      0xe9ccfdffff	                           jmp 0x4000a47	       412	xprepare.c	FUNCTION_9	FOR_2
+0x4000c7b	          0x4889ef	                            mov rdi, rbp	       302	xprepare.c	FUNCTION_6	IF_4	CALL_15
+0x4000c7e	      0xe890f4ffff	                   call sym.xdl_free_ctx	       302	xprepare.c	FUNCTION_6	IF_4	CALL_15
+0x4000c83	          0x4889df	                            mov rdi, rbx	       303	xprepare.c	FUNCTION_6	IF_4	CALL_16
+0x4000c86	      0xe888f4ffff	                   call sym.xdl_free_ctx	       303	xprepare.c	FUNCTION_6	IF_4	CALL_16
+0x4000c8b	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	       304	xprepare.c	FUNCTION_6	IF_4	CALL_17
+0x4000c90	      0xe8c0f4ffff	            call sym.xdl_free_classifier	       304	xprepare.c	FUNCTION_6	IF_4	CALL_17
+0x4000c95	      0xb8ffffffff	                     mov eax, 0xffffffff	       305	xprepare.c	FUNCTION_6	IF_4
+0x4000c9a	      0xe956ffffff	                           jmp 0x4000bf5	       305	xprepare.c	FUNCTION_6	IF_4
+0x4000c9f	    0x4889b3d80000	             mov qword [rbx + 0xd8], rsi	       459	xprepare.c	FUNCTION_10
+0x4000ca6	        0x48897350	             mov qword [rbx + 0x50], rsi	       459	xprepare.c	FUNCTION_10
+0x4000caa	      0x4c89742408	                mov qword [rsp + 8], r14	       461	xprepare.c	FUNCTION_10
+0x4000caf	      0xb800000000	                              mov eax, 0	       463	xprepare.c	FUNCTION_10	FOR_2
+0x4000cb4	      0xe931fcffff	                           jmp 0x40008ea	       463	xprepare.c	FUNCTION_10	FOR_2
+0x4000cb9	      0xe800000000	                          call 0x4000cbe	       312	xprepare.c	FUNCTION_6
+0x4000cbe	    0x4881c4a80000	                           add rsp, 0xa8	       312	xprepare.c	FUNCTION_6
+0x4000cc5	              0x5b	                                 pop rbx	       312	xprepare.c	FUNCTION_6
+0x4000cc6	              0x5d	                                 pop rbp	       312	xprepare.c	FUNCTION_6
+0x4000cc7	            0x415c	                                 pop r12	       312	xprepare.c	FUNCTION_6
+0x4000cc9	            0x415d	                                 pop r13	       312	xprepare.c	FUNCTION_6
+0x4000ccb	            0x415e	                                 pop r14	       312	xprepare.c	FUNCTION_6
+0x4000ccd	            0x415f	                                 pop r15	       312	xprepare.c	FUNCTION_6
+0x4000ccf	              0xc3	                                     ret	       312	xprepare.c	FUNCTION_6

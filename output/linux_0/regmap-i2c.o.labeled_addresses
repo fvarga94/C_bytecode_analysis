@@ -1,0 +1,179 @@
+regmap_smbus_word_reg_read	WHILE,0:functions,0:SWITCH,0:CALL,2:DO,0:ELSE,0:IF,2:FOR,0	13
+0x40001a0	        0x4883ef20	                           sub rdi, 0x20	        59	regmap-i2c.c	FUNCTION_3	CALL_1
+0x40001a4	    0x81feff000000	                           cmp esi, 0xff	        62	regmap-i2c.c	FUNCTION_3	IF_1
+0x40001aa	      0xb8eaffffff	                     mov eax, 0xffffffea	        63	regmap-i2c.c	FUNCTION_3	IF_1
+0x40001af	            0x7712	                            ja 0x40001c3	        62	regmap-i2c.c	FUNCTION_3	IF_1
+0x40001b1	              0x53	                                push rbx	        57	regmap-i2c.c	FUNCTION_3
+0x40001b2	          0x4889d3	                            mov rbx, rdx	        57	regmap-i2c.c	FUNCTION_3
+0x40001b5	      0xe800000000	                          call 0x40001ba	        65	regmap-i2c.c	FUNCTION_3	CALL_2
+0x40001ba	            0x85c0	                           test eax, eax	        66	regmap-i2c.c	FUNCTION_3	IF_2
+0x40001bc	            0x7804	                            js 0x40001c2	        66	regmap-i2c.c	FUNCTION_3	IF_2
+0x40001be	            0x8903	                    mov dword [rbx], eax	        69	regmap-i2c.c	FUNCTION_3
+0x40001c0	            0x31c0	                            xor eax, eax	        71	regmap-i2c.c	FUNCTION_3
+0x40001c2	              0x5b	                                 pop rbx	        72	regmap-i2c.c	FUNCTION_3
+0x40001c3	            0xf3c3	                                     ret	        72	regmap-i2c.c	FUNCTION_3
+regmap_smbus_word_reg_write	WHILE,0:functions,0:SWITCH,0:CALL,2:DO,0:ELSE,0:IF,1:FOR,0	8
+0x4000230	        0x4883ef20	                           sub rdi, 0x20	        78	regmap-i2c.c	FUNCTION_4	CALL_1
+0x4000234	    0x81faffff0000	                         cmp edx, 0xffff	        80	regmap-i2c.c	FUNCTION_4	IF_1
+0x400023a	            0x770d	                            ja 0x4000249	        80	regmap-i2c.c	FUNCTION_4	IF_1
+0x400023c	    0x81feff000000	                           cmp esi, 0xff	        80	regmap-i2c.c	FUNCTION_4	IF_1
+0x4000242	            0x7705	                            ja 0x4000249	        80	regmap-i2c.c	FUNCTION_4	IF_1
+0x4000244	      0xe900000000	                           jmp 0x4000249	        83	regmap-i2c.c	FUNCTION_4	CALL_2
+0x4000249	      0xb8eaffffff	                     mov eax, 0xffffffea	        84	regmap-i2c.c	FUNCTION_4
+0x400024e	              0xc3	                                     ret	        84	regmap-i2c.c	FUNCTION_4
+regmap_i2c_read	WHILE,0:functions,0:SWITCH,0:CALL,2:DO,0:ELSE,2:IF,2:FOR,0	41
+0x40002c0	      0x4c8d542408	                      lea r10, [rsp + 8]	       179	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002c5	        0x4883e4f0	             and rsp, 0xfffffffffffffff0	       179	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002c9	          0x4531c9	                            xor r9d, r9d	       186	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002cc	        0x41ff72f8	                    push qword [r10 - 8]	       179	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002d0	              0x55	                                push rbp	       179	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002d1	          0x4889e5	                            mov rbp, rsp	       179	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002d4	            0x4152	                                push r10	       179	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002d6	    0x41ba01000000	                             mov r10d, 1	       191	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002dc	        0x4883ec38	                           sub rsp, 0x38	       179	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002e0	        0x488975c8	             mov qword [rbp - 0x38], rsi	       188	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002e4	        0x488d75c0	                   lea rsi, [rbp - 0x40]	       195	regmap-i2c.c	ELSE_1	FUNCTION_9	CALL_2
+0x40002e8	    0x65488b042528	                mov rax, qword gs:[0x28]	       179	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002f1	        0x488945e8	             mov qword [rbp - 0x18], rax	       179	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002f5	            0x31c0	                            xor eax, eax	       179	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002f7	         0xfb747e2	            movzx eax, word [rdi - 0x1e]	       185	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x40002fb	        0x488b7ff8	                mov rdi, qword [rdi - 8]	       195	regmap-i2c.c	ELSE_1	FUNCTION_9	CALL_2
+0x40002ff	        0x668955c4	               mov word [rbp - 0x3c], dx	       187	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x4000303	      0xba02000000	                              mov edx, 2	       195	regmap-i2c.c	ELSE_1	FUNCTION_9	CALL_2
+0x4000308	      0x6644894dc2	              mov word [rbp - 0x3e], r9w	       186	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x400030d	      0x66448955d2	             mov word [rbp - 0x2e], r10w	       191	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x4000312	      0x66448945d4	              mov word [rbp - 0x2c], r8w	       192	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x4000317	        0x48894dd8	             mov qword [rbp - 0x28], rcx	       193	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x400031b	        0x668945c0	               mov word [rbp - 0x40], ax	       185	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x400031f	        0x668945d0	               mov word [rbp - 0x30], ax	       190	regmap-i2c.c	ELSE_1	FUNCTION_9
+0x4000323	      0xe800000000	                          call 0x4000328	       195	regmap-i2c.c	ELSE_1	FUNCTION_9	CALL_2
+0x4000328	          0x83f802	                              cmp eax, 2	       196	regmap-i2c.c	ELSE_1	FUNCTION_9	IF_1
+0x400032b	            0x7425	                            je 0x4000352	       196	regmap-i2c.c	ELSE_1	FUNCTION_9	IF_1
+0x400032d	            0x85c0	                           test eax, eax	       198	regmap-i2c.c	FUNCTION_9	IF_2
+0x400032f	      0xbafbffffff	                     mov edx, 0xfffffffb	       198	regmap-i2c.c	FUNCTION_9	IF_2
+0x4000334	           0xf49c2	                         cmovns eax, edx	       198	regmap-i2c.c	FUNCTION_9	IF_2
+0x4000337	        0x488b4de8	             mov rcx, qword [rbp - 0x18]	       202	regmap-i2c.c	FUNCTION_9	ELSE_1	ELSE_2
+0x400033b	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       202	regmap-i2c.c	FUNCTION_9	ELSE_1	ELSE_2
+0x4000344	            0x7510	                           jne 0x4000356	       202	regmap-i2c.c	FUNCTION_9	ELSE_1	ELSE_2
+0x4000346	        0x4883c438	                           add rsp, 0x38	       202	regmap-i2c.c	FUNCTION_9	ELSE_1	ELSE_2
+0x400034a	            0x415a	                                 pop r10	       202	regmap-i2c.c	FUNCTION_9	ELSE_1	ELSE_2
+0x400034c	              0x5d	                                 pop rbp	       202	regmap-i2c.c	FUNCTION_9	ELSE_1	ELSE_2
+0x400034d	        0x498d62f8	                      lea rsp, [r10 - 8]	       202	regmap-i2c.c	FUNCTION_9	ELSE_1	ELSE_2
+0x4000351	              0xc3	                                     ret	       202	regmap-i2c.c	FUNCTION_9	ELSE_1	ELSE_2
+0x4000352	            0x31c0	                            xor eax, eax	       197	regmap-i2c.c	ELSE_1	FUNCTION_9	IF_1
+0x4000354	            0xebe1	                           jmp 0x4000337	       197	regmap-i2c.c	ELSE_1	FUNCTION_9	IF_1
+0x4000356	      0xe800000000	                          call 0x400035b	       202	regmap-i2c.c	FUNCTION_9	ELSE_1	ELSE_2
+__regmap_init_i2c	WHILE,0:functions,0:SWITCH,0:CALL,4:DO,0:ELSE,0:IF,1:FOR,0	27
+0x4000470	            0x4155	                                push r13	       285	regmap-i2c.c	FUNCTION_13
+0x4000472	            0x4154	                                push r12	       285	regmap-i2c.c	FUNCTION_13
+0x4000474	          0x4989cd	                            mov r13, rcx	       285	regmap-i2c.c	FUNCTION_13
+0x4000477	              0x55	                                push rbp	       285	regmap-i2c.c	FUNCTION_13
+0x4000478	              0x53	                                push rbx	       285	regmap-i2c.c	FUNCTION_13
+0x4000479	          0x4889f5	                            mov rbp, rsi	       285	regmap-i2c.c	FUNCTION_13
+0x400047c	          0x4889fb	                            mov rbx, rdi	       285	regmap-i2c.c	FUNCTION_13
+0x400047f	          0x4989d4	                            mov r12, rdx	       285	regmap-i2c.c	FUNCTION_13
+0x4000482	      0xe8b9fbffff	             call sym.regmap_get_i2c_bus	       286	regmap-i2c.c	FUNCTION_13	CALL_1
+0x4000487	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       288	regmap-i2c.c	FUNCTION_13	IF_1	CALL_2
+0x400048d	            0x771e	                            ja 0x40004ad	       288	regmap-i2c.c	FUNCTION_13	IF_1	CALL_2
+0x400048f	        0x488d7b20	                   lea rdi, [rbx + 0x20]	       291	regmap-i2c.c	FUNCTION_13	CALL_4
+0x4000493	          0x4d89e9	                             mov r9, r13	       291	regmap-i2c.c	FUNCTION_13	CALL_4
+0x4000496	          0x4d89e0	                             mov r8, r12	       291	regmap-i2c.c	FUNCTION_13	CALL_4
+0x4000499	              0x5b	                                 pop rbx	       293	regmap-i2c.c	FUNCTION_13
+0x400049a	          0x4889e9	                            mov rcx, rbp	       291	regmap-i2c.c	FUNCTION_13	CALL_4
+0x400049d	          0x4889fa	                            mov rdx, rdi	       291	regmap-i2c.c	FUNCTION_13	CALL_4
+0x40004a0	          0x4889c6	                            mov rsi, rax	       291	regmap-i2c.c	FUNCTION_13	CALL_4
+0x40004a3	              0x5d	                                 pop rbp	       293	regmap-i2c.c	FUNCTION_13
+0x40004a4	            0x415c	                                 pop r12	       293	regmap-i2c.c	FUNCTION_13
+0x40004a6	            0x415d	                                 pop r13	       293	regmap-i2c.c	FUNCTION_13
+0x40004a8	      0xe900000000	                           jmp 0x40004ad	       291	regmap-i2c.c	FUNCTION_13	CALL_4
+0x40004ad	              0x5b	                                 pop rbx	       293	regmap-i2c.c	FUNCTION_13
+0x40004ae	              0x5d	                                 pop rbp	       293	regmap-i2c.c	FUNCTION_13
+0x40004af	            0x415c	                                 pop r12	       293	regmap-i2c.c	FUNCTION_13
+0x40004b1	            0x415d	                                 pop r13	       293	regmap-i2c.c	FUNCTION_13
+0x40004b3	              0xc3	                                     ret	       293	regmap-i2c.c	FUNCTION_13
+regmap_smbus_byte_reg_write	WHILE,0:functions,0:SWITCH,0:CALL,2:DO,0:ELSE,0:IF,1:FOR,0	8
+0x4000180	        0x4883ef20	                           sub rdi, 0x20	        42	regmap-i2c.c	FUNCTION_2	CALL_1
+0x4000184	    0x81faff000000	                           cmp edx, 0xff	        44	regmap-i2c.c	FUNCTION_2	IF_1
+0x400018a	            0x770d	                            ja 0x4000199	        44	regmap-i2c.c	FUNCTION_2	IF_1
+0x400018c	    0x81feff000000	                           cmp esi, 0xff	        44	regmap-i2c.c	FUNCTION_2	IF_1
+0x4000192	            0x7705	                            ja 0x4000199	        44	regmap-i2c.c	FUNCTION_2	IF_1
+0x4000194	      0xe900000000	                           jmp 0x4000199	        47	regmap-i2c.c	FUNCTION_2	CALL_2
+0x4000199	      0xb8eaffffff	                     mov eax, 0xffffffea	        48	regmap-i2c.c	FUNCTION_2
+0x400019e	              0xc3	                                     ret	        48	regmap-i2c.c	FUNCTION_2
+__devm_regmap_init_i2c	WHILE,0:functions,0:SWITCH,0:CALL,4:DO,0:ELSE,0:IF,1:FOR,0	27
+0x40004c0	            0x4155	                                push r13	       300	regmap-i2c.c	FUNCTION_14
+0x40004c2	            0x4154	                                push r12	       300	regmap-i2c.c	FUNCTION_14
+0x40004c4	          0x4989cd	                            mov r13, rcx	       300	regmap-i2c.c	FUNCTION_14
+0x40004c7	              0x55	                                push rbp	       300	regmap-i2c.c	FUNCTION_14
+0x40004c8	              0x53	                                push rbx	       300	regmap-i2c.c	FUNCTION_14
+0x40004c9	          0x4889f5	                            mov rbp, rsi	       300	regmap-i2c.c	FUNCTION_14
+0x40004cc	          0x4889fb	                            mov rbx, rdi	       300	regmap-i2c.c	FUNCTION_14
+0x40004cf	          0x4989d4	                            mov r12, rdx	       300	regmap-i2c.c	FUNCTION_14
+0x40004d2	      0xe869fbffff	             call sym.regmap_get_i2c_bus	       301	regmap-i2c.c	FUNCTION_14	CALL_1
+0x40004d7	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       303	regmap-i2c.c	FUNCTION_14	IF_1	CALL_2
+0x40004dd	            0x771e	                            ja 0x40004fd	       303	regmap-i2c.c	FUNCTION_14	IF_1	CALL_2
+0x40004df	        0x488d7b20	                   lea rdi, [rbx + 0x20]	       306	regmap-i2c.c	FUNCTION_14	CALL_4
+0x40004e3	          0x4d89e9	                             mov r9, r13	       306	regmap-i2c.c	FUNCTION_14	CALL_4
+0x40004e6	          0x4d89e0	                             mov r8, r12	       306	regmap-i2c.c	FUNCTION_14	CALL_4
+0x40004e9	              0x5b	                                 pop rbx	       308	regmap-i2c.c	FUNCTION_14
+0x40004ea	          0x4889e9	                            mov rcx, rbp	       306	regmap-i2c.c	FUNCTION_14	CALL_4
+0x40004ed	          0x4889fa	                            mov rdx, rdi	       306	regmap-i2c.c	FUNCTION_14	CALL_4
+0x40004f0	          0x4889c6	                            mov rsi, rax	       306	regmap-i2c.c	FUNCTION_14	CALL_4
+0x40004f3	              0x5d	                                 pop rbp	       308	regmap-i2c.c	FUNCTION_14
+0x40004f4	            0x415c	                                 pop r12	       308	regmap-i2c.c	FUNCTION_14
+0x40004f6	            0x415d	                                 pop r13	       308	regmap-i2c.c	FUNCTION_14
+0x40004f8	      0xe900000000	                           jmp 0x40004fd	       306	regmap-i2c.c	FUNCTION_14	CALL_4
+0x40004fd	              0x5b	                                 pop rbx	       308	regmap-i2c.c	FUNCTION_14
+0x40004fe	              0x5d	                                 pop rbp	       308	regmap-i2c.c	FUNCTION_14
+0x40004ff	            0x415c	                                 pop r12	       308	regmap-i2c.c	FUNCTION_14
+0x4000501	            0x415d	                                 pop r13	       308	regmap-i2c.c	FUNCTION_14
+0x4000503	              0xc3	                                     ret	       308	regmap-i2c.c	FUNCTION_14
+regmap_i2c_smbus_i2c_write	WHILE,0:functions,0:SWITCH,0:CALL,2:DO,0:ELSE,0:IF,1:FOR,0	10
+0x4000290	        0x4883ef20	                           sub rdi, 0x20	       216	regmap-i2c.c	ELSE_2	FUNCTION_10	CALL_1
+0x4000294	          0x4885d2	                           test rdx, rdx	       218	regmap-i2c.c	ELSE_2	FUNCTION_10	IF_1
+0x4000297	            0x7413	                            je 0x40002ac	       218	regmap-i2c.c	ELSE_2	FUNCTION_10	IF_1
+0x4000299	        0x488d4e01	                      lea rcx, [rsi + 1]	       222	regmap-i2c.c	ELSE_2	FUNCTION_10	CALL_2
+0x400029d	           0xfb636	                   movzx esi, byte [rsi]	       222	regmap-i2c.c	ELSE_2	FUNCTION_10	CALL_2
+0x40002a0	        0x4883ea01	                              sub rdx, 1	       222	regmap-i2c.c	ELSE_2	FUNCTION_10	CALL_2
+0x40002a4	           0xfb6d2	                           movzx edx, dl	       222	regmap-i2c.c	ELSE_2	FUNCTION_10	CALL_2
+0x40002a7	      0xe900000000	                           jmp 0x40002ac	       222	regmap-i2c.c	ELSE_2	FUNCTION_10	CALL_2
+0x40002ac	      0xb8eaffffff	                     mov eax, 0xffffffea	       224	regmap-i2c.c	ELSE_2	FUNCTION_10
+0x40002b1	              0xc3	                                     ret	       224	regmap-i2c.c	ELSE_2	FUNCTION_10
+regmap_smbus_byte_reg_read	WHILE,0:functions,0:SWITCH,0:CALL,2:DO,0:ELSE,0:IF,2:FOR,0	13
+0x4000150	        0x4883ef20	                           sub rdi, 0x20	        23	regmap-i2c.c	FUNCTION_1	CALL_1
+0x4000154	    0x81feff000000	                           cmp esi, 0xff	        26	regmap-i2c.c	FUNCTION_1	IF_1
+0x400015a	      0xb8eaffffff	                     mov eax, 0xffffffea	        27	regmap-i2c.c	FUNCTION_1	IF_1
+0x400015f	            0x7712	                            ja 0x4000173	        26	regmap-i2c.c	FUNCTION_1	IF_1
+0x4000161	              0x53	                                push rbx	        21	regmap-i2c.c	FUNCTION_1
+0x4000162	          0x4889d3	                            mov rbx, rdx	        21	regmap-i2c.c	FUNCTION_1
+0x4000165	      0xe800000000	                          call 0x400016a	        29	regmap-i2c.c	FUNCTION_1	CALL_2
+0x400016a	            0x85c0	                           test eax, eax	        30	regmap-i2c.c	FUNCTION_1	IF_2
+0x400016c	            0x7804	                            js 0x4000172	        30	regmap-i2c.c	FUNCTION_1	IF_2
+0x400016e	            0x8903	                    mov dword [rbx], eax	        33	regmap-i2c.c	FUNCTION_1
+0x4000170	            0x31c0	                            xor eax, eax	        35	regmap-i2c.c	FUNCTION_1
+0x4000172	              0x5b	                                 pop rbx	        36	regmap-i2c.c	FUNCTION_1
+0x4000173	            0xf3c3	                                     ret	        36	regmap-i2c.c	FUNCTION_1
+regmap_i2c_smbus_i2c_read	WHILE,0:functions,0:SWITCH,0:CALL,2:DO,0:ELSE,2:IF,3:FOR,0	23
+0x4000250	        0x4883ef20	                           sub rdi, 0x20	       231	regmap-i2c.c	FUNCTION_11	CALL_1
+0x4000254	        0x4883fa01	                              cmp rdx, 1	       234	regmap-i2c.c	FUNCTION_11	IF_1
+0x4000258	            0x752d	                           jne 0x4000287	       234	regmap-i2c.c	FUNCTION_11	IF_1
+0x400025a	          0x4d85c0	                             test r8, r8	       234	regmap-i2c.c	FUNCTION_11	IF_1
+0x400025d	            0x7428	                            je 0x4000287	       234	regmap-i2c.c	FUNCTION_11	IF_1
+0x400025f	              0x53	                                push rbx	       229	regmap-i2c.c	FUNCTION_11
+0x4000260	           0xfb636	                   movzx esi, byte [rsi]	       237	regmap-i2c.c	FUNCTION_11	CALL_2
+0x4000263	        0x410fb6d0	                          movzx edx, r8b	       237	regmap-i2c.c	FUNCTION_11	CALL_2
+0x4000267	          0x4c89c3	                             mov rbx, r8	       237	regmap-i2c.c	FUNCTION_11	CALL_2
+0x400026a	      0xe800000000	                          call 0x400026f	       237	regmap-i2c.c	FUNCTION_11	CALL_2
+0x400026f	          0x4863d0	                         movsxd rdx, eax	       238	regmap-i2c.c	FUNCTION_11	IF_2
+0x4000272	          0x4839d3	                            cmp rbx, rdx	       238	regmap-i2c.c	FUNCTION_11	IF_2
+0x4000275	            0x740c	                            je 0x4000283	       238	regmap-i2c.c	FUNCTION_11	IF_2
+0x4000277	            0x85c0	                           test eax, eax	       240	regmap-i2c.c	FUNCTION_11	ELSE_1	IF_3
+0x4000279	      0xbafbffffff	                     mov edx, 0xfffffffb	       240	regmap-i2c.c	FUNCTION_11	ELSE_1	IF_3
+0x400027e	           0xf49c2	                         cmovns eax, edx	       240	regmap-i2c.c	FUNCTION_11	ELSE_1	IF_3
+0x4000281	              0x5b	                                 pop rbx	       244	regmap-i2c.c	FUNCTION_11	ELSE_2
+0x4000282	              0xc3	                                     ret	       244	regmap-i2c.c	FUNCTION_11	ELSE_2
+0x4000283	            0x31c0	                            xor eax, eax	       239	regmap-i2c.c	FUNCTION_11	IF_2
+0x4000285	              0x5b	                                 pop rbx	       244	regmap-i2c.c	FUNCTION_11	ELSE_2
+0x4000286	              0xc3	                                     ret	       244	regmap-i2c.c	FUNCTION_11	ELSE_2
+0x4000287	      0xb8eaffffff	                     mov eax, 0xffffffea	       235	regmap-i2c.c	FUNCTION_11	IF_1
+0x400028c	              0xc3	                                     ret	       244	regmap-i2c.c	FUNCTION_11	ELSE_2

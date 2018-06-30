@@ -1,40 +1,52 @@
-cmd_main	SWITCH,0:ELSE,0:IF,2:DO,0:functions,0:CALL,5:FOR,1:WHILE,0	39
-0x4000040	            0x4156	                                push r14	        48	test-tool.c	FUNCTION_1
-0x4000042	            0x4155	                                push r13	        48	test-tool.c	FUNCTION_1
-0x4000044	            0x4154	                                push r12	        48	test-tool.c	FUNCTION_1
-0x4000046	              0x55	                                push rbp	        48	test-tool.c	FUNCTION_1
-0x4000047	              0x53	                                push rbx	        48	test-tool.c	FUNCTION_1
-0x4000048	          0x83ff01	                              cmp edi, 1	        51	test-tool.c	FUNCTION_1	IF_1
-0x400004b	            0x7f0f	                            jg 0x400005c	        51	test-tool.c	FUNCTION_1	IF_1
-0x400004d	      0xbf00000000	                              mov edi, 0	        52	test-tool.c	FUNCTION_1	CALL_1
-0x4000052	      0xb800000000	                              mov eax, 0	        52	test-tool.c	FUNCTION_1	CALL_1
-0x4000057	      0xe800000000	                          call 0x400005c	        52	test-tool.c	FUNCTION_1	CALL_1
-0x400005c	          0x4189fd	                           mov r13d, edi	        52	test-tool.c	FUNCTION_1	CALL_1
-0x400005f	          0x4989f6	                            mov r14, rsi	        52	test-tool.c	FUNCTION_1	CALL_1
-0x4000062	        0x4c8b6608	                mov r12, qword [rsi + 8]	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
-0x4000066	      0xbb00000000	                              mov ebx, 0	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
-0x400006b	          0x4889d8	                            mov rax, rbx	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
-0x400006e	        0x48c1e004	                              shl rax, 4	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
-0x4000072	    0x488bb8000000	                    mov rdi, qword [rax]	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
-0x4000079	          0x4c89e6	                            mov rsi, r12	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
-0x400007c	      0xe800000000	                          call 0x4000081	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
-0x4000081	            0x85c0	                           test eax, eax	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
-0x4000083	            0x741c	                            je 0x40000a1	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
-0x4000085	        0x4883c301	                              add rbx, 1	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
-0x4000089	        0x4883fb23	                           cmp rbx, 0x23	        54	test-tool.c	FUNCTION_1	FOR_1	CALL_2
-0x400008d	            0x75dc	                           jne 0x400006b	        54	test-tool.c	FUNCTION_1	FOR_1	CALL_2
-0x400008f	          0x4c89e6	                            mov rsi, r12	        61	test-tool.c	FUNCTION_1	CALL_5
-0x4000092	      0xbf00000000	                              mov edi, 0	        61	test-tool.c	FUNCTION_1	CALL_5
-0x4000097	      0xb800000000	                              mov eax, 0	        61	test-tool.c	FUNCTION_1	CALL_5
-0x400009c	      0xe800000000	                          call 0x40000a1	        61	test-tool.c	FUNCTION_1	CALL_5
-0x40000a1	        0x498d7608	                      lea rsi, [r14 + 8]	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
-0x40000a5	        0x418d7dff	                      lea edi, [r13 - 1]	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
-0x40000a9	          0x4863eb	                         movsxd rbp, ebx	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
-0x40000ac	        0x48c1e504	                              shl rbp, 4	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
-0x40000b0	    0xff9500000000	                        call qword [rbp]	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
-0x40000b6	              0x5b	                                 pop rbx	        62	test-tool.c	FUNCTION_1
-0x40000b7	              0x5d	                                 pop rbp	        62	test-tool.c	FUNCTION_1
-0x40000b8	            0x415c	                                 pop r12	        62	test-tool.c	FUNCTION_1
-0x40000ba	            0x415d	                                 pop r13	        62	test-tool.c	FUNCTION_1
-0x40000bc	            0x415e	                                 pop r14	        62	test-tool.c	FUNCTION_1
-0x40000be	              0xc3	                                     ret	        62	test-tool.c	FUNCTION_1
+cmd_main	DO,0:SWITCH,0:CALL,5:IF,2:FOR,1:WHILE,0:ELSE,0:functions,0	51
+0x4000040	              0x55	                                push rbp	        48	test-tool.c	FUNCTION_1
+0x4000041	          0x4889e5	                            mov rbp, rsp	        48	test-tool.c	FUNCTION_1
+0x4000044	        0x4883ec20	                           sub rsp, 0x20	        48	test-tool.c	FUNCTION_1
+0x4000048	          0x897dec	             mov dword [rbp - 0x14], edi	        48	test-tool.c	FUNCTION_1
+0x400004b	        0x488975e0	             mov qword [rbp - 0x20], rsi	        48	test-tool.c	FUNCTION_1
+0x400004f	        0x837dec01	               cmp dword [rbp - 0x14], 1	        51	test-tool.c	FUNCTION_1	IF_1
+0x4000053	            0x7f0f	                            jg 0x4000064	        51	test-tool.c	FUNCTION_1	IF_1
+0x4000055	      0xbf00000000	                              mov edi, 0	        52	test-tool.c	FUNCTION_1	CALL_1
+0x400005a	      0xb800000000	                              mov eax, 0	        52	test-tool.c	FUNCTION_1	CALL_1
+0x400005f	      0xe800000000	                          call 0x4000064	        52	test-tool.c	FUNCTION_1	CALL_1
+0x4000064	    0xc745fc000000	                  mov dword [rbp - 4], 0	        54	test-tool.c	FUNCTION_1	FOR_1	CALL_2
+0x400006b	            0xeb5b	                           jmp 0x40000c8	        54	test-tool.c	FUNCTION_1	FOR_1	CALL_2
+0x400006d	        0x488b45e0	             mov rax, qword [rbp - 0x20]	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x4000071	        0x4883c008	                              add rax, 8	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x4000075	          0x488b10	                    mov rdx, qword [rax]	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x4000078	          0x8b45fc	                mov eax, dword [rbp - 4]	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x400007b	            0x4898	                                    cdqe	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x400007d	        0x48c1e004	                              shl rax, 4	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x4000081	    0x480500000000	                              add rax, 0	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x4000087	          0x488b00	                    mov rax, qword [rax]	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x400008a	          0x4889d6	                            mov rsi, rdx	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x400008d	          0x4889c7	                            mov rdi, rax	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x4000090	      0xe800000000	                          call 0x4000095	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x4000095	            0x85c0	                           test eax, eax	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x4000097	            0x752b	                           jne 0x40000c4	        55	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_3
+0x4000099	      0x488345e008	               add qword [rbp - 0x20], 8	        56	test-tool.c	FUNCTION_1	FOR_1	IF_2
+0x400009e	        0x836dec01	               sub dword [rbp - 0x14], 1	        57	test-tool.c	FUNCTION_1	FOR_1	IF_2
+0x40000a2	          0x8b45fc	                mov eax, dword [rbp - 4]	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000a5	            0x4898	                                    cdqe	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000a7	        0x48c1e004	                              shl rax, 4	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000ab	    0x480500000000	                              add rax, 0	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000b1	          0x488b00	                    mov rax, qword [rax]	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000b4	        0x488b4de0	             mov rcx, qword [rbp - 0x20]	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000b8	          0x8b55ec	             mov edx, dword [rbp - 0x14]	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000bb	          0x4889ce	                            mov rsi, rcx	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000be	            0x89d7	                            mov edi, edx	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000c0	            0xffd0	                                call rax	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000c2	            0xeb29	                           jmp 0x40000ed	        58	test-tool.c	FUNCTION_1	FOR_1	IF_2	CALL_4
+0x40000c4	        0x8345fc01	                  add dword [rbp - 4], 1	        54	test-tool.c	FUNCTION_1	FOR_1	CALL_2
+0x40000c8	          0x8b45fc	                mov eax, dword [rbp - 4]	        54	test-tool.c	FUNCTION_1	FOR_1	CALL_2
+0x40000cb	          0x83f822	                           cmp eax, 0x22	        54	test-tool.c	FUNCTION_1	FOR_1	CALL_2
+0x40000ce	            0x769d	                           jbe 0x400006d	        54	test-tool.c	FUNCTION_1	FOR_1	CALL_2
+0x40000d0	        0x488b45e0	             mov rax, qword [rbp - 0x20]	        61	test-tool.c	FUNCTION_1	CALL_5
+0x40000d4	        0x4883c008	                              add rax, 8	        61	test-tool.c	FUNCTION_1	CALL_5
+0x40000d8	          0x488b00	                    mov rax, qword [rax]	        61	test-tool.c	FUNCTION_1	CALL_5
+0x40000db	          0x4889c6	                            mov rsi, rax	        61	test-tool.c	FUNCTION_1	CALL_5
+0x40000de	      0xbf00000000	                              mov edi, 0	        61	test-tool.c	FUNCTION_1	CALL_5
+0x40000e3	      0xb800000000	                              mov eax, 0	        61	test-tool.c	FUNCTION_1	CALL_5
+0x40000e8	      0xe800000000	                          call 0x40000ed	        61	test-tool.c	FUNCTION_1	CALL_5
+0x40000ed	              0xc9	                                   leave	        62	test-tool.c	FUNCTION_1
+0x40000ee	              0xc3	                                     ret	        62	test-tool.c	FUNCTION_1

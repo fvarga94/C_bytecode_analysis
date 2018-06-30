@@ -1,0 +1,249 @@
+grab_cache_page_write_begin	SWITCH,0:WHILE,0:IF,2:ELSE,0:CALL,3:functions,0:FOR,0:DO,0	16
+0x4002e50	          0x83e202	                              and edx, 2	      3086	filemap.c	FUNCTION_80	IF_1
+0x4002e53	              0x53	                                push rbx	      3082	filemap.c	FUNCTION_80
+0x4002e54	    0x8b8f84000000	            mov ecx, dword [rdi + 0x84] 	      3089	filemap.c	FUNCTION_80	CALL_1
+0x4002e5a	          0x83fa01	                              cmp edx, 1	      3087	filemap.c	FUNCTION_80	IF_1
+0x4002e5d	            0x19d2	                            sbb edx, edx	      3087	filemap.c	FUNCTION_80	IF_1
+0x4002e5f	          0x83e2f0	                     and edx, 0xfffffff0	      3087	filemap.c	FUNCTION_80	IF_1
+0x4002e62	          0x83c21e	                           add edx, 0x1e	      3087	filemap.c	FUNCTION_80	IF_1
+0x4002e65	      0xe800000000	                          call 0x4002e6a	      3089	filemap.c	FUNCTION_80	CALL_1
+0x4002e6a	          0x4885c0	                           test rax, rax	      3091	filemap.c	FUNCTION_80	IF_2
+0x4002e6d	          0x4889c3	                            mov rbx, rax	      3089	filemap.c	FUNCTION_80	CALL_1
+0x4002e70	            0x7408	                            je 0x4002e7a	      3091	filemap.c	FUNCTION_80	IF_2
+0x4002e72	          0x4889c7	                            mov rdi, rax	      3092	filemap.c	FUNCTION_80	CALL_3
+0x4002e75	      0xe800000000	                          call 0x4002e7a	      3092	filemap.c	FUNCTION_80	CALL_3
+0x4002e7a	          0x4889d8	                            mov rax, rbx	      3095	filemap.c	FUNCTION_80
+0x4002e7d	              0x5b	                                 pop rbx	      3095	filemap.c	FUNCTION_80
+0x4002e7e	              0xc3	                                     ret	      3095	filemap.c	FUNCTION_80
+pagecache_write_begin	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,1:functions,0:FOR,0:DO,0	3
+0x40000f0	        0x488b4670	            mov rax, qword [rsi + 0x70] 	      2983	filemap.c	FUNCTION_77	CALL_1
+0x40000f4	        0x488b4028	            mov rax, qword [rax + 0x28] 	      2983	filemap.c	FUNCTION_77	CALL_1
+0x40000f8	      0xe900000000	                           jmp 0x40000fd	      2983	filemap.c	FUNCTION_77	CALL_1
+file_write_and_wait_range	SWITCH,0:WHILE,0:IF,3:ELSE,0:CALL,4:functions,0:FOR,0:DO,0	47
+0x4003790	            0x4156	                                push r14	       748	filemap.c	FUNCTION_26
+0x4003792	            0x4155	                                push r13	       748	filemap.c	FUNCTION_26
+0x4003794	            0x4154	                                push r12	       748	filemap.c	FUNCTION_26
+0x4003796	              0x55	                                push rbp	       748	filemap.c	FUNCTION_26
+0x4003797	              0x53	                                push rbx	       748	filemap.c	FUNCTION_26
+0x4003798	    0x488baff00000	            mov rbp, qword [rdi + 0xf0] 	       750	filemap.c	FUNCTION_26
+0x400379f	      0x48837d5800	               cmp qword [rbp + 0x58], 0	       608	filemap.c	FUNCTION_21	CALL_1
+0x40037a4	            0x7447	                            je 0x40037ed	       608	filemap.c	FUNCTION_21	CALL_1
+0x40037a6	          0x4889fb	                            mov rbx, rdi	       608	filemap.c	FUNCTION_21	CALL_1
+0x40037a9	      0xb901000000	                              mov ecx, 1	       753	filemap.c	FUNCTION_26	IF_1	CALL_2
+0x40037ae	          0x4889ef	                            mov rdi, rbp	       753	filemap.c	FUNCTION_26	IF_1	CALL_2
+0x40037b1	          0x4989d5	                            mov r13, rdx	       753	filemap.c	FUNCTION_26	IF_1	CALL_2
+0x40037b4	          0x4989f4	                            mov r12, rsi	       753	filemap.c	FUNCTION_26	IF_1	CALL_2
+0x40037b7	      0xe800000000	                          call 0x40037bc	       753	filemap.c	FUNCTION_26	IF_1	CALL_2
+0x40037bc	          0x83f8fb	             cmp eax, 0xfffffffffffffffb	       756	filemap.c	FUNCTION_26	IF_1	IF_2
+0x40037bf	          0x4189c6	                           mov r14d, eax	       753	filemap.c	FUNCTION_26	IF_1	CALL_2
+0x40037c2	            0x7436	                            je 0x40037fa	       756	filemap.c	FUNCTION_26	IF_1	IF_2
+0x40037c4	          0x4c89ea	                            mov rdx, r13	       757	filemap.c	FUNCTION_26	IF_1	CALL_3
+0x40037c7	          0x4c89e6	                            mov rsi, r12	       757	filemap.c	FUNCTION_26	IF_1	CALL_3
+0x40037ca	          0x4889ef	                            mov rdi, rbp	       757	filemap.c	FUNCTION_26	IF_1	CALL_3
+0x40037cd	      0xe81ed2ffff	      call sym.__filemap_fdatawait_range	       757	filemap.c	FUNCTION_26	IF_1	CALL_3
+0x40037d2	          0x4889df	                            mov rdi, rbx	       759	filemap.c	FUNCTION_26	CALL_4
+0x40037d5	      0xe800000000	                          call 0x40037da	       759	filemap.c	FUNCTION_26	CALL_4
+0x40037da	          0x4585f6	                         test r14d, r14d	       759	filemap.c	FUNCTION_26	CALL_4
+0x40037dd	        0x440f44f0	                         cmove r14d, eax	       759	filemap.c	FUNCTION_26	CALL_4
+0x40037e1	              0x5b	                                 pop rbx	       763	filemap.c	FUNCTION_26
+0x40037e2	          0x4489f0	                           mov eax, r14d	       763	filemap.c	FUNCTION_26
+0x40037e5	              0x5d	                                 pop rbp	       763	filemap.c	FUNCTION_26
+0x40037e6	            0x415c	                                 pop r12	       763	filemap.c	FUNCTION_26
+0x40037e8	            0x415d	                                 pop r13	       763	filemap.c	FUNCTION_26
+0x40037ea	            0x415e	                                 pop r14	       763	filemap.c	FUNCTION_26
+0x40037ec	              0xc3	                                     ret	       763	filemap.c	FUNCTION_26
+0x40037ed	              0x5b	                                 pop rbx	       763	filemap.c	FUNCTION_26
+0x40037ee	              0x5d	                                 pop rbp	       763	filemap.c	FUNCTION_26
+0x40037ef	            0x415c	                                 pop r12	       763	filemap.c	FUNCTION_26
+0x40037f1	            0x415d	                                 pop r13	       763	filemap.c	FUNCTION_26
+0x40037f3	            0x415e	                                 pop r14	       763	filemap.c	FUNCTION_26
+0x40037f5	      0xe9b6ceffff	   jmp sym.file_check_and_advance_wb_err	       759	filemap.c	FUNCTION_26	CALL_4
+0x40037fa	          0x4889df	                            mov rdi, rbx	       759	filemap.c	FUNCTION_26	CALL_4
+0x40037fd	      0xe800000000	                          call 0x4003802	       759	filemap.c	FUNCTION_26	CALL_4
+0x4003802	          0x4489f0	                           mov eax, r14d	       763	filemap.c	FUNCTION_26
+0x4003805	              0x5b	                                 pop rbx	       763	filemap.c	FUNCTION_26
+0x4003806	              0x5d	                                 pop rbp	       763	filemap.c	FUNCTION_26
+0x4003807	            0x415c	                                 pop r12	       763	filemap.c	FUNCTION_26
+0x4003809	            0x415d	                                 pop r13	       763	filemap.c	FUNCTION_26
+0x400380b	            0x415e	                                 pop r14	       763	filemap.c	FUNCTION_26
+0x400380d	              0xc3	                                     ret	       763	filemap.c	FUNCTION_26
+filemap_fdatawrite_range	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,1:functions,0:FOR,0:DO,0	2
+0x4003720	      0xb901000000	                              mov ecx, 1	       465	filemap.c	FUNCTION_14	CALL_1
+0x4003725	      0xe9a6feffff	      jmp sym.__filemap_fdatawrite_range	       465	filemap.c	FUNCTION_14	CALL_1
+read_cache_page_gfp	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,1:functions,0:FOR,0:DO,0	5
+0x4002e30	        0x488b4770	            mov rax, qword [rdi + 0x70] 	      2912	filemap.c	FUNCTION_75
+0x4002e34	          0x4189d0	                            mov r8d, edx	      2911	filemap.c	FUNCTION_75
+0x4002e37	            0x31c9	                            xor ecx, ecx	      2914	filemap.c	FUNCTION_75	CALL_1
+0x4002e39	        0x488b5008	                mov rdx, qword [rax + 8]	      2914	filemap.c	FUNCTION_75	CALL_1
+0x4002e3d	      0xe96efbffff	              jmp sym.do_read_cache_page	      2914	filemap.c	FUNCTION_75	CALL_1
+file_fdatawait_range	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,2:functions,0:FOR,0:DO,0	7
+0x4000b40	              0x53	                                push rbx	       579	filemap.c	FUNCTION_19
+0x4000b41	          0x4889fb	                            mov rbx, rdi	       579	filemap.c	FUNCTION_19
+0x4000b44	    0x488bbff00000	            mov rdi, qword [rdi + 0xf0] 	       582	filemap.c	FUNCTION_19	CALL_1
+0x4000b4b	      0xe8a0feffff	      call sym.__filemap_fdatawait_range	       582	filemap.c	FUNCTION_19	CALL_1
+0x4000b50	          0x4889df	                            mov rdi, rbx	       583	filemap.c	FUNCTION_19	CALL_2
+0x4000b53	              0x5b	                                 pop rbx	       584	filemap.c	FUNCTION_19
+0x4000b54	      0xe957fbffff	   jmp sym.file_check_and_advance_wb_err	       583	filemap.c	FUNCTION_19	CALL_2
+page_cache_tree_insert	SWITCH,0:WHILE,0:IF,4:ELSE,0:CALL,5:functions,0:FOR,0:DO,0	55
+0x4000770	            0x4155	                                push r13	       116	filemap.c	FUNCTION_1
+0x4000772	            0x4154	                                push r12	       116	filemap.c	FUNCTION_1
+0x4000774	          0x4989f4	                            mov r12, rsi	       116	filemap.c	FUNCTION_1
+0x4000777	              0x55	                                push rbp	       116	filemap.c	FUNCTION_1
+0x4000778	              0x53	                                push rbx	       116	filemap.c	FUNCTION_1
+0x4000779	        0x488d6f08	                      lea rbp, [rdi + 8]	       121	filemap.c	FUNCTION_1	CALL_1
+0x400077d	          0x4889fb	                            mov rbx, rdi	       116	filemap.c	FUNCTION_1
+0x4000780	          0x4989d5	                            mov r13, rdx	       116	filemap.c	FUNCTION_1
+0x4000783	            0x31d2	                            xor edx, edx	       121	filemap.c	FUNCTION_1	CALL_1
+0x4000785	        0x4883ec18	                           sub rsp, 0x18	       116	filemap.c	FUNCTION_1
+0x4000789	        0x488b7610	            mov rsi, qword [rsi + 0x10] 	       121	filemap.c	FUNCTION_1	CALL_1
+0x400078d	          0x4889ef	                            mov rdi, rbp	       121	filemap.c	FUNCTION_1	CALL_1
+0x4000790	      0x4c8d442408	                       lea r8, [rsp + 8]	       121	filemap.c	FUNCTION_1	CALL_1
+0x4000795	          0x4889e1	                            mov rcx, rsp	       121	filemap.c	FUNCTION_1	CALL_1
+0x4000798	    0x65488b042528	                mov rax, qword gs:[0x28]	       116	filemap.c	FUNCTION_1
+0x40007a1	      0x4889442410	             mov qword [rsp + 0x10], rax	       116	filemap.c	FUNCTION_1
+0x40007a6	            0x31c0	                            xor eax, eax	       116	filemap.c	FUNCTION_1
+0x40007a8	      0xe800000000	                          call 0x40007ad	       121	filemap.c	FUNCTION_1	CALL_1
+0x40007ad	            0x85c0	                           test eax, eax	       123	filemap.c	FUNCTION_1	IF_1
+0x40007af	            0x7555	                           jne 0x4000806	       123	filemap.c	FUNCTION_1	IF_1
+0x40007b1	      0x488b442408	                mov rax, qword [rsp + 8]	       125	filemap.c	FUNCTION_1	IF_2
+0x40007b6	          0x488b00	                    mov rax, qword [rax]	       125	filemap.c	FUNCTION_1	IF_2
+0x40007b9	          0x4885c0	                           test rax, rax	       125	filemap.c	FUNCTION_1	IF_2
+0x40007bc	            0x7412	                            je 0x40007d0	       125	filemap.c	FUNCTION_1	IF_2
+0x40007be	            0xa802	                              test al, 2	       130	filemap.c	FUNCTION_1	IF_2	IF_3	CALL_3
+0x40007c0	            0x745f	                            je 0x4000821	       130	filemap.c	FUNCTION_1	IF_2	IF_3	CALL_3
+0x40007c2	      0x48836b6001	               sub qword [rbx + 0x60], 1	       133	filemap.c	FUNCTION_1	IF_2
+0x40007c7	          0x4d85ed	                           test r13, r13	       134	filemap.c	FUNCTION_1	IF_2	IF_4
+0x40007ca	            0x7404	                            je 0x40007d0	       134	filemap.c	FUNCTION_1	IF_2	IF_4
+0x40007cc	        0x49894500	                    mov qword [r13], rax	       135	filemap.c	FUNCTION_1	IF_2	IF_4
+0x40007d0	          0x4889df	                            mov rdi, rbx	       138	filemap.c	FUNCTION_1	CALL_5
+0x40007d3	      0xe800000000	                          call 0x40007d8	       138	filemap.c	FUNCTION_1	CALL_5
+0x40007d8	      0x488b542408	                mov rdx, qword [rsp + 8]	       137	filemap.c	FUNCTION_1	CALL_4
+0x40007dd	        0x488b3424	                    mov rsi, qword [rsp]	       137	filemap.c	FUNCTION_1	CALL_4
+0x40007e1	            0x84c0	                             test al, al	       138	filemap.c	FUNCTION_1	CALL_5
+0x40007e3	    0x41b800000000	                              mov r8d, 0	       138	filemap.c	FUNCTION_1	CALL_5
+0x40007e9	    0x48c7c0000000	                              mov rax, 0	       138	filemap.c	FUNCTION_1	CALL_5
+0x40007f0	          0x4c89e1	                            mov rcx, r12	       137	filemap.c	FUNCTION_1	CALL_4
+0x40007f3	        0x4c0f44c0	                           cmove r8, rax	       138	filemap.c	FUNCTION_1	CALL_5
+0x40007f7	          0x4889ef	                            mov rdi, rbp	       137	filemap.c	FUNCTION_1	CALL_4
+0x40007fa	      0xe800000000	                          call 0x40007ff	       137	filemap.c	FUNCTION_1	CALL_4
+0x40007ff	      0x4883435801	               add qword [rbx + 0x58], 1	       139	filemap.c	FUNCTION_1
+0x4000804	            0x31c0	                            xor eax, eax	       140	filemap.c	FUNCTION_1
+0x4000806	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       141	filemap.c	FUNCTION_1
+0x400080b	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       141	filemap.c	FUNCTION_1
+0x4000814	            0x7512	                           jne 0x4000828	       141	filemap.c	FUNCTION_1
+0x4000816	        0x4883c418	                           add rsp, 0x18	       141	filemap.c	FUNCTION_1
+0x400081a	              0x5b	                                 pop rbx	       141	filemap.c	FUNCTION_1
+0x400081b	              0x5d	                                 pop rbp	       141	filemap.c	FUNCTION_1
+0x400081c	            0x415c	                                 pop r12	       141	filemap.c	FUNCTION_1
+0x400081e	            0x415d	                                 pop r13	       141	filemap.c	FUNCTION_1
+0x4000820	              0xc3	                                     ret	       141	filemap.c	FUNCTION_1
+0x4000821	      0xb8efffffff	                     mov eax, 0xffffffef	       131	filemap.c	FUNCTION_1	IF_2	IF_3
+0x4000826	            0xebde	                           jmp 0x4000806	       131	filemap.c	FUNCTION_1	IF_2	IF_3
+0x4000828	      0xe800000000	                          call 0x400082d	       141	filemap.c	FUNCTION_1
+page_cache_prev_hole	SWITCH,0:WHILE,0:IF,2:ELSE,0:CALL,2:functions,0:FOR,1:DO,0	27
+0x4000d80	          0x4885d2	                           test rdx, rdx	      1395	filemap.c	FUNCTION_49	FOR_1
+0x4000d83	            0x4154	                                push r12	      1392	filemap.c	FUNCTION_49
+0x4000d85	              0x55	                                push rbp	      1392	filemap.c	FUNCTION_49
+0x4000d86	              0x53	                                push rbx	      1392	filemap.c	FUNCTION_49
+0x4000d87	          0x4889f3	                            mov rbx, rsi	      1392	filemap.c	FUNCTION_49
+0x4000d8a	            0x742f	                            je 0x4000dbb	      1395	filemap.c	FUNCTION_49	FOR_1
+0x4000d8c	          0x4989f4	                            mov r12, rsi	      1395	filemap.c	FUNCTION_49	FOR_1
+0x4000d8f	        0x488d6f08	                      lea rbp, [rdi + 8]	      1395	filemap.c	FUNCTION_49	FOR_1
+0x4000d93	          0x4929d4	                            sub r12, rdx	      1395	filemap.c	FUNCTION_49	FOR_1
+0x4000d96	            0xeb13	                           jmp 0x4000dab	      1395	filemap.c	FUNCTION_49	FOR_1
+0x4000d98	            0xa802	                              test al, 2	      1399	filemap.c	FUNCTION_49	FOR_1	IF_1	CALL_2
+0x4000d9a	            0x751f	                           jne 0x4000dbb	      1399	filemap.c	FUNCTION_49	FOR_1	IF_1	CALL_2
+0x4000d9c	        0x4883eb01	                              sub rbx, 1	      1401	filemap.c	FUNCTION_49	FOR_1
+0x4000da0	        0x4883fbff	             cmp rbx, 0xffffffffffffffff	      1402	filemap.c	FUNCTION_49	FOR_1	IF_2
+0x4000da4	            0x7415	                            je 0x4000dbb	      1402	filemap.c	FUNCTION_49	FOR_1	IF_2
+0x4000da6	          0x4c39e3	                            cmp rbx, r12	      1395	filemap.c	FUNCTION_49	FOR_1
+0x4000da9	            0x7410	                            je 0x4000dbb	      1395	filemap.c	FUNCTION_49	FOR_1
+0x4000dab	          0x4889de	                            mov rsi, rbx	      1398	filemap.c	FUNCTION_49	FOR_1	CALL_1
+0x4000dae	          0x4889ef	                            mov rdi, rbp	      1398	filemap.c	FUNCTION_49	FOR_1	CALL_1
+0x4000db1	      0xe800000000	                          call 0x4000db6	      1398	filemap.c	FUNCTION_49	FOR_1	CALL_1
+0x4000db6	          0x4885c0	                           test rax, rax	      1399	filemap.c	FUNCTION_49	FOR_1	IF_1	CALL_2
+0x4000db9	            0x75dd	                           jne 0x4000d98	      1399	filemap.c	FUNCTION_49	FOR_1	IF_1	CALL_2
+0x4000dbb	          0x4889d8	                            mov rax, rbx	      1407	filemap.c	FUNCTION_49
+0x4000dbe	              0x5b	                                 pop rbx	      1407	filemap.c	FUNCTION_49
+0x4000dbf	              0x5d	                                 pop rbp	      1407	filemap.c	FUNCTION_49
+0x4000dc0	            0x415c	                                 pop r12	      1407	filemap.c	FUNCTION_49
+0x4000dc2	              0xc3	                                     ret	      1407	filemap.c	FUNCTION_49
+page_cache_next_hole	SWITCH,0:WHILE,0:IF,2:ELSE,0:CALL,2:functions,0:FOR,1:DO,0	25
+0x4000d40	          0x4885d2	                           test rdx, rdx	      1354	filemap.c	FUNCTION_48	FOR_1
+0x4000d43	            0x4154	                                push r12	      1351	filemap.c	FUNCTION_48
+0x4000d45	              0x55	                                push rbp	      1351	filemap.c	FUNCTION_48
+0x4000d46	              0x53	                                push rbx	      1351	filemap.c	FUNCTION_48
+0x4000d47	          0x4889f3	                            mov rbx, rsi	      1351	filemap.c	FUNCTION_48
+0x4000d4a	            0x7429	                            je 0x4000d75	      1354	filemap.c	FUNCTION_48	FOR_1
+0x4000d4c	        0x4c8d6708	                      lea r12, [rdi + 8]	      1354	filemap.c	FUNCTION_48	FOR_1
+0x4000d50	        0x488d2c16	                    lea rbp, [rsi + rdx]	      1354	filemap.c	FUNCTION_48	FOR_1
+0x4000d54	            0xeb0f	                           jmp 0x4000d65	      1354	filemap.c	FUNCTION_48	FOR_1
+0x4000d56	            0xa802	                              test al, 2	      1358	filemap.c	FUNCTION_48	FOR_1	IF_1	CALL_2
+0x4000d58	            0x751b	                           jne 0x4000d75	      1358	filemap.c	FUNCTION_48	FOR_1	IF_1	CALL_2
+0x4000d5a	        0x4883c301	                              add rbx, 1	      1361	filemap.c	FUNCTION_48	FOR_1	IF_2
+0x4000d5e	            0x7415	                            je 0x4000d75	      1361	filemap.c	FUNCTION_48	FOR_1	IF_2
+0x4000d60	          0x4839eb	                            cmp rbx, rbp	      1354	filemap.c	FUNCTION_48	FOR_1
+0x4000d63	            0x7410	                            je 0x4000d75	      1354	filemap.c	FUNCTION_48	FOR_1
+0x4000d65	          0x4889de	                            mov rsi, rbx	      1357	filemap.c	FUNCTION_48	FOR_1	CALL_1
+0x4000d68	          0x4c89e7	                            mov rdi, r12	      1357	filemap.c	FUNCTION_48	FOR_1	CALL_1
+0x4000d6b	      0xe800000000	                          call 0x4000d70	      1357	filemap.c	FUNCTION_48	FOR_1	CALL_1
+0x4000d70	          0x4885c0	                           test rax, rax	      1358	filemap.c	FUNCTION_48	FOR_1	IF_1	CALL_2
+0x4000d73	            0x75e1	                           jne 0x4000d56	      1358	filemap.c	FUNCTION_48	FOR_1	IF_1	CALL_2
+0x4000d75	          0x4889d8	                            mov rax, rbx	      1366	filemap.c	FUNCTION_48
+0x4000d78	              0x5b	                                 pop rbx	      1366	filemap.c	FUNCTION_48
+0x4000d79	              0x5d	                                 pop rbp	      1366	filemap.c	FUNCTION_48
+0x4000d7a	            0x415c	                                 pop r12	      1366	filemap.c	FUNCTION_48
+0x4000d7c	              0xc3	                                     ret	      1366	filemap.c	FUNCTION_48
+read_cache_page	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,2:functions,0:FOR,0:DO,0	2
+0x4002e20	    0x448b87840000	            mov r8d, dword [rdi + 0x84] 	      2893	filemap.c	FUNCTION_74	CALL_2
+0x4002e27	      0xe984fbffff	              jmp sym.do_read_cache_page	      2893	filemap.c	FUNCTION_74	CALL_2
+__filemap_fdatawrite_range	SWITCH,0:WHILE,0:IF,1:ELSE,0:CALL,4:functions,0:FOR,0:DO,0	37
+0x40035d0	              0x53	                                push rbx	       432	filemap.c	FUNCTION_11
+0x40035d1	          0x4889fb	                            mov rbx, rdi	       432	filemap.c	FUNCTION_11
+0x40035d4	        0x4883ec30	                           sub rsp, 0x30	       432	filemap.c	FUNCTION_11
+0x40035d8	          0x488b3f	                    mov rdi, qword [rdi]	       432	filemap.c	FUNCTION_11
+0x40035db	    0x65488b042528	                mov rax, qword gs:[0x28]	       432	filemap.c	FUNCTION_11
+0x40035e4	      0x4889442428	             mov qword [rsp + 0x28], rax	       432	filemap.c	FUNCTION_11
+0x40035e9	            0x31c0	                            xor eax, eax	       432	filemap.c	FUNCTION_11
+0x40035eb	    0x48b8ffffffff	         movabs rax, 0x7fffffffffffffff 	       434	filemap.c	FUNCTION_11
+0x40035f5	    0x48c744242000	               mov qword [rsp + 0x20], 0	       434	filemap.c	FUNCTION_11
+0x40035fe	      0x4889542418	             mov qword [rsp + 0x18], rdx	       434	filemap.c	FUNCTION_11
+0x4003603	          0x4885ff	                           test rdi, rdi	       158	backing-dev.h	FUNCTION_200	IF_1
+0x4003606	    0x48c744240800	                  mov qword [rsp + 8], 0	       434	filemap.c	FUNCTION_11
+0x400360f	        0x48890424	                    mov qword [rsp], rax	       434	filemap.c	FUNCTION_11
+0x4003613	      0x4889742410	             mov qword [rsp + 0x10], rsi	       434	filemap.c	FUNCTION_11
+0x4003618	        0x894c2420	             mov dword [rsp + 0x20], ecx	       434	filemap.c	FUNCTION_11
+0x400361c	    0x48c7c2000000	                              mov rdx, 0	       159	backing-dev.h	FUNCTION_200	IF_1
+0x4003623	            0x7414	                            je 0x4003639	       158	backing-dev.h	FUNCTION_200	IF_1
+0x4003625	        0x488b4728	            mov rax, qword [rdi + 0x28] 	       161	backing-dev.h	FUNCTION_200
+0x4003629	    0x483b05000000	            cmp rax, qword [0x04003630] 	       163	backing-dev.h	FUNCTION_200	IF_2	CALL_1
+0x4003630	            0x7430	                            je 0x4003662	       163	backing-dev.h	FUNCTION_200	IF_2	CALL_1
+0x4003632	    0x488b90d80000	            mov rdx, qword [rax + 0xd8] 	       166	backing-dev.h	FUNCTION_200
+0x4003639	            0x31c0	                            xor eax, eax	       442	filemap.c	FUNCTION_11	IF_1
+0x400363b	        0xf6423c02	               test byte [rdx + 0x3c], 2	       441	filemap.c	FUNCTION_11	IF_1	CALL_1
+0x400363f	            0x750b	                           jne 0x400364c	       441	filemap.c	FUNCTION_11	IF_1	CALL_1
+0x4003641	          0x4889e6	                            mov rsi, rsp	       445	filemap.c	FUNCTION_11	CALL_3
+0x4003644	          0x4889df	                            mov rdi, rbx	       445	filemap.c	FUNCTION_11	CALL_3
+0x4003647	      0xe800000000	                          call 0x400364c	       445	filemap.c	FUNCTION_11	CALL_3
+0x400364c	      0x488b5c2428	            mov rbx, qword [rsp + 0x28] 	       448	filemap.c	FUNCTION_11
+0x4003651	    0x6548331c2528	                xor rbx, qword gs:[0x28]	       448	filemap.c	FUNCTION_11
+0x400365a	            0x7514	                           jne 0x4003670	       448	filemap.c	FUNCTION_11
+0x400365c	        0x4883c430	                           add rsp, 0x30	       448	filemap.c	FUNCTION_11
+0x4003660	              0x5b	                                 pop rbx	       448	filemap.c	FUNCTION_11
+0x4003661	              0xc3	                                     ret	       448	filemap.c	FUNCTION_11
+0x4003662	      0xe800000000	                          call 0x4003667	       164	backing-dev.h	FUNCTION_200	CALL_2
+0x4003667	    0x488b90900000	            mov rdx, qword [rax + 0x90] 	       164	backing-dev.h	FUNCTION_200	CALL_2
+0x400366e	            0xebc9	                           jmp 0x4003639	       164	backing-dev.h	FUNCTION_200	CALL_2
+0x4003670	      0xe800000000	                          call 0x4003675	       448	filemap.c	FUNCTION_11
+add_to_page_cache_locked	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,1:functions,0:FOR,0:DO,0	2
+0x4002000	          0x4531c0	                            xor r8d, r8d	       893	filemap.c	FUNCTION_29	CALL_1
+0x4002003	      0xe9b8feffff	      jmp sym.__add_to_page_cache_locked	       893	filemap.c	FUNCTION_29	CALL_1
+filemap_flush	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,1:functions,0:FOR,0:DO,0	4
+0x4003700	            0x31c9	                            xor ecx, ecx	       453	filemap.c	FUNCTION_12	CALL_1
+0x4003702	    0x48baffffffff	         movabs rdx, 0x7fffffffffffffff 	       453	filemap.c	FUNCTION_12	CALL_1
+0x400370c	            0x31f6	                            xor esi, esi	       453	filemap.c	FUNCTION_12	CALL_1
+0x400370e	      0xe9bdfeffff	      jmp sym.__filemap_fdatawrite_range	       453	filemap.c	FUNCTION_12	CALL_1
+pagecache_write_end	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,1:functions,0:FOR,0:DO,0	3
+0x4000100	        0x488b4670	            mov rax, qword [rsi + 0x70] 	      2994	filemap.c	FUNCTION_78	CALL_1
+0x4000104	        0x488b4030	            mov rax, qword [rax + 0x30] 	      2994	filemap.c	FUNCTION_78	CALL_1
+0x4000108	      0xe900000000	                           jmp 0x400010d	      2994	filemap.c	FUNCTION_78	CALL_1

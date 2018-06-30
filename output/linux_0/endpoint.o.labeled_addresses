@@ -1,0 +1,104 @@
+usb_remove_ep_devs	functions,0:SWITCH,0:IF,1:WHILE,0:FOR,0:ELSE,0:CALL,1:DO,0	10
+0x4000310	        0x488b4730	            mov rax, qword [rdi + 0x30] 	       212	endpoint.c	FUNCTION_7
+0x4000314	          0x4885c0	                           test rax, rax	       214	endpoint.c	FUNCTION_7	IF_1
+0x4000317	            0x7416	                            je 0x400032f	       214	endpoint.c	FUNCTION_7	IF_1
+0x4000319	              0x53	                                push rbx	       211	endpoint.c	FUNCTION_7
+0x400031a	          0x4889fb	                            mov rbx, rdi	       211	endpoint.c	FUNCTION_7
+0x400031d	        0x488d7810	                   lea rdi, [rax + 0x10]	       215	endpoint.c	FUNCTION_7	IF_1	CALL_1
+0x4000321	      0xe800000000	                          call 0x4000326	       215	endpoint.c	FUNCTION_7	IF_1	CALL_1
+0x4000326	    0x48c743300000	               mov qword [rbx + 0x30], 0	       216	endpoint.c	FUNCTION_7	IF_1
+0x400032e	              0x5b	                                 pop rbx	       218	endpoint.c	FUNCTION_7
+0x400032f	            0xf3c3	                                     ret	       218	endpoint.c	FUNCTION_7
+type_show	functions,0:SWITCH,1:IF,0:WHILE,0:FOR,0:ELSE,0:CALL,3:DO,0	10
+0x4000090	        0x488b47f0	             mov rax, qword [rdi - 0x10]	        61	endpoint.c	FUNCTION_2
+0x4000094	          0x4889d1	                            mov rcx, rdx	        61	endpoint.c	FUNCTION_2
+0x4000097	    0x48c7c6000000	                              mov rsi, 0	        79	endpoint.c	FUNCTION_2	CALL_3
+0x400009e	          0x4889cf	                            mov rdi, rcx	        79	endpoint.c	FUNCTION_2	CALL_3
+0x40000a1	         0xfb64003	               movzx eax, byte [rax + 3]	        79	endpoint.c	FUNCTION_2	CALL_3
+0x40000a5	          0x83e003	                              and eax, 3	        79	endpoint.c	FUNCTION_2	CALL_3
+0x40000a8	    0x488b14c50000	                  mov rdx, qword [rax*8]	        79	endpoint.c	FUNCTION_2	CALL_3
+0x40000b0	      0xe800000000	                          call 0x40000b5	        79	endpoint.c	FUNCTION_2	CALL_3
+0x40000b5	            0x4898	                                    cdqe	        79	endpoint.c	FUNCTION_2	CALL_3
+0x40000b7	              0xc3	                                     ret	        80	endpoint.c	FUNCTION_2
+interval_show	functions,0:SWITCH,1:IF,4:WHILE,0:FOR,0:ELSE,2:CALL,3:DO,0	63
+0x40000c0	          0x4989d0	                             mov r8, rdx	        85	endpoint.c	FUNCTION_3
+0x40000c3	        0x488b57f0	             mov rdx, qword [rdi - 0x10]	        91	endpoint.c	FUNCTION_3
+0x40000c7	         0xfb64203	               movzx eax, byte [rdx + 3]	        93	endpoint.c	FUNCTION_3	SWITCH_1	CALL_2
+0x40000cb	          0x83e003	                              and eax, 3	        93	endpoint.c	FUNCTION_3	SWITCH_1	CALL_2
+0x40000ce	            0x3c02	                               cmp al, 2	        93	endpoint.c	FUNCTION_3	SWITCH_1	CALL_2
+0x40000d0	     0xf8480000000	                            je 0x4000156	        93	endpoint.c	FUNCTION_3	SWITCH_1	CALL_2
+0x40000d6	            0x3c03	                               cmp al, 3	        93	endpoint.c	FUNCTION_3	SWITCH_1	CALL_2
+0x40000d8	            0x746c	                            je 0x4000146	        93	endpoint.c	FUNCTION_3	SWITCH_1	CALL_2
+0x40000da	            0x3c01	                               cmp al, 1	        93	endpoint.c	FUNCTION_3	SWITCH_1	CALL_2
+0x40000dc	            0x7429	                            je 0x4000107	        93	endpoint.c	FUNCTION_3	SWITCH_1	CALL_2
+0x40000de	        0x488b47f8	                mov rax, qword [rdi - 8]	        95	endpoint.c	FUNCTION_3	SWITCH_1	IF_1
+0x40000e2	            0x31f6	                            xor esi, esi	        95	endpoint.c	FUNCTION_3	SWITCH_1	IF_1
+0x40000e4	        0x83781c03	               cmp dword [rax + 0x1c], 3	        95	endpoint.c	FUNCTION_3	SWITCH_1	IF_1
+0x40000e8	     0xf849f000000	                            je 0x400018d	        95	endpoint.c	FUNCTION_3	SWITCH_1	IF_1
+0x40000ee	      0xb96d000000	                           mov ecx, 0x6d	        95	endpoint.c	FUNCTION_3	SWITCH_1	IF_1
+0x40000f3	            0x89f2	                            mov edx, esi	       125	endpoint.c	FUNCTION_3	CALL_3
+0x40000f5	          0x4c89c7	                             mov rdi, r8	       125	endpoint.c	FUNCTION_3	CALL_3
+0x40000f8	    0x48c7c6000000	                              mov rsi, 0	       125	endpoint.c	FUNCTION_3	CALL_3
+0x40000ff	      0xe800000000	                          call 0x4000104	       125	endpoint.c	FUNCTION_3	CALL_3
+0x4000104	            0x4898	                                    cdqe	       125	endpoint.c	FUNCTION_3	CALL_3
+0x4000106	              0xc3	                                     ret	       126	endpoint.c	FUNCTION_3
+0x4000107	         0xfb64a06	               movzx ecx, byte [rdx + 6]	       101	endpoint.c	FUNCTION_3	SWITCH_1
+0x400010b	        0x488b47f8	                mov rax, qword [rdi - 8]	       101	endpoint.c	FUNCTION_3	SWITCH_1
+0x400010f	      0xbe01000000	                              mov esi, 1	       101	endpoint.c	FUNCTION_3	SWITCH_1
+0x4000114	          0x83e901	                              sub ecx, 1	       101	endpoint.c	FUNCTION_3	SWITCH_1
+0x4000117	            0xd3e6	                             shl esi, cl	       101	endpoint.c	FUNCTION_3	SWITCH_1
+0x4000119	        0x83781c03	               cmp dword [rax + 0x1c], 3	       117	endpoint.c	FUNCTION_3
+0x400011d	            0x7460	                            je 0x400017f	       117	endpoint.c	FUNCTION_3
+0x400011f	      0xb8e8030000	                          mov eax, 0x3e8	       117	endpoint.c	FUNCTION_3
+0x4000124	           0xfaff0	                           imul esi, eax	       117	endpoint.c	FUNCTION_3
+0x4000127	      0xbad34d6210	                     mov edx, 0x10624dd3	       118	endpoint.c	FUNCTION_3	IF_4
+0x400012c	      0xb975000000	                           mov ecx, 0x75	       118	endpoint.c	FUNCTION_3	IF_4
+0x4000131	            0x89f0	                            mov eax, esi	       118	endpoint.c	FUNCTION_3	IF_4
+0x4000133	            0xf7e2	                                 mul edx	       118	endpoint.c	FUNCTION_3	IF_4
+0x4000135	          0xc1ea06	                              shr edx, 6	       118	endpoint.c	FUNCTION_3	IF_4
+0x4000138	    0x69c2e8030000	                    imul eax, edx, 0x3e8	       118	endpoint.c	FUNCTION_3	IF_4
+0x400013e	            0x39c6	                            cmp esi, eax	       118	endpoint.c	FUNCTION_3	IF_4
+0x4000140	            0x75b1	                           jne 0x40000f3	       118	endpoint.c	FUNCTION_3	IF_4
+0x4000142	            0x89d6	                            mov esi, edx	       118	endpoint.c	FUNCTION_3	IF_4
+0x4000144	            0xeba8	                           jmp 0x40000ee	       118	endpoint.c	FUNCTION_3	IF_4
+0x4000146	        0x488b47f8	                mov rax, qword [rdi - 8]	       111	endpoint.c	FUNCTION_3	SWITCH_1	IF_3
+0x400014a	        0x83781c03	               cmp dword [rax + 0x1c], 3	       111	endpoint.c	FUNCTION_3	SWITCH_1	IF_3
+0x400014e	            0x7421	                            je 0x4000171	       111	endpoint.c	FUNCTION_3	SWITCH_1	IF_3
+0x4000150	         0xfb67206	               movzx esi, byte [rdx + 6]	       114	endpoint.c	FUNCTION_3	SWITCH_1	ELSE_1
+0x4000154	            0xebc9	                           jmp 0x400011f	       114	endpoint.c	FUNCTION_3	SWITCH_1	ELSE_1
+0x4000156	        0x488b47f8	                mov rax, qword [rdi - 8]	       105	endpoint.c	FUNCTION_3	SWITCH_1	IF_2
+0x400015a	        0x83781c03	               cmp dword [rax + 0x1c], 3	       105	endpoint.c	FUNCTION_3	SWITCH_1	IF_2
+0x400015e	            0x7526	                           jne 0x4000186	       105	endpoint.c	FUNCTION_3	SWITCH_1	IF_2
+0x4000160	        0x807a0200	                   cmp byte [rdx + 2], 0	       105	endpoint.c	FUNCTION_3	SWITCH_1	IF_2
+0x4000164	            0x7820	                            js 0x4000186	       105	endpoint.c	FUNCTION_3	SWITCH_1	IF_2
+0x4000166	         0xfb67206	               movzx esi, byte [rdx + 6]	       107	endpoint.c	FUNCTION_3	SWITCH_1	IF_2
+0x400016a	      0xb87d000000	                           mov eax, 0x7d	       117	endpoint.c	FUNCTION_3
+0x400016f	            0xebb3	                           jmp 0x4000124	       117	endpoint.c	FUNCTION_3
+0x4000171	         0xfb64a06	               movzx ecx, byte [rdx + 6]	       112	endpoint.c	FUNCTION_3	SWITCH_1	IF_3
+0x4000175	      0xbe01000000	                              mov esi, 1	       112	endpoint.c	FUNCTION_3	SWITCH_1	IF_3
+0x400017a	          0x83e901	                              sub ecx, 1	       112	endpoint.c	FUNCTION_3	SWITCH_1	IF_3
+0x400017d	            0xd3e6	                             shl esi, cl	       112	endpoint.c	FUNCTION_3	SWITCH_1	IF_3
+0x400017f	      0xb87d000000	                           mov eax, 0x7d	       117	endpoint.c	FUNCTION_3
+0x4000184	            0xeb9e	                           jmp 0x4000124	       117	endpoint.c	FUNCTION_3
+0x4000186	            0x31f6	                            xor esi, esi	       117	endpoint.c	FUNCTION_3
+0x4000188	      0xe961ffffff	                           jmp 0x40000ee	       117	endpoint.c	FUNCTION_3
+0x400018d	         0xfb67206	               movzx esi, byte [rdx + 6]	        97	endpoint.c	FUNCTION_3	SWITCH_1	IF_1
+0x4000191	            0xebec	                           jmp 0x400017f	        97	endpoint.c	FUNCTION_3	SWITCH_1	IF_1
+direction_show	functions,0:SWITCH,0:IF,2:WHILE,0:FOR,0:ELSE,2:CALL,4:DO,0	14
+0x4000050	        0x488b47f0	             mov rax, qword [rdi - 0x10]	       135	endpoint.c	FUNCTION_4	IF_1	CALL_2
+0x4000054	          0x4889d1	                            mov rcx, rdx	       131	endpoint.c	FUNCTION_4
+0x4000057	    0x48c7c2000000	                              mov rdx, 0	       136	endpoint.c	FUNCTION_4	IF_1
+0x400005e	        0xf6400303	                  test byte [rax + 3], 3	       135	endpoint.c	FUNCTION_4	IF_1	CALL_2
+0x4000062	            0x7416	                            je 0x400007a	       135	endpoint.c	FUNCTION_4	IF_1	CALL_2
+0x4000064	        0x80780200	                   cmp byte [rax + 2], 0	       140	endpoint.c	FUNCTION_4	ELSE_2
+0x4000068	    0x48c7c2000000	                              mov rdx, 0	       140	endpoint.c	FUNCTION_4	ELSE_2
+0x400006f	    0x48c7c0000000	                              mov rax, 0	       140	endpoint.c	FUNCTION_4	ELSE_2
+0x4000076	        0x480f48d0	                          cmovs rdx, rax	       140	endpoint.c	FUNCTION_4	ELSE_2
+0x400007a	    0x48c7c6000000	                              mov rsi, 0	       141	endpoint.c	FUNCTION_4	CALL_4
+0x4000081	          0x4889cf	                            mov rdi, rcx	       141	endpoint.c	FUNCTION_4	CALL_4
+0x4000084	      0xe800000000	                          call 0x4000089	       141	endpoint.c	FUNCTION_4	CALL_4
+0x4000089	            0x4898	                                    cdqe	       141	endpoint.c	FUNCTION_4	CALL_4
+0x400008b	              0xc3	                                     ret	       142	endpoint.c	FUNCTION_4
+ep_device_release	functions,0:SWITCH,0:IF,0:WHILE,0:FOR,0:ELSE,0:CALL,2:DO,0	2
+0x4000040	        0x4883ef10	                           sub rdi, 0x10	       168	endpoint.c	FUNCTION_5	CALL_2
+0x4000044	      0xe900000000	                           jmp 0x4000049	       168	endpoint.c	FUNCTION_5	CALL_2

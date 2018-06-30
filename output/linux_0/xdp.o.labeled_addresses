@@ -1,0 +1,69 @@
+xdp_rxq_info_unreg	ELSE,0:IF,1:DO,0:WHILE,0:SWITCH,0:functions,0:FOR,0:CALL,1	15
+0x4000060	          0x8b470c	              mov eax, dword [rdi + 0xc]	        19	xdp.c	FUNCTION_1	IF_1
+0x4000063	          0x83f803	                              cmp eax, 3	        19	xdp.c	FUNCTION_1	IF_1
+0x4000066	            0x7418	                            je 0x4000080	        19	xdp.c	FUNCTION_1	IF_1
+0x4000068	          0x83f801	                              cmp eax, 1	        22	xdp.c	FUNCTION_1	CALL_1
+0x400006b	              0x53	                                push rbx	        17	xdp.c	FUNCTION_1
+0x400006c	          0x4889fb	                            mov rbx, rdi	        17	xdp.c	FUNCTION_1
+0x400006f	            0x7511	                           jne 0x4000082	        22	xdp.c	FUNCTION_1	CALL_1
+0x4000071	    0xc7430c020000	                mov dword [rbx + 0xc], 2	        24	xdp.c	FUNCTION_1
+0x4000078	    0x48c703000000	                      mov qword [rbx], 0	        25	xdp.c	FUNCTION_1
+0x400007f	              0x5b	                                 pop rbx	        26	xdp.c	FUNCTION_1
+0x4000080	            0xf3c3	                                     ret	        26	xdp.c	FUNCTION_1
+0x4000082	    0x48c7c7000000	                              mov rdi, 0	        22	xdp.c	FUNCTION_1	CALL_1
+0x4000089	      0xe800000000	                          call 0x400008e	        22	xdp.c	FUNCTION_1	CALL_1
+0x400008e	             0xf0b	                                     ud2	        22	xdp.c	FUNCTION_1	CALL_1
+0x4000090	            0xebdf	                           jmp 0x4000071	        22	xdp.c	FUNCTION_1	CALL_1
+xdp_rxq_info_reg	ELSE,0:IF,3:DO,0:WHILE,0:SWITCH,0:functions,0:FOR,0:CALL,5	45
+0x40000a0	              0x53	                                push rbx	        37	xdp.c	FUNCTION_3
+0x40000a1	        0x4883ec10	                           sub rsp, 0x10	        37	xdp.c	FUNCTION_3
+0x40000a5	          0x8b470c	              mov eax, dword [rdi + 0xc]	        38	xdp.c	FUNCTION_3	IF_1
+0x40000a8	          0x83f803	                              cmp eax, 3	        38	xdp.c	FUNCTION_3	IF_1
+0x40000ab	            0x747e	                            je 0x400012b	        38	xdp.c	FUNCTION_3	IF_1
+0x40000ad	          0x83f801	                              cmp eax, 1	        43	xdp.c	FUNCTION_3	IF_2
+0x40000b0	          0x4889fb	                            mov rbx, rdi	        43	xdp.c	FUNCTION_3	IF_2
+0x40000b3	            0x7439	                            je 0x40000ee	        43	xdp.c	FUNCTION_3	IF_2
+0x40000b5	          0x4885f6	                           test rsi, rsi	        48	xdp.c	FUNCTION_3	IF_3
+0x40000b8	            0x745c	                            je 0x4000116	        48	xdp.c	FUNCTION_3	IF_3
+0x40000ba	        0x488d7b08	                      lea rdi, [rbx + 8]	        31	xdp.c	FUNCTION_2	CALL_1
+0x40000be	          0x4889d9	                            mov rcx, rbx	        31	xdp.c	FUNCTION_2	CALL_1
+0x40000c1	            0x31c0	                            xor eax, eax	        31	xdp.c	FUNCTION_2	CALL_1
+0x40000c3	    0x48c743380000	               mov qword [rbx + 0x38], 0	        31	xdp.c	FUNCTION_2	CALL_1
+0x40000cb	        0x4883e7f8	             and rdi, 0xfffffffffffffff8	        31	xdp.c	FUNCTION_2	CALL_1
+0x40000cf	          0x4829f9	                            sub rcx, rdi	        31	xdp.c	FUNCTION_2	CALL_1
+0x40000d2	          0x83c140	                           add ecx, 0x40	        31	xdp.c	FUNCTION_2	CALL_1
+0x40000d5	          0xc1e903	                              shr ecx, 3	        31	xdp.c	FUNCTION_2	CALL_1
+0x40000d8	          0xf348ab	              rep stosq qword [rdi], rax	        31	xdp.c	FUNCTION_2	CALL_1
+0x40000db	          0x488933	                    mov qword [rbx], rsi	        55	xdp.c	FUNCTION_3
+0x40000de	          0x895308	                mov dword [rbx + 8], edx	        56	xdp.c	FUNCTION_3
+0x40000e1	    0xc7430c010000	                mov dword [rbx + 0xc], 1	        58	xdp.c	FUNCTION_3
+0x40000e8	        0x4883c410	                           add rsp, 0x10	        60	xdp.c	FUNCTION_3
+0x40000ec	              0x5b	                                 pop rbx	        60	xdp.c	FUNCTION_3
+0x40000ed	              0xc3	                                     ret	        60	xdp.c	FUNCTION_3
+0x40000ee	    0x48c7c7000000	                              mov rdi, 0	        44	xdp.c	FUNCTION_3	IF_2	CALL_2
+0x40000f5	        0x8954240c	              mov dword [rsp + 0xc], edx	        44	xdp.c	FUNCTION_3	IF_2	CALL_2
+0x40000f9	        0x48893424	                    mov qword [rsp], rsi	        44	xdp.c	FUNCTION_3	IF_2	CALL_2
+0x40000fd	      0xe800000000	                          call 0x4000102	        44	xdp.c	FUNCTION_3	IF_2	CALL_2
+0x4000102	             0xf0b	                                     ud2	        44	xdp.c	FUNCTION_3	IF_2	CALL_2
+0x4000104	          0x4889df	                            mov rdi, rbx	        45	xdp.c	FUNCTION_3	IF_2	CALL_3
+0x4000107	      0xe800000000	                          call 0x400010c	        45	xdp.c	FUNCTION_3	IF_2	CALL_3
+0x400010c	        0x8b54240c	              mov edx, dword [rsp + 0xc]	        45	xdp.c	FUNCTION_3	IF_2	CALL_3
+0x4000110	        0x488b3424	                    mov rsi, qword [rsp]	        45	xdp.c	FUNCTION_3	IF_2	CALL_3
+0x4000114	            0xeb9f	                           jmp 0x40000b5	        45	xdp.c	FUNCTION_3	IF_2	CALL_3
+0x4000116	    0x48c7c7000000	                              mov rdi, 0	        49	xdp.c	FUNCTION_3	IF_3	CALL_4
+0x400011d	      0xe800000000	                          call 0x4000122	        49	xdp.c	FUNCTION_3	IF_3	CALL_4
+0x4000122	             0xf0b	                                     ud2	        49	xdp.c	FUNCTION_3	IF_3	CALL_4
+0x4000124	      0xb8edffffff	                     mov eax, 0xffffffed	        50	xdp.c	FUNCTION_3	IF_3
+0x4000129	            0xebbd	                           jmp 0x40000e8	        50	xdp.c	FUNCTION_3	IF_3
+0x400012b	    0x48c7c7000000	                              mov rdi, 0	        39	xdp.c	FUNCTION_3	IF_1	CALL_1
+0x4000132	      0xe800000000	                          call 0x4000137	        39	xdp.c	FUNCTION_3	IF_1	CALL_1
+0x4000137	             0xf0b	                                     ud2	        39	xdp.c	FUNCTION_3	IF_1	CALL_1
+0x4000139	      0xb8eaffffff	                     mov eax, 0xffffffea	        40	xdp.c	FUNCTION_3	IF_1
+0x400013e	            0xeba8	                           jmp 0x40000e8	        40	xdp.c	FUNCTION_3	IF_1
+xdp_rxq_info_is_reg	ELSE,0:IF,0:DO,0:WHILE,0:SWITCH,0:functions,0:FOR,0:CALL,0	3
+0x4000050	        0x837f0c01	                cmp dword [rdi + 0xc], 1	        71	xdp.c	FUNCTION_5
+0x4000054	           0xf94c0	                                 sete al	        71	xdp.c	FUNCTION_5
+0x4000057	              0xc3	                                     ret	        72	xdp.c	FUNCTION_5
+xdp_rxq_info_unused	ELSE,0:IF,0:DO,0:WHILE,0:SWITCH,0:functions,0:FOR,0:CALL,0	2
+0x4000040	    0xc7470c030000	                mov dword [rdi + 0xc], 3	        65	xdp.c	FUNCTION_4
+0x4000047	              0xc3	                                     ret	        65	xdp.c	FUNCTION_4

@@ -1,0 +1,120 @@
+nlmclnt_done	FOR,0:functions,0:WHILE,0:CALL,2:SWITCH,0:DO,0:IF,0:ELSE,0	6
+0x40000d0	              0x53	                                push rbx	        88	clntlock.c	FUNCTION_2
+0x40000d1	    0x488b9f000200	           mov rbx, qword [rdi + 0x200] 	        89	clntlock.c	FUNCTION_2
+0x40000d8	      0xe800000000	                          call 0x40000dd	        91	clntlock.c	FUNCTION_2	CALL_1
+0x40000dd	          0x4889df	                            mov rdi, rbx	        92	clntlock.c	FUNCTION_2	CALL_2
+0x40000e0	              0x5b	                                 pop rbx	        93	clntlock.c	FUNCTION_2
+0x40000e1	      0xe900000000	                           jmp 0x40000e6	        92	clntlock.c	FUNCTION_2	CALL_2
+nlmclnt_recovery	FOR,0:functions,0:WHILE,0:CALL,5:SWITCH,0:DO,0:IF,2:ELSE,0	30
+0x40006a0	     0xfb687360100	          movzx eax, byte [rdi + 0x136] 	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006a7	            0x89c1	                            mov ecx, eax	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006a9	          0x83e0fe	                     and eax, 0xfffffffe	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006ac	          0x83e101	                              and ecx, 1	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006af	            0x89ca	                            mov edx, ecx	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006b1	          0x83f201	                              xor edx, 1	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006b4	             0x9d0	                             or eax, edx	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006b6	            0x84c9	                             test cl, cl	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006b8	    0x888736010000	              mov byte [rdi + 0x136], al	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006be	            0x7402	                            je 0x40006c2	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006c0	            0xf3c3	                                     ret	       217	clntlock.c	FUNCTION_7	IF_1
+0x40006c2	              0x53	                                push rbx	       214	clntlock.c	FUNCTION_7
+0x40006c3	          0x4889fb	                            mov rbx, rdi	       214	clntlock.c	FUNCTION_7
+0x40006c6	      0xe800000000	                          call 0x40006cb	       218	clntlock.c	FUNCTION_7	IF_1	CALL_1
+0x40006cb	    0x4c8b83280100	            mov r8, qword [rbx + 0x128] 	       219	clntlock.c	FUNCTION_7	IF_1	CALL_2
+0x40006d2	    0x48c7c1000000	                              mov rcx, 0	       219	clntlock.c	FUNCTION_7	IF_1	CALL_2
+0x40006d9	      0xbaffffffff	                     mov edx, 0xffffffff	       219	clntlock.c	FUNCTION_7	IF_1	CALL_2
+0x40006de	          0x4889de	                            mov rsi, rbx	       219	clntlock.c	FUNCTION_7	IF_1	CALL_2
+0x40006e1	    0x48c7c7000000	                              mov rdi, 0	       219	clntlock.c	FUNCTION_7	IF_1	CALL_2
+0x40006e8	      0xe800000000	                          call 0x40006ed	       219	clntlock.c	FUNCTION_7	IF_1	CALL_2
+0x40006ed	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       219	clntlock.c	FUNCTION_7	IF_1	CALL_2
+0x40006f3	            0x7709	                            ja 0x40006fe	       219	clntlock.c	FUNCTION_7	IF_1	CALL_2
+0x40006f5	              0x5b	                                 pop rbx	       225	clntlock.c	FUNCTION_7
+0x40006f6	          0x4889c7	                            mov rdi, rax	       219	clntlock.c	FUNCTION_7	IF_1	CALL_2
+0x40006f9	      0xe900000000	                           jmp 0x40006fe	       219	clntlock.c	FUNCTION_7	IF_1	CALL_2
+0x40006fe	    0x488bb3280100	           mov rsi, qword [rbx + 0x128] 	       221	clntlock.c	FUNCTION_7	IF_1	IF_2	CALL_4
+0x4000705	          0x4889c2	                            mov rdx, rax	       221	clntlock.c	FUNCTION_7	IF_1	IF_2	CALL_4
+0x4000708	    0x48c7c7000000	                              mov rdi, 0	       221	clntlock.c	FUNCTION_7	IF_1	IF_2	CALL_4
+0x400070f	              0x5b	                                 pop rbx	       225	clntlock.c	FUNCTION_7
+0x4000710	      0xe900000000	                   jmp section_end..text	       221	clntlock.c	FUNCTION_7	IF_1	IF_2	CALL_4
+nlmclnt_block	FOR,0:functions,0:WHILE,0:CALL,1:SWITCH,0:DO,0:IF,3:ELSE,0	81
+0x4000410	            0x4155	                                push r13	       131	clntlock.c	FUNCTION_5
+0x4000412	            0x4154	                                push r12	       131	clntlock.c	FUNCTION_5
+0x4000414	              0x55	                                push rbp	       131	clntlock.c	FUNCTION_5
+0x4000415	              0x53	                                push rbx	       131	clntlock.c	FUNCTION_5
+0x4000416	        0x4883ec30	                           sub rsp, 0x30	       131	clntlock.c	FUNCTION_5
+0x400041a	    0x65488b042528	                mov rax, qword gs:[0x28]	       131	clntlock.c	FUNCTION_5
+0x4000423	      0x4889442428	             mov qword [rsp + 0x28], rax	       131	clntlock.c	FUNCTION_5
+0x4000428	            0x31c0	                            xor eax, eax	       131	clntlock.c	FUNCTION_5
+0x400042a	          0x4885ff	                           test rdi, rdi	       137	clntlock.c	FUNCTION_5	IF_1
+0x400042d	     0xf84e5000000	                            je 0x4000518	       137	clntlock.c	FUNCTION_5	IF_1
+0x4000433	          0x4889fd	                            mov rbp, rdi	       137	clntlock.c	FUNCTION_5	IF_1
+0x4000436	          0x4889d3	                            mov rbx, rdx	       137	clntlock.c	FUNCTION_5	IF_1
+0x4000439	          0x4989f5	                            mov r13, rsi	       137	clntlock.c	FUNCTION_5	IF_1
+0x400043c	      0xe800000000	                          call 0x4000441	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000441	          0x8b453c	            mov eax, dword [rbp + 0x3c] 	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000444	      0x3d00000003	                      cmp eax, 0x3000000	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000449	           0xf95c1	                                setne cl	       148	clntlock.c	FUNCTION_5	CALL_1
+0x400044c	          0x4885db	                           test rbx, rbx	       148	clntlock.c	FUNCTION_5	CALL_1
+0x400044f	           0xf94c2	                                 sete dl	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000452	            0x84c9	                             test cl, cl	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000454	            0x7437	                            je 0x400048d	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000456	            0x84d2	                             test dl, dl	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000458	            0x747f	                            je 0x40004d9	       148	clntlock.c	FUNCTION_5	CALL_1
+0x400045a	      0x3d00000004	                 cmp eax, loc.imp.printk	       154	clntlock.c	FUNCTION_5	IF_3
+0x400045f	     0xf8487000000	                            je 0x40004ec	       154	clntlock.c	FUNCTION_5	IF_3
+0x4000465	    0x418985e40100	            mov dword [r13 + 0x1e4], eax	       156	clntlock.c	FUNCTION_5
+0x400046c	            0x31c0	                            xor eax, eax	       157	clntlock.c	FUNCTION_5
+0x400046e	      0x488b742428	            mov rsi, qword [rsp + 0x28] 	       158	clntlock.c	FUNCTION_5
+0x4000473	    0x654833342528	                xor rsi, qword gs:[0x28]	       158	clntlock.c	FUNCTION_5
+0x400047c	     0xf85aa000000	                           jne 0x400052c	       158	clntlock.c	FUNCTION_5
+0x4000482	        0x4883c430	                           add rsp, 0x30	       158	clntlock.c	FUNCTION_5
+0x4000486	              0x5b	                                 pop rbx	       158	clntlock.c	FUNCTION_5
+0x4000487	              0x5d	                                 pop rbp	       158	clntlock.c	FUNCTION_5
+0x4000488	            0x415c	                                 pop r12	       158	clntlock.c	FUNCTION_5
+0x400048a	            0x415d	                                 pop r13	       158	clntlock.c	FUNCTION_5
+0x400048c	              0xc3	                                     ret	       158	clntlock.c	FUNCTION_5
+0x400048d	            0x84d2	                             test dl, dl	       148	clntlock.c	FUNCTION_5	CALL_1
+0x400048f	            0x7548	                           jne 0x40004d9	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000491	        0x4c8d6510	                   lea r12, [rbp + 0x10]	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000495	            0x31f6	                            xor esi, esi	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000497	          0x4889e7	                            mov rdi, rsp	       148	clntlock.c	FUNCTION_5	CALL_1
+0x400049a	      0xe800000000	                          call 0x400049f	       148	clntlock.c	FUNCTION_5	CALL_1
+0x400049f	      0xba01000000	                              mov edx, 1	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004a4	          0x4889e6	                            mov rsi, rsp	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004a7	          0x4c89e7	                            mov rdi, r12	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004aa	      0xe800000000	                          call 0x40004af	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004af	    0x817d3c000000	      cmp dword [rbp + 0x3c], 0x3000000 	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004b6	           0xf95c1	                                setne cl	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004b9	          0x4885db	                           test rbx, rbx	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004bc	           0xf94c2	                                 sete dl	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004bf	            0x84c9	                             test cl, cl	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004c1	            0x743a	                            je 0x40004fd	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004c3	            0x84d2	                             test dl, dl	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004c5	      0xb801000000	                              mov eax, 1	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004ca	        0x480f45d8	                         cmovne rbx, rax	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004ce	          0x4889e6	                            mov rsi, rsp	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004d1	          0x4c89e7	                            mov rdi, r12	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004d4	      0xe800000000	                          call 0x40004d9	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004d9	          0x4885db	                           test rbx, rbx	       151	clntlock.c	FUNCTION_5	IF_2
+0x40004dc	            0x7844	                            js 0x4000522	       151	clntlock.c	FUNCTION_5	IF_2
+0x40004de	          0x8b453c	            mov eax, dword [rbp + 0x3c] 	       151	clntlock.c	FUNCTION_5	IF_2
+0x40004e1	      0x3d00000004	                 cmp eax, loc.imp.printk	       154	clntlock.c	FUNCTION_5	IF_3
+0x40004e6	     0xf8579ffffff	                           jne 0x4000465	       154	clntlock.c	FUNCTION_5	IF_3
+0x40004ec	    0xc7453c000000	       mov dword [rbp + 0x3c], 0x3000000	       155	clntlock.c	FUNCTION_5	IF_3
+0x40004f3	      0xb800000003	                      mov eax, 0x3000000	       155	clntlock.c	FUNCTION_5	IF_3
+0x40004f8	      0xe968ffffff	                           jmp 0x4000465	       155	clntlock.c	FUNCTION_5	IF_3
+0x40004fd	            0x84d2	                             test dl, dl	       148	clntlock.c	FUNCTION_5	CALL_1
+0x40004ff	            0x75cd	                           jne 0x40004ce	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000501	          0x4885c0	                           test rax, rax	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000504	            0x750d	                           jne 0x4000513	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000506	          0x4889df	                            mov rdi, rbx	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000509	      0xe800000000	                          call 0x400050e	       148	clntlock.c	FUNCTION_5	CALL_1
+0x400050e	          0x4889c3	                            mov rbx, rax	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000511	            0xeb8c	                           jmp 0x400049f	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000513	          0x4889c3	                            mov rbx, rax	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000516	            0xebc1	                           jmp 0x40004d9	       148	clntlock.c	FUNCTION_5	CALL_1
+0x4000518	      0xb8f5ffffff	                     mov eax, 0xfffffff5	       138	clntlock.c	FUNCTION_5	IF_1
+0x400051d	      0xe94cffffff	                           jmp 0x400046e	       138	clntlock.c	FUNCTION_5	IF_1
+0x4000522	      0xb800feffff	                     mov eax, 0xfffffe00	       152	clntlock.c	FUNCTION_5	IF_2
+0x4000527	      0xe942ffffff	                           jmp 0x400046e	       152	clntlock.c	FUNCTION_5	IF_2
+0x400052c	      0xe800000000	                          call 0x4000531	       158	clntlock.c	FUNCTION_5

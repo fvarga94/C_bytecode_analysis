@@ -1,0 +1,56 @@
+devinfo_stop	functions,0:CALL,0:ELSE,0:FOR,0:WHILE,0:IF,0:DO,0:SWITCH,0	1
+0x4000080	            0xf3c3	                                     ret	        43	devices.c	FUNCTION_4
+devinfo_start	functions,0:CALL,0:ELSE,0:FOR,0:WHILE,0:IF,1:DO,0:SWITCH,0	4
+0x4000040	    0x48813eff0300	                  cmp qword [rsi], 0x3ff	        30	devices.c	FUNCTION_2	IF_1
+0x4000047	      0xb800000000	                              mov eax, 0	        30	devices.c	FUNCTION_2	IF_1
+0x400004c	        0x480f4ec6	                         cmovle rax, rsi	        30	devices.c	FUNCTION_2	IF_1
+0x4000050	              0xc3	                                     ret	        32	devices.c	FUNCTION_2
+devinfo_next	functions,0:CALL,0:ELSE,0:FOR,0:WHILE,0:IF,1:DO,0:SWITCH,0	7
+0x4000060	          0x488b02	                    mov rax, qword [rdx]	        36	devices.c	FUNCTION_3
+0x4000063	        0x4883c001	                              add rax, 1	        36	devices.c	FUNCTION_3
+0x4000067	    0x483dff030000	                          cmp rax, 0x3ff	        39	devices.c	FUNCTION_3
+0x400006d	          0x488902	                    mov qword [rdx], rax	        36	devices.c	FUNCTION_3
+0x4000070	      0xb800000000	                              mov eax, 0	        39	devices.c	FUNCTION_3
+0x4000075	        0x480f4ec2	                         cmovle rax, rdx	        39	devices.c	FUNCTION_3
+0x4000079	              0xc3	                                     ret	        40	devices.c	FUNCTION_3
+proc_devices_init	functions,0:CALL,1:ELSE,0:FOR,0:WHILE,0:IF,0:DO,0:SWITCH,0	6
+0x4000040	    0x48813eff0300	                  cmp qword [rsi], 0x3ff	        30	devices.c	FUNCTION_2	IF_1
+0x4000047	      0xb800000000	                              mov eax, 0	        30	devices.c	FUNCTION_2	IF_1
+0x400004c	        0x480f4ec6	                         cmovle rax, rsi	        30	devices.c	FUNCTION_2	IF_1
+0x4000050	              0xc3	                                     ret	        32	devices.c	FUNCTION_2
+0x4000051	       0xf1f440000	                   nop dword [rax + rax]	        32	devices.c	FUNCTION_2
+0x4000056	    0x662e0f1f8400	                 nop word cs:[rax + rax]	        32	devices.c	FUNCTION_2
+devinfo_show	functions,0:CALL,4:ELSE,1:FOR,0:WHILE,0:IF,3:DO,0:SWITCH,0	33
+0x4000090	              0x55	                                push rbp	         8	devices.c	FUNCTION_1
+0x4000091	              0x53	                                push rbx	         8	devices.c	FUNCTION_1
+0x4000092	          0x4889fd	                            mov rbp, rdi	         8	devices.c	FUNCTION_1
+0x4000095	          0x488b1e	                    mov rbx, qword [rsi]	         9	devices.c	FUNCTION_1
+0x4000098	    0x81fbff010000	                          cmp ebx, 0x1ff	        11	devices.c	FUNCTION_1	IF_1
+0x400009e	            0x7f14	                            jg 0x40000b4	        11	devices.c	FUNCTION_1	IF_1
+0x40000a0	            0x85db	                           test ebx, ebx	        12	devices.c	FUNCTION_1	IF_1	IF_2
+0x40000a2	            0x7428	                            je 0x40000cc	        12	devices.c	FUNCTION_1	IF_1	IF_2
+0x40000a4	          0x4863f3	                         movsxd rsi, ebx	        14	devices.c	FUNCTION_1	IF_1	CALL_2
+0x40000a7	          0x4889ef	                            mov rdi, rbp	        14	devices.c	FUNCTION_1	IF_1	CALL_2
+0x40000aa	      0xe800000000	                          call 0x40000af	        14	devices.c	FUNCTION_1	IF_1	CALL_2
+0x40000af	            0x31c0	                            xor eax, eax	        25	devices.c	FUNCTION_1
+0x40000b1	              0x5b	                                 pop rbx	        25	devices.c	FUNCTION_1
+0x40000b2	              0x5d	                                 pop rbp	        25	devices.c	FUNCTION_1
+0x40000b3	              0xc3	                                     ret	        25	devices.c	FUNCTION_1
+0x40000b4	    0x81eb00020000	                          sub ebx, 0x200	        19	devices.c	FUNCTION_1	ELSE_1	IF_3
+0x40000ba	            0x741e	                            je 0x40000da	        19	devices.c	FUNCTION_1	ELSE_1	IF_3
+0x40000bc	          0x4863f3	                         movsxd rsi, ebx	        21	devices.c	FUNCTION_1	ELSE_1	CALL_4
+0x40000bf	          0x4889ef	                            mov rdi, rbp	        21	devices.c	FUNCTION_1	ELSE_1	CALL_4
+0x40000c2	      0xe800000000	                          call 0x40000c7	        21	devices.c	FUNCTION_1	ELSE_1	CALL_4
+0x40000c7	            0x31c0	                            xor eax, eax	        25	devices.c	FUNCTION_1
+0x40000c9	              0x5b	                                 pop rbx	        25	devices.c	FUNCTION_1
+0x40000ca	              0x5d	                                 pop rbp	        25	devices.c	FUNCTION_1
+0x40000cb	              0xc3	                                     ret	        25	devices.c	FUNCTION_1
+0x40000cc	    0x48c7c6000000	                              mov rsi, 0	        13	devices.c	FUNCTION_1	IF_1	CALL_1
+0x40000d3	      0xe800000000	                          call 0x40000d8	        13	devices.c	FUNCTION_1	IF_1	CALL_1
+0x40000d8	            0xebca	                           jmp 0x40000a4	        13	devices.c	FUNCTION_1	IF_1	CALL_1
+0x40000da	    0x48c7c6000000	                              mov rsi, 0	        20	devices.c	FUNCTION_1	ELSE_1	CALL_3
+0x40000e1	      0xe800000000	                          call 0x40000e6	        20	devices.c	FUNCTION_1	ELSE_1	CALL_3
+0x40000e6	          0x4863f3	                         movsxd rsi, ebx	        21	devices.c	FUNCTION_1	ELSE_1	CALL_4
+0x40000e9	          0x4889ef	                            mov rdi, rbp	        21	devices.c	FUNCTION_1	ELSE_1	CALL_4
+0x40000ec	      0xe800000000	                          call 0x40000f1	        21	devices.c	FUNCTION_1	ELSE_1	CALL_4
+0x40000f1	            0xebd4	                           jmp 0x40000c7	        21	devices.c	FUNCTION_1	ELSE_1	CALL_4

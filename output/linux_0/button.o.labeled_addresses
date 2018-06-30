@@ -1,0 +1,175 @@
+acpi_button_remove	CALL,4:SWITCH,0:DO,0:WHILE,0:IF,0:ELSE,0:functions,0:FOR,0	13
+0x40006e0	              0x53	                                push rbx	       576	button.c	FUNCTION_16
+0x40006e1	    0x488b9f480200	           mov rbx, qword [rdi + 0x248] 	       576	button.c	FUNCTION_16
+0x40006e8	          0x833b05	                      cmp dword [rbx], 5	       329	button.c	FUNCTION_5	IF_1
+0x40006eb	            0x7415	                            je 0x4000702	       329	button.c	FUNCTION_5	IF_1
+0x40006ed	        0x488b7b08	                mov rdi, qword [rbx + 8]	       580	button.c	FUNCTION_16	CALL_3
+0x40006f1	      0xe800000000	                          call 0x40006f6	       580	button.c	FUNCTION_16	CALL_3
+0x40006f6	          0x4889df	                            mov rdi, rbx	       581	button.c	FUNCTION_16	CALL_4
+0x40006f9	      0xe800000000	                          call 0x40006fe	       581	button.c	FUNCTION_16	CALL_4
+0x40006fe	            0x31c0	                            xor eax, eax	       583	button.c	FUNCTION_16
+0x4000700	              0x5b	                                 pop rbx	       583	button.c	FUNCTION_16
+0x4000701	              0xc3	                                     ret	       583	button.c	FUNCTION_16
+0x4000702	      0xe869ffffff	   call sym.acpi_button_remove_fs.part.7	       583	button.c	FUNCTION_16
+0x4000707	            0xebe4	                           jmp 0x40006ed	       583	button.c	FUNCTION_16
+acpi_lid_initialize_state	CALL,2:SWITCH,1:DO,0:WHILE,0:IF,0:ELSE,0:functions,0:FOR,0	9
+0x4000300	     0xfb605000000	           movzx eax, byte [0x04000307] 	       382	button.c	FUNCTION_10	SWITCH_1
+0x4000307	            0x3c01	                               cmp al, 1	       382	button.c	FUNCTION_10	SWITCH_1
+0x4000309	            0x740b	                            je 0x4000316	       382	button.c	FUNCTION_10	SWITCH_1
+0x400030b	            0x3c02	                               cmp al, 2	       382	button.c	FUNCTION_10	SWITCH_1
+0x400030d	            0x7505	                           jne 0x4000314	       382	button.c	FUNCTION_10	SWITCH_1
+0x400030f	      0xe97cffffff	           jmp sym.acpi_lid_update_state	       387	button.c	FUNCTION_10	SWITCH_1	CALL_2
+0x4000314	            0xf3c3	                                     ret	       387	button.c	FUNCTION_10	SWITCH_1	CALL_2
+0x4000316	      0xbe01000000	                              mov esi, 1	       384	button.c	FUNCTION_10	SWITCH_1	CALL_1
+0x400031b	      0xe9c0fdffff	           jmp sym.acpi_lid_notify_state	       384	button.c	FUNCTION_10	SWITCH_1	CALL_1
+acpi_button_suspend	CALL,2:SWITCH,0:DO,0:WHILE,0:IF,0:ELSE,0:functions,0:FOR,0	4
+0x4000040	        0x488b47f8	                mov rax, qword [rdi - 8]	       442	button.c	FUNCTION_12
+0x4000044	        0xc6404801	                mov byte [rax + 0x48], 1	       446	button.c	FUNCTION_12
+0x4000048	            0x31c0	                            xor eax, eax	       448	button.c	FUNCTION_12
+0x400004a	              0xc3	                                     ret	       448	button.c	FUNCTION_12
+acpi_lid_notifier_register	CALL,1:SWITCH,0:DO,0:WHILE,0:IF,0:ELSE,0:functions,0:FOR,0	3
+0x4000050	          0x4889fe	                            mov rsi, rdi	       349	button.c	FUNCTION_6
+0x4000053	    0x48c7c7000000	                              mov rdi, 0	       350	button.c	FUNCTION_6	CALL_1
+0x400005a	      0xe900000000	                           jmp 0x400005f	       350	button.c	FUNCTION_6	CALL_1
+acpi_lid_input_open	CALL,5:SWITCH,0:DO,0:WHILE,0:IF,0:ELSE,0:functions,0:FOR,0	33
+0x4000350	              0x55	                                push rbp	       463	button.c	FUNCTION_14
+0x4000351	              0x53	                                push rbx	       463	button.c	FUNCTION_14
+0x4000352	            0x31d2	                            xor edx, edx	       151	button.c	FUNCTION_1	CALL_1
+0x4000354	    0x48c7c6000000	                              mov rsi, 0	       151	button.c	FUNCTION_1	CALL_1
+0x400035b	        0x4883ec10	                           sub rsp, 0x10	       463	button.c	FUNCTION_14
+0x400035f	    0x488b9fb00200	           mov rbx, qword [rdi + 0x2b0] 	       463	button.c	FUNCTION_14
+0x4000366	          0x4889e1	                            mov rcx, rsp	       151	button.c	FUNCTION_1	CALL_1
+0x4000369	    0x65488b042528	                mov rax, qword gs:[0x28]	       463	button.c	FUNCTION_14
+0x4000372	      0x4889442408	                mov qword [rsp + 8], rax	       463	button.c	FUNCTION_14
+0x4000377	            0x31c0	                            xor eax, eax	       463	button.c	FUNCTION_14
+0x4000379	        0x488b7b08	                mov rdi, qword [rbx + 8]	       151	button.c	FUNCTION_1	CALL_1
+0x400037d	    0x488bab480200	           mov rbp, qword [rbx + 0x248] 	       151	button.c	FUNCTION_1	CALL_1
+0x4000384	      0xe800000000	                          call 0x4000389	       151	button.c	FUNCTION_1	CALL_1
+0x4000389	            0x85c0	                           test eax, eax	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x400038b	      0xba01000000	                              mov edx, 1	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x4000390	            0x750a	                           jne 0x400039c	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x4000392	            0x31d2	                            xor edx, edx	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x4000394	      0x48833c2400	                      cmp qword [rsp], 0	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x4000399	           0xf95c2	                                setne dl	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x400039c	          0x895538	            mov dword [rbp + 0x38], edx 	       467	button.c	FUNCTION_14	CALL_3
+0x400039f	      0xe800000000	                          call 0x40003a4	       468	button.c	FUNCTION_14	CALL_4
+0x40003a4	          0x4889df	                            mov rdi, rbx	       469	button.c	FUNCTION_14	CALL_5
+0x40003a7	        0x48894540	            mov qword [rbp + 0x40], rax 	       468	button.c	FUNCTION_14	CALL_4
+0x40003ab	      0xe850ffffff	      call sym.acpi_lid_initialize_state	       469	button.c	FUNCTION_14	CALL_5
+0x40003b0	            0x31c0	                            xor eax, eax	       472	button.c	FUNCTION_14
+0x40003b2	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       472	button.c	FUNCTION_14
+0x40003b7	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       472	button.c	FUNCTION_14
+0x40003c0	            0x7507	                           jne 0x40003c9	       472	button.c	FUNCTION_14
+0x40003c2	        0x4883c410	                           add rsp, 0x10	       472	button.c	FUNCTION_14
+0x40003c6	              0x5b	                                 pop rbx	       472	button.c	FUNCTION_14
+0x40003c7	              0x5d	                                 pop rbp	       472	button.c	FUNCTION_14
+0x40003c8	              0xc3	                                     ret	       472	button.c	FUNCTION_14
+0x40003c9	      0xe800000000	                          call 0x40003ce	       472	button.c	FUNCTION_14
+acpi_lid_open	CALL,1:SWITCH,0:DO,0:WHILE,0:IF,1:ELSE,0:functions,0:FOR,0	28
+0x4000070	        0x4883ec10	                           sub rsp, 0x10	       361	button.c	FUNCTION_8
+0x4000074	    0x65488b042528	                mov rax, qword gs:[0x28]	       361	button.c	FUNCTION_8
+0x400007d	      0x4889442408	                mov qword [rsp + 8], rax	       361	button.c	FUNCTION_8
+0x4000082	            0x31c0	                            xor eax, eax	       361	button.c	FUNCTION_8
+0x4000084	    0x488b05000000	            mov rax, qword [0x0400008b] 	       362	button.c	FUNCTION_8	IF_1
+0x400008b	          0x4885c0	                           test rax, rax	       362	button.c	FUNCTION_8	IF_1
+0x400008e	            0x7441	                            je 0x40000d1	       362	button.c	FUNCTION_8	IF_1
+0x4000090	        0x488b7808	                mov rdi, qword [rax + 8]	       151	button.c	FUNCTION_1	CALL_1
+0x4000094	            0x31d2	                            xor edx, edx	       151	button.c	FUNCTION_1	CALL_1
+0x4000096	          0x4889e1	                            mov rcx, rsp	       151	button.c	FUNCTION_1	CALL_1
+0x4000099	    0x48c7c6000000	                              mov rsi, 0	       151	button.c	FUNCTION_1	CALL_1
+0x40000a0	      0xe800000000	                          call 0x40000a5	       151	button.c	FUNCTION_1	CALL_1
+0x40000a5	            0x85c0	                           test eax, eax	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x40000a7	      0xbaedffffff	                     mov edx, 0xffffffed	       153	button.c	FUNCTION_1	IF_1
+0x40000ac	            0x7417	                            je 0x40000c5	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x40000ae	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       366	button.c	FUNCTION_8
+0x40000b3	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       366	button.c	FUNCTION_8
+0x40000bc	            0x89d0	                            mov eax, edx	       366	button.c	FUNCTION_8
+0x40000be	            0x7518	                           jne 0x40000d8	       366	button.c	FUNCTION_8
+0x40000c0	        0x4883c410	                           add rsp, 0x10	       366	button.c	FUNCTION_8
+0x40000c4	              0xc3	                                     ret	       366	button.c	FUNCTION_8
+0x40000c5	            0x31d2	                            xor edx, edx	       155	button.c	FUNCTION_1
+0x40000c7	      0x48833c2400	                      cmp qword [rsp], 0	       155	button.c	FUNCTION_1
+0x40000cc	           0xf95c2	                                setne dl	       155	button.c	FUNCTION_1
+0x40000cf	            0xebdd	                           jmp 0x40000ae	       155	button.c	FUNCTION_1
+0x40000d1	      0xbaedffffff	                     mov edx, 0xffffffed	       363	button.c	FUNCTION_8	IF_1
+0x40000d6	            0xebd6	                           jmp 0x40000ae	       363	button.c	FUNCTION_8	IF_1
+0x40000d8	      0xe800000000	                          call 0x40000dd	       366	button.c	FUNCTION_8
+acpi_lid_update_state	CALL,2:SWITCH,0:DO,0:WHILE,0:IF,1:ELSE,0:functions,0:FOR,0	28
+0x4000290	              0x53	                                push rbx	       370	button.c	FUNCTION_9
+0x4000291	          0x4889fb	                            mov rbx, rdi	       370	button.c	FUNCTION_9
+0x4000294	            0x31d2	                            xor edx, edx	       151	button.c	FUNCTION_1	CALL_1
+0x4000296	    0x48c7c6000000	                              mov rsi, 0	       151	button.c	FUNCTION_1	CALL_1
+0x400029d	        0x4883ec10	                           sub rsp, 0x10	       370	button.c	FUNCTION_9
+0x40002a1	        0x488b7f08	                mov rdi, qword [rdi + 8]	       151	button.c	FUNCTION_1	CALL_1
+0x40002a5	          0x4889e1	                            mov rcx, rsp	       151	button.c	FUNCTION_1	CALL_1
+0x40002a8	    0x65488b042528	                mov rax, qword gs:[0x28]	       370	button.c	FUNCTION_9
+0x40002b1	      0x4889442408	                mov qword [rsp + 8], rax	       370	button.c	FUNCTION_9
+0x40002b6	            0x31c0	                            xor eax, eax	       370	button.c	FUNCTION_9
+0x40002b8	      0xe800000000	                          call 0x40002bd	       151	button.c	FUNCTION_1	CALL_1
+0x40002bd	            0x85c0	                           test eax, eax	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x40002bf	      0xbaedffffff	                     mov edx, 0xffffffed	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x40002c4	            0x7515	                           jne 0x40002db	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x40002c6	            0x31f6	                            xor esi, esi	       155	button.c	FUNCTION_1
+0x40002c8	      0x48833c2400	                      cmp qword [rsp], 0	       155	button.c	FUNCTION_1
+0x40002cd	          0x4889df	                            mov rdi, rbx	       377	button.c	FUNCTION_9	CALL_2
+0x40002d0	        0x400f95c6	                               setne sil	       155	button.c	FUNCTION_1
+0x40002d4	      0xe807feffff	          call sym.acpi_lid_notify_state	       377	button.c	FUNCTION_9	CALL_2
+0x40002d9	            0x89c2	                            mov edx, eax	       377	button.c	FUNCTION_9	CALL_2
+0x40002db	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       378	button.c	FUNCTION_9
+0x40002e0	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       378	button.c	FUNCTION_9
+0x40002e9	            0x89d0	                            mov eax, edx	       378	button.c	FUNCTION_9
+0x40002eb	            0x7506	                           jne 0x40002f3	       378	button.c	FUNCTION_9
+0x40002ed	        0x4883c410	                           add rsp, 0x10	       378	button.c	FUNCTION_9
+0x40002f1	              0x5b	                                 pop rbx	       378	button.c	FUNCTION_9
+0x40002f2	              0xc3	                                     ret	       378	button.c	FUNCTION_9
+0x40002f3	      0xe800000000	                          call 0x40002f8	       378	button.c	FUNCTION_9
+acpi_button_resume	CALL,3:SWITCH,0:DO,0:WHILE,0:IF,1:ELSE,0:functions,0:FOR,0	14
+0x4000320	        0x488b47f8	                mov rax, qword [rdi - 8]	       451	button.c	FUNCTION_13
+0x4000324	          0x833805	                      cmp dword [rax], 5	       456	button.c	FUNCTION_13	IF_1
+0x4000327	        0xc6404800	                mov byte [rax + 0x48], 0	       455	button.c	FUNCTION_13
+0x400032b	            0x7403	                            je 0x4000330	       456	button.c	FUNCTION_13	IF_1
+0x400032d	            0x31c0	                            xor eax, eax	       459	button.c	FUNCTION_13
+0x400032f	              0xc3	                                     ret	       459	button.c	FUNCTION_13
+0x4000330	        0x488b4008	                mov rax, qword [rax + 8]	       456	button.c	FUNCTION_13	IF_1
+0x4000334	    0x8b8010020000	           mov eax, dword [rax + 0x210] 	       456	button.c	FUNCTION_13	IF_1
+0x400033a	            0x85c0	                           test eax, eax	       456	button.c	FUNCTION_13	IF_1
+0x400033c	            0x74ef	                            je 0x400032d	       456	button.c	FUNCTION_13	IF_1
+0x400033e	    0x4881ef500200	                          sub rdi, 0x250	       457	button.c	FUNCTION_13	CALL_3
+0x4000345	      0xe8b6ffffff	      call sym.acpi_lid_initialize_state	       457	button.c	FUNCTION_13	CALL_3
+0x400034a	            0x31c0	                            xor eax, eax	       459	button.c	FUNCTION_13
+0x400034c	              0xc3	                                     ret	       459	button.c	FUNCTION_13
+acpi_button_state_seq_show	CALL,2:SWITCH,0:DO,0:WHILE,0:IF,0:ELSE,0:functions,0:FOR,0	30
+0x40004f0	              0x53	                                push rbx	       256	button.c	FUNCTION_3
+0x40004f1	          0x4889fb	                            mov rbx, rdi	       256	button.c	FUNCTION_3
+0x40004f4	            0x31d2	                            xor edx, edx	       151	button.c	FUNCTION_1	CALL_1
+0x40004f6	    0x48c7c6000000	                              mov rsi, 0	       151	button.c	FUNCTION_1	CALL_1
+0x40004fd	        0x4883ec10	                           sub rsp, 0x10	       256	button.c	FUNCTION_3
+0x4000501	    0x65488b042528	                mov rax, qword gs:[0x28]	       256	button.c	FUNCTION_3
+0x400050a	      0x4889442408	                mov qword [rsp + 8], rax	       256	button.c	FUNCTION_3
+0x400050f	            0x31c0	                            xor eax, eax	       256	button.c	FUNCTION_3
+0x4000511	        0x488b4778	            mov rax, qword [rdi + 0x78] 	       256	button.c	FUNCTION_3
+0x4000515	          0x4889e1	                            mov rcx, rsp	       151	button.c	FUNCTION_1	CALL_1
+0x4000518	        0x488b7808	                mov rdi, qword [rax + 8]	       151	button.c	FUNCTION_1	CALL_1
+0x400051c	      0xe800000000	                          call 0x4000521	       151	button.c	FUNCTION_1	CALL_1
+0x4000521	            0x85c0	                           test eax, eax	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x4000523	    0x48c7c2000000	                              mov rdx, 0	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x400052a	            0x7517	                           jne 0x4000543	       152	button.c	FUNCTION_1	IF_1	CALL_2
+0x400052c	      0x48833c2400	                      cmp qword [rsp], 0	       262	button.c	FUNCTION_3
+0x4000531	    0x48c7c2000000	                              mov rdx, 0	       262	button.c	FUNCTION_3
+0x4000538	    0x48c7c0000000	                              mov rax, 0	       262	button.c	FUNCTION_3
+0x400053f	        0x480f45d0	                         cmovne rdx, rax	       262	button.c	FUNCTION_3
+0x4000543	    0x48c7c6000000	                              mov rsi, 0	       261	button.c	FUNCTION_3	CALL_2
+0x400054a	          0x4889df	                            mov rdi, rbx	       261	button.c	FUNCTION_3	CALL_2
+0x400054d	      0xe800000000	                          call 0x4000552	       261	button.c	FUNCTION_3	CALL_2
+0x4000552	            0x31c0	                            xor eax, eax	       264	button.c	FUNCTION_3
+0x4000554	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       264	button.c	FUNCTION_3
+0x4000559	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       264	button.c	FUNCTION_3
+0x4000562	            0x7506	                           jne 0x400056a	       264	button.c	FUNCTION_3
+0x4000564	        0x4883c410	                           add rsp, 0x10	       264	button.c	FUNCTION_3
+0x4000568	              0x5b	                                 pop rbx	       264	button.c	FUNCTION_3
+0x4000569	              0xc3	                                     ret	       264	button.c	FUNCTION_3
+0x400056a	      0xe800000000	                          call 0x400056f	       264	button.c	FUNCTION_3
+acpi_lid_notifier_unregister	CALL,1:SWITCH,0:DO,0:WHILE,0:IF,0:ELSE,0:functions,0:FOR,0	3
+0x4000060	          0x4889fe	                            mov rsi, rdi	       355	button.c	FUNCTION_7
+0x4000063	    0x48c7c7000000	                              mov rdi, 0	       356	button.c	FUNCTION_7	CALL_1
+0x400006a	      0xe900000000	                           jmp 0x400006f	       356	button.c	FUNCTION_7	CALL_1

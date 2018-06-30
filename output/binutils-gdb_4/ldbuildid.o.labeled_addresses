@@ -1,0 +1,100 @@
+validate_build_id_style	FOR,0:ELSE,0:SWITCH,0:IF,1:functions,0:CALL,0:WHILE,0:DO,0	33
+0x4000040	          0x803f6d	                    cmp byte [rdi], 0x6d	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000043	          0x4889fa	                            mov rdx, rdi	        37	ldbuildid.c	FUNCTION_1
+0x4000046	            0x7520	                           jne 0x4000068	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000048	        0x807f0164	                cmp byte [rdi + 1], 0x64	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x400004c	            0x751a	                           jne 0x4000068	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x400004e	        0x807f0235	                cmp byte [rdi + 2], 0x35	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000052	            0x7514	                           jne 0x4000068	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000054	        0x807f0300	                   cmp byte [rdi + 3], 0	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000058	            0x750e	                           jne 0x4000068	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x400005a	      0xb801000000	                              mov eax, 1	        40	ldbuildid.c	FUNCTION_1	IF_1
+0x400005f	            0xf3c3	                                     ret	        43	ldbuildid.c	FUNCTION_1
+0x4000061	     0xf1f80000000	                         nop dword [rax]	        43	ldbuildid.c	FUNCTION_1
+0x4000068	      0xb905000000	                              mov ecx, 5	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x400006d	          0x4889d6	                            mov rsi, rdx	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000070	      0xbf00000000	                              mov edi, 0	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000075	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000077	      0xb801000000	                              mov eax, 1	        40	ldbuildid.c	FUNCTION_1	IF_1
+0x400007c	        0x400f97c6	                                seta sil	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000080	           0xf92c1	                                 setb cl	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000083	          0x4038ce	                             cmp sil, cl	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000086	            0x74d7	                            je 0x400005f	        38	ldbuildid.c	FUNCTION_1	IF_1
+0x4000088	      0xbf00000000	                              mov edi, 0	        39	ldbuildid.c	FUNCTION_1	IF_1
+0x400008d	      0xb905000000	                              mov ecx, 5	        39	ldbuildid.c	FUNCTION_1	IF_1
+0x4000092	          0x4889d6	                            mov rsi, rdx	        39	ldbuildid.c	FUNCTION_1	IF_1
+0x4000095	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        39	ldbuildid.c	FUNCTION_1	IF_1
+0x4000097	            0x74c6	                            je 0x400005f	        39	ldbuildid.c	FUNCTION_1	IF_1
+0x4000099	      0xbf00000000	                              mov edi, 0	        39	ldbuildid.c	FUNCTION_1	IF_1
+0x400009e	      0xb902000000	                              mov ecx, 2	        39	ldbuildid.c	FUNCTION_1	IF_1
+0x40000a3	          0x4889d6	                            mov rsi, rdx	        39	ldbuildid.c	FUNCTION_1	IF_1
+0x40000a6	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        40	ldbuildid.c	FUNCTION_1	IF_1
+0x40000a8	           0xf94c0	                                 sete al	        40	ldbuildid.c	FUNCTION_1	IF_1
+0x40000ab	           0xfb6c0	                           movzx eax, al	        40	ldbuildid.c	FUNCTION_1	IF_1
+0x40000ae	              0xc3	                                     ret	        40	ldbuildid.c	FUNCTION_1	IF_1
+compute_build_id_size	FOR,0:ELSE,2:SWITCH,0:IF,5:functions,0:CALL,2:WHILE,0:DO,1	65
+0x40000b0	          0x803f6d	                    cmp byte [rdi], 0x6d	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000b3	          0x4889fa	                            mov rdx, rdi	        47	ldbuildid.c	FUNCTION_2
+0x40000b6	            0x7428	                            je 0x40000e0	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000b8	      0xb905000000	                              mov ecx, 5	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000bd	          0x4889d6	                            mov rsi, rdx	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000c0	      0xbf00000000	                              mov edi, 0	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000c5	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000c7	      0xb810000000	                           mov eax, 0x10	        49	ldbuildid.c	FUNCTION_2	IF_1
+0x40000cc	        0x400f97c6	                                seta sil	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000d0	           0xf92c1	                                 setb cl	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000d3	          0x4038ce	                             cmp sil, cl	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000d6	            0x7528	                           jne 0x4000100	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000d8	            0xf3c3	                                     ret	        79	ldbuildid.c	FUNCTION_2
+0x40000da	    0x660f1f440000	                    nop word [rax + rax]	        79	ldbuildid.c	FUNCTION_2
+0x40000e0	        0x807f0164	                cmp byte [rdi + 1], 0x64	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000e4	            0x75d2	                           jne 0x40000b8	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000e6	        0x807f0235	                cmp byte [rdi + 2], 0x35	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000ea	            0x75cc	                           jne 0x40000b8	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000ec	        0x807f0300	                   cmp byte [rdi + 3], 0	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000f0	            0x75c6	                           jne 0x40000b8	        48	ldbuildid.c	FUNCTION_2	IF_1
+0x40000f2	      0xb810000000	                           mov eax, 0x10	        49	ldbuildid.c	FUNCTION_2	IF_1
+0x40000f7	              0xc3	                                     ret	        49	ldbuildid.c	FUNCTION_2	IF_1
+0x40000f8	     0xf1f84000000	                   nop dword [rax + rax]	        49	ldbuildid.c	FUNCTION_2	IF_1
+0x4000100	      0xb905000000	                              mov ecx, 5	        51	ldbuildid.c	FUNCTION_2	IF_2
+0x4000105	          0x4889d6	                            mov rsi, rdx	        51	ldbuildid.c	FUNCTION_2	IF_2
+0x4000108	      0xbf00000000	                              mov edi, 0	        51	ldbuildid.c	FUNCTION_2	IF_2
+0x400010d	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        51	ldbuildid.c	FUNCTION_2	IF_2
+0x400010f	      0xb814000000	                           mov eax, 0x14	        52	ldbuildid.c	FUNCTION_2	IF_2
+0x4000114	        0x400f97c6	                                seta sil	        51	ldbuildid.c	FUNCTION_2	IF_2
+0x4000118	           0xf92c1	                                 setb cl	        51	ldbuildid.c	FUNCTION_2	IF_2
+0x400011b	          0x4038ce	                             cmp sil, cl	        51	ldbuildid.c	FUNCTION_2	IF_2
+0x400011e	            0x74b8	                            je 0x40000d8	        51	ldbuildid.c	FUNCTION_2	IF_2
+0x4000120	      0xb902000000	                              mov ecx, 2	        54	ldbuildid.c	FUNCTION_2	IF_3
+0x4000125	          0x4889d6	                            mov rsi, rdx	        54	ldbuildid.c	FUNCTION_2	IF_3
+0x4000128	      0xbf00000000	                              mov edi, 0	        54	ldbuildid.c	FUNCTION_2	IF_3
+0x400012d	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        54	ldbuildid.c	FUNCTION_2	IF_3
+0x400012f	        0x400f97c6	                                seta sil	        54	ldbuildid.c	FUNCTION_2	IF_3
+0x4000133	           0xf92c1	                                 setb cl	        54	ldbuildid.c	FUNCTION_2	IF_3
+0x4000136	            0x31c0	                            xor eax, eax	        78	ldbuildid.c	FUNCTION_2
+0x4000138	          0x4038ce	                             cmp sil, cl	        54	ldbuildid.c	FUNCTION_2	IF_3
+0x400013b	            0x759b	                           jne 0x40000d8	        54	ldbuildid.c	FUNCTION_2	IF_3
+0x400013d	        0x4883c202	                              add rdx, 2	        58	ldbuildid.c	FUNCTION_2	IF_3
+0x4000141	            0xeb20	                           jmp 0x4000163	        58	ldbuildid.c	FUNCTION_2	IF_3
+0x4000143	       0xf1f440000	                   nop dword [rax + rax]	        58	ldbuildid.c	FUNCTION_2	IF_3
+0x4000148	         0xfb67201	               movzx esi, byte [rdx + 1]	        62	ldbuildid.c	FUNCTION_2	IF_3	DO_1	IF_4	CALL_2
+0x400014c	    0xf68436000000	                test byte [rsi + rsi], 1	        62	ldbuildid.c	FUNCTION_2	IF_3	DO_1	IF_4	CALL_2
+0x4000154	            0x741d	                            je 0x4000173	        62	ldbuildid.c	FUNCTION_2	IF_3	DO_1	IF_4	CALL_2
+0x4000156	        0x4883c001	                              add rax, 1	        64	ldbuildid.c	FUNCTION_2	IF_3	DO_1	IF_4
+0x400015a	        0x4883c202	                              add rdx, 2	        65	ldbuildid.c	FUNCTION_2	IF_3	DO_1	IF_4
+0x400015e	          0x803a00	                       cmp byte [rdx], 0	        74	ldbuildid.c	FUNCTION_2	IF_3	DO_1
+0x4000161	            0x7425	                            je 0x4000188	        74	ldbuildid.c	FUNCTION_2	IF_3	DO_1
+0x4000163	           0xfb632	                   movzx esi, byte [rdx]	        62	ldbuildid.c	FUNCTION_2	IF_3	DO_1	IF_4	CALL_2
+0x4000166	    0xf68436000000	                test byte [rsi + rsi], 1	        62	ldbuildid.c	FUNCTION_2	IF_3	DO_1	IF_4	CALL_2
+0x400016e	          0x4889f1	                            mov rcx, rsi	        62	ldbuildid.c	FUNCTION_2	IF_3	DO_1	IF_4	CALL_2
+0x4000171	            0x75d5	                           jne 0x4000148	        62	ldbuildid.c	FUNCTION_2	IF_3	DO_1	IF_4	CALL_2
+0x4000173	          0x80f92d	                            cmp cl, 0x2d	        67	ldbuildid.c	FUNCTION_2	IF_3	DO_1	ELSE_1	IF_5
+0x4000176	            0x7405	                            je 0x400017d	        67	ldbuildid.c	FUNCTION_2	IF_3	DO_1	ELSE_1	IF_5
+0x4000178	          0x80f93a	                            cmp cl, 0x3a	        67	ldbuildid.c	FUNCTION_2	IF_3	DO_1	ELSE_1	IF_5
+0x400017b	            0x750d	                           jne 0x400018a	        67	ldbuildid.c	FUNCTION_2	IF_3	DO_1	ELSE_1	IF_5
+0x400017d	        0x4883c201	                              add rdx, 1	        68	ldbuildid.c	FUNCTION_2	IF_3	DO_1	ELSE_1	IF_5
+0x4000181	            0xebdb	                           jmp 0x400015e	        68	ldbuildid.c	FUNCTION_2	IF_3	DO_1	ELSE_1	IF_5
+0x4000183	       0xf1f440000	                   nop dword [rax + rax]	        68	ldbuildid.c	FUNCTION_2	IF_3	DO_1	ELSE_1	IF_5
+0x4000188	            0xf3c3	                                     ret	        68	ldbuildid.c	FUNCTION_2	IF_3	DO_1	ELSE_1	IF_5
+0x400018a	            0x31c0	                            xor eax, eax	        78	ldbuildid.c	FUNCTION_2
+0x400018c	              0xc3	                                     ret	        79	ldbuildid.c	FUNCTION_2

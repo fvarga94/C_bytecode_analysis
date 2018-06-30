@@ -1,13 +1,20 @@
-cmd__mktemp	functions,0:CALL,3:IF,1:SWITCH,0:FOR,0:DO,0:ELSE,0:WHILE,0	12
-0x4000040	        0x4883ec08	                              sub rsp, 8	         8	test-mktemp.c	FUNCTION_1
-0x4000044	          0x83ff02	                              cmp edi, 2	         9	test-mktemp.c	FUNCTION_1	IF_1
-0x4000047	            0x740a	                            je 0x4000053	         9	test-mktemp.c	FUNCTION_1	IF_1
-0x4000049	      0xbf00000000	                              mov edi, 0	        10	test-mktemp.c	FUNCTION_1	CALL_1
-0x400004e	      0xe800000000	                          call 0x4000053	        10	test-mktemp.c	FUNCTION_1	CALL_1
-0x4000053	        0x488b7e08	                mov rdi, qword [rsi + 8]	        12	test-mktemp.c	FUNCTION_1	CALL_3
-0x4000057	      0xe800000000	                          call 0x400005c	        12	test-mktemp.c	FUNCTION_1	CALL_3
-0x400005c	          0x4889c7	                            mov rdi, rax	        12	test-mktemp.c	FUNCTION_1	CALL_3
-0x400005f	      0xe800000000	                          call 0x4000064	        12	test-mktemp.c	FUNCTION_1	CALL_3
-0x4000064	      0xb800000000	                              mov eax, 0	        15	test-mktemp.c	FUNCTION_1
-0x4000069	        0x4883c408	                              add rsp, 8	        15	test-mktemp.c	FUNCTION_1
-0x400006d	              0xc3	                                     ret	        15	test-mktemp.c	FUNCTION_1
+cmd__mktemp	CALL,3:SWITCH,0:IF,1:ELSE,0:DO,0:FOR,0:WHILE,0:functions,0	19
+0x4000040	              0x55	                                push rbp	         8	test-mktemp.c	FUNCTION_1
+0x4000041	          0x4889e5	                            mov rbp, rsp	         8	test-mktemp.c	FUNCTION_1
+0x4000044	        0x4883ec10	                           sub rsp, 0x10	         8	test-mktemp.c	FUNCTION_1
+0x4000048	          0x897dfc	                mov dword [rbp - 4], edi	         8	test-mktemp.c	FUNCTION_1
+0x400004b	        0x488975f0	             mov qword [rbp - 0x10], rsi	         8	test-mktemp.c	FUNCTION_1
+0x400004f	        0x837dfc02	                  cmp dword [rbp - 4], 2	         9	test-mktemp.c	FUNCTION_1	IF_1
+0x4000053	            0x740a	                            je 0x400005f	         9	test-mktemp.c	FUNCTION_1	IF_1
+0x4000055	      0xbf00000000	                              mov edi, 0	        10	test-mktemp.c	FUNCTION_1	CALL_1
+0x400005a	      0xe800000000	                          call 0x400005f	        10	test-mktemp.c	FUNCTION_1	CALL_1
+0x400005f	        0x488b45f0	             mov rax, qword [rbp - 0x10]	        12	test-mktemp.c	FUNCTION_1	CALL_3
+0x4000063	        0x4883c008	                              add rax, 8	        12	test-mktemp.c	FUNCTION_1	CALL_3
+0x4000067	          0x488b00	                    mov rax, qword [rax]	        12	test-mktemp.c	FUNCTION_1	CALL_3
+0x400006a	          0x4889c7	                            mov rdi, rax	        12	test-mktemp.c	FUNCTION_1	CALL_3
+0x400006d	      0xe800000000	                          call 0x4000072	        12	test-mktemp.c	FUNCTION_1	CALL_3
+0x4000072	          0x4889c7	                            mov rdi, rax	        12	test-mktemp.c	FUNCTION_1	CALL_3
+0x4000075	      0xe800000000	                          call 0x400007a	        12	test-mktemp.c	FUNCTION_1	CALL_3
+0x400007a	      0xb800000000	                              mov eax, 0	        14	test-mktemp.c	FUNCTION_1
+0x400007f	              0xc9	                                   leave	        15	test-mktemp.c	FUNCTION_1
+0x4000080	              0xc3	                                     ret	        15	test-mktemp.c	FUNCTION_1

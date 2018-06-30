@@ -1,0 +1,136 @@
+pty_cleanup	SWITCH,0:IF,0:ELSE,0:functions,0:FOR,0:CALL,1:DO,0:WHILE,0	2
+0x4000320	    0x488bbfb80200	           mov rdi, qword [rdi + 0x2b8] 	       449	pty.c	FUNCTION_18	CALL_1
+0x4000327	      0xe900000000	                           jmp 0x400032c	       449	pty.c	FUNCTION_18	CALL_1
+pts_unix98_lookup	SWITCH,0:IF,1:ELSE,0:functions,0:FOR,0:CALL,4:DO,0:WHILE,0	14
+0x4000490	              0x53	                                push rbx	       713	pty.c	FUNCTION_29
+0x4000491	    0x48c7c7000000	                              mov rdi, 0	       716	pty.c	FUNCTION_29	CALL_1
+0x4000498	          0x4889f3	                            mov rbx, rsi	       713	pty.c	FUNCTION_29
+0x400049b	      0xe800000000	                          call 0x40004a0	       716	pty.c	FUNCTION_29	CALL_1
+0x40004a0	        0x488b7b18	            mov rdi, qword [rbx + 0x18] 	       717	pty.c	FUNCTION_29	CALL_2
+0x40004a4	      0xe800000000	                          call 0x40004a9	       717	pty.c	FUNCTION_29	CALL_2
+0x40004a9	    0x48c7c7000000	                              mov rdi, 0	       718	pty.c	FUNCTION_29	CALL_3
+0x40004b0	          0x4889c3	                            mov rbx, rax	       717	pty.c	FUNCTION_29	CALL_2
+0x40004b3	      0xe800000000	                          call 0x40004b8	       718	pty.c	FUNCTION_29	CALL_3
+0x40004b8	          0x4885db	                           test rbx, rbx	       720	pty.c	FUNCTION_29	IF_1
+0x40004bb	    0x48c7c0fbffff	             mov rax, 0xfffffffffffffffb	       720	pty.c	FUNCTION_29	IF_1
+0x40004c2	        0x480f45c3	                         cmovne rax, rbx	       720	pty.c	FUNCTION_29	IF_1
+0x40004c6	              0x5b	                                 pop rbx	       723	pty.c	FUNCTION_29
+0x40004c7	              0xc3	                                     ret	       723	pty.c	FUNCTION_29
+pty_write	SWITCH,0:IF,3:ELSE,0:functions,0:FOR,0:CALL,2:DO,0:WHILE,0	22
+0x40002d0	            0x31c0	                            xor eax, eax	       115	pty.c	FUNCTION_3	IF_1
+0x40002d2	    0xf687d4010000	              test byte [rdi + 0x1d4], 1	       114	pty.c	FUNCTION_3	IF_1
+0x40002d9	            0x7540	                           jne 0x400031b	       114	pty.c	FUNCTION_3	IF_1
+0x40002db	            0x85d2	                           test edx, edx	       117	pty.c	FUNCTION_3	IF_2
+0x40002dd	            0x89d0	                            mov eax, edx	       117	pty.c	FUNCTION_3	IF_2
+0x40002df	            0x7e3a	                           jle 0x400031b	       117	pty.c	FUNCTION_3	IF_2
+0x40002e1	              0x53	                                push rbx	       111	pty.c	FUNCTION_3
+0x40002e2	          0x4863ca	                         movsxd rcx, edx	        37	tty_flip.h	FUNCTION_45	CALL_1
+0x40002e5	            0x31d2	                            xor edx, edx	        37	tty_flip.h	FUNCTION_45	CALL_1
+0x40002e7	        0x4883ec08	                              sub rsp, 8	       111	pty.c	FUNCTION_3
+0x40002eb	    0x488b9ff80100	           mov rbx, qword [rdi + 0x1f8] 	       112	pty.c	FUNCTION_3
+0x40002f2	    0x488bbbb80200	           mov rdi, qword [rbx + 0x2b8] 	        37	tty_flip.h	FUNCTION_45	CALL_1
+0x40002f9	      0xe800000000	                          call 0x40002fe	        37	tty_flip.h	FUNCTION_45	CALL_1
+0x40002fe	            0x85c0	                           test eax, eax	       121	pty.c	FUNCTION_3	IF_2	IF_3
+0x4000300	            0x7414	                            je 0x4000316	       121	pty.c	FUNCTION_3	IF_2	IF_3
+0x4000302	    0x488bbbb80200	           mov rdi, qword [rbx + 0x2b8] 	       122	pty.c	FUNCTION_3	IF_2	CALL_2
+0x4000309	        0x89442404	                mov dword [rsp + 4], eax	       122	pty.c	FUNCTION_3	IF_2	CALL_2
+0x400030d	      0xe800000000	                          call 0x4000312	       122	pty.c	FUNCTION_3	IF_2	CALL_2
+0x4000312	        0x8b442404	                mov eax, dword [rsp + 4]	       122	pty.c	FUNCTION_3	IF_2	CALL_2
+0x4000316	        0x4883c408	                              add rsp, 8	       125	pty.c	FUNCTION_3
+0x400031a	              0x5b	                                 pop rbx	       125	pty.c	FUNCTION_3
+0x400031b	            0xf3c3	                                     ret	       125	pty.c	FUNCTION_3
+ptm_unix98_lookup	SWITCH,0:IF,0:ELSE,0:functions,0:FOR,0:CALL,1:DO,0:WHILE,0	2
+0x40000c0	    0x48c7c0fbffff	             mov rax, 0xfffffffffffffffb	       700	pty.c	FUNCTION_28
+0x40000c7	              0xc3	                                     ret	       700	pty.c	FUNCTION_28
+pty_resize	SWITCH,0:IF,3:ELSE,0:functions,0:FOR,0:CALL,9:DO,0:WHILE,0	58
+0x40004f0	            0x4157	                                push r15	       300	pty.c	FUNCTION_14
+0x40004f2	            0x4156	                                push r14	       300	pty.c	FUNCTION_14
+0x40004f4	            0x4155	                                push r13	       300	pty.c	FUNCTION_14
+0x40004f6	            0x4154	                                push r12	       300	pty.c	FUNCTION_14
+0x40004f8	          0x4989f4	                            mov r12, rsi	       300	pty.c	FUNCTION_14
+0x40004fb	              0x55	                                push rbp	       300	pty.c	FUNCTION_14
+0x40004fc	    0x488dafe80000	                   lea rbp, [rdi + 0xe8]	       305	pty.c	FUNCTION_14	CALL_1
+0x4000503	              0x53	                                push rbx	       300	pty.c	FUNCTION_14
+0x4000504	          0x4889fb	                            mov rbx, rdi	       300	pty.c	FUNCTION_14
+0x4000507	    0x4c8baff80100	           mov r13, qword [rdi + 0x1f8] 	       302	pty.c	FUNCTION_14
+0x400050e	          0x4889ef	                            mov rdi, rbp	       305	pty.c	FUNCTION_14	CALL_1
+0x4000511	      0xe800000000	                          call 0x4000516	       305	pty.c	FUNCTION_14	CALL_1
+0x4000516	    0x488db3cc0100	                  lea rsi, [rbx + 0x1cc]	       306	pty.c	FUNCTION_14	IF_1	CALL_2
+0x400051d	      0xba08000000	                              mov edx, 8	       306	pty.c	FUNCTION_14	IF_1	CALL_2
+0x4000522	          0x4c89e7	                            mov rdi, r12	       306	pty.c	FUNCTION_14	IF_1	CALL_2
+0x4000525	      0xe800000000	                          call 0x400052a	       306	pty.c	FUNCTION_14	IF_1	CALL_2
+0x400052a	            0x85c0	                           test eax, eax	       306	pty.c	FUNCTION_14	IF_1	CALL_2
+0x400052c	            0x7515	                           jne 0x4000543	       306	pty.c	FUNCTION_14	IF_1	CALL_2
+0x400052e	          0x4889ef	                            mov rdi, rbp	       324	pty.c	FUNCTION_14	CALL_9
+0x4000531	      0xe800000000	                          call 0x4000536	       324	pty.c	FUNCTION_14	CALL_9
+0x4000536	            0x31c0	                            xor eax, eax	       326	pty.c	FUNCTION_14
+0x4000538	              0x5b	                                 pop rbx	       326	pty.c	FUNCTION_14
+0x4000539	              0x5d	                                 pop rbp	       326	pty.c	FUNCTION_14
+0x400053a	            0x415c	                                 pop r12	       326	pty.c	FUNCTION_14
+0x400053c	            0x415d	                                 pop r13	       326	pty.c	FUNCTION_14
+0x400053e	            0x415e	                                 pop r14	       326	pty.c	FUNCTION_14
+0x4000540	            0x415f	                                 pop r15	       326	pty.c	FUNCTION_14
+0x4000542	              0xc3	                                     ret	       326	pty.c	FUNCTION_14
+0x4000543	          0x4889df	                            mov rdi, rbx	       310	pty.c	FUNCTION_14	CALL_3
+0x4000546	      0xe800000000	                          call 0x400054b	       310	pty.c	FUNCTION_14	CALL_3
+0x400054b	          0x4c89ef	                            mov rdi, r13	       311	pty.c	FUNCTION_14	CALL_4
+0x400054e	          0x4989c6	                            mov r14, rax	       310	pty.c	FUNCTION_14	CALL_3
+0x4000551	      0xe800000000	                          call 0x4000556	       311	pty.c	FUNCTION_14	CALL_4
+0x4000556	          0x4d85f6	                           test r14, r14	       313	pty.c	FUNCTION_14	IF_2
+0x4000559	          0x4989c7	                            mov r15, rax	       311	pty.c	FUNCTION_14	CALL_4
+0x400055c	            0x7412	                            je 0x4000570	       313	pty.c	FUNCTION_14	IF_2
+0x400055e	      0xba01000000	                              mov edx, 1	       314	pty.c	FUNCTION_14	CALL_5
+0x4000563	      0xbe1c000000	                           mov esi, 0x1c	       314	pty.c	FUNCTION_14	CALL_5
+0x4000568	          0x4c89f7	                            mov rdi, r14	       314	pty.c	FUNCTION_14	CALL_5
+0x400056b	      0xe800000000	                          call 0x4000570	       314	pty.c	FUNCTION_14	CALL_5
+0x4000570	          0x4d39fe	                            cmp r14, r15	       315	pty.c	FUNCTION_14	IF_3
+0x4000573	            0x7405	                            je 0x400057a	       315	pty.c	FUNCTION_14	IF_3
+0x4000575	          0x4d85ff	                           test r15, r15	       315	pty.c	FUNCTION_14	IF_3
+0x4000578	            0x7528	                           jne 0x40005a2	       315	pty.c	FUNCTION_14	IF_3
+0x400057a	          0x4c89f7	                            mov rdi, r14	       318	pty.c	FUNCTION_14	CALL_7
+0x400057d	      0xe800000000	                          call 0x4000582	       318	pty.c	FUNCTION_14	CALL_7
+0x4000582	          0x4c89ff	                            mov rdi, r15	       319	pty.c	FUNCTION_14	CALL_8
+0x4000585	      0xe800000000	                          call 0x400058a	       319	pty.c	FUNCTION_14	CALL_8
+0x400058a	        0x498b0424	                    mov rax, qword [r12]	       321	pty.c	FUNCTION_14
+0x400058e	    0x488983cc0100	            mov qword [rbx + 0x1cc], rax	       321	pty.c	FUNCTION_14
+0x4000595	        0x498b0424	                    mov rax, qword [r12]	       322	pty.c	FUNCTION_14
+0x4000599	    0x498985cc0100	            mov qword [r13 + 0x1cc], rax	       322	pty.c	FUNCTION_14
+0x40005a0	            0xeb8c	                           jmp 0x400052e	       322	pty.c	FUNCTION_14
+0x40005a2	      0xba01000000	                              mov edx, 1	       316	pty.c	FUNCTION_14	CALL_6
+0x40005a7	      0xbe1c000000	                           mov esi, 0x1c	       316	pty.c	FUNCTION_14	CALL_6
+0x40005ac	          0x4c89ff	                            mov rdi, r15	       316	pty.c	FUNCTION_14	CALL_6
+0x40005af	      0xe800000000	                          call 0x40005b4	       316	pty.c	FUNCTION_14	CALL_6
+0x40005b4	            0xebc4	                           jmp 0x400057a	       316	pty.c	FUNCTION_14	CALL_6
+pty_chars_in_buffer	SWITCH,0:IF,0:ELSE,0:functions,0:FOR,0:CALL,0:DO,0:WHILE,0	2
+0x4000040	            0x31c0	                            xor eax, eax	       153	pty.c	FUNCTION_5
+0x4000042	              0xc3	                                     ret	       153	pty.c	FUNCTION_5
+pty_unix98_remove	SWITCH,0:IF,2:ELSE,1:functions,0:FOR,0:CALL,2:DO,0:WHILE,0	19
+0x40000d0	              0x53	                                push rbx	       732	pty.c	FUNCTION_31
+0x40000d1	        0x488b4610	            mov rax, qword [rsi + 0x10] 	       735	pty.c	FUNCTION_31	IF_1
+0x40000d5	      0x6683783a01	                cmp word [rax + 0x3a], 1	       735	pty.c	FUNCTION_31	IF_1
+0x40000da	            0x7427	                            je 0x4000103	       735	pty.c	FUNCTION_31	IF_1
+0x40000dc	    0x488b86f80100	           mov rax, qword [rsi + 0x1f8] 	       738	pty.c	FUNCTION_31	ELSE_1
+0x40000e3	    0x488b98600200	           mov rbx, qword [rax + 0x260] 	       738	pty.c	FUNCTION_31	ELSE_1
+0x40000ea	          0x4885db	                           test rbx, rbx	       740	pty.c	FUNCTION_31	ELSE_1	IF_2
+0x40000ed	            0x7420	                            je 0x400010f	       740	pty.c	FUNCTION_31	ELSE_1	IF_2
+0x40000ef	          0x8b7620	            mov esi, dword [rsi + 0x20] 	       741	pty.c	FUNCTION_31	ELSE_1	IF_2	CALL_1
+0x40000f2	          0x4889df	                            mov rdi, rbx	       741	pty.c	FUNCTION_31	ELSE_1	IF_2	CALL_1
+0x40000f5	      0xe800000000	                          call 0x40000fa	       741	pty.c	FUNCTION_31	ELSE_1	IF_2	CALL_1
+0x40000fa	          0x4889df	                            mov rdi, rbx	       742	pty.c	FUNCTION_31	ELSE_1	IF_2	CALL_2
+0x40000fd	              0x5b	                                 pop rbx	       744	pty.c	FUNCTION_31
+0x40000fe	      0xe900000000	                           jmp 0x4000103	       742	pty.c	FUNCTION_31	ELSE_1	IF_2	CALL_2
+0x4000103	    0x488b9e600200	           mov rbx, qword [rsi + 0x260] 	       736	pty.c	FUNCTION_31	IF_1
+0x400010a	          0x4885db	                           test rbx, rbx	       740	pty.c	FUNCTION_31	ELSE_1	IF_2
+0x400010d	            0x75e0	                           jne 0x40000ef	       740	pty.c	FUNCTION_31	ELSE_1	IF_2
+0x400010f	              0x5b	                                 pop rbx	       744	pty.c	FUNCTION_31
+0x4000110	              0xc3	                                     ret	       744	pty.c	FUNCTION_31
+pty_unix98_compat_ioctl	SWITCH,0:IF,0:ELSE,0:functions,0:FOR,0:CALL,1:DO,0:WHILE,0	3
+0x40009c0	      0xe87bfeffff	               call sym.pty_unix98_ioctl	       683	pty.c	FUNCTION_27	CALL_1
+0x40009c5	            0x4898	                                    cdqe	       683	pty.c	FUNCTION_27	CALL_1
+0x40009c7	              0xc3	                                     ret	       684	pty.c	FUNCTION_27
+pty_show_fdinfo	SWITCH,0:IF,0:ELSE,0:functions,0:FOR,0:CALL,1:DO,0:WHILE,0	5
+0x40004d0	          0x8b5720	            mov edx, dword [rdi + 0x20] 	       748	pty.c	FUNCTION_32	CALL_1
+0x40004d3	          0x4889f0	                            mov rax, rsi	       747	pty.c	FUNCTION_32
+0x40004d6	    0x48c7c6000000	                              mov rsi, 0	       748	pty.c	FUNCTION_32	CALL_1
+0x40004dd	          0x4889c7	                            mov rdi, rax	       748	pty.c	FUNCTION_32	CALL_1
+0x40004e0	      0xe900000000	                           jmp 0x40004e5	       748	pty.c	FUNCTION_32	CALL_1

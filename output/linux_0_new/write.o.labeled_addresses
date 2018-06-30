@@ -1,0 +1,153 @@
+nfs_async_write_reschedule_io	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,1:functions,0:WHILE,0	2
+0x4001230	        0x4883c710	                           add rdi, 0x10	      1411	write.c	FUNCTION_66	CALL_1
+0x4001234	            0xebba	           jmp sym.nfs_async_write_error	      1411	write.c	FUNCTION_66	CALL_1
+nfs_writepage	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,2:functions,0:WHILE,0	11
+0x4002210	              0x55	                                push rbp	       688	write.c	FUNCTION_30
+0x4002211	              0x53	                                push rbx	       688	write.c	FUNCTION_30
+0x4002212	          0x4889fb	                            mov rbx, rdi	       688	write.c	FUNCTION_30
+0x4002215	      0xe8a6fcffff	           call sym.nfs_writepage_locked	       691	write.c	FUNCTION_30	CALL_1
+0x400221a	          0x4889df	                            mov rdi, rbx	       692	write.c	FUNCTION_30	CALL_2
+0x400221d	            0x89c5	                            mov ebp, eax	       691	write.c	FUNCTION_30	CALL_1
+0x400221f	      0xe800000000	                          call 0x4002224	       692	write.c	FUNCTION_30	CALL_2
+0x4002224	            0x89e8	                            mov eax, ebp	       694	write.c	FUNCTION_30
+0x4002226	              0x5b	                                 pop rbx	       694	write.c	FUNCTION_30
+0x4002227	              0x5d	                                 pop rbp	       694	write.c	FUNCTION_30
+0x4002228	              0xc3	                                     ret	       694	write.c	FUNCTION_30
+nfs_filemap_write_and_wait_range	ELSE,0:DO,0:FOR,0:IF,1:SWITCH,0:CALL,2:functions,0:WHILE,0	1
+0x4000810	      0xe900000000	                           jmp 0x4000815	      1971	write.c	FUNCTION_92	CALL_1
+nfs_commitdata_release	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,2:functions,0:WHILE,0	8
+0x4000430	              0x53	                                push rbx	      1643	write.c	FUNCTION_78
+0x4000431	          0x4889fb	                            mov rbx, rdi	      1643	write.c	FUNCTION_78
+0x4000434	    0x488bbf700200	           mov rdi, qword [rdi + 0x270] 	      1644	write.c	FUNCTION_78	CALL_1
+0x400043b	      0xe800000000	                          call 0x4000440	      1644	write.c	FUNCTION_78	CALL_1
+0x4000440	          0x4889df	                            mov rdi, rbx	        98	write.c	FUNCTION_2	CALL_1
+0x4000443	    0x488b35000000	            mov rsi, qword [0x0400044a] 	        98	write.c	FUNCTION_2	CALL_1
+0x400044a	              0x5b	                                 pop rbx	      1646	write.c	FUNCTION_78
+0x400044b	      0xe900000000	              jmp sym.nfs_commit_release	        98	write.c	FUNCTION_2	CALL_1
+nfs_writehdr_free	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,1:functions,0:WHILE,0	2
+0x40002d0	    0x488b35000000	            mov rsi, qword [0x040002d7] 	       113	write.c	FUNCTION_4	CALL_1
+0x40002d7	      0xe900000000	                           jmp 0x40002dc	       113	write.c	FUNCTION_4	CALL_1
+nfs_writehdr_alloc	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,2:functions,0:WHILE,0	17
+0x4000270	    0x488b3d000000	            mov rdi, qword [0x04000277] 	       104	write.c	FUNCTION_3	CALL_1
+0x4000277	      0xbe00004001	                      mov esi, 0x1400000	       104	write.c	FUNCTION_3	CALL_1
+0x400027c	      0xe800000000	                          call 0x4000281	       104	write.c	FUNCTION_3	CALL_1
+0x4000281	        0x488d7808	                      lea rdi, [rax + 8]	       106	write.c	FUNCTION_3	CALL_2
+0x4000285	          0x4889c1	                            mov rcx, rax	       106	write.c	FUNCTION_3	CALL_2
+0x4000288	          0x4889c2	                            mov rdx, rax	       104	write.c	FUNCTION_3	CALL_1
+0x400028b	    0x48c700000000	                      mov qword [rax], 0	       106	write.c	FUNCTION_3	CALL_2
+0x4000292	    0x48c780700300	              mov qword [rax + 0x370], 0	       106	write.c	FUNCTION_3	CALL_2
+0x400029d	            0x31c0	                            xor eax, eax	       106	write.c	FUNCTION_3	CALL_2
+0x400029f	        0x4883e7f8	             and rdi, 0xfffffffffffffff8	       106	write.c	FUNCTION_3	CALL_2
+0x40002a3	          0x4829f9	                            sub rcx, rdi	       106	write.c	FUNCTION_3	CALL_2
+0x40002a6	    0x81c178030000	                          add ecx, 0x378	       106	write.c	FUNCTION_3	CALL_2
+0x40002ac	          0xc1e903	                              shr ecx, 3	       106	write.c	FUNCTION_3	CALL_2
+0x40002af	          0xf348ab	              rep stosq qword [rdi], rax	       106	write.c	FUNCTION_3	CALL_2
+0x40002b2	    0xc74234020000	               mov dword [rdx + 0x34], 2	       107	write.c	FUNCTION_3
+0x40002b9	          0x4889d0	                            mov rax, rdx	       109	write.c	FUNCTION_3
+0x40002bc	              0xc3	                                     ret	       109	write.c	FUNCTION_3
+nfs_destroy_writepagecache	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,4:functions,0:WHILE,0	8
+0x4003030	    0x488b3d000000	            mov rdi, qword [0x04003037] 	      2145	write.c	FUNCTION_98	CALL_1
+0x4003037	      0xe800000000	                          call 0x400303c	      2145	write.c	FUNCTION_98	CALL_1
+0x400303c	    0x488b3d000000	            mov rdi, qword [0x04003043] 	      2146	write.c	FUNCTION_98	CALL_2
+0x4003043	      0xe800000000	                          call 0x4003048	      2146	write.c	FUNCTION_98	CALL_2
+0x4003048	    0x488b3d000000	            mov rdi, qword [0x0400304f] 	      2147	write.c	FUNCTION_98	CALL_3
+0x400304f	      0xe800000000	                          call 0x4003054	      2147	write.c	FUNCTION_98	CALL_3
+0x4003054	    0x488b3d000000	            mov rdi, qword [0x0400305b] 	      2148	write.c	FUNCTION_98	CALL_4
+0x400305b	      0xe900000000	                   jmp section_end..text	      2148	write.c	FUNCTION_98	CALL_4
+nfs_commit_resched_write	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,1:functions,0:WHILE,0	2
+0x40002e0	        0x488b7e10	            mov rdi, qword [rsi + 0x10] 	      1761	write.c	FUNCTION_83	CALL_1
+0x40002e4	      0xe900000000	                           jmp 0x40002e9	      1761	write.c	FUNCTION_83	CALL_1
+nfs_commit_release	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,2:functions,0:WHILE,0	8
+0x4000450	              0x53	                                push rbx	      1854	write.c	FUNCTION_87
+0x4000451	    0x488b87a00200	           mov rax, qword [rdi + 0x2a0] 	      1857	write.c	FUNCTION_87	CALL_1
+0x4000458	          0x4889fb	                            mov rbx, rdi	      1854	write.c	FUNCTION_87
+0x400045b	          0x488b00	                    mov rax, qword [rax]	      1857	write.c	FUNCTION_87	CALL_1
+0x400045e	      0xe800000000	                          call 0x4000463	      1857	write.c	FUNCTION_87	CALL_1
+0x4000463	          0x4889df	                            mov rdi, rbx	      1858	write.c	FUNCTION_87	CALL_2
+0x4000466	              0x5b	                                 pop rbx	      1859	write.c	FUNCTION_87
+0x4000467	            0xebc7	          jmp sym.nfs_commitdata_release	      1858	write.c	FUNCTION_87	CALL_2
+nfs_pageio_reset_write_mds	ELSE,0:DO,0:FOR,0:IF,1:SWITCH,0:CALL,3:functions,0:WHILE,0	20
+0x4000330	              0x53	                                push rbx	      1438	write.c	FUNCTION_68
+0x4000331	        0x488b4710	            mov rax, qword [rdi + 0x10] 	      1441	write.c	FUNCTION_68	IF_1
+0x4000335	          0x4889fb	                            mov rbx, rdi	      1438	write.c	FUNCTION_68
+0x4000338	          0x4885c0	                           test rax, rax	      1441	write.c	FUNCTION_68	IF_1
+0x400033b	            0x740e	                            je 0x400034b	      1441	write.c	FUNCTION_68	IF_1
+0x400033d	        0x488b4020	            mov rax, qword [rax + 0x20] 	      1441	write.c	FUNCTION_68	IF_1
+0x4000341	          0x4885c0	                           test rax, rax	      1441	write.c	FUNCTION_68	IF_1
+0x4000344	            0x7405	                            je 0x400034b	      1441	write.c	FUNCTION_68	IF_1
+0x4000346	      0xe800000000	                          call 0x400034b	      1442	write.c	FUNCTION_68	CALL_1
+0x400034b	    0x48c743100000	               mov qword [rbx + 0x10], 0	      1444	write.c	FUNCTION_68
+0x4000353	          0x4889df	                            mov rdi, rbx	      1446	write.c	FUNCTION_68	CALL_2
+0x4000356	      0xe800000000	                          call 0x400035b	      1446	write.c	FUNCTION_68	CALL_2
+0x400035b	        0x488b5308	                mov rdx, qword [rbx + 8]	      1446	write.c	FUNCTION_68	CALL_2
+0x400035f	        0x488b4358	            mov rax, qword [rbx + 0x58] 	      1448	write.c	FUNCTION_68
+0x4000363	        0x488b5228	            mov rdx, qword [rdx + 0x28] 	      1448	write.c	FUNCTION_68
+0x4000367	    0x488b92080400	           mov rdx, qword [rdx + 0x408] 	      1449	write.c	FUNCTION_68	CALL_3
+0x400036e	          0x8b4a60	            mov ecx, dword [rdx + 0x60] 	      1449	write.c	FUNCTION_68	CALL_3
+0x4000371	        0x48894820	             mov qword [rax + 0x20], rcx	      1449	write.c	FUNCTION_68	CALL_3
+0x4000375	              0x5b	                                 pop rbx	      1450	write.c	FUNCTION_68
+0x4000376	              0xc3	                                     ret	      1450	write.c	FUNCTION_68
+nfs_io_completion_commit	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,1:functions,0:WHILE,0	3
+0x4000e20	            0x31d2	                            xor edx, edx	      1919	write.c	FUNCTION_90	CALL_1
+0x4000e22	            0x31f6	                            xor esi, esi	      1919	write.c	FUNCTION_90	CALL_1
+0x4000e24	      0xe967feffff	              jmp sym.__nfs_commit_inode	      1919	write.c	FUNCTION_90	CALL_1
+nfs_ctx_key_to_expire	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,2:functions,0:WHILE,0	7
+0x4002490	        0x488b5628	            mov rdx, qword [rsi + 0x28] 	      1245	write.c	FUNCTION_57
+0x4002494	        0x488b4740	            mov rax, qword [rdi + 0x40] 	      1248	write.c	FUNCTION_57	CALL_2
+0x4002498	    0x488b92080400	           mov rdx, qword [rdx + 0x408] 	      1246	write.c	FUNCTION_57	CALL_1
+0x400249f	          0x4889c6	                            mov rsi, rax	      1248	write.c	FUNCTION_57	CALL_2
+0x40024a2	        0x488b5228	            mov rdx, qword [rdx + 0x28] 	      1246	write.c	FUNCTION_57	CALL_1
+0x40024a6	        0x488b7a50	            mov rdi, qword [rdx + 0x50] 	      1248	write.c	FUNCTION_57	CALL_2
+0x40024aa	      0xe900000000	                           jmp 0x40024af	      1248	write.c	FUNCTION_57	CALL_2
+nfs_writepages_callback	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,2:functions,0:WHILE,0	11
+0x4001ea0	              0x55	                                push rbp	       697	write.c	FUNCTION_31
+0x4001ea1	              0x53	                                push rbx	       697	write.c	FUNCTION_31
+0x4001ea2	          0x4889fb	                            mov rbx, rdi	       697	write.c	FUNCTION_31
+0x4001ea5	      0xe836fdffff	               call sym.nfs_do_writepage	       700	write.c	FUNCTION_31	CALL_1
+0x4001eaa	          0x4889df	                            mov rdi, rbx	       701	write.c	FUNCTION_31	CALL_2
+0x4001ead	            0x89c5	                            mov ebp, eax	       700	write.c	FUNCTION_31	CALL_1
+0x4001eaf	      0xe800000000	                          call 0x4001eb4	       701	write.c	FUNCTION_31	CALL_2
+0x4001eb4	            0x89e8	                            mov eax, ebp	       703	write.c	FUNCTION_31
+0x4001eb6	              0x5b	                                 pop rbx	       703	write.c	FUNCTION_31
+0x4001eb7	              0x5d	                                 pop rbp	       703	write.c	FUNCTION_31
+0x4001eb8	              0xc3	                                     ret	       703	write.c	FUNCTION_31
+nfs_error_is_fatal_on_server	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,1:CALL,1:functions,0:WHILE,0	30
+0x4000b00	          0x83fffc	             cmp edi, 0xfffffffffffffffc	       595	write.c	FUNCTION_26	SWITCH_1
+0x4000b03	            0x7427	                            je 0x4000b2c	       595	write.c	FUNCTION_26	SWITCH_1
+0x4000b05	            0x85ff	                           test edi, edi	       595	write.c	FUNCTION_26	SWITCH_1
+0x4000b07	            0x7423	                            je 0x4000b2c	       595	write.c	FUNCTION_26	SWITCH_1
+0x4000b09	    0x81ff00feffff	                     cmp edi, 0xfffffe00	       595	write.c	FUNCTION_26	SWITCH_1
+0x4000b0f	            0x741b	                            je 0x4000b2c	       595	write.c	FUNCTION_26	SWITCH_1
+0x4000b11	          0x83ffe5	             cmp edi, 0xffffffffffffffe5	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b14	            0x7f19	                            jg 0x4000b2f	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b16	          0x83ffe4	             cmp edi, 0xffffffffffffffe4	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b19	            0x7d23	                           jge 0x4000b3e	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b1b	          0x83ff86	             cmp edi, 0xffffffffffffff86	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b1e	            0x741e	                            je 0x4000b3e	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b20	            0x7e22	                           jle 0x4000b44	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b22	          0x83ff8c	             cmp edi, 0xffffffffffffff8c	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b25	            0x7417	                            je 0x4000b3e	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b27	          0x83ffe2	             cmp edi, 0xffffffffffffffe2	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b2a	            0x7412	                            je 0x4000b3e	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b2c	            0x31c0	                            xor eax, eax	       599	write.c	FUNCTION_26	SWITCH_1
+0x4000b2e	              0xc3	                                     ret	       599	write.c	FUNCTION_26	SWITCH_1
+0x4000b2f	          0x83fff9	             cmp edi, 0xfffffffffffffff9	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b32	            0x740a	                            je 0x4000b3e	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b34	          0x83fffb	             cmp edi, 0xfffffffffffffffb	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b37	            0x7405	                            je 0x4000b3e	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b39	          0x83fff3	             cmp edi, 0xfffffffffffffff3	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b3c	            0x75ee	                           jne 0x4000b2c	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b3e	      0xb801000000	                              mov eax, 1	       767	internal.h	FUNCTION_213	SWITCH_1
+0x4000b43	              0xc3	                                     ret	       602	write.c	FUNCTION_26
+0x4000b44	    0x81ff00feffff	                     cmp edi, 0xfffffe00	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b4a	            0x75e0	                           jne 0x4000b2c	       757	internal.h	FUNCTION_213	SWITCH_1
+0x4000b4c	            0xebf0	                           jmp 0x4000b3e	       757	internal.h	FUNCTION_213	SWITCH_1
+nfs_key_timeout_notify	ELSE,0:DO,0:FOR,0:IF,0:SWITCH,0:CALL,3:functions,0:WHILE,0	8
+0x4002460	        0x488b5628	            mov rdx, qword [rsi + 0x28] 	      1234	write.c	FUNCTION_56
+0x4002464	    0x488b87c80000	            mov rax, qword [rdi + 0xc8] 	      1238	write.c	FUNCTION_56	CALL_3
+0x400246b	    0x488b92080400	           mov rdx, qword [rdx + 0x408] 	      1236	write.c	FUNCTION_56	CALL_2
+0x4002472	        0x488b4040	            mov rax, qword [rax + 0x40] 	      1238	write.c	FUNCTION_56	CALL_3
+0x4002476	        0x488b5228	            mov rdx, qword [rdx + 0x28] 	      1236	write.c	FUNCTION_56	CALL_2
+0x400247a	          0x4889c6	                            mov rsi, rax	      1238	write.c	FUNCTION_56	CALL_3
+0x400247d	        0x488b7a50	            mov rdi, qword [rdx + 0x50] 	      1238	write.c	FUNCTION_56	CALL_3
+0x4002481	      0xe900000000	                           jmp 0x4002486	      1238	write.c	FUNCTION_56	CALL_3

@@ -1,0 +1,37 @@
+put_filp	IF,1:ELSE,0:CALL,3:SWITCH,0:DO,0:FOR,0:WHILE,0:functions,0	14
+0x4000600	      0xf048ff4f38	             lock dec qword [rdi + 0x38]	       115	atomic64_64.h	FUNCTION_25	CALL_1
+0x4000605	            0x7401	                            je 0x4000608	       115	atomic64_64.h	FUNCTION_25	CALL_1
+0x4000607	              0xc3	                                     ret	       309	file_table.c	FUNCTION_15
+0x4000608	              0x53	                                push rbx	       304	file_table.c	FUNCTION_15
+0x4000609	          0x4889fb	                            mov rbx, rdi	       304	file_table.c	FUNCTION_15
+0x400060c	      0xe800000000	                          call 0x4000611	       306	file_table.c	FUNCTION_15	IF_1	CALL_2
+0x4000611	    0x8b1500000000	            mov edx, dword [0x04000617] 	        55	percpu_counter.h	FUNCTION_43	CALL_1
+0x4000617	    0x48c7c6ffffff	             mov rsi, 0xffffffffffffffff	        55	percpu_counter.h	FUNCTION_43	CALL_1
+0x400061e	    0x48c7c7000000	                              mov rdi, 0	        55	percpu_counter.h	FUNCTION_43	CALL_1
+0x4000625	      0xe800000000	                          call 0x400062a	        55	percpu_counter.h	FUNCTION_43	CALL_1
+0x400062a	          0x4889df	                            mov rdi, rbx	        55	file_table.c	FUNCTION_2	CALL_2
+0x400062d	    0x48c7c6000000	                              mov rsi, 0	        55	file_table.c	FUNCTION_2	CALL_2
+0x4000634	              0x5b	                                 pop rbx	       309	file_table.c	FUNCTION_15
+0x4000635	      0xe900000000	                   jmp section_end..text	        55	file_table.c	FUNCTION_2	CALL_2
+____fput	IF,0:ELSE,0:CALL,2:SWITCH,0:DO,0:FOR,0:WHILE,0:functions,0	1
+0x4000310	      0xe9ebfdffff	                          jmp sym.__fput	       243	file_table.c	FUNCTION_11	CALL_2
+proc_nr_files	IF,0:ELSE,0:CALL,0:SWITCH,0:DO,0:FOR,0:WHILE,0:functions,0	6
+0x4000320	    0x488b05000000	            mov rax, qword [0x04000327] 	        81	file_table.c	FUNCTION_5
+0x4000327	    0x41b900000000	                              mov r9d, 0	        82	file_table.c	FUNCTION_5	CALL_1
+0x400032d	          0x4885c0	                           test rax, rax	        82	file_table.c	FUNCTION_5	CALL_1
+0x4000330	        0x490f48c1	                           cmovs rax, r9	        82	file_table.c	FUNCTION_5	CALL_1
+0x4000334	    0x488905000000	            mov qword [0x0400033b], rax 	        82	file_table.c	FUNCTION_5	CALL_1
+0x400033b	      0xe900000000	                  jmp sym.get_empty_filp	        83	file_table.c	FUNCTION_5	CALL_2
+flush_delayed_fput	IF,0:ELSE,0:CALL,1:SWITCH,0:DO,0:FOR,0:WHILE,0:functions,0	12
+0x40005b0	            0x31ff	                            xor edi, edi	       234	llist.h	FUNCTION_71	CALL_1
+0x40005b2	    0x48873d000000	            xchg qword [0x040005b9], rdi	       234	llist.h	FUNCTION_71	CALL_1
+0x40005b9	          0x4885ff	                           test rdi, rdi	       237	file_table.c	FUNCTION_10
+0x40005bc	            0x7412	                            je 0x40005d0	       237	file_table.c	FUNCTION_10
+0x40005be	              0x53	                                push rbx	       257	file_table.c	FUNCTION_12
+0x40005bf	          0x488b1f	                    mov rbx, qword [rdi]	       237	file_table.c	FUNCTION_10
+0x40005c2	      0xe839fbffff	                         call sym.__fput	       238	file_table.c	FUNCTION_10	CALL_2
+0x40005c7	          0x4885db	                           test rbx, rbx	       237	file_table.c	FUNCTION_10
+0x40005ca	          0x4889df	                            mov rdi, rbx	       237	file_table.c	FUNCTION_10
+0x40005cd	            0x75f0	                           jne 0x40005bf	       237	file_table.c	FUNCTION_10
+0x40005cf	              0x5b	                                 pop rbx	       259	file_table.c	FUNCTION_12
+0x40005d0	            0xf3c3	                                     ret	       259	file_table.c	FUNCTION_12

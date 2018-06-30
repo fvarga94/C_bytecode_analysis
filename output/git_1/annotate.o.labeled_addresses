@@ -1,45 +1,48 @@
-cmd_annotate	CALL,3:functions,0:IF,0:DO,0:ELSE,0:WHILE,0:SWITCH,0:FOR,1	44
-0x4000040	            0x4155	                                push r13	        11	annotate.c	FUNCTION_1
-0x4000042	            0x4154	                                push r12	        11	annotate.c	FUNCTION_1
-0x4000044	              0x55	                                push rbp	        11	annotate.c	FUNCTION_1
-0x4000045	              0x53	                                push rbx	        11	annotate.c	FUNCTION_1
-0x4000046	        0x4883ec28	                           sub rsp, 0x28	        11	annotate.c	FUNCTION_1
-0x400004a	            0x89fd	                            mov ebp, edi	        11	annotate.c	FUNCTION_1
-0x400004c	          0x4989f4	                            mov r12, rsi	        11	annotate.c	FUNCTION_1
-0x400004f	          0x4989d5	                            mov r13, rdx	        11	annotate.c	FUNCTION_1
-0x4000052	    0x64488b042528	                mov rax, qword fs:[0x28]	        11	annotate.c	FUNCTION_1
-0x400005b	      0x4889442418	             mov qword [rsp + 0x18], rax	        11	annotate.c	FUNCTION_1
+cmd_annotate	CALL,3:ELSE,0:SWITCH,0:IF,0:FOR,1:functions,0:DO,0:WHILE,0	47
+0x4000040	              0x55	                                push rbp	        11	annotate.c	FUNCTION_1
+0x4000041	          0x4889e5	                            mov rbp, rsp	        11	annotate.c	FUNCTION_1
+0x4000044	        0x4883ec50	                           sub rsp, 0x50	        11	annotate.c	FUNCTION_1
+0x4000048	          0x897dcc	             mov dword [rbp - 0x34], edi	        11	annotate.c	FUNCTION_1
+0x400004b	        0x488975c0	             mov qword [rbp - 0x40], rsi	        11	annotate.c	FUNCTION_1
+0x400004f	        0x488955b8	             mov qword [rbp - 0x48], rdx	        11	annotate.c	FUNCTION_1
+0x4000053	    0x64488b042528	                mov rax, qword fs:[0x28]	        11	annotate.c	FUNCTION_1
+0x400005c	        0x488945f8	                mov qword [rbp - 8], rax	        11	annotate.c	FUNCTION_1
 0x4000060	            0x31c0	                            xor eax, eax	        11	annotate.c	FUNCTION_1
-0x4000062	    0x48c704240000	                      mov qword [rsp], 0	        12	annotate.c	FUNCTION_1
-0x400006a	    0xc74424080000	                  mov dword [rsp + 8], 0	        12	annotate.c	FUNCTION_1
-0x4000072	    0xc744240c0000	                mov dword [rsp + 0xc], 0	        12	annotate.c	FUNCTION_1
-0x400007a	      0xb900000000	                              mov ecx, 0	        15	annotate.c	FUNCTION_1	CALL_1
-0x400007f	      0xba00000000	                              mov edx, 0	        15	annotate.c	FUNCTION_1	CALL_1
-0x4000084	      0xbe00000000	                              mov esi, 0	        15	annotate.c	FUNCTION_1	CALL_1
-0x4000089	          0x4889e7	                            mov rdi, rsp	        15	annotate.c	FUNCTION_1	CALL_1
-0x400008c	      0xe800000000	                          call 0x4000091	        15	annotate.c	FUNCTION_1	CALL_1
-0x4000091	          0x83fd01	                              cmp ebp, 1	        17	annotate.c	FUNCTION_1	FOR_1
-0x4000094	            0x7e21	                           jle 0x40000b7	        17	annotate.c	FUNCTION_1	FOR_1
-0x4000096	      0x498d5c2408	                      lea rbx, [r12 + 8]	        17	annotate.c	FUNCTION_1	FOR_1
-0x400009b	          0x8d45fe	                      lea eax, [rbp - 2]	        17	annotate.c	FUNCTION_1	FOR_1
-0x400009e	      0x498d6cc410	          lea rbp, [r12 + rax*8 + 0x10] 	        17	annotate.c	FUNCTION_1	FOR_1
-0x40000a3	          0x488b33	                    mov rsi, qword [rbx]	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
-0x40000a6	          0x4889e7	                            mov rdi, rsp	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
-0x40000a9	      0xe800000000	                          call 0x40000ae	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
-0x40000ae	        0x4883c308	                              add rbx, 8	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
-0x40000b2	          0x4839eb	                            cmp rbx, rbp	        17	annotate.c	FUNCTION_1	FOR_1
-0x40000b5	            0x75ec	                           jne 0x40000a3	        17	annotate.c	FUNCTION_1	FOR_1
-0x40000b7	          0x4c89ea	                            mov rdx, r13	        21	annotate.c	FUNCTION_1	CALL_3
-0x40000ba	        0x488b3424	                    mov rsi, qword [rsp]	        21	annotate.c	FUNCTION_1	CALL_3
-0x40000be	        0x8b7c2408	                mov edi, dword [rsp + 8]	        21	annotate.c	FUNCTION_1	CALL_3
-0x40000c2	      0xe800000000	                          call 0x40000c7	        21	annotate.c	FUNCTION_1	CALL_3
-0x40000c7	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	        22	annotate.c	FUNCTION_1
-0x40000cc	    0x6448330c2528	                xor rcx, qword fs:[0x28]	        22	annotate.c	FUNCTION_1
-0x40000d5	            0x7405	                            je 0x40000dc	        22	annotate.c	FUNCTION_1
-0x40000d7	      0xe800000000	                          call 0x40000dc	        22	annotate.c	FUNCTION_1
-0x40000dc	        0x4883c428	                           add rsp, 0x28	        22	annotate.c	FUNCTION_1
-0x40000e0	              0x5b	                                 pop rbx	        22	annotate.c	FUNCTION_1
-0x40000e1	              0x5d	                                 pop rbp	        22	annotate.c	FUNCTION_1
-0x40000e2	            0x415c	                                 pop r12	        22	annotate.c	FUNCTION_1
-0x40000e4	            0x415d	                                 pop r13	        22	annotate.c	FUNCTION_1
-0x40000e6	              0xc3	                                     ret	        22	annotate.c	FUNCTION_1
+0x4000062	    0x48c745e00000	               mov qword [rbp - 0x20], 0	        12	annotate.c	FUNCTION_1
+0x400006a	    0xc745e8000000	               mov dword [rbp - 0x18], 0	        12	annotate.c	FUNCTION_1
+0x4000071	    0xc745ec000000	               mov dword [rbp - 0x14], 0	        12	annotate.c	FUNCTION_1
+0x4000078	        0x488d45e0	                   lea rax, [rbp - 0x20]	        15	annotate.c	FUNCTION_1	CALL_1
+0x400007c	      0xb900000000	                              mov ecx, 0	        15	annotate.c	FUNCTION_1	CALL_1
+0x4000081	      0xba00000000	                              mov edx, 0	        15	annotate.c	FUNCTION_1	CALL_1
+0x4000086	      0xbe00000000	                              mov esi, 0	        15	annotate.c	FUNCTION_1	CALL_1
+0x400008b	          0x4889c7	                            mov rdi, rax	        15	annotate.c	FUNCTION_1	CALL_1
+0x400008e	      0xb800000000	                              mov eax, 0	        15	annotate.c	FUNCTION_1	CALL_1
+0x4000093	      0xe800000000	                          call 0x4000098	        15	annotate.c	FUNCTION_1	CALL_1
+0x4000098	    0xc745dc010000	               mov dword [rbp - 0x24], 1	        17	annotate.c	FUNCTION_1	FOR_1
+0x400009f	            0xeb2a	                           jmp 0x40000cb	        17	annotate.c	FUNCTION_1	FOR_1
+0x40000a1	          0x8b45dc	             mov eax, dword [rbp - 0x24]	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
+0x40000a4	            0x4898	                                    cdqe	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
+0x40000a6	    0x488d14c50000	                        lea rdx, [rax*8]	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
+0x40000ae	        0x488b45c0	             mov rax, qword [rbp - 0x40]	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
+0x40000b2	          0x4801d0	                            add rax, rdx	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
+0x40000b5	          0x488b10	                    mov rdx, qword [rax]	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
+0x40000b8	        0x488d45e0	                   lea rax, [rbp - 0x20]	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
+0x40000bc	          0x4889d6	                            mov rsi, rdx	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
+0x40000bf	          0x4889c7	                            mov rdi, rax	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
+0x40000c2	      0xe800000000	                          call 0x40000c7	        18	annotate.c	FUNCTION_1	FOR_1	CALL_2
+0x40000c7	        0x8345dc01	               add dword [rbp - 0x24], 1	        17	annotate.c	FUNCTION_1	FOR_1
+0x40000cb	          0x8b45dc	             mov eax, dword [rbp - 0x24]	        17	annotate.c	FUNCTION_1	FOR_1
+0x40000ce	          0x3b45cc	             cmp eax, dword [rbp - 0x34]	        17	annotate.c	FUNCTION_1	FOR_1
+0x40000d1	            0x7cce	                            jl 0x40000a1	        17	annotate.c	FUNCTION_1	FOR_1
+0x40000d3	        0x488b4de0	             mov rcx, qword [rbp - 0x20]	        21	annotate.c	FUNCTION_1	CALL_3
+0x40000d7	          0x8b45e8	             mov eax, dword [rbp - 0x18]	        21	annotate.c	FUNCTION_1	CALL_3
+0x40000da	        0x488b55b8	             mov rdx, qword [rbp - 0x48]	        21	annotate.c	FUNCTION_1	CALL_3
+0x40000de	          0x4889ce	                            mov rsi, rcx	        21	annotate.c	FUNCTION_1	CALL_3
+0x40000e1	            0x89c7	                            mov edi, eax	        21	annotate.c	FUNCTION_1	CALL_3
+0x40000e3	      0xe800000000	                          call 0x40000e8	        21	annotate.c	FUNCTION_1	CALL_3
+0x40000e8	        0x488b4df8	                mov rcx, qword [rbp - 8]	        22	annotate.c	FUNCTION_1
+0x40000ec	    0x6448330c2528	                xor rcx, qword fs:[0x28]	        22	annotate.c	FUNCTION_1
+0x40000f5	            0x7405	                            je 0x40000fc	        22	annotate.c	FUNCTION_1
+0x40000f7	      0xe800000000	                          call 0x40000fc	        22	annotate.c	FUNCTION_1
+0x40000fc	              0xc9	                                   leave	        22	annotate.c	FUNCTION_1
+0x40000fd	              0xc3	                                     ret	        22	annotate.c	FUNCTION_1

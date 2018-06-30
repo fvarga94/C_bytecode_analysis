@@ -1,0 +1,263 @@
+battery_ac_is_broken_quirk	IF,0:CALL,0:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,0:WHILE,0	3
+0x400005a	      0x3d00000000	                              cmp eax, 0	      1285	battery.c	FUNCTION_40
+0x400005f	    0x488d9848ffff	                   lea rbx, [rax - 0xb8]	      1285	battery.c	FUNCTION_40
+0x4000066	               0xf	                                 invalid	      1287	battery.c	FUNCTION_40
+battery_notification_delay_quirk	IF,0:CALL,0:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,0:WHILE,0	3
+0x400004d	    0x858100000048	     test dword [rcx + 0x48000000], eax 	      1278	battery.c	FUNCTION_39
+0x4000053	    0x8b0500000000	            mov eax, dword [0x04000059] 	      1278	battery.c	FUNCTION_39
+0x4000059	              0x48	                                 invalid	      1280	battery.c	FUNCTION_39
+battery_bix_broken_package_quirk	IF,0:CALL,0:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,0:WHILE,0	7
+0x4000040	            0x85f6	                           test esi, esi	      1271	battery.c	FUNCTION_38
+0x4000042	            0x4154	                                push r12	      1271	battery.c	FUNCTION_38
+0x4000044	          0x4189f4	                           mov r12d, esi	      1271	battery.c	FUNCTION_38
+0x4000047	              0x55	                                push rbp	      1271	battery.c	FUNCTION_38
+0x4000048	          0x4889fd	                            mov rbp, rdi	      1271	battery.c	FUNCTION_38
+0x400004b	              0x53	                                push rbx	      1273	battery.c	FUNCTION_38
+0x400004c	               0xf	                                 invalid	      1273	battery.c	FUNCTION_38
+acpi_battery_alarm_show	IF,0:CALL,3:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,0:WHILE,0	11
+0x4000350	              0x53	                                push rbx	       636	battery.c	FUNCTION_14
+0x4000351	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	       637	battery.c	FUNCTION_14	CALL_2
+0x4000358	          0x4889d3	                            mov rbx, rdx	       636	battery.c	FUNCTION_14
+0x400035b	      0xe800000000	                          call 0x4000360	       637	battery.c	FUNCTION_14	CALL_2
+0x4000360	    0x699018010000	    imul edx, dword [rax + 0x118], 0x3e8	       638	battery.c	FUNCTION_14	CALL_3
+0x400036a	          0x4889df	                            mov rdi, rbx	       638	battery.c	FUNCTION_14	CALL_3
+0x400036d	    0x48c7c6000000	                              mov rsi, 0	       638	battery.c	FUNCTION_14	CALL_3
+0x4000374	      0xe800000000	                          call 0x4000379	       638	battery.c	FUNCTION_14	CALL_3
+0x4000379	            0x4898	                                    cdqe	       638	battery.c	FUNCTION_14	CALL_3
+0x400037b	              0x5b	                                 pop rbx	       639	battery.c	FUNCTION_14
+0x400037c	              0xc3	                                     ret	       639	battery.c	FUNCTION_14
+acpi_battery_init	IF,1:CALL,1:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,0:WHILE,0	10
+0x4000074	      0xe800000000	                          call 0x4000079	      1505	battery.c	FUNCTION_47
+0x4000079	    0x488b83b80000	            mov rax, qword [rbx + 0xb8] 	      1506	battery.c	FUNCTION_47	IF_1
+0x4000080	    0x483d00000000	                              cmp rax, 0	      1509	battery.c	FUNCTION_47	CALL_1
+0x4000086	    0x488d9848ffff	                   lea rbx, [rax - 0xb8]	      1509	battery.c	FUNCTION_47	CALL_1
+0x400008d	            0x75dd	                           jne 0x400006c	      1509	battery.c	FUNCTION_47	CALL_1
+0x400008f	        0x488b4520	            mov rax, qword [rbp + 0x20] 	      1509	battery.c	FUNCTION_47	CALL_1
+0x4000093	        0x488b5518	            mov rdx, qword [rbp + 0x18] 	      1509	battery.c	FUNCTION_47	CALL_1
+0x4000097	          0x4585e4	                         test r12d, r12d	      1507	battery.c	FUNCTION_47	IF_1
+0x400009a	        0x48894208	                mov qword [rdx + 8], rax	      1507	battery.c	FUNCTION_47	IF_1
+0x400009e	              0x48	                                 invalid	      1511	battery.c	FUNCTION_47
+battery_hook_unregister	IF,0:CALL,1:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,0:WHILE,0	2
+0x4000170	      0xbe01000000	                              mov esi, 1	       693	battery.c	FUNCTION_17	CALL_1
+0x4000175	      0xe9c6feffff	       jmp sym.__battery_hook_unregister	       693	battery.c	FUNCTION_17	CALL_1
+acpi_battery_alarm_store	IF,2:CALL,5:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,0:WHILE,0	40
+0x40002b0	            0x4154	                                push r12	       644	battery.c	FUNCTION_15
+0x40002b2	              0x55	                                push rbp	       644	battery.c	FUNCTION_15
+0x40002b3	          0x4989d4	                            mov r12, rdx	       644	battery.c	FUNCTION_15
+0x40002b6	              0x53	                                push rbx	       644	battery.c	FUNCTION_15
+0x40002b7	          0x4889cd	                            mov rbp, rcx	       644	battery.c	FUNCTION_15
+0x40002ba	        0x4883ec10	                           sub rsp, 0x10	       644	battery.c	FUNCTION_15
+0x40002be	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	       646	battery.c	FUNCTION_15	CALL_2
+0x40002c5	    0x65488b042528	                mov rax, qword gs:[0x28]	       644	battery.c	FUNCTION_15
+0x40002ce	      0x4889442408	                mov qword [rsp + 8], rax	       644	battery.c	FUNCTION_15
+0x40002d3	            0x31c0	                            xor eax, eax	       644	battery.c	FUNCTION_15
+0x40002d5	      0xe800000000	                          call 0x40002da	       646	battery.c	FUNCTION_15	CALL_2
+0x40002da	    0x48c7c6000000	                              mov rsi, 0	       647	battery.c	FUNCTION_15	IF_1	CALL_3
+0x40002e1	          0x4889e2	                            mov rdx, rsp	       647	battery.c	FUNCTION_15	IF_1	CALL_3
+0x40002e4	          0x4c89e7	                            mov rdi, r12	       647	battery.c	FUNCTION_15	IF_1	CALL_3
+0x40002e7	          0x4889c3	                            mov rbx, rax	       646	battery.c	FUNCTION_15	CALL_2
+0x40002ea	      0xe800000000	                          call 0x40002ef	       647	battery.c	FUNCTION_15	IF_1	CALL_3
+0x40002ef	          0x83f801	                              cmp eax, 1	       647	battery.c	FUNCTION_15	IF_1	CALL_3
+0x40002f2	            0x7431	                            je 0x4000325	       647	battery.c	FUNCTION_15	IF_1	CALL_3
+0x40002f4	    0x488b83980000	            mov rax, qword [rbx + 0x98] 	       163	battery.c	FUNCTION_1
+0x40002fb	        0xf6406810	           test byte [rax + 0x68], 0x10 	       649	battery.c	FUNCTION_15	IF_2	CALL_4
+0x40002ff	            0x7408	                            je 0x4000309	       649	battery.c	FUNCTION_15	IF_2	CALL_4
+0x4000301	          0x4889df	                            mov rdi, rbx	       650	battery.c	FUNCTION_15	CALL_5
+0x4000304	      0xe847ffffff	         call sym.acpi_battery_set_alarm	       650	battery.c	FUNCTION_15	CALL_5
+0x4000309	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       652	battery.c	FUNCTION_15
+0x400030e	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       652	battery.c	FUNCTION_15
+0x4000317	          0x4889e8	                            mov rax, rbp	       652	battery.c	FUNCTION_15
+0x400031a	            0x752a	                           jne 0x4000346	       652	battery.c	FUNCTION_15
+0x400031c	        0x4883c410	                           add rsp, 0x10	       652	battery.c	FUNCTION_15
+0x4000320	              0x5b	                                 pop rbx	       652	battery.c	FUNCTION_15
+0x4000321	              0x5d	                                 pop rbp	       652	battery.c	FUNCTION_15
+0x4000322	            0x415c	                                 pop r12	       652	battery.c	FUNCTION_15
+0x4000324	              0xc3	                                     ret	       652	battery.c	FUNCTION_15
+0x4000325	        0x488b0424	                    mov rax, qword [rsp]	       648	battery.c	FUNCTION_15	IF_1
+0x4000329	    0x48bacff753e3	          movabs rdx, 0x20c49ba5e353f7cf	       648	battery.c	FUNCTION_15	IF_1
+0x4000333	        0x48c1e803	                              shr rax, 3	       648	battery.c	FUNCTION_15	IF_1
+0x4000337	          0x48f7e2	                                 mul rdx	       648	battery.c	FUNCTION_15	IF_1
+0x400033a	        0x48c1ea04	                              shr rdx, 4	       648	battery.c	FUNCTION_15	IF_1
+0x400033e	    0x899318010000	            mov dword [rbx + 0x118], edx	       648	battery.c	FUNCTION_15	IF_1
+0x4000344	            0xebae	                           jmp 0x40002f4	       648	battery.c	FUNCTION_15	IF_1
+0x4000346	      0xe800000000	                          call 0x400034b	       652	battery.c	FUNCTION_15
+acpi_battery_remove	IF,1:CALL,9:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,0:WHILE,0	21
+0x4000810	          0x4885ff	                           test rdi, rdi	      1423	battery.c	FUNCTION_44	IF_1	CALL_1
+0x4000813	            0x7443	                            je 0x4000858	      1423	battery.c	FUNCTION_44	IF_1	CALL_1
+0x4000815	    0x4883bf480200	              cmp qword [rdi + 0x248], 0	      1423	battery.c	FUNCTION_44	IF_1	CALL_1
+0x400081d	            0x7439	                            je 0x4000858	      1423	battery.c	FUNCTION_44	IF_1	CALL_1
+0x400081f	              0x53	                                push rbx	      1420	battery.c	FUNCTION_44
+0x4000820	          0x4889fb	                            mov rbx, rdi	      1420	battery.c	FUNCTION_44
+0x4000823	    0x488dbf500200	                  lea rdi, [rdi + 0x250]	      1425	battery.c	FUNCTION_44	CALL_2
+0x400082a	            0x31f6	                            xor esi, esi	      1425	battery.c	FUNCTION_44	CALL_2
+0x400082c	      0xe800000000	                          call 0x4000831	      1425	battery.c	FUNCTION_44	CALL_2
+0x4000831	    0x488b9b480200	           mov rbx, qword [rbx + 0x248] 	      1425	battery.c	FUNCTION_44	CALL_2
+0x4000838	    0x488dbba00000	                   lea rdi, [rbx + 0xa0]	      1427	battery.c	FUNCTION_44	CALL_4
+0x400083f	      0xe800000000	                          call 0x4000844	      1427	battery.c	FUNCTION_44	CALL_4
+0x4000844	          0x4889df	                            mov rdi, rbx	      1431	battery.c	FUNCTION_44	CALL_6
+0x4000847	      0xe834f9ffff	           call sym.sysfs_remove_battery	      1431	battery.c	FUNCTION_44	CALL_6
+0x400084c	          0x4889df	                            mov rdi, rbx	      1434	battery.c	FUNCTION_44	CALL_9
+0x400084f	      0xe800000000	                          call 0x4000854	      1434	battery.c	FUNCTION_44	CALL_9
+0x4000854	            0x31c0	                            xor eax, eax	      1435	battery.c	FUNCTION_44
+0x4000856	              0x5b	                                 pop rbx	      1436	battery.c	FUNCTION_44
+0x4000857	              0xc3	                                     ret	      1436	battery.c	FUNCTION_44
+0x4000858	      0xb8eaffffff	                     mov eax, 0xffffffea	      1424	battery.c	FUNCTION_44	IF_1
+0x400085d	              0xc3	                                     ret	      1424	battery.c	FUNCTION_44	IF_1
+battery_hook_exit	IF,0:CALL,1:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,1:WHILE,0	16
+0x4000040	            0x85f6	                           test esi, esi	      1271	battery.c	FUNCTION_38
+0x4000042	            0x4154	                                push r12	      1271	battery.c	FUNCTION_38
+0x4000044	          0x4189f4	                           mov r12d, esi	      1271	battery.c	FUNCTION_38
+0x4000047	              0x55	                                push rbp	      1271	battery.c	FUNCTION_38
+0x4000048	          0x4889fd	                            mov rbp, rdi	      1271	battery.c	FUNCTION_38
+0x400004b	              0x53	                                push rbx	      1273	battery.c	FUNCTION_38
+0x400004c	     0xf8581000000	                           jne 0x40000d3	      1273	battery.c	FUNCTION_38
+0x4000052	    0x488b05000000	            mov rax, qword [0x04000059] 	      1278	battery.c	FUNCTION_39
+0x4000059	    0x483d00000000	                              cmp rax, 0	      1280	battery.c	FUNCTION_39
+0x400005f	    0x488d9848ffff	                   lea rbx, [rax - 0xb8]	      1285	battery.c	FUNCTION_40
+0x4000066	     0xf84c6000000	                            je 0x4000132	      1287	battery.c	FUNCTION_40
+0x400006c	        0x488b7b40	            mov rdi, qword [rbx + 0x40] 	      1292	battery.c	FUNCTION_41
+0x4000070	        0x488b4510	            mov rax, qword [rbp + 0x10] 	      1292	battery.c	FUNCTION_41
+0x4000074	              0xe8	                                 invalid	      1505	battery.c	FUNCTION_47
+0x4000075	               0x0	                      add byte [rax], al	      1506	battery.c	FUNCTION_47	IF_1
+0x4000077	               0x0	                                 invalid	      1506	battery.c	FUNCTION_47	IF_1
+acpi_battery_resume	IF,2:CALL,3:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,0:WHILE,0	12
+0x4000f00	          0x4885ff	                           test rdi, rdi	      1444	battery.c	FUNCTION_45	IF_1
+0x4000f03	            0x7421	                            je 0x4000f26	      1444	battery.c	FUNCTION_45	IF_1
+0x4000f05	        0x488b7ff8	                mov rdi, qword [rdi - 8]	      1444	battery.c	FUNCTION_45	IF_1
+0x4000f09	          0x4885ff	                           test rdi, rdi	      1448	battery.c	FUNCTION_45	IF_2
+0x4000f0c	            0x7418	                            je 0x4000f26	      1448	battery.c	FUNCTION_45	IF_2
+0x4000f0e	    0x48c787c80000	               mov qword [rdi + 0xc8], 0	      1451	battery.c	FUNCTION_45
+0x4000f19	      0xbe01000000	                              mov esi, 1	      1452	battery.c	FUNCTION_45	CALL_3
+0x4000f1e	      0xe81dfdffff	            call sym.acpi_battery_update	      1452	battery.c	FUNCTION_45	CALL_3
+0x4000f23	            0x31c0	                            xor eax, eax	      1453	battery.c	FUNCTION_45
+0x4000f25	              0xc3	                                     ret	      1453	battery.c	FUNCTION_45
+0x4000f26	      0xb8eaffffff	                     mov eax, 0xffffffea	      1445	battery.c	FUNCTION_45	IF_1
+0x4000f2b	              0xc3	                                     ret	      1454	battery.c	FUNCTION_45
+extract_package	IF,5:CALL,2:DO,0:FOR,1:SWITCH,0:ELSE,3:functions,0:WHILE,0	88
+0x4000380	          0x833e04	                      cmp dword [rsi], 4	       427	battery.c	FUNCTION_7	IF_1
+0x4000383	     0xf85ea000000	                           jne 0x4000473	       427	battery.c	FUNCTION_7	IF_1
+0x4000389	            0x85c9	                           test ecx, ecx	       429	battery.c	FUNCTION_7	FOR_1
+0x400038b	     0xf8ee8000000	                           jle 0x4000479	       429	battery.c	FUNCTION_7	FOR_1
+0x4000391	          0x8b4604	                mov eax, dword [rsi + 4]	       430	battery.c	FUNCTION_7	FOR_1	IF_2
+0x4000394	            0x85c0	                           test eax, eax	       430	battery.c	FUNCTION_7	FOR_1	IF_2
+0x4000396	     0xf84d7000000	                            je 0x4000473	       430	battery.c	FUNCTION_7	FOR_1	IF_2
+0x400039c	            0x4157	                                push r15	       424	battery.c	FUNCTION_7
+0x400039e	            0x4156	                                push r14	       424	battery.c	FUNCTION_7
+0x40003a0	          0x4989ff	                            mov r15, rdi	       424	battery.c	FUNCTION_7
+0x40003a3	            0x4155	                                push r13	       424	battery.c	FUNCTION_7
+0x40003a5	            0x4154	                                push r12	       424	battery.c	FUNCTION_7
+0x40003a7	          0x4189ce	                           mov r14d, ecx	       424	battery.c	FUNCTION_7
+0x40003aa	              0x55	                                push rbp	       424	battery.c	FUNCTION_7
+0x40003ab	              0x53	                                push rbx	       424	battery.c	FUNCTION_7
+0x40003ac	          0x4989f5	                            mov r13, rsi	       424	battery.c	FUNCTION_7
+0x40003af	          0x4889d3	                            mov rbx, rdx	       424	battery.c	FUNCTION_7
+0x40003b2	          0x4531e4	                          xor r12d, r12d	       430	battery.c	FUNCTION_7	FOR_1	IF_2
+0x40003b5	            0x31ed	                            xor ebp, ebp	       430	battery.c	FUNCTION_7	FOR_1	IF_2
+0x40003b7	        0x4883ec08	                              sub rsp, 8	       424	battery.c	FUNCTION_7
+0x40003bb	            0xeb2e	                           jmp 0x40003eb	       424	battery.c	FUNCTION_7
+0x40003bd	            0x8b06	                    mov eax, dword [rsi]	       435	battery.c	FUNCTION_7	FOR_1	IF_3	IF_4
+0x40003bf	          0x4c89f9	                            mov rcx, r15	       434	battery.c	FUNCTION_7	FOR_1	IF_3
+0x40003c2	          0x48030b	                    add rcx, qword [rbx]	       434	battery.c	FUNCTION_7	FOR_1	IF_3
+0x40003c5	          0x8d50fe	                      lea edx, [rax - 2]	       435	battery.c	FUNCTION_7	FOR_1	IF_3	IF_4
+0x40003c8	          0x83fa01	                              cmp edx, 1	       435	battery.c	FUNCTION_7	FOR_1	IF_3	IF_4
+0x40003cb	            0x765d	                           jbe 0x400042a	       435	battery.c	FUNCTION_7	FOR_1	IF_3	IF_4
+0x40003cd	          0x83f801	                              cmp eax, 1	       438	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_1	IF_5
+0x40003d0	            0x746b	                            je 0x400043d	       438	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_1	IF_5
+0x40003d2	          0xc60100	                       mov byte [rcx], 0	       443	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_2
+0x40003d5	          0x83c501	                              add ebp, 1	       429	battery.c	FUNCTION_7	FOR_1
+0x40003d8	          0x4139ee	                           cmp r14d, ebp	       429	battery.c	FUNCTION_7	FOR_1
+0x40003db	            0x7435	                            je 0x4000412	       429	battery.c	FUNCTION_7	FOR_1
+0x40003dd	        0x4983c418	                           add r12, 0x18	       429	battery.c	FUNCTION_7	FOR_1
+0x40003e1	        0x4883c310	                           add rbx, 0x10	       429	battery.c	FUNCTION_7	FOR_1
+0x40003e5	        0x41396d04	                cmp dword [r13 + 4], ebp	       430	battery.c	FUNCTION_7	FOR_1	IF_2
+0x40003e9	            0x7674	                           jbe 0x400045f	       430	battery.c	FUNCTION_7	FOR_1	IF_2
+0x40003eb	          0x4c89e6	                            mov rsi, r12	       432	battery.c	FUNCTION_7	FOR_1
+0x40003ee	        0x49037508	                add rsi, qword [r13 + 8]	       432	battery.c	FUNCTION_7	FOR_1
+0x40003f2	        0x807b0800	                   cmp byte [rbx + 8], 0	       433	battery.c	FUNCTION_7	FOR_1	IF_3
+0x40003f6	            0x75c5	                           jne 0x40003bd	       433	battery.c	FUNCTION_7	FOR_1	IF_3
+0x40003f8	          0x4c89fa	                            mov rdx, r15	       445	battery.c	FUNCTION_7	FOR_1	ELSE_3
+0x40003fb	          0x480313	                    add rdx, qword [rbx]	       445	battery.c	FUNCTION_7	FOR_1	ELSE_3
+0x40003fe	          0x833e01	                      cmp dword [rsi], 1	       446	battery.c	FUNCTION_7	FOR_1	ELSE_3
+0x4000401	      0xb8ffffffff	                     mov eax, 0xffffffff	       446	battery.c	FUNCTION_7	FOR_1	ELSE_3
+0x4000406	            0x741b	                            je 0x4000423	       446	battery.c	FUNCTION_7	FOR_1	ELSE_3
+0x4000408	            0x8902	                    mov dword [rdx], eax	       446	battery.c	FUNCTION_7	FOR_1	ELSE_3
+0x400040a	          0x83c501	                              add ebp, 1	       429	battery.c	FUNCTION_7	FOR_1
+0x400040d	          0x4139ee	                           cmp r14d, ebp	       429	battery.c	FUNCTION_7	FOR_1
+0x4000410	            0x75cb	                           jne 0x40003dd	       429	battery.c	FUNCTION_7	FOR_1
+0x4000412	        0x4883c408	                              add rsp, 8	       451	battery.c	FUNCTION_7
+0x4000416	            0x31c0	                            xor eax, eax	       450	battery.c	FUNCTION_7
+0x4000418	              0x5b	                                 pop rbx	       451	battery.c	FUNCTION_7
+0x4000419	              0x5d	                                 pop rbp	       451	battery.c	FUNCTION_7
+0x400041a	            0x415c	                                 pop r12	       451	battery.c	FUNCTION_7
+0x400041c	            0x415d	                                 pop r13	       451	battery.c	FUNCTION_7
+0x400041e	            0x415e	                                 pop r14	       451	battery.c	FUNCTION_7
+0x4000420	            0x415f	                                 pop r15	       451	battery.c	FUNCTION_7
+0x4000422	              0xc3	                                     ret	       451	battery.c	FUNCTION_7
+0x4000423	          0x8b4608	                mov eax, dword [rsi + 8]	       446	battery.c	FUNCTION_7	FOR_1	ELSE_3
+0x4000426	            0x8902	                    mov dword [rdx], eax	       446	battery.c	FUNCTION_7	FOR_1	ELSE_3
+0x4000428	            0xebe0	                           jmp 0x400040a	       446	battery.c	FUNCTION_7	FOR_1	ELSE_3
+0x400042a	        0x488b7608	                mov rsi, qword [rsi + 8]	       437	battery.c	FUNCTION_7	FOR_1	IF_3	CALL_1
+0x400042e	      0xba20000000	                           mov edx, 0x20	       437	battery.c	FUNCTION_7	FOR_1	IF_3	CALL_1
+0x4000433	          0x4889cf	                            mov rdi, rcx	       437	battery.c	FUNCTION_7	FOR_1	IF_3	CALL_1
+0x4000436	      0xe800000000	                          call 0x400043b	       437	battery.c	FUNCTION_7	FOR_1	IF_3	CALL_1
+0x400043b	            0xeb98	                           jmp 0x40003d5	       437	battery.c	FUNCTION_7	FOR_1	IF_3	CALL_1
+0x400043d	          0x4889cf	                            mov rdi, rcx	       439	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_1	IF_5	CALL_2
+0x4000440	        0x4883c608	                              add rsi, 8	       439	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_1	IF_5	CALL_2
+0x4000444	      0xba08000000	                              mov edx, 8	       439	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_1	IF_5	CALL_2
+0x4000449	        0x48890c24	                    mov qword [rsp], rcx	       439	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_1	IF_5	CALL_2
+0x400044d	      0xe800000000	                          call 0x4000452	       439	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_1	IF_5	CALL_2
+0x4000452	        0x488b0c24	                    mov rcx, qword [rsp]	       441	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_1	IF_5
+0x4000456	        0xc6410800	                   mov byte [rcx + 8], 0	       441	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_1	IF_5
+0x400045a	      0xe976ffffff	                           jmp 0x40003d5	       441	battery.c	FUNCTION_7	FOR_1	IF_3	ELSE_1	IF_5
+0x400045f	        0x4883c408	                              add rsp, 8	       451	battery.c	FUNCTION_7
+0x4000463	      0xb8f2ffffff	                     mov eax, 0xfffffff2	       428	battery.c	FUNCTION_7	IF_1
+0x4000468	              0x5b	                                 pop rbx	       451	battery.c	FUNCTION_7
+0x4000469	              0x5d	                                 pop rbp	       451	battery.c	FUNCTION_7
+0x400046a	            0x415c	                                 pop r12	       451	battery.c	FUNCTION_7
+0x400046c	            0x415d	                                 pop r13	       451	battery.c	FUNCTION_7
+0x400046e	            0x415e	                                 pop r14	       451	battery.c	FUNCTION_7
+0x4000470	            0x415f	                                 pop r15	       451	battery.c	FUNCTION_7
+0x4000472	              0xc3	                                     ret	       451	battery.c	FUNCTION_7
+0x4000473	      0xb8f2ffffff	                     mov eax, 0xfffffff2	       428	battery.c	FUNCTION_7	IF_1
+0x4000478	              0xc3	                                     ret	       451	battery.c	FUNCTION_7
+0x4000479	            0x31c0	                            xor eax, eax	       450	battery.c	FUNCTION_7
+0x400047b	              0xc3	                                     ret	       451	battery.c	FUNCTION_7
+battery_do_not_check_pmic_quirk	IF,0:CALL,0:DO,0:FOR,0:SWITCH,0:ELSE,0:functions,0:WHILE,0	5
+0x4000067	            0x84c6	                             test dh, al	      1292	battery.c	FUNCTION_41
+0x4000069	               0x0	                      add byte [rax], al	      1292	battery.c	FUNCTION_41
+0x400006b	            0x488b	               add byte [rax - 0x75], cl	      1292	battery.c	FUNCTION_41
+0x400006e	            0x7b40	                           jnp 0x40000b0	      1292	battery.c	FUNCTION_41
+0x4000070	        0x488b4510	            mov rax, qword [rbp + 0x10] 	      1292	battery.c	FUNCTION_41
+battery_notify	IF,4:CALL,7:DO,0:FOR,0:SWITCH,1:ELSE,1:functions,0:WHILE,0	32
+0x4001040	        0x4883fe02	                              cmp rsi, 2	      1243	battery.c	FUNCTION_37	SWITCH_1
+0x4001044	            0x7409	                            je 0x400104f	      1243	battery.c	FUNCTION_37	SWITCH_1
+0x4001046	        0x4883fe04	                              cmp rsi, 4	      1243	battery.c	FUNCTION_37	SWITCH_1
+0x400104a	            0x7403	                            je 0x400104f	      1243	battery.c	FUNCTION_37	SWITCH_1
+0x400104c	            0x31c0	                            xor eax, eax	      1265	battery.c	FUNCTION_37
+0x400104e	              0xc3	                                     ret	      1265	battery.c	FUNCTION_37
+0x400104f	        0x488b57f8	                mov rdx, qword [rdi - 8]	       163	battery.c	FUNCTION_1
+0x4001053	            0x31c0	                            xor eax, eax	      1247	battery.c	FUNCTION_37	SWITCH_1	IF_1
+0x4001055	        0xf6426810	           test byte [rdx + 0x68], 0x10 	      1246	battery.c	FUNCTION_37	SWITCH_1	IF_1	CALL_2
+0x4001059	            0x742a	                            je 0x4001085	      1246	battery.c	FUNCTION_37	SWITCH_1	IF_1	CALL_2
+0x400105b	              0x53	                                push rbx	      1238	battery.c	FUNCTION_37
+0x400105c	      0x48837fa000	               cmp qword [rdi - 0x60], 0	      1249	battery.c	FUNCTION_37	SWITCH_1	IF_2
+0x4001061	    0x488d9f60ffff	                   lea rbx, [rdi - 0xa0]	      1239	battery.c	FUNCTION_37	CALL_1
+0x4001068	          0x4889df	                            mov rdi, rbx	      1250	battery.c	FUNCTION_37	SWITCH_1	IF_2	CALL_3
+0x400106b	            0x741a	                            je 0x4001087	      1249	battery.c	FUNCTION_37	SWITCH_1	IF_2
+0x400106d	      0xe8befeffff	           call sym.acpi_battery_refresh	      1258	battery.c	FUNCTION_37	SWITCH_1	CALL_5
+0x4001072	          0x4889df	                            mov rdi, rbx	      1260	battery.c	FUNCTION_37	SWITCH_1	CALL_6
+0x4001075	      0xe866fbffff	        call sym.acpi_battery_init_alarm	      1260	battery.c	FUNCTION_37	SWITCH_1	CALL_6
+0x400107a	          0x4889df	                            mov rdi, rbx	      1261	battery.c	FUNCTION_37	SWITCH_1	CALL_7
+0x400107d	      0xe8fef3ffff	         call sym.acpi_battery_get_state	      1261	battery.c	FUNCTION_37	SWITCH_1	CALL_7
+0x4001082	            0x31c0	                            xor eax, eax	      1265	battery.c	FUNCTION_37
+0x4001084	              0x5b	                                 pop rbx	      1266	battery.c	FUNCTION_37
+0x4001085	            0xf3c3	                                     ret	      1266	battery.c	FUNCTION_37
+0x4001087	      0xe8e4f8ffff	          call sym.acpi_battery_get_info	      1250	battery.c	FUNCTION_37	SWITCH_1	IF_2	CALL_3
+0x400108c	            0x85c0	                           test eax, eax	      1251	battery.c	FUNCTION_37	SWITCH_1	IF_2	IF_3
+0x400108e	            0x75f4	                           jne 0x4001084	      1251	battery.c	FUNCTION_37	SWITCH_1	IF_2	IF_3
+0x4001090	          0x4889df	                            mov rdi, rbx	      1254	battery.c	FUNCTION_37	SWITCH_1	IF_2	CALL_4
+0x4001093	      0xe8e8f5ffff	              call sym.sysfs_add_battery	      1254	battery.c	FUNCTION_37	SWITCH_1	IF_2	CALL_4
+0x4001098	            0x85c0	                           test eax, eax	      1255	battery.c	FUNCTION_37	SWITCH_1	IF_2	IF_4
+0x400109a	            0x74d6	                            je 0x4001072	      1255	battery.c	FUNCTION_37	SWITCH_1	IF_2	IF_4
+0x400109c	              0x5b	                                 pop rbx	      1266	battery.c	FUNCTION_37
+0x400109d	            0xebe6	                           jmp 0x4001085	      1266	battery.c	FUNCTION_37

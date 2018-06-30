@@ -1,0 +1,35 @@
+region_kill_internal	WHILE,0:IF,2:DO,0:FOR,0:ELSE,0:CALL,3:functions,0:SWITCH,0	31
+0x40001dd	            0x89f8	                            mov eax, edi	       413	kill.c	FUNCTION_2
+0x40001df	    0x8b3500000000	            mov esi, dword [0x040001e5] 	       416	kill.c	FUNCTION_2	IF_1
+0x40001e5	    0x8b3d00000000	            mov edi, dword [0x040001eb] 	       416	kill.c	FUNCTION_2	IF_1
+0x40001eb	            0x39fe	                            cmp esi, edi	       416	kill.c	FUNCTION_2	IF_1
+0x40001ed	            0x7454	                            je 0x4000243	       416	kill.c	FUNCTION_2	IF_1
+0x40001ef	              0x55	                                push rbp	       413	kill.c	FUNCTION_2
+0x40001f0	              0x53	                                push rbx	       413	kill.c	FUNCTION_2
+0x40001f1	        0x4883ec08	                              sub rsp, 8	       413	kill.c	FUNCTION_2
+0x40001f5	            0x89c3	                            mov ebx, eax	       413	kill.c	FUNCTION_2
+0x40001f7	      0xe800000000	                          call 0x40001fc	       418	kill.c	FUNCTION_2	IF_1	CALL_1
+0x40001fc	          0x4889c5	                            mov rbp, rax	       418	kill.c	FUNCTION_2	IF_1	CALL_1
+0x40001ff	            0x85db	                           test ebx, ebx	       419	kill.c	FUNCTION_2	IF_1	IF_2
+0x4000201	            0x7411	                            je 0x4000214	       419	kill.c	FUNCTION_2	IF_1	IF_2
+0x4000203	    0x8b3500000000	            mov esi, dword [0x04000209] 	       420	kill.c	FUNCTION_2	IF_1	CALL_2
+0x4000209	    0x8b3d00000000	            mov edi, dword [0x0400020f] 	       420	kill.c	FUNCTION_2	IF_1	CALL_2
+0x400020f	      0xe800000000	                          call 0x4000214	       420	kill.c	FUNCTION_2	IF_1	CALL_2
+0x4000214	    0x8b0500000000	            mov eax, dword [0x0400021a] 	       421	kill.c	FUNCTION_2	IF_1	CALL_3
+0x400021a	    0x390500000000	            cmp dword [0x04000220], eax 	       421	kill.c	FUNCTION_2	IF_1	CALL_3
+0x4000220	        0x400f9cc6	                                setl sil	       421	kill.c	FUNCTION_2	IF_1	CALL_3
+0x4000224	        0x400fb6f6	                          movzx esi, sil	       421	kill.c	FUNCTION_2	IF_1	CALL_3
+0x4000228	          0x4889ef	                            mov rdi, rbp	       421	kill.c	FUNCTION_2	IF_1	CALL_3
+0x400022b	      0xe810feffff	          call sym._rl_copy_to_kill_ring	       421	kill.c	FUNCTION_2	IF_1	CALL_3
+0x4000230	    0x830500000000	               add dword [0x04000237], 1	       424	kill.c	FUNCTION_2
+0x4000237	      0xb800000000	                              mov eax, 0	       426	kill.c	FUNCTION_2
+0x400023c	        0x4883c408	                              add rsp, 8	       426	kill.c	FUNCTION_2
+0x4000240	              0x5b	                                 pop rbx	       426	kill.c	FUNCTION_2
+0x4000241	              0x5d	                                 pop rbp	       426	kill.c	FUNCTION_2
+0x4000242	              0xc3	                                     ret	       426	kill.c	FUNCTION_2
+0x4000243	    0x830500000000	               add dword [0x0400024a], 1	       424	kill.c	FUNCTION_2
+0x400024a	      0xb800000000	                              mov eax, 0	       426	kill.c	FUNCTION_2
+0x400024f	              0xc3	                                     ret	       426	kill.c	FUNCTION_2
+rl_set_retained_kills	WHILE,0:IF,0:DO,0:FOR,0:ELSE,0:CALL,0:functions,0:SWITCH,0	2
+0x400050b	      0xb800000000	                              mov eax, 0	        85	kill.c	FUNCTION_1
+0x4000510	              0xc3	                                     ret	        85	kill.c	FUNCTION_1

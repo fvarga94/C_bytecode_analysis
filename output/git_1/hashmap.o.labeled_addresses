@@ -1,527 +1,833 @@
-hashmap_bucket	FOR,0:IF,0:SWITCH,0:DO,0:CALL,0:functions,0:ELSE,0:WHILE,0	4
-0x4000228	          0x8b471c	            mov eax, dword [rdi + 0x1c] 	       111	hashmap.c	FUNCTION_9
-0x400022b	          0x83e801	                              sub eax, 1	       111	hashmap.c	FUNCTION_9
-0x400022e	            0x21f0	                            and eax, esi	       111	hashmap.c	FUNCTION_9
-0x4000230	              0xc3	                                     ret	       112	hashmap.c	FUNCTION_9
-hashmap_init	FOR,0:IF,0:SWITCH,0:DO,0:CALL,2:functions,0:ELSE,0:WHILE,1	40
-0x4000231	              0x53	                                push rbx	       152	hashmap.c	FUNCTION_13
-0x4000232	          0x4889fb	                            mov rbx, rdi	       152	hashmap.c	FUNCTION_13
-0x4000235	          0x4989c8	                             mov r8, rcx	       152	hashmap.c	FUNCTION_13
-0x4000238	    0x48c707000000	                      mov qword [rdi], 0	        90	string3.h	FUNCTION_27	CALL_6
-0x400023f	    0x48c747280000	               mov qword [rdi + 0x28], 0	        90	string3.h	FUNCTION_27	CALL_6
-0x4000247	        0x488d7f08	                      lea rdi, [rdi + 8]	        90	string3.h	FUNCTION_27	CALL_6
-0x400024b	        0x4883e7f8	             and rdi, 0xfffffffffffffff8	        90	string3.h	FUNCTION_27	CALL_6
-0x400024f	          0x4889d9	                            mov rcx, rbx	        90	string3.h	FUNCTION_27	CALL_6
-0x4000252	          0x4829f9	                            sub rcx, rdi	        90	string3.h	FUNCTION_27	CALL_6
-0x4000255	          0x83c130	                           add ecx, 0x30	        90	string3.h	FUNCTION_27	CALL_6
-0x4000258	          0xc1e903	                              shr ecx, 3	        90	string3.h	FUNCTION_27	CALL_6
-0x400025b	            0x89c9	                            mov ecx, ecx	        90	string3.h	FUNCTION_27	CALL_6
-0x400025d	      0xb800000000	                              mov eax, 0	        90	string3.h	FUNCTION_27	CALL_6
-0x4000262	          0xf348ab	              rep stosq qword [rdi], rax	        90	string3.h	FUNCTION_27	CALL_6
-0x4000265	          0x4885f6	                           test rsi, rsi	       157	hashmap.c	FUNCTION_13
-0x4000268	      0xb800000000	                              mov eax, 0	       157	hashmap.c	FUNCTION_13
-0x400026d	        0x480f44f0	                          cmove rsi, rax	       157	hashmap.c	FUNCTION_13
-0x4000271	        0x48897308	                mov qword [rbx + 8], rsi	       157	hashmap.c	FUNCTION_13
-0x4000275	        0x48895310	             mov qword [rbx + 0x10], rdx	       158	hashmap.c	FUNCTION_13
-0x4000279	        0x4b8d0480	                    lea rax, [r8 + r8*4]	       162	hashmap.c	FUNCTION_13
-0x400027d	        0x488d1480	                  lea rdx, [rax + rax*4]	       162	hashmap.c	FUNCTION_13
-0x4000281	    0x488d04950000	                        lea rax, [rdx*4]	       162	hashmap.c	FUNCTION_13
-0x4000289	    0x48bacdcccccc	          movabs rdx, 0xcccccccccccccccd	       162	hashmap.c	FUNCTION_13
-0x4000293	          0x48f7e2	                                 mul rdx	       162	hashmap.c	FUNCTION_13
-0x4000296	        0x48c1ea06	                              shr rdx, 6	       162	hashmap.c	FUNCTION_13
-0x400029a	            0x89d2	                            mov edx, edx	       161	hashmap.c	FUNCTION_13
-0x400029c	        0x4883fa40	                           cmp rdx, 0x40	       163	hashmap.c	FUNCTION_13	WHILE_1
-0x40002a0	            0x7611	                           jbe 0x40002b3	       163	hashmap.c	FUNCTION_13	WHILE_1
-0x40002a2	      0xbe40000000	                           mov esi, 0x40	       163	hashmap.c	FUNCTION_13	WHILE_1
-0x40002a7	          0xc1e602	                              shl esi, 2	       164	hashmap.c	FUNCTION_13	WHILE_1
-0x40002aa	            0x89f0	                            mov eax, esi	       163	hashmap.c	FUNCTION_13	WHILE_1
-0x40002ac	          0x4839c2	                            cmp rdx, rax	       163	hashmap.c	FUNCTION_13	WHILE_1
-0x40002af	            0x77f6	                            ja 0x40002a7	       163	hashmap.c	FUNCTION_13	WHILE_1
-0x40002b1	            0xeb05	                           jmp 0x40002b8	       163	hashmap.c	FUNCTION_13	WHILE_1
-0x40002b3	      0xbe40000000	                           mov esi, 0x40	       153	hashmap.c	FUNCTION_13
-0x40002b8	          0x4889df	                            mov rdi, rbx	       165	hashmap.c	FUNCTION_13	CALL_2
-0x40002bb	      0xe886fdffff	                    call sym.alloc_table	       165	hashmap.c	FUNCTION_13	CALL_2
-0x40002c0	        0x804b2801	                 or byte [rbx + 0x28], 1	       171	hashmap.c	FUNCTION_13
-0x40002c4	              0x5b	                                 pop rbx	       172	hashmap.c	FUNCTION_13
-0x40002c5	              0xc3	                                     ret	       172	hashmap.c	FUNCTION_13
-hashmap_free	FOR,0:IF,2:SWITCH,0:DO,0:CALL,5:functions,0:ELSE,0:WHILE,1	41
-0x4000514	              0x53	                                push rbx	       175	hashmap.c	FUNCTION_14
-0x4000515	        0x4883ec20	                           sub rsp, 0x20	       175	hashmap.c	FUNCTION_14
-0x4000519	    0x64488b042528	                mov rax, qword fs:[0x28]	       175	hashmap.c	FUNCTION_14
-0x4000522	      0x4889442418	             mov qword [rsp + 0x18], rax	       175	hashmap.c	FUNCTION_14
-0x4000527	            0x31c0	                            xor eax, eax	       175	hashmap.c	FUNCTION_14
-0x4000529	          0x4885ff	                           test rdi, rdi	       176	hashmap.c	FUNCTION_14	IF_1
-0x400052c	            0x746b	                            je 0x4000599	       176	hashmap.c	FUNCTION_14	IF_1
-0x400052e	          0x4889fb	                            mov rbx, rdi	       176	hashmap.c	FUNCTION_14	IF_1
-0x4000531	        0x48833f00	                      cmp qword [rdi], 0	       176	hashmap.c	FUNCTION_14	IF_1
-0x4000535	            0x7462	                            je 0x4000599	       176	hashmap.c	FUNCTION_14	IF_1
-0x4000537	            0x85f6	                           test esi, esi	       178	hashmap.c	FUNCTION_14	IF_2
-0x4000539	            0x742c	                            je 0x4000567	       178	hashmap.c	FUNCTION_14	IF_2
-0x400053b	        0x48893c24	                    mov qword [rsp], rdi	       250	hashmap.c	FUNCTION_20
-0x400053f	    0xc74424100000	               mov dword [rsp + 0x10], 0	       251	hashmap.c	FUNCTION_20
-0x4000547	    0x48c744240800	                  mov qword [rsp + 8], 0	       252	hashmap.c	FUNCTION_20
-0x4000550	            0xeb08	                           jmp 0x400055a	       252	hashmap.c	FUNCTION_20
-0x4000552	          0x4889c7	                            mov rdi, rax	       183	hashmap.c	FUNCTION_14	IF_2	CALL_3
-0x4000555	      0xe800000000	                          call 0x400055a	       183	hashmap.c	FUNCTION_14	IF_2	CALL_3
-0x400055a	          0x4889e7	                            mov rdi, rsp	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
-0x400055d	      0xe800000000	                          call 0x4000562	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
-0x4000562	          0x4885c0	                           test rax, rax	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
-0x4000565	            0x75eb	                           jne 0x4000552	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
-0x4000567	          0x488b3b	                    mov rdi, qword [rbx]	       185	hashmap.c	FUNCTION_14	CALL_4
-0x400056a	      0xe800000000	                          call 0x400056f	       185	hashmap.c	FUNCTION_14	CALL_4
-0x400056f	    0x48c703000000	                      mov qword [rbx], 0	        90	string3.h	FUNCTION_27	CALL_6
-0x4000576	    0x48c743280000	               mov qword [rbx + 0x28], 0	        90	string3.h	FUNCTION_27	CALL_6
-0x400057e	        0x488d7b08	                      lea rdi, [rbx + 8]	        90	string3.h	FUNCTION_27	CALL_6
-0x4000582	        0x4883e7f8	             and rdi, 0xfffffffffffffff8	        90	string3.h	FUNCTION_27	CALL_6
-0x4000586	          0x4829fb	                            sub rbx, rdi	        90	string3.h	FUNCTION_27	CALL_6
-0x4000589	          0x8d4b30	                   lea ecx, [rbx + 0x30]	        90	string3.h	FUNCTION_27	CALL_6
-0x400058c	          0xc1e903	                              shr ecx, 3	        90	string3.h	FUNCTION_27	CALL_6
-0x400058f	            0x89c9	                            mov ecx, ecx	        90	string3.h	FUNCTION_27	CALL_6
-0x4000591	      0xb800000000	                              mov eax, 0	        90	string3.h	FUNCTION_27	CALL_6
-0x4000596	          0xf348ab	              rep stosq qword [rdi], rax	        90	string3.h	FUNCTION_27	CALL_6
-0x4000599	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       187	hashmap.c	FUNCTION_14
-0x400059e	    0x644833042528	                xor rax, qword fs:[0x28]	       187	hashmap.c	FUNCTION_14
-0x40005a7	            0x7405	                            je 0x40005ae	       187	hashmap.c	FUNCTION_14
-0x40005a9	      0xe800000000	                          call 0x40005ae	       187	hashmap.c	FUNCTION_14
-0x40005ae	        0x4883c420	                           add rsp, 0x20	       187	hashmap.c	FUNCTION_14
-0x40005b2	              0x5b	                                 pop rbx	       187	hashmap.c	FUNCTION_14
-0x40005b3	              0xc3	                                     ret	       187	hashmap.c	FUNCTION_14
-strhash	FOR,0:IF,0:SWITCH,0:DO,0:CALL,0:functions,0:ELSE,0:WHILE,1	12
-0x400014b	        0x488d4f01	                      lea rcx, [rdi + 1]	        13	hashmap.c	FUNCTION_1	WHILE_1
-0x400014f	           0xfb617	                   movzx edx, byte [rdi]	        13	hashmap.c	FUNCTION_1	WHILE_1
-0x4000152	      0xb8c59d1c81	                     mov eax, 0x811c9dc5	        12	hashmap.c	FUNCTION_1
-0x4000157	            0x85d2	                           test edx, edx	        13	hashmap.c	FUNCTION_1	WHILE_1
-0x4000159	            0x7414	                            je 0x400016f	        13	hashmap.c	FUNCTION_1	WHILE_1
-0x400015b	    0x69c093010001	                imul eax, eax, 0x1000193	        14	hashmap.c	FUNCTION_1	WHILE_1
-0x4000161	            0x31d0	                            xor eax, edx	        14	hashmap.c	FUNCTION_1	WHILE_1
-0x4000163	        0x4883c101	                              add rcx, 1	        13	hashmap.c	FUNCTION_1	WHILE_1
-0x4000167	         0xfb651ff	               movzx edx, byte [rcx - 1]	        13	hashmap.c	FUNCTION_1	WHILE_1
-0x400016b	            0x85d2	                           test edx, edx	        13	hashmap.c	FUNCTION_1	WHILE_1
-0x400016d	            0x75ec	                           jne 0x400015b	        13	hashmap.c	FUNCTION_1	WHILE_1
-0x400016f	            0xf3c3	                                     ret	        16	hashmap.c	FUNCTION_1
-hashmap_get	FOR,0:IF,0:SWITCH,0:DO,0:CALL,1:functions,0:ELSE,0:WHILE,0	39
-0x40002c6	            0x4155	                                push r13	       190	hashmap.c	FUNCTION_15
-0x40002c8	            0x4154	                                push r12	       190	hashmap.c	FUNCTION_15
-0x40002ca	              0x55	                                push rbp	       190	hashmap.c	FUNCTION_15
-0x40002cb	              0x53	                                push rbx	       190	hashmap.c	FUNCTION_15
-0x40002cc	        0x4883ec08	                              sub rsp, 8	       190	hashmap.c	FUNCTION_15
-0x40002d0	          0x4989fc	                            mov r12, rdi	       190	hashmap.c	FUNCTION_15
-0x40002d3	          0x4889f5	                            mov rbp, rsi	       190	hashmap.c	FUNCTION_15
-0x40002d6	          0x4989d5	                            mov r13, rdx	       190	hashmap.c	FUNCTION_15
-0x40002d9	          0x8b471c	            mov eax, dword [rdi + 0x1c] 	       136	hashmap.c	FUNCTION_11	CALL_1
-0x40002dc	          0x83e801	                              sub eax, 1	       136	hashmap.c	FUNCTION_11	CALL_1
-0x40002df	          0x234608	                and eax, dword [rsi + 8]	       136	hashmap.c	FUNCTION_11	CALL_1
-0x40002e2	          0x488b17	                    mov rdx, qword [rdi]	       136	hashmap.c	FUNCTION_11	CALL_1
-0x40002e5	        0x488d1cc2	                  lea rbx, [rdx + rax*8]	       136	hashmap.c	FUNCTION_11	CALL_1
-0x40002e9	          0x488b33	                    mov rsi, qword [rbx]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40002ec	          0x4885f6	                           test rsi, rsi	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40002ef	            0x750d	                           jne 0x40002fe	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40002f1	            0xeb2c	                           jmp 0x400031f	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40002f3	          0x488b1b	                    mov rbx, qword [rbx]	       138	hashmap.c	FUNCTION_11	WHILE_1
-0x40002f6	          0x488b33	                    mov rsi, qword [rbx]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40002f9	          0x4885f6	                           test rsi, rsi	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40002fc	            0x7421	                            je 0x400031f	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40002fe	          0x4839f5	                            cmp rbp, rsi	        98	hashmap.c	FUNCTION_7
-0x4000301	            0x741c	                            je 0x400031f	        98	hashmap.c	FUNCTION_7
-0x4000303	          0x8b4508	                mov eax, dword [rbp + 8]	        98	hashmap.c	FUNCTION_7
-0x4000306	          0x394608	                cmp dword [rsi + 8], eax	        98	hashmap.c	FUNCTION_7
-0x4000309	            0x75e8	                           jne 0x40002f3	        98	hashmap.c	FUNCTION_7
-0x400030b	      0x498b7c2410	            mov rdi, qword [r12 + 0x10] 	       100	hashmap.c	FUNCTION_7	CALL_1
-0x4000310	          0x4c89e9	                            mov rcx, r13	       100	hashmap.c	FUNCTION_7	CALL_1
-0x4000313	          0x4889ea	                            mov rdx, rbp	       100	hashmap.c	FUNCTION_7	CALL_1
-0x4000316	      0x41ff542408	                    call qword [r12 + 8]	       100	hashmap.c	FUNCTION_7	CALL_1
-0x400031b	            0x85c0	                           test eax, eax	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x400031d	            0x75d4	                           jne 0x40002f3	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x400031f	          0x488b03	                    mov rax, qword [rbx]	       191	hashmap.c	FUNCTION_15	CALL_1
-0x4000322	        0x4883c408	                              add rsp, 8	       192	hashmap.c	FUNCTION_15
-0x4000326	              0x5b	                                 pop rbx	       192	hashmap.c	FUNCTION_15
-0x4000327	              0x5d	                                 pop rbp	       192	hashmap.c	FUNCTION_15
-0x4000328	            0x415c	                                 pop r12	       192	hashmap.c	FUNCTION_15
-0x400032a	            0x415d	                                 pop r13	       192	hashmap.c	FUNCTION_15
-0x400032c	              0xc3	                                     ret	       192	hashmap.c	FUNCTION_15
-strihash	FOR,0:IF,1:SWITCH,0:DO,0:CALL,0:functions,0:ELSE,0:WHILE,1	16
-0x4000171	        0x488d4f01	                      lea rcx, [rdi + 1]	        21	hashmap.c	FUNCTION_2	WHILE_1
-0x4000175	           0xfb617	                   movzx edx, byte [rdi]	        21	hashmap.c	FUNCTION_2	WHILE_1
-0x4000178	      0xb8c59d1c81	                     mov eax, 0x811c9dc5	        20	hashmap.c	FUNCTION_2
-0x400017d	            0x85d2	                           test edx, edx	        21	hashmap.c	FUNCTION_2	WHILE_1
-0x400017f	            0x7420	                            je 0x40001a1	        21	hashmap.c	FUNCTION_2	WHILE_1
-0x4000181	          0x8d729f	                   lea esi, [rdx - 0x61]	        22	hashmap.c	FUNCTION_2	WHILE_1	IF_1
-0x4000184	          0x8d7ae0	                   lea edi, [rdx - 0x20]	        23	hashmap.c	FUNCTION_2	WHILE_1	IF_1
-0x4000187	          0x83fe19	                           cmp esi, 0x19	        23	hashmap.c	FUNCTION_2	WHILE_1	IF_1
-0x400018a	           0xf46d7	                         cmovbe edx, edi	        23	hashmap.c	FUNCTION_2	WHILE_1	IF_1
-0x400018d	    0x69c093010001	                imul eax, eax, 0x1000193	        24	hashmap.c	FUNCTION_2	WHILE_1
-0x4000193	            0x31d0	                            xor eax, edx	        24	hashmap.c	FUNCTION_2	WHILE_1
-0x4000195	        0x4883c101	                              add rcx, 1	        21	hashmap.c	FUNCTION_2	WHILE_1
-0x4000199	         0xfb651ff	               movzx edx, byte [rcx - 1]	        21	hashmap.c	FUNCTION_2	WHILE_1
-0x400019d	            0x85d2	                           test edx, edx	        21	hashmap.c	FUNCTION_2	WHILE_1
-0x400019f	            0x75e0	                           jne 0x4000181	        21	hashmap.c	FUNCTION_2	WHILE_1
-0x40001a1	            0xf3c3	                                     ret	        27	hashmap.c	FUNCTION_2
-hashmap_get_next	FOR,1:IF,1:SWITCH,0:DO,0:CALL,1:functions,0:ELSE,0:WHILE,0	34
-0x400032d	            0x4154	                                push r12	       195	hashmap.c	FUNCTION_16
-0x400032f	              0x55	                                push rbp	       195	hashmap.c	FUNCTION_16
-0x4000330	              0x53	                                push rbx	       195	hashmap.c	FUNCTION_16
-0x4000331	          0x4989fc	                            mov r12, rdi	       195	hashmap.c	FUNCTION_16
-0x4000334	          0x4889f5	                            mov rbp, rsi	       195	hashmap.c	FUNCTION_16
-0x4000337	          0x488b1e	                    mov rbx, qword [rsi]	       196	hashmap.c	FUNCTION_16
-0x400033a	          0x4885db	                           test rbx, rbx	       197	hashmap.c	FUNCTION_16	FOR_1
-0x400033d	            0x7435	                            je 0x4000374	       197	hashmap.c	FUNCTION_16	FOR_1
-0x400033f	          0x4839dd	                            cmp rbp, rbx	        98	hashmap.c	FUNCTION_7
-0x4000342	            0x7437	                            je 0x400037b	        98	hashmap.c	FUNCTION_7
-0x4000344	          0x8b4308	                mov eax, dword [rbx + 8]	        98	hashmap.c	FUNCTION_7
-0x4000347	          0x394508	                cmp dword [rbp + 8], eax	        98	hashmap.c	FUNCTION_7
-0x400034a	            0x7519	                           jne 0x4000365	        98	hashmap.c	FUNCTION_7
-0x400034c	      0x498b7c2410	            mov rdi, qword [r12 + 0x10] 	       100	hashmap.c	FUNCTION_7	CALL_1
-0x4000351	      0xb900000000	                              mov ecx, 0	       100	hashmap.c	FUNCTION_7	CALL_1
-0x4000356	          0x4889da	                            mov rdx, rbx	       100	hashmap.c	FUNCTION_7	CALL_1
-0x4000359	          0x4889ee	                            mov rsi, rbp	       100	hashmap.c	FUNCTION_7	CALL_1
-0x400035c	      0x41ff542408	                    call qword [r12 + 8]	       100	hashmap.c	FUNCTION_7	CALL_1
-0x4000361	            0x85c0	                           test eax, eax	       198	hashmap.c	FUNCTION_16	FOR_1	IF_1	CALL_1
-0x4000363	            0x741b	                            je 0x4000380	       198	hashmap.c	FUNCTION_16	FOR_1	IF_1	CALL_1
-0x4000365	          0x488b1b	                    mov rbx, qword [rbx]	       197	hashmap.c	FUNCTION_16	FOR_1
-0x4000368	          0x4885db	                           test rbx, rbx	       197	hashmap.c	FUNCTION_16	FOR_1
-0x400036b	            0x75d2	                           jne 0x400033f	       197	hashmap.c	FUNCTION_16	FOR_1
-0x400036d	      0xb800000000	                              mov eax, 0	       200	hashmap.c	FUNCTION_16
-0x4000372	            0xeb0f	                           jmp 0x4000383	       200	hashmap.c	FUNCTION_16
-0x4000374	      0xb800000000	                              mov eax, 0	       200	hashmap.c	FUNCTION_16
-0x4000379	            0xeb08	                           jmp 0x4000383	       200	hashmap.c	FUNCTION_16
-0x400037b	          0x4889d8	                            mov rax, rbx	        98	hashmap.c	FUNCTION_7
-0x400037e	            0xeb03	                           jmp 0x4000383	        98	hashmap.c	FUNCTION_7
-0x4000380	          0x4889d8	                            mov rax, rbx	        98	hashmap.c	FUNCTION_7
-0x4000383	              0x5b	                                 pop rbx	       201	hashmap.c	FUNCTION_16
-0x4000384	              0x5d	                                 pop rbp	       201	hashmap.c	FUNCTION_16
-0x4000385	            0x415c	                                 pop r12	       201	hashmap.c	FUNCTION_16
-0x4000387	              0xc3	                                     ret	       201	hashmap.c	FUNCTION_16
-hashmap_put	FOR,0:IF,0:SWITCH,0:DO,0:CALL,2:functions,0:ELSE,0:WHILE,0	16
-0x4000490	            0x4154	                                push r12	       242	hashmap.c	FUNCTION_19
-0x4000492	              0x55	                                push rbp	       242	hashmap.c	FUNCTION_19
-0x4000493	              0x53	                                push rbx	       242	hashmap.c	FUNCTION_19
-0x4000494	          0x4889fb	                            mov rbx, rdi	       242	hashmap.c	FUNCTION_19
-0x4000497	          0x4889f5	                            mov rbp, rsi	       242	hashmap.c	FUNCTION_19
-0x400049a	      0xba00000000	                              mov edx, 0	       243	hashmap.c	FUNCTION_19	CALL_1
-0x400049f	      0xe800000000	                          call 0x40004a4	       243	hashmap.c	FUNCTION_19	CALL_1
-0x40004a4	          0x4989c4	                            mov r12, rax	       243	hashmap.c	FUNCTION_19	CALL_1
-0x40004a7	          0x4889ee	                            mov rsi, rbp	       244	hashmap.c	FUNCTION_19	CALL_2
-0x40004aa	          0x4889df	                            mov rdi, rbx	       244	hashmap.c	FUNCTION_19	CALL_2
-0x40004ad	      0xe800000000	                          call 0x40004b2	       244	hashmap.c	FUNCTION_19	CALL_2
-0x40004b2	          0x4c89e0	                            mov rax, r12	       246	hashmap.c	FUNCTION_19
-0x40004b5	              0x5b	                                 pop rbx	       246	hashmap.c	FUNCTION_19
-0x40004b6	              0x5d	                                 pop rbp	       246	hashmap.c	FUNCTION_19
-0x40004b7	            0x415c	                                 pop r12	       246	hashmap.c	FUNCTION_19
-0x40004b9	              0xc3	                                     ret	       246	hashmap.c	FUNCTION_19
-always_equal	FOR,0:IF,0:SWITCH,0:DO,0:CALL,0:functions,0:ELSE,0:WHILE,0	2
-0x4000040	      0xb800000000	                              mov eax, 0	       148	hashmap.c	FUNCTION_12
-0x4000045	              0xc3	                                     ret	       148	hashmap.c	FUNCTION_12
-alloc_table	FOR,0:IF,1:SWITCH,0:DO,0:CALL,1:functions,0:ELSE,1:WHILE,0	31
-0x4000046	            0x4154	                                push r12	        77	hashmap.c	FUNCTION_6
-0x4000048	              0x55	                                push rbp	        77	hashmap.c	FUNCTION_6
-0x4000049	              0x53	                                push rbx	        77	hashmap.c	FUNCTION_6
-0x400004a	          0x4889fb	                            mov rbx, rdi	        77	hashmap.c	FUNCTION_6
-0x400004d	            0x89f5	                            mov ebp, esi	        77	hashmap.c	FUNCTION_6
-0x400004f	          0x89771c	             mov dword [rdi + 0x1c], esi	        78	hashmap.c	FUNCTION_6
-0x4000052	          0x4189f4	                           mov r12d, esi	        79	hashmap.c	FUNCTION_6	CALL_1
-0x4000055	      0xbe08000000	                              mov esi, 8	        79	hashmap.c	FUNCTION_6	CALL_1
-0x400005a	          0x4c89e7	                            mov rdi, r12	        79	hashmap.c	FUNCTION_6	CALL_1
-0x400005d	      0xe800000000	                          call 0x4000062	        79	hashmap.c	FUNCTION_6	CALL_1
-0x4000062	          0x488903	                    mov qword [rbx], rax	        79	hashmap.c	FUNCTION_6	CALL_1
-0x4000065	        0x4b8d14a4	                  lea rdx, [r12 + r12*4]	        82	hashmap.c	FUNCTION_6
-0x4000069	        0x48c1e202	                              shl rdx, 2	        82	hashmap.c	FUNCTION_6
-0x400006d	    0x48b9c3f5285c	          movabs rcx, 0x28f5c28f5c28f5c3	        82	hashmap.c	FUNCTION_6
-0x4000077	          0x4889d0	                            mov rax, rdx	        82	hashmap.c	FUNCTION_6
-0x400007a	          0x48f7e1	                                 mul rcx	        82	hashmap.c	FUNCTION_6
-0x400007d	        0x48c1ea02	                              shr rdx, 2	        82	hashmap.c	FUNCTION_6
-0x4000081	          0x895320	             mov dword [rbx + 0x20], edx	        82	hashmap.c	FUNCTION_6
-0x4000084	          0x83fd40	                           cmp ebp, 0x40	        83	hashmap.c	FUNCTION_6	IF_1
-0x4000087	            0x7709	                            ja 0x4000092	        83	hashmap.c	FUNCTION_6	IF_1
-0x4000089	    0xc74324000000	               mov dword [rbx + 0x24], 0	        84	hashmap.c	FUNCTION_6	IF_1
-0x4000090	            0xeb0f	                           jmp 0x40000a1	        84	hashmap.c	FUNCTION_6	IF_1
-0x4000092	      0xb9cdcccccc	                     mov ecx, 0xcccccccd	        91	hashmap.c	FUNCTION_6	ELSE_1
-0x4000097	            0x89d0	                            mov eax, edx	        91	hashmap.c	FUNCTION_6	ELSE_1
-0x4000099	            0xf7e1	                                 mul ecx	        91	hashmap.c	FUNCTION_6	ELSE_1
-0x400009b	          0xc1ea02	                              shr edx, 2	        91	hashmap.c	FUNCTION_6	ELSE_1
-0x400009e	          0x895324	             mov dword [rbx + 0x24], edx	        91	hashmap.c	FUNCTION_6	ELSE_1
-0x40000a1	              0x5b	                                 pop rbx	        92	hashmap.c	FUNCTION_6
-0x40000a2	              0x5d	                                 pop rbp	        92	hashmap.c	FUNCTION_6
-0x40000a3	            0x415c	                                 pop r12	        92	hashmap.c	FUNCTION_6
-0x40000a5	              0xc3	                                     ret	        92	hashmap.c	FUNCTION_6
-memihash_cont	FOR,0:IF,1:SWITCH,0:DO,0:CALL,0:functions,0:ELSE,0:WHILE,1	15
-0x40001f9	            0x89f8	                            mov eax, edi	        58	hashmap.c	FUNCTION_5
-0x40001fb	          0x4885d2	                           test rdx, rdx	        61	hashmap.c	FUNCTION_5	WHILE_1
-0x40001fe	            0x7426	                            je 0x4000226	        61	hashmap.c	FUNCTION_5	WHILE_1
-0x4000200	          0x4801f2	                            add rdx, rsi	        61	hashmap.c	FUNCTION_5	WHILE_1
-0x4000203	        0x4883c601	                              add rsi, 1	        62	hashmap.c	FUNCTION_5	WHILE_1
-0x4000207	         0xfb64eff	               movzx ecx, byte [rsi - 1]	        62	hashmap.c	FUNCTION_5	WHILE_1
-0x400020b	          0x8d799f	                   lea edi, [rcx - 0x61]	        63	hashmap.c	FUNCTION_5	WHILE_1	IF_1
-0x400020e	        0x448d41e0	                   lea r8d, [rcx - 0x20]	        64	hashmap.c	FUNCTION_5	WHILE_1	IF_1
-0x4000212	          0x83ff19	                           cmp edi, 0x19	        64	hashmap.c	FUNCTION_5	WHILE_1	IF_1
-0x4000215	        0x410f46c8	                         cmovbe ecx, r8d	        64	hashmap.c	FUNCTION_5	WHILE_1	IF_1
-0x4000219	    0x69c093010001	                imul eax, eax, 0x1000193	        65	hashmap.c	FUNCTION_5	WHILE_1
-0x400021f	            0x31c8	                            xor eax, ecx	        65	hashmap.c	FUNCTION_5	WHILE_1
-0x4000221	          0x4839f2	                            cmp rdx, rsi	        61	hashmap.c	FUNCTION_5	WHILE_1
-0x4000224	            0x75dd	                           jne 0x4000203	        61	hashmap.c	FUNCTION_5	WHILE_1
-0x4000226	            0xf3c3	                                     ret	        68	hashmap.c	FUNCTION_5
-hashmap_iter_next	FOR,1:IF,2:SWITCH,0:DO,0:CALL,0:functions,0:ELSE,0:WHILE,0	26
-0x40004cd	        0x488b4708	                mov rax, qword [rdi + 8]	       257	hashmap.c	FUNCTION_21
-0x40004d1	          0x4885c0	                           test rax, rax	       259	hashmap.c	FUNCTION_21	FOR_1	IF_1
-0x40004d4	            0x750d	                           jne 0x40004e3	       259	hashmap.c	FUNCTION_21	FOR_1	IF_1
-0x40004d6	          0x8b4710	            mov eax, dword [rdi + 0x10] 	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x40004d9	          0x488b0f	                    mov rcx, qword [rdi]	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x40004dc	          0x3b411c	            cmp eax, dword [rcx + 0x1c] 	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x40004df	            0x7211	                            jb 0x40004f2	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x40004e1	            0xeb25	                           jmp 0x4000508	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x40004e3	          0x488b10	                    mov rdx, qword [rax]	       260	hashmap.c	FUNCTION_21	FOR_1	IF_1
-0x40004e6	        0x48895708	                mov qword [rdi + 8], rdx	       260	hashmap.c	FUNCTION_21	FOR_1	IF_1
-0x40004ea	              0xc3	                                     ret	       261	hashmap.c	FUNCTION_21	FOR_1	IF_1
-0x40004eb	            0x89d0	                            mov eax, edx	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x40004ed	          0x39511c	            cmp dword [rcx + 0x1c], edx 	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x40004f0	            0x761c	                           jbe 0x400050e	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x40004f2	          0x488b31	                    mov rsi, qword [rcx]	       267	hashmap.c	FUNCTION_21	FOR_1
-0x40004f5	          0x8d5001	                      lea edx, [rax + 1]	       267	hashmap.c	FUNCTION_21	FOR_1
-0x40004f8	          0x895710	             mov dword [rdi + 0x10], edx	       267	hashmap.c	FUNCTION_21	FOR_1
-0x40004fb	            0x89c0	                            mov eax, eax	       267	hashmap.c	FUNCTION_21	FOR_1
-0x40004fd	        0x488b04c6	            mov rax, qword [rsi + rax*8]	       267	hashmap.c	FUNCTION_21	FOR_1
-0x4000501	          0x4885c0	                           test rax, rax	       259	hashmap.c	FUNCTION_21	FOR_1	IF_1
-0x4000504	            0x74e5	                            je 0x40004eb	       259	hashmap.c	FUNCTION_21	FOR_1	IF_1
-0x4000506	            0xebdb	                           jmp 0x40004e3	       259	hashmap.c	FUNCTION_21	FOR_1	IF_1
-0x4000508	      0xb800000000	                              mov eax, 0	       265	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x400050d	              0xc3	                                     ret	       265	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x400050e	      0xb800000000	                              mov eax, 0	       265	hashmap.c	FUNCTION_21	FOR_1	IF_2
-0x4000513	              0xc3	                                     ret	       269	hashmap.c	FUNCTION_21
-hashmap_add	FOR,0:IF,2:SWITCH,0:DO,0:CALL,2:functions,0:ELSE,0:WHILE,0	21
-0x4000388	          0x8b471c	            mov eax, dword [rdi + 0x1c] 	       208	hashmap.c	FUNCTION_17
-0x400038b	          0x83e801	                              sub eax, 1	       208	hashmap.c	FUNCTION_17
-0x400038e	          0x234608	                and eax, dword [rsi + 8]	       208	hashmap.c	FUNCTION_17
-0x4000391	          0x488b17	                    mov rdx, qword [rdi]	       208	hashmap.c	FUNCTION_17
-0x4000394	        0x488b14c2	            mov rdx, qword [rdx + rax*8]	       208	hashmap.c	FUNCTION_17
-0x4000398	          0x488916	                    mov qword [rsi], rdx	       208	hashmap.c	FUNCTION_17
-0x400039b	          0x488b17	                    mov rdx, qword [rdi]	       209	hashmap.c	FUNCTION_17
-0x400039e	        0x488934c2	            mov qword [rdx + rax*8], rsi	       209	hashmap.c	FUNCTION_17
-0x40003a2	        0xf6472801	               test byte [rdi + 0x28], 1	       212	hashmap.c	FUNCTION_17	IF_1
-0x40003a6	            0x7425	                            je 0x40003cd	       212	hashmap.c	FUNCTION_17	IF_1
-0x40003a8	          0x8b4718	            mov eax, dword [rdi + 0x18] 	       213	hashmap.c	FUNCTION_17	IF_1
-0x40003ab	          0x83c001	                              add eax, 1	       213	hashmap.c	FUNCTION_17	IF_1
-0x40003ae	          0x894718	             mov dword [rdi + 0x18], eax	       213	hashmap.c	FUNCTION_17	IF_1
-0x40003b1	          0x3b4720	            cmp eax, dword [rdi + 0x20] 	       214	hashmap.c	FUNCTION_17	IF_1	IF_2
-0x40003b4	            0x7617	                           jbe 0x40003cd	       214	hashmap.c	FUNCTION_17	IF_1	IF_2
-0x40003b6	        0x4883ec08	                              sub rsp, 8	       204	hashmap.c	FUNCTION_17
-0x40003ba	          0x8b471c	            mov eax, dword [rdi + 0x1c] 	       215	hashmap.c	FUNCTION_17	IF_1	CALL_2
-0x40003bd	    0x8d3485000000	                        lea esi, [rax*4]	       215	hashmap.c	FUNCTION_17	IF_1	CALL_2
-0x40003c4	      0xe8ddfcffff	                         call sym.rehash	       215	hashmap.c	FUNCTION_17	IF_1	CALL_2
-0x40003c9	        0x4883c408	                              add rsp, 8	       217	hashmap.c	FUNCTION_17
-0x40003cd	            0xf3c3	                                     ret	       217	hashmap.c	FUNCTION_17
-hashmap_remove	FOR,0:IF,3:SWITCH,0:DO,0:CALL,2:functions,0:ELSE,0:WHILE,0	62
-0x40003cf	            0x4155	                                push r13	       220	hashmap.c	FUNCTION_18
-0x40003d1	            0x4154	                                push r12	       220	hashmap.c	FUNCTION_18
-0x40003d3	              0x55	                                push rbp	       220	hashmap.c	FUNCTION_18
-0x40003d4	              0x53	                                push rbx	       220	hashmap.c	FUNCTION_18
-0x40003d5	        0x4883ec08	                              sub rsp, 8	       220	hashmap.c	FUNCTION_18
-0x40003d9	          0x4989fc	                            mov r12, rdi	       220	hashmap.c	FUNCTION_18
-0x40003dc	          0x4889f5	                            mov rbp, rsi	       220	hashmap.c	FUNCTION_18
-0x40003df	          0x4989d5	                            mov r13, rdx	       220	hashmap.c	FUNCTION_18
-0x40003e2	          0x8b471c	            mov eax, dword [rdi + 0x1c] 	       136	hashmap.c	FUNCTION_11	CALL_1
-0x40003e5	          0x83e801	                              sub eax, 1	       136	hashmap.c	FUNCTION_11	CALL_1
-0x40003e8	          0x234608	                and eax, dword [rsi + 8]	       136	hashmap.c	FUNCTION_11	CALL_1
-0x40003eb	          0x488b17	                    mov rdx, qword [rdi]	       136	hashmap.c	FUNCTION_11	CALL_1
-0x40003ee	        0x488d1cc2	                  lea rbx, [rdx + rax*8]	       136	hashmap.c	FUNCTION_11	CALL_1
-0x40003f2	          0x488b33	                    mov rsi, qword [rbx]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40003f5	          0x4885f6	                           test rsi, rsi	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40003f8	            0x7510	                           jne 0x400040a	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40003fa	      0xe981000000	                           jmp 0x4000480	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x40003ff	          0x488b1b	                    mov rbx, qword [rbx]	       138	hashmap.c	FUNCTION_11	WHILE_1
-0x4000402	          0x488b33	                    mov rsi, qword [rbx]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x4000405	          0x4885f6	                           test rsi, rsi	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x4000408	            0x7476	                            je 0x4000480	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x400040a	          0x4839f5	                            cmp rbp, rsi	        98	hashmap.c	FUNCTION_7
-0x400040d	            0x741c	                            je 0x400042b	        98	hashmap.c	FUNCTION_7
-0x400040f	          0x8b4508	                mov eax, dword [rbp + 8]	        98	hashmap.c	FUNCTION_7
-0x4000412	          0x394608	                cmp dword [rsi + 8], eax	        98	hashmap.c	FUNCTION_7
-0x4000415	            0x75e8	                           jne 0x40003ff	        98	hashmap.c	FUNCTION_7
-0x4000417	      0x498b7c2410	            mov rdi, qword [r12 + 0x10] 	       100	hashmap.c	FUNCTION_7	CALL_1
-0x400041c	          0x4c89e9	                            mov rcx, r13	       100	hashmap.c	FUNCTION_7	CALL_1
-0x400041f	          0x4889ea	                            mov rdx, rbp	       100	hashmap.c	FUNCTION_7	CALL_1
-0x4000422	      0x41ff542408	                    call qword [r12 + 8]	       100	hashmap.c	FUNCTION_7	CALL_1
-0x4000427	            0x85c0	                           test eax, eax	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x4000429	            0x75d4	                           jne 0x40003ff	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
-0x400042b	          0x488b2b	                    mov rbp, qword [rbx]	       223	hashmap.c	FUNCTION_18	IF_1
-0x400042e	          0x4885ed	                           test rbp, rbp	       223	hashmap.c	FUNCTION_18	IF_1
-0x4000431	            0x7446	                            je 0x4000479	       223	hashmap.c	FUNCTION_18	IF_1
-0x4000433	        0x488b4500	                    mov rax, qword [rbp]	       228	hashmap.c	FUNCTION_18
-0x4000437	          0x488903	                    mov qword [rbx], rax	       228	hashmap.c	FUNCTION_18
-0x400043a	    0x48c745000000	                      mov qword [rbp], 0	       229	hashmap.c	FUNCTION_18
-0x4000442	          0x4889e8	                            mov rax, rbp	       223	hashmap.c	FUNCTION_18	IF_1
-0x4000445	    0x41f644242801	               test byte [r12 + 0x28], 1	       232	hashmap.c	FUNCTION_18	IF_2
-0x400044b	            0x7438	                            je 0x4000485	       232	hashmap.c	FUNCTION_18	IF_2
-0x400044d	      0x418b442418	            mov eax, dword [r12 + 0x18] 	       233	hashmap.c	FUNCTION_18	IF_2
-0x4000452	          0x8d50ff	                      lea edx, [rax - 1]	       233	hashmap.c	FUNCTION_18	IF_2
-0x4000455	      0x4189542418	             mov dword [r12 + 0x18], edx	       233	hashmap.c	FUNCTION_18	IF_2
-0x400045a	          0x4889e8	                            mov rax, rbp	       223	hashmap.c	FUNCTION_18	IF_1
-0x400045d	      0x413b542424	            cmp edx, dword [r12 + 0x24] 	       234	hashmap.c	FUNCTION_18	IF_2	IF_3
-0x4000462	            0x7321	                           jae 0x4000485	       234	hashmap.c	FUNCTION_18	IF_2	IF_3
-0x4000464	      0x418b74241c	            mov esi, dword [r12 + 0x1c] 	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
-0x4000469	          0xc1ee02	                              shr esi, 2	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
-0x400046c	          0x4c89e7	                            mov rdi, r12	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
-0x400046f	      0xe832fcffff	                         call sym.rehash	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
-0x4000474	          0x4889e8	                            mov rax, rbp	       223	hashmap.c	FUNCTION_18	IF_1
-0x4000477	            0xeb0c	                           jmp 0x4000485	       223	hashmap.c	FUNCTION_18	IF_1
-0x4000479	      0xb800000000	                              mov eax, 0	       224	hashmap.c	FUNCTION_18	IF_1
-0x400047e	            0xeb05	                           jmp 0x4000485	       224	hashmap.c	FUNCTION_18	IF_1
-0x4000480	      0xb800000000	                              mov eax, 0	       224	hashmap.c	FUNCTION_18	IF_1
-0x4000485	        0x4883c408	                              add rsp, 8	       239	hashmap.c	FUNCTION_18
-0x4000489	              0x5b	                                 pop rbx	       239	hashmap.c	FUNCTION_18
-0x400048a	              0x5d	                                 pop rbp	       239	hashmap.c	FUNCTION_18
-0x400048b	            0x415c	                                 pop r12	       239	hashmap.c	FUNCTION_18
-0x400048d	            0x415d	                                 pop r13	       239	hashmap.c	FUNCTION_18
-0x400048f	              0xc3	                                     ret	       239	hashmap.c	FUNCTION_18
-memintern	FOR,0:IF,2:SWITCH,0:DO,0:CALL,7:functions,0:ELSE,0:WHILE,0	68
-0x40005b4	            0x4154	                                push r12	       287	hashmap.c	FUNCTION_23
-0x40005b6	              0x55	                                push rbp	       287	hashmap.c	FUNCTION_23
-0x40005b7	              0x53	                                push rbx	       287	hashmap.c	FUNCTION_23
-0x40005b8	        0x4883ec20	                           sub rsp, 0x20	       287	hashmap.c	FUNCTION_23
-0x40005bc	          0x4989fc	                            mov r12, rdi	       287	hashmap.c	FUNCTION_23
-0x40005bf	          0x4889f5	                            mov rbp, rsi	       287	hashmap.c	FUNCTION_23
-0x40005c2	    0x64488b042528	                mov rax, qword fs:[0x28]	       287	hashmap.c	FUNCTION_23
-0x40005cb	      0x4889442418	             mov qword [rsp + 0x18], rax	       287	hashmap.c	FUNCTION_23
-0x40005d0	            0x31c0	                            xor eax, eax	       287	hashmap.c	FUNCTION_23
-0x40005d2	    0x833d00000000	               cmp dword [0x040005d9], 0	       292	hashmap.c	FUNCTION_23	IF_1
-0x40005d9	            0x7519	                           jne 0x40005f4	       292	hashmap.c	FUNCTION_23	IF_1
-0x40005db	      0xb900000000	                              mov ecx, 0	       293	hashmap.c	FUNCTION_23	CALL_1
-0x40005e0	      0xba00000000	                              mov edx, 0	       293	hashmap.c	FUNCTION_23	CALL_1
-0x40005e5	      0xbe00000000	                              mov esi, 0	       293	hashmap.c	FUNCTION_23	CALL_1
-0x40005ea	      0xbf00000000	                              mov edi, 0	       293	hashmap.c	FUNCTION_23	CALL_1
-0x40005ef	      0xe800000000	                          call 0x40005f4	       293	hashmap.c	FUNCTION_23	CALL_1
-0x40005f4	          0x4889ee	                            mov rsi, rbp	       296	hashmap.c	FUNCTION_23	CALL_3
-0x40005f7	          0x4c89e7	                            mov rdi, r12	       296	hashmap.c	FUNCTION_23	CALL_3
-0x40005fa	      0xe800000000	                          call 0x40005ff	       296	hashmap.c	FUNCTION_23	CALL_3
-0x40005ff	        0x89442408	                mov dword [rsp + 8], eax	       248	hashmap.h	FUNCTION_37
-0x4000603	    0x48c704240000	                      mov qword [rsp], 0	       249	hashmap.h	FUNCTION_37
-0x400060b	      0x48896c2410	             mov qword [rsp + 0x10], rbp	       297	hashmap.c	FUNCTION_23
-0x4000610	          0x4c89e2	                            mov rdx, r12	       298	hashmap.c	FUNCTION_23	CALL_4
-0x4000613	          0x4889e6	                            mov rsi, rsp	       298	hashmap.c	FUNCTION_23	CALL_4
-0x4000616	      0xbf00000000	                              mov edi, 0	       298	hashmap.c	FUNCTION_23	CALL_4
-0x400061b	      0xe800000000	                          call 0x4000620	       298	hashmap.c	FUNCTION_23	CALL_4
-0x4000620	          0x4889c3	                            mov rbx, rax	       298	hashmap.c	FUNCTION_23	CALL_4
-0x4000623	          0x4885c0	                           test rax, rax	       299	hashmap.c	FUNCTION_23	IF_2
-0x4000626	            0x757d	                           jne 0x40006a5	       299	hashmap.c	FUNCTION_23	IF_2
-0x4000628	        0x4883fde7	             cmp rbp, 0xffffffffffffffe7	       785	git-compat-util.h	FUNCTION_57	IF_1	CALL_1
-0x400062c	            0x7617	                           jbe 0x4000645	       785	git-compat-util.h	FUNCTION_57	IF_1	CALL_1
-0x400062e	          0x4889ea	                            mov rdx, rbp	       786	git-compat-util.h	FUNCTION_57	IF_1	CALL_2
-0x4000631	      0xbe18000000	                           mov esi, 0x18	       786	git-compat-util.h	FUNCTION_57	IF_1	CALL_2
-0x4000636	      0xbf00000000	                              mov edi, 0	       786	git-compat-util.h	FUNCTION_57	IF_1	CALL_2
-0x400063b	      0xb800000000	                              mov eax, 0	       786	git-compat-util.h	FUNCTION_57	IF_1	CALL_2
-0x4000640	      0xe800000000	                          call 0x4000645	       786	git-compat-util.h	FUNCTION_57	IF_1	CALL_2
-0x4000645	        0x4883fde7	             cmp rbp, 0xffffffffffffffe7	       785	git-compat-util.h	FUNCTION_57	IF_1	CALL_1
-0x4000649	            0x751b	                           jne 0x4000666	       785	git-compat-util.h	FUNCTION_57	IF_1	CALL_1
-0x400064b	      0xba01000000	                              mov edx, 1	       786	git-compat-util.h	FUNCTION_57	IF_1	CALL_2
-0x4000650	    0x48c7c6ffffff	             mov rsi, 0xffffffffffffffff	       786	git-compat-util.h	FUNCTION_57	IF_1	CALL_2
-0x4000657	      0xbf00000000	                              mov edi, 0	       786	git-compat-util.h	FUNCTION_57	IF_1	CALL_2
-0x400065c	      0xb800000000	                              mov eax, 0	       786	git-compat-util.h	FUNCTION_57	IF_1	CALL_2
-0x4000661	      0xe800000000	                          call 0x4000666	       786	git-compat-util.h	FUNCTION_57	IF_1	CALL_2
-0x4000666	        0x488d7519	                   lea rsi, [rbp + 0x19]	       301	hashmap.c	FUNCTION_23	IF_2	CALL_5
-0x400066a	      0xbf01000000	                              mov edi, 1	       301	hashmap.c	FUNCTION_23	IF_2	CALL_5
-0x400066f	      0xe800000000	                          call 0x4000674	       301	hashmap.c	FUNCTION_23	IF_2	CALL_5
-0x4000674	          0x4889c3	                            mov rbx, rax	       301	hashmap.c	FUNCTION_23	IF_2	CALL_5
-0x4000677	        0x488d7818	                   lea rdi, [rax + 0x18]	        53	string3.h	FUNCTION_24	CALL_3
-0x400067b	          0x4889ea	                            mov rdx, rbp	        53	string3.h	FUNCTION_24	CALL_3
-0x400067e	          0x4c89e6	                            mov rsi, r12	        53	string3.h	FUNCTION_24	CALL_3
-0x4000681	      0xe800000000	                          call 0x4000686	        53	string3.h	FUNCTION_24	CALL_3
-0x4000686	        0x8b442408	                mov eax, dword [rsp + 8]	       302	hashmap.c	FUNCTION_23	IF_2	CALL_6
-0x400068a	          0x894308	                mov dword [rbx + 8], eax	       248	hashmap.h	FUNCTION_37
-0x400068d	    0x48c703000000	                      mov qword [rbx], 0	       249	hashmap.h	FUNCTION_37
-0x4000694	        0x48896b10	             mov qword [rbx + 0x10], rbp	       303	hashmap.c	FUNCTION_23	IF_2
-0x4000698	          0x4889de	                            mov rsi, rbx	       304	hashmap.c	FUNCTION_23	IF_2	CALL_7
-0x400069b	      0xbf00000000	                              mov edi, 0	       304	hashmap.c	FUNCTION_23	IF_2	CALL_7
-0x40006a0	      0xe800000000	                          call 0x40006a5	       304	hashmap.c	FUNCTION_23	IF_2	CALL_7
-0x40006a5	        0x488d4318	                   lea rax, [rbx + 0x18]	       306	hashmap.c	FUNCTION_23
-0x40006a9	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	       307	hashmap.c	FUNCTION_23
-0x40006ae	    0x6448330c2528	                xor rcx, qword fs:[0x28]	       307	hashmap.c	FUNCTION_23
-0x40006b7	            0x7405	                            je 0x40006be	       307	hashmap.c	FUNCTION_23
-0x40006b9	      0xe800000000	                          call 0x40006be	       307	hashmap.c	FUNCTION_23
-0x40006be	        0x4883c420	                           add rsp, 0x20	       307	hashmap.c	FUNCTION_23
-0x40006c2	              0x5b	                                 pop rbx	       307	hashmap.c	FUNCTION_23
-0x40006c3	              0x5d	                                 pop rbp	       307	hashmap.c	FUNCTION_23
-0x40006c4	            0x415c	                                 pop r12	       307	hashmap.c	FUNCTION_23
-0x40006c6	              0xc3	                                     ret	       307	hashmap.c	FUNCTION_23
-memhash	FOR,0:IF,0:SWITCH,0:DO,0:CALL,0:functions,0:ELSE,0:WHILE,1	11
-0x40001a3	      0xb8c59d1c81	                     mov eax, 0x811c9dc5	        31	hashmap.c	FUNCTION_3
-0x40001a8	          0x4885f6	                           test rsi, rsi	        33	hashmap.c	FUNCTION_3	WHILE_1
-0x40001ab	            0x7418	                            je 0x40001c5	        33	hashmap.c	FUNCTION_3	WHILE_1
-0x40001ad	          0x4801fe	                            add rsi, rdi	        33	hashmap.c	FUNCTION_3	WHILE_1
-0x40001b0	        0x4883c701	                              add rdi, 1	        34	hashmap.c	FUNCTION_3	WHILE_1
-0x40001b4	    0x69c093010001	                imul eax, eax, 0x1000193	        35	hashmap.c	FUNCTION_3	WHILE_1
-0x40001ba	         0xfb657ff	               movzx edx, byte [rdi - 1]	        35	hashmap.c	FUNCTION_3	WHILE_1
-0x40001be	            0x31d0	                            xor eax, edx	        35	hashmap.c	FUNCTION_3	WHILE_1
-0x40001c0	          0x4839fe	                            cmp rsi, rdi	        33	hashmap.c	FUNCTION_3	WHILE_1
-0x40001c3	            0x75eb	                           jne 0x40001b0	        33	hashmap.c	FUNCTION_3	WHILE_1
-0x40001c5	            0xf3c3	                                     ret	        38	hashmap.c	FUNCTION_3
-pool_entry_cmp	FOR,0:IF,0:SWITCH,0:DO,0:CALL,1:functions,0:ELSE,0:WHILE,0	19
-0x400010e	        0x488d7e18	                   lea rdi, [rsi + 0x18]	       282	hashmap.c	FUNCTION_22
-0x4000112	          0x4839cf	                            cmp rdi, rcx	       282	hashmap.c	FUNCTION_22
-0x4000115	            0x7428	                            je 0x400013f	       282	hashmap.c	FUNCTION_22
-0x4000117	        0x4c8b4610	              mov r8, qword [rsi + 0x10]	       283	hashmap.c	FUNCTION_22	CALL_1
-0x400011b	      0xb801000000	                              mov eax, 1	       282	hashmap.c	FUNCTION_22
-0x4000120	        0x4c3b4210	              cmp r8, qword [rdx + 0x10]	       282	hashmap.c	FUNCTION_22
-0x4000124	            0x7523	                           jne 0x4000149	       282	hashmap.c	FUNCTION_22
-0x4000126	        0x4883ec08	                              sub rsp, 8	       281	hashmap.c	FUNCTION_22
-0x400012a	          0x4889ce	                            mov rsi, rcx	       281	hashmap.c	FUNCTION_22
-0x400012d	          0x4c89c2	                             mov rdx, r8	       283	hashmap.c	FUNCTION_22	CALL_1
-0x4000130	      0xe800000000	                          call 0x4000135	       283	hashmap.c	FUNCTION_22	CALL_1
-0x4000135	            0x85c0	                           test eax, eax	       282	hashmap.c	FUNCTION_22
-0x4000137	           0xf95c0	                                setne al	       282	hashmap.c	FUNCTION_22
-0x400013a	           0xfb6c0	                           movzx eax, al	       282	hashmap.c	FUNCTION_22
-0x400013d	            0xeb06	                           jmp 0x4000145	       282	hashmap.c	FUNCTION_22
-0x400013f	      0xb800000000	                              mov eax, 0	       282	hashmap.c	FUNCTION_22
-0x4000144	              0xc3	                                     ret	       282	hashmap.c	FUNCTION_22
-0x4000145	        0x4883c408	                              add rsp, 8	       284	hashmap.c	FUNCTION_22
-0x4000149	            0xf3c3	                                     ret	       284	hashmap.c	FUNCTION_22
-rehash	FOR,1:IF,0:SWITCH,0:DO,0:CALL,3:functions,0:ELSE,0:WHILE,1	36
-0x40000a6	            0x4154	                                push r12	       115	hashmap.c	FUNCTION_10
-0x40000a8	              0x55	                                push rbp	       115	hashmap.c	FUNCTION_10
-0x40000a9	              0x53	                                push rbx	       115	hashmap.c	FUNCTION_10
-0x40000aa	          0x4889fb	                            mov rbx, rdi	       115	hashmap.c	FUNCTION_10
-0x40000ad	        0x448b671c	           mov r12d, dword [rdi + 0x1c] 	       116	hashmap.c	FUNCTION_10
-0x40000b1	          0x488b2f	                    mov rbp, qword [rdi]	       117	hashmap.c	FUNCTION_10
-0x40000b4	      0xe88dffffff	                    call sym.alloc_table	       119	hashmap.c	FUNCTION_10	CALL_1
-0x40000b9	          0x4585e4	                         test r12d, r12d	       120	hashmap.c	FUNCTION_10	FOR_1
-0x40000bc	            0x7443	                            je 0x4000101	       120	hashmap.c	FUNCTION_10	FOR_1
-0x40000be	          0x4889ef	                            mov rdi, rbp	       120	hashmap.c	FUNCTION_10	FOR_1
-0x40000c1	      0x418d4424ff	                      lea eax, [r12 - 1]	       120	hashmap.c	FUNCTION_10	FOR_1
-0x40000c6	      0x4c8d44c508	               lea r8, [rbp + rax*8 + 8]	       120	hashmap.c	FUNCTION_10	FOR_1
-0x40000cb	          0x488b17	                    mov rdx, qword [rdi]	       121	hashmap.c	FUNCTION_10	FOR_1
-0x40000ce	          0x4885d2	                           test rdx, rdx	       122	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000d1	            0x7425	                            je 0x40000f8	       122	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000d3	          0x488b0a	                    mov rcx, qword [rdx]	       123	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000d6	          0x8b431c	            mov eax, dword [rbx + 0x1c] 	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000d9	          0x83e801	                              sub eax, 1	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000dc	          0x234208	                and eax, dword [rdx + 8]	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000df	          0x488b33	                    mov rsi, qword [rbx]	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000e2	        0x488b34c6	            mov rsi, qword [rsi + rax*8]	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000e6	          0x488932	                    mov qword [rdx], rsi	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000e9	          0x488b33	                    mov rsi, qword [rbx]	       126	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000ec	        0x488914c6	            mov qword [rsi + rax*8], rdx	       126	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000f0	          0x4889ca	                            mov rdx, rcx	       127	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000f3	          0x4885c9	                           test rcx, rcx	       122	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000f6	            0x75db	                           jne 0x40000d3	       122	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000f8	        0x4883c708	                              add rdi, 8	       122	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
-0x40000fc	          0x4c39c7	                             cmp rdi, r8	       120	hashmap.c	FUNCTION_10	FOR_1
-0x40000ff	            0x75ca	                           jne 0x40000cb	       120	hashmap.c	FUNCTION_10	FOR_1
-0x4000101	          0x4889ef	                            mov rdi, rbp	       130	hashmap.c	FUNCTION_10	CALL_3
-0x4000104	      0xe800000000	                          call 0x4000109	       130	hashmap.c	FUNCTION_10	CALL_3
-0x4000109	              0x5b	                                 pop rbx	       131	hashmap.c	FUNCTION_10
-0x400010a	              0x5d	                                 pop rbp	       131	hashmap.c	FUNCTION_10
-0x400010b	            0x415c	                                 pop r12	       131	hashmap.c	FUNCTION_10
-0x400010d	              0xc3	                                     ret	       131	hashmap.c	FUNCTION_10
-memihash	FOR,0:IF,1:SWITCH,0:DO,0:CALL,0:functions,0:ELSE,0:WHILE,1	15
-0x40001c7	      0xb8c59d1c81	                     mov eax, 0x811c9dc5	        42	hashmap.c	FUNCTION_4
-0x40001cc	          0x4885f6	                           test rsi, rsi	        44	hashmap.c	FUNCTION_4	WHILE_1
-0x40001cf	            0x7426	                            je 0x40001f7	        44	hashmap.c	FUNCTION_4	WHILE_1
-0x40001d1	          0x4801fe	                            add rsi, rdi	        44	hashmap.c	FUNCTION_4	WHILE_1
-0x40001d4	        0x4883c701	                              add rdi, 1	        45	hashmap.c	FUNCTION_4	WHILE_1
-0x40001d8	         0xfb657ff	               movzx edx, byte [rdi - 1]	        45	hashmap.c	FUNCTION_4	WHILE_1
-0x40001dc	          0x8d4a9f	                   lea ecx, [rdx - 0x61]	        46	hashmap.c	FUNCTION_4	WHILE_1	IF_1
-0x40001df	        0x448d42e0	                   lea r8d, [rdx - 0x20]	        47	hashmap.c	FUNCTION_4	WHILE_1	IF_1
-0x40001e3	          0x83f919	                           cmp ecx, 0x19	        47	hashmap.c	FUNCTION_4	WHILE_1	IF_1
-0x40001e6	        0x410f46d0	                         cmovbe edx, r8d	        47	hashmap.c	FUNCTION_4	WHILE_1	IF_1
-0x40001ea	    0x69c093010001	                imul eax, eax, 0x1000193	        48	hashmap.c	FUNCTION_4	WHILE_1
-0x40001f0	            0x31d0	                            xor eax, edx	        48	hashmap.c	FUNCTION_4	WHILE_1
-0x40001f2	          0x4839fe	                            cmp rsi, rdi	        44	hashmap.c	FUNCTION_4	WHILE_1
-0x40001f5	            0x75dd	                           jne 0x40001d4	        44	hashmap.c	FUNCTION_4	WHILE_1
-0x40001f7	            0xf3c3	                                     ret	        51	hashmap.c	FUNCTION_4
+strhash	ELSE,0:functions,0:SWITCH,0:WHILE,1:CALL,0:FOR,0:DO,0:IF,0	20
+0x40000af	              0x55	                                push rbp	        11	hashmap.c	FUNCTION_1
+0x40000b0	          0x4889e5	                            mov rbp, rsp	        11	hashmap.c	FUNCTION_1
+0x40000b3	        0x48897de8	             mov qword [rbp - 0x18], rdi	        11	hashmap.c	FUNCTION_1
+0x40000b7	    0xc745f8c59d1c	         mov dword [rbp - 8], 0x811c9dc5	        12	hashmap.c	FUNCTION_1
+0x40000be	            0xeb0f	                           jmp 0x40000cf	        13	hashmap.c	FUNCTION_1	WHILE_1
+0x40000c0	          0x8b45f8	                mov eax, dword [rbp - 8]	        14	hashmap.c	FUNCTION_1	WHILE_1
+0x40000c3	    0x69c093010001	                imul eax, eax, 0x1000193	        14	hashmap.c	FUNCTION_1	WHILE_1
+0x40000c9	          0x3345fc	                xor eax, dword [rbp - 4]	        14	hashmap.c	FUNCTION_1	WHILE_1
+0x40000cc	          0x8945f8	                mov dword [rbp - 8], eax	        14	hashmap.c	FUNCTION_1	WHILE_1
+0x40000cf	        0x488b45e8	             mov rax, qword [rbp - 0x18]	        13	hashmap.c	FUNCTION_1	WHILE_1
+0x40000d3	        0x488d5001	                      lea rdx, [rax + 1]	        13	hashmap.c	FUNCTION_1	WHILE_1
+0x40000d7	        0x488955e8	             mov qword [rbp - 0x18], rdx	        13	hashmap.c	FUNCTION_1	WHILE_1
+0x40000db	           0xfb600	                   movzx eax, byte [rax]	        13	hashmap.c	FUNCTION_1	WHILE_1
+0x40000de	           0xfb6c0	                           movzx eax, al	        13	hashmap.c	FUNCTION_1	WHILE_1
+0x40000e1	          0x8945fc	                mov dword [rbp - 4], eax	        13	hashmap.c	FUNCTION_1	WHILE_1
+0x40000e4	        0x837dfc00	                  cmp dword [rbp - 4], 0	        13	hashmap.c	FUNCTION_1	WHILE_1
+0x40000e8	            0x75d6	                           jne 0x40000c0	        13	hashmap.c	FUNCTION_1	WHILE_1
+0x40000ea	          0x8b45f8	                mov eax, dword [rbp - 8]	        15	hashmap.c	FUNCTION_1
+0x40000ed	              0x5d	                                 pop rbp	        16	hashmap.c	FUNCTION_1
+0x40000ee	              0xc3	                                     ret	        16	hashmap.c	FUNCTION_1
+hashmap_init	ELSE,0:functions,0:SWITCH,0:WHILE,1:CALL,2:FOR,0:DO,0:IF,0	53
+0x4000510	              0x55	                                push rbp	       152	hashmap.c	FUNCTION_13
+0x4000511	          0x4889e5	                            mov rbp, rsp	       152	hashmap.c	FUNCTION_13
+0x4000514	        0x4883ec30	                           sub rsp, 0x30	       152	hashmap.c	FUNCTION_13
+0x4000518	        0x48897de8	             mov qword [rbp - 0x18], rdi	       152	hashmap.c	FUNCTION_13
+0x400051c	        0x488975e0	             mov qword [rbp - 0x20], rsi	       152	hashmap.c	FUNCTION_13
+0x4000520	        0x488955d8	             mov qword [rbp - 0x28], rdx	       152	hashmap.c	FUNCTION_13
+0x4000524	        0x48894dd0	             mov qword [rbp - 0x30], rcx	       152	hashmap.c	FUNCTION_13
+0x4000528	    0xc745fc400000	               mov dword [rbp - 4], 0x40	       153	hashmap.c	FUNCTION_13
+0x400052f	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       155	hashmap.c	FUNCTION_13	CALL_1
+0x4000533	      0xba30000000	                           mov edx, 0x30	       155	hashmap.c	FUNCTION_13	CALL_1
+0x4000538	      0xbe00000000	                              mov esi, 0	       155	hashmap.c	FUNCTION_13	CALL_1
+0x400053d	          0x4889c7	                            mov rdi, rax	       155	hashmap.c	FUNCTION_13	CALL_1
+0x4000540	      0xe800000000	                          call 0x4000545	       155	hashmap.c	FUNCTION_13	CALL_1
+0x4000545	      0x48837de000	               cmp qword [rbp - 0x20], 0	       157	hashmap.c	FUNCTION_13
+0x400054a	            0x7406	                            je 0x4000552	       157	hashmap.c	FUNCTION_13
+0x400054c	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       157	hashmap.c	FUNCTION_13
+0x4000550	            0xeb05	                           jmp 0x4000557	       157	hashmap.c	FUNCTION_13
+0x4000552	      0xb800000000	                              mov eax, 0	       157	hashmap.c	FUNCTION_13
+0x4000557	        0x488b55e8	             mov rdx, qword [rbp - 0x18]	       157	hashmap.c	FUNCTION_13
+0x400055b	        0x48894208	                mov qword [rdx + 8], rax	       157	hashmap.c	FUNCTION_13
+0x400055f	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       158	hashmap.c	FUNCTION_13
+0x4000563	        0x488b55d8	             mov rdx, qword [rbp - 0x28]	       158	hashmap.c	FUNCTION_13
+0x4000567	        0x48895010	             mov qword [rax + 0x10], rdx	       158	hashmap.c	FUNCTION_13
+0x400056b	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       161	hashmap.c	FUNCTION_13
+0x400056f	          0x4889d0	                            mov rax, rdx	       161	hashmap.c	FUNCTION_13
+0x4000572	        0x48c1e002	                              shl rax, 2	       161	hashmap.c	FUNCTION_13
+0x4000576	          0x4801d0	                            add rax, rdx	       161	hashmap.c	FUNCTION_13
+0x4000579	    0x488d14850000	                        lea rdx, [rax*4]	       161	hashmap.c	FUNCTION_13
+0x4000581	          0x4801d0	                            add rax, rdx	       161	hashmap.c	FUNCTION_13
+0x4000584	        0x48c1e002	                              shl rax, 2	       161	hashmap.c	FUNCTION_13
+0x4000588	    0x48bacdcccccc	          movabs rdx, 0xcccccccccccccccd	       162	hashmap.c	FUNCTION_13
+0x4000592	          0x48f7e2	                                 mul rdx	       162	hashmap.c	FUNCTION_13
+0x4000595	          0x4889d0	                            mov rax, rdx	       162	hashmap.c	FUNCTION_13
+0x4000598	        0x48c1e806	                              shr rax, 6	       162	hashmap.c	FUNCTION_13
+0x400059c	          0x83e0ff	                     and eax, 0xffffffff	       161	hashmap.c	FUNCTION_13
+0x400059f	        0x488945d0	             mov qword [rbp - 0x30], rax	       161	hashmap.c	FUNCTION_13
+0x40005a3	            0xeb04	                           jmp 0x40005a9	       163	hashmap.c	FUNCTION_13	WHILE_1
+0x40005a5	        0xc165fc02	                  shl dword [rbp - 4], 2	       164	hashmap.c	FUNCTION_13	WHILE_1
+0x40005a9	          0x8b45fc	                mov eax, dword [rbp - 4]	       163	hashmap.c	FUNCTION_13	WHILE_1
+0x40005ac	        0x483b45d0	             cmp rax, qword [rbp - 0x30]	       163	hashmap.c	FUNCTION_13	WHILE_1
+0x40005b0	            0x72f3	                            jb 0x40005a5	       163	hashmap.c	FUNCTION_13	WHILE_1
+0x40005b2	          0x8b55fc	                mov edx, dword [rbp - 4]	       165	hashmap.c	FUNCTION_13	CALL_2
+0x40005b5	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       165	hashmap.c	FUNCTION_13	CALL_2
+0x40005b9	            0x89d6	                            mov esi, edx	       165	hashmap.c	FUNCTION_13	CALL_2
+0x40005bb	          0x4889c7	                            mov rdi, rax	       165	hashmap.c	FUNCTION_13	CALL_2
+0x40005be	      0xe8a3fcffff	                    call sym.alloc_table	       165	hashmap.c	FUNCTION_13	CALL_2
+0x40005c3	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       171	hashmap.c	FUNCTION_13
+0x40005c7	         0xfb65028	           movzx edx, byte [rax + 0x28] 	       171	hashmap.c	FUNCTION_13
+0x40005cb	          0x83ca01	                               or edx, 1	       171	hashmap.c	FUNCTION_13
+0x40005ce	          0x885028	               mov byte [rax + 0x28], dl	       171	hashmap.c	FUNCTION_13
+0x40005d1	              0x90	                                     nop	       172	hashmap.c	FUNCTION_13
+0x40005d2	              0xc9	                                   leave	       172	hashmap.c	FUNCTION_13
+0x40005d3	              0xc3	                                     ret	       172	hashmap.c	FUNCTION_13
+hashmap_iter_next	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,0:FOR,1:DO,0:IF,2	39
+0x40008e2	              0x55	                                push rbp	       256	hashmap.c	FUNCTION_21
+0x40008e3	          0x4889e5	                            mov rbp, rsp	       256	hashmap.c	FUNCTION_21
+0x40008e6	        0x48897de8	             mov qword [rbp - 0x18], rdi	       256	hashmap.c	FUNCTION_21
+0x40008ea	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       257	hashmap.c	FUNCTION_21
+0x40008ee	        0x488b4008	                mov rax, qword [rax + 8]	       257	hashmap.c	FUNCTION_21
+0x40008f2	        0x488945f8	                mov qword [rbp - 8], rax	       257	hashmap.c	FUNCTION_21
+0x40008f6	      0x48837df800	                  cmp qword [rbp - 8], 0	       259	hashmap.c	FUNCTION_21	FOR_1	IF_1
+0x40008fb	            0x7415	                            je 0x4000912	       259	hashmap.c	FUNCTION_21	FOR_1	IF_1
+0x40008fd	        0x488b45f8	                mov rax, qword [rbp - 8]	       260	hashmap.c	FUNCTION_21	FOR_1	IF_1
+0x4000901	          0x488b10	                    mov rdx, qword [rax]	       260	hashmap.c	FUNCTION_21	FOR_1	IF_1
+0x4000904	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       260	hashmap.c	FUNCTION_21	FOR_1	IF_1
+0x4000908	        0x48895008	                mov qword [rax + 8], rdx	       260	hashmap.c	FUNCTION_21	FOR_1	IF_1
+0x400090c	        0x488b45f8	                mov rax, qword [rbp - 8]	       261	hashmap.c	FUNCTION_21	FOR_1	IF_1
+0x4000910	            0xeb49	                           jmp 0x400095b	       261	hashmap.c	FUNCTION_21	FOR_1	IF_1
+0x4000912	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
+0x4000916	          0x8b5010	            mov edx, dword [rax + 0x10] 	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
+0x4000919	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
+0x400091d	          0x488b00	                    mov rax, qword [rax]	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
+0x4000920	          0x8b401c	            mov eax, dword [rax + 0x1c] 	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
+0x4000923	            0x39c2	                            cmp edx, eax	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
+0x4000925	            0x7207	                            jb 0x400092e	       264	hashmap.c	FUNCTION_21	FOR_1	IF_2
+0x4000927	      0xb800000000	                              mov eax, 0	       265	hashmap.c	FUNCTION_21	FOR_1	IF_2
+0x400092c	            0xeb2d	                           jmp 0x400095b	       265	hashmap.c	FUNCTION_21	FOR_1	IF_2
+0x400092e	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       267	hashmap.c	FUNCTION_21	FOR_1
+0x4000932	          0x488b00	                    mov rax, qword [rax]	       267	hashmap.c	FUNCTION_21	FOR_1
+0x4000935	          0x488b30	                    mov rsi, qword [rax]	       267	hashmap.c	FUNCTION_21	FOR_1
+0x4000938	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       267	hashmap.c	FUNCTION_21	FOR_1
+0x400093c	          0x8b4010	            mov eax, dword [rax + 0x10] 	       267	hashmap.c	FUNCTION_21	FOR_1
+0x400093f	          0x8d4801	                      lea ecx, [rax + 1]	       267	hashmap.c	FUNCTION_21	FOR_1
+0x4000942	        0x488b55e8	             mov rdx, qword [rbp - 0x18]	       267	hashmap.c	FUNCTION_21	FOR_1
+0x4000946	          0x894a10	             mov dword [rdx + 0x10], ecx	       267	hashmap.c	FUNCTION_21	FOR_1
+0x4000949	            0x89c0	                            mov eax, eax	       267	hashmap.c	FUNCTION_21	FOR_1
+0x400094b	        0x48c1e003	                              shl rax, 3	       267	hashmap.c	FUNCTION_21	FOR_1
+0x400094f	          0x4801f0	                            add rax, rsi	       267	hashmap.c	FUNCTION_21	FOR_1
+0x4000952	          0x488b00	                    mov rax, qword [rax]	       267	hashmap.c	FUNCTION_21	FOR_1
+0x4000955	        0x488945f8	                mov qword [rbp - 8], rax	       267	hashmap.c	FUNCTION_21	FOR_1
+0x4000959	            0xeb9b	                           jmp 0x40008f6	       268	hashmap.c	FUNCTION_21	FOR_1
+0x400095b	              0x5d	                                 pop rbp	       269	hashmap.c	FUNCTION_21
+0x400095c	              0xc3	                                     ret	       269	hashmap.c	FUNCTION_21
+strihash	ELSE,0:functions,0:SWITCH,0:WHILE,1:CALL,0:FOR,0:DO,0:IF,1	25
+0x40000ef	              0x55	                                push rbp	        19	hashmap.c	FUNCTION_2
+0x40000f0	          0x4889e5	                            mov rbp, rsp	        19	hashmap.c	FUNCTION_2
+0x40000f3	        0x48897de8	             mov qword [rbp - 0x18], rdi	        19	hashmap.c	FUNCTION_2
+0x40000f7	    0xc745fcc59d1c	         mov dword [rbp - 4], 0x811c9dc5	        20	hashmap.c	FUNCTION_2
+0x40000fe	            0xeb1f	                           jmp 0x400011f	        21	hashmap.c	FUNCTION_2	WHILE_1
+0x4000100	        0x837df860	               cmp dword [rbp - 8], 0x60	        22	hashmap.c	FUNCTION_2	WHILE_1	IF_1
+0x4000104	            0x760a	                           jbe 0x4000110	        22	hashmap.c	FUNCTION_2	WHILE_1	IF_1
+0x4000106	        0x837df87a	               cmp dword [rbp - 8], 0x7a	        22	hashmap.c	FUNCTION_2	WHILE_1	IF_1
+0x400010a	            0x7704	                            ja 0x4000110	        22	hashmap.c	FUNCTION_2	WHILE_1	IF_1
+0x400010c	        0x836df820	               sub dword [rbp - 8], 0x20	        23	hashmap.c	FUNCTION_2	WHILE_1	IF_1
+0x4000110	          0x8b45fc	                mov eax, dword [rbp - 4]	        24	hashmap.c	FUNCTION_2	WHILE_1
+0x4000113	    0x69c093010001	                imul eax, eax, 0x1000193	        24	hashmap.c	FUNCTION_2	WHILE_1
+0x4000119	          0x3345f8	                xor eax, dword [rbp - 8]	        24	hashmap.c	FUNCTION_2	WHILE_1
+0x400011c	          0x8945fc	                mov dword [rbp - 4], eax	        24	hashmap.c	FUNCTION_2	WHILE_1
+0x400011f	        0x488b45e8	             mov rax, qword [rbp - 0x18]	        21	hashmap.c	FUNCTION_2	WHILE_1
+0x4000123	        0x488d5001	                      lea rdx, [rax + 1]	        21	hashmap.c	FUNCTION_2	WHILE_1
+0x4000127	        0x488955e8	             mov qword [rbp - 0x18], rdx	        21	hashmap.c	FUNCTION_2	WHILE_1
+0x400012b	           0xfb600	                   movzx eax, byte [rax]	        21	hashmap.c	FUNCTION_2	WHILE_1
+0x400012e	           0xfb6c0	                           movzx eax, al	        21	hashmap.c	FUNCTION_2	WHILE_1
+0x4000131	          0x8945f8	                mov dword [rbp - 8], eax	        21	hashmap.c	FUNCTION_2	WHILE_1
+0x4000134	        0x837df800	                  cmp dword [rbp - 8], 0	        21	hashmap.c	FUNCTION_2	WHILE_1
+0x4000138	            0x75c6	                           jne 0x4000100	        21	hashmap.c	FUNCTION_2	WHILE_1
+0x400013a	          0x8b45fc	                mov eax, dword [rbp - 4]	        26	hashmap.c	FUNCTION_2
+0x400013d	              0x5d	                                 pop rbp	        27	hashmap.c	FUNCTION_2
+0x400013e	              0xc3	                                     ret	        27	hashmap.c	FUNCTION_2
+memintern	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,6:FOR,0:DO,0:IF,2	76
+0x40009c9	              0x55	                                push rbp	       287	hashmap.c	FUNCTION_23
+0x40009ca	          0x4889e5	                            mov rbp, rsp	       287	hashmap.c	FUNCTION_23
+0x40009cd	        0x4883ec40	                           sub rsp, 0x40	       287	hashmap.c	FUNCTION_23
+0x40009d1	        0x48897dc8	             mov qword [rbp - 0x38], rdi	       287	hashmap.c	FUNCTION_23
+0x40009d5	        0x488975c0	             mov qword [rbp - 0x40], rsi	       287	hashmap.c	FUNCTION_23
+0x40009d9	    0x64488b042528	                mov rax, qword fs:[0x28]	       287	hashmap.c	FUNCTION_23
+0x40009e2	        0x488945f8	                mov qword [rbp - 8], rax	       287	hashmap.c	FUNCTION_23
+0x40009e6	            0x31c0	                            xor eax, eax	       287	hashmap.c	FUNCTION_23
+0x40009e8	    0x8b0500000000	            mov eax, dword [0x040009ee] 	       292	hashmap.c	FUNCTION_23	IF_1
+0x40009ee	            0x85c0	                           test eax, eax	       292	hashmap.c	FUNCTION_23	IF_1
+0x40009f0	            0x7519	                           jne 0x4000a0b	       292	hashmap.c	FUNCTION_23	IF_1
+0x40009f2	      0xb900000000	                              mov ecx, 0	       293	hashmap.c	FUNCTION_23	CALL_1
+0x40009f7	      0xba00000000	                              mov edx, 0	       293	hashmap.c	FUNCTION_23	CALL_1
+0x40009fc	      0xbe00000000	                              mov esi, 0	       293	hashmap.c	FUNCTION_23	CALL_1
+0x4000a01	      0xbf00000000	                              mov edi, 0	       293	hashmap.c	FUNCTION_23	CALL_1
+0x4000a06	      0xe800000000	                          call 0x4000a0b	       293	hashmap.c	FUNCTION_23	CALL_1
+0x4000a0b	        0x488b55c0	             mov rdx, qword [rbp - 0x40]	       296	hashmap.c	FUNCTION_23	CALL_3
+0x4000a0f	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       296	hashmap.c	FUNCTION_23	CALL_3
+0x4000a13	          0x4889d6	                            mov rsi, rdx	       296	hashmap.c	FUNCTION_23	CALL_3
+0x4000a16	          0x4889c7	                            mov rdi, rax	       296	hashmap.c	FUNCTION_23	CALL_3
+0x4000a19	      0xe800000000	                          call 0x4000a1e	       296	hashmap.c	FUNCTION_23	CALL_3
+0x4000a1e	            0x89c2	                            mov edx, eax	       296	hashmap.c	FUNCTION_23	CALL_3
+0x4000a20	        0x488d45e0	                   lea rax, [rbp - 0x20]	       296	hashmap.c	FUNCTION_23	CALL_3
+0x4000a24	            0x89d6	                            mov esi, edx	       296	hashmap.c	FUNCTION_23	CALL_3
+0x4000a26	          0x4889c7	                            mov rdi, rax	       296	hashmap.c	FUNCTION_23	CALL_3
+0x4000a29	      0xe856f6ffff	             call sym.hashmap_entry_init	       296	hashmap.c	FUNCTION_23	CALL_3
+0x4000a2e	        0x488b45c0	             mov rax, qword [rbp - 0x40]	       297	hashmap.c	FUNCTION_23
+0x4000a32	        0x488945f0	             mov qword [rbp - 0x10], rax	       297	hashmap.c	FUNCTION_23
+0x4000a36	        0x488b55c8	             mov rdx, qword [rbp - 0x38]	       298	hashmap.c	FUNCTION_23	CALL_4
+0x4000a3a	        0x488d45e0	                   lea rax, [rbp - 0x20]	       298	hashmap.c	FUNCTION_23	CALL_4
+0x4000a3e	          0x4889c6	                            mov rsi, rax	       298	hashmap.c	FUNCTION_23	CALL_4
+0x4000a41	      0xbf00000000	                              mov edi, 0	       298	hashmap.c	FUNCTION_23	CALL_4
+0x4000a46	      0xe800000000	                          call 0x4000a4b	       298	hashmap.c	FUNCTION_23	CALL_4
+0x4000a4b	        0x488945d0	             mov qword [rbp - 0x30], rax	       298	hashmap.c	FUNCTION_23	CALL_4
+0x4000a4f	      0x48837dd000	               cmp qword [rbp - 0x30], 0	       299	hashmap.c	FUNCTION_23	IF_2
+0x4000a54	     0xf8580000000	                           jne 0x4000ada	       299	hashmap.c	FUNCTION_23	IF_2
+0x4000a5a	        0x488b45c0	             mov rax, qword [rbp - 0x40]	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a5e	        0x488945d8	             mov qword [rbp - 0x28], rax	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a62	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a66	          0x4889c6	                            mov rsi, rax	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a69	      0xbf18000000	                           mov edi, 0x18	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a6e	      0xe8cdf5ffff	                         call sym.st_add	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a73	      0xbe01000000	                              mov esi, 1	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a78	          0x4889c7	                            mov rdi, rax	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a7b	      0xe8c0f5ffff	                         call sym.st_add	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a80	          0x4889c6	                            mov rsi, rax	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a83	      0xbf01000000	                              mov edi, 1	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a88	      0xe800000000	                          call 0x4000a8d	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a8d	        0x488945d0	             mov qword [rbp - 0x30], rax	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a91	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a95	        0x488d4818	                   lea rcx, [rax + 0x18]	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a99	        0x488b55d8	             mov rdx, qword [rbp - 0x28]	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000a9d	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000aa1	          0x4889c6	                            mov rsi, rax	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000aa4	          0x4889cf	                            mov rdi, rcx	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000aa7	      0xe800000000	                          call 0x4000aac	       301	hashmap.c	FUNCTION_23	IF_2
+0x4000aac	          0x8b55e8	             mov edx, dword [rbp - 0x18]	       302	hashmap.c	FUNCTION_23	IF_2	CALL_5
+0x4000aaf	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       302	hashmap.c	FUNCTION_23	IF_2	CALL_5
+0x4000ab3	            0x89d6	                            mov esi, edx	       302	hashmap.c	FUNCTION_23	IF_2	CALL_5
+0x4000ab5	          0x4889c7	                            mov rdi, rax	       302	hashmap.c	FUNCTION_23	IF_2	CALL_5
+0x4000ab8	      0xe8c7f5ffff	             call sym.hashmap_entry_init	       302	hashmap.c	FUNCTION_23	IF_2	CALL_5
+0x4000abd	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       303	hashmap.c	FUNCTION_23	IF_2
+0x4000ac1	        0x488b55c0	             mov rdx, qword [rbp - 0x40]	       303	hashmap.c	FUNCTION_23	IF_2
+0x4000ac5	        0x48895010	             mov qword [rax + 0x10], rdx	       303	hashmap.c	FUNCTION_23	IF_2
+0x4000ac9	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       304	hashmap.c	FUNCTION_23	IF_2	CALL_6
+0x4000acd	          0x4889c6	                            mov rsi, rax	       304	hashmap.c	FUNCTION_23	IF_2	CALL_6
+0x4000ad0	      0xbf00000000	                              mov edi, 0	       304	hashmap.c	FUNCTION_23	IF_2	CALL_6
+0x4000ad5	      0xe800000000	                          call 0x4000ada	       304	hashmap.c	FUNCTION_23	IF_2	CALL_6
+0x4000ada	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       306	hashmap.c	FUNCTION_23
+0x4000ade	        0x4883c018	                           add rax, 0x18	       306	hashmap.c	FUNCTION_23
+0x4000ae2	        0x488b4df8	                mov rcx, qword [rbp - 8]	       307	hashmap.c	FUNCTION_23
+0x4000ae6	    0x6448330c2528	                xor rcx, qword fs:[0x28]	       307	hashmap.c	FUNCTION_23
+0x4000aef	            0x7405	                            je 0x4000af6	       307	hashmap.c	FUNCTION_23
+0x4000af1	      0xe800000000	                          call 0x4000af6	       307	hashmap.c	FUNCTION_23
+0x4000af6	              0xc9	                                   leave	       307	hashmap.c	FUNCTION_23
+0x4000af7	              0xc3	                                     ret	       307	hashmap.c	FUNCTION_23
+hashmap_bucket	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,0:FOR,0:DO,0:IF,0	10
+0x400037e	              0x55	                                push rbp	       110	hashmap.c	FUNCTION_9
+0x400037f	          0x4889e5	                            mov rbp, rsp	       110	hashmap.c	FUNCTION_9
+0x4000382	        0x48897df8	                mov qword [rbp - 8], rdi	       110	hashmap.c	FUNCTION_9
+0x4000386	          0x8975f4	              mov dword [rbp - 0xc], esi	       110	hashmap.c	FUNCTION_9
+0x4000389	        0x488b45f8	                mov rax, qword [rbp - 8]	       111	hashmap.c	FUNCTION_9
+0x400038d	          0x8b401c	            mov eax, dword [rax + 0x1c] 	       111	hashmap.c	FUNCTION_9
+0x4000390	          0x83e801	                              sub eax, 1	       111	hashmap.c	FUNCTION_9
+0x4000393	          0x2345f4	              and eax, dword [rbp - 0xc]	       111	hashmap.c	FUNCTION_9
+0x4000396	              0x5d	                                 pop rbp	       112	hashmap.c	FUNCTION_9
+0x4000397	              0xc3	                                     ret	       112	hashmap.c	FUNCTION_9
+alloc_table	ELSE,1:functions,0:SWITCH,0:WHILE,0:CALL,1:FOR,0:DO,0:IF,1	43
+0x4000266	              0x55	                                push rbp	        77	hashmap.c	FUNCTION_6
+0x4000267	          0x4889e5	                            mov rbp, rsp	        77	hashmap.c	FUNCTION_6
+0x400026a	        0x4883ec10	                           sub rsp, 0x10	        77	hashmap.c	FUNCTION_6
+0x400026e	        0x48897df8	                mov qword [rbp - 8], rdi	        77	hashmap.c	FUNCTION_6
+0x4000272	          0x8975f4	              mov dword [rbp - 0xc], esi	        77	hashmap.c	FUNCTION_6
+0x4000275	        0x488b45f8	                mov rax, qword [rbp - 8]	        78	hashmap.c	FUNCTION_6
+0x4000279	          0x8b55f4	              mov edx, dword [rbp - 0xc]	        78	hashmap.c	FUNCTION_6
+0x400027c	          0x89501c	             mov dword [rax + 0x1c], edx	        78	hashmap.c	FUNCTION_6
+0x400027f	          0x8b45f4	              mov eax, dword [rbp - 0xc]	        79	hashmap.c	FUNCTION_6	CALL_1
+0x4000282	      0xbe08000000	                              mov esi, 8	        79	hashmap.c	FUNCTION_6	CALL_1
+0x4000287	          0x4889c7	                            mov rdi, rax	        79	hashmap.c	FUNCTION_6	CALL_1
+0x400028a	      0xe800000000	                          call 0x400028f	        79	hashmap.c	FUNCTION_6	CALL_1
+0x400028f	          0x4889c2	                            mov rdx, rax	        79	hashmap.c	FUNCTION_6	CALL_1
+0x4000292	        0x488b45f8	                mov rax, qword [rbp - 8]	        79	hashmap.c	FUNCTION_6	CALL_1
+0x4000296	          0x488910	                    mov qword [rax], rdx	        79	hashmap.c	FUNCTION_6	CALL_1
+0x4000299	          0x8b55f4	              mov edx, dword [rbp - 0xc]	        82	hashmap.c	FUNCTION_6
+0x400029c	          0x4889d0	                            mov rax, rdx	        82	hashmap.c	FUNCTION_6
+0x400029f	        0x48c1e002	                              shl rax, 2	        82	hashmap.c	FUNCTION_6
+0x40002a3	          0x4801d0	                            add rax, rdx	        82	hashmap.c	FUNCTION_6
+0x40002a6	        0x48c1e004	                              shl rax, 4	        82	hashmap.c	FUNCTION_6
+0x40002aa	        0x48c1e802	                              shr rax, 2	        82	hashmap.c	FUNCTION_6
+0x40002ae	    0x48bac3f5285c	          movabs rdx, 0x28f5c28f5c28f5c3	        82	hashmap.c	FUNCTION_6
+0x40002b8	          0x48f7e2	                                 mul rdx	        82	hashmap.c	FUNCTION_6
+0x40002bb	          0x4889d0	                            mov rax, rdx	        82	hashmap.c	FUNCTION_6
+0x40002be	        0x48c1e802	                              shr rax, 2	        82	hashmap.c	FUNCTION_6
+0x40002c2	            0x89c2	                            mov edx, eax	        82	hashmap.c	FUNCTION_6
+0x40002c4	        0x488b45f8	                mov rax, qword [rbp - 8]	        82	hashmap.c	FUNCTION_6
+0x40002c8	          0x895020	             mov dword [rax + 0x20], edx	        82	hashmap.c	FUNCTION_6
+0x40002cb	        0x837df440	            cmp dword [rbp - 0xc], 0x40 	        83	hashmap.c	FUNCTION_6	IF_1
+0x40002cf	            0x770d	                            ja 0x40002de	        83	hashmap.c	FUNCTION_6	IF_1
+0x40002d1	        0x488b45f8	                mov rax, qword [rbp - 8]	        84	hashmap.c	FUNCTION_6	IF_1
+0x40002d5	    0xc74024000000	               mov dword [rax + 0x24], 0	        84	hashmap.c	FUNCTION_6	IF_1
+0x40002dc	            0xeb18	                           jmp 0x40002f6	        92	hashmap.c	FUNCTION_6
+0x40002de	        0x488b45f8	                mov rax, qword [rbp - 8]	        91	hashmap.c	FUNCTION_6	ELSE_1
+0x40002e2	          0x8b4020	            mov eax, dword [rax + 0x20] 	        91	hashmap.c	FUNCTION_6	ELSE_1
+0x40002e5	      0xbacdcccccc	                     mov edx, 0xcccccccd	        91	hashmap.c	FUNCTION_6	ELSE_1
+0x40002ea	            0xf7e2	                                 mul edx	        91	hashmap.c	FUNCTION_6	ELSE_1
+0x40002ec	          0xc1ea02	                              shr edx, 2	        91	hashmap.c	FUNCTION_6	ELSE_1
+0x40002ef	        0x488b45f8	                mov rax, qword [rbp - 8]	        91	hashmap.c	FUNCTION_6	ELSE_1
+0x40002f3	          0x895024	             mov dword [rax + 0x24], edx	        91	hashmap.c	FUNCTION_6	ELSE_1
+0x40002f6	              0x90	                                     nop	        92	hashmap.c	FUNCTION_6
+0x40002f7	              0xc9	                                   leave	        92	hashmap.c	FUNCTION_6
+0x40002f8	              0xc3	                                     ret	        92	hashmap.c	FUNCTION_6
+memihash_cont	ELSE,0:functions,0:SWITCH,0:WHILE,1:CALL,0:FOR,0:DO,0:IF,1	33
+0x40001fd	              0x55	                                push rbp	        58	hashmap.c	FUNCTION_5
+0x40001fe	          0x4889e5	                            mov rbp, rsp	        58	hashmap.c	FUNCTION_5
+0x4000201	          0x897dec	             mov dword [rbp - 0x14], edi	        58	hashmap.c	FUNCTION_5
+0x4000204	        0x488975e0	             mov qword [rbp - 0x20], rsi	        58	hashmap.c	FUNCTION_5
+0x4000208	        0x488955d8	             mov qword [rbp - 0x28], rdx	        58	hashmap.c	FUNCTION_5
+0x400020c	          0x8b45ec	             mov eax, dword [rbp - 0x14]	        59	hashmap.c	FUNCTION_5
+0x400020f	          0x8945f0	             mov dword [rbp - 0x10], eax	        59	hashmap.c	FUNCTION_5
+0x4000212	        0x488b45e0	             mov rax, qword [rbp - 0x20]	        60	hashmap.c	FUNCTION_5
+0x4000216	        0x488945f8	                mov qword [rbp - 8], rax	        60	hashmap.c	FUNCTION_5
+0x400021a	            0xeb34	                           jmp 0x4000250	        61	hashmap.c	FUNCTION_5	WHILE_1
+0x400021c	        0x488b45f8	                mov rax, qword [rbp - 8]	        62	hashmap.c	FUNCTION_5	WHILE_1
+0x4000220	        0x488d5001	                      lea rdx, [rax + 1]	        62	hashmap.c	FUNCTION_5	WHILE_1
+0x4000224	        0x488955f8	                mov qword [rbp - 8], rdx	        62	hashmap.c	FUNCTION_5	WHILE_1
+0x4000228	           0xfb600	                   movzx eax, byte [rax]	        62	hashmap.c	FUNCTION_5	WHILE_1
+0x400022b	           0xfb6c0	                           movzx eax, al	        62	hashmap.c	FUNCTION_5	WHILE_1
+0x400022e	          0x8945f4	              mov dword [rbp - 0xc], eax	        62	hashmap.c	FUNCTION_5	WHILE_1
+0x4000231	        0x837df460	            cmp dword [rbp - 0xc], 0x60 	        63	hashmap.c	FUNCTION_5	WHILE_1	IF_1
+0x4000235	            0x760a	                           jbe 0x4000241	        63	hashmap.c	FUNCTION_5	WHILE_1	IF_1
+0x4000237	        0x837df47a	            cmp dword [rbp - 0xc], 0x7a 	        63	hashmap.c	FUNCTION_5	WHILE_1	IF_1
+0x400023b	            0x7704	                            ja 0x4000241	        63	hashmap.c	FUNCTION_5	WHILE_1	IF_1
+0x400023d	        0x836df420	             sub dword [rbp - 0xc], 0x20	        64	hashmap.c	FUNCTION_5	WHILE_1	IF_1
+0x4000241	          0x8b45f0	             mov eax, dword [rbp - 0x10]	        65	hashmap.c	FUNCTION_5	WHILE_1
+0x4000244	    0x69c093010001	                imul eax, eax, 0x1000193	        65	hashmap.c	FUNCTION_5	WHILE_1
+0x400024a	          0x3345f4	              xor eax, dword [rbp - 0xc]	        65	hashmap.c	FUNCTION_5	WHILE_1
+0x400024d	          0x8945f0	             mov dword [rbp - 0x10], eax	        65	hashmap.c	FUNCTION_5	WHILE_1
+0x4000250	        0x488b45d8	             mov rax, qword [rbp - 0x28]	        61	hashmap.c	FUNCTION_5	WHILE_1
+0x4000254	        0x488d50ff	                      lea rdx, [rax - 1]	        61	hashmap.c	FUNCTION_5	WHILE_1
+0x4000258	        0x488955d8	             mov qword [rbp - 0x28], rdx	        61	hashmap.c	FUNCTION_5	WHILE_1
+0x400025c	          0x4885c0	                           test rax, rax	        61	hashmap.c	FUNCTION_5	WHILE_1
+0x400025f	            0x75bb	                           jne 0x400021c	        61	hashmap.c	FUNCTION_5	WHILE_1
+0x4000261	          0x8b45f0	             mov eax, dword [rbp - 0x10]	        67	hashmap.c	FUNCTION_5
+0x4000264	              0x5d	                                 pop rbp	        68	hashmap.c	FUNCTION_5
+0x4000265	              0xc3	                                     ret	        68	hashmap.c	FUNCTION_5
+bucket	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,0:FOR,0:DO,0:IF,0	12
+0x400035d	              0x55	                                push rbp	       105	hashmap.c	FUNCTION_8
+0x400035e	          0x4889e5	                            mov rbp, rsp	       105	hashmap.c	FUNCTION_8
+0x4000361	        0x48897df8	                mov qword [rbp - 8], rdi	       105	hashmap.c	FUNCTION_8
+0x4000365	        0x488975f0	             mov qword [rbp - 0x10], rsi	       105	hashmap.c	FUNCTION_8
+0x4000369	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       106	hashmap.c	FUNCTION_8
+0x400036d	          0x8b5008	                mov edx, dword [rax + 8]	       106	hashmap.c	FUNCTION_8
+0x4000370	        0x488b45f8	                mov rax, qword [rbp - 8]	       106	hashmap.c	FUNCTION_8
+0x4000374	          0x8b401c	            mov eax, dword [rax + 0x1c] 	       106	hashmap.c	FUNCTION_8
+0x4000377	          0x83e801	                              sub eax, 1	       106	hashmap.c	FUNCTION_8
+0x400037a	            0x21d0	                            and eax, edx	       106	hashmap.c	FUNCTION_8
+0x400037c	              0x5d	                                 pop rbp	       107	hashmap.c	FUNCTION_8
+0x400037d	              0xc3	                                     ret	       107	hashmap.c	FUNCTION_8
+hashmap_remove	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,2:FOR,0:DO,0:IF,3	55
+0x40007b4	              0x55	                                push rbp	       220	hashmap.c	FUNCTION_18
+0x40007b5	          0x4889e5	                            mov rbp, rsp	       220	hashmap.c	FUNCTION_18
+0x40007b8	        0x4883ec30	                           sub rsp, 0x30	       220	hashmap.c	FUNCTION_18
+0x40007bc	        0x48897de8	             mov qword [rbp - 0x18], rdi	       220	hashmap.c	FUNCTION_18
+0x40007c0	        0x488975e0	             mov qword [rbp - 0x20], rsi	       220	hashmap.c	FUNCTION_18
+0x40007c4	        0x488955d8	             mov qword [rbp - 0x28], rdx	       220	hashmap.c	FUNCTION_18
+0x40007c8	        0x488b55d8	             mov rdx, qword [rbp - 0x28]	       222	hashmap.c	FUNCTION_18	CALL_1
+0x40007cc	        0x488b4de0	             mov rcx, qword [rbp - 0x20]	       222	hashmap.c	FUNCTION_18	CALL_1
+0x40007d0	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       222	hashmap.c	FUNCTION_18	CALL_1
+0x40007d4	          0x4889ce	                            mov rsi, rcx	       222	hashmap.c	FUNCTION_18	CALL_1
+0x40007d7	          0x4889c7	                            mov rdi, rax	       222	hashmap.c	FUNCTION_18	CALL_1
+0x40007da	      0xe897fcffff	                 call sym.find_entry_ptr	       222	hashmap.c	FUNCTION_18	CALL_1
+0x40007df	        0x488945f0	             mov qword [rbp - 0x10], rax	       222	hashmap.c	FUNCTION_18	CALL_1
+0x40007e3	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       223	hashmap.c	FUNCTION_18	IF_1
+0x40007e7	          0x488b00	                    mov rax, qword [rax]	       223	hashmap.c	FUNCTION_18	IF_1
+0x40007ea	          0x4885c0	                           test rax, rax	       223	hashmap.c	FUNCTION_18	IF_1
+0x40007ed	            0x7507	                           jne 0x40007f6	       223	hashmap.c	FUNCTION_18	IF_1
+0x40007ef	      0xb800000000	                              mov eax, 0	       224	hashmap.c	FUNCTION_18	IF_1
+0x40007f4	            0xeb74	                           jmp 0x400086a	       224	hashmap.c	FUNCTION_18	IF_1
+0x40007f6	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       227	hashmap.c	FUNCTION_18
+0x40007fa	          0x488b00	                    mov rax, qword [rax]	       227	hashmap.c	FUNCTION_18
+0x40007fd	        0x488945f8	                mov qword [rbp - 8], rax	       227	hashmap.c	FUNCTION_18
+0x4000801	        0x488b45f8	                mov rax, qword [rbp - 8]	       228	hashmap.c	FUNCTION_18
+0x4000805	          0x488b10	                    mov rdx, qword [rax]	       228	hashmap.c	FUNCTION_18
+0x4000808	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       228	hashmap.c	FUNCTION_18
+0x400080c	          0x488910	                    mov qword [rax], rdx	       228	hashmap.c	FUNCTION_18
+0x400080f	        0x488b45f8	                mov rax, qword [rbp - 8]	       229	hashmap.c	FUNCTION_18
+0x4000813	    0x48c700000000	                      mov qword [rax], 0	       229	hashmap.c	FUNCTION_18
+0x400081a	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       232	hashmap.c	FUNCTION_18	IF_2
+0x400081e	         0xfb64028	           movzx eax, byte [rax + 0x28] 	       232	hashmap.c	FUNCTION_18	IF_2
+0x4000822	          0x83e001	                              and eax, 1	       232	hashmap.c	FUNCTION_18	IF_2
+0x4000825	            0x84c0	                             test al, al	       232	hashmap.c	FUNCTION_18	IF_2
+0x4000827	            0x743d	                            je 0x4000866	       232	hashmap.c	FUNCTION_18	IF_2
+0x4000829	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       233	hashmap.c	FUNCTION_18	IF_2
+0x400082d	          0x8b4018	            mov eax, dword [rax + 0x18] 	       233	hashmap.c	FUNCTION_18	IF_2
+0x4000830	          0x8d50ff	                      lea edx, [rax - 1]	       233	hashmap.c	FUNCTION_18	IF_2
+0x4000833	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       233	hashmap.c	FUNCTION_18	IF_2
+0x4000837	          0x895018	             mov dword [rax + 0x18], edx	       233	hashmap.c	FUNCTION_18	IF_2
+0x400083a	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       234	hashmap.c	FUNCTION_18	IF_2	IF_3
+0x400083e	          0x8b5018	            mov edx, dword [rax + 0x18] 	       234	hashmap.c	FUNCTION_18	IF_2	IF_3
+0x4000841	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       234	hashmap.c	FUNCTION_18	IF_2	IF_3
+0x4000845	          0x8b4024	            mov eax, dword [rax + 0x24] 	       234	hashmap.c	FUNCTION_18	IF_2	IF_3
+0x4000848	            0x39c2	                            cmp edx, eax	       234	hashmap.c	FUNCTION_18	IF_2	IF_3
+0x400084a	            0x731a	                           jae 0x4000866	       234	hashmap.c	FUNCTION_18	IF_2	IF_3
+0x400084c	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
+0x4000850	          0x8b401c	            mov eax, dword [rax + 0x1c] 	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
+0x4000853	          0xc1e802	                              shr eax, 2	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
+0x4000856	            0x89c2	                            mov edx, eax	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
+0x4000858	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
+0x400085c	            0x89d6	                            mov esi, edx	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
+0x400085e	          0x4889c7	                            mov rdi, rax	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
+0x4000861	      0xe832fbffff	                         call sym.rehash	       235	hashmap.c	FUNCTION_18	IF_2	CALL_2
+0x4000866	        0x488b45f8	                mov rax, qword [rbp - 8]	       238	hashmap.c	FUNCTION_18
+0x400086a	              0xc9	                                   leave	       239	hashmap.c	FUNCTION_18
+0x400086b	              0xc3	                                     ret	       239	hashmap.c	FUNCTION_18
+hashmap_get	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,1:FOR,0:DO,0:IF,0	15
+0x4000681	              0x55	                                push rbp	       190	hashmap.c	FUNCTION_15
+0x4000682	          0x4889e5	                            mov rbp, rsp	       190	hashmap.c	FUNCTION_15
+0x4000685	        0x4883ec20	                           sub rsp, 0x20	       190	hashmap.c	FUNCTION_15
+0x4000689	        0x48897df8	                mov qword [rbp - 8], rdi	       190	hashmap.c	FUNCTION_15
+0x400068d	        0x488975f0	             mov qword [rbp - 0x10], rsi	       190	hashmap.c	FUNCTION_15
+0x4000691	        0x488955e8	             mov qword [rbp - 0x18], rdx	       190	hashmap.c	FUNCTION_15
+0x4000695	        0x488b55e8	             mov rdx, qword [rbp - 0x18]	       191	hashmap.c	FUNCTION_15	CALL_1
+0x4000699	        0x488b4df0	             mov rcx, qword [rbp - 0x10]	       191	hashmap.c	FUNCTION_15	CALL_1
+0x400069d	        0x488b45f8	                mov rax, qword [rbp - 8]	       191	hashmap.c	FUNCTION_15	CALL_1
+0x40006a1	          0x4889ce	                            mov rsi, rcx	       191	hashmap.c	FUNCTION_15	CALL_1
+0x40006a4	          0x4889c7	                            mov rdi, rax	       191	hashmap.c	FUNCTION_15	CALL_1
+0x40006a7	      0xe8cafdffff	                 call sym.find_entry_ptr	       191	hashmap.c	FUNCTION_15	CALL_1
+0x40006ac	          0x488b00	                    mov rax, qword [rax]	       191	hashmap.c	FUNCTION_15	CALL_1
+0x40006af	              0xc9	                                   leave	       192	hashmap.c	FUNCTION_15
+0x40006b0	              0xc3	                                     ret	       192	hashmap.c	FUNCTION_15
+hashmap_add	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,2:FOR,0:DO,0:IF,2	52
+0x400070a	              0x55	                                push rbp	       204	hashmap.c	FUNCTION_17
+0x400070b	          0x4889e5	                            mov rbp, rsp	       204	hashmap.c	FUNCTION_17
+0x400070e	        0x4883ec20	                           sub rsp, 0x20	       204	hashmap.c	FUNCTION_17
+0x4000712	        0x48897de8	             mov qword [rbp - 0x18], rdi	       204	hashmap.c	FUNCTION_17
+0x4000716	        0x488975e0	             mov qword [rbp - 0x20], rsi	       204	hashmap.c	FUNCTION_17
+0x400071a	        0x488b55e0	             mov rdx, qword [rbp - 0x20]	       205	hashmap.c	FUNCTION_17	CALL_1
+0x400071e	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       205	hashmap.c	FUNCTION_17	CALL_1
+0x4000722	          0x4889d6	                            mov rsi, rdx	       205	hashmap.c	FUNCTION_17	CALL_1
+0x4000725	          0x4889c7	                            mov rdi, rax	       205	hashmap.c	FUNCTION_17	CALL_1
+0x4000728	      0xe830fcffff	                         call sym.bucket	       205	hashmap.c	FUNCTION_17	CALL_1
+0x400072d	          0x8945fc	                mov dword [rbp - 4], eax	       205	hashmap.c	FUNCTION_17	CALL_1
+0x4000730	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       208	hashmap.c	FUNCTION_17
+0x4000734	          0x488b00	                    mov rax, qword [rax]	       208	hashmap.c	FUNCTION_17
+0x4000737	          0x8b55fc	                mov edx, dword [rbp - 4]	       208	hashmap.c	FUNCTION_17
+0x400073a	        0x48c1e203	                              shl rdx, 3	       208	hashmap.c	FUNCTION_17
+0x400073e	          0x4801d0	                            add rax, rdx	       208	hashmap.c	FUNCTION_17
+0x4000741	          0x488b10	                    mov rdx, qword [rax]	       208	hashmap.c	FUNCTION_17
+0x4000744	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       208	hashmap.c	FUNCTION_17
+0x4000748	          0x488910	                    mov qword [rax], rdx	       208	hashmap.c	FUNCTION_17
+0x400074b	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       209	hashmap.c	FUNCTION_17
+0x400074f	          0x488b00	                    mov rax, qword [rax]	       209	hashmap.c	FUNCTION_17
+0x4000752	          0x8b55fc	                mov edx, dword [rbp - 4]	       209	hashmap.c	FUNCTION_17
+0x4000755	        0x48c1e203	                              shl rdx, 3	       209	hashmap.c	FUNCTION_17
+0x4000759	          0x4801c2	                            add rdx, rax	       209	hashmap.c	FUNCTION_17
+0x400075c	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       209	hashmap.c	FUNCTION_17
+0x4000760	          0x488902	                    mov qword [rdx], rax	       209	hashmap.c	FUNCTION_17
+0x4000763	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       212	hashmap.c	FUNCTION_17	IF_1
+0x4000767	         0xfb64028	           movzx eax, byte [rax + 0x28] 	       212	hashmap.c	FUNCTION_17	IF_1
+0x400076b	          0x83e001	                              and eax, 1	       212	hashmap.c	FUNCTION_17	IF_1
+0x400076e	            0x84c0	                             test al, al	       212	hashmap.c	FUNCTION_17	IF_1
+0x4000770	            0x743f	                            je 0x40007b1	       212	hashmap.c	FUNCTION_17	IF_1
+0x4000772	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       213	hashmap.c	FUNCTION_17	IF_1
+0x4000776	          0x8b4018	            mov eax, dword [rax + 0x18] 	       213	hashmap.c	FUNCTION_17	IF_1
+0x4000779	          0x8d5001	                      lea edx, [rax + 1]	       213	hashmap.c	FUNCTION_17	IF_1
+0x400077c	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       213	hashmap.c	FUNCTION_17	IF_1
+0x4000780	          0x895018	             mov dword [rax + 0x18], edx	       213	hashmap.c	FUNCTION_17	IF_1
+0x4000783	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       214	hashmap.c	FUNCTION_17	IF_1	IF_2
+0x4000787	          0x8b5018	            mov edx, dword [rax + 0x18] 	       214	hashmap.c	FUNCTION_17	IF_1	IF_2
+0x400078a	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       214	hashmap.c	FUNCTION_17	IF_1	IF_2
+0x400078e	          0x8b4020	            mov eax, dword [rax + 0x20] 	       214	hashmap.c	FUNCTION_17	IF_1	IF_2
+0x4000791	            0x39c2	                            cmp edx, eax	       214	hashmap.c	FUNCTION_17	IF_1	IF_2
+0x4000793	            0x761c	                           jbe 0x40007b1	       214	hashmap.c	FUNCTION_17	IF_1	IF_2
+0x4000795	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       215	hashmap.c	FUNCTION_17	IF_1	CALL_2
+0x4000799	          0x8b401c	            mov eax, dword [rax + 0x1c] 	       215	hashmap.c	FUNCTION_17	IF_1	CALL_2
+0x400079c	    0x8d1485000000	                        lea edx, [rax*4]	       215	hashmap.c	FUNCTION_17	IF_1	CALL_2
+0x40007a3	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       215	hashmap.c	FUNCTION_17	IF_1	CALL_2
+0x40007a7	            0x89d6	                            mov esi, edx	       215	hashmap.c	FUNCTION_17	IF_1	CALL_2
+0x40007a9	          0x4889c7	                            mov rdi, rax	       215	hashmap.c	FUNCTION_17	IF_1	CALL_2
+0x40007ac	      0xe8e7fbffff	                         call sym.rehash	       215	hashmap.c	FUNCTION_17	IF_1	CALL_2
+0x40007b1	              0x90	                                     nop	       217	hashmap.c	FUNCTION_17
+0x40007b2	              0xc9	                                   leave	       217	hashmap.c	FUNCTION_17
+0x40007b3	              0xc3	                                     ret	       217	hashmap.c	FUNCTION_17
+pool_entry_cmp	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,1:FOR,0:DO,0:IF,0	32
+0x400095d	              0x55	                                push rbp	       281	hashmap.c	FUNCTION_22
+0x400095e	          0x4889e5	                            mov rbp, rsp	       281	hashmap.c	FUNCTION_22
+0x4000961	        0x4883ec20	                           sub rsp, 0x20	       281	hashmap.c	FUNCTION_22
+0x4000965	        0x48897df8	                mov qword [rbp - 8], rdi	       281	hashmap.c	FUNCTION_22
+0x4000969	        0x488975f0	             mov qword [rbp - 0x10], rsi	       281	hashmap.c	FUNCTION_22
+0x400096d	        0x488955e8	             mov qword [rbp - 0x18], rdx	       281	hashmap.c	FUNCTION_22
+0x4000971	        0x48894de0	             mov qword [rbp - 0x20], rcx	       281	hashmap.c	FUNCTION_22
+0x4000975	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       282	hashmap.c	FUNCTION_22
+0x4000979	        0x4883c018	                           add rax, 0x18	       282	hashmap.c	FUNCTION_22
+0x400097d	        0x483b45e0	             cmp rax, qword [rbp - 0x20]	       282	hashmap.c	FUNCTION_22
+0x4000981	            0x743f	                            je 0x40009c2	       282	hashmap.c	FUNCTION_22
+0x4000983	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       283	hashmap.c	FUNCTION_22	CALL_1
+0x4000987	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       283	hashmap.c	FUNCTION_22	CALL_1
+0x400098b	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       283	hashmap.c	FUNCTION_22	CALL_1
+0x400098f	        0x488b4010	            mov rax, qword [rax + 0x10] 	       283	hashmap.c	FUNCTION_22	CALL_1
+0x4000993	          0x4839c2	                            cmp rdx, rax	       282	hashmap.c	FUNCTION_22
+0x4000996	            0x7523	                           jne 0x40009bb	       282	hashmap.c	FUNCTION_22
+0x4000998	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       283	hashmap.c	FUNCTION_22	CALL_1
+0x400099c	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       283	hashmap.c	FUNCTION_22	CALL_1
+0x40009a0	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       283	hashmap.c	FUNCTION_22	CALL_1
+0x40009a4	        0x488d4818	                   lea rcx, [rax + 0x18]	       283	hashmap.c	FUNCTION_22	CALL_1
+0x40009a8	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       283	hashmap.c	FUNCTION_22	CALL_1
+0x40009ac	          0x4889c6	                            mov rsi, rax	       283	hashmap.c	FUNCTION_22	CALL_1
+0x40009af	          0x4889cf	                            mov rdi, rcx	       283	hashmap.c	FUNCTION_22	CALL_1
+0x40009b2	      0xe800000000	                          call 0x40009b7	       283	hashmap.c	FUNCTION_22	CALL_1
+0x40009b7	            0x85c0	                           test eax, eax	       283	hashmap.c	FUNCTION_22	CALL_1
+0x40009b9	            0x7407	                            je 0x40009c2	       283	hashmap.c	FUNCTION_22	CALL_1
+0x40009bb	      0xb801000000	                              mov eax, 1	       282	hashmap.c	FUNCTION_22
+0x40009c0	            0xeb05	                           jmp 0x40009c7	       282	hashmap.c	FUNCTION_22
+0x40009c2	      0xb800000000	                              mov eax, 0	       282	hashmap.c	FUNCTION_22
+0x40009c7	              0xc9	                                   leave	       284	hashmap.c	FUNCTION_22
+0x40009c8	              0xc3	                                     ret	       284	hashmap.c	FUNCTION_22
+rehash	ELSE,0:functions,0:SWITCH,0:WHILE,1:CALL,3:FOR,1:DO,0:IF,0	63
+0x4000398	              0x55	                                push rbp	       115	hashmap.c	FUNCTION_10
+0x4000399	          0x4889e5	                            mov rbp, rsp	       115	hashmap.c	FUNCTION_10
+0x400039c	        0x4883ec40	                           sub rsp, 0x40	       115	hashmap.c	FUNCTION_10
+0x40003a0	        0x48897dc8	             mov qword [rbp - 0x38], rdi	       115	hashmap.c	FUNCTION_10
+0x40003a4	          0x8975c4	             mov dword [rbp - 0x3c], esi	       115	hashmap.c	FUNCTION_10
+0x40003a7	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       116	hashmap.c	FUNCTION_10
+0x40003ab	          0x8b401c	            mov eax, dword [rax + 0x1c] 	       116	hashmap.c	FUNCTION_10
+0x40003ae	          0x8945e0	             mov dword [rbp - 0x20], eax	       116	hashmap.c	FUNCTION_10
+0x40003b1	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       117	hashmap.c	FUNCTION_10
+0x40003b5	          0x488b00	                    mov rax, qword [rax]	       117	hashmap.c	FUNCTION_10
+0x40003b8	        0x488945f0	             mov qword [rbp - 0x10], rax	       117	hashmap.c	FUNCTION_10
+0x40003bc	          0x8b55c4	             mov edx, dword [rbp - 0x3c]	       119	hashmap.c	FUNCTION_10	CALL_1
+0x40003bf	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       119	hashmap.c	FUNCTION_10	CALL_1
+0x40003c3	            0x89d6	                            mov esi, edx	       119	hashmap.c	FUNCTION_10	CALL_1
+0x40003c5	          0x4889c7	                            mov rdi, rax	       119	hashmap.c	FUNCTION_10	CALL_1
+0x40003c8	      0xe899feffff	                    call sym.alloc_table	       119	hashmap.c	FUNCTION_10	CALL_1
+0x40003cd	    0xc745dc000000	               mov dword [rbp - 0x24], 0	       120	hashmap.c	FUNCTION_10	FOR_1
+0x40003d4	      0xe982000000	                           jmp 0x400045b	       120	hashmap.c	FUNCTION_10	FOR_1
+0x40003d9	          0x8b45dc	             mov eax, dword [rbp - 0x24]	       121	hashmap.c	FUNCTION_10	FOR_1
+0x40003dc	    0x488d14c50000	                        lea rdx, [rax*8]	       121	hashmap.c	FUNCTION_10	FOR_1
+0x40003e4	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       121	hashmap.c	FUNCTION_10	FOR_1
+0x40003e8	          0x4801d0	                            add rax, rdx	       121	hashmap.c	FUNCTION_10	FOR_1
+0x40003eb	          0x488b00	                    mov rax, qword [rax]	       121	hashmap.c	FUNCTION_10	FOR_1
+0x40003ee	        0x488945e8	             mov qword [rbp - 0x18], rax	       121	hashmap.c	FUNCTION_10	FOR_1
+0x40003f2	            0xeb5c	                           jmp 0x4000450	       122	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x40003f4	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       123	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x40003f8	          0x488b00	                    mov rax, qword [rax]	       123	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x40003fb	        0x488945f8	                mov qword [rbp - 8], rax	       123	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x40003ff	        0x488b55e8	             mov rdx, qword [rbp - 0x18]	       124	hashmap.c	FUNCTION_10	FOR_1	WHILE_1	CALL_2
+0x4000403	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       124	hashmap.c	FUNCTION_10	FOR_1	WHILE_1	CALL_2
+0x4000407	          0x4889d6	                            mov rsi, rdx	       124	hashmap.c	FUNCTION_10	FOR_1	WHILE_1	CALL_2
+0x400040a	          0x4889c7	                            mov rdi, rax	       124	hashmap.c	FUNCTION_10	FOR_1	WHILE_1	CALL_2
+0x400040d	      0xe84bffffff	                         call sym.bucket	       124	hashmap.c	FUNCTION_10	FOR_1	WHILE_1	CALL_2
+0x4000412	          0x8945e4	             mov dword [rbp - 0x1c], eax	       124	hashmap.c	FUNCTION_10	FOR_1	WHILE_1	CALL_2
+0x4000415	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000419	          0x488b00	                    mov rax, qword [rax]	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x400041c	          0x8b55e4	             mov edx, dword [rbp - 0x1c]	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x400041f	        0x48c1e203	                              shl rdx, 3	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000423	          0x4801d0	                            add rax, rdx	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000426	          0x488b10	                    mov rdx, qword [rax]	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000429	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x400042d	          0x488910	                    mov qword [rax], rdx	       125	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000430	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       126	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000434	          0x488b00	                    mov rax, qword [rax]	       126	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000437	          0x8b55e4	             mov edx, dword [rbp - 0x1c]	       126	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x400043a	        0x48c1e203	                              shl rdx, 3	       126	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x400043e	          0x4801c2	                            add rdx, rax	       126	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000441	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       126	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000445	          0x488902	                    mov qword [rdx], rax	       126	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000448	        0x488b45f8	                mov rax, qword [rbp - 8]	       127	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x400044c	        0x488945e8	             mov qword [rbp - 0x18], rax	       127	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000450	      0x48837de800	               cmp qword [rbp - 0x18], 0	       122	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000455	            0x759d	                           jne 0x40003f4	       122	hashmap.c	FUNCTION_10	FOR_1	WHILE_1
+0x4000457	        0x8345dc01	               add dword [rbp - 0x24], 1	       120	hashmap.c	FUNCTION_10	FOR_1
+0x400045b	          0x8b45dc	             mov eax, dword [rbp - 0x24]	       120	hashmap.c	FUNCTION_10	FOR_1
+0x400045e	          0x3b45e0	             cmp eax, dword [rbp - 0x20]	       120	hashmap.c	FUNCTION_10	FOR_1
+0x4000461	     0xf8272ffffff	                            jb 0x40003d9	       120	hashmap.c	FUNCTION_10	FOR_1
+0x4000467	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       130	hashmap.c	FUNCTION_10	CALL_3
+0x400046b	          0x4889c7	                            mov rdi, rax	       130	hashmap.c	FUNCTION_10	CALL_3
+0x400046e	      0xe800000000	                          call 0x4000473	       130	hashmap.c	FUNCTION_10	CALL_3
+0x4000473	              0x90	                                     nop	       131	hashmap.c	FUNCTION_10
+0x4000474	              0xc9	                                   leave	       131	hashmap.c	FUNCTION_10
+0x4000475	              0xc3	                                     ret	       131	hashmap.c	FUNCTION_10
+entry_equals	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,1:FOR,0:DO,0:IF,0	31
+0x40002f9	              0x55	                                push rbp	        97	hashmap.c	FUNCTION_7
+0x40002fa	          0x4889e5	                            mov rbp, rsp	        97	hashmap.c	FUNCTION_7
+0x40002fd	        0x4883ec20	                           sub rsp, 0x20	        97	hashmap.c	FUNCTION_7
+0x4000301	        0x48897df8	                mov qword [rbp - 8], rdi	        97	hashmap.c	FUNCTION_7
+0x4000305	        0x488975f0	             mov qword [rbp - 0x10], rsi	        97	hashmap.c	FUNCTION_7
+0x4000309	        0x488955e8	             mov qword [rbp - 0x18], rdx	        97	hashmap.c	FUNCTION_7
+0x400030d	        0x48894de0	             mov qword [rbp - 0x20], rcx	        97	hashmap.c	FUNCTION_7
+0x4000311	        0x488b45f0	             mov rax, qword [rbp - 0x10]	        98	hashmap.c	FUNCTION_7
+0x4000315	        0x483b45e8	             cmp rax, qword [rbp - 0x18]	        98	hashmap.c	FUNCTION_7
+0x4000319	            0x7434	                            je 0x400034f	        98	hashmap.c	FUNCTION_7
+0x400031b	        0x488b45f0	             mov rax, qword [rbp - 0x10]	        99	hashmap.c	FUNCTION_7
+0x400031f	          0x8b5008	                mov edx, dword [rax + 8]	        99	hashmap.c	FUNCTION_7
+0x4000322	        0x488b45e8	             mov rax, qword [rbp - 0x18]	        99	hashmap.c	FUNCTION_7
+0x4000326	          0x8b4008	                mov eax, dword [rax + 8]	        99	hashmap.c	FUNCTION_7
+0x4000329	            0x39c2	                            cmp edx, eax	        98	hashmap.c	FUNCTION_7
+0x400032b	            0x7529	                           jne 0x4000356	        98	hashmap.c	FUNCTION_7
+0x400032d	        0x488b45f8	                mov rax, qword [rbp - 8]	       100	hashmap.c	FUNCTION_7	CALL_1
+0x4000331	        0x488b4008	                mov rax, qword [rax + 8]	       100	hashmap.c	FUNCTION_7	CALL_1
+0x4000335	        0x488b55f8	                mov rdx, qword [rbp - 8]	       100	hashmap.c	FUNCTION_7	CALL_1
+0x4000339	        0x488b7a10	            mov rdi, qword [rdx + 0x10] 	       100	hashmap.c	FUNCTION_7	CALL_1
+0x400033d	        0x488b4de0	             mov rcx, qword [rbp - 0x20]	       100	hashmap.c	FUNCTION_7	CALL_1
+0x4000341	        0x488b55e8	             mov rdx, qword [rbp - 0x18]	       100	hashmap.c	FUNCTION_7	CALL_1
+0x4000345	        0x488b75f0	             mov rsi, qword [rbp - 0x10]	       100	hashmap.c	FUNCTION_7	CALL_1
+0x4000349	            0xffd0	                                call rax	       100	hashmap.c	FUNCTION_7	CALL_1
+0x400034b	            0x85c0	                           test eax, eax	        99	hashmap.c	FUNCTION_7
+0x400034d	            0x7507	                           jne 0x4000356	        99	hashmap.c	FUNCTION_7
+0x400034f	      0xb801000000	                              mov eax, 1	        98	hashmap.c	FUNCTION_7
+0x4000354	            0xeb05	                           jmp 0x400035b	        98	hashmap.c	FUNCTION_7
+0x4000356	      0xb800000000	                              mov eax, 0	        98	hashmap.c	FUNCTION_7
+0x400035b	              0xc9	                                   leave	       101	hashmap.c	FUNCTION_7
+0x400035c	              0xc3	                                     ret	       101	hashmap.c	FUNCTION_7
+find_entry_ptr	ELSE,0:functions,0:SWITCH,0:WHILE,1:CALL,2:FOR,0:DO,0:IF,0	40
+0x4000476	              0x55	                                push rbp	       135	hashmap.c	FUNCTION_11
+0x4000477	          0x4889e5	                            mov rbp, rsp	       135	hashmap.c	FUNCTION_11
+0x400047a	              0x53	                                push rbx	       135	hashmap.c	FUNCTION_11
+0x400047b	        0x4883ec38	                           sub rsp, 0x38	       135	hashmap.c	FUNCTION_11
+0x400047f	        0x48897dd8	             mov qword [rbp - 0x28], rdi	       135	hashmap.c	FUNCTION_11
+0x4000483	        0x488975d0	             mov qword [rbp - 0x30], rsi	       135	hashmap.c	FUNCTION_11
+0x4000487	        0x488955c8	             mov qword [rbp - 0x38], rdx	       135	hashmap.c	FUNCTION_11
+0x400048b	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       136	hashmap.c	FUNCTION_11	CALL_1
+0x400048f	          0x488b18	                    mov rbx, qword [rax]	       136	hashmap.c	FUNCTION_11	CALL_1
+0x4000492	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       136	hashmap.c	FUNCTION_11	CALL_1
+0x4000496	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       136	hashmap.c	FUNCTION_11	CALL_1
+0x400049a	          0x4889d6	                            mov rsi, rdx	       136	hashmap.c	FUNCTION_11	CALL_1
+0x400049d	          0x4889c7	                            mov rdi, rax	       136	hashmap.c	FUNCTION_11	CALL_1
+0x40004a0	      0xe8b8feffff	                         call sym.bucket	       136	hashmap.c	FUNCTION_11	CALL_1
+0x40004a5	            0x89c0	                            mov eax, eax	       136	hashmap.c	FUNCTION_11	CALL_1
+0x40004a7	        0x48c1e003	                              shl rax, 3	       136	hashmap.c	FUNCTION_11	CALL_1
+0x40004ab	          0x4801d8	                            add rax, rbx	       136	hashmap.c	FUNCTION_11	CALL_1
+0x40004ae	        0x488945e8	             mov qword [rbp - 0x18], rax	       136	hashmap.c	FUNCTION_11	CALL_1
+0x40004b2	            0xeb0b	                           jmp 0x40004bf	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004b4	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       138	hashmap.c	FUNCTION_11	WHILE_1
+0x40004b8	          0x488b00	                    mov rax, qword [rax]	       138	hashmap.c	FUNCTION_11	WHILE_1
+0x40004bb	        0x488945e8	             mov qword [rbp - 0x18], rax	       138	hashmap.c	FUNCTION_11	WHILE_1
+0x40004bf	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004c3	          0x488b00	                    mov rax, qword [rax]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004c6	          0x4885c0	                           test rax, rax	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004c9	            0x741f	                            je 0x40004ea	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004cb	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004cf	          0x488b30	                    mov rsi, qword [rax]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004d2	        0x488b4dc8	             mov rcx, qword [rbp - 0x38]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004d6	        0x488b55d0	             mov rdx, qword [rbp - 0x30]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004da	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004de	          0x4889c7	                            mov rdi, rax	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004e1	      0xe813feffff	                   call sym.entry_equals	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004e6	            0x85c0	                           test eax, eax	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004e8	            0x74ca	                            je 0x40004b4	       137	hashmap.c	FUNCTION_11	WHILE_1	CALL_2
+0x40004ea	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       139	hashmap.c	FUNCTION_11
+0x40004ee	        0x4883c438	                           add rsp, 0x38	       140	hashmap.c	FUNCTION_11
+0x40004f2	              0x5b	                                 pop rbx	       140	hashmap.c	FUNCTION_11
+0x40004f3	              0x5d	                                 pop rbp	       140	hashmap.c	FUNCTION_11
+0x40004f4	              0xc3	                                     ret	       140	hashmap.c	FUNCTION_11
+hashmap_get_next	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,1:FOR,1:DO,0:IF,1	27
+0x40006b1	              0x55	                                push rbp	       195	hashmap.c	FUNCTION_16
+0x40006b2	          0x4889e5	                            mov rbp, rsp	       195	hashmap.c	FUNCTION_16
+0x40006b5	        0x4883ec20	                           sub rsp, 0x20	       195	hashmap.c	FUNCTION_16
+0x40006b9	        0x48897de8	             mov qword [rbp - 0x18], rdi	       195	hashmap.c	FUNCTION_16
+0x40006bd	        0x488975e0	             mov qword [rbp - 0x20], rsi	       195	hashmap.c	FUNCTION_16
+0x40006c1	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       196	hashmap.c	FUNCTION_16
+0x40006c5	          0x488b00	                    mov rax, qword [rax]	       196	hashmap.c	FUNCTION_16
+0x40006c8	        0x488945f8	                mov qword [rbp - 8], rax	       196	hashmap.c	FUNCTION_16
+0x40006cc	            0xeb2e	                           jmp 0x40006fc	       197	hashmap.c	FUNCTION_16	FOR_1
+0x40006ce	        0x488b55f8	                mov rdx, qword [rbp - 8]	       198	hashmap.c	FUNCTION_16	FOR_1	IF_1	CALL_1
+0x40006d2	        0x488b75e0	             mov rsi, qword [rbp - 0x20]	       198	hashmap.c	FUNCTION_16	FOR_1	IF_1	CALL_1
+0x40006d6	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       198	hashmap.c	FUNCTION_16	FOR_1	IF_1	CALL_1
+0x40006da	      0xb900000000	                              mov ecx, 0	       198	hashmap.c	FUNCTION_16	FOR_1	IF_1	CALL_1
+0x40006df	          0x4889c7	                            mov rdi, rax	       198	hashmap.c	FUNCTION_16	FOR_1	IF_1	CALL_1
+0x40006e2	      0xe812fcffff	                   call sym.entry_equals	       198	hashmap.c	FUNCTION_16	FOR_1	IF_1	CALL_1
+0x40006e7	            0x85c0	                           test eax, eax	       198	hashmap.c	FUNCTION_16	FOR_1	IF_1	CALL_1
+0x40006e9	            0x7406	                            je 0x40006f1	       198	hashmap.c	FUNCTION_16	FOR_1	IF_1	CALL_1
+0x40006eb	        0x488b45f8	                mov rax, qword [rbp - 8]	       199	hashmap.c	FUNCTION_16	FOR_1	IF_1
+0x40006ef	            0xeb17	                           jmp 0x4000708	       199	hashmap.c	FUNCTION_16	FOR_1	IF_1
+0x40006f1	        0x488b45f8	                mov rax, qword [rbp - 8]	       197	hashmap.c	FUNCTION_16	FOR_1
+0x40006f5	          0x488b00	                    mov rax, qword [rax]	       197	hashmap.c	FUNCTION_16	FOR_1
+0x40006f8	        0x488945f8	                mov qword [rbp - 8], rax	       197	hashmap.c	FUNCTION_16	FOR_1
+0x40006fc	      0x48837df800	                  cmp qword [rbp - 8], 0	       197	hashmap.c	FUNCTION_16	FOR_1
+0x4000701	            0x75cb	                           jne 0x40006ce	       197	hashmap.c	FUNCTION_16	FOR_1
+0x4000703	      0xb800000000	                              mov eax, 0	       200	hashmap.c	FUNCTION_16
+0x4000708	              0xc9	                                   leave	       201	hashmap.c	FUNCTION_16
+0x4000709	              0xc3	                                     ret	       201	hashmap.c	FUNCTION_16
+memihash	ELSE,0:functions,0:SWITCH,0:WHILE,1:CALL,0:FOR,0:DO,0:IF,1	31
+0x4000196	              0x55	                                push rbp	        41	hashmap.c	FUNCTION_4
+0x4000197	          0x4889e5	                            mov rbp, rsp	        41	hashmap.c	FUNCTION_4
+0x400019a	        0x48897de8	             mov qword [rbp - 0x18], rdi	        41	hashmap.c	FUNCTION_4
+0x400019e	        0x488975e0	             mov qword [rbp - 0x20], rsi	        41	hashmap.c	FUNCTION_4
+0x40001a2	    0xc745f0c59d1c	      mov dword [rbp - 0x10], 0x811c9dc5	        42	hashmap.c	FUNCTION_4
+0x40001a9	        0x488b45e8	             mov rax, qword [rbp - 0x18]	        43	hashmap.c	FUNCTION_4
+0x40001ad	        0x488945f8	                mov qword [rbp - 8], rax	        43	hashmap.c	FUNCTION_4
+0x40001b1	            0xeb34	                           jmp 0x40001e7	        44	hashmap.c	FUNCTION_4	WHILE_1
+0x40001b3	        0x488b45f8	                mov rax, qword [rbp - 8]	        45	hashmap.c	FUNCTION_4	WHILE_1
+0x40001b7	        0x488d5001	                      lea rdx, [rax + 1]	        45	hashmap.c	FUNCTION_4	WHILE_1
+0x40001bb	        0x488955f8	                mov qword [rbp - 8], rdx	        45	hashmap.c	FUNCTION_4	WHILE_1
+0x40001bf	           0xfb600	                   movzx eax, byte [rax]	        45	hashmap.c	FUNCTION_4	WHILE_1
+0x40001c2	           0xfb6c0	                           movzx eax, al	        45	hashmap.c	FUNCTION_4	WHILE_1
+0x40001c5	          0x8945f4	              mov dword [rbp - 0xc], eax	        45	hashmap.c	FUNCTION_4	WHILE_1
+0x40001c8	        0x837df460	            cmp dword [rbp - 0xc], 0x60 	        46	hashmap.c	FUNCTION_4	WHILE_1	IF_1
+0x40001cc	            0x760a	                           jbe 0x40001d8	        46	hashmap.c	FUNCTION_4	WHILE_1	IF_1
+0x40001ce	        0x837df47a	            cmp dword [rbp - 0xc], 0x7a 	        46	hashmap.c	FUNCTION_4	WHILE_1	IF_1
+0x40001d2	            0x7704	                            ja 0x40001d8	        46	hashmap.c	FUNCTION_4	WHILE_1	IF_1
+0x40001d4	        0x836df420	             sub dword [rbp - 0xc], 0x20	        47	hashmap.c	FUNCTION_4	WHILE_1	IF_1
+0x40001d8	          0x8b45f0	             mov eax, dword [rbp - 0x10]	        48	hashmap.c	FUNCTION_4	WHILE_1
+0x40001db	    0x69c093010001	                imul eax, eax, 0x1000193	        48	hashmap.c	FUNCTION_4	WHILE_1
+0x40001e1	          0x3345f4	              xor eax, dword [rbp - 0xc]	        48	hashmap.c	FUNCTION_4	WHILE_1
+0x40001e4	          0x8945f0	             mov dword [rbp - 0x10], eax	        48	hashmap.c	FUNCTION_4	WHILE_1
+0x40001e7	        0x488b45e0	             mov rax, qword [rbp - 0x20]	        44	hashmap.c	FUNCTION_4	WHILE_1
+0x40001eb	        0x488d50ff	                      lea rdx, [rax - 1]	        44	hashmap.c	FUNCTION_4	WHILE_1
+0x40001ef	        0x488955e0	             mov qword [rbp - 0x20], rdx	        44	hashmap.c	FUNCTION_4	WHILE_1
+0x40001f3	          0x4885c0	                           test rax, rax	        44	hashmap.c	FUNCTION_4	WHILE_1
+0x40001f6	            0x75bb	                           jne 0x40001b3	        44	hashmap.c	FUNCTION_4	WHILE_1
+0x40001f8	          0x8b45f0	             mov eax, dword [rbp - 0x10]	        50	hashmap.c	FUNCTION_4
+0x40001fb	              0x5d	                                 pop rbp	        51	hashmap.c	FUNCTION_4
+0x40001fc	              0xc3	                                     ret	        51	hashmap.c	FUNCTION_4
+hashmap_put	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,2:FOR,0:DO,0:IF,0	20
+0x400086c	              0x55	                                push rbp	       242	hashmap.c	FUNCTION_19
+0x400086d	          0x4889e5	                            mov rbp, rsp	       242	hashmap.c	FUNCTION_19
+0x4000870	        0x4883ec20	                           sub rsp, 0x20	       242	hashmap.c	FUNCTION_19
+0x4000874	        0x48897de8	             mov qword [rbp - 0x18], rdi	       242	hashmap.c	FUNCTION_19
+0x4000878	        0x488975e0	             mov qword [rbp - 0x20], rsi	       242	hashmap.c	FUNCTION_19
+0x400087c	        0x488b4de0	             mov rcx, qword [rbp - 0x20]	       243	hashmap.c	FUNCTION_19	CALL_1
+0x4000880	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       243	hashmap.c	FUNCTION_19	CALL_1
+0x4000884	      0xba00000000	                              mov edx, 0	       243	hashmap.c	FUNCTION_19	CALL_1
+0x4000889	          0x4889ce	                            mov rsi, rcx	       243	hashmap.c	FUNCTION_19	CALL_1
+0x400088c	          0x4889c7	                            mov rdi, rax	       243	hashmap.c	FUNCTION_19	CALL_1
+0x400088f	      0xe800000000	                          call 0x4000894	       243	hashmap.c	FUNCTION_19	CALL_1
+0x4000894	        0x488945f8	                mov qword [rbp - 8], rax	       243	hashmap.c	FUNCTION_19	CALL_1
+0x4000898	        0x488b55e0	             mov rdx, qword [rbp - 0x20]	       244	hashmap.c	FUNCTION_19	CALL_2
+0x400089c	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       244	hashmap.c	FUNCTION_19	CALL_2
+0x40008a0	          0x4889d6	                            mov rsi, rdx	       244	hashmap.c	FUNCTION_19	CALL_2
+0x40008a3	          0x4889c7	                            mov rdi, rax	       244	hashmap.c	FUNCTION_19	CALL_2
+0x40008a6	      0xe800000000	                          call 0x40008ab	       244	hashmap.c	FUNCTION_19	CALL_2
+0x40008ab	        0x488b45f8	                mov rax, qword [rbp - 8]	       245	hashmap.c	FUNCTION_19
+0x40008af	              0xc9	                                   leave	       246	hashmap.c	FUNCTION_19
+0x40008b0	              0xc3	                                     ret	       246	hashmap.c	FUNCTION_19
+hashmap_free	ELSE,0:functions,0:SWITCH,0:WHILE,1:CALL,5:FOR,0:DO,0:IF,2	48
+0x40005d4	              0x55	                                push rbp	       175	hashmap.c	FUNCTION_14
+0x40005d5	          0x4889e5	                            mov rbp, rsp	       175	hashmap.c	FUNCTION_14
+0x40005d8	        0x4883ec40	                           sub rsp, 0x40	       175	hashmap.c	FUNCTION_14
+0x40005dc	        0x48897dc8	             mov qword [rbp - 0x38], rdi	       175	hashmap.c	FUNCTION_14
+0x40005e0	          0x8975c4	             mov dword [rbp - 0x3c], esi	       175	hashmap.c	FUNCTION_14
+0x40005e3	    0x64488b042528	                mov rax, qword fs:[0x28]	       175	hashmap.c	FUNCTION_14
+0x40005ec	        0x488945f8	                mov qword [rbp - 8], rax	       175	hashmap.c	FUNCTION_14
+0x40005f0	            0x31c0	                            xor eax, eax	       175	hashmap.c	FUNCTION_14
+0x40005f2	      0x48837dc800	               cmp qword [rbp - 0x38], 0	       176	hashmap.c	FUNCTION_14	IF_1
+0x40005f7	            0x7471	                            je 0x400066a	       176	hashmap.c	FUNCTION_14	IF_1
+0x40005f9	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       176	hashmap.c	FUNCTION_14	IF_1
+0x40005fd	          0x488b00	                    mov rax, qword [rax]	       176	hashmap.c	FUNCTION_14	IF_1
+0x4000600	          0x4885c0	                           test rax, rax	       176	hashmap.c	FUNCTION_14	IF_1
+0x4000603	            0x7465	                            je 0x400066a	       176	hashmap.c	FUNCTION_14	IF_1
+0x4000605	        0x837dc400	               cmp dword [rbp - 0x3c], 0	       178	hashmap.c	FUNCTION_14	IF_2
+0x4000609	            0x7438	                            je 0x4000643	       178	hashmap.c	FUNCTION_14	IF_2
+0x400060b	        0x488d55e0	                   lea rdx, [rbp - 0x20]	       181	hashmap.c	FUNCTION_14	IF_2	CALL_1
+0x400060f	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       181	hashmap.c	FUNCTION_14	IF_2	CALL_1
+0x4000613	          0x4889d6	                            mov rsi, rdx	       181	hashmap.c	FUNCTION_14	IF_2	CALL_1
+0x4000616	          0x4889c7	                            mov rdi, rax	       181	hashmap.c	FUNCTION_14	IF_2	CALL_1
+0x4000619	      0xe800000000	                          call 0x400061e	       181	hashmap.c	FUNCTION_14	IF_2	CALL_1
+0x400061e	            0xeb0c	                           jmp 0x400062c	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
+0x4000620	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       183	hashmap.c	FUNCTION_14	IF_2	CALL_3
+0x4000624	          0x4889c7	                            mov rdi, rax	       183	hashmap.c	FUNCTION_14	IF_2	CALL_3
+0x4000627	      0xe800000000	                          call 0x400062c	       183	hashmap.c	FUNCTION_14	IF_2	CALL_3
+0x400062c	        0x488d45e0	                   lea rax, [rbp - 0x20]	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
+0x4000630	          0x4889c7	                            mov rdi, rax	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
+0x4000633	      0xe800000000	                          call 0x4000638	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
+0x4000638	        0x488945d8	             mov qword [rbp - 0x28], rax	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
+0x400063c	      0x48837dd800	               cmp qword [rbp - 0x28], 0	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
+0x4000641	            0x75dd	                           jne 0x4000620	       182	hashmap.c	FUNCTION_14	IF_2	WHILE_1	CALL_2
+0x4000643	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       185	hashmap.c	FUNCTION_14	CALL_4
+0x4000647	          0x488b00	                    mov rax, qword [rax]	       185	hashmap.c	FUNCTION_14	CALL_4
+0x400064a	          0x4889c7	                            mov rdi, rax	       185	hashmap.c	FUNCTION_14	CALL_4
+0x400064d	      0xe800000000	                          call 0x4000652	       185	hashmap.c	FUNCTION_14	CALL_4
+0x4000652	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       186	hashmap.c	FUNCTION_14	CALL_5
+0x4000656	      0xba30000000	                           mov edx, 0x30	       186	hashmap.c	FUNCTION_14	CALL_5
+0x400065b	      0xbe00000000	                              mov esi, 0	       186	hashmap.c	FUNCTION_14	CALL_5
+0x4000660	          0x4889c7	                            mov rdi, rax	       186	hashmap.c	FUNCTION_14	CALL_5
+0x4000663	      0xe800000000	                          call 0x4000668	       186	hashmap.c	FUNCTION_14	CALL_5
+0x4000668	            0xeb01	                           jmp 0x400066b	       186	hashmap.c	FUNCTION_14	CALL_5
+0x400066a	              0x90	                                     nop	       177	hashmap.c	FUNCTION_14	IF_1
+0x400066b	        0x488b45f8	                mov rax, qword [rbp - 8]	       187	hashmap.c	FUNCTION_14
+0x400066f	    0x644833042528	                xor rax, qword fs:[0x28]	       187	hashmap.c	FUNCTION_14
+0x4000678	            0x7405	                            je 0x400067f	       187	hashmap.c	FUNCTION_14
+0x400067a	      0xe800000000	                          call 0x400067f	       187	hashmap.c	FUNCTION_14
+0x400067f	              0xc9	                                   leave	       187	hashmap.c	FUNCTION_14
+0x4000680	              0xc3	                                     ret	       187	hashmap.c	FUNCTION_14
+memhash	ELSE,0:functions,0:SWITCH,0:WHILE,1:CALL,0:FOR,0:DO,0:IF,0	26
+0x400013f	              0x55	                                push rbp	        30	hashmap.c	FUNCTION_3
+0x4000140	          0x4889e5	                            mov rbp, rsp	        30	hashmap.c	FUNCTION_3
+0x4000143	        0x48897de8	             mov qword [rbp - 0x18], rdi	        30	hashmap.c	FUNCTION_3
+0x4000147	        0x488975e0	             mov qword [rbp - 0x20], rsi	        30	hashmap.c	FUNCTION_3
+0x400014b	    0xc745f0c59d1c	      mov dword [rbp - 0x10], 0x811c9dc5	        31	hashmap.c	FUNCTION_3
+0x4000152	        0x488b45e8	             mov rax, qword [rbp - 0x18]	        32	hashmap.c	FUNCTION_3
+0x4000156	        0x488945f8	                mov qword [rbp - 8], rax	        32	hashmap.c	FUNCTION_3
+0x400015a	            0xeb24	                           jmp 0x4000180	        33	hashmap.c	FUNCTION_3	WHILE_1
+0x400015c	        0x488b45f8	                mov rax, qword [rbp - 8]	        34	hashmap.c	FUNCTION_3	WHILE_1
+0x4000160	        0x488d5001	                      lea rdx, [rax + 1]	        34	hashmap.c	FUNCTION_3	WHILE_1
+0x4000164	        0x488955f8	                mov qword [rbp - 8], rdx	        34	hashmap.c	FUNCTION_3	WHILE_1
+0x4000168	           0xfb600	                   movzx eax, byte [rax]	        34	hashmap.c	FUNCTION_3	WHILE_1
+0x400016b	           0xfb6c0	                           movzx eax, al	        34	hashmap.c	FUNCTION_3	WHILE_1
+0x400016e	          0x8945f4	              mov dword [rbp - 0xc], eax	        34	hashmap.c	FUNCTION_3	WHILE_1
+0x4000171	          0x8b45f0	             mov eax, dword [rbp - 0x10]	        35	hashmap.c	FUNCTION_3	WHILE_1
+0x4000174	    0x69c093010001	                imul eax, eax, 0x1000193	        35	hashmap.c	FUNCTION_3	WHILE_1
+0x400017a	          0x3345f4	              xor eax, dword [rbp - 0xc]	        35	hashmap.c	FUNCTION_3	WHILE_1
+0x400017d	          0x8945f0	             mov dword [rbp - 0x10], eax	        35	hashmap.c	FUNCTION_3	WHILE_1
+0x4000180	        0x488b45e0	             mov rax, qword [rbp - 0x20]	        33	hashmap.c	FUNCTION_3	WHILE_1
+0x4000184	        0x488d50ff	                      lea rdx, [rax - 1]	        33	hashmap.c	FUNCTION_3	WHILE_1
+0x4000188	        0x488955e0	             mov qword [rbp - 0x20], rdx	        33	hashmap.c	FUNCTION_3	WHILE_1
+0x400018c	          0x4885c0	                           test rax, rax	        33	hashmap.c	FUNCTION_3	WHILE_1
+0x400018f	            0x75cb	                           jne 0x400015c	        33	hashmap.c	FUNCTION_3	WHILE_1
+0x4000191	          0x8b45f0	             mov eax, dword [rbp - 0x10]	        37	hashmap.c	FUNCTION_3
+0x4000194	              0x5d	                                 pop rbp	        38	hashmap.c	FUNCTION_3
+0x4000195	              0xc3	                                     ret	        38	hashmap.c	FUNCTION_3
+always_equal	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,0:FOR,0:DO,0:IF,0	9
+0x40004f5	              0x55	                                push rbp	       146	hashmap.c	FUNCTION_12
+0x40004f6	          0x4889e5	                            mov rbp, rsp	       146	hashmap.c	FUNCTION_12
+0x40004f9	        0x48897df8	                mov qword [rbp - 8], rdi	       146	hashmap.c	FUNCTION_12
+0x40004fd	        0x488975f0	             mov qword [rbp - 0x10], rsi	       146	hashmap.c	FUNCTION_12
+0x4000501	        0x488955e8	             mov qword [rbp - 0x18], rdx	       146	hashmap.c	FUNCTION_12
+0x4000505	        0x48894de0	             mov qword [rbp - 0x20], rcx	       146	hashmap.c	FUNCTION_12
+0x4000509	      0xb800000000	                              mov eax, 0	       147	hashmap.c	FUNCTION_12
+0x400050e	              0x5d	                                 pop rbp	       148	hashmap.c	FUNCTION_12
+0x400050f	              0xc3	                                     ret	       148	hashmap.c	FUNCTION_12
+hashmap_entry_init	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,0:FOR,0:DO,0:IF,0	14
+0x4000084	              0x55	                                push rbp	       246	hashmap.h	FUNCTION_25
+0x4000085	          0x4889e5	                            mov rbp, rsp	       246	hashmap.h	FUNCTION_25
+0x4000088	        0x48897de8	             mov qword [rbp - 0x18], rdi	       246	hashmap.h	FUNCTION_25
+0x400008c	          0x8975e4	             mov dword [rbp - 0x1c], esi	       246	hashmap.h	FUNCTION_25
+0x400008f	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       247	hashmap.h	FUNCTION_25
+0x4000093	        0x488945f8	                mov qword [rbp - 8], rax	       247	hashmap.h	FUNCTION_25
+0x4000097	        0x488b45f8	                mov rax, qword [rbp - 8]	       248	hashmap.h	FUNCTION_25
+0x400009b	          0x8b55e4	             mov edx, dword [rbp - 0x1c]	       248	hashmap.h	FUNCTION_25
+0x400009e	          0x895008	                mov dword [rax + 8], edx	       248	hashmap.h	FUNCTION_25
+0x40000a1	        0x488b45f8	                mov rax, qword [rbp - 8]	       249	hashmap.h	FUNCTION_25
+0x40000a5	    0x48c700000000	                      mov qword [rax], 0	       249	hashmap.h	FUNCTION_25
+0x40000ac	              0x90	                                     nop	       250	hashmap.h	FUNCTION_25
+0x40000ad	              0x5d	                                 pop rbp	       250	hashmap.h	FUNCTION_25
+0x40000ae	              0xc3	                                     ret	       250	hashmap.h	FUNCTION_25
+st_add	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,1:FOR,0:DO,0:IF,1	20
+0x4000040	              0x55	                                push rbp	       784	git-compat-util.h	FUNCTION_45
+0x4000041	          0x4889e5	                            mov rbp, rsp	       784	git-compat-util.h	FUNCTION_45
+0x4000044	        0x4883ec10	                           sub rsp, 0x10	       784	git-compat-util.h	FUNCTION_45
+0x4000048	        0x48897df8	                mov qword [rbp - 8], rdi	       784	git-compat-util.h	FUNCTION_45
+0x400004c	        0x488975f0	             mov qword [rbp - 0x10], rsi	       784	git-compat-util.h	FUNCTION_45
+0x4000050	        0x488b45f8	                mov rax, qword [rbp - 8]	       785	git-compat-util.h	FUNCTION_45	IF_1
+0x4000054	          0x48f7d0	                                 not rax	       785	git-compat-util.h	FUNCTION_45	IF_1
+0x4000057	        0x483b45f0	             cmp rax, qword [rbp - 0x10]	       785	git-compat-util.h	FUNCTION_45	IF_1
+0x400005b	            0x731a	                           jae 0x4000077	       785	git-compat-util.h	FUNCTION_45	IF_1
+0x400005d	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       786	git-compat-util.h	FUNCTION_45	IF_1	CALL_1
+0x4000061	        0x488b45f8	                mov rax, qword [rbp - 8]	       786	git-compat-util.h	FUNCTION_45	IF_1	CALL_1
+0x4000065	          0x4889c6	                            mov rsi, rax	       786	git-compat-util.h	FUNCTION_45	IF_1	CALL_1
+0x4000068	      0xbf00000000	                              mov edi, 0	       786	git-compat-util.h	FUNCTION_45	IF_1	CALL_1
+0x400006d	      0xb800000000	                              mov eax, 0	       786	git-compat-util.h	FUNCTION_45	IF_1	CALL_1
+0x4000072	      0xe800000000	                          call 0x4000077	       786	git-compat-util.h	FUNCTION_45	IF_1	CALL_1
+0x4000077	        0x488b55f8	                mov rdx, qword [rbp - 8]	       788	git-compat-util.h	FUNCTION_45
+0x400007b	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       788	git-compat-util.h	FUNCTION_45
+0x400007f	          0x4801d0	                            add rax, rdx	       788	git-compat-util.h	FUNCTION_45
+0x4000082	              0xc9	                                   leave	       789	git-compat-util.h	FUNCTION_45
+0x4000083	              0xc3	                                     ret	       789	git-compat-util.h	FUNCTION_45
+hashmap_iter_init	ELSE,0:functions,0:SWITCH,0:WHILE,0:CALL,0:FOR,0:DO,0:IF,0	14
+0x40008b1	              0x55	                                push rbp	       249	hashmap.c	FUNCTION_20
+0x40008b2	          0x4889e5	                            mov rbp, rsp	       249	hashmap.c	FUNCTION_20
+0x40008b5	        0x48897df8	                mov qword [rbp - 8], rdi	       249	hashmap.c	FUNCTION_20
+0x40008b9	        0x488975f0	             mov qword [rbp - 0x10], rsi	       249	hashmap.c	FUNCTION_20
+0x40008bd	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       250	hashmap.c	FUNCTION_20
+0x40008c1	        0x488b55f8	                mov rdx, qword [rbp - 8]	       250	hashmap.c	FUNCTION_20
+0x40008c5	          0x488910	                    mov qword [rax], rdx	       250	hashmap.c	FUNCTION_20
+0x40008c8	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       251	hashmap.c	FUNCTION_20
+0x40008cc	    0xc74010000000	               mov dword [rax + 0x10], 0	       251	hashmap.c	FUNCTION_20
+0x40008d3	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       252	hashmap.c	FUNCTION_20
+0x40008d7	    0x48c740080000	                  mov qword [rax + 8], 0	       252	hashmap.c	FUNCTION_20
+0x40008df	              0x90	                                     nop	       253	hashmap.c	FUNCTION_20
+0x40008e0	              0x5d	                                 pop rbp	       253	hashmap.c	FUNCTION_20
+0x40008e1	              0xc3	                                     ret	       253	hashmap.c	FUNCTION_20

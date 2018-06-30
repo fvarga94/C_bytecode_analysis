@@ -1,0 +1,28 @@
+e1000e_phc_getcrosststamp	FOR,0:ELSE,0:DO,0:SWITCH,0:WHILE,0:IF,0:CALL,2:functions,0	5
+0x4000080	          0x4889f1	                            mov rcx, rsi	       173	ptp.c	FUNCTION_4
+0x4000083	    0x488db718d1ff	                 lea rsi, [rdi - 0x2ee8]	       177	ptp.c	FUNCTION_4	CALL_2
+0x400008a	            0x31d2	                            xor edx, edx	       177	ptp.c	FUNCTION_4	CALL_2
+0x400008c	    0x48c7c7000000	                              mov rdi, 0	       177	ptp.c	FUNCTION_4	CALL_2
+0x4000093	      0xe900000000	                           jmp 0x4000098	       177	ptp.c	FUNCTION_4	CALL_2
+e1000e_ptp_remove	FOR,0:ELSE,0:DO,0:SWITCH,0:WHILE,0:IF,2:CALL,3:functions,0	18
+0x4000620	    0xf6878d2d0000	         test byte [rdi + 0x2d8d], 0x40 	       351	ptp.c	FUNCTION_10	IF_1
+0x4000627	            0x7501	                           jne 0x400062a	       351	ptp.c	FUNCTION_10	IF_1
+0x4000629	              0xc3	                                     ret	       361	ptp.c	FUNCTION_10
+0x400062a	              0x53	                                push rbx	       350	ptp.c	FUNCTION_10
+0x400062b	          0x4889fb	                            mov rbx, rdi	       350	ptp.c	FUNCTION_10
+0x400062e	    0x488dbf102e00	                 lea rdi, [rdi + 0x2e10]	       354	ptp.c	FUNCTION_10	CALL_1
+0x4000635	      0xe800000000	                          call 0x400063a	       354	ptp.c	FUNCTION_10	CALL_1
+0x400063a	    0x488bbbe02e00	          mov rdi, qword [rbx + 0x2ee0] 	       356	ptp.c	FUNCTION_10	IF_2
+0x4000641	          0x4885ff	                           test rdi, rdi	       356	ptp.c	FUNCTION_10	IF_2
+0x4000644	            0x7424	                            je 0x400066a	       356	ptp.c	FUNCTION_10	IF_2
+0x4000646	      0xe800000000	                          call 0x400064b	       357	ptp.c	FUNCTION_10	IF_2	CALL_2
+0x400064b	    0x48c783e02e00	            mov qword [rbx + 0x2ee0], 0 	       358	ptp.c	FUNCTION_10	IF_2
+0x4000656	    0x488bbba80400	           mov rdi, qword [rbx + 0x4a8] 	       359	ptp.c	FUNCTION_10	IF_2	CALL_3
+0x400065d	    0x48c7c6000000	                              mov rsi, 0	       359	ptp.c	FUNCTION_10	IF_2	CALL_3
+0x4000664	              0x5b	                                 pop rbx	       361	ptp.c	FUNCTION_10
+0x4000665	      0xe900000000	                           jmp 0x400066a	       359	ptp.c	FUNCTION_10	IF_2	CALL_3
+0x400066a	              0x5b	                                 pop rbx	       361	ptp.c	FUNCTION_10
+0x400066b	              0xc3	                                     ret	       361	ptp.c	FUNCTION_10
+e1000e_phc_enable	FOR,0:ELSE,0:DO,0:SWITCH,0:WHILE,0:IF,0:CALL,0:functions,0	2
+0x4000070	      0xb8a1ffffff	                     mov eax, 0xffffffa1	       246	ptp.c	FUNCTION_7
+0x4000075	              0xc3	                                     ret	       246	ptp.c	FUNCTION_7

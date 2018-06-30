@@ -1,0 +1,45 @@
+nfs3_clone_server	IF,1:WHILE,0:DO,0:functions,0:FOR,0:ELSE,0:SWITCH,0:CALL,4	15
+0x40001b0	              0x55	                                push rbp	        62	nfs3client.c	FUNCTION_4
+0x40001b1	              0x53	                                push rbx	        62	nfs3client.c	FUNCTION_4
+0x40001b2	          0x4889fd	                            mov rbp, rdi	        62	nfs3client.c	FUNCTION_4
+0x40001b5	      0xe800000000	                          call 0x40001ba	        63	nfs3client.c	FUNCTION_4	CALL_1
+0x40001ba	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	        64	nfs3client.c	FUNCTION_4	IF_1	CALL_3
+0x40001c0	          0x4889c3	                            mov rbx, rax	        63	nfs3client.c	FUNCTION_4	CALL_1
+0x40001c3	            0x7712	                            ja 0x40001d7	        64	nfs3client.c	FUNCTION_4	IF_1	CALL_3
+0x40001c5	    0x48817d3000f0	cmp qword [rbp + 0x30], 0xfffffffffffff000	        64	nfs3client.c	FUNCTION_4	IF_1	CALL_3
+0x40001cd	            0x7708	                            ja 0x40001d7	        64	nfs3client.c	FUNCTION_4	IF_1	CALL_3
+0x40001cf	          0x4889c7	                            mov rdi, rax	        65	nfs3client.c	FUNCTION_4	CALL_4
+0x40001d2	      0xe869feffff	      call sym.nfs_init_server_aclclient	        65	nfs3client.c	FUNCTION_4	CALL_4
+0x40001d7	          0x4889d8	                            mov rax, rbx	        67	nfs3client.c	FUNCTION_4
+0x40001da	              0x5b	                                 pop rbx	        67	nfs3client.c	FUNCTION_4
+0x40001db	              0x5d	                                 pop rbp	        67	nfs3client.c	FUNCTION_4
+0x40001dc	              0xc3	                                     ret	        67	nfs3client.c	FUNCTION_4
+nfs_init_server_aclclient	IF,0:WHILE,0:DO,0:functions,0:FOR,0:ELSE,0:SWITCH,0:CALL,0	17
+0x4000040	              0x53	                                push rbx	        25	nfs3client.c	FUNCTION_1
+0x4000041	        0xf6475108	               test byte [rdi + 0x51], 8	        26	nfs3client.c	FUNCTION_1	IF_1
+0x4000045	          0x4889fb	                            mov rbx, rdi	        25	nfs3client.c	FUNCTION_1
+0x4000048	            0x7406	                            je 0x4000050	        26	nfs3client.c	FUNCTION_1	IF_1
+0x400004a	        0x836354f7	      and dword [rbx + 0x54], 0xfffffff7	        38	nfs3client.c	FUNCTION_1
+0x400004e	              0x5b	                                 pop rbx	        39	nfs3client.c	FUNCTION_1
+0x400004f	              0xc3	                                     ret	        39	nfs3client.c	FUNCTION_1
+0x4000050	        0x488b7f28	            mov rdi, qword [rdi + 0x28] 	        29	nfs3client.c	FUNCTION_1	CALL_1
+0x4000054	      0xba03000000	                              mov edx, 3	        29	nfs3client.c	FUNCTION_1	CALL_1
+0x4000059	    0x48c7c6000000	                              mov rsi, 0	        29	nfs3client.c	FUNCTION_1	CALL_1
+0x4000060	      0xe800000000	                          call 0x4000065	        29	nfs3client.c	FUNCTION_1	CALL_1
+0x4000065	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	        30	nfs3client.c	FUNCTION_1	IF_2	CALL_2
+0x400006b	        0x48894330	             mov qword [rbx + 0x30], rax	        29	nfs3client.c	FUNCTION_1	CALL_1
+0x400006f	            0x77d9	                            ja 0x400004a	        30	nfs3client.c	FUNCTION_1	IF_2	CALL_2
+0x4000071	        0x834b5408	                or dword [rbx + 0x54], 8	        34	nfs3client.c	FUNCTION_1
+0x4000075	              0x5b	                                 pop rbx	        39	nfs3client.c	FUNCTION_1
+0x4000076	              0xc3	                                     ret	        39	nfs3client.c	FUNCTION_1
+nfs3_create_server	IF,1:WHILE,0:DO,0:functions,0:FOR,0:ELSE,0:SWITCH,0:CALL,3	10
+0x4000190	              0x53	                                push rbx	        50	nfs3client.c	FUNCTION_3
+0x4000191	      0xe800000000	                          call 0x4000196	        51	nfs3client.c	FUNCTION_3	CALL_1
+0x4000196	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	        53	nfs3client.c	FUNCTION_3	IF_1	CALL_2
+0x400019c	          0x4889c3	                            mov rbx, rax	        51	nfs3client.c	FUNCTION_3	CALL_1
+0x400019f	            0x7708	                            ja 0x40001a9	        53	nfs3client.c	FUNCTION_3	IF_1	CALL_2
+0x40001a1	          0x4889c7	                            mov rdi, rax	        54	nfs3client.c	FUNCTION_3	CALL_3
+0x40001a4	      0xe897feffff	      call sym.nfs_init_server_aclclient	        54	nfs3client.c	FUNCTION_3	CALL_3
+0x40001a9	          0x4889d8	                            mov rax, rbx	        56	nfs3client.c	FUNCTION_3
+0x40001ac	              0x5b	                                 pop rbx	        56	nfs3client.c	FUNCTION_3
+0x40001ad	              0xc3	                                     ret	        56	nfs3client.c	FUNCTION_3

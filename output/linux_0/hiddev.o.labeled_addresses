@@ -1,0 +1,114 @@
+hiddev_fasync	IF,0:FOR,0:CALL,1:ELSE,0:SWITCH,0:WHILE,0:DO,0:functions,0	3
+0x4000130	    0x488b86c80000	            mov rax, qword [rsi + 0xc8] 	       221	hiddev.c	FUNCTION_6	CALL_1
+0x4000137	    0x488d8810c000	                 lea rcx, [rax + 0xc010]	       221	hiddev.c	FUNCTION_6	CALL_1
+0x400013e	      0xe900000000	                           jmp 0x4000143	       221	hiddev.c	FUNCTION_6	CALL_1
+hiddev_report_event	IF,0:FOR,0:CALL,2:ELSE,0:SWITCH,0:WHILE,0:DO,0:functions,0	31
+0x40013f0	        0x4883ec20	                           sub rsp, 0x20	       199	hiddev.c	FUNCTION_5
+0x40013f4	          0x8b5614	            mov edx, dword [rsi + 0x14] 	       200	hiddev.c	FUNCTION_5
+0x40013f7	    0x65488b042528	                mov rax, qword gs:[0x28]	       199	hiddev.c	FUNCTION_5
+0x4001400	      0x4889442418	             mov qword [rsp + 0x18], rax	       199	hiddev.c	FUNCTION_5
+0x4001405	            0x31c0	                            xor eax, eax	       199	hiddev.c	FUNCTION_5
+0x4001407	    0x48c744240800	                  mov qword [rsp + 8], 0	       203	hiddev.c	FUNCTION_5	CALL_1
+0x4001410	    0x48c744241000	               mov qword [rsp + 0x10], 0	       203	hiddev.c	FUNCTION_5	CALL_1
+0x4001419	      0xb801000000	                              mov eax, 1	       204	hiddev.c	FUNCTION_5
+0x400141e	            0x85d2	                           test edx, edx	       204	hiddev.c	FUNCTION_5
+0x4001420	            0x7410	                            je 0x4001432	       204	hiddev.c	FUNCTION_5
+0x4001422	          0x83fa01	                              cmp edx, 1	       204	hiddev.c	FUNCTION_5
+0x4001425	            0x7441	                            je 0x4001468	       204	hiddev.c	FUNCTION_5
+0x4001427	            0x31c0	                            xor eax, eax	       204	hiddev.c	FUNCTION_5
+0x4001429	          0x83fa02	                              cmp edx, 2	       204	hiddev.c	FUNCTION_5
+0x400142c	           0xf94c0	                                 sete al	       204	hiddev.c	FUNCTION_5
+0x400142f	          0x8d0440	                  lea eax, [rax + rax*2]	       204	hiddev.c	FUNCTION_5
+0x4001432	          0x890424	                    mov dword [rsp], eax	       204	hiddev.c	FUNCTION_5
+0x4001435	    0x488bbff81b00	          mov rdi, qword [rdi + 0x1bf8] 	       211	hiddev.c	FUNCTION_5	CALL_2
+0x400143c	          0x8b4610	            mov eax, dword [rsi + 0x10] 	       208	hiddev.c	FUNCTION_5
+0x400143f	          0x4889e6	                            mov rsi, rsp	       211	hiddev.c	FUNCTION_5	CALL_2
+0x4001442	    0xc7442408ffff	        mov dword [rsp + 8], 0xffffffff 	       209	hiddev.c	FUNCTION_5
+0x400144a	        0x89442404	                mov dword [rsp + 4], eax	       208	hiddev.c	FUNCTION_5
+0x400144e	      0xe85df3ffff	       call sym.hiddev_send_event.isra.5	       211	hiddev.c	FUNCTION_5	CALL_2
+0x4001453	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       212	hiddev.c	FUNCTION_5
+0x4001458	    0x654833042528	                xor rax, qword gs:[0x28]	       212	hiddev.c	FUNCTION_5
+0x4001461	            0x750c	                           jne 0x400146f	       212	hiddev.c	FUNCTION_5
+0x4001463	        0x4883c420	                           add rsp, 0x20	       212	hiddev.c	FUNCTION_5
+0x4001467	              0xc3	                                     ret	       212	hiddev.c	FUNCTION_5
+0x4001468	      0xb802000000	                              mov eax, 2	       204	hiddev.c	FUNCTION_5
+0x400146d	            0xebc3	                           jmp 0x4001432	       204	hiddev.c	FUNCTION_5
+0x400146f	      0xe800000000	                          call 0x4001474	       212	hiddev.c	FUNCTION_5
+hiddev_hid_event	IF,0:FOR,0:CALL,1:ELSE,0:SWITCH,0:WHILE,0:DO,0:functions,0	40
+0x4000880	        0x4883ec20	                           sub rsp, 0x20	       180	hiddev.c	FUNCTION_4
+0x4000884	        0x448b462c	            mov r8d, dword [rsi + 0x2c] 	       181	hiddev.c	FUNCTION_4
+0x4000888	    0x65488b042528	                mov rax, qword gs:[0x28]	       180	hiddev.c	FUNCTION_4
+0x4000891	      0x4889442418	             mov qword [rsp + 0x18], rax	       180	hiddev.c	FUNCTION_4
+0x4000896	            0x31c0	                            xor eax, eax	       180	hiddev.c	FUNCTION_4
+0x4000898	      0xb801000000	                              mov eax, 1	       184	hiddev.c	FUNCTION_4
+0x400089d	          0x4585c0	                           test r8d, r8d	       184	hiddev.c	FUNCTION_4
+0x40008a0	            0x7412	                            je 0x40008b4	       184	hiddev.c	FUNCTION_4
+0x40008a2	        0x4183f801	                              cmp r8d, 1	       184	hiddev.c	FUNCTION_4
+0x40008a6	            0x746c	                            je 0x4000914	       184	hiddev.c	FUNCTION_4
+0x40008a8	            0x31c0	                            xor eax, eax	       184	hiddev.c	FUNCTION_4
+0x40008aa	        0x4183f802	                              cmp r8d, 2	       184	hiddev.c	FUNCTION_4
+0x40008ae	           0xf94c0	                                 sete al	       184	hiddev.c	FUNCTION_4
+0x40008b1	          0x8d0440	                  lea eax, [rax + rax*2]	       184	hiddev.c	FUNCTION_4
+0x40008b4	          0x890424	                    mov dword [rsp], eax	       184	hiddev.c	FUNCTION_4
+0x40008b7	        0x488b4650	            mov rax, qword [rsi + 0x50] 	       188	hiddev.c	FUNCTION_4
+0x40008bb	    0x488bbff81b00	          mov rdi, qword [rdi + 0x1bf8] 	       194	hiddev.c	FUNCTION_4	CALL_1
+0x40008c2	          0x8b4010	            mov eax, dword [rax + 0x10] 	       188	hiddev.c	FUNCTION_4
+0x40008c5	        0x894c2414	             mov dword [rsp + 0x14], ecx	       192	hiddev.c	FUNCTION_4
+0x40008c9	        0x89442404	                mov dword [rsp + 4], eax	       188	hiddev.c	FUNCTION_4
+0x40008cd	          0x8b4658	            mov eax, dword [rsi + 0x58] 	       189	hiddev.c	FUNCTION_4
+0x40008d0	        0x89442408	                mov dword [rsp + 8], eax	       189	hiddev.c	FUNCTION_4
+0x40008d4	          0x4889d0	                            mov rax, rdx	       190	hiddev.c	FUNCTION_4
+0x40008d7	        0x482b4610	             sub rax, qword [rsi + 0x10]	       190	hiddev.c	FUNCTION_4
+0x40008db	    0x48becdcccccc	          movabs rsi, 0xcccccccccccccccd	       190	hiddev.c	FUNCTION_4
+0x40008e5	        0x48c1f802	                              sar rax, 2	       190	hiddev.c	FUNCTION_4
+0x40008e9	        0x480fafc6	                           imul rax, rsi	       190	hiddev.c	FUNCTION_4
+0x40008ed	          0x4889e6	                            mov rsi, rsp	       194	hiddev.c	FUNCTION_4	CALL_1
+0x40008f0	        0x8944240c	              mov dword [rsp + 0xc], eax	       190	hiddev.c	FUNCTION_4
+0x40008f4	            0x8b02	                    mov eax, dword [rdx]	       191	hiddev.c	FUNCTION_4
+0x40008f6	        0x89442410	             mov dword [rsp + 0x10], eax	       191	hiddev.c	FUNCTION_4
+0x40008fa	      0xe8b1feffff	       call sym.hiddev_send_event.isra.5	       194	hiddev.c	FUNCTION_4	CALL_1
+0x40008ff	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       195	hiddev.c	FUNCTION_4
+0x4000904	    0x654833042528	                xor rax, qword gs:[0x28]	       195	hiddev.c	FUNCTION_4
+0x400090d	            0x750c	                           jne 0x400091b	       195	hiddev.c	FUNCTION_4
+0x400090f	        0x4883c420	                           add rsp, 0x20	       195	hiddev.c	FUNCTION_4
+0x4000913	              0xc3	                                     ret	       195	hiddev.c	FUNCTION_4
+0x4000914	      0xb802000000	                              mov eax, 2	       184	hiddev.c	FUNCTION_4
+0x4000919	            0xeb99	                           jmp 0x40008b4	       184	hiddev.c	FUNCTION_4
+0x400091b	      0xe800000000	      call sym.hiddev_ioctl_usage.isra.7	       195	hiddev.c	FUNCTION_4
+hiddev_compat_ioctl	IF,0:FOR,0:CALL,2:ELSE,0:SWITCH,0:WHILE,0:DO,0:functions,0	2
+0x40013e0	            0x89d2	                            mov edx, edx	       840	hiddev.c	FUNCTION_15	CALL_2
+0x40013e2	      0xe999f9ffff	                    jmp sym.hiddev_ioctl	       840	hiddev.c	FUNCTION_15	CALL_2
+hiddev_disconnect	IF,1:FOR,0:CALL,7:ELSE,1:SWITCH,0:WHILE,0:DO,0:functions,0	30
+0x40015d0	              0x55	                                push rbp	       927	hiddev.c	FUNCTION_18
+0x40015d1	              0x53	                                push rbx	       927	hiddev.c	FUNCTION_18
+0x40015d2	    0x48c7c6000000	                              mov rsi, 0	       931	hiddev.c	FUNCTION_18	CALL_1
+0x40015d9	    0x488b87081d00	          mov rax, qword [rdi + 0x1d08] 	       931	hiddev.c	FUNCTION_18	CALL_1
+0x40015e0	    0x488b9ff81b00	          mov rbx, qword [rdi + 0x1bf8] 	       928	hiddev.c	FUNCTION_18
+0x40015e7	        0x488b7808	                mov rdi, qword [rax + 8]	       931	hiddev.c	FUNCTION_18	CALL_1
+0x40015eb	        0x488d6b10	                   lea rbp, [rbx + 0x10]	       933	hiddev.c	FUNCTION_18	CALL_2
+0x40015ef	      0xe800000000	                          call 0x40015f4	       931	hiddev.c	FUNCTION_18	CALL_1
+0x40015f4	          0x4889ef	                            mov rdi, rbp	       933	hiddev.c	FUNCTION_18	CALL_2
+0x40015f7	      0xe800000000	                          call 0x40015fc	       933	hiddev.c	FUNCTION_18	CALL_2
+0x40015fc	          0x8b4308	                mov eax, dword [rbx + 8]	       936	hiddev.c	FUNCTION_18	IF_1
+0x40015ff	    0xc74304000000	                  mov dword [rbx + 4], 0	       934	hiddev.c	FUNCTION_18
+0x4001606	          0x4889ef	                            mov rdi, rbp	       937	hiddev.c	FUNCTION_18	IF_1	CALL_3
+0x4001609	            0x85c0	                           test eax, eax	       936	hiddev.c	FUNCTION_18	IF_1
+0x400160b	            0x750f	                           jne 0x400161c	       936	hiddev.c	FUNCTION_18	IF_1
+0x400160d	      0xe800000000	                          call 0x4001612	       941	hiddev.c	FUNCTION_18	ELSE_1	CALL_6
+0x4001612	          0x4889df	                            mov rdi, rbx	       942	hiddev.c	FUNCTION_18	ELSE_1	CALL_7
+0x4001615	              0x5b	                                 pop rbx	       944	hiddev.c	FUNCTION_18
+0x4001616	              0x5d	                                 pop rbp	       944	hiddev.c	FUNCTION_18
+0x4001617	      0xe900000000	                           jmp 0x400161c	       942	hiddev.c	FUNCTION_18	ELSE_1	CALL_7
+0x400161c	      0xe800000000	                          call 0x4001621	       937	hiddev.c	FUNCTION_18	IF_1	CALL_3
+0x4001621	        0x488b7b48	            mov rdi, qword [rbx + 0x48] 	       938	hiddev.c	FUNCTION_18	IF_1	CALL_4
+0x4001625	      0xe800000000	                          call 0x400162a	       938	hiddev.c	FUNCTION_18	IF_1	CALL_4
+0x400162a	        0x488d7b30	                   lea rdi, [rbx + 0x30]	       939	hiddev.c	FUNCTION_18	IF_1	CALL_5
+0x400162e	            0x31c9	                            xor ecx, ecx	       939	hiddev.c	FUNCTION_18	IF_1	CALL_5
+0x4001630	      0xba01000000	                              mov edx, 1	       939	hiddev.c	FUNCTION_18	IF_1	CALL_5
+0x4001635	              0x5b	                                 pop rbx	       944	hiddev.c	FUNCTION_18
+0x4001636	              0x5d	                                 pop rbp	       944	hiddev.c	FUNCTION_18
+0x4001637	      0xbe01000000	                              mov esi, 1	       939	hiddev.c	FUNCTION_18	IF_1	CALL_5
+0x400163c	      0xe900000000	                   jmp section_end..text	       939	hiddev.c	FUNCTION_18	IF_1	CALL_5
+hiddev_write	IF,0:FOR,0:CALL,0:ELSE,0:SWITCH,0:WHILE,0:DO,0:functions,0	2
+0x40000c0	    0x48c7c0eaffff	             mov rax, 0xffffffffffffffea	       327	hiddev.c	FUNCTION_9
+0x40000c7	              0xc3	                                     ret	       327	hiddev.c	FUNCTION_9

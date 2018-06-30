@@ -1,0 +1,25 @@
+urb_destroy	IF,1:FOR,0:SWITCH,0:DO,0:WHILE,0:functions,0:ELSE,0:CALL,2	9
+0x40001c0	              0x53	                                push rbx	        20	urb.c	FUNCTION_1
+0x40001c1	        0xf6476501	               test byte [rdi + 0x65], 1	        23	urb.c	FUNCTION_1	IF_1
+0x40001c5	          0x4889fb	                            mov rbx, rdi	        20	urb.c	FUNCTION_1
+0x40001c8	            0x7409	                            je 0x40001d3	        23	urb.c	FUNCTION_1	IF_1
+0x40001ca	        0x488b7f68	            mov rdi, qword [rdi + 0x68] 	        24	urb.c	FUNCTION_1	CALL_1
+0x40001ce	      0xe800000000	                          call 0x40001d3	        24	urb.c	FUNCTION_1	CALL_1
+0x40001d3	          0x4889df	                            mov rdi, rbx	        26	urb.c	FUNCTION_1	CALL_2
+0x40001d6	              0x5b	                                 pop rbx	        27	urb.c	FUNCTION_1
+0x40001d7	      0xe900000000	                           jmp 0x40001dc	        26	urb.c	FUNCTION_1	CALL_2
+usb_unlink_urb	IF,3:FOR,0:SWITCH,0:DO,0:WHILE,0:functions,0:ELSE,0:CALL,1	14
+0x4000250	          0x4885ff	                           test rdi, rdi	       651	urb.c	FUNCTION_12	IF_1
+0x4000253	            0x741e	                            je 0x4000273	       651	urb.c	FUNCTION_12	IF_1
+0x4000255	      0x48837f4800	               cmp qword [rdi + 0x48], 0	       653	urb.c	FUNCTION_12	IF_2
+0x400025a	            0x741d	                            je 0x4000279	       653	urb.c	FUNCTION_12	IF_2
+0x400025c	      0x48837f5000	               cmp qword [rdi + 0x50], 0	       655	urb.c	FUNCTION_12	IF_3
+0x4000261	            0x740a	                            je 0x400026d	       655	urb.c	FUNCTION_12	IF_3
+0x4000263	      0xbe98ffffff	                     mov esi, 0xffffff98	       657	urb.c	FUNCTION_12	CALL_1
+0x4000268	      0xe900000000	                           jmp 0x400026d	       657	urb.c	FUNCTION_12	CALL_1
+0x400026d	      0xb8d5ffffff	                     mov eax, 0xffffffd5	       656	urb.c	FUNCTION_12	IF_3
+0x4000272	              0xc3	                                     ret	       658	urb.c	FUNCTION_12
+0x4000273	      0xb8eaffffff	                     mov eax, 0xffffffea	       652	urb.c	FUNCTION_12	IF_1
+0x4000278	              0xc3	                                     ret	       652	urb.c	FUNCTION_12	IF_1
+0x4000279	      0xb8edffffff	                     mov eax, 0xffffffed	       654	urb.c	FUNCTION_12	IF_2
+0x400027e	              0xc3	                                     ret	       654	urb.c	FUNCTION_12	IF_2

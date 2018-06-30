@@ -1,0 +1,163 @@
+nfs_idmap_pipe_create	DO,0:CALL,3:SWITCH,0:FOR,0:IF,1:functions,0:WHILE,0:ELSE,0	12
+0x40000e0	              0x53	                                push rbx	       426	nfs4idmap.c	FUNCTION_18
+0x40000e1	        0x488b5618	            mov rdx, qword [rsi + 0x18] 	       427	nfs4idmap.c	FUNCTION_18
+0x40000e5	    0x48c7c6000000	                              mov rsi, 0	       431	nfs4idmap.c	FUNCTION_18	CALL_1
+0x40000ec	        0x488b5a20	            mov rbx, qword [rdx + 0x20] 	       428	nfs4idmap.c	FUNCTION_18
+0x40000f0	          0x4889d9	                            mov rcx, rbx	       431	nfs4idmap.c	FUNCTION_18	CALL_1
+0x40000f3	      0xe800000000	                          call 0x40000f8	       431	nfs4idmap.c	FUNCTION_18	CALL_1
+0x40000f8	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       432	nfs4idmap.c	FUNCTION_18	IF_1	CALL_2
+0x40000fe	            0x7709	                            ja 0x4000109	       432	nfs4idmap.c	FUNCTION_18	IF_1	CALL_2
+0x4000100	    0x488983a80000	             mov qword [rbx + 0xa8], rax	       434	nfs4idmap.c	FUNCTION_18
+0x4000107	            0x31c0	                            xor eax, eax	       435	nfs4idmap.c	FUNCTION_18
+0x4000109	              0x5b	                                 pop rbx	       436	nfs4idmap.c	FUNCTION_18
+0x400010a	              0xc3	                                     ret	       436	nfs4idmap.c	FUNCTION_18
+nfs_fattr_free_names	DO,0:CALL,2:SWITCH,0:FOR,0:IF,2:functions,0:WHILE,0:ELSE,0	22
+0x40007b0	              0x53	                                push rbx	       132	nfs4idmap.c	FUNCTION_6
+0x40007b1	            0x8b07	                    mov eax, dword [rdi]	       133	nfs4idmap.c	FUNCTION_6	IF_1
+0x40007b3	          0x4889fb	                            mov rbx, rdi	       132	nfs4idmap.c	FUNCTION_6
+0x40007b6	      0xa900008000	                      test eax, 0x800000	       133	nfs4idmap.c	FUNCTION_6	IF_1
+0x40007bb	            0x7521	                           jne 0x40007de	       133	nfs4idmap.c	FUNCTION_6	IF_1
+0x40007bd	      0xa900000001	                     test eax, 0x1000000	       135	nfs4idmap.c	FUNCTION_6	IF_2
+0x40007c2	            0x7502	                           jne 0x40007c6	       135	nfs4idmap.c	FUNCTION_6	IF_2
+0x40007c4	              0x5b	                                 pop rbx	       137	nfs4idmap.c	FUNCTION_6
+0x40007c5	              0xc3	                                     ret	       137	nfs4idmap.c	FUNCTION_6
+0x40007c6	    0x488b93c80000	            mov rdx, qword [rbx + 0xc8] 	       137	nfs4idmap.c	FUNCTION_6
+0x40007cd	      0x25fffffffe	                     and eax, 0xfeffffff	        95	nfs4idmap.c	FUNCTION_3
+0x40007d2	            0x8903	                    mov dword [rbx], eax	        95	nfs4idmap.c	FUNCTION_3
+0x40007d4	              0x5b	                                 pop rbx	       137	nfs4idmap.c	FUNCTION_6
+0x40007d5	        0x488b7a08	                mov rdi, qword [rdx + 8]	        96	nfs4idmap.c	FUNCTION_3	CALL_1
+0x40007d9	      0xe900000000	                           jmp 0x40007de	        96	nfs4idmap.c	FUNCTION_3	CALL_1
+0x40007de	    0x488b97c00000	            mov rdx, qword [rdi + 0xc0] 	        96	nfs4idmap.c	FUNCTION_3	CALL_1
+0x40007e5	      0x25ffff7fff	                     and eax, 0xff7fffff	        89	nfs4idmap.c	FUNCTION_2
+0x40007ea	            0x8907	                    mov dword [rdi], eax	        89	nfs4idmap.c	FUNCTION_2
+0x40007ec	        0x488b7a08	                mov rdi, qword [rdx + 8]	        90	nfs4idmap.c	FUNCTION_2	CALL_1
+0x40007f0	      0xe800000000	                          call 0x40007f5	        90	nfs4idmap.c	FUNCTION_2	CALL_1
+0x40007f5	            0x8b03	                    mov eax, dword [rbx]	        90	nfs4idmap.c	FUNCTION_2	CALL_1
+0x40007f7	            0xebc4	                           jmp 0x40007bd	        90	nfs4idmap.c	FUNCTION_2	CALL_1
+nfs_idmap_delete	DO,0:CALL,3:SWITCH,0:FOR,0:IF,1:functions,0:WHILE,0:ELSE,0	17
+0x40009f0	              0x53	                                push rbx	       483	nfs4idmap.c	FUNCTION_20
+0x40009f1	    0x488b9f400200	           mov rbx, qword [rdi + 0x240] 	       484	nfs4idmap.c	FUNCTION_20
+0x40009f8	          0x4885db	                           test rbx, rbx	       486	nfs4idmap.c	FUNCTION_20	IF_1
+0x40009fb	            0x743a	                            je 0x4000a37	       486	nfs4idmap.c	FUNCTION_20	IF_1
+0x40009fd	    0x488b87d80000	            mov rax, qword [rdi + 0xd8] 	       489	nfs4idmap.c	FUNCTION_20	CALL_1
+0x4000a04	    0x48c787400200	              mov qword [rdi + 0x240], 0	       488	nfs4idmap.c	FUNCTION_20
+0x4000a0f	          0x4889da	                            mov rdx, rbx	       489	nfs4idmap.c	FUNCTION_20	CALL_1
+0x4000a12	    0x488bbfd80200	           mov rdi, qword [rdi + 0x2d8] 	       489	nfs4idmap.c	FUNCTION_20	CALL_1
+0x4000a19	    0x488db0d00000	                   lea rsi, [rax + 0xd0]	       489	nfs4idmap.c	FUNCTION_20	CALL_1
+0x4000a20	      0xe800000000	                          call 0x4000a25	       489	nfs4idmap.c	FUNCTION_20	CALL_1
+0x4000a25	        0x488b7b20	            mov rdi, qword [rbx + 0x20] 	       492	nfs4idmap.c	FUNCTION_20	CALL_2
+0x4000a29	      0xe800000000	                          call 0x4000a2e	       492	nfs4idmap.c	FUNCTION_20	CALL_2
+0x4000a2e	          0x4889df	                            mov rdi, rbx	       493	nfs4idmap.c	FUNCTION_20	CALL_3
+0x4000a31	              0x5b	                                 pop rbx	       494	nfs4idmap.c	FUNCTION_20
+0x4000a32	      0xe900000000	                           jmp 0x4000a37	       493	nfs4idmap.c	FUNCTION_20	CALL_3
+0x4000a37	              0x5b	                                 pop rbx	       494	nfs4idmap.c	FUNCTION_20
+0x4000a38	              0xc3	                                     ret	       494	nfs4idmap.c	FUNCTION_20
+nfs_idmap_pipe_destroy	DO,0:CALL,1:SWITCH,0:FOR,0:IF,1:functions,0:WHILE,0:ELSE,0	10
+0x40000b0	        0x488b4618	            mov rax, qword [rsi + 0x18] 	       416	nfs4idmap.c	FUNCTION_17
+0x40000b4	              0x53	                                push rbx	       414	nfs4idmap.c	FUNCTION_17
+0x40000b5	        0x488b5820	            mov rbx, qword [rax + 0x20] 	       416	nfs4idmap.c	FUNCTION_17
+0x40000b9	    0x488bbba80000	            mov rdi, qword [rbx + 0xa8] 	       418	nfs4idmap.c	FUNCTION_17	IF_1
+0x40000c0	          0x4885ff	                           test rdi, rdi	       418	nfs4idmap.c	FUNCTION_17	IF_1
+0x40000c3	            0x7410	                            je 0x40000d5	       418	nfs4idmap.c	FUNCTION_17	IF_1
+0x40000c5	      0xe800000000	                          call 0x40000ca	       419	nfs4idmap.c	FUNCTION_17	IF_1	CALL_1
+0x40000ca	    0x48c783a80000	               mov qword [rbx + 0xa8], 0	       420	nfs4idmap.c	FUNCTION_17	IF_1
+0x40000d5	              0x5b	                                 pop rbx	       422	nfs4idmap.c	FUNCTION_17
+0x40000d6	              0xc3	                                     ret	       422	nfs4idmap.c	FUNCTION_17
+nfs_fattr_init_names	DO,0:CALL,0:SWITCH,0:FOR,0:IF,0:functions,0:WHILE,0:ELSE,0	3
+0x40007a0	    0x4889b7c00000	             mov qword [rdi + 0xc0], rsi	        83	nfs4idmap.c	FUNCTION_1
+0x40007a7	    0x488997c80000	             mov qword [rdi + 0xc8], rdx	        84	nfs4idmap.c	FUNCTION_1
+0x40007ae	              0xc3	                                     ret	        84	nfs4idmap.c	FUNCTION_1
+idmap_release_pipe	DO,0:CALL,2:SWITCH,0:FOR,0:IF,0:functions,0:WHILE,0:ELSE,0	3
+0x40000a0	    0x488bbf400200	           mov rdi, qword [rdi + 0x240] 	       718	nfs4idmap.c	FUNCTION_30	CALL_2
+0x40000a7	      0xbee0ffffff	                     mov esi, 0xffffffe0	       718	nfs4idmap.c	FUNCTION_30	CALL_2
+0x40000ac	            0xeb92	     jmp sym.nfs_idmap_abort_pipe_upcall	       718	nfs4idmap.c	FUNCTION_30	CALL_2
+nfs_fattr_map_and_free_names	DO,0:CALL,4:SWITCH,0:FOR,0:IF,2:functions,0:WHILE,0:ELSE,0	62
+0x4000c60	              0x55	                                push rbp	       148	nfs4idmap.c	FUNCTION_7
+0x4000c61	              0x53	                                push rbx	       148	nfs4idmap.c	FUNCTION_7
+0x4000c62	          0x4889fd	                            mov rbp, rdi	       148	nfs4idmap.c	FUNCTION_7
+0x4000c65	          0x4889f3	                            mov rbx, rsi	       148	nfs4idmap.c	FUNCTION_7
+0x4000c68	        0x4883ec10	                           sub rsp, 0x10	       148	nfs4idmap.c	FUNCTION_7
+0x4000c6c	    0x65488b042528	                mov rax, qword gs:[0x28]	       148	nfs4idmap.c	FUNCTION_7
+0x4000c75	      0x4889442408	                mov qword [rsp + 8], rax	       148	nfs4idmap.c	FUNCTION_7
+0x4000c7a	            0x31c0	                            xor eax, eax	       148	nfs4idmap.c	FUNCTION_7
+0x4000c7c	            0x8b06	                    mov eax, dword [rsi]	       104	nfs4idmap.c	FUNCTION_4	IF_1
+0x4000c7e	      0xa900008000	                      test eax, 0x800000	       104	nfs4idmap.c	FUNCTION_4	IF_1
+0x4000c83	            0x7522	                           jne 0x4000ca7	       104	nfs4idmap.c	FUNCTION_4	IF_1
+0x4000c85	      0xa900000001	                     test eax, 0x1000000	       118	nfs4idmap.c	FUNCTION_5	IF_1
+0x4000c8a	            0x7562	                           jne 0x4000cee	       118	nfs4idmap.c	FUNCTION_5	IF_1
+0x4000c8c	      0x488b442408	                mov rax, qword [rsp + 8]	       153	nfs4idmap.c	FUNCTION_7
+0x4000c91	    0x654833042528	                xor rax, qword gs:[0x28]	       153	nfs4idmap.c	FUNCTION_7
+0x4000c9a	     0xf859c000000	                           jne 0x4000d3c	       153	nfs4idmap.c	FUNCTION_7
+0x4000ca0	        0x4883c410	                           add rsp, 0x10	       153	nfs4idmap.c	FUNCTION_7
+0x4000ca4	              0x5b	                                 pop rbx	       153	nfs4idmap.c	FUNCTION_7
+0x4000ca5	              0x5d	                                 pop rbp	       153	nfs4idmap.c	FUNCTION_7
+0x4000ca6	              0xc3	                                     ret	       153	nfs4idmap.c	FUNCTION_7
+0x4000ca7	    0x488b86c00000	            mov rax, qword [rsi + 0xc0] 	       101	nfs4idmap.c	FUNCTION_4
+0x4000cae	      0x488d4c2404	                      lea rcx, [rsp + 4]	       106	nfs4idmap.c	FUNCTION_4	IF_2	CALL_1
+0x4000cb3	            0x8b10	                    mov edx, dword [rax]	       106	nfs4idmap.c	FUNCTION_4	IF_2	CALL_1
+0x4000cb5	        0x488b7008	                mov rsi, qword [rax + 8]	       106	nfs4idmap.c	FUNCTION_4	IF_2	CALL_1
+0x4000cb9	      0xe800000000	                          call 0x4000cbe	       106	nfs4idmap.c	FUNCTION_4	IF_2	CALL_1
+0x4000cbe	            0x85c0	                           test eax, eax	       106	nfs4idmap.c	FUNCTION_4	IF_2	CALL_1
+0x4000cc0	            0x7572	                           jne 0x4000d34	       106	nfs4idmap.c	FUNCTION_4	IF_2	CALL_1
+0x4000cc2	        0x8b442404	                mov eax, dword [rsp + 4]	       107	nfs4idmap.c	FUNCTION_4	IF_2
+0x4000cc6	          0x89430c	              mov dword [rbx + 0xc], eax	       107	nfs4idmap.c	FUNCTION_4	IF_2
+0x4000cc9	            0x8b03	                    mov eax, dword [rbx]	       108	nfs4idmap.c	FUNCTION_4	IF_2
+0x4000ccb	          0x83c808	                               or eax, 8	       108	nfs4idmap.c	FUNCTION_4	IF_2
+0x4000cce	    0x488b93c00000	            mov rdx, qword [rbx + 0xc0] 	       108	nfs4idmap.c	FUNCTION_4	IF_2
+0x4000cd5	      0x25ffff7fff	                     and eax, 0xff7fffff	        89	nfs4idmap.c	FUNCTION_2
+0x4000cda	            0x8903	                    mov dword [rbx], eax	        89	nfs4idmap.c	FUNCTION_2
+0x4000cdc	        0x488b7a08	                mov rdi, qword [rdx + 8]	        90	nfs4idmap.c	FUNCTION_2	CALL_1
+0x4000ce0	      0xe800000000	                          call 0x4000ce5	        90	nfs4idmap.c	FUNCTION_2	CALL_1
+0x4000ce5	            0x8b03	                    mov eax, dword [rbx]	        90	nfs4idmap.c	FUNCTION_2	CALL_1
+0x4000ce7	      0xa900000001	                     test eax, 0x1000000	       118	nfs4idmap.c	FUNCTION_5	IF_1
+0x4000cec	            0x749e	                            je 0x4000c8c	       118	nfs4idmap.c	FUNCTION_5	IF_1
+0x4000cee	    0x488b83c80000	            mov rax, qword [rbx + 0xc8] 	       115	nfs4idmap.c	FUNCTION_5
+0x4000cf5	      0x488d4c2404	                      lea rcx, [rsp + 4]	       120	nfs4idmap.c	FUNCTION_5	IF_2	CALL_1
+0x4000cfa	          0x4889ef	                            mov rdi, rbp	       120	nfs4idmap.c	FUNCTION_5	IF_2	CALL_1
+0x4000cfd	            0x8b10	                    mov edx, dword [rax]	       120	nfs4idmap.c	FUNCTION_5	IF_2	CALL_1
+0x4000cff	        0x488b7008	                mov rsi, qword [rax + 8]	       120	nfs4idmap.c	FUNCTION_5	IF_2	CALL_1
+0x4000d03	      0xe800000000	                          call 0x4000d08	       120	nfs4idmap.c	FUNCTION_5	IF_2	CALL_1
+0x4000d08	            0x85c0	                           test eax, eax	       120	nfs4idmap.c	FUNCTION_5	IF_2	CALL_1
+0x4000d0a	            0x752c	                           jne 0x4000d38	       120	nfs4idmap.c	FUNCTION_5	IF_2	CALL_1
+0x4000d0c	        0x8b442404	                mov eax, dword [rsp + 4]	       121	nfs4idmap.c	FUNCTION_5	IF_2
+0x4000d10	          0x894310	             mov dword [rbx + 0x10], eax	       121	nfs4idmap.c	FUNCTION_5	IF_2
+0x4000d13	            0x8b03	                    mov eax, dword [rbx]	       122	nfs4idmap.c	FUNCTION_5	IF_2
+0x4000d15	          0x83c810	                            or eax, 0x10	       122	nfs4idmap.c	FUNCTION_5	IF_2
+0x4000d18	    0x488b93c80000	            mov rdx, qword [rbx + 0xc8] 	       122	nfs4idmap.c	FUNCTION_5	IF_2
+0x4000d1f	      0x25fffffffe	                     and eax, 0xfeffffff	        95	nfs4idmap.c	FUNCTION_3
+0x4000d24	            0x8903	                    mov dword [rbx], eax	        95	nfs4idmap.c	FUNCTION_3
+0x4000d26	        0x488b7a08	                mov rdi, qword [rdx + 8]	        96	nfs4idmap.c	FUNCTION_3	CALL_1
+0x4000d2a	      0xe800000000	                          call 0x4000d2f	        96	nfs4idmap.c	FUNCTION_3	CALL_1
+0x4000d2f	      0xe958ffffff	                           jmp 0x4000c8c	        96	nfs4idmap.c	FUNCTION_3	CALL_1
+0x4000d34	            0x8b03	                    mov eax, dword [rbx]	        96	nfs4idmap.c	FUNCTION_3	CALL_1
+0x4000d36	            0xeb96	                           jmp 0x4000cce	        96	nfs4idmap.c	FUNCTION_3	CALL_1
+0x4000d38	            0x8b03	                    mov eax, dword [rbx]	        96	nfs4idmap.c	FUNCTION_3	CALL_1
+0x4000d3a	            0xebdc	                           jmp 0x4000d18	        96	nfs4idmap.c	FUNCTION_3	CALL_1
+0x4000d3c	      0xe800000000	                          call 0x4000d41	       153	nfs4idmap.c	FUNCTION_7
+nfs_idmap_abort_pipe_upcall	DO,0:CALL,1:SWITCH,0:FOR,0:IF,1:functions,0:WHILE,0:ELSE,0	19
+0x4000040	          0x4889f8	                            mov rax, rdi	       557	nfs4idmap.c	FUNCTION_24
+0x4000043	        0x488b7f28	            mov rdi, qword [rdi + 0x28] 	       558	nfs4idmap.c	FUNCTION_24	IF_1
+0x4000047	          0x4885ff	                           test rdi, rdi	       558	nfs4idmap.c	FUNCTION_24	IF_1
+0x400004a	            0x742b	                            je 0x4000077	       558	nfs4idmap.c	FUNCTION_24	IF_1
+0x400004c	            0x4154	                                push r12	       557	nfs4idmap.c	FUNCTION_24
+0x400004e	              0x55	                                push rbp	       557	nfs4idmap.c	FUNCTION_24
+0x400004f	            0x89f5	                            mov ebp, esi	       557	nfs4idmap.c	FUNCTION_24
+0x4000051	              0x53	                                push rbx	       557	nfs4idmap.c	FUNCTION_24
+0x4000052	    0x4c8ba7c00000	            mov r12, qword [rdi + 0xc0] 	       548	nfs4idmap.c	FUNCTION_23
+0x4000059	          0x4889c3	                            mov rbx, rax	       548	nfs4idmap.c	FUNCTION_23
+0x400005c	      0xe800000000	                          call 0x4000061	       550	nfs4idmap.c	FUNCTION_23	CALL_1
+0x4000061	    0x48c743280000	               mov qword [rbx + 0x28], 0	       551	nfs4idmap.c	FUNCTION_23
+0x4000069	            0x89ee	                            mov esi, ebp	       552	nfs4idmap.c	FUNCTION_23	CALL_2
+0x400006b	          0x4c89e7	                            mov rdi, r12	       552	nfs4idmap.c	FUNCTION_23	CALL_2
+0x400006e	              0x5b	                                 pop rbx	       560	nfs4idmap.c	FUNCTION_24
+0x400006f	              0x5d	                                 pop rbp	       560	nfs4idmap.c	FUNCTION_24
+0x4000070	            0x415c	                                 pop r12	       560	nfs4idmap.c	FUNCTION_24
+0x4000072	      0xe900000000	                           jmp 0x4000077	       552	nfs4idmap.c	FUNCTION_23	CALL_2
+0x4000077	            0xf3c3	                                     ret	       552	nfs4idmap.c	FUNCTION_23	CALL_2
+idmap_pipe_destroy_msg	DO,0:CALL,2:SWITCH,0:FOR,0:IF,1:functions,0:WHILE,0:ELSE,0	6
+0x4000080	          0x8b7728	            mov esi, dword [rdi + 0x28] 	       708	nfs4idmap.c	FUNCTION_29	IF_1
+0x4000083	            0x85f6	                           test esi, esi	       708	nfs4idmap.c	FUNCTION_29	IF_1
+0x4000085	            0x7502	                           jne 0x4000089	       708	nfs4idmap.c	FUNCTION_29	IF_1
+0x4000087	            0xf3c3	                                     ret	       708	nfs4idmap.c	FUNCTION_29	IF_1
+0x4000089	    0x488bbfc80000	            mov rdi, qword [rdi + 0xc8] 	       709	nfs4idmap.c	FUNCTION_29	CALL_2
+0x4000090	            0xebae	     jmp sym.nfs_idmap_abort_pipe_upcall	       709	nfs4idmap.c	FUNCTION_29	CALL_2

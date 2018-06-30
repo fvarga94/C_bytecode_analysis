@@ -1,0 +1,788 @@
+mpihelp_release_karatsuba_ctx	SWITCH,0:WHILE,0:CALL,5:DO,0:IF,4:ELSE,0:FOR,1:functions,0	31
+0x4000920	              0x55	                                push rbp	       407	mpih-mul.c	FUNCTION_6
+0x4000921	              0x53	                                push rbx	       407	mpih-mul.c	FUNCTION_6
+0x4000922	          0x4889fb	                            mov rbx, rdi	       407	mpih-mul.c	FUNCTION_6
+0x4000925	        0x488b7f18	            mov rdi, qword [rdi + 0x18] 	       410	mpih-mul.c	FUNCTION_6	IF_1
+0x4000929	          0x4885ff	                           test rdi, rdi	       410	mpih-mul.c	FUNCTION_6	IF_1
+0x400092c	            0x7405	                            je 0x4000933	       410	mpih-mul.c	FUNCTION_6	IF_1
+0x400092e	      0xe800000000	                          call 0x4000933	       411	mpih-mul.c	FUNCTION_6	CALL_1
+0x4000933	        0x488b7b08	                mov rdi, qword [rbx + 8]	       412	mpih-mul.c	FUNCTION_6	IF_2
+0x4000937	          0x4885ff	                           test rdi, rdi	       412	mpih-mul.c	FUNCTION_6	IF_2
+0x400093a	            0x7405	                            je 0x4000941	       412	mpih-mul.c	FUNCTION_6	IF_2
+0x400093c	      0xe800000000	                          call 0x4000941	       413	mpih-mul.c	FUNCTION_6	CALL_2
+0x4000941	          0x488b1b	                    mov rbx, qword [rbx]	       414	mpih-mul.c	FUNCTION_6	FOR_1
+0x4000944	          0x4885db	                           test rbx, rbx	       414	mpih-mul.c	FUNCTION_6	FOR_1
+0x4000947	            0x742f	                            je 0x4000978	       414	mpih-mul.c	FUNCTION_6	FOR_1
+0x4000949	        0x488b7b18	            mov rdi, qword [rbx + 0x18] 	       416	mpih-mul.c	FUNCTION_6	FOR_1	IF_3
+0x400094d	          0x488b2b	                    mov rbp, qword [rbx]	       415	mpih-mul.c	FUNCTION_6	FOR_1
+0x4000950	          0x4885ff	                           test rdi, rdi	       416	mpih-mul.c	FUNCTION_6	FOR_1	IF_3
+0x4000953	            0x7405	                            je 0x400095a	       416	mpih-mul.c	FUNCTION_6	FOR_1	IF_3
+0x4000955	      0xe800000000	                          call 0x400095a	       417	mpih-mul.c	FUNCTION_6	FOR_1	CALL_3
+0x400095a	        0x488b7b08	                mov rdi, qword [rbx + 8]	       418	mpih-mul.c	FUNCTION_6	FOR_1	IF_4
+0x400095e	          0x4885ff	                           test rdi, rdi	       418	mpih-mul.c	FUNCTION_6	FOR_1	IF_4
+0x4000961	            0x7405	                            je 0x4000968	       418	mpih-mul.c	FUNCTION_6	FOR_1	IF_4
+0x4000963	      0xe800000000	                          call 0x4000968	       419	mpih-mul.c	FUNCTION_6	FOR_1	CALL_4
+0x4000968	          0x4889df	                            mov rdi, rbx	       420	mpih-mul.c	FUNCTION_6	FOR_1	CALL_5
+0x400096b	          0x4889eb	                            mov rbx, rbp	       420	mpih-mul.c	FUNCTION_6	FOR_1	CALL_5
+0x400096e	      0xe800000000	                          call 0x4000973	       420	mpih-mul.c	FUNCTION_6	FOR_1	CALL_5
+0x4000973	          0x4885ed	                           test rbp, rbp	       414	mpih-mul.c	FUNCTION_6	FOR_1
+0x4000976	            0x75d1	                           jne 0x4000949	       414	mpih-mul.c	FUNCTION_6	FOR_1
+0x4000978	              0x5b	                                 pop rbx	       422	mpih-mul.c	FUNCTION_6
+0x4000979	              0x5d	                                 pop rbp	       422	mpih-mul.c	FUNCTION_6
+0x400097a	              0xc3	                                     ret	       422	mpih-mul.c	FUNCTION_6
+mul_n	SWITCH,0:WHILE,0:CALL,17:DO,0:IF,6:ELSE,4:FOR,0:functions,0	249
+0x4000130	            0x4157	                                push r15	       110	mpih-mul.c	FUNCTION_2
+0x4000132	            0x4156	                                push r14	       110	mpih-mul.c	FUNCTION_2
+0x4000134	            0x4155	                                push r13	       110	mpih-mul.c	FUNCTION_2
+0x4000136	            0x4154	                                push r12	       110	mpih-mul.c	FUNCTION_2
+0x4000138	          0x4d89c5	                             mov r13, r8	       110	mpih-mul.c	FUNCTION_2
+0x400013b	              0x55	                                push rbp	       110	mpih-mul.c	FUNCTION_2
+0x400013c	              0x53	                                push rbx	       110	mpih-mul.c	FUNCTION_2
+0x400013d	            0x89cd	                            mov ebp, ecx	       110	mpih-mul.c	FUNCTION_2
+0x400013f	          0x4889fb	                            mov rbx, rdi	       110	mpih-mul.c	FUNCTION_2
+0x4000142	        0x4883ec40	                           sub rsp, 0x40	       110	mpih-mul.c	FUNCTION_2
+0x4000146	          0x83e101	                              and ecx, 1	       111	mpih-mul.c	FUNCTION_2	IF_1
+0x4000149	        0x48893424	                    mov qword [rsp], rsi	       110	mpih-mul.c	FUNCTION_2
+0x400014d	      0x4889542408	                mov qword [rsp + 8], rdx	       110	mpih-mul.c	FUNCTION_2
+0x4000152	            0x7478	                            je 0x40001cc	       111	mpih-mul.c	FUNCTION_2	IF_1
+0x4000154	        0x448d65ff	                     lea r12d, [rbp - 1]	       122	mpih-mul.c	FUNCTION_2	IF_1
+0x4000158	        0x4183fc0f	                           cmp r12d, 0xf	       125	mpih-mul.c	FUNCTION_2	IF_1
+0x400015c	     0xf8e56020000	                           jle 0x40003b8	       125	mpih-mul.c	FUNCTION_2	IF_1
+0x4000162	      0x488b542408	                mov rdx, qword [rsp + 8]	       125	mpih-mul.c	FUNCTION_2	IF_1
+0x4000167	        0x488b3424	                    mov rsi, qword [rsp]	       125	mpih-mul.c	FUNCTION_2	IF_1
+0x400016b	          0x4489e1	                           mov ecx, r12d	       125	mpih-mul.c	FUNCTION_2	IF_1
+0x400016e	      0xe8bdffffff	                          call sym.mul_n	       125	mpih-mul.c	FUNCTION_2	IF_1
+0x4000173	      0x4c8b6c2408	                mov r13, qword [rsp + 8]	       126	mpih-mul.c	FUNCTION_2	IF_1	CALL_1
+0x4000178	          0x4d63f4	                        movsxd r14, r12d	       126	mpih-mul.c	FUNCTION_2	IF_1	CALL_1
+0x400017b	        0x488b3424	                    mov rsi, qword [rsp]	       126	mpih-mul.c	FUNCTION_2	IF_1	CALL_1
+0x400017f	        0x4e8d3cf3	                  lea r15, [rbx + r14*8]	       126	mpih-mul.c	FUNCTION_2	IF_1	CALL_1
+0x4000183	          0x4489e2	                           mov edx, r12d	       126	mpih-mul.c	FUNCTION_2	IF_1	CALL_1
+0x4000186	      0x4b8b4cf500	            mov rcx, qword [r13 + r14*8]	       126	mpih-mul.c	FUNCTION_2	IF_1	CALL_1
+0x400018b	          0x4c89ff	                            mov rdi, r15	       126	mpih-mul.c	FUNCTION_2	IF_1	CALL_1
+0x400018e	      0xe800000000	                          call 0x4000193	       126	mpih-mul.c	FUNCTION_2	IF_1	CALL_1
+0x4000193	        0x438d1424	                    lea edx, [r12 + r12]	       127	mpih-mul.c	FUNCTION_2	IF_1
+0x4000197	          0x4c89ee	                            mov rsi, r13	       128	mpih-mul.c	FUNCTION_2	IF_1	CALL_2
+0x400019a	          0x4c89ff	                            mov rdi, r15	       128	mpih-mul.c	FUNCTION_2	IF_1	CALL_2
+0x400019d	          0x4863d2	                         movsxd rdx, edx	       127	mpih-mul.c	FUNCTION_2	IF_1
+0x40001a0	        0x488904d3	            mov qword [rbx + rdx*8], rax	       127	mpih-mul.c	FUNCTION_2	IF_1
+0x40001a4	        0x488b0424	                    mov rax, qword [rsp]	       128	mpih-mul.c	FUNCTION_2	IF_1	CALL_2
+0x40001a8	            0x89ea	                            mov edx, ebp	       128	mpih-mul.c	FUNCTION_2	IF_1	CALL_2
+0x40001aa	          0x4401e5	                           add ebp, r12d	       129	mpih-mul.c	FUNCTION_2	IF_1
+0x40001ad	          0x4863ed	                         movsxd rbp, ebp	       129	mpih-mul.c	FUNCTION_2	IF_1
+0x40001b0	        0x4a8b0cf0	            mov rcx, qword [rax + r14*8]	       128	mpih-mul.c	FUNCTION_2	IF_1	CALL_2
+0x40001b4	      0xe800000000	                          call 0x40001b9	       128	mpih-mul.c	FUNCTION_2	IF_1	CALL_2
+0x40001b9	        0x488904eb	            mov qword [rbx + rbp*8], rax	       129	mpih-mul.c	FUNCTION_2	IF_1
+0x40001bd	        0x4883c440	                           add rsp, 0x40	       218	mpih-mul.c	FUNCTION_2
+0x40001c1	              0x5b	                                 pop rbx	       218	mpih-mul.c	FUNCTION_2
+0x40001c2	              0x5d	                                 pop rbp	       218	mpih-mul.c	FUNCTION_2
+0x40001c3	            0x415c	                                 pop r12	       218	mpih-mul.c	FUNCTION_2
+0x40001c5	            0x415d	                                 pop r13	       218	mpih-mul.c	FUNCTION_2
+0x40001c7	            0x415e	                                 pop r14	       218	mpih-mul.c	FUNCTION_2
+0x40001c9	            0x415f	                                 pop r15	       218	mpih-mul.c	FUNCTION_2
+0x40001cb	              0xc3	                                     ret	       218	mpih-mul.c	FUNCTION_2
+0x40001cc	          0x4189ef	                           mov r15d, ebp	       146	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001cf	      0x488b7c2408	                mov rdi, qword [rsp + 8]	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001d4	        0x4c8b3424	                    mov r14, qword [rsp]	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001d8	          0x41d1ff	                             sar r15d, 1	       146	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001db	          0x4d63e7	                        movsxd r12, r15d	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001de	    0x4a8d04e50000	                        lea rax, [r12*8]	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001e6	          0x4801c7	                            add rdi, rax	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001e9	          0x4901c6	                            add r14, rax	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001ec	      0x4889442418	             mov qword [rsp + 0x18], rax	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001f1	          0x4863c5	                         movsxd rax, ebp	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001f4	          0x4889fa	                            mov rdx, rdi	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001f7	      0x48897c2410	             mov qword [rsp + 0x10], rdi	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40001fc	      0x4889442420	             mov qword [rsp + 0x20], rax	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000201	        0x48c1e003	                              shl rax, 3	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000205	      0x4889442438	             mov qword [rsp + 0x38], rax	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x400020a	          0x4801d8	                            add rax, rbx	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x400020d	        0x4183ff0f	                           cmp r15d, 0xf	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000211	      0x4889442430	             mov qword [rsp + 0x30], rax	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000216	     0xf8e89010000	                           jle 0x40003a5	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x400021c	          0x4489f9	                           mov ecx, r15d	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x400021f	          0x4c89f6	                            mov rsi, r14	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000222	          0x4889c7	                            mov rdi, rax	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000225	      0xe806ffffff	                          call sym.mul_n	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x400022a	        0x488b3424	                    mov rsi, qword [rsp]	       161	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_3
+0x400022e	          0x4489fa	                           mov edx, r15d	       161	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_3
+0x4000231	          0x4c89f7	                            mov rdi, r14	       161	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_3
+0x4000234	      0xe800000000	                          call 0x4000239	       161	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_3
+0x4000239	            0x85c0	                           test eax, eax	       161	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_3
+0x400023b	          0x4489f9	                           mov ecx, r15d	       162	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_4
+0x400023e	     0xf8875020000	                            js 0x40004b9	       161	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_3
+0x4000244	        0x488b1424	                    mov rdx, qword [rsp]	       162	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_4
+0x4000248	          0x4c89f6	                            mov rsi, r14	       162	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_4
+0x400024b	          0x4889df	                            mov rdi, rbx	       162	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_4
+0x400024e	      0xe800000000	                          call 0x4000253	       162	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2	CALL_4
+0x4000253	    0xc744242c0000	               mov dword [rsp + 0x2c], 0	       163	mpih-mul.c	FUNCTION_2	ELSE_1	IF_2
+0x400025b	      0x488b742408	                mov rsi, qword [rsp + 8]	       168	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_6
+0x4000260	      0x488b7c2410	            mov rdi, qword [rsp + 0x10] 	       168	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_6
+0x4000265	          0x4489fa	                           mov edx, r15d	       168	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_6
+0x4000268	      0xe800000000	                          call 0x400026d	       168	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_6
+0x400026d	            0x85c0	                           test eax, eax	       168	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_6
+0x400026f	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       169	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_7
+0x4000274	          0x4489f9	                           mov ecx, r15d	       169	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_7
+0x4000277	        0x4c8d3403	                    lea r14, [rbx + rax]	       169	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_7
+0x400027b	     0xf8821020000	                            js 0x40004a2	       168	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_6
+0x4000281	      0x488b542408	                mov rdx, qword [rsp + 8]	       169	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_7
+0x4000286	      0x488b742410	            mov rsi, qword [rsp + 0x10] 	       169	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_7
+0x400028b	          0x4c89f7	                            mov rdi, r14	       169	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_7
+0x400028e	      0xe800000000	                          call 0x4000293	       169	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3	CALL_7
+0x4000293	      0x8374242c01	               xor dword [rsp + 0x2c], 1	       170	mpih-mul.c	FUNCTION_2	ELSE_1	IF_3
+0x4000298	        0x4183ff0f	                           cmp r15d, 0xf	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x400029c	     0xf8f23010000	                            jg 0x40003c5	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40002a2	          0x4489f9	                           mov ecx, r15d	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40002a5	          0x4c89f2	                            mov rdx, r14	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40002a8	          0x4889de	                            mov rsi, rbx	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40002ab	          0x4c89ef	                            mov rdi, r13	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40002ae	      0xe88dfdffff	                 call sym.mul_n_basecase	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40002b3	          0x4585ff	                         test r15d, r15d	       183	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_9
+0x40002b6	            0x7e20	                           jle 0x40002d8	       183	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_9
+0x40002b8	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       183	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_9
+0x40002bd	        0x4a8d0ce3	                  lea rcx, [rbx + r12*8]	       183	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_9
+0x40002c1	        0x488d34c3	                  lea rsi, [rbx + rax*8]	       183	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_9
+0x40002c5	            0x31c0	                            xor eax, eax	       166	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_2
+0x40002c7	        0x488b14c6	            mov rdx, qword [rsi + rax*8]	       183	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_9
+0x40002cb	        0x488914c1	            mov qword [rcx + rax*8], rdx	       183	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_9
+0x40002cf	        0x4883c001	                              add rax, 1	       183	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_9
+0x40002d3	          0x4139c7	                           cmp r15d, eax	       183	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_9
+0x40002d6	            0x7fef	                            jg 0x40002c7	       183	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_9
+0x40002d8	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       184	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_10
+0x40002dd	      0x488b7c2430	            mov rdi, qword [rsp + 0x30] 	       184	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_10
+0x40002e2	          0x4489f9	                           mov ecx, r15d	       184	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_10
+0x40002e5	          0x4c01e0	                            add rax, r12	       184	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_10
+0x40002e8	          0x4889fe	                            mov rsi, rdi	       184	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_10
+0x40002eb	        0x4c8d24c3	                  lea r12, [rbx + rax*8]	       184	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_10
+0x40002ef	          0x4c89e2	                            mov rdx, r12	       184	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_10
+0x40002f2	      0xe800000000	                          call 0x40002f7	       184	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_10
+0x40002f7	      0x4889442410	             mov qword [rsp + 0x10], rax	       184	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_10
+0x40002fc	        0x8b44242c	            mov eax, dword [rsp + 0x2c] 	       188	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4
+0x4000300	            0x85c0	                           test eax, eax	       188	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4
+0x4000302	     0xf84fe000000	                            je 0x4000406	       188	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4
+0x4000308	          0x4c89f7	                            mov rdi, r14	       190	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4	CALL_11
+0x400030b	            0x89e9	                            mov ecx, ebp	       190	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4	CALL_11
+0x400030d	          0x4c89ea	                            mov rdx, r13	       190	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4	CALL_11
+0x4000310	          0x4c89f6	                            mov rsi, r14	       190	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4	CALL_11
+0x4000313	      0xe800000000	                          call 0x4000318	       190	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4	CALL_11
+0x4000318	      0x488b7c2410	            mov rdi, qword [rsp + 0x10] 	       189	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4
+0x400031d	          0x4829c7	                            sub rdi, rax	       189	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4
+0x4000320	      0x48897c2410	             mov qword [rsp + 0x10], rdi	       189	mpih-mul.c	FUNCTION_2	ELSE_1	IF_4
+0x4000325	        0x4183ff0f	                           cmp r15d, 0xf	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000329	     0xf8fb6000000	                            jg 0x40003e5	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x400032f	      0x488b542408	                mov rdx, qword [rsp + 8]	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000334	        0x488b3424	                    mov rsi, qword [rsp]	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000338	          0x4489f9	                           mov ecx, r15d	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x400033b	          0x4c89ef	                            mov rdi, r13	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x400033e	      0xe8fdfcffff	                 call sym.mul_n_basecase	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000343	            0x89e9	                            mov ecx, ebp	       207	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_13
+0x4000345	          0x4c89ea	                            mov rdx, r13	       207	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_13
+0x4000348	          0x4c89f6	                            mov rsi, r14	       207	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_13
+0x400034b	          0x4c89f7	                            mov rdi, r14	       207	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_13
+0x400034e	      0xe800000000	                          call 0x4000353	       207	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_13
+0x4000353	      0x4803442410	             add rax, qword [rsp + 0x10]	       208	mpih-mul.c	FUNCTION_2	ELSE_1	IF_5
+0x4000358	     0xf850d010000	                           jne 0x400046b	       208	mpih-mul.c	FUNCTION_2	ELSE_1	IF_5
+0x400035e	            0x31c0	                            xor eax, eax	       212	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_15
+0x4000360	          0x4585ff	                         test r15d, r15d	       212	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_15
+0x4000363	            0x7e12	                           jle 0x4000377	       212	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_15
+0x4000365	      0x498b54c500	            mov rdx, qword [r13 + rax*8]	       212	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_15
+0x400036a	        0x488914c3	            mov qword [rbx + rax*8], rdx	       212	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_15
+0x400036e	        0x4883c001	                              add rax, 1	       212	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_15
+0x4000372	          0x4139c7	                           cmp r15d, eax	       212	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_15
+0x4000375	            0x7fee	                            jg 0x4000365	       212	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_15
+0x4000377	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	       213	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_16
+0x400037c	          0x4489f9	                           mov ecx, r15d	       213	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_16
+0x400037f	          0x4c89f6	                            mov rsi, r14	       213	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_16
+0x4000382	          0x4c89f7	                            mov rdi, r14	       213	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_16
+0x4000385	          0x4c01ea	                            add rdx, r13	       213	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_16
+0x4000388	      0xe800000000	                          call 0x400038d	       213	mpih-mul.c	FUNCTION_2	ELSE_1	CALL_16
+0x400038d	          0x4885c0	                           test rax, rax	       215	mpih-mul.c	FUNCTION_2	ELSE_1	IF_6
+0x4000390	     0xf858f000000	                           jne 0x4000425	       215	mpih-mul.c	FUNCTION_2	ELSE_1	IF_6
+0x4000396	        0x4883c440	                           add rsp, 0x40	       218	mpih-mul.c	FUNCTION_2
+0x400039a	              0x5b	                                 pop rbx	       218	mpih-mul.c	FUNCTION_2
+0x400039b	              0x5d	                                 pop rbp	       218	mpih-mul.c	FUNCTION_2
+0x400039c	            0x415c	                                 pop r12	       218	mpih-mul.c	FUNCTION_2
+0x400039e	            0x415d	                                 pop r13	       218	mpih-mul.c	FUNCTION_2
+0x40003a0	            0x415e	                                 pop r14	       218	mpih-mul.c	FUNCTION_2
+0x40003a2	            0x415f	                                 pop r15	       218	mpih-mul.c	FUNCTION_2
+0x40003a4	              0xc3	                                     ret	       218	mpih-mul.c	FUNCTION_2
+0x40003a5	          0x4489f9	                           mov ecx, r15d	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003a8	          0x4c89f6	                            mov rsi, r14	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003ab	          0x4889c7	                            mov rdi, rax	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003ae	      0xe88dfcffff	                 call sym.mul_n_basecase	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003b3	      0xe972feffff	                           jmp 0x400022a	       155	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003b8	          0x4489e1	                           mov ecx, r12d	       125	mpih-mul.c	FUNCTION_2	IF_1
+0x40003bb	      0xe880fcffff	                 call sym.mul_n_basecase	       125	mpih-mul.c	FUNCTION_2	IF_1
+0x40003c0	      0xe9aefdffff	                           jmp 0x4000173	       125	mpih-mul.c	FUNCTION_2	IF_1
+0x40003c5	      0x488b442438	            mov rax, qword [rsp + 0x38] 	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003ca	          0x4489f9	                           mov ecx, r15d	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003cd	          0x4c89f2	                            mov rdx, r14	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003d0	          0x4889de	                            mov rsi, rbx	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003d3	          0x4c89ef	                            mov rdi, r13	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003d6	      0x4d8d440500	                     lea r8, [r13 + rax]	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003db	      0xe850fdffff	                          call sym.mul_n	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003e0	      0xe9d3feffff	                           jmp 0x40002b8	       179	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003e5	      0x4c8b442438	              mov r8, qword [rsp + 0x38]	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003ea	      0x488b542408	                mov rdx, qword [rsp + 8]	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003ef	          0x4489f9	                           mov ecx, r15d	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003f2	        0x488b3424	                    mov rsi, qword [rsp]	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003f6	          0x4c89ef	                            mov rdi, r13	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003f9	          0x4d01e8	                             add r8, r13	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x40003fc	      0xe82ffdffff	                          call sym.mul_n	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000401	      0xe93dffffff	                           jmp 0x4000343	       203	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000406	            0x89e9	                            mov ecx, ebp	       194	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_4	CALL_12
+0x4000408	          0x4c89ea	                            mov rdx, r13	       194	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_4	CALL_12
+0x400040b	          0x4c89f6	                            mov rsi, r14	       194	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_4	CALL_12
+0x400040e	          0x4c89f7	                            mov rdi, r14	       194	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_4	CALL_12
+0x4000411	      0xe800000000	                          call 0x4000416	       194	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_4	CALL_12
+0x4000416	      0x4803442410	             add rax, qword [rsp + 0x10]	       193	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_4
+0x400041b	      0x4889442410	             mov qword [rsp + 0x10], rax	       193	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_4
+0x4000420	      0xe900ffffff	                           jmp 0x4000325	       193	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_4
+0x4000425	      0x488b5c2430	            mov rbx, qword [rsp + 0x30] 	        42	mpi-inline.h	FUNCTION_8
+0x400042a	          0x488b13	                    mov rdx, qword [rbx]	        42	mpi-inline.h	FUNCTION_8
+0x400042d	        0x488d4201	                      lea rax, [rdx + 1]	        43	mpi-inline.h	FUNCTION_8
+0x4000431	          0x4839c2	                            cmp rdx, rax	        45	mpi-inline.h	FUNCTION_8	IF_1
+0x4000434	          0x488903	                    mov qword [rbx], rax	        44	mpi-inline.h	FUNCTION_8
+0x4000437	     0xf8659ffffff	                           jbe 0x4000396	        45	mpi-inline.h	FUNCTION_8	IF_1
+0x400043d	      0x488b442430	            mov rax, qword [rsp + 0x30] 	        42	mpi-inline.h	FUNCTION_8
+0x4000442	        0x4883c008	                              add rax, 8	        42	mpi-inline.h	FUNCTION_8
+0x4000446	            0xeb19	                           jmp 0x4000461	        42	mpi-inline.h	FUNCTION_8
+0x4000448	        0x4883c008	                              add rax, 8	        47	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x400044c	        0x488b78f8	                mov rdi, qword [rax - 8]	        47	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x4000450	        0x488d5701	                      lea rdx, [rdi + 1]	        47	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x4000454	          0x4885d2	                           test rdx, rdx	        49	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1	IF_2
+0x4000457	        0x488950f8	                mov qword [rax - 8], rdx	        48	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x400045b	     0xf8535ffffff	                           jne 0x4000396	        49	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1	IF_2
+0x4000461	          0x83ed01	                              sub ebp, 1	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x4000464	            0x75e2	                           jne 0x4000448	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x4000466	      0xe92bffffff	                           jmp 0x4000396	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x400046b	        0x498b1424	                    mov rdx, qword [r12]	        42	mpi-inline.h	FUNCTION_8
+0x400046f	          0x4801d0	                            add rax, rdx	        43	mpi-inline.h	FUNCTION_8
+0x4000472	          0x4839c2	                            cmp rdx, rax	        45	mpi-inline.h	FUNCTION_8	IF_1
+0x4000475	        0x49890424	                    mov qword [r12], rax	        44	mpi-inline.h	FUNCTION_8
+0x4000479	     0xf86dffeffff	                           jbe 0x400035e	        45	mpi-inline.h	FUNCTION_8	IF_1
+0x400047f	        0x4983c408	                              add r12, 8	        42	mpi-inline.h	FUNCTION_8
+0x4000483	          0x4489fa	                           mov edx, r15d	       146	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000486	            0xeb10	                           jmp 0x4000498	       146	mpih-mul.c	FUNCTION_2	ELSE_1
+0x4000488	        0x4983c408	                              add r12, 8	        47	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x400048c	    0x49834424f801	                  add qword [r12 - 8], 1	        49	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1	IF_2
+0x4000492	     0xf85c6feffff	                           jne 0x400035e	        49	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1	IF_2
+0x4000498	          0x83ea01	                              sub edx, 1	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x400049b	            0x75eb	                           jne 0x4000488	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x400049d	      0xe9bcfeffff	                           jmp 0x400035e	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x40004a2	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       172	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_3	CALL_8
+0x40004a7	      0x488b742408	                mov rsi, qword [rsp + 8]	       172	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_3	CALL_8
+0x40004ac	          0x4c89f7	                            mov rdi, r14	       172	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_3	CALL_8
+0x40004af	      0xe800000000	                          call 0x40004b4	       172	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_3	CALL_8
+0x40004b4	      0xe9dffdffff	                           jmp 0x4000298	       172	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_3	CALL_8
+0x40004b9	        0x488b3424	                    mov rsi, qword [rsp]	       165	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_2	CALL_5
+0x40004bd	          0x4c89f2	                            mov rdx, r14	       165	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_2	CALL_5
+0x40004c0	          0x4889df	                            mov rdi, rbx	       165	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_2	CALL_5
+0x40004c3	      0xe800000000	                          call 0x40004c8	       165	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_2	CALL_5
+0x40004c8	    0xc744242c0100	               mov dword [rsp + 0x2c], 1	       166	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_2
+0x40004d0	      0xe986fdffff	                           jmp 0x400025b	       166	mpih-mul.c	FUNCTION_2	ELSE_1	ELSE_2
+mul_n_basecase	SWITCH,0:WHILE,0:CALL,5:DO,0:IF,4:ELSE,3:FOR,1:functions,0	74
+0x4000040	            0x4157	                                push r15	        69	mpih-mul.c	FUNCTION_1
+0x4000042	            0x4156	                                push r14	        69	mpih-mul.c	FUNCTION_1
+0x4000044	          0x4989ff	                            mov r15, rdi	        69	mpih-mul.c	FUNCTION_1
+0x4000047	            0x4155	                                push r13	        69	mpih-mul.c	FUNCTION_1
+0x4000049	            0x4154	                                push r12	        69	mpih-mul.c	FUNCTION_1
+0x400004b	          0x4189cc	                           mov r12d, ecx	        69	mpih-mul.c	FUNCTION_1
+0x400004e	              0x55	                                push rbp	        69	mpih-mul.c	FUNCTION_1
+0x400004f	              0x53	                                push rbx	        69	mpih-mul.c	FUNCTION_1
+0x4000050	          0x4989f6	                            mov r14, rsi	        69	mpih-mul.c	FUNCTION_1
+0x4000053	          0x488b0a	                    mov rcx, qword [rdx]	        76	mpih-mul.c	FUNCTION_1
+0x4000056	          0x4889d5	                            mov rbp, rdx	        69	mpih-mul.c	FUNCTION_1
+0x4000059	        0x4883f901	                              cmp rcx, 1	        77	mpih-mul.c	FUNCTION_1	IF_1
+0x400005d	            0x767f	                           jbe 0x40000de	        77	mpih-mul.c	FUNCTION_1	IF_1
+0x400005f	          0x4489e2	                           mov edx, r12d	        84	mpih-mul.c	FUNCTION_1	CALL_3
+0x4000062	      0xe800000000	                          call 0x4000067	        84	mpih-mul.c	FUNCTION_1	CALL_3
+0x4000067	          0x4963d4	                        movsxd rdx, r12d	        86	mpih-mul.c	FUNCTION_1
+0x400006a	        0x4183fc01	                             cmp r12d, 1	        91	mpih-mul.c	FUNCTION_1	FOR_1
+0x400006e	        0x498d5f08	                      lea rbx, [r15 + 8]	        87	mpih-mul.c	FUNCTION_1
+0x4000072	    0x4c8d2cd50000	                        lea r13, [rdx*8]	        86	mpih-mul.c	FUNCTION_1
+0x400007a	        0x498904d7	            mov qword [r15 + rdx*8], rax	        86	mpih-mul.c	FUNCTION_1
+0x400007e	            0x7e53	                           jle 0x40000d3	        91	mpih-mul.c	FUNCTION_1	FOR_1
+0x4000080	      0x418d4424fe	                      lea eax, [r12 - 2]	        91	mpih-mul.c	FUNCTION_1	FOR_1
+0x4000085	        0x4883c508	                              add rbp, 8	        91	mpih-mul.c	FUNCTION_1	FOR_1
+0x4000089	      0x4d8d7cc710	          lea r15, [r15 + rax*8 + 0x10] 	        91	mpih-mul.c	FUNCTION_1	FOR_1
+0x400008e	            0xeb1f	                           jmp 0x40000af	        91	mpih-mul.c	FUNCTION_1	FOR_1
+0x4000090	          0x4489e2	                           mov edx, r12d	        98	mpih-mul.c	FUNCTION_1	FOR_1	CALL_5
+0x4000093	          0x4c89f6	                            mov rsi, r14	        98	mpih-mul.c	FUNCTION_1	FOR_1	CALL_5
+0x4000096	          0x4889df	                            mov rdi, rbx	        98	mpih-mul.c	FUNCTION_1	FOR_1	CALL_5
+0x4000099	      0xe800000000	                          call 0x400009e	        98	mpih-mul.c	FUNCTION_1	FOR_1	CALL_5
+0x400009e	        0x4a89042b	              mov qword [rbx + r13], rax	       100	mpih-mul.c	FUNCTION_1	FOR_1
+0x40000a2	        0x4883c308	                              add rbx, 8	       101	mpih-mul.c	FUNCTION_1	FOR_1
+0x40000a6	        0x4883c508	                              add rbp, 8	       101	mpih-mul.c	FUNCTION_1	FOR_1
+0x40000aa	          0x4c39fb	                            cmp rbx, r15	        91	mpih-mul.c	FUNCTION_1	FOR_1
+0x40000ad	            0x7424	                            je 0x40000d3	        91	mpih-mul.c	FUNCTION_1	FOR_1
+0x40000af	        0x488b4d00	                    mov rcx, qword [rbp]	        92	mpih-mul.c	FUNCTION_1	FOR_1
+0x40000b3	        0x4883f901	                              cmp rcx, 1	        93	mpih-mul.c	FUNCTION_1	FOR_1	IF_3
+0x40000b7	            0x77d7	                            ja 0x4000090	        93	mpih-mul.c	FUNCTION_1	FOR_1	IF_3
+0x40000b9	      0xb800000000	                              mov eax, 0	        94	mpih-mul.c	FUNCTION_1	FOR_1	IF_3
+0x40000be	            0x75de	                           jne 0x400009e	        95	mpih-mul.c	FUNCTION_1	FOR_1	IF_3	IF_4
+0x40000c0	          0x4489e1	                           mov ecx, r12d	        96	mpih-mul.c	FUNCTION_1	FOR_1	IF_3	CALL_4
+0x40000c3	          0x4c89f2	                            mov rdx, r14	        96	mpih-mul.c	FUNCTION_1	FOR_1	IF_3	CALL_4
+0x40000c6	          0x4889de	                            mov rsi, rbx	        96	mpih-mul.c	FUNCTION_1	FOR_1	IF_3	CALL_4
+0x40000c9	          0x4889df	                            mov rdi, rbx	        96	mpih-mul.c	FUNCTION_1	FOR_1	IF_3	CALL_4
+0x40000cc	      0xe800000000	                          call 0x40000d1	        96	mpih-mul.c	FUNCTION_1	FOR_1	IF_3	CALL_4
+0x40000d1	            0xebcb	                           jmp 0x400009e	        96	mpih-mul.c	FUNCTION_1	FOR_1	IF_3	CALL_4
+0x40000d3	              0x5b	                                 pop rbx	       105	mpih-mul.c	FUNCTION_1
+0x40000d4	              0x5d	                                 pop rbp	       105	mpih-mul.c	FUNCTION_1
+0x40000d5	            0x415c	                                 pop r12	       105	mpih-mul.c	FUNCTION_1
+0x40000d7	            0x415d	                                 pop r13	       105	mpih-mul.c	FUNCTION_1
+0x40000d9	            0x415e	                                 pop r14	       105	mpih-mul.c	FUNCTION_1
+0x40000db	            0x415f	                                 pop r15	       105	mpih-mul.c	FUNCTION_1
+0x40000dd	              0xc3	                                     ret	       105	mpih-mul.c	FUNCTION_1
+0x40000de	            0x7429	                            je 0x4000109	        78	mpih-mul.c	FUNCTION_1	IF_1	IF_2
+0x40000e0	          0x4585e4	                         test r12d, r12d	        81	mpih-mul.c	FUNCTION_1	IF_1	CALL_2
+0x40000e3	            0x7e1d	                           jle 0x4000102	        81	mpih-mul.c	FUNCTION_1	IF_1	CALL_2
+0x40000e5	      0x418d5424ff	                      lea edx, [r12 - 1]	        81	mpih-mul.c	FUNCTION_1	IF_1	CALL_2
+0x40000ea	          0x4889f8	                            mov rax, rdi	        81	mpih-mul.c	FUNCTION_1	IF_1	CALL_2
+0x40000ed	      0x488d54d708	              lea rdx, [rdi + rdx*8 + 8]	        81	mpih-mul.c	FUNCTION_1	IF_1	CALL_2
+0x40000f2	    0x48c700000000	                      mov qword [rax], 0	        81	mpih-mul.c	FUNCTION_1	IF_1	CALL_2
+0x40000f9	        0x4883c008	                              add rax, 8	        81	mpih-mul.c	FUNCTION_1	IF_1	CALL_2
+0x40000fd	          0x4839d0	                            cmp rax, rdx	        81	mpih-mul.c	FUNCTION_1	IF_1	CALL_2
+0x4000100	            0x75f0	                           jne 0x40000f2	        81	mpih-mul.c	FUNCTION_1	IF_1	CALL_2
+0x4000102	            0x31c0	                            xor eax, eax	        82	mpih-mul.c	FUNCTION_1	IF_1
+0x4000104	      0xe95effffff	                           jmp 0x4000067	        82	mpih-mul.c	FUNCTION_1	IF_1
+0x4000109	          0x4585e4	                         test r12d, r12d	        79	mpih-mul.c	FUNCTION_1	IF_1	CALL_1
+0x400010c	            0x7ef4	                           jle 0x4000102	        79	mpih-mul.c	FUNCTION_1	IF_1	CALL_1
+0x400010e	            0x31c0	                            xor eax, eax	        79	mpih-mul.c	FUNCTION_1	IF_1	CALL_1
+0x4000110	        0x498b14c6	            mov rdx, qword [r14 + rax*8]	        79	mpih-mul.c	FUNCTION_1	IF_1	CALL_1
+0x4000114	        0x498914c7	            mov qword [r15 + rax*8], rdx	        79	mpih-mul.c	FUNCTION_1	IF_1	CALL_1
+0x4000118	        0x4883c001	                              add rax, 1	        79	mpih-mul.c	FUNCTION_1	IF_1	CALL_1
+0x400011c	          0x4139c4	                           cmp r12d, eax	        79	mpih-mul.c	FUNCTION_1	IF_1	CALL_1
+0x400011f	            0x7fef	                            jg 0x4000110	        79	mpih-mul.c	FUNCTION_1	IF_1	CALL_1
+0x4000121	            0x31c0	                            xor eax, eax	        82	mpih-mul.c	FUNCTION_1	IF_1
+0x4000123	      0xe93fffffff	                           jmp 0x4000067	        82	mpih-mul.c	FUNCTION_1	IF_1
+mpih_sqr_n	SWITCH,0:WHILE,0:CALL,13:DO,0:IF,4:ELSE,2:FOR,0:functions,0	234
+0x40005c0	            0x4157	                                push r15	       259	mpih-mul.c	FUNCTION_4
+0x40005c2	            0x4156	                                push r14	       259	mpih-mul.c	FUNCTION_4
+0x40005c4	          0x4989f7	                            mov r15, rsi	       259	mpih-mul.c	FUNCTION_4
+0x40005c7	            0x4155	                                push r13	       259	mpih-mul.c	FUNCTION_4
+0x40005c9	            0x4154	                                push r12	       259	mpih-mul.c	FUNCTION_4
+0x40005cb	          0x4989fc	                            mov r12, rdi	       259	mpih-mul.c	FUNCTION_4
+0x40005ce	              0x55	                                push rbp	       259	mpih-mul.c	FUNCTION_4
+0x40005cf	              0x53	                                push rbx	       259	mpih-mul.c	FUNCTION_4
+0x40005d0	            0x89d3	                            mov ebx, edx	       259	mpih-mul.c	FUNCTION_4
+0x40005d2	          0x4889cd	                            mov rbp, rcx	       259	mpih-mul.c	FUNCTION_4
+0x40005d5	        0x4883ec28	                           sub rsp, 0x28	       259	mpih-mul.c	FUNCTION_4
+0x40005d9	          0x83e201	                              and edx, 1	       260	mpih-mul.c	FUNCTION_4	IF_1
+0x40005dc	            0x746b	                            je 0x4000649	       260	mpih-mul.c	FUNCTION_4	IF_1
+0x40005de	        0x448d73ff	                     lea r14d, [rbx - 1]	       271	mpih-mul.c	FUNCTION_4	IF_1
+0x40005e2	        0x4183fe0f	                           cmp r14d, 0xf	       274	mpih-mul.c	FUNCTION_4	IF_1
+0x40005e6	     0xf8e0c020000	                           jle 0x40007f8	       274	mpih-mul.c	FUNCTION_4	IF_1
+0x40005ec	          0x4489f2	                           mov edx, r14d	       274	mpih-mul.c	FUNCTION_4	IF_1
+0x40005ef	      0xe800000000	                          call 0x40005f4	       274	mpih-mul.c	FUNCTION_4	IF_1
+0x40005f4	          0x4d63ee	                        movsxd r13, r14d	       275	mpih-mul.c	FUNCTION_4	IF_1	CALL_1
+0x40005f7	          0x4489f2	                           mov edx, r14d	       275	mpih-mul.c	FUNCTION_4	IF_1	CALL_1
+0x40005fa	          0x4c89fe	                            mov rsi, r15	       275	mpih-mul.c	FUNCTION_4	IF_1	CALL_1
+0x40005fd	        0x49c1e503	                              shl r13, 3	       275	mpih-mul.c	FUNCTION_4	IF_1	CALL_1
+0x4000601	        0x4b8d2c2f	                    lea rbp, [r15 + r13]	       275	mpih-mul.c	FUNCTION_4	IF_1	CALL_1
+0x4000605	          0x4d01e5	                            add r13, r12	       275	mpih-mul.c	FUNCTION_4	IF_1	CALL_1
+0x4000608	          0x4c89ef	                            mov rdi, r13	       275	mpih-mul.c	FUNCTION_4	IF_1	CALL_1
+0x400060b	        0x488b4d00	                    mov rcx, qword [rbp]	       275	mpih-mul.c	FUNCTION_4	IF_1	CALL_1
+0x400060f	      0xe800000000	                          call 0x4000614	       275	mpih-mul.c	FUNCTION_4	IF_1	CALL_1
+0x4000614	        0x438d1436	                    lea edx, [r14 + r14]	       276	mpih-mul.c	FUNCTION_4	IF_1
+0x4000618	          0x4c89fe	                            mov rsi, r15	       277	mpih-mul.c	FUNCTION_4	IF_1	CALL_2
+0x400061b	          0x4c89ef	                            mov rdi, r13	       277	mpih-mul.c	FUNCTION_4	IF_1	CALL_2
+0x400061e	          0x4863d2	                         movsxd rdx, edx	       276	mpih-mul.c	FUNCTION_4	IF_1
+0x4000621	        0x498904d4	            mov qword [r12 + rdx*8], rax	       276	mpih-mul.c	FUNCTION_4	IF_1
+0x4000625	        0x488b4d00	                    mov rcx, qword [rbp]	       277	mpih-mul.c	FUNCTION_4	IF_1	CALL_2
+0x4000629	            0x89da	                            mov edx, ebx	       277	mpih-mul.c	FUNCTION_4	IF_1	CALL_2
+0x400062b	          0x4401f3	                           add ebx, r14d	       279	mpih-mul.c	FUNCTION_4	IF_1
+0x400062e	          0x4863db	                         movsxd rbx, ebx	       279	mpih-mul.c	FUNCTION_4	IF_1
+0x4000631	      0xe800000000	                          call 0x4000636	       277	mpih-mul.c	FUNCTION_4	IF_1	CALL_2
+0x4000636	        0x498904dc	            mov qword [r12 + rbx*8], rax	       279	mpih-mul.c	FUNCTION_4	IF_1
+0x400063a	        0x4883c428	                           add rsp, 0x28	       331	mpih-mul.c	FUNCTION_4
+0x400063e	              0x5b	                                 pop rbx	       331	mpih-mul.c	FUNCTION_4
+0x400063f	              0x5d	                                 pop rbp	       331	mpih-mul.c	FUNCTION_4
+0x4000640	            0x415c	                                 pop r12	       331	mpih-mul.c	FUNCTION_4
+0x4000642	            0x415d	                                 pop r13	       331	mpih-mul.c	FUNCTION_4
+0x4000644	            0x415e	                                 pop r14	       331	mpih-mul.c	FUNCTION_4
+0x4000646	            0x415f	                                 pop r15	       331	mpih-mul.c	FUNCTION_4
+0x4000648	              0xc3	                                     ret	       331	mpih-mul.c	FUNCTION_4
+0x4000649	          0x4189de	                           mov r14d, ebx	       281	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400064c	          0x41d1fe	                             sar r14d, 1	       281	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400064f	          0x4d63ee	                        movsxd r13, r14d	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000652	    0x4a8d04ed0000	                        lea rax, [r13*8]	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400065a	      0x4889442408	                mov qword [rsp + 8], rax	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400065f	          0x4801f0	                            add rax, rsi	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000662	        0x4183fe0f	                           cmp r14d, 0xf	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000666	        0x48890424	                    mov qword [rsp], rax	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400066a	     0xf8e5b010000	                           jle 0x40007cb	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000670	          0x4863cb	                         movsxd rcx, ebx	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000673	          0x4489f2	                           mov edx, r14d	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000676	    0x488d34cd0000	                        lea rsi, [rcx*8]	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400067e	      0x48894c2410	             mov qword [rsp + 0x10], rcx	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000683	        0x488d0c37	                    lea rcx, [rdi + rsi]	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000687	      0x4889742420	             mov qword [rsp + 0x20], rsi	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400068c	          0x4889c6	                            mov rsi, rax	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400068f	          0x4889cf	                            mov rdi, rcx	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000692	      0x48894c2418	             mov qword [rsp + 0x18], rcx	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000697	          0x4889e9	                            mov rcx, rbp	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400069a	      0xe800000000	                          call 0x400069f	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400069f	        0x488b3c24	                    mov rdi, qword [rsp]	       294	mpih-mul.c	FUNCTION_4	ELSE_1	IF_2	CALL_3
+0x40006a3	          0x4489f2	                           mov edx, r14d	       294	mpih-mul.c	FUNCTION_4	ELSE_1	IF_2	CALL_3
+0x40006a6	          0x4c89fe	                            mov rsi, r15	       294	mpih-mul.c	FUNCTION_4	ELSE_1	IF_2	CALL_3
+0x40006a9	      0xe800000000	                          call 0x40006ae	       294	mpih-mul.c	FUNCTION_4	ELSE_1	IF_2	CALL_3
+0x40006ae	            0x85c0	                           test eax, eax	       294	mpih-mul.c	FUNCTION_4	ELSE_1	IF_2	CALL_3
+0x40006b0	          0x4489f1	                           mov ecx, r14d	       295	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_4
+0x40006b3	     0xf88fe010000	                            js 0x40008b7	       294	mpih-mul.c	FUNCTION_4	ELSE_1	IF_2	CALL_3
+0x40006b9	        0x488b3424	                    mov rsi, qword [rsp]	       295	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_4
+0x40006bd	          0x4c89fa	                            mov rdx, r15	       295	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_4
+0x40006c0	          0x4c89e7	                            mov rdi, r12	       295	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_4
+0x40006c3	      0xe800000000	                          call 0x40006c8	       295	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_4
+0x40006c8	        0x4183fe0f	                           cmp r14d, 0xf	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40006cc	     0xf8f4e010000	                            jg 0x4000820	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40006d2	          0x4489f2	                           mov edx, r14d	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40006d5	          0x4c89e6	                            mov rsi, r12	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40006d8	          0x4889ef	                            mov rdi, rbp	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40006db	      0xe800000000	                          call 0x40006e0	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40006e0	          0x4585f6	                         test r14d, r14d	       305	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_6
+0x40006e3	     0xf8ee2010000	                           jle 0x40008cb	       305	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_6
+0x40006e9	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       305	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_6
+0x40006ee	        0x4b8d0cec	                  lea rcx, [r12 + r13*8]	       305	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_6
+0x40006f2	        0x498d34c4	                  lea rsi, [r12 + rax*8]	       305	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_6
+0x40006f6	            0x31c0	                            xor eax, eax	       259	mpih-mul.c	FUNCTION_4
+0x40006f8	        0x488b14c6	            mov rdx, qword [rsi + rax*8]	       305	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_6
+0x40006fc	        0x488914c1	            mov qword [rcx + rax*8], rdx	       305	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_6
+0x4000700	        0x4883c001	                              add rax, 1	       305	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_6
+0x4000704	          0x4139c6	                           cmp r14d, eax	       305	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_6
+0x4000707	            0x7fef	                            jg 0x40006f8	       305	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_6
+0x4000709	      0x4c036c2410	             add r13, qword [rsp + 0x10]	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x400070e	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x4000713	          0x4489f1	                           mov ecx, r14d	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x4000716	          0x4889fe	                            mov rsi, rdi	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x4000719	        0x4b8d04ec	                  lea rax, [r12 + r13*8]	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x400071d	          0x4889c2	                            mov rdx, rax	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x4000720	      0x4889442410	             mov qword [rsp + 0x10], rax	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x4000725	      0xe800000000	                          call 0x400072a	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x400072a	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x400072f	          0x4889ea	                            mov rdx, rbp	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x4000732	        0x48890424	                    mov qword [rsp], rax	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x4000736	        0x4d8d2c0c	                    lea r13, [r12 + rcx]	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x400073a	            0x89d9	                            mov ecx, ebx	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x400073c	          0x4c89ef	                            mov rdi, r13	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x400073f	          0x4c89ee	                            mov rsi, r13	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x4000742	      0xe800000000	                          call 0x4000747	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x4000747	        0x488b3c24	                    mov rdi, qword [rsp]	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x400074b	          0x4829c7	                            sub rdi, rax	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x400074e	        0x4183fe0f	                           cmp r14d, 0xf	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000752	        0x48893c24	                    mov qword [rsp], rdi	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x4000756	     0xf8fa9000000	                            jg 0x4000805	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400075c	          0x4489f2	                           mov edx, r14d	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400075f	          0x4c89fe	                            mov rsi, r15	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000762	          0x4889ef	                            mov rdi, rbp	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000765	      0xe800000000	                          call 0x400076a	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400076a	            0x89d9	                            mov ecx, ebx	       320	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_9
+0x400076c	          0x4889ea	                            mov rdx, rbp	       320	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_9
+0x400076f	          0x4c89ee	                            mov rsi, r13	       320	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_9
+0x4000772	          0x4c89ef	                            mov rdi, r13	       320	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_9
+0x4000775	      0xe800000000	                          call 0x400077a	       320	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_9
+0x400077a	        0x48030424	                    add rax, qword [rsp]	       321	mpih-mul.c	FUNCTION_4	ELSE_1	IF_3
+0x400077e	     0xf85f5000000	                           jne 0x4000879	       321	mpih-mul.c	FUNCTION_4	ELSE_1	IF_3
+0x4000784	            0x31c0	                            xor eax, eax	       325	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_11
+0x4000786	          0x4585f6	                         test r14d, r14d	       325	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_11
+0x4000789	            0x7e12	                           jle 0x400079d	       325	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_11
+0x400078b	      0x488b54c500	            mov rdx, qword [rbp + rax*8]	       325	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_11
+0x4000790	        0x498914c4	            mov qword [r12 + rax*8], rdx	       325	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_11
+0x4000794	        0x4883c001	                              add rax, 1	       325	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_11
+0x4000798	          0x4139c6	                           cmp r14d, eax	       325	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_11
+0x400079b	            0x7fee	                            jg 0x400078b	       325	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_11
+0x400079d	      0x488b542408	                mov rdx, qword [rsp + 8]	       326	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_12
+0x40007a2	          0x4489f1	                           mov ecx, r14d	       326	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_12
+0x40007a5	          0x4c89ee	                            mov rsi, r13	       326	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_12
+0x40007a8	          0x4c89ef	                            mov rdi, r13	       326	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_12
+0x40007ab	          0x4801ea	                            add rdx, rbp	       326	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_12
+0x40007ae	      0xe800000000	                          call 0x40007b3	       326	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_12
+0x40007b3	          0x4885c0	                           test rax, rax	       328	mpih-mul.c	FUNCTION_4	ELSE_1	IF_4
+0x40007b6	     0xf8581000000	                           jne 0x400083d	       328	mpih-mul.c	FUNCTION_4	ELSE_1	IF_4
+0x40007bc	        0x4883c428	                           add rsp, 0x28	       331	mpih-mul.c	FUNCTION_4
+0x40007c0	              0x5b	                                 pop rbx	       331	mpih-mul.c	FUNCTION_4
+0x40007c1	              0x5d	                                 pop rbp	       331	mpih-mul.c	FUNCTION_4
+0x40007c2	            0x415c	                                 pop r12	       331	mpih-mul.c	FUNCTION_4
+0x40007c4	            0x415d	                                 pop r13	       331	mpih-mul.c	FUNCTION_4
+0x40007c6	            0x415e	                                 pop r14	       331	mpih-mul.c	FUNCTION_4
+0x40007c8	            0x415f	                                 pop r15	       331	mpih-mul.c	FUNCTION_4
+0x40007ca	              0xc3	                                     ret	       331	mpih-mul.c	FUNCTION_4
+0x40007cb	          0x4863fb	                         movsxd rdi, ebx	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007ce	          0x4489f2	                           mov edx, r14d	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007d1	      0x48897c2410	             mov qword [rsp + 0x10], rdi	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007d6	        0x48c1e703	                              shl rdi, 3	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007da	        0x498d343c	                    lea rsi, [r12 + rdi]	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007de	      0x48897c2420	             mov qword [rsp + 0x20], rdi	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007e3	      0x4889742418	             mov qword [rsp + 0x18], rsi	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007e8	          0x4889f7	                            mov rdi, rsi	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007eb	          0x4889c6	                            mov rsi, rax	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007ee	      0xe800000000	                          call 0x40007f3	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007f3	      0xe9a7feffff	                           jmp 0x400069f	       289	mpih-mul.c	FUNCTION_4	ELSE_1
+0x40007f8	          0x4489f2	                           mov edx, r14d	       274	mpih-mul.c	FUNCTION_4	IF_1
+0x40007fb	      0xe800000000	                          call 0x4000800	       274	mpih-mul.c	FUNCTION_4	IF_1
+0x4000800	      0xe9effdffff	                           jmp 0x40005f4	       274	mpih-mul.c	FUNCTION_4	IF_1
+0x4000805	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400080a	          0x4489f2	                           mov edx, r14d	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400080d	          0x4c89fe	                            mov rsi, r15	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000810	          0x4889ef	                            mov rdi, rbp	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000813	          0x4801e9	                            add rcx, rbp	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000816	      0xe800000000	                          call 0x400081b	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400081b	      0xe94affffff	                           jmp 0x400076a	       317	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000820	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000825	          0x4489f2	                           mov edx, r14d	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000828	          0x4c89e6	                            mov rsi, r12	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400082b	          0x4889ef	                            mov rdi, rbp	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400082e	      0x488d4c0500	                    lea rcx, [rbp + rax]	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000833	      0xe800000000	                          call 0x4000838	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000838	      0xe9acfeffff	                           jmp 0x40006e9	       302	mpih-mul.c	FUNCTION_4	ELSE_1
+0x400083d	      0x488b742418	            mov rsi, qword [rsp + 0x18] 	        42	mpi-inline.h	FUNCTION_8
+0x4000842	          0x488b16	                    mov rdx, qword [rsi]	        42	mpi-inline.h	FUNCTION_8
+0x4000845	        0x488d4201	                      lea rax, [rdx + 1]	        43	mpi-inline.h	FUNCTION_8
+0x4000849	          0x4839c2	                            cmp rdx, rax	        45	mpi-inline.h	FUNCTION_8	IF_1
+0x400084c	          0x488906	                    mov qword [rsi], rax	        44	mpi-inline.h	FUNCTION_8
+0x400084f	     0xf8667ffffff	                           jbe 0x40007bc	        45	mpi-inline.h	FUNCTION_8	IF_1
+0x4000855	      0x488b6c2418	            mov rbp, qword [rsp + 0x18] 	        42	mpi-inline.h	FUNCTION_8
+0x400085a	        0x4883c508	                              add rbp, 8	        42	mpi-inline.h	FUNCTION_8
+0x400085e	            0xeb0f	                           jmp 0x400086f	        42	mpi-inline.h	FUNCTION_8
+0x4000860	        0x4883c508	                              add rbp, 8	        47	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x4000864	      0x488345f801	                  add qword [rbp - 8], 1	        49	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1	IF_2
+0x4000869	     0xf854dffffff	                           jne 0x40007bc	        49	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1	IF_2
+0x400086f	          0x83eb01	                              sub ebx, 1	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x4000872	            0x75ec	                           jne 0x4000860	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x4000874	      0xe943ffffff	                           jmp 0x40007bc	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x4000879	      0x488b7c2410	            mov rdi, qword [rsp + 0x10] 	        42	mpi-inline.h	FUNCTION_8
+0x400087e	          0x488b17	                    mov rdx, qword [rdi]	        42	mpi-inline.h	FUNCTION_8
+0x4000881	          0x4801d0	                            add rax, rdx	        43	mpi-inline.h	FUNCTION_8
+0x4000884	          0x4839c2	                            cmp rdx, rax	        45	mpi-inline.h	FUNCTION_8	IF_1
+0x4000887	          0x488907	                    mov qword [rdi], rax	        44	mpi-inline.h	FUNCTION_8
+0x400088a	     0xf86f4feffff	                           jbe 0x4000784	        45	mpi-inline.h	FUNCTION_8	IF_1
+0x4000890	      0x4c8b7c2410	            mov r15, qword [rsp + 0x10] 	        42	mpi-inline.h	FUNCTION_8
+0x4000895	          0x4489f2	                           mov edx, r14d	       281	mpih-mul.c	FUNCTION_4	ELSE_1
+0x4000898	        0x4983c708	                              add r15, 8	        42	mpi-inline.h	FUNCTION_8
+0x400089c	            0xeb0f	                           jmp 0x40008ad	        42	mpi-inline.h	FUNCTION_8
+0x400089e	        0x4983c708	                              add r15, 8	        47	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x40008a2	      0x498347f801	                  add qword [r15 - 8], 1	        49	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1	IF_2
+0x40008a7	     0xf85d7feffff	                           jne 0x4000784	        49	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1	IF_2
+0x40008ad	          0x83ea01	                              sub edx, 1	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x40008b0	            0x75ec	                           jne 0x400089e	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x40008b2	      0xe9cdfeffff	                           jmp 0x4000784	        46	mpi-inline.h	FUNCTION_8	IF_1	WHILE_1
+0x40008b7	        0x488b1424	                    mov rdx, qword [rsp]	       297	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_5
+0x40008bb	          0x4c89fe	                            mov rsi, r15	       297	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_5
+0x40008be	          0x4c89e7	                            mov rdi, r12	       297	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_5
+0x40008c1	      0xe800000000	                          call 0x40008c6	       297	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_5
+0x40008c6	      0xe9fdfdffff	                           jmp 0x40006c8	       297	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_5
+0x40008cb	      0x4c036c2410	             add r13, qword [rsp + 0x10]	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x40008d0	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x40008d5	          0x4489f1	                           mov ecx, r14d	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x40008d8	          0x4889fe	                            mov rsi, rdi	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x40008db	        0x4b8d04ec	                  lea rax, [r12 + r13*8]	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x40008df	          0x4889c2	                            mov rdx, rax	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x40008e2	      0x4889442410	             mov qword [rsp + 0x10], rax	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x40008e7	      0xe800000000	                          call 0x40008ec	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x40008ec	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x40008f1	          0x4889ea	                            mov rdx, rbp	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x40008f4	        0x48890424	                    mov qword [rsp], rax	       306	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_7
+0x40008f8	        0x4d8d2c0c	                    lea r13, [r12 + rcx]	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x40008fc	            0x89d9	                            mov ecx, ebx	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x40008fe	          0x4c89ee	                            mov rsi, r13	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x4000901	          0x4c89ef	                            mov rdi, r13	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x4000904	      0xe800000000	                          call 0x4000909	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x4000909	        0x488b3424	                    mov rsi, qword [rsp]	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x400090d	          0x4829c6	                            sub rsi, rax	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x4000910	        0x48893424	                    mov qword [rsp], rsi	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+0x4000914	      0xe943feffff	                           jmp 0x400075c	       310	mpih-mul.c	FUNCTION_4	ELSE_1	CALL_8
+mpihelp_mul	SWITCH,0:WHILE,0:CALL,8:DO,0:IF,7:ELSE,3:FOR,1:functions,0	122
+0x4000980	            0x4157	                                push r15	       442	mpih-mul.c	FUNCTION_7
+0x4000982	            0x4156	                                push r14	       442	mpih-mul.c	FUNCTION_7
+0x4000984	          0x4989fa	                            mov r10, rdi	       442	mpih-mul.c	FUNCTION_7
+0x4000987	            0x4155	                                push r13	       442	mpih-mul.c	FUNCTION_7
+0x4000989	            0x4154	                                push r12	       442	mpih-mul.c	FUNCTION_7
+0x400098b	          0x4d63e8	                         movsxd r13, r8d	       442	mpih-mul.c	FUNCTION_7
+0x400098e	              0x55	                                push rbp	       442	mpih-mul.c	FUNCTION_7
+0x400098f	              0x53	                                push rbx	       442	mpih-mul.c	FUNCTION_7
+0x4000990	          0x4863da	                         movsxd rbx, edx	       442	mpih-mul.c	FUNCTION_7
+0x4000993	          0x4989f6	                            mov r14, rsi	       442	mpih-mul.c	FUNCTION_7
+0x4000996	          0x4889dd	                            mov rbp, rbx	       442	mpih-mul.c	FUNCTION_7
+0x4000999	          0x4989cb	                            mov r11, rcx	       442	mpih-mul.c	FUNCTION_7
+0x400099c	        0x4883ec48	                           sub rsp, 0x48	       442	mpih-mul.c	FUNCTION_7
+0x40009a0	    0x65488b042528	                mov rax, qword gs:[0x28]	       442	mpih-mul.c	FUNCTION_7
+0x40009a9	      0x4889442440	             mov qword [rsp + 0x40], rax	       442	mpih-mul.c	FUNCTION_7
+0x40009ae	            0x31c0	                            xor eax, eax	       442	mpih-mul.c	FUNCTION_7
+0x40009b0	        0x4183fd0f	                           cmp r13d, 0xf	       447	mpih-mul.c	FUNCTION_7	IF_1
+0x40009b4	        0x4c890c24	                     mov qword [rsp], r9	       442	mpih-mul.c	FUNCTION_7
+0x40009b8	     0xf8fcd000000	                            jg 0x4000a8b	       447	mpih-mul.c	FUNCTION_7	IF_1
+0x40009be	          0x4585ed	                         test r13d, r13d	       451	mpih-mul.c	FUNCTION_7	IF_1	IF_2
+0x40009c1	     0xf848d000000	                            je 0x4000a54	       451	mpih-mul.c	FUNCTION_7	IF_1	IF_2
+0x40009c7	          0x488b09	                    mov rcx, qword [rcx]	       458	mpih-mul.c	FUNCTION_7	IF_1
+0x40009ca	        0x4883f901	                              cmp rcx, 1	       459	mpih-mul.c	FUNCTION_7	IF_1	IF_3
+0x40009ce	     0xf8621010000	                           jbe 0x4000af5	       459	mpih-mul.c	FUNCTION_7	IF_1	IF_3
+0x40009d4	            0x89da	                            mov edx, ebx	       466	mpih-mul.c	FUNCTION_7	IF_1	CALL_3
+0x40009d6	      0x4c895c2410	             mov qword [rsp + 0x10], r11	       466	mpih-mul.c	FUNCTION_7	IF_1	CALL_3
+0x40009db	      0x48897c2408	                mov qword [rsp + 8], rdi	       466	mpih-mul.c	FUNCTION_7	IF_1	CALL_3
+0x40009e0	      0xe800000000	                          call 0x40009e5	       466	mpih-mul.c	FUNCTION_7	IF_1	CALL_3
+0x40009e5	      0x4c8b5c2410	            mov r11, qword [rsp + 0x10] 	       466	mpih-mul.c	FUNCTION_7	IF_1	CALL_3
+0x40009ea	      0x4c8b542408	                mov r10, qword [rsp + 8]	       466	mpih-mul.c	FUNCTION_7	IF_1	CALL_3
+0x40009ef	        0x4183fd01	                             cmp r13d, 1	       473	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x40009f3	    0x4c8d24dd0000	                        lea r12, [rbx*8]	       468	mpih-mul.c	FUNCTION_7	IF_1
+0x40009fb	        0x498904da	            mov qword [r10 + rbx*8], rax	       468	mpih-mul.c	FUNCTION_7	IF_1
+0x40009ff	        0x498d5a08	                      lea rbx, [r10 + 8]	       469	mpih-mul.c	FUNCTION_7	IF_1
+0x4000a03	            0x7e7b	                           jle 0x4000a80	       473	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a05	        0x418d45fe	                      lea eax, [r13 - 2]	       473	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a09	        0x4d8d7b08	                      lea r15, [r11 + 8]	       473	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a0d	      0x4d8d6cc210	          lea r13, [r10 + rax*8 + 0x10] 	       473	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a12	            0xeb1e	                           jmp 0x4000a32	       473	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a14	            0x89ea	                            mov edx, ebp	       481	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	CALL_5
+0x4000a16	          0x4c89f6	                            mov rsi, r14	       481	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	CALL_5
+0x4000a19	          0x4889df	                            mov rdi, rbx	       481	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	CALL_5
+0x4000a1c	      0xe800000000	                          call 0x4000a21	       481	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	CALL_5
+0x4000a21	        0x4a890423	              mov qword [rbx + r12], rax	       483	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a25	        0x4883c308	                              add rbx, 8	       484	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a29	        0x4983c708	                              add r15, 8	       484	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a2d	          0x4c39eb	                            cmp rbx, r13	       473	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a30	            0x744e	                            je 0x4000a80	       473	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a32	          0x498b0f	                    mov rcx, qword [r15]	       474	mpih-mul.c	FUNCTION_7	IF_1	FOR_1
+0x4000a35	        0x4883f901	                              cmp rcx, 1	       475	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	IF_5
+0x4000a39	            0x77d9	                            ja 0x4000a14	       475	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	IF_5
+0x4000a3b	      0xb800000000	                              mov eax, 0	       476	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	IF_5
+0x4000a40	            0x75df	                           jne 0x4000a21	       477	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	IF_5	IF_6
+0x4000a42	            0x89e9	                            mov ecx, ebp	       478	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	IF_5	IF_6	CALL_4
+0x4000a44	          0x4c89f2	                            mov rdx, r14	       478	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	IF_5	IF_6	CALL_4
+0x4000a47	          0x4889de	                            mov rsi, rbx	       478	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	IF_5	IF_6	CALL_4
+0x4000a4a	          0x4889df	                            mov rdi, rbx	       478	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	IF_5	IF_6	CALL_4
+0x4000a4d	      0xe800000000	                          call 0x4000a52	       478	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	IF_5	IF_6	CALL_4
+0x4000a52	            0xebcd	                           jmp 0x4000a21	       478	mpih-mul.c	FUNCTION_7	IF_1	FOR_1	IF_5	IF_6	CALL_4
+0x4000a54	    0x49c701000000	                       mov qword [r9], 0	       452	mpih-mul.c	FUNCTION_7	IF_1	IF_2
+0x4000a5b	            0x31c0	                            xor eax, eax	       453	mpih-mul.c	FUNCTION_7	IF_1	IF_2
+0x4000a5d	      0x488b742440	            mov rsi, qword [rsp + 0x40] 	       497	mpih-mul.c	FUNCTION_7
+0x4000a62	    0x654833342528	                xor rsi, qword gs:[0x28]	       497	mpih-mul.c	FUNCTION_7
+0x4000a6b	     0xf85d3000000	                           jne 0x4000b44	       497	mpih-mul.c	FUNCTION_7
+0x4000a71	        0x4883c448	                           add rsp, 0x48	       497	mpih-mul.c	FUNCTION_7
+0x4000a75	              0x5b	                                 pop rbx	       497	mpih-mul.c	FUNCTION_7
+0x4000a76	              0x5d	                                 pop rbp	       497	mpih-mul.c	FUNCTION_7
+0x4000a77	            0x415c	                                 pop r12	       497	mpih-mul.c	FUNCTION_7
+0x4000a79	            0x415d	                                 pop r13	       497	mpih-mul.c	FUNCTION_7
+0x4000a7b	            0x415e	                                 pop r14	       497	mpih-mul.c	FUNCTION_7
+0x4000a7d	            0x415f	                                 pop r15	       497	mpih-mul.c	FUNCTION_7
+0x4000a7f	              0xc3	                                     ret	       497	mpih-mul.c	FUNCTION_7
+0x4000a80	        0x488b3c24	                    mov rdi, qword [rsp]	       487	mpih-mul.c	FUNCTION_7	IF_1
+0x4000a84	          0x488907	                    mov qword [rdi], rax	       487	mpih-mul.c	FUNCTION_7	IF_1
+0x4000a87	            0x31c0	                            xor eax, eax	       488	mpih-mul.c	FUNCTION_7	IF_1
+0x4000a89	            0xebd2	                           jmp 0x4000a5d	       488	mpih-mul.c	FUNCTION_7	IF_1
+0x4000a8b	      0x4c8d4c2418	                    lea r9, [rsp + 0x18]	       492	mpih-mul.c	FUNCTION_7	IF_7	CALL_7
+0x4000a90	          0x4589e8	                           mov r8d, r13d	       492	mpih-mul.c	FUNCTION_7	IF_7	CALL_7
+0x4000a93	            0x89da	                            mov edx, ebx	       492	mpih-mul.c	FUNCTION_7	IF_7	CALL_7
+0x4000a95	    0x48c744241800	               mov qword [rsp + 0x18], 0	       491	mpih-mul.c	FUNCTION_7	CALL_6
+0x4000a9e	    0x48c744242000	               mov qword [rsp + 0x20], 0	       491	mpih-mul.c	FUNCTION_7	CALL_6
+0x4000aa7	    0x48c744242800	               mov qword [rsp + 0x28], 0	       491	mpih-mul.c	FUNCTION_7	CALL_6
+0x4000ab0	    0x48c744243000	               mov qword [rsp + 0x30], 0	       491	mpih-mul.c	FUNCTION_7	CALL_6
+0x4000ab9	    0x48c744243800	               mov qword [rsp + 0x38], 0	       491	mpih-mul.c	FUNCTION_7	CALL_6
+0x4000ac2	      0x48897c2408	                mov qword [rsp + 8], rdi	       492	mpih-mul.c	FUNCTION_7	IF_7	CALL_7
+0x4000ac7	      0xe800000000	                          call 0x4000acc	       492	mpih-mul.c	FUNCTION_7	IF_7	CALL_7
+0x4000acc	            0x85c0	                           test eax, eax	       492	mpih-mul.c	FUNCTION_7	IF_7	CALL_7
+0x4000ace	            0x786a	                            js 0x4000b3a	       492	mpih-mul.c	FUNCTION_7	IF_7	CALL_7
+0x4000ad0	      0x488d7c2418	                   lea rdi, [rsp + 0x18]	       494	mpih-mul.c	FUNCTION_7	CALL_8
+0x4000ad5	          0x4901dd	                            add r13, rbx	       495	mpih-mul.c	FUNCTION_7
+0x4000ad8	      0xe800000000	                          call 0x4000add	       494	mpih-mul.c	FUNCTION_7	CALL_8
+0x4000add	      0x4c8b542408	                mov r10, qword [rsp + 8]	       495	mpih-mul.c	FUNCTION_7
+0x4000ae2	        0x488b3424	                    mov rsi, qword [rsp]	       495	mpih-mul.c	FUNCTION_7
+0x4000ae6	      0x4b8b44eaf8	        mov rax, qword [r10 + r13*8 - 8]	       495	mpih-mul.c	FUNCTION_7
+0x4000aeb	          0x488906	                    mov qword [rsi], rax	       495	mpih-mul.c	FUNCTION_7
+0x4000aee	            0x31c0	                            xor eax, eax	       496	mpih-mul.c	FUNCTION_7
+0x4000af0	      0xe968ffffff	                           jmp 0x4000a5d	       496	mpih-mul.c	FUNCTION_7
+0x4000af5	            0x7426	                            je 0x4000b1d	       460	mpih-mul.c	FUNCTION_7	IF_1	IF_3	IF_4
+0x4000af7	            0x85db	                           test ebx, ebx	       463	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_2
+0x4000af9	            0x7e1b	                           jle 0x4000b16	       463	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_2
+0x4000afb	          0x8d53ff	                      lea edx, [rbx - 1]	       463	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_2
+0x4000afe	          0x4889f8	                            mov rax, rdi	       463	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_2
+0x4000b01	      0x488d54d708	              lea rdx, [rdi + rdx*8 + 8]	       463	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_2
+0x4000b06	    0x48c700000000	                      mov qword [rax], 0	       463	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_2
+0x4000b0d	        0x4883c008	                              add rax, 8	       463	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_2
+0x4000b11	          0x4839d0	                            cmp rax, rdx	       463	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_2
+0x4000b14	            0x75f0	                           jne 0x4000b06	       463	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_2
+0x4000b16	            0x31c0	                            xor eax, eax	       464	mpih-mul.c	FUNCTION_7	IF_1	IF_3
+0x4000b18	      0xe9d2feffff	                           jmp 0x40009ef	       464	mpih-mul.c	FUNCTION_7	IF_1	IF_3
+0x4000b1d	            0x85db	                           test ebx, ebx	       461	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_1
+0x4000b1f	            0x7ef5	                           jle 0x4000b16	       461	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_1
+0x4000b21	            0x31c0	                            xor eax, eax	       461	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_1
+0x4000b23	        0x498b14c6	            mov rdx, qword [r14 + rax*8]	       461	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_1
+0x4000b27	        0x498914c2	            mov qword [r10 + rax*8], rdx	       461	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_1
+0x4000b2b	        0x4883c001	                              add rax, 1	       461	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_1
+0x4000b2f	            0x39c5	                            cmp ebp, eax	       461	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_1
+0x4000b31	            0x7ff0	                            jg 0x4000b23	       461	mpih-mul.c	FUNCTION_7	IF_1	IF_3	CALL_1
+0x4000b33	            0x31c0	                            xor eax, eax	       464	mpih-mul.c	FUNCTION_7	IF_1	IF_3
+0x4000b35	      0xe9b5feffff	                           jmp 0x40009ef	       464	mpih-mul.c	FUNCTION_7	IF_1	IF_3
+0x4000b3a	      0xb8f4ffffff	                     mov eax, 0xfffffff4	       493	mpih-mul.c	FUNCTION_7	IF_7
+0x4000b3f	      0xe919ffffff	                           jmp 0x4000a5d	       493	mpih-mul.c	FUNCTION_7	IF_7
+0x4000b44	      0xe800000000	                          call 0x4000b49	       497	mpih-mul.c	FUNCTION_7
+mpih_sqr_n_basecase	SWITCH,0:WHILE,0:CALL,5:DO,0:IF,4:ELSE,3:FOR,1:functions,0	72
+0x40004e0	            0x4157	                                push r15	       221	mpih-mul.c	FUNCTION_3
+0x40004e2	            0x4156	                                push r14	       221	mpih-mul.c	FUNCTION_3
+0x40004e4	          0x4989f7	                            mov r15, rsi	       221	mpih-mul.c	FUNCTION_3
+0x40004e7	            0x4155	                                push r13	       221	mpih-mul.c	FUNCTION_3
+0x40004e9	            0x4154	                                push r12	       221	mpih-mul.c	FUNCTION_3
+0x40004eb	          0x4989fe	                            mov r14, rdi	       221	mpih-mul.c	FUNCTION_3
+0x40004ee	              0x55	                                push rbp	       221	mpih-mul.c	FUNCTION_3
+0x40004ef	              0x53	                                push rbx	       221	mpih-mul.c	FUNCTION_3
+0x40004f0	          0x4189d4	                           mov r12d, edx	       221	mpih-mul.c	FUNCTION_3
+0x40004f3	          0x488b0e	                    mov rcx, qword [rsi]	       228	mpih-mul.c	FUNCTION_3
+0x40004f6	        0x4883f901	                              cmp rcx, 1	       229	mpih-mul.c	FUNCTION_3	IF_1
+0x40004fa	            0x767c	                           jbe 0x4000578	       229	mpih-mul.c	FUNCTION_3	IF_1
+0x40004fc	      0xe800000000	                          call 0x4000501	       236	mpih-mul.c	FUNCTION_3	CALL_3
+0x4000501	          0x4963d4	                        movsxd rdx, r12d	       238	mpih-mul.c	FUNCTION_3
+0x4000504	        0x4183fc01	                             cmp r12d, 1	       243	mpih-mul.c	FUNCTION_3	FOR_1
+0x4000508	        0x498d5e08	                      lea rbx, [r14 + 8]	       239	mpih-mul.c	FUNCTION_3
+0x400050c	    0x4c8d2cd50000	                        lea r13, [rdx*8]	       238	mpih-mul.c	FUNCTION_3
+0x4000514	        0x498904d6	            mov qword [r14 + rdx*8], rax	       238	mpih-mul.c	FUNCTION_3
+0x4000518	            0x7e53	                           jle 0x400056d	       243	mpih-mul.c	FUNCTION_3	FOR_1
+0x400051a	      0x418d4424fe	                      lea eax, [r12 - 2]	       243	mpih-mul.c	FUNCTION_3	FOR_1
+0x400051f	        0x498d6f08	                      lea rbp, [r15 + 8]	       243	mpih-mul.c	FUNCTION_3	FOR_1
+0x4000523	      0x4d8d74c610	          lea r14, [r14 + rax*8 + 0x10] 	       243	mpih-mul.c	FUNCTION_3	FOR_1
+0x4000528	            0xeb1f	                           jmp 0x4000549	       243	mpih-mul.c	FUNCTION_3	FOR_1
+0x400052a	          0x4489e2	                           mov edx, r12d	       250	mpih-mul.c	FUNCTION_3	FOR_1	CALL_5
+0x400052d	          0x4c89fe	                            mov rsi, r15	       250	mpih-mul.c	FUNCTION_3	FOR_1	CALL_5
+0x4000530	          0x4889df	                            mov rdi, rbx	       250	mpih-mul.c	FUNCTION_3	FOR_1	CALL_5
+0x4000533	      0xe800000000	                          call 0x4000538	       250	mpih-mul.c	FUNCTION_3	FOR_1	CALL_5
+0x4000538	        0x4a89042b	              mov qword [rbx + r13], rax	       252	mpih-mul.c	FUNCTION_3	FOR_1
+0x400053c	        0x4883c308	                              add rbx, 8	       253	mpih-mul.c	FUNCTION_3	FOR_1
+0x4000540	        0x4883c508	                              add rbp, 8	       253	mpih-mul.c	FUNCTION_3	FOR_1
+0x4000544	          0x4c39f3	                            cmp rbx, r14	       243	mpih-mul.c	FUNCTION_3	FOR_1
+0x4000547	            0x7424	                            je 0x400056d	       243	mpih-mul.c	FUNCTION_3	FOR_1
+0x4000549	        0x488b4d00	                    mov rcx, qword [rbp]	       244	mpih-mul.c	FUNCTION_3	FOR_1
+0x400054d	        0x4883f901	                              cmp rcx, 1	       245	mpih-mul.c	FUNCTION_3	FOR_1	IF_3
+0x4000551	            0x77d7	                            ja 0x400052a	       245	mpih-mul.c	FUNCTION_3	FOR_1	IF_3
+0x4000553	      0xb800000000	                              mov eax, 0	       246	mpih-mul.c	FUNCTION_3	FOR_1	IF_3
+0x4000558	            0x75de	                           jne 0x4000538	       247	mpih-mul.c	FUNCTION_3	FOR_1	IF_3	IF_4
+0x400055a	          0x4489e1	                           mov ecx, r12d	       248	mpih-mul.c	FUNCTION_3	FOR_1	IF_3	CALL_4
+0x400055d	          0x4c89fa	                            mov rdx, r15	       248	mpih-mul.c	FUNCTION_3	FOR_1	IF_3	CALL_4
+0x4000560	          0x4889de	                            mov rsi, rbx	       248	mpih-mul.c	FUNCTION_3	FOR_1	IF_3	CALL_4
+0x4000563	          0x4889df	                            mov rdi, rbx	       248	mpih-mul.c	FUNCTION_3	FOR_1	IF_3	CALL_4
+0x4000566	      0xe800000000	                          call 0x400056b	       248	mpih-mul.c	FUNCTION_3	FOR_1	IF_3	CALL_4
+0x400056b	            0xebcb	                           jmp 0x4000538	       248	mpih-mul.c	FUNCTION_3	FOR_1	IF_3	CALL_4
+0x400056d	              0x5b	                                 pop rbx	       255	mpih-mul.c	FUNCTION_3
+0x400056e	              0x5d	                                 pop rbp	       255	mpih-mul.c	FUNCTION_3
+0x400056f	            0x415c	                                 pop r12	       255	mpih-mul.c	FUNCTION_3
+0x4000571	            0x415d	                                 pop r13	       255	mpih-mul.c	FUNCTION_3
+0x4000573	            0x415e	                                 pop r14	       255	mpih-mul.c	FUNCTION_3
+0x4000575	            0x415f	                                 pop r15	       255	mpih-mul.c	FUNCTION_3
+0x4000577	              0xc3	                                     ret	       255	mpih-mul.c	FUNCTION_3
+0x4000578	            0x7426	                            je 0x40005a0	       230	mpih-mul.c	FUNCTION_3	IF_1	IF_2
+0x400057a	            0x85d2	                           test edx, edx	       233	mpih-mul.c	FUNCTION_3	IF_1	CALL_2
+0x400057c	            0x7e1b	                           jle 0x4000599	       233	mpih-mul.c	FUNCTION_3	IF_1	CALL_2
+0x400057e	          0x8d52ff	                      lea edx, [rdx - 1]	       233	mpih-mul.c	FUNCTION_3	IF_1	CALL_2
+0x4000581	          0x4889f8	                            mov rax, rdi	       233	mpih-mul.c	FUNCTION_3	IF_1	CALL_2
+0x4000584	      0x488d54d708	              lea rdx, [rdi + rdx*8 + 8]	       233	mpih-mul.c	FUNCTION_3	IF_1	CALL_2
+0x4000589	    0x48c700000000	                      mov qword [rax], 0	       233	mpih-mul.c	FUNCTION_3	IF_1	CALL_2
+0x4000590	        0x4883c008	                              add rax, 8	       233	mpih-mul.c	FUNCTION_3	IF_1	CALL_2
+0x4000594	          0x4839d0	                            cmp rax, rdx	       233	mpih-mul.c	FUNCTION_3	IF_1	CALL_2
+0x4000597	            0x75f0	                           jne 0x4000589	       233	mpih-mul.c	FUNCTION_3	IF_1	CALL_2
+0x4000599	            0x31c0	                            xor eax, eax	       234	mpih-mul.c	FUNCTION_3	IF_1
+0x400059b	      0xe961ffffff	                           jmp 0x4000501	       234	mpih-mul.c	FUNCTION_3	IF_1
+0x40005a0	            0x85d2	                           test edx, edx	       231	mpih-mul.c	FUNCTION_3	IF_1	CALL_1
+0x40005a2	            0x7ef5	                           jle 0x4000599	       231	mpih-mul.c	FUNCTION_3	IF_1	CALL_1
+0x40005a4	            0x31c0	                            xor eax, eax	       231	mpih-mul.c	FUNCTION_3	IF_1	CALL_1
+0x40005a6	        0x498b14c7	            mov rdx, qword [r15 + rax*8]	       231	mpih-mul.c	FUNCTION_3	IF_1	CALL_1
+0x40005aa	        0x498914c6	            mov qword [r14 + rax*8], rdx	       231	mpih-mul.c	FUNCTION_3	IF_1	CALL_1
+0x40005ae	        0x4883c001	                              add rax, 1	       231	mpih-mul.c	FUNCTION_3	IF_1	CALL_1
+0x40005b2	          0x4139c4	                           cmp r12d, eax	       231	mpih-mul.c	FUNCTION_3	IF_1	CALL_1
+0x40005b5	            0x7fef	                            jg 0x40005a6	       231	mpih-mul.c	FUNCTION_3	IF_1	CALL_1
+0x40005b7	            0x31c0	                            xor eax, eax	       234	mpih-mul.c	FUNCTION_3	IF_1
+0x40005b9	      0xe943ffffff	                           jmp 0x4000501	       234	mpih-mul.c	FUNCTION_3	IF_1

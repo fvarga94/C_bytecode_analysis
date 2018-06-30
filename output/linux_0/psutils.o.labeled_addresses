@@ -1,0 +1,74 @@
+acpi_ps_is_leading_char	WHILE,0:FOR,0:ELSE,0:functions,0:SWITCH,0:IF,0:CALL,0:DO,0	7
+0x4000113	          0x8d47bf	                   lea eax, [rdi - 0x41]	       181	psutils.c	FUNCTION_5
+0x4000116	          0x83f819	                           cmp eax, 0x19	       181	psutils.c	FUNCTION_5
+0x4000119	           0xf96c2	                                setbe dl	       181	psutils.c	FUNCTION_5
+0x400011c	          0x83ff5f	                           cmp edi, 0x5f	       181	psutils.c	FUNCTION_5
+0x400011f	           0xf94c0	                                 sete al	       181	psutils.c	FUNCTION_5
+0x4000122	             0x9d0	                             or eax, edx	       181	psutils.c	FUNCTION_5
+0x4000124	              0xc3	                                     ret	       182	psutils.c	FUNCTION_5
+acpi_ps_alloc_op	WHILE,0:FOR,0:ELSE,3:functions,0:SWITCH,0:IF,7:CALL,7:DO,0	39
+0x400006d	            0x4154	                                push r12	        86	psutils.c	FUNCTION_3
+0x400006f	              0x55	                                push rbp	        86	psutils.c	FUNCTION_3
+0x4000070	            0x89fd	                            mov ebp, edi	        86	psutils.c	FUNCTION_3
+0x4000072	              0x53	                                push rbx	        86	psutils.c	FUNCTION_3
+0x4000073	           0xfb7ff	                           movzx edi, di	        93	psutils.c	FUNCTION_3	CALL_2
+0x4000076	          0x4989f4	                            mov r12, rsi	        86	psutils.c	FUNCTION_3
+0x4000079	      0xe800000000	                          call 0x400007e	        93	psutils.c	FUNCTION_3	CALL_2
+0x400007e	          0x8b4008	                mov eax, dword [rax + 8]	        97	psutils.c	FUNCTION_3	IF_1
+0x4000081	            0xa820	                           test al, 0x20	        97	psutils.c	FUNCTION_3	IF_1
+0x4000083	            0x753b	                           jne 0x40000c0	        97	psutils.c	FUNCTION_3	IF_1
+0x4000085	            0xa840	                           test al, 0x40	        99	psutils.c	FUNCTION_3	ELSE_1	IF_2
+0x4000087	            0x753b	                           jne 0x40000c4	        99	psutils.c	FUNCTION_3	ELSE_1	IF_2
+0x4000089	        0x6683fd33	                            cmp bp, 0x33	       101	psutils.c	FUNCTION_3	ELSE_2	IF_3
+0x400008d	            0x7439	                            je 0x40000c8	       101	psutils.c	FUNCTION_3	ELSE_2	IF_3
+0x400008f	    0x488b3d000000	            mov rdi, qword [0x04000096] 	       111	psutils.c	FUNCTION_3	IF_4	CALL_3
+0x4000096	            0xb301	                               mov bl, 1	        89	psutils.c	FUNCTION_3
+0x4000098	      0xe8a3ffffff	         call sym.acpi_os_acquire_object	       111	psutils.c	FUNCTION_3	IF_4	CALL_3
+0x400009d	          0x4885c0	                           test rax, rax	       120	psutils.c	FUNCTION_3	IF_5
+0x40000a0	            0x7436	                            je 0x40000d8	       120	psutils.c	FUNCTION_3	IF_5
+0x40000a2	        0x6683fd10	                            cmp bp, 0x10	       126	psutils.c	FUNCTION_3	IF_5	IF_6
+0x40000a6	        0xc640080d	                 mov byte [rax + 8], 0xd	        60	psutils.c	FUNCTION_2
+0x40000aa	        0x6689680a	                mov word [rax + 0xa], bp	        61	psutils.c	FUNCTION_2
+0x40000ae	        0x4c896010	             mov qword [rax + 0x10], r12	       122	psutils.c	FUNCTION_3	IF_5
+0x40000b2	          0x885809	                  mov byte [rax + 9], bl	       123	psutils.c	FUNCTION_3	IF_5
+0x40000b5	            0x7521	                           jne 0x40000d8	       126	psutils.c	FUNCTION_3	IF_5	IF_6
+0x40000b7	    0x488905000000	            mov qword [0x040000be], rax 	       127	psutils.c	FUNCTION_3	IF_5	IF_6
+0x40000be	            0xeb18	                           jmp 0x40000d8	       135	psutils.c	FUNCTION_3
+0x40000c0	            0xb304	                               mov bl, 4	        98	psutils.c	FUNCTION_3	IF_1
+0x40000c2	            0xeb06	                           jmp 0x40000ca	        98	psutils.c	FUNCTION_3	IF_1
+0x40000c4	            0xb302	                               mov bl, 2	       100	psutils.c	FUNCTION_3	ELSE_1	IF_2
+0x40000c6	            0xeb02	                           jmp 0x40000ca	       100	psutils.c	FUNCTION_3	ELSE_1	IF_2
+0x40000c8	            0xb308	                               mov bl, 8	       102	psutils.c	FUNCTION_3	ELSE_2	IF_3
+0x40000ca	    0x488b3d000000	            mov rdi, qword [0x040000d1] 	       115	psutils.c	FUNCTION_3	ELSE_3	CALL_4
+0x40000d1	      0xe86affffff	         call sym.acpi_os_acquire_object	       115	psutils.c	FUNCTION_3	ELSE_3	CALL_4
+0x40000d6	            0xebc5	                           jmp 0x400009d	       115	psutils.c	FUNCTION_3	ELSE_3	CALL_4
+0x40000d8	              0x5b	                                 pop rbx	       136	psutils.c	FUNCTION_3
+0x40000d9	              0x5d	                                 pop rbp	       136	psutils.c	FUNCTION_3
+0x40000da	            0x415c	                                 pop r12	       136	psutils.c	FUNCTION_3
+0x40000dc	              0xc3	                                     ret	       136	psutils.c	FUNCTION_3
+acpi_ps_free_op	WHILE,0:FOR,0:ELSE,1:functions,0:SWITCH,0:IF,2:CALL,5:DO,0	6
+0x40000f7	          0x4889fe	                            mov rsi, rdi	       152	psutils.c	FUNCTION_4
+0x40000fa	    0x488b3d000000	            mov rdi, qword [0x04000101] 	       162	psutils.c	FUNCTION_4	IF_2	CALL_4
+0x4000101	        0xf6460901	                  test byte [rsi + 9], 1	       161	psutils.c	FUNCTION_4	IF_2
+0x4000105	            0x7507	                           jne 0x400010e	       161	psutils.c	FUNCTION_4	IF_2
+0x4000107	    0x488b3d000000	            mov rdi, qword [0x0400010e] 	       164	psutils.c	FUNCTION_4	ELSE_1	CALL_5
+0x400010e	      0xe900000000	         jmp sym.acpi_ps_is_leading_char	       164	psutils.c	FUNCTION_4	ELSE_1	CALL_5
+acpi_ps_get_name	WHILE,0:FOR,0:ELSE,0:functions,0:SWITCH,0:IF,1:CALL,0:DO,0	5
+0x4000125	            0x31c0	                            xor eax, eax	       193	psutils.c	FUNCTION_6	IF_1
+0x4000127	        0xf6470901	                  test byte [rdi + 9], 1	       192	psutils.c	FUNCTION_6	IF_1
+0x400012b	            0x7503	                           jne 0x4000130	       192	psutils.c	FUNCTION_6	IF_1
+0x400012d	          0x8b474c	            mov eax, dword [rdi + 0x4c] 	       198	psutils.c	FUNCTION_6
+0x4000130	              0xc3	                                     ret	       199	psutils.c	FUNCTION_6
+acpi_ps_set_name	WHILE,0:FOR,0:ELSE,0:functions,0:SWITCH,0:IF,1:CALL,0:DO,0	4
+0x4000131	        0xf6470901	                  test byte [rdi + 9], 1	       209	psutils.c	FUNCTION_7	IF_1
+0x4000135	            0x7503	                           jne 0x400013a	       209	psutils.c	FUNCTION_7	IF_1
+0x4000137	          0x89774c	             mov dword [rdi + 0x4c], esi	       213	psutils.c	FUNCTION_7
+0x400013a	              0xc3	                                     ret	       213	psutils.c	FUNCTION_7
+acpi_ps_create_scope_op	WHILE,0:FOR,0:ELSE,0:functions,0:SWITCH,0:IF,1:CALL,1:DO,0	7
+0x40000dd	          0x4889fe	                            mov rsi, rdi	        31	psutils.c	FUNCTION_1
+0x40000e0	      0xbf10000000	                           mov edi, 0x10	        34	psutils.c	FUNCTION_1	CALL_1
+0x40000e5	      0xe800000000	                          call 0x40000ea	        34	psutils.c	FUNCTION_1	CALL_1
+0x40000ea	          0x4885c0	                           test rax, rax	        35	psutils.c	FUNCTION_1	IF_1
+0x40000ed	            0x7407	                            je 0x40000f6	        35	psutils.c	FUNCTION_1	IF_1
+0x40000ef	    0xc7404c5c5f5f	     mov dword [rax + 0x4c], 0x5f5f5f5c 	        39	psutils.c	FUNCTION_1
+0x40000f6	              0xc3	                                     ret	        41	psutils.c	FUNCTION_1

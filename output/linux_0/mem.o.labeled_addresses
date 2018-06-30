@@ -1,0 +1,149 @@
+open_port	DO,0:SWITCH,0:CALL,1:functions,0:IF,0:ELSE,0:WHILE,0:FOR,0	6
+0x40001f0	      0xbf11000000	                           mov edi, 0x11	       787	mem.c	FUNCTION_38	CALL_1
+0x40001f5	      0xe800000000	                          call 0x40001fa	       787	mem.c	FUNCTION_38	CALL_1
+0x40001fa	          0x83f001	                              xor eax, 1	       787	mem.c	FUNCTION_38	CALL_1
+0x40001fd	           0xfb6c0	                           movzx eax, al	       787	mem.c	FUNCTION_38	CALL_1
+0x4000200	            0xf7d8	                                 neg eax	       787	mem.c	FUNCTION_38	CALL_1
+0x4000202	              0xc3	                                     ret	       788	mem.c	FUNCTION_38
+phys_mem_access_prot_allowed	DO,0:SWITCH,0:CALL,0:functions,0:IF,0:ELSE,0:WHILE,0:FOR,0	2
+0x4000630	      0xb801000000	                              mov eax, 1	       264	mem.c	FUNCTION_11
+0x4000635	              0xc3	                                     ret	       264	mem.c	FUNCTION_11
+mem_devnode	DO,0:SWITCH,0:CALL,2:functions,0:IF,1:ELSE,0:WHILE,0:FOR,0	11
+0x40000f0	          0x4885f6	                           test rsi, rsi	       909	mem.c	FUNCTION_40	IF_1	CALL_1
+0x40000f3	            0x741e	                            je 0x4000113	       909	mem.c	FUNCTION_40	IF_1	CALL_1
+0x40000f5	    0x8b8760020000	           mov eax, dword [rdi + 0x260] 	       909	mem.c	FUNCTION_40	IF_1	CALL_1
+0x40000fb	      0x25ffff0f00	                        and eax, 0xfffff	       909	mem.c	FUNCTION_40	IF_1	CALL_1
+0x4000100	        0x48c1e005	                              shl rax, 5	       909	mem.c	FUNCTION_40	IF_1	CALL_1
+0x4000104	     0xfb780000000	                   movzx eax, word [rax]	       909	mem.c	FUNCTION_40	IF_1	CALL_1
+0x400010b	          0x6685c0	                             test ax, ax	       909	mem.c	FUNCTION_40	IF_1	CALL_1
+0x400010e	            0x7403	                            je 0x4000113	       909	mem.c	FUNCTION_40	IF_1	CALL_1
+0x4000110	          0x668906	                      mov word [rsi], ax	       910	mem.c	FUNCTION_40	CALL_2
+0x4000113	            0x31c0	                            xor eax, eax	       912	mem.c	FUNCTION_40
+0x4000115	              0xc3	                                     ret	       912	mem.c	FUNCTION_40
+read_iter_null	DO,0:SWITCH,0:CALL,0:functions,0:IF,0:ELSE,0:WHILE,0:FOR,0	2
+0x4000060	            0x31c0	                            xor eax, eax	       663	mem.c	FUNCTION_28
+0x4000062	              0xc3	                                     ret	       663	mem.c	FUNCTION_28
+splice_write_null	DO,0:SWITCH,0:CALL,1:functions,0:IF,0:ELSE,0:WHILE,0:FOR,0	2
+0x4000280	    0x49c7c1000000	                               mov r9, 0	       681	mem.c	FUNCTION_31	CALL_1
+0x4000287	      0xe900000000	                           jmp 0x400028c	       681	mem.c	FUNCTION_31	CALL_1
+write_iter_null	DO,0:SWITCH,0:CALL,2:functions,0:IF,0:ELSE,0:WHILE,0:FOR,0	8
+0x40001d0	              0x53	                                push rbx	       666	mem.c	FUNCTION_29
+0x40001d1	        0x488b5e10	            mov rbx, qword [rsi + 0x10] 	       666	mem.c	FUNCTION_29
+0x40001d5	          0x4889f7	                            mov rdi, rsi	       666	mem.c	FUNCTION_29
+0x40001d8	          0x4889de	                            mov rsi, rbx	       668	mem.c	FUNCTION_29	CALL_2
+0x40001db	      0xe800000000	                          call 0x40001e0	       668	mem.c	FUNCTION_29	CALL_2
+0x40001e0	          0x4889d8	                            mov rax, rbx	       670	mem.c	FUNCTION_29
+0x40001e3	              0x5b	                                 pop rbx	       670	mem.c	FUNCTION_29
+0x40001e4	              0xc3	                                     ret	       670	mem.c	FUNCTION_29
+mmap_mem	DO,0:SWITCH,0:CALL,6:functions,0:IF,7:ELSE,0:WHILE,0:FOR,0	88
+0x4000640	            0x4157	                                push r15	       359	mem.c	FUNCTION_19
+0x4000642	            0x4156	                                push r14	       359	mem.c	FUNCTION_19
+0x4000644	            0x4155	                                push r13	       359	mem.c	FUNCTION_19
+0x4000646	            0x4154	                                push r12	       359	mem.c	FUNCTION_19
+0x4000648	              0x55	                                push rbp	       359	mem.c	FUNCTION_19
+0x4000649	              0x53	                                push rbx	       359	mem.c	FUNCTION_19
+0x400064a	    0x488b86980000	            mov rax, qword [rsi + 0x98] 	       361	mem.c	FUNCTION_19
+0x4000651	        0x4c8b6e08	                mov r13, qword [rsi + 8]	       360	mem.c	FUNCTION_19
+0x4000655	          0x4c2b2e	                    sub r13, qword [rsi]	       360	mem.c	FUNCTION_19
+0x4000658	          0x4889c2	                            mov rdx, rax	       361	mem.c	FUNCTION_19
+0x400065b	        0x48c1e20c	                            shl rdx, 0xc	       361	mem.c	FUNCTION_19
+0x400065f	          0x4889d1	                            mov rcx, rdx	       364	mem.c	FUNCTION_19	IF_1
+0x4000662	        0x48c1e90c	                            shr rcx, 0xc	       364	mem.c	FUNCTION_19	IF_1
+0x4000666	          0x4839c8	                            cmp rax, rcx	       364	mem.c	FUNCTION_19	IF_1
+0x4000669	     0xf85e5000000	                           jne 0x4000754	       364	mem.c	FUNCTION_19	IF_1
+0x400066f	      0x498d4c15ff	                lea rcx, [r13 + rdx - 1]	       368	mem.c	FUNCTION_19	IF_2
+0x4000674	          0x4839ca	                            cmp rdx, rcx	       368	mem.c	FUNCTION_19	IF_2
+0x4000677	     0xf87d7000000	                            ja 0x4000754	       368	mem.c	FUNCTION_19	IF_2
+0x400067d	          0x4989f4	                            mov r12, rsi	       368	mem.c	FUNCTION_19	IF_2
+0x4000680	          0x4989fe	                            mov r14, rdi	       368	mem.c	FUNCTION_19	IF_2
+0x4000683	          0x4c89ee	                            mov rsi, r13	       371	mem.c	FUNCTION_19	IF_3	CALL_1
+0x4000686	          0x4889c7	                            mov rdi, rax	       371	mem.c	FUNCTION_19	IF_3	CALL_1
+0x4000689	      0xe800000000	                          call 0x400068e	       371	mem.c	FUNCTION_19	IF_3	CALL_1
+0x400068e	            0x85c0	                           test eax, eax	       371	mem.c	FUNCTION_19	IF_3	CALL_1
+0x4000690	     0xf84be000000	                            je 0x4000754	       371	mem.c	FUNCTION_19	IF_3	CALL_1
+0x4000696	    0x498b9c249800	            mov rbx, qword [r12 + 0x98] 	       377	mem.c	FUNCTION_19	IF_5	CALL_3
+0x400069e	          0x4889dd	                            mov rbp, rbx	        70	mem.c	FUNCTION_5
+0x40006a1	        0x48c1e50c	                            shl rbp, 0xc	        70	mem.c	FUNCTION_5
+0x40006a5	      0x4d8d7c2d00	                    lea r15, [r13 + rbp]	        71	mem.c	FUNCTION_5
+0x40006aa	          0x4c39fd	                            cmp rbp, r15	        74	mem.c	FUNCTION_5	WHILE_1
+0x40006ad	            0x7215	                            jb 0x40006c4	        74	mem.c	FUNCTION_5	WHILE_1
+0x40006af	      0xe9b0000000	                           jmp 0x4000764	        74	mem.c	FUNCTION_5	WHILE_1
+0x40006b4	    0x4881c5001000	                         add rbp, 0x1000	        77	mem.c	FUNCTION_5	WHILE_1
+0x40006bb	        0x4883c301	                              add rbx, 1	        78	mem.c	FUNCTION_5	WHILE_1
+0x40006bf	          0x4939ef	                            cmp r15, rbp	        74	mem.c	FUNCTION_5	WHILE_1
+0x40006c2	            0x761c	                           jbe 0x40006e0	        74	mem.c	FUNCTION_5	WHILE_1
+0x40006c4	          0x4889df	                            mov rdi, rbx	        75	mem.c	FUNCTION_5	WHILE_1	IF_1	CALL_1
+0x40006c7	      0xe800000000	                          call 0x40006cc	        75	mem.c	FUNCTION_5	WHILE_1	IF_1	CALL_1
+0x40006cc	            0x85c0	                           test eax, eax	        75	mem.c	FUNCTION_5	WHILE_1	IF_1	CALL_1
+0x40006ce	            0x75e4	                           jne 0x40006b4	        75	mem.c	FUNCTION_5	WHILE_1	IF_1	CALL_1
+0x40006d0	              0x5b	                                 pop rbx	       399	mem.c	FUNCTION_19
+0x40006d1	      0xb8ffffffff	                     mov eax, 0xffffffff	       378	mem.c	FUNCTION_19	IF_5
+0x40006d6	              0x5d	                                 pop rbp	       399	mem.c	FUNCTION_19
+0x40006d7	            0x415c	                                 pop r12	       399	mem.c	FUNCTION_19
+0x40006d9	            0x415d	                                 pop r13	       399	mem.c	FUNCTION_19
+0x40006db	            0x415e	                                 pop r14	       399	mem.c	FUNCTION_19
+0x40006dd	            0x415f	                                 pop r15	       399	mem.c	FUNCTION_19
+0x40006df	              0xc3	                                     ret	       399	mem.c	FUNCTION_19
+0x40006e0	    0x498bb4249800	            mov rsi, qword [r12 + 0x98] 	       399	mem.c	FUNCTION_19
+0x40006e8	      0x498d4c2448	                   lea rcx, [r12 + 0x48]	       380	mem.c	FUNCTION_19	IF_6	CALL_4
+0x40006ed	          0x4c89ea	                            mov rdx, r13	       380	mem.c	FUNCTION_19	IF_6	CALL_4
+0x40006f0	          0x4c89f7	                            mov rdi, r14	       380	mem.c	FUNCTION_19	IF_6	CALL_4
+0x40006f3	      0xe800000000	                          call 0x40006f8	       380	mem.c	FUNCTION_19	IF_6	CALL_4
+0x40006f8	            0x85c0	                           test eax, eax	       380	mem.c	FUNCTION_19	IF_6	CALL_4
+0x40006fa	            0x7458	                            je 0x4000754	       380	mem.c	FUNCTION_19	IF_6	CALL_4
+0x40006fc	      0x498b4c2448	            mov rcx, qword [r12 + 0x48] 	       384	mem.c	FUNCTION_19	CALL_5
+0x4000701	    0x498bb4249800	            mov rsi, qword [r12 + 0x98] 	       384	mem.c	FUNCTION_19	CALL_5
+0x4000709	          0x4c89ea	                            mov rdx, r13	       384	mem.c	FUNCTION_19	CALL_5
+0x400070c	          0x4c89f7	                            mov rdi, r14	       384	mem.c	FUNCTION_19	CALL_5
+0x400070f	      0xe800000000	                          call 0x4000714	       384	mem.c	FUNCTION_19	CALL_5
+0x4000714	    0x498b94249800	            mov rdx, qword [r12 + 0x98] 	       391	mem.c	FUNCTION_19	IF_7	CALL_6
+0x400071c	        0x498b3424	                    mov rsi, qword [r12]	       391	mem.c	FUNCTION_19	IF_7	CALL_6
+0x4000720	          0x4c89e9	                            mov rcx, r13	       391	mem.c	FUNCTION_19	IF_7	CALL_6
+0x4000723	      0x4989442448	             mov qword [r12 + 0x48], rax	       384	mem.c	FUNCTION_19	CALL_5
+0x4000728	    0x49c784249000	               mov qword [r12 + 0x90], 0	       388	mem.c	FUNCTION_19
+0x4000734	          0x4c89e7	                            mov rdi, r12	       391	mem.c	FUNCTION_19	IF_7	CALL_6
+0x4000737	          0x4989c0	                             mov r8, rax	       384	mem.c	FUNCTION_19	CALL_5
+0x400073a	      0xe800000000	                          call 0x400073f	       391	mem.c	FUNCTION_19	IF_7	CALL_6
+0x400073f	      0xbaf5ffffff	                     mov edx, 0xfffffff5	       396	mem.c	FUNCTION_19	IF_7
+0x4000744	            0x85c0	                           test eax, eax	       396	mem.c	FUNCTION_19	IF_7
+0x4000746	              0x5b	                                 pop rbx	       399	mem.c	FUNCTION_19
+0x4000747	           0xf45c2	                         cmovne eax, edx	       396	mem.c	FUNCTION_19	IF_7
+0x400074a	              0x5d	                                 pop rbp	       399	mem.c	FUNCTION_19
+0x400074b	            0x415c	                                 pop r12	       399	mem.c	FUNCTION_19
+0x400074d	            0x415d	                                 pop r13	       399	mem.c	FUNCTION_19
+0x400074f	            0x415e	                                 pop r14	       399	mem.c	FUNCTION_19
+0x4000751	            0x415f	                                 pop r15	       399	mem.c	FUNCTION_19
+0x4000753	              0xc3	                                     ret	       399	mem.c	FUNCTION_19
+0x4000754	              0x5b	                                 pop rbx	       399	mem.c	FUNCTION_19
+0x4000755	      0xb8eaffffff	                     mov eax, 0xffffffea	       365	mem.c	FUNCTION_19	IF_1
+0x400075a	              0x5d	                                 pop rbp	       399	mem.c	FUNCTION_19
+0x400075b	            0x415c	                                 pop r12	       399	mem.c	FUNCTION_19
+0x400075d	            0x415d	                                 pop r13	       399	mem.c	FUNCTION_19
+0x400075f	            0x415e	                                 pop r14	       399	mem.c	FUNCTION_19
+0x4000761	            0x415f	                                 pop r15	       399	mem.c	FUNCTION_19
+0x4000763	              0xc3	                                     ret	       399	mem.c	FUNCTION_19
+0x4000764	          0x4889de	                            mov rsi, rbx	        74	mem.c	FUNCTION_5	WHILE_1
+0x4000767	      0xe97cffffff	                           jmp 0x40006e8	        74	mem.c	FUNCTION_5	WHILE_1
+mmap_zero	DO,0:SWITCH,0:CALL,1:functions,0:IF,1:ELSE,0:WHILE,0:FOR,0	6
+0x40001b0	        0xf6465008	               test byte [rsi + 0x50], 8	       709	mem.c	FUNCTION_33	IF_1
+0x40001b4	            0x7503	                           jne 0x40001b9	       709	mem.c	FUNCTION_33	IF_1
+0x40001b6	            0x31c0	                            xor eax, eax	       712	mem.c	FUNCTION_33
+0x40001b8	              0xc3	                                     ret	       712	mem.c	FUNCTION_33
+0x40001b9	          0x4889f7	                            mov rdi, rsi	       710	mem.c	FUNCTION_33	CALL_1
+0x40001bc	      0xe900000000	                           jmp 0x40001c1	       710	mem.c	FUNCTION_33	CALL_1
+write_null	DO,0:SWITCH,0:CALL,0:functions,0:IF,0:ELSE,0:WHILE,0:FOR,0	2
+0x4000050	          0x4889d0	                            mov rax, rdx	       656	mem.c	FUNCTION_27
+0x4000053	              0xc3	                                     ret	       658	mem.c	FUNCTION_27
+write_full	DO,0:SWITCH,0:CALL,0:functions,0:IF,0:ELSE,0:WHILE,0:FOR,0	2
+0x4000080	    0x48c7c0e4ffff	             mov rax, 0xffffffffffffffe4	       740	mem.c	FUNCTION_35
+0x4000087	              0xc3	                                     ret	       740	mem.c	FUNCTION_35
+null_lseek	DO,0:SWITCH,0:CALL,0:functions,0:IF,0:ELSE,0:WHILE,0:FOR,0	3
+0x4000090	    0x48c747680000	               mov qword [rdi + 0x68], 0	       749	mem.c	FUNCTION_36
+0x4000098	            0x31c0	                            xor eax, eax	       750	mem.c	FUNCTION_36
+0x400009a	              0xc3	                                     ret	       750	mem.c	FUNCTION_36
+read_null	DO,0:SWITCH,0:CALL,0:functions,0:IF,0:ELSE,0:WHILE,0:FOR,0	2
+0x4000040	            0x31c0	                            xor eax, eax	       652	mem.c	FUNCTION_26
+0x4000042	              0xc3	                                     ret	       652	mem.c	FUNCTION_26
+pipe_to_null	DO,0:SWITCH,0:CALL,0:functions,0:IF,0:ELSE,0:WHILE,0:FOR,0	2
+0x4000070	          0x8b4208	                mov eax, dword [rdx + 8]	       675	mem.c	FUNCTION_30
+0x4000073	              0xc3	                                     ret	       676	mem.c	FUNCTION_30

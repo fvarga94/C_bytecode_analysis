@@ -1,0 +1,95 @@
+acpi_lpat_temp_to_raw	SWITCH,0:FOR,1:WHILE,0:IF,2:ELSE,0:DO,0:CALL,0:functions,0	39
+0x40000b0	          0x8b4708	                mov eax, dword [rdi + 8]	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000b3	          0x4c8b07	                     mov r8, qword [rdi]	        69	acpi_lpat.c	FUNCTION_2
+0x40000b6	          0x83e801	                              sub eax, 1	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000b9	            0x85c0	                           test eax, eax	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000bb	            0x7e4f	                           jle 0x400010c	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000bd	          0x4c89c1	                             mov rcx, r8	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000c0	          0x4863d0	                         movsxd rdx, eax	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000c3	            0x31ff	                            xor edi, edi	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000c5	            0x3931	                    cmp dword [rcx], esi	        72	acpi_lpat.c	FUNCTION_2	FOR_1	IF_1
+0x40000c7	            0x7f05	                            jg 0x40000ce	        72	acpi_lpat.c	FUNCTION_2	FOR_1	IF_1
+0x40000c9	          0x3b7108	                cmp esi, dword [rcx + 8]	        72	acpi_lpat.c	FUNCTION_2	FOR_1	IF_1
+0x40000cc	            0x7e39	                           jle 0x4000107	        72	acpi_lpat.c	FUNCTION_2	FOR_1	IF_1
+0x40000ce	          0x83c701	                              add edi, 1	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000d1	        0x4883c108	                              add rcx, 8	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000d5	            0x39c7	                            cmp edi, eax	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000d7	            0x75ec	                           jne 0x40000c5	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x40000d9	            0x39c2	                            cmp edx, eax	        76	acpi_lpat.c	FUNCTION_2	IF_2
+0x40000db	            0x7433	                            je 0x4000110	        76	acpi_lpat.c	FUNCTION_2	IF_2
+0x40000dd	    0x488d04d50800	                    lea rax, [rdx*8 + 8]	        79	acpi_lpat.c	FUNCTION_2
+0x40000e5	        0x498d3c00	                     lea rdi, [r8 + rax]	        79	acpi_lpat.c	FUNCTION_2
+0x40000e9	      0x498d4400f8	                 lea rax, [r8 + rax - 8]	        79	acpi_lpat.c	FUNCTION_2
+0x40000ee	            0x8b10	                    mov edx, dword [rax]	        79	acpi_lpat.c	FUNCTION_2
+0x40000f0	          0x8b4804	                mov ecx, dword [rax + 4]	        80	acpi_lpat.c	FUNCTION_2
+0x40000f3	          0x8b4704	                mov eax, dword [rdi + 4]	        81	acpi_lpat.c	FUNCTION_2
+0x40000f6	            0x8b3f	                    mov edi, dword [rdi]	        81	acpi_lpat.c	FUNCTION_2
+0x40000f8	            0x29d6	                            sub esi, edx	        81	acpi_lpat.c	FUNCTION_2
+0x40000fa	            0x29c8	                            sub eax, ecx	        81	acpi_lpat.c	FUNCTION_2
+0x40000fc	            0x29d7	                            sub edi, edx	        81	acpi_lpat.c	FUNCTION_2
+0x40000fe	           0xfafc6	                           imul eax, esi	        81	acpi_lpat.c	FUNCTION_2
+0x4000101	              0x99	                                     cdq	        81	acpi_lpat.c	FUNCTION_2
+0x4000102	            0xf7ff	                                idiv edi	        81	acpi_lpat.c	FUNCTION_2
+0x4000104	             0x1c8	                            add eax, ecx	        83	acpi_lpat.c	FUNCTION_2
+0x4000106	              0xc3	                                     ret	        83	acpi_lpat.c	FUNCTION_2
+0x4000107	          0x4863d7	                         movsxd rdx, edi	        83	acpi_lpat.c	FUNCTION_2
+0x400010a	            0xebcd	                           jmp 0x40000d9	        83	acpi_lpat.c	FUNCTION_2
+0x400010c	            0x31d2	                            xor edx, edx	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x400010e	            0xebc9	                           jmp 0x40000d9	        71	acpi_lpat.c	FUNCTION_2	FOR_1
+0x4000110	      0xb8feffffff	                     mov eax, 0xfffffffe	        77	acpi_lpat.c	FUNCTION_2	IF_2
+0x4000115	              0xc3	                                     ret	        84	acpi_lpat.c	FUNCTION_2
+acpi_lpat_raw_to_temp	SWITCH,0:FOR,1:WHILE,0:IF,2:ELSE,0:DO,0:CALL,0:functions,0	43
+0x4000040	          0x8b5708	                mov edx, dword [rdi + 8]	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x4000043	          0x4c8b07	                     mov r8, qword [rdi]	        35	acpi_lpat.c	FUNCTION_1
+0x4000046	          0x83ea01	                              sub edx, 1	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x4000049	            0x85d2	                           test edx, edx	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x400004b	            0x7e57	                           jle 0x40000a4	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x400004d	        0x498d480c	                     lea rcx, [r8 + 0xc]	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x4000051	            0x31ff	                            xor edi, edi	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x4000053	            0xeb13	                           jmp 0x4000068	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x4000055	            0x3b31	                    cmp esi, dword [rcx]	        38	acpi_lpat.c	FUNCTION_1	FOR_1	IF_1
+0x4000057	            0x7e1a	                           jle 0x4000073	        38	acpi_lpat.c	FUNCTION_1	FOR_1	IF_1
+0x4000059	            0x39f0	                            cmp eax, esi	        38	acpi_lpat.c	FUNCTION_1	FOR_1	IF_1
+0x400005b	            0x7d16	                           jge 0x4000073	        38	acpi_lpat.c	FUNCTION_1	FOR_1	IF_1
+0x400005d	          0x83c701	                              add edi, 1	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x4000060	        0x4883c108	                              add rcx, 8	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x4000064	            0x39fa	                            cmp edx, edi	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x4000066	            0x740b	                            je 0x4000073	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x4000068	          0x8b41f8	                mov eax, dword [rcx - 8]	        38	acpi_lpat.c	FUNCTION_1	FOR_1	IF_1
+0x400006b	            0x39f0	                            cmp eax, esi	        38	acpi_lpat.c	FUNCTION_1	FOR_1	IF_1
+0x400006d	            0x7ee6	                           jle 0x4000055	        38	acpi_lpat.c	FUNCTION_1	FOR_1	IF_1
+0x400006f	            0x3b31	                    cmp esi, dword [rcx]	        39	acpi_lpat.c	FUNCTION_1	FOR_1	IF_1
+0x4000071	            0x7cea	                            jl 0x400005d	        39	acpi_lpat.c	FUNCTION_1	FOR_1	IF_1
+0x4000073	            0x39d7	                            cmp edi, edx	        43	acpi_lpat.c	FUNCTION_1	IF_2
+0x4000075	            0x7431	                            je 0x40000a8	        43	acpi_lpat.c	FUNCTION_1	IF_2
+0x4000077	          0x4863ff	                         movsxd rdi, edi	        46	acpi_lpat.c	FUNCTION_1
+0x400007a	    0x488d04fd0800	                    lea rax, [rdi*8 + 8]	        46	acpi_lpat.c	FUNCTION_1
+0x4000082	        0x498d3c00	                     lea rdi, [r8 + rax]	        46	acpi_lpat.c	FUNCTION_1
+0x4000086	      0x498d4400f8	                 lea rax, [r8 + rax - 8]	        46	acpi_lpat.c	FUNCTION_1
+0x400008b	          0x8b5004	                mov edx, dword [rax + 4]	        47	acpi_lpat.c	FUNCTION_1
+0x400008e	            0x8b08	                    mov ecx, dword [rax]	        46	acpi_lpat.c	FUNCTION_1
+0x4000090	            0x8b07	                    mov eax, dword [rdi]	        48	acpi_lpat.c	FUNCTION_1
+0x4000092	          0x8b7f04	                mov edi, dword [rdi + 4]	        48	acpi_lpat.c	FUNCTION_1
+0x4000095	            0x29d6	                            sub esi, edx	        48	acpi_lpat.c	FUNCTION_1
+0x4000097	            0x29c8	                            sub eax, ecx	        48	acpi_lpat.c	FUNCTION_1
+0x4000099	            0x29d7	                            sub edi, edx	        48	acpi_lpat.c	FUNCTION_1
+0x400009b	           0xfafc6	                           imul eax, esi	        48	acpi_lpat.c	FUNCTION_1
+0x400009e	              0x99	                                     cdq	        48	acpi_lpat.c	FUNCTION_1
+0x400009f	            0xf7ff	                                idiv edi	        48	acpi_lpat.c	FUNCTION_1
+0x40000a1	             0x1c8	                            add eax, ecx	        50	acpi_lpat.c	FUNCTION_1
+0x40000a3	              0xc3	                                     ret	        50	acpi_lpat.c	FUNCTION_1
+0x40000a4	            0x31ff	                            xor edi, edi	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x40000a6	            0xebcb	                           jmp 0x4000073	        37	acpi_lpat.c	FUNCTION_1	FOR_1
+0x40000a8	      0xb8feffffff	                     mov eax, 0xfffffffe	        44	acpi_lpat.c	FUNCTION_1	IF_2
+0x40000ad	              0xc3	                                     ret	        44	acpi_lpat.c	FUNCTION_1	IF_2
+acpi_lpat_free_conversion_table	SWITCH,0:FOR,0:WHILE,0:IF,1:ELSE,0:DO,0:CALL,2:functions,0	10
+0x4000120	          0x4885ff	                           test rdi, rdi	       154	acpi_lpat.c	FUNCTION_4	IF_1
+0x4000123	            0x7415	                            je 0x400013a	       154	acpi_lpat.c	FUNCTION_4	IF_1
+0x4000125	              0x53	                                push rbx	       153	acpi_lpat.c	FUNCTION_4
+0x4000126	          0x4889fb	                            mov rbx, rdi	       153	acpi_lpat.c	FUNCTION_4
+0x4000129	          0x488b3f	                    mov rdi, qword [rdi]	       155	acpi_lpat.c	FUNCTION_4	IF_1	CALL_1
+0x400012c	      0xe800000000	                          call 0x4000131	       155	acpi_lpat.c	FUNCTION_4	IF_1	CALL_1
+0x4000131	          0x4889df	                            mov rdi, rbx	       156	acpi_lpat.c	FUNCTION_4	IF_1	CALL_2
+0x4000134	              0x5b	                                 pop rbx	       158	acpi_lpat.c	FUNCTION_4
+0x4000135	      0xe900000000	                           jmp 0x400013a	       156	acpi_lpat.c	FUNCTION_4	IF_1	CALL_2
+0x400013a	            0xf3c3	                                     ret	       156	acpi_lpat.c	FUNCTION_4	IF_1	CALL_2

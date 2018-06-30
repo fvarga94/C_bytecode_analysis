@@ -1,0 +1,58 @@
+acpi_ut_get_next_predefined_method	WHILE,0:FOR,0:ELSE,0:SWITCH,0:IF,1:CALL,0:DO,0:functions,0	10
+0x4000040	          0x8a4706	                  mov al, byte [rdi + 6]	        52	utpredef.c	FUNCTION_1	IF_1
+0x4000043	            0xa810	                           test al, 0x10	        52	utpredef.c	FUNCTION_1	IF_1
+0x4000045	            0x740f	                            je 0x4000056	        52	utpredef.c	FUNCTION_1	IF_1
+0x4000047	            0x3c3f	                            cmp al, 0x3f	        52	utpredef.c	FUNCTION_1	IF_1
+0x4000049	        0x488d4707	                      lea rax, [rdi + 7]	        54	utpredef.c	FUNCTION_1	IF_1
+0x400004d	           0xf95c2	                                setne dl	        52	utpredef.c	FUNCTION_1	IF_1
+0x4000050	            0x84d2	                             test dl, dl	        54	utpredef.c	FUNCTION_1	IF_1
+0x4000052	        0x480f45f8	                         cmovne rdi, rax	        54	utpredef.c	FUNCTION_1	IF_1
+0x4000056	        0x488d4707	                      lea rax, [rdi + 7]	        58	utpredef.c	FUNCTION_1
+0x400005a	              0xc3	                                     ret	        59	utpredef.c	FUNCTION_1
+acpi_ut_get_expected_return_types	WHILE,0:FOR,1:ELSE,0:SWITCH,0:IF,2:CALL,2:DO,0:functions,0	30
+0x4000084	            0x85f6	                           test esi, esi	       116	utpredef.c	FUNCTION_3	IF_1
+0x4000086	            0x750c	                           jne 0x4000094	       116	utpredef.c	FUNCTION_3	IF_1
+0x4000088	    0x48c7c6000000	                              mov rsi, 0	       117	utpredef.c	FUNCTION_3	IF_1	CALL_1
+0x400008f	      0xe900000000	                           jmp 0x4000094	       117	utpredef.c	FUNCTION_3	IF_1	CALL_1
+0x4000094	            0x4155	                                push r13	       111	utpredef.c	FUNCTION_3
+0x4000096	      0xb801000000	                              mov eax, 1	       121	utpredef.c	FUNCTION_3
+0x400009b	            0x4154	                                push r12	       111	utpredef.c	FUNCTION_3
+0x400009d	    0x41bd02000000	                             mov r13d, 2	       123	utpredef.c	FUNCTION_3
+0x40000a3	              0x55	                                push rbp	       111	utpredef.c	FUNCTION_3
+0x40000a4	          0x4531e4	                          xor r12d, r12d	       122	utpredef.c	FUNCTION_3
+0x40000a7	              0x53	                                push rbx	       111	utpredef.c	FUNCTION_3
+0x40000a8	            0x89f5	                            mov ebp, esi	       111	utpredef.c	FUNCTION_3
+0x40000aa	          0x4889fb	                            mov rbx, rdi	       111	utpredef.c	FUNCTION_3
+0x40000ad	          0xc60700	                       mov byte [rdi], 0	       122	utpredef.c	FUNCTION_3
+0x40000b0	          0x4485ed	                          test ebp, r13d	       129	utpredef.c	FUNCTION_3	FOR_1	IF_2
+0x40000b3	            0x7415	                            je 0x40000ca	       129	utpredef.c	FUNCTION_3	FOR_1	IF_2
+0x40000b5	    0x490384240000	                    add rax, qword [r12]	       130	utpredef.c	FUNCTION_3	FOR_1	IF_2	CALL_2
+0x40000bd	          0x4889df	                            mov rdi, rbx	       130	utpredef.c	FUNCTION_3	FOR_1	IF_2	CALL_2
+0x40000c0	          0x4889c6	                            mov rsi, rax	       130	utpredef.c	FUNCTION_3	FOR_1	IF_2	CALL_2
+0x40000c3	      0xe800000000	                          call 0x40000c8	       130	utpredef.c	FUNCTION_3	FOR_1	IF_2	CALL_2
+0x40000c8	            0x31c0	                            xor eax, eax	       131	utpredef.c	FUNCTION_3	FOR_1	IF_2
+0x40000ca	        0x4983c408	                              add r12, 8	       131	utpredef.c	FUNCTION_3	FOR_1	IF_2
+0x40000ce	          0x4501ed	                          add r13d, r13d	       134	utpredef.c	FUNCTION_3	FOR_1
+0x40000d1	        0x4983fc28	                           cmp r12, 0x28	       125	utpredef.c	FUNCTION_3	FOR_1
+0x40000d5	            0x75d9	                           jne 0x40000b0	       125	utpredef.c	FUNCTION_3	FOR_1
+0x40000d7	              0x5b	                                 pop rbx	       136	utpredef.c	FUNCTION_3
+0x40000d8	              0x5d	                                 pop rbp	       136	utpredef.c	FUNCTION_3
+0x40000d9	            0x415c	                                 pop r12	       136	utpredef.c	FUNCTION_3
+0x40000db	            0x415d	                                 pop r13	       136	utpredef.c	FUNCTION_3
+0x40000dd	              0xc3	                                     ret	       136	utpredef.c	FUNCTION_3
+acpi_ut_match_predefined_method	WHILE,1:FOR,0:ELSE,0:SWITCH,0:IF,2:CALL,2:DO,0:functions,0	15
+0x400005b	            0x31c0	                            xor eax, eax	        80	utpredef.c	FUNCTION_2	IF_1
+0x400005d	          0x803f5f	                    cmp byte [rdi], 0x5f	        79	utpredef.c	FUNCTION_2	IF_1
+0x4000060	            0x7521	                           jne 0x4000083	        79	utpredef.c	FUNCTION_2	IF_1
+0x4000062	          0x4889f9	                            mov rcx, rdi	        79	utpredef.c	FUNCTION_2	IF_1
+0x4000065	    0x48c7c0000000	                              mov rax, 0	        79	utpredef.c	FUNCTION_2	IF_1
+0x400006c	          0x803800	                       cmp byte [rax], 0	        86	utpredef.c	FUNCTION_2	WHILE_1
+0x400006f	            0x7410	                            je 0x4000081	        86	utpredef.c	FUNCTION_2	WHILE_1
+0x4000071	            0x8b10	                    mov edx, dword [rax]	        87	utpredef.c	FUNCTION_2	WHILE_1	IF_2	CALL_1
+0x4000073	            0x3911	                    cmp dword [rcx], edx	        87	utpredef.c	FUNCTION_2	WHILE_1	IF_2	CALL_1
+0x4000075	            0x740c	                            je 0x4000083	        87	utpredef.c	FUNCTION_2	WHILE_1	IF_2	CALL_1
+0x4000077	          0x4889c7	                            mov rdi, rax	        91	utpredef.c	FUNCTION_2	WHILE_1	CALL_2
+0x400007a	      0xe800000000	                          call 0x400007f	        91	utpredef.c	FUNCTION_2	WHILE_1	CALL_2
+0x400007f	            0xebeb	                           jmp 0x400006c	        91	utpredef.c	FUNCTION_2	WHILE_1	CALL_2
+0x4000081	            0x31c0	                            xor eax, eax	        80	utpredef.c	FUNCTION_2	IF_1
+0x4000083	              0xc3	                                     ret	        95	utpredef.c	FUNCTION_2

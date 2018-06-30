@@ -1,0 +1,117 @@
+lifebook_limit_serio3	WHILE,0:DO,0:IF,0:SWITCH,0:functions,0:ELSE,0:FOR,0:CALL,0	3
+0x4000040	    0x48c705000000	               mov qword [0x0400004b], 0	        36	lifebook.c	FUNCTION_1
+0x400004b	      0xb801000000	                              mov eax, 1	        38	lifebook.c	FUNCTION_1
+0x4000050	              0xc3	                                     ret	        38	lifebook.c	FUNCTION_1
+lifebook_set_6byte_proto	WHILE,0:DO,0:IF,0:SWITCH,0:functions,0:ELSE,0:FOR,0:CALL,0	3
+0x4000060	    0xc60500000000	                mov byte [0x04000067], 1	        44	lifebook.c	FUNCTION_2
+0x4000067	      0xb801000000	                              mov eax, 1	        46	lifebook.c	FUNCTION_2
+0x400006c	              0xc3	                                     ret	        46	lifebook.c	FUNCTION_2
+lifebook_module_init	WHILE,0:DO,0:IF,0:SWITCH,0:functions,0:ELSE,0:FOR,0:CALL,1	4
+0x4000040	    0x48c705000000	               mov qword [0x0400004b], 0	        36	lifebook.c	FUNCTION_1
+0x400004b	      0xb801000000	                              mov eax, 1	        38	lifebook.c	FUNCTION_1
+0x4000050	              0xc3	                                     ret	        38	lifebook.c	FUNCTION_1
+0x4000051	       0xf1f440000	                   nop dword [rax + rax]	        38	lifebook.c	FUNCTION_1
+lifebook_disconnect	WHILE,0:DO,0:IF,1:SWITCH,0:functions,0:ELSE,0:FOR,0:CALL,3	15
+0x4000070	              0x55	                                push rbp	       245	lifebook.c	FUNCTION_8
+0x4000071	              0x53	                                push rbx	       245	lifebook.c	FUNCTION_8
+0x4000072	          0x4889fb	                            mov rbx, rdi	       245	lifebook.c	FUNCTION_8
+0x4000075	          0x488b2f	                    mov rbp, qword [rdi]	       246	lifebook.c	FUNCTION_8
+0x4000078	      0xe800000000	                          call 0x400007d	       248	lifebook.c	FUNCTION_8	CALL_1
+0x400007d	          0x4885ed	                           test rbp, rbp	       249	lifebook.c	FUNCTION_8	IF_1
+0x4000080	            0x7411	                            je 0x4000093	       249	lifebook.c	FUNCTION_8	IF_1
+0x4000082	        0x488b7d00	                    mov rdi, qword [rbp]	       250	lifebook.c	FUNCTION_8	IF_1	CALL_2
+0x4000086	      0xe800000000	                          call 0x400008b	       250	lifebook.c	FUNCTION_8	IF_1	CALL_2
+0x400008b	          0x4889ef	                            mov rdi, rbp	       251	lifebook.c	FUNCTION_8	IF_1	CALL_3
+0x400008e	      0xe800000000	                          call 0x4000093	       251	lifebook.c	FUNCTION_8	IF_1	CALL_3
+0x4000093	    0x48c703000000	                      mov qword [rbx], 0	       253	lifebook.c	FUNCTION_8
+0x400009a	              0x5b	                                 pop rbx	       254	lifebook.c	FUNCTION_8
+0x400009b	              0x5d	                                 pop rbp	       254	lifebook.c	FUNCTION_8
+0x400009c	              0xc3	                                     ret	       254	lifebook.c	FUNCTION_8
+lifebook_detect	WHILE,0:DO,0:IF,3:SWITCH,0:functions,0:ELSE,0:FOR,0:CALL,1	26
+0x40003f0	    0x803d00000000	                cmp byte [0x040003f7], 0	       258	lifebook.c	FUNCTION_9	IF_1
+0x40003f7	            0x7444	                            je 0x400043d	       258	lifebook.c	FUNCTION_9	IF_1
+0x40003f9	              0x55	                                push rbp	       257	lifebook.c	FUNCTION_9
+0x40003fa	            0x89f5	                            mov ebp, esi	       257	lifebook.c	FUNCTION_9
+0x40003fc	    0x488b35000000	            mov rsi, qword [0x04000403] 	       261	lifebook.c	FUNCTION_9	IF_2
+0x4000403	              0x53	                                push rbx	       257	lifebook.c	FUNCTION_9
+0x4000404	          0x4889fb	                            mov rbx, rdi	       257	lifebook.c	FUNCTION_9
+0x4000407	          0x4885f6	                           test rsi, rsi	       261	lifebook.c	FUNCTION_9	IF_2
+0x400040a	            0x7411	                            je 0x400041d	       261	lifebook.c	FUNCTION_9	IF_2
+0x400040c	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       262	lifebook.c	FUNCTION_9	IF_2	CALL_1
+0x4000410	        0x488d7828	                   lea rdi, [rax + 0x28]	       262	lifebook.c	FUNCTION_9	IF_2	CALL_1
+0x4000414	      0xe800000000	                          call 0x4000419	       262	lifebook.c	FUNCTION_9	IF_2	CALL_1
+0x4000419	            0x85c0	                           test eax, eax	       261	lifebook.c	FUNCTION_9	IF_2
+0x400041b	            0x7526	                           jne 0x4000443	       261	lifebook.c	FUNCTION_9	IF_2
+0x400041d	            0x31c0	                            xor eax, eax	       270	lifebook.c	FUNCTION_9
+0x400041f	          0x4084ed	                           test bpl, bpl	       265	lifebook.c	FUNCTION_9	IF_3
+0x4000422	            0x7416	                            je 0x400043a	       265	lifebook.c	FUNCTION_9	IF_3
+0x4000424	    0x48c783c00000	               mov qword [rbx + 0xc0], 0	       266	lifebook.c	FUNCTION_9	IF_3
+0x400042f	    0x48c783c80000	               mov qword [rbx + 0xc8], 0	       267	lifebook.c	FUNCTION_9	IF_3
+0x400043a	              0x5b	                                 pop rbx	       271	lifebook.c	FUNCTION_9
+0x400043b	              0x5d	                                 pop rbp	       271	lifebook.c	FUNCTION_9
+0x400043c	              0xc3	                                     ret	       271	lifebook.c	FUNCTION_9
+0x400043d	      0xb8faffffff	                     mov eax, 0xfffffffa	       259	lifebook.c	FUNCTION_9	IF_1
+0x4000442	              0xc3	                                     ret	       271	lifebook.c	FUNCTION_9
+0x4000443	      0xb8faffffff	                     mov eax, 0xfffffffa	       259	lifebook.c	FUNCTION_9	IF_1
+0x4000448	            0xebf0	                           jmp 0x400043a	       259	lifebook.c	FUNCTION_9	IF_1
+lifebook_set_resolution	WHILE,0:DO,0:IF,1:SWITCH,0:functions,0:ELSE,0:FOR,0:CALL,1	31
+0x40000a0	              0x53	                                push rbx	       232	lifebook.c	FUNCTION_7
+0x40000a1	      0xb903000000	                              mov ecx, 3	       232	lifebook.c	FUNCTION_7
+0x40000a6	          0x4889fb	                            mov rbx, rdi	       232	lifebook.c	FUNCTION_7
+0x40000a9	        0x4883ec10	                           sub rsp, 0x10	       232	lifebook.c	FUNCTION_7
+0x40000ad	    0x65488b042528	                mov rax, qword gs:[0x28]	       232	lifebook.c	FUNCTION_7
+0x40000b6	      0x4889442408	                mov qword [rsp + 8], rax	       232	lifebook.c	FUNCTION_7
+0x40000bb	            0x31c0	                            xor eax, eax	       232	lifebook.c	FUNCTION_7
+0x40000bd	          0x8d46ff	                      lea eax, [rsi - 1]	       236	lifebook.c	FUNCTION_7	IF_1
+0x40000c0	      0x3d8f010000	                          cmp eax, 0x18f	       236	lifebook.c	FUNCTION_7	IF_1
+0x40000c5	            0x7713	                            ja 0x40000da	       236	lifebook.c	FUNCTION_7	IF_1
+0x40000c7	      0xba1f85eb51	                     mov edx, 0x51eb851f	       236	lifebook.c	FUNCTION_7	IF_1
+0x40000cc	            0x89f0	                            mov eax, esi	       236	lifebook.c	FUNCTION_7	IF_1
+0x40000ce	            0xf7e2	                                 mul edx	       236	lifebook.c	FUNCTION_7	IF_1
+0x40000d0	          0xc1ea05	                              shr edx, 5	       236	lifebook.c	FUNCTION_7	IF_1
+0x40000d3	     0xfb68a000000	                   movzx ecx, byte [rdx]	       236	lifebook.c	FUNCTION_7	IF_1
+0x40000da	        0x488d7b10	                   lea rdi, [rbx + 0x10]	       240	lifebook.c	FUNCTION_7	CALL_1
+0x40000de	      0x488d742407	                      lea rsi, [rsp + 7]	       240	lifebook.c	FUNCTION_7	CALL_1
+0x40000e3	      0xbae8100000	                         mov edx, 0x10e8	       240	lifebook.c	FUNCTION_7	CALL_1
+0x40000e8	        0x884c2407	                  mov byte [rsp + 7], cl	       239	lifebook.c	FUNCTION_7
+0x40000ec	      0xe800000000	                          call 0x40000f1	       240	lifebook.c	FUNCTION_7	CALL_1
+0x40000f1	       0xfb64c2407	               movzx ecx, byte [rsp + 7]	       241	lifebook.c	FUNCTION_7
+0x40000f6	      0xb832000000	                           mov eax, 0x32	       241	lifebook.c	FUNCTION_7
+0x40000fb	            0xd3e0	                             shl eax, cl	       241	lifebook.c	FUNCTION_7
+0x40000fd	    0x898370010000	            mov dword [rbx + 0x170], eax	       241	lifebook.c	FUNCTION_7
+0x4000103	      0x488b442408	                mov rax, qword [rsp + 8]	       242	lifebook.c	FUNCTION_7
+0x4000108	    0x654833042528	                xor rax, qword gs:[0x28]	       242	lifebook.c	FUNCTION_7
+0x4000111	            0x7506	                           jne 0x4000119	       242	lifebook.c	FUNCTION_7
+0x4000113	        0x4883c410	                           add rsp, 0x10	       242	lifebook.c	FUNCTION_7
+0x4000117	              0x5b	                                 pop rbx	       242	lifebook.c	FUNCTION_7
+0x4000118	              0xc3	                                     ret	       242	lifebook.c	FUNCTION_7
+0x4000119	      0xe800000000	                          call 0x400011e	       242	lifebook.c	FUNCTION_7
+lifebook_absolute_mode	WHILE,0:DO,0:IF,1:SWITCH,0:functions,0:ELSE,0:FOR,0:CALL,2	28
+0x4000120	              0x55	                                push rbp	       203	lifebook.c	FUNCTION_5
+0x4000121	              0x53	                                push rbx	       203	lifebook.c	FUNCTION_5
+0x4000122	          0x4889fb	                            mov rbx, rdi	       203	lifebook.c	FUNCTION_5
+0x4000125	        0x4883ec10	                           sub rsp, 0x10	       203	lifebook.c	FUNCTION_5
+0x4000129	    0x65488b042528	                mov rax, qword gs:[0x28]	       203	lifebook.c	FUNCTION_5
+0x4000132	      0x4889442408	                mov qword [rsp + 8], rax	       203	lifebook.c	FUNCTION_5
+0x4000137	            0x31c0	                            xor eax, eax	       203	lifebook.c	FUNCTION_5
+0x4000139	      0xe800000000	                          call 0x400013e	       208	lifebook.c	FUNCTION_5	CALL_1
+0x400013e	            0x85c0	                           test eax, eax	       209	lifebook.c	FUNCTION_5	IF_1
+0x4000140	            0x89c5	                            mov ebp, eax	       208	lifebook.c	FUNCTION_5	CALL_1
+0x4000142	            0x7523	                           jne 0x4000167	       209	lifebook.c	FUNCTION_5	IF_1
+0x4000144	    0x803d00000000	                cmp byte [0x0400014b], 1	       217	lifebook.c	FUNCTION_5
+0x400014b	        0x488d7b10	                   lea rdi, [rbx + 0x10]	       204	lifebook.c	FUNCTION_5
+0x400014f	      0x488d742407	                      lea rsi, [rsp + 7]	       218	lifebook.c	FUNCTION_5	CALL_2
+0x4000154	      0xbae8100000	                         mov edx, 0x10e8	       218	lifebook.c	FUNCTION_5	CALL_2
+0x4000159	            0x19c0	                            sbb eax, eax	       217	lifebook.c	FUNCTION_5
+0x400015b	          0x83c008	                              add eax, 8	       217	lifebook.c	FUNCTION_5
+0x400015e	        0x88442407	                  mov byte [rsp + 7], al	       217	lifebook.c	FUNCTION_5
+0x4000162	      0xe800000000	                          call 0x4000167	       218	lifebook.c	FUNCTION_5	CALL_2
+0x4000167	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       221	lifebook.c	FUNCTION_5
+0x400016c	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       221	lifebook.c	FUNCTION_5
+0x4000175	            0x89e8	                            mov eax, ebp	       221	lifebook.c	FUNCTION_5
+0x4000177	            0x7507	                           jne 0x4000180	       221	lifebook.c	FUNCTION_5
+0x4000179	        0x4883c410	                           add rsp, 0x10	       221	lifebook.c	FUNCTION_5
+0x400017d	              0x5b	                                 pop rbx	       221	lifebook.c	FUNCTION_5
+0x400017e	              0x5d	                                 pop rbp	       221	lifebook.c	FUNCTION_5
+0x400017f	              0xc3	                                     ret	       221	lifebook.c	FUNCTION_5
+0x4000180	      0xe800000000	                          call 0x4000185	       221	lifebook.c	FUNCTION_5

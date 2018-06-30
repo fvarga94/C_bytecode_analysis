@@ -1,0 +1,137 @@
+brightness_show	CALL,3:DO,0:functions,0:FOR,0:ELSE,0:WHILE,0:SWITCH,0:IF,0	14
+0x40001f0	              0x55	                                push rbp	        30	led-class.c	FUNCTION_1
+0x40001f1	              0x53	                                push rbx	        30	led-class.c	FUNCTION_1
+0x40001f2	          0x4889d5	                            mov rbp, rdx	        30	led-class.c	FUNCTION_1
+0x40001f5	    0x488b9f980000	            mov rbx, qword [rdi + 0x98] 	        30	led-class.c	FUNCTION_1
+0x40001fc	          0x4889df	                            mov rdi, rbx	        34	led-class.c	FUNCTION_1	CALL_2
+0x40001ff	      0xe800000000	                          call 0x4000204	        34	led-class.c	FUNCTION_1	CALL_2
+0x4000204	          0x8b5308	                mov edx, dword [rbx + 8]	        36	led-class.c	FUNCTION_1	CALL_3
+0x4000207	          0x4889ef	                            mov rdi, rbp	        36	led-class.c	FUNCTION_1	CALL_3
+0x400020a	    0x48c7c6000000	                              mov rsi, 0	        36	led-class.c	FUNCTION_1	CALL_3
+0x4000211	      0xe800000000	                          call 0x4000216	        36	led-class.c	FUNCTION_1	CALL_3
+0x4000216	            0x4898	                                    cdqe	        36	led-class.c	FUNCTION_1	CALL_3
+0x4000218	              0x5b	                                 pop rbx	        37	led-class.c	FUNCTION_1
+0x4000219	              0x5d	                                 pop rbp	        37	led-class.c	FUNCTION_1
+0x400021a	              0xc3	                                     ret	        37	led-class.c	FUNCTION_1
+led_resume	CALL,2:DO,0:functions,0:FOR,0:ELSE,0:WHILE,0:SWITCH,0:IF,1	6
+0x40000b0	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	       206	led-class.c	FUNCTION_13
+0x40000b7	        0xf6471201	               test byte [rdi + 0x12], 1	       209	led-class.c	FUNCTION_13	IF_1
+0x40000bb	            0x7405	                            je 0x40000c2	       209	led-class.c	FUNCTION_13	IF_1
+0x40000bd	      0xe800000000	                          call 0x40000c2	       210	led-class.c	FUNCTION_13	CALL_2
+0x40000c2	            0x31c0	                            xor eax, eax	       213	led-class.c	FUNCTION_13
+0x40000c4	              0xc3	                                     ret	       213	led-class.c	FUNCTION_13
+devm_led_classdev_release	CALL,1:DO,0:functions,0:FOR,0:ELSE,0:WHILE,0:SWITCH,0:IF,0	2
+0x40001c0	          0x488b3e	                    mov rdi, qword [rsi]	       351	led-class.c	FUNCTION_18	CALL_1
+0x40001c3	      0xe958ffffff	         jmp sym.led_classdev_unregister	       351	led-class.c	FUNCTION_18	CALL_1
+max_brightness_show	CALL,2:DO,0:functions,0:FOR,0:ELSE,0:WHILE,0:SWITCH,0:IF,0	8
+0x40001d0	          0x4889d0	                            mov rax, rdx	        70	led-class.c	FUNCTION_3
+0x40001d3	    0x488b97980000	            mov rdx, qword [rdi + 0x98] 	        73	led-class.c	FUNCTION_3	CALL_2
+0x40001da	    0x48c7c6000000	                              mov rsi, 0	        73	led-class.c	FUNCTION_3	CALL_2
+0x40001e1	          0x4889c7	                            mov rdi, rax	        73	led-class.c	FUNCTION_3	CALL_2
+0x40001e4	          0x8b520c	              mov edx, dword [rdx + 0xc]	        73	led-class.c	FUNCTION_3	CALL_2
+0x40001e7	      0xe800000000	                          call 0x40001ec	        73	led-class.c	FUNCTION_3	CALL_2
+0x40001ec	            0x4898	                                    cdqe	        73	led-class.c	FUNCTION_3	CALL_2
+0x40001ee	              0xc3	                                     ret	        74	led-class.c	FUNCTION_3
+leds_init	CALL,3:DO,0:functions,0:FOR,0:ELSE,0:WHILE,0:SWITCH,0:IF,1	16
+0x4000040	        0x834f1001	                or dword [rdi + 0x10], 1	       174	led-class.c	FUNCTION_10
+0x4000044	            0x31f6	                            xor esi, esi	       175	led-class.c	FUNCTION_10	CALL_1
+0x4000046	      0xe900000000	                           jmp 0x400004b	       175	led-class.c	FUNCTION_10	CALL_1
+0x400004b	       0xf1f440000	                   nop dword [rax + rax]	       175	led-class.c	FUNCTION_10	CALL_1
+0x4000050	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	       196	led-class.c	FUNCTION_12
+0x4000057	          0x8b4710	            mov eax, dword [rdi + 0x10] 	       199	led-class.c	FUNCTION_12	IF_1
+0x400005a	      0xa900000100	                       test eax, 0x10000	       199	led-class.c	FUNCTION_12	IF_1
+0x400005f	            0x740d	                            je 0x400006e	       199	led-class.c	FUNCTION_12	IF_1
+0x4000061	          0x83c801	                               or eax, 1	       174	led-class.c	FUNCTION_10
+0x4000064	            0x31f6	                            xor esi, esi	       175	led-class.c	FUNCTION_10	CALL_1
+0x4000066	          0x894710	             mov dword [rdi + 0x10], eax	       174	led-class.c	FUNCTION_10
+0x4000069	      0xe800000000	                          call 0x400006e	       175	led-class.c	FUNCTION_10	CALL_1
+0x400006e	            0x31c0	                            xor eax, eax	       203	led-class.c	FUNCTION_12
+0x4000070	              0xc3	                                     ret	       203	led-class.c	FUNCTION_12
+0x4000071	       0xf1f440000	                   nop dword [rax + rax]	       203	led-class.c	FUNCTION_12
+0x4000076	              0x66	                                 invalid	       203	led-class.c	FUNCTION_12
+leds_exit	CALL,1:DO,0:functions,0:FOR,0:ELSE,0:WHILE,0:SWITCH,0:IF,0	4
+0x4000040	        0x834f1001	                or dword [rdi + 0x10], 1	       174	led-class.c	FUNCTION_10
+0x4000044	            0x31f6	                            xor esi, esi	       175	led-class.c	FUNCTION_10	CALL_1
+0x4000046	      0xe900000000	                           jmp 0x400004b	       175	led-class.c	FUNCTION_10	CALL_1
+0x400004b	               0xf	                                 invalid	       175	led-class.c	FUNCTION_10	CALL_1
+led_suspend	CALL,2:DO,0:functions,0:FOR,0:ELSE,0:WHILE,0:SWITCH,0:IF,1	10
+0x4000050	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	       196	led-class.c	FUNCTION_12
+0x4000057	          0x8b4710	            mov eax, dword [rdi + 0x10] 	       199	led-class.c	FUNCTION_12	IF_1
+0x400005a	      0xa900000100	                       test eax, 0x10000	       199	led-class.c	FUNCTION_12	IF_1
+0x400005f	            0x740d	                            je 0x400006e	       199	led-class.c	FUNCTION_12	IF_1
+0x4000061	          0x83c801	                               or eax, 1	       174	led-class.c	FUNCTION_10
+0x4000064	            0x31f6	                            xor esi, esi	       175	led-class.c	FUNCTION_10	CALL_1
+0x4000066	          0x894710	             mov dword [rdi + 0x10], eax	       174	led-class.c	FUNCTION_10
+0x4000069	      0xe800000000	                          call 0x400006e	       175	led-class.c	FUNCTION_10	CALL_1
+0x400006e	            0x31c0	                            xor eax, eax	       203	led-class.c	FUNCTION_12
+0x4000070	              0xc3	                                     ret	       203	led-class.c	FUNCTION_12
+devm_led_classdev_match	CALL,1:DO,0:functions,0:FOR,0:ELSE,0:WHILE,0:SWITCH,0:IF,1	12
+0x4000100	          0x4885f6	                           test rsi, rsi	       388	led-class.c	FUNCTION_20	IF_1	CALL_1
+0x4000103	            0x7412	                            je 0x4000117	       388	led-class.c	FUNCTION_20	IF_1	CALL_1
+0x4000105	          0x488b06	                    mov rax, qword [rsi]	       388	led-class.c	FUNCTION_20	IF_1	CALL_1
+0x4000108	          0x4885c0	                           test rax, rax	       388	led-class.c	FUNCTION_20	IF_1	CALL_1
+0x400010b	            0x740a	                            je 0x4000117	       388	led-class.c	FUNCTION_20	IF_1	CALL_1
+0x400010d	          0x4839d0	                            cmp rax, rdx	       391	led-class.c	FUNCTION_20
+0x4000110	           0xf94c0	                                 sete al	       391	led-class.c	FUNCTION_20
+0x4000113	           0xfb6c0	                           movzx eax, al	       391	led-class.c	FUNCTION_20
+0x4000116	              0xc3	                                     ret	       391	led-class.c	FUNCTION_20
+0x4000117	             0xf0b	                                     ud2	       391	led-class.c	FUNCTION_20
+0x4000119	            0x31c0	                            xor eax, eax	       389	led-class.c	FUNCTION_20	IF_1
+0x400011b	              0xc3	                                     ret	       392	led-class.c	FUNCTION_20
+led_classdev_resume	CALL,2:DO,0:functions,0:FOR,0:ELSE,0:WHILE,0:SWITCH,0:IF,1	12
+0x4000080	              0x53	                                push rbx	       184	led-class.c	FUNCTION_11
+0x4000081	          0x8b7708	                mov esi, dword [rdi + 8]	       185	led-class.c	FUNCTION_11	CALL_1
+0x4000084	          0x4889fb	                            mov rbx, rdi	       184	led-class.c	FUNCTION_11
+0x4000087	      0xe800000000	                          call 0x400008c	       185	led-class.c	FUNCTION_11	CALL_1
+0x400008c	    0x488b83a80000	            mov rax, qword [rbx + 0xa8] 	       187	led-class.c	FUNCTION_11	IF_1
+0x4000093	          0x4885c0	                           test rax, rax	       187	led-class.c	FUNCTION_11	IF_1
+0x4000096	            0x7408	                            je 0x40000a0	       187	led-class.c	FUNCTION_11	IF_1
+0x4000098	          0x4889df	                            mov rdi, rbx	       188	led-class.c	FUNCTION_11	CALL_2
+0x400009b	      0xe800000000	                          call 0x40000a0	       188	led-class.c	FUNCTION_11	CALL_2
+0x40000a0	        0x836310fe	      and dword [rbx + 0x10], 0xfffffffe	       190	led-class.c	FUNCTION_11
+0x40000a4	              0x5b	                                 pop rbx	       191	led-class.c	FUNCTION_11
+0x40000a5	              0xc3	                                     ret	       191	led-class.c	FUNCTION_11
+devm_of_led_classdev_register	CALL,4:DO,0:functions,0:FOR,0:ELSE,0:WHILE,0:SWITCH,0:IF,2	43
+0x40004d0	            0x4155	                                push r13	       363	led-class.c	FUNCTION_19
+0x40004d2	            0x4154	                                push r12	       363	led-class.c	FUNCTION_19
+0x40004d4	          0x4989f5	                            mov r13, rsi	       363	led-class.c	FUNCTION_19
+0x40004d7	              0x55	                                push rbp	       363	led-class.c	FUNCTION_19
+0x40004d8	              0x53	                                push rbx	       363	led-class.c	FUNCTION_19
+0x40004d9	          0x4889fd	                            mov rbp, rdi	       363	led-class.c	FUNCTION_19
+0x40004dc	          0x4989d4	                            mov r12, rdx	       363	led-class.c	FUNCTION_19
+0x40004df	    0x49c7c0000000	                               mov r8, 0	       367	led-class.c	FUNCTION_19	CALL_1
+0x40004e6	      0xb9ffffffff	                     mov ecx, 0xffffffff	       367	led-class.c	FUNCTION_19	CALL_1
+0x40004eb	      0xbac0004001	                      mov edx, 0x14000c0	       367	led-class.c	FUNCTION_19	CALL_1
+0x40004f0	      0xbe08000000	                              mov esi, 8	       367	led-class.c	FUNCTION_19	CALL_1
+0x40004f5	    0x48c7c7000000	                              mov rdi, 0	       367	led-class.c	FUNCTION_19	CALL_1
+0x40004fc	      0xe800000000	                          call 0x4000501	       367	led-class.c	FUNCTION_19	CALL_1
+0x4000501	          0x4885c0	                           test rax, rax	       368	led-class.c	FUNCTION_19	IF_1
+0x4000504	            0x7441	                            je 0x4000547	       368	led-class.c	FUNCTION_19	IF_1
+0x4000506	          0x4c89ee	                            mov rsi, r13	       371	led-class.c	FUNCTION_19	CALL_2
+0x4000509	          0x4c89e2	                            mov rdx, r12	       371	led-class.c	FUNCTION_19	CALL_2
+0x400050c	          0x4889ef	                            mov rdi, rbp	       371	led-class.c	FUNCTION_19	CALL_2
+0x400050f	          0x4889c3	                            mov rbx, rax	       371	led-class.c	FUNCTION_19	CALL_2
+0x4000512	      0xe800000000	                          call 0x4000517	       371	led-class.c	FUNCTION_19	CALL_2
+0x4000517	            0x85c0	                           test eax, eax	       372	led-class.c	FUNCTION_19	IF_2
+0x4000519	          0x4189c5	                           mov r13d, eax	       371	led-class.c	FUNCTION_19	CALL_2
+0x400051c	            0x7517	                           jne 0x4000535	       372	led-class.c	FUNCTION_19	IF_2
+0x400051e	          0x4c8923	                    mov qword [rbx], r12	       377	led-class.c	FUNCTION_19
+0x4000521	          0x4889de	                            mov rsi, rbx	       378	led-class.c	FUNCTION_19	CALL_4
+0x4000524	          0x4889ef	                            mov rdi, rbp	       378	led-class.c	FUNCTION_19	CALL_4
+0x4000527	      0xe800000000	                          call 0x400052c	       378	led-class.c	FUNCTION_19	CALL_4
+0x400052c	            0x31c0	                            xor eax, eax	       380	led-class.c	FUNCTION_19
+0x400052e	              0x5b	                                 pop rbx	       381	led-class.c	FUNCTION_19
+0x400052f	              0x5d	                                 pop rbp	       381	led-class.c	FUNCTION_19
+0x4000530	            0x415c	                                 pop r12	       381	led-class.c	FUNCTION_19
+0x4000532	            0x415d	                                 pop r13	       381	led-class.c	FUNCTION_19
+0x4000534	              0xc3	                                     ret	       381	led-class.c	FUNCTION_19
+0x4000535	          0x4889df	                            mov rdi, rbx	       373	led-class.c	FUNCTION_19	IF_2	CALL_3
+0x4000538	      0xe800000000	                          call 0x400053d	       373	led-class.c	FUNCTION_19	IF_2	CALL_3
+0x400053d	          0x4489e8	                           mov eax, r13d	       374	led-class.c	FUNCTION_19	IF_2
+0x4000540	              0x5b	                                 pop rbx	       381	led-class.c	FUNCTION_19
+0x4000541	              0x5d	                                 pop rbp	       381	led-class.c	FUNCTION_19
+0x4000542	            0x415c	                                 pop r12	       381	led-class.c	FUNCTION_19
+0x4000544	            0x415d	                                 pop r13	       381	led-class.c	FUNCTION_19
+0x4000546	              0xc3	                                     ret	       381	led-class.c	FUNCTION_19
+0x4000547	      0xb8f4ffffff	                     mov eax, 0xfffffff4	       369	led-class.c	FUNCTION_19	IF_1
+0x400054c	            0xebe0	                           jmp 0x400052e	       369	led-class.c	FUNCTION_19	IF_1

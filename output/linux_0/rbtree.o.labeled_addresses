@@ -1,0 +1,68 @@
+rb_first	CALL,0:DO,0:SWITCH,0:ELSE,0:IF,1:FOR,0:functions,0:WHILE,1	11
+0x40005f0	          0x488b07	                    mov rax, qword [rdi]	       506	rbtree.c	FUNCTION_15
+0x40005f3	          0x4885c0	                           test rax, rax	       507	rbtree.c	FUNCTION_15	IF_1
+0x40005f6	            0x7505	                           jne 0x40005fd	       507	rbtree.c	FUNCTION_15	IF_1
+0x40005f8	            0xeb0e	                           jmp 0x4000608	       507	rbtree.c	FUNCTION_15	IF_1
+0x40005fa	          0x4889d0	                            mov rax, rdx	       507	rbtree.c	FUNCTION_15	IF_1
+0x40005fd	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       509	rbtree.c	FUNCTION_15	WHILE_1
+0x4000601	          0x4885d2	                           test rdx, rdx	       509	rbtree.c	FUNCTION_15	WHILE_1
+0x4000604	            0x75f4	                           jne 0x40005fa	       509	rbtree.c	FUNCTION_15	WHILE_1
+0x4000606	            0xf3c3	                                     ret	       509	rbtree.c	FUNCTION_15	WHILE_1
+0x4000608	            0x31c0	                            xor eax, eax	       508	rbtree.c	FUNCTION_15	IF_1
+0x400060a	              0xc3	                                     ret	       512	rbtree.c	FUNCTION_15
+rb_next_postorder	CALL,2:DO,0:SWITCH,0:ELSE,1:IF,2:FOR,0:functions,0:WHILE,0	21
+0x4000710	          0x4885ff	                           test rdi, rdi	       653	rbtree.c	FUNCTION_23	IF_1
+0x4000713	            0x7431	                            je 0x4000746	       653	rbtree.c	FUNCTION_23	IF_1
+0x4000715	          0x488b07	                    mov rax, qword [rdi]	       658	rbtree.c	FUNCTION_23	IF_2
+0x4000718	        0x4883e0fc	             and rax, 0xfffffffffffffffc	       658	rbtree.c	FUNCTION_23	IF_2
+0x400071c	            0x7428	                            je 0x4000746	       658	rbtree.c	FUNCTION_23	IF_2
+0x400071e	        0x483b7810	            cmp rdi, qword [rax + 0x10] 	       658	rbtree.c	FUNCTION_23	IF_2
+0x4000722	            0x7402	                            je 0x4000726	       658	rbtree.c	FUNCTION_23	IF_2
+0x4000724	            0xf3c3	                                     ret	       666	rbtree.c	FUNCTION_23
+0x4000726	        0x488b5008	                mov rdx, qword [rax + 8]	       658	rbtree.c	FUNCTION_23	IF_2
+0x400072a	          0x4885d2	                           test rdx, rdx	       658	rbtree.c	FUNCTION_23	IF_2
+0x400072d	            0x74f5	                            je 0x4000724	       658	rbtree.c	FUNCTION_23	IF_2
+0x400072f	          0x4889d0	                            mov rax, rdx	       641	rbtree.c	FUNCTION_22	FOR_1	IF_1
+0x4000732	        0x488b5210	            mov rdx, qword [rdx + 0x10] 	       641	rbtree.c	FUNCTION_22	FOR_1	IF_1
+0x4000736	          0x4885d2	                           test rdx, rdx	       641	rbtree.c	FUNCTION_22	FOR_1	IF_1
+0x4000739	            0x75f4	                           jne 0x400072f	       641	rbtree.c	FUNCTION_22	FOR_1	IF_1
+0x400073b	        0x488b5008	                mov rdx, qword [rax + 8]	       643	rbtree.c	FUNCTION_22	FOR_1	ELSE_1	IF_2
+0x400073f	          0x4885d2	                           test rdx, rdx	       643	rbtree.c	FUNCTION_22	FOR_1	ELSE_1	IF_2
+0x4000742	            0x75eb	                           jne 0x400072f	       643	rbtree.c	FUNCTION_22	FOR_1	ELSE_1	IF_2
+0x4000744	            0xf3c3	                                     ret	       643	rbtree.c	FUNCTION_22	FOR_1	ELSE_1	IF_2
+0x4000746	            0x31c0	                            xor eax, eax	       654	rbtree.c	FUNCTION_23	IF_1
+0x4000748	              0xc3	                                     ret	       666	rbtree.c	FUNCTION_23
+rb_first_postorder	CALL,1:DO,0:SWITCH,0:ELSE,0:IF,1:FOR,0:functions,0:WHILE,0	13
+0x4000750	          0x488b17	                    mov rdx, qword [rdi]	       671	rbtree.c	FUNCTION_24	IF_1
+0x4000753	          0x4885d2	                           test rdx, rdx	       671	rbtree.c	FUNCTION_24	IF_1
+0x4000756	            0x7417	                            je 0x400076f	       671	rbtree.c	FUNCTION_24	IF_1
+0x4000758	          0x4889d0	                            mov rax, rdx	       641	rbtree.c	FUNCTION_22	FOR_1	IF_1
+0x400075b	        0x488b5210	            mov rdx, qword [rdx + 0x10] 	       641	rbtree.c	FUNCTION_22	FOR_1	IF_1
+0x400075f	          0x4885d2	                           test rdx, rdx	       641	rbtree.c	FUNCTION_22	FOR_1	IF_1
+0x4000762	            0x75f4	                           jne 0x4000758	       641	rbtree.c	FUNCTION_22	FOR_1	IF_1
+0x4000764	        0x488b5008	                mov rdx, qword [rax + 8]	       643	rbtree.c	FUNCTION_22	FOR_1	ELSE_1	IF_2
+0x4000768	          0x4885d2	                           test rdx, rdx	       643	rbtree.c	FUNCTION_22	FOR_1	ELSE_1	IF_2
+0x400076b	            0x75eb	                           jne 0x4000758	       643	rbtree.c	FUNCTION_22	FOR_1	ELSE_1	IF_2
+0x400076d	            0xf3c3	                                     ret	       643	rbtree.c	FUNCTION_22	FOR_1	ELSE_1	IF_2
+0x400076f	            0x31c0	                            xor eax, eax	       672	rbtree.c	FUNCTION_24	IF_1
+0x4000771	              0xc3	                                     ret	       675	rbtree.c	FUNCTION_24
+rb_last	CALL,0:DO,0:SWITCH,0:ELSE,0:IF,1:FOR,0:functions,0:WHILE,1	11
+0x4000610	          0x488b07	                    mov rax, qword [rdi]	       519	rbtree.c	FUNCTION_16
+0x4000613	          0x4885c0	                           test rax, rax	       520	rbtree.c	FUNCTION_16	IF_1
+0x4000616	            0x7505	                           jne 0x400061d	       520	rbtree.c	FUNCTION_16	IF_1
+0x4000618	            0xeb0e	                           jmp 0x4000628	       520	rbtree.c	FUNCTION_16	IF_1
+0x400061a	          0x4889d0	                            mov rax, rdx	       520	rbtree.c	FUNCTION_16	IF_1
+0x400061d	        0x488b5008	                mov rdx, qword [rax + 8]	       522	rbtree.c	FUNCTION_16	WHILE_1
+0x4000621	          0x4885d2	                           test rdx, rdx	       522	rbtree.c	FUNCTION_16	WHILE_1
+0x4000624	            0x75f4	                           jne 0x400061a	       522	rbtree.c	FUNCTION_16	WHILE_1
+0x4000626	            0xf3c3	                                     ret	       522	rbtree.c	FUNCTION_16	WHILE_1
+0x4000628	            0x31c0	                            xor eax, eax	       521	rbtree.c	FUNCTION_16	IF_1
+0x400062a	              0xc3	                                     ret	       525	rbtree.c	FUNCTION_16
+rb_replace_node_cached	CALL,1:DO,0:SWITCH,0:ELSE,0:IF,1:FOR,0:functions,0:WHILE,0	7
+0x4000690	          0x4989d1	                             mov r9, rdx	       608	rbtree.c	FUNCTION_20
+0x4000693	      0xe800000000	                          call 0x4000698	       609	rbtree.c	FUNCTION_20	CALL_1
+0x4000698	        0x483b7a08	                cmp rdi, qword [rdx + 8]	       611	rbtree.c	FUNCTION_20	IF_1
+0x400069c	            0x7402	                            je 0x40006a0	       611	rbtree.c	FUNCTION_20	IF_1
+0x400069e	            0xf3c3	                                     ret	       611	rbtree.c	FUNCTION_20	IF_1
+0x40006a0	        0x49897108	                 mov qword [r9 + 8], rsi	       612	rbtree.c	FUNCTION_20	IF_1
+0x40006a4	              0xc3	                                     ret	       612	rbtree.c	FUNCTION_20	IF_1

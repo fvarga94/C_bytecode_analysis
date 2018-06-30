@@ -1,0 +1,98 @@
+acpi_tb_get_rsdp_length	WHILE,0:functions,0:DO,0:CALL,1:IF,2:FOR,0:ELSE,1:SWITCH,0	15
+0x4000040	              0x53	                                push rbx	        29	tbxfroot.c	FUNCTION_1
+0x4000041	      0xba08000000	                              mov edx, 8	        31	tbxfroot.c	FUNCTION_1	IF_1	CALL_1
+0x4000046	    0x48c7c6000000	                              mov rsi, 0	        31	tbxfroot.c	FUNCTION_1	IF_1	CALL_1
+0x400004d	          0x4889fb	                            mov rbx, rdi	        29	tbxfroot.c	FUNCTION_1
+0x4000050	      0xe800000000	                          call 0x4000055	        31	tbxfroot.c	FUNCTION_1	IF_1	CALL_1
+0x4000055	            0x31d2	                            xor edx, edx	        35	tbxfroot.c	FUNCTION_1	IF_1
+0x4000057	            0x85c0	                           test eax, eax	        31	tbxfroot.c	FUNCTION_1	IF_1	CALL_1
+0x4000059	            0x750e	                           jne 0x4000069	        31	tbxfroot.c	FUNCTION_1	IF_1	CALL_1
+0x400005b	        0x807b0f01	                 cmp byte [rbx + 0xf], 1	        40	tbxfroot.c	FUNCTION_1	IF_2
+0x400005f	      0xba14000000	                           mov edx, 0x14	        43	tbxfroot.c	FUNCTION_1	ELSE_1
+0x4000064	            0x7603	                           jbe 0x4000069	        40	tbxfroot.c	FUNCTION_1	IF_2
+0x4000066	          0x8b5314	            mov edx, dword [rbx + 0x14] 	        41	tbxfroot.c	FUNCTION_1	IF_2
+0x4000069	            0x89d0	                            mov eax, edx	        45	tbxfroot.c	FUNCTION_1
+0x400006b	              0x5b	                                 pop rbx	        45	tbxfroot.c	FUNCTION_1
+0x400006c	              0xc3	                                     ret	        45	tbxfroot.c	FUNCTION_1
+acpi_tb_scan_memory_for_rsdp	WHILE,0:functions,0:DO,0:CALL,8:IF,1:FOR,1:ELSE,0:SWITCH,0	19
+0x40000c0	              0x55	                                push rbp	       229	tbxfroot.c	FUNCTION_4
+0x40000c1	            0x89f5	                            mov ebp, esi	       236	tbxfroot.c	FUNCTION_4
+0x40000c3	              0x53	                                push rbx	       229	tbxfroot.c	FUNCTION_4
+0x40000c4	          0x4801fd	                            add rbp, rdi	       236	tbxfroot.c	FUNCTION_4
+0x40000c7	          0x4889fb	                            mov rbx, rdi	       229	tbxfroot.c	FUNCTION_4
+0x40000ca	          0x4839eb	                            cmp rbx, rbp	       240	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000cd	            0x7312	                           jae 0x40000e1	       240	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000cf	          0x4889df	                            mov rdi, rbx	       245	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000d2	      0xe800000000	                          call 0x40000d7	       245	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000d7	            0x85c0	                           test eax, eax	       248	tbxfroot.c	FUNCTION_4	FOR_1	IF_1	CALL_4
+0x40000d9	            0x740a	                            je 0x40000e5	       248	tbxfroot.c	FUNCTION_4	FOR_1	IF_1	CALL_4
+0x40000db	        0x4883c310	                           add rbx, 0x10	       241	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000df	            0xebe9	                           jmp 0x40000ca	       241	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000e1	            0x31c0	                            xor eax, eax	       266	tbxfroot.c	FUNCTION_4	CALL_8
+0x40000e3	            0xeb03	                           jmp 0x40000e8	       266	tbxfroot.c	FUNCTION_4	CALL_8
+0x40000e5	          0x4889d8	                            mov rax, rbx	       266	tbxfroot.c	FUNCTION_4	CALL_8
+0x40000e8	              0x5b	                                 pop rbx	       267	tbxfroot.c	FUNCTION_4
+0x40000e9	              0x5d	                                 pop rbp	       267	tbxfroot.c	FUNCTION_4
+0x40000ea	              0xc3	                                     ret	       267	tbxfroot.c	FUNCTION_4
+acpi_find_root_pointer	WHILE,0:functions,0:DO,0:CALL,22:IF,6:FOR,0:ELSE,0:SWITCH,0	61
+0x4000040	              0x53	                                push rbx	        29	tbxfroot.c	FUNCTION_1
+0x4000041	      0xba08000000	                              mov edx, 8	        31	tbxfroot.c	FUNCTION_1	IF_1	CALL_1
+0x4000046	    0x48c7c6000000	                              mov rsi, 0	        31	tbxfroot.c	FUNCTION_1	IF_1	CALL_1
+0x400004d	          0x4889fb	                            mov rbx, rdi	        29	tbxfroot.c	FUNCTION_1
+0x4000050	      0xe800000000	                          call 0x4000055	        31	tbxfroot.c	FUNCTION_1	IF_1	CALL_1
+0x4000055	            0x31d2	                            xor edx, edx	        35	tbxfroot.c	FUNCTION_1	IF_1
+0x4000057	            0x85c0	                           test eax, eax	        31	tbxfroot.c	FUNCTION_1	IF_1	CALL_1
+0x4000059	            0x750e	                           jne 0x4000069	        31	tbxfroot.c	FUNCTION_1	IF_1	CALL_1
+0x400005b	        0x807b0f01	                 cmp byte [rbx + 0xf], 1	        40	tbxfroot.c	FUNCTION_1	IF_2
+0x400005f	      0xba14000000	                           mov edx, 0x14	        43	tbxfroot.c	FUNCTION_1	ELSE_1
+0x4000064	            0x7603	                           jbe 0x4000069	        40	tbxfroot.c	FUNCTION_1	IF_2
+0x4000066	          0x8b5314	            mov edx, dword [rbx + 0x14] 	        41	tbxfroot.c	FUNCTION_1	IF_2
+0x4000069	            0x89d0	                            mov eax, edx	        45	tbxfroot.c	FUNCTION_1
+0x400006b	              0x5b	                                 pop rbx	        45	tbxfroot.c	FUNCTION_1
+0x400006c	              0xc3	                                     ret	        45	tbxfroot.c	FUNCTION_1
+0x400006d	              0x53	                                push rbx	        60	tbxfroot.c	FUNCTION_2
+0x400006e	      0xba08000000	                              mov edx, 8	        68	tbxfroot.c	FUNCTION_2	IF_1	CALL_1
+0x4000073	    0x48c7c6000000	                              mov rsi, 0	        68	tbxfroot.c	FUNCTION_2	IF_1	CALL_1
+0x400007a	          0x4889fb	                            mov rbx, rdi	        60	tbxfroot.c	FUNCTION_2
+0x400007d	      0xe800000000	                          call 0x4000082	        68	tbxfroot.c	FUNCTION_2	IF_1	CALL_1
+0x4000082	            0x85c0	                           test eax, eax	        68	tbxfroot.c	FUNCTION_2	IF_1	CALL_1
+0x4000084	      0xba01200000	                         mov edx, 0x2001	        72	tbxfroot.c	FUNCTION_2	IF_1
+0x4000089	            0x7531	                           jne 0x40000bc	        68	tbxfroot.c	FUNCTION_2	IF_1	CALL_1
+0x400008b	      0xbe14000000	                           mov esi, 0x14	        77	tbxfroot.c	FUNCTION_2	IF_2	CALL_2
+0x4000090	          0x4889df	                            mov rdi, rbx	        77	tbxfroot.c	FUNCTION_2	IF_2	CALL_2
+0x4000093	      0xe800000000	                          call 0x4000098	        77	tbxfroot.c	FUNCTION_2	IF_2	CALL_2
+0x4000098	            0x84c0	                             test al, al	        77	tbxfroot.c	FUNCTION_2	IF_2	CALL_2
+0x400009a	            0x7407	                            je 0x40000a3	        77	tbxfroot.c	FUNCTION_2	IF_2	CALL_2
+0x400009c	      0xba03200000	                         mov edx, 0x2003	        78	tbxfroot.c	FUNCTION_2	IF_2
+0x40000a1	            0xeb19	                           jmp 0x40000bc	        78	tbxfroot.c	FUNCTION_2	IF_2
+0x40000a3	        0x807b0f01	                 cmp byte [rbx + 0xf], 1	        83	tbxfroot.c	FUNCTION_2	IF_3
+0x40000a7	            0x7611	                           jbe 0x40000ba	        83	tbxfroot.c	FUNCTION_2	IF_3
+0x40000a9	      0xbe24000000	                           mov esi, 0x24	        84	tbxfroot.c	FUNCTION_2	IF_3	CALL_3
+0x40000ae	          0x4889df	                            mov rdi, rbx	        84	tbxfroot.c	FUNCTION_2	IF_3	CALL_3
+0x40000b1	      0xe800000000	                          call 0x40000b6	        84	tbxfroot.c	FUNCTION_2	IF_3	CALL_3
+0x40000b6	            0x84c0	                             test al, al	        83	tbxfroot.c	FUNCTION_2	IF_3
+0x40000b8	            0x75e2	                           jne 0x400009c	        83	tbxfroot.c	FUNCTION_2	IF_3
+0x40000ba	            0x31d2	                            xor edx, edx	        88	tbxfroot.c	FUNCTION_2
+0x40000bc	            0x89d0	                            mov eax, edx	        89	tbxfroot.c	FUNCTION_2
+0x40000be	              0x5b	                                 pop rbx	        89	tbxfroot.c	FUNCTION_2
+0x40000bf	              0xc3	                                     ret	        89	tbxfroot.c	FUNCTION_2
+0x40000c0	              0x55	                                push rbp	       229	tbxfroot.c	FUNCTION_4
+0x40000c1	            0x89f5	                            mov ebp, esi	       236	tbxfroot.c	FUNCTION_4
+0x40000c3	              0x53	                                push rbx	       229	tbxfroot.c	FUNCTION_4
+0x40000c4	          0x4801fd	                            add rbp, rdi	       236	tbxfroot.c	FUNCTION_4
+0x40000c7	          0x4889fb	                            mov rbx, rdi	       229	tbxfroot.c	FUNCTION_4
+0x40000ca	          0x4839eb	                            cmp rbx, rbp	       240	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000cd	            0x7312	                           jae 0x40000e1	       240	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000cf	          0x4889df	                            mov rdi, rbx	       245	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000d2	      0xe800000000	                          call 0x40000d7	       245	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000d7	            0x85c0	                           test eax, eax	       248	tbxfroot.c	FUNCTION_4	FOR_1	IF_1	CALL_4
+0x40000d9	            0x740a	                            je 0x40000e5	       248	tbxfroot.c	FUNCTION_4	FOR_1	IF_1	CALL_4
+0x40000db	        0x4883c310	                           add rbx, 0x10	       241	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000df	            0xebe9	                           jmp 0x40000ca	       241	tbxfroot.c	FUNCTION_4	FOR_1
+0x40000e1	            0x31c0	                            xor eax, eax	       266	tbxfroot.c	FUNCTION_4	CALL_8
+0x40000e3	            0xeb03	                           jmp 0x40000e8	       266	tbxfroot.c	FUNCTION_4	CALL_8
+0x40000e5	          0x4889d8	                            mov rax, rbx	       266	tbxfroot.c	FUNCTION_4	CALL_8
+0x40000e8	              0x5b	                                 pop rbx	       267	tbxfroot.c	FUNCTION_4
+0x40000e9	              0x5d	                                 pop rbp	       267	tbxfroot.c	FUNCTION_4
+0x40000ea	              0xc3	                                     ret	       267	tbxfroot.c	FUNCTION_4
+0x40000eb	              0xff	                                 invalid	       161	tbxfroot.c	FUNCTION_3	IF_2	CALL_11

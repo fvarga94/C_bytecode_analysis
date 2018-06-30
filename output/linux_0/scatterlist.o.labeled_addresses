@@ -1,0 +1,315 @@
+sg_miter_skip	functions,0:FOR,0:WHILE,1:ELSE,0:IF,1:DO,0:CALL,3:SWITCH,0	22
+0x4000650	          0x4989f3	                            mov r11, rsi	       697	scatterlist.c	FUNCTION_25
+0x4000653	          0x4989fa	                            mov r10, rdi	       697	scatterlist.c	FUNCTION_25
+0x4000656	      0xe800000000	                          call 0x400065b	       698	scatterlist.c	FUNCTION_25	CALL_1
+0x400065b	          0x4d85db	                           test r11, r11	       700	scatterlist.c	FUNCTION_25	WHILE_1
+0x400065e	            0x751f	                           jne 0x400067f	       700	scatterlist.c	FUNCTION_25	WHILE_1
+0x4000660	            0xeb2b	                           jmp 0x400068d	       700	scatterlist.c	FUNCTION_25	WHILE_1
+0x4000662	        0x418b423c	            mov eax, dword [r10 + 0x3c] 	       706	scatterlist.c	FUNCTION_25	WHILE_1	CALL_3
+0x4000666	          0x4c39d8	                            cmp rax, r11	       706	scatterlist.c	FUNCTION_25	WHILE_1	CALL_3
+0x4000669	          0x4889c2	                            mov rdx, rax	       706	scatterlist.c	FUNCTION_25	WHILE_1	CALL_3
+0x400066c	        0x490f4fc3	                          cmovg rax, r11	       706	scatterlist.c	FUNCTION_25	WHILE_1	CALL_3
+0x4000670	        0x41014238	             add dword [r10 + 0x38], eax	       707	scatterlist.c	FUNCTION_25	WHILE_1
+0x4000674	            0x29c2	                            sub edx, eax	       708	scatterlist.c	FUNCTION_25	WHILE_1
+0x4000676	          0x4929c3	                            sub r11, rax	       700	scatterlist.c	FUNCTION_25	WHILE_1
+0x4000679	        0x4189523c	             mov dword [r10 + 0x3c], edx	       708	scatterlist.c	FUNCTION_25	WHILE_1
+0x400067d	            0x740e	                            je 0x400068d	       700	scatterlist.c	FUNCTION_25	WHILE_1
+0x400067f	          0x4c89d7	                            mov rdi, r10	       703	scatterlist.c	FUNCTION_25	WHILE_1	IF_1	CALL_2
+0x4000682	      0xe859ffffff	         call sym.sg_miter_get_next_page	       703	scatterlist.c	FUNCTION_25	WHILE_1	IF_1	CALL_2
+0x4000687	            0x84c0	                             test al, al	       703	scatterlist.c	FUNCTION_25	WHILE_1	IF_1	CALL_2
+0x4000689	            0x75d7	                           jne 0x4000662	       703	scatterlist.c	FUNCTION_25	WHILE_1	IF_1	CALL_2
+0x400068b	            0xf3c3	                                     ret	       713	scatterlist.c	FUNCTION_25
+0x400068d	      0xb801000000	                              mov eax, 1	       712	scatterlist.c	FUNCTION_25
+0x4000692	              0xc3	                                     ret	       712	scatterlist.c	FUNCTION_25
+sg_nents	functions,0:FOR,1:WHILE,0:ELSE,0:IF,0:DO,0:CALL,1:SWITCH,0	16
+0x4000080	            0x31c0	                            xor eax, eax	        53	scatterlist.c	FUNCTION_2	FOR_1	CALL_1
+0x4000082	          0x4885ff	                           test rdi, rdi	        53	scatterlist.c	FUNCTION_2	FOR_1	CALL_1
+0x4000085	            0x7408	                            je 0x400008f	        53	scatterlist.c	FUNCTION_2	FOR_1	CALL_1
+0x4000087	          0x83c001	                              add eax, 1	        54	scatterlist.c	FUNCTION_2	FOR_1
+0x400008a	          0xf60702	                      test byte [rdi], 2	        30	scatterlist.c	FUNCTION_1	IF_1	CALL_2
+0x400008d	            0x7402	                            je 0x4000091	        30	scatterlist.c	FUNCTION_1	IF_1	CALL_2
+0x400008f	            0xf3c3	                                     ret	        56	scatterlist.c	FUNCTION_2
+0x4000091	        0x488b5720	            mov rdx, qword [rdi + 0x20] 	        34	scatterlist.c	FUNCTION_1	IF_2	CALL_4
+0x4000095	        0x488d4f20	                   lea rcx, [rdi + 0x20]	        33	scatterlist.c	FUNCTION_1
+0x4000099	          0x4889d7	                            mov rdi, rdx	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x400009c	        0x4883e7fc	             and rdi, 0xfffffffffffffffc	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40000a0	          0x83e201	                              and edx, 1	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40000a3	        0x480f44f9	                          cmove rdi, rcx	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40000a7	          0x4885ff	                           test rdi, rdi	        53	scatterlist.c	FUNCTION_2	FOR_1	CALL_1
+0x40000aa	            0x75db	                           jne 0x4000087	        53	scatterlist.c	FUNCTION_2	FOR_1	CALL_1
+0x40000ac	            0xf3c3	                                     ret	        53	scatterlist.c	FUNCTION_2	FOR_1	CALL_1
+sg_zero_buffer	functions,0:FOR,0:WHILE,1:ELSE,0:IF,1:DO,0:CALL,6:SWITCH,0	53
+0x40007c0	            0x4154	                                push r12	       927	scatterlist.c	FUNCTION_33
+0x40007c2	              0x55	                                push rbp	       927	scatterlist.c	FUNCTION_33
+0x40007c3	          0x4989ca	                            mov r10, rcx	       927	scatterlist.c	FUNCTION_33
+0x40007c6	              0x53	                                push rbx	       927	scatterlist.c	FUNCTION_33
+0x40007c7	      0xb903000000	                              mov ecx, 3	       932	scatterlist.c	FUNCTION_33	CALL_1
+0x40007cc	          0x4989d4	                            mov r12, rdx	       927	scatterlist.c	FUNCTION_33
+0x40007cf	            0x89f2	                            mov edx, esi	       932	scatterlist.c	FUNCTION_33	CALL_1
+0x40007d1	          0x4889fe	                            mov rsi, rdi	       932	scatterlist.c	FUNCTION_33	CALL_1
+0x40007d4	            0x31db	                            xor ebx, ebx	       935	scatterlist.c	FUNCTION_33	IF_1
+0x40007d6	        0x4883ec50	                           sub rsp, 0x50	       927	scatterlist.c	FUNCTION_33
+0x40007da	          0x4889e7	                            mov rdi, rsp	       932	scatterlist.c	FUNCTION_33	CALL_1
+0x40007dd	    0x65488b042528	                mov rax, qword gs:[0x28]	       927	scatterlist.c	FUNCTION_33
+0x40007e6	      0x4889442448	             mov qword [rsp + 0x48], rax	       927	scatterlist.c	FUNCTION_33
+0x40007eb	            0x31c0	                            xor eax, eax	       927	scatterlist.c	FUNCTION_33
+0x40007ed	      0xe800000000	                          call 0x40007f2	       932	scatterlist.c	FUNCTION_33	CALL_1
+0x40007f2	          0x4c89d6	                            mov rsi, r10	       934	scatterlist.c	FUNCTION_33	IF_1	CALL_2
+0x40007f5	          0x4889e7	                            mov rdi, rsp	       934	scatterlist.c	FUNCTION_33	IF_1	CALL_2
+0x40007f8	      0xe800000000	                          call 0x40007fd	       934	scatterlist.c	FUNCTION_33	IF_1	CALL_2
+0x40007fd	            0x84c0	                             test al, al	       934	scatterlist.c	FUNCTION_33	IF_1	CALL_2
+0x40007ff	            0x7449	                            je 0x400084a	       934	scatterlist.c	FUNCTION_33	IF_1	CALL_2
+0x4000801	            0x31ed	                            xor ebp, ebp	       937	scatterlist.c	FUNCTION_33	WHILE_1	CALL_3
+0x4000803	          0x4d85e4	                           test r12, r12	       937	scatterlist.c	FUNCTION_33	WHILE_1	CALL_3
+0x4000806	            0x752e	                           jne 0x4000836	       937	scatterlist.c	FUNCTION_33	WHILE_1	CALL_3
+0x4000808	            0xeb38	                           jmp 0x4000842	       937	scatterlist.c	FUNCTION_33	WHILE_1	CALL_3
+0x400080a	          0x4c89e0	                            mov rax, r12	       940	scatterlist.c	FUNCTION_33	WHILE_1	CALL_4
+0x400080d	      0x488b7c2408	                mov rdi, qword [rsp + 8]	       941	scatterlist.c	FUNCTION_33	WHILE_1	CALL_5
+0x4000812	          0x4829d8	                            sub rax, rbx	       940	scatterlist.c	FUNCTION_33	WHILE_1	CALL_4
+0x4000815	      0x4839442410	            cmp qword [rsp + 0x10], rax 	       940	scatterlist.c	FUNCTION_33	WHILE_1	CALL_4
+0x400081a	          0x4889c3	                            mov rbx, rax	       940	scatterlist.c	FUNCTION_33	WHILE_1	CALL_4
+0x400081d	    0x480f465c2410	          cmovbe rbx, qword [rsp + 0x10]	       940	scatterlist.c	FUNCTION_33	WHILE_1	CALL_4
+0x4000823	            0x31f6	                            xor esi, esi	       941	scatterlist.c	FUNCTION_33	WHILE_1	CALL_5
+0x4000825	            0x89da	                            mov edx, ebx	       941	scatterlist.c	FUNCTION_33	WHILE_1	CALL_5
+0x4000827	             0x1eb	                            add ebx, ebp	       943	scatterlist.c	FUNCTION_33	WHILE_1
+0x4000829	      0xe800000000	                          call 0x400082e	       941	scatterlist.c	FUNCTION_33	WHILE_1	CALL_5
+0x400082e	          0x4c39e3	                            cmp rbx, r12	       937	scatterlist.c	FUNCTION_33	WHILE_1	CALL_3
+0x4000831	          0x4889dd	                            mov rbp, rbx	       943	scatterlist.c	FUNCTION_33	WHILE_1
+0x4000834	            0x730c	                           jae 0x4000842	       937	scatterlist.c	FUNCTION_33	WHILE_1	CALL_3
+0x4000836	          0x4889e7	                            mov rdi, rsp	       937	scatterlist.c	FUNCTION_33	WHILE_1	CALL_3
+0x4000839	      0xe800000000	                          call 0x400083e	       937	scatterlist.c	FUNCTION_33	WHILE_1	CALL_3
+0x400083e	            0x84c0	                             test al, al	       937	scatterlist.c	FUNCTION_33	WHILE_1	CALL_3
+0x4000840	            0x75c8	                           jne 0x400080a	       937	scatterlist.c	FUNCTION_33	WHILE_1	CALL_3
+0x4000842	          0x4889e7	                            mov rdi, rsp	       946	scatterlist.c	FUNCTION_33	CALL_6
+0x4000845	      0xe800000000	                          call 0x400084a	       946	scatterlist.c	FUNCTION_33	CALL_6
+0x400084a	      0x488b4c2448	            mov rcx, qword [rsp + 0x48] 	       948	scatterlist.c	FUNCTION_33
+0x400084f	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       948	scatterlist.c	FUNCTION_33
+0x4000858	          0x4889d8	                            mov rax, rbx	       948	scatterlist.c	FUNCTION_33
+0x400085b	            0x7509	                           jne 0x4000866	       948	scatterlist.c	FUNCTION_33
+0x400085d	        0x4883c450	                           add rsp, 0x50	       948	scatterlist.c	FUNCTION_33
+0x4000861	              0x5b	                                 pop rbx	       948	scatterlist.c	FUNCTION_33
+0x4000862	              0x5d	                                 pop rbp	       948	scatterlist.c	FUNCTION_33
+0x4000863	            0x415c	                                 pop r12	       948	scatterlist.c	FUNCTION_33
+0x4000865	              0xc3	                                     ret	       948	scatterlist.c	FUNCTION_33
+0x4000866	      0xe800000000	                          call 0x400086b	       948	scatterlist.c	FUNCTION_33
+sgl_free_n_order	functions,1:FOR,0:WHILE,0:ELSE,0:IF,0:DO,0:CALL,1:SWITCH,0	41
+0x4000460	            0x4156	                                push r14	       558	scatterlist.c	FUNCTION_17
+0x4000462	          0x4531f6	                          xor r14d, r14d	       563	scatterlist.c	FUNCTION_17	FUNCTION_1
+0x4000465	            0x4155	                                push r13	       558	scatterlist.c	FUNCTION_17
+0x4000467	          0x4989fd	                            mov r13, rdi	       558	scatterlist.c	FUNCTION_17
+0x400046a	            0x4154	                                push r12	       558	scatterlist.c	FUNCTION_17
+0x400046c	          0x4189d4	                           mov r12d, edx	       558	scatterlist.c	FUNCTION_17
+0x400046f	              0x55	                                push rbp	       558	scatterlist.c	FUNCTION_17
+0x4000470	            0x89f5	                            mov ebp, esi	       558	scatterlist.c	FUNCTION_17
+0x4000472	              0x53	                                push rbx	       558	scatterlist.c	FUNCTION_17
+0x4000473	          0x4889fb	                            mov rbx, rdi	       563	scatterlist.c	FUNCTION_17	FUNCTION_1
+0x4000476	          0x4885db	                           test rbx, rbx	       564	scatterlist.c	FUNCTION_17	FUNCTION_1	IF_1
+0x4000479	            0x743e	                            je 0x40004b9	       564	scatterlist.c	FUNCTION_17	FUNCTION_1	IF_1
+0x400047b	          0x4139ee	                           cmp r14d, ebp	       564	scatterlist.c	FUNCTION_17	FUNCTION_1	IF_1
+0x400047e	            0x7d39	                           jge 0x40004b9	       564	scatterlist.c	FUNCTION_17	FUNCTION_1	IF_1
+0x4000480	          0x488b03	                    mov rax, qword [rbx]	       564	scatterlist.c	FUNCTION_17	FUNCTION_1	IF_1
+0x4000483	          0x4889c7	                            mov rdi, rax	       567	scatterlist.c	FUNCTION_17	FUNCTION_1	IF_2
+0x4000486	        0x4883e7fc	             and rdi, 0xfffffffffffffffc	       567	scatterlist.c	FUNCTION_17	FUNCTION_1	IF_2
+0x400048a	            0x740b	                            je 0x4000497	       567	scatterlist.c	FUNCTION_17	FUNCTION_1	IF_2
+0x400048c	          0x4489e6	                           mov esi, r12d	       568	scatterlist.c	FUNCTION_17	FUNCTION_1	CALL_2
+0x400048f	      0xe800000000	                          call 0x4000494	       568	scatterlist.c	FUNCTION_17	FUNCTION_1	CALL_2
+0x4000494	          0x488b03	                    mov rax, qword [rbx]	       568	scatterlist.c	FUNCTION_17	FUNCTION_1	CALL_2
+0x4000497	        0x4183c601	                             add r14d, 1	       563	scatterlist.c	FUNCTION_17	FUNCTION_1
+0x400049b	            0xa802	                              test al, 2	        30	scatterlist.c	FUNCTION_1	IF_1	CALL_2
+0x400049d	            0x752a	                           jne 0x40004c9	        30	scatterlist.c	FUNCTION_1	IF_1	CALL_2
+0x400049f	        0x488b4320	            mov rax, qword [rbx + 0x20] 	        34	scatterlist.c	FUNCTION_1	IF_2	CALL_4
+0x40004a3	        0x488d5320	                   lea rdx, [rbx + 0x20]	        33	scatterlist.c	FUNCTION_1
+0x40004a7	          0x4889c3	                            mov rbx, rax	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40004aa	        0x4883e3fc	             and rbx, 0xfffffffffffffffc	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40004ae	            0xa801	                              test al, 1	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40004b0	        0x480f44da	                          cmove rbx, rdx	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40004b4	          0x4885db	                           test rbx, rbx	       564	scatterlist.c	FUNCTION_17	FUNCTION_1	IF_1
+0x40004b7	            0x75c2	                           jne 0x400047b	       564	scatterlist.c	FUNCTION_17	FUNCTION_1	IF_1
+0x40004b9	              0x5b	                                 pop rbx	       571	scatterlist.c	FUNCTION_17
+0x40004ba	          0x4c89ef	                            mov rdi, r13	       570	scatterlist.c	FUNCTION_17	CALL_1
+0x40004bd	              0x5d	                                 pop rbp	       571	scatterlist.c	FUNCTION_17
+0x40004be	            0x415c	                                 pop r12	       571	scatterlist.c	FUNCTION_17
+0x40004c0	            0x415d	                                 pop r13	       571	scatterlist.c	FUNCTION_17
+0x40004c2	            0x415e	                                 pop r14	       571	scatterlist.c	FUNCTION_17
+0x40004c4	      0xe900000000	                           jmp 0x40004c9	       570	scatterlist.c	FUNCTION_17	CALL_1
+0x40004c9	            0x31db	                            xor ebx, ebx	        31	scatterlist.c	FUNCTION_1	IF_1
+0x40004cb	            0xeba9	                           jmp 0x4000476	        31	scatterlist.c	FUNCTION_1	IF_1
+sg_free_table	functions,0:FOR,0:WHILE,0:ELSE,0:IF,0:DO,0:CALL,1:SWITCH,0	32
+0x40003e0	              0x55	                                push rbp	       244	scatterlist.c	FUNCTION_10
+0x40003e1	              0x53	                                push rbx	       244	scatterlist.c	FUNCTION_10
+0x40003e2	          0x4889fb	                            mov rbx, rdi	       244	scatterlist.c	FUNCTION_10
+0x40003e5	          0x488b3f	                    mov rdi, qword [rdi]	       203	scatterlist.c	FUNCTION_9	IF_1	CALL_1
+0x40003e8	          0x4885ff	                           test rdi, rdi	       203	scatterlist.c	FUNCTION_9	IF_1	CALL_1
+0x40003eb	            0x7437	                            je 0x4000424	       203	scatterlist.c	FUNCTION_9	IF_1	CALL_1
+0x40003ed	          0x8b430c	              mov eax, dword [rbx + 0xc]	       207	scatterlist.c	FUNCTION_9	WHILE_1
+0x40003f0	            0x85c0	                           test eax, eax	       207	scatterlist.c	FUNCTION_9	WHILE_1
+0x40003f2	            0x7429	                            je 0x400041d	       207	scatterlist.c	FUNCTION_9	WHILE_1
+0x40003f4	      0x3d80000000	                           cmp eax, 0x80	       217	scatterlist.c	FUNCTION_9	WHILE_1	IF_2
+0x40003f9	            0x762c	                           jbe 0x4000427	       217	scatterlist.c	FUNCTION_9	WHILE_1	IF_2
+0x40003fb	    0x488bafe00f00	           mov rbp, qword [rdi + 0xfe0] 	       218	scatterlist.c	FUNCTION_9	WHILE_1	IF_2	CALL_2
+0x4000402	          0x83e87f	                           sub eax, 0x7f	       226	scatterlist.c	FUNCTION_9	WHILE_1
+0x4000405	          0x89430c	              mov dword [rbx + 0xc], eax	       226	scatterlist.c	FUNCTION_9	WHILE_1
+0x4000408	        0x4883e5fc	             and rbp, 0xfffffffffffffffc	       218	scatterlist.c	FUNCTION_9	WHILE_1	IF_2	CALL_2
+0x400040c	            0x31f6	                            xor esi, esi	       180	scatterlist.c	FUNCTION_8	IF_1	CALL_2
+0x400040e	      0xe800000000	                          call 0x4000413	       180	scatterlist.c	FUNCTION_8	IF_1	CALL_2
+0x4000413	          0x8b430c	              mov eax, dword [rbx + 0xc]	       207	scatterlist.c	FUNCTION_9	WHILE_1
+0x4000416	          0x4889ef	                            mov rdi, rbp	       180	scatterlist.c	FUNCTION_8	IF_1	CALL_2
+0x4000419	            0x85c0	                           test eax, eax	       207	scatterlist.c	FUNCTION_9	WHILE_1
+0x400041b	            0x75d7	                           jne 0x40003f4	       207	scatterlist.c	FUNCTION_9	WHILE_1
+0x400041d	    0x48c703000000	                      mov qword [rbx], 0	       234	scatterlist.c	FUNCTION_9
+0x4000424	              0x5b	                                 pop rbx	       246	scatterlist.c	FUNCTION_10
+0x4000425	              0x5d	                                 pop rbp	       246	scatterlist.c	FUNCTION_10
+0x4000426	              0xc3	                                     ret	       246	scatterlist.c	FUNCTION_10
+0x4000427	    0xc7430c000000	                mov dword [rbx + 0xc], 0	       226	scatterlist.c	FUNCTION_9	WHILE_1
+0x400042e	            0x7409	                            je 0x4000439	       178	scatterlist.c	FUNCTION_8	IF_1
+0x4000430	      0xe800000000	                          call 0x4000435	       182	scatterlist.c	FUNCTION_8	CALL_3
+0x4000435	            0x31ff	                            xor edi, edi	       223	scatterlist.c	FUNCTION_9	WHILE_1	ELSE_1
+0x4000437	            0xebb4	                           jmp 0x40003ed	       223	scatterlist.c	FUNCTION_9	WHILE_1	ELSE_1
+0x4000439	            0x31ed	                            xor ebp, ebp	       223	scatterlist.c	FUNCTION_9	WHILE_1	ELSE_1
+0x400043b	            0xebcf	                           jmp 0x400040c	       223	scatterlist.c	FUNCTION_9	WHILE_1	ELSE_1
+sg_copy_from_buffer	functions,0:FOR,0:WHILE,0:ELSE,0:IF,0:DO,0:CALL,1:SWITCH,0	3
+0x4000960	          0x4531c9	                            xor r9d, r9d	       859	scatterlist.c	FUNCTION_29	CALL_1
+0x4000963	          0x4531c0	                            xor r8d, r8d	       859	scatterlist.c	FUNCTION_29	CALL_1
+0x4000966	      0xe905ffffff	                  jmp sym.sg_copy_buffer	       859	scatterlist.c	FUNCTION_29	CALL_1
+sg_miter_start	functions,0:FOR,0:WHILE,0:ELSE,0:IF,0:DO,0:CALL,3:SWITCH,0	23
+0x4000380	    0x48c707000000	                      mov qword [rdi], 0	       648	scatterlist.c	FUNCTION_23	CALL_1
+0x4000387	    0x48c747400000	               mov qword [rdi + 0x40], 0	       648	scatterlist.c	FUNCTION_23	CALL_1
+0x400038f	          0x4989f8	                             mov r8, rdi	       647	scatterlist.c	FUNCTION_23
+0x4000392	        0x488d7f08	                      lea rdi, [rdi + 8]	       648	scatterlist.c	FUNCTION_23	CALL_1
+0x4000396	          0x4189c9	                            mov r9d, ecx	       647	scatterlist.c	FUNCTION_23
+0x4000399	          0x4c89c1	                             mov rcx, r8	       648	scatterlist.c	FUNCTION_23	CALL_1
+0x400039c	            0x31c0	                            xor eax, eax	       648	scatterlist.c	FUNCTION_23	CALL_1
+0x400039e	        0x4883e7f8	             and rdi, 0xfffffffffffffff8	       648	scatterlist.c	FUNCTION_23	CALL_1
+0x40003a2	          0x4829f9	                            sub rcx, rdi	       648	scatterlist.c	FUNCTION_23	CALL_1
+0x40003a5	          0x83c148	                           add ecx, 0x48	       648	scatterlist.c	FUNCTION_23	CALL_1
+0x40003a8	          0xc1e903	                              shr ecx, 3	       648	scatterlist.c	FUNCTION_23	CALL_1
+0x40003ab	        0x41f6c106	                             test r9b, 6	       651	scatterlist.c	FUNCTION_23	CALL_3
+0x40003af	          0xf348ab	              rep stosq qword [rdi], rax	       648	scatterlist.c	FUNCTION_23	CALL_1
+0x40003b2	    0x41c740300000	                mov dword [r8 + 0x30], 0	       601	scatterlist.c	FUNCTION_20
+0x40003ba	        0x4189502c	              mov dword [r8 + 0x2c], edx	       602	scatterlist.c	FUNCTION_20
+0x40003be	        0x49897020	              mov qword [r8 + 0x20], rsi	       604	scatterlist.c	FUNCTION_20
+0x40003c2	    0x41c740280000	                mov dword [r8 + 0x28], 0	       605	scatterlist.c	FUNCTION_20
+0x40003ca	            0x7405	                            je 0x40003d1	       651	scatterlist.c	FUNCTION_23	CALL_3
+0x40003cc	        0x45894840	              mov dword [r8 + 0x40], r9d	       652	scatterlist.c	FUNCTION_23
+0x40003d0	              0xc3	                                     ret	       652	scatterlist.c	FUNCTION_23
+0x40003d1	             0xf0b	                                     ud2	       652	scatterlist.c	FUNCTION_23
+0x40003d3	        0x45894840	              mov dword [r8 + 0x40], r9d	       652	scatterlist.c	FUNCTION_23
+0x40003d7	              0xc3	                                     ret	       652	scatterlist.c	FUNCTION_23
+sg_pcopy_to_buffer	functions,0:FOR,0:WHILE,0:ELSE,0:IF,0:DO,0:CALL,1:SWITCH,0	2
+0x4000990	    0x41b901000000	                              mov r9d, 1	       912	scatterlist.c	FUNCTION_32	CALL_1
+0x4000996	      0xe9d5feffff	                  jmp sym.sg_copy_buffer	       912	scatterlist.c	FUNCTION_32	CALL_1
+sg_copy_buffer	functions,0:FOR,0:WHILE,1:ELSE,2:IF,3:DO,0:CALL,7:SWITCH,0	73
+0x4000870	            0x4157	                                push r15	       812	scatterlist.c	FUNCTION_28
+0x4000872	            0x4156	                                push r14	       812	scatterlist.c	FUNCTION_28
+0x4000874	          0x4d89c2	                             mov r10, r8	       812	scatterlist.c	FUNCTION_28
+0x4000877	            0x4155	                                push r13	       812	scatterlist.c	FUNCTION_28
+0x4000879	            0x4154	                                push r12	       812	scatterlist.c	FUNCTION_28
+0x400087b	          0x4989cc	                            mov r12, rcx	       812	scatterlist.c	FUNCTION_28
+0x400087e	              0x55	                                push rbp	       812	scatterlist.c	FUNCTION_28
+0x400087f	              0x53	                                push rbx	       812	scatterlist.c	FUNCTION_28
+0x4000880	          0x4989d5	                            mov r13, rdx	       812	scatterlist.c	FUNCTION_28
+0x4000883	            0x89f2	                            mov edx, esi	       822	scatterlist.c	FUNCTION_28	CALL_1
+0x4000885	          0x4889fe	                            mov rsi, rdi	       822	scatterlist.c	FUNCTION_28	CALL_1
+0x4000888	          0x4589ce	                           mov r14d, r9d	       812	scatterlist.c	FUNCTION_28
+0x400088b	        0x4883ec50	                           sub rsp, 0x50	       812	scatterlist.c	FUNCTION_28
+0x400088f	    0x65488b042528	                mov rax, qword gs:[0x28]	       812	scatterlist.c	FUNCTION_28
+0x4000898	      0x4889442448	             mov qword [rsp + 0x48], rax	       812	scatterlist.c	FUNCTION_28
+0x400089d	            0x31c0	                            xor eax, eax	       812	scatterlist.c	FUNCTION_28
+0x400089f	        0x4180f901	                              cmp r9b, 1	       820	scatterlist.c	FUNCTION_28	ELSE_1
+0x40008a3	          0x4889e7	                            mov rdi, rsp	       822	scatterlist.c	FUNCTION_28	CALL_1
+0x40008a6	            0x19c9	                            sbb ecx, ecx	       820	scatterlist.c	FUNCTION_28	ELSE_1
+0x40008a8	            0x31db	                            xor ebx, ebx	       825	scatterlist.c	FUNCTION_28	IF_2
+0x40008aa	          0x83e1fe	                     and ecx, 0xfffffffe	       820	scatterlist.c	FUNCTION_28	ELSE_1
+0x40008ad	          0x83c105	                              add ecx, 5	       820	scatterlist.c	FUNCTION_28	ELSE_1
+0x40008b0	      0xe800000000	                          call 0x40008b5	       822	scatterlist.c	FUNCTION_28	CALL_1
+0x40008b5	          0x4c89d6	                            mov rsi, r10	       824	scatterlist.c	FUNCTION_28	IF_2	CALL_2
+0x40008b8	          0x4889e7	                            mov rdi, rsp	       824	scatterlist.c	FUNCTION_28	IF_2	CALL_2
+0x40008bb	      0xe800000000	                          call 0x40008c0	       824	scatterlist.c	FUNCTION_28	IF_2	CALL_2
+0x40008c0	            0x84c0	                             test al, al	       824	scatterlist.c	FUNCTION_28	IF_2	CALL_2
+0x40008c2	            0x7471	                            je 0x4000935	       824	scatterlist.c	FUNCTION_28	IF_2	CALL_2
+0x40008c4	            0x31ed	                            xor ebp, ebp	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x40008c6	          0x4d85e4	                           test r12, r12	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x40008c9	            0x7521	                           jne 0x40008ec	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x40008cb	            0xeb60	                           jmp 0x400092d	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x40008cd	      0x488b742408	                mov rsi, qword [rsp + 8]	       833	scatterlist.c	FUNCTION_28	WHILE_1	CALL_5
+0x40008d2	      0x498d7c1d00	                    lea rdi, [r13 + rbx]	       833	scatterlist.c	FUNCTION_28	WHILE_1	CALL_5
+0x40008d7	      0x428d5c3d00	                    lea ebx, [rbp + r15]	       837	scatterlist.c	FUNCTION_28	WHILE_1
+0x40008dc	          0x4489fa	                           mov edx, r15d	       833	scatterlist.c	FUNCTION_28	WHILE_1	CALL_5
+0x40008df	          0x4889dd	                            mov rbp, rbx	       837	scatterlist.c	FUNCTION_28	WHILE_1
+0x40008e2	      0xe800000000	                          call 0x40008e7	       833	scatterlist.c	FUNCTION_28	WHILE_1	CALL_5
+0x40008e7	          0x4c39e3	                            cmp rbx, r12	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x40008ea	            0x7341	                           jae 0x400092d	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x40008ec	          0x4889e7	                            mov rdi, rsp	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x40008ef	      0xe800000000	                          call 0x40008f4	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x40008f4	            0x84c0	                             test al, al	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x40008f6	            0x7435	                            je 0x400092d	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x40008f8	          0x4d89e7	                            mov r15, r12	       830	scatterlist.c	FUNCTION_28	WHILE_1	CALL_4
+0x40008fb	          0x4929df	                            sub r15, rbx	       830	scatterlist.c	FUNCTION_28	WHILE_1	CALL_4
+0x40008fe	      0x4c397c2410	            cmp qword [rsp + 0x10], r15 	       830	scatterlist.c	FUNCTION_28	WHILE_1	CALL_4
+0x4000903	    0x4c0f467c2410	          cmovbe r15, qword [rsp + 0x10]	       830	scatterlist.c	FUNCTION_28	WHILE_1	CALL_4
+0x4000909	          0x4584f6	                         test r14b, r14b	       832	scatterlist.c	FUNCTION_28	WHILE_1	IF_3
+0x400090c	            0x75bf	                           jne 0x40008cd	       832	scatterlist.c	FUNCTION_28	WHILE_1	IF_3
+0x400090e	      0x488b7c2408	                mov rdi, qword [rsp + 8]	       835	scatterlist.c	FUNCTION_28	WHILE_1	CALL_6
+0x4000913	      0x498d741d00	                    lea rsi, [r13 + rbx]	       835	scatterlist.c	FUNCTION_28	WHILE_1	CALL_6
+0x4000918	      0x428d5c3d00	                    lea ebx, [rbp + r15]	       837	scatterlist.c	FUNCTION_28	WHILE_1
+0x400091d	          0x4489fa	                           mov edx, r15d	       835	scatterlist.c	FUNCTION_28	WHILE_1	CALL_6
+0x4000920	          0x4889dd	                            mov rbp, rbx	       837	scatterlist.c	FUNCTION_28	WHILE_1
+0x4000923	      0xe800000000	                          call 0x4000928	       835	scatterlist.c	FUNCTION_28	WHILE_1	CALL_6
+0x4000928	          0x4c39e3	                            cmp rbx, r12	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x400092b	            0x72bf	                            jb 0x40008ec	       827	scatterlist.c	FUNCTION_28	WHILE_1	CALL_3
+0x400092d	          0x4889e7	                            mov rdi, rsp	       840	scatterlist.c	FUNCTION_28	CALL_7
+0x4000930	      0xe800000000	                          call 0x4000935	       840	scatterlist.c	FUNCTION_28	CALL_7
+0x4000935	      0x488b4c2448	            mov rcx, qword [rsp + 0x48] 	       843	scatterlist.c	FUNCTION_28
+0x400093a	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       843	scatterlist.c	FUNCTION_28
+0x4000943	          0x4889d8	                            mov rax, rbx	       843	scatterlist.c	FUNCTION_28
+0x4000946	            0x750f	                           jne 0x4000957	       843	scatterlist.c	FUNCTION_28
+0x4000948	        0x4883c450	                           add rsp, 0x50	       843	scatterlist.c	FUNCTION_28
+0x400094c	              0x5b	                                 pop rbx	       843	scatterlist.c	FUNCTION_28
+0x400094d	              0x5d	                                 pop rbp	       843	scatterlist.c	FUNCTION_28
+0x400094e	            0x415c	                                 pop r12	       843	scatterlist.c	FUNCTION_28
+0x4000950	            0x415d	                                 pop r13	       843	scatterlist.c	FUNCTION_28
+0x4000952	            0x415e	                                 pop r14	       843	scatterlist.c	FUNCTION_28
+0x4000954	            0x415f	                                 pop r15	       843	scatterlist.c	FUNCTION_28
+0x4000956	              0xc3	                                     ret	       843	scatterlist.c	FUNCTION_28
+0x4000957	      0xe800000000	                          call 0x400095c	       843	scatterlist.c	FUNCTION_28
+sgl_alloc	functions,0:FOR,0:WHILE,0:ELSE,0:IF,0:DO,0:CALL,1:SWITCH,0	5
+0x4000ba0	            0x89f1	                            mov ecx, esi	       539	scatterlist.c	FUNCTION_16
+0x4000ba2	          0x4989d0	                             mov r8, rdx	       539	scatterlist.c	FUNCTION_16
+0x4000ba5	            0x31f6	                            xor esi, esi	       540	scatterlist.c	FUNCTION_16	CALL_1
+0x4000ba7	            0x31d2	                            xor edx, edx	       540	scatterlist.c	FUNCTION_16	CALL_1
+0x4000ba9	      0xe982feffff	                 jmp sym.sgl_alloc_order	       540	scatterlist.c	FUNCTION_16	CALL_1
+sg_last	functions,0:FOR,0:WHILE,0:ELSE,0:IF,0:DO,0:CALL,4:SWITCH,0	21
+0x40000b0	            0x85f6	                           test esi, esi	       111	scatterlist.c	FUNCTION_4	CALL_1
+0x40000b2	          0x4889f8	                            mov rax, rdi	       107	scatterlist.c	FUNCTION_4
+0x40000b5	            0x742d	                            je 0x40000e4	       111	scatterlist.c	FUNCTION_4	CALL_1
+0x40000b7	            0x31c9	                            xor ecx, ecx	       111	scatterlist.c	FUNCTION_4	CALL_1
+0x40000b9	            0xeb03	                           jmp 0x40000be	       111	scatterlist.c	FUNCTION_4	CALL_1
+0x40000bb	          0x4889d0	                            mov rax, rdx	       111	scatterlist.c	FUNCTION_4	CALL_1
+0x40000be	          0x83c101	                              add ecx, 1	       111	scatterlist.c	FUNCTION_4	CALL_1
+0x40000c1	            0x31d2	                            xor edx, edx	        31	scatterlist.c	FUNCTION_1	IF_1
+0x40000c3	          0xf60002	                      test byte [rax], 2	        30	scatterlist.c	FUNCTION_1	IF_1	CALL_2
+0x40000c6	            0x7516	                           jne 0x40000de	        30	scatterlist.c	FUNCTION_1	IF_1	CALL_2
+0x40000c8	        0x488b7820	            mov rdi, qword [rax + 0x20] 	        34	scatterlist.c	FUNCTION_1	IF_2	CALL_4
+0x40000cc	        0x488d5020	                   lea rdx, [rax + 0x20]	        33	scatterlist.c	FUNCTION_1
+0x40000d0	          0x4989f8	                             mov r8, rdi	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40000d3	        0x4983e0fc	              and r8, 0xfffffffffffffffc	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40000d7	          0x83e701	                              and edi, 1	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40000da	        0x490f45d0	                          cmovne rdx, r8	        35	scatterlist.c	FUNCTION_1	CALL_5
+0x40000de	            0x39ce	                            cmp esi, ecx	       111	scatterlist.c	FUNCTION_4	CALL_1
+0x40000e0	            0x75d9	                           jne 0x40000bb	       111	scatterlist.c	FUNCTION_4	CALL_1
+0x40000e2	            0xf3c3	                                     ret	       111	scatterlist.c	FUNCTION_4	CALL_1
+0x40000e4	            0x31c0	                            xor eax, eax	       108	scatterlist.c	FUNCTION_4
+0x40000e6	              0xc3	                                     ret	       119	scatterlist.c	FUNCTION_4
+sg_copy_to_buffer	functions,0:FOR,0:WHILE,0:ELSE,0:IF,0:DO,0:CALL,1:SWITCH,0	3
+0x4000970	    0x41b901000000	                              mov r9d, 1	       876	scatterlist.c	FUNCTION_30	CALL_1
+0x4000976	          0x4531c0	                            xor r8d, r8d	       876	scatterlist.c	FUNCTION_30	CALL_1
+0x4000979	      0xe9f2feffff	                  jmp sym.sg_copy_buffer	       876	scatterlist.c	FUNCTION_30	CALL_1
+sg_pcopy_from_buffer	functions,0:FOR,0:WHILE,0:ELSE,0:IF,0:DO,0:CALL,1:SWITCH,0	2
+0x4000980	          0x4531c9	                            xor r9d, r9d	       894	scatterlist.c	FUNCTION_31	CALL_1
+0x4000983	      0xe9e8feffff	                  jmp sym.sg_copy_buffer	       894	scatterlist.c	FUNCTION_31	CALL_1
+sg_alloc_table_from_pages	functions,0:FOR,0:WHILE,0:ELSE,0:IF,0:DO,0:CALL,1:SWITCH,0	5
+0x4000db0	            0x4151	                                 push r9	       465	scatterlist.c	FUNCTION_14	CALL_1
+0x4000db2	    0x41b900f0ffff	                     mov r9d, 0xfffff000	       465	scatterlist.c	FUNCTION_14	CALL_1
+0x4000db8	      0xe800000000	                          call 0x4000dbd	       465	scatterlist.c	FUNCTION_14	CALL_1
+0x4000dbd	              0x5a	                                 pop rdx	       465	scatterlist.c	FUNCTION_14	CALL_1
+0x4000dbe	              0xc3	                                     ret	       467	scatterlist.c	FUNCTION_14

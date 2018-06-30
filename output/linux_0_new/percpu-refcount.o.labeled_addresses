@@ -1,0 +1,50 @@
+percpu_ref_exit	SWITCH,0:WHILE,0:DO,0:CALL,3:functions,0:FOR,0:IF,1:ELSE,0	14
+0x40000d0	          0x4889f8	                            mov rax, rdi	       102	percpu-refcount.c	FUNCTION_3
+0x40000d3	        0x488b7f08	                mov rdi, qword [rdi + 8]	       105	percpu-refcount.c	FUNCTION_3	IF_1
+0x40000d7	        0x4883e7fc	             and rdi, 0xfffffffffffffffc	       105	percpu-refcount.c	FUNCTION_3	IF_1
+0x40000db	            0x7419	                            je 0x40000f6	       105	percpu-refcount.c	FUNCTION_3	IF_1
+0x40000dd	      0x4883781800	               cmp qword [rax + 0x18], 0	       107	percpu-refcount.c	FUNCTION_3	IF_1	CALL_2
+0x40000e2	              0x53	                                push rbx	       102	percpu-refcount.c	FUNCTION_3
+0x40000e3	            0x7513	                           jne 0x40000f8	       107	percpu-refcount.c	FUNCTION_3	IF_1	CALL_2
+0x40000e5	          0x4889c3	                            mov rbx, rax	       107	percpu-refcount.c	FUNCTION_3	IF_1	CALL_2
+0x40000e8	      0xe800000000	                          call 0x40000ed	       108	percpu-refcount.c	FUNCTION_3	IF_1	CALL_3
+0x40000ed	    0x48c743080300	                  mov qword [rbx + 8], 3	       109	percpu-refcount.c	FUNCTION_3	IF_1
+0x40000f5	              0x5b	                                 pop rbx	       111	percpu-refcount.c	FUNCTION_3
+0x40000f6	            0xf3c3	                                     ret	       111	percpu-refcount.c	FUNCTION_3
+0x40000f8	             0xf0b	                                     ud2	       111	percpu-refcount.c	FUNCTION_3
+0x40000fa	            0xebe9	                           jmp 0x40000e5	       107	percpu-refcount.c	FUNCTION_3	IF_1	CALL_2
+percpu_ref_noop_confirm_switch	SWITCH,0:WHILE,0:DO,0:CALL,0:functions,0:FOR,0:IF,0:ELSE,0	1
+0x4000040	            0xf3c3	                                     ret	       162	percpu-refcount.c	FUNCTION_6
+percpu_ref_switch_to_atomic_sync	SWITCH,0:WHILE,0:DO,0:CALL,2:functions,0:FOR,0:IF,0:ELSE,0	32
+0x4000380	              0x53	                                push rbx	       274	percpu-refcount.c	FUNCTION_11
+0x4000381	            0x31f6	                            xor esi, esi	       275	percpu-refcount.c	FUNCTION_11	CALL_1
+0x4000383	          0x4889fb	                            mov rbx, rdi	       274	percpu-refcount.c	FUNCTION_11
+0x4000386	        0x4883ec30	                           sub rsp, 0x30	       274	percpu-refcount.c	FUNCTION_11
+0x400038a	    0x65488b042528	                mov rax, qword gs:[0x28]	       274	percpu-refcount.c	FUNCTION_11
+0x4000393	      0x4889442428	             mov qword [rsp + 0x28], rax	       274	percpu-refcount.c	FUNCTION_11
+0x4000398	            0x31c0	                            xor eax, eax	       274	percpu-refcount.c	FUNCTION_11
+0x400039a	      0xe800000000	                          call 0x400039f	       275	percpu-refcount.c	FUNCTION_11	CALL_1
+0x400039f	      0xe800000000	                          call 0x40003a4	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003a4	      0x48837b1800	               cmp qword [rbx + 0x18], 0	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003a9	            0x743b	                            je 0x40003e6	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003ab	            0x31f6	                            xor esi, esi	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003ad	          0x4889e7	                            mov rdi, rsp	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003b0	      0xe800000000	                          call 0x40003b5	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003b5	            0xeb05	                           jmp 0x40003bc	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003b7	      0xe800000000	                          call 0x40003bc	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003bc	      0xba02000000	                              mov edx, 2	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003c1	          0x4889e6	                            mov rsi, rsp	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003c4	    0x48c7c7000000	                              mov rdi, 0	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003cb	      0xe800000000	                          call 0x40003d0	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003d0	      0x48837b1800	               cmp qword [rbx + 0x18], 0	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003d5	            0x75e0	                           jne 0x40003b7	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003d7	          0x4889e6	                            mov rsi, rsp	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003da	    0x48c7c7000000	                              mov rdi, 0	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003e1	      0xe800000000	                          call 0x40003e6	       276	percpu-refcount.c	FUNCTION_11	CALL_2
+0x40003e6	      0x488b442428	            mov rax, qword [rsp + 0x28] 	       277	percpu-refcount.c	FUNCTION_11
+0x40003eb	    0x654833042528	                xor rax, qword gs:[0x28]	       277	percpu-refcount.c	FUNCTION_11
+0x40003f4	            0x7506	                           jne 0x40003fc	       277	percpu-refcount.c	FUNCTION_11
+0x40003f6	        0x4883c430	                           add rsp, 0x30	       277	percpu-refcount.c	FUNCTION_11
+0x40003fa	              0x5b	                                 pop rbx	       277	percpu-refcount.c	FUNCTION_11
+0x40003fb	              0xc3	                                     ret	       277	percpu-refcount.c	FUNCTION_11
+0x40003fc	      0xe800000000	                          call 0x4000401	       277	percpu-refcount.c	FUNCTION_11

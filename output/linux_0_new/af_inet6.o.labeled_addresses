@@ -1,0 +1,63 @@
+ipv6_mod_enabled	FOR,0:WHILE,0:IF,0:functions,0:SWITCH,0:ELSE,0:CALL,0:DO,0	4
+0x4000040	    0x8b0500000000	            mov eax, dword [0x04000046] 	        99	af_inet6.c	FUNCTION_1
+0x4000046	            0x85c0	                           test eax, eax	        99	af_inet6.c	FUNCTION_1
+0x4000048	           0xf94c0	                                 sete al	        99	af_inet6.c	FUNCTION_1
+0x400004b	              0xc3	                                     ret	       100	af_inet6.c	FUNCTION_1
+inet6_net_exit	FOR,0:WHILE,0:IF,0:functions,0:SWITCH,0:ELSE,0:CALL,4:DO,0	10
+0x4000410	              0x53	                                push rbx	       873	af_inet6.c	FUNCTION_19
+0x4000411	          0x4889fb	                            mov rbx, rdi	       873	af_inet6.c	FUNCTION_19
+0x4000414	      0xe800000000	                          call 0x4000419	       875	af_inet6.c	FUNCTION_19	CALL_1
+0x4000419	          0x4889df	                            mov rdi, rbx	       876	af_inet6.c	FUNCTION_19	CALL_2
+0x400041c	      0xe800000000	                          call 0x4000421	       876	af_inet6.c	FUNCTION_19	CALL_2
+0x4000421	          0x4889df	                            mov rdi, rbx	       877	af_inet6.c	FUNCTION_19	CALL_3
+0x4000424	      0xe800000000	                          call 0x4000429	       877	af_inet6.c	FUNCTION_19	CALL_3
+0x4000429	          0x4889df	                            mov rdi, rbx	       879	af_inet6.c	FUNCTION_19	CALL_4
+0x400042c	              0x5b	                                 pop rbx	       880	af_inet6.c	FUNCTION_19
+0x400042d	            0xeb91	               jmp sym.ipv6_cleanup_mibs	       879	af_inet6.c	FUNCTION_19	CALL_4
+ipv6_cleanup_mibs	FOR,0:WHILE,0:IF,0:functions,0:SWITCH,0:ELSE,0:CALL,5:DO,0	13
+0x40003c0	              0x53	                                push rbx	       820	af_inet6.c	FUNCTION_17
+0x40003c1	          0x4889fb	                            mov rbx, rdi	       820	af_inet6.c	FUNCTION_17
+0x40003c4	    0x488bbfc80100	           mov rdi, qword [rdi + 0x1c8] 	       821	af_inet6.c	FUNCTION_17	CALL_1
+0x40003cb	      0xe800000000	                          call 0x40003d0	       821	af_inet6.c	FUNCTION_17	CALL_1
+0x40003d0	    0x488bbbd00100	           mov rdi, qword [rbx + 0x1d0] 	       822	af_inet6.c	FUNCTION_17	CALL_2
+0x40003d7	      0xe800000000	                          call 0x40003dc	       822	af_inet6.c	FUNCTION_17	CALL_2
+0x40003dc	    0x488bbbd80100	           mov rdi, qword [rbx + 0x1d8] 	       823	af_inet6.c	FUNCTION_17	CALL_3
+0x40003e3	      0xe800000000	                          call 0x40003e8	       823	af_inet6.c	FUNCTION_17	CALL_3
+0x40003e8	    0x488bbbe00100	           mov rdi, qword [rbx + 0x1e0] 	       824	af_inet6.c	FUNCTION_17	CALL_4
+0x40003ef	      0xe800000000	                          call 0x40003f4	       824	af_inet6.c	FUNCTION_17	CALL_4
+0x40003f4	    0x488bbbe80100	           mov rdi, qword [rbx + 0x1e8] 	       825	af_inet6.c	FUNCTION_17	CALL_5
+0x40003fb	              0x5b	                                 pop rbx	       826	af_inet6.c	FUNCTION_17
+0x40003fc	      0xe900000000	                           jmp 0x4000401	       825	af_inet6.c	FUNCTION_17	CALL_5
+inet6_bind	FOR,0:WHILE,0:IF,3:functions,0:SWITCH,0:ELSE,0:CALL,3:DO,0	13
+0x4000bf0	        0x488b7f20	            mov rdi, qword [rdi + 0x20] 	       280	af_inet6.c	FUNCTION_4
+0x4000bf4	        0x488b4728	            mov rax, qword [rdi + 0x28] 	       284	af_inet6.c	FUNCTION_4	IF_1
+0x4000bf8	    0x488b80900000	            mov rax, qword [rax + 0x90] 	       284	af_inet6.c	FUNCTION_4	IF_1
+0x4000bff	          0x4885c0	                           test rax, rax	       284	af_inet6.c	FUNCTION_4	IF_1
+0x4000c02	            0x7405	                            je 0x4000c09	       284	af_inet6.c	FUNCTION_4	IF_1
+0x4000c04	      0xe900000000	                           jmp 0x4000c09	       285	af_inet6.c	FUNCTION_4	CALL_1
+0x4000c09	          0x83fa17	                           cmp edx, 0x17	       287	af_inet6.c	FUNCTION_4	IF_2
+0x4000c0c	            0x7e0d	                           jle 0x4000c1b	       287	af_inet6.c	FUNCTION_4	IF_2
+0x4000c0e	    0x41b801000000	                              mov r8d, 1	       297	af_inet6.c	FUNCTION_4	CALL_3
+0x4000c14	            0x31c9	                            xor ecx, ecx	       297	af_inet6.c	FUNCTION_4	CALL_3
+0x4000c16	      0xe945fbffff	                    jmp sym.__inet6_bind	       297	af_inet6.c	FUNCTION_4	CALL_3
+0x4000c1b	      0xb8eaffffff	                     mov eax, 0xffffffea	       298	af_inet6.c	FUNCTION_4
+0x4000c20	              0xc3	                                     ret	       298	af_inet6.c	FUNCTION_4
+inet6_release	FOR,0:WHILE,0:IF,1:functions,0:SWITCH,0:ELSE,0:CALL,3:DO,0	18
+0x40001f0	              0x55	                                push rbp	       448	af_inet6.c	FUNCTION_6
+0x40001f1	              0x53	                                push rbx	       448	af_inet6.c	FUNCTION_6
+0x40001f2	        0x488b6f20	            mov rbp, qword [rdi + 0x20] 	       449	af_inet6.c	FUNCTION_6
+0x40001f6	          0x4885ed	                           test rbp, rbp	       451	af_inet6.c	FUNCTION_6	IF_1
+0x40001f9	            0x741d	                            je 0x4000218	       451	af_inet6.c	FUNCTION_6	IF_1
+0x40001fb	          0x4889fb	                            mov rbx, rdi	       451	af_inet6.c	FUNCTION_6	IF_1
+0x40001fe	          0x4889ef	                            mov rdi, rbp	       455	af_inet6.c	FUNCTION_6	CALL_1
+0x4000201	      0xe800000000	                          call 0x4000206	       455	af_inet6.c	FUNCTION_6	CALL_1
+0x4000206	          0x4889ef	                            mov rdi, rbp	       458	af_inet6.c	FUNCTION_6	CALL_2
+0x4000209	      0xe800000000	                          call 0x400020e	       458	af_inet6.c	FUNCTION_6	CALL_2
+0x400020e	          0x4889df	                            mov rdi, rbx	       460	af_inet6.c	FUNCTION_6	CALL_3
+0x4000211	              0x5b	                                 pop rbx	       461	af_inet6.c	FUNCTION_6
+0x4000212	              0x5d	                                 pop rbp	       461	af_inet6.c	FUNCTION_6
+0x4000213	      0xe900000000	                           jmp 0x4000218	       460	af_inet6.c	FUNCTION_6	CALL_3
+0x4000218	      0xb8eaffffff	                     mov eax, 0xffffffea	       461	af_inet6.c	FUNCTION_6
+0x400021d	              0x5b	                                 pop rbx	       461	af_inet6.c	FUNCTION_6
+0x400021e	              0x5d	                                 pop rbp	       461	af_inet6.c	FUNCTION_6
+0x400021f	              0xc3	                                     ret	       461	af_inet6.c	FUNCTION_6

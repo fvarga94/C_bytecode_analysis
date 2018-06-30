@@ -1,0 +1,886 @@
+cmp_topo	IF,0:DO,0:ELSE,0:FOR,0:SWITCH,0:CALL,0:WHILE,0:functions,0	5
+0x4000040	          0x488b07	                    mov rax, qword [rdi]	       159	cg_arcs.c	FUNCTION_3
+0x4000043	          0x488b16	                    mov rdx, qword [rsi]	       159	cg_arcs.c	FUNCTION_3
+0x4000046	    0x8b800c010000	           mov eax, dword [rax + 0x10c] 	       159	cg_arcs.c	FUNCTION_3
+0x400004c	    0x2b820c010000	            sub eax, dword [rdx + 0x10c]	       159	cg_arcs.c	FUNCTION_3
+0x4000052	              0xc3	                                     ret	       160	cg_arcs.c	FUNCTION_3
+cmp_total	IF,10:DO,0:ELSE,0:FOR,0:SWITCH,0:CALL,1:WHILE,0:functions,0	61
+0x4000053	          0x488b17	                    mov rdx, qword [rdi]	       540	cg_arcs.c	FUNCTION_9
+0x4000056	          0x488b0e	                    mov rcx, qword [rsi]	       541	cg_arcs.c	FUNCTION_9
+0x4000059	    0xf20f10822001	        movsd xmm0, qword [rdx + 0x120] 	       544	cg_arcs.c	FUNCTION_9
+0x4000061	    0xf20f58822801	         addsd xmm0, qword [rdx + 0x128]	       544	cg_arcs.c	FUNCTION_9
+0x4000069	    0xf20f10892001	        movsd xmm1, qword [rcx + 0x120] 	       544	cg_arcs.c	FUNCTION_9
+0x4000071	    0xf20f58892801	         addsd xmm1, qword [rcx + 0x128]	       544	cg_arcs.c	FUNCTION_9
+0x4000079	        0xf20f5cc1	                        subsd xmm0, xmm1	       544	cg_arcs.c	FUNCTION_9
+0x400007d	        0x660fefc9	                         pxor xmm1, xmm1	       546	cg_arcs.c	FUNCTION_9	IF_1
+0x4000081	        0x660f2ec8	                      ucomisd xmm1, xmm0	       546	cg_arcs.c	FUNCTION_9	IF_1
+0x4000085	            0x7770	                            ja 0x40000f7	       546	cg_arcs.c	FUNCTION_9	IF_1
+0x4000087	      0xb8ffffffff	                     mov eax, 0xffffffff	       552	cg_arcs.c	FUNCTION_9	IF_2
+0x400008c	        0x660f2ec1	                      ucomisd xmm0, xmm1	       550	cg_arcs.c	FUNCTION_9	IF_2
+0x4000090	     0xf8795000000	                            ja 0x400012b	       550	cg_arcs.c	FUNCTION_9	IF_2
+0x4000096	        0x488b7a10	            mov rdi, qword [rdx + 0x10] 	       554	cg_arcs.c	FUNCTION_9	IF_3
+0x400009a	          0x4885ff	                           test rdi, rdi	       554	cg_arcs.c	FUNCTION_9	IF_3
+0x400009d	            0x757d	                           jne 0x400011c	       554	cg_arcs.c	FUNCTION_9	IF_3
+0x400009f	    0x83ba30010000	              cmp dword [rdx + 0x130], 0	       554	cg_arcs.c	FUNCTION_9	IF_3
+0x40000a6	            0x7467	                            je 0x400010f	       554	cg_arcs.c	FUNCTION_9	IF_3
+0x40000a8	            0xeb53	                           jmp 0x40000fd	       554	cg_arcs.c	FUNCTION_9	IF_3
+0x40000aa	      0xb801000000	                              mov eax, 1	       560	cg_arcs.c	FUNCTION_9	IF_4
+0x40000af	    0x83b930010000	              cmp dword [rcx + 0x130], 0	       558	cg_arcs.c	FUNCTION_9	IF_4
+0x40000b6	            0x7573	                           jne 0x400012b	       558	cg_arcs.c	FUNCTION_9	IF_4
+0x40000b8	        0x4883ff01	                              cmp rdi, 1	       564	cg_arcs.c	FUNCTION_9	IF_5
+0x40000bc	            0x19c0	                            sbb eax, eax	       564	cg_arcs.c	FUNCTION_9	IF_5
+0x40000be	          0x83c801	                               or eax, 1	       564	cg_arcs.c	FUNCTION_9	IF_5
+0x40000c1	              0xc3	                                     ret	       564	cg_arcs.c	FUNCTION_9	IF_5
+0x40000c2	          0x803f5f	                    cmp byte [rdi], 0x5f	       570	cg_arcs.c	FUNCTION_9	IF_7
+0x40000c5	            0x7407	                            je 0x40000ce	       570	cg_arcs.c	FUNCTION_9	IF_7
+0x40000c7	          0x803e5f	                    cmp byte [rsi], 0x5f	       570	cg_arcs.c	FUNCTION_9	IF_7
+0x40000ca	            0x750c	                           jne 0x40000d8	       570	cg_arcs.c	FUNCTION_9	IF_7
+0x40000cc	            0xeb35	                           jmp 0x4000103	       570	cg_arcs.c	FUNCTION_9	IF_7
+0x40000ce	      0xb801000000	                              mov eax, 1	       576	cg_arcs.c	FUNCTION_9	IF_8
+0x40000d3	          0x803e5f	                    cmp byte [rsi], 0x5f	       574	cg_arcs.c	FUNCTION_9	IF_8
+0x40000d6	            0x7553	                           jne 0x400012b	       574	cg_arcs.c	FUNCTION_9	IF_8
+0x40000d8	        0x4c8b4228	              mov r8, qword [rdx + 0x28]	       578	cg_arcs.c	FUNCTION_9	IF_9
+0x40000dc	        0x488b5128	            mov rdx, qword [rcx + 0x28] 	       578	cg_arcs.c	FUNCTION_9	IF_9
+0x40000e0	          0x4939d0	                             cmp r8, rdx	       578	cg_arcs.c	FUNCTION_9	IF_9
+0x40000e3	            0x7724	                            ja 0x4000109	       578	cg_arcs.c	FUNCTION_9	IF_9
+0x40000e5	      0xb801000000	                              mov eax, 1	       584	cg_arcs.c	FUNCTION_9	IF_10
+0x40000ea	            0x723f	                            jb 0x400012b	       582	cg_arcs.c	FUNCTION_9	IF_10
+0x40000ec	        0x4883ec08	                              sub rsp, 8	       539	cg_arcs.c	FUNCTION_9
+0x40000f0	      0xe800000000	                          call 0x40000f5	       586	cg_arcs.c	FUNCTION_9	CALL_1
+0x40000f5	            0xeb30	                           jmp 0x4000127	       586	cg_arcs.c	FUNCTION_9	CALL_1
+0x40000f7	      0xb801000000	                              mov eax, 1	       548	cg_arcs.c	FUNCTION_9	IF_1
+0x40000fc	              0xc3	                                     ret	       548	cg_arcs.c	FUNCTION_9	IF_1
+0x40000fd	      0xb8ffffffff	                     mov eax, 0xffffffff	       556	cg_arcs.c	FUNCTION_9	IF_3
+0x4000102	              0xc3	                                     ret	       556	cg_arcs.c	FUNCTION_9	IF_3
+0x4000103	      0xb8ffffffff	                     mov eax, 0xffffffff	       572	cg_arcs.c	FUNCTION_9	IF_7
+0x4000108	              0xc3	                                     ret	       572	cg_arcs.c	FUNCTION_9	IF_7
+0x4000109	      0xb8ffffffff	                     mov eax, 0xffffffff	       580	cg_arcs.c	FUNCTION_9	IF_9
+0x400010e	              0xc3	                                     ret	       587	cg_arcs.c	FUNCTION_9
+0x400010f	      0x4883791000	               cmp qword [rcx + 0x10], 0	       558	cg_arcs.c	FUNCTION_9	IF_4
+0x4000114	            0x7494	                            je 0x40000aa	       558	cg_arcs.c	FUNCTION_9	IF_4
+0x4000116	      0xb8ffffffff	                     mov eax, 0xffffffff	       564	cg_arcs.c	FUNCTION_9	IF_5
+0x400011b	              0xc3	                                     ret	       564	cg_arcs.c	FUNCTION_9	IF_5
+0x400011c	        0x488b7110	            mov rsi, qword [rcx + 0x10] 	       558	cg_arcs.c	FUNCTION_9	IF_4
+0x4000120	          0x4885f6	                           test rsi, rsi	       558	cg_arcs.c	FUNCTION_9	IF_4
+0x4000123	            0x759d	                           jne 0x40000c2	       558	cg_arcs.c	FUNCTION_9	IF_4
+0x4000125	            0xeb83	                           jmp 0x40000aa	       558	cg_arcs.c	FUNCTION_9	IF_4
+0x4000127	        0x4883c408	                              add rsp, 8	       587	cg_arcs.c	FUNCTION_9
+0x400012b	            0xf3c3	                                     ret	       587	cg_arcs.c	FUNCTION_9
+arc_lookup	IF,2:DO,0:ELSE,0:FOR,1:SWITCH,0:CALL,2:WHILE,0:functions,0	53
+0x400012d	              0x55	                                push rbp	        60	cg_arcs.c	FUNCTION_1
+0x400012e	              0x53	                                push rbx	        60	cg_arcs.c	FUNCTION_1
+0x400012f	        0x4883ec08	                              sub rsp, 8	        60	cg_arcs.c	FUNCTION_1
+0x4000133	          0x4885ff	                           test rdi, rdi	        63	cg_arcs.c	FUNCTION_1	IF_1
+0x4000136	            0x740b	                            je 0x4000143	        63	cg_arcs.c	FUNCTION_1	IF_1
+0x4000138	          0x4889fb	                            mov rbx, rdi	        63	cg_arcs.c	FUNCTION_1	IF_1
+0x400013b	          0x4889f5	                            mov rbp, rsi	        63	cg_arcs.c	FUNCTION_1	IF_1
+0x400013e	          0x4885f6	                           test rsi, rsi	        63	cg_arcs.c	FUNCTION_1	IF_1
+0x4000141	            0x7514	                           jne 0x4000157	        63	cg_arcs.c	FUNCTION_1	IF_1
+0x4000143	      0xbf00000000	                              mov edi, 0	       104	stdio2.h	CALL_19
+0x4000148	      0xe800000000	                          call 0x400014d	       104	stdio2.h	CALL_19
+0x400014d	      0xb800000000	                              mov eax, 0	        66	cg_arcs.c	FUNCTION_1	IF_1
+0x4000152	      0xe98e000000	                           jmp 0x40001e5	        66	cg_arcs.c	FUNCTION_1	IF_1
+0x4000157	    0xf60500000000	               test byte [0x0400015e], 2	        68	cg_arcs.c	FUNCTION_1	CALL_1
+0x400015e	            0x741c	                            je 0x400017c	        68	cg_arcs.c	FUNCTION_1	CALL_1
+0x4000160	        0x488b4e10	            mov rcx, qword [rsi + 0x10] 	       104	stdio2.h	CALL_19
+0x4000164	        0x488b5710	            mov rdx, qword [rdi + 0x10] 	       104	stdio2.h	CALL_19
+0x4000168	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x400016d	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000172	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x4000177	      0xe800000000	                          call 0x400017c	       104	stdio2.h	CALL_19
+0x400017c	    0x488b9b500100	           mov rbx, qword [rbx + 0x150] 	        70	cg_arcs.c	FUNCTION_1	FOR_1
+0x4000183	          0x4885db	                           test rbx, rbx	        70	cg_arcs.c	FUNCTION_1	FOR_1
+0x4000186	            0x7453	                            je 0x40001db	        70	cg_arcs.c	FUNCTION_1	FOR_1
+0x4000188	    0xf60500000000	               test byte [0x0400018f], 2	        72	cg_arcs.c	FUNCTION_1	FOR_1	CALL_2
+0x400018f	            0x7423	                            je 0x40001b4	        72	cg_arcs.c	FUNCTION_1	FOR_1	CALL_2
+0x4000191	        0x488b4308	                mov rax, qword [rbx + 8]	        72	cg_arcs.c	FUNCTION_1	FOR_1	CALL_2
+0x4000195	        0x488b4810	            mov rcx, qword [rax + 0x10] 	       104	stdio2.h	CALL_19
+0x4000199	          0x488b03	                    mov rax, qword [rbx]	        72	cg_arcs.c	FUNCTION_1	FOR_1	CALL_2
+0x400019c	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       104	stdio2.h	CALL_19
+0x40001a0	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x40001a5	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x40001aa	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x40001af	      0xe800000000	                          call 0x40001b4	       104	stdio2.h	CALL_19
+0x40001b4	        0x488b4308	                mov rax, qword [rbx + 8]	        74	cg_arcs.c	FUNCTION_1	FOR_1	IF_2
+0x40001b8	          0x488b30	                    mov rsi, qword [rax]	        74	cg_arcs.c	FUNCTION_1	FOR_1	IF_2
+0x40001bb	        0x48397500	                    cmp qword [rbp], rsi	        74	cg_arcs.c	FUNCTION_1	FOR_1	IF_2
+0x40001bf	            0x720a	                            jb 0x40001cb	        74	cg_arcs.c	FUNCTION_1	FOR_1	IF_2
+0x40001c1	        0x488b4008	                mov rax, qword [rax + 8]	        75	cg_arcs.c	FUNCTION_1	FOR_1	IF_2
+0x40001c5	        0x48394508	                cmp qword [rbp + 8], rax	        75	cg_arcs.c	FUNCTION_1	FOR_1	IF_2
+0x40001c9	            0x7617	                           jbe 0x40001e2	        75	cg_arcs.c	FUNCTION_1	FOR_1	IF_2
+0x40001cb	        0x488b5b30	            mov rbx, qword [rbx + 0x30] 	        70	cg_arcs.c	FUNCTION_1	FOR_1
+0x40001cf	          0x4885db	                           test rbx, rbx	        70	cg_arcs.c	FUNCTION_1	FOR_1
+0x40001d2	            0x75b4	                           jne 0x4000188	        70	cg_arcs.c	FUNCTION_1	FOR_1
+0x40001d4	      0xb800000000	                              mov eax, 0	        80	cg_arcs.c	FUNCTION_1
+0x40001d9	            0xeb0a	                           jmp 0x40001e5	        80	cg_arcs.c	FUNCTION_1
+0x40001db	      0xb800000000	                              mov eax, 0	        80	cg_arcs.c	FUNCTION_1
+0x40001e0	            0xeb03	                           jmp 0x40001e5	        80	cg_arcs.c	FUNCTION_1
+0x40001e2	          0x4889d8	                            mov rax, rbx	        80	cg_arcs.c	FUNCTION_1
+0x40001e5	        0x4883c408	                              add rsp, 8	        81	cg_arcs.c	FUNCTION_1
+0x40001e9	              0x5b	                                 pop rbx	        81	cg_arcs.c	FUNCTION_1
+0x40001ea	              0x5d	                                 pop rbp	        81	cg_arcs.c	FUNCTION_1
+0x40001eb	              0xc3	                                     ret	        81	cg_arcs.c	FUNCTION_1
+arc_add	IF,4:DO,0:ELSE,0:FOR,0:SWITCH,0:CALL,8:WHILE,0:functions,0	89
+0x40001ec	            0x4156	                                push r14	        89	cg_arcs.c	FUNCTION_2
+0x40001ee	            0x4155	                                push r13	        89	cg_arcs.c	FUNCTION_2
+0x40001f0	            0x4154	                                push r12	        89	cg_arcs.c	FUNCTION_2
+0x40001f2	              0x55	                                push rbp	        89	cg_arcs.c	FUNCTION_2
+0x40001f3	              0x53	                                push rbx	        89	cg_arcs.c	FUNCTION_2
+0x40001f4	          0x4989fd	                            mov r13, rdi	        89	cg_arcs.c	FUNCTION_2
+0x40001f7	          0x4989f4	                            mov r12, rsi	        89	cg_arcs.c	FUNCTION_2
+0x40001fa	          0x4889d5	                            mov rbp, rdx	        89	cg_arcs.c	FUNCTION_2
+0x40001fd	    0xf60500000000	           test byte [0x04000204], 0x10 	        93	cg_arcs.c	FUNCTION_2	CALL_1
+0x4000204	            0x741c	                            je 0x4000222	        93	cg_arcs.c	FUNCTION_2	CALL_1
+0x4000206	        0x488b4f10	            mov rcx, qword [rdi + 0x10] 	       104	stdio2.h	CALL_19
+0x400020a	        0x4c8b4610	              mov r8, qword [rsi + 0x10]	       104	stdio2.h	CALL_19
+0x400020e	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000213	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000218	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x400021d	      0xe800000000	                          call 0x4000222	       104	stdio2.h	CALL_19
+0x4000222	          0x4c89e6	                            mov rsi, r12	        95	cg_arcs.c	FUNCTION_2	CALL_2
+0x4000225	          0x4c89ef	                            mov rdi, r13	        95	cg_arcs.c	FUNCTION_2	CALL_2
+0x4000228	      0xe800000000	                          call 0x400022d	        95	cg_arcs.c	FUNCTION_2	CALL_2
+0x400022d	          0x4889c3	                            mov rbx, rax	        95	cg_arcs.c	FUNCTION_2	CALL_2
+0x4000230	          0x4885c0	                           test rax, rax	        96	cg_arcs.c	FUNCTION_2	IF_1
+0x4000233	            0x742d	                            je 0x4000262	        96	cg_arcs.c	FUNCTION_2	IF_1
+0x4000235	    0xf60500000000	           test byte [0x0400023c], 0x10 	       101	cg_arcs.c	FUNCTION_2	IF_1	CALL_3
+0x400023c	            0x741b	                            je 0x4000259	       101	cg_arcs.c	FUNCTION_2	IF_1	CALL_3
+0x400023e	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       104	stdio2.h	CALL_19
+0x4000242	          0x4889e9	                            mov rcx, rbp	       104	stdio2.h	CALL_19
+0x4000245	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x400024a	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x400024f	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x4000254	      0xe800000000	                          call 0x4000259	       104	stdio2.h	CALL_19
+0x4000259	        0x48016b10	            add qword [rbx + 0x10], rbp 	       103	cg_arcs.c	FUNCTION_2	IF_1
+0x400025d	      0xe9e6000000	                           jmp 0x4000348	       104	cg_arcs.c	FUNCTION_2	IF_1
+0x4000262	      0xbf40000000	                           mov edi, 0x40	       106	cg_arcs.c	FUNCTION_2	CALL_4
+0x4000267	      0xe800000000	                          call 0x400026c	       106	cg_arcs.c	FUNCTION_2	CALL_4
+0x400026c	          0x4889c3	                            mov rbx, rax	       106	cg_arcs.c	FUNCTION_2	CALL_4
+0x400026f	    0x48c740380000	               mov qword [rax + 0x38], 0	        90	string3.h	FUNCTION_31	CALL_6
+0x4000277	        0x488d7808	                      lea rdi, [rax + 8]	        90	string3.h	FUNCTION_31	CALL_6
+0x400027b	        0x4883e7f8	             and rdi, 0xfffffffffffffff8	        90	string3.h	FUNCTION_31	CALL_6
+0x400027f	          0x4889c1	                            mov rcx, rax	        90	string3.h	FUNCTION_31	CALL_6
+0x4000282	          0x4829f9	                            sub rcx, rdi	        90	string3.h	FUNCTION_31	CALL_6
+0x4000285	          0x83c140	                           add ecx, 0x40	        90	string3.h	FUNCTION_31	CALL_6
+0x4000288	          0xc1e903	                              shr ecx, 3	        90	string3.h	FUNCTION_31	CALL_6
+0x400028b	            0x89c9	                            mov ecx, ecx	        90	string3.h	FUNCTION_31	CALL_6
+0x400028d	      0xb800000000	                              mov eax, 0	        90	string3.h	FUNCTION_31	CALL_6
+0x4000292	          0xf348ab	              rep stosq qword [rdi], rax	        90	string3.h	FUNCTION_31	CALL_6
+0x4000295	          0x4c892b	                    mov qword [rbx], r13	       108	cg_arcs.c	FUNCTION_2
+0x4000298	        0x4c896308	                mov qword [rbx + 8], r12	       109	cg_arcs.c	FUNCTION_2
+0x400029c	        0x48896b10	             mov qword [rbx + 0x10], rbp	       110	cg_arcs.c	FUNCTION_2
+0x40002a0	          0x4d39ec	                            cmp r12, r13	       114	cg_arcs.c	FUNCTION_2	IF_2
+0x40002a3	            0x747d	                            je 0x4000322	       114	cg_arcs.c	FUNCTION_2	IF_2
+0x40002a5	    0x8b0500000000	            mov eax, dword [0x040002ab] 	       119	cg_arcs.c	FUNCTION_2	IF_2	IF_3
+0x40002ab	    0x3b0500000000	            cmp eax, dword [0x040002b1] 	       119	cg_arcs.c	FUNCTION_2	IF_2	IF_3
+0x40002b1	            0x7553	                           jne 0x4000306	       119	cg_arcs.c	FUNCTION_2	IF_2	IF_3
+0x40002b3	            0x85c0	                           test eax, eax	       123	cg_arcs.c	FUNCTION_2	IF_2	IF_3	IF_4
+0x40002b5	      0xb801000000	                              mov eax, 1	       124	cg_arcs.c	FUNCTION_2	IF_2	IF_3
+0x40002ba	     0xf4505000000	          cmovne eax, dword [0x040002c1]	       124	cg_arcs.c	FUNCTION_2	IF_2	IF_3
+0x40002c1	             0x1c0	                            add eax, eax	       124	cg_arcs.c	FUNCTION_2	IF_2	IF_3
+0x40002c3	    0x890500000000	            mov dword [0x040002c9], eax 	       124	cg_arcs.c	FUNCTION_2	IF_2	IF_3
+0x40002c9	            0x89c0	                            mov eax, eax	       127	cg_arcs.c	FUNCTION_2	IF_2	IF_3	CALL_6
+0x40002cb	    0x488d3cc50000	                        lea rdi, [rax*8]	       127	cg_arcs.c	FUNCTION_2	IF_2	IF_3	CALL_6
+0x40002d3	      0xe800000000	                          call 0x40002d8	       127	cg_arcs.c	FUNCTION_2	IF_2	IF_3	CALL_6
+0x40002d8	          0x4889c5	                            mov rbp, rax	       127	cg_arcs.c	FUNCTION_2	IF_2	IF_3	CALL_6
+0x40002db	    0x4c8b35000000	            mov r14, qword [0x040002e2] 	       130	cg_arcs.c	FUNCTION_2	IF_2	IF_3	CALL_7
+0x40002e2	    0x8b1500000000	            mov edx, dword [0x040002e8] 	        53	string3.h	FUNCTION_28	CALL_3
+0x40002e8	        0x48c1e203	                              shl rdx, 3	        53	string3.h	FUNCTION_28	CALL_3
+0x40002ec	          0x4c89f6	                            mov rsi, r14	        53	string3.h	FUNCTION_28	CALL_3
+0x40002ef	          0x4889c7	                            mov rdi, rax	        53	string3.h	FUNCTION_28	CALL_3
+0x40002f2	      0xe800000000	                          call 0x40002f7	        53	string3.h	FUNCTION_28	CALL_3
+0x40002f7	          0x4c89f7	                            mov rdi, r14	       133	cg_arcs.c	FUNCTION_2	IF_2	IF_3	CALL_8
+0x40002fa	      0xe800000000	                          call 0x40002ff	       133	cg_arcs.c	FUNCTION_2	IF_2	IF_3	CALL_8
+0x40002ff	    0x48892d000000	            mov qword [0x04000306], rbp 	       136	cg_arcs.c	FUNCTION_2	IF_2	IF_3
+0x4000306	    0x8b0500000000	            mov eax, dword [0x0400030c] 	       140	cg_arcs.c	FUNCTION_2	IF_2
+0x400030c	          0x8d5001	                      lea edx, [rax + 1]	       140	cg_arcs.c	FUNCTION_2	IF_2
+0x400030f	    0x891500000000	            mov dword [0x04000315], edx 	       140	cg_arcs.c	FUNCTION_2	IF_2
+0x4000315	            0x89c0	                            mov eax, eax	       140	cg_arcs.c	FUNCTION_2	IF_2
+0x4000317	    0x488b15000000	            mov rdx, qword [0x0400031e] 	       140	cg_arcs.c	FUNCTION_2	IF_2
+0x400031e	        0x48891cc2	            mov qword [rdx + rax*8], rbx	       140	cg_arcs.c	FUNCTION_2	IF_2
+0x4000322	    0x498b85500100	           mov rax, qword [r13 + 0x150] 	       144	cg_arcs.c	FUNCTION_2
+0x4000329	        0x48894330	             mov qword [rbx + 0x30], rax	       144	cg_arcs.c	FUNCTION_2
+0x400032d	    0x49899d500100	            mov qword [r13 + 0x150], rbx	       145	cg_arcs.c	FUNCTION_2
+0x4000334	    0x498b84244801	           mov rax, qword [r12 + 0x148] 	       148	cg_arcs.c	FUNCTION_2
+0x400033c	        0x48894328	             mov qword [rbx + 0x28], rax	       148	cg_arcs.c	FUNCTION_2
+0x4000340	    0x49899c244801	            mov qword [r12 + 0x148], rbx	       149	cg_arcs.c	FUNCTION_2
+0x4000348	              0x5b	                                 pop rbx	       150	cg_arcs.c	FUNCTION_2
+0x4000349	              0x5d	                                 pop rbp	       150	cg_arcs.c	FUNCTION_2
+0x400034a	            0x415c	                                 pop r12	       150	cg_arcs.c	FUNCTION_2
+0x400034c	            0x415d	                                 pop r13	       150	cg_arcs.c	FUNCTION_2
+0x400034e	            0x415e	                                 pop r14	       150	cg_arcs.c	FUNCTION_2
+0x4000350	              0xc3	                                     ret	       150	cg_arcs.c	FUNCTION_2
+cg_assemble	IF,3:DO,0:ELSE,1:FOR,8:SWITCH,0:CALL,14:WHILE,0:functions,0	673
+0x4000351	            0x4157	                                push r15	       595	cg_arcs.c	FUNCTION_10
+0x4000353	            0x4156	                                push r14	       595	cg_arcs.c	FUNCTION_10
+0x4000355	            0x4155	                                push r13	       595	cg_arcs.c	FUNCTION_10
+0x4000357	            0x4154	                                push r12	       595	cg_arcs.c	FUNCTION_10
+0x4000359	              0x55	                                push rbp	       595	cg_arcs.c	FUNCTION_10
+0x400035a	              0x53	                                push rbx	       595	cg_arcs.c	FUNCTION_10
+0x400035b	        0x4883ec18	                           sub rsp, 0x18	       595	cg_arcs.c	FUNCTION_10
+0x400035f	    0x488b1d000000	            mov rbx, qword [0x04000366] 	       604	cg_arcs.c	FUNCTION_10	FOR_1
+0x4000366	    0x488b05000000	            mov rax, qword [0x0400036d] 	       604	cg_arcs.c	FUNCTION_10	FOR_1
+0x400036d	          0x4839c3	                            cmp rbx, rax	       604	cg_arcs.c	FUNCTION_10	FOR_1
+0x4000370	     0xf83ed000000	                           jae 0x4000463	       604	cg_arcs.c	FUNCTION_10	FOR_1
+0x4000376	    0x41bc00000000	                             mov r12d, 0	       606	cg_arcs.c	FUNCTION_10	FOR_1
+0x400037c	          0x4c89e5	                            mov rbp, r12	       617	cg_arcs.c	FUNCTION_10	FOR_1
+0x400037f	    0x4c89a3000100	            mov qword [rbx + 0x100], r12	       606	cg_arcs.c	FUNCTION_10	FOR_1
+0x4000386	          0x4889de	                            mov rsi, rbx	       607	cg_arcs.c	FUNCTION_10	FOR_1	CALL_1
+0x4000389	          0x4889df	                            mov rdi, rbx	       607	cg_arcs.c	FUNCTION_10	FOR_1	CALL_1
+0x400038c	      0xe800000000	                          call 0x4000391	       607	cg_arcs.c	FUNCTION_10	FOR_1	CALL_1
+0x4000391	          0x4885c0	                           test rax, rax	       608	cg_arcs.c	FUNCTION_10	FOR_1	IF_1
+0x4000394	            0x741b	                            je 0x40003b1	       608	cg_arcs.c	FUNCTION_10	FOR_1	IF_1
+0x4000396	        0x48395808	                cmp qword [rax + 8], rbx	       608	cg_arcs.c	FUNCTION_10	FOR_1	IF_1
+0x400039a	            0x7515	                           jne 0x40003b1	       608	cg_arcs.c	FUNCTION_10	FOR_1	IF_1
+0x400039c	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       610	cg_arcs.c	FUNCTION_10	FOR_1	IF_1
+0x40003a0	        0x48295328	             sub qword [rbx + 0x28], rdx	       610	cg_arcs.c	FUNCTION_10	FOR_1	IF_1
+0x40003a4	        0x488b4010	            mov rax, qword [rax + 0x10] 	       611	cg_arcs.c	FUNCTION_10	FOR_1	IF_1
+0x40003a8	    0x488983f80000	             mov qword [rbx + 0xf8], rax	       611	cg_arcs.c	FUNCTION_10	FOR_1	IF_1
+0x40003af	            0xeb0b	                           jmp 0x40003bc	       611	cg_arcs.c	FUNCTION_10	FOR_1	IF_1
+0x40003b1	    0x48c783f80000	               mov qword [rbx + 0xf8], 0	       615	cg_arcs.c	FUNCTION_10	FOR_1	ELSE_1
+0x40003bc	    0x4889ab180100	            mov qword [rbx + 0x118], rbp	       617	cg_arcs.c	FUNCTION_10	FOR_1
+0x40003c3	    0x4889ab200100	            mov qword [rbx + 0x120], rbp	       618	cg_arcs.c	FUNCTION_10	FOR_1
+0x40003ca	    0x4889ab280100	            mov qword [rbx + 0x128], rbp	       619	cg_arcs.c	FUNCTION_10	FOR_1
+0x40003d1	    0xc78310010000	              mov dword [rbx + 0x110], 0	       620	cg_arcs.c	FUNCTION_10	FOR_1
+0x40003db	    0xc7830c010000	              mov dword [rbx + 0x10c], 0	       621	cg_arcs.c	FUNCTION_10	FOR_1
+0x40003e5	    0xc78330010000	              mov dword [rbx + 0x130], 0	       622	cg_arcs.c	FUNCTION_10	FOR_1
+0x40003ef	    0x48899b380100	            mov qword [rbx + 0x138], rbx	       623	cg_arcs.c	FUNCTION_10	FOR_1
+0x40003f6	    0x48c783400100	              mov qword [rbx + 0x140], 0	       624	cg_arcs.c	FUNCTION_10	FOR_1
+0x4000401	    0x833d00000000	               cmp dword [0x04000408], 0	       625	cg_arcs.c	FUNCTION_10	FOR_1	IF_2
+0x4000408	            0x7412	                            je 0x400041c	       625	cg_arcs.c	FUNCTION_10	FOR_1	IF_2
+0x400040a	    0x488b93580100	           mov rdx, qword [rbx + 0x158] 	       626	cg_arcs.c	FUNCTION_10	FOR_1	CALL_2
+0x4000411	          0x488b33	                    mov rsi, qword [rbx]	       626	cg_arcs.c	FUNCTION_10	FOR_1	CALL_2
+0x4000414	          0x4889df	                            mov rdi, rbx	       626	cg_arcs.c	FUNCTION_10	FOR_1	CALL_2
+0x4000417	      0xe800000000	                          call 0x400041c	       626	cg_arcs.c	FUNCTION_10	FOR_1	CALL_2
+0x400041c	    0x4881c3580100	                          add rbx, 0x158	       604	cg_arcs.c	FUNCTION_10	FOR_1
+0x4000423	    0x488b05000000	            mov rax, qword [0x0400042a] 	       604	cg_arcs.c	FUNCTION_10	FOR_1
+0x400042a	          0x4839d8	                            cmp rax, rbx	       604	cg_arcs.c	FUNCTION_10	FOR_1
+0x400042d	     0xf874cffffff	                            ja 0x400037f	       604	cg_arcs.c	FUNCTION_10	FOR_1
+0x4000433	    0x488b1d000000	            mov rbx, qword [0x0400043a] 	       631	cg_arcs.c	FUNCTION_10	FOR_2
+0x400043a	          0x4839d8	                            cmp rax, rbx	       631	cg_arcs.c	FUNCTION_10	FOR_2
+0x400043d	            0x7624	                           jbe 0x4000463	       631	cg_arcs.c	FUNCTION_10	FOR_2
+0x400043f	    0x83bb0c010000	              cmp dword [rbx + 0x10c], 0	       633	cg_arcs.c	FUNCTION_10	FOR_2	IF_3
+0x4000446	            0x7508	                           jne 0x4000450	       633	cg_arcs.c	FUNCTION_10	FOR_2	IF_3
+0x4000448	          0x4889df	                            mov rdi, rbx	       634	cg_arcs.c	FUNCTION_10	FOR_2	CALL_3
+0x400044b	      0xe800000000	                          call 0x4000450	       634	cg_arcs.c	FUNCTION_10	FOR_2	CALL_3
+0x4000450	    0x4881c3580100	                          add rbx, 0x158	       631	cg_arcs.c	FUNCTION_10	FOR_2
+0x4000457	    0x488b05000000	            mov rax, qword [0x0400045e] 	       631	cg_arcs.c	FUNCTION_10	FOR_2
+0x400045e	          0x4839d8	                            cmp rax, rbx	       631	cg_arcs.c	FUNCTION_10	FOR_2
+0x4000461	            0x77dc	                            ja 0x400043f	       631	cg_arcs.c	FUNCTION_10	FOR_2
+0x4000463	    0xc70500000000	               mov dword [0x0400046d], 0	       280	cg_arcs.c	FUNCTION_6
+0x400046d	    0x488b15000000	            mov rdx, qword [0x04000474] 	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x4000474	          0x4839c2	                            cmp rdx, rax	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x4000477	            0x733c	                           jae 0x40004b5	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x4000479	      0xbe00000000	                              mov esi, 0	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x400047e	      0xb900000000	                              mov ecx, 0	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x4000483	    0x483992380100	           cmp qword [rdx + 0x138], rdx 	       284	cg_arcs.c	FUNCTION_6	FOR_1	IF_1
+0x400048a	            0x7512	                           jne 0x400049e	       284	cg_arcs.c	FUNCTION_6	FOR_1	IF_1
+0x400048c	    0x4883ba400100	              cmp qword [rdx + 0x140], 0	       284	cg_arcs.c	FUNCTION_6	FOR_1	IF_1
+0x4000494	            0x7408	                            je 0x400049e	       284	cg_arcs.c	FUNCTION_6	FOR_1	IF_1
+0x4000496	          0x83c101	                              add ecx, 1	       286	cg_arcs.c	FUNCTION_6	FOR_1	IF_1
+0x4000499	      0xbe01000000	                              mov esi, 1	       286	cg_arcs.c	FUNCTION_6	FOR_1	IF_1
+0x400049e	    0x4881c2580100	                          add rdx, 0x158	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x40004a5	          0x4839c2	                            cmp rdx, rax	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x40004a8	            0x72d9	                            jb 0x4000483	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x40004aa	          0x4084f6	                           test sil, sil	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x40004ad	            0x7406	                            je 0x40004b5	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x40004af	    0x890d00000000	            mov dword [0x040004b5], ecx 	       281	cg_arcs.c	FUNCTION_6	FOR_1
+0x40004b5	    0x8b0500000000	            mov eax, dword [0x040004bb] 	       294	cg_arcs.c	FUNCTION_6	CALL_1
+0x40004bb	          0x8d7801	                      lea edi, [rax + 1]	       294	cg_arcs.c	FUNCTION_6	CALL_1
+0x40004be	    0x4869ff580100	                    imul rdi, rdi, 0x158	       294	cg_arcs.c	FUNCTION_6	CALL_1
+0x40004c5	      0xe800000000	                          call 0x40004ca	       294	cg_arcs.c	FUNCTION_6	CALL_1
+0x40004ca	          0x4889c3	                            mov rbx, rax	       294	cg_arcs.c	FUNCTION_6	CALL_1
+0x40004cd	    0x488905000000	            mov qword [0x040004d4], rax 	       294	cg_arcs.c	FUNCTION_6	CALL_1
+0x40004d4	    0x4c8b2d000000	            mov r13, qword [0x040004db] 	       302	cg_arcs.c	FUNCTION_6	FOR_2
+0x40004db	    0x4c3b2d000000	            cmp r13, qword [0x040004e2] 	       302	cg_arcs.c	FUNCTION_6	FOR_2
+0x40004e2	     0xf8324010000	                           jae 0x400060c	       302	cg_arcs.c	FUNCTION_6	FOR_2
+0x40004e8	    0x41bc00000000	                             mov r12d, 0	       302	cg_arcs.c	FUNCTION_6	FOR_2
+0x40004ee	    0x498bad380100	           mov rbp, qword [r13 + 0x138] 	       304	cg_arcs.c	FUNCTION_6	FOR_2	IF_2
+0x40004f5	          0x4c39ed	                            cmp rbp, r13	       304	cg_arcs.c	FUNCTION_6	FOR_2	IF_2
+0x40004f8	     0xf85fa000000	                           jne 0x40005f8	       304	cg_arcs.c	FUNCTION_6	FOR_2	IF_2
+0x40004fe	    0x4983bd400100	              cmp qword [r13 + 0x140], 0	       304	cg_arcs.c	FUNCTION_6	FOR_2	IF_2
+0x4000506	     0xf84ec000000	                            je 0x40005f8	       304	cg_arcs.c	FUNCTION_6	FOR_2	IF_2
+0x400050c	        0x4183c401	                             add r12d, 1	       308	cg_arcs.c	FUNCTION_6	FOR_2
+0x4000510	    0x4c8db3580100	                  lea r14, [rbx + 0x158]	       309	cg_arcs.c	FUNCTION_6	FOR_2
+0x4000517	          0x4c89f7	                            mov rdi, r14	       310	cg_arcs.c	FUNCTION_6	FOR_2	CALL_2
+0x400051a	      0xe800000000	                          call 0x400051f	       310	cg_arcs.c	FUNCTION_6	FOR_2	CALL_2
+0x400051f	    0xc78368020000	              mov dword [rbx + 0x268], 1	       311	cg_arcs.c	FUNCTION_6	FOR_2
+0x4000529	    0xc78364020000	              mov dword [rbx + 0x264], 0	       312	cg_arcs.c	FUNCTION_6	FOR_2
+0x4000533	    0x4489a3880200	           mov dword [rbx + 0x288], r12d	       313	cg_arcs.c	FUNCTION_6	FOR_2
+0x400053a	    0x4c89b3900200	            mov qword [rbx + 0x290], r14	       314	cg_arcs.c	FUNCTION_6	FOR_2
+0x4000541	    0x4c89ab980200	            mov qword [rbx + 0x298], r13	       315	cg_arcs.c	FUNCTION_6	FOR_2
+0x4000548	    0xf60500000000	               test byte [0x0400054f], 4	       316	cg_arcs.c	FUNCTION_6	FOR_2	CALL_3
+0x400054f	            0x7433	                            je 0x4000584	       316	cg_arcs.c	FUNCTION_6	FOR_2	CALL_3
+0x4000551	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000556	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x400055b	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x4000560	      0xe800000000	                          call 0x4000565	       104	stdio2.h	CALL_19
+0x4000565	          0x4c89ef	                            mov rdi, r13	       316	cg_arcs.c	FUNCTION_6	FOR_2	CALL_3
+0x4000568	      0xe800000000	                          call 0x400056d	       316	cg_arcs.c	FUNCTION_6	FOR_2	CALL_3
+0x400056d	          0x4489e2	                           mov edx, r12d	       104	stdio2.h	CALL_19
+0x4000570	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000575	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x400057a	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x400057f	      0xe800000000	                          call 0x4000584	       104	stdio2.h	CALL_19
+0x4000584	          0x4d85ed	                           test r13, r13	       321	cg_arcs.c	FUNCTION_6	FOR_2	FOR_3
+0x4000587	            0x746c	                            je 0x40005f5	       321	cg_arcs.c	FUNCTION_6	FOR_2	FOR_3
+0x4000589	          0x4889e8	                            mov rax, rbp	       321	cg_arcs.c	FUNCTION_6	FOR_2	FOR_3
+0x400058c	    0x4489a0300100	           mov dword [rax + 0x130], r12d	       323	cg_arcs.c	FUNCTION_6	FOR_2	FOR_3
+0x4000593	    0x4c89b0380100	            mov qword [rax + 0x138], r14	       324	cg_arcs.c	FUNCTION_6	FOR_2	FOR_3
+0x400059a	    0x488b80400100	           mov rax, qword [rax + 0x140] 	       321	cg_arcs.c	FUNCTION_6	FOR_2	FOR_3
+0x40005a1	          0x4885c0	                           test rax, rax	       321	cg_arcs.c	FUNCTION_6	FOR_2	FOR_3
+0x40005a4	            0x75e6	                           jne 0x400058c	       321	cg_arcs.c	FUNCTION_6	FOR_2	FOR_3
+0x40005a6	    0x488b85480100	           mov rax, qword [rbp + 0x148] 	       333	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5
+0x40005ad	          0x4885c0	                           test rax, rax	       333	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5
+0x40005b0	            0x7432	                            je 0x40005e4	       333	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5
+0x40005b2	          0x488b10	                    mov rdx, qword [rax]	       335	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5	IF_3
+0x40005b5	          0x4839ea	                            cmp rdx, rbp	       335	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5	IF_3
+0x40005b8	            0x7421	                            je 0x40005db	       335	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5	IF_3
+0x40005ba	    0x443ba2300100	          cmp r12d, dword [rdx + 0x130] 	       339	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5	IF_4
+0x40005c1	            0x750d	                           jne 0x40005d0	       339	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5	IF_4
+0x40005c3	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       341	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5	IF_4
+0x40005c7	    0x480193500200	           add qword [rbx + 0x250], rdx 	       341	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5	IF_4
+0x40005ce	            0xeb0b	                           jmp 0x40005db	       341	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5	IF_4
+0x40005d0	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       345	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5	ELSE_1
+0x40005d4	    0x480193800100	           add qword [rbx + 0x180], rdx 	       345	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5	ELSE_1
+0x40005db	        0x488b4028	            mov rax, qword [rax + 0x28] 	       333	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5
+0x40005df	          0x4885c0	                           test rax, rax	       333	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5
+0x40005e2	            0x75ce	                           jne 0x40005b2	       333	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4	FOR_5
+0x40005e4	    0x488bad400100	           mov rbp, qword [rbp + 0x140] 	       331	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4
+0x40005eb	          0x4885ed	                           test rbp, rbp	       331	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4
+0x40005ee	            0x75b6	                           jne 0x40005a6	       331	cg_arcs.c	FUNCTION_6	FOR_2	FOR_4
+0x40005f0	          0x4c89f3	                            mov rbx, r14	       309	cg_arcs.c	FUNCTION_6	FOR_2
+0x40005f3	            0xeb03	                           jmp 0x40005f8	       309	cg_arcs.c	FUNCTION_6	FOR_2
+0x40005f5	          0x4c89f3	                            mov rbx, r14	       309	cg_arcs.c	FUNCTION_6	FOR_2
+0x40005f8	    0x4981c5580100	                          add r13, 0x158	       302	cg_arcs.c	FUNCTION_6	FOR_2
+0x40005ff	    0x4c3b2d000000	            cmp r13, qword [0x04000606] 	       302	cg_arcs.c	FUNCTION_6	FOR_2
+0x4000606	     0xf82e2feffff	                            jb 0x40004ee	       302	cg_arcs.c	FUNCTION_6	FOR_2
+0x400060c	    0x8b3d00000000	            mov edi, dword [0x04000612] 	       641	cg_arcs.c	FUNCTION_10	CALL_5
+0x4000612	        0x48c1e703	                              shl rdi, 3	       641	cg_arcs.c	FUNCTION_10	CALL_5
+0x4000616	      0xe800000000	                          call 0x400061b	       641	cg_arcs.c	FUNCTION_10	CALL_5
+0x400061b	          0x4989c5	                            mov r13, rax	       641	cg_arcs.c	FUNCTION_10	CALL_5
+0x400061e	    0x8b3500000000	            mov esi, dword [0x04000624] 	       642	cg_arcs.c	FUNCTION_10	FOR_3
+0x4000624	            0x85f6	                           test esi, esi	       642	cg_arcs.c	FUNCTION_10	FOR_3
+0x4000626	            0x7422	                            je 0x400064a	       642	cg_arcs.c	FUNCTION_10	FOR_3
+0x4000628	    0x488b15000000	            mov rdx, qword [0x0400062f] 	       642	cg_arcs.c	FUNCTION_10	FOR_3
+0x400062f	          0x8d4eff	                      lea ecx, [rsi - 1]	       642	cg_arcs.c	FUNCTION_10	FOR_3
+0x4000632	      0x488d4cc808	              lea rcx, [rax + rcx*8 + 8]	       642	cg_arcs.c	FUNCTION_10	FOR_3
+0x4000637	          0x488910	                    mov qword [rax], rdx	       643	cg_arcs.c	FUNCTION_10	FOR_3
+0x400063a	    0x4881c2580100	                          add rdx, 0x158	       643	cg_arcs.c	FUNCTION_10	FOR_3
+0x4000641	        0x4883c008	                              add rax, 8	       643	cg_arcs.c	FUNCTION_10	FOR_3
+0x4000645	          0x4839c8	                            cmp rax, rcx	       642	cg_arcs.c	FUNCTION_10	FOR_3
+0x4000648	            0x75ed	                           jne 0x4000637	       642	cg_arcs.c	FUNCTION_10	FOR_3
+0x400064a	            0x89f6	                            mov esi, esi	       645	cg_arcs.c	FUNCTION_10	CALL_6
+0x400064c	      0xb900000000	                              mov ecx, 0	       645	cg_arcs.c	FUNCTION_10	CALL_6
+0x4000651	      0xba08000000	                              mov edx, 8	       645	cg_arcs.c	FUNCTION_10	CALL_6
+0x4000656	          0x4c89ef	                            mov rdi, r13	       645	cg_arcs.c	FUNCTION_10	CALL_6
+0x4000659	      0xe800000000	                          call 0x400065e	       645	cg_arcs.c	FUNCTION_10	CALL_6
+0x400065e	    0xf60500000000	               test byte [0x04000665], 2	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x4000665	            0x7474	                            je 0x40006db	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x4000667	      0xbf00000000	                              mov edi, 0	       104	stdio2.h	CALL_19
+0x400066c	      0xe800000000	                          call 0x4000671	       104	stdio2.h	CALL_19
+0x4000671	    0x8b1d00000000	            mov ebx, dword [0x04000677] 	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x4000677	            0x85db	                           test ebx, ebx	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x4000679	     0xf84d5080000	                            je 0x4000f54	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x400067f	      0xbb00000000	                              mov ebx, 0	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x4000684	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000689	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x400068e	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x4000693	      0xe800000000	                          call 0x4000698	       104	stdio2.h	CALL_19
+0x4000698	            0x89d8	                            mov eax, ebx	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x400069a	      0x498d6cc500	                  lea rbp, [r13 + rax*8]	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x400069f	        0x488b4500	                    mov rax, qword [rbp]	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x40006a3	    0x8b900c010000	           mov edx, dword [rax + 0x10c] 	       104	stdio2.h	CALL_19
+0x40006a9	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x40006ae	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x40006b3	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x40006b8	      0xe800000000	                          call 0x40006bd	       104	stdio2.h	CALL_19
+0x40006bd	        0x488b7d00	                    mov rdi, qword [rbp]	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x40006c1	      0xe800000000	                          call 0x40006c6	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x40006c6	      0xbf0a000000	                            mov edi, 0xa	       104	stdio2.h	CALL_19
+0x40006cb	      0xe800000000	                          call 0x40006d0	       104	stdio2.h	CALL_19
+0x40006d0	          0x83c301	                              add ebx, 1	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x40006d3	    0x391d00000000	            cmp dword [0x040006d9], ebx 	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x40006d9	            0x77a9	                            ja 0x4000684	       646	cg_arcs.c	FUNCTION_10	CALL_7
+0x40006db	    0x448b25000000	           mov r12d, dword [0x040006e2] 	       444	cg_arcs.c	FUNCTION_8	FOR_1
+0x40006e2	        0x4183ec01	                             sub r12d, 1	       444	cg_arcs.c	FUNCTION_8	FOR_1
+0x40006e6	     0xf880b040000	                            js 0x4000af7	       444	cg_arcs.c	FUNCTION_8	FOR_1
+0x40006ec	    0x41bf00000000	                             mov r15d, 0	       444	cg_arcs.c	FUNCTION_8	FOR_1
+0x40006f2	    0x41be00000000	                             mov r14d, 0	       398	cg_arcs.c	FUNCTION_7	ELSE_1
+0x40006f8	          0x4963c4	                        movsxd rax, r12d	       446	cg_arcs.c	FUNCTION_8	FOR_1
+0x40006fb	      0x498b6cc500	            mov rbp, qword [r13 + rax*8]	       446	cg_arcs.c	FUNCTION_8	FOR_1
+0x4000700	    0x488b9d380100	           mov rbx, qword [rbp + 0x138] 	       453	cg_arcs.c	FUNCTION_8	FOR_1	IF_1
+0x4000707	          0x4c39fb	                            cmp rbx, r15	       453	cg_arcs.c	FUNCTION_8	FOR_1	IF_1
+0x400070a	     0xf84ee010000	                            je 0x40008fe	       453	cg_arcs.c	FUNCTION_8	FOR_1	IF_1
+0x4000710	          0x4839dd	                            cmp rbp, rbx	       366	cg_arcs.c	FUNCTION_7	IF_1
+0x4000713	     0xf85ce000000	                           jne 0x40007e7	       366	cg_arcs.c	FUNCTION_7	IF_1
+0x4000719	    0xc78510010000	              mov dword [rbp + 0x110], 0	       369	cg_arcs.c	FUNCTION_7	IF_1
+0x4000723	        0x660fefed	                         pxor xmm5, xmm5	       370	cg_arcs.c	FUNCTION_7	IF_1
+0x4000727	    0xf20f11ad1801	        movsd qword [rbp + 0x118], xmm5 	       370	cg_arcs.c	FUNCTION_7	IF_1
+0x400072f	    0x488b85480100	           mov rax, qword [rbp + 0x148] 	       371	cg_arcs.c	FUNCTION_7	IF_1	FOR_1
+0x4000736	          0x4885c0	                           test rax, rax	       371	cg_arcs.c	FUNCTION_7	IF_1	FOR_1
+0x4000739	     0xf8400080000	                            je 0x4000f3f	       371	cg_arcs.c	FUNCTION_7	IF_1	FOR_1
+0x400073f	          0x488b08	                    mov rcx, qword [rax]	       373	cg_arcs.c	FUNCTION_7	IF_1	FOR_1
+0x4000742	          0x4839cd	                            cmp rbp, rcx	       374	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_2
+0x4000745	     0xf8487000000	                            je 0x40007d2	       374	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_2
+0x400074b	    0x8b9110010000	           mov edx, dword [rcx + 0x110] 	       378	cg_arcs.c	FUNCTION_7	IF_1	FOR_1
+0x4000751	     0x99510010000	             or dword [rbp + 0x110], edx	       378	cg_arcs.c	FUNCTION_7	IF_1	FOR_1
+0x4000757	        0x488b7528	            mov rsi, qword [rbp + 0x28] 	       384	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x400075b	          0x4885f6	                           test rsi, rsi	       384	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x400075e	            0x7472	                            je 0x40007d2	       384	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000760	        0x488b7810	            mov rdi, qword [rax + 0x10] 	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000764	          0x4885ff	                           test rdi, rdi	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000767	            0x780b	                            js 0x4000774	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000769	        0x660fefc0	                         pxor xmm0, xmm0	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x400076d	      0xf2480f2ac7	                      cvtsi2sd xmm0, rdi	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000772	            0xeb19	                           jmp 0x400078d	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000774	          0x4889fa	                            mov rdx, rdi	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000777	          0x48d1ea	                              shr rdx, 1	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x400077a	          0x83e701	                              and edi, 1	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x400077d	          0x4809fa	                             or rdx, rdi	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000780	        0x660fefc0	                         pxor xmm0, xmm0	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000784	      0xf2480f2ac2	                      cvtsi2sd xmm0, rdx	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000789	        0xf20f58c0	                        addsd xmm0, xmm0	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x400078d	          0x4885f6	                           test rsi, rsi	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000790	            0x780b	                            js 0x400079d	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000792	        0x660fefc9	                         pxor xmm1, xmm1	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x4000796	      0xf2480f2ace	                      cvtsi2sd xmm1, rsi	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x400079b	            0xeb19	                           jmp 0x40007b6	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x400079d	          0x4889f2	                            mov rdx, rsi	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007a0	          0x48d1ea	                              shr rdx, 1	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007a3	          0x83e601	                              and esi, 1	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007a6	          0x4809f2	                             or rdx, rsi	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007a9	        0x660fefc9	                         pxor xmm1, xmm1	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007ad	      0xf2480f2aca	                      cvtsi2sd xmm1, rdx	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007b2	        0xf20f58c9	                        addsd xmm1, xmm1	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007b6	        0xf20f5ec1	                        divsd xmm0, xmm1	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007ba	    0xf20f59811801	         mulsd xmm0, qword [rcx + 0x118]	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007c2	    0xf20f58851801	         addsd xmm0, qword [rbp + 0x118]	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007ca	    0xf20f11851801	        movsd qword [rbp + 0x118], xmm0 	       386	cg_arcs.c	FUNCTION_7	IF_1	FOR_1	IF_3
+0x40007d2	        0x488b4028	            mov rax, qword [rax + 0x28] 	       371	cg_arcs.c	FUNCTION_7	IF_1	FOR_1
+0x40007d6	          0x4885c0	                           test rax, rax	       371	cg_arcs.c	FUNCTION_7	IF_1	FOR_1
+0x40007d9	     0xf8560ffffff	                           jne 0x400073f	       371	cg_arcs.c	FUNCTION_7	IF_1	FOR_1
+0x40007df	          0x4889eb	                            mov rbx, rbp	       455	cg_arcs.c	FUNCTION_8	FOR_1	IF_1
+0x40007e2	      0xe91a010000	                           jmp 0x4000901	       455	cg_arcs.c	FUNCTION_8	FOR_1	IF_1
+0x40007e7	    0xc78310010000	              mov dword [rbx + 0x110], 0	       397	cg_arcs.c	FUNCTION_7	ELSE_1
+0x40007f1	    0x4c89b3180100	            mov qword [rbx + 0x118], r14	       398	cg_arcs.c	FUNCTION_7	ELSE_1
+0x40007f8	    0x488bbb400100	           mov rdi, qword [rbx + 0x140] 	       399	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2
+0x40007ff	          0x4885ff	                           test rdi, rdi	       399	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2
+0x4000802	     0xf84c4000000	                            je 0x40008cc	       399	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2
+0x4000808	    0x488b97480100	           mov rdx, qword [rdi + 0x148] 	       401	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3
+0x400080f	          0x4885d2	                           test rdx, rdx	       401	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3
+0x4000812	     0xf84a4000000	                            je 0x40008bc	       401	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3
+0x4000818	          0x488b32	                    mov rsi, qword [rdx]	       403	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_4
+0x400081b	    0x483b9e380100	           cmp rbx, qword [rsi + 0x138] 	       403	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_4
+0x4000822	     0xf8487000000	                            je 0x40008af	       403	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_4
+0x4000828	    0x8b8610010000	           mov eax, dword [rsi + 0x110] 	       408	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3
+0x400082e	     0x98310010000	             or dword [rbx + 0x110], eax	       408	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3
+0x4000834	        0x488b4b28	            mov rcx, qword [rbx + 0x28] 	       414	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000838	          0x4885c9	                           test rcx, rcx	       414	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400083b	            0x7472	                            je 0x40008af	       414	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400083d	        0x488b4210	            mov rax, qword [rdx + 0x10] 	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000841	          0x4885c0	                           test rax, rax	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000844	            0x780b	                            js 0x4000851	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000846	        0x660fefc0	                         pxor xmm0, xmm0	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400084a	      0xf2480f2ac0	                      cvtsi2sd xmm0, rax	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400084f	            0xeb19	                           jmp 0x400086a	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000851	          0x4989c0	                             mov r8, rax	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000854	          0x49d1e8	                               shr r8, 1	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000857	          0x83e001	                              and eax, 1	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400085a	          0x4909c0	                              or r8, rax	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400085d	        0x660fefc0	                         pxor xmm0, xmm0	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000861	      0xf2490f2ac0	                       cvtsi2sd xmm0, r8	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000866	        0xf20f58c0	                        addsd xmm0, xmm0	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400086a	          0x4885c9	                           test rcx, rcx	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400086d	            0x780b	                            js 0x400087a	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400086f	        0x660fefc9	                         pxor xmm1, xmm1	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000873	      0xf2480f2ac9	                      cvtsi2sd xmm1, rcx	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000878	            0xeb19	                           jmp 0x4000893	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400087a	          0x4889c8	                            mov rax, rcx	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400087d	          0x48d1e8	                              shr rax, 1	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000880	          0x83e101	                              and ecx, 1	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000883	          0x4809c8	                             or rax, rcx	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000886	        0x660fefc9	                         pxor xmm1, xmm1	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400088a	      0xf2480f2ac8	                      cvtsi2sd xmm1, rax	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400088f	        0xf20f58c9	                        addsd xmm1, xmm1	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000893	        0xf20f5ec1	                        divsd xmm0, xmm1	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x4000897	    0xf20f59861801	         mulsd xmm0, qword [rsi + 0x118]	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x400089f	    0xf20f58831801	         addsd xmm0, qword [rbx + 0x118]	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x40008a7	    0xf20f11831801	         movsd qword [rbx + 0x118], xmm0	       416	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3	IF_5
+0x40008af	        0x488b5228	            mov rdx, qword [rdx + 0x28] 	       401	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3
+0x40008b3	          0x4885d2	                           test rdx, rdx	       401	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3
+0x40008b6	     0xf855cffffff	                           jne 0x4000818	       401	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2	FOR_3
+0x40008bc	    0x488bbf400100	           mov rdi, qword [rdi + 0x140] 	       399	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2
+0x40008c3	          0x4885ff	                           test rdi, rdi	       399	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2
+0x40008c6	     0xf853cffffff	                           jne 0x4000808	       399	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_2
+0x40008cc	          0x4885db	                           test rbx, rbx	       421	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008cf	            0x7430	                            je 0x4000901	       421	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008d1	          0x4889d8	                            mov rax, rbx	       421	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008d4	    0x8b9310010000	           mov edx, dword [rbx + 0x110] 	       423	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008da	    0x899010010000	            mov dword [rax + 0x110], edx	       423	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008e0	    0xf20f10831801	        movsd xmm0, qword [rbx + 0x118] 	       424	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008e8	    0xf20f11801801	         movsd qword [rax + 0x118], xmm0	       424	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008f0	    0x488b80400100	           mov rax, qword [rax + 0x140] 	       421	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008f7	          0x4885c0	                           test rax, rax	       421	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008fa	            0x75d8	                           jne 0x40008d4	       421	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008fc	            0xeb03	                           jmp 0x4000901	       421	cg_arcs.c	FUNCTION_7	ELSE_1	FOR_4
+0x40008fe	          0x4c89fb	                            mov rbx, r15	       453	cg_arcs.c	FUNCTION_8	FOR_1	IF_1
+0x4000901	    0xf60500000000	               test byte [0x04000908], 4	       458	cg_arcs.c	FUNCTION_8	FOR_1	CALL_2
+0x4000908	            0x7443	                            je 0x400094d	       458	cg_arcs.c	FUNCTION_8	FOR_1	CALL_2
+0x400090a	            0xeb03	                           jmp 0x400090f	       458	cg_arcs.c	FUNCTION_8	FOR_1	CALL_2
+0x400090c	          0x4889eb	                            mov rbx, rbp	       455	cg_arcs.c	FUNCTION_8	FOR_1	IF_1
+0x400090f	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000914	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000919	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x400091e	      0xe800000000	                          call 0x4000923	       104	stdio2.h	CALL_19
+0x4000923	          0x4889ef	                            mov rdi, rbp	       458	cg_arcs.c	FUNCTION_8	FOR_1	CALL_2
+0x4000926	      0xe800000000	                          call 0x400092b	       458	cg_arcs.c	FUNCTION_8	FOR_1	CALL_2
+0x400092b	    0x8b9510010000	           mov edx, dword [rbp + 0x110] 	       104	stdio2.h	CALL_19
+0x4000931	    0xf20f10851801	        movsd xmm0, qword [rbp + 0x118] 	       104	stdio2.h	CALL_19
+0x4000939	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x400093e	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000943	      0xb801000000	                              mov eax, 1	       104	stdio2.h	CALL_19
+0x4000948	      0xe800000000	                          call 0x400094d	       104	stdio2.h	CALL_19
+0x400094d	    0x83bd10010000	              cmp dword [rbp + 0x110], 0	       463	cg_arcs.c	FUNCTION_8	FOR_1	IF_2
+0x4000954	            0x7541	                           jne 0x4000997	       463	cg_arcs.c	FUNCTION_8	FOR_1	IF_2
+0x4000956	        0x488b7500	                    mov rsi, qword [rbp]	       470	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3	CALL_4
+0x400095a	      0xbf00000000	                              mov edi, 0	       470	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3	CALL_4
+0x400095f	      0xe800000000	                          call 0x4000964	       470	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3	CALL_4
+0x4000964	          0x4885c0	                           test rax, rax	       470	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3	CALL_4
+0x4000967	            0x751f	                           jne 0x4000988	       470	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3	CALL_4
+0x4000969	          0x4989df	                            mov r15, rbx	       471	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3
+0x400096c	    0x833d00000000	               cmp dword [0x04000973], 0	       471	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3
+0x4000973	            0x755a	                           jne 0x40009cf	       471	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3
+0x4000975	        0x488b7500	                    mov rsi, qword [rbp]	       472	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3	CALL_5
+0x4000979	      0xbf00000000	                              mov edi, 0	       472	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3	CALL_5
+0x400097e	      0xe800000000	                          call 0x4000983	       472	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3	CALL_5
+0x4000983	          0x4885c0	                           test rax, rax	       472	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3	CALL_5
+0x4000986	            0x7547	                           jne 0x40009cf	       472	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3	CALL_5
+0x4000988	    0xc78510010000	              mov dword [rbp + 0x110], 1	       474	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3
+0x4000992	          0x4989df	                            mov r15, rbx	       474	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3
+0x4000995	            0xeb38	                           jmp 0x40009cf	       474	cg_arcs.c	FUNCTION_8	FOR_1	IF_2	IF_3
+0x4000997	        0x488b7500	                    mov rsi, qword [rbp]	       484	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_6
+0x400099b	      0xbf00000000	                              mov edi, 0	       484	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_6
+0x40009a0	      0xe800000000	                          call 0x40009a5	       484	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_6
+0x40009a5	          0x4989df	                            mov r15, rbx	       484	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_6
+0x40009a8	          0x4885c0	                           test rax, rax	       484	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_6
+0x40009ab	            0x7522	                           jne 0x40009cf	       484	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_6
+0x40009ad	        0x488b7500	                    mov rsi, qword [rbp]	       485	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_7
+0x40009b1	      0xbf00000000	                              mov edi, 0	       485	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_7
+0x40009b6	      0xe800000000	                          call 0x40009bb	       485	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_7
+0x40009bb	          0x4885c0	                           test rax, rax	       485	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_7
+0x40009be	            0x740c	                            je 0x40009cc	       485	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_7
+0x40009c0	    0xc78510010000	              mov dword [rbp + 0x110], 0	       487	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4
+0x40009ca	            0xeb03	                           jmp 0x40009cf	       487	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4
+0x40009cc	          0x4989df	                            mov r15, rbx	       485	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_1	IF_4	CALL_7
+0x40009cf	        0x660feff6	                         pxor xmm6, xmm6	       490	cg_arcs.c	FUNCTION_8	FOR_1	IF_5
+0x40009d3	    0x660f2eb51801	       ucomisd xmm6, qword [rbp + 0x118]	       490	cg_arcs.c	FUNCTION_8	FOR_1	IF_5
+0x40009db	            0x7a43	                            jp 0x4000a20	       490	cg_arcs.c	FUNCTION_8	FOR_1	IF_5
+0x40009dd	            0x7541	                           jne 0x4000a20	       490	cg_arcs.c	FUNCTION_8	FOR_1	IF_5
+0x40009df	        0x488b7500	                    mov rsi, qword [rbp]	       497	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6	CALL_8
+0x40009e3	      0xbf00000000	                              mov edi, 0	       497	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6	CALL_8
+0x40009e8	      0xe800000000	                          call 0x40009ed	       497	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6	CALL_8
+0x40009ed	          0x4885c0	                           test rax, rax	       497	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6	CALL_8
+0x40009f0	            0x751c	                           jne 0x4000a0e	       497	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6	CALL_8
+0x40009f2	    0x833d00000000	               cmp dword [0x040009f9], 0	       498	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6
+0x40009f9	            0x7557	                           jne 0x4000a52	       498	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6
+0x40009fb	        0x488b7500	                    mov rsi, qword [rbp]	       499	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6	CALL_9
+0x40009ff	      0xbf00000000	                              mov edi, 0	       499	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6	CALL_9
+0x4000a04	      0xe800000000	                          call 0x4000a09	       499	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6	CALL_9
+0x4000a09	          0x4885c0	                           test rax, rax	       499	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6	CALL_9
+0x4000a0c	            0x7544	                           jne 0x4000a52	       499	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6	CALL_9
+0x4000a0e	    0xf20f103d0000	         movsd xmm7, qword [0x04000a16] 	       501	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6
+0x4000a16	    0xf20f11bd1801	        movsd qword [rbp + 0x118], xmm7 	       501	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6
+0x4000a1e	            0xeb32	                           jmp 0x4000a52	       501	cg_arcs.c	FUNCTION_8	FOR_1	IF_5	IF_6
+0x4000a20	        0x488b7500	                    mov rsi, qword [rbp]	       512	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7	CALL_10
+0x4000a24	      0xbf00000000	                              mov edi, 0	       512	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7	CALL_10
+0x4000a29	      0xe800000000	                          call 0x4000a2e	       512	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7	CALL_10
+0x4000a2e	          0x4885c0	                           test rax, rax	       512	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7	CALL_10
+0x4000a31	            0x751f	                           jne 0x4000a52	       512	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7	CALL_10
+0x4000a33	        0x488b7500	                    mov rsi, qword [rbp]	       513	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7	CALL_11
+0x4000a37	      0xbf00000000	                              mov edi, 0	       513	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7	CALL_11
+0x4000a3c	      0xe800000000	                          call 0x4000a41	       513	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7	CALL_11
+0x4000a41	          0x4885c0	                           test rax, rax	       513	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7	CALL_11
+0x4000a44	            0x740c	                            je 0x4000a52	       513	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7	CALL_11
+0x4000a46	        0x660fefff	                         pxor xmm7, xmm7	       515	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7
+0x4000a4a	    0xf20f11bd1801	        movsd qword [rbp + 0x118], xmm7 	       515	cg_arcs.c	FUNCTION_8	FOR_1	ELSE_2	IF_7
+0x4000a52	    0xf20f1085e800	         movsd xmm0, qword [rbp + 0xe8] 	       518	cg_arcs.c	FUNCTION_8	FOR_1
+0x4000a5a	    0xf20f59851801	         mulsd xmm0, qword [rbp + 0x118]	       518	cg_arcs.c	FUNCTION_8	FOR_1
+0x4000a62	    0xf20f11852001	        movsd qword [rbp + 0x120], xmm0 	       518	cg_arcs.c	FUNCTION_8	FOR_1
+0x4000a6a	    0xf20f58050000	          addsd xmm0, qword [0x04000a72]	       519	cg_arcs.c	FUNCTION_8	FOR_1
+0x4000a72	    0xf20f11050000	         movsd qword [0x04000a7a], xmm0 	       519	cg_arcs.c	FUNCTION_8	FOR_1
+0x4000a7a	    0xf60500000000	               test byte [0x04000a81], 4	       520	cg_arcs.c	FUNCTION_8	FOR_1	CALL_12
+0x4000a81	            0x746a	                            je 0x4000aed	       520	cg_arcs.c	FUNCTION_8	FOR_1	CALL_12
+0x4000a83	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000a88	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000a8d	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x4000a92	      0xe800000000	                          call 0x4000a97	       104	stdio2.h	CALL_19
+0x4000a97	          0x4889ef	                            mov rdi, rbp	       520	cg_arcs.c	FUNCTION_8	FOR_1	CALL_12
+0x4000a9a	      0xe800000000	                          call 0x4000a9f	       520	cg_arcs.c	FUNCTION_8	FOR_1	CALL_12
+0x4000a9f	    0x8b9510010000	           mov edx, dword [rbp + 0x110] 	       104	stdio2.h	CALL_19
+0x4000aa5	    0xf20f10851801	        movsd xmm0, qword [rbp + 0x118] 	       104	stdio2.h	CALL_19
+0x4000aad	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000ab2	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000ab7	      0xb801000000	                              mov eax, 1	       104	stdio2.h	CALL_19
+0x4000abc	      0xe800000000	                          call 0x4000ac1	       104	stdio2.h	CALL_19
+0x4000ac1	    0xf20f1085e800	         movsd xmm0, qword [rbp + 0xe8] 	       104	stdio2.h	CALL_19
+0x4000ac9	    0xf20f10150000	         movsd xmm2, qword [0x04000ad1] 	       104	stdio2.h	CALL_19
+0x4000ad1	    0xf20f108d2001	        movsd xmm1, qword [rbp + 0x120] 	       104	stdio2.h	CALL_19
+0x4000ad9	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000ade	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000ae3	      0xb803000000	                              mov eax, 3	       104	stdio2.h	CALL_19
+0x4000ae8	      0xe800000000	                          call 0x4000aed	       104	stdio2.h	CALL_19
+0x4000aed	        0x4183ec01	                             sub r12d, 1	       444	cg_arcs.c	FUNCTION_8	FOR_1
+0x4000af1	     0xf8901fcffff	                           jns 0x40006f8	       444	cg_arcs.c	FUNCTION_8	FOR_1
+0x4000af7	    0x488b0d000000	            mov rcx, qword [0x04000afe] 	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000afe	    0x488d91580100	                  lea rdx, [rcx + 0x158]	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b05	    0x8b0500000000	            mov eax, dword [0x04000b0b] 	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b0b	    0x4869c0580100	                    imul rax, rax, 0x158	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b12	          0x4801c1	                            add rcx, rax	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b15	          0x4839ca	                            cmp rdx, rcx	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b18	            0x7770	                            ja 0x4000b8a	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b1a	        0x660fefc9	                         pxor xmm1, xmm1	       256	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2	IF_1
+0x4000b1e	        0x660f28d1	                       movapd xmm2, xmm1	       256	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2	IF_1
+0x4000b22	    0x488b82400100	           mov rax, qword [rdx + 0x140] 	       254	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2
+0x4000b29	          0x4885c0	                           test rax, rax	       254	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2
+0x4000b2c	            0x7438	                            je 0x4000b66	       254	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2
+0x4000b2e	    0x660f2e881801	       ucomisd xmm1, qword [rax + 0x118]	       256	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2	IF_1
+0x4000b36	            0x7a0a	                            jp 0x4000b42	       256	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2	IF_1
+0x4000b38	    0x660f2e901801	       ucomisd xmm2, qword [rax + 0x118]	       256	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2	IF_1
+0x4000b40	            0x7418	                            je 0x4000b5a	       256	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2	IF_1
+0x4000b42	    0xf20f1082e800	         movsd xmm0, qword [rdx + 0xe8] 	       264	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2
+0x4000b4a	    0xf20f5880e800	          addsd xmm0, qword [rax + 0xe8]	       264	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2
+0x4000b52	    0xf20f1182e800	          movsd qword [rdx + 0xe8], xmm0	       264	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2
+0x4000b5a	    0x488b80400100	           mov rax, qword [rax + 0x140] 	       254	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2
+0x4000b61	          0x4885c0	                           test rax, rax	       254	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2
+0x4000b64	            0x75c8	                           jne 0x4000b2e	       254	cg_arcs.c	FUNCTION_5	FOR_1	FOR_2
+0x4000b66	    0xf20f10821801	        movsd xmm0, qword [rdx + 0x118] 	       266	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b6e	    0xf20f5982e800	          mulsd xmm0, qword [rdx + 0xe8]	       266	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b76	    0xf20f11822001	         movsd qword [rdx + 0x120], xmm0	       266	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b7e	    0x4881c2580100	                          add rdx, 0x158	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b85	          0x4839ca	                            cmp rdx, rcx	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b88	            0x7698	                           jbe 0x4000b22	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000b8a	    0x8b1d00000000	            mov ebx, dword [0x04000b90] 	       666	cg_arcs.c	FUNCTION_10	FOR_5
+0x4000b90	            0x85db	                           test ebx, ebx	       666	cg_arcs.c	FUNCTION_10	FOR_5
+0x4000b92	     0xf84e6020000	                            je 0x4000e7e	       666	cg_arcs.c	FUNCTION_10	FOR_5
+0x4000b98	    0x41be00000000	                             mov r14d, 0	       666	cg_arcs.c	FUNCTION_10	FOR_5
+0x4000b9e	          0x4489f0	                           mov eax, r14d	       667	cg_arcs.c	FUNCTION_10	CALL_11
+0x4000ba1	      0x4d8b64c500	            mov r12, qword [r13 + rax*8]	       667	cg_arcs.c	FUNCTION_10	CALL_11
+0x4000ba6	        0x660fefff	                         pxor xmm7, xmm7	       170	cg_arcs.c	FUNCTION_4	IF_1
+0x4000baa	    0x66410f2ebc24	       ucomisd xmm7, qword [r12 + 0x118]	       170	cg_arcs.c	FUNCTION_4	IF_1
+0x4000bb4	            0x7a06	                            jp 0x4000bbc	       170	cg_arcs.c	FUNCTION_4	IF_1
+0x4000bb6	     0xf84af020000	                            je 0x4000e6b	       170	cg_arcs.c	FUNCTION_4	IF_1
+0x4000bbc	    0x498b9c245001	           mov rbx, qword [r12 + 0x150] 	       177	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000bc4	          0x4885db	                           test rbx, rbx	       177	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000bc7	     0xf849e020000	                            je 0x4000e6b	       177	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000bcd	        0x488b6b08	                mov rbp, qword [rbx + 8]	       179	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000bd1	      0x48837b1000	               cmp qword [rbx + 0x10], 0	       180	cg_arcs.c	FUNCTION_4	FOR_1	IF_2
+0x4000bd6	     0xf8482020000	                            je 0x4000e5e	       180	cg_arcs.c	FUNCTION_4	FOR_1	IF_2
+0x4000bdc	          0x4939ec	                            cmp r12, rbp	       180	cg_arcs.c	FUNCTION_4	FOR_1	IF_2
+0x4000bdf	     0xf8479020000	                            je 0x4000e5e	       180	cg_arcs.c	FUNCTION_4	FOR_1	IF_2
+0x4000be5	        0x660fefdb	                         pxor xmm3, xmm3	       180	cg_arcs.c	FUNCTION_4	FOR_1	IF_2
+0x4000be9	    0x660f2e9d1801	       ucomisd xmm3, qword [rbp + 0x118]	       180	cg_arcs.c	FUNCTION_4	FOR_1	IF_2
+0x4000bf1	            0x7a06	                            jp 0x4000bf9	       180	cg_arcs.c	FUNCTION_4	FOR_1	IF_2
+0x4000bf3	     0xf8465020000	                            je 0x4000e5e	       180	cg_arcs.c	FUNCTION_4	FOR_1	IF_2
+0x4000bf9	    0x483bad380100	           cmp rbp, qword [rbp + 0x138] 	       184	cg_arcs.c	FUNCTION_4	FOR_1	IF_3
+0x4000c00	            0x7448	                            je 0x4000c4a	       184	cg_arcs.c	FUNCTION_4	FOR_1	IF_3
+0x4000c02	    0x8b8530010000	           mov eax, dword [rbp + 0x130] 	       186	cg_arcs.c	FUNCTION_4	FOR_1	IF_3	IF_4
+0x4000c08	    0x413984243001	           cmp dword [r12 + 0x130], eax 	       186	cg_arcs.c	FUNCTION_4	FOR_1	IF_3	IF_4
+0x4000c10	     0xf8448020000	                            je 0x4000e5e	       186	cg_arcs.c	FUNCTION_4	FOR_1	IF_3	IF_4
+0x4000c16	    0x8b850c010000	           mov eax, dword [rbp + 0x10c] 	       190	cg_arcs.c	FUNCTION_4	FOR_1	IF_3	IF_5
+0x4000c1c	    0x413984240c01	           cmp dword [r12 + 0x10c], eax 	       190	cg_arcs.c	FUNCTION_4	FOR_1	IF_3	IF_5
+0x4000c24	            0x7f1b	                            jg 0x4000c41	       190	cg_arcs.c	FUNCTION_4	FOR_1	IF_3	IF_5
+0x4000c26	    0x488b0d000000	            mov rcx, qword [0x04000c2d] 	        97	stdio2.h	CALL_16
+0x4000c2d	      0xba1d000000	                           mov edx, 0x1d	        97	stdio2.h	CALL_16
+0x4000c32	      0xbe01000000	                              mov esi, 1	        97	stdio2.h	CALL_16
+0x4000c37	      0xbf00000000	                              mov edi, 0	        97	stdio2.h	CALL_16
+0x4000c3c	      0xe800000000	                          call 0x4000c41	        97	stdio2.h	CALL_16
+0x4000c41	    0x488bad380100	           mov rbp, qword [rbp + 0x138] 	       194	cg_arcs.c	FUNCTION_4	FOR_1	IF_3
+0x4000c48	            0xeb30	                           jmp 0x4000c7a	       194	cg_arcs.c	FUNCTION_4	FOR_1	IF_3
+0x4000c4a	    0x8b850c010000	           mov eax, dword [rbp + 0x10c] 	       198	cg_arcs.c	FUNCTION_4	FOR_1	ELSE_1	IF_6
+0x4000c50	    0x413984240c01	           cmp dword [r12 + 0x10c], eax 	       198	cg_arcs.c	FUNCTION_4	FOR_1	ELSE_1	IF_6
+0x4000c58	            0x7f20	                            jg 0x4000c7a	       198	cg_arcs.c	FUNCTION_4	FOR_1	ELSE_1	IF_6
+0x4000c5a	    0x488b0d000000	            mov rcx, qword [0x04000c61] 	        97	stdio2.h	CALL_16
+0x4000c61	      0xba1d000000	                           mov edx, 0x1d	        97	stdio2.h	CALL_16
+0x4000c66	      0xbe01000000	                              mov esi, 1	        97	stdio2.h	CALL_16
+0x4000c6b	      0xbf00000000	                              mov edi, 0	        97	stdio2.h	CALL_16
+0x4000c70	      0xe800000000	                          call 0x4000c75	        97	stdio2.h	CALL_16
+0x4000c75	      0xe9e4010000	                           jmp 0x4000e5e	        97	stdio2.h	CALL_16
+0x4000c7a	        0x488b5528	            mov rdx, qword [rbp + 0x28] 	       204	cg_arcs.c	FUNCTION_4	FOR_1	IF_7
+0x4000c7e	          0x4885d2	                           test rdx, rdx	       204	cg_arcs.c	FUNCTION_4	FOR_1	IF_7
+0x4000c81	     0xf84d7010000	                            je 0x4000e5e	       204	cg_arcs.c	FUNCTION_4	FOR_1	IF_7
+0x4000c87	        0x488b4b10	            mov rcx, qword [rbx + 0x10] 	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000c8b	          0x4885c9	                           test rcx, rcx	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000c8e	            0x780b	                            js 0x4000c9b	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000c90	        0x660fefc0	                         pxor xmm0, xmm0	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000c94	      0xf2480f2ac1	                      cvtsi2sd xmm0, rcx	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000c99	            0xeb19	                           jmp 0x4000cb4	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000c9b	          0x4889c8	                            mov rax, rcx	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000c9e	          0x48d1e8	                              shr rax, 1	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000ca1	          0x83e101	                              and ecx, 1	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000ca4	          0x4809c8	                             or rax, rcx	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000ca7	        0x660fefc0	                         pxor xmm0, xmm0	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cab	      0xf2480f2ac0	                      cvtsi2sd xmm0, rax	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cb0	        0xf20f58c0	                        addsd xmm0, xmm0	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cb4	          0x4885d2	                           test rdx, rdx	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cb7	            0x780b	                            js 0x4000cc4	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cb9	        0x660fefc9	                         pxor xmm1, xmm1	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cbd	      0xf2480f2aca	                      cvtsi2sd xmm1, rdx	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cc2	            0xeb19	                           jmp 0x4000cdd	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cc4	          0x4889d0	                            mov rax, rdx	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cc7	          0x48d1e8	                              shr rax, 1	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cca	          0x83e201	                              and edx, 1	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000ccd	          0x4809d0	                             or rax, rdx	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cd0	        0x660fefc9	                         pxor xmm1, xmm1	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cd4	      0xf2480f2ac8	                      cvtsi2sd xmm1, rax	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cd9	        0xf20f58c9	                        addsd xmm1, xmm1	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cdd	        0x660f28f0	                       movapd xmm6, xmm0	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000ce1	        0xf20f5ef1	                        divsd xmm6, xmm1	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000ce5	        0x660f28ce	                       movapd xmm1, xmm6	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000ce9	    0xf20f598de800	          mulsd xmm1, qword [rbp + 0xe8]	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cf1	      0xf20f114b18	          movsd qword [rbx + 0x18], xmm1	       210	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cf6	        0x488b4528	            mov rax, qword [rbp + 0x28] 	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cfa	          0x4885c0	                           test rax, rax	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cfd	            0x780b	                            js 0x4000d0a	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000cff	        0x660fefd2	                         pxor xmm2, xmm2	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d03	      0xf2480f2ad0	                      cvtsi2sd xmm2, rax	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d08	            0xeb19	                           jmp 0x4000d23	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d0a	          0x4889c2	                            mov rdx, rax	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d0d	          0x48d1ea	                              shr rdx, 1	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d10	          0x83e001	                              and eax, 1	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d13	          0x4809c2	                             or rdx, rax	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d16	        0x660fefd2	                         pxor xmm2, xmm2	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d1a	      0xf2480f2ad2	                      cvtsi2sd xmm2, rdx	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d1f	        0xf20f58d2	                        addsd xmm2, xmm2	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d23	        0xf20f5ec2	                        divsd xmm0, xmm2	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d27	    0xf20f59850001	         mulsd xmm0, qword [rbp + 0x100]	       213	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d2f	      0xf20f114320	          movsd qword [rbx + 0x20], xmm0	       212	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d34	        0xf20f58c8	                        addsd xmm1, xmm0	       214	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d38	        0x660f28e9	                       movapd xmm5, xmm1	       214	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d3c	    0xf20f114c2408	             movsd qword [rsp + 8], xmm1	       214	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d42	        0x660f28c1	                       movapd xmm0, xmm1	       215	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d46	    0xf2410f588424	         addsd xmm0, qword [r12 + 0x100]	       215	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d50	    0xf2410f118424	         movsd qword [r12 + 0x100], xmm0	       215	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d5a	    0xf2410f108424	        movsd xmm0, qword [r12 + 0x118] 	       218	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d64	        0xf20f59c8	                        mulsd xmm1, xmm0	       218	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d68	        0x660f28d1	                       movapd xmm2, xmm1	       221	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d6c	    0xf2410f589424	         addsd xmm2, qword [r12 + 0x128]	       221	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d76	    0xf2410f119424	         movsd qword [r12 + 0x128], xmm2	       221	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d80	      0xf20f594318	          mulsd xmm0, qword [rbx + 0x18]	       222	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d85	      0xf20f114318	          movsd qword [rbx + 0x18], xmm0	       222	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d8a	      0xf20f104320	         movsd xmm0, qword [rbx + 0x20] 	       223	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d8f	    0xf2410f598424	         mulsd xmm0, qword [r12 + 0x118]	       223	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d99	      0xf20f114320	          movsd qword [rbx + 0x20], xmm0	       223	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000d9e	    0x498b84243801	           mov rax, qword [r12 + 0x138] 	       226	cg_arcs.c	FUNCTION_4	FOR_1	IF_8
+0x4000da6	          0x4939c4	                            cmp r12, rax	       226	cg_arcs.c	FUNCTION_4	FOR_1	IF_8
+0x4000da9	            0x742c	                            je 0x4000dd7	       226	cg_arcs.c	FUNCTION_4	FOR_1	IF_8
+0x4000dab	        0x660f28c5	                       movapd xmm0, xmm5	       228	cg_arcs.c	FUNCTION_4	FOR_1	IF_8
+0x4000daf	    0xf20f58800001	         addsd xmm0, qword [rax + 0x100]	       228	cg_arcs.c	FUNCTION_4	FOR_1	IF_8
+0x4000db7	    0xf20f11800001	         movsd qword [rax + 0x100], xmm0	       228	cg_arcs.c	FUNCTION_4	FOR_1	IF_8
+0x4000dbf	    0x498b84243801	           mov rax, qword [r12 + 0x138] 	       229	cg_arcs.c	FUNCTION_4	FOR_1	IF_8
+0x4000dc7	    0xf20f58882801	         addsd xmm1, qword [rax + 0x128]	       229	cg_arcs.c	FUNCTION_4	FOR_1	IF_8
+0x4000dcf	    0xf20f11882801	         movsd qword [rax + 0x128], xmm1	       229	cg_arcs.c	FUNCTION_4	FOR_1	IF_8
+0x4000dd7	    0xf60500000000	               test byte [0x04000dde], 4	       231	cg_arcs.c	FUNCTION_4	FOR_1	CALL_1
+0x4000dde	            0x747e	                            je 0x4000e5e	       231	cg_arcs.c	FUNCTION_4	FOR_1	CALL_1
+0x4000de0	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000de5	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000dea	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x4000def	      0xe800000000	                          call 0x4000df4	       104	stdio2.h	CALL_19
+0x4000df4	          0x4889ef	                            mov rdi, rbp	       231	cg_arcs.c	FUNCTION_4	FOR_1	CALL_1
+0x4000df7	      0xe800000000	                          call 0x4000dfc	       231	cg_arcs.c	FUNCTION_4	FOR_1	CALL_1
+0x4000dfc	        0x488b4d28	            mov rcx, qword [rbp + 0x28] 	       104	stdio2.h	CALL_19
+0x4000e00	        0x488b5310	            mov rdx, qword [rbx + 0x10] 	       104	stdio2.h	CALL_19
+0x4000e04	    0xf20f1085e800	         movsd xmm0, qword [rbp + 0xe8] 	       104	stdio2.h	CALL_19
+0x4000e0c	    0xf20f108d0001	        movsd xmm1, qword [rbp + 0x100] 	       104	stdio2.h	CALL_19
+0x4000e14	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000e19	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000e1e	      0xb802000000	                              mov eax, 2	       104	stdio2.h	CALL_19
+0x4000e23	      0xe800000000	                          call 0x4000e28	       104	stdio2.h	CALL_19
+0x4000e28	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000e2d	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000e32	      0xb800000000	                              mov eax, 0	       104	stdio2.h	CALL_19
+0x4000e37	      0xe800000000	                          call 0x4000e3c	       104	stdio2.h	CALL_19
+0x4000e3c	          0x4c89e7	                            mov rdi, r12	       231	cg_arcs.c	FUNCTION_4	FOR_1	CALL_1
+0x4000e3f	      0xe800000000	                          call 0x4000e44	       231	cg_arcs.c	FUNCTION_4	FOR_1	CALL_1
+0x4000e44	    0xf20f10442408	            movsd xmm0, qword [rsp + 8] 	       104	stdio2.h	CALL_19
+0x4000e4a	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_19
+0x4000e4f	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_19
+0x4000e54	      0xb801000000	                              mov eax, 1	       104	stdio2.h	CALL_19
+0x4000e59	      0xe800000000	                          call 0x4000e5e	       104	stdio2.h	CALL_19
+0x4000e5e	        0x488b5b30	            mov rbx, qword [rbx + 0x30] 	       177	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000e62	          0x4885db	                           test rbx, rbx	       177	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000e65	     0xf8562fdffff	                           jne 0x4000bcd	       177	cg_arcs.c	FUNCTION_4	FOR_1
+0x4000e6b	        0x4183c601	                             add r14d, 1	       666	cg_arcs.c	FUNCTION_10	FOR_5
+0x4000e6f	    0x8b1d00000000	            mov ebx, dword [0x04000e75] 	       666	cg_arcs.c	FUNCTION_10	FOR_5
+0x4000e75	          0x4439f3	                           cmp ebx, r14d	       666	cg_arcs.c	FUNCTION_10	FOR_5
+0x4000e78	     0xf8720fdffff	                            ja 0x4000b9e	       666	cg_arcs.c	FUNCTION_10	FOR_5
+0x4000e7e	          0x4c89ef	                            mov rdi, r13	       669	cg_arcs.c	FUNCTION_10	CALL_12
+0x4000e81	      0xe800000000	                          call 0x4000e86	       669	cg_arcs.c	FUNCTION_10	CALL_12
+0x4000e86	            0x89df	                            mov edi, ebx	       673	cg_arcs.c	FUNCTION_10	CALL_13
+0x4000e88	     0x33d00000000	             add edi, dword [0x04000e8e]	       673	cg_arcs.c	FUNCTION_10	CALL_13
+0x4000e8e	        0x48c1e703	                              shl rdi, 3	       673	cg_arcs.c	FUNCTION_10	CALL_13
+0x4000e92	      0xe800000000	                          call 0x4000e97	       673	cg_arcs.c	FUNCTION_10	CALL_13
+0x4000e97	          0x4889c3	                            mov rbx, rax	       673	cg_arcs.c	FUNCTION_10	CALL_13
+0x4000e9a	    0x448b0d000000	            mov r9d, dword [0x04000ea1] 	       674	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000ea1	          0x4585c9	                           test r9d, r9d	       674	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000ea4	            0x7423	                            je 0x4000ec9	       674	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000ea6	    0x488b15000000	            mov rdx, qword [0x04000ead] 	       674	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000ead	        0x418d49ff	                       lea ecx, [r9 - 1]	       674	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000eb1	      0x488d4cc808	              lea rcx, [rax + rcx*8 + 8]	       674	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000eb6	          0x488910	                    mov qword [rax], rdx	       675	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000eb9	    0x4881c2580100	                          add rdx, 0x158	       675	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000ec0	        0x4883c008	                              add rax, 8	       675	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000ec4	          0x4839c1	                            cmp rcx, rax	       674	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000ec7	            0x75ed	                           jne 0x4000eb6	       674	cg_arcs.c	FUNCTION_10	FOR_6
+0x4000ec9	    0x8b3500000000	            mov esi, dword [0x04000ecf] 	       677	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000ecf	            0x85f6	                           test esi, esi	       677	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000ed1	            0x742a	                            je 0x4000efd	       677	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000ed3	    0x4c8b05000000	              mov r8, qword [0x04000eda]	       678	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000eda	      0xba01000000	                              mov edx, 1	       678	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000edf	        0x418d79ff	                       lea edi, [r9 - 1]	       678	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000ee3	          0x8d0c17	                    lea ecx, [rdi + rdx]	       678	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000ee6	            0x89d0	                            mov eax, edx	       678	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000ee8	    0x4869c0580100	                    imul rax, rax, 0x158	       678	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000eef	          0x4c01c0	                             add rax, r8	       678	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000ef2	        0x488904cb	            mov qword [rbx + rcx*8], rax	       678	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000ef6	          0x83c201	                              add edx, 1	       677	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000ef9	            0x39f2	                            cmp edx, esi	       677	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000efb	            0x76e6	                           jbe 0x4000ee3	       677	cg_arcs.c	FUNCTION_10	FOR_7
+0x4000efd	        0x418d3431	                     lea esi, [r9 + rsi]	       680	cg_arcs.c	FUNCTION_10	CALL_14
+0x4000f01	      0xb900000000	                              mov ecx, 0	       680	cg_arcs.c	FUNCTION_10	CALL_14
+0x4000f06	      0xba08000000	                              mov edx, 8	       680	cg_arcs.c	FUNCTION_10	CALL_14
+0x4000f0b	          0x4889df	                            mov rdi, rbx	       680	cg_arcs.c	FUNCTION_10	CALL_14
+0x4000f0e	      0xe800000000	                          call 0x4000f13	       680	cg_arcs.c	FUNCTION_10	CALL_14
+0x4000f13	    0x8b3500000000	            mov esi, dword [0x04000f19] 	       683	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f19	     0x33500000000	             add esi, dword [0x04000f1f]	       683	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f1f	            0x745f	                            je 0x4000f80	       683	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f21	          0x4889da	                            mov rdx, rbx	       683	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f24	      0xb800000000	                              mov eax, 0	       683	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f29	          0x488b0a	                    mov rcx, qword [rdx]	       684	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f2c	          0x83c001	                              add eax, 1	       684	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f2f	    0x898108010000	            mov dword [rcx + 0x108], eax	       684	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f35	        0x4883c208	                              add rdx, 8	       684	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f39	            0x39f0	                            cmp eax, esi	       683	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f3b	            0x75ec	                           jne 0x4000f29	       683	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f3d	            0xeb41	                           jmp 0x4000f80	       683	cg_arcs.c	FUNCTION_10	FOR_8
+0x4000f3f	          0x4889eb	                            mov rbx, rbp	       455	cg_arcs.c	FUNCTION_8	FOR_1	IF_1
+0x4000f42	    0xf60500000000	               test byte [0x04000f49], 4	       458	cg_arcs.c	FUNCTION_8	FOR_1	CALL_2
+0x4000f49	     0xf8407faffff	                            je 0x4000956	       458	cg_arcs.c	FUNCTION_8	FOR_1	CALL_2
+0x4000f4f	      0xe9b8f9ffff	                           jmp 0x400090c	       458	cg_arcs.c	FUNCTION_8	FOR_1	CALL_2
+0x4000f54	    0x488b0d000000	            mov rcx, qword [0x04000f5b] 	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000f5b	    0x488d91580100	                  lea rdx, [rcx + 0x158]	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000f62	    0x8b0500000000	            mov eax, dword [0x04000f68] 	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000f68	    0x4869c0580100	                    imul rax, rax, 0x158	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000f6f	          0x4801c1	                            add rcx, rax	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000f72	          0x4839d1	                            cmp rcx, rdx	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000f75	     0xf839ffbffff	                           jae 0x4000b1a	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000f7b	      0xe9fefeffff	                           jmp 0x4000e7e	       252	cg_arcs.c	FUNCTION_5	FOR_1
+0x4000f80	          0x4889d8	                            mov rax, rbx	       687	cg_arcs.c	FUNCTION_10
+0x4000f83	        0x4883c418	                           add rsp, 0x18	       687	cg_arcs.c	FUNCTION_10
+0x4000f87	              0x5b	                                 pop rbx	       687	cg_arcs.c	FUNCTION_10
+0x4000f88	              0x5d	                                 pop rbp	       687	cg_arcs.c	FUNCTION_10
+0x4000f89	            0x415c	                                 pop r12	       687	cg_arcs.c	FUNCTION_10
+0x4000f8b	            0x415d	                                 pop r13	       687	cg_arcs.c	FUNCTION_10
+0x4000f8d	            0x415e	                                 pop r14	       687	cg_arcs.c	FUNCTION_10
+0x4000f8f	            0x415f	                                 pop r15	       687	cg_arcs.c	FUNCTION_10
+0x4000f91	              0xc3	                                     ret	       687	cg_arcs.c	FUNCTION_10

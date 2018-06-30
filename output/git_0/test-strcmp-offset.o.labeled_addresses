@@ -1,0 +1,57 @@
+cmd__strcmp_offset	SWITCH,0:functions,0:IF,1:WHILE,0:ELSE,0:CALL,3:DO,0:FOR,0	56
+0x4000040	              0x55	                                push rbp	         5	test-strcmp-offset.c	FUNCTION_1
+0x4000041	          0x4889e5	                            mov rbp, rsp	         5	test-strcmp-offset.c	FUNCTION_1
+0x4000044	        0x4883ec30	                           sub rsp, 0x30	         5	test-strcmp-offset.c	FUNCTION_1
+0x4000048	          0x897ddc	             mov dword [rbp - 0x24], edi	         5	test-strcmp-offset.c	FUNCTION_1
+0x400004b	        0x488975d0	             mov qword [rbp - 0x30], rsi	         5	test-strcmp-offset.c	FUNCTION_1
+0x400004f	    0x64488b042528	                mov rax, qword fs:[0x28]	         5	test-strcmp-offset.c	FUNCTION_1
+0x4000058	        0x488945f8	                mov qword [rbp - 8], rax	         5	test-strcmp-offset.c	FUNCTION_1
+0x400005c	            0x31c0	                            xor eax, eax	         5	test-strcmp-offset.c	FUNCTION_1
+0x400005e	        0x488b45d0	             mov rax, qword [rbp - 0x30]	         9	test-strcmp-offset.c	FUNCTION_1	IF_1
+0x4000062	        0x4883c008	                              add rax, 8	         9	test-strcmp-offset.c	FUNCTION_1	IF_1
+0x4000066	          0x488b00	                    mov rax, qword [rax]	         9	test-strcmp-offset.c	FUNCTION_1	IF_1
+0x4000069	          0x4885c0	                           test rax, rax	         9	test-strcmp-offset.c	FUNCTION_1	IF_1
+0x400006c	            0x7410	                            je 0x400007e	         9	test-strcmp-offset.c	FUNCTION_1	IF_1
+0x400006e	        0x488b45d0	             mov rax, qword [rbp - 0x30]	         9	test-strcmp-offset.c	FUNCTION_1	IF_1
+0x4000072	        0x4883c010	                           add rax, 0x10	         9	test-strcmp-offset.c	FUNCTION_1	IF_1
+0x4000076	          0x488b00	                    mov rax, qword [rax]	         9	test-strcmp-offset.c	FUNCTION_1	IF_1
+0x4000079	          0x4885c0	                           test rax, rax	         9	test-strcmp-offset.c	FUNCTION_1	IF_1
+0x400007c	            0x7519	                           jne 0x4000097	         9	test-strcmp-offset.c	FUNCTION_1	IF_1
+0x400007e	        0x488b45d0	             mov rax, qword [rbp - 0x30]	        10	test-strcmp-offset.c	FUNCTION_1	CALL_1
+0x4000082	          0x488b00	                    mov rax, qword [rax]	        10	test-strcmp-offset.c	FUNCTION_1	CALL_1
+0x4000085	          0x4889c6	                            mov rsi, rax	        10	test-strcmp-offset.c	FUNCTION_1	CALL_1
+0x4000088	      0xbf00000000	                              mov edi, 0	        10	test-strcmp-offset.c	FUNCTION_1	CALL_1
+0x400008d	      0xb800000000	                              mov eax, 0	        10	test-strcmp-offset.c	FUNCTION_1	CALL_1
+0x4000092	      0xe800000000	                          call 0x4000097	        10	test-strcmp-offset.c	FUNCTION_1	CALL_1
+0x4000097	        0x488b45d0	             mov rax, qword [rbp - 0x30]	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x400009b	        0x4883c010	                           add rax, 0x10	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x400009f	          0x488b08	                    mov rcx, qword [rax]	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x40000a2	        0x488b45d0	             mov rax, qword [rbp - 0x30]	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x40000a6	        0x4883c008	                              add rax, 8	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x40000aa	          0x488b00	                    mov rax, qword [rax]	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x40000ad	        0x488d55f0	                   lea rdx, [rbp - 0x10]	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x40000b1	          0x4889ce	                            mov rsi, rcx	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x40000b4	          0x4889c7	                            mov rdi, rax	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x40000b7	      0xe800000000	                          call 0x40000bc	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x40000bc	          0x8945ec	             mov dword [rbp - 0x14], eax	        12	test-strcmp-offset.c	FUNCTION_1	CALL_2
+0x40000bf	        0x837dec00	               cmp dword [rbp - 0x14], 0	        18	test-strcmp-offset.c	FUNCTION_1
+0x40000c3	            0x780c	                            js 0x40000d1	        18	test-strcmp-offset.c	FUNCTION_1
+0x40000c5	        0x837dec00	               cmp dword [rbp - 0x14], 0	        19	test-strcmp-offset.c	FUNCTION_1
+0x40000c9	           0xf9fc0	                                 setg al	        19	test-strcmp-offset.c	FUNCTION_1
+0x40000cc	           0xfb6c0	                           movzx eax, al	        18	test-strcmp-offset.c	FUNCTION_1
+0x40000cf	            0xeb05	                           jmp 0x40000d6	        18	test-strcmp-offset.c	FUNCTION_1
+0x40000d1	      0xb8ffffffff	                     mov eax, 0xffffffff	        18	test-strcmp-offset.c	FUNCTION_1
+0x40000d6	          0x8945ec	             mov dword [rbp - 0x14], eax	        18	test-strcmp-offset.c	FUNCTION_1
+0x40000d9	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	        21	test-strcmp-offset.c	FUNCTION_1	CALL_3
+0x40000dd	          0x8b45ec	             mov eax, dword [rbp - 0x14]	        21	test-strcmp-offset.c	FUNCTION_1	CALL_3
+0x40000e0	            0x89c6	                            mov esi, eax	        21	test-strcmp-offset.c	FUNCTION_1	CALL_3
+0x40000e2	      0xbf00000000	                              mov edi, 0	        21	test-strcmp-offset.c	FUNCTION_1	CALL_3
+0x40000e7	      0xb800000000	                              mov eax, 0	        21	test-strcmp-offset.c	FUNCTION_1	CALL_3
+0x40000ec	      0xe800000000	                          call 0x40000f1	        21	test-strcmp-offset.c	FUNCTION_1	CALL_3
+0x40000f1	      0xb800000000	                              mov eax, 0	        22	test-strcmp-offset.c	FUNCTION_1
+0x40000f6	        0x488b4df8	                mov rcx, qword [rbp - 8]	        23	test-strcmp-offset.c	FUNCTION_1
+0x40000fa	    0x6448330c2528	                xor rcx, qword fs:[0x28]	        23	test-strcmp-offset.c	FUNCTION_1
+0x4000103	            0x7405	                            je 0x400010a	        23	test-strcmp-offset.c	FUNCTION_1
+0x4000105	      0xe800000000	                          call 0x400010a	        23	test-strcmp-offset.c	FUNCTION_1
+0x400010a	              0xc9	                                   leave	        23	test-strcmp-offset.c	FUNCTION_1
+0x400010b	              0xc3	                                     ret	        23	test-strcmp-offset.c	FUNCTION_1

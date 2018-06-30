@@ -1,0 +1,267 @@
+sony_resume	FOR,0:ELSE,0:CALL,2:SWITCH,0:WHILE,0:DO,0:IF,1:functions,0	10
+0x40003e0	              0x53	                                push rbx	      3019	hid-sony.c	FUNCTION_61
+0x40003e1	    0x488b9f681900	          mov rbx, qword [rdi + 0x1968] 	      3019	hid-sony.c	FUNCTION_61
+0x40003e8	    0x48f743500204	         test qword [rbx + 0x50], 0x402 	      3026	hid-sony.c	FUNCTION_61	IF_1
+0x40003f0	            0x7410	                            je 0x4000402	      3026	hid-sony.c	FUNCTION_61	IF_1
+0x40003f2	        0x488b7b18	            mov rdi, qword [rbx + 0x18] 	      3028	hid-sony.c	FUNCTION_61	IF_1	CALL_2
+0x40003f6	      0xe8b5feffff	    call sym.sixaxis_set_operational_usb	      3028	hid-sony.c	FUNCTION_61	IF_1	CALL_2
+0x40003fb	    0xc68318010000	               mov byte [rbx + 0x118], 1	      3029	hid-sony.c	FUNCTION_61	IF_1
+0x4000402	            0x31c0	                            xor eax, eax	      3033	hid-sony.c	FUNCTION_61
+0x4000404	              0x5b	                                 pop rbx	      3033	hid-sony.c	FUNCTION_61
+0x4000405	              0xc3	                                     ret	      3033	hid-sony.c	FUNCTION_61
+sony_suspend	FOR,0:ELSE,0:CALL,2:SWITCH,0:WHILE,0:DO,0:IF,1:functions,0	2
+0x40001a0	            0x31c0	                            xor eax, eax	      3016	hid-sony.c	FUNCTION_60
+0x40001a2	              0xc3	                                     ret	      3016	hid-sony.c	FUNCTION_60
+sony_led_set_brightness	FOR,1:ELSE,0:CALL,4:SWITCH,0:WHILE,0:DO,0:IF,2:functions,0	36
+0x40016a0	        0x488b4740	            mov rax, qword [rdi + 0x40] 	      1881	hid-sony.c	FUNCTION_31
+0x40016a4	          0x488b00	                    mov rax, qword [rax]	      1881	hid-sony.c	FUNCTION_31
+0x40016a7	    0x488b90980000	            mov rdx, qword [rax + 0x98] 	      1881	hid-sony.c	FUNCTION_31
+0x40016ae	          0x4885d2	                           test rdx, rdx	      1889	hid-sony.c	FUNCTION_31	IF_1
+0x40016b1	            0x7475	                            je 0x4001728	      1889	hid-sony.c	FUNCTION_31	IF_1
+0x40016b3	    0x440fb6822801	          movzx r8d, byte [rdx + 0x128] 	      1903	hid-sony.c	FUNCTION_31	FOR_1
+0x40016bb	        0x4c8b5250	            mov r10, qword [rdx + 0x50] 	      1901	hid-sony.c	FUNCTION_31
+0x40016bf	        0x4183e202	                             and r10d, 2	      1901	hid-sony.c	FUNCTION_31
+0x40016c3	          0x4585c0	                           test r8d, r8d	      1903	hid-sony.c	FUNCTION_31	FOR_1
+0x40016c6	            0x745e	                            je 0x4001726	      1903	hid-sony.c	FUNCTION_31	FOR_1
+0x40016c8	            0x31c0	                            xor eax, eax	      1903	hid-sony.c	FUNCTION_31	FOR_1
+0x40016ca	            0xeb09	                           jmp 0x40016d5	      1903	hid-sony.c	FUNCTION_31	FOR_1
+0x40016cc	        0x4883c001	                              add rax, 1	      1903	hid-sony.c	FUNCTION_31	FOR_1
+0x40016d0	          0x4139c0	                            cmp r8d, eax	      1903	hid-sony.c	FUNCTION_31	FOR_1
+0x40016d3	            0x7e51	                           jle 0x4001726	      1903	hid-sony.c	FUNCTION_31	FOR_1
+0x40016d5	      0x483b7cc230	    cmp rdi, qword [rdx + rax*8 + 0x30] 	      1904	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x40016da	          0x4863c8	                         movsxd rcx, eax	      1904	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x40016dd	            0x75ed	                           jne 0x40016cc	      1904	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x40016df	          0x4d85d2	                           test r10, r10	      1904	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x40016e2	            0x7522	                           jne 0x4001706	      1904	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x40016e4	    0x440fb68c021c	    movzx r9d, byte [rdx + rax + 0x11c] 	      1904	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x40016ed	          0x4139f1	                            cmp r9d, esi	      1904	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x40016f0	            0x7514	                           jne 0x4001706	      1904	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x40016f2	    0x80bc02200100	         cmp byte [rdx + rax + 0x120], 0	      1905	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x40016fa	            0x750a	                           jne 0x4001706	      1905	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x40016fc	    0x80bc02240100	         cmp byte [rdx + rax + 0x124], 0	      1906	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x4001704	            0x74c6	                            je 0x40016cc	      1906	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x4001706	    0x4088b40a1c01	       mov byte [rdx + rcx + 0x11c], sil	      1909	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x400170e	    0xc6840a200100	         mov byte [rdx + rcx + 0x120], 0	      1912	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x4001716	          0x4889d7	                            mov rdi, rdx	      1915	hid-sony.c	FUNCTION_31	FOR_1	IF_2	CALL_4
+0x4001719	    0xc6840a240100	         mov byte [rdx + rcx + 0x124], 0	      1913	hid-sony.c	FUNCTION_31	FOR_1	IF_2
+0x4001721	      0xe9bafeffff	                   jmp sym.sony_set_leds	      1915	hid-sony.c	FUNCTION_31	FOR_1	IF_2	CALL_4
+0x4001726	            0xf3c3	                                     ret	      1915	hid-sony.c	FUNCTION_31	FOR_1	IF_2	CALL_4
+0x4001728	    0x48c7c6000000	                              mov rsi, 0	      1890	hid-sony.c	FUNCTION_31	IF_1	CALL_3
+0x400172f	          0x4889c7	                            mov rdi, rax	      1890	hid-sony.c	FUNCTION_31	IF_1	CALL_3
+0x4001732	      0xe900000000	                           jmp 0x4001737	      1890	hid-sony.c	FUNCTION_31	IF_1	CALL_3
+sony_init	FOR,0:ELSE,0:CALL,2:SWITCH,0:WHILE,0:DO,0:IF,0:functions,0	10
+0x4000040	    0x488b97080100	           mov rdx, qword [rdi + 0x108] 	      2137	hid-sony.c	FUNCTION_36
+0x4000047	    0x488b05000000	            mov rax, qword [0x0400004e] 	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x400004e	          0x488902	                    mov qword [rdx], rax	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000051	    0x488b05000000	            mov rax, qword [0x04000058] 	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000058	        0x48894208	                mov qword [rdx + 8], rax	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x400005c	    0x488b05000000	            mov rax, qword [0x04000063] 	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000063	        0x48894210	             mov qword [rdx + 0x10], rax	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000067	    0x488b05000000	            mov rax, qword [0x0400006e] 	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x400006e	        0x48894218	             mov qword [rdx + 0x18], rax	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000072	    0x8b0500000000	            mov eax, dword [0x04000078] 	      2142	hid-sony.c	FUNCTION_36	CALL_1
+sony_led_get_brightness	FOR,1:ELSE,0:CALL,3:SWITCH,0:WHILE,0:DO,0:IF,2:functions,0	30
+0x40001b0	        0x488b4740	            mov rax, qword [rdi + 0x40] 	      1923	hid-sony.c	FUNCTION_32
+0x40001b4	          0x488b00	                    mov rax, qword [rax]	      1923	hid-sony.c	FUNCTION_32
+0x40001b7	    0x488bb0980000	            mov rsi, qword [rax + 0x98] 	      1923	hid-sony.c	FUNCTION_32
+0x40001be	          0x4885f6	                           test rsi, rsi	      1930	hid-sony.c	FUNCTION_32	IF_1
+0x40001c1	            0x743a	                            je 0x40001fd	      1930	hid-sony.c	FUNCTION_32	IF_1
+0x40001c3	     0xfb68e280100	          movzx ecx, byte [rsi + 0x128] 	      1935	hid-sony.c	FUNCTION_32	FOR_1
+0x40001ca	            0x85c9	                           test ecx, ecx	      1935	hid-sony.c	FUNCTION_32	FOR_1
+0x40001cc	            0x741f	                            je 0x40001ed	      1935	hid-sony.c	FUNCTION_32	FOR_1
+0x40001ce	            0x31c0	                            xor eax, eax	      1936	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001d0	        0x483b7e30	            cmp rdi, qword [rsi + 0x30] 	      1936	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001d4	        0x488d5638	                   lea rdx, [rsi + 0x38]	      1936	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001d8	            0x750c	                           jne 0x40001e6	      1936	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001da	            0xeb14	                           jmp 0x40001f0	      1936	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001dc	        0x4883c208	                              add rdx, 8	      1936	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001e0	        0x483b7af8	                cmp rdi, qword [rdx - 8]	      1936	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001e4	            0x740c	                            je 0x40001f2	      1936	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001e6	          0x83c001	                              add eax, 1	      1935	hid-sony.c	FUNCTION_32	FOR_1
+0x40001e9	            0x39c8	                            cmp eax, ecx	      1935	hid-sony.c	FUNCTION_32	FOR_1
+0x40001eb	            0x7cef	                            jl 0x40001dc	      1935	hid-sony.c	FUNCTION_32	FOR_1
+0x40001ed	            0x31c0	                            xor eax, eax	      1940	hid-sony.c	FUNCTION_32
+0x40001ef	              0xc3	                                     ret	      1941	hid-sony.c	FUNCTION_32
+0x40001f0	            0x31c0	                            xor eax, eax	      1936	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001f2	            0x4898	                                    cdqe	      1937	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001f4	     0xfb684061c01	    movzx eax, byte [rsi + rax + 0x11c] 	      1937	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001fc	              0xc3	                                     ret	      1937	hid-sony.c	FUNCTION_32	FOR_1	IF_2
+0x40001fd	          0x4889c7	                            mov rdi, rax	      1931	hid-sony.c	FUNCTION_32	IF_1	CALL_3
+0x4000200	    0x48c7c6000000	                              mov rsi, 0	      1931	hid-sony.c	FUNCTION_32	IF_1	CALL_3
+0x4000207	      0xe800000000	                          call 0x400020c	      1931	hid-sony.c	FUNCTION_32	IF_1	CALL_3
+0x400020c	            0x31c0	                            xor eax, eax	      1932	hid-sony.c	FUNCTION_32	IF_1
+0x400020e	              0xc3	                                     ret	      1932	hid-sony.c	FUNCTION_32	IF_1
+sony_report_fixup	FOR,0:ELSE,0:CALL,4:SWITCH,0:WHILE,0:DO,0:IF,4:functions,0	49
+0x4000210	              0x55	                                push rbp	       840	hid-sony.c	FUNCTION_12
+0x4000211	              0x53	                                push rbx	       840	hid-sony.c	FUNCTION_12
+0x4000212	          0x4889f5	                            mov rbp, rsi	       840	hid-sony.c	FUNCTION_12
+0x4000215	        0x4883ec08	                              sub rsp, 8	       840	hid-sony.c	FUNCTION_12
+0x4000219	    0x488b9f681900	          mov rbx, qword [rdi + 0x1968] 	       840	hid-sony.c	FUNCTION_12
+0x4000220	        0x488b4b50	            mov rcx, qword [rbx + 0x50] 	       843	hid-sony.c	FUNCTION_12	IF_1
+0x4000224	          0xf6c530	                           test ch, 0x30	       843	hid-sony.c	FUNCTION_12	IF_1
+0x4000227	            0x752e	                           jne 0x4000257	       843	hid-sony.c	FUNCTION_12	IF_1
+0x4000229	          0xf6c101	                              test cl, 1	       850	hid-sony.c	FUNCTION_12	IF_2
+0x400022c	            0x740b	                            je 0x4000239	       850	hid-sony.c	FUNCTION_12	IF_2
+0x400022e	          0x833a37	                   cmp dword [rdx], 0x37	       850	hid-sony.c	FUNCTION_12	IF_2
+0x4000231	            0x7606	                           jbe 0x4000239	       850	hid-sony.c	FUNCTION_12	IF_2
+0x4000233	        0x807e0209	                   cmp byte [rsi + 2], 9	       850	hid-sony.c	FUNCTION_12	IF_2
+0x4000237	            0x743c	                            je 0x4000275	       850	hid-sony.c	FUNCTION_12	IF_2
+0x4000239	          0xf6c503	                              test ch, 3	       862	hid-sony.c	FUNCTION_12	IF_3
+0x400023c	            0x7523	                           jne 0x4000261	       862	hid-sony.c	FUNCTION_12	IF_3
+0x400023e	          0x83e110	                           and ecx, 0x10	       865	hid-sony.c	FUNCTION_12	IF_4
+0x4000241	            0x7414	                            je 0x4000257	       865	hid-sony.c	FUNCTION_12	IF_4
+0x4000243	    0xc70243000000	                   mov dword [rdx], 0x43	       673	hid-sony.c	FUNCTION_7
+0x4000249	        0x4883c408	                              add rsp, 8	       869	hid-sony.c	FUNCTION_12
+0x400024d	    0x48c7c0000000	                              mov rax, 0	       866	hid-sony.c	FUNCTION_12	CALL_4
+0x4000254	              0x5b	                                 pop rbx	       869	hid-sony.c	FUNCTION_12
+0x4000255	              0x5d	                                 pop rbp	       869	hid-sony.c	FUNCTION_12
+0x4000256	              0xc3	                                     ret	       869	hid-sony.c	FUNCTION_12
+0x4000257	        0x4883c408	                              add rsp, 8	       869	hid-sony.c	FUNCTION_12
+0x400025b	          0x4889e8	                            mov rax, rbp	       844	hid-sony.c	FUNCTION_12	IF_1
+0x400025e	              0x5b	                                 pop rbx	       869	hid-sony.c	FUNCTION_12
+0x400025f	              0x5d	                                 pop rbp	       869	hid-sony.c	FUNCTION_12
+0x4000260	              0xc3	                                     ret	       869	hid-sony.c	FUNCTION_12
+0x4000261	    0xc702c2000000	                   mov dword [rdx], 0xc2	       666	hid-sony.c	FUNCTION_6
+0x4000267	        0x4883c408	                              add rsp, 8	       869	hid-sony.c	FUNCTION_12
+0x400026b	    0x48c7c0000000	                              mov rax, 0	       863	hid-sony.c	FUNCTION_12	CALL_3
+0x4000272	              0x5b	                                 pop rbx	       869	hid-sony.c	FUNCTION_12
+0x4000273	              0x5d	                                 pop rbp	       869	hid-sony.c	FUNCTION_12
+0x4000274	              0xc3	                                     ret	       869	hid-sony.c	FUNCTION_12
+0x4000275	        0x807e0302	                   cmp byte [rsi + 3], 2	       854	hid-sony.c	FUNCTION_12	IF_2
+0x4000279	            0x75be	                           jne 0x4000239	       854	hid-sony.c	FUNCTION_12	IF_2
+0x400027b	        0x807e3681	            cmp byte [rsi + 0x36], 0x81 	       854	hid-sony.c	FUNCTION_12	IF_2
+0x400027f	            0x75b8	                           jne 0x4000239	       854	hid-sony.c	FUNCTION_12	IF_2
+0x4000281	        0x807e3707	                cmp byte [rsi + 0x37], 7	       856	hid-sony.c	FUNCTION_12	IF_2
+0x4000285	            0x75b2	                           jne 0x4000239	       856	hid-sony.c	FUNCTION_12	IF_2
+0x4000287	    0x4881c7d01800	                         add rdi, 0x18d0	       857	hid-sony.c	FUNCTION_12	IF_2	CALL_2
+0x400028e	    0x48c7c6000000	                              mov rsi, 0	       857	hid-sony.c	FUNCTION_12	IF_2	CALL_2
+0x4000295	        0x48891424	                    mov qword [rsp], rdx	       857	hid-sony.c	FUNCTION_12	IF_2	CALL_2
+0x4000299	      0xe800000000	                          call 0x400029e	       857	hid-sony.c	FUNCTION_12	IF_2	CALL_2
+0x400029e	        0xc6453706	                mov byte [rbp + 0x37], 6	       859	hid-sony.c	FUNCTION_12	IF_2
+0x40002a2	        0x488b1424	                    mov rdx, qword [rsp]	       859	hid-sony.c	FUNCTION_12	IF_2
+0x40002a6	        0x488b4b50	            mov rcx, qword [rbx + 0x50] 	       859	hid-sony.c	FUNCTION_12	IF_2
+0x40002aa	            0xeb8d	                           jmp 0x4000239	       859	hid-sony.c	FUNCTION_12	IF_2
+ds4_show_poll_interval	FOR,0:ELSE,0:CALL,3:SWITCH,0:WHILE,0:DO,0:IF,0:functions,0	9
+0x40009c0	          0x4889d0	                            mov rax, rdx	       605	hid-sony.c	FUNCTION_2
+0x40009c3	    0x488b97980000	            mov rdx, qword [rdi + 0x98] 	       609	hid-sony.c	FUNCTION_2	CALL_3
+0x40009ca	      0xbe00100000	                         mov esi, 0x1000	       609	hid-sony.c	FUNCTION_2	CALL_3
+0x40009cf	          0x4889c7	                            mov rdi, rax	       609	hid-sony.c	FUNCTION_2	CALL_3
+0x40009d2	     0xfb68a300100	          movzx ecx, byte [rdx + 0x130] 	       609	hid-sony.c	FUNCTION_2	CALL_3
+0x40009d9	    0x48c7c2000000	                              mov rdx, 0	       609	hid-sony.c	FUNCTION_2	CALL_3
+0x40009e0	      0xe800000000	                          call 0x40009e5	       609	hid-sony.c	FUNCTION_2	CALL_3
+0x40009e5	            0x4898	                                    cdqe	       609	hid-sony.c	FUNCTION_2	CALL_3
+0x40009e7	              0xc3	                                     ret	       610	hid-sony.c	FUNCTION_2
+sony_show_firmware_version	FOR,0:ELSE,0:CALL,3:SWITCH,0:WHILE,0:DO,0:IF,0:functions,0	9
+0x4000a20	          0x4889d0	                            mov rax, rdx	       642	hid-sony.c	FUNCTION_4
+0x4000a23	    0x488b97980000	            mov rdx, qword [rdi + 0x98] 	       646	hid-sony.c	FUNCTION_4	CALL_3
+0x4000a2a	      0xbe00100000	                         mov esi, 0x1000	       646	hid-sony.c	FUNCTION_4	CALL_3
+0x4000a2f	          0x4889c7	                            mov rdi, rax	       646	hid-sony.c	FUNCTION_4	CALL_3
+0x4000a32	    0x8b8afc000000	            mov ecx, dword [rdx + 0xfc] 	       646	hid-sony.c	FUNCTION_4	CALL_3
+0x4000a38	    0x48c7c2000000	                              mov rdx, 0	       646	hid-sony.c	FUNCTION_4	CALL_3
+0x4000a3f	      0xe800000000	                          call 0x4000a44	       646	hid-sony.c	FUNCTION_4	CALL_3
+0x4000a44	            0x4898	                                    cdqe	       646	hid-sony.c	FUNCTION_4	CALL_3
+0x4000a46	              0xc3	                                     ret	       647	hid-sony.c	FUNCTION_4
+sony_remove	FOR,0:ELSE,0:CALL,14:SWITCH,0:WHILE,0:DO,0:IF,7:functions,0	76
+0x4001470	              0x55	                                push rbp	      2963	hid-sony.c	FUNCTION_59
+0x4001471	              0x53	                                push rbx	      2963	hid-sony.c	FUNCTION_59
+0x4001472	          0x4889fd	                            mov rbp, rdi	      2963	hid-sony.c	FUNCTION_59
+0x4001475	    0x488b9f681900	          mov rbx, qword [rdi + 0x1968] 	      2963	hid-sony.c	FUNCTION_59
+0x400147c	      0xe800000000	                          call 0x4001481	      2966	hid-sony.c	FUNCTION_59	CALL_2
+0x4001481	        0x488b4350	            mov rax, qword [rbx + 0x50] 	      2968	hid-sony.c	FUNCTION_59	IF_1
+0x4001485	      0xa9ee0f0000	                         test eax, 0xfee	      2968	hid-sony.c	FUNCTION_59	IF_1
+0x400148a	     0xf8538010000	                           jne 0x40015c8	      2968	hid-sony.c	FUNCTION_59	IF_1
+0x4001490	      0xa9e60e0000	                         test eax, 0xee6	      2971	hid-sony.c	FUNCTION_59	IF_2
+0x4001495	     0xf85f7000000	                           jne 0x4001592	      2971	hid-sony.c	FUNCTION_59	IF_2
+0x400149b	      0x48837b2000	               cmp qword [rbx + 0x20], 0	      2974	hid-sony.c	FUNCTION_59	IF_3
+0x40014a0	            0x7409	                            je 0x40014ab	      2974	hid-sony.c	FUNCTION_59	IF_3
+0x40014a2	        0x488d7b20	                   lea rdi, [rbx + 0x20]	      2974	hid-sony.c	FUNCTION_59	IF_3
+0x40014a6	      0xe895f8ffff	call sym.sony_unregister_sensors.isra.18	      2975	hid-sony.c	FUNCTION_59	CALL_5
+0x40014ab	      0x48837b2800	               cmp qword [rbx + 0x28], 0	      2977	hid-sony.c	FUNCTION_59	IF_4
+0x40014b0	            0x7409	                            je 0x40014bb	      2977	hid-sony.c	FUNCTION_59	IF_4
+0x40014b2	        0x488d7b28	                   lea rdi, [rbx + 0x28]	      2977	hid-sony.c	FUNCTION_59	IF_4
+0x40014b6	      0xe885f8ffff	call sym.sony_unregister_sensors.isra.18	      2978	hid-sony.c	FUNCTION_59	CALL_6
+0x40014bb	        0xf6435040	           test byte [rbx + 0x50], 0x40 	      2980	hid-sony.c	FUNCTION_59	IF_5
+0x40014bf	     0xf85b1000000	                           jne 0x4001576	      2980	hid-sony.c	FUNCTION_59	IF_5
+0x40014c5	    0x8b93fc000000	            mov edx, dword [rbx + 0xfc] 	      2983	hid-sony.c	FUNCTION_59	IF_6
+0x40014cb	            0x85d2	                           test edx, edx	      2983	hid-sony.c	FUNCTION_59	IF_6
+0x40014cd	     0xf8587000000	                           jne 0x400155a	      2983	hid-sony.c	FUNCTION_59	IF_6
+0x40014d3	    0x8b8300010000	           mov eax, dword [rbx + 0x100] 	      2986	hid-sony.c	FUNCTION_59	IF_7
+0x40014d9	            0x85c0	                           test eax, eax	      2986	hid-sony.c	FUNCTION_59	IF_7
+0x40014db	            0x7564	                           jne 0x4001541	      2986	hid-sony.c	FUNCTION_59	IF_7
+0x40014dd	    0x80bb16010000	               cmp byte [rbx + 0x116], 0	      2641	hid-sony.c	FUNCTION_56	IF_1
+0x40014e4	            0x7550	                           jne 0x4001536	      2641	hid-sony.c	FUNCTION_56	IF_1
+0x40014e6	    0x80bb17010000	               cmp byte [rbx + 0x117], 0	      2643	hid-sony.c	FUNCTION_56	IF_2
+0x40014ed	            0x7409	                            je 0x40014f8	      2643	hid-sony.c	FUNCTION_56	IF_2
+0x40014ef	        0x488d7b78	                   lea rdi, [rbx + 0x78]	      2644	hid-sony.c	FUNCTION_56	CALL_2
+0x40014f3	      0xe800000000	                          call 0x40014f8	      2644	hid-sony.c	FUNCTION_56	CALL_2
+0x40014f8	    0x488bbb080100	           mov rdi, qword [rbx + 0x108] 	      2991	hid-sony.c	FUNCTION_59	CALL_11
+0x40014ff	      0xe800000000	                          call 0x4001504	      2991	hid-sony.c	FUNCTION_59	CALL_11
+0x4001504	          0x4889df	                            mov rdi, rbx	      2993	hid-sony.c	FUNCTION_59	CALL_12
+0x4001507	      0xe834ecffff	           call sym.sony_remove_dev_list	      2993	hid-sony.c	FUNCTION_59	CALL_12
+0x400150c	    0x8bb3f8000000	            mov esi, dword [rbx + 0xf8] 	      2622	hid-sony.c	FUNCTION_54	IF_1
+0x4001512	            0x85f6	                           test esi, esi	      2622	hid-sony.c	FUNCTION_54	IF_1
+0x4001514	            0x7816	                            js 0x400152c	      2622	hid-sony.c	FUNCTION_54	IF_1
+0x4001516	    0x48c7c7000000	                              mov rdi, 0	      2623	hid-sony.c	FUNCTION_54	IF_1	CALL_1
+0x400151d	      0xe800000000	                          call 0x4001522	      2623	hid-sony.c	FUNCTION_54	IF_1	CALL_1
+0x4001522	    0xc783f8000000	     mov dword [rbx + 0xf8], 0xffffffff 	      2624	hid-sony.c	FUNCTION_54	IF_1
+0x400152c	          0x4889ef	                            mov rdi, rbp	      2997	hid-sony.c	FUNCTION_59	CALL_14
+0x400152f	              0x5b	                                 pop rbx	      2998	hid-sony.c	FUNCTION_59
+0x4001530	              0x5d	                                 pop rbp	      2998	hid-sony.c	FUNCTION_59
+0x4001531	      0xe900000000	                           jmp 0x4001536	      2997	hid-sony.c	FUNCTION_59	CALL_14
+0x4001536	        0x488d7b58	                   lea rdi, [rbx + 0x58]	      2642	hid-sony.c	FUNCTION_56	CALL_1
+0x400153a	      0xe800000000	                          call 0x400153f	      2642	hid-sony.c	FUNCTION_56	CALL_1
+0x400153f	            0xeba5	                           jmp 0x40014e6	      2642	hid-sony.c	FUNCTION_56	CALL_1
+0x4001541	        0x488b4318	            mov rax, qword [rbx + 0x18] 	      2987	hid-sony.c	FUNCTION_59	CALL_9
+0x4001545	    0x48c7c6000000	                              mov rsi, 0	      2987	hid-sony.c	FUNCTION_59	CALL_9
+0x400154c	    0x488db8d01800	                 lea rdi, [rax + 0x18d0]	      2987	hid-sony.c	FUNCTION_59	CALL_9
+0x4001553	      0xe800000000	                          call 0x4001558	      2987	hid-sony.c	FUNCTION_59	CALL_9
+0x4001558	            0xeb83	                           jmp 0x40014dd	      2987	hid-sony.c	FUNCTION_59	CALL_9
+0x400155a	        0x488b4318	            mov rax, qword [rbx + 0x18] 	      2984	hid-sony.c	FUNCTION_59	CALL_8
+0x400155e	    0x48c7c6000000	                              mov rsi, 0	      2984	hid-sony.c	FUNCTION_59	CALL_8
+0x4001565	    0x488db8d01800	                 lea rdi, [rax + 0x18d0]	      2984	hid-sony.c	FUNCTION_59	CALL_8
+0x400156c	      0xe800000000	                          call 0x4001571	      2984	hid-sony.c	FUNCTION_59	CALL_8
+0x4001571	      0xe95dffffff	                           jmp 0x40014d3	      2984	hid-sony.c	FUNCTION_59	CALL_8
+0x4001576	        0x488b4318	            mov rax, qword [rbx + 0x18] 	      2981	hid-sony.c	FUNCTION_59	CALL_7
+0x400157a	    0x48c7c6000000	                              mov rsi, 0	      2981	hid-sony.c	FUNCTION_59	CALL_7
+0x4001581	    0x488db8d01800	                 lea rdi, [rax + 0x18d0]	      2981	hid-sony.c	FUNCTION_59	CALL_7
+0x4001588	      0xe800000000	                          call 0x400158d	      2981	hid-sony.c	FUNCTION_59	CALL_7
+0x400158d	      0xe933ffffff	                           jmp 0x40014c5	      2981	hid-sony.c	FUNCTION_59	CALL_7
+0x4001592	    0x4883bba80000	               cmp qword [rbx + 0xa8], 0	      2419	hid-sony.c	FUNCTION_47	IF_1
+0x400159a	     0xf84fbfeffff	                            je 0x400149b	      2419	hid-sony.c	FUNCTION_47	IF_1
+0x40015a0	    0x488bbba00000	            mov rdi, qword [rbx + 0xa0] 	      2422	hid-sony.c	FUNCTION_47	CALL_1
+0x40015a7	      0xe800000000	                          call 0x40015ac	      2422	hid-sony.c	FUNCTION_47	CALL_1
+0x40015ac	    0x488bbba80000	            mov rdi, qword [rbx + 0xa8] 	      2423	hid-sony.c	FUNCTION_47	CALL_2
+0x40015b3	      0xe800000000	                          call 0x40015b8	      2423	hid-sony.c	FUNCTION_47	CALL_2
+0x40015b8	    0x48c783a80000	               mov qword [rbx + 0xa8], 0	      2424	hid-sony.c	FUNCTION_47
+0x40015c3	      0xe9d3feffff	                           jmp 0x400149b	      2424	hid-sony.c	FUNCTION_47
+0x40015c8	          0x4889df	                            mov rdi, rbx	      2969	hid-sony.c	FUNCTION_59	CALL_3
+0x40015cb	      0xe800f7ffff	               call sym.sony_leds_remove	      2969	hid-sony.c	FUNCTION_59	CALL_3
+0x40015d0	        0x488b4350	            mov rax, qword [rbx + 0x50] 	      2969	hid-sony.c	FUNCTION_59	CALL_3
+0x40015d4	      0xe9b7feffff	                           jmp 0x4001490	      2969	hid-sony.c	FUNCTION_59	CALL_3
+sony_exit	FOR,0:ELSE,0:CALL,3:SWITCH,0:WHILE,0:DO,0:IF,0:functions,0	11
+0x4000040	    0x488b97080100	           mov rdx, qword [rdi + 0x108] 	      2137	hid-sony.c	FUNCTION_36
+0x4000047	    0x488b05000000	            mov rax, qword [0x0400004e] 	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x400004e	          0x488902	                    mov qword [rdx], rax	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000051	    0x488b05000000	            mov rax, qword [0x04000058] 	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000058	        0x48894208	                mov qword [rdx + 8], rax	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x400005c	    0x488b05000000	            mov rax, qword [0x04000063] 	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000063	        0x48894210	             mov qword [rdx + 0x10], rax	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000067	    0x488b05000000	            mov rax, qword [0x0400006e] 	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x400006e	        0x48894218	             mov qword [rdx + 0x18], rax	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000072	    0x8b0500000000	            mov eax, dword [0x04000078] 	      2142	hid-sony.c	FUNCTION_36	CALL_1
+0x4000078	          0x894220	             mov dword [rdx + 0x20], eax	      2142	hid-sony.c	FUNCTION_36	CALL_1
+sony_show_hardware_version	FOR,0:ELSE,0:CALL,3:SWITCH,0:WHILE,0:DO,0:IF,0:functions,0	9
+0x40009f0	          0x4889d0	                            mov rax, rdx	       654	hid-sony.c	FUNCTION_5
+0x40009f3	    0x488b97980000	            mov rdx, qword [rdi + 0x98] 	       658	hid-sony.c	FUNCTION_5	CALL_3
+0x40009fa	      0xbe00100000	                         mov esi, 0x1000	       658	hid-sony.c	FUNCTION_5	CALL_3
+0x40009ff	          0x4889c7	                            mov rdi, rax	       658	hid-sony.c	FUNCTION_5	CALL_3
+0x4000a02	    0x8b8a00010000	           mov ecx, dword [rdx + 0x100] 	       658	hid-sony.c	FUNCTION_5	CALL_3
+0x4000a08	    0x48c7c2000000	                              mov rdx, 0	       658	hid-sony.c	FUNCTION_5	CALL_3
+0x4000a0f	      0xe800000000	                          call 0x4000a14	       658	hid-sony.c	FUNCTION_5	CALL_3
+0x4000a14	            0x4898	                                    cdqe	       658	hid-sony.c	FUNCTION_5	CALL_3
+0x4000a16	              0xc3	                                     ret	       659	hid-sony.c	FUNCTION_5
+sony_state_worker	FOR,0:ELSE,0:CALL,2:SWITCH,0:WHILE,0:DO,0:IF,0:functions,0	4
+0x4000130	          0x4889f8	                            mov rax, rdi	      2268	hid-sony.c	FUNCTION_40
+0x4000133	        0x488d7f88	                   lea rdi, [rdi - 0x78]	      2271	hid-sony.c	FUNCTION_40	CALL_2
+0x4000137	        0x488b4020	            mov rax, qword [rax + 0x20] 	      2271	hid-sony.c	FUNCTION_40	CALL_2
+0x400013b	      0xe900000000	            jmp sym.sony_remove_dev_list	      2271	hid-sony.c	FUNCTION_40	CALL_2

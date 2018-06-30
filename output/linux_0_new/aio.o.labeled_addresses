@@ -1,0 +1,77 @@
+aio_setup_rw	FOR,0:WHILE,0:SWITCH,0:IF,2:functions,0:ELSE,0:DO,0:CALL,3	20
+0x40004d0	          0x4889f0	                            mov rax, rsi	      1446	aio.c	FUNCTION_35
+0x40004d3	            0x84c9	                             test cl, cl	      1450	aio.c	FUNCTION_35	IF_1
+0x40004d5	          0x4989d2	                            mov r10, rdx	      1446	aio.c	FUNCTION_35
+0x40004d8	        0x488b7618	            mov rsi, qword [rsi + 0x18] 	      1447	aio.c	FUNCTION_35
+0x40004dc	        0x488b5020	            mov rdx, qword [rax + 0x20] 	      1448	aio.c	FUNCTION_35
+0x40004e0	            0x7417	                            je 0x40004f9	      1450	aio.c	FUNCTION_35	IF_1
+0x40004e2	          0x4584c0	                           test r8b, r8b	      1456	aio.c	FUNCTION_35	IF_2
+0x40004e5	      0xb908000000	                              mov ecx, 8	      1457	aio.c	FUNCTION_35	IF_2	CALL_2
+0x40004ea	          0x4d89d0	                             mov r8, r10	      1457	aio.c	FUNCTION_35	IF_2	CALL_2
+0x40004ed	            0x7505	                           jne 0x40004f4	      1456	aio.c	FUNCTION_35	IF_2
+0x40004ef	      0xe900000000	                           jmp 0x40004f4	      1460	aio.c	FUNCTION_35	CALL_3
+0x40004f4	      0xe900000000	                           jmp 0x40004f9	      1457	aio.c	FUNCTION_35	IF_2	CALL_2
+0x40004f9	          0x498b0a	                    mov rcx, qword [r10]	      1451	aio.c	FUNCTION_35	IF_1	CALL_1
+0x40004fc	              0x53	                                push rbx	      1446	aio.c	FUNCTION_35
+0x40004fd	          0x4d89c8	                              mov r8, r9	      1446	aio.c	FUNCTION_35
+0x4000500	          0x4c89d3	                            mov rbx, r10	      1446	aio.c	FUNCTION_35
+0x4000503	      0xe800000000	                          call 0x4000508	      1451	aio.c	FUNCTION_35	IF_1	CALL_1
+0x4000508	    0x48c703000000	                      mov qword [rbx], 0	      1452	aio.c	FUNCTION_35	IF_1
+0x400050f	              0x5b	                                 pop rbx	      1461	aio.c	FUNCTION_35
+0x4000510	              0xc3	                                     ret	      1461	aio.c	FUNCTION_35
+aio_ring_mmap	FOR,0:WHILE,0:SWITCH,0:IF,0:functions,0:ELSE,0:DO,0:CALL,0	4
+0x40000d0	    0x48814e500000	          or qword [rsi + 0x50], 0x40000	       366	aio.c	FUNCTION_7
+0x40000d8	    0x48c786900000	               mov qword [rsi + 0x90], 0	       367	aio.c	FUNCTION_7
+0x40000e3	            0x31c0	                            xor eax, eax	       369	aio.c	FUNCTION_7
+0x40000e5	              0xc3	                                     ret	       369	aio.c	FUNCTION_7
+aio_fsync_work	FOR,0:WHILE,0:SWITCH,0:IF,0:functions,0:ELSE,0:DO,0:CALL,5	15
+0x4002070	              0x55	                                push rbp	      1563	aio.c	FUNCTION_39
+0x4002071	              0x53	                                push rbx	      1563	aio.c	FUNCTION_39
+0x4002072	          0x4889fb	                            mov rbx, rdi	      1563	aio.c	FUNCTION_39
+0x4002075	         0xfb67728	           movzx esi, byte [rdi + 0x28] 	      1567	aio.c	FUNCTION_39	CALL_2
+0x4002079	        0x488b7f20	            mov rdi, qword [rdi + 0x20] 	      1567	aio.c	FUNCTION_39	CALL_2
+0x400207d	      0xe800000000	                          call 0x4002082	      1567	aio.c	FUNCTION_39	CALL_2
+0x4002082	        0x488b7b20	            mov rdi, qword [rbx + 0x20] 	      1568	aio.c	FUNCTION_39	CALL_3
+0x4002086	            0x89c5	                            mov ebp, eax	      1567	aio.c	FUNCTION_39	CALL_2
+0x4002088	      0xe800000000	                          call 0x400208d	      1568	aio.c	FUNCTION_39	CALL_3
+0x400208d	          0x4863f5	                         movsxd rsi, ebp	      1569	aio.c	FUNCTION_39	CALL_5
+0x4002090	          0x4889df	                            mov rdi, rbx	      1569	aio.c	FUNCTION_39	CALL_5
+0x4002093	            0x31d2	                            xor edx, edx	      1569	aio.c	FUNCTION_39	CALL_5
+0x4002095	              0x5b	                                 pop rbx	      1570	aio.c	FUNCTION_39
+0x4002096	              0x5d	                                 pop rbp	      1570	aio.c	FUNCTION_39
+0x4002097	      0xe954f9ffff	                    jmp sym.aio_complete	      1569	aio.c	FUNCTION_39	CALL_5
+free_ioctx	FOR,0:WHILE,0:SWITCH,0:IF,0:functions,0:ELSE,0:DO,0:CALL,8	17
+0x4000cd0	              0x55	                                push rbp	       583	aio.c	FUNCTION_11
+0x4000cd1	              0x53	                                push rbx	       583	aio.c	FUNCTION_11
+0x4000cd2	    0x488d9f48ffff	                   lea rbx, [rdi - 0xb8]	       584	aio.c	FUNCTION_11	CALL_2
+0x4000cd9	          0x4889fd	                            mov rbp, rdi	       583	aio.c	FUNCTION_11
+0x4000cdc	          0x4889df	                            mov rdi, rbx	       588	aio.c	FUNCTION_11	CALL_4
+0x4000cdf	      0xe84cffffff	                  call sym.aio_free_ring	       588	aio.c	FUNCTION_11	CALL_4
+0x4000ce4	        0x488b7dc8	             mov rdi, qword [rbp - 0x38]	       589	aio.c	FUNCTION_11	CALL_5
+0x4000ce8	      0xe800000000	                          call 0x4000ced	       589	aio.c	FUNCTION_11	CALL_5
+0x4000ced	        0x488d7b40	                   lea rdi, [rbx + 0x40]	       590	aio.c	FUNCTION_11	CALL_6
+0x4000cf1	      0xe800000000	                          call 0x4000cf6	       590	aio.c	FUNCTION_11	CALL_6
+0x4000cf6	          0x4889df	                            mov rdi, rbx	       591	aio.c	FUNCTION_11	CALL_7
+0x4000cf9	      0xe800000000	                          call 0x4000cfe	       591	aio.c	FUNCTION_11	CALL_7
+0x4000cfe	          0x4889de	                            mov rsi, rbx	       592	aio.c	FUNCTION_11	CALL_8
+0x4000d01	    0x488b3d000000	            mov rdi, qword [0x04000d08] 	       592	aio.c	FUNCTION_11	CALL_8
+0x4000d08	              0x5b	                                 pop rbx	       593	aio.c	FUNCTION_11
+0x4000d09	              0x5d	                                 pop rbp	       593	aio.c	FUNCTION_11
+0x4000d0a	      0xe900000000	                           jmp 0x4000d0f	       592	aio.c	FUNCTION_11	CALL_8
+refill_reqs_available	FOR,0:WHILE,0:SWITCH,0:IF,3:functions,0:ELSE,2:DO,0:CALL,1	16
+0x40001a0	    0x448b87900000	            mov r8d, dword [rdi + 0x90] 	       962	aio.c	FUNCTION_21
+0x40001a7	            0x89d1	                            mov ecx, edx	       958	aio.c	FUNCTION_21
+0x40001a9	            0x89f0	                            mov eax, esi	       962	aio.c	FUNCTION_21
+0x40001ab	            0x31d2	                            xor edx, edx	       962	aio.c	FUNCTION_21
+0x40001ad	          0x41f7f0	                                 div r8d	       962	aio.c	FUNCTION_21
+0x40001b0	            0x39ca	                            cmp edx, ecx	       963	aio.c	FUNCTION_21	IF_1
+0x40001b2	            0x7603	                           jbe 0x40001b7	       963	aio.c	FUNCTION_21	IF_1
+0x40001b4	          0x4401c1	                            add ecx, r8d	       966	aio.c	FUNCTION_21	ELSE_1
+0x40001b7	    0x8bb7c4010000	           mov esi, dword [rdi + 0x1c4] 	       968	aio.c	FUNCTION_21
+0x40001bd	            0x29d1	                            sub ecx, edx	       966	aio.c	FUNCTION_21	ELSE_1
+0x40001bf	            0x39f1	                            cmp ecx, esi	       969	aio.c	FUNCTION_21	IF_2
+0x40001c1	            0x730d	                           jae 0x40001d0	       969	aio.c	FUNCTION_21	IF_2
+0x40001c3	    0x898fc4010000	            mov dword [rdi + 0x1c4], ecx	       977	aio.c	FUNCTION_21
+0x40001c9	            0x29ce	                            sub esi, ecx	       978	aio.c	FUNCTION_21	CALL_1
+0x40001cb	      0xe920ffffff	              jmp sym.put_reqs_available	       978	aio.c	FUNCTION_21	CALL_1
+0x40001d0	            0xf3c3	                                     ret	       978	aio.c	FUNCTION_21	CALL_1

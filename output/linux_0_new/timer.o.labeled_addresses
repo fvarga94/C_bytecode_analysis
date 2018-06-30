@@ -1,0 +1,62 @@
+rpc_init_rtt	IF,1:FOR,1:DO,0:WHILE,0:SWITCH,0:functions,0:ELSE,0:CALL,0	13
+0x4000040	    0x488d04f5c0f9	                lea rax, [rsi*8 - 0x640]	        42	timer.c	FUNCTION_1	IF_1
+0x4000048	    0x4881fec90000	                           cmp rsi, 0xc9	        42	timer.c	FUNCTION_1	IF_1
+0x400004f	      0xba00000000	                              mov edx, 0	        42	timer.c	FUNCTION_1	IF_1
+0x4000054	          0x488937	                    mov qword [rdi], rsi	        39	timer.c	FUNCTION_1
+0x4000057	        0x480f43d0	                         cmovae rdx, rax	        42	timer.c	FUNCTION_1	IF_1
+0x400005b	            0x31c0	                            xor eax, eax	        36	timer.c	FUNCTION_1
+0x400005d	      0x4889544708	        mov qword [rdi + rax*2 + 8], rdx	        44	timer.c	FUNCTION_1	FOR_1
+0x4000062	    0x48c7444730c8	   mov qword [rdi + rax*2 + 0x30], 0xc8 	        45	timer.c	FUNCTION_1	FOR_1
+0x400006b	    0xc74407580000	         mov dword [rdi + rax + 0x58], 0	        46	timer.c	FUNCTION_1	FOR_1
+0x4000073	        0x4883c004	                              add rax, 4	        46	timer.c	FUNCTION_1	FOR_1
+0x4000077	        0x4883f814	                           cmp rax, 0x14	        43	timer.c	FUNCTION_1	FOR_1
+0x400007b	            0x75e0	                           jne 0x400005d	        43	timer.c	FUNCTION_1	FOR_1
+0x400007d	            0xf3c3	                                     ret	        48	timer.c	FUNCTION_1
+rpc_update_rtt	IF,5:FOR,0:DO,0:WHILE,0:SWITCH,0:functions,0:ELSE,0:CALL,0	32
+0x4000080	          0x4889d0	                            mov rax, rdx	        68	timer.c	FUNCTION_2	IF_2
+0x4000083	        0x48c1e83f	                           shr rax, 0x3f	        68	timer.c	FUNCTION_2	IF_2
+0x4000087	            0x84c0	                             test al, al	        68	timer.c	FUNCTION_2	IF_2
+0x4000089	            0x755e	                           jne 0x40000e9	        68	timer.c	FUNCTION_2	IF_2
+0x400008b	            0x85f6	                           test esi, esi	        68	timer.c	FUNCTION_2	IF_2
+0x400008d	            0x745a	                            je 0x40000e9	        68	timer.c	FUNCTION_2	IF_2
+0x400008f	          0x8d4eff	                      lea ecx, [rsi - 1]	        74	timer.c	FUNCTION_2
+0x4000092	          0x4885d2	                           test rdx, rdx	        72	timer.c	FUNCTION_2	IF_3
+0x4000095	      0xb801000000	                              mov eax, 1	        72	timer.c	FUNCTION_2	IF_3
+0x400009a	        0x480f44d0	                          cmove rdx, rax	        72	timer.c	FUNCTION_2	IF_3
+0x400009e	        0x488d34cf	                  lea rsi, [rdi + rcx*8]	        74	timer.c	FUNCTION_2
+0x40000a2	      0x488d4ccf30	          lea rcx, [rdi + rcx*8 + 0x30] 	        81	timer.c	FUNCTION_2
+0x40000a7	        0x488b4608	                mov rax, qword [rsi + 8]	        75	timer.c	FUNCTION_2
+0x40000ab	          0x4989c0	                             mov r8, rax	        75	timer.c	FUNCTION_2
+0x40000ae	        0x49c1f803	                               sar r8, 3	        75	timer.c	FUNCTION_2
+0x40000b2	          0x4c29c2	                             sub rdx, r8	        75	timer.c	FUNCTION_2
+0x40000b5	          0x4801d0	                            add rax, rdx	        76	timer.c	FUNCTION_2
+0x40000b8	        0x48894608	                mov qword [rsi + 8], rax	        76	timer.c	FUNCTION_2
+0x40000bc	          0x4889d0	                            mov rax, rdx	        76	timer.c	FUNCTION_2
+0x40000bf	        0x48c1f83f	                           sar rax, 0x3f	        76	timer.c	FUNCTION_2
+0x40000c3	          0x4831c2	                            xor rdx, rax	        76	timer.c	FUNCTION_2
+0x40000c6	          0x4829c2	                            sub rdx, rax	        76	timer.c	FUNCTION_2
+0x40000c9	          0x488b01	                    mov rax, qword [rcx]	        82	timer.c	FUNCTION_2
+0x40000cc	          0x4889c6	                            mov rsi, rax	        83	timer.c	FUNCTION_2
+0x40000cf	        0x48c1fe02	                              sar rsi, 2	        83	timer.c	FUNCTION_2
+0x40000d3	          0x4829f2	                            sub rdx, rsi	        83	timer.c	FUNCTION_2
+0x40000d6	          0x4801c2	                            add rdx, rax	        83	timer.c	FUNCTION_2
+0x40000d9	      0xb864000000	                           mov eax, 0x64	        83	timer.c	FUNCTION_2
+0x40000de	        0x4883fa64	                           cmp rdx, 0x64	        83	timer.c	FUNCTION_2
+0x40000e2	        0x480f4cd0	                          cmovl rdx, rax	        83	timer.c	FUNCTION_2
+0x40000e6	          0x488911	                    mov qword [rcx], rdx	        83	timer.c	FUNCTION_2
+0x40000e9	            0xf3c3	                                     ret	        83	timer.c	FUNCTION_2
+rpc_calc_rto	IF,2:FOR,0:DO,0:WHILE,0:SWITCH,0:functions,0:ELSE,0:CALL,0	14
+0x40000f0	            0x85f6	                           test esi, esi	       113	timer.c	FUNCTION_3	IF_1
+0x40000f2	            0x7427	                            je 0x400011b	       113	timer.c	FUNCTION_3	IF_1
+0x40000f4	          0x8d46ff	                      lea eax, [rsi - 1]	       113	timer.c	FUNCTION_3	IF_1
+0x40000f7	        0x488d14c7	                  lea rdx, [rdi + rax*8]	       113	timer.c	FUNCTION_3	IF_1
+0x40000fb	        0x488b4208	                mov rax, qword [rdx + 8]	       113	timer.c	FUNCTION_3	IF_1
+0x40000ff	        0x4883c007	                              add rax, 7	       113	timer.c	FUNCTION_3	IF_1
+0x4000103	        0x48c1e803	                              shr rax, 3	       113	timer.c	FUNCTION_3	IF_1
+0x4000107	        0x48034230	             add rax, qword [rdx + 0x30]	       113	timer.c	FUNCTION_3	IF_1
+0x400010b	      0xba60ea0000	                         mov edx, 0xea60	       113	timer.c	FUNCTION_3	IF_1
+0x4000110	    0x483d60ea0000	                         cmp rax, 0xea60	       113	timer.c	FUNCTION_3	IF_1
+0x4000116	        0x480f47c2	                          cmova rax, rdx	       113	timer.c	FUNCTION_3	IF_1
+0x400011a	              0xc3	                                     ret	       121	timer.c	FUNCTION_3
+0x400011b	          0x488b07	                    mov rax, qword [rdi]	       114	timer.c	FUNCTION_3	IF_1
+0x400011e	              0xc3	                                     ret	       114	timer.c	FUNCTION_3	IF_1

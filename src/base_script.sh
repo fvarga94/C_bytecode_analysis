@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir="$1"
-oflag="_$2_new"
+oflag="_$2"
 
 files=$(find $HOME/$dir/ -name '*.o')
 

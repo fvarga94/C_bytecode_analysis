@@ -1,0 +1,307 @@
+scsi_is_target_device	FOR,0:SWITCH,0:CALL,0:WHILE,0:functions,0:IF,0:ELSE,0:DO,0	4
+0x4000040	            0x31c0	                            xor eax, eax	       349	scsi_scan.c	FUNCTION_6
+0x4000042	    0x48817f580000	               cmp qword [rdi + 0x58], 0	       349	scsi_scan.c	FUNCTION_6
+0x400004a	           0xf94c0	                                 sete al	       349	scsi_scan.c	FUNCTION_6
+0x400004d	              0xc3	                                     ret	       350	scsi_scan.c	FUNCTION_6
+scsi_add_device	FOR,0:SWITCH,0:CALL,4:WHILE,0:functions,0:IF,1:ELSE,0:DO,0	8
+0x40016b0	          0x4531c0	                            xor r8d, r8d	      1506	scsi_scan.c	FUNCTION_20
+0x40016b3	      0xe800000000	                          call 0x40016b8	      1506	scsi_scan.c	FUNCTION_20
+0x40016b8	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1508	scsi_scan.c	FUNCTION_20	IF_1	CALL_2
+0x40016be	            0x770a	                            ja 0x40016ca	      1508	scsi_scan.c	FUNCTION_20	IF_1	CALL_2
+0x40016c0	          0x4889c7	                            mov rdi, rax	      1511	scsi_scan.c	FUNCTION_20	CALL_4
+0x40016c3	      0xe800000000	                          call 0x40016c8	      1511	scsi_scan.c	FUNCTION_20	CALL_4
+0x40016c8	            0x31c0	                            xor eax, eax	      1512	scsi_scan.c	FUNCTION_20
+0x40016ca	            0xf3c3	                                     ret	      1513	scsi_scan.c	FUNCTION_20
+__scsi_add_device	FOR,0:SWITCH,0:CALL,16:WHILE,0:functions,0:IF,4:ELSE,0:DO,0	79
+0x4001580	            0x4156	                                push r14	      1469	scsi_scan.c	FUNCTION_19
+0x4001582	            0x4155	                                push r13	      1469	scsi_scan.c	FUNCTION_19
+0x4001584	          0x4189f1	                            mov r9d, esi	      1469	scsi_scan.c	FUNCTION_19
+0x4001587	            0x4154	                                push r12	      1469	scsi_scan.c	FUNCTION_19
+0x4001589	              0x55	                                push rbp	      1469	scsi_scan.c	FUNCTION_19
+0x400158a	    0x48c7c6000000	                              mov rsi, 0	      1474	scsi_scan.c	FUNCTION_19	IF_1	CALL_2
+0x4001591	              0x53	                                push rbx	      1469	scsi_scan.c	FUNCTION_19
+0x4001592	          0x4889cd	                            mov rbp, rcx	      1469	scsi_scan.c	FUNCTION_19
+0x4001595	          0x4889fb	                            mov rbx, rdi	      1469	scsi_scan.c	FUNCTION_19
+0x4001598	      0xb904000000	                              mov ecx, 4	      1474	scsi_scan.c	FUNCTION_19	IF_1	CALL_2
+0x400159d	    0x48c7c7000000	                              mov rdi, 0	      1474	scsi_scan.c	FUNCTION_19	IF_1	CALL_2
+0x40015a4	        0x4883ec10	                           sub rsp, 0x10	      1469	scsi_scan.c	FUNCTION_19
+0x40015a8	    0x65488b042528	                mov rax, qword gs:[0x28]	      1469	scsi_scan.c	FUNCTION_19
+0x40015b1	      0x4889442408	                mov qword [rsp + 8], rax	      1469	scsi_scan.c	FUNCTION_19
+0x40015b6	            0x31c0	                            xor eax, eax	      1469	scsi_scan.c	FUNCTION_19
+0x40015b8	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	      1474	scsi_scan.c	FUNCTION_19	IF_1	CALL_2
+0x40015ba	    0x48c70424edff	     mov qword [rsp], 0xffffffffffffffed	      1470	scsi_scan.c	FUNCTION_19	CALL_1
+0x40015c2	    0x48c7c0edffff	             mov rax, 0xffffffffffffffed	      1475	scsi_scan.c	FUNCTION_19	CALL_3
+0x40015c9	        0x400f97c6	                                seta sil	      1474	scsi_scan.c	FUNCTION_19	IF_1	CALL_2
+0x40015cd	           0xf92c1	                                 setb cl	      1474	scsi_scan.c	FUNCTION_19	IF_1	CALL_2
+0x40015d0	          0x4038ce	                             cmp sil, cl	      1474	scsi_scan.c	FUNCTION_19	IF_1	CALL_2
+0x40015d3	            0x7521	                           jne 0x40015f6	      1474	scsi_scan.c	FUNCTION_19	IF_1	CALL_2
+0x40015d5	      0x488b5c2408	                mov rbx, qword [rsp + 8]	      1500	scsi_scan.c	FUNCTION_19
+0x40015da	    0x6548331c2528	                xor rbx, qword gs:[0x28]	      1500	scsi_scan.c	FUNCTION_19
+0x40015e3	     0xf85bb000000	                           jne 0x40016a4	      1500	scsi_scan.c	FUNCTION_19
+0x40015e9	        0x4883c410	                           add rsp, 0x10	      1500	scsi_scan.c	FUNCTION_19
+0x40015ed	              0x5b	                                 pop rbx	      1500	scsi_scan.c	FUNCTION_19
+0x40015ee	              0x5d	                                 pop rbp	      1500	scsi_scan.c	FUNCTION_19
+0x40015ef	            0x415c	                                 pop r12	      1500	scsi_scan.c	FUNCTION_19
+0x40015f1	            0x415d	                                 pop r13	      1500	scsi_scan.c	FUNCTION_19
+0x40015f3	            0x415e	                                 pop r14	      1500	scsi_scan.c	FUNCTION_19
+0x40015f5	              0xc3	                                     ret	      1500	scsi_scan.c	FUNCTION_19
+0x40015f6	    0x488dbbd80100	                  lea rdi, [rbx + 0x1d8]	      1471	scsi_scan.c	FUNCTION_19
+0x40015fd	          0x4489ce	                            mov esi, r9d	      1477	scsi_scan.c	FUNCTION_19	CALL_4
+0x4001600	          0x4d89c4	                             mov r12, r8	      1477	scsi_scan.c	FUNCTION_19	CALL_4
+0x4001603	      0xe898faffff	              call sym.scsi_alloc_target	      1477	scsi_scan.c	FUNCTION_19	CALL_4
+0x4001608	          0x4989c5	                            mov r13, rax	      1477	scsi_scan.c	FUNCTION_19	CALL_4
+0x400160b	    0x48c7c0f4ffff	             mov rax, 0xfffffffffffffff4	      1479	scsi_scan.c	FUNCTION_19	CALL_5
+0x4001612	          0x4d85ed	                           test r13, r13	      1478	scsi_scan.c	FUNCTION_19	IF_2
+0x4001615	            0x74be	                            je 0x40015d5	      1478	scsi_scan.c	FUNCTION_19	IF_2
+0x4001617	        0x4c8d7340	                   lea r14, [rbx + 0x40]	      1482	scsi_scan.c	FUNCTION_19	CALL_7
+0x400161b	          0x4c89ef	                            mov rdi, r13	      1480	scsi_scan.c	FUNCTION_19	CALL_6
+0x400161e	      0xe800000000	                          call 0x4001623	      1480	scsi_scan.c	FUNCTION_19	CALL_6
+0x4001623	          0x4c89f7	                            mov rdi, r14	      1482	scsi_scan.c	FUNCTION_19	CALL_7
+0x4001626	      0xe800000000	                          call 0x400162b	      1482	scsi_scan.c	FUNCTION_19	CALL_7
+0x400162b	    0x80bb80010000	               cmp byte [rbx + 0x180], 0	      1483	scsi_scan.c	FUNCTION_19	IF_3
+0x4001632	            0x793a	                           jns 0x400166e	      1483	scsi_scan.c	FUNCTION_19	IF_3
+0x4001634	    0x8b83d0010000	           mov eax, dword [rbx + 0x1d0] 	      1483	scsi_scan.c	FUNCTION_19	IF_3
+0x400163a	          0x83f802	                              cmp eax, 2	      1486	scsi_scan.c	FUNCTION_19	IF_4	CALL_10
+0x400163d	            0x7436	                            je 0x4001675	      1486	scsi_scan.c	FUNCTION_19	IF_4	CALL_10
+0x400163f	          0x83f805	                              cmp eax, 5	      1486	scsi_scan.c	FUNCTION_19	IF_4	CALL_10
+0x4001642	            0x7431	                            je 0x4001675	      1486	scsi_scan.c	FUNCTION_19	IF_4	CALL_10
+0x4001644	          0x4c89f7	                            mov rdi, r14	      1490	scsi_scan.c	FUNCTION_19	CALL_13
+0x4001647	      0xe800000000	                          call 0x400164c	      1490	scsi_scan.c	FUNCTION_19	CALL_13
+0x400164c	          0x4c89ef	                            mov rdi, r13	      1491	scsi_scan.c	FUNCTION_19	CALL_14
+0x400164f	      0xe800000000	                          call 0x4001654	      1491	scsi_scan.c	FUNCTION_19	CALL_14
+0x4001654	          0x4c89ef	                            mov rdi, r13	      1496	scsi_scan.c	FUNCTION_19	CALL_15
+0x4001657	      0xe800000000	                          call 0x400165c	      1496	scsi_scan.c	FUNCTION_19	CALL_15
+0x400165c	        0x498d7d28	                   lea rdi, [r13 + 0x28]	      1497	scsi_scan.c	FUNCTION_19	CALL_16
+0x4001660	      0xe800000000	                          call 0x4001665	      1497	scsi_scan.c	FUNCTION_19	CALL_16
+0x4001665	        0x488b0424	                    mov rax, qword [rsp]	      1499	scsi_scan.c	FUNCTION_19
+0x4001669	      0xe967ffffff	                           jmp 0x40015d5	      1499	scsi_scan.c	FUNCTION_19
+0x400166e	      0xe800000000	                          call 0x4001673	      1484	scsi_scan.c	FUNCTION_19	CALL_8
+0x4001673	            0xebbf	                           jmp 0x4001634	      1484	scsi_scan.c	FUNCTION_19	CALL_8
+0x4001675	          0x4889df	                            mov rdi, rbx	      1486	scsi_scan.c	FUNCTION_19	IF_4	CALL_10
+0x4001678	      0xe800000000	                          call 0x400167d	      1486	scsi_scan.c	FUNCTION_19	IF_4	CALL_10
+0x400167d	            0x85c0	                           test eax, eax	      1486	scsi_scan.c	FUNCTION_19	IF_4	CALL_10
+0x400167f	            0x75c3	                           jne 0x4001644	      1486	scsi_scan.c	FUNCTION_19	IF_4	CALL_10
+0x4001681	          0x4c89ef	                            mov rdi, r13	      1487	scsi_scan.c	FUNCTION_19	IF_4	CALL_11
+0x4001684	          0x4d89e1	                             mov r9, r12	      1487	scsi_scan.c	FUNCTION_19	IF_4	CALL_11
+0x4001687	    0x41b801000000	                              mov r8d, 1	      1487	scsi_scan.c	FUNCTION_19	IF_4	CALL_11
+0x400168d	          0x4889e1	                            mov rcx, rsp	      1487	scsi_scan.c	FUNCTION_19	IF_4	CALL_11
+0x4001690	            0x31d2	                            xor edx, edx	      1487	scsi_scan.c	FUNCTION_19	IF_4	CALL_11
+0x4001692	          0x4889ee	                            mov rsi, rbp	      1487	scsi_scan.c	FUNCTION_19	IF_4	CALL_11
+0x4001695	      0xe886eeffff	         call sym.scsi_probe_and_add_lun	      1487	scsi_scan.c	FUNCTION_19	IF_4	CALL_11
+0x400169a	          0x4889df	                            mov rdi, rbx	      1488	scsi_scan.c	FUNCTION_19	IF_4	CALL_12
+0x400169d	      0xe800000000	                          call 0x40016a2	      1488	scsi_scan.c	FUNCTION_19	IF_4	CALL_12
+0x40016a2	            0xeba0	                           jmp 0x4001644	      1488	scsi_scan.c	FUNCTION_19	IF_4	CALL_12
+0x40016a4	      0xe800000000	                          call 0x40016a9	      1500	scsi_scan.c	FUNCTION_19
+scsi_target_dev_release	FOR,0:SWITCH,0:CALL,3:WHILE,0:functions,0:IF,0:ELSE,0:DO,0	7
+0x4000090	              0x53	                                push rbx	       334	scsi_scan.c	FUNCTION_5
+0x4000091	          0x488b1f	                    mov rbx, qword [rdi]	       335	scsi_scan.c	FUNCTION_5
+0x4000094	        0x4883ef28	                           sub rdi, 0x28	       338	scsi_scan.c	FUNCTION_5	CALL_2
+0x4000098	      0xe800000000	                          call 0x400009d	       338	scsi_scan.c	FUNCTION_5	CALL_2
+0x400009d	          0x4889df	                            mov rdi, rbx	       339	scsi_scan.c	FUNCTION_5	CALL_3
+0x40000a0	              0x5b	                                 pop rbx	       340	scsi_scan.c	FUNCTION_5
+0x40000a1	      0xe900000000	                           jmp 0x40000a6	       339	scsi_scan.c	FUNCTION_5	CALL_3
+scsi_get_host_dev	FOR,0:SWITCH,0:CALL,7:WHILE,0:functions,0:IF,3:ELSE,1:DO,0	47
+0x4001d60	            0x4154	                                push r12	      1903	scsi_scan.c	FUNCTION_33
+0x4001d62	        0x4c8d6740	                   lea r12, [rdi + 0x40]	      1907	scsi_scan.c	FUNCTION_33	CALL_1
+0x4001d66	              0x55	                                push rbp	      1903	scsi_scan.c	FUNCTION_33
+0x4001d67	              0x53	                                push rbx	      1903	scsi_scan.c	FUNCTION_33
+0x4001d68	          0x4889fb	                            mov rbx, rdi	      1903	scsi_scan.c	FUNCTION_33
+0x4001d6b	          0x4c89e7	                            mov rdi, r12	      1907	scsi_scan.c	FUNCTION_33	CALL_1
+0x4001d6e	      0xe800000000	                          call 0x4001d73	      1907	scsi_scan.c	FUNCTION_33	CALL_1
+0x4001d73	    0x8b83d0010000	           mov eax, dword [rbx + 0x1d0] 	      1907	scsi_scan.c	FUNCTION_33	CALL_1
+0x4001d79	          0x83f802	                              cmp eax, 2	      1908	scsi_scan.c	FUNCTION_33	IF_1	CALL_2
+0x4001d7c	            0x7405	                            je 0x4001d83	      1908	scsi_scan.c	FUNCTION_33	IF_1	CALL_2
+0x4001d7e	          0x83f805	                              cmp eax, 5	      1908	scsi_scan.c	FUNCTION_33	IF_1	CALL_2
+0x4001d81	            0x7550	                           jne 0x4001dd3	      1908	scsi_scan.c	FUNCTION_33	IF_1	CALL_2
+0x4001d83	    0x8b9350010000	           mov edx, dword [rbx + 0x150] 	      1910	scsi_scan.c	FUNCTION_33	CALL_3
+0x4001d89	    0x488dbbd80100	                  lea rdi, [rbx + 0x1d8]	      1910	scsi_scan.c	FUNCTION_33	CALL_3
+0x4001d90	            0x31f6	                            xor esi, esi	      1910	scsi_scan.c	FUNCTION_33	CALL_3
+0x4001d92	      0xe809f3ffff	              call sym.scsi_alloc_target	      1910	scsi_scan.c	FUNCTION_33	CALL_3
+0x4001d97	          0x4885c0	                           test rax, rax	      1911	scsi_scan.c	FUNCTION_33	IF_2
+0x4001d9a	          0x4889c3	                            mov rbx, rax	      1910	scsi_scan.c	FUNCTION_33	CALL_3
+0x4001d9d	            0x7434	                            je 0x4001dd3	      1911	scsi_scan.c	FUNCTION_33	IF_2
+0x4001d9f	            0x31d2	                            xor edx, edx	      1914	scsi_scan.c	FUNCTION_33	CALL_4
+0x4001da1	            0x31f6	                            xor esi, esi	      1914	scsi_scan.c	FUNCTION_33	CALL_4
+0x4001da3	          0x4889c7	                            mov rdi, rax	      1914	scsi_scan.c	FUNCTION_33	CALL_4
+0x4001da6	      0xe8c5e3ffff	                call sym.scsi_alloc_sdev	      1914	scsi_scan.c	FUNCTION_33	CALL_4
+0x4001dab	          0x4885c0	                           test rax, rax	      1915	scsi_scan.c	FUNCTION_33	IF_3
+0x4001dae	          0x4889c5	                            mov rbp, rax	      1914	scsi_scan.c	FUNCTION_33	CALL_4
+0x4001db1	            0x7432	                            je 0x4001de5	      1915	scsi_scan.c	FUNCTION_33	IF_3
+0x4001db3	    0x80a018010000	            and byte [rax + 0x118], 0xdf	      1916	scsi_scan.c	FUNCTION_33	IF_3
+0x4001dba	        0x488d7b28	                   lea rdi, [rbx + 0x28]	      1919	scsi_scan.c	FUNCTION_33	CALL_6
+0x4001dbe	      0xe800000000	                          call 0x4001dc3	      1919	scsi_scan.c	FUNCTION_33	CALL_6
+0x4001dc3	          0x4c89e7	                            mov rdi, r12	      1921	scsi_scan.c	FUNCTION_33	CALL_7
+0x4001dc6	      0xe800000000	                          call 0x4001dcb	      1921	scsi_scan.c	FUNCTION_33	CALL_7
+0x4001dcb	          0x4889e8	                            mov rax, rbp	      1923	scsi_scan.c	FUNCTION_33
+0x4001dce	              0x5b	                                 pop rbx	      1923	scsi_scan.c	FUNCTION_33
+0x4001dcf	              0x5d	                                 pop rbp	      1923	scsi_scan.c	FUNCTION_33
+0x4001dd0	            0x415c	                                 pop r12	      1923	scsi_scan.c	FUNCTION_33
+0x4001dd2	              0xc3	                                     ret	      1923	scsi_scan.c	FUNCTION_33
+0x4001dd3	            0x31ed	                            xor ebp, ebp	      1904	scsi_scan.c	FUNCTION_33
+0x4001dd5	          0x4c89e7	                            mov rdi, r12	      1921	scsi_scan.c	FUNCTION_33	CALL_7
+0x4001dd8	      0xe800000000	                          call 0x4001ddd	      1921	scsi_scan.c	FUNCTION_33	CALL_7
+0x4001ddd	          0x4889e8	                            mov rax, rbp	      1923	scsi_scan.c	FUNCTION_33
+0x4001de0	              0x5b	                                 pop rbx	      1923	scsi_scan.c	FUNCTION_33
+0x4001de1	              0x5d	                                 pop rbp	      1923	scsi_scan.c	FUNCTION_33
+0x4001de2	            0x415c	                                 pop r12	      1923	scsi_scan.c	FUNCTION_33
+0x4001de4	              0xc3	                                     ret	      1923	scsi_scan.c	FUNCTION_33
+0x4001de5	          0x4889df	                            mov rdi, rbx	      1918	scsi_scan.c	FUNCTION_33	CALL_5
+0x4001de8	      0xe800000000	                          call 0x4001ded	      1918	scsi_scan.c	FUNCTION_33	CALL_5
+0x4001ded	            0xebcb	                           jmp 0x4001dba	      1918	scsi_scan.c	FUNCTION_33	CALL_5
+scsi_scan_host_selected	FOR,1:SWITCH,0:CALL,10:WHILE,0:functions,0:IF,4:ELSE,1:DO,0	75
+0x4001df0	          0x83feff	             cmp esi, 0xffffffffffffffff	      1673	scsi_scan.c	FUNCTION_25	IF_1
+0x4001df3	            0x4157	                                push r15	      1668	scsi_scan.c	FUNCTION_25
+0x4001df5	            0x4156	                                push r14	      1668	scsi_scan.c	FUNCTION_25
+0x4001df7	            0x4155	                                push r13	      1668	scsi_scan.c	FUNCTION_25
+0x4001df9	            0x4154	                                push r12	      1668	scsi_scan.c	FUNCTION_25
+0x4001dfb	              0x55	                                push rbp	      1668	scsi_scan.c	FUNCTION_25
+0x4001dfc	              0x53	                                push rbx	      1668	scsi_scan.c	FUNCTION_25
+0x4001dfd	            0x740c	                            je 0x4001e0b	      1673	scsi_scan.c	FUNCTION_25	IF_1
+0x4001dff	    0x3bb738010000	           cmp esi, dword [rdi + 0x138] 	      1673	scsi_scan.c	FUNCTION_25	IF_1
+0x4001e05	     0xf87bb000000	                            ja 0x4001ec6	      1673	scsi_scan.c	FUNCTION_25	IF_1
+0x4001e0b	          0x83faff	             cmp edx, 0xffffffffffffffff	      1673	scsi_scan.c	FUNCTION_25	IF_1
+0x4001e0e	            0x740c	                            je 0x4001e1c	      1673	scsi_scan.c	FUNCTION_25	IF_1
+0x4001e10	    0x3b973c010000	           cmp edx, dword [rdi + 0x13c] 	      1674	scsi_scan.c	FUNCTION_25	IF_1
+0x4001e16	     0xf83aa000000	                           jae 0x4001ec6	      1674	scsi_scan.c	FUNCTION_25	IF_1
+0x4001e1c	        0x4883f9ff	             cmp rcx, 0xffffffffffffffff	      1674	scsi_scan.c	FUNCTION_25	IF_1
+0x4001e20	            0x740d	                            je 0x4001e2f	      1674	scsi_scan.c	FUNCTION_25	IF_1
+0x4001e22	    0x483b8f400100	           cmp rcx, qword [rdi + 0x140] 	      1675	scsi_scan.c	FUNCTION_25	IF_1
+0x4001e29	     0xf8397000000	                           jae 0x4001ec6	      1675	scsi_scan.c	FUNCTION_25	IF_1
+0x4001e2f	        0x4c8d7f40	                   lea r15, [rdi + 0x40]	      1678	scsi_scan.c	FUNCTION_25	CALL_3
+0x4001e33	          0x4889fb	                            mov rbx, rdi	      1678	scsi_scan.c	FUNCTION_25	CALL_3
+0x4001e36	          0x4589c5	                           mov r13d, r8d	      1678	scsi_scan.c	FUNCTION_25	CALL_3
+0x4001e39	          0x4989cc	                            mov r12, rcx	      1678	scsi_scan.c	FUNCTION_25	CALL_3
+0x4001e3c	            0x89d5	                            mov ebp, edx	      1678	scsi_scan.c	FUNCTION_25	CALL_3
+0x4001e3e	          0x4189f6	                           mov r14d, esi	      1678	scsi_scan.c	FUNCTION_25	CALL_3
+0x4001e41	          0x4c89ff	                            mov rdi, r15	      1678	scsi_scan.c	FUNCTION_25	CALL_3
+0x4001e44	      0xe800000000	                          call 0x4001e49	      1678	scsi_scan.c	FUNCTION_25	CALL_3
+0x4001e49	    0x80bb80010000	               cmp byte [rbx + 0x180], 0	      1679	scsi_scan.c	FUNCTION_25	IF_2
+0x4001e50	            0x7925	                           jns 0x4001e77	      1679	scsi_scan.c	FUNCTION_25	IF_2
+0x4001e52	    0x8b83d0010000	           mov eax, dword [rbx + 0x1d0] 	      1679	scsi_scan.c	FUNCTION_25	IF_2
+0x4001e58	          0x83f802	                              cmp eax, 2	      1682	scsi_scan.c	FUNCTION_25	IF_3	CALL_6
+0x4001e5b	            0x742a	                            je 0x4001e87	      1682	scsi_scan.c	FUNCTION_25	IF_3	CALL_6
+0x4001e5d	          0x83f805	                              cmp eax, 5	      1682	scsi_scan.c	FUNCTION_25	IF_3	CALL_6
+0x4001e60	            0x7425	                            je 0x4001e87	      1682	scsi_scan.c	FUNCTION_25	IF_3	CALL_6
+0x4001e62	          0x4c89ff	                            mov rdi, r15	      1692	scsi_scan.c	FUNCTION_25	CALL_10
+0x4001e65	      0xe800000000	                          call 0x4001e6a	      1692	scsi_scan.c	FUNCTION_25	CALL_10
+0x4001e6a	            0x31c0	                            xor eax, eax	      1694	scsi_scan.c	FUNCTION_25
+0x4001e6c	              0x5b	                                 pop rbx	      1695	scsi_scan.c	FUNCTION_25
+0x4001e6d	              0x5d	                                 pop rbp	      1695	scsi_scan.c	FUNCTION_25
+0x4001e6e	            0x415c	                                 pop r12	      1695	scsi_scan.c	FUNCTION_25
+0x4001e70	            0x415d	                                 pop r13	      1695	scsi_scan.c	FUNCTION_25
+0x4001e72	            0x415e	                                 pop r14	      1695	scsi_scan.c	FUNCTION_25
+0x4001e74	            0x415f	                                 pop r15	      1695	scsi_scan.c	FUNCTION_25
+0x4001e76	              0xc3	                                     ret	      1695	scsi_scan.c	FUNCTION_25
+0x4001e77	      0xe800000000	                          call 0x4001e7c	      1680	scsi_scan.c	FUNCTION_25	CALL_4
+0x4001e7c	    0x8b83d0010000	           mov eax, dword [rbx + 0x1d0] 	      1680	scsi_scan.c	FUNCTION_25	CALL_4
+0x4001e82	          0x83f802	                              cmp eax, 2	      1682	scsi_scan.c	FUNCTION_25	IF_3	CALL_6
+0x4001e85	            0x75d6	                           jne 0x4001e5d	      1682	scsi_scan.c	FUNCTION_25	IF_3	CALL_6
+0x4001e87	          0x4889df	                            mov rdi, rbx	      1682	scsi_scan.c	FUNCTION_25	IF_3	CALL_6
+0x4001e8a	      0xe800000000	                          call 0x4001e8f	      1682	scsi_scan.c	FUNCTION_25	IF_3	CALL_6
+0x4001e8f	            0x85c0	                           test eax, eax	      1682	scsi_scan.c	FUNCTION_25	IF_3	CALL_6
+0x4001e91	            0x75cf	                           jne 0x4001e62	      1682	scsi_scan.c	FUNCTION_25	IF_3	CALL_6
+0x4001e93	        0x4183feff	            cmp r14d, 0xffffffffffffffff	      1683	scsi_scan.c	FUNCTION_25	IF_3	IF_4
+0x4001e97	            0x7534	                           jne 0x4001ecd	      1683	scsi_scan.c	FUNCTION_25	IF_3	IF_4
+0x4001e99	          0x4531f6	                          xor r14d, r14d	      1683	scsi_scan.c	FUNCTION_25	IF_3	IF_4
+0x4001e9c	          0x4489f6	                           mov esi, r14d	      1686	scsi_scan.c	FUNCTION_25	IF_3	IF_4	FOR_1	CALL_7
+0x4001e9f	          0x4589e8	                           mov r8d, r13d	      1686	scsi_scan.c	FUNCTION_25	IF_3	IF_4	FOR_1	CALL_7
+0x4001ea2	          0x4c89e1	                            mov rcx, r12	      1686	scsi_scan.c	FUNCTION_25	IF_3	IF_4	FOR_1	CALL_7
+0x4001ea5	            0x89ea	                            mov edx, ebp	      1686	scsi_scan.c	FUNCTION_25	IF_3	IF_4	FOR_1	CALL_7
+0x4001ea7	          0x4889df	                            mov rdi, rbx	      1686	scsi_scan.c	FUNCTION_25	IF_3	IF_4	FOR_1	CALL_7
+0x4001eaa	        0x4183c601	                             add r14d, 1	      1685	scsi_scan.c	FUNCTION_25	IF_3	IF_4	FOR_1
+0x4001eae	      0xe82dfeffff	              call sym.scsi_scan_channel	      1686	scsi_scan.c	FUNCTION_25	IF_3	IF_4	FOR_1	CALL_7
+0x4001eb3	    0x4439b3380100	          cmp dword [rbx + 0x138], r14d 	      1684	scsi_scan.c	FUNCTION_25	IF_3	IF_4	FOR_1
+0x4001eba	            0x73e0	                           jae 0x4001e9c	      1684	scsi_scan.c	FUNCTION_25	IF_3	IF_4	FOR_1
+0x4001ebc	          0x4889df	                            mov rdi, rbx	      1690	scsi_scan.c	FUNCTION_25	IF_3	CALL_9
+0x4001ebf	      0xe800000000	                          call 0x4001ec4	      1690	scsi_scan.c	FUNCTION_25	IF_3	CALL_9
+0x4001ec4	            0xeb9c	                           jmp 0x4001e62	      1690	scsi_scan.c	FUNCTION_25	IF_3	CALL_9
+0x4001ec6	      0xb8eaffffff	                     mov eax, 0xffffffea	      1676	scsi_scan.c	FUNCTION_25	IF_1
+0x4001ecb	            0xeb9f	                           jmp 0x4001e6c	      1676	scsi_scan.c	FUNCTION_25	IF_1
+0x4001ecd	          0x4589e8	                           mov r8d, r13d	      1689	scsi_scan.c	FUNCTION_25	IF_3	CALL_8
+0x4001ed0	          0x4c89e1	                            mov rcx, r12	      1689	scsi_scan.c	FUNCTION_25	IF_3	CALL_8
+0x4001ed3	            0x89ea	                            mov edx, ebp	      1689	scsi_scan.c	FUNCTION_25	IF_3	CALL_8
+0x4001ed5	          0x4489f6	                           mov esi, r14d	      1689	scsi_scan.c	FUNCTION_25	IF_3	CALL_8
+0x4001ed8	          0x4889df	                            mov rdi, rbx	      1689	scsi_scan.c	FUNCTION_25	IF_3	CALL_8
+0x4001edb	      0xe800feffff	              call sym.scsi_scan_channel	      1689	scsi_scan.c	FUNCTION_25	IF_3	CALL_8
+0x4001ee0	            0xebda	                           jmp 0x4001ebc	      1689	scsi_scan.c	FUNCTION_25	IF_3	CALL_8
+scsi_scan_target	FOR,0:SWITCH,0:CALL,10:WHILE,0:functions,0:IF,4:ELSE,0:DO,0	80
+0x4001be0	            0x4157	                                push r15	      1611	scsi_scan.c	FUNCTION_23
+0x4001be2	            0x4156	                                push r14	      1611	scsi_scan.c	FUNCTION_23
+0x4001be4	          0x4989cf	                            mov r15, rcx	      1611	scsi_scan.c	FUNCTION_23
+0x4001be7	            0x4155	                                push r13	      1611	scsi_scan.c	FUNCTION_23
+0x4001be9	            0x4154	                                push r12	      1611	scsi_scan.c	FUNCTION_23
+0x4001beb	          0x4189f5	                           mov r13d, esi	      1611	scsi_scan.c	FUNCTION_23
+0x4001bee	              0x55	                                push rbp	      1611	scsi_scan.c	FUNCTION_23
+0x4001bef	              0x53	                                push rbx	      1611	scsi_scan.c	FUNCTION_23
+0x4001bf0	          0x4889fd	                            mov rbp, rdi	      1611	scsi_scan.c	FUNCTION_23
+0x4001bf3	          0x4189d6	                           mov r14d, edx	      1611	scsi_scan.c	FUNCTION_23
+0x4001bf6	          0x4589c4	                           mov r12d, r8d	      1611	scsi_scan.c	FUNCTION_23
+0x4001bf9	          0x4889fb	                            mov rbx, rdi	      1611	scsi_scan.c	FUNCTION_23
+0x4001bfc	        0x4883ec08	                              sub rsp, 8	      1611	scsi_scan.c	FUNCTION_23
+0x4001c00	            0xeb0c	                           jmp 0x4001c0e	      1611	scsi_scan.c	FUNCTION_23
+0x4001c02	          0x488b1b	                    mov rbx, qword [rbx]	       730	scsi_host.h	FUNCTION_36	WHILE_1	IF_1
+0x4001c05	          0x4885db	                           test rbx, rbx	       730	scsi_host.h	FUNCTION_36	WHILE_1	IF_1
+0x4001c08	     0xf8495000000	                            je 0x4001ca3	       730	scsi_host.h	FUNCTION_36	WHILE_1	IF_1
+0x4001c0e	          0x4889df	                            mov rdi, rbx	       729	scsi_host.h	FUNCTION_36	WHILE_1	CALL_1
+0x4001c11	      0xe800000000	                          call 0x4001c16	       729	scsi_host.h	FUNCTION_36	WHILE_1	CALL_1
+0x4001c16	            0x85c0	                           test eax, eax	       729	scsi_host.h	FUNCTION_36	WHILE_1	CALL_1
+0x4001c18	            0x74e8	                            je 0x4001c02	       729	scsi_host.h	FUNCTION_36	WHILE_1	CALL_1
+0x4001c1a	    0x4881ebd80100	                          sub rbx, 0x1d8	       734	scsi_host.h	FUNCTION_36	CALL_2
+0x4001c21	    0x48c7c0000000	                              mov rax, 0	      1614	scsi_scan.c	FUNCTION_23	IF_1	CALL_2
+0x4001c28	      0xb904000000	                              mov ecx, 4	      1614	scsi_scan.c	FUNCTION_23	IF_1	CALL_2
+0x4001c2d	    0x48c7c7000000	                              mov rdi, 0	      1614	scsi_scan.c	FUNCTION_23	IF_1	CALL_2
+0x4001c34	          0x4889c6	                            mov rsi, rax	      1614	scsi_scan.c	FUNCTION_23	IF_1	CALL_2
+0x4001c37	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	      1614	scsi_scan.c	FUNCTION_23	IF_1	CALL_2
+0x4001c39	            0x7459	                            je 0x4001c94	      1614	scsi_scan.c	FUNCTION_23	IF_1	CALL_2
+0x4001c3b	        0x4183fc02	                             cmp r12d, 2	      1617	scsi_scan.c	FUNCTION_23	IF_2
+0x4001c3f	            0x7413	                            je 0x4001c54	      1617	scsi_scan.c	FUNCTION_23	IF_2
+0x4001c41	      0xb906000000	                              mov ecx, 6	      1618	scsi_scan.c	FUNCTION_23	IF_2	CALL_3
+0x4001c46	    0x48c7c7000000	                              mov rdi, 0	      1618	scsi_scan.c	FUNCTION_23	IF_2	CALL_3
+0x4001c4d	          0x4889c6	                            mov rsi, rax	      1618	scsi_scan.c	FUNCTION_23	IF_2	CALL_3
+0x4001c50	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	      1617	scsi_scan.c	FUNCTION_23	IF_2
+0x4001c52	            0x7440	                            je 0x4001c94	      1617	scsi_scan.c	FUNCTION_23	IF_2
+0x4001c54	        0x488d4340	                   lea rax, [rbx + 0x40]	      1621	scsi_scan.c	FUNCTION_23	CALL_4
+0x4001c58	          0x4889c7	                            mov rdi, rax	      1621	scsi_scan.c	FUNCTION_23	CALL_4
+0x4001c5b	        0x48890424	                    mov qword [rsp], rax	      1621	scsi_scan.c	FUNCTION_23	CALL_4
+0x4001c5f	      0xe800000000	                          call 0x4001c64	      1621	scsi_scan.c	FUNCTION_23	CALL_4
+0x4001c64	    0x80bb80010000	               cmp byte [rbx + 0x180], 0	      1622	scsi_scan.c	FUNCTION_23	IF_3
+0x4001c6b	            0x793d	                           jns 0x4001caa	      1622	scsi_scan.c	FUNCTION_23	IF_3
+0x4001c6d	    0x8b83d0010000	           mov eax, dword [rbx + 0x1d0] 	      1622	scsi_scan.c	FUNCTION_23	IF_3
+0x4001c73	          0x83f802	                              cmp eax, 2	      1625	scsi_scan.c	FUNCTION_23	IF_4	CALL_7
+0x4001c76	            0x7439	                            je 0x4001cb1	      1625	scsi_scan.c	FUNCTION_23	IF_4	CALL_7
+0x4001c78	          0x83f805	                              cmp eax, 5	      1625	scsi_scan.c	FUNCTION_23	IF_4	CALL_7
+0x4001c7b	            0x7434	                            je 0x4001cb1	      1625	scsi_scan.c	FUNCTION_23	IF_4	CALL_7
+0x4001c7d	        0x488b3c24	                    mov rdi, qword [rsp]	      1629	scsi_scan.c	FUNCTION_23	CALL_10
+0x4001c81	        0x4883c408	                              add rsp, 8	      1630	scsi_scan.c	FUNCTION_23
+0x4001c85	              0x5b	                                 pop rbx	      1630	scsi_scan.c	FUNCTION_23
+0x4001c86	              0x5d	                                 pop rbp	      1630	scsi_scan.c	FUNCTION_23
+0x4001c87	            0x415c	                                 pop r12	      1630	scsi_scan.c	FUNCTION_23
+0x4001c89	            0x415d	                                 pop r13	      1630	scsi_scan.c	FUNCTION_23
+0x4001c8b	            0x415e	                                 pop r14	      1630	scsi_scan.c	FUNCTION_23
+0x4001c8d	            0x415f	                                 pop r15	      1630	scsi_scan.c	FUNCTION_23
+0x4001c8f	      0xe900000000	                           jmp 0x4001c94	      1629	scsi_scan.c	FUNCTION_23	CALL_10
+0x4001c94	        0x4883c408	                              add rsp, 8	      1630	scsi_scan.c	FUNCTION_23
+0x4001c98	              0x5b	                                 pop rbx	      1630	scsi_scan.c	FUNCTION_23
+0x4001c99	              0x5d	                                 pop rbp	      1630	scsi_scan.c	FUNCTION_23
+0x4001c9a	            0x415c	                                 pop r12	      1630	scsi_scan.c	FUNCTION_23
+0x4001c9c	            0x415d	                                 pop r13	      1630	scsi_scan.c	FUNCTION_23
+0x4001c9e	            0x415e	                                 pop r14	      1630	scsi_scan.c	FUNCTION_23
+0x4001ca0	            0x415f	                                 pop r15	      1630	scsi_scan.c	FUNCTION_23
+0x4001ca2	              0xc3	                                     ret	      1630	scsi_scan.c	FUNCTION_23
+0x4001ca3	            0x31db	                            xor ebx, ebx	       731	scsi_host.h	FUNCTION_36	WHILE_1	IF_1
+0x4001ca5	      0xe977ffffff	                           jmp 0x4001c21	       731	scsi_host.h	FUNCTION_36	WHILE_1	IF_1
+0x4001caa	      0xe800000000	                          call 0x4001caf	      1623	scsi_scan.c	FUNCTION_23	CALL_5
+0x4001caf	            0xebbc	                           jmp 0x4001c6d	      1623	scsi_scan.c	FUNCTION_23	CALL_5
+0x4001cb1	          0x4889df	                            mov rdi, rbx	      1625	scsi_scan.c	FUNCTION_23	IF_4	CALL_7
+0x4001cb4	      0xe800000000	                          call 0x4001cb9	      1625	scsi_scan.c	FUNCTION_23	IF_4	CALL_7
+0x4001cb9	            0x85c0	                           test eax, eax	      1625	scsi_scan.c	FUNCTION_23	IF_4	CALL_7
+0x4001cbb	            0x75c0	                           jne 0x4001c7d	      1625	scsi_scan.c	FUNCTION_23	IF_4	CALL_7
+0x4001cbd	          0x4889ef	                            mov rdi, rbp	      1626	scsi_scan.c	FUNCTION_23	IF_4	CALL_8
+0x4001cc0	          0x4589e0	                           mov r8d, r12d	      1626	scsi_scan.c	FUNCTION_23	IF_4	CALL_8
+0x4001cc3	          0x4c89f9	                            mov rcx, r15	      1626	scsi_scan.c	FUNCTION_23	IF_4	CALL_8
+0x4001cc6	          0x4489f2	                           mov edx, r14d	      1626	scsi_scan.c	FUNCTION_23	IF_4	CALL_8
+0x4001cc9	          0x4489ee	                           mov esi, r13d	      1626	scsi_scan.c	FUNCTION_23	IF_4	CALL_8
+0x4001ccc	      0xe8fff9ffff	             call sym.__scsi_scan_target	      1626	scsi_scan.c	FUNCTION_23	IF_4	CALL_8
+0x4001cd1	          0x4889df	                            mov rdi, rbx	      1627	scsi_scan.c	FUNCTION_23	IF_4	CALL_9
+0x4001cd4	      0xe800000000	                          call 0x4001cd9	      1627	scsi_scan.c	FUNCTION_23	IF_4	CALL_9
+0x4001cd9	            0xeba2	                           jmp 0x4001c7d	      1627	scsi_scan.c	FUNCTION_23	IF_4	CALL_9

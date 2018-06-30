@@ -1,0 +1,31 @@
+cmd__read_cache	functions,0:DO,0:SWITCH,0:ELSE,0:IF,1:WHILE,0:CALL,4:FOR,1	30
+0x4000040	              0x55	                                push rbp	         5	test-read-cache.c	FUNCTION_1
+0x4000041	          0x4889e5	                            mov rbp, rsp	         5	test-read-cache.c	FUNCTION_1
+0x4000044	        0x4883ec20	                           sub rsp, 0x20	         5	test-read-cache.c	FUNCTION_1
+0x4000048	          0x897dec	             mov dword [rbp - 0x14], edi	         5	test-read-cache.c	FUNCTION_1
+0x400004b	        0x488975e0	             mov qword [rbp - 0x20], rsi	         5	test-read-cache.c	FUNCTION_1
+0x400004f	    0xc745fc010000	                  mov dword [rbp - 4], 1	         6	test-read-cache.c	FUNCTION_1
+0x4000056	        0x837dec02	               cmp dword [rbp - 0x14], 2	         7	test-read-cache.c	FUNCTION_1	IF_1
+0x400005a	            0x7520	                           jne 0x400007c	         7	test-read-cache.c	FUNCTION_1	IF_1
+0x400005c	        0x488b45e0	             mov rax, qword [rbp - 0x20]	         8	test-read-cache.c	FUNCTION_1	CALL_1
+0x4000060	        0x4883c008	                              add rax, 8	         8	test-read-cache.c	FUNCTION_1	CALL_1
+0x4000064	          0x488b00	                    mov rax, qword [rax]	         8	test-read-cache.c	FUNCTION_1	CALL_1
+0x4000067	      0xba00000000	                              mov edx, 0	         8	test-read-cache.c	FUNCTION_1	CALL_1
+0x400006c	      0xbe00000000	                              mov esi, 0	         8	test-read-cache.c	FUNCTION_1	CALL_1
+0x4000071	          0x4889c7	                            mov rdi, rax	         8	test-read-cache.c	FUNCTION_1	CALL_1
+0x4000074	      0xe800000000	                          call 0x4000079	         8	test-read-cache.c	FUNCTION_1	CALL_1
+0x4000079	          0x8945fc	                mov dword [rbp - 4], eax	         8	test-read-cache.c	FUNCTION_1	CALL_1
+0x400007c	      0xe800000000	                          call 0x4000081	         9	test-read-cache.c	FUNCTION_1	CALL_2
+0x4000081	    0xc745f8000000	                  mov dword [rbp - 8], 0	        10	test-read-cache.c	FUNCTION_1	FOR_1
+0x4000088	            0xeb18	                           jmp 0x40000a2	        10	test-read-cache.c	FUNCTION_1	FOR_1
+0x400008a	      0xbf00000000	                              mov edi, 0	        11	test-read-cache.c	FUNCTION_1	FOR_1	CALL_3
+0x400008f	      0xe800000000	                          call 0x4000094	        11	test-read-cache.c	FUNCTION_1	FOR_1	CALL_3
+0x4000094	      0xbf00000000	                              mov edi, 0	        12	test-read-cache.c	FUNCTION_1	FOR_1	CALL_4
+0x4000099	      0xe800000000	                          call 0x400009e	        12	test-read-cache.c	FUNCTION_1	FOR_1	CALL_4
+0x400009e	        0x8345f801	                  add dword [rbp - 8], 1	        10	test-read-cache.c	FUNCTION_1	FOR_1
+0x40000a2	          0x8b45f8	                mov eax, dword [rbp - 8]	        10	test-read-cache.c	FUNCTION_1	FOR_1
+0x40000a5	          0x3b45fc	                cmp eax, dword [rbp - 4]	        10	test-read-cache.c	FUNCTION_1	FOR_1
+0x40000a8	            0x7ce0	                            jl 0x400008a	        10	test-read-cache.c	FUNCTION_1	FOR_1
+0x40000aa	      0xb800000000	                              mov eax, 0	        14	test-read-cache.c	FUNCTION_1
+0x40000af	              0xc9	                                   leave	        15	test-read-cache.c	FUNCTION_1
+0x40000b0	              0xc3	                                     ret	        15	test-read-cache.c	FUNCTION_1

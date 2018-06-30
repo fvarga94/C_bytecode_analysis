@@ -1,0 +1,278 @@
+__crc32c_le_shift	FOR,0:CALL,1:DO,0:WHILE,0:ELSE,0:IF,0:functions,0:SWITCH,0	2
+0x4000110	      0xba783bf682	                     mov edx, 0x82f63b78	       276	crc32.c	FUNCTION_9	CALL_1
+0x4000115	      0xe926ffffff	             jmp sym.crc32_generic_shift	       276	crc32.c	FUNCTION_9	CALL_1
+__crc32c_le	FOR,0:CALL,2:DO,0:WHILE,0:ELSE,0:IF,0:functions,0:SWITCH,0	68
+0x4000220	        0x40f6c603	                             test sil, 3	        84	crc32.c	IF_1	CALL_2
+0x4000224	              0x53	                                push rbx	       200	crc32.c	FUNCTION_5
+0x4000225	     0xf85bf000000	                           jne 0x40002ea	        84	crc32.c	IF_1	CALL_2
+0x400022b	          0x4989d2	                            mov r10, rdx	        94	crc32.c	
+0x400022e	        0x48c1ea03	                              shr rdx, 3	        95	crc32.c	
+0x4000232	        0x4c8d4efc	                       lea r9, [rsi - 4]	       100	crc32.c	
+0x4000236	        0x4183e207	                             and r10d, 7	        94	crc32.c	
+0x400023a	          0x4885d2	                           test rdx, rdx	       101	crc32.c	FOR_1
+0x400023d	            0x747f	                            je 0x40002be	       101	crc32.c	FOR_1
+0x400023f	        0x48c1e203	                              shl rdx, 3	       101	crc32.c	FOR_1
+0x4000243	      0x4c8d4416fc	                 lea r8, [rsi + rdx - 4]	       101	crc32.c	FOR_1
+0x4000248	          0x4c89ce	                             mov rsi, r9	       100	crc32.c	
+0x400024b	          0x8b4604	                mov eax, dword [rsi + 4]	       105	crc32.c	FOR_1	FOR_2
+0x400024e	        0x4883c608	                              add rsi, 8	       105	crc32.c	FOR_1	FOR_2
+0x4000252	            0x8b0e	                    mov ecx, dword [rsi]	       110	crc32.c	FOR_1	FOR_2
+0x4000254	            0x31f8	                            xor eax, edi	       105	crc32.c	FOR_1	FOR_2
+0x4000256	          0x4189c3	                           mov r11d, eax	       109	crc32.c	FOR_1	FOR_2
+0x4000259	           0xfb6f8	                           movzx edi, al	       109	crc32.c	FOR_1	FOR_2
+0x400025c	           0xfb6dc	                           movzx ebx, ah	       109	crc32.c	FOR_1	FOR_2
+0x400025f	        0x41c1eb18	                          shr r11d, 0x18	       109	crc32.c	FOR_1	FOR_2
+0x4000263	    0x8b3cbd000000	                  mov edi, dword [rdi*4]	       111	crc32.c	FOR_1	FOR_2
+0x400026a	          0xc1e810	                           shr eax, 0x10	       109	crc32.c	FOR_1	FOR_2
+0x400026d	    0x42333c9d0000	                  xor edi, dword [r11*4]	       111	crc32.c	FOR_1	FOR_2
+0x4000275	          0x4189cb	                           mov r11d, ecx	       111	crc32.c	FOR_1	FOR_2
+0x4000278	           0xfb6c0	                           movzx eax, al	       109	crc32.c	FOR_1	FOR_2
+0x400027b	        0x41c1eb18	                          shr r11d, 0x18	       111	crc32.c	FOR_1	FOR_2
+0x400027f	    0x42333c9d0000	                  xor edi, dword [r11*4]	       111	crc32.c	FOR_1	FOR_2
+0x4000287	    0x333c9d000000	                  xor edi, dword [rbx*4]	       111	crc32.c	FOR_1	FOR_2
+0x400028e	    0x333c85000000	                  xor edi, dword [rax*4]	       111	crc32.c	FOR_1	FOR_2
+0x4000295	           0xfb6c1	                           movzx eax, cl	       111	crc32.c	FOR_1	FOR_2
+0x4000298	    0x333c85000000	                  xor edi, dword [rax*4]	       111	crc32.c	FOR_1	FOR_2
+0x400029f	           0xfb6c5	                           movzx eax, ch	       111	crc32.c	FOR_1	FOR_2
+0x40002a2	          0xc1e910	                           shr ecx, 0x10	       111	crc32.c	FOR_1	FOR_2
+0x40002a5	    0x333c85000000	                  xor edi, dword [rax*4]	       111	crc32.c	FOR_1	FOR_2
+0x40002ac	           0xfb6c9	                           movzx ecx, cl	       111	crc32.c	FOR_1	FOR_2
+0x40002af	    0x333c8d000000	                  xor edi, dword [rcx*4]	       111	crc32.c	FOR_1	FOR_2
+0x40002b6	          0x4c39c6	                             cmp rsi, r8	       101	crc32.c	FOR_1
+0x40002b9	            0x7590	                           jne 0x400024b	       101	crc32.c	FOR_1
+0x40002bb	          0x4901d1	                             add r9, rdx	       101	crc32.c	FOR_1
+0x40002be	          0x4d85d2	                           test r10, r10	       116	crc32.c	FOR_1	IF_2
+0x40002c1	            0x7423	                            je 0x40002e6	       116	crc32.c	FOR_1	IF_2
+0x40002c3	        0x498d5103	                       lea rdx, [r9 + 3]	       117	crc32.c	FOR_1	IF_2
+0x40002c7	      0x4b8d441103	                 lea rax, [r9 + r10 + 3]	       117	crc32.c	FOR_1	IF_2
+0x40002cc	        0x4883c201	                              add rdx, 1	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40002d0	            0x89f9	                            mov ecx, edi	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40002d2	          0xc1ef08	                              shr edi, 8	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40002d5	            0x320a	                      xor cl, byte [rdx]	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40002d7	           0xfb6c9	                           movzx ecx, cl	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40002da	    0x333c8d000000	                  xor edi, dword [rcx*4]	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40002e1	          0x4839c2	                            cmp rdx, rax	       119	crc32.c	FOR_1	IF_2	FOR_3
+0x40002e4	            0x75e6	                           jne 0x40002cc	       119	crc32.c	FOR_1	IF_2	FOR_3
+0x40002e6	            0x89f8	                            mov eax, edi	       203	crc32.c	FUNCTION_5
+0x40002e8	              0x5b	                                 pop rbx	       203	crc32.c	FUNCTION_5
+0x40002e9	              0xc3	                                     ret	       203	crc32.c	FUNCTION_5
+0x40002ea	          0x4885d2	                           test rdx, rdx	        84	crc32.c	IF_1	CALL_2
+0x40002ed	            0x74f7	                            je 0x40002e6	        84	crc32.c	IF_1	CALL_2
+0x40002ef	            0xeb0a	                           jmp 0x40002fb	        84	crc32.c	IF_1	CALL_2
+0x40002f1	        0x40f6c603	                             test sil, 3	        87	crc32.c	IF_1	DO_1
+0x40002f5	     0xf8430ffffff	                            je 0x400022b	        87	crc32.c	IF_1	DO_1
+0x40002fb	        0x4883c601	                              add rsi, 1	        86	crc32.c	IF_1	DO_1
+0x40002ff	            0x89f9	                            mov ecx, edi	        86	crc32.c	IF_1	DO_1
+0x4000301	          0xc1ef08	                              shr edi, 8	        86	crc32.c	IF_1	DO_1
+0x4000304	          0x324eff	                  xor cl, byte [rsi - 1]	        86	crc32.c	IF_1	DO_1
+0x4000307	           0xfb6c9	                           movzx ecx, cl	        86	crc32.c	IF_1	DO_1
+0x400030a	    0x333c8d000000	                  xor edi, dword [rcx*4]	        86	crc32.c	IF_1	DO_1
+0x4000311	        0x4883ea01	                              sub rdx, 1	        87	crc32.c	IF_1	DO_1
+0x4000315	            0x75da	                           jne 0x40002f1	        87	crc32.c	IF_1	DO_1
+0x4000317	            0xebcd	                           jmp 0x40002e6	        87	crc32.c	IF_1	DO_1
+crc32_le_shift	FOR,0:CALL,1:DO,0:WHILE,0:ELSE,0:IF,0:functions,0:SWITCH,0	2
+0x4000100	      0xba2083b8ed	                     mov edx, 0xedb88320	       271	crc32.c	FUNCTION_8	CALL_1
+0x4000105	      0xe936ffffff	             jmp sym.crc32_generic_shift	       271	crc32.c	FUNCTION_8	CALL_1
+crc32_be	FOR,0:CALL,2:DO,0:WHILE,0:ELSE,0:IF,0:functions,0:SWITCH,0	70
+0x4000120	            0x89f8	                            mov eax, edi	       323	crc32.c	FUNCTION_10	CALL_2
+0x4000122	        0x40f6c603	                             test sil, 3	        84	crc32.c	IF_1	CALL_2
+0x4000126	              0x53	                                push rbx	       337	crc32.c	FUNCTION_12
+0x4000127	             0xfc8	                               bswap eax	       323	crc32.c	FUNCTION_10	CALL_2
+0x4000129	     0xf85b9000000	                           jne 0x40001e8	        84	crc32.c	IF_1	CALL_2
+0x400012f	          0x4989d2	                            mov r10, rdx	        94	crc32.c	
+0x4000132	        0x48c1ea03	                              shr rdx, 3	        95	crc32.c	
+0x4000136	        0x4c8d4efc	                       lea r9, [rsi - 4]	       100	crc32.c	
+0x400013a	        0x4183e207	                             and r10d, 7	        94	crc32.c	
+0x400013e	          0x4885d2	                           test rdx, rdx	       101	crc32.c	FOR_1
+0x4000141	            0x7479	                            je 0x40001bc	       101	crc32.c	FOR_1
+0x4000143	        0x48c1e203	                              shl rdx, 3	       101	crc32.c	FOR_1
+0x4000147	      0x4c8d4416fc	                 lea r8, [rsi + rdx - 4]	       101	crc32.c	FOR_1
+0x400014c	          0x4c89ce	                             mov rsi, r9	       100	crc32.c	
+0x400014f	          0x334604	                xor eax, dword [rsi + 4]	       105	crc32.c	FOR_1	FOR_2
+0x4000152	        0x4883c608	                              add rsi, 8	       105	crc32.c	FOR_1	FOR_2
+0x4000156	            0x8b1e	                    mov ebx, dword [rsi]	       110	crc32.c	FOR_1	FOR_2
+0x4000158	            0x89c1	                            mov ecx, eax	       109	crc32.c	FOR_1	FOR_2
+0x400015a	           0xfb6f8	                           movzx edi, al	       109	crc32.c	FOR_1	FOR_2
+0x400015d	          0xc1e918	                           shr ecx, 0x18	       109	crc32.c	FOR_1	FOR_2
+0x4000160	    0x8b3cbd000000	                  mov edi, dword [rdi*4]	       111	crc32.c	FOR_1	FOR_2
+0x4000167	    0x333c8d000000	                  xor edi, dword [rcx*4]	       111	crc32.c	FOR_1	FOR_2
+0x400016e	            0x89d9	                            mov ecx, ebx	       111	crc32.c	FOR_1	FOR_2
+0x4000170	          0xc1e918	                           shr ecx, 0x18	       111	crc32.c	FOR_1	FOR_2
+0x4000173	    0x333c8d000000	                  xor edi, dword [rcx*4]	       111	crc32.c	FOR_1	FOR_2
+0x400017a	           0xfb6cc	                           movzx ecx, ah	       109	crc32.c	FOR_1	FOR_2
+0x400017d	          0xc1e810	                           shr eax, 0x10	       109	crc32.c	FOR_1	FOR_2
+0x4000180	    0x333c8d000000	                  xor edi, dword [rcx*4]	       111	crc32.c	FOR_1	FOR_2
+0x4000187	           0xfb6c8	                           movzx ecx, al	       109	crc32.c	FOR_1	FOR_2
+0x400018a	    0x8b048d000000	                  mov eax, dword [rcx*4]	       111	crc32.c	FOR_1	FOR_2
+0x4000191	           0xfb6cb	                           movzx ecx, bl	       111	crc32.c	FOR_1	FOR_2
+0x4000194	            0x31f8	                            xor eax, edi	       111	crc32.c	FOR_1	FOR_2
+0x4000196	    0x33048d000000	                  xor eax, dword [rcx*4]	       111	crc32.c	FOR_1	FOR_2
+0x400019d	           0xfb6cf	                           movzx ecx, bh	       111	crc32.c	FOR_1	FOR_2
+0x40001a0	          0xc1eb10	                           shr ebx, 0x10	       111	crc32.c	FOR_1	FOR_2
+0x40001a3	    0x33048d000000	                  xor eax, dword [rcx*4]	       111	crc32.c	FOR_1	FOR_2
+0x40001aa	           0xfb6db	                           movzx ebx, bl	       111	crc32.c	FOR_1	FOR_2
+0x40001ad	    0x33049d000000	                  xor eax, dword [rbx*4]	       111	crc32.c	FOR_1	FOR_2
+0x40001b4	          0x4c39c6	                             cmp rsi, r8	       101	crc32.c	FOR_1
+0x40001b7	            0x7596	                           jne 0x400014f	       101	crc32.c	FOR_1
+0x40001b9	          0x4901d1	                             add r9, rdx	       101	crc32.c	FOR_1
+0x40001bc	          0x4d85d2	                           test r10, r10	       116	crc32.c	FOR_1	IF_2
+0x40001bf	            0x7423	                            je 0x40001e4	       116	crc32.c	FOR_1	IF_2
+0x40001c1	        0x498d5103	                       lea rdx, [r9 + 3]	       117	crc32.c	FOR_1	IF_2
+0x40001c5	      0x4b8d741103	                 lea rsi, [r9 + r10 + 3]	       117	crc32.c	FOR_1	IF_2
+0x40001ca	        0x4883c201	                              add rdx, 1	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40001ce	            0x89c1	                            mov ecx, eax	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40001d0	          0xc1e808	                              shr eax, 8	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40001d3	            0x320a	                      xor cl, byte [rdx]	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40001d5	           0xfb6c9	                           movzx ecx, cl	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40001d8	    0x33048d000000	                  xor eax, dword [rcx*4]	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40001df	          0x4839f2	                            cmp rdx, rsi	       119	crc32.c	FOR_1	IF_2	FOR_3
+0x40001e2	            0x75e6	                           jne 0x40001ca	       119	crc32.c	FOR_1	IF_2	FOR_3
+0x40001e4	             0xfc8	                               bswap eax	       325	crc32.c	FUNCTION_10	CALL_4
+0x40001e6	              0x5b	                                 pop rbx	       340	crc32.c	FUNCTION_12
+0x40001e7	              0xc3	                                     ret	       340	crc32.c	FUNCTION_12
+0x40001e8	          0x4885d2	                           test rdx, rdx	        84	crc32.c	IF_1	CALL_2
+0x40001eb	            0x74f7	                            je 0x40001e4	        84	crc32.c	IF_1	CALL_2
+0x40001ed	            0xeb0a	                           jmp 0x40001f9	        84	crc32.c	IF_1	CALL_2
+0x40001ef	        0x40f6c603	                             test sil, 3	        87	crc32.c	IF_1	DO_1
+0x40001f3	     0xf8436ffffff	                            je 0x400012f	        87	crc32.c	IF_1	DO_1
+0x40001f9	        0x4883c601	                              add rsi, 1	        86	crc32.c	IF_1	DO_1
+0x40001fd	            0x89c1	                            mov ecx, eax	        86	crc32.c	IF_1	DO_1
+0x40001ff	          0xc1e808	                              shr eax, 8	        86	crc32.c	IF_1	DO_1
+0x4000202	          0x324eff	                  xor cl, byte [rsi - 1]	        86	crc32.c	IF_1	DO_1
+0x4000205	           0xfb6c9	                           movzx ecx, cl	        86	crc32.c	IF_1	DO_1
+0x4000208	    0x33048d000000	                  xor eax, dword [rcx*4]	        86	crc32.c	IF_1	DO_1
+0x400020f	        0x4883ea01	                              sub rdx, 1	        87	crc32.c	IF_1	DO_1
+0x4000213	            0x75da	                           jne 0x40001ef	        87	crc32.c	IF_1	DO_1
+0x4000215	            0xebcd	                           jmp 0x40001e4	        87	crc32.c	IF_1	DO_1
+crc32_le	FOR,0:CALL,2:DO,0:WHILE,0:ELSE,0:IF,0:functions,0:SWITCH,0	68
+0x4000320	        0x40f6c603	                             test sil, 3	        84	crc32.c	IF_1	CALL_2
+0x4000324	              0x53	                                push rbx	       195	crc32.c	FUNCTION_4
+0x4000325	     0xf85bf000000	                           jne 0x40003ea	        84	crc32.c	IF_1	CALL_2
+0x400032b	          0x4989d2	                            mov r10, rdx	        94	crc32.c	
+0x400032e	        0x48c1ea03	                              shr rdx, 3	        95	crc32.c	
+0x4000332	        0x4c8d4efc	                       lea r9, [rsi - 4]	       100	crc32.c	
+0x4000336	        0x4183e207	                             and r10d, 7	        94	crc32.c	
+0x400033a	          0x4885d2	                           test rdx, rdx	       101	crc32.c	FOR_1
+0x400033d	            0x747f	                            je 0x40003be	       101	crc32.c	FOR_1
+0x400033f	        0x48c1e203	                              shl rdx, 3	       101	crc32.c	FOR_1
+0x4000343	      0x4c8d4416fc	                 lea r8, [rsi + rdx - 4]	       101	crc32.c	FOR_1
+0x4000348	          0x4c89ce	                             mov rsi, r9	       100	crc32.c	
+0x400034b	          0x8b4604	                mov eax, dword [rsi + 4]	       105	crc32.c	FOR_1	FOR_2
+0x400034e	        0x4883c608	                              add rsi, 8	       105	crc32.c	FOR_1	FOR_2
+0x4000352	            0x8b0e	                    mov ecx, dword [rsi]	       110	crc32.c	FOR_1	FOR_2
+0x4000354	            0x31f8	                            xor eax, edi	       105	crc32.c	FOR_1	FOR_2
+0x4000356	          0x4189c3	                           mov r11d, eax	       109	crc32.c	FOR_1	FOR_2
+0x4000359	           0xfb6f8	                           movzx edi, al	       109	crc32.c	FOR_1	FOR_2
+0x400035c	           0xfb6dc	                           movzx ebx, ah	       109	crc32.c	FOR_1	FOR_2
+0x400035f	        0x41c1eb18	                          shr r11d, 0x18	       109	crc32.c	FOR_1	FOR_2
+0x4000363	    0x8b3cbd000000	                  mov edi, dword [rdi*4]	       111	crc32.c	FOR_1	FOR_2
+0x400036a	          0xc1e810	                           shr eax, 0x10	       109	crc32.c	FOR_1	FOR_2
+0x400036d	    0x42333c9d0000	                  xor edi, dword [r11*4]	       111	crc32.c	FOR_1	FOR_2
+0x4000375	          0x4189cb	                           mov r11d, ecx	       111	crc32.c	FOR_1	FOR_2
+0x4000378	           0xfb6c0	                           movzx eax, al	       109	crc32.c	FOR_1	FOR_2
+0x400037b	        0x41c1eb18	                          shr r11d, 0x18	       111	crc32.c	FOR_1	FOR_2
+0x400037f	    0x42333c9d0000	                  xor edi, dword [r11*4]	       111	crc32.c	FOR_1	FOR_2
+0x4000387	    0x333c9d000000	                  xor edi, dword [rbx*4]	       111	crc32.c	FOR_1	FOR_2
+0x400038e	    0x333c85000000	                  xor edi, dword [rax*4]	       111	crc32.c	FOR_1	FOR_2
+0x4000395	           0xfb6c1	                           movzx eax, cl	       111	crc32.c	FOR_1	FOR_2
+0x4000398	    0x333c85000000	                  xor edi, dword [rax*4]	       111	crc32.c	FOR_1	FOR_2
+0x400039f	           0xfb6c5	                           movzx eax, ch	       111	crc32.c	FOR_1	FOR_2
+0x40003a2	          0xc1e910	                           shr ecx, 0x10	       111	crc32.c	FOR_1	FOR_2
+0x40003a5	    0x333c85000000	                  xor edi, dword [rax*4]	       111	crc32.c	FOR_1	FOR_2
+0x40003ac	           0xfb6c9	                           movzx ecx, cl	       111	crc32.c	FOR_1	FOR_2
+0x40003af	    0x333c8d000000	                  xor edi, dword [rcx*4]	       111	crc32.c	FOR_1	FOR_2
+0x40003b6	          0x4c39c6	                             cmp rsi, r8	       101	crc32.c	FOR_1
+0x40003b9	            0x7590	                           jne 0x400034b	       101	crc32.c	FOR_1
+0x40003bb	          0x4901d1	                             add r9, rdx	       101	crc32.c	FOR_1
+0x40003be	          0x4d85d2	                           test r10, r10	       116	crc32.c	FOR_1	IF_2
+0x40003c1	            0x7423	                            je 0x40003e6	       116	crc32.c	FOR_1	IF_2
+0x40003c3	        0x498d5103	                       lea rdx, [r9 + 3]	       117	crc32.c	FOR_1	IF_2
+0x40003c7	      0x4b8d441103	                 lea rax, [r9 + r10 + 3]	       117	crc32.c	FOR_1	IF_2
+0x40003cc	        0x4883c201	                              add rdx, 1	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40003d0	            0x89f9	                            mov ecx, edi	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40003d2	          0xc1ef08	                              shr edi, 8	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40003d5	            0x320a	                      xor cl, byte [rdx]	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40003d7	           0xfb6c9	                           movzx ecx, cl	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40003da	    0x333c8d000000	                  xor edi, dword [rcx*4]	       120	crc32.c	FOR_1	IF_2	FOR_3
+0x40003e1	          0x4839c2	                            cmp rdx, rax	       119	crc32.c	FOR_1	IF_2	FOR_3
+0x40003e4	            0x75e6	                           jne 0x40003cc	       119	crc32.c	FOR_1	IF_2	FOR_3
+0x40003e6	            0x89f8	                            mov eax, edi	       198	crc32.c	FUNCTION_4
+0x40003e8	              0x5b	                                 pop rbx	       198	crc32.c	FUNCTION_4
+0x40003e9	              0xc3	                                     ret	       198	crc32.c	FUNCTION_4
+0x40003ea	          0x4885d2	                           test rdx, rdx	        84	crc32.c	IF_1	CALL_2
+0x40003ed	            0x74f7	                            je 0x40003e6	        84	crc32.c	IF_1	CALL_2
+0x40003ef	            0xeb0a	                           jmp 0x40003fb	        84	crc32.c	IF_1	CALL_2
+0x40003f1	        0x40f6c603	                             test sil, 3	        87	crc32.c	IF_1	DO_1
+0x40003f5	     0xf8430ffffff	                            je 0x400032b	        87	crc32.c	IF_1	DO_1
+0x40003fb	        0x4883c601	                              add rsi, 1	        86	crc32.c	IF_1	DO_1
+0x40003ff	            0x89f9	                            mov ecx, edi	        86	crc32.c	IF_1	DO_1
+0x4000401	          0xc1ef08	                              shr edi, 8	        86	crc32.c	IF_1	DO_1
+0x4000404	          0x324eff	                  xor cl, byte [rsi - 1]	        86	crc32.c	IF_1	DO_1
+0x4000407	           0xfb6c9	                           movzx ecx, cl	        86	crc32.c	IF_1	DO_1
+0x400040a	    0x333c8d000000	                  xor edi, dword [rcx*4]	        86	crc32.c	IF_1	DO_1
+0x4000411	        0x4883ea01	                              sub rdx, 1	        87	crc32.c	IF_1	DO_1
+0x4000415	            0x75da	                           jne 0x40003f1	        87	crc32.c	IF_1	DO_1
+0x4000417	            0xebcd	                           jmp 0x40003e6	        87	crc32.c	IF_1	DO_1
+crc32_generic_shift	FOR,2:CALL,2:DO,0:WHILE,0:ELSE,0:IF,3:functions,0:SWITCH,0	62
+0x4000040	          0x4189f0	                            mov r8d, esi	       246	crc32.c	FUNCTION_7	FOR_1
+0x4000043	            0x89f8	                            mov eax, edi	       241	crc32.c	FUNCTION_7
+0x4000045	        0x4183e003	                              and r8d, 3	       246	crc32.c	FUNCTION_7	FOR_1
+0x4000049	        0x41c1e003	                              shl r8d, 3	       246	crc32.c	FUNCTION_7	FOR_1
+0x400004d	          0x4585c0	                           test r8d, r8d	       246	crc32.c	FUNCTION_7	FOR_1
+0x4000050	            0x7416	                            je 0x4000068	       246	crc32.c	FUNCTION_7	FOR_1
+0x4000052	            0x31c9	                            xor ecx, ecx	       246	crc32.c	FUNCTION_7	FOR_1
+0x4000054	            0x89c7	                            mov edi, eax	       247	crc32.c	FUNCTION_7	FOR_1
+0x4000056	            0xd1ef	                              shr edi, 1	       247	crc32.c	FUNCTION_7	FOR_1
+0x4000058	          0x83e001	                              and eax, 1	       247	crc32.c	FUNCTION_7	FOR_1
+0x400005b	           0xf45c2	                         cmovne eax, edx	       247	crc32.c	FUNCTION_7	FOR_1
+0x400005e	          0x83c101	                              add ecx, 1	       246	crc32.c	FUNCTION_7	FOR_1
+0x4000061	            0x31f8	                            xor eax, edi	       247	crc32.c	FUNCTION_7	FOR_1
+0x4000063	          0x4439c1	                            cmp ecx, r8d	       246	crc32.c	FUNCTION_7	FOR_1
+0x4000066	            0x75ec	                           jne 0x4000054	       246	crc32.c	FUNCTION_7	FOR_1
+0x4000068	        0x48c1ee02	                              shr rsi, 2	       249	crc32.c	FUNCTION_7
+0x400006c	          0x4885f6	                           test rsi, rsi	       250	crc32.c	FUNCTION_7	IF_1
+0x400006f	     0xf8481000000	                            je 0x40000f6	       250	crc32.c	FUNCTION_7	IF_1
+0x4000075	          0x4189d2	                           mov r10d, edx	       250	crc32.c	FUNCTION_7	IF_1
+0x4000078	          0x4531db	                          xor r11d, r11d	       215	crc32.c	FUNCTION_6
+0x400007b	        0x40f6c601	                             test sil, 1	       255	crc32.c	FUNCTION_7	FOR_2	IF_2
+0x400007f	            0x7432	                            je 0x40000b3	       255	crc32.c	FUNCTION_7	FOR_2	IF_2
+0x4000081	            0xa801	                              test al, 1	       215	crc32.c	FUNCTION_6
+0x4000083	          0x4489df	                           mov edi, r11d	       215	crc32.c	FUNCTION_6
+0x4000086	            0x89c1	                            mov ecx, eax	       215	crc32.c	FUNCTION_6
+0x4000088	        0x410f45fa	                        cmovne edi, r10d	       215	crc32.c	FUNCTION_6
+0x400008c	    0x41b81f000000	                           mov r8d, 0x1f	       215	crc32.c	FUNCTION_6
+0x4000092	            0x89f8	                            mov eax, edi	       215	crc32.c	FUNCTION_6
+0x4000094	            0x89c7	                            mov edi, eax	       219	crc32.c	FUNCTION_6	FOR_1
+0x4000096	            0xd1ef	                              shr edi, 1	       219	crc32.c	FUNCTION_6	FOR_1
+0x4000098	          0x83e001	                              and eax, 1	       219	crc32.c	FUNCTION_6	FOR_1
+0x400009b	           0xf45c2	                         cmovne eax, edx	       219	crc32.c	FUNCTION_6	FOR_1
+0x400009e	            0xd1e9	                              shr ecx, 1	       220	crc32.c	FUNCTION_6	FOR_1
+0x40000a0	            0x31f8	                            xor eax, edi	       219	crc32.c	FUNCTION_6	FOR_1
+0x40000a2	            0x89cf	                            mov edi, ecx	       221	crc32.c	FUNCTION_6	FOR_1
+0x40000a4	          0x83e701	                              and edi, 1	       221	crc32.c	FUNCTION_6	FOR_1
+0x40000a7	        0x410f45fa	                        cmovne edi, r10d	       221	crc32.c	FUNCTION_6	FOR_1
+0x40000ab	            0x31f8	                            xor eax, edi	       221	crc32.c	FUNCTION_6	FOR_1
+0x40000ad	        0x4183e801	                              sub r8d, 1	       218	crc32.c	FUNCTION_6	FOR_1
+0x40000b1	            0x75e1	                           jne 0x4000094	       218	crc32.c	FUNCTION_6	FOR_1
+0x40000b3	          0x48d1ee	                              shr rsi, 1	       259	crc32.c	FUNCTION_7	FOR_2	IF_3
+0x40000b6	            0x743e	                            je 0x40000f6	       259	crc32.c	FUNCTION_7	FOR_2	IF_3
+0x40000b8	        0x41f6c201	                            test r10b, 1	       215	crc32.c	FUNCTION_6
+0x40000bc	          0x4489d9	                           mov ecx, r11d	       215	crc32.c	FUNCTION_6
+0x40000bf	          0x4489d7	                           mov edi, r10d	       215	crc32.c	FUNCTION_6
+0x40000c2	        0x410f45ca	                        cmovne ecx, r10d	       215	crc32.c	FUNCTION_6
+0x40000c6	    0x41b91f000000	                           mov r9d, 0x1f	       215	crc32.c	FUNCTION_6
+0x40000cc	          0x4189c8	                            mov r8d, ecx	       219	crc32.c	FUNCTION_6	FOR_1
+0x40000cf	          0x41d1e8	                              shr r8d, 1	       219	crc32.c	FUNCTION_6	FOR_1
+0x40000d2	          0x83e101	                              and ecx, 1	       219	crc32.c	FUNCTION_6	FOR_1
+0x40000d5	           0xf45ca	                         cmovne ecx, edx	       219	crc32.c	FUNCTION_6	FOR_1
+0x40000d8	            0xd1ef	                              shr edi, 1	       220	crc32.c	FUNCTION_6	FOR_1
+0x40000da	          0x4431c1	                            xor ecx, r8d	       219	crc32.c	FUNCTION_6	FOR_1
+0x40000dd	          0x4189f8	                            mov r8d, edi	       221	crc32.c	FUNCTION_6	FOR_1
+0x40000e0	        0x4183e001	                              and r8d, 1	       221	crc32.c	FUNCTION_6	FOR_1
+0x40000e4	        0x450f45c2	                        cmovne r8d, r10d	       221	crc32.c	FUNCTION_6	FOR_1
+0x40000e8	          0x4431c1	                            xor ecx, r8d	       221	crc32.c	FUNCTION_6	FOR_1
+0x40000eb	        0x4183e901	                              sub r9d, 1	       218	crc32.c	FUNCTION_6	FOR_1
+0x40000ef	            0x75db	                           jne 0x40000cc	       218	crc32.c	FUNCTION_6	FOR_1
+0x40000f1	          0x4189ca	                           mov r10d, ecx	       221	crc32.c	FUNCTION_6	FOR_1
+0x40000f4	            0xeb85	                           jmp 0x400007b	       221	crc32.c	FUNCTION_6	FOR_1
+0x40000f6	            0xf3c3	                                     ret	       267	crc32.c	FUNCTION_7

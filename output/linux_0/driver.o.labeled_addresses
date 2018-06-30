@@ -1,0 +1,270 @@
+pnp_bus_suspend	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,1:IF,0	3
+0x40001e0	      0xbe02000000	                              mov esi, 2	       197	driver.c	FUNCTION_11	CALL_1
+0x40001e5	      0xe8f6feffff	              call sym.__pnp_bus_suspend	       197	driver.c	FUNCTION_11	CALL_1
+0x40001ea	            0xf3c3	                                     ret	       198	driver.c	FUNCTION_11
+pnp_device_detach	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,2:IF,1	10
+0x40000b0	              0x53	                                push rbx	        73	driver.c	FUNCTION_5
+0x40000b1	          0x4889fb	                            mov rbx, rdi	        73	driver.c	FUNCTION_5
+0x40000b4	    0x48c7c7000000	                              mov rdi, 0	        74	driver.c	FUNCTION_5	CALL_1
+0x40000bb	      0xe800000000	                          call 0x40000c0	        74	driver.c	FUNCTION_5	CALL_1
+0x40000c0	    0x83bbdc020000	              cmp dword [rbx + 0x2dc], 1	        75	driver.c	FUNCTION_5	IF_1
+0x40000c7	            0x750a	                           jne 0x40000d3	        75	driver.c	FUNCTION_5	IF_1
+0x40000c9	    0xc783dc020000	              mov dword [rbx + 0x2dc], 0	        76	driver.c	FUNCTION_5	IF_1
+0x40000d3	              0x5b	                                 pop rbx	        78	driver.c	FUNCTION_5
+0x40000d4	    0x48c7c7000000	                              mov rdi, 0	        77	driver.c	FUNCTION_5	CALL_2
+0x40000db	      0xe900000000	               jmp sym.__pnp_bus_suspend	        77	driver.c	FUNCTION_5	CALL_2
+pnp_device_shutdown	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,2:IF,1	8
+0x4000040	    0x488b87300300	           mov rax, qword [rdi + 0x330] 	       146	driver.c	FUNCTION_8
+0x4000047	          0x4885c0	                           test rax, rax	       148	driver.c	FUNCTION_8	IF_1
+0x400004a	            0x740e	                            je 0x400005a	       148	driver.c	FUNCTION_8	IF_1
+0x400004c	        0x488b4028	            mov rax, qword [rax + 0x28] 	       148	driver.c	FUNCTION_8	IF_1
+0x4000050	          0x4885c0	                           test rax, rax	       148	driver.c	FUNCTION_8	IF_1
+0x4000053	            0x7405	                            je 0x400005a	       148	driver.c	FUNCTION_8	IF_1
+0x4000055	      0xe900000000	                           jmp 0x400005a	       149	driver.c	FUNCTION_8	CALL_2
+0x400005a	            0xf3c3	                                     ret	       149	driver.c	FUNCTION_8	CALL_2
+pnp_device_probe	ELSE,2:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,8:IF,9	55
+0x4000430	            0x4154	                                push r12	        81	driver.c	FUNCTION_6
+0x4000432	              0x55	                                push rbp	        81	driver.c	FUNCTION_6
+0x4000433	              0x53	                                push rbx	        81	driver.c	FUNCTION_6
+0x4000434	          0x4889fb	                            mov rbx, rdi	        81	driver.c	FUNCTION_6
+0x4000437	    0x488baf880000	            mov rbp, qword [rdi + 0x88] 	        87	driver.c	FUNCTION_6	CALL_2
+0x400043e	      0xe800000000	                          call 0x4000443	        89	driver.c	FUNCTION_6	CALL_3
+0x4000443	            0x85c0	                           test eax, eax	        90	driver.c	FUNCTION_6	IF_1
+0x4000445	            0x7852	                            js 0x4000499	        90	driver.c	FUNCTION_6	IF_1
+0x4000447	    0x8b8348030000	           mov eax, dword [rbx + 0x348] 	        93	driver.c	FUNCTION_6	IF_2
+0x400044d	            0x85c0	                           test eax, eax	        93	driver.c	FUNCTION_6	IF_2
+0x400044f	            0x744d	                            je 0x400049e	        93	driver.c	FUNCTION_6	IF_2
+0x4000451	          0x8b45d0	             mov eax, dword [rbp - 0x30]	        99	driver.c	FUNCTION_6	ELSE_1	IF_5
+0x4000454	          0x83e003	                              and eax, 3	        99	driver.c	FUNCTION_6	ELSE_1	IF_5
+0x4000457	          0x83f803	                              cmp eax, 3	        99	driver.c	FUNCTION_6	ELSE_1	IF_5
+0x400045a	            0x7466	                            je 0x40004c2	        99	driver.c	FUNCTION_6	ELSE_1	IF_5
+0x400045c	        0x4c8b65d8	             mov r12, qword [rbp - 0x28]	       106	driver.c	FUNCTION_6	IF_7
+0x4000460	          0x4d85e4	                           test r12, r12	       106	driver.c	FUNCTION_6	IF_7
+0x4000463	            0x7427	                            je 0x400048c	       106	driver.c	FUNCTION_6	IF_7
+0x4000465	        0x488b7dc8	             mov rdi, qword [rbp - 0x38]	       107	driver.c	FUNCTION_6	IF_7	CALL_6
+0x4000469	    0x488db3400300	                  lea rsi, [rbx + 0x340]	       107	driver.c	FUNCTION_6	IF_7	CALL_6
+0x4000470	      0xe87bffffff	            call sym.match_device.isra.1	       107	driver.c	FUNCTION_6	IF_7	CALL_6
+0x4000475	          0x4885c0	                           test rax, rax	       108	driver.c	FUNCTION_6	IF_7	IF_8
+0x4000478	            0x7412	                            je 0x400048c	       108	driver.c	FUNCTION_6	IF_7	IF_8
+0x400047a	          0x4889c6	                            mov rsi, rax	       109	driver.c	FUNCTION_6	IF_7	CALL_7
+0x400047d	          0x4889df	                            mov rdi, rbx	       109	driver.c	FUNCTION_6	IF_7	CALL_7
+0x4000480	      0xe800000000	                          call 0x4000485	       109	driver.c	FUNCTION_6	IF_7	CALL_7
+0x4000485	            0x85c0	                           test eax, eax	       111	driver.c	FUNCTION_6	IF_9
+0x4000487	          0x4189c4	                           mov r12d, eax	       109	driver.c	FUNCTION_6	IF_7	CALL_7
+0x400048a	            0x7826	                            js 0x40004b2	       111	driver.c	FUNCTION_6	IF_9
+0x400048c	        0x4883ed40	                           sub rbp, 0x40	       112	driver.c	FUNCTION_6	IF_9
+0x4000490	            0x31c0	                            xor eax, eax	       117	driver.c	FUNCTION_6
+0x4000492	    0x4889ab300300	            mov qword [rbx + 0x330], rbp	       112	driver.c	FUNCTION_6	IF_9
+0x4000499	              0x5b	                                 pop rbx	       122	driver.c	FUNCTION_6
+0x400049a	              0x5d	                                 pop rbp	       122	driver.c	FUNCTION_6
+0x400049b	            0x415c	                                 pop r12	       122	driver.c	FUNCTION_6
+0x400049d	              0xc3	                                     ret	       122	driver.c	FUNCTION_6
+0x400049e	        0xf645d001	               test byte [rbp - 0x30], 1	        94	driver.c	FUNCTION_6	IF_2	IF_3
+0x40004a2	            0x75b8	                           jne 0x400045c	        94	driver.c	FUNCTION_6	IF_2	IF_3
+0x40004a4	          0x4889df	                            mov rdi, rbx	        95	driver.c	FUNCTION_6	IF_2	IF_3	CALL_4
+0x40004a7	      0xe800000000	                          call 0x40004ac	        95	driver.c	FUNCTION_6	IF_2	IF_3	CALL_4
+0x40004ac	            0x85c0	                           test eax, eax	        96	driver.c	FUNCTION_6	IF_2	IF_3	IF_4
+0x40004ae	            0x79ac	                           jns 0x400045c	        96	driver.c	FUNCTION_6	IF_2	IF_3	IF_4
+0x40004b0	            0xebe7	                           jmp 0x4000499	        96	driver.c	FUNCTION_6	IF_2	IF_3	IF_4
+0x40004b2	          0x4889df	                            mov rdi, rbx	       120	driver.c	FUNCTION_6	CALL_8
+0x40004b5	      0xe800000000	                          call 0x40004ba	       120	driver.c	FUNCTION_6	CALL_8
+0x40004ba	          0x4489e0	                           mov eax, r12d	       121	driver.c	FUNCTION_6
+0x40004bd	              0x5b	                                 pop rbx	       122	driver.c	FUNCTION_6
+0x40004be	              0x5d	                                 pop rbp	       122	driver.c	FUNCTION_6
+0x40004bf	            0x415c	                                 pop r12	       122	driver.c	FUNCTION_6
+0x40004c1	              0xc3	                                     ret	       122	driver.c	FUNCTION_6
+0x40004c2	          0x4889df	                            mov rdi, rbx	       101	driver.c	FUNCTION_6	ELSE_1	IF_5	CALL_5
+0x40004c5	      0xe800000000	                          call 0x40004ca	       101	driver.c	FUNCTION_6	ELSE_1	IF_5	CALL_5
+0x40004ca	            0x85c0	                           test eax, eax	       102	driver.c	FUNCTION_6	ELSE_1	IF_5	IF_6
+0x40004cc	            0x798e	                           jns 0x400045c	       102	driver.c	FUNCTION_6	ELSE_1	IF_5	IF_6
+0x40004ce	            0xebc9	                           jmp 0x4000499	       102	driver.c	FUNCTION_6	ELSE_1	IF_5	IF_6
+__pnp_bus_suspend	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,8:IF,8	64
+0x40000e0	            0x4155	                                push r13	       163	driver.c	FUNCTION_10
+0x40000e2	            0x4154	                                push r12	       163	driver.c	FUNCTION_10
+0x40000e4	              0x55	                                push rbp	       163	driver.c	FUNCTION_10
+0x40000e5	              0x53	                                push rbx	       163	driver.c	FUNCTION_10
+0x40000e6	    0x4c8ba7300300	           mov r12, qword [rdi + 0x330] 	       165	driver.c	FUNCTION_10
+0x40000ed	          0x4d85e4	                           test r12, r12	       168	driver.c	FUNCTION_10	IF_1
+0x40000f0	     0xf84bc000000	                            je 0x40001b2	       168	driver.c	FUNCTION_10	IF_1
+0x40000f6	    0x498b8424a800	            mov rax, qword [r12 + 0xa8] 	       171	driver.c	FUNCTION_10	IF_2
+0x40000fe	          0x4189f5	                           mov r13d, esi	       171	driver.c	FUNCTION_10	IF_2
+0x4000101	          0x4889fb	                            mov rbx, rdi	       171	driver.c	FUNCTION_10	IF_2
+0x4000104	          0x4885c0	                           test rax, rax	       171	driver.c	FUNCTION_10	IF_2
+0x4000107	            0x7430	                            je 0x4000139	       171	driver.c	FUNCTION_10	IF_2
+0x4000109	        0x488b4010	            mov rax, qword [rax + 0x10] 	       171	driver.c	FUNCTION_10	IF_2
+0x400010d	          0x4885c0	                           test rax, rax	       171	driver.c	FUNCTION_10	IF_2
+0x4000110	            0x7427	                            je 0x4000139	       171	driver.c	FUNCTION_10	IF_2
+0x4000112	      0xe800000000	                          call 0x4000117	       172	driver.c	FUNCTION_10	IF_2	CALL_2
+0x4000117	            0x89c5	                            mov ebp, eax	       172	driver.c	FUNCTION_10	IF_2	CALL_2
+0x4000119	    0x498b8424a800	            mov rax, qword [r12 + 0xa8] 	       173	driver.c	FUNCTION_10	IF_2	CALL_3
+0x4000121	    0x48c7c7000000	                              mov rdi, 0	       173	driver.c	FUNCTION_10	IF_2	CALL_3
+0x4000128	            0x89ea	                            mov edx, ebp	       173	driver.c	FUNCTION_10	IF_2	CALL_3
+0x400012a	        0x488b7010	            mov rsi, qword [rax + 0x10] 	       173	driver.c	FUNCTION_10	IF_2	CALL_3
+0x400012e	      0xe800000000	                          call 0x4000133	       173	driver.c	FUNCTION_10	IF_2	CALL_3
+0x4000133	            0x85ed	                           test ebp, ebp	       174	driver.c	FUNCTION_10	IF_2	IF_3
+0x4000135	            0x89e8	                            mov eax, ebp	       174	driver.c	FUNCTION_10	IF_2	IF_3
+0x4000137	            0x757b	                           jne 0x40001b4	       174	driver.c	FUNCTION_10	IF_2	IF_3
+0x4000139	      0x498b442430	            mov rax, qword [r12 + 0x30] 	       178	driver.c	FUNCTION_10	IF_4
+0x400013e	          0x4885c0	                           test rax, rax	       178	driver.c	FUNCTION_10	IF_4
+0x4000141	            0x740f	                            je 0x4000152	       178	driver.c	FUNCTION_10	IF_4
+0x4000143	          0x4489ee	                           mov esi, r13d	       179	driver.c	FUNCTION_10	IF_4	CALL_4
+0x4000146	          0x4889df	                            mov rdi, rbx	       179	driver.c	FUNCTION_10	IF_4	CALL_4
+0x4000149	      0xe800000000	                          call 0x400014e	       179	driver.c	FUNCTION_10	IF_4	CALL_4
+0x400014e	            0x85c0	                           test eax, eax	       180	driver.c	FUNCTION_10	IF_4	IF_5
+0x4000150	            0x7562	                           jne 0x40001b4	       180	driver.c	FUNCTION_10	IF_4	IF_5
+0x4000152	    0x488b83200300	           mov rax, qword [rbx + 0x320] 	       184	driver.c	FUNCTION_10	IF_6	CALL_5
+0x4000159	      0x4883782800	               cmp qword [rax + 0x28], 0	       184	driver.c	FUNCTION_10	IF_6	CALL_5
+0x400015e	            0x742c	                            je 0x400018c	       184	driver.c	FUNCTION_10	IF_6	CALL_5
+0x4000160	    0x8b934c030000	           mov edx, dword [rbx + 0x34c] 	       184	driver.c	FUNCTION_10	IF_6	CALL_5
+0x4000166	          0xf6c204	                              test dl, 4	       184	driver.c	FUNCTION_10	IF_6	CALL_5
+0x4000169	            0x7421	                            je 0x400018c	       184	driver.c	FUNCTION_10	IF_6	CALL_5
+0x400016b	          0x83e220	                           and edx, 0x20	       184	driver.c	FUNCTION_10	IF_6	CALL_5
+0x400016e	            0x7409	                            je 0x4000179	       184	driver.c	FUNCTION_10	IF_6	CALL_5
+0x4000170	    0x803d00000000	                cmp byte [0x04000177], 0	       184	driver.c	FUNCTION_10	IF_6	CALL_5
+0x4000177	            0x7439	                            je 0x40001b2	       184	driver.c	FUNCTION_10	IF_6	CALL_5
+0x4000179	          0x4889df	                            mov rdi, rbx	       185	driver.c	FUNCTION_10	IF_6	CALL_6
+0x400017c	      0xe800000000	                          call 0x4000181	       185	driver.c	FUNCTION_10	IF_6	CALL_6
+0x4000181	            0x85c0	                           test eax, eax	       186	driver.c	FUNCTION_10	IF_6	IF_7
+0x4000183	            0x752f	                           jne 0x40001b4	       186	driver.c	FUNCTION_10	IF_6	IF_7
+0x4000185	    0x488b83200300	           mov rax, qword [rbx + 0x320] 	       186	driver.c	FUNCTION_10	IF_6	IF_7
+0x400018c	        0x488b4038	            mov rax, qword [rax + 0x38] 	       190	driver.c	FUNCTION_10	IF_8	CALL_7
+0x4000190	          0x4885c0	                           test rax, rax	       190	driver.c	FUNCTION_10	IF_8	CALL_7
+0x4000193	            0x741d	                            je 0x40001b2	       190	driver.c	FUNCTION_10	IF_8	CALL_7
+0x4000195	    0xf6834c030000	          test byte [rbx + 0x34c], 0x20 	       190	driver.c	FUNCTION_10	IF_8	CALL_7
+0x400019c	            0x7409	                            je 0x40001a7	       190	driver.c	FUNCTION_10	IF_8	CALL_7
+0x400019e	    0x803d00000000	                cmp byte [0x040001a5], 0	       190	driver.c	FUNCTION_10	IF_8	CALL_7
+0x40001a5	            0x740b	                            je 0x40001b2	       190	driver.c	FUNCTION_10	IF_8	CALL_7
+0x40001a7	          0x4489ee	                           mov esi, r13d	       191	driver.c	FUNCTION_10	CALL_8
+0x40001aa	          0x4889df	                            mov rdi, rbx	       191	driver.c	FUNCTION_10	CALL_8
+0x40001ad	      0xe800000000	                          call 0x40001b2	       191	driver.c	FUNCTION_10	CALL_8
+0x40001b2	            0x31c0	                            xor eax, eax	       192	driver.c	FUNCTION_10
+0x40001b4	              0x5b	                                 pop rbx	       193	driver.c	FUNCTION_10
+0x40001b5	              0x5d	                                 pop rbp	       193	driver.c	FUNCTION_10
+0x40001b6	            0x415c	                                 pop r12	       193	driver.c	FUNCTION_10
+0x40001b8	            0x415d	                                 pop r13	       193	driver.c	FUNCTION_10
+0x40001ba	              0xc3	                                     ret	       193	driver.c	FUNCTION_10
+pnp_bus_freeze	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,1:IF,0	3
+0x40001d0	      0xbe01000000	                              mov esi, 1	       202	driver.c	FUNCTION_12	CALL_1
+0x40001d5	      0xe806ffffff	              call sym.__pnp_bus_suspend	       202	driver.c	FUNCTION_12	CALL_1
+0x40001da	            0xf3c3	                                     ret	       203	driver.c	FUNCTION_12
+pnp_register_driver	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,1:IF,0	5
+0x40002f0	          0x488b07	                    mov rax, qword [rdi]	       269	driver.c	FUNCTION_15
+0x40002f3	    0x48c747480000	               mov qword [rdi + 0x48], 0	       270	driver.c	FUNCTION_15
+0x40002fb	        0x4883c740	                           add rdi, 0x40	       272	driver.c	FUNCTION_15	CALL_1
+0x40002ff	          0x488907	                    mov qword [rdi], rax	       269	driver.c	FUNCTION_15
+0x4000302	      0xe900000000	                           jmp 0x4000307	       272	driver.c	FUNCTION_15	CALL_1
+pnp_bus_poweroff	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,1:IF,0	3
+0x40001c0	      0xbe04000000	                              mov esi, 4	       207	driver.c	FUNCTION_13	CALL_1
+0x40001c5	      0xe816ffffff	              call sym.__pnp_bus_suspend	       207	driver.c	FUNCTION_13	CALL_1
+0x40001ca	            0xf3c3	                                     ret	       208	driver.c	FUNCTION_13
+pnp_unregister_driver	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,1:IF,0	2
+0x4000310	        0x4883c740	                           add rdi, 0x40	       277	driver.c	FUNCTION_16	CALL_1
+0x4000314	      0xe900000000	                           jmp 0x4000319	       277	driver.c	FUNCTION_16	CALL_1
+pnp_device_remove	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,4:IF,3	33
+0x4000280	              0x55	                                push rbp	       125	driver.c	FUNCTION_7
+0x4000281	              0x53	                                push rbx	       125	driver.c	FUNCTION_7
+0x4000282	          0x4889fb	                            mov rbx, rdi	       125	driver.c	FUNCTION_7
+0x4000285	    0x488baf300300	           mov rbp, qword [rdi + 0x330] 	       127	driver.c	FUNCTION_7
+0x400028c	          0x4885ed	                           test rbp, rbp	       129	driver.c	FUNCTION_7	IF_1
+0x400028f	            0x743e	                            je 0x40002cf	       129	driver.c	FUNCTION_7	IF_1
+0x4000291	        0x488b4520	            mov rax, qword [rbp + 0x20] 	       130	driver.c	FUNCTION_7	IF_1	IF_2
+0x4000295	          0x4885c0	                           test rax, rax	       130	driver.c	FUNCTION_7	IF_1	IF_2
+0x4000298	            0x7405	                            je 0x400029f	       130	driver.c	FUNCTION_7	IF_1	IF_2
+0x400029a	      0xe800000000	                          call 0x400029f	       131	driver.c	FUNCTION_7	IF_1	CALL_2
+0x400029f	    0x8b9348030000	           mov edx, dword [rbx + 0x348] 	       135	driver.c	FUNCTION_7	IF_3
+0x40002a5	    0x48c783300300	              mov qword [rbx + 0x330], 0	       132	driver.c	FUNCTION_7	IF_1
+0x40002b0	            0x85d2	                           test edx, edx	       135	driver.c	FUNCTION_7	IF_3
+0x40002b2	            0x740e	                            je 0x40002c2	       135	driver.c	FUNCTION_7	IF_3
+0x40002b4	        0xf6451001	               test byte [rbp + 0x10], 1	       136	driver.c	FUNCTION_7	IF_3
+0x40002b8	            0x7508	                           jne 0x40002c2	       136	driver.c	FUNCTION_7	IF_3
+0x40002ba	          0x4889df	                            mov rdi, rbx	       137	driver.c	FUNCTION_7	CALL_3
+0x40002bd	      0xe800000000	                          call 0x40002c2	       137	driver.c	FUNCTION_7	CALL_3
+0x40002c2	          0x4889df	                            mov rdi, rbx	       139	driver.c	FUNCTION_7	CALL_4
+0x40002c5	      0xe800000000	                          call 0x40002ca	       139	driver.c	FUNCTION_7	CALL_4
+0x40002ca	            0x31c0	                            xor eax, eax	       141	driver.c	FUNCTION_7
+0x40002cc	              0x5b	                                 pop rbx	       141	driver.c	FUNCTION_7
+0x40002cd	              0x5d	                                 pop rbp	       141	driver.c	FUNCTION_7
+0x40002ce	              0xc3	                                     ret	       141	driver.c	FUNCTION_7
+0x40002cf	    0x8b8748030000	           mov eax, dword [rdi + 0x348] 	       135	driver.c	FUNCTION_7	IF_3
+0x40002d5	            0x85c0	                           test eax, eax	       135	driver.c	FUNCTION_7	IF_3
+0x40002d7	            0x75e1	                           jne 0x40002ba	       135	driver.c	FUNCTION_7	IF_3
+0x40002d9	          0x4889df	                            mov rdi, rbx	       139	driver.c	FUNCTION_7	CALL_4
+0x40002dc	      0xe800000000	                          call 0x40002e1	       139	driver.c	FUNCTION_7	CALL_4
+0x40002e1	            0x31c0	                            xor eax, eax	       141	driver.c	FUNCTION_7
+0x40002e3	              0x5b	                                 pop rbx	       141	driver.c	FUNCTION_7
+0x40002e4	              0x5d	                                 pop rbp	       141	driver.c	FUNCTION_7
+0x40002e5	              0xc3	                                     ret	       141	driver.c	FUNCTION_7
+pnp_bus_resume	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,6:IF,9	44
+0x40001f0	              0x55	                                push rbp	       211	driver.c	FUNCTION_14
+0x40001f1	              0x53	                                push rbx	       211	driver.c	FUNCTION_14
+0x40001f2	    0x488baf300300	           mov rbp, qword [rdi + 0x330] 	       213	driver.c	FUNCTION_14
+0x40001f9	          0x4885ed	                           test rbp, rbp	       216	driver.c	FUNCTION_14	IF_1
+0x40001fc	            0x7467	                            je 0x4000265	       216	driver.c	FUNCTION_14	IF_1
+0x40001fe	    0x488b87200300	           mov rax, qword [rdi + 0x320] 	       219	driver.c	FUNCTION_14	IF_2
+0x4000205	          0x4889fb	                            mov rbx, rdi	       219	driver.c	FUNCTION_14	IF_2
+0x4000208	        0x488b5040	            mov rdx, qword [rax + 0x40] 	       219	driver.c	FUNCTION_14	IF_2
+0x400020c	          0x4885d2	                           test rdx, rdx	       219	driver.c	FUNCTION_14	IF_2
+0x400020f	            0x7410	                            je 0x4000221	       219	driver.c	FUNCTION_14	IF_2
+0x4000211	      0xe800000000	                          call 0x4000216	       220	driver.c	FUNCTION_14	IF_2	CALL_2
+0x4000216	            0x85c0	                           test eax, eax	       221	driver.c	FUNCTION_14	IF_2	IF_3
+0x4000218	            0x754d	                           jne 0x4000267	       221	driver.c	FUNCTION_14	IF_2	IF_3
+0x400021a	    0x488b83200300	           mov rax, qword [rbx + 0x320] 	       221	driver.c	FUNCTION_14	IF_2	IF_3
+0x4000221	      0x4883782000	               cmp qword [rax + 0x20], 0	       225	driver.c	FUNCTION_14	IF_4	CALL_3
+0x4000226	            0x7409	                            je 0x4000231	       225	driver.c	FUNCTION_14	IF_4	CALL_3
+0x4000228	    0xf6834c030000	              test byte [rbx + 0x34c], 2	       225	driver.c	FUNCTION_14	IF_4	CALL_3
+0x400022f	            0x7539	                           jne 0x400026a	       225	driver.c	FUNCTION_14	IF_4	CALL_3
+0x4000231	    0x488b85a80000	            mov rax, qword [rbp + 0xa8] 	       231	driver.c	FUNCTION_14	IF_6
+0x4000238	          0x4885c0	                           test rax, rax	       231	driver.c	FUNCTION_14	IF_6
+0x400023b	            0x7415	                            je 0x4000252	       231	driver.c	FUNCTION_14	IF_6
+0x400023d	        0x488b4018	            mov rax, qword [rax + 0x18] 	       231	driver.c	FUNCTION_14	IF_6
+0x4000241	          0x4885c0	                           test rax, rax	       231	driver.c	FUNCTION_14	IF_6
+0x4000244	            0x740c	                            je 0x4000252	       231	driver.c	FUNCTION_14	IF_6
+0x4000246	          0x4889df	                            mov rdi, rbx	       232	driver.c	FUNCTION_14	IF_6	CALL_5
+0x4000249	      0xe800000000	                          call 0x400024e	       232	driver.c	FUNCTION_14	IF_6	CALL_5
+0x400024e	            0x85c0	                           test eax, eax	       233	driver.c	FUNCTION_14	IF_6	IF_7
+0x4000250	            0x7515	                           jne 0x4000267	       233	driver.c	FUNCTION_14	IF_6	IF_7
+0x4000252	        0x488b4538	            mov rax, qword [rbp + 0x38] 	       237	driver.c	FUNCTION_14	IF_8
+0x4000256	          0x4885c0	                           test rax, rax	       237	driver.c	FUNCTION_14	IF_8
+0x4000259	            0x740a	                            je 0x4000265	       237	driver.c	FUNCTION_14	IF_8
+0x400025b	          0x4889df	                            mov rdi, rbx	       238	driver.c	FUNCTION_14	IF_8	CALL_6
+0x400025e	              0x5b	                                 pop rbx	       244	driver.c	FUNCTION_14
+0x400025f	              0x5d	                                 pop rbp	       244	driver.c	FUNCTION_14
+0x4000260	      0xe900000000	                           jmp 0x4000265	       238	driver.c	FUNCTION_14	IF_8	CALL_6
+0x4000265	            0x31c0	                            xor eax, eax	       217	driver.c	FUNCTION_14	IF_1
+0x4000267	              0x5b	                                 pop rbx	       244	driver.c	FUNCTION_14
+0x4000268	              0x5d	                                 pop rbp	       244	driver.c	FUNCTION_14
+0x4000269	              0xc3	                                     ret	       244	driver.c	FUNCTION_14
+0x400026a	          0x4889df	                            mov rdi, rbx	       226	driver.c	FUNCTION_14	IF_4	CALL_4
+0x400026d	      0xe800000000	                          call 0x4000272	       226	driver.c	FUNCTION_14	IF_4	CALL_4
+0x4000272	            0x85c0	                           test eax, eax	       227	driver.c	FUNCTION_14	IF_4	IF_5
+0x4000274	            0x74bb	                            je 0x4000231	       227	driver.c	FUNCTION_14	IF_4	IF_5
+0x4000276	            0xebef	                           jmp 0x4000267	       227	driver.c	FUNCTION_14	IF_4	IF_5
+pnp_bus_match	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,3:IF,1	8
+0x40004d0	    0x488d87400300	                  lea rax, [rdi + 0x340]	       153	driver.c	FUNCTION_9
+0x40004d7	        0x488b7ec8	             mov rdi, qword [rsi - 0x38]	       157	driver.c	FUNCTION_9	IF_1	CALL_3
+0x40004db	          0x4889c6	                            mov rsi, rax	       157	driver.c	FUNCTION_9	IF_1	CALL_3
+0x40004de	      0xe80dffffff	            call sym.match_device.isra.1	       157	driver.c	FUNCTION_9	IF_1	CALL_3
+0x40004e3	          0x4885c0	                           test rax, rax	       157	driver.c	FUNCTION_9	IF_1	CALL_3
+0x40004e6	           0xf95c0	                                setne al	       157	driver.c	FUNCTION_9	IF_1	CALL_3
+0x40004e9	           0xfb6c0	                           movzx eax, al	       157	driver.c	FUNCTION_9	IF_1	CALL_3
+0x40004ec	              0xc3	                                     ret	       160	driver.c	FUNCTION_9
+pnp_device_attach	ELSE,0:FOR,0:SWITCH,0:functions,0:DO,0:WHILE,0:CALL,3:IF,1	19
+0x4000060	              0x55	                                push rbp	        61	driver.c	FUNCTION_4
+0x4000061	              0x53	                                push rbx	        61	driver.c	FUNCTION_4
+0x4000062	          0x4889fd	                            mov rbp, rdi	        61	driver.c	FUNCTION_4
+0x4000065	    0x48c7c7000000	                              mov rdi, 0	        62	driver.c	FUNCTION_4	CALL_1
+0x400006c	      0xe800000000	                          call 0x4000071	        62	driver.c	FUNCTION_4	CALL_1
+0x4000071	    0x8b9ddc020000	           mov ebx, dword [rbp + 0x2dc] 	        63	driver.c	FUNCTION_4	IF_1
+0x4000077	            0x85db	                           test ebx, ebx	        63	driver.c	FUNCTION_4	IF_1
+0x4000079	            0x751b	                           jne 0x4000096	        63	driver.c	FUNCTION_4	IF_1
+0x400007b	    0xc785dc020000	              mov dword [rbp + 0x2dc], 1	        67	driver.c	FUNCTION_4
+0x4000085	    0x48c7c7000000	                              mov rdi, 0	        68	driver.c	FUNCTION_4	CALL_3
+0x400008c	      0xe800000000	                          call 0x4000091	        68	driver.c	FUNCTION_4	CALL_3
+0x4000091	            0x89d8	                            mov eax, ebx	        70	driver.c	FUNCTION_4
+0x4000093	              0x5b	                                 pop rbx	        70	driver.c	FUNCTION_4
+0x4000094	              0x5d	                                 pop rbp	        70	driver.c	FUNCTION_4
+0x4000095	              0xc3	                                     ret	        70	driver.c	FUNCTION_4
+0x4000096	    0x48c7c7000000	                              mov rdi, 0	        64	driver.c	FUNCTION_4	IF_1	CALL_2
+0x400009d	      0xbbf0ffffff	                     mov ebx, 0xfffffff0	        65	driver.c	FUNCTION_4	IF_1
+0x40000a2	      0xe800000000	                          call 0x40000a7	        64	driver.c	FUNCTION_4	IF_1	CALL_2
+0x40000a7	            0xebe8	                           jmp 0x4000091	        65	driver.c	FUNCTION_4	IF_1

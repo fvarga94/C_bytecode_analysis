@@ -1,0 +1,32 @@
+genericbl_get_intensity	CALL,0:SWITCH,0:DO,0:FOR,0:WHILE,0:IF,0:functions,0:ELSE,0	2
+0x40000a0	    0x8b0500000000	            mov eax, dword [0x040000a6] 	        53	generic_bl.c	FUNCTION_2
+0x40000a6	              0xc3	                                     ret	        53	generic_bl.c	FUNCTION_2
+genericbl_send_intensity	CALL,2:SWITCH,0:DO,0:FOR,0:WHILE,0:IF,5:functions,0:ELSE,0	28
+0x4000040	              0x53	                                push rbx	        28	generic_bl.c	FUNCTION_1
+0x4000041	          0x8b4708	                mov eax, dword [rdi + 8]	        32	generic_bl.c	FUNCTION_1	IF_1
+0x4000044	            0x31d2	                            xor edx, edx	        32	generic_bl.c	FUNCTION_1	IF_1
+0x4000046	            0x8b1f	                    mov ebx, dword [rdi]	        29	generic_bl.c	FUNCTION_1
+0x4000048	            0x85c0	                           test eax, eax	        32	generic_bl.c	FUNCTION_1	IF_1
+0x400004a	          0x8b4714	            mov eax, dword [rdi + 0x14] 	        33	generic_bl.c	FUNCTION_1	IF_2
+0x400004d	           0xf45da	                         cmovne ebx, edx	        32	generic_bl.c	FUNCTION_1	IF_1
+0x4000050	            0xa802	                              test al, 2	        34	generic_bl.c	FUNCTION_1	IF_2
+0x4000052	           0xf45da	                         cmovne ebx, edx	        34	generic_bl.c	FUNCTION_1	IF_2
+0x4000055	            0xa801	                              test al, 1	        36	generic_bl.c	FUNCTION_1	IF_3
+0x4000057	           0xf45da	                         cmovne ebx, edx	        36	generic_bl.c	FUNCTION_1	IF_3
+0x400005a	            0x85c0	                           test eax, eax	        37	generic_bl.c	FUNCTION_1	IF_4
+0x400005c	    0x488b05000000	            mov rax, qword [0x04000063] 	        38	generic_bl.c	FUNCTION_1	IF_4
+0x4000063	            0x782a	                            js 0x400008f	        37	generic_bl.c	FUNCTION_1	IF_4
+0x4000065	        0x488b4018	            mov rax, qword [rax + 0x18] 	        40	generic_bl.c	FUNCTION_1	CALL_1
+0x4000069	            0x89df	                            mov edi, ebx	        40	generic_bl.c	FUNCTION_1	CALL_1
+0x400006b	      0xe800000000	                          call 0x4000070	        40	generic_bl.c	FUNCTION_1	CALL_1
+0x4000070	    0x488b05000000	            mov rax, qword [0x04000077] 	        44	generic_bl.c	FUNCTION_1	IF_5
+0x4000077	    0x891d00000000	            mov dword [0x0400007d], ebx 	        42	generic_bl.c	FUNCTION_1
+0x400007d	        0x488b4020	            mov rax, qword [rax + 0x20] 	        44	generic_bl.c	FUNCTION_1	IF_5
+0x4000081	          0x4885c0	                           test rax, rax	        44	generic_bl.c	FUNCTION_1	IF_5
+0x4000084	            0x7405	                            je 0x400008b	        44	generic_bl.c	FUNCTION_1	IF_5
+0x4000086	      0xe800000000	                          call 0x400008b	        45	generic_bl.c	FUNCTION_1	CALL_2
+0x400008b	            0x31c0	                            xor eax, eax	        48	generic_bl.c	FUNCTION_1
+0x400008d	              0x5b	                                 pop rbx	        48	generic_bl.c	FUNCTION_1
+0x400008e	              0xc3	                                     ret	        48	generic_bl.c	FUNCTION_1
+0x400008f	          0x235810	             and ebx, dword [rax + 0x10]	        38	generic_bl.c	FUNCTION_1	IF_4
+0x4000092	            0xebd1	                           jmp 0x4000065	        38	generic_bl.c	FUNCTION_1	IF_4

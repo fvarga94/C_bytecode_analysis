@@ -1,0 +1,31 @@
+pci_iounmap	SWITCH,0:CALL,2:WHILE,0:DO,0:FOR,0:functions,0:ELSE,0:IF,0	9
+0x40002d0	    0x4881feffff03	                        cmp rsi, 0x3ffff	       250	iomap.c	FUNCTION_26	CALL_2
+0x40002d7	          0x4889f7	                            mov rdi, rsi	       249	iomap.c	FUNCTION_26
+0x40002da	            0x7717	                            ja 0x40002f3	       250	iomap.c	FUNCTION_26	CALL_2
+0x40002dc	    0x4881fe000001	                        cmp rsi, 0x10000	       250	iomap.c	FUNCTION_26	CALL_2
+0x40002e3	            0x7602	                           jbe 0x40002e7	       250	iomap.c	FUNCTION_26	CALL_2
+0x40002e5	            0xf3c3	                                     ret	       250	iomap.c	FUNCTION_26	CALL_2
+0x40002e7	    0x48c7c6000000	                              mov rsi, 0	       250	iomap.c	FUNCTION_26	CALL_2
+0x40002ee	      0xe97dfdffff	                   jmp sym.bad_io_access	       250	iomap.c	FUNCTION_26	CALL_2
+0x40002f3	      0xe900000000	                           jmp 0x40002f8	       250	iomap.c	FUNCTION_26	CALL_2
+ioport_unmap	SWITCH,0:CALL,0:WHILE,0:DO,0:FOR,0:functions,0:ELSE,0:IF,0	1
+0x4000060	            0xf3c3	                                     ret	       238	iomap.c	FUNCTION_25
+bad_io_access	SWITCH,0:CALL,1:WHILE,0:DO,0:FOR,0:functions,0:ELSE,0:IF,1	12
+0x4000070	    0x8b0500000000	            mov eax, dword [0x04000076] 	        42	iomap.c	FUNCTION_1	IF_1
+0x4000076	            0x85c0	                           test eax, eax	        42	iomap.c	FUNCTION_1	IF_1
+0x4000078	            0x7502	                           jne 0x400007c	        42	iomap.c	FUNCTION_1	IF_1
+0x400007a	            0xf3c3	                                     ret	        42	iomap.c	FUNCTION_1	IF_1
+0x400007c	          0x4889f2	                            mov rdx, rsi	        42	iomap.c	FUNCTION_1	IF_1
+0x400007f	          0x83e801	                              sub eax, 1	        43	iomap.c	FUNCTION_1	IF_1
+0x4000082	          0x4889fe	                            mov rsi, rdi	        43	iomap.c	FUNCTION_1	IF_1
+0x4000085	    0x48c7c7000000	                              mov rdi, 0	        44	iomap.c	FUNCTION_1	IF_1	CALL_1
+0x400008c	    0x890500000000	            mov dword [0x04000092], eax 	        43	iomap.c	FUNCTION_1	IF_1
+0x4000092	      0xe800000000	                          call 0x4000097	        44	iomap.c	FUNCTION_1	IF_1	CALL_1
+0x4000097	             0xf0b	                                     ud2	        44	iomap.c	FUNCTION_1	IF_1	CALL_1
+0x4000099	              0xc3	                                     ret	        44	iomap.c	FUNCTION_1	IF_1	CALL_1
+ioport_map	SWITCH,0:CALL,0:WHILE,0:DO,0:FOR,0:functions,0:ELSE,0:IF,1	5
+0x4000040	    0x488d87000001	                lea rax, [rdi + 0x10000]	       234	iomap.c	FUNCTION_24
+0x4000047	    0x4881ffffff00	                         cmp rdi, 0xffff	       234	iomap.c	FUNCTION_24
+0x400004e	      0xba00000000	                              mov edx, 0	       234	iomap.c	FUNCTION_24
+0x4000053	        0x480f47c2	                          cmova rax, rdx	       234	iomap.c	FUNCTION_24
+0x4000057	              0xc3	                                     ret	       235	iomap.c	FUNCTION_24

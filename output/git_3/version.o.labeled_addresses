@@ -1,0 +1,65 @@
+git_user_agent	functions,0:DO,0:FOR,0:CALL,1:ELSE,0:IF,2:SWITCH,0:WHILE,0	17
+0x4000040	    0x488b05000000	            mov rax, qword [0x04000047] 	        12	version.c	FUNCTION_1	IF_1
+0x4000047	          0x4885c0	                           test rax, rax	        12	version.c	FUNCTION_1	IF_1
+0x400004a	            0x7404	                            je 0x4000050	        12	version.c	FUNCTION_1	IF_1
+0x400004c	              0xc3	                                     ret	        19	version.c	FUNCTION_1
+0x400004d	           0xf1f00	                         nop dword [rax]	        19	version.c	FUNCTION_1
+0x4000050	        0x4883ec08	                              sub rsp, 8	         9	version.c	FUNCTION_1
+0x4000054	      0xbf00000000	                              mov edi, 0	        13	version.c	FUNCTION_1	IF_1	CALL_1
+0x4000059	      0xe800000000	                          call 0x400005e	        13	version.c	FUNCTION_1	IF_1	CALL_1
+0x400005e	          0x4885c0	                           test rax, rax	        14	version.c	FUNCTION_1	IF_1	IF_2
+0x4000061	            0x740d	                            je 0x4000070	        14	version.c	FUNCTION_1	IF_1	IF_2
+0x4000063	    0x488905000000	            mov qword [0x0400006a], rax 	        13	version.c	FUNCTION_1	IF_1	CALL_1
+0x400006a	        0x4883c408	                              add rsp, 8	        19	version.c	FUNCTION_1
+0x400006e	              0xc3	                                     ret	        19	version.c	FUNCTION_1
+0x400006f	              0x90	                                     nop	        19	version.c	FUNCTION_1
+0x4000070	    0x48c705000000	               mov qword [0x0400007b], 0	        15	version.c	FUNCTION_1	IF_1	IF_2
+0x400007b	      0xb800000000	                              mov eax, 0	        15	version.c	FUNCTION_1	IF_1	IF_2
+0x4000080	            0xebe8	                           jmp 0x400006a	        15	version.c	FUNCTION_1	IF_1	IF_2
+git_user_agent_sanitized	functions,0:DO,0:FOR,1:CALL,3:ELSE,0:IF,2:SWITCH,0:WHILE,0	46
+0x4000090	              0x53	                                push rbx	        22	version.c	FUNCTION_2
+0x4000091	        0x4883ec20	                           sub rsp, 0x20	        22	version.c	FUNCTION_2
+0x4000095	    0x64488b042528	                mov rax, qword fs:[0x28]	        22	version.c	FUNCTION_2
+0x400009e	      0x4889442418	             mov qword [rsp + 0x18], rax	        22	version.c	FUNCTION_2
+0x40000a3	            0x31c0	                            xor eax, eax	        22	version.c	FUNCTION_2
+0x40000a5	    0x488b05000000	            mov rax, qword [0x040000ac] 	        25	version.c	FUNCTION_2	IF_1
+0x40000ac	          0x4885c0	                           test rax, rax	        25	version.c	FUNCTION_2	IF_1
+0x40000af	            0x741f	                            je 0x40000d0	        25	version.c	FUNCTION_2	IF_1
+0x40000b1	      0x488b5c2418	            mov rbx, qword [rsp + 0x18] 	        39	version.c	FUNCTION_2
+0x40000b6	    0x6448331c2528	                xor rbx, qword fs:[0x28]	        39	version.c	FUNCTION_2
+0x40000bf	     0xf8589000000	                           jne 0x400014e	        39	version.c	FUNCTION_2
+0x40000c5	        0x4883c420	                           add rsp, 0x20	        39	version.c	FUNCTION_2
+0x40000c9	              0x5b	                                 pop rbx	        39	version.c	FUNCTION_2
+0x40000ca	              0xc3	                                     ret	        39	version.c	FUNCTION_2
+0x40000cb	       0xf1f440000	                   nop dword [rax + rax]	        39	version.c	FUNCTION_2
+0x40000d0	    0x48c704240000	                      mov qword [rsp], 0	        26	version.c	FUNCTION_2	IF_1
+0x40000d8	    0x48c744240800	                  mov qword [rsp + 8], 0	        26	version.c	FUNCTION_2	IF_1
+0x40000e1	    0x48c744241000	               mov qword [rsp + 0x10], 0	        26	version.c	FUNCTION_2	IF_1
+0x40000ea	      0xe800000000	                          call 0x40000ef	        29	version.c	FUNCTION_2	IF_1	CALL_2
+0x40000ef	          0x4889c3	                            mov rbx, rax	        29	version.c	FUNCTION_2	IF_1	CALL_2
+0x40000f2	          0x4889c7	                            mov rdi, rax	       279	strbuf.h	FUNCTION_7	CALL_2
+0x40000f5	      0xe800000000	                          call 0x40000fa	       279	strbuf.h	FUNCTION_7	CALL_2
+0x40000fa	          0x4889de	                            mov rsi, rbx	       279	strbuf.h	FUNCTION_7	CALL_2
+0x40000fd	          0x4889c2	                            mov rdx, rax	       279	strbuf.h	FUNCTION_7	CALL_2
+0x4000100	          0x4889e7	                            mov rdi, rsp	       279	strbuf.h	FUNCTION_7	CALL_2
+0x4000103	      0xe800000000	                          call 0x4000108	       279	strbuf.h	FUNCTION_7	CALL_2
+0x4000108	          0x4889e7	                            mov rdi, rsp	        30	version.c	FUNCTION_2	IF_1	CALL_3
+0x400010b	      0xe800000000	                          call 0x4000110	        30	version.c	FUNCTION_2	IF_1	CALL_3
+0x4000110	    0x48837c240800	                  cmp qword [rsp + 8], 0	        31	version.c	FUNCTION_2	IF_1	FOR_1
+0x4000116	      0x488b442410	            mov rax, qword [rsp + 0x10] 	        31	version.c	FUNCTION_2	IF_1	FOR_1
+0x400011b	            0x7425	                            je 0x4000142	        31	version.c	FUNCTION_2	IF_1	FOR_1
+0x400011d	            0x31d2	                            xor edx, edx	        31	version.c	FUNCTION_2	IF_1	FOR_1
+0x400011f	              0x90	                                     nop	        31	version.c	FUNCTION_2	IF_1	FOR_1
+0x4000120	        0x488d3410	                    lea rsi, [rax + rdx]	        32	version.c	FUNCTION_2	IF_1	FOR_1	IF_2
+0x4000124	           0xfb63e	                   movzx edi, byte [rsi]	        32	version.c	FUNCTION_2	IF_1	FOR_1	IF_2
+0x4000127	          0x8d4fdf	                   lea ecx, [rdi - 0x21]	        32	version.c	FUNCTION_2	IF_1	FOR_1	IF_2
+0x400012a	          0x80f95d	                            cmp cl, 0x5d	        32	version.c	FUNCTION_2	IF_1	FOR_1	IF_2
+0x400012d	            0x7608	                           jbe 0x4000137	        32	version.c	FUNCTION_2	IF_1	FOR_1	IF_2
+0x400012f	          0xc6062e	                    mov byte [rsi], 0x2e	        33	version.c	FUNCTION_2	IF_1	FOR_1	IF_2
+0x4000132	      0x488b442410	            mov rax, qword [rsp + 0x10] 	        33	version.c	FUNCTION_2	IF_1	FOR_1	IF_2
+0x4000137	        0x4883c201	                              add rdx, 1	        33	version.c	FUNCTION_2	IF_1	FOR_1	IF_2
+0x400013b	      0x4839542408	                cmp qword [rsp + 8], rdx	        31	version.c	FUNCTION_2	IF_1	FOR_1
+0x4000140	            0x77de	                            ja 0x4000120	        31	version.c	FUNCTION_2	IF_1	FOR_1
+0x4000142	    0x488905000000	            mov qword [0x04000149], rax 	        35	version.c	FUNCTION_2	IF_1
+0x4000149	      0xe963ffffff	                           jmp 0x40000b1	        35	version.c	FUNCTION_2	IF_1
+0x400014e	      0xe800000000	                  call section_end..data	        39	version.c	FUNCTION_2

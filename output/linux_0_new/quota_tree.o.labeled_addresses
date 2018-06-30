@@ -1,0 +1,798 @@
+get_index	SWITCH,0:functions,0:ELSE,0:DO,0:WHILE,0:IF,0:FOR,0:CALL,2	25
+0x4000490	              0x55	                                push rbp	        36	quota_tree.c	FUNCTION_2
+0x4000491	              0x53	                                push rbx	        36	quota_tree.c	FUNCTION_2
+0x4000492	          0x4889fb	                            mov rbx, rdi	        36	quota_tree.c	FUNCTION_2
+0x4000495	    0x48c7c7000000	                              mov rdi, 0	        37	quota_tree.c	FUNCTION_2	CALL_1
+0x400049c	            0x89d5	                            mov ebp, edx	        36	quota_tree.c	FUNCTION_2
+0x400049e	      0xe800000000	                          call 0x40004a3	        37	quota_tree.c	FUNCTION_2	CALL_1
+0x40004a3	          0x8b4b24	            mov ecx, dword [rbx + 0x24] 	        29	quota_tree.c	FUNCTION_1
+0x40004a6	          0x8b7320	            mov esi, dword [rbx + 0x20] 	        27	quota_tree.c	FUNCTION_1
+0x40004a9	            0x89ca	                            mov edx, ecx	        29	quota_tree.c	FUNCTION_1
+0x40004ab	          0xc1ee02	                              shr esi, 2	        27	quota_tree.c	FUNCTION_1
+0x40004ae	            0x29ea	                            sub edx, ebp	        29	quota_tree.c	FUNCTION_1
+0x40004b0	          0x83fa01	                              cmp edx, 1	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40004b3	            0x740f	                            je 0x40004c4	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40004b5	          0x8d4afe	                      lea ecx, [rdx - 2]	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40004b8	            0x31d2	                            xor edx, edx	        31	quota_tree.c	FUNCTION_1	WHILE_1
+0x40004ba	          0x83e901	                              sub ecx, 1	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40004bd	            0xf7f6	                                 div esi	        31	quota_tree.c	FUNCTION_1	WHILE_1
+0x40004bf	          0x83f9ff	             cmp ecx, 0xffffffffffffffff	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40004c2	            0x75f4	                           jne 0x40004b8	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40004c4	            0x31d2	                            xor edx, edx	        39	quota_tree.c	FUNCTION_2	CALL_2
+0x40004c6	            0xf7f6	                                 div esi	        39	quota_tree.c	FUNCTION_2	CALL_2
+0x40004c8	              0x5b	                                 pop rbx	        40	quota_tree.c	FUNCTION_2
+0x40004c9	              0x5d	                                 pop rbp	        40	quota_tree.c	FUNCTION_2
+0x40004ca	            0x89d0	                            mov eax, edx	        40	quota_tree.c	FUNCTION_2
+0x40004cc	              0xc3	                                     ret	        40	quota_tree.c	FUNCTION_2
+remove_free_dqentry	SWITCH,0:functions,0:ELSE,1:DO,0:WHILE,0:IF,8:FOR,0:CALL,13	92
+0x4000360	            0x4157	                                push r15	       133	quota_tree.c	FUNCTION_9
+0x4000362	            0x4156	                                push r14	       133	quota_tree.c	FUNCTION_9
+0x4000364	          0x4189d6	                           mov r14d, edx	       133	quota_tree.c	FUNCTION_9
+0x4000367	            0x4155	                                push r13	       133	quota_tree.c	FUNCTION_9
+0x4000369	            0x4154	                                push r12	       133	quota_tree.c	FUNCTION_9
+0x400036b	              0x55	                                push rbp	       133	quota_tree.c	FUNCTION_9
+0x400036c	              0x53	                                push rbx	       133	quota_tree.c	FUNCTION_9
+0x400036d	          0x4889fd	                            mov rbp, rdi	       133	quota_tree.c	FUNCTION_9
+0x4000370	          0x4889f3	                            mov rbx, rsi	       133	quota_tree.c	FUNCTION_9
+0x4000373	        0x4883ec08	                              sub rsp, 8	       133	quota_tree.c	FUNCTION_9
+0x4000377	          0x8b7f20	            mov edi, dword [rdi + 0x20] 	       134	quota_tree.c	FUNCTION_9	CALL_1
+0x400037a	      0xe861fdffff	                       call sym.getdqbuf	       134	quota_tree.c	FUNCTION_9	CALL_1
+0x400037f	          0x4885c0	                           test rax, rax	       140	quota_tree.c	FUNCTION_9	IF_1
+0x4000382	          0x448b3b	                   mov r15d, dword [rbx]	       136	quota_tree.c	FUNCTION_9	CALL_2
+0x4000385	        0x448b6b04	               mov r13d, dword [rbx + 4]	       137	quota_tree.c	FUNCTION_9	CALL_3
+0x4000389	     0xf84f7000000	                            je 0x4000486	       140	quota_tree.c	FUNCTION_9	IF_1
+0x400038f	          0x4585ff	                         test r15d, r15d	       142	quota_tree.c	FUNCTION_9	IF_2
+0x4000392	          0x4989c4	                            mov r12, rax	       142	quota_tree.c	FUNCTION_9	IF_2
+0x4000395	     0xf8596000000	                           jne 0x4000431	       142	quota_tree.c	FUNCTION_9	IF_2
+0x400039b	          0x4585ed	                         test r13d, r13d	       152	quota_tree.c	FUNCTION_9	IF_5
+0x400039e	            0x754f	                           jne 0x40003ef	       152	quota_tree.c	FUNCTION_9	IF_5
+0x40003a0	          0x8b7508	                mov esi, dword [rbp + 8]	       163	quota_tree.c	FUNCTION_9	ELSE_1	CALL_8
+0x40003a3	        0x488b7d00	                    mov rdi, qword [rbp]	       163	quota_tree.c	FUNCTION_9	ELSE_1	CALL_8
+0x40003a7	        0x44897d14	           mov dword [rbp + 0x14], r15d 	       162	quota_tree.c	FUNCTION_9	ELSE_1
+0x40003ab	      0xe800000000	                          call 0x40003b0	       163	quota_tree.c	FUNCTION_9	ELSE_1	CALL_8
+0x40003b0	          0x4c89e7	                            mov rdi, r12	       165	quota_tree.c	FUNCTION_9	CALL_9
+0x40003b3	      0xe800000000	                          call 0x40003b8	       165	quota_tree.c	FUNCTION_9	CALL_9
+0x40003b8	    0xc74304000000	                  mov dword [rbx + 4], 0	       166	quota_tree.c	FUNCTION_9	CALL_10
+0x40003bf	    0xc70300000000	                      mov dword [rbx], 0	       166	quota_tree.c	FUNCTION_9	CALL_10
+0x40003c5	          0x4889da	                            mov rdx, rbx	       168	quota_tree.c	FUNCTION_9	IF_8	CALL_11
+0x40003c8	          0x4489f6	                           mov esi, r14d	       168	quota_tree.c	FUNCTION_9	IF_8	CALL_11
+0x40003cb	          0x4889ef	                            mov rdi, rbp	       168	quota_tree.c	FUNCTION_9	IF_8	CALL_11
+0x40003ce	            0x31db	                            xor ebx, ebx	       171	quota_tree.c	FUNCTION_9
+0x40003d0	      0xe89bfcffff	                      call sym.write_blk	       168	quota_tree.c	FUNCTION_9	IF_8	CALL_11
+0x40003d5	          0x4885c0	                           test rax, rax	       168	quota_tree.c	FUNCTION_9	IF_8	CALL_11
+0x40003d8	     0xf8889000000	                            js 0x4000467	       168	quota_tree.c	FUNCTION_9	IF_8	CALL_11
+0x40003de	        0x4883c408	                              add rsp, 8	       175	quota_tree.c	FUNCTION_9
+0x40003e2	            0x89d8	                            mov eax, ebx	       175	quota_tree.c	FUNCTION_9
+0x40003e4	              0x5b	                                 pop rbx	       175	quota_tree.c	FUNCTION_9
+0x40003e5	              0x5d	                                 pop rbp	       175	quota_tree.c	FUNCTION_9
+0x40003e6	            0x415c	                                 pop r12	       175	quota_tree.c	FUNCTION_9
+0x40003e8	            0x415d	                                 pop r13	       175	quota_tree.c	FUNCTION_9
+0x40003ea	            0x415e	                                 pop r14	       175	quota_tree.c	FUNCTION_9
+0x40003ec	            0x415f	                                 pop r15	       175	quota_tree.c	FUNCTION_9
+0x40003ee	              0xc3	                                     ret	       175	quota_tree.c	FUNCTION_9
+0x40003ef	          0x4c89e2	                            mov rdx, r12	       153	quota_tree.c	FUNCTION_9	IF_5	CALL_6
+0x40003f2	          0x4489ee	                           mov esi, r13d	       153	quota_tree.c	FUNCTION_9	IF_5	CALL_6
+0x40003f5	          0x4889ef	                            mov rdi, rbp	       153	quota_tree.c	FUNCTION_9	IF_5	CALL_6
+0x40003f8	      0xe813fdffff	                       call sym.read_blk	       153	quota_tree.c	FUNCTION_9	IF_5	CALL_6
+0x40003fd	            0x85c0	                           test eax, eax	       154	quota_tree.c	FUNCTION_9	IF_5	IF_6
+0x40003ff	            0x89c2	                            mov edx, eax	       153	quota_tree.c	FUNCTION_9	IF_5	CALL_6
+0x4000401	            0x781a	                            js 0x400041d	       154	quota_tree.c	FUNCTION_9	IF_5	IF_6
+0x4000403	            0x8b03	                    mov eax, dword [rbx]	       157	quota_tree.c	FUNCTION_9	IF_5
+0x4000405	          0x4c89e2	                            mov rdx, r12	       158	quota_tree.c	FUNCTION_9	IF_5	CALL_7
+0x4000408	          0x4489ee	                           mov esi, r13d	       158	quota_tree.c	FUNCTION_9	IF_5	CALL_7
+0x400040b	          0x4889ef	                            mov rdi, rbp	       158	quota_tree.c	FUNCTION_9	IF_5	CALL_7
+0x400040e	        0x41890424	                    mov dword [r12], eax	       156	quota_tree.c	FUNCTION_9	IF_5
+0x4000412	      0xe859fcffff	                      call sym.write_blk	       158	quota_tree.c	FUNCTION_9	IF_5	CALL_7
+0x4000417	            0x85c0	                           test eax, eax	       159	quota_tree.c	FUNCTION_9	IF_5	IF_7
+0x4000419	            0x89c2	                            mov edx, eax	       158	quota_tree.c	FUNCTION_9	IF_5	CALL_7
+0x400041b	            0x7993	                           jns 0x40003b0	       159	quota_tree.c	FUNCTION_9	IF_5	IF_7
+0x400041d	          0x4c89e7	                            mov rdi, r12	       173	quota_tree.c	FUNCTION_9	CALL_13
+0x4000420	        0x89542404	                mov dword [rsp + 4], edx	       173	quota_tree.c	FUNCTION_9	CALL_13
+0x4000424	      0xe800000000	                          call 0x4000429	       173	quota_tree.c	FUNCTION_9	CALL_13
+0x4000429	        0x8b542404	                mov edx, dword [rsp + 4]	       174	quota_tree.c	FUNCTION_9
+0x400042d	            0x89d3	                            mov ebx, edx	       174	quota_tree.c	FUNCTION_9
+0x400042f	            0xebad	                           jmp 0x40003de	       174	quota_tree.c	FUNCTION_9
+0x4000431	          0x4889c2	                            mov rdx, rax	       143	quota_tree.c	FUNCTION_9	IF_2	CALL_4
+0x4000434	          0x4489fe	                           mov esi, r15d	       143	quota_tree.c	FUNCTION_9	IF_2	CALL_4
+0x4000437	          0x4889ef	                            mov rdi, rbp	       143	quota_tree.c	FUNCTION_9	IF_2	CALL_4
+0x400043a	      0xe8d1fcffff	                       call sym.read_blk	       143	quota_tree.c	FUNCTION_9	IF_2	CALL_4
+0x400043f	            0x85c0	                           test eax, eax	       144	quota_tree.c	FUNCTION_9	IF_2	IF_3
+0x4000441	            0x89c2	                            mov edx, eax	       143	quota_tree.c	FUNCTION_9	IF_2	CALL_4
+0x4000443	            0x78d8	                            js 0x400041d	       144	quota_tree.c	FUNCTION_9	IF_2	IF_3
+0x4000445	          0x8b4304	                mov eax, dword [rbx + 4]	       147	quota_tree.c	FUNCTION_9	IF_2
+0x4000448	          0x4c89e2	                            mov rdx, r12	       148	quota_tree.c	FUNCTION_9	IF_2	CALL_5
+0x400044b	          0x4489fe	                           mov esi, r15d	       148	quota_tree.c	FUNCTION_9	IF_2	CALL_5
+0x400044e	          0x4889ef	                            mov rdi, rbp	       148	quota_tree.c	FUNCTION_9	IF_2	CALL_5
+0x4000451	      0x4189442404	                mov dword [r12 + 4], eax	       146	quota_tree.c	FUNCTION_9	IF_2
+0x4000456	      0xe815fcffff	                      call sym.write_blk	       148	quota_tree.c	FUNCTION_9	IF_2	CALL_5
+0x400045b	            0x85c0	                           test eax, eax	       149	quota_tree.c	FUNCTION_9	IF_2	IF_4
+0x400045d	            0x89c2	                            mov edx, eax	       148	quota_tree.c	FUNCTION_9	IF_2	CALL_5
+0x400045f	     0xf8936ffffff	                           jns 0x400039b	       149	quota_tree.c	FUNCTION_9	IF_2	IF_4
+0x4000465	            0xebb6	                           jmp 0x400041d	       149	quota_tree.c	FUNCTION_9	IF_2	IF_4
+0x4000467	        0x488b7d00	                    mov rdi, qword [rbp]	       169	quota_tree.c	FUNCTION_9	IF_8	CALL_12
+0x400046b	          0x4489f1	                           mov ecx, r14d	       169	quota_tree.c	FUNCTION_9	IF_8	CALL_12
+0x400046e	    0x48c7c2000000	                              mov rdx, 0	       169	quota_tree.c	FUNCTION_9	IF_8	CALL_12
+0x4000475	    0x48c7c6000000	                              mov rsi, 0	       169	quota_tree.c	FUNCTION_9	IF_8	CALL_12
+0x400047c	      0xe800000000	                          call 0x4000481	       169	quota_tree.c	FUNCTION_9	IF_8	CALL_12
+0x4000481	      0xe958ffffff	                           jmp 0x40003de	       169	quota_tree.c	FUNCTION_9	IF_8	CALL_12
+0x4000486	      0xbbf4ffffff	                     mov ebx, 0xfffffff4	       141	quota_tree.c	FUNCTION_9	IF_1
+0x400048b	      0xe94effffff	                           jmp 0x40003de	       141	quota_tree.c	FUNCTION_9	IF_1
+write_blk	SWITCH,0:functions,0:ELSE,0:DO,0:WHILE,0:IF,2:FOR,0:CALL,2	31
+0x4000070	              0x55	                                push rbp	        68	quota_tree.c	FUNCTION_6
+0x4000071	              0x53	                                push rbx	        68	quota_tree.c	FUNCTION_6
+0x4000072	          0x4889fb	                            mov rbx, rdi	        68	quota_tree.c	FUNCTION_6
+0x4000075	          0x4189f0	                            mov r8d, esi	        72	quota_tree.c	FUNCTION_6	CALL_1
+0x4000078	        0x4883ec08	                              sub rsp, 8	        68	quota_tree.c	FUNCTION_6
+0x400007c	          0x488b2f	                    mov rbp, qword [rdi]	        69	quota_tree.c	FUNCTION_6
+0x400007f	          0x8b4f18	            mov ecx, dword [rdi + 0x18] 	        72	quota_tree.c	FUNCTION_6	CALL_1
+0x4000082	          0x8b7f20	            mov edi, dword [rdi + 0x20] 	        72	quota_tree.c	FUNCTION_6	CALL_1
+0x4000085	          0x8b7308	                mov esi, dword [rbx + 8]	        72	quota_tree.c	FUNCTION_6	CALL_1
+0x4000088	        0x488b4530	            mov rax, qword [rbp + 0x30] 	        72	quota_tree.c	FUNCTION_6	CALL_1
+0x400008c	          0x41d3e0	                             shl r8d, cl	        72	quota_tree.c	FUNCTION_6	CALL_1
+0x400008f	          0x4889f9	                            mov rcx, rdi	        72	quota_tree.c	FUNCTION_6	CALL_1
+0x4000092	          0x4889ef	                            mov rdi, rbp	        72	quota_tree.c	FUNCTION_6	CALL_1
+0x4000095	    0x488b80a00000	            mov rax, qword [rax + 0xa0] 	        72	quota_tree.c	FUNCTION_6	CALL_1
+0x400009c	      0xe800000000	                          call 0x40000a1	        72	quota_tree.c	FUNCTION_6	CALL_1
+0x40000a1	          0x8b5320	            mov edx, dword [rbx + 0x20] 	        74	quota_tree.c	FUNCTION_6	IF_1
+0x40000a4	          0x4839d0	                            cmp rax, rdx	        74	quota_tree.c	FUNCTION_6	IF_1
+0x40000a7	            0x742c	                            je 0x40000d5	        74	quota_tree.c	FUNCTION_6	IF_1
+0x40000a9	    0x48c7c2000000	                              mov rdx, 0	        75	quota_tree.c	FUNCTION_6	IF_1	CALL_2
+0x40000b0	    0x48c7c6000000	                              mov rsi, 0	        75	quota_tree.c	FUNCTION_6	IF_1	CALL_2
+0x40000b7	          0x4889ef	                            mov rdi, rbp	        75	quota_tree.c	FUNCTION_6	IF_1	CALL_2
+0x40000ba	        0x48890424	                    mov qword [rsp], rax	        75	quota_tree.c	FUNCTION_6	IF_1	CALL_2
+0x40000be	      0xe800000000	                          call 0x40000c3	        75	quota_tree.c	FUNCTION_6	IF_1	CALL_2
+0x40000c3	        0x488b0424	                    mov rax, qword [rsp]	        77	quota_tree.c	FUNCTION_6	IF_1	IF_2
+0x40000c7	    0x48c7c2fbffff	             mov rdx, 0xfffffffffffffffb	        77	quota_tree.c	FUNCTION_6	IF_1	IF_2
+0x40000ce	          0x4885c0	                           test rax, rax	        77	quota_tree.c	FUNCTION_6	IF_1	IF_2
+0x40000d1	        0x480f49c2	                         cmovns rax, rdx	        77	quota_tree.c	FUNCTION_6	IF_1	IF_2
+0x40000d5	        0x4883c408	                              add rsp, 8	        80	quota_tree.c	FUNCTION_6
+0x40000d9	              0x5b	                                 pop rbx	        80	quota_tree.c	FUNCTION_6
+0x40000da	              0x5d	                                 pop rbp	        80	quota_tree.c	FUNCTION_6
+0x40000db	              0xc3	                                     ret	        80	quota_tree.c	FUNCTION_6
+find_tree_dqentry	SWITCH,0:functions,0:ELSE,1:DO,0:WHILE,0:IF,4:FOR,0:CALL,8	139
+0x40004d0	            0x4157	                                push r15	       572	quota_tree.c	FUNCTION_20
+0x40004d2	            0x4156	                                push r14	       572	quota_tree.c	FUNCTION_20
+0x40004d4	          0x4989fe	                            mov r14, rdi	       572	quota_tree.c	FUNCTION_20
+0x40004d7	            0x4155	                                push r13	       572	quota_tree.c	FUNCTION_20
+0x40004d9	            0x4154	                                push r12	       572	quota_tree.c	FUNCTION_20
+0x40004db	          0x4189cd	                           mov r13d, ecx	       572	quota_tree.c	FUNCTION_20
+0x40004de	              0x55	                                push rbp	       572	quota_tree.c	FUNCTION_20
+0x40004df	              0x53	                                push rbx	       572	quota_tree.c	FUNCTION_20
+0x40004e0	          0x4889f5	                            mov rbp, rsi	       572	quota_tree.c	FUNCTION_20
+0x40004e3	          0x4189d4	                           mov r12d, edx	       572	quota_tree.c	FUNCTION_20
+0x40004e6	        0x4883ec08	                              sub rsp, 8	       572	quota_tree.c	FUNCTION_20
+0x40004ea	          0x8b7f20	            mov edi, dword [rdi + 0x20] 	       573	quota_tree.c	FUNCTION_20	CALL_1
+0x40004ed	      0xe8eefbffff	                       call sym.getdqbuf	       573	quota_tree.c	FUNCTION_20	CALL_1
+0x40004f2	          0x4885c0	                           test rax, rax	       577	quota_tree.c	FUNCTION_20	IF_1
+0x40004f5	     0xf84b8010000	                            je 0x40006b3	       577	quota_tree.c	FUNCTION_20	IF_1
+0x40004fb	          0x4889c2	                            mov rdx, rax	       579	quota_tree.c	FUNCTION_20	CALL_2
+0x40004fe	          0x4489e6	                           mov esi, r12d	       579	quota_tree.c	FUNCTION_20	CALL_2
+0x4000501	          0x4c89f7	                            mov rdi, r14	       579	quota_tree.c	FUNCTION_20	CALL_2
+0x4000504	          0x4889c3	                            mov rbx, rax	       579	quota_tree.c	FUNCTION_20	CALL_2
+0x4000507	      0xe804fcffff	                       call sym.read_blk	       579	quota_tree.c	FUNCTION_20	CALL_2
+0x400050c	          0x4885c0	                           test rax, rax	       580	quota_tree.c	FUNCTION_20	IF_2
+0x400050f	          0x4989c7	                            mov r15, rax	       579	quota_tree.c	FUNCTION_20	CALL_2
+0x4000512	     0xf8811010000	                            js 0x4000629	       580	quota_tree.c	FUNCTION_20	IF_2
+0x4000518	        0x488b7570	            mov rsi, qword [rbp + 0x70] 	       586	quota_tree.c	FUNCTION_20	CALL_5
+0x400051c	          0x4489ea	                           mov edx, r13d	       586	quota_tree.c	FUNCTION_20	CALL_5
+0x400051f	          0x4c89f7	                            mov rdi, r14	       586	quota_tree.c	FUNCTION_20	CALL_5
+0x4000522	          0x4531ff	                          xor r15d, r15d	       585	quota_tree.c	FUNCTION_20
+0x4000525	      0xe866ffffff	                      call sym.get_index	       586	quota_tree.c	FUNCTION_20	CALL_5
+0x400052a	            0x4898	                                    cdqe	       586	quota_tree.c	FUNCTION_20	CALL_5
+0x400052c	        0x448b2483	           mov r12d, dword [rbx + rax*4]	       586	quota_tree.c	FUNCTION_20	CALL_5
+0x4000530	          0x4585e4	                         test r12d, r12d	       587	quota_tree.c	FUNCTION_20	IF_3
+0x4000533	            0x751a	                           jne 0x400054f	       587	quota_tree.c	FUNCTION_20	IF_3
+0x4000535	          0x4889df	                            mov rdi, rbx	       594	quota_tree.c	FUNCTION_20	CALL_8
+0x4000538	      0xe800000000	                          call 0x400053d	       594	quota_tree.c	FUNCTION_20	CALL_8
+0x400053d	          0x4c89f8	                            mov rax, r15	       595	quota_tree.c	FUNCTION_20
+0x4000540	        0x4883c408	                              add rsp, 8	       596	quota_tree.c	FUNCTION_20
+0x4000544	              0x5b	                                 pop rbx	       596	quota_tree.c	FUNCTION_20
+0x4000545	              0x5d	                                 pop rbp	       596	quota_tree.c	FUNCTION_20
+0x4000546	            0x415c	                                 pop r12	       596	quota_tree.c	FUNCTION_20
+0x4000548	            0x415d	                                 pop r13	       596	quota_tree.c	FUNCTION_20
+0x400054a	            0x415e	                                 pop r14	       596	quota_tree.c	FUNCTION_20
+0x400054c	            0x415f	                                 pop r15	       596	quota_tree.c	FUNCTION_20
+0x400054e	              0xc3	                                     ret	       596	quota_tree.c	FUNCTION_20
+0x400054f	        0x418b4624	            mov eax, dword [r14 + 0x24] 	       589	quota_tree.c	FUNCTION_20	IF_4
+0x4000553	          0x83e801	                              sub eax, 1	       589	quota_tree.c	FUNCTION_20	IF_4
+0x4000556	          0x4439e8	                           cmp eax, r13d	       589	quota_tree.c	FUNCTION_20	IF_4
+0x4000559	     0xf87e9000000	                            ja 0x4000648	       589	quota_tree.c	FUNCTION_20	IF_4
+0x400055f	        0x418b7e20	            mov edi, dword [r14 + 0x20] 	       535	quota_tree.c	FUNCTION_19	CALL_1
+0x4000563	      0xe878fbffff	                       call sym.getdqbuf	       535	quota_tree.c	FUNCTION_19	CALL_1
+0x4000568	          0x4885c0	                           test rax, rax	       540	quota_tree.c	FUNCTION_19	IF_1
+0x400056b	        0x48890424	                    mov qword [rsp], rax	       535	quota_tree.c	FUNCTION_19	CALL_1
+0x400056f	     0xf844a010000	                            je 0x40006bf	       540	quota_tree.c	FUNCTION_19	IF_1
+0x4000575	          0x4889c2	                            mov rdx, rax	       542	quota_tree.c	FUNCTION_19	CALL_2
+0x4000578	          0x4489e6	                           mov esi, r12d	       542	quota_tree.c	FUNCTION_19	CALL_2
+0x400057b	          0x4c89f7	                            mov rdi, r14	       542	quota_tree.c	FUNCTION_19	CALL_2
+0x400057e	      0xe88dfbffff	                       call sym.read_blk	       542	quota_tree.c	FUNCTION_19	CALL_2
+0x4000583	          0x4885c0	                           test rax, rax	       543	quota_tree.c	FUNCTION_19	IF_2
+0x4000586	          0x4989c7	                            mov r15, rax	       542	quota_tree.c	FUNCTION_19	CALL_2
+0x4000589	     0xf88d3000000	                            js 0x4000662	       543	quota_tree.c	FUNCTION_19	IF_2
+0x400058f	        0x488b0424	                    mov rax, qword [rsp]	       548	quota_tree.c	FUNCTION_19
+0x4000593	        0x418b4e1c	            mov ecx, dword [r14 + 0x1c] 	       548	quota_tree.c	FUNCTION_19
+0x4000597	            0x31d2	                            xor edx, edx	        45	quota_tree.c	FUNCTION_3
+0x4000599	          0x4531ff	                          xor r15d, r15d	       549	quota_tree.c	FUNCTION_19	FOR_1	CALL_4
+0x400059c	        0x4c8d6810	                   lea r13, [rax + 0x10]	       548	quota_tree.c	FUNCTION_19
+0x40005a0	        0x418b4620	            mov eax, dword [r14 + 0x20] 	        45	quota_tree.c	FUNCTION_3
+0x40005a4	          0x4889ce	                            mov rsi, rcx	        45	quota_tree.c	FUNCTION_3
+0x40005a7	        0x4883e810	                           sub rax, 0x10	        45	quota_tree.c	FUNCTION_3
+0x40005ab	          0x48f7f1	                                 div rcx	        45	quota_tree.c	FUNCTION_3
+0x40005ae	            0x85c0	                           test eax, eax	       549	quota_tree.c	FUNCTION_19	FOR_1	CALL_4
+0x40005b0	            0x89c1	                            mov ecx, eax	        45	quota_tree.c	FUNCTION_3
+0x40005b2	            0x7f24	                            jg 0x40005d8	       549	quota_tree.c	FUNCTION_19	FOR_1	CALL_4
+0x40005b4	            0xeb50	                           jmp 0x4000606	       549	quota_tree.c	FUNCTION_19	FOR_1	CALL_4
+0x40005b6	        0x418b4620	            mov eax, dword [r14 + 0x20] 	        45	quota_tree.c	FUNCTION_3
+0x40005ba	        0x418b4e1c	            mov ecx, dword [r14 + 0x1c] 	       552	quota_tree.c	FUNCTION_19	FOR_1
+0x40005be	            0x31d2	                            xor edx, edx	        45	quota_tree.c	FUNCTION_3
+0x40005c0	        0x4183c701	                             add r15d, 1	       549	quota_tree.c	FUNCTION_19	FOR_1	CALL_4
+0x40005c4	        0x4883e810	                           sub rax, 0x10	        45	quota_tree.c	FUNCTION_3
+0x40005c8	          0x4901cd	                            add r13, rcx	       552	quota_tree.c	FUNCTION_19	FOR_1
+0x40005cb	          0x4889ce	                            mov rsi, rcx	       552	quota_tree.c	FUNCTION_19	FOR_1
+0x40005ce	          0x48f7f1	                                 div rcx	        45	quota_tree.c	FUNCTION_3
+0x40005d1	          0x4139c7	                           cmp r15d, eax	       549	quota_tree.c	FUNCTION_19	FOR_1	CALL_4
+0x40005d4	            0x89c1	                            mov ecx, eax	        45	quota_tree.c	FUNCTION_3
+0x40005d6	            0x7d2e	                           jge 0x4000606	       549	quota_tree.c	FUNCTION_19	FOR_1	CALL_4
+0x40005d8	        0x498b4628	            mov rax, qword [r14 + 0x28] 	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005dc	          0x4889ee	                            mov rsi, rbp	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005df	          0x4c89ef	                            mov rdi, r13	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005e2	        0x488b4010	            mov rax, qword [rax + 0x10] 	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005e6	      0xe800000000	                          call 0x40005eb	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005eb	            0x85c0	                           test eax, eax	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005ed	            0x74c7	                            je 0x40005b6	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005ef	        0x418b4620	            mov eax, dword [r14 + 0x20] 	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005f3	        0x418b7e1c	            mov edi, dword [r14 + 0x1c] 	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005f7	            0x31d2	                            xor edx, edx	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005f9	        0x4883e810	                           sub rax, 0x10	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x40005fd	          0x4889fe	                            mov rsi, rdi	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x4000600	          0x48f7f7	                                 div rdi	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x4000603	          0x4889c1	                            mov rcx, rax	       550	quota_tree.c	FUNCTION_19	FOR_1	IF_3	CALL_5
+0x4000606	          0x4139cf	                           cmp r15d, ecx	       554	quota_tree.c	FUNCTION_19	IF_4	CALL_6
+0x4000609	            0x7473	                            je 0x400067e	       554	quota_tree.c	FUNCTION_19	IF_4	CALL_6
+0x400060b	        0x418b4e18	            mov ecx, dword [r14 + 0x18] 	       561	quota_tree.c	FUNCTION_19	ELSE_1
+0x400060f	        0x440faffe	                          imul r15d, esi	       561	quota_tree.c	FUNCTION_19	ELSE_1
+0x4000613	          0x41d3e4	                            shl r12d, cl	       561	quota_tree.c	FUNCTION_19	ELSE_1
+0x4000616	      0x4f8d7c3c10	            lea r15, [r12 + r15 + 0x10] 	       561	quota_tree.c	FUNCTION_19	ELSE_1
+0x400061b	        0x488b3c24	                    mov rdi, qword [rsp]	       565	quota_tree.c	FUNCTION_19	CALL_9
+0x400061f	      0xe800000000	                          call 0x4000624	       565	quota_tree.c	FUNCTION_19	CALL_9
+0x4000624	      0xe90cffffff	                           jmp 0x4000535	       565	quota_tree.c	FUNCTION_19	CALL_9
+0x4000629	        0x488b7d68	            mov rdi, qword [rbp + 0x68] 	       581	quota_tree.c	FUNCTION_20	IF_2	CALL_3
+0x400062d	          0x4489e1	                           mov ecx, r12d	       581	quota_tree.c	FUNCTION_20	IF_2	CALL_3
+0x4000630	    0x48c7c2000000	                              mov rdx, 0	       581	quota_tree.c	FUNCTION_20	IF_2	CALL_3
+0x4000637	    0x48c7c6000000	                              mov rsi, 0	       581	quota_tree.c	FUNCTION_20	IF_2	CALL_3
+0x400063e	      0xe800000000	                          call 0x4000643	       581	quota_tree.c	FUNCTION_20	IF_2	CALL_3
+0x4000643	      0xe9edfeffff	                           jmp 0x4000535	       583	quota_tree.c	FUNCTION_20	IF_2
+0x4000648	        0x418d4d01	                      lea ecx, [r13 + 1]	       590	quota_tree.c	FUNCTION_20	CALL_6
+0x400064c	          0x4489e2	                           mov edx, r12d	       590	quota_tree.c	FUNCTION_20	CALL_6
+0x400064f	          0x4889ee	                            mov rsi, rbp	       590	quota_tree.c	FUNCTION_20	CALL_6
+0x4000652	          0x4c89f7	                            mov rdi, r14	       590	quota_tree.c	FUNCTION_20	CALL_6
+0x4000655	      0xe876feffff	              call sym.find_tree_dqentry	       590	quota_tree.c	FUNCTION_20	CALL_6
+0x400065a	          0x4989c7	                            mov r15, rax	       590	quota_tree.c	FUNCTION_20	CALL_6
+0x400065d	      0xe9d3feffff	                           jmp 0x4000535	       590	quota_tree.c	FUNCTION_20	CALL_6
+0x4000662	        0x488b7d68	            mov rdi, qword [rbp + 0x68] 	       544	quota_tree.c	FUNCTION_19	IF_2	CALL_3
+0x4000666	          0x4489e1	                           mov ecx, r12d	       544	quota_tree.c	FUNCTION_19	IF_2	CALL_3
+0x4000669	    0x48c7c2000000	                              mov rdx, 0	       544	quota_tree.c	FUNCTION_19	IF_2	CALL_3
+0x4000670	    0x48c7c6000000	                              mov rsi, 0	       544	quota_tree.c	FUNCTION_19	IF_2	CALL_3
+0x4000677	      0xe800000000	                          call 0x400067c	       544	quota_tree.c	FUNCTION_19	IF_2	CALL_3
+0x400067c	            0xeb9d	                           jmp 0x400061b	       544	quota_tree.c	FUNCTION_19	IF_2	CALL_3
+0x400067e	        0x488b7570	            mov rsi, qword [rbp + 0x70] 	       555	quota_tree.c	FUNCTION_19	IF_4	CALL_7
+0x4000682	    0x48c7c7000000	                              mov rdi, 0	       555	quota_tree.c	FUNCTION_19	IF_4	CALL_7
+0x4000689	    0x49c7c7fbffff	             mov r15, 0xfffffffffffffffb	       558	quota_tree.c	FUNCTION_19	IF_4
+0x4000690	      0xe800000000	                          call 0x4000695	       555	quota_tree.c	FUNCTION_19	IF_4	CALL_7
+0x4000695	        0x488b7d68	            mov rdi, qword [rbp + 0x68] 	       555	quota_tree.c	FUNCTION_19	IF_4	CALL_7
+0x4000699	            0x89c1	                            mov ecx, eax	       555	quota_tree.c	FUNCTION_19	IF_4	CALL_7
+0x400069b	    0x48c7c2000000	                              mov rdx, 0	       555	quota_tree.c	FUNCTION_19	IF_4	CALL_7
+0x40006a2	    0x48c7c6000000	                              mov rsi, 0	       555	quota_tree.c	FUNCTION_19	IF_4	CALL_7
+0x40006a9	      0xe800000000	                          call 0x40006ae	       555	quota_tree.c	FUNCTION_19	IF_4	CALL_7
+0x40006ae	      0xe968ffffff	                           jmp 0x400061b	       555	quota_tree.c	FUNCTION_19	IF_4	CALL_7
+0x40006b3	    0x48c7c0f4ffff	             mov rax, 0xfffffffffffffff4	       578	quota_tree.c	FUNCTION_20	IF_1
+0x40006ba	      0xe981feffff	                           jmp 0x4000540	       578	quota_tree.c	FUNCTION_20	IF_1
+0x40006bf	    0x49c7c7f4ffff	             mov r15, 0xfffffffffffffff4	       541	quota_tree.c	FUNCTION_19	IF_1
+0x40006c6	      0xe96afeffff	                           jmp 0x4000535	       541	quota_tree.c	FUNCTION_19	IF_1
+read_blk	SWITCH,0:functions,0:ELSE,0:DO,0:WHILE,0:IF,0:FOR,0:CALL,2	27
+0x4000110	            0x4155	                                push r13	        59	quota_tree.c	FUNCTION_5
+0x4000112	            0x4154	                                push r12	        59	quota_tree.c	FUNCTION_5
+0x4000114	          0x4989d4	                            mov r12, rdx	        59	quota_tree.c	FUNCTION_5
+0x4000117	              0x55	                                push rbp	        59	quota_tree.c	FUNCTION_5
+0x4000118	              0x53	                                push rbx	        59	quota_tree.c	FUNCTION_5
+0x4000119	          0x4189f5	                           mov r13d, esi	        59	quota_tree.c	FUNCTION_5
+0x400011c	          0x8b5720	            mov edx, dword [rdi + 0x20] 	        62	quota_tree.c	FUNCTION_5	CALL_1
+0x400011f	          0x4889fb	                            mov rbx, rdi	        59	quota_tree.c	FUNCTION_5
+0x4000122	          0x488b2f	                    mov rbp, qword [rdi]	        60	quota_tree.c	FUNCTION_5
+0x4000125	            0x31f6	                            xor esi, esi	        62	quota_tree.c	FUNCTION_5	CALL_1
+0x4000127	          0x4c89e7	                            mov rdi, r12	        62	quota_tree.c	FUNCTION_5	CALL_1
+0x400012a	      0xe800000000	                          call 0x400012f	        62	quota_tree.c	FUNCTION_5	CALL_1
+0x400012f	          0x8b5320	            mov edx, dword [rbx + 0x20] 	        63	quota_tree.c	FUNCTION_5	CALL_2
+0x4000132	          0x8b4b18	            mov ecx, dword [rbx + 0x18] 	        63	quota_tree.c	FUNCTION_5	CALL_2
+0x4000135	          0x4589e8	                           mov r8d, r13d	        63	quota_tree.c	FUNCTION_5	CALL_2
+0x4000138	        0x488b4530	            mov rax, qword [rbp + 0x30] 	        63	quota_tree.c	FUNCTION_5	CALL_2
+0x400013c	          0x8b7308	                mov esi, dword [rbx + 8]	        63	quota_tree.c	FUNCTION_5	CALL_2
+0x400013f	          0x4889ef	                            mov rdi, rbp	        63	quota_tree.c	FUNCTION_5	CALL_2
+0x4000142	              0x5b	                                 pop rbx	        65	quota_tree.c	FUNCTION_5
+0x4000143	          0x41d3e0	                             shl r8d, cl	        63	quota_tree.c	FUNCTION_5	CALL_2
+0x4000146	              0x5d	                                 pop rbp	        65	quota_tree.c	FUNCTION_5
+0x4000147	          0x4889d1	                            mov rcx, rdx	        63	quota_tree.c	FUNCTION_5	CALL_2
+0x400014a	          0x4c89e2	                            mov rdx, r12	        63	quota_tree.c	FUNCTION_5	CALL_2
+0x400014d	    0x488b80980000	            mov rax, qword [rax + 0x98] 	        63	quota_tree.c	FUNCTION_5	CALL_2
+0x4000154	            0x415c	                                 pop r12	        65	quota_tree.c	FUNCTION_5
+0x4000156	            0x415d	                                 pop r13	        65	quota_tree.c	FUNCTION_5
+0x4000158	      0xe900000000	                           jmp 0x400015d	        63	quota_tree.c	FUNCTION_5	CALL_2
+get_free_dqblk	SWITCH,0:functions,0:ELSE,1:DO,0:WHILE,0:IF,4:FOR,0:CALL,7	51
+0x40002d0	            0x4155	                                push r13	        84	quota_tree.c	FUNCTION_7
+0x40002d2	            0x4154	                                push r12	        84	quota_tree.c	FUNCTION_7
+0x40002d4	              0x55	                                push rbp	        84	quota_tree.c	FUNCTION_7
+0x40002d5	              0x53	                                push rbx	        84	quota_tree.c	FUNCTION_7
+0x40002d6	          0x4889fb	                            mov rbx, rdi	        84	quota_tree.c	FUNCTION_7
+0x40002d9	          0x8b7f20	            mov edi, dword [rdi + 0x20] 	        85	quota_tree.c	FUNCTION_7	CALL_1
+0x40002dc	      0xe8fffdffff	                       call sym.getdqbuf	        85	quota_tree.c	FUNCTION_7	CALL_1
+0x40002e1	          0x4885c0	                           test rax, rax	        89	quota_tree.c	FUNCTION_7	IF_1
+0x40002e4	            0x7472	                            je 0x4000358	        89	quota_tree.c	FUNCTION_7	IF_1
+0x40002e6	        0x448b6b10	           mov r13d, dword [rbx + 0x10] 	        91	quota_tree.c	FUNCTION_7	IF_2
+0x40002ea	          0x4989c4	                            mov r12, rax	        91	quota_tree.c	FUNCTION_7	IF_2
+0x40002ed	          0x4585ed	                         test r13d, r13d	        91	quota_tree.c	FUNCTION_7	IF_2
+0x40002f0	            0x7546	                           jne 0x4000338	        91	quota_tree.c	FUNCTION_7	IF_2
+0x40002f2	          0x8b5320	            mov edx, dword [rbx + 0x20] 	        99	quota_tree.c	FUNCTION_7	ELSE_1	CALL_4
+0x40002f5	            0x31f6	                            xor esi, esi	        99	quota_tree.c	FUNCTION_7	ELSE_1	CALL_4
+0x40002f7	          0x4889c7	                            mov rdi, rax	        99	quota_tree.c	FUNCTION_7	ELSE_1	CALL_4
+0x40002fa	      0xe800000000	                          call 0x40002ff	        99	quota_tree.c	FUNCTION_7	ELSE_1	CALL_4
+0x40002ff	          0x8b730c	              mov esi, dword [rbx + 0xc]	       101	quota_tree.c	FUNCTION_7	ELSE_1	CALL_5
+0x4000302	          0x4c89e2	                            mov rdx, r12	       101	quota_tree.c	FUNCTION_7	ELSE_1	CALL_5
+0x4000305	          0x4889df	                            mov rdi, rbx	       101	quota_tree.c	FUNCTION_7	ELSE_1	CALL_5
+0x4000308	      0xe863fdffff	                      call sym.write_blk	       101	quota_tree.c	FUNCTION_7	ELSE_1	CALL_5
+0x400030d	            0x85c0	                           test eax, eax	       102	quota_tree.c	FUNCTION_7	ELSE_1	IF_4
+0x400030f	            0x89c5	                            mov ebp, eax	       101	quota_tree.c	FUNCTION_7	ELSE_1	CALL_5
+0x4000311	            0x7814	                            js 0x4000327	       102	quota_tree.c	FUNCTION_7	ELSE_1	IF_4
+0x4000313	          0x8b6b0c	              mov ebp, dword [rbx + 0xc]	       104	quota_tree.c	FUNCTION_7	ELSE_1
+0x4000316	          0x8d4501	                      lea eax, [rbp + 1]	       104	quota_tree.c	FUNCTION_7	ELSE_1
+0x4000319	          0x89430c	              mov dword [rbx + 0xc], eax	       104	quota_tree.c	FUNCTION_7	ELSE_1
+0x400031c	          0x8b7308	                mov esi, dword [rbx + 8]	       106	quota_tree.c	FUNCTION_7	CALL_6
+0x400031f	          0x488b3b	                    mov rdi, qword [rbx]	       106	quota_tree.c	FUNCTION_7	CALL_6
+0x4000322	      0xe800000000	                          call 0x4000327	       106	quota_tree.c	FUNCTION_7	CALL_6
+0x4000327	          0x4c89e7	                            mov rdi, r12	       109	quota_tree.c	FUNCTION_7	CALL_7
+0x400032a	      0xe800000000	                          call 0x400032f	       109	quota_tree.c	FUNCTION_7	CALL_7
+0x400032f	            0x89e8	                            mov eax, ebp	       110	quota_tree.c	FUNCTION_7
+0x4000331	              0x5b	                                 pop rbx	       111	quota_tree.c	FUNCTION_7
+0x4000332	              0x5d	                                 pop rbp	       111	quota_tree.c	FUNCTION_7
+0x4000333	            0x415c	                                 pop r12	       111	quota_tree.c	FUNCTION_7
+0x4000335	            0x415d	                                 pop r13	       111	quota_tree.c	FUNCTION_7
+0x4000337	              0xc3	                                     ret	       111	quota_tree.c	FUNCTION_7
+0x4000338	          0x4889c2	                            mov rdx, rax	        93	quota_tree.c	FUNCTION_7	IF_2	CALL_2
+0x400033b	          0x4489ee	                           mov esi, r13d	        93	quota_tree.c	FUNCTION_7	IF_2	CALL_2
+0x400033e	          0x4889df	                            mov rdi, rbx	        93	quota_tree.c	FUNCTION_7	IF_2	CALL_2
+0x4000341	      0xe8cafdffff	                       call sym.read_blk	        93	quota_tree.c	FUNCTION_7	IF_2	CALL_2
+0x4000346	            0x85c0	                           test eax, eax	        94	quota_tree.c	FUNCTION_7	IF_2	IF_3
+0x4000348	            0x89c5	                            mov ebp, eax	        93	quota_tree.c	FUNCTION_7	IF_2	CALL_2
+0x400034a	            0x78db	                            js 0x4000327	        94	quota_tree.c	FUNCTION_7	IF_2	IF_3
+0x400034c	        0x418b0424	                    mov eax, dword [r12]	        96	quota_tree.c	FUNCTION_7	IF_2	CALL_3
+0x4000350	          0x4489ed	                           mov ebp, r13d	        92	quota_tree.c	FUNCTION_7	IF_2
+0x4000353	          0x894310	             mov dword [rbx + 0x10], eax	        96	quota_tree.c	FUNCTION_7	IF_2	CALL_3
+0x4000356	            0xebc4	                           jmp 0x400031c	        96	quota_tree.c	FUNCTION_7	IF_2	CALL_3
+0x4000358	      0xb8f4ffffff	                     mov eax, 0xfffffff4	        90	quota_tree.c	FUNCTION_7	IF_1
+0x400035d	            0xebd2	                           jmp 0x4000331	        90	quota_tree.c	FUNCTION_7	IF_1
+remove_tree	SWITCH,0:functions,0:ELSE,2:DO,0:WHILE,0:IF,6:FOR,1:CALL,13	311
+0x4000fd0	            0x4157	                                push r15	       475	quota_tree.c	FUNCTION_17
+0x4000fd2	            0x4156	                                push r14	       475	quota_tree.c	FUNCTION_17
+0x4000fd4	          0x4989d6	                            mov r14, rdx	       475	quota_tree.c	FUNCTION_17
+0x4000fd7	            0x4155	                                push r13	       475	quota_tree.c	FUNCTION_17
+0x4000fd9	            0x4154	                                push r12	       475	quota_tree.c	FUNCTION_17
+0x4000fdb	          0x4989f5	                            mov r13, rsi	       475	quota_tree.c	FUNCTION_17
+0x4000fde	              0x55	                                push rbp	       475	quota_tree.c	FUNCTION_17
+0x4000fdf	              0x53	                                push rbx	       475	quota_tree.c	FUNCTION_17
+0x4000fe0	          0x4889fb	                            mov rbx, rdi	       475	quota_tree.c	FUNCTION_17
+0x4000fe3	          0x4189cc	                           mov r12d, ecx	       475	quota_tree.c	FUNCTION_17
+0x4000fe6	        0x4883ec28	                           sub rsp, 0x28	       475	quota_tree.c	FUNCTION_17
+0x4000fea	          0x8b7f20	            mov edi, dword [rdi + 0x20] 	       476	quota_tree.c	FUNCTION_17	CALL_1
+0x4000fed	    0x65488b042528	                mov rax, qword gs:[0x28]	       475	quota_tree.c	FUNCTION_17
+0x4000ff6	      0x4889442420	             mov qword [rsp + 0x20], rax	       475	quota_tree.c	FUNCTION_17
+0x4000ffb	            0x31c0	                            xor eax, eax	       475	quota_tree.c	FUNCTION_17
+0x4000ffd	      0xe8def0ffff	                       call sym.getdqbuf	       476	quota_tree.c	FUNCTION_17	CALL_1
+0x4001002	          0x4885c0	                           test rax, rax	       481	quota_tree.c	FUNCTION_17	IF_1
+0x4001005	     0xf8401030000	                            je 0x400130c	       481	quota_tree.c	FUNCTION_17	IF_1
+0x400100b	          0x418b36	                    mov esi, dword [r14]	       483	quota_tree.c	FUNCTION_17	CALL_2
+0x400100e	          0x4889c2	                            mov rdx, rax	       483	quota_tree.c	FUNCTION_17	CALL_2
+0x4001011	          0x4889df	                            mov rdi, rbx	       483	quota_tree.c	FUNCTION_17	CALL_2
+0x4001014	          0x4889c5	                            mov rbp, rax	       483	quota_tree.c	FUNCTION_17	CALL_2
+0x4001017	      0xe8f4f0ffff	                       call sym.read_blk	       483	quota_tree.c	FUNCTION_17	CALL_2
+0x400101c	            0x85c0	                           test eax, eax	       484	quota_tree.c	FUNCTION_17	IF_2
+0x400101e	          0x4189c7	                           mov r15d, eax	       483	quota_tree.c	FUNCTION_17	CALL_2
+0x4001021	            0x787e	                            js 0x40010a1	       484	quota_tree.c	FUNCTION_17	IF_2
+0x4001023	        0x498b7570	            mov rsi, qword [r13 + 0x70] 	       489	quota_tree.c	FUNCTION_17	CALL_5
+0x4001027	          0x4489e2	                           mov edx, r12d	       489	quota_tree.c	FUNCTION_17	CALL_5
+0x400102a	          0x4889df	                            mov rdi, rbx	       489	quota_tree.c	FUNCTION_17	CALL_5
+0x400102d	      0xe85ef4ffff	                      call sym.get_index	       489	quota_tree.c	FUNCTION_17	CALL_5
+0x4001032	            0x4898	                                    cdqe	       489	quota_tree.c	FUNCTION_17	CALL_5
+0x4001034	      0x448b4c8500	            mov r9d, dword [rbp + rax*4]	       489	quota_tree.c	FUNCTION_17	CALL_5
+0x4001039	          0x8b4324	            mov eax, dword [rbx + 0x24] 	       490	quota_tree.c	FUNCTION_17	IF_3
+0x400103c	          0x83e801	                              sub eax, 1	       490	quota_tree.c	FUNCTION_17	IF_3
+0x400103f	      0x44894c241c	             mov dword [rsp + 0x1c], r9d	       489	quota_tree.c	FUNCTION_17	CALL_5
+0x4001044	          0x4439e0	                           cmp eax, r12d	       490	quota_tree.c	FUNCTION_17	IF_3
+0x4001047	            0x7474	                            je 0x40010bd	       490	quota_tree.c	FUNCTION_17	IF_3
+0x4001049	      0x418d4c2401	                      lea ecx, [r12 + 1]	       494	quota_tree.c	FUNCTION_17	ELSE_1	CALL_7
+0x400104e	      0x488d54241c	                   lea rdx, [rsp + 0x1c]	       494	quota_tree.c	FUNCTION_17	ELSE_1	CALL_7
+0x4001053	          0x4c89ee	                            mov rsi, r13	       494	quota_tree.c	FUNCTION_17	ELSE_1	CALL_7
+0x4001056	          0x4889df	                            mov rdi, rbx	       494	quota_tree.c	FUNCTION_17	ELSE_1	CALL_7
+0x4001059	      0xe872ffffff	                    call sym.remove_tree	       494	quota_tree.c	FUNCTION_17	ELSE_1	CALL_7
+0x400105e	            0x85c0	                           test eax, eax	       496	quota_tree.c	FUNCTION_17	IF_4
+0x4001060	          0x4189c7	                           mov r15d, eax	       494	quota_tree.c	FUNCTION_17	ELSE_1	CALL_7
+0x4001063	            0x780e	                            js 0x4001073	       496	quota_tree.c	FUNCTION_17	IF_4
+0x4001065	      0x448b44241c	            mov r8d, dword [rsp + 0x1c] 	       496	quota_tree.c	FUNCTION_17	IF_4
+0x400106a	          0x4585c0	                           test r8d, r8d	       496	quota_tree.c	FUNCTION_17	IF_4
+0x400106d	     0xf84b5000000	                            je 0x4001128	       496	quota_tree.c	FUNCTION_17	IF_4
+0x4001073	          0x4889ef	                            mov rdi, rbp	       516	quota_tree.c	FUNCTION_17	CALL_13
+0x4001076	      0xe800000000	                          call 0x400107b	       516	quota_tree.c	FUNCTION_17	CALL_13
+0x400107b	          0x4489f8	                           mov eax, r15d	       517	quota_tree.c	FUNCTION_17
+0x400107e	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	       518	quota_tree.c	FUNCTION_17
+0x4001083	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       518	quota_tree.c	FUNCTION_17
+0x400108c	     0xf85ed030000	                           jne 0x400147f	       518	quota_tree.c	FUNCTION_17
+0x4001092	        0x4883c428	                           add rsp, 0x28	       518	quota_tree.c	FUNCTION_17
+0x4001096	              0x5b	                                 pop rbx	       518	quota_tree.c	FUNCTION_17
+0x4001097	              0x5d	                                 pop rbp	       518	quota_tree.c	FUNCTION_17
+0x4001098	            0x415c	                                 pop r12	       518	quota_tree.c	FUNCTION_17
+0x400109a	            0x415d	                                 pop r13	       518	quota_tree.c	FUNCTION_17
+0x400109c	            0x415e	                                 pop r14	       518	quota_tree.c	FUNCTION_17
+0x400109e	            0x415f	                                 pop r15	       518	quota_tree.c	FUNCTION_17
+0x40010a0	              0xc3	                                     ret	       518	quota_tree.c	FUNCTION_17
+0x40010a1	        0x498b7d68	            mov rdi, qword [r13 + 0x68] 	       485	quota_tree.c	FUNCTION_17	IF_2	CALL_3
+0x40010a5	          0x418b0e	                    mov ecx, dword [r14]	       485	quota_tree.c	FUNCTION_17	IF_2	CALL_3
+0x40010a8	    0x48c7c2000000	                              mov rdx, 0	       485	quota_tree.c	FUNCTION_17	IF_2	CALL_3
+0x40010af	    0x48c7c6000000	                              mov rsi, 0	       485	quota_tree.c	FUNCTION_17	IF_2	CALL_3
+0x40010b6	      0xe800000000	                          call 0x40010bb	       485	quota_tree.c	FUNCTION_17	IF_2	CALL_3
+0x40010bb	            0xebb6	                           jmp 0x4001073	       487	quota_tree.c	FUNCTION_17	IF_2
+0x40010bd	          0x8b7b20	            mov edi, dword [rbx + 0x20] 	       416	quota_tree.c	FUNCTION_16	CALL_1
+0x40010c0	        0x44890c24	                    mov dword [rsp], r9d	       416	quota_tree.c	FUNCTION_16	CALL_1
+0x40010c4	      0xe817f0ffff	                       call sym.getdqbuf	       416	quota_tree.c	FUNCTION_16	CALL_1
+0x40010c9	          0x4885c0	                           test rax, rax	       419	quota_tree.c	FUNCTION_16	IF_1
+0x40010cc	          0x4989c2	                            mov r10, rax	       416	quota_tree.c	FUNCTION_16	CALL_1
+0x40010cf	     0xf849e010000	                            je 0x4001273	       419	quota_tree.c	FUNCTION_16	IF_1
+0x40010d5	          0x8b4b18	            mov ecx, dword [rbx + 0x18] 	       421	quota_tree.c	FUNCTION_16	IF_2
+0x40010d8	        0x4d8b4578	              mov r8, qword [r13 + 0x78]	       421	quota_tree.c	FUNCTION_16	IF_2
+0x40010dc	          0x8b0424	                    mov eax, dword [rsp]	       421	quota_tree.c	FUNCTION_16	IF_2
+0x40010df	          0x49d3f8	                              sar r8, cl	       421	quota_tree.c	FUNCTION_16	IF_2
+0x40010e2	          0x4939c0	                             cmp r8, rax	       421	quota_tree.c	FUNCTION_16	IF_2
+0x40010e5	     0xf84de000000	                            je 0x40011c9	       421	quota_tree.c	FUNCTION_16	IF_2
+0x40010eb	        0x498b7d68	            mov rdi, qword [r13 + 0x68] 	       422	quota_tree.c	FUNCTION_16	IF_2	CALL_2
+0x40010ef	            0x89c1	                            mov ecx, eax	       422	quota_tree.c	FUNCTION_16	IF_2	CALL_2
+0x40010f1	    0x48c7c2000000	                              mov rdx, 0	       422	quota_tree.c	FUNCTION_16	IF_2	CALL_2
+0x40010f8	    0x48c7c6000000	                              mov rsi, 0	       422	quota_tree.c	FUNCTION_16	IF_2	CALL_2
+0x40010ff	        0x4c891424	                    mov qword [rsp], r10	       422	quota_tree.c	FUNCTION_16	IF_2	CALL_2
+0x4001103	          0x4531ff	                          xor r15d, r15d	       417	quota_tree.c	FUNCTION_16
+0x4001106	      0xe800000000	                          call 0x400110b	       422	quota_tree.c	FUNCTION_16	IF_2	CALL_2
+0x400110b	        0x4c8b1424	                    mov r10, qword [rsp]	       422	quota_tree.c	FUNCTION_16	IF_2	CALL_2
+0x400110f	          0x4c89d7	                            mov rdi, r10	       468	quota_tree.c	FUNCTION_16	CALL_17
+0x4001112	      0xe800000000	                          call 0x4001117	       468	quota_tree.c	FUNCTION_16	CALL_17
+0x4001117	          0x4585ff	                         test r15d, r15d	       496	quota_tree.c	FUNCTION_17	IF_4
+0x400111a	    0xc744241c0000	               mov dword [rsp + 0x1c], 0	       492	quota_tree.c	FUNCTION_17	IF_3
+0x4001122	     0xf884bffffff	                            js 0x4001073	       496	quota_tree.c	FUNCTION_17	IF_4
+0x4001128	        0x498b7570	            mov rsi, qword [r13 + 0x70] 	       498	quota_tree.c	FUNCTION_17	IF_4	CALL_9
+0x400112c	          0x4489e2	                           mov edx, r12d	       498	quota_tree.c	FUNCTION_17	IF_4	CALL_9
+0x400112f	          0x4889df	                            mov rdi, rbx	       498	quota_tree.c	FUNCTION_17	IF_4	CALL_9
+0x4001132	      0xe859f3ffff	                      call sym.get_index	       498	quota_tree.c	FUNCTION_17	IF_4	CALL_9
+0x4001137	            0x4898	                                    cdqe	       498	quota_tree.c	FUNCTION_17	IF_4	CALL_9
+0x4001139	    0xc74485000000	              mov dword [rbp + rax*4], 0	       498	quota_tree.c	FUNCTION_17	IF_4	CALL_9
+0x4001141	          0x8b4b20	            mov ecx, dword [rbx + 0x20] 	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001144	          0xc1e902	                              shr ecx, 2	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001147	            0x85c9	                           test ecx, ecx	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001149	            0x7425	                            je 0x4001170	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x400114b	          0x8b7d00	                    mov edi, dword [rbp]	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x400114e	            0x85ff	                           test edi, edi	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001150	            0x753f	                           jne 0x4001191	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001152	        0x488d5504	                      lea rdx, [rbp + 4]	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001156	            0x31c0	                            xor eax, eax	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001158	            0xeb0b	                           jmp 0x4001165	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x400115a	        0x4883c204	                              add rdx, 4	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x400115e	          0x8b72fc	                mov esi, dword [rdx - 4]	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001161	            0x85f6	                           test esi, esi	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001163	            0x7507	                           jne 0x400116c	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001165	          0x83c001	                              add eax, 1	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x4001168	            0x39c8	                            cmp eax, ecx	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x400116a	            0x75ee	                           jne 0x400115a	       500	quota_tree.c	FUNCTION_17	IF_4	FOR_1
+0x400116c	            0x39c8	                            cmp eax, ecx	       503	quota_tree.c	FUNCTION_17	IF_4	IF_5
+0x400116e	            0x7521	                           jne 0x4001191	       503	quota_tree.c	FUNCTION_17	IF_4	IF_5
+0x4001170	          0x418b36	                    mov esi, dword [r14]	       504	quota_tree.c	FUNCTION_17	IF_4	IF_5
+0x4001173	          0x83fe01	                              cmp esi, 1	       504	quota_tree.c	FUNCTION_17	IF_4	IF_5
+0x4001176	            0x741c	                            je 0x4001194	       504	quota_tree.c	FUNCTION_17	IF_4	IF_5
+0x4001178	            0x89f2	                            mov edx, esi	       505	quota_tree.c	FUNCTION_17	IF_4	IF_5	CALL_10
+0x400117a	          0x4889df	                            mov rdi, rbx	       505	quota_tree.c	FUNCTION_17	IF_4	IF_5	CALL_10
+0x400117d	          0x4889ee	                            mov rsi, rbp	       505	quota_tree.c	FUNCTION_17	IF_4	IF_5	CALL_10
+0x4001180	      0xe8fbf7ffff	                 call sym.put_free_dqblk	       505	quota_tree.c	FUNCTION_17	IF_4	IF_5	CALL_10
+0x4001185	    0x41c706000000	                      mov dword [r14], 0	       506	quota_tree.c	FUNCTION_17	IF_4	IF_5
+0x400118c	      0xe9e2feffff	                           jmp 0x4001073	       506	quota_tree.c	FUNCTION_17	IF_4	IF_5
+0x4001191	          0x418b36	                    mov esi, dword [r14]	       506	quota_tree.c	FUNCTION_17	IF_4	IF_5
+0x4001194	          0x4889ea	                            mov rdx, rbp	       508	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	CALL_11
+0x4001197	          0x4889df	                            mov rdi, rbx	       508	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	CALL_11
+0x400119a	      0xe8d1eeffff	                      call sym.write_blk	       508	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	CALL_11
+0x400119f	            0x85c0	                           test eax, eax	       509	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	IF_6
+0x40011a1	          0x4189c7	                           mov r15d, eax	       508	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	CALL_11
+0x40011a4	     0xf89c9feffff	                           jns 0x4001073	       509	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	IF_6
+0x40011aa	        0x498b7d68	            mov rdi, qword [r13 + 0x68] 	       510	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	IF_6	CALL_12
+0x40011ae	          0x418b0e	                    mov ecx, dword [r14]	       510	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	IF_6	CALL_12
+0x40011b1	    0x48c7c2000000	                              mov rdx, 0	       510	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	IF_6	CALL_12
+0x40011b8	    0x48c7c6000000	                              mov rsi, 0	       510	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	IF_6	CALL_12
+0x40011bf	      0xe800000000	                          call 0x40011c4	       510	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	IF_6	CALL_12
+0x40011c4	      0xe9aafeffff	                           jmp 0x4001073	       510	quota_tree.c	FUNCTION_17	IF_4	ELSE_2	IF_6	CALL_12
+0x40011c9	          0x4c89d2	                            mov rdx, r10	       427	quota_tree.c	FUNCTION_16	CALL_3
+0x40011cc	            0x89c6	                            mov esi, eax	       427	quota_tree.c	FUNCTION_16	CALL_3
+0x40011ce	          0x4889df	                            mov rdi, rbx	       427	quota_tree.c	FUNCTION_16	CALL_3
+0x40011d1	      0x4c89542408	                mov qword [rsp + 8], r10	       427	quota_tree.c	FUNCTION_16	CALL_3
+0x40011d6	          0x890424	                    mov dword [rsp], eax	       427	quota_tree.c	FUNCTION_16	CALL_3
+0x40011d9	      0xe832efffff	                       call sym.read_blk	       427	quota_tree.c	FUNCTION_16	CALL_3
+0x40011de	            0x85c0	                           test eax, eax	       428	quota_tree.c	FUNCTION_16	IF_3
+0x40011e0	          0x4189c7	                           mov r15d, eax	       427	quota_tree.c	FUNCTION_16	CALL_3
+0x40011e3	        0x448b0c24	                    mov r9d, dword [rsp]	       428	quota_tree.c	FUNCTION_16	IF_3
+0x40011e7	      0x4c8b542408	                mov r10, qword [rsp + 8]	       428	quota_tree.c	FUNCTION_16	IF_3
+0x40011ec	            0x785e	                            js 0x400124c	       428	quota_tree.c	FUNCTION_16	IF_3
+0x40011ee	    0x6641836a0801	                   sub word [r10 + 8], 1	       435	quota_tree.c	FUNCTION_16	IF_4	CALL_6
+0x40011f4	     0xf858c000000	                           jne 0x4001286	       435	quota_tree.c	FUNCTION_16	IF_4	CALL_6
+0x40011fa	          0x4489ca	                            mov edx, r9d	       436	quota_tree.c	FUNCTION_16	IF_4	CALL_7
+0x40011fd	          0x4c89d6	                            mov rsi, r10	       436	quota_tree.c	FUNCTION_16	IF_4	CALL_7
+0x4001200	          0x4889df	                            mov rdi, rbx	       436	quota_tree.c	FUNCTION_16	IF_4	CALL_7
+0x4001203	      0x44894c2408	                mov dword [rsp + 8], r9d	       436	quota_tree.c	FUNCTION_16	IF_4	CALL_7
+0x4001208	        0x4c891424	                    mov qword [rsp], r10	       436	quota_tree.c	FUNCTION_16	IF_4	CALL_7
+0x400120c	      0xe84ff1ffff	            call sym.remove_free_dqentry	       436	quota_tree.c	FUNCTION_16	IF_4	CALL_7
+0x4001211	            0x85c0	                           test eax, eax	       437	quota_tree.c	FUNCTION_16	IF_4	IF_5
+0x4001213	          0x4189c7	                           mov r15d, eax	       436	quota_tree.c	FUNCTION_16	IF_4	CALL_7
+0x4001216	        0x4c8b1424	                    mov r10, qword [rsp]	       437	quota_tree.c	FUNCTION_16	IF_4	IF_5
+0x400121a	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       437	quota_tree.c	FUNCTION_16	IF_4	IF_5
+0x400121f	     0xf89f1000000	                           jns 0x4001316	       437	quota_tree.c	FUNCTION_16	IF_4	IF_5
+0x4001225	        0x498b7d68	            mov rdi, qword [r13 + 0x68] 	       440	quota_tree.c	FUNCTION_16	IF_4	IF_6	CALL_9
+0x4001229	          0x4489c9	                            mov ecx, r9d	       440	quota_tree.c	FUNCTION_16	IF_4	IF_6	CALL_9
+0x400122c	    0x48c7c2000000	                              mov rdx, 0	       440	quota_tree.c	FUNCTION_16	IF_4	IF_6	CALL_9
+0x4001233	    0x48c7c6000000	                              mov rsi, 0	       440	quota_tree.c	FUNCTION_16	IF_4	IF_6	CALL_9
+0x400123a	        0x4c891424	                    mov qword [rsp], r10	       440	quota_tree.c	FUNCTION_16	IF_4	IF_6	CALL_9
+0x400123e	      0xe800000000	                          call 0x4001243	       440	quota_tree.c	FUNCTION_16	IF_4	IF_6	CALL_9
+0x4001243	        0x4c8b1424	                    mov r10, qword [rsp]	       440	quota_tree.c	FUNCTION_16	IF_4	IF_6	CALL_9
+0x4001247	      0xe9c3feffff	                           jmp 0x400110f	       440	quota_tree.c	FUNCTION_16	IF_4	IF_6	CALL_9
+0x400124c	        0x498b7d68	            mov rdi, qword [r13 + 0x68] 	       429	quota_tree.c	FUNCTION_16	IF_3	CALL_4
+0x4001250	          0x4489c9	                            mov ecx, r9d	       429	quota_tree.c	FUNCTION_16	IF_3	CALL_4
+0x4001253	    0x48c7c2000000	                              mov rdx, 0	       429	quota_tree.c	FUNCTION_16	IF_3	CALL_4
+0x400125a	    0x48c7c6000000	                              mov rsi, 0	       429	quota_tree.c	FUNCTION_16	IF_3	CALL_4
+0x4001261	        0x4c891424	                    mov qword [rsp], r10	       429	quota_tree.c	FUNCTION_16	IF_3	CALL_4
+0x4001265	      0xe800000000	                          call 0x400126a	       429	quota_tree.c	FUNCTION_16	IF_3	CALL_4
+0x400126a	        0x4c8b1424	                    mov r10, qword [rsp]	       429	quota_tree.c	FUNCTION_16	IF_3	CALL_4
+0x400126e	      0xe99cfeffff	                           jmp 0x400110f	       429	quota_tree.c	FUNCTION_16	IF_3	CALL_4
+0x4001273	    0xc744241c0000	               mov dword [rsp + 0x1c], 0	       492	quota_tree.c	FUNCTION_17	IF_3
+0x400127b	    0x41bff4ffffff	                    mov r15d, 0xfffffff4	       420	quota_tree.c	FUNCTION_16	IF_1
+0x4001281	      0xe9edfdffff	                           jmp 0x4001073	       420	quota_tree.c	FUNCTION_16	IF_1
+0x4001286	          0x8b4b18	            mov ecx, dword [rbx + 0x18] 	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x4001289	      0xb801000000	                              mov eax, 1	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x400128e	          0x8b531c	            mov edx, dword [rbx + 0x1c] 	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x4001291	            0x31f6	                            xor esi, esi	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x4001293	      0x44894c2408	                mov dword [rsp + 8], r9d	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x4001298	        0x4c891424	                    mov qword [rsp], r10	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x400129c	            0xd3e0	                             shl eax, cl	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x400129e	          0x8d78ff	                      lea edi, [rax - 1]	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x40012a1	          0x4863ff	                         movsxd rdi, edi	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x40012a4	        0x49237d78	             and rdi, qword [r13 + 0x78]	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x40012a8	          0x4c01d7	                            add rdi, r10	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x40012ab	      0xe800000000	                          call 0x40012b0	       445	quota_tree.c	FUNCTION_16	ELSE_1	CALL_10
+0x40012b0	          0x8b7b20	            mov edi, dword [rbx + 0x20] 	        45	quota_tree.c	FUNCTION_3
+0x40012b3	          0x8b4b1c	            mov ecx, dword [rbx + 0x1c] 	       448	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	CALL_11
+0x40012b6	            0x31d2	                            xor edx, edx	       448	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	CALL_11
+0x40012b8	        0x4c8b1424	                    mov r10, qword [rsp]	       448	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	CALL_11
+0x40012bc	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       448	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	CALL_11
+0x40012c1	        0x488d47f0	                   lea rax, [rdi - 0x10]	       448	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	CALL_11
+0x40012c5	      0x410fb77208	               movzx esi, word [r10 + 8]	       448	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	CALL_11
+0x40012ca	          0x48f7f1	                                 div rcx	       448	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	CALL_11
+0x40012cd	          0x83e801	                              sub eax, 1	       448	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	CALL_11
+0x40012d0	            0x39c6	                            cmp esi, eax	       448	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	CALL_11
+0x40012d2	            0x7465	                            je 0x4001339	       448	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	CALL_11
+0x40012d4	          0x4c89d2	                            mov rdx, r10	       458	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	CALL_15
+0x40012d7	          0x4489ce	                            mov esi, r9d	       458	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	CALL_15
+0x40012da	          0x4889df	                            mov rdi, rbx	       458	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	CALL_15
+0x40012dd	      0x4c89542408	                mov qword [rsp + 8], r10	       458	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	CALL_15
+0x40012e2	        0x44890c24	                    mov dword [rsp], r9d	       458	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	CALL_15
+0x40012e6	      0xe885edffff	                      call sym.write_blk	       458	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	CALL_15
+0x40012eb	            0x85c0	                           test eax, eax	       459	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9
+0x40012ed	          0x4189c7	                           mov r15d, eax	       458	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	CALL_15
+0x40012f0	        0x448b0c24	                    mov r9d, dword [rsp]	       459	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9
+0x40012f4	      0x4c8b542408	                mov r10, qword [rsp + 8]	       459	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9
+0x40012f9	     0xf8859010000	                            js 0x4001458	       459	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9
+0x40012ff	    0x49c745780000	               mov qword [r13 + 0x78], 0	       466	quota_tree.c	FUNCTION_16
+0x4001307	      0xe903feffff	                           jmp 0x400110f	       466	quota_tree.c	FUNCTION_16
+0x400130c	      0xb8f4ffffff	                     mov eax, 0xfffffff4	       482	quota_tree.c	FUNCTION_17	IF_1
+0x4001311	      0xe968fdffff	                           jmp 0x400107e	       482	quota_tree.c	FUNCTION_17	IF_1
+0x4001316	          0x4489ca	                            mov edx, r9d	       438	quota_tree.c	FUNCTION_16	IF_4	CALL_8
+0x4001319	          0x4c89d6	                            mov rsi, r10	       438	quota_tree.c	FUNCTION_16	IF_4	CALL_8
+0x400131c	          0x4889df	                            mov rdi, rbx	       438	quota_tree.c	FUNCTION_16	IF_4	CALL_8
+0x400131f	      0xe85cf6ffff	                 call sym.put_free_dqblk	       438	quota_tree.c	FUNCTION_16	IF_4	CALL_8
+0x4001324	            0x85c0	                           test eax, eax	       439	quota_tree.c	FUNCTION_16	IF_4	IF_6
+0x4001326	          0x4189c7	                           mov r15d, eax	       438	quota_tree.c	FUNCTION_16	IF_4	CALL_8
+0x4001329	        0x4c8b1424	                    mov r10, qword [rsp]	       439	quota_tree.c	FUNCTION_16	IF_4	IF_6
+0x400132d	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       439	quota_tree.c	FUNCTION_16	IF_4	IF_6
+0x4001332	            0x79cb	                           jns 0x40012ff	       439	quota_tree.c	FUNCTION_16	IF_4	IF_6
+0x4001334	      0xe9ecfeffff	                           jmp 0x4001225	       439	quota_tree.c	FUNCTION_16	IF_4	IF_6
+0x4001339	      0x4c89542410	             mov qword [rsp + 0x10], r10	       439	quota_tree.c	FUNCTION_16	IF_4	IF_6
+0x400133e	      0xe89dedffff	                       call sym.getdqbuf	       181	quota_tree.c	FUNCTION_10	CALL_1
+0x4001343	          0x4885c0	                           test rax, rax	       185	quota_tree.c	FUNCTION_10	IF_1
+0x4001346	        0x48890424	                    mov qword [rsp], rax	       181	quota_tree.c	FUNCTION_10	CALL_1
+0x400134a	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       185	quota_tree.c	FUNCTION_10	IF_1
+0x400134f	      0x4c8b542410	            mov r10, qword [rsp + 0x10] 	       185	quota_tree.c	FUNCTION_10	IF_1
+0x4001354	     0xf842a010000	                            je 0x4001484	       185	quota_tree.c	FUNCTION_10	IF_1
+0x400135a	          0x8b4314	            mov eax, dword [rbx + 0x14] 	       187	quota_tree.c	FUNCTION_10	CALL_2
+0x400135d	          0x4c89d2	                            mov rdx, r10	       189	quota_tree.c	FUNCTION_10	CALL_4
+0x4001360	    0x41c742040000	                  mov dword [r10 + 4], 0	       188	quota_tree.c	FUNCTION_10	CALL_3
+0x4001368	          0x4489ce	                            mov esi, r9d	       189	quota_tree.c	FUNCTION_10	CALL_4
+0x400136b	          0x4889df	                            mov rdi, rbx	       189	quota_tree.c	FUNCTION_10	CALL_4
+0x400136e	          0x418902	                    mov dword [r10], eax	       187	quota_tree.c	FUNCTION_10	CALL_2
+0x4001371	      0xe8faecffff	                      call sym.write_blk	       189	quota_tree.c	FUNCTION_10	CALL_4
+0x4001376	            0x85c0	                           test eax, eax	       190	quota_tree.c	FUNCTION_10	IF_2
+0x4001378	          0x4189c7	                           mov r15d, eax	       189	quota_tree.c	FUNCTION_10	CALL_4
+0x400137b	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       190	quota_tree.c	FUNCTION_10	IF_2
+0x4001380	      0x4c8b542410	            mov r10, qword [rsp + 0x10] 	       190	quota_tree.c	FUNCTION_10	IF_2
+0x4001385	     0xf8889000000	                            js 0x4001414	       190	quota_tree.c	FUNCTION_10	IF_2
+0x400138b	          0x8b7314	            mov esi, dword [rbx + 0x14] 	       192	quota_tree.c	FUNCTION_10	IF_3
+0x400138e	            0x85f6	                           test esi, esi	       192	quota_tree.c	FUNCTION_10	IF_3
+0x4001390	            0x744e	                            je 0x40013e0	       192	quota_tree.c	FUNCTION_10	IF_3
+0x4001392	        0x488b1424	                    mov rdx, qword [rsp]	       193	quota_tree.c	FUNCTION_10	IF_3	CALL_5
+0x4001396	          0x4889df	                            mov rdi, rbx	       193	quota_tree.c	FUNCTION_10	IF_3	CALL_5
+0x4001399	      0x4c89542410	             mov qword [rsp + 0x10], r10	       193	quota_tree.c	FUNCTION_10	IF_3	CALL_5
+0x400139e	      0x44894c2408	                mov dword [rsp + 8], r9d	       193	quota_tree.c	FUNCTION_10	IF_3	CALL_5
+0x40013a3	      0xe868edffff	                       call sym.read_blk	       193	quota_tree.c	FUNCTION_10	IF_3	CALL_5
+0x40013a8	            0x85c0	                           test eax, eax	       194	quota_tree.c	FUNCTION_10	IF_3	IF_4
+0x40013aa	          0x4189c7	                           mov r15d, eax	       193	quota_tree.c	FUNCTION_10	IF_3	CALL_5
+0x40013ad	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       194	quota_tree.c	FUNCTION_10	IF_3	IF_4
+0x40013b2	      0x4c8b542410	            mov r10, qword [rsp + 0x10] 	       194	quota_tree.c	FUNCTION_10	IF_3	IF_4
+0x40013b7	            0x785b	                            js 0x4001414	       194	quota_tree.c	FUNCTION_10	IF_3	IF_4
+0x40013b9	        0x488b0424	                    mov rax, qword [rsp]	       196	quota_tree.c	FUNCTION_10	IF_3
+0x40013bd	          0x4889df	                            mov rdi, rbx	       198	quota_tree.c	FUNCTION_10	IF_3	CALL_7
+0x40013c0	        0x44894804	                mov dword [rax + 4], r9d	       196	quota_tree.c	FUNCTION_10	IF_3
+0x40013c4	          0x8b7314	            mov esi, dword [rbx + 0x14] 	       198	quota_tree.c	FUNCTION_10	IF_3	CALL_7
+0x40013c7	          0x4889c2	                            mov rdx, rax	       198	quota_tree.c	FUNCTION_10	IF_3	CALL_7
+0x40013ca	      0xe8a1ecffff	                      call sym.write_blk	       198	quota_tree.c	FUNCTION_10	IF_3	CALL_7
+0x40013cf	            0x85c0	                           test eax, eax	       199	quota_tree.c	FUNCTION_10	IF_3	IF_5
+0x40013d1	          0x4189c7	                           mov r15d, eax	       198	quota_tree.c	FUNCTION_10	IF_3	CALL_7
+0x40013d4	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       199	quota_tree.c	FUNCTION_10	IF_3	IF_5
+0x40013d9	      0x4c8b542410	            mov r10, qword [rsp + 0x10] 	       199	quota_tree.c	FUNCTION_10	IF_3	IF_5
+0x40013de	            0x7834	                            js 0x4001414	       199	quota_tree.c	FUNCTION_10	IF_3	IF_5
+0x40013e0	        0x488b3c24	                    mov rdi, qword [rsp]	       202	quota_tree.c	FUNCTION_10	CALL_8
+0x40013e4	      0x4c89542410	             mov qword [rsp + 0x10], r10	       202	quota_tree.c	FUNCTION_10	CALL_8
+0x40013e9	          0x4531ff	                          xor r15d, r15d	       204	quota_tree.c	FUNCTION_10	CALL_9
+0x40013ec	      0x44894c2408	                mov dword [rsp + 8], r9d	       204	quota_tree.c	FUNCTION_10	CALL_9
+0x40013f1	      0xe800000000	                          call 0x40013f6	       202	quota_tree.c	FUNCTION_10	CALL_8
+0x40013f6	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       203	quota_tree.c	FUNCTION_10
+0x40013fb	          0x8b7308	                mov esi, dword [rbx + 8]	       204	quota_tree.c	FUNCTION_10	CALL_9
+0x40013fe	          0x488b3b	                    mov rdi, qword [rbx]	       204	quota_tree.c	FUNCTION_10	CALL_9
+0x4001401	        0x44894b14	             mov dword [rbx + 0x14], r9d	       203	quota_tree.c	FUNCTION_10
+0x4001405	      0xe800000000	                          call 0x400140a	       204	quota_tree.c	FUNCTION_10	CALL_9
+0x400140a	      0x4c8b542410	            mov r10, qword [rsp + 0x10] 	       204	quota_tree.c	FUNCTION_10	CALL_9
+0x400140f	      0xe9ebfeffff	                           jmp 0x40012ff	       204	quota_tree.c	FUNCTION_10	CALL_9
+0x4001414	        0x488b3c24	                    mov rdi, qword [rsp]	       207	quota_tree.c	FUNCTION_10	CALL_10
+0x4001418	      0x4c89542410	             mov qword [rsp + 0x10], r10	       207	quota_tree.c	FUNCTION_10	CALL_10
+0x400141d	      0x44894c2408	                mov dword [rsp + 8], r9d	       207	quota_tree.c	FUNCTION_10	CALL_10
+0x4001422	      0xe800000000	                          call 0x4001427	       207	quota_tree.c	FUNCTION_10	CALL_10
+0x4001427	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       207	quota_tree.c	FUNCTION_10	CALL_10
+0x400142c	      0x4c8b542410	            mov r10, qword [rsp + 0x10] 	       207	quota_tree.c	FUNCTION_10	CALL_10
+0x4001431	        0x498b7d68	            mov rdi, qword [r13 + 0x68] 	       453	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	IF_8	CALL_14
+0x4001435	          0x4489c9	                            mov ecx, r9d	       453	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	IF_8	CALL_14
+0x4001438	    0x48c7c2000000	                              mov rdx, 0	       453	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	IF_8	CALL_14
+0x400143f	    0x48c7c6000000	                              mov rsi, 0	       453	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	IF_8	CALL_14
+0x4001446	        0x4c891424	                    mov qword [rsp], r10	       453	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	IF_8	CALL_14
+0x400144a	      0xe800000000	                          call 0x400144f	       453	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	IF_8	CALL_14
+0x400144f	        0x4c8b1424	                    mov r10, qword [rsp]	       453	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	IF_8	CALL_14
+0x4001453	      0xe9b7fcffff	                           jmp 0x400110f	       453	quota_tree.c	FUNCTION_16	ELSE_1	IF_7	IF_8	CALL_14
+0x4001458	        0x498b7d68	            mov rdi, qword [r13 + 0x68] 	       460	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9	CALL_16
+0x400145c	          0x4489c9	                            mov ecx, r9d	       460	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9	CALL_16
+0x400145f	    0x48c7c2000000	                              mov rdx, 0	       460	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9	CALL_16
+0x4001466	    0x48c7c6000000	                              mov rsi, 0	       460	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9	CALL_16
+0x400146d	        0x4c891424	                    mov qword [rsp], r10	       460	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9	CALL_16
+0x4001471	      0xe800000000	                          call 0x4001476	       460	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9	CALL_16
+0x4001476	        0x4c8b1424	                    mov r10, qword [rsp]	       460	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9	CALL_16
+0x400147a	      0xe990fcffff	                           jmp 0x400110f	       460	quota_tree.c	FUNCTION_16	ELSE_1	ELSE_2	IF_9	CALL_16
+0x400147f	      0xe800000000	                          call 0x4001484	       518	quota_tree.c	FUNCTION_17
+0x4001484	    0x41bff4ffffff	                    mov r15d, 0xfffffff4	       186	quota_tree.c	FUNCTION_10	IF_1
+0x400148a	            0xeba5	                           jmp 0x4001431	       186	quota_tree.c	FUNCTION_10	IF_1
+find_next_id	SWITCH,0:functions,0:ELSE,0:DO,0:WHILE,0:IF,6:FOR,2:CALL,8	114
+0x4000160	            0x4157	                                push r15	       680	quota_tree.c	FUNCTION_24
+0x4000162	            0x4156	                                push r14	       680	quota_tree.c	FUNCTION_24
+0x4000164	          0x4989f7	                            mov r15, rsi	       680	quota_tree.c	FUNCTION_24
+0x4000167	            0x4155	                                push r13	       680	quota_tree.c	FUNCTION_24
+0x4000169	            0x4154	                                push r12	       680	quota_tree.c	FUNCTION_24
+0x400016b	          0x4189ce	                           mov r14d, ecx	       680	quota_tree.c	FUNCTION_24
+0x400016e	              0x55	                                push rbp	       680	quota_tree.c	FUNCTION_24
+0x400016f	              0x53	                                push rbx	       680	quota_tree.c	FUNCTION_24
+0x4000170	          0x4889fd	                            mov rbp, rdi	       680	quota_tree.c	FUNCTION_24
+0x4000173	            0x89d3	                            mov ebx, edx	       680	quota_tree.c	FUNCTION_24
+0x4000175	        0x4883ec18	                           sub rsp, 0x18	       680	quota_tree.c	FUNCTION_24
+0x4000179	          0x8b7f20	            mov edi, dword [rdi + 0x20] 	       681	quota_tree.c	FUNCTION_24	CALL_1
+0x400017c	        0x894c2408	                mov dword [rsp + 8], ecx	       680	quota_tree.c	FUNCTION_24
+0x4000180	      0xe85bffffff	                       call sym.getdqbuf	       681	quota_tree.c	FUNCTION_24	CALL_1
+0x4000185	        0x448b6520	           mov r12d, dword [rbp + 0x20] 	       684	quota_tree.c	FUNCTION_24
+0x4000189	        0x41c1ec02	                             shr r12d, 2	       684	quota_tree.c	FUNCTION_24
+0x400018d	          0x4885c0	                           test rax, rax	       688	quota_tree.c	FUNCTION_24	IF_1
+0x4000190	     0xf8425010000	                            je 0x40002bb	       688	quota_tree.c	FUNCTION_24	IF_1
+0x4000196	          0x4989c1	                             mov r9, rax	       688	quota_tree.c	FUNCTION_24	IF_1
+0x4000199	          0x8b4524	            mov eax, dword [rbp + 0x24] 	       691	quota_tree.c	FUNCTION_24	FOR_1
+0x400019c	    0x41bd01000000	                             mov r13d, 1	       691	quota_tree.c	FUNCTION_24	FOR_1
+0x40001a2	          0x8d50ff	                      lea edx, [rax - 1]	       691	quota_tree.c	FUNCTION_24	FOR_1
+0x40001a5	          0x4489f0	                           mov eax, r14d	       691	quota_tree.c	FUNCTION_24	FOR_1
+0x40001a8	          0x4139d6	                           cmp r14d, edx	       691	quota_tree.c	FUNCTION_24	FOR_1
+0x40001ab	            0x730b	                           jae 0x40001b8	       691	quota_tree.c	FUNCTION_24	FOR_1
+0x40001ad	          0x83c001	                              add eax, 1	       691	quota_tree.c	FUNCTION_24	FOR_1
+0x40001b0	        0x450fafec	                         imul r13d, r12d	       692	quota_tree.c	FUNCTION_24	FOR_1
+0x40001b4	            0x39d0	                            cmp eax, edx	       691	quota_tree.c	FUNCTION_24	FOR_1
+0x40001b6	            0x72f5	                            jb 0x40001ad	       691	quota_tree.c	FUNCTION_24	FOR_1
+0x40001b8	          0x4c89ca	                             mov rdx, r9	       694	quota_tree.c	FUNCTION_24	CALL_2
+0x40001bb	            0x89de	                            mov esi, ebx	       694	quota_tree.c	FUNCTION_24	CALL_2
+0x40001bd	          0x4889ef	                            mov rdi, rbp	       694	quota_tree.c	FUNCTION_24	CALL_2
+0x40001c0	        0x4c890c24	                     mov qword [rsp], r9	       694	quota_tree.c	FUNCTION_24	CALL_2
+0x40001c4	      0xe847ffffff	                       call sym.read_blk	       694	quota_tree.c	FUNCTION_24	CALL_2
+0x40001c9	          0x4885c0	                           test rax, rax	       695	quota_tree.c	FUNCTION_24	IF_2
+0x40001cc	          0x4989c0	                             mov r8, rax	       694	quota_tree.c	FUNCTION_24	CALL_2
+0x40001cf	        0x4c8b0c24	                     mov r9, qword [rsp]	       695	quota_tree.c	FUNCTION_24	IF_2
+0x40001d3	     0xf88b2000000	                            js 0x400028b	       695	quota_tree.c	FUNCTION_24	IF_2
+0x40001d9	          0x8b5524	            mov edx, dword [rbp + 0x24] 	        29	quota_tree.c	FUNCTION_1
+0x40001dc	        0x2b542408	                sub edx, dword [rsp + 8]	        29	quota_tree.c	FUNCTION_1
+0x40001e0	          0x8b7520	            mov esi, dword [rbp + 0x20] 	        27	quota_tree.c	FUNCTION_1
+0x40001e3	          0x418b07	                    mov eax, dword [r15]	       700	quota_tree.c	FUNCTION_24	FOR_2	CALL_4
+0x40001e6	          0xc1ee02	                              shr esi, 2	        27	quota_tree.c	FUNCTION_1
+0x40001e9	          0x83fa01	                              cmp edx, 1	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40001ec	          0x8d4afe	                      lea ecx, [rdx - 2]	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40001ef	            0x740c	                            je 0x40001fd	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40001f1	            0x31d2	                            xor edx, edx	        31	quota_tree.c	FUNCTION_1	WHILE_1
+0x40001f3	          0x83e901	                              sub ecx, 1	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40001f6	            0xf7f6	                                 div esi	        31	quota_tree.c	FUNCTION_1	WHILE_1
+0x40001f8	          0x83f9ff	             cmp ecx, 0xffffffffffffffff	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40001fb	            0x75f4	                           jne 0x40001f1	        30	quota_tree.c	FUNCTION_1	WHILE_1
+0x40001fd	            0x31d2	                            xor edx, edx	        32	quota_tree.c	FUNCTION_1
+0x40001ff	            0xf7f6	                                 div esi	        32	quota_tree.c	FUNCTION_1
+0x4000201	          0x4139d4	                           cmp r12d, edx	       700	quota_tree.c	FUNCTION_24	FOR_2	CALL_4
+0x4000204	          0x4189d6	                           mov r14d, edx	        32	quota_tree.c	FUNCTION_1
+0x4000207	            0x89d3	                            mov ebx, edx	        32	quota_tree.c	FUNCTION_1
+0x4000209	            0x7655	                           jbe 0x4000260	       700	quota_tree.c	FUNCTION_24	FOR_2	CALL_4
+0x400020b	        0x8b442408	                mov eax, dword [rsp + 8]	       709	quota_tree.c	FUNCTION_24	FOR_2	CALL_7
+0x400020f	          0x83c001	                              add eax, 1	       709	quota_tree.c	FUNCTION_24	FOR_2	CALL_7
+0x4000212	        0x89442414	             mov dword [rsp + 0x14], eax	       709	quota_tree.c	FUNCTION_24	FOR_2	CALL_7
+0x4000216	            0xeb0e	                           jmp 0x4000226	       709	quota_tree.c	FUNCTION_24	FOR_2	CALL_7
+0x4000218	          0x45012f	                   add dword [r15], r13d	       702	quota_tree.c	FUNCTION_24	FOR_2	IF_3
+0x400021b	          0x83c301	                              add ebx, 1	       700	quota_tree.c	FUNCTION_24	FOR_2	CALL_4
+0x400021e	          0x4139dc	                           cmp r12d, ebx	       700	quota_tree.c	FUNCTION_24	FOR_2	CALL_4
+0x4000221	          0x4189de	                           mov r14d, ebx	       700	quota_tree.c	FUNCTION_24	FOR_2	CALL_4
+0x4000224	            0x743a	                            je 0x4000260	       700	quota_tree.c	FUNCTION_24	FOR_2	CALL_4
+0x4000226	          0x4863c3	                         movsxd rax, ebx	       701	quota_tree.c	FUNCTION_24	FOR_2	IF_3	CALL_5
+0x4000229	          0x4189de	                           mov r14d, ebx	       701	quota_tree.c	FUNCTION_24	FOR_2	IF_3	CALL_5
+0x400022c	        0x418b1481	             mov edx, dword [r9 + rax*4]	       701	quota_tree.c	FUNCTION_24	FOR_2	IF_3	CALL_5
+0x4000230	            0x85d2	                           test edx, edx	       701	quota_tree.c	FUNCTION_24	FOR_2	IF_3	CALL_5
+0x4000232	            0x74e4	                            je 0x4000218	       701	quota_tree.c	FUNCTION_24	FOR_2	IF_3	CALL_5
+0x4000234	          0x8b4524	            mov eax, dword [rbp + 0x24] 	       705	quota_tree.c	FUNCTION_24	FOR_2	IF_4
+0x4000237	          0x83e801	                              sub eax, 1	       705	quota_tree.c	FUNCTION_24	FOR_2	IF_4
+0x400023a	        0x3b442408	                cmp eax, dword [rsp + 8]	       705	quota_tree.c	FUNCTION_24	FOR_2	IF_4
+0x400023e	            0x7447	                            je 0x4000287	       705	quota_tree.c	FUNCTION_24	FOR_2	IF_4
+0x4000240	        0x8b4c2414	            mov ecx, dword [rsp + 0x14] 	       709	quota_tree.c	FUNCTION_24	FOR_2	CALL_7
+0x4000244	          0x4c89fe	                            mov rsi, r15	       709	quota_tree.c	FUNCTION_24	FOR_2	CALL_7
+0x4000247	          0x4889ef	                            mov rdi, rbp	       709	quota_tree.c	FUNCTION_24	FOR_2	CALL_7
+0x400024a	        0x4c890c24	                     mov qword [rsp], r9	       709	quota_tree.c	FUNCTION_24	FOR_2	CALL_7
+0x400024e	      0xe80dffffff	                   call sym.find_next_id	       709	quota_tree.c	FUNCTION_24	FOR_2	CALL_7
+0x4000253	          0x4c63c0	                          movsxd r8, eax	       709	quota_tree.c	FUNCTION_24	FOR_2	CALL_7
+0x4000256	        0x4c8b0c24	                     mov r9, qword [rsp]	       710	quota_tree.c	FUNCTION_24	FOR_2	IF_5
+0x400025a	        0x4983f8fe	              cmp r8, 0xfffffffffffffffe	       710	quota_tree.c	FUNCTION_24	FOR_2	IF_5
+0x400025e	            0x74bb	                            je 0x400021b	       710	quota_tree.c	FUNCTION_24	FOR_2	IF_5
+0x4000260	          0x4539f4	                          cmp r12d, r14d	       710	quota_tree.c	FUNCTION_24	FOR_2	IF_5
+0x4000263	      0xb8feffffff	                     mov eax, 0xfffffffe	       710	quota_tree.c	FUNCTION_24	FOR_2	IF_5
+0x4000268	        0x410f45c0	                         cmovne eax, r8d	       710	quota_tree.c	FUNCTION_24	FOR_2	IF_5
+0x400026c	            0x89c5	                            mov ebp, eax	       710	quota_tree.c	FUNCTION_24	FOR_2	IF_5
+0x400026e	          0x4c89cf	                             mov rdi, r9	       718	quota_tree.c	FUNCTION_24	CALL_8
+0x4000271	      0xe800000000	                          call 0x4000276	       718	quota_tree.c	FUNCTION_24	CALL_8
+0x4000276	        0x4883c418	                           add rsp, 0x18	       720	quota_tree.c	FUNCTION_24
+0x400027a	            0x89e8	                            mov eax, ebp	       720	quota_tree.c	FUNCTION_24
+0x400027c	              0x5b	                                 pop rbx	       720	quota_tree.c	FUNCTION_24
+0x400027d	              0x5d	                                 pop rbp	       720	quota_tree.c	FUNCTION_24
+0x400027e	            0x415c	                                 pop r12	       720	quota_tree.c	FUNCTION_24
+0x4000280	            0x415d	                                 pop r13	       720	quota_tree.c	FUNCTION_24
+0x4000282	            0x415e	                                 pop r14	       720	quota_tree.c	FUNCTION_24
+0x4000284	            0x415f	                                 pop r15	       720	quota_tree.c	FUNCTION_24
+0x4000286	              0xc3	                                     ret	       720	quota_tree.c	FUNCTION_24
+0x4000287	            0x31ed	                            xor ebp, ebp	       720	quota_tree.c	FUNCTION_24
+0x4000289	            0xebe3	                           jmp 0x400026e	       720	quota_tree.c	FUNCTION_24
+0x400028b	        0x488b7d00	                    mov rdi, qword [rbp]	       696	quota_tree.c	FUNCTION_24	IF_2	CALL_3
+0x400028f	            0x89d9	                            mov ecx, ebx	       696	quota_tree.c	FUNCTION_24	IF_2	CALL_3
+0x4000291	    0x48c7c2000000	                              mov rdx, 0	       696	quota_tree.c	FUNCTION_24	IF_2	CALL_3
+0x4000298	    0x48c7c6000000	                              mov rsi, 0	       696	quota_tree.c	FUNCTION_24	IF_2	CALL_3
+0x400029f	      0x4c894c2408	                 mov qword [rsp + 8], r9	       696	quota_tree.c	FUNCTION_24	IF_2	CALL_3
+0x40002a4	        0x48890424	                    mov qword [rsp], rax	       696	quota_tree.c	FUNCTION_24	IF_2	CALL_3
+0x40002a8	      0xe800000000	                          call 0x40002ad	       696	quota_tree.c	FUNCTION_24	IF_2	CALL_3
+0x40002ad	        0x4c8b0424	                     mov r8, qword [rsp]	       696	quota_tree.c	FUNCTION_24	IF_2	CALL_3
+0x40002b1	      0x4c8b4c2408	                 mov r9, qword [rsp + 8]	       698	quota_tree.c	FUNCTION_24	IF_2
+0x40002b6	          0x4489c5	                            mov ebp, r8d	       698	quota_tree.c	FUNCTION_24	IF_2
+0x40002b9	            0xebb3	                           jmp 0x400026e	       698	quota_tree.c	FUNCTION_24	IF_2
+0x40002bb	      0xbdf4ffffff	                     mov ebp, 0xfffffff4	       689	quota_tree.c	FUNCTION_24	IF_1
+0x40002c0	            0xebb4	                           jmp 0x4000276	       689	quota_tree.c	FUNCTION_24	IF_1

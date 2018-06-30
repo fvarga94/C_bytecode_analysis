@@ -1,0 +1,95 @@
+acpi_ex_system_wait_event	IF,1:WHILE,0:SWITCH,0:DO,0:FOR,0:functions,0:CALL,3:ELSE,0	8
+0x4000133	          0x4885f6	                           test rsi, rsi	       233	exsystem.c	FUNCTION_6	IF_1
+0x4000136	          0x4889f0	                            mov rax, rsi	       228	exsystem.c	FUNCTION_6
+0x4000139	            0x740d	                            je 0x4000148	       233	exsystem.c	FUNCTION_6	IF_1
+0x400013b	         0xfb77710	           movzx esi, word [rdi + 0x10] 	       234	exsystem.c	FUNCTION_6	IF_1
+0x400013f	        0x488b7810	            mov rdi, qword [rax + 0x10] 	       234	exsystem.c	FUNCTION_6	IF_1
+0x4000143	      0xe9f8feffff	   jmp sym.acpi_ex_system_wait_semaphore	       234	exsystem.c	FUNCTION_6	IF_1
+0x4000148	            0x31c0	                            xor eax, eax	       241	exsystem.c	FUNCTION_6
+0x400014a	              0xc3	                                     ret	       241	exsystem.c	FUNCTION_6
+acpi_ex_system_do_sleep	IF,1:WHILE,0:SWITCH,0:DO,0:FOR,0:functions,0:CALL,4:ELSE,0	11
+0x40000f6	              0x53	                                push rbx	       160	exsystem.c	FUNCTION_4
+0x40000f7	          0x4889fb	                            mov rbx, rdi	       160	exsystem.c	FUNCTION_4
+0x40000fa	      0xe800000000	                          call 0x40000ff	       165	exsystem.c	FUNCTION_4	CALL_2
+0x40000ff	    0x4881fbd00700	                          cmp rbx, 0x7d0	       175	exsystem.c	FUNCTION_4	CALL_3
+0x4000106	      0xbfd0070000	                          mov edi, 0x7d0	       175	exsystem.c	FUNCTION_4	CALL_3
+0x400010b	        0x480f46fb	                         cmovbe rdi, rbx	       175	exsystem.c	FUNCTION_4	CALL_3
+0x400010f	      0xe800000000	                          call 0x4000114	       175	exsystem.c	FUNCTION_4	CALL_3
+0x4000114	      0xe800000000	                          call 0x4000119	       179	exsystem.c	FUNCTION_4	CALL_4
+0x4000119	            0x31c0	                            xor eax, eax	       181	exsystem.c	FUNCTION_4
+0x400011b	              0x5b	                                 pop rbx	       181	exsystem.c	FUNCTION_4
+0x400011c	              0xc3	                                     ret	       181	exsystem.c	FUNCTION_4
+acpi_ex_system_signal_event	IF,1:WHILE,0:SWITCH,0:DO,0:FOR,0:functions,0:CALL,3:ELSE,0	7
+0x400011d	          0x4885ff	                           test rdi, rdi	       202	exsystem.c	FUNCTION_5	IF_1
+0x4000120	            0x740e	                            je 0x4000130	       202	exsystem.c	FUNCTION_5	IF_1
+0x4000122	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	       203	exsystem.c	FUNCTION_5	IF_1
+0x4000126	      0xbe01000000	                              mov esi, 1	       203	exsystem.c	FUNCTION_5	IF_1
+0x400012b	      0xe900000000	                           jmp 0x4000130	       203	exsystem.c	FUNCTION_5	IF_1
+0x4000130	            0x31c0	                            xor eax, eax	       208	exsystem.c	FUNCTION_5
+0x4000132	              0xc3	                                     ret	       208	exsystem.c	FUNCTION_5
+acpi_ex_system_wait_mutex	IF,2:WHILE,0:SWITCH,0:DO,0:FOR,0:functions,0:CALL,10:ELSE,0	24
+0x4000083	              0x55	                                push rbp	        77	exsystem.c	FUNCTION_2
+0x4000084	              0x53	                                push rbx	        77	exsystem.c	FUNCTION_2
+0x4000085	            0x31d2	                            xor edx, edx	        82	exsystem.c	FUNCTION_2	CALL_2
+0x4000087	              0x51	                                push rcx	        77	exsystem.c	FUNCTION_2
+0x4000088	            0x89f3	                            mov ebx, esi	        77	exsystem.c	FUNCTION_2
+0x400008a	      0xbe01000000	                              mov esi, 1	        82	exsystem.c	FUNCTION_2	CALL_2
+0x400008f	          0x4889fd	                            mov rbp, rdi	        77	exsystem.c	FUNCTION_2
+0x4000092	      0xe800000000	                          call 0x4000097	        82	exsystem.c	FUNCTION_2	CALL_2
+0x4000097	            0x85c0	                           test eax, eax	        83	exsystem.c	FUNCTION_2	IF_1	CALL_3
+0x4000099	            0x7427	                            je 0x40000c2	        83	exsystem.c	FUNCTION_2	IF_1	CALL_3
+0x400009b	          0x83f811	                           cmp eax, 0x11	        87	exsystem.c	FUNCTION_2	IF_2
+0x400009e	            0x7522	                           jne 0x40000c2	        87	exsystem.c	FUNCTION_2	IF_2
+0x40000a0	      0xe800000000	                          call 0x40000a5	        91	exsystem.c	FUNCTION_2	IF_2	CALL_5
+0x40000a5	           0xfb7d3	                           movzx edx, bx	        92	exsystem.c	FUNCTION_2	IF_2	CALL_6
+0x40000a8	      0xbe01000000	                              mov esi, 1	        92	exsystem.c	FUNCTION_2	IF_2	CALL_6
+0x40000ad	          0x4889ef	                            mov rdi, rbp	        92	exsystem.c	FUNCTION_2	IF_2	CALL_6
+0x40000b0	      0xe800000000	                          call 0x40000b5	        92	exsystem.c	FUNCTION_2	IF_2	CALL_6
+0x40000b5	        0x89442404	                mov dword [rsp + 4], eax	        92	exsystem.c	FUNCTION_2	IF_2	CALL_6
+0x40000b9	      0xe800000000	                          call 0x40000be	       100	exsystem.c	FUNCTION_2	IF_2	CALL_9
+0x40000be	        0x8b442404	                mov eax, dword [rsp + 4]	       100	exsystem.c	FUNCTION_2	IF_2	CALL_9
+0x40000c2	              0x5a	                                 pop rdx	       104	exsystem.c	FUNCTION_2
+0x40000c3	              0x5b	                                 pop rbx	       104	exsystem.c	FUNCTION_2
+0x40000c4	              0x5d	                                 pop rbp	       104	exsystem.c	FUNCTION_2
+0x40000c5	              0xc3	                                     ret	       104	exsystem.c	FUNCTION_2
+acpi_ex_system_reset_event	IF,1:WHILE,0:SWITCH,0:DO,0:FOR,0:functions,0:CALL,4:ELSE,0	27
+0x400014b	              0x55	                                push rbp	       256	exsystem.c	FUNCTION_7
+0x400014c	              0x53	                                push rbx	       256	exsystem.c	FUNCTION_7
+0x400014d	            0x31f6	                            xor esi, esi	       266	exsystem.c	FUNCTION_7
+0x400014f	          0x4889fd	                            mov rbp, rdi	       256	exsystem.c	FUNCTION_7
+0x4000152	          0x83cfff	                      or edi, 0xffffffff	       266	exsystem.c	FUNCTION_7
+0x4000155	        0x4883ec10	                           sub rsp, 0x10	       256	exsystem.c	FUNCTION_7
+0x4000159	          0x4889e2	                            mov rdx, rsp	       266	exsystem.c	FUNCTION_7
+0x400015c	    0x65488b042528	                mov rax, qword gs:[0x28]	       256	exsystem.c	FUNCTION_7
+0x4000165	      0x4889442408	                mov qword [rsp + 8], rax	       256	exsystem.c	FUNCTION_7
+0x400016a	            0x31c0	                            xor eax, eax	       256	exsystem.c	FUNCTION_7
+0x400016c	      0xe800000000	                          call 0x4000171	       266	exsystem.c	FUNCTION_7
+0x4000171	            0x85c0	                           test eax, eax	       268	exsystem.c	FUNCTION_7	IF_1	CALL_3
+0x4000173	            0x89c3	                            mov ebx, eax	       266	exsystem.c	FUNCTION_7
+0x4000175	            0x7511	                           jne 0x4000188	       268	exsystem.c	FUNCTION_7	IF_1	CALL_3
+0x4000177	        0x488b7d10	            mov rdi, qword [rbp + 0x10] 	       269	exsystem.c	FUNCTION_7	IF_1	CALL_4
+0x400017b	      0xe800000000	                          call 0x4000180	       269	exsystem.c	FUNCTION_7	IF_1	CALL_4
+0x4000180	        0x488b0424	                    mov rax, qword [rsp]	       270	exsystem.c	FUNCTION_7	IF_1
+0x4000184	        0x48894510	            mov qword [rbp + 0x10], rax 	       270	exsystem.c	FUNCTION_7	IF_1
+0x4000188	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       274	exsystem.c	FUNCTION_7
+0x400018d	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       274	exsystem.c	FUNCTION_7
+0x4000196	            0x89d8	                            mov eax, ebx	       274	exsystem.c	FUNCTION_7
+0x4000198	            0x7405	                            je 0x400019f	       274	exsystem.c	FUNCTION_7
+0x400019a	      0xe800000000	                          call 0x400019f	       274	exsystem.c	FUNCTION_7
+0x400019f	        0x4883c410	                           add rsp, 0x10	       274	exsystem.c	FUNCTION_7
+0x40001a3	              0x5b	                                 pop rbx	       274	exsystem.c	FUNCTION_7
+0x40001a4	              0x5d	                                 pop rbp	       274	exsystem.c	FUNCTION_7
+0x40001a5	              0xc3	                                     ret	       274	exsystem.c	FUNCTION_7
+acpi_ex_system_do_stall	IF,1:WHILE,0:SWITCH,0:DO,0:FOR,0:functions,0:CALL,3:ELSE,1	12
+0x40000c6	    0x81ffff000000	                           cmp edi, 0xff	       129	exsystem.c	FUNCTION_3	IF_1
+0x40000cc	            0x7620	                           jbe 0x40000ee	       129	exsystem.c	FUNCTION_3	IF_1
+0x40000ce	            0x89f9	                            mov ecx, edi	       136	exsystem.c	FUNCTION_3	IF_1	CALL_2
+0x40000d0	    0x48c7c2000000	                              mov rdx, 0	       136	exsystem.c	FUNCTION_3	IF_1	CALL_2
+0x40000d7	      0xbe89000000	                           mov esi, 0x89	       136	exsystem.c	FUNCTION_3	IF_1	CALL_2
+0x40000dc	    0x48c7c7000000	                              mov rdi, 0	       136	exsystem.c	FUNCTION_3	IF_1	CALL_2
+0x40000e3	      0xe800000000	                          call 0x40000e8	       136	exsystem.c	FUNCTION_3	IF_1	CALL_2
+0x40000e8	      0xb804300000	                         mov eax, 0x3004	       138	exsystem.c	FUNCTION_3	IF_1
+0x40000ed	              0xc3	                                     ret	       138	exsystem.c	FUNCTION_3	IF_1
+0x40000ee	      0xe800000000	                          call 0x40000f3	       140	exsystem.c	FUNCTION_3	ELSE_1	CALL_3
+0x40000f3	            0x31c0	                            xor eax, eax	       125	exsystem.c	FUNCTION_3
+0x40000f5	              0xc3	                                     ret	       144	exsystem.c	FUNCTION_3

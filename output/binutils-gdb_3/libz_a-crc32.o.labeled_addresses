@@ -1,0 +1,130 @@
+get_crc_table	DO,0:CALL,1:IF,1:functions,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	2
+0x40004d0	      0xb800000000	                              mov eax, 0	       195	crc32.c	FUNCTION_2
+0x40004d5	              0xc3	                                     ret	       195	crc32.c	FUNCTION_2
+crc32_combine_	DO,1:CALL,6:IF,4:functions,0:SWITCH,0:WHILE,0:FOR,1:ELSE,0	126
+0x40002f0	    0x4881ec180200	                          sub rsp, 0x218	       376	crc32.c	FUNCTION_3
+0x40002f7	    0x64488b042528	                mov rax, qword fs:[0x28]	       376	crc32.c	FUNCTION_3
+0x4000300	    0x488984240802	            mov qword [rsp + 0x208], rax	       376	crc32.c	FUNCTION_3
+0x4000308	            0x31c0	                            xor eax, eax	       376	crc32.c	FUNCTION_3
+0x400030a	          0x4885d2	                           test rdx, rdx	       383	crc32.c	FUNCTION_3	IF_1
+0x400030d	     0xf8ea7010000	                           jle 0x40004ba	       383	crc32.c	FUNCTION_3	IF_1
+0x4000313	      0xb82083b8ed	                     mov eax, 0xedb88320	       387	crc32.c	FUNCTION_3
+0x4000318	    0x4c8d84240002	                   lea r8, [rsp + 0x200]	       387	crc32.c	FUNCTION_3
+0x4000320	      0xb901000000	                              mov ecx, 1	       388	crc32.c	FUNCTION_3
+0x4000325	    0x488984240001	            mov qword [rsp + 0x100], rax	       387	crc32.c	FUNCTION_3
+0x400032d	    0x488d84240801	                  lea rax, [rsp + 0x108]	       387	crc32.c	FUNCTION_3
+0x4000335	          0x488908	                    mov qword [rax], rcx	       390	crc32.c	FUNCTION_3	FOR_1
+0x4000338	        0x4883c008	                              add rax, 8	       390	crc32.c	FUNCTION_3	FOR_1
+0x400033c	          0x4801c9	                            add rcx, rcx	       391	crc32.c	FUNCTION_3	FOR_1
+0x400033f	          0x4c39c0	                             cmp rax, r8	       389	crc32.c	FUNCTION_3	FOR_1
+0x4000342	            0x75f1	                           jne 0x4000335	       389	crc32.c	FUNCTION_3	FOR_1
+0x4000344	          0x4531c9	                            xor r9d, r9d	       389	crc32.c	FUNCTION_3	FOR_1
+0x4000347	    0x4a8b840c0001	      mov rax, qword [rsp + r9 + 0x100] 	       368	crc32.c	CALL_22
+0x400034f	          0x4531c0	                            xor r8d, r8d	       351	crc32.c	WHILE_8
+0x4000352	          0x4885c0	                           test rax, rax	       351	crc32.c	WHILE_8
+0x4000355	            0x7419	                            je 0x4000370	       351	crc32.c	WHILE_8
+0x4000357	    0x488d8c240001	                  lea rcx, [rsp + 0x100]	       351	crc32.c	WHILE_8
+0x400035f	              0x90	                                     nop	       351	crc32.c	WHILE_8
+0x4000360	            0xa801	                              test al, 1	       352	crc32.c	WHILE_8	IF_8
+0x4000362	            0x7403	                            je 0x4000367	       352	crc32.c	WHILE_8	IF_8
+0x4000364	          0x4c3301	                     xor r8, qword [rcx]	       353	crc32.c	WHILE_8	IF_8
+0x4000367	        0x4883c108	                              add rcx, 8	       355	crc32.c	WHILE_8
+0x400036b	          0x48d1e8	                              shr rax, 1	       351	crc32.c	WHILE_8
+0x400036e	            0x75f0	                           jne 0x4000360	       351	crc32.c	WHILE_8
+0x4000370	        0x4e89040c	                mov qword [rsp + r9], r8	       368	crc32.c	CALL_22
+0x4000374	        0x4983c108	                               add r9, 8	       368	crc32.c	CALL_22
+0x4000378	    0x4981f9000100	                           cmp r9, 0x100	       367	crc32.c	FOR_2
+0x400037f	            0x75c6	                           jne 0x4000347	       367	crc32.c	FOR_2
+0x4000381	          0x4531c9	                            xor r9d, r9d	       367	crc32.c	FOR_2
+0x4000384	        0x4a8b040c	               mov rax, qword [rsp + r9]	       368	crc32.c	CALL_22
+0x4000388	          0x4531c0	                            xor r8d, r8d	       351	crc32.c	WHILE_8
+0x400038b	          0x4885c0	                           test rax, rax	       351	crc32.c	WHILE_8
+0x400038e	            0x7418	                            je 0x40003a8	       351	crc32.c	WHILE_8
+0x4000390	          0x4889e1	                            mov rcx, rsp	       351	crc32.c	WHILE_8
+0x4000393	       0xf1f440000	                   nop dword [rax + rax]	       351	crc32.c	WHILE_8
+0x4000398	            0xa801	                              test al, 1	       352	crc32.c	WHILE_8	IF_8
+0x400039a	            0x7403	                            je 0x400039f	       352	crc32.c	WHILE_8	IF_8
+0x400039c	          0x4c3301	                     xor r8, qword [rcx]	       353	crc32.c	WHILE_8	IF_8
+0x400039f	        0x4883c108	                              add rcx, 8	       355	crc32.c	WHILE_8
+0x40003a3	          0x48d1e8	                              shr rax, 1	       351	crc32.c	WHILE_8
+0x40003a6	            0x75f0	                           jne 0x4000398	       351	crc32.c	WHILE_8
+0x40003a8	    0x4e89840c0001	        mov qword [rsp + r9 + 0x100], r8	       368	crc32.c	CALL_22
+0x40003b0	        0x4983c108	                               add r9, 8	       368	crc32.c	CALL_22
+0x40003b4	    0x4981f9000100	                           cmp r9, 0x100	       367	crc32.c	FOR_2
+0x40003bb	            0x75c7	                           jne 0x4000384	       367	crc32.c	FOR_2
+0x40003bd	          0x4531c9	                            xor r9d, r9d	       350	crc32.c	
+0x40003c0	    0x4a8b840c0001	      mov rax, qword [rsp + r9 + 0x100] 	       368	crc32.c	CALL_22
+0x40003c8	          0x4531c0	                            xor r8d, r8d	       351	crc32.c	WHILE_8
+0x40003cb	          0x4885c0	                           test rax, rax	       351	crc32.c	WHILE_8
+0x40003ce	            0x7420	                            je 0x40003f0	       351	crc32.c	WHILE_8
+0x40003d0	    0x488d8c240001	                  lea rcx, [rsp + 0x100]	       351	crc32.c	WHILE_8
+0x40003d8	     0xf1f84000000	                   nop dword [rax + rax]	       351	crc32.c	WHILE_8
+0x40003e0	            0xa801	                              test al, 1	       352	crc32.c	WHILE_8	IF_8
+0x40003e2	            0x7403	                            je 0x40003e7	       352	crc32.c	WHILE_8	IF_8
+0x40003e4	          0x4c3301	                     xor r8, qword [rcx]	       353	crc32.c	WHILE_8	IF_8
+0x40003e7	        0x4883c108	                              add rcx, 8	       355	crc32.c	WHILE_8
+0x40003eb	          0x48d1e8	                              shr rax, 1	       351	crc32.c	WHILE_8
+0x40003ee	            0x75f0	                           jne 0x40003e0	       351	crc32.c	WHILE_8
+0x40003f0	        0x4e89040c	                mov qword [rsp + r9], r8	       368	crc32.c	CALL_22
+0x40003f4	        0x4983c108	                               add r9, 8	       368	crc32.c	CALL_22
+0x40003f8	    0x4981f9000100	                           cmp r9, 0x100	       367	crc32.c	FOR_2
+0x40003ff	            0x75bf	                           jne 0x40003c0	       367	crc32.c	FOR_2
+0x4000401	          0xf6c201	                              test dl, 1	       405	crc32.c	FUNCTION_3	DO_1	IF_2
+0x4000404	            0x7422	                            je 0x4000428	       405	crc32.c	FUNCTION_3	DO_1	IF_2
+0x4000406	          0x4885ff	                           test rdi, rdi	       351	crc32.c	WHILE_8
+0x4000409	            0x741d	                            je 0x4000428	       351	crc32.c	WHILE_8
+0x400040b	          0x4889f8	                            mov rax, rdi	       351	crc32.c	WHILE_8
+0x400040e	          0x4889e1	                            mov rcx, rsp	       351	crc32.c	WHILE_8
+0x4000411	            0x31ff	                            xor edi, edi	       351	crc32.c	WHILE_8
+0x4000413	       0xf1f440000	                   nop dword [rax + rax]	       351	crc32.c	WHILE_8
+0x4000418	            0xa801	                              test al, 1	       352	crc32.c	WHILE_8	IF_8
+0x400041a	            0x7403	                            je 0x400041f	       352	crc32.c	WHILE_8	IF_8
+0x400041c	          0x483339	                    xor rdi, qword [rcx]	       353	crc32.c	WHILE_8	IF_8
+0x400041f	        0x4883c108	                              add rcx, 8	       355	crc32.c	WHILE_8
+0x4000423	          0x48d1e8	                              shr rax, 1	       351	crc32.c	WHILE_8
+0x4000426	            0x75f0	                           jne 0x4000418	       351	crc32.c	WHILE_8
+0x4000428	          0x48d1fa	                              sar rdx, 1	       410	crc32.c	FUNCTION_3	DO_1	IF_3
+0x400042b	            0x746c	                            je 0x4000499	       410	crc32.c	FUNCTION_3	DO_1	IF_3
+0x400042d	          0x4531c9	                            xor r9d, r9d	       410	crc32.c	FUNCTION_3	DO_1	IF_3
+0x4000430	        0x4a8b040c	               mov rax, qword [rsp + r9]	       368	crc32.c	CALL_22
+0x4000434	          0x4531c0	                            xor r8d, r8d	       351	crc32.c	WHILE_8
+0x4000437	          0x4885c0	                           test rax, rax	       351	crc32.c	WHILE_8
+0x400043a	            0x7414	                            je 0x4000450	       351	crc32.c	WHILE_8
+0x400043c	          0x4889e1	                            mov rcx, rsp	       351	crc32.c	WHILE_8
+0x400043f	              0x90	                                     nop	       351	crc32.c	WHILE_8
+0x4000440	            0xa801	                              test al, 1	       352	crc32.c	WHILE_8	IF_8
+0x4000442	            0x7403	                            je 0x4000447	       352	crc32.c	WHILE_8	IF_8
+0x4000444	          0x4c3301	                     xor r8, qword [rcx]	       353	crc32.c	WHILE_8	IF_8
+0x4000447	        0x4883c108	                              add rcx, 8	       355	crc32.c	WHILE_8
+0x400044b	          0x48d1e8	                              shr rax, 1	       351	crc32.c	WHILE_8
+0x400044e	            0x75f0	                           jne 0x4000440	       351	crc32.c	WHILE_8
+0x4000450	    0x4e89840c0001	        mov qword [rsp + r9 + 0x100], r8	       368	crc32.c	CALL_22
+0x4000458	        0x4983c108	                               add r9, 8	       368	crc32.c	CALL_22
+0x400045c	    0x4981f9000100	                           cmp r9, 0x100	       367	crc32.c	FOR_2
+0x4000463	            0x75cb	                           jne 0x4000430	       367	crc32.c	FOR_2
+0x4000465	          0xf6c201	                              test dl, 1	       415	crc32.c	FUNCTION_3	DO_1	IF_4
+0x4000468	            0x7426	                            je 0x4000490	       415	crc32.c	FUNCTION_3	DO_1	IF_4
+0x400046a	          0x4885ff	                           test rdi, rdi	       351	crc32.c	WHILE_8
+0x400046d	            0x7421	                            je 0x4000490	       351	crc32.c	WHILE_8
+0x400046f	    0x488d8c240001	                  lea rcx, [rsp + 0x100]	       351	crc32.c	WHILE_8
+0x4000477	          0x4889f8	                            mov rax, rdi	       351	crc32.c	WHILE_8
+0x400047a	            0x31ff	                            xor edi, edi	       351	crc32.c	WHILE_8
+0x400047c	         0xf1f4000	                         nop dword [rax]	       351	crc32.c	WHILE_8
+0x4000480	            0xa801	                              test al, 1	       352	crc32.c	WHILE_8	IF_8
+0x4000482	            0x7403	                            je 0x4000487	       352	crc32.c	WHILE_8	IF_8
+0x4000484	          0x483339	                    xor rdi, qword [rcx]	       353	crc32.c	WHILE_8	IF_8
+0x4000487	        0x4883c108	                              add rcx, 8	       355	crc32.c	WHILE_8
+0x400048b	          0x48d1e8	                              shr rax, 1	       351	crc32.c	WHILE_8
+0x400048e	            0x75f0	                           jne 0x4000480	       351	crc32.c	WHILE_8
+0x4000490	          0x48d1fa	                              sar rdx, 1	       420	crc32.c	FUNCTION_3	DO_1
+0x4000493	     0xf8524ffffff	                           jne 0x40003bd	       420	crc32.c	FUNCTION_3	DO_1
+0x4000499	          0x4889f8	                            mov rax, rdi	       424	crc32.c	FUNCTION_3
+0x400049c	          0x4831f0	                            xor rax, rsi	       424	crc32.c	FUNCTION_3
+0x400049f	    0x488bb4240802	           mov rsi, qword [rsp + 0x208] 	       425	crc32.c	FUNCTION_3
+0x40004a7	    0x644833342528	                xor rsi, qword fs:[0x28]	       425	crc32.c	FUNCTION_3
+0x40004b0	            0x750d	                           jne 0x40004bf	       425	crc32.c	FUNCTION_3
+0x40004b2	    0x4881c4180200	                          add rsp, 0x218	       425	crc32.c	FUNCTION_3
+0x40004b9	              0xc3	                                     ret	       425	crc32.c	FUNCTION_3
+0x40004ba	          0x4889f8	                            mov rax, rdi	       384	crc32.c	FUNCTION_3	IF_1
+0x40004bd	            0xebe0	                           jmp 0x400049f	       384	crc32.c	FUNCTION_3	IF_1
+0x40004bf	      0xe800000000	                          call 0x40004c4	       425	crc32.c	FUNCTION_3

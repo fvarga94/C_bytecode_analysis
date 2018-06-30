@@ -1,0 +1,36 @@
+next_zone	FOR,0:WHILE,0:CALL,1:functions,0:IF,2:ELSE,2:DO,0:SWITCH,0	8
+0x40000b0	        0x488b4748	            mov rax, qword [rdi + 0x48] 	        32	mmzone.c	FUNCTION_3
+0x40000b4	    0x488d90000f00	                  lea rdx, [rax + 0xf00]	        34	mmzone.c	FUNCTION_3	IF_1
+0x40000bb	          0x4839d7	                            cmp rdi, rdx	        34	mmzone.c	FUNCTION_3	IF_1
+0x40000be	            0x7308	                           jae 0x40000c8	        34	mmzone.c	FUNCTION_3	IF_1
+0x40000c0	    0x488d87000500	                  lea rax, [rdi + 0x500]	        35	mmzone.c	FUNCTION_3	IF_1
+0x40000c7	              0xc3	                                     ret	        44	mmzone.c	FUNCTION_3	ELSE_2
+0x40000c8	          0x4889c7	                            mov rdi, rax	        37	mmzone.c	FUNCTION_3	ELSE_1	CALL_1
+0x40000cb	            0xeba3	               jmp sym.next_online_pgdat	        37	mmzone.c	FUNCTION_3	ELSE_1	CALL_1
+first_online_pgdat	FOR,0:WHILE,0:CALL,1:functions,0:IF,0:ELSE,0:DO,0:SWITCH,0	9
+0x4000040	      0xbe40000000	                           mov esi, 0x40	       265	nodemask.h	FUNCTION_29	CALL_2
+0x4000045	    0x48c7c7000000	                              mov rdi, 0	       265	nodemask.h	FUNCTION_29	CALL_2
+0x400004c	      0xe800000000	                          call 0x4000051	       265	nodemask.h	FUNCTION_29	CALL_2
+0x4000051	      0xba40000000	                           mov edx, 0x40	        15	mmzone.c	FUNCTION_1	CALL_1
+0x4000056	          0x83f840	                           cmp eax, 0x40	        15	mmzone.c	FUNCTION_1	CALL_1
+0x4000059	           0xf4fc2	                          cmovg eax, edx	        15	mmzone.c	FUNCTION_1	CALL_1
+0x400005c	            0x4898	                                    cdqe	        15	mmzone.c	FUNCTION_1	CALL_1
+0x400005e	    0x488b04c50000	                  mov rax, qword [rax*8]	        15	mmzone.c	FUNCTION_1	CALL_1
+0x4000066	              0xc3	                                     ret	        16	mmzone.c	FUNCTION_1
+next_online_pgdat	FOR,0:WHILE,0:CALL,2:functions,0:IF,1:ELSE,0:DO,0:SWITCH,0	16
+0x4000070	    0x8b9740340000	          mov edx, dword [rdi + 0x3440] 	       271	nodemask.h	FUNCTION_30	CALL_2
+0x4000076	      0xbe40000000	                           mov esi, 0x40	       271	nodemask.h	FUNCTION_30	CALL_2
+0x400007b	    0x48c7c7000000	                              mov rdi, 0	       271	nodemask.h	FUNCTION_30	CALL_2
+0x4000082	          0x83c201	                              add edx, 1	       271	nodemask.h	FUNCTION_30	CALL_2
+0x4000085	          0x4863d2	                         movsxd rdx, edx	       271	nodemask.h	FUNCTION_30	CALL_2
+0x4000088	      0xe800000000	                          call 0x400008d	       271	nodemask.h	FUNCTION_30	CALL_2
+0x400008d	      0xba40000000	                           mov edx, 0x40	       271	nodemask.h	FUNCTION_30	CALL_2
+0x4000092	          0x83f840	                           cmp eax, 0x40	       271	nodemask.h	FUNCTION_30	CALL_2
+0x4000095	           0xf4fc2	                          cmovg eax, edx	       271	nodemask.h	FUNCTION_30	CALL_2
+0x4000098	          0x83f840	                           cmp eax, 0x40	        22	mmzone.c	FUNCTION_2	IF_1
+0x400009b	            0x740b	                            je 0x40000a8	        22	mmzone.c	FUNCTION_2	IF_1
+0x400009d	            0x4898	                                    cdqe	        24	mmzone.c	FUNCTION_2	CALL_2
+0x400009f	    0x488b04c50000	                  mov rax, qword [rax*8]	        24	mmzone.c	FUNCTION_2	CALL_2
+0x40000a7	              0xc3	                                     ret	        24	mmzone.c	FUNCTION_2	CALL_2
+0x40000a8	            0x31c0	                            xor eax, eax	        23	mmzone.c	FUNCTION_2	IF_1
+0x40000aa	              0xc3	                                     ret	        25	mmzone.c	FUNCTION_2

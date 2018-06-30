@@ -1,0 +1,18 @@
+intel_csr_ucode_resume	functions,0:DO,0:ELSE,0:CALL,2:IF,2:WHILE,0:SWITCH,0:FOR,0	7
+0x4000770	    0xf68777060000	          test byte [rdi + 0x677], 0x20 	       511	intel_csr.c	FUNCTION_8	IF_1	CALL_1
+0x4000777	            0x740a	                            je 0x4000783	       511	intel_csr.c	FUNCTION_8	IF_1	CALL_1
+0x4000779	    0x4883bff00e00	              cmp qword [rdi + 0xef0], 0	       518	intel_csr.c	FUNCTION_8	IF_2
+0x4000781	            0x7402	                            je 0x4000785	       518	intel_csr.c	FUNCTION_8	IF_2
+0x4000783	            0xf3c3	                                     ret	       518	intel_csr.c	FUNCTION_8	IF_2
+0x4000785	      0xbe27000000	                           mov esi, 0x27	       519	intel_csr.c	FUNCTION_8	CALL_2
+0x400078a	      0xe900000000	                           jmp 0x400078f	       519	intel_csr.c	FUNCTION_8	CALL_2
+intel_csr_ucode_fini	functions,0:DO,0:ELSE,0:CALL,3:IF,1:WHILE,0:SWITCH,0:FOR,0	9
+0x4000790	    0xf68777060000	          test byte [rdi + 0x677], 0x20 	       531	intel_csr.c	FUNCTION_9	IF_1	CALL_1
+0x4000797	            0x7416	                            je 0x40007af	       531	intel_csr.c	FUNCTION_9	IF_1	CALL_1
+0x4000799	              0x53	                                push rbx	       530	intel_csr.c	FUNCTION_9
+0x400079a	          0x4889fb	                            mov rbx, rdi	       530	intel_csr.c	FUNCTION_9
+0x400079d	      0xe89ef8ffff	 call sym.intel_csr_ucode_suspend.part.3	       530	intel_csr.c	FUNCTION_9
+0x40007a2	    0x488bbbf00e00	           mov rdi, qword [rbx + 0xef0] 	       536	intel_csr.c	FUNCTION_9	CALL_3
+0x40007a9	              0x5b	                                 pop rbx	       537	intel_csr.c	FUNCTION_9
+0x40007aa	      0xe900000000	                           jmp 0x40007af	       536	intel_csr.c	FUNCTION_9	CALL_3
+0x40007af	            0xf3c3	                                     ret	       536	intel_csr.c	FUNCTION_9	CALL_3

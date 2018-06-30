@@ -1,0 +1,659 @@
+__bitmap_complement	SWITCH,0:DO,0:functions,0:IF,1:CALL,0:WHILE,0:ELSE,0:FOR,1	17
+0x40000b0	          0x4189d0	                            mov r8d, edx	        67	bitmap.c	FUNCTION_2
+0x40000b3	        0x41c1e806	                              shr r8d, 6	        67	bitmap.c	FUNCTION_2
+0x40000b7	          0x4585c0	                           test r8d, r8d	        68	bitmap.c	FUNCTION_2	FOR_1
+0x40000ba	            0x7416	                            je 0x40000d2	        68	bitmap.c	FUNCTION_2	FOR_1
+0x40000bc	            0x31c0	                            xor eax, eax	        68	bitmap.c	FUNCTION_2	FOR_1
+0x40000be	        0x488b0cc6	            mov rcx, qword [rsi + rax*8]	        69	bitmap.c	FUNCTION_2	FOR_1
+0x40000c2	          0x48f7d1	                                 not rcx	        69	bitmap.c	FUNCTION_2	FOR_1
+0x40000c5	        0x48890cc7	            mov qword [rdi + rax*8], rcx	        69	bitmap.c	FUNCTION_2	FOR_1
+0x40000c9	        0x4883c001	                              add rax, 1	        69	bitmap.c	FUNCTION_2	FOR_1
+0x40000cd	          0x4139c0	                            cmp r8d, eax	        68	bitmap.c	FUNCTION_2	FOR_1
+0x40000d0	            0x77ec	                            ja 0x40000be	        68	bitmap.c	FUNCTION_2	FOR_1
+0x40000d2	          0x83e23f	                           and edx, 0x3f	        71	bitmap.c	FUNCTION_2	IF_1
+0x40000d5	            0x740b	                            je 0x40000e2	        71	bitmap.c	FUNCTION_2	IF_1
+0x40000d7	        0x4a8b04c6	             mov rax, qword [rsi + r8*8]	        72	bitmap.c	FUNCTION_2	IF_1
+0x40000db	          0x48f7d0	                                 not rax	        72	bitmap.c	FUNCTION_2	IF_1
+0x40000de	        0x4a8904c7	             mov qword [rdi + r8*8], rax	        72	bitmap.c	FUNCTION_2	IF_1
+0x40000e2	            0xf3c3	                                     ret	        72	bitmap.c	FUNCTION_2	IF_1
+__bitmap_equal	SWITCH,0:DO,0:functions,0:IF,3:CALL,1:WHILE,0:ELSE,0:FOR,1	33
+0x4000040	          0x4189d2	                           mov r10d, edx	        52	bitmap.c	FUNCTION_1
+0x4000043	        0x41c1ea06	                             shr r10d, 6	        52	bitmap.c	FUNCTION_1
+0x4000047	          0x4585d2	                         test r10d, r10d	        53	bitmap.c	FUNCTION_1	FOR_1
+0x400004a	            0x7427	                            je 0x4000073	        53	bitmap.c	FUNCTION_1	FOR_1
+0x400004c	          0x488b06	                    mov rax, qword [rsi]	        54	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x400004f	          0x483907	                    cmp qword [rdi], rax	        54	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000052	            0x754c	                           jne 0x40000a0	        54	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000054	            0x31c0	                            xor eax, eax	        54	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000056	          0x4531c0	                            xor r8d, r8d	        54	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000059	            0xeb0f	                           jmp 0x400006a	        54	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x400005b	      0x4c8b4c0708	          mov r9, qword [rdi + rax + 8] 	        54	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000060	        0x4883c008	                              add rax, 8	        54	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000064	        0x4c3b0c06	               cmp r9, qword [rsi + rax]	        54	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000068	            0x7536	                           jne 0x40000a0	        54	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x400006a	        0x4183c001	                              add r8d, 1	        53	bitmap.c	FUNCTION_1	FOR_1
+0x400006e	          0x4539c2	                           cmp r10d, r8d	        53	bitmap.c	FUNCTION_1	FOR_1
+0x4000071	            0x75e8	                           jne 0x400005b	        53	bitmap.c	FUNCTION_1	FOR_1
+0x4000073	          0xf6c23f	                           test dl, 0x3f	        57	bitmap.c	FUNCTION_1	IF_2
+0x4000076	      0xb801000000	                              mov eax, 1	        61	bitmap.c	FUNCTION_1
+0x400007b	            0x7425	                            je 0x40000a2	        57	bitmap.c	FUNCTION_1	IF_2
+0x400007d	        0x4a8b04d7	            mov rax, qword [rdi + r10*8]	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000081	        0x4a3304d6	            xor rax, qword [rsi + r10*8]	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000085	            0x89d1	                            mov ecx, edx	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000087	            0xf7d9	                                 neg ecx	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000089	          0x4889c6	                            mov rsi, rax	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x400008c	    0x48c7c0ffffff	             mov rax, 0xffffffffffffffff	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000093	          0x48d3e8	                             shr rax, cl	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000096	          0x4885c6	                           test rsi, rax	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x4000099	           0xf94c0	                                 sete al	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x400009c	           0xfb6c0	                           movzx eax, al	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x400009f	              0xc3	                                     ret	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x40000a0	            0x31c0	                            xor eax, eax	        55	bitmap.c	FUNCTION_1	FOR_1	IF_1
+0x40000a2	            0xf3c3	                                     ret	        62	bitmap.c	FUNCTION_1
+__reg_op	SWITCH,1:DO,0:functions,0:IF,1:CALL,2:WHILE,0:ELSE,0:FOR,3	65
+0x40003f0	          0x4189c9	                            mov r9d, ecx	       993	bitmap.c	FUNCTION_27
+0x40003f3	      0xb801000000	                              mov eax, 1	      1007	bitmap.c	FUNCTION_27
+0x40003f8	            0x89d1	                            mov ecx, edx	      1007	bitmap.c	FUNCTION_27
+0x40003fa	            0xd3e0	                             shl eax, cl	      1007	bitmap.c	FUNCTION_27
+0x40003fc	      0xba02000000	                              mov edx, 2	      1017	bitmap.c	FUNCTION_27
+0x4000401	            0x4898	                                    cdqe	      1007	bitmap.c	FUNCTION_27
+0x4000403	          0x4889c1	                            mov rcx, rax	      1007	bitmap.c	FUNCTION_27
+0x4000406	        0x4883c03f	                           add rax, 0x3f	      1010	bitmap.c	FUNCTION_27	CALL_1
+0x400040a	        0x48c1e806	                              shr rax, 6	      1010	bitmap.c	FUNCTION_27	CALL_1
+0x400040e	          0x83f940	                           cmp ecx, 0x40	      1017	bitmap.c	FUNCTION_27
+0x4000411	          0x4989c0	                             mov r8, rax	      1010	bitmap.c	FUNCTION_27	CALL_1
+0x4000414	      0xb840000000	                           mov eax, 0x40	      1017	bitmap.c	FUNCTION_27
+0x4000419	           0xf4fc8	                          cmovg ecx, eax	      1017	bitmap.c	FUNCTION_27
+0x400041c	            0x89f0	                            mov eax, esi	      1019	bitmap.c	FUNCTION_27
+0x400041e	          0x83e901	                              sub ecx, 1	      1017	bitmap.c	FUNCTION_27
+0x4000421	          0xc1e806	                              shr eax, 6	      1019	bitmap.c	FUNCTION_27
+0x4000424	          0x48d3e2	                             shl rdx, cl	      1018	bitmap.c	FUNCTION_27
+0x4000427	            0x89f1	                            mov ecx, esi	      1019	bitmap.c	FUNCTION_27
+0x4000429	        0x4883ea01	                              sub rdx, 1	      1018	bitmap.c	FUNCTION_27
+0x400042d	          0x48d3e2	                             shl rdx, cl	      1019	bitmap.c	FUNCTION_27
+0x4000430	        0x4183f901	                              cmp r9d, 1	      1021	bitmap.c	FUNCTION_27	SWITCH_1
+0x4000434	            0x7456	                            je 0x400048c	      1021	bitmap.c	FUNCTION_27	SWITCH_1
+0x4000436	        0x4183f902	                              cmp r9d, 2	      1021	bitmap.c	FUNCTION_27	SWITCH_1
+0x400043a	            0x7433	                            je 0x400046f	      1021	bitmap.c	FUNCTION_27	SWITCH_1
+0x400043c	          0x4585c9	                           test r9d, r9d	      1021	bitmap.c	FUNCTION_27	SWITCH_1
+0x400043f	            0x7403	                            je 0x4000444	      1021	bitmap.c	FUNCTION_27	SWITCH_1
+0x4000441	            0x31c0	                            xor eax, eax	      1001	bitmap.c	FUNCTION_27
+0x4000443	              0xc3	                                     ret	      1001	bitmap.c	FUNCTION_27
+0x4000444	          0x4585c0	                           test r8d, r8d	      1023	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1
+0x4000447	            0x7e20	                           jle 0x4000469	      1023	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1
+0x4000449	            0x89c6	                            mov esi, eax	      1024	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1	IF_1
+0x400044b	          0x8d4801	                      lea ecx, [rax + 1]	      1024	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1	IF_1
+0x400044e	          0x4401c0	                            add eax, r8d	      1024	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1	IF_1
+0x4000451	        0x488514f7	          test qword [rdi + rsi*8], rdx 	      1024	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1	IF_1
+0x4000455	            0x740e	                            je 0x4000465	      1024	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1	IF_1
+0x4000457	            0xebe8	                           jmp 0x4000441	      1024	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1	IF_1
+0x4000459	          0x4863f1	                         movsxd rsi, ecx	      1024	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1	IF_1
+0x400045c	          0x83c101	                              add ecx, 1	      1024	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1	IF_1
+0x400045f	        0x488514f7	          test qword [rdi + rsi*8], rdx 	      1024	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1	IF_1
+0x4000463	            0x75dc	                           jne 0x4000441	      1024	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1	IF_1
+0x4000465	            0x39c8	                            cmp eax, ecx	      1023	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1
+0x4000467	            0x75f0	                           jne 0x4000459	      1023	bitmap.c	FUNCTION_27	SWITCH_1	FOR_1
+0x4000469	      0xb801000000	                              mov eax, 1	      1027	bitmap.c	FUNCTION_27	SWITCH_1
+0x400046e	              0xc3	                                     ret	      1042	bitmap.c	FUNCTION_27
+0x400046f	          0x4585c0	                           test r8d, r8d	      1036	bitmap.c	FUNCTION_27	SWITCH_1	FOR_3
+0x4000472	          0x48f7d2	                                 not rdx	      1036	bitmap.c	FUNCTION_27	SWITCH_1	FOR_3
+0x4000475	        0x428d3400	                     lea esi, [rax + r8]	      1036	bitmap.c	FUNCTION_27	SWITCH_1	FOR_3
+0x4000479	            0x7ec6	                           jle 0x4000441	      1036	bitmap.c	FUNCTION_27	SWITCH_1	FOR_3
+0x400047b	          0x4863c8	                         movsxd rcx, eax	      1037	bitmap.c	FUNCTION_27	SWITCH_1	FOR_3
+0x400047e	          0x83c001	                              add eax, 1	      1037	bitmap.c	FUNCTION_27	SWITCH_1	FOR_3
+0x4000481	        0x482114cf	            and qword [rdi + rcx*8], rdx	      1037	bitmap.c	FUNCTION_27	SWITCH_1	FOR_3
+0x4000485	            0x39f0	                            cmp eax, esi	      1036	bitmap.c	FUNCTION_27	SWITCH_1	FOR_3
+0x4000487	            0x75f2	                           jne 0x400047b	      1036	bitmap.c	FUNCTION_27	SWITCH_1	FOR_3
+0x4000489	            0x31c0	                            xor eax, eax	      1001	bitmap.c	FUNCTION_27
+0x400048b	              0xc3	                                     ret	      1001	bitmap.c	FUNCTION_27
+0x400048c	          0x4585c0	                           test r8d, r8d	      1031	bitmap.c	FUNCTION_27	SWITCH_1	FOR_2
+0x400048f	        0x428d3400	                     lea esi, [rax + r8]	      1031	bitmap.c	FUNCTION_27	SWITCH_1	FOR_2
+0x4000493	            0x7eac	                           jle 0x4000441	      1031	bitmap.c	FUNCTION_27	SWITCH_1	FOR_2
+0x4000495	          0x4863c8	                         movsxd rcx, eax	      1032	bitmap.c	FUNCTION_27	SWITCH_1	FOR_2
+0x4000498	          0x83c001	                              add eax, 1	      1032	bitmap.c	FUNCTION_27	SWITCH_1	FOR_2
+0x400049b	        0x480914cf	             or qword [rdi + rcx*8], rdx	      1032	bitmap.c	FUNCTION_27	SWITCH_1	FOR_2
+0x400049f	            0x39c6	                            cmp esi, eax	      1031	bitmap.c	FUNCTION_27	SWITCH_1	FOR_2
+0x40004a1	            0x75f2	                           jne 0x4000495	      1031	bitmap.c	FUNCTION_27	SWITCH_1	FOR_2
+0x40004a3	            0x31c0	                            xor eax, eax	      1001	bitmap.c	FUNCTION_27
+0x40004a5	              0xc3	                                     ret	      1001	bitmap.c	FUNCTION_27
+__bitmap_andnot	SWITCH,0:DO,0:functions,0:IF,1:CALL,1:WHILE,0:ELSE,0:FOR,1	32
+0x40001b0	          0x4189ca	                           mov r10d, ecx	       199	bitmap.c	FUNCTION_8
+0x40001b3	        0x41c1ea06	                             shr r10d, 6	       199	bitmap.c	FUNCTION_8
+0x40001b7	          0x4585d2	                         test r10d, r10d	       202	bitmap.c	FUNCTION_8	FOR_1
+0x40001ba	            0x7453	                            je 0x400020f	       202	bitmap.c	FUNCTION_8	FOR_1
+0x40001bc	          0x4531c0	                            xor r8d, r8d	       202	bitmap.c	FUNCTION_8	FOR_1
+0x40001bf	          0x4531c9	                            xor r9d, r9d	       202	bitmap.c	FUNCTION_8	FOR_1
+0x40001c2	        0x4a8b04c2	             mov rax, qword [rdx + r8*8]	       203	bitmap.c	FUNCTION_8	FOR_1
+0x40001c6	          0x48f7d0	                                 not rax	       203	bitmap.c	FUNCTION_8	FOR_1
+0x40001c9	        0x4a2304c6	             and rax, qword [rsi + r8*8]	       203	bitmap.c	FUNCTION_8	FOR_1
+0x40001cd	        0x4a8904c7	             mov qword [rdi + r8*8], rax	       203	bitmap.c	FUNCTION_8	FOR_1
+0x40001d1	        0x4983c001	                               add r8, 1	       203	bitmap.c	FUNCTION_8	FOR_1
+0x40001d5	          0x4909c1	                              or r9, rax	       203	bitmap.c	FUNCTION_8	FOR_1
+0x40001d8	          0x4539c2	                           cmp r10d, r8d	       202	bitmap.c	FUNCTION_8	FOR_1
+0x40001db	            0x77e5	                            ja 0x40001c2	       202	bitmap.c	FUNCTION_8	FOR_1
+0x40001dd	          0xf6c13f	                           test cl, 0x3f	       204	bitmap.c	FUNCTION_8	IF_1
+0x40001e0	            0x7424	                            je 0x4000206	       204	bitmap.c	FUNCTION_8	IF_1
+0x40001e2	            0xf7d9	                                 neg ecx	       205	bitmap.c	FUNCTION_8	IF_1
+0x40001e4	    0x48c7c0ffffff	             mov rax, 0xffffffffffffffff	       205	bitmap.c	FUNCTION_8	IF_1
+0x40001eb	          0x48d3e8	                             shr rax, cl	       205	bitmap.c	FUNCTION_8	IF_1
+0x40001ee	        0x4a2304d6	            and rax, qword [rsi + r10*8]	       205	bitmap.c	FUNCTION_8	IF_1
+0x40001f2	          0x4889c1	                            mov rcx, rax	       205	bitmap.c	FUNCTION_8	IF_1
+0x40001f5	        0x4a8b04d2	            mov rax, qword [rdx + r10*8]	       205	bitmap.c	FUNCTION_8	IF_1
+0x40001f9	          0x48f7d0	                                 not rax	       205	bitmap.c	FUNCTION_8	IF_1
+0x40001fc	          0x4821c8	                            and rax, rcx	       205	bitmap.c	FUNCTION_8	IF_1
+0x40001ff	        0x4a8904d7	            mov qword [rdi + r10*8], rax	       205	bitmap.c	FUNCTION_8	IF_1
+0x4000203	          0x4909c1	                              or r9, rax	       205	bitmap.c	FUNCTION_8	IF_1
+0x4000206	            0x31c0	                            xor eax, eax	       207	bitmap.c	FUNCTION_8
+0x4000208	          0x4d85c9	                             test r9, r9	       207	bitmap.c	FUNCTION_8
+0x400020b	           0xf95c0	                                setne al	       207	bitmap.c	FUNCTION_8
+0x400020e	              0xc3	                                     ret	       208	bitmap.c	FUNCTION_8
+0x400020f	          0x4531c9	                            xor r9d, r9d	       200	bitmap.c	FUNCTION_8
+0x4000212	            0xebc9	                           jmp 0x40001dd	       200	bitmap.c	FUNCTION_8
+__bitmap_clear	SWITCH,0:DO,0:functions,0:IF,1:CALL,3:WHILE,1:ELSE,0:FOR,0	35
+0x4000370	            0x89f0	                            mov eax, esi	       279	bitmap.c	FUNCTION_13	CALL_1
+0x4000372	            0x89f1	                            mov ecx, esi	       281	bitmap.c	FUNCTION_13
+0x4000374	          0xc1e806	                              shr eax, 6	       279	bitmap.c	FUNCTION_13	CALL_1
+0x4000377	          0x83e13f	                           and ecx, 0x3f	       281	bitmap.c	FUNCTION_13
+0x400037a	        0x488d04c7	                  lea rax, [rdi + rax*8]	       279	bitmap.c	FUNCTION_13	CALL_1
+0x400037e	    0x48c7c7ffffff	             mov rdi, 0xffffffffffffffff	       282	bitmap.c	FUNCTION_13	CALL_2
+0x4000385	          0x48d3e7	                             shl rdi, cl	       282	bitmap.c	FUNCTION_13	CALL_2
+0x4000388	        0x8d4c11c0	             lea ecx, [rcx + rdx - 0x40]	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x400038c	            0x85c9	                           test ecx, ecx	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x400038e	            0x784a	                            js 0x40003da	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x4000390	          0x4189c8	                            mov r8d, ecx	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x4000393	        0x41c1e806	                              shr r8d, 6	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x4000397	          0x4589c1	                            mov r9d, r8d	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x400039a	      0x4e8d4cc808	                lea r9, [rax + r9*8 + 8]	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x400039f	          0x48f7d7	                                 not rdi	       285	bitmap.c	FUNCTION_13	WHILE_1
+0x40003a2	          0x482138	                    and qword [rax], rdi	       285	bitmap.c	FUNCTION_13	WHILE_1
+0x40003a5	        0x4883c008	                              add rax, 8	       289	bitmap.c	FUNCTION_13	WHILE_1
+0x40003a9	          0x4c39c8	                             cmp rax, r9	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x40003ac	    0x48c7c7ffffff	             mov rdi, 0xffffffffffffffff	       288	bitmap.c	FUNCTION_13	WHILE_1
+0x40003b3	            0x75ea	                           jne 0x400039f	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x40003b5	        0x41c1e006	                              shl r8d, 6	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x40003b9	          0x4429c1	                            sub ecx, r8d	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x40003bc	            0x85c9	                           test ecx, ecx	       291	bitmap.c	FUNCTION_13	IF_1
+0x40003be	            0x7418	                            je 0x40003d8	       291	bitmap.c	FUNCTION_13	IF_1
+0x40003c0	          0x8d0c32	                    lea ecx, [rdx + rsi]	       293	bitmap.c	FUNCTION_13	IF_1
+0x40003c3	    0x48c7c0ffffff	             mov rax, 0xffffffffffffffff	       293	bitmap.c	FUNCTION_13	IF_1
+0x40003ca	            0xf7d9	                                 neg ecx	       293	bitmap.c	FUNCTION_13	IF_1
+0x40003cc	          0x48d3e8	                             shr rax, cl	       293	bitmap.c	FUNCTION_13	IF_1
+0x40003cf	          0x4821c7	                            and rdi, rax	       293	bitmap.c	FUNCTION_13	IF_1
+0x40003d2	          0x48f7d7	                                 not rdi	       293	bitmap.c	FUNCTION_13	IF_1
+0x40003d5	          0x492139	                     and qword [r9], rdi	       293	bitmap.c	FUNCTION_13	IF_1
+0x40003d8	            0xf3c3	                                     ret	       293	bitmap.c	FUNCTION_13	IF_1
+0x40003da	          0x4989c1	                             mov r9, rax	       279	bitmap.c	FUNCTION_13	CALL_1
+0x40003dd	            0x89d1	                            mov ecx, edx	       284	bitmap.c	FUNCTION_13	WHILE_1
+0x40003df	            0xebdb	                           jmp 0x40003bc	       284	bitmap.c	FUNCTION_13	WHILE_1
+__bitmap_xor	SWITCH,0:DO,0:functions,0:IF,0:CALL,1:WHILE,0:ELSE,0:FOR,1	14
+0x4000180	            0x89c9	                            mov ecx, ecx	       188	bitmap.c	FUNCTION_7	CALL_1
+0x4000182	            0x31c0	                            xor eax, eax	       190	bitmap.c	FUNCTION_7	FOR_1
+0x4000184	        0x4883c13f	                           add rcx, 0x3f	       188	bitmap.c	FUNCTION_7	CALL_1
+0x4000188	        0x48c1e906	                              shr rcx, 6	       188	bitmap.c	FUNCTION_7	CALL_1
+0x400018c	          0x4885c9	                           test rcx, rcx	       190	bitmap.c	FUNCTION_7	FOR_1
+0x400018f	          0x4189c8	                            mov r8d, ecx	       188	bitmap.c	FUNCTION_7	CALL_1
+0x4000192	            0x7415	                            je 0x40001a9	       190	bitmap.c	FUNCTION_7	FOR_1
+0x4000194	        0x488b0cc6	            mov rcx, qword [rsi + rax*8]	       191	bitmap.c	FUNCTION_7	FOR_1
+0x4000198	        0x48330cc2	            xor rcx, qword [rdx + rax*8]	       191	bitmap.c	FUNCTION_7	FOR_1
+0x400019c	        0x48890cc7	            mov qword [rdi + rax*8], rcx	       191	bitmap.c	FUNCTION_7	FOR_1
+0x40001a0	        0x4883c001	                              add rax, 1	       191	bitmap.c	FUNCTION_7	FOR_1
+0x40001a4	          0x4139c0	                            cmp r8d, eax	       190	bitmap.c	FUNCTION_7	FOR_1
+0x40001a7	            0x77eb	                            ja 0x4000194	       190	bitmap.c	FUNCTION_7	FOR_1
+0x40001a9	            0xf3c3	                                     ret	       190	bitmap.c	FUNCTION_7	FOR_1
+__bitmap_or	SWITCH,0:DO,0:functions,0:IF,0:CALL,1:WHILE,0:ELSE,0:FOR,1	14
+0x4000150	            0x89c9	                            mov ecx, ecx	       177	bitmap.c	FUNCTION_6	CALL_1
+0x4000152	            0x31c0	                            xor eax, eax	       179	bitmap.c	FUNCTION_6	FOR_1
+0x4000154	        0x4883c13f	                           add rcx, 0x3f	       177	bitmap.c	FUNCTION_6	CALL_1
+0x4000158	        0x48c1e906	                              shr rcx, 6	       177	bitmap.c	FUNCTION_6	CALL_1
+0x400015c	          0x4885c9	                           test rcx, rcx	       179	bitmap.c	FUNCTION_6	FOR_1
+0x400015f	          0x4189c8	                            mov r8d, ecx	       177	bitmap.c	FUNCTION_6	CALL_1
+0x4000162	            0x7415	                            je 0x4000179	       179	bitmap.c	FUNCTION_6	FOR_1
+0x4000164	        0x488b0cc6	            mov rcx, qword [rsi + rax*8]	       180	bitmap.c	FUNCTION_6	FOR_1
+0x4000168	        0x480b0cc2	             or rcx, qword [rdx + rax*8]	       180	bitmap.c	FUNCTION_6	FOR_1
+0x400016c	        0x48890cc7	            mov qword [rdi + rax*8], rcx	       180	bitmap.c	FUNCTION_6	FOR_1
+0x4000170	        0x4883c001	                              add rax, 1	       180	bitmap.c	FUNCTION_6	FOR_1
+0x4000174	          0x4139c0	                            cmp r8d, eax	       179	bitmap.c	FUNCTION_6	FOR_1
+0x4000177	            0x77eb	                            ja 0x4000164	       179	bitmap.c	FUNCTION_6	FOR_1
+0x4000179	            0xf3c3	                                     ret	       179	bitmap.c	FUNCTION_6	FOR_1
+__bitmap_shift_right	SWITCH,0:DO,0:functions,0:IF,4:CALL,3:WHILE,0:ELSE,1:FOR,1	73
+0x4000560	            0x4157	                                push r15	        89	bitmap.c	FUNCTION_3
+0x4000562	            0x4156	                                push r14	        89	bitmap.c	FUNCTION_3
+0x4000564	    0x49c7c6ffffff	             mov r14, 0xffffffffffffffff	        92	bitmap.c	FUNCTION_3	CALL_2
+0x400056b	            0x4155	                                push r13	        89	bitmap.c	FUNCTION_3
+0x400056d	            0x4154	                                push r12	        89	bitmap.c	FUNCTION_3
+0x400056f	          0x4189d5	                           mov r13d, edx	        91	bitmap.c	FUNCTION_3
+0x4000572	              0x55	                                push rbp	        89	bitmap.c	FUNCTION_3
+0x4000573	            0x89cd	                            mov ebp, ecx	        90	bitmap.c	FUNCTION_3	CALL_1
+0x4000575	        0x41c1ed06	                             shr r13d, 6	        91	bitmap.c	FUNCTION_3
+0x4000579	        0x4883c53f	                           add rbp, 0x3f	        90	bitmap.c	FUNCTION_3	CALL_1
+0x400057d	            0xf7d9	                                 neg ecx	        92	bitmap.c	FUNCTION_3	CALL_2
+0x400057f	          0x83e23f	                           and edx, 0x3f	        91	bitmap.c	FUNCTION_3
+0x4000582	        0x48c1ed06	                              shr rbp, 6	        90	bitmap.c	FUNCTION_3	CALL_1
+0x4000586	          0x49d3ee	                             shr r14, cl	        92	bitmap.c	FUNCTION_3	CALL_2
+0x4000589	              0x53	                                push rbx	        89	bitmap.c	FUNCTION_3
+0x400058a	          0x4439ed	                           cmp ebp, r13d	        93	bitmap.c	FUNCTION_3	FOR_1
+0x400058d	            0x765f	                           jbe 0x40005ee	        93	bitmap.c	FUNCTION_3	FOR_1
+0x400058f	    0x41bc40000000	                          mov r12d, 0x40	       106	bitmap.c	FUNCTION_3	FOR_1	ELSE_1
+0x4000595	          0x8d5dff	                      lea ebx, [rbp - 1]	       106	bitmap.c	FUNCTION_3	FOR_1	ELSE_1
+0x4000598	        0x458d4d01	                      lea r9d, [r13 + 1]	       106	bitmap.c	FUNCTION_3	FOR_1	ELSE_1
+0x400059c	          0x4189eb	                           mov r11d, ebp	       106	bitmap.c	FUNCTION_3	FOR_1	ELSE_1
+0x400059f	          0x4989fa	                            mov r10, rdi	       106	bitmap.c	FUNCTION_3	FOR_1	ELSE_1
+0x40005a2	          0x4589e8	                           mov r8d, r13d	        93	bitmap.c	FUNCTION_3	FOR_1
+0x40005a5	          0x4129d4	                           sub r12d, edx	       106	bitmap.c	FUNCTION_3	FOR_1	ELSE_1
+0x40005a8	            0x31c0	                            xor eax, eax	       101	bitmap.c	FUNCTION_3	FOR_1	IF_1
+0x40005aa	            0x85d2	                           test edx, edx	       100	bitmap.c	FUNCTION_3	FOR_1	IF_1
+0x40005ac	            0x7417	                            je 0x40005c5	       100	bitmap.c	FUNCTION_3	FOR_1	IF_1
+0x40005ae	          0x4539cb	                           cmp r11d, r9d	       100	bitmap.c	FUNCTION_3	FOR_1	IF_1
+0x40005b1	            0x7612	                           jbe 0x40005c5	       100	bitmap.c	FUNCTION_3	FOR_1	IF_1
+0x40005b3	          0x4489c8	                            mov eax, r9d	       103	bitmap.c	FUNCTION_3	FOR_1	ELSE_1
+0x40005b6	          0x4139d9	                            cmp r9d, ebx	       104	bitmap.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+0x40005b9	        0x488b04c6	            mov rax, qword [rsi + rax*8]	       103	bitmap.c	FUNCTION_3	FOR_1	ELSE_1
+0x40005bd	            0x7463	                            je 0x4000622	       104	bitmap.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+0x40005bf	          0x4489e1	                           mov ecx, r12d	       106	bitmap.c	FUNCTION_3	FOR_1	ELSE_1
+0x40005c2	          0x48d3e0	                             shl rax, cl	       106	bitmap.c	FUNCTION_3	FOR_1	ELSE_1
+0x40005c5	          0x4489c1	                            mov ecx, r8d	       108	bitmap.c	FUNCTION_3	FOR_1
+0x40005c8	          0x4139d8	                            cmp r8d, ebx	       109	bitmap.c	FUNCTION_3	FOR_1	IF_3
+0x40005cb	        0x4c8b3cce	            mov r15, qword [rsi + rcx*8]	       108	bitmap.c	FUNCTION_3	FOR_1
+0x40005cf	            0x744c	                            je 0x400061d	       109	bitmap.c	FUNCTION_3	FOR_1	IF_3
+0x40005d1	            0x89d1	                            mov ecx, edx	       112	bitmap.c	FUNCTION_3	FOR_1
+0x40005d3	        0x4183c001	                              add r8d, 1	        93	bitmap.c	FUNCTION_3	FOR_1
+0x40005d7	        0x4183c101	                              add r9d, 1	        93	bitmap.c	FUNCTION_3	FOR_1
+0x40005db	          0x49d3ef	                             shr r15, cl	       112	bitmap.c	FUNCTION_3	FOR_1
+0x40005de	        0x4983c208	                              add r10, 8	       112	bitmap.c	FUNCTION_3	FOR_1
+0x40005e2	          0x4c09f8	                             or rax, r15	       112	bitmap.c	FUNCTION_3	FOR_1
+0x40005e5	        0x498942f8	                mov qword [r10 - 8], rax	       112	bitmap.c	FUNCTION_3	FOR_1
+0x40005e9	          0x4539c3	                           cmp r11d, r8d	        93	bitmap.c	FUNCTION_3	FOR_1
+0x40005ec	            0x75ba	                           jne 0x40005a8	        93	bitmap.c	FUNCTION_3	FOR_1
+0x40005ee	          0x4585ed	                         test r13d, r13d	       114	bitmap.c	FUNCTION_3	IF_4
+0x40005f1	            0x750b	                           jne 0x40005fe	       114	bitmap.c	FUNCTION_3	IF_4
+0x40005f3	              0x5b	                                 pop rbx	       116	bitmap.c	FUNCTION_3
+0x40005f4	              0x5d	                                 pop rbp	       116	bitmap.c	FUNCTION_3
+0x40005f5	            0x415c	                                 pop r12	       116	bitmap.c	FUNCTION_3
+0x40005f7	            0x415d	                                 pop r13	       116	bitmap.c	FUNCTION_3
+0x40005f9	            0x415e	                                 pop r14	       116	bitmap.c	FUNCTION_3
+0x40005fb	            0x415f	                                 pop r15	       116	bitmap.c	FUNCTION_3
+0x40005fd	              0xc3	                                     ret	       116	bitmap.c	FUNCTION_3
+0x40005fe	          0x4429ed	                           sub ebp, r13d	       115	bitmap.c	FUNCTION_3	CALL_3
+0x4000601	          0x4489ea	                           mov edx, r13d	       115	bitmap.c	FUNCTION_3	CALL_3
+0x4000604	            0x31f6	                            xor esi, esi	       115	bitmap.c	FUNCTION_3	CALL_3
+0x4000606	              0x5b	                                 pop rbx	       116	bitmap.c	FUNCTION_3
+0x4000607	        0x488d3cef	                  lea rdi, [rdi + rbp*8]	       115	bitmap.c	FUNCTION_3	CALL_3
+0x400060b	        0x48c1e203	                              shl rdx, 3	       115	bitmap.c	FUNCTION_3	CALL_3
+0x400060f	              0x5d	                                 pop rbp	       116	bitmap.c	FUNCTION_3
+0x4000610	            0x415c	                                 pop r12	       116	bitmap.c	FUNCTION_3
+0x4000612	            0x415d	                                 pop r13	       116	bitmap.c	FUNCTION_3
+0x4000614	            0x415e	                                 pop r14	       116	bitmap.c	FUNCTION_3
+0x4000616	            0x415f	                                 pop r15	       116	bitmap.c	FUNCTION_3
+0x4000618	      0xe900000000	                           jmp 0x400061d	       115	bitmap.c	FUNCTION_3	CALL_3
+0x400061d	          0x4d21f7	                            and r15, r14	       110	bitmap.c	FUNCTION_3	FOR_1	IF_3
+0x4000620	            0xebaf	                           jmp 0x40005d1	       110	bitmap.c	FUNCTION_3	FOR_1	IF_3
+0x4000622	          0x4c21f0	                            and rax, r14	       105	bitmap.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+0x4000625	            0xeb98	                           jmp 0x40005bf	       105	bitmap.c	FUNCTION_3	FOR_1	ELSE_1	IF_2
+bitmap_find_free_region	SWITCH,0:DO,0:functions,0:IF,1:CALL,2:WHILE,0:ELSE,0:FOR,1	42
+0x40004b0	            0x4155	                                push r13	      1059	bitmap.c	FUNCTION_28
+0x40004b2	            0x89d1	                            mov ecx, edx	      1059	bitmap.c	FUNCTION_28
+0x40004b4	            0x4154	                                push r12	      1059	bitmap.c	FUNCTION_28
+0x40004b6	              0x55	                                push rbp	      1059	bitmap.c	FUNCTION_28
+0x40004b7	              0x53	                                push rbx	      1059	bitmap.c	FUNCTION_28
+0x40004b8	      0xbb01000000	                              mov ebx, 1	      1059	bitmap.c	FUNCTION_28
+0x40004bd	            0xd3e3	                             shl ebx, cl	      1059	bitmap.c	FUNCTION_28
+0x40004bf	          0x4531d2	                          xor r10d, r10d	      1062	bitmap.c	FUNCTION_28	FOR_1
+0x40004c2	          0x4189f5	                           mov r13d, esi	      1059	bitmap.c	FUNCTION_28
+0x40004c5	        0x458d1c1a	                   lea r11d, [r10 + rbx]	      1062	bitmap.c	FUNCTION_28	FOR_1
+0x40004c9	          0x4989fc	                            mov r12, rdi	      1059	bitmap.c	FUNCTION_28
+0x40004cc	            0x89d5	                            mov ebp, edx	      1059	bitmap.c	FUNCTION_28
+0x40004ce	          0x4539eb	                          cmp r11d, r13d	      1062	bitmap.c	FUNCTION_28	FOR_1
+0x40004d1	            0x771f	                            ja 0x40004f2	      1062	bitmap.c	FUNCTION_28	FOR_1
+0x40004d3	            0x31c9	                            xor ecx, ecx	      1063	bitmap.c	FUNCTION_28	FOR_1	IF_1	CALL_1
+0x40004d5	            0x89ea	                            mov edx, ebp	      1063	bitmap.c	FUNCTION_28	FOR_1	IF_1	CALL_1
+0x40004d7	          0x4489d6	                           mov esi, r10d	      1063	bitmap.c	FUNCTION_28	FOR_1	IF_1	CALL_1
+0x40004da	          0x4c89e7	                            mov rdi, r12	      1063	bitmap.c	FUNCTION_28	FOR_1	IF_1	CALL_1
+0x40004dd	      0xe80effffff	                       call sym.__reg_op	      1063	bitmap.c	FUNCTION_28	FOR_1	IF_1	CALL_1
+0x40004e2	            0x85c0	                           test eax, eax	      1063	bitmap.c	FUNCTION_28	FOR_1	IF_1	CALL_1
+0x40004e4	            0x7518	                           jne 0x40004fe	      1063	bitmap.c	FUNCTION_28	FOR_1	IF_1	CALL_1
+0x40004e6	          0x4589da	                          mov r10d, r11d	      1063	bitmap.c	FUNCTION_28	FOR_1	IF_1	CALL_1
+0x40004e9	        0x458d1c1a	                   lea r11d, [r10 + rbx]	      1062	bitmap.c	FUNCTION_28	FOR_1
+0x40004ed	          0x4539eb	                          cmp r11d, r13d	      1062	bitmap.c	FUNCTION_28	FOR_1
+0x40004f0	            0x76e1	                           jbe 0x40004d3	      1062	bitmap.c	FUNCTION_28	FOR_1
+0x40004f2	              0x5b	                                 pop rbx	      1069	bitmap.c	FUNCTION_28
+0x40004f3	      0xb8f4ffffff	                     mov eax, 0xfffffff4	      1068	bitmap.c	FUNCTION_28
+0x40004f8	              0x5d	                                 pop rbp	      1069	bitmap.c	FUNCTION_28
+0x40004f9	            0x415c	                                 pop r12	      1069	bitmap.c	FUNCTION_28
+0x40004fb	            0x415d	                                 pop r13	      1069	bitmap.c	FUNCTION_28
+0x40004fd	              0xc3	                                     ret	      1069	bitmap.c	FUNCTION_28
+0x40004fe	            0x89ea	                            mov edx, ebp	      1065	bitmap.c	FUNCTION_28	FOR_1	CALL_2
+0x4000500	          0x4c89e7	                            mov rdi, r12	      1065	bitmap.c	FUNCTION_28	FOR_1	CALL_2
+0x4000503	      0xb901000000	                              mov ecx, 1	      1065	bitmap.c	FUNCTION_28	FOR_1	CALL_2
+0x4000508	          0x4489d6	                           mov esi, r10d	      1065	bitmap.c	FUNCTION_28	FOR_1	CALL_2
+0x400050b	      0xe8e0feffff	                       call sym.__reg_op	      1065	bitmap.c	FUNCTION_28	FOR_1	CALL_2
+0x4000510	              0x5b	                                 pop rbx	      1069	bitmap.c	FUNCTION_28
+0x4000511	          0x4489d0	                           mov eax, r10d	      1066	bitmap.c	FUNCTION_28	FOR_1
+0x4000514	              0x5d	                                 pop rbp	      1069	bitmap.c	FUNCTION_28
+0x4000515	            0x415c	                                 pop r12	      1069	bitmap.c	FUNCTION_28
+0x4000517	            0x415d	                                 pop r13	      1069	bitmap.c	FUNCTION_28
+0x4000519	              0xc3	                                     ret	      1069	bitmap.c	FUNCTION_28
+bitmap_parselist	SWITCH,0:DO,0:functions,0:IF,0:CALL,2:WHILE,0:ELSE,0:FOR,0	18
+0x4000f90	            0x4154	                                push r12	       624	bitmap.c	FUNCTION_19
+0x4000f92	              0x55	                                push rbp	       624	bitmap.c	FUNCTION_19
+0x4000f93	          0x4189d4	                           mov r12d, edx	       624	bitmap.c	FUNCTION_19
+0x4000f96	              0x53	                                push rbx	       624	bitmap.c	FUNCTION_19
+0x4000f97	          0x4889f5	                            mov rbp, rsi	       624	bitmap.c	FUNCTION_19
+0x4000f9a	          0x4889fb	                            mov rbx, rdi	       624	bitmap.c	FUNCTION_19
+0x4000f9d	      0xbe0a000000	                            mov esi, 0xa	       625	bitmap.c	FUNCTION_19	CALL_1
+0x4000fa2	      0xe800000000	                          call 0x4000fa7	       625	bitmap.c	FUNCTION_19	CALL_1
+0x4000fa7	          0x4589e0	                           mov r8d, r12d	       628	bitmap.c	FUNCTION_19	CALL_2
+0x4000faa	          0x4829d8	                            sub rax, rbx	       628	bitmap.c	FUNCTION_19	CALL_2
+0x4000fad	          0x4889e9	                            mov rcx, rbp	       628	bitmap.c	FUNCTION_19	CALL_2
+0x4000fb0	          0x4889df	                            mov rdi, rbx	       628	bitmap.c	FUNCTION_19	CALL_2
+0x4000fb3	          0x4889c6	                            mov rsi, rax	       628	bitmap.c	FUNCTION_19	CALL_2
+0x4000fb6	            0x31d2	                            xor edx, edx	       628	bitmap.c	FUNCTION_19	CALL_2
+0x4000fb8	              0x5b	                                 pop rbx	       629	bitmap.c	FUNCTION_19
+0x4000fb9	              0x5d	                                 pop rbp	       629	bitmap.c	FUNCTION_19
+0x4000fba	            0x415c	                                 pop r12	       629	bitmap.c	FUNCTION_19
+0x4000fbc	      0xe98ffcffff	              jmp sym.__bitmap_parselist	       628	bitmap.c	FUNCTION_19	CALL_2
+__bitmap_set	SWITCH,0:DO,0:functions,0:IF,1:CALL,3:WHILE,1:ELSE,0:FOR,0	33
+0x4000300	            0x89f0	                            mov eax, esi	       258	bitmap.c	FUNCTION_12	CALL_1
+0x4000302	            0x89f1	                            mov ecx, esi	       260	bitmap.c	FUNCTION_12
+0x4000304	          0xc1e806	                              shr eax, 6	       258	bitmap.c	FUNCTION_12	CALL_1
+0x4000307	          0x83e13f	                           and ecx, 0x3f	       260	bitmap.c	FUNCTION_12
+0x400030a	        0x488d04c7	                  lea rax, [rdi + rax*8]	       258	bitmap.c	FUNCTION_12	CALL_1
+0x400030e	    0x48c7c7ffffff	             mov rdi, 0xffffffffffffffff	       261	bitmap.c	FUNCTION_12	CALL_2
+0x4000315	          0x48d3e7	                             shl rdi, cl	       261	bitmap.c	FUNCTION_12	CALL_2
+0x4000318	        0x8d4c11c0	             lea ecx, [rcx + rdx - 0x40]	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x400031c	            0x85c9	                           test ecx, ecx	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x400031e	            0x7844	                            js 0x4000364	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x4000320	          0x4189c9	                            mov r9d, ecx	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x4000323	        0x41c1e906	                              shr r9d, 6	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x4000327	          0x4589c8	                            mov r8d, r9d	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x400032a	      0x4e8d44c008	                lea r8, [rax + r8*8 + 8]	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x400032f	          0x480938	                     or qword [rax], rdi	       264	bitmap.c	FUNCTION_12	WHILE_1
+0x4000332	        0x4883c008	                              add rax, 8	       268	bitmap.c	FUNCTION_12	WHILE_1
+0x4000336	    0x48c7c7ffffff	             mov rdi, 0xffffffffffffffff	       267	bitmap.c	FUNCTION_12	WHILE_1
+0x400033d	          0x4c39c0	                             cmp rax, r8	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x4000340	            0x75ed	                           jne 0x400032f	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x4000342	        0x41c1e106	                              shl r9d, 6	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x4000346	          0x4429c9	                            sub ecx, r9d	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x4000349	            0x85c9	                           test ecx, ecx	       270	bitmap.c	FUNCTION_12	IF_1
+0x400034b	            0x7415	                            je 0x4000362	       270	bitmap.c	FUNCTION_12	IF_1
+0x400034d	          0x8d0c32	                    lea ecx, [rdx + rsi]	       272	bitmap.c	FUNCTION_12	IF_1
+0x4000350	    0x48c7c0ffffff	             mov rax, 0xffffffffffffffff	       272	bitmap.c	FUNCTION_12	IF_1
+0x4000357	            0xf7d9	                                 neg ecx	       272	bitmap.c	FUNCTION_12	IF_1
+0x4000359	          0x48d3e8	                             shr rax, cl	       272	bitmap.c	FUNCTION_12	IF_1
+0x400035c	          0x4821c7	                            and rdi, rax	       272	bitmap.c	FUNCTION_12	IF_1
+0x400035f	          0x490938	                      or qword [r8], rdi	       272	bitmap.c	FUNCTION_12	IF_1
+0x4000362	            0xf3c3	                                     ret	       272	bitmap.c	FUNCTION_12	IF_1
+0x4000364	          0x4989c0	                             mov r8, rax	       258	bitmap.c	FUNCTION_12	CALL_1
+0x4000367	            0x89d1	                            mov ecx, edx	       263	bitmap.c	FUNCTION_12	WHILE_1
+0x4000369	            0xebde	                           jmp 0x4000349	       263	bitmap.c	FUNCTION_12	WHILE_1
+__bitmap_shift_left	SWITCH,0:DO,0:functions,0:IF,2:CALL,2:WHILE,0:ELSE,1:FOR,1	47
+0x4000630	          0x4189d2	                           mov r10d, edx	       137	bitmap.c	FUNCTION_4
+0x4000633	            0x89c8	                            mov eax, ecx	       138	bitmap.c	FUNCTION_4	FOR_1
+0x4000635	              0x55	                                push rbp	       134	bitmap.c	FUNCTION_4
+0x4000636	        0x41c1ea06	                             shr r10d, 6	       137	bitmap.c	FUNCTION_4
+0x400063a	        0x4883c03f	                           add rax, 0x3f	       138	bitmap.c	FUNCTION_4	FOR_1
+0x400063e	              0x53	                                push rbx	       134	bitmap.c	FUNCTION_4
+0x400063f	          0x4489d1	                           mov ecx, r10d	       138	bitmap.c	FUNCTION_4	FOR_1
+0x4000642	        0x48c1e806	                              shr rax, 6	       138	bitmap.c	FUNCTION_4	FOR_1
+0x4000646	      0xbb40000000	                           mov ebx, 0x40	       146	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x400064b	          0x83e23f	                           and edx, 0x3f	       146	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x400064e	            0xf7d1	                                 not ecx	       138	bitmap.c	FUNCTION_4	FOR_1
+0x4000650	        0x410f95c3	                              setne r11b	       138	bitmap.c	FUNCTION_4	FOR_1
+0x4000654	            0x29d3	                            sub ebx, edx	       146	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x4000656	             0x1c8	                            add eax, ecx	       138	bitmap.c	FUNCTION_4	FOR_1
+0x4000658	            0x792d	                           jns 0x4000687	       138	bitmap.c	FUNCTION_4	FOR_1
+0x400065a	            0xeb3b	                           jmp 0x4000697	       138	bitmap.c	FUNCTION_4	FOR_1
+0x400065c	          0x4584db	                         test r11b, r11b	       145	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x400065f	            0x7431	                            je 0x4000692	       145	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x4000661	      0x4e8b440ef8	            mov r8, qword [rsi + r9 - 8]	       146	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x4000666	            0x89d9	                            mov ecx, ebx	       146	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x4000668	          0x49d3e8	                              shr r8, cl	       146	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x400066b	        0x4e8b0c0e	                mov r9, qword [rsi + r9]	       150	bitmap.c	FUNCTION_4	FOR_1
+0x400066f	            0x89d1	                            mov ecx, edx	       150	bitmap.c	FUNCTION_4	FOR_1
+0x4000671	        0x428d2c10	                    lea ebp, [rax + r10]	       150	bitmap.c	FUNCTION_4	FOR_1
+0x4000675	          0x83e801	                              sub eax, 1	       138	bitmap.c	FUNCTION_4	FOR_1
+0x4000678	          0x49d3e1	                              shl r9, cl	       150	bitmap.c	FUNCTION_4	FOR_1
+0x400067b	          0x4d09c8	                               or r8, r9	       150	bitmap.c	FUNCTION_4	FOR_1
+0x400067e	          0x83f8ff	             cmp eax, 0xffffffffffffffff	       138	bitmap.c	FUNCTION_4	FOR_1
+0x4000681	        0x4c8904ef	             mov qword [rdi + rbp*8], r8	       150	bitmap.c	FUNCTION_4	FOR_1
+0x4000685	            0x7410	                            je 0x4000697	       138	bitmap.c	FUNCTION_4	FOR_1
+0x4000687	          0x4c63c8	                          movsxd r9, eax	       146	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x400068a	        0x49c1e103	                               shl r9, 3	       146	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x400068e	            0x85c0	                           test eax, eax	       145	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x4000690	            0x7fca	                            jg 0x400065c	       145	bitmap.c	FUNCTION_4	FOR_1	IF_1
+0x4000692	          0x4531c0	                            xor r8d, r8d	       148	bitmap.c	FUNCTION_4	FOR_1	ELSE_1
+0x4000695	            0xebd4	                           jmp 0x400066b	       148	bitmap.c	FUNCTION_4	FOR_1	ELSE_1
+0x4000697	          0x4585d2	                         test r10d, r10d	       152	bitmap.c	FUNCTION_4	IF_2
+0x400069a	            0x7503	                           jne 0x400069f	       152	bitmap.c	FUNCTION_4	IF_2
+0x400069c	              0x5b	                                 pop rbx	       154	bitmap.c	FUNCTION_4
+0x400069d	              0x5d	                                 pop rbp	       154	bitmap.c	FUNCTION_4
+0x400069e	              0xc3	                                     ret	       154	bitmap.c	FUNCTION_4
+0x400069f	              0x5b	                                 pop rbx	       154	bitmap.c	FUNCTION_4
+0x40006a0	              0x5d	                                 pop rbp	       154	bitmap.c	FUNCTION_4
+0x40006a1	          0x4489d2	                           mov edx, r10d	       153	bitmap.c	FUNCTION_4	CALL_2
+0x40006a4	            0x31f6	                            xor esi, esi	       153	bitmap.c	FUNCTION_4	CALL_2
+0x40006a6	        0x48c1e203	                              shl rdx, 3	       153	bitmap.c	FUNCTION_4	CALL_2
+0x40006aa	      0xe900000000	                           jmp 0x40006af	       153	bitmap.c	FUNCTION_4	CALL_2
+bitmap_print_to_pagebuf	SWITCH,0:DO,0:functions,0:IF,1:CALL,3:WHILE,0:ELSE,0:FOR,0	17
+0x40007f0	          0x4889f0	                            mov rax, rsi	       477	bitmap.c	FUNCTION_17
+0x40007f3	    0x488db6fe1f00	                 lea rsi, [rsi + 0x1ffe]	       478	bitmap.c	FUNCTION_17	CALL_1
+0x40007fa	          0x4989d0	                             mov r8, rdx	       477	bitmap.c	FUNCTION_17
+0x40007fd	    0x4881e600f0ff	             and rsi, 0xfffffffffffff000	       478	bitmap.c	FUNCTION_17	CALL_1
+0x4000804	          0x4829c6	                            sub rsi, rax	       478	bitmap.c	FUNCTION_17	CALL_1
+0x4000807	        0x4883fe01	                              cmp rsi, 1	       481	bitmap.c	FUNCTION_17	IF_1
+0x400080b	            0x7e23	                           jle 0x4000830	       481	bitmap.c	FUNCTION_17	IF_1
+0x400080d	          0x4084ff	                           test dil, dil	       482	bitmap.c	FUNCTION_17	IF_1	CALL_2
+0x4000810	            0x750f	                           jne 0x4000821	       482	bitmap.c	FUNCTION_17	IF_1	CALL_2
+0x4000812	    0x48c7c2000000	                              mov rdx, 0	       482	bitmap.c	FUNCTION_17	IF_1	CALL_2
+0x4000819	          0x4889c7	                            mov rdi, rax	       482	bitmap.c	FUNCTION_17	IF_1	CALL_2
+0x400081c	      0xe900000000	                           jmp 0x4000821	       482	bitmap.c	FUNCTION_17	IF_1	CALL_2
+0x4000821	    0x48c7c2000000	                              mov rdx, 0	       482	bitmap.c	FUNCTION_17	IF_1	CALL_2
+0x4000828	          0x4889c7	                            mov rdi, rax	       482	bitmap.c	FUNCTION_17	IF_1	CALL_2
+0x400082b	      0xe900000000	                           jmp 0x4000830	       482	bitmap.c	FUNCTION_17	IF_1	CALL_2
+0x4000830	            0x31c0	                            xor eax, eax	       485	bitmap.c	FUNCTION_17
+0x4000832	              0xc3	                                     ret	       485	bitmap.c	FUNCTION_17
+__bitmap_and	SWITCH,0:DO,0:functions,0:IF,1:CALL,1:WHILE,0:ELSE,0:FOR,1	29
+0x40000f0	          0x4189ca	                           mov r10d, ecx	       161	bitmap.c	FUNCTION_5
+0x40000f3	        0x41c1ea06	                             shr r10d, 6	       161	bitmap.c	FUNCTION_5
+0x40000f7	          0x4585d2	                         test r10d, r10d	       164	bitmap.c	FUNCTION_5	FOR_1
+0x40000fa	            0x7449	                            je 0x4000145	       164	bitmap.c	FUNCTION_5	FOR_1
+0x40000fc	            0x31c0	                            xor eax, eax	       164	bitmap.c	FUNCTION_5	FOR_1
+0x40000fe	          0x4531c9	                            xor r9d, r9d	       164	bitmap.c	FUNCTION_5	FOR_1
+0x4000101	        0x4c8b04c6	             mov r8, qword [rsi + rax*8]	       165	bitmap.c	FUNCTION_5	FOR_1
+0x4000105	        0x4c2304c2	             and r8, qword [rdx + rax*8]	       165	bitmap.c	FUNCTION_5	FOR_1
+0x4000109	        0x4c8904c7	             mov qword [rdi + rax*8], r8	       165	bitmap.c	FUNCTION_5	FOR_1
+0x400010d	        0x4883c001	                              add rax, 1	       165	bitmap.c	FUNCTION_5	FOR_1
+0x4000111	          0x4d09c1	                               or r9, r8	       165	bitmap.c	FUNCTION_5	FOR_1
+0x4000114	          0x4139c2	                           cmp r10d, eax	       164	bitmap.c	FUNCTION_5	FOR_1
+0x4000117	            0x77e8	                            ja 0x4000101	       164	bitmap.c	FUNCTION_5	FOR_1
+0x4000119	          0xf6c13f	                           test cl, 0x3f	       166	bitmap.c	FUNCTION_5	IF_1
+0x400011c	            0x741e	                            je 0x400013c	       166	bitmap.c	FUNCTION_5	IF_1
+0x400011e	        0x4a8b04d6	            mov rax, qword [rsi + r10*8]	       167	bitmap.c	FUNCTION_5	IF_1
+0x4000122	        0x4a2304d2	            and rax, qword [rdx + r10*8]	       167	bitmap.c	FUNCTION_5	IF_1
+0x4000126	            0xf7d9	                                 neg ecx	       167	bitmap.c	FUNCTION_5	IF_1
+0x4000128	    0x48c7c2ffffff	             mov rdx, 0xffffffffffffffff	       167	bitmap.c	FUNCTION_5	IF_1
+0x400012f	          0x48d3ea	                             shr rdx, cl	       167	bitmap.c	FUNCTION_5	IF_1
+0x4000132	          0x4821d0	                            and rax, rdx	       167	bitmap.c	FUNCTION_5	IF_1
+0x4000135	        0x4a8904d7	            mov qword [rdi + r10*8], rax	       167	bitmap.c	FUNCTION_5	IF_1
+0x4000139	          0x4909c1	                              or r9, rax	       167	bitmap.c	FUNCTION_5	IF_1
+0x400013c	            0x31c0	                            xor eax, eax	       169	bitmap.c	FUNCTION_5
+0x400013e	          0x4d85c9	                             test r9, r9	       169	bitmap.c	FUNCTION_5
+0x4000141	           0xf95c0	                                setne al	       169	bitmap.c	FUNCTION_5
+0x4000144	              0xc3	                                     ret	       170	bitmap.c	FUNCTION_5
+0x4000145	          0x4531c9	                            xor r9d, r9d	       162	bitmap.c	FUNCTION_5
+0x4000148	            0xebcf	                           jmp 0x4000119	       162	bitmap.c	FUNCTION_5
+bitmap_release_region	SWITCH,0:DO,0:functions,0:IF,0:CALL,1:WHILE,0:ELSE,0:FOR,0	2
+0x4000520	      0xb902000000	                              mov ecx, 2	      1085	bitmap.c	FUNCTION_29	CALL_1
+0x4000525	      0xe9c6feffff	                        jmp sym.__reg_op	      1085	bitmap.c	FUNCTION_29	CALL_1
+bitmap_find_next_zero_area_off	SWITCH,0:DO,0:functions,0:IF,2:CALL,3:WHILE,0:ELSE,0:FOR,0	53
+0x4000750	            0x4157	                                push r15	       317	bitmap.c	FUNCTION_14
+0x4000752	            0x4156	                                push r14	       317	bitmap.c	FUNCTION_14
+0x4000754	          0x4c89c0	                             mov rax, r8	       317	bitmap.c	FUNCTION_14
+0x4000757	            0x4155	                                push r13	       317	bitmap.c	FUNCTION_14
+0x4000759	            0x4154	                                push r12	       317	bitmap.c	FUNCTION_14
+0x400075b	          0x48f7d0	                                 not rax	       317	bitmap.c	FUNCTION_14
+0x400075e	              0x55	                                push rbp	       317	bitmap.c	FUNCTION_14
+0x400075f	              0x53	                                push rbx	       317	bitmap.c	FUNCTION_14
+0x4000760	          0x4889fd	                            mov rbp, rdi	       317	bitmap.c	FUNCTION_14
+0x4000763	          0x4889f3	                            mov rbx, rsi	       317	bitmap.c	FUNCTION_14
+0x4000766	          0x4d89ce	                             mov r14, r9	       317	bitmap.c	FUNCTION_14
+0x4000769	          0x4189cd	                           mov r13d, ecx	       317	bitmap.c	FUNCTION_14
+0x400076c	        0x4883ec10	                           sub rsp, 0x10	       317	bitmap.c	FUNCTION_14
+0x4000770	        0x48890424	                    mov qword [rsp], rax	       317	bitmap.c	FUNCTION_14
+0x4000774	        0x4b8d0401	                      lea rax, [r9 + r8]	       317	bitmap.c	FUNCTION_14
+0x4000778	      0x4889442408	                mov qword [rsp + 8], rax	       317	bitmap.c	FUNCTION_14
+0x400077d	            0xeb17	                           jmp 0x4000796	       317	bitmap.c	FUNCTION_14
+0x400077f	          0x4889ca	                            mov rdx, rcx	       328	bitmap.c	FUNCTION_14	CALL_3
+0x4000782	          0x4c89fe	                            mov rsi, r15	       328	bitmap.c	FUNCTION_14	CALL_3
+0x4000785	          0x4889ef	                            mov rdi, rbp	       328	bitmap.c	FUNCTION_14	CALL_3
+0x4000788	      0xe800000000	                          call 0x400078d	       328	bitmap.c	FUNCTION_14	CALL_3
+0x400078d	          0x4939c7	                            cmp r15, rax	       329	bitmap.c	FUNCTION_14	IF_2
+0x4000790	            0x763d	                           jbe 0x40007cf	       329	bitmap.c	FUNCTION_14	IF_2
+0x4000792	        0x488d5001	                      lea rdx, [rax + 1]	       330	bitmap.c	FUNCTION_14	IF_2
+0x4000796	          0x4889de	                            mov rsi, rbx	       320	bitmap.c	FUNCTION_14	CALL_1
+0x4000799	          0x4889ef	                            mov rdi, rbp	       320	bitmap.c	FUNCTION_14	CALL_1
+0x400079c	      0xe800000000	                          call 0x40007a1	       320	bitmap.c	FUNCTION_14	CALL_1
+0x40007a1	      0x488b742408	                mov rsi, qword [rsp + 8]	       323	bitmap.c	FUNCTION_14	CALL_2
+0x40007a6	        0x488d0c30	                    lea rcx, [rax + rsi]	       323	bitmap.c	FUNCTION_14	CALL_2
+0x40007aa	        0x48230c24	                    and rcx, qword [rsp]	       323	bitmap.c	FUNCTION_14	CALL_2
+0x40007ae	          0x4c29f1	                            sub rcx, r14	       323	bitmap.c	FUNCTION_14	CALL_2
+0x40007b1	        0x4e8d3c29	                    lea r15, [rcx + r13]	       325	bitmap.c	FUNCTION_14
+0x40007b5	          0x4989cc	                            mov r12, rcx	       323	bitmap.c	FUNCTION_14	CALL_2
+0x40007b8	          0x4c39fb	                            cmp rbx, r15	       326	bitmap.c	FUNCTION_14	IF_1
+0x40007bb	            0x73c2	                           jae 0x400077f	       326	bitmap.c	FUNCTION_14	IF_1
+0x40007bd	        0x4883c410	                           add rsp, 0x10	       334	bitmap.c	FUNCTION_14
+0x40007c1	          0x4c89f8	                            mov rax, r15	       325	bitmap.c	FUNCTION_14
+0x40007c4	              0x5b	                                 pop rbx	       334	bitmap.c	FUNCTION_14
+0x40007c5	              0x5d	                                 pop rbp	       334	bitmap.c	FUNCTION_14
+0x40007c6	            0x415c	                                 pop r12	       334	bitmap.c	FUNCTION_14
+0x40007c8	            0x415d	                                 pop r13	       334	bitmap.c	FUNCTION_14
+0x40007ca	            0x415e	                                 pop r14	       334	bitmap.c	FUNCTION_14
+0x40007cc	            0x415f	                                 pop r15	       334	bitmap.c	FUNCTION_14
+0x40007ce	              0xc3	                                     ret	       334	bitmap.c	FUNCTION_14
+0x40007cf	        0x4883c410	                           add rsp, 0x10	       334	bitmap.c	FUNCTION_14
+0x40007d3	          0x4c89e0	                            mov rax, r12	       323	bitmap.c	FUNCTION_14	CALL_2
+0x40007d6	              0x5b	                                 pop rbx	       334	bitmap.c	FUNCTION_14
+0x40007d7	              0x5d	                                 pop rbp	       334	bitmap.c	FUNCTION_14
+0x40007d8	            0x415c	                                 pop r12	       334	bitmap.c	FUNCTION_14
+0x40007da	            0x415d	                                 pop r13	       334	bitmap.c	FUNCTION_14
+0x40007dc	            0x415e	                                 pop r14	       334	bitmap.c	FUNCTION_14
+0x40007de	            0x415f	                                 pop r15	       334	bitmap.c	FUNCTION_14
+0x40007e0	              0xc3	                                     ret	       334	bitmap.c	FUNCTION_14
+bitmap_ord_to_pos	SWITCH,0:DO,0:functions,0:IF,0:CALL,2:WHILE,0:ELSE,0:FOR,1	30
+0x4000fd0	            0x4155	                                push r13	       705	bitmap.c	FUNCTION_22
+0x4000fd2	            0x4154	                                push r12	       705	bitmap.c	FUNCTION_22
+0x4000fd4	          0x4189d4	                           mov r12d, edx	       705	bitmap.c	FUNCTION_22
+0x4000fd7	              0x55	                                push rbp	       705	bitmap.c	FUNCTION_22
+0x4000fd8	              0x53	                                push rbx	       705	bitmap.c	FUNCTION_22
+0x4000fd9	            0x89f3	                            mov ebx, esi	       705	bitmap.c	FUNCTION_22
+0x4000fdb	          0x4c89e6	                            mov rsi, r12	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x4000fde	          0x4989fd	                            mov r13, rdi	       705	bitmap.c	FUNCTION_22
+0x4000fe1	      0xe800000000	                          call 0x4000fe6	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x4000fe6	          0x4139c4	                           cmp r12d, eax	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x4000fe9	            0x89c2	                            mov edx, eax	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x4000feb	            0x7620	                           jbe 0x400100d	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x4000fed	          0x4c89e5	                            mov rbp, r12	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x4000ff0	            0xeb17	                           jmp 0x4001009	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x4000ff2	          0x83c201	                              add edx, 1	       710	bitmap.c	FUNCTION_22	FOR_1	CALL_2
+0x4000ff5	          0x4c89e6	                            mov rsi, r12	       710	bitmap.c	FUNCTION_22	FOR_1	CALL_2
+0x4000ff8	          0x4c89ef	                            mov rdi, r13	       710	bitmap.c	FUNCTION_22	FOR_1	CALL_2
+0x4000ffb	      0xe800000000	                          call 0x4001000	       710	bitmap.c	FUNCTION_22	FOR_1	CALL_2
+0x4001000	          0x83eb01	                              sub ebx, 1	       711	bitmap.c	FUNCTION_22	FOR_1
+0x4001003	            0x39c5	                            cmp ebp, eax	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x4001005	            0x89c2	                            mov edx, eax	       710	bitmap.c	FUNCTION_22	FOR_1	CALL_2
+0x4001007	            0x7604	                           jbe 0x400100d	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x4001009	            0x85db	                           test ebx, ebx	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x400100b	            0x75e5	                           jne 0x4000ff2	       708	bitmap.c	FUNCTION_22	FOR_1	CALL_1
+0x400100d	              0x5b	                                 pop rbx	       714	bitmap.c	FUNCTION_22
+0x400100e	            0x89d0	                            mov eax, edx	       714	bitmap.c	FUNCTION_22
+0x4001010	              0x5d	                                 pop rbp	       714	bitmap.c	FUNCTION_22
+0x4001011	            0x415c	                                 pop r12	       714	bitmap.c	FUNCTION_22
+0x4001013	            0x415d	                                 pop r13	       714	bitmap.c	FUNCTION_22
+0x4001015	              0xc3	                                     ret	       714	bitmap.c	FUNCTION_22
+bitmap_allocate_region	SWITCH,0:DO,0:functions,0:IF,1:CALL,2:WHILE,0:ELSE,0:FOR,0	15
+0x4000530	              0x53	                                push rbx	      1101	bitmap.c	FUNCTION_30
+0x4000531	            0x31c9	                            xor ecx, ecx	      1102	bitmap.c	FUNCTION_30	IF_1	CALL_1
+0x4000533	          0x4189f3	                           mov r11d, esi	      1101	bitmap.c	FUNCTION_30
+0x4000536	            0x89d3	                            mov ebx, edx	      1101	bitmap.c	FUNCTION_30
+0x4000538	      0xe8b3feffff	                       call sym.__reg_op	      1102	bitmap.c	FUNCTION_30	IF_1	CALL_1
+0x400053d	            0x85c0	                           test eax, eax	      1102	bitmap.c	FUNCTION_30	IF_1	CALL_1
+0x400053f	            0x7410	                            je 0x4000551	      1102	bitmap.c	FUNCTION_30	IF_1	CALL_1
+0x4000541	            0x89da	                            mov edx, ebx	      1104	bitmap.c	FUNCTION_30	CALL_2
+0x4000543	      0xb901000000	                              mov ecx, 1	      1104	bitmap.c	FUNCTION_30	CALL_2
+0x4000548	          0x4489de	                           mov esi, r11d	      1104	bitmap.c	FUNCTION_30	CALL_2
+0x400054b	              0x5b	                                 pop rbx	      1105	bitmap.c	FUNCTION_30
+0x400054c	      0xe99ffeffff	                        jmp sym.__reg_op	      1104	bitmap.c	FUNCTION_30	CALL_2
+0x4000551	      0xb8f0ffffff	                     mov eax, 0xfffffff0	      1105	bitmap.c	FUNCTION_30
+0x4000556	              0x5b	                                 pop rbx	      1105	bitmap.c	FUNCTION_30
+0x4000557	              0xc3	                                     ret	      1105	bitmap.c	FUNCTION_30
+__bitmap_subset	SWITCH,0:DO,0:functions,0:IF,3:CALL,1:WHILE,0:ELSE,0:FOR,1	36
+0x4000290	          0x4189d2	                           mov r10d, edx	       229	bitmap.c	FUNCTION_10
+0x4000293	        0x41c1ea06	                             shr r10d, 6	       229	bitmap.c	FUNCTION_10
+0x4000297	          0x4585d2	                         test r10d, r10d	       230	bitmap.c	FUNCTION_10	FOR_1
+0x400029a	            0x7432	                            je 0x40002ce	       230	bitmap.c	FUNCTION_10	FOR_1
+0x400029c	          0x488b06	                    mov rax, qword [rsi]	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x400029f	          0x48f7d0	                                 not rax	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002a2	          0x488507	                   test qword [rdi], rax	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002a5	            0x7554	                           jne 0x40002fb	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002a7	          0x4531c0	                            xor r8d, r8d	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002aa	          0x4531c9	                            xor r9d, r9d	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002ad	            0xeb16	                           jmp 0x40002c5	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002af	      0x4a8b440608	          mov rax, qword [rsi + r8 + 8] 	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002b4	          0x48f7d0	                                 not rax	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002b7	      0x4a23440708	           and rax, qword [rdi + r8 + 8]	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002bc	        0x4983c008	                               add r8, 8	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002c0	          0x4885c0	                           test rax, rax	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002c3	            0x7536	                           jne 0x40002fb	       231	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002c5	        0x4183c101	                              add r9d, 1	       230	bitmap.c	FUNCTION_10	FOR_1
+0x40002c9	          0x4539ca	                           cmp r10d, r9d	       230	bitmap.c	FUNCTION_10	FOR_1
+0x40002cc	            0x75e1	                           jne 0x40002af	       230	bitmap.c	FUNCTION_10	FOR_1
+0x40002ce	          0xf6c23f	                           test dl, 0x3f	       234	bitmap.c	FUNCTION_10	IF_2
+0x40002d1	      0xb801000000	                              mov eax, 1	       237	bitmap.c	FUNCTION_10
+0x40002d6	            0x7425	                            je 0x40002fd	       234	bitmap.c	FUNCTION_10	IF_2
+0x40002d8	            0x89d1	                            mov ecx, edx	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002da	    0x48c7c0ffffff	             mov rax, 0xffffffffffffffff	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002e1	        0x4a8b14d6	            mov rdx, qword [rsi + r10*8]	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002e5	            0xf7d9	                                 neg ecx	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002e7	          0x48d3e8	                             shr rax, cl	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002ea	        0x4a2304d7	            and rax, qword [rdi + r10*8]	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002ee	          0x48f7d2	                                 not rdx	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002f1	          0x4885d0	                           test rax, rdx	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002f4	           0xf94c0	                                 sete al	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002f7	           0xfb6c0	                           movzx eax, al	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002fa	              0xc3	                                     ret	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002fb	            0x31c0	                            xor eax, eax	       232	bitmap.c	FUNCTION_10	FOR_1	IF_1
+0x40002fd	            0xf3c3	                                     ret	       238	bitmap.c	FUNCTION_10
+__bitmap_intersects	SWITCH,0:DO,0:functions,0:IF,3:CALL,1:WHILE,0:ELSE,0:FOR,1	34
+0x4000220	          0x4189d2	                           mov r10d, edx	       214	bitmap.c	FUNCTION_9
+0x4000223	        0x41c1ea06	                             shr r10d, 6	       214	bitmap.c	FUNCTION_9
+0x4000227	          0x4585d2	                         test r10d, r10d	       215	bitmap.c	FUNCTION_9	FOR_1
+0x400022a	            0x742b	                            je 0x4000257	       215	bitmap.c	FUNCTION_9	FOR_1
+0x400022c	          0x488b07	                    mov rax, qword [rdi]	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x400022f	          0x488506	                   test qword [rsi], rax	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000232	            0x754d	                           jne 0x4000281	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000234	            0x31c0	                            xor eax, eax	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000236	          0x4531c9	                            xor r9d, r9d	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000239	            0xeb13	                           jmp 0x400024e	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x400023b	      0x4c8b440708	          mov r8, qword [rdi + rax + 8] 	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000240	      0x4c23440608	           and r8, qword [rsi + rax + 8]	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000245	        0x4883c008	                              add rax, 8	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000249	          0x4d85c0	                             test r8, r8	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x400024c	            0x7533	                           jne 0x4000281	       216	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x400024e	        0x4183c101	                              add r9d, 1	       215	bitmap.c	FUNCTION_9	FOR_1
+0x4000252	          0x4539ca	                           cmp r10d, r9d	       215	bitmap.c	FUNCTION_9	FOR_1
+0x4000255	            0x75e4	                           jne 0x400023b	       215	bitmap.c	FUNCTION_9	FOR_1
+0x4000257	            0x31c0	                            xor eax, eax	       222	bitmap.c	FUNCTION_9
+0x4000259	          0xf6c23f	                           test dl, 0x3f	       219	bitmap.c	FUNCTION_9	IF_2
+0x400025c	            0x7428	                            je 0x4000286	       219	bitmap.c	FUNCTION_9	IF_2
+0x400025e	        0x4a8b04d7	            mov rax, qword [rdi + r10*8]	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000262	        0x4a2304d6	            and rax, qword [rsi + r10*8]	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000266	            0x89d1	                            mov ecx, edx	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000268	            0xf7d9	                                 neg ecx	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x400026a	          0x4889c6	                            mov rsi, rax	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x400026d	    0x48c7c0ffffff	             mov rax, 0xffffffffffffffff	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000274	          0x48d3e8	                             shr rax, cl	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000277	          0x4885c6	                           test rsi, rax	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x400027a	           0xf95c0	                                setne al	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x400027d	           0xfb6c0	                           movzx eax, al	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000280	              0xc3	                                     ret	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000281	      0xb801000000	                              mov eax, 1	       217	bitmap.c	FUNCTION_9	FOR_1	IF_1
+0x4000286	            0xf3c3	                                     ret	       223	bitmap.c	FUNCTION_9

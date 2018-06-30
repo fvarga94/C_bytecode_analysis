@@ -1,0 +1,32 @@
+tty_unlock	IF,1:functions,0:DO,0:SWITCH,0:WHILE,0:FOR,0:CALL,3:ELSE,0	15
+0x4000040	              0x53	                                push rbx	        37	tty_mutex.c	FUNCTION_3
+0x4000041	    0x813f01540000	                 cmp dword [rdi], 0x5401	        38	tty_mutex.c	FUNCTION_3	IF_1	CALL_1
+0x4000047	          0x4889fb	                            mov rbx, rdi	        37	tty_mutex.c	FUNCTION_3
+0x400004a	            0x7515	                           jne 0x4000061	        38	tty_mutex.c	FUNCTION_3	IF_1	CALL_1
+0x400004c	    0x488dbf800000	                   lea rdi, [rdi + 0x80]	        40	tty_mutex.c	FUNCTION_3	CALL_2
+0x4000053	      0xe800000000	                          call 0x4000058	        40	tty_mutex.c	FUNCTION_3	CALL_2
+0x4000058	          0x4889df	                            mov rdi, rbx	        41	tty_mutex.c	FUNCTION_3	CALL_3
+0x400005b	              0x5b	                                 pop rbx	        42	tty_mutex.c	FUNCTION_3
+0x400005c	      0xe900000000	                           jmp 0x4000061	        41	tty_mutex.c	FUNCTION_3	CALL_3
+0x4000061	          0x4889fe	                            mov rsi, rdi	        38	tty_mutex.c	FUNCTION_3	IF_1	CALL_1
+0x4000064	    0x48c7c7000000	                              mov rdi, 0	        38	tty_mutex.c	FUNCTION_3	IF_1	CALL_1
+0x400006b	      0xe800000000	                          call 0x4000070	        38	tty_mutex.c	FUNCTION_3	IF_1	CALL_1
+0x4000070	             0xf0b	                                     ud2	        38	tty_mutex.c	FUNCTION_3	IF_1	CALL_1
+0x4000072	              0x5b	                                 pop rbx	        42	tty_mutex.c	FUNCTION_3
+0x4000073	              0xc3	                                     ret	        42	tty_mutex.c	FUNCTION_3
+tty_set_lock_subclass	IF,0:functions,0:DO,0:SWITCH,0:WHILE,0:FOR,0:CALL,1:ELSE,0	1
+0x4000160	            0xf3c3	                                     ret	        58	tty_mutex.c	FUNCTION_6
+tty_unlock_slave	IF,1:functions,0:DO,0:SWITCH,0:WHILE,0:FOR,0:CALL,1:ELSE,0	6
+0x4000140	          0x4885ff	                           test rdi, rdi	        53	tty_mutex.c	FUNCTION_5	IF_1
+0x4000143	            0x740e	                            je 0x4000153	        53	tty_mutex.c	FUNCTION_5	IF_1
+0x4000145	    0x483bbff80100	           cmp rdi, qword [rdi + 0x1f8] 	        53	tty_mutex.c	FUNCTION_5	IF_1
+0x400014c	            0x7405	                            je 0x4000153	        53	tty_mutex.c	FUNCTION_5	IF_1
+0x400014e	      0xe9edfeffff	                      jmp sym.tty_unlock	        54	tty_mutex.c	FUNCTION_5	CALL_1
+0x4000153	            0xf3c3	                                     ret	        54	tty_mutex.c	FUNCTION_5	CALL_1
+tty_lock_slave	IF,1:functions,0:DO,0:SWITCH,0:WHILE,0:FOR,0:CALL,1:ELSE,0	6
+0x4000120	          0x4885ff	                           test rdi, rdi	        47	tty_mutex.c	FUNCTION_4	IF_1
+0x4000123	            0x740e	                            je 0x4000133	        47	tty_mutex.c	FUNCTION_4	IF_1
+0x4000125	    0x483bbff80100	           cmp rdi, qword [rdi + 0x1f8] 	        47	tty_mutex.c	FUNCTION_4	IF_1
+0x400012c	            0x7405	                            je 0x4000133	        47	tty_mutex.c	FUNCTION_4	IF_1
+0x400012e	      0xe94dffffff	                        jmp sym.tty_lock	        48	tty_mutex.c	FUNCTION_4	CALL_1
+0x4000133	            0xf3c3	                                     ret	        48	tty_mutex.c	FUNCTION_4	CALL_1

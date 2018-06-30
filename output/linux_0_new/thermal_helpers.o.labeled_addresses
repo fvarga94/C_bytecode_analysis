@@ -1,0 +1,219 @@
+thermal_zone_get_slope	FOR,0:WHILE,0:CALL,0:ELSE,0:SWITCH,0:DO,0:IF,1:functions,0	9
+0x40000c0	          0x4885ff	                           test rdi, rdi	       210	thermal_helpers.c	FUNCTION_6	IF_1
+0x40000c3	            0x7410	                            je 0x40000d5	       210	thermal_helpers.c	FUNCTION_6	IF_1
+0x40000c5	    0x488b87700300	           mov rax, qword [rdi + 0x370] 	       210	thermal_helpers.c	FUNCTION_6	IF_1
+0x40000cc	          0x4885c0	                           test rax, rax	       210	thermal_helpers.c	FUNCTION_6	IF_1
+0x40000cf	            0x7404	                            je 0x40000d5	       210	thermal_helpers.c	FUNCTION_6	IF_1
+0x40000d1	          0x8b4040	            mov eax, dword [rax + 0x40] 	       211	thermal_helpers.c	FUNCTION_6	IF_1
+0x40000d4	              0xc3	                                     ret	       211	thermal_helpers.c	FUNCTION_6	IF_1
+0x40000d5	      0xb801000000	                              mov eax, 1	       212	thermal_helpers.c	FUNCTION_6
+0x40000da	              0xc3	                                     ret	       213	thermal_helpers.c	FUNCTION_6
+get_tz_trend	FOR,0:WHILE,0:CALL,1:ELSE,2:SWITCH,0:DO,0:IF,3:functions,0	33
+0x4000040	              0x53	                                push rbx	        29	thermal_helpers.c	FUNCTION_1
+0x4000041	          0x4889fb	                            mov rbx, rdi	        29	thermal_helpers.c	FUNCTION_1
+0x4000044	        0x4883ec10	                           sub rsp, 0x10	        29	thermal_helpers.c	FUNCTION_1
+0x4000048	    0x65488b042528	                mov rax, qword gs:[0x28]	        29	thermal_helpers.c	FUNCTION_1
+0x4000051	      0x4889442408	                mov qword [rsp + 8], rax	        29	thermal_helpers.c	FUNCTION_1
+0x4000056	            0x31c0	                            xor eax, eax	        29	thermal_helpers.c	FUNCTION_1
+0x4000058	    0x8b8750030000	           mov eax, dword [rdi + 0x350] 	        32	thermal_helpers.c	FUNCTION_1	IF_1
+0x400005e	            0x85c0	                           test eax, eax	        32	thermal_helpers.c	FUNCTION_1	IF_1
+0x4000060	            0x751e	                           jne 0x4000080	        32	thermal_helpers.c	FUNCTION_1	IF_1
+0x4000062	    0x488b87680300	           mov rax, qword [rdi + 0x368] 	        32	thermal_helpers.c	FUNCTION_1	IF_1
+0x4000069	        0x488b4068	            mov rax, qword [rax + 0x68] 	        32	thermal_helpers.c	FUNCTION_1	IF_1
+0x400006d	          0x4885c0	                           test rax, rax	        32	thermal_helpers.c	FUNCTION_1	IF_1
+0x4000070	            0x740e	                            je 0x4000080	        32	thermal_helpers.c	FUNCTION_1	IF_1
+0x4000072	      0x488d542404	                      lea rdx, [rsp + 4]	        33	thermal_helpers.c	FUNCTION_1	IF_1	CALL_1
+0x4000077	      0xe800000000	                          call 0x400007c	        33	thermal_helpers.c	FUNCTION_1	IF_1	CALL_1
+0x400007c	            0x85c0	                           test eax, eax	        32	thermal_helpers.c	FUNCTION_1	IF_1
+0x400007e	            0x7431	                            je 0x40000b1	        32	thermal_helpers.c	FUNCTION_1	IF_1
+0x4000080	    0x8b8b4c030000	           mov ecx, dword [rbx + 0x34c] 	        34	thermal_helpers.c	FUNCTION_1	IF_1	IF_2
+0x4000086	    0x398b48030000	           cmp dword [rbx + 0x348], ecx 	        34	thermal_helpers.c	FUNCTION_1	IF_1	IF_2
+0x400008c	      0xb801000000	                              mov eax, 1	        34	thermal_helpers.c	FUNCTION_1	IF_1	IF_2
+0x4000091	            0x7f08	                            jg 0x400009b	        34	thermal_helpers.c	FUNCTION_1	IF_1	IF_2
+0x4000093	           0xf9cc0	                                 setl al	        36	thermal_helpers.c	FUNCTION_1	IF_1	ELSE_1	IF_3
+0x4000096	           0xfb6c0	                           movzx eax, al	        36	thermal_helpers.c	FUNCTION_1	IF_1	ELSE_1	IF_3
+0x4000099	             0x1c0	                            add eax, eax	        36	thermal_helpers.c	FUNCTION_1	IF_1	ELSE_1	IF_3
+0x400009b	      0x488b542408	                mov rdx, qword [rsp + 8]	        43	thermal_helpers.c	FUNCTION_1
+0x40000a0	    0x654833142528	                xor rdx, qword gs:[0x28]	        43	thermal_helpers.c	FUNCTION_1
+0x40000a9	            0x750c	                           jne 0x40000b7	        43	thermal_helpers.c	FUNCTION_1
+0x40000ab	        0x4883c410	                           add rsp, 0x10	        43	thermal_helpers.c	FUNCTION_1
+0x40000af	              0x5b	                                 pop rbx	        43	thermal_helpers.c	FUNCTION_1
+0x40000b0	              0xc3	                                     ret	        43	thermal_helpers.c	FUNCTION_1
+0x40000b1	        0x8b442404	                mov eax, dword [rsp + 4]	        43	thermal_helpers.c	FUNCTION_1
+0x40000b5	            0xebe4	                           jmp 0x400009b	        43	thermal_helpers.c	FUNCTION_1
+0x40000b7	      0xe800000000	                          call 0x40000bc	        43	thermal_helpers.c	FUNCTION_1
+get_thermal_instance	FOR,0:WHILE,0:CALL,4:ELSE,0:SWITCH,0:DO,0:IF,0:functions,1	45
+0x4000100	            0x4157	                                push r15	        49	thermal_helpers.c	FUNCTION_2
+0x4000102	            0x4156	                                push r14	        49	thermal_helpers.c	FUNCTION_2
+0x4000104	          0x4189d6	                           mov r14d, edx	        49	thermal_helpers.c	FUNCTION_2
+0x4000107	            0x4155	                                push r13	        49	thermal_helpers.c	FUNCTION_2
+0x4000109	          0x4989f5	                            mov r13, rsi	        49	thermal_helpers.c	FUNCTION_2
+0x400010c	            0x4154	                                push r12	        49	thermal_helpers.c	FUNCTION_2
+0x400010e	    0x4c8da7a80300	                  lea r12, [rdi + 0x3a8]	        53	thermal_helpers.c	FUNCTION_2	CALL_1
+0x4000115	              0x55	                                push rbp	        49	thermal_helpers.c	FUNCTION_2
+0x4000116	    0x4d8dbd100300	                  lea r15, [r13 + 0x310]	        54	thermal_helpers.c	FUNCTION_2	CALL_2
+0x400011d	              0x53	                                push rbx	        49	thermal_helpers.c	FUNCTION_2
+0x400011e	          0x4889fd	                            mov rbp, rdi	        49	thermal_helpers.c	FUNCTION_2
+0x4000121	          0x4c89e7	                            mov rdi, r12	        53	thermal_helpers.c	FUNCTION_2	CALL_1
+0x4000124	      0xe800000000	                          call 0x4000129	        53	thermal_helpers.c	FUNCTION_2	CALL_1
+0x4000129	          0x4c89ff	                            mov rdi, r15	        54	thermal_helpers.c	FUNCTION_2	CALL_2
+0x400012c	      0xe800000000	                          call 0x4000131	        54	thermal_helpers.c	FUNCTION_2	CALL_2
+0x4000131	    0x488b85880300	           mov rax, qword [rbp + 0x388] 	        56	thermal_helpers.c	FUNCTION_2	FUNCTION_1
+0x4000138	    0x488d8d880300	                  lea rcx, [rbp + 0x388]	        56	thermal_helpers.c	FUNCTION_2	FUNCTION_1
+0x400013f	          0x4839c1	                            cmp rcx, rax	        56	thermal_helpers.c	FUNCTION_2	FUNCTION_1
+0x4000142	            0x744c	                            je 0x4000190	        56	thermal_helpers.c	FUNCTION_2	FUNCTION_1
+0x4000144	    0x488d9848ffff	                   lea rbx, [rax - 0xb8]	        56	thermal_helpers.c	FUNCTION_2	FUNCTION_1
+0x400014b	            0xeb13	                           jmp 0x4000160	        56	thermal_helpers.c	FUNCTION_2	FUNCTION_1
+0x400014d	    0x488b83b80000	            mov rax, qword [rbx + 0xb8] 	        56	thermal_helpers.c	FUNCTION_2	FUNCTION_1
+0x4000154	          0x4839c1	                            cmp rcx, rax	        56	thermal_helpers.c	FUNCTION_2	FUNCTION_1
+0x4000157	    0x488d9848ffff	                   lea rbx, [rax - 0xb8]	        56	thermal_helpers.c	FUNCTION_2	FUNCTION_1
+0x400015e	            0x7430	                            je 0x4000190	        56	thermal_helpers.c	FUNCTION_2	FUNCTION_1
+0x4000160	        0x483b6b18	            cmp rbp, qword [rbx + 0x18] 	        57	thermal_helpers.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000164	            0x75e7	                           jne 0x400014d	        57	thermal_helpers.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000166	        0x44397328	           cmp dword [rbx + 0x28], r14d 	        57	thermal_helpers.c	FUNCTION_2	FUNCTION_1	IF_1
+0x400016a	            0x75e1	                           jne 0x400014d	        57	thermal_helpers.c	FUNCTION_2	FUNCTION_1	IF_1
+0x400016c	        0x4c3b6b20	            cmp r13, qword [rbx + 0x20] 	        57	thermal_helpers.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000170	            0x75db	                           jne 0x400014d	        57	thermal_helpers.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000172	          0x4c89ff	                            mov rdi, r15	        63	thermal_helpers.c	FUNCTION_2	CALL_3
+0x4000175	      0xe800000000	                          call 0x400017a	        63	thermal_helpers.c	FUNCTION_2	CALL_3
+0x400017a	          0x4c89e7	                            mov rdi, r12	        64	thermal_helpers.c	FUNCTION_2	CALL_4
+0x400017d	      0xe800000000	                          call 0x4000182	        64	thermal_helpers.c	FUNCTION_2	CALL_4
+0x4000182	          0x4889d8	                            mov rax, rbx	        67	thermal_helpers.c	FUNCTION_2
+0x4000185	              0x5b	                                 pop rbx	        67	thermal_helpers.c	FUNCTION_2
+0x4000186	              0x5d	                                 pop rbp	        67	thermal_helpers.c	FUNCTION_2
+0x4000187	            0x415c	                                 pop r12	        67	thermal_helpers.c	FUNCTION_2
+0x4000189	            0x415d	                                 pop r13	        67	thermal_helpers.c	FUNCTION_2
+0x400018b	            0x415e	                                 pop r14	        67	thermal_helpers.c	FUNCTION_2
+0x400018d	            0x415f	                                 pop r15	        67	thermal_helpers.c	FUNCTION_2
+0x400018f	              0xc3	                                     ret	        67	thermal_helpers.c	FUNCTION_2
+0x4000190	            0x31db	                            xor ebx, ebx	        51	thermal_helpers.c	FUNCTION_2
+0x4000192	            0xebde	                           jmp 0x4000172	        51	thermal_helpers.c	FUNCTION_2
+thermal_zone_get_offset	FOR,0:WHILE,0:CALL,0:ELSE,0:SWITCH,0:DO,0:IF,1:functions,0	9
+0x40000e0	          0x4885ff	                           test rdi, rdi	       225	thermal_helpers.c	FUNCTION_7	IF_1
+0x40000e3	            0x7410	                            je 0x40000f5	       225	thermal_helpers.c	FUNCTION_7	IF_1
+0x40000e5	    0x488b87700300	           mov rax, qword [rdi + 0x370] 	       225	thermal_helpers.c	FUNCTION_7	IF_1
+0x40000ec	          0x4885c0	                           test rax, rax	       225	thermal_helpers.c	FUNCTION_7	IF_1
+0x40000ef	            0x7404	                            je 0x40000f5	       225	thermal_helpers.c	FUNCTION_7	IF_1
+0x40000f1	          0x8b4044	            mov eax, dword [rax + 0x44] 	       226	thermal_helpers.c	FUNCTION_7	IF_1
+0x40000f4	              0xc3	                                     ret	       226	thermal_helpers.c	FUNCTION_7	IF_1
+0x40000f5	            0x31c0	                            xor eax, eax	       227	thermal_helpers.c	FUNCTION_7
+0x40000f7	              0xc3	                                     ret	       228	thermal_helpers.c	FUNCTION_7
+thermal_zone_get_temp	FOR,1:WHILE,0:CALL,7:ELSE,0:SWITCH,0:DO,0:IF,4:functions,0	29
+0x4000290	          0x4885ff	                           test rdi, rdi	        87	thermal_helpers.c	FUNCTION_3	IF_1	CALL_1
+0x4000293	            0x4154	                                push r12	        81	thermal_helpers.c	FUNCTION_3
+0x4000295	              0x55	                                push rbp	        81	thermal_helpers.c	FUNCTION_3
+0x4000296	              0x53	                                push rbx	        81	thermal_helpers.c	FUNCTION_3
+0x4000297	      0xbbeaffffff	                     mov ebx, 0xffffffea	        82	thermal_helpers.c	FUNCTION_3
+0x400029c	            0x744c	                            je 0x40002ea	        87	thermal_helpers.c	FUNCTION_3	IF_1	CALL_1
+0x400029e	    0x4881ff00f0ff	             cmp rdi, 0xfffffffffffff000	        87	thermal_helpers.c	FUNCTION_3	IF_1	CALL_1
+0x40002a5	            0x7743	                            ja 0x40002ea	        87	thermal_helpers.c	FUNCTION_3	IF_1	CALL_1
+0x40002a7	    0x488b87680300	           mov rax, qword [rdi + 0x368] 	        87	thermal_helpers.c	FUNCTION_3	IF_1	CALL_1
+0x40002ae	      0x4883781000	               cmp qword [rax + 0x10], 0	        87	thermal_helpers.c	FUNCTION_3	IF_1	CALL_1
+0x40002b3	            0x7435	                            je 0x40002ea	        87	thermal_helpers.c	FUNCTION_3	IF_1	CALL_1
+0x40002b5	    0x4c8da7a80300	                  lea r12, [rdi + 0x3a8]	        90	thermal_helpers.c	FUNCTION_3	CALL_2
+0x40002bc	          0x4889fb	                            mov rbx, rdi	        90	thermal_helpers.c	FUNCTION_3	CALL_2
+0x40002bf	          0x4889f5	                            mov rbp, rsi	        90	thermal_helpers.c	FUNCTION_3	CALL_2
+0x40002c2	          0x4c89e7	                            mov rdi, r12	        90	thermal_helpers.c	FUNCTION_3	CALL_2
+0x40002c5	      0xe800000000	                          call 0x40002ca	        90	thermal_helpers.c	FUNCTION_3	CALL_2
+0x40002ca	    0x488b83680300	           mov rax, qword [rbx + 0x368] 	        92	thermal_helpers.c	FUNCTION_3	CALL_3
+0x40002d1	          0x4889df	                            mov rdi, rbx	        92	thermal_helpers.c	FUNCTION_3	CALL_3
+0x40002d4	          0x4889ee	                            mov rsi, rbp	        92	thermal_helpers.c	FUNCTION_3	CALL_3
+0x40002d7	        0x488b4010	            mov rax, qword [rax + 0x10] 	        92	thermal_helpers.c	FUNCTION_3	CALL_3
+0x40002db	      0xe800000000	                          call 0x40002e0	        92	thermal_helpers.c	FUNCTION_3	CALL_3
+0x40002e0	          0x4c89e7	                            mov rdi, r12	       113	thermal_helpers.c	FUNCTION_3	CALL_7
+0x40002e3	            0x89c3	                            mov ebx, eax	        92	thermal_helpers.c	FUNCTION_3	CALL_3
+0x40002e5	      0xe800000000	                          call 0x40002ea	       113	thermal_helpers.c	FUNCTION_3	CALL_7
+0x40002ea	            0x89d8	                            mov eax, ebx	       116	thermal_helpers.c	FUNCTION_3
+0x40002ec	              0x5b	                                 pop rbx	       116	thermal_helpers.c	FUNCTION_3
+0x40002ed	              0x5d	                                 pop rbp	       116	thermal_helpers.c	FUNCTION_3
+0x40002ee	            0x415c	                                 pop r12	       116	thermal_helpers.c	FUNCTION_3
+0x40002f0	              0xc3	                                     ret	       116	thermal_helpers.c	FUNCTION_3
+thermal_zone_set_trips	FOR,1:WHILE,0:CALL,7:ELSE,0:SWITCH,0:DO,0:IF,5:functions,0	88
+0x4000300	            0x4156	                                push r14	       120	thermal_helpers.c	FUNCTION_4
+0x4000302	            0x4155	                                push r13	       120	thermal_helpers.c	FUNCTION_4
+0x4000304	            0x4154	                                push r12	       120	thermal_helpers.c	FUNCTION_4
+0x4000306	    0x4c8da7a80300	                  lea r12, [rdi + 0x3a8]	       126	thermal_helpers.c	FUNCTION_4	CALL_1
+0x400030d	              0x55	                                push rbp	       120	thermal_helpers.c	FUNCTION_4
+0x400030e	              0x53	                                push rbx	       120	thermal_helpers.c	FUNCTION_4
+0x400030f	          0x4889fb	                            mov rbx, rdi	       120	thermal_helpers.c	FUNCTION_4
+0x4000312	          0x4c89e7	                            mov rdi, r12	       126	thermal_helpers.c	FUNCTION_4	CALL_1
+0x4000315	        0x4883ec10	                           sub rsp, 0x10	       120	thermal_helpers.c	FUNCTION_4
+0x4000319	    0x65488b042528	                mov rax, qword gs:[0x28]	       120	thermal_helpers.c	FUNCTION_4
+0x4000322	      0x4889442408	                mov qword [rsp + 8], rax	       120	thermal_helpers.c	FUNCTION_4
+0x4000327	            0x31c0	                            xor eax, eax	       120	thermal_helpers.c	FUNCTION_4
+0x4000329	      0xe800000000	                          call 0x400032e	       126	thermal_helpers.c	FUNCTION_4	CALL_1
+0x400032e	    0x488b83680300	           mov rax, qword [rbx + 0x368] 	       128	thermal_helpers.c	FUNCTION_4	IF_1
+0x4000335	      0x4883781800	               cmp qword [rax + 0x18], 0	       128	thermal_helpers.c	FUNCTION_4	IF_1
+0x400033a	     0xf84bf000000	                            je 0x40003ff	       128	thermal_helpers.c	FUNCTION_4	IF_1
+0x4000340	      0x4883784800	               cmp qword [rax + 0x48], 0	       128	thermal_helpers.c	FUNCTION_4	IF_1
+0x4000345	     0xf84b4000000	                            je 0x40003ff	       128	thermal_helpers.c	FUNCTION_4	IF_1
+0x400034b	    0x8b9330030000	           mov edx, dword [rbx + 0x330] 	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x4000351	            0x85d2	                           test edx, edx	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x4000353	     0xf8eea000000	                           jle 0x4000443	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x4000359	            0x31ed	                            xor ebp, ebp	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x400035b	    0x41bdffffff7f	                    mov r13d, 0x7fffffff	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x4000361	    0x41be01000080	                    mov r14d, 0x80000001	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x4000367	            0xeb07	                           jmp 0x4000370	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x4000369	    0x488b83680300	           mov rax, qword [rbx + 0x368] 	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x4000370	          0x4889e2	                            mov rdx, rsp	       134	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_2
+0x4000373	            0x89ee	                            mov esi, ebp	       134	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_2
+0x4000375	          0x4889df	                            mov rdi, rbx	       134	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_2
+0x4000378	        0x488b4038	            mov rax, qword [rax + 0x38] 	       134	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_2
+0x400037c	      0xe800000000	                          call 0x4000381	       134	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_2
+0x4000381	    0x488b83680300	           mov rax, qword [rbx + 0x368] 	       135	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_3
+0x4000388	      0x488d542404	                      lea rdx, [rsp + 4]	       135	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_3
+0x400038d	            0x89ee	                            mov esi, ebp	       135	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_3
+0x400038f	          0x4889df	                            mov rdi, rbx	       135	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_3
+0x4000392	        0x488b4048	            mov rax, qword [rax + 0x48] 	       135	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_3
+0x4000396	      0xe800000000	                          call 0x400039b	       135	thermal_helpers.c	FUNCTION_4	FOR_1	CALL_3
+0x400039b	          0x8b0424	                    mov eax, dword [rsp]	       137	thermal_helpers.c	FUNCTION_4	FOR_1
+0x400039e	    0x8b8b48030000	           mov ecx, dword [rbx + 0x348] 	       139	thermal_helpers.c	FUNCTION_4	FOR_1	IF_2
+0x40003a4	            0x89c2	                            mov edx, eax	       137	thermal_helpers.c	FUNCTION_4	FOR_1
+0x40003a6	        0x2b542404	                sub edx, dword [rsp + 4]	       137	thermal_helpers.c	FUNCTION_4	FOR_1
+0x40003aa	            0x39ca	                            cmp edx, ecx	       139	thermal_helpers.c	FUNCTION_4	FOR_1	IF_2
+0x40003ac	            0x7d07	                           jge 0x40003b5	       139	thermal_helpers.c	FUNCTION_4	FOR_1	IF_2
+0x40003ae	          0x4439f2	                           cmp edx, r14d	       139	thermal_helpers.c	FUNCTION_4	FOR_1	IF_2
+0x40003b1	        0x440f4ff2	                         cmovg r14d, edx	       139	thermal_helpers.c	FUNCTION_4	FOR_1	IF_2
+0x40003b5	          0x4439e8	                           cmp eax, r13d	       142	thermal_helpers.c	FUNCTION_4	FOR_1	IF_3
+0x40003b8	            0x7d06	                           jge 0x40003c0	       142	thermal_helpers.c	FUNCTION_4	FOR_1	IF_3
+0x40003ba	            0x39c8	                            cmp eax, ecx	       142	thermal_helpers.c	FUNCTION_4	FOR_1	IF_3
+0x40003bc	        0x440f4fe8	                         cmovg r13d, eax	       142	thermal_helpers.c	FUNCTION_4	FOR_1	IF_3
+0x40003c0	          0x83c501	                              add ebp, 1	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x40003c3	    0x39ab30030000	           cmp dword [rbx + 0x330], ebp 	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x40003c9	            0x7f9e	                            jg 0x4000369	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x40003cb	    0x4439b3580300	          cmp dword [rbx + 0x358], r14d 	       147	thermal_helpers.c	FUNCTION_4	IF_4
+0x40003d2	            0x7450	                            je 0x4000424	       147	thermal_helpers.c	FUNCTION_4	IF_4
+0x40003d4	    0x488b83680300	           mov rax, qword [rbx + 0x368] 	       160	thermal_helpers.c	FUNCTION_4	CALL_5
+0x40003db	    0x4489b3580300	           mov dword [rbx + 0x358], r14d	       150	thermal_helpers.c	FUNCTION_4
+0x40003e2	          0x4489ea	                           mov edx, r13d	       160	thermal_helpers.c	FUNCTION_4	CALL_5
+0x40003e5	    0x4489ab5c0300	           mov dword [rbx + 0x35c], r13d	       151	thermal_helpers.c	FUNCTION_4
+0x40003ec	          0x4489f6	                           mov esi, r14d	       160	thermal_helpers.c	FUNCTION_4	CALL_5
+0x40003ef	          0x4889df	                            mov rdi, rbx	       160	thermal_helpers.c	FUNCTION_4	CALL_5
+0x40003f2	        0x488b4018	            mov rax, qword [rax + 0x18] 	       160	thermal_helpers.c	FUNCTION_4	CALL_5
+0x40003f6	      0xe800000000	                          call 0x40003fb	       160	thermal_helpers.c	FUNCTION_4	CALL_5
+0x40003fb	            0x85c0	                           test eax, eax	       161	thermal_helpers.c	FUNCTION_4	IF_5
+0x40003fd	            0x7530	                           jne 0x400042f	       161	thermal_helpers.c	FUNCTION_4	IF_5
+0x40003ff	          0x4c89e7	                            mov rdi, r12	       165	thermal_helpers.c	FUNCTION_4	CALL_7
+0x4000402	      0xe800000000	                          call 0x4000407	       165	thermal_helpers.c	FUNCTION_4	CALL_7
+0x4000407	      0x488b442408	                mov rax, qword [rsp + 8]	       166	thermal_helpers.c	FUNCTION_4
+0x400040c	    0x654833042528	                xor rax, qword gs:[0x28]	       166	thermal_helpers.c	FUNCTION_4
+0x4000415	            0x753d	                           jne 0x4000454	       166	thermal_helpers.c	FUNCTION_4
+0x4000417	        0x4883c410	                           add rsp, 0x10	       166	thermal_helpers.c	FUNCTION_4
+0x400041b	              0x5b	                                 pop rbx	       166	thermal_helpers.c	FUNCTION_4
+0x400041c	              0x5d	                                 pop rbp	       166	thermal_helpers.c	FUNCTION_4
+0x400041d	            0x415c	                                 pop r12	       166	thermal_helpers.c	FUNCTION_4
+0x400041f	            0x415d	                                 pop r13	       166	thermal_helpers.c	FUNCTION_4
+0x4000421	            0x415e	                                 pop r14	       166	thermal_helpers.c	FUNCTION_4
+0x4000423	              0xc3	                                     ret	       166	thermal_helpers.c	FUNCTION_4
+0x4000424	    0x4439ab5c0300	          cmp dword [rbx + 0x35c], r13d 	       147	thermal_helpers.c	FUNCTION_4	IF_4
+0x400042b	            0x75a7	                           jne 0x40003d4	       147	thermal_helpers.c	FUNCTION_4	IF_4
+0x400042d	            0xebd0	                           jmp 0x40003ff	       147	thermal_helpers.c	FUNCTION_4	IF_4
+0x400042f	        0x488d7b18	                   lea rdi, [rbx + 0x18]	       162	thermal_helpers.c	FUNCTION_4	CALL_6
+0x4000433	            0x89c2	                            mov edx, eax	       162	thermal_helpers.c	FUNCTION_4	CALL_6
+0x4000435	    0x48c7c6000000	                              mov rsi, 0	       162	thermal_helpers.c	FUNCTION_4	CALL_6
+0x400043c	      0xe800000000	                          call 0x4000441	       162	thermal_helpers.c	FUNCTION_4	CALL_6
+0x4000441	            0xebbc	                           jmp 0x40003ff	       162	thermal_helpers.c	FUNCTION_4	CALL_6
+0x4000443	    0x41bdffffff7f	                    mov r13d, 0x7fffffff	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x4000449	    0x41be01000080	                    mov r14d, 0x80000001	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x400044f	      0xe977ffffff	                           jmp 0x40003cb	       131	thermal_helpers.c	FUNCTION_4	FOR_1
+0x4000454	      0xe800000000	                  call section_end..text	       166	thermal_helpers.c	FUNCTION_4

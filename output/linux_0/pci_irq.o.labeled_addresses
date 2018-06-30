@@ -1,0 +1,266 @@
+acpi_pci_irq_disable	FOR,0:CALL,6:WHILE,0:SWITCH,0:IF,6:DO,0:ELSE,1:functions,0	38
+0x40006b0	         0xfb67751	           movzx esi, byte [rdi + 0x51] 	       506	pci_irq.c	FUNCTION_12
+0x40006b4	          0x4084f6	                           test sil, sil	       507	pci_irq.c	FUNCTION_12	IF_1
+0x40006b7	            0x746a	                            je 0x4000723	       507	pci_irq.c	FUNCTION_12	IF_1
+0x40006b9	    0xf6873c060000	          test byte [rdi + 0x63c], 0x10 	       507	pci_irq.c	FUNCTION_12	IF_1
+0x40006c0	            0x7461	                            je 0x4000723	       507	pci_irq.c	FUNCTION_12	IF_1
+0x40006c2	    0x8b8774030000	           mov eax, dword [rdi + 0x374] 	       507	pci_irq.c	FUNCTION_12	IF_1
+0x40006c8	            0x85c0	                           test eax, eax	       507	pci_irq.c	FUNCTION_12	IF_1
+0x40006ca	            0x7457	                            je 0x4000723	       507	pci_irq.c	FUNCTION_12	IF_1
+0x40006cc	    0xf6876c010000	              test byte [rdi + 0x16c], 8	       511	pci_irq.c	FUNCTION_12	IF_2
+0x40006d3	            0x754e	                           jne 0x4000723	       511	pci_irq.c	FUNCTION_12	IF_2
+0x40006d5	    0x83bf3c020000	              cmp dword [rdi + 0x23c], 3	       514	pci_irq.c	FUNCTION_12	IF_3
+0x40006dc	            0x7445	                            je 0x4000723	       514	pci_irq.c	FUNCTION_12	IF_3
+0x40006de	            0x4154	                                push r12	       501	pci_irq.c	FUNCTION_12
+0x40006e0	              0x55	                                push rbp	       501	pci_irq.c	FUNCTION_12
+0x40006e1	              0x53	                                push rbx	       501	pci_irq.c	FUNCTION_12
+0x40006e2	          0x4889fb	                            mov rbx, rdi	       501	pci_irq.c	FUNCTION_12
+0x40006e5	      0xe836fcffff	            call sym.acpi_pci_irq_lookup	       518	pci_irq.c	FUNCTION_12	CALL_1
+0x40006ea	          0x4885c0	                           test rax, rax	       519	pci_irq.c	FUNCTION_12	IF_4
+0x40006ed	          0x4889c5	                            mov rbp, rax	       518	pci_irq.c	FUNCTION_12	CALL_1
+0x40006f0	            0x742d	                            je 0x400071f	       519	pci_irq.c	FUNCTION_12	IF_4
+0x40006f2	        0x488b7810	            mov rdi, qword [rax + 0x10] 	       522	pci_irq.c	FUNCTION_12	IF_5
+0x40006f6	          0x4885ff	                           test rdi, rdi	       522	pci_irq.c	FUNCTION_12	IF_5
+0x40006f9	            0x742a	                            je 0x4000725	       522	pci_irq.c	FUNCTION_12	IF_5
+0x40006fb	      0xe800000000	                          call 0x4000700	       523	pci_irq.c	FUNCTION_12	CALL_2
+0x4000700	          0x4189c4	                           mov r12d, eax	       523	pci_irq.c	FUNCTION_12	CALL_2
+0x4000703	          0x4889ef	                            mov rdi, rbp	       527	pci_irq.c	FUNCTION_12	CALL_3
+0x4000706	      0xe800000000	                          call 0x400070b	       527	pci_irq.c	FUNCTION_12	CALL_3
+0x400070b	          0x4585e4	                         test r12d, r12d	       535	pci_irq.c	FUNCTION_12	IF_6
+0x400070e	            0x780f	                            js 0x400071f	       535	pci_irq.c	FUNCTION_12	IF_6
+0x4000710	          0x4489e7	                           mov edi, r12d	       536	pci_irq.c	FUNCTION_12	IF_6	CALL_6
+0x4000713	      0xe800000000	                          call 0x4000718	       536	pci_irq.c	FUNCTION_12	IF_6	CALL_6
+0x4000718	    0x80a33c060000	            and byte [rbx + 0x63c], 0xef	       537	pci_irq.c	FUNCTION_12	IF_6
+0x400071f	              0x5b	                                 pop rbx	       539	pci_irq.c	FUNCTION_12
+0x4000720	              0x5d	                                 pop rbp	       539	pci_irq.c	FUNCTION_12
+0x4000721	            0x415c	                                 pop r12	       539	pci_irq.c	FUNCTION_12
+0x4000723	            0xf3c3	                                     ret	       539	pci_irq.c	FUNCTION_12
+0x4000725	        0x448b6018	           mov r12d, dword [rax + 0x18] 	       525	pci_irq.c	FUNCTION_12	ELSE_1
+0x4000729	            0xebd8	                           jmp 0x4000703	       525	pci_irq.c	FUNCTION_12	ELSE_1
+acpi_pci_irq_enable	FOR,0:CALL,17:WHILE,0:SWITCH,0:IF,11:DO,0:ELSE,3:functions,0	110
+0x40004d0	            0x4155	                                push r13	       409	pci_irq.c	FUNCTION_11
+0x40004d2	            0x4154	                                push r12	       409	pci_irq.c	FUNCTION_11
+0x40004d4	              0x55	                                push rbp	       409	pci_irq.c	FUNCTION_11
+0x40004d5	              0x53	                                push rbx	       409	pci_irq.c	FUNCTION_11
+0x40004d6	        0x4883ec30	                           sub rsp, 0x30	       409	pci_irq.c	FUNCTION_11
+0x40004da	         0xfb66f51	           movzx ebp, byte [rdi + 0x51] 	       427	pci_irq.c	FUNCTION_11
+0x40004de	    0x65488b042528	                mov rax, qword gs:[0x28]	       409	pci_irq.c	FUNCTION_11
+0x40004e7	      0x4889442428	             mov qword [rsp + 0x28], rax	       409	pci_irq.c	FUNCTION_11
+0x40004ec	            0x31c0	                            xor eax, eax	       409	pci_irq.c	FUNCTION_11
+0x40004ee	            0x31c0	                            xor eax, eax	       421	pci_irq.c	FUNCTION_11
+0x40004f0	    0x833d00000000	               cmp dword [0x040004f7], 4	       421	pci_irq.c	FUNCTION_11
+0x40004f7	    0xc74424080000	                  mov dword [rsp + 8], 0	       413	pci_irq.c	FUNCTION_11
+0x40004ff	    0x48c744241000	               mov qword [rsp + 0x10], 0	       423	pci_irq.c	FUNCTION_11
+0x4000508	           0xf95c0	                                setne al	       421	pci_irq.c	FUNCTION_11
+0x400050b	          0x4084ed	                           test bpl, bpl	       428	pci_irq.c	FUNCTION_11	IF_1
+0x400050e	        0x8944240c	              mov dword [rsp + 0xc], eax	       421	pci_irq.c	FUNCTION_11
+0x4000512	     0xf84b8000000	                            je 0x40005d0	       428	pci_irq.c	FUNCTION_11	IF_1
+0x4000518	    0xf6873c060000	          test byte [rdi + 0x63c], 0x10 	       435	pci_irq.c	FUNCTION_11	IF_2
+0x400051f	          0x4889fb	                            mov rbx, rdi	       435	pci_irq.c	FUNCTION_11	IF_2
+0x4000522	            0x740e	                            je 0x4000532	       435	pci_irq.c	FUNCTION_11	IF_2
+0x4000524	    0x8b8774030000	           mov eax, dword [rdi + 0x374] 	       435	pci_irq.c	FUNCTION_11	IF_2
+0x400052a	            0x85c0	                           test eax, eax	       435	pci_irq.c	FUNCTION_11	IF_2
+0x400052c	     0xf859e000000	                           jne 0x40005d0	       435	pci_irq.c	FUNCTION_11	IF_2
+0x4000532	        0x400fb6f5	                          movzx esi, bpl	       438	pci_irq.c	FUNCTION_11	CALL_3
+0x4000536	          0x4889df	                            mov rdi, rbx	       438	pci_irq.c	FUNCTION_11	CALL_3
+0x4000539	      0xe8e2fdffff	            call sym.acpi_pci_irq_lookup	       438	pci_irq.c	FUNCTION_11	CALL_3
+0x400053e	          0x4885c0	                           test rax, rax	       439	pci_irq.c	FUNCTION_11	IF_3
+0x4000541	          0x4989c4	                            mov r12, rax	       438	pci_irq.c	FUNCTION_11	CALL_3
+0x4000544	     0xf84a7000000	                            je 0x40005f1	       439	pci_irq.c	FUNCTION_11	IF_3
+0x400054a	        0x488b7810	            mov rdi, qword [rax + 0x10] 	       450	pci_irq.c	FUNCTION_11	IF_5	IF_6
+0x400054e	          0x4885ff	                           test rdi, rdi	       450	pci_irq.c	FUNCTION_11	IF_5	IF_6
+0x4000551	     0xf84e2000000	                            je 0x4000639	       450	pci_irq.c	FUNCTION_11	IF_5	IF_6
+0x4000557	          0x8b7018	            mov esi, dword [rax + 0x18] 	       451	pci_irq.c	FUNCTION_11	IF_5	IF_6	CALL_4
+0x400055a	      0x4c8d442410	                    lea r8, [rsp + 0x10]	       451	pci_irq.c	FUNCTION_11	IF_5	IF_6	CALL_4
+0x400055f	      0x488d4c240c	                    lea rcx, [rsp + 0xc]	       451	pci_irq.c	FUNCTION_11	IF_5	IF_6	CALL_4
+0x4000564	      0x488d542408	                      lea rdx, [rsp + 8]	       451	pci_irq.c	FUNCTION_11	IF_5	IF_6	CALL_4
+0x4000569	      0xe800000000	                          call 0x400056e	       451	pci_irq.c	FUNCTION_11	IF_5	IF_6	CALL_4
+0x400056e	            0x85c0	                           test eax, eax	       460	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7
+0x4000570	     0xf888b000000	                            js 0x4000601	       460	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7
+0x4000576	    0x4c8daba00000	                   lea r13, [rbx + 0xa0]	       476	pci_irq.c	FUNCTION_11	CALL_10
+0x400057d	        0x8b4c240c	              mov ecx, dword [rsp + 0xc]	       476	pci_irq.c	FUNCTION_11	CALL_10
+0x4000581	        0x8b542408	                mov edx, dword [rsp + 8]	       476	pci_irq.c	FUNCTION_11	CALL_10
+0x4000585	            0x89c6	                            mov esi, eax	       476	pci_irq.c	FUNCTION_11	CALL_10
+0x4000587	          0x4c89ef	                            mov rdi, r13	       476	pci_irq.c	FUNCTION_11	CALL_10
+0x400058a	      0xe800000000	                          call 0x400058f	       476	pci_irq.c	FUNCTION_11	CALL_10
+0x400058f	            0x85c0	                           test eax, eax	       477	pci_irq.c	FUNCTION_11	IF_10
+0x4000591	     0xf88dd000000	                            js 0x4000674	       477	pci_irq.c	FUNCTION_11	IF_10
+0x4000597	    0x808b3c060000	             or byte [rbx + 0x63c], 0x10	       484	pci_irq.c	FUNCTION_11
+0x400059e	    0x898374030000	            mov dword [rbx + 0x374], eax	       483	pci_irq.c	FUNCTION_11
+0x40005a4	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       486	pci_irq.c	FUNCTION_11	IF_11
+0x40005a9	          0x4885c9	                           test rcx, rcx	       486	pci_irq.c	FUNCTION_11	IF_11
+0x40005ac	     0xf8480000000	                            je 0x4000632	       486	pci_irq.c	FUNCTION_11	IF_11
+0x40005b2	      0x488d7c2418	                   lea rdi, [rsp + 0x18]	       487	pci_irq.c	FUNCTION_11	CALL_14
+0x40005b7	    0x48c7c2000000	                              mov rdx, 0	       487	pci_irq.c	FUNCTION_11	CALL_14
+0x40005be	      0xbe10000000	                           mov esi, 0x10	       487	pci_irq.c	FUNCTION_11	CALL_14
+0x40005c3	      0xe800000000	                          call 0x40005c8	       487	pci_irq.c	FUNCTION_11	CALL_14
+0x40005c8	          0x4c89e7	                            mov rdi, r12	       496	pci_irq.c	FUNCTION_11	CALL_17
+0x40005cb	      0xe800000000	                          call 0x40005d0	       496	pci_irq.c	FUNCTION_11	CALL_17
+0x40005d0	            0x31c0	                            xor eax, eax	       497	pci_irq.c	FUNCTION_11
+0x40005d2	      0x488b4c2428	            mov rcx, qword [rsp + 0x28] 	       498	pci_irq.c	FUNCTION_11
+0x40005d7	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       498	pci_irq.c	FUNCTION_11
+0x40005e0	     0xf85b8000000	                           jne 0x400069e	       498	pci_irq.c	FUNCTION_11
+0x40005e6	        0x4883c430	                           add rsp, 0x30	       498	pci_irq.c	FUNCTION_11
+0x40005ea	              0x5b	                                 pop rbx	       498	pci_irq.c	FUNCTION_11
+0x40005eb	              0x5d	                                 pop rbp	       498	pci_irq.c	FUNCTION_11
+0x40005ec	            0x415c	                                 pop r12	       498	pci_irq.c	FUNCTION_11
+0x40005ee	            0x415d	                                 pop r13	       498	pci_irq.c	FUNCTION_11
+0x40005f0	              0xc3	                                     ret	       498	pci_irq.c	FUNCTION_11
+0x40005f1	          0x8b4344	            mov eax, dword [rbx + 0x44] 	       444	pci_irq.c	FUNCTION_11	IF_3	IF_4
+0x40005f4	            0x89c2	                            mov edx, eax	       444	pci_irq.c	FUNCTION_11	IF_3	IF_4
+0x40005f6	          0xc1ea08	                              shr edx, 8	       444	pci_irq.c	FUNCTION_11	IF_3	IF_4
+0x40005f9	    0x81fa01010000	                          cmp edx, 0x101	       444	pci_irq.c	FUNCTION_11	IF_3	IF_4
+0x40005ff	            0x746a	                            je 0x400066b	       444	pci_irq.c	FUNCTION_11	IF_3	IF_4
+0x4000601	    0x81bb74030000	          cmp dword [rbx + 0x374], 0xff 	       398	pci_irq.c	FUNCTION_10	IF_1
+0x400060b	            0x7434	                            je 0x4000641	       398	pci_irq.c	FUNCTION_10	IF_1
+0x400060d	          0x8d5540	                   lea edx, [rbp + 0x40]	       469	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7	IF_9	CALL_7
+0x4000610	    0x488dbba00000	                   lea rdi, [rbx + 0xa0]	       469	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7	IF_9	CALL_7
+0x4000617	    0x48c7c6000000	                              mov rsi, 0	       469	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7	IF_9	CALL_7
+0x400061e	           0xfbed2	                           movsx edx, dl	       469	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7	IF_9	CALL_7
+0x4000621	      0xe800000000	                          call 0x4000626	       469	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7	IF_9	CALL_7
+0x4000626	          0x4c89e7	                            mov rdi, r12	       472	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7	CALL_9
+0x4000629	      0xe800000000	                          call 0x400062e	       472	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7	CALL_9
+0x400062e	            0x31c0	                            xor eax, eax	       473	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7
+0x4000630	            0xeba0	                           jmp 0x40005d2	       473	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7
+0x4000632	      0xc644241800	                mov byte [rsp + 0x18], 0	       489	pci_irq.c	FUNCTION_11	ELSE_3
+0x4000637	            0xeb8f	                           jmp 0x40005c8	       489	pci_irq.c	FUNCTION_11	ELSE_3
+0x4000639	          0x8b4018	            mov eax, dword [rax + 0x18] 	       456	pci_irq.c	FUNCTION_11	IF_5	ELSE_1
+0x400063c	      0xe92dffffff	                           jmp 0x400056e	       456	pci_irq.c	FUNCTION_11	IF_5	ELSE_1
+0x4000641	          0x8d5540	                   lea edx, [rbp + 0x40]	       400	pci_irq.c	FUNCTION_10	IF_1	CALL_1
+0x4000644	    0x488dbba00000	                   lea rdi, [rbx + 0xa0]	       400	pci_irq.c	FUNCTION_10	IF_1	CALL_1
+0x400064b	    0xc78374030000	    mov dword [rbx + 0x374], 0x80000000 	       399	pci_irq.c	FUNCTION_10	IF_1
+0x4000655	    0x48c7c6000000	                              mov rsi, 0	       400	pci_irq.c	FUNCTION_10	IF_1	CALL_1
+0x400065c	           0xfbed2	                           movsx edx, dl	       400	pci_irq.c	FUNCTION_10	IF_1	CALL_1
+0x400065f	      0xe800000000	                          call 0x4000664	       400	pci_irq.c	FUNCTION_10	IF_1	CALL_1
+0x4000664	            0x31c0	                            xor eax, eax	       466	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7	IF_8
+0x4000666	      0xe967ffffff	                           jmp 0x40005d2	       466	pci_irq.c	FUNCTION_11	ELSE_1	ELSE_2	IF_7	IF_8
+0x400066b	            0xa805	                              test al, 5	       444	pci_irq.c	FUNCTION_11	IF_3	IF_4
+0x400066d	            0x7592	                           jne 0x4000601	       444	pci_irq.c	FUNCTION_11	IF_3	IF_4
+0x400066f	      0xe95cffffff	                           jmp 0x40005d0	       444	pci_irq.c	FUNCTION_11	IF_3	IF_4
+0x4000674	          0x8d5540	                   lea edx, [rbp + 0x40]	       478	pci_irq.c	FUNCTION_11	IF_10	CALL_11
+0x4000677	    0x48c7c6000000	                              mov rsi, 0	       478	pci_irq.c	FUNCTION_11	IF_10	CALL_11
+0x400067e	          0x4c89ef	                            mov rdi, r13	       478	pci_irq.c	FUNCTION_11	IF_10	CALL_11
+0x4000681	        0x89442404	                mov dword [rsp + 4], eax	       478	pci_irq.c	FUNCTION_11	IF_10	CALL_11
+0x4000685	           0xfbed2	                           movsx edx, dl	       478	pci_irq.c	FUNCTION_11	IF_10	CALL_11
+0x4000688	      0xe800000000	                          call 0x400068d	       478	pci_irq.c	FUNCTION_11	IF_10	CALL_11
+0x400068d	          0x4c89e7	                            mov rdi, r12	       480	pci_irq.c	FUNCTION_11	IF_10	CALL_13
+0x4000690	      0xe800000000	                          call 0x4000695	       480	pci_irq.c	FUNCTION_11	IF_10	CALL_13
+0x4000695	        0x8b442404	                mov eax, dword [rsp + 4]	       481	pci_irq.c	FUNCTION_11	IF_10
+0x4000699	      0xe934ffffff	                           jmp 0x40005d2	       481	pci_irq.c	FUNCTION_11	IF_10
+0x400069e	      0xe800000000	                          call 0x40006a3	       498	pci_irq.c	FUNCTION_11
+acpi_pci_irq_lookup	FOR,0:CALL,15:WHILE,1:SWITCH,0:IF,4:DO,0:ELSE,0:functions,0	115
+0x4000320	            0x4155	                                push r13	       312	pci_irq.c	FUNCTION_7
+0x4000322	            0x4154	                                push r12	       312	pci_irq.c	FUNCTION_7
+0x4000324	          0x4989fd	                            mov r13, rdi	       312	pci_irq.c	FUNCTION_7
+0x4000327	              0x55	                                push rbp	       312	pci_irq.c	FUNCTION_7
+0x4000328	              0x53	                                push rbx	       312	pci_irq.c	FUNCTION_7
+0x4000329	          0x4189f4	                           mov r12d, esi	       312	pci_irq.c	FUNCTION_7
+0x400032c	        0x4883ec18	                           sub rsp, 0x18	       312	pci_irq.c	FUNCTION_7
+0x4000330	      0x488d542408	                      lea rdx, [rsp + 8]	       318	pci_irq.c	FUNCTION_7	CALL_1
+0x4000335	    0x48c744240800	                  mov qword [rsp + 8], 0	       313	pci_irq.c	FUNCTION_7
+0x400033e	    0x65488b042528	                mov rax, qword gs:[0x28]	       312	pci_irq.c	FUNCTION_7
+0x4000347	      0x4889442410	             mov qword [rsp + 0x10], rax	       312	pci_irq.c	FUNCTION_7
+0x400034c	            0x31c0	                            xor eax, eax	       312	pci_irq.c	FUNCTION_7
+0x400034e	      0xe8edfcffff	    call sym.acpi_pci_irq_find_prt_entry	       318	pci_irq.c	FUNCTION_7	CALL_1
+0x4000353	            0x85c0	                           test eax, eax	       319	pci_irq.c	FUNCTION_7	IF_1
+0x4000355	            0x7567	                           jne 0x40003be	       319	pci_irq.c	FUNCTION_7	IF_1
+0x4000357	      0x488b442408	                mov rax, qword [rsp + 8]	       319	pci_irq.c	FUNCTION_7	IF_1
+0x400035c	          0x4885c0	                           test rax, rax	       319	pci_irq.c	FUNCTION_7	IF_1
+0x400035f	            0x745d	                            je 0x40003be	       319	pci_irq.c	FUNCTION_7	IF_1
+0x4000361	    0x8b0d00000000	            mov ecx, dword [0x04000367] 	       283	pci_irq.c	FUNCTION_6	IF_1
+0x4000367	            0x85c9	                           test ecx, ecx	       283	pci_irq.c	FUNCTION_6	IF_1
+0x4000369	            0x7534	                           jne 0x400039f	       283	pci_irq.c	FUNCTION_6	IF_1
+0x400036b	    0x8b1500000000	            mov edx, dword [0x04000371] 	       283	pci_irq.c	FUNCTION_6	IF_1
+0x4000371	            0x85d2	                           test edx, edx	       283	pci_irq.c	FUNCTION_6	IF_1
+0x4000373	            0x752a	                           jne 0x400039f	       283	pci_irq.c	FUNCTION_6	IF_1
+0x4000375	        0x498b5510	            mov rdx, qword [r13 + 0x10] 	       286	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_1
+0x4000379	          0x4885d2	                           test rdx, rdx	       264	pci_irq.c	FUNCTION_5	FOR_1
+0x400037c	            0x7518	                           jne 0x4000396	       264	pci_irq.c	FUNCTION_5	FOR_1
+0x400037e	            0xeb1f	                           jmp 0x400039f	       264	pci_irq.c	FUNCTION_5	FOR_1
+0x4000380	    0xf6813a060000	              test byte [rcx + 0x63a], 3	       267	pci_irq.c	FUNCTION_5	FOR_1	IF_2
+0x4000387	     0xf85c4000000	                           jne 0x4000451	       267	pci_irq.c	FUNCTION_5	FOR_1	IF_2
+0x400038d	        0x488b5210	            mov rdx, qword [rdx + 0x10] 	       264	pci_irq.c	FUNCTION_5	FOR_1
+0x4000391	          0x4885d2	                           test rdx, rdx	       264	pci_irq.c	FUNCTION_5	FOR_1
+0x4000394	            0x7409	                            je 0x400039f	       264	pci_irq.c	FUNCTION_5	FOR_1
+0x4000396	        0x488b4a38	            mov rcx, qword [rdx + 0x38] 	       265	pci_irq.c	FUNCTION_5	FOR_1	IF_1
+0x400039a	          0x4885c9	                           test rcx, rcx	       265	pci_irq.c	FUNCTION_5	FOR_1	IF_1
+0x400039d	            0x75e1	                           jne 0x4000380	       265	pci_irq.c	FUNCTION_5	FOR_1	IF_1
+0x400039f	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       364	pci_irq.c	FUNCTION_7
+0x40003a4	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       364	pci_irq.c	FUNCTION_7
+0x40003ad	     0xf8517010000	                           jne 0x40004ca	       364	pci_irq.c	FUNCTION_7
+0x40003b3	        0x4883c418	                           add rsp, 0x18	       364	pci_irq.c	FUNCTION_7
+0x40003b7	              0x5b	                                 pop rbx	       364	pci_irq.c	FUNCTION_7
+0x40003b8	              0x5d	                                 pop rbp	       364	pci_irq.c	FUNCTION_7
+0x40003b9	            0x415c	                                 pop r12	       364	pci_irq.c	FUNCTION_7
+0x40003bb	            0x415d	                                 pop r13	       364	pci_irq.c	FUNCTION_7
+0x40003bd	              0xc3	                                     ret	       364	pci_irq.c	FUNCTION_7
+0x40003be	        0x498b4510	            mov rax, qword [r13 + 0x10] 	       332	pci_irq.c	FUNCTION_7
+0x40003c2	        0x488b6838	            mov rbp, qword [rax + 0x38] 	       332	pci_irq.c	FUNCTION_7
+0x40003c6	          0x4885ed	                           test rbp, rbp	       333	pci_irq.c	FUNCTION_7	WHILE_1
+0x40003c9	     0xf84f3000000	                            je 0x40004c2	       333	pci_irq.c	FUNCTION_7	WHILE_1
+0x40003cf	          0x4489e3	                           mov ebx, r12d	       333	pci_irq.c	FUNCTION_7	WHILE_1
+0x40003d2	            0xeb03	                           jmp 0x40003d7	       333	pci_irq.c	FUNCTION_7	WHILE_1
+0x40003d4	          0x4889c5	                            mov rbp, rax	       333	pci_irq.c	FUNCTION_7	WHILE_1
+0x40003d7	           0xfb6f3	                           movzx esi, bl	       334	pci_irq.c	FUNCTION_7	WHILE_1	CALL_6
+0x40003da	          0x4c89ef	                            mov rdi, r13	       334	pci_irq.c	FUNCTION_7	WHILE_1	CALL_6
+0x40003dd	      0xe800000000	                          call 0x40003e2	       334	pci_irq.c	FUNCTION_7	WHILE_1	CALL_6
+0x40003e2	          0x8b5544	            mov edx, dword [rbp + 0x44] 	       336	pci_irq.c	FUNCTION_7	WHILE_1	IF_2
+0x40003e5	           0xfb6d8	                           movzx ebx, al	       334	pci_irq.c	FUNCTION_7	WHILE_1	CALL_6
+0x40003e8	          0xc1ea08	                              shr edx, 8	       336	pci_irq.c	FUNCTION_7	WHILE_1	IF_2
+0x40003eb	    0x81fa07060000	                          cmp edx, 0x607	       336	pci_irq.c	FUNCTION_7	WHILE_1	IF_2
+0x40003f1	            0x7508	                           jne 0x40003fb	       336	pci_irq.c	FUNCTION_7	WHILE_1	IF_2
+0x40003f3	         0xfb65d51	           movzx ebx, byte [rbp + 0x51] 	       338	pci_irq.c	FUNCTION_7	WHILE_1	IF_2
+0x40003f7	            0x84db	                             test bl, bl	       339	pci_irq.c	FUNCTION_7	WHILE_1	IF_2	IF_3
+0x40003f9	            0x744f	                            je 0x400044a	       339	pci_irq.c	FUNCTION_7	WHILE_1	IF_2	IF_3
+0x40003fb	      0x488d542408	                      lea rdx, [rsp + 8]	       348	pci_irq.c	FUNCTION_7	WHILE_1	CALL_9
+0x4000400	            0x89de	                            mov esi, ebx	       348	pci_irq.c	FUNCTION_7	WHILE_1	CALL_9
+0x4000402	          0x4889ef	                            mov rdi, rbp	       348	pci_irq.c	FUNCTION_7	WHILE_1	CALL_9
+0x4000405	      0xe836fcffff	    call sym.acpi_pci_irq_find_prt_entry	       348	pci_irq.c	FUNCTION_7	WHILE_1	CALL_9
+0x400040a	            0x85c0	                           test eax, eax	       349	pci_irq.c	FUNCTION_7	WHILE_1	IF_4
+0x400040c	            0x750a	                           jne 0x4000418	       349	pci_irq.c	FUNCTION_7	WHILE_1	IF_4
+0x400040e	      0x488b442408	                mov rax, qword [rsp + 8]	       349	pci_irq.c	FUNCTION_7	WHILE_1	IF_4
+0x4000413	          0x4885c0	                           test rax, rax	       349	pci_irq.c	FUNCTION_7	WHILE_1	IF_4
+0x4000416	            0x7587	                           jne 0x400039f	       349	pci_irq.c	FUNCTION_7	WHILE_1	IF_4
+0x4000418	        0x488b4510	            mov rax, qword [rbp + 0x10] 	       358	pci_irq.c	FUNCTION_7	WHILE_1
+0x400041c	          0x4989ed	                            mov r13, rbp	       358	pci_irq.c	FUNCTION_7	WHILE_1
+0x400041f	        0x488b4038	            mov rax, qword [rax + 0x38] 	       358	pci_irq.c	FUNCTION_7	WHILE_1
+0x4000423	          0x4885c0	                           test rax, rax	       333	pci_irq.c	FUNCTION_7	WHILE_1
+0x4000426	            0x75ac	                           jne 0x40003d4	       333	pci_irq.c	FUNCTION_7	WHILE_1
+0x4000428	      0x418d542440	                   lea edx, [r12 + 0x40]	       361	pci_irq.c	FUNCTION_7	CALL_14
+0x400042d	    0x488dbda00000	                   lea rdi, [rbp + 0xa0]	       361	pci_irq.c	FUNCTION_7	CALL_14
+0x4000434	    0x48c7c6000000	                              mov rsi, 0	       361	pci_irq.c	FUNCTION_7	CALL_14
+0x400043b	           0xfbed2	                           movsx edx, dl	       361	pci_irq.c	FUNCTION_7	CALL_14
+0x400043e	      0xe800000000	                          call 0x4000443	       361	pci_irq.c	FUNCTION_7	CALL_14
+0x4000443	            0x31c0	                            xor eax, eax	       363	pci_irq.c	FUNCTION_7
+0x4000445	      0xe955ffffff	                           jmp 0x400039f	       363	pci_irq.c	FUNCTION_7
+0x400044a	            0x31c0	                            xor eax, eax	       343	pci_irq.c	FUNCTION_7	WHILE_1	IF_2	IF_3
+0x400044c	      0xe94effffff	                           jmp 0x400039f	       343	pci_irq.c	FUNCTION_7	WHILE_1	IF_2	IF_3
+0x4000451	     0xfb6913a0600	          movzx edx, byte [rcx + 0x63a] 	       268	pci_irq.c	FUNCTION_5	FOR_1	IF_2
+0x4000458	          0x83e203	                              and edx, 3	       286	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_1
+0x400045b	     0xf843effffff	                            je 0x400039f	       286	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_1
+0x4000461	          0x80fa01	                               cmp dl, 1	       286	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_1
+0x4000464	            0x753c	                           jne 0x40004a2	       286	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_1
+0x4000466	          0x8b5018	            mov edx, dword [rax + 0x18] 	       297	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_2
+0x4000469	    0x498dbda00000	                   lea rdi, [r13 + 0xa0]	       297	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_2
+0x4000470	    0x48c7c6000000	                              mov rsi, 0	       297	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_2
+0x4000477	        0x48890424	                    mov qword [rsp], rax	       297	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_2
+0x400047b	            0x89d1	                            mov ecx, edx	       297	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_2
+0x400047d	          0x83e103	                              and ecx, 3	       297	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_2
+0x4000480	          0x83c110	                           add ecx, 0x10	       297	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_2
+0x4000483	      0xe800000000	                          call 0x4000488	       297	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_2
+0x4000488	        0x488b0424	                    mov rax, qword [rsp]	       300	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1
+0x400048c	          0x8b5018	            mov edx, dword [rax + 0x18] 	       300	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1
+0x400048f	          0x83e203	                              and edx, 3	       300	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1
+0x4000492	          0x83c210	                           add edx, 0x10	       300	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1
+0x4000495	          0x895018	             mov dword [rax + 0x18], edx	       300	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1
+0x4000498	      0x488b442408	                mov rax, qword [rsp + 8]	       300	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1
+0x400049d	      0xe9fdfeffff	                           jmp 0x400039f	       300	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1
+0x40004a2	          0x8b5018	            mov edx, dword [rax + 0x18] 	       303	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_3
+0x40004a5	    0x498dbda00000	                   lea rdi, [r13 + 0xa0]	       303	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_3
+0x40004ac	    0x48c7c6000000	                              mov rsi, 0	       303	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_3
+0x40004b3	      0xe800000000	                          call 0x40004b8	       303	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_3
+0x40004b8	      0x488b442408	                mov rax, qword [rsp + 8]	       303	pci_irq.c	FUNCTION_6	ELSE_1	SWITCH_1	CALL_3
+0x40004bd	      0xe9ddfeffff	                           jmp 0x400039f	       325	pci_irq.c	FUNCTION_7	IF_1
+0x40004c2	          0x4c89ed	                            mov rbp, r13	       333	pci_irq.c	FUNCTION_7	WHILE_1
+0x40004c5	      0xe95effffff	                           jmp 0x4000428	       333	pci_irq.c	FUNCTION_7	WHILE_1
+0x40004ca	      0xe800000000	                          call 0x40004cf	       364	pci_irq.c	FUNCTION_7

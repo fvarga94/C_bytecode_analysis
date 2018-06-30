@@ -1,0 +1,38 @@
+tty_buffer_cancel_work	CALL,1:DO,0:WHILE,0:FOR,0:IF,0:SWITCH,0:ELSE,0:functions,0	2
+0x40007d0	        0x4883c708	                              add rdi, 8	       604	tty_buffer.c	FUNCTION_24	CALL_1
+0x40007d4	      0xe900000000	                           jmp 0x40007d9	       604	tty_buffer.c	FUNCTION_24	CALL_1
+tty_buffer_set_limit	CALL,0:DO,0:WHILE,0:FOR,0:IF,1:SWITCH,0:ELSE,0:functions,0	7
+0x40000b0	    0x81feff000000	                           cmp esi, 0xff	       584	tty_buffer.c	FUNCTION_21	IF_1
+0x40000b6	            0x7e06	                           jle 0x40000be	       584	tty_buffer.c	FUNCTION_21	IF_1
+0x40000b8	          0x89777c	             mov dword [rdi + 0x7c], esi	       586	tty_buffer.c	FUNCTION_21
+0x40000bb	            0x31c0	                            xor eax, eax	       587	tty_buffer.c	FUNCTION_21
+0x40000bd	              0xc3	                                     ret	       587	tty_buffer.c	FUNCTION_21
+0x40000be	      0xb8eaffffff	                     mov eax, 0xffffffea	       585	tty_buffer.c	FUNCTION_21	IF_1
+0x40000c3	              0xc3	                                     ret	       588	tty_buffer.c	FUNCTION_21
+tty_buffer_set_lock_subclass	CALL,1:DO,0:WHILE,0:FOR,0:IF,0:SWITCH,0:ELSE,0:functions,0	1
+0x40007a0	            0xf3c3	                                     ret	       593	tty_buffer.c	FUNCTION_22
+tty_buffer_flush_work	CALL,1:DO,0:WHILE,0:FOR,0:IF,0:SWITCH,0:ELSE,0:functions,0	2
+0x40007e0	        0x4883c708	                              add rdi, 8	       609	tty_buffer.c	FUNCTION_25	CALL_1
+0x40007e4	      0xe900000000	                   jmp section_end..text	       609	tty_buffer.c	FUNCTION_25	CALL_1
+tty_ldisc_receive_buf	CALL,3:DO,0:WHILE,0:FOR,0:IF,2:SWITCH,0:ELSE,1:functions,0	21
+0x4000060	          0x4c8b07	                     mov r8, qword [rdi]	       455	tty_buffer.c	FUNCTION_16	IF_1
+0x4000063	    0x498b80800000	              mov rax, qword [r8 + 0x80]	       455	tty_buffer.c	FUNCTION_16	IF_1
+0x400006a	          0x4885c0	                           test rax, rax	       455	tty_buffer.c	FUNCTION_16	IF_1
+0x400006d	            0x7409	                            je 0x4000078	       455	tty_buffer.c	FUNCTION_16	IF_1
+0x400006f	        0x488b7f08	                mov rdi, qword [rdi + 8]	       456	tty_buffer.c	FUNCTION_16	CALL_1
+0x4000073	      0xe900000000	                           jmp 0x4000078	       456	tty_buffer.c	FUNCTION_16	CALL_1
+0x4000078	              0x53	                                push rbx	       454	tty_buffer.c	FUNCTION_16
+0x4000079	        0x488b7f08	                mov rdi, qword [rdi + 8]	       458	tty_buffer.c	FUNCTION_16	ELSE_1	CALL_2
+0x400007d	            0x89cb	                            mov ebx, ecx	       458	tty_buffer.c	FUNCTION_16	ELSE_1	CALL_2
+0x400007f	    0x398ff0010000	           cmp dword [rdi + 0x1f0], ecx 	       458	tty_buffer.c	FUNCTION_16	ELSE_1	CALL_2
+0x4000085	     0xf4e9ff00100	         cmovle ebx, dword [rdi + 0x1f0]	       458	tty_buffer.c	FUNCTION_16	ELSE_1	CALL_2
+0x400008c	            0x85db	                           test ebx, ebx	       459	tty_buffer.c	FUNCTION_16	ELSE_1	IF_2
+0x400008e	            0x7410	                            je 0x40000a0	       459	tty_buffer.c	FUNCTION_16	ELSE_1	IF_2
+0x4000090	        0x498b4068	              mov rax, qword [r8 + 0x68]	       459	tty_buffer.c	FUNCTION_16	ELSE_1	IF_2
+0x4000094	          0x4885c0	                           test rax, rax	       459	tty_buffer.c	FUNCTION_16	ELSE_1	IF_2
+0x4000097	            0x7407	                            je 0x40000a0	       459	tty_buffer.c	FUNCTION_16	ELSE_1	IF_2
+0x4000099	            0x89d9	                            mov ecx, ebx	       460	tty_buffer.c	FUNCTION_16	ELSE_1	CALL_3
+0x400009b	      0xe800000000	                          call 0x40000a0	       460	tty_buffer.c	FUNCTION_16	ELSE_1	CALL_3
+0x40000a0	            0x89d8	                            mov eax, ebx	       463	tty_buffer.c	FUNCTION_16
+0x40000a2	              0x5b	                                 pop rbx	       463	tty_buffer.c	FUNCTION_16
+0x40000a3	              0xc3	                                     ret	       463	tty_buffer.c	FUNCTION_16

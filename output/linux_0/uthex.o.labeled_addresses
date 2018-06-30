@@ -1,0 +1,35 @@
+acpi_ut_ascii_to_hex_byte	functions,0:DO,0:SWITCH,0:FOR,0:WHILE,0:IF,1:ELSE,0:CALL,4	18
+0x4000099	           0xfb617	                   movzx edx, byte [rdi]	        63	uthex.c	FUNCTION_2	IF_1	CALL_1
+0x400009c	      0xb805100000	                         mov eax, 0x1005	        65	uthex.c	FUNCTION_2	IF_1
+0x40000a1	    0xf68200000000	                   test byte [rdx], 0x44	        63	uthex.c	FUNCTION_2	IF_1	CALL_1
+0x40000a8	          0x4889d1	                            mov rcx, rdx	        63	uthex.c	FUNCTION_2	IF_1	CALL_1
+0x40000ab	            0x742b	                            je 0x40000d8	        63	uthex.c	FUNCTION_2	IF_1	CALL_1
+0x40000ad	         0xfb65701	               movzx edx, byte [rdi + 1]	        64	uthex.c	FUNCTION_2	IF_1	CALL_2
+0x40000b1	    0xf68200000000	                   test byte [rdx], 0x44	        63	uthex.c	FUNCTION_2	IF_1	CALL_1
+0x40000b8	            0x741e	                            je 0x40000d8	        63	uthex.c	FUNCTION_2	IF_1	CALL_1
+0x40000ba	           0xfbefa	                           movsx edi, dl	        69	uthex.c	FUNCTION_2	CALL_3
+0x40000bd	      0xe800000000	                          call 0x40000c2	        69	uthex.c	FUNCTION_2	CALL_3
+0x40000c2	           0xfbef9	                           movsx edi, cl	        70	uthex.c	FUNCTION_2	CALL_4
+0x40000c5	          0x4188c0	                             mov r8b, al	        69	uthex.c	FUNCTION_2	CALL_3
+0x40000c8	      0xe800000000	                          call 0x40000cd	        70	uthex.c	FUNCTION_2	CALL_4
+0x40000cd	          0xc1e004	                              shl eax, 4	        68	uthex.c	FUNCTION_2
+0x40000d0	          0x4109c0	                             or r8d, eax	        68	uthex.c	FUNCTION_2
+0x40000d3	            0x31c0	                            xor eax, eax	        72	uthex.c	FUNCTION_2
+0x40000d5	          0x448806	                     mov byte [rsi], r8b	        68	uthex.c	FUNCTION_2
+0x40000d8	              0xc3	                                     ret	        73	uthex.c	FUNCTION_2
+acpi_ut_hex_to_ascii_char	functions,0:DO,0:SWITCH,0:FOR,0:WHILE,0:IF,0:ELSE,0:CALL,1	15
+0x4000040	        0x4883ec10	                           sub rsp, 0x10	        37	uthex.c	FUNCTION_1
+0x4000044	          0x4889e2	                            mov rdx, rsp	        40	uthex.c	FUNCTION_1	CALL_1
+0x4000047	    0x65488b042528	                mov rax, qword gs:[0x28]	        37	uthex.c	FUNCTION_1
+0x4000050	      0x4889442408	                mov qword [rsp + 8], rax	        37	uthex.c	FUNCTION_1
+0x4000055	            0x31c0	                            xor eax, eax	        37	uthex.c	FUNCTION_1
+0x4000057	      0xe800000000	                          call 0x400005c	        40	uthex.c	FUNCTION_1	CALL_1
+0x400005c	        0x488b0424	                    mov rax, qword [rsp]	        41	uthex.c	FUNCTION_1
+0x4000060	          0x83e00f	                            and eax, 0xf	        41	uthex.c	FUNCTION_1
+0x4000063	      0x488b4c2408	                mov rcx, qword [rsp + 8]	        42	uthex.c	FUNCTION_1
+0x4000068	    0x6548330c2528	                xor rcx, qword gs:[0x28]	        42	uthex.c	FUNCTION_1
+0x4000071	    0x8a8000000000	                      mov al, byte [rax]	        41	uthex.c	FUNCTION_1
+0x4000077	            0x7405	                            je 0x400007e	        42	uthex.c	FUNCTION_1
+0x4000079	      0xe800000000	                          call 0x400007e	        42	uthex.c	FUNCTION_1
+0x400007e	        0x4883c410	                           add rsp, 0x10	        42	uthex.c	FUNCTION_1
+0x4000082	              0xc3	                                     ret	        42	uthex.c	FUNCTION_1

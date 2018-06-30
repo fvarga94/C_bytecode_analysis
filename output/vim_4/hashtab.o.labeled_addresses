@@ -1,0 +1,287 @@
+hash_unlock	FOR,0:DO,0:CALL,1:WHILE,0:ELSE,0:SWITCH,0:functions,0:IF,0	8
+0x4000720	          0x8b4718	            mov eax, dword [rdi + 0x18] 	       307	hashtab.c	FUNCTION_14
+0x4000723	          0x83e801	                              sub eax, 1	       307	hashtab.c	FUNCTION_14
+0x4000726	            0x85c0	                           test eax, eax	       332	hashtab.c	FUNCTION_15	IF_1
+0x4000728	          0x894718	             mov dword [rdi + 0x18], eax	       307	hashtab.c	FUNCTION_14
+0x400072b	            0x7e03	                           jle 0x4000730	       332	hashtab.c	FUNCTION_15	IF_1
+0x400072d	            0xf3c3	                                     ret	       332	hashtab.c	FUNCTION_15	IF_1
+0x400072f	              0x90	                                     nop	       332	hashtab.c	FUNCTION_15	IF_1
+0x4000730	      0xe90bf9ffff	jmp sym.hash_may_resize.part.0.constprop.1	       332	hashtab.c	FUNCTION_15	IF_1
+hash_lookup	FOR,1:DO,0:CALL,2:WHILE,0:ELSE,2:SWITCH,0:functions,0:IF,6	91
+0x4000350	            0x4157	                                push r15	       126	hashtab.c	FUNCTION_6
+0x4000352	            0x4156	                                push r14	       126	hashtab.c	FUNCTION_6
+0x4000354	            0x4155	                                push r13	       126	hashtab.c	FUNCTION_6
+0x4000356	            0x4154	                                push r12	       126	hashtab.c	FUNCTION_6
+0x4000358	              0x55	                                push rbp	       126	hashtab.c	FUNCTION_6
+0x4000359	              0x53	                                push rbx	       126	hashtab.c	FUNCTION_6
+0x400035a	            0x89d3	                            mov ebx, edx	       142	hashtab.c	FUNCTION_6
+0x400035c	        0x4883ec18	                           sub rsp, 0x18	       126	hashtab.c	FUNCTION_6
+0x4000360	          0x4c8b37	                    mov r14, qword [rdi]	       142	hashtab.c	FUNCTION_6
+0x4000363	        0x4c8b7f20	            mov r15, qword [rdi + 0x20] 	       143	hashtab.c	FUNCTION_6
+0x4000367	          0x4421f3	                           and ebx, r14d	       142	hashtab.c	FUNCTION_6
+0x400036a	            0x89d9	                            mov ecx, ebx	       143	hashtab.c	FUNCTION_6
+0x400036c	        0x48c1e104	                              shl rcx, 4	       143	hashtab.c	FUNCTION_6
+0x4000370	        0x498d2c0f	                    lea rbp, [r15 + rcx]	       143	hashtab.c	FUNCTION_6
+0x4000374	        0x488b7d08	                mov rdi, qword [rbp + 8]	       145	hashtab.c	FUNCTION_6	IF_1
+0x4000378	          0x4885ff	                           test rdi, rdi	       145	hashtab.c	FUNCTION_6	IF_1
+0x400037b	     0xf84a2000000	                            je 0x4000423	       145	hashtab.c	FUNCTION_6	IF_1
+0x4000381	    0x4881ff000000	                              cmp rdi, 0	       147	hashtab.c	FUNCTION_6	IF_2
+0x4000388	          0x4989d5	                            mov r13, rdx	       147	hashtab.c	FUNCTION_6	IF_2
+0x400038b	      0x4889742408	                mov qword [rsp + 8], rsi	       147	hashtab.c	FUNCTION_6	IF_2
+0x4000390	     0xf84d1000000	                            je 0x4000467	       147	hashtab.c	FUNCTION_6	IF_2
+0x4000396	        0x4c3b6d00	                    cmp r13, qword [rbp]	       149	hashtab.c	FUNCTION_6	ELSE_1	IF_3	CALL_1
+0x400039a	     0xf84b8000000	                            je 0x4000458	       149	hashtab.c	FUNCTION_6	ELSE_1	IF_3	CALL_1
+0x40003a0	      0x428d442b01	                lea eax, [rbx + r13 + 1]	       149	hashtab.c	FUNCTION_6	ELSE_1	IF_3	CALL_1
+0x40003a5	        0x448d2498	                 lea r12d, [rax + rbx*4]	       168	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003a9	          0x4489e3	                           mov ebx, r12d	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003ac	          0x4421f3	                           and ebx, r14d	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003af	        0x48c1e304	                              shl rbx, 4	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003b3	          0x4c01fb	                            add rbx, r15	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003b6	        0x488b7b08	                mov rdi, qword [rbx + 8]	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x40003ba	          0x4885ff	                           test rdi, rdi	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x40003bd	            0x7461	                            je 0x4000420	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x40003bf	            0x31ed	                            xor ebp, ebp	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x40003c1	          0x4c89ea	                            mov rdx, r13	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x40003c4	            0xeb36	                           jmp 0x40003fc	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x40003c6	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x40003d0	    0x4881ff000000	                              cmp rdi, 0	       176	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_6
+0x40003d7	            0x745f	                            je 0x4000438	       176	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_6
+0x40003d9	        0x48c1ea05	                              shr rdx, 5	       163	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003dd	      0x418d441401	                lea eax, [r12 + rdx + 1]	       163	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003e2	        0x468d24a0	                 lea r12d, [rax + r12*4]	       168	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003e6	          0x4489e3	                           mov ebx, r12d	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003e9	          0x4421f3	                           and ebx, r14d	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003ec	        0x48c1e304	                              shl rbx, 4	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003f0	          0x4c01fb	                            add rbx, r15	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x40003f3	        0x488b7b08	                mov rdi, qword [rbx + 8]	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x40003f7	          0x4885ff	                           test rdi, rdi	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x40003fa	            0x744c	                            je 0x4000448	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x40003fc	          0x4c3b2b	                    cmp r13, qword [rbx]	       172	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_5
+0x40003ff	            0x75cf	                           jne 0x40003d0	       172	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_5
+0x4000401	    0x4881ff000000	                              cmp rdi, 0	       173	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_5
+0x4000408	            0x742e	                            je 0x4000438	       173	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_5
+0x400040a	      0x488b742408	                mov rsi, qword [rsp + 8]	       174	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_5	CALL_2
+0x400040f	        0x48891424	                    mov qword [rsp], rdx	       174	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_5	CALL_2
+0x4000413	      0xe800000000	                          call 0x4000418	       174	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_5	CALL_2
+0x4000418	            0x85c0	                           test eax, eax	       174	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_5	CALL_2
+0x400041a	        0x488b1424	                    mov rdx, qword [rsp]	       174	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_5	CALL_2
+0x400041e	            0x75b9	                           jne 0x40003d9	       174	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_5	CALL_2
+0x4000420	          0x4889dd	                            mov rbp, rbx	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x4000423	        0x4883c418	                           add rsp, 0x18	       179	hashtab.c	FUNCTION_6
+0x4000427	          0x4889e8	                            mov rax, rbp	       179	hashtab.c	FUNCTION_6
+0x400042a	              0x5b	                                 pop rbx	       179	hashtab.c	FUNCTION_6
+0x400042b	              0x5d	                                 pop rbp	       179	hashtab.c	FUNCTION_6
+0x400042c	            0x415c	                                 pop r12	       179	hashtab.c	FUNCTION_6
+0x400042e	            0x415d	                                 pop r13	       179	hashtab.c	FUNCTION_6
+0x4000430	            0x415e	                                 pop r14	       179	hashtab.c	FUNCTION_6
+0x4000432	            0x415f	                                 pop r15	       179	hashtab.c	FUNCTION_6
+0x4000434	              0xc3	                                     ret	       179	hashtab.c	FUNCTION_6
+0x4000435	           0xf1f00	                         nop dword [rax]	       179	hashtab.c	FUNCTION_6
+0x4000438	          0x4885ed	                           test rbp, rbp	       176	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_6
+0x400043b	        0x480f44eb	                          cmove rbp, rbx	       176	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_6
+0x400043f	            0xeb98	                           jmp 0x40003d9	       176	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_6
+0x4000441	     0xf1f80000000	                         nop dword [rax]	       176	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_6
+0x4000448	          0x4885ed	                           test rbp, rbp	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x400044b	        0x480f44eb	                          cmove rbp, rbx	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x400044f	            0xebd2	                           jmp 0x4000423	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x4000451	     0xf1f80000000	                         nop dword [rax]	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x4000458	      0xe800000000	                          call 0x400045d	       149	hashtab.c	FUNCTION_6	ELSE_1	IF_3	CALL_1
+0x400045d	            0x85c0	                           test eax, eax	       149	hashtab.c	FUNCTION_6	ELSE_1	IF_3	CALL_1
+0x400045f	     0xf853bffffff	                           jne 0x40003a0	       149	hashtab.c	FUNCTION_6	ELSE_1	IF_3	CALL_1
+0x4000465	            0xebbc	                           jmp 0x4000423	       149	hashtab.c	FUNCTION_6	ELSE_1	IF_3	CALL_1
+0x4000467	        0x8d441301	                lea eax, [rbx + rdx + 1]	       149	hashtab.c	FUNCTION_6	ELSE_1	IF_3	CALL_1
+0x400046b	        0x448d2498	                 lea r12d, [rax + rbx*4]	       168	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x400046f	          0x4489e3	                           mov ebx, r12d	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x4000472	          0x4421f3	                           and ebx, r14d	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x4000475	        0x48c1e304	                              shl rbx, 4	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x4000479	          0x4c01fb	                            add rbx, r15	       169	hashtab.c	FUNCTION_6	ELSE_2	FOR_1
+0x400047c	        0x488b7b08	                mov rdi, qword [rbx + 8]	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x4000480	          0x4885ff	                           test rdi, rdi	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x4000483	     0xf8538ffffff	                           jne 0x40003c1	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+0x4000489	            0xeb98	                           jmp 0x4000423	       170	hashtab.c	FUNCTION_6	ELSE_2	FOR_1	IF_4
+hash_clear_all	FOR,1:DO,0:CALL,3:WHILE,0:ELSE,0:SWITCH,0:functions,0:IF,1	44
+0x40002d0	            0x4155	                                push r13	        91	hashtab.c	FUNCTION_4
+0x40002d2	            0x4154	                                push r12	        91	hashtab.c	FUNCTION_4
+0x40002d4	          0x4989fc	                            mov r12, rdi	        91	hashtab.c	FUNCTION_4
+0x40002d7	              0x55	                                push rbp	        91	hashtab.c	FUNCTION_4
+0x40002d8	              0x53	                                push rbx	        91	hashtab.c	FUNCTION_4
+0x40002d9	        0x4883ec08	                              sub rsp, 8	        91	hashtab.c	FUNCTION_4
+0x40002dd	        0x488b6f08	                mov rbp, qword [rdi + 8]	        95	hashtab.c	FUNCTION_4
+0x40002e1	        0x488b5f20	            mov rbx, qword [rdi + 0x20] 	        96	hashtab.c	FUNCTION_4	FOR_1
+0x40002e5	          0x4885ed	                           test rbp, rbp	        96	hashtab.c	FUNCTION_4	FOR_1
+0x40002e8	            0x7e61	                           jle 0x400034b	        96	hashtab.c	FUNCTION_4	FOR_1
+0x40002ea	          0x4c63ee	                         movsxd r13, esi	        96	hashtab.c	FUNCTION_4	FOR_1
+0x40002ed	           0xf1f00	                         nop dword [rax]	        96	hashtab.c	FUNCTION_4	FOR_1
+0x40002f0	        0x488b7b08	                mov rdi, qword [rbx + 8]	        98	hashtab.c	FUNCTION_4	FOR_1	IF_1	CALL_1
+0x40002f4	          0x4885ff	                           test rdi, rdi	        98	hashtab.c	FUNCTION_4	FOR_1	IF_1	CALL_1
+0x40002f7	            0x743f	                            je 0x4000338	        98	hashtab.c	FUNCTION_4	FOR_1	IF_1	CALL_1
+0x40002f9	    0x4881ff000000	                              cmp rdi, 0	        98	hashtab.c	FUNCTION_4	FOR_1	IF_1	CALL_1
+0x4000300	            0x7436	                            je 0x4000338	        98	hashtab.c	FUNCTION_4	FOR_1	IF_1	CALL_1
+0x4000302	          0x4c29ef	                            sub rdi, r13	       100	hashtab.c	FUNCTION_4	FOR_1	IF_1	CALL_2
+0x4000305	        0x4883c310	                           add rbx, 0x10	        96	hashtab.c	FUNCTION_4	FOR_1
+0x4000309	      0xe800000000	                          call 0x400030e	       100	hashtab.c	FUNCTION_4	FOR_1	IF_1	CALL_2
+0x400030e	        0x4883ed01	                              sub rbp, 1	        96	hashtab.c	FUNCTION_4	FOR_1
+0x4000312	            0x75dc	                           jne 0x40002f0	        96	hashtab.c	FUNCTION_4	FOR_1
+0x4000314	      0x498b7c2420	            mov rdi, qword [r12 + 0x20] 	        96	hashtab.c	FUNCTION_4	FOR_1
+0x4000319	        0x4983c428	                           add r12, 0x28	        80	hashtab.c	FUNCTION_3	IF_1
+0x400031d	          0x4c39e7	                            cmp rdi, r12	        80	hashtab.c	FUNCTION_3	IF_1
+0x4000320	            0x741e	                            je 0x4000340	        80	hashtab.c	FUNCTION_3	IF_1
+0x4000322	        0x4883c408	                              add rsp, 8	       105	hashtab.c	FUNCTION_4
+0x4000326	              0x5b	                                 pop rbx	       105	hashtab.c	FUNCTION_4
+0x4000327	              0x5d	                                 pop rbp	       105	hashtab.c	FUNCTION_4
+0x4000328	            0x415c	                                 pop r12	       105	hashtab.c	FUNCTION_4
+0x400032a	            0x415d	                                 pop r13	       105	hashtab.c	FUNCTION_4
+0x400032c	      0xe900000000	                           jmp 0x4000331	        81	hashtab.c	FUNCTION_3	CALL_1
+0x4000331	     0xf1f80000000	                         nop dword [rax]	        81	hashtab.c	FUNCTION_3	CALL_1
+0x4000338	        0x4883c310	                           add rbx, 0x10	        96	hashtab.c	FUNCTION_4	FOR_1
+0x400033c	            0xebb2	                           jmp 0x40002f0	        96	hashtab.c	FUNCTION_4	FOR_1
+0x400033e	            0x6690	                                     nop	        96	hashtab.c	FUNCTION_4	FOR_1
+0x4000340	        0x4883c408	                              add rsp, 8	       105	hashtab.c	FUNCTION_4
+0x4000344	              0x5b	                                 pop rbx	       105	hashtab.c	FUNCTION_4
+0x4000345	              0x5d	                                 pop rbp	       105	hashtab.c	FUNCTION_4
+0x4000346	            0x415c	                                 pop r12	       105	hashtab.c	FUNCTION_4
+0x4000348	            0x415d	                                 pop r13	       105	hashtab.c	FUNCTION_4
+0x400034a	              0xc3	                                     ret	       105	hashtab.c	FUNCTION_4
+0x400034b	          0x4889df	                            mov rdi, rbx	        96	hashtab.c	FUNCTION_4	FOR_1
+0x400034e	            0xebc9	                           jmp 0x4000319	        96	hashtab.c	FUNCTION_4	FOR_1
+hash_add	FOR,0:DO,0:CALL,5:WHILE,0:ELSE,0:SWITCH,0:functions,0:IF,1	90
+0x40004f0	            0x4155	                                push r13	       204	hashtab.c	FUNCTION_8
+0x40004f2	            0x4154	                                push r12	       204	hashtab.c	FUNCTION_8
+0x40004f4	          0x4531e4	                          xor r12d, r12d	       469	hashtab.c	FUNCTION_16	IF_1
+0x40004f7	              0x55	                                push rbp	       204	hashtab.c	FUNCTION_8
+0x40004f8	              0x53	                                push rbx	       204	hashtab.c	FUNCTION_8
+0x40004f9	          0x4889fd	                            mov rbp, rdi	       204	hashtab.c	FUNCTION_8
+0x40004fc	          0x4889f3	                            mov rbx, rsi	       204	hashtab.c	FUNCTION_8
+0x40004ff	        0x4883ec08	                              sub rsp, 8	       204	hashtab.c	FUNCTION_8
+0x4000503	           0xfb606	                   movzx eax, byte [rsi]	       468	hashtab.c	FUNCTION_16	IF_1
+0x4000506	          0x4885c0	                           test rax, rax	       468	hashtab.c	FUNCTION_16	IF_1
+0x4000509	            0x7435	                            je 0x4000540	       468	hashtab.c	FUNCTION_16	IF_1
+0x400050b	         0xfb64b01	               movzx ecx, byte [rbx + 1]	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x400050f	        0x488d7601	                      lea rsi, [rsi + 1]	       470	hashtab.c	FUNCTION_16
+0x4000513	            0x84c9	                             test cl, cl	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x4000515	            0x7426	                            je 0x400053d	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x4000517	    0x660f1f840000	                    nop word [rax + rax]	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x4000520	        0x488d1480	                  lea rdx, [rax + rax*4]	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x4000524	        0x4883c601	                              add rsi, 1	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x4000528	        0x488d1492	                  lea rdx, [rdx + rdx*4]	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x400052c	        0x488d1490	                  lea rdx, [rax + rdx*4]	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x4000530	           0xfb6c1	                           movzx eax, cl	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x4000533	           0xfb60e	                   movzx ecx, byte [rsi]	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x4000536	          0x4801d0	                            add rax, rdx	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x4000539	            0x84c9	                             test cl, cl	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x400053b	            0x75e3	                           jne 0x4000520	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x400053d	          0x4989c4	                            mov r12, rax	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x4000540	          0x4c89e2	                            mov rdx, r12	       208	hashtab.c	FUNCTION_8	CALL_2
+0x4000543	          0x4889de	                            mov rsi, rbx	       208	hashtab.c	FUNCTION_8	CALL_2
+0x4000546	          0x4889ef	                            mov rdi, rbp	       208	hashtab.c	FUNCTION_8	CALL_2
+0x4000549	      0xe800000000	                          call 0x400054e	       208	hashtab.c	FUNCTION_8	CALL_2
+0x400054e	          0x4989c5	                            mov r13, rax	       208	hashtab.c	FUNCTION_8	CALL_2
+0x4000551	        0x488b4008	                mov rax, qword [rax + 8]	       209	hashtab.c	FUNCTION_8	IF_1	CALL_3
+0x4000555	    0x483d00000000	                              cmp rax, 0	       209	hashtab.c	FUNCTION_8	IF_1	CALL_3
+0x400055b	            0x7423	                            je 0x4000580	       209	hashtab.c	FUNCTION_8	IF_1	CALL_3
+0x400055d	          0x4885c0	                           test rax, rax	       209	hashtab.c	FUNCTION_8	IF_1	CALL_3
+0x4000560	            0x741e	                            je 0x4000580	       209	hashtab.c	FUNCTION_8	IF_1	CALL_3
+0x4000562	      0xbf00000000	                              mov edi, 0	       211	hashtab.c	FUNCTION_8	IF_1	CALL_4
+0x4000567	      0xe800000000	                          call 0x400056c	       211	hashtab.c	FUNCTION_8	IF_1	CALL_4
+0x400056c	            0x31c0	                            xor eax, eax	       212	hashtab.c	FUNCTION_8	IF_1
+0x400056e	        0x4883c408	                              add rsp, 8	       215	hashtab.c	FUNCTION_8
+0x4000572	              0x5b	                                 pop rbx	       215	hashtab.c	FUNCTION_8
+0x4000573	              0x5d	                                 pop rbp	       215	hashtab.c	FUNCTION_8
+0x4000574	            0x415c	                                 pop r12	       215	hashtab.c	FUNCTION_8
+0x4000576	            0x415d	                                 pop r13	       215	hashtab.c	FUNCTION_8
+0x4000578	              0xc3	                                     ret	       215	hashtab.c	FUNCTION_8
+0x4000579	     0xf1f80000000	                         nop dword [rax]	       215	hashtab.c	FUNCTION_8
+0x4000580	          0x8b551c	            mov edx, dword [rbp + 0x1c] 	       231	hashtab.c	FUNCTION_9	IF_1	CALL_1
+0x4000583	            0x85d2	                           test edx, edx	       231	hashtab.c	FUNCTION_9	IF_1	CALL_1
+0x4000585	          0x8b5518	            mov edx, dword [rbp + 0x18] 	       332	hashtab.c	FUNCTION_15	IF_1
+0x4000588	            0x7536	                           jne 0x40005c0	       231	hashtab.c	FUNCTION_9	IF_1	CALL_1
+0x400058a	      0x4883450801	                  add qword [rbp + 8], 1	       234	hashtab.c	FUNCTION_9
+0x400058f	          0x4885c0	                           test rax, rax	       235	hashtab.c	FUNCTION_9	IF_2
+0x4000592	            0x745c	                            je 0x40005f0	       235	hashtab.c	FUNCTION_9	IF_2
+0x4000594	            0x85d2	                           test edx, edx	       332	hashtab.c	FUNCTION_15	IF_1
+0x4000596	        0x49895d08	                mov qword [r13 + 8], rbx	       237	hashtab.c	FUNCTION_9
+0x400059a	        0x4d896500	                    mov qword [r13], r12	       238	hashtab.c	FUNCTION_9
+0x400059e	      0xb801000000	                              mov eax, 1	       333	hashtab.c	FUNCTION_15	IF_1
+0x40005a3	            0x7fc9	                            jg 0x400056e	       332	hashtab.c	FUNCTION_15	IF_1
+0x40005a5	        0x4883c408	                              add rsp, 8	       215	hashtab.c	FUNCTION_8
+0x40005a9	          0x4889ef	                            mov rdi, rbp	       215	hashtab.c	FUNCTION_8
+0x40005ac	              0x5b	                                 pop rbx	       215	hashtab.c	FUNCTION_8
+0x40005ad	              0x5d	                                 pop rbp	       215	hashtab.c	FUNCTION_8
+0x40005ae	            0x415c	                                 pop r12	       215	hashtab.c	FUNCTION_8
+0x40005b0	            0x415d	                                 pop r13	       215	hashtab.c	FUNCTION_8
+0x40005b2	      0xe989faffff	jmp sym.hash_may_resize.part.0.constprop.1	       215	hashtab.c	FUNCTION_8
+0x40005b7	    0x660f1f840000	                    nop word [rax + rax]	       215	hashtab.c	FUNCTION_8
+0x40005c0	            0x85d2	                           test edx, edx	       332	hashtab.c	FUNCTION_15	IF_1
+0x40005c2	            0x7e33	                           jle 0x40005f7	       332	hashtab.c	FUNCTION_15	IF_1
+0x40005c4	      0x4883450801	                  add qword [rbp + 8], 1	       234	hashtab.c	FUNCTION_9
+0x40005c9	          0x4885c0	                           test rax, rax	       235	hashtab.c	FUNCTION_9	IF_2
+0x40005cc	            0x7422	                            je 0x40005f0	       235	hashtab.c	FUNCTION_9	IF_2
+0x40005ce	        0x49895d08	                mov qword [r13 + 8], rbx	       237	hashtab.c	FUNCTION_9
+0x40005d2	        0x4d896500	                    mov qword [r13], r12	       238	hashtab.c	FUNCTION_9
+0x40005d6	        0x4883c408	                              add rsp, 8	       215	hashtab.c	FUNCTION_8
+0x40005da	              0x5b	                                 pop rbx	       215	hashtab.c	FUNCTION_8
+0x40005db	      0xb801000000	                              mov eax, 1	       333	hashtab.c	FUNCTION_15	IF_1
+0x40005e0	              0x5d	                                 pop rbp	       215	hashtab.c	FUNCTION_8
+0x40005e1	            0x415c	                                 pop r12	       215	hashtab.c	FUNCTION_8
+0x40005e3	            0x415d	                                 pop r13	       215	hashtab.c	FUNCTION_8
+0x40005e5	              0xc3	                                     ret	       215	hashtab.c	FUNCTION_8
+0x40005e6	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       215	hashtab.c	FUNCTION_8
+0x40005f0	      0x4883451001	               add qword [rbp + 0x10], 1	       236	hashtab.c	FUNCTION_9	IF_2
+0x40005f5	            0xeb9d	                           jmp 0x4000594	       236	hashtab.c	FUNCTION_9	IF_2
+0x40005f7	          0x4889ef	                            mov rdi, rbp	       236	hashtab.c	FUNCTION_9	IF_2
+0x40005fa	      0xe841faffff	call sym.hash_may_resize.part.0.constprop.1	       236	hashtab.c	FUNCTION_9	IF_2
+0x40005ff	            0x85c0	                           test eax, eax	       231	hashtab.c	FUNCTION_9	IF_1	CALL_1
+0x4000601	     0xf8467ffffff	                            je 0x400056e	       231	hashtab.c	FUNCTION_9	IF_1	CALL_1
+0x4000607	        0x498b4508	                mov rax, qword [r13 + 8]	       231	hashtab.c	FUNCTION_9	IF_1	CALL_1
+0x400060b	          0x8b5518	            mov edx, dword [rbp + 0x18] 	       231	hashtab.c	FUNCTION_9	IF_1	CALL_1
+0x400060e	      0xe977ffffff	                           jmp 0x400058a	       231	hashtab.c	FUNCTION_9	IF_1	CALL_1
+hash_remove	FOR,0:DO,0:CALL,1:WHILE,0:ELSE,0:SWITCH,0:functions,0:IF,0	8
+0x40006e0	          0x8b4718	            mov eax, dword [rdi + 0x18] 	       332	hashtab.c	FUNCTION_15	IF_1
+0x40006e3	      0x48836f0801	                  sub qword [rdi + 8], 1	       269	hashtab.c	FUNCTION_11
+0x40006e8	    0x48c746080000	                  mov qword [rsi + 8], 0	       270	hashtab.c	FUNCTION_11
+0x40006f0	            0x85c0	                           test eax, eax	       332	hashtab.c	FUNCTION_15	IF_1
+0x40006f2	            0x7e0c	                           jle 0x4000700	       332	hashtab.c	FUNCTION_15	IF_1
+0x40006f4	            0xf3c3	                                     ret	       332	hashtab.c	FUNCTION_15	IF_1
+0x40006f6	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       332	hashtab.c	FUNCTION_15	IF_1
+0x4000700	      0xe93bf9ffff	jmp sym.hash_may_resize.part.0.constprop.1	       332	hashtab.c	FUNCTION_15	IF_1
+hash_find	FOR,0:DO,0:CALL,2:WHILE,0:ELSE,0:SWITCH,0:functions,0:IF,0	20
+0x4000490	           0xfb606	                   movzx eax, byte [rsi]	       468	hashtab.c	FUNCTION_16	IF_1
+0x4000493	            0x31d2	                            xor edx, edx	       469	hashtab.c	FUNCTION_16	IF_1
+0x4000495	          0x4885c0	                           test rax, rax	       468	hashtab.c	FUNCTION_16	IF_1
+0x4000498	            0x7437	                            je 0x40004d1	       468	hashtab.c	FUNCTION_16	IF_1
+0x400049a	         0xfb64e01	               movzx ecx, byte [rsi + 1]	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x400049e	        0x4c8d4601	                       lea r8, [rsi + 1]	       470	hashtab.c	FUNCTION_16
+0x40004a2	            0x84c9	                             test cl, cl	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x40004a4	            0x7428	                            je 0x40004ce	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x40004a6	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x40004b0	        0x488d1480	                  lea rdx, [rax + rax*4]	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x40004b4	        0x4983c001	                               add r8, 1	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x40004b8	        0x488d1492	                  lea rdx, [rdx + rdx*4]	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x40004bc	        0x488d1490	                  lea rdx, [rax + rdx*4]	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x40004c0	           0xfb6c1	                           movzx eax, cl	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x40004c3	        0x410fb608	                    movzx ecx, byte [r8]	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x40004c7	          0x4801d0	                            add rax, rdx	       475	hashtab.c	FUNCTION_16	WHILE_1
+0x40004ca	            0x84c9	                             test cl, cl	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x40004cc	            0x75e2	                           jne 0x40004b0	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x40004ce	          0x4889c2	                            mov rdx, rax	       474	hashtab.c	FUNCTION_16	WHILE_1
+0x40004d1	      0xe97afeffff	                     jmp sym.hash_lookup	       118	hashtab.c	FUNCTION_5	CALL_2
+hash_debug_results	FOR,0:DO,0:CALL,4:WHILE,0:ELSE,0:SWITCH,0:functions,0:IF,0	1
+0x40004e0	            0xf3c3	                                     ret	       188	hashtab.c	FUNCTION_7
+hash_lock	FOR,0:DO,0:CALL,0:WHILE,0:ELSE,0:SWITCH,0:functions,0:IF,0	2
+0x4000710	        0x83471801	               add dword [rdi + 0x18], 1	       282	hashtab.c	FUNCTION_12
+0x4000714	              0xc3	                                     ret	       282	hashtab.c	FUNCTION_12
+hash_init	FOR,0:DO,0:CALL,1:WHILE,0:ELSE,0:SWITCH,0:functions,0:IF,0	14
+0x4000270	          0x4889fa	                            mov rdx, rdi	        66	hashtab.c	FUNCTION_2
+0x4000273	    0x48c787200100	              mov qword [rdi + 0x120], 0	        90	string3.h	FUNCTION_20	CALL_6
+0x400027e	        0x488d7f08	                      lea rdi, [rdi + 8]	        90	string3.h	FUNCTION_20	CALL_6
+0x4000282	          0x4889d1	                            mov rcx, rdx	        90	string3.h	FUNCTION_20	CALL_6
+0x4000285	            0x31c0	                            xor eax, eax	        90	string3.h	FUNCTION_20	CALL_6
+0x4000287	        0x4883e7f8	             and rdi, 0xfffffffffffffff8	        90	string3.h	FUNCTION_20	CALL_6
+0x400028b	          0x4829f9	                            sub rcx, rdi	        90	string3.h	FUNCTION_20	CALL_6
+0x400028e	    0x81c128010000	                          add ecx, 0x128	        90	string3.h	FUNCTION_20	CALL_6
+0x4000294	          0xc1e903	                              shr ecx, 3	        90	string3.h	FUNCTION_20	CALL_6
+0x4000297	          0xf348ab	              rep stosq qword [rdi], rax	        90	string3.h	FUNCTION_20	CALL_6
+0x400029a	        0x488d4228	                   lea rax, [rdx + 0x28]	        69	hashtab.c	FUNCTION_2
+0x400029e	    0x48c7020f0000	                    mov qword [rdx], 0xf	        70	hashtab.c	FUNCTION_2
+0x40002a5	        0x48894220	             mov qword [rdx + 0x20], rax	        69	hashtab.c	FUNCTION_2
+0x40002a9	              0xc3	                                     ret	        70	hashtab.c	FUNCTION_2

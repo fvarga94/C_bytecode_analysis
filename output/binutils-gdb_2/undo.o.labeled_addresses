@@ -1,0 +1,215 @@
+rl_free_undo_list	IF,1:ELSE,0:WHILE,1:FOR,0:functions,0:CALL,3:DO,0:SWITCH,0	27
+0x4000091	              0x55	                                push rbp	       107	undo.c	FUNCTION_1
+0x4000092	              0x53	                                push rbx	       107	undo.c	FUNCTION_1
+0x4000093	        0x4883ec08	                              sub rsp, 8	       107	undo.c	FUNCTION_1
+0x4000097	    0x488b2d000000	            mov rbp, qword [0x0400009e] 	       110	undo.c	FUNCTION_1
+0x400009e	          0x4885ed	                           test rbp, rbp	       111	undo.c	FUNCTION_1	WHILE_1
+0x40000a1	            0x7430	                            je 0x40000d3	       111	undo.c	FUNCTION_1	WHILE_1
+0x40000a3	          0x4889eb	                            mov rbx, rbp	       111	undo.c	FUNCTION_1	WHILE_1
+0x40000a6	          0x488b03	                    mov rax, qword [rbx]	       114	undo.c	FUNCTION_1	WHILE_1
+0x40000a9	    0x488905000000	            mov qword [0x040000b0], rax 	       114	undo.c	FUNCTION_1	WHILE_1
+0x40000b0	        0x837b1800	               cmp dword [rbx + 0x18], 0	       116	undo.c	FUNCTION_1	WHILE_1	IF_1
+0x40000b4	            0x7509	                           jne 0x40000bf	       116	undo.c	FUNCTION_1	WHILE_1	IF_1
+0x40000b6	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	       117	undo.c	FUNCTION_1	WHILE_1	CALL_1
+0x40000ba	      0xe800000000	                          call 0x40000bf	       117	undo.c	FUNCTION_1	WHILE_1	CALL_1
+0x40000bf	          0x4889df	                            mov rdi, rbx	       119	undo.c	FUNCTION_1	WHILE_1	CALL_2
+0x40000c2	      0xe800000000	                          call 0x40000c7	       119	undo.c	FUNCTION_1	WHILE_1	CALL_2
+0x40000c7	    0x488b1d000000	            mov rbx, qword [0x040000ce] 	       111	undo.c	FUNCTION_1	WHILE_1
+0x40000ce	          0x4885db	                           test rbx, rbx	       111	undo.c	FUNCTION_1	WHILE_1
+0x40000d1	            0x75d3	                           jne 0x40000a6	       111	undo.c	FUNCTION_1	WHILE_1
+0x40000d3	    0x48c705000000	               mov qword [0x040000de], 0	       121	undo.c	FUNCTION_1
+0x40000de	      0xba00000000	                              mov edx, 0	       122	undo.c	FUNCTION_1	CALL_3
+0x40000e3	          0x4889ee	                            mov rsi, rbp	       122	undo.c	FUNCTION_1	CALL_3
+0x40000e6	      0xbfffffffff	                     mov edi, 0xffffffff	       122	undo.c	FUNCTION_1	CALL_3
+0x40000eb	      0xe800000000	                          call 0x40000f0	       122	undo.c	FUNCTION_1	CALL_3
+0x40000f0	        0x4883c408	                              add rsp, 8	       123	undo.c	FUNCTION_1
+0x40000f4	              0x5b	                                 pop rbx	       123	undo.c	FUNCTION_1
+0x40000f5	              0x5d	                                 pop rbp	       123	undo.c	FUNCTION_1
+0x40000f6	              0xc3	                                     ret	       123	undo.c	FUNCTION_1
+rl_begin_undo_group	IF,0:ELSE,0:WHILE,0:FOR,0:functions,0:CALL,1:DO,0:SWITCH,0	10
+0x4000380	        0x4883ec08	                              sub rsp, 8	       256	undo.c	FUNCTION_5
+0x4000384	      0xb900000000	                              mov ecx, 0	       257	undo.c	FUNCTION_5	CALL_1
+0x4000389	      0xba00000000	                              mov edx, 0	       257	undo.c	FUNCTION_5	CALL_1
+0x400038e	      0xbe00000000	                              mov esi, 0	       257	undo.c	FUNCTION_5	CALL_1
+0x4000393	      0xbf02000000	                              mov edi, 2	       257	undo.c	FUNCTION_5	CALL_1
+0x4000398	      0xe800000000	                          call 0x400039d	       257	undo.c	FUNCTION_5	CALL_1
+0x400039d	    0x830500000000	               add dword [0x040003a4], 1	       258	undo.c	FUNCTION_5
+0x40003a4	      0xb800000000	                              mov eax, 0	       260	undo.c	FUNCTION_5
+0x40003a9	        0x4883c408	                              add rsp, 8	       260	undo.c	FUNCTION_5
+0x40003ad	              0xc3	                                     ret	       260	undo.c	FUNCTION_5
+_rl_copy_undo_list	IF,2:ELSE,1:WHILE,1:FOR,0:functions,0:CALL,1:DO,0:SWITCH,0	31
+0x4000179	          0x4885ff	                           test rdi, rdi	       142	undo.c	FUNCTION_3	IF_1
+0x400017c	            0x7536	                           jne 0x40001b4	       142	undo.c	FUNCTION_3	IF_1
+0x400017e	            0xeb2e	                           jmp 0x40001ae	       142	undo.c	FUNCTION_3	IF_1
+0x4000180	          0x4889df	                            mov rdi, rbx	       149	undo.c	FUNCTION_3	WHILE_1	CALL_1
+0x4000183	      0xe800000000	                          call 0x4000188	       149	undo.c	FUNCTION_3	WHILE_1	CALL_1
+0x4000188	          0x4d85e4	                           test r12, r12	       150	undo.c	FUNCTION_3	WHILE_1	IF_2
+0x400018b	            0x7406	                            je 0x4000193	       150	undo.c	FUNCTION_3	WHILE_1	IF_2
+0x400018d	        0x48894500	                    mov qword [rbp], rax	       154	undo.c	FUNCTION_3	WHILE_1	ELSE_1
+0x4000191	            0xeb03	                           jmp 0x4000196	       154	undo.c	FUNCTION_3	WHILE_1	ELSE_1
+0x4000193	          0x4989c4	                            mov r12, rax	       149	undo.c	FUNCTION_3	WHILE_1	CALL_1
+0x4000196	          0x4889c5	                            mov rbp, rax	       149	undo.c	FUNCTION_3	WHILE_1	CALL_1
+0x4000199	          0x488b1b	                    mov rbx, qword [rbx]	       157	undo.c	FUNCTION_3	WHILE_1
+0x400019c	          0x4885db	                           test rbx, rbx	       147	undo.c	FUNCTION_3	WHILE_1
+0x400019f	            0x75df	                           jne 0x4000180	       147	undo.c	FUNCTION_3	WHILE_1
+0x40001a1	    0x48c745000000	                      mov qword [rbp], 0	       160	undo.c	FUNCTION_3
+0x40001a9	          0x4c89e0	                            mov rax, r12	       161	undo.c	FUNCTION_3
+0x40001ac	            0xeb1a	                           jmp 0x40001c8	       161	undo.c	FUNCTION_3
+0x40001ae	      0xb800000000	                              mov eax, 0	       143	undo.c	FUNCTION_3	IF_1
+0x40001b3	              0xc3	                                     ret	       162	undo.c	FUNCTION_3
+0x40001b4	            0x4154	                                push r12	       139	undo.c	FUNCTION_3
+0x40001b6	              0x55	                                push rbp	       139	undo.c	FUNCTION_3
+0x40001b7	              0x53	                                push rbx	       139	undo.c	FUNCTION_3
+0x40001b8	          0x4889fb	                            mov rbx, rdi	       139	undo.c	FUNCTION_3
+0x40001bb	      0xe800000000	                          call 0x40001c0	       149	undo.c	FUNCTION_3	WHILE_1	CALL_1
+0x40001c0	          0x4889c5	                            mov rbp, rax	       149	undo.c	FUNCTION_3	WHILE_1	CALL_1
+0x40001c3	          0x4989c4	                            mov r12, rax	       149	undo.c	FUNCTION_3	WHILE_1	CALL_1
+0x40001c6	            0xebd1	                           jmp 0x4000199	       149	undo.c	FUNCTION_3	WHILE_1	CALL_1
+0x40001c8	              0x5b	                                 pop rbx	       162	undo.c	FUNCTION_3
+0x40001c9	              0x5d	                                 pop rbp	       162	undo.c	FUNCTION_3
+0x40001ca	            0x415c	                                 pop r12	       162	undo.c	FUNCTION_3
+0x40001cc	              0xc3	                                     ret	       162	undo.c	FUNCTION_3
+rl_end_undo_group	IF,0:ELSE,0:WHILE,0:FOR,0:functions,0:CALL,1:DO,0:SWITCH,0	10
+0x40003ae	        0x4883ec08	                              sub rsp, 8	       265	undo.c	FUNCTION_6
+0x40003b2	      0xb900000000	                              mov ecx, 0	       266	undo.c	FUNCTION_6	CALL_1
+0x40003b7	      0xba00000000	                              mov edx, 0	       266	undo.c	FUNCTION_6	CALL_1
+0x40003bc	      0xbe00000000	                              mov esi, 0	       266	undo.c	FUNCTION_6	CALL_1
+0x40003c1	      0xbf03000000	                              mov edi, 3	       266	undo.c	FUNCTION_6	CALL_1
+0x40003c6	      0xe800000000	                          call 0x40003cb	       266	undo.c	FUNCTION_6	CALL_1
+0x40003cb	    0x832d00000000	               sub dword [0x040003d2], 1	       267	undo.c	FUNCTION_6
+0x40003d2	      0xb800000000	                              mov eax, 0	       269	undo.c	FUNCTION_6
+0x40003d7	        0x4883c408	                              add rsp, 8	       269	undo.c	FUNCTION_6
+0x40003db	              0xc3	                                     ret	       269	undo.c	FUNCTION_6
+rl_do_undo	IF,3:ELSE,1:WHILE,0:FOR,0:functions,0:CALL,8:DO,1:SWITCH,1	92
+0x40001cd	            0x4156	                                push r14	       168	undo.c	FUNCTION_4
+0x40001cf	            0x4155	                                push r13	       168	undo.c	FUNCTION_4
+0x40001d1	            0x4154	                                push r12	       168	undo.c	FUNCTION_4
+0x40001d3	              0x55	                                push rbp	       168	undo.c	FUNCTION_4
+0x40001d4	              0x53	                                push rbx	       168	undo.c	FUNCTION_4
+0x40001d5	    0x41bc00000000	                             mov r12d, 0	       174	undo.c	FUNCTION_4
+0x40001db	      0xbd00000000	                              mov ebp, 0	       174	undo.c	FUNCTION_4
+0x40001e0	      0xbb00000000	                              mov ebx, 0	       174	undo.c	FUNCTION_4
+0x40001e5	    0x41bdffffffff	                    mov r13d, 0xffffffff	       225	undo.c	FUNCTION_4	DO_1	CALL_7
+0x40001eb	    0x488b15000000	            mov rdx, qword [0x040001f2] 	       177	undo.c	FUNCTION_4	DO_1	IF_1
+0x40001f2	          0x4885d2	                           test rdx, rdx	       177	undo.c	FUNCTION_4	DO_1	IF_1
+0x40001f5	     0xf843d010000	                            je 0x4000338	       177	undo.c	FUNCTION_4	DO_1	IF_1
+0x40001fb	    0xc70500000000	               mov dword [0x04000205], 1	       180	undo.c	FUNCTION_4	DO_1
+0x4000205	    0x810d00000000	          or dword [0x0400020f], 0x10000	       181	undo.c	FUNCTION_4	DO_1	CALL_1
+0x400020f	          0x8b4218	            mov eax, dword [rdx + 0x18] 	       185	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000212	          0x83f801	                              cmp eax, 1	       185	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000215	            0x7739	                            ja 0x4000250	       185	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000217	          0x8b6a08	                mov ebp, dword [rdx + 8]	       187	undo.c	FUNCTION_4	DO_1	IF_2
+0x400021a	          0x83fdff	             cmp ebp, 0xffffffffffffffff	       187	undo.c	FUNCTION_4	DO_1	IF_2
+0x400021d	            0x740c	                            je 0x400022b	       187	undo.c	FUNCTION_4	DO_1	IF_2
+0x400021f	          0x83fdfe	             cmp ebp, 0xfffffffffffffffe	       187	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000222	     0xf442d000000	           cmove ebp, dword [0x04000229]	       187	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000229	            0xeb06	                           jmp 0x4000231	       187	undo.c	FUNCTION_4	DO_1	IF_2
+0x400022b	    0x8b2d00000000	            mov ebp, dword [0x04000231] 	       187	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000231	        0x448b620c	            mov r12d, dword [rdx + 0xc] 	       188	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000235	        0x4183fcff	            cmp r12d, 0xffffffffffffffff	       188	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000239	            0x740e	                            je 0x4000249	       188	undo.c	FUNCTION_4	DO_1	IF_2
+0x400023b	        0x4183fcfe	            cmp r12d, 0xfffffffffffffffe	       188	undo.c	FUNCTION_4	DO_1	IF_2
+0x400023f	    0x440f44250000	          cmove r12d, dword [0x04000247]	       188	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000247	            0xeb07	                           jmp 0x4000250	       188	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000249	    0x448b25000000	           mov r12d, dword [0x04000250] 	       188	undo.c	FUNCTION_4	DO_1	IF_2
+0x4000250	          0x83f801	                              cmp eax, 1	       191	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x4000253	            0x743b	                            je 0x4000290	       191	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x4000255	          0x83f801	                              cmp eax, 1	       191	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x4000258	            0x7215	                            jb 0x400026f	       191	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x400025a	          0x83f802	                              cmp eax, 2	       191	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x400025d	            0x7443	                            je 0x40002a2	       191	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x400025f	          0x83f803	                              cmp eax, 3	       208	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x4000262	           0xf94c0	                                 sete al	       208	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x4000265	           0xfb6c0	                           movzx eax, al	       208	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x4000268	             0x1c3	                            add ebx, eax	       208	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x400026a	      0xe982000000	                           jmp 0x40002f1	       208	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x400026f	    0x892d00000000	            mov dword [0x04000275], ebp 	       195	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x4000275	        0x488b7a10	            mov rdi, qword [rdx + 0x10] 	       196	undo.c	FUNCTION_4	DO_1	SWITCH_1	CALL_2
+0x4000279	      0xe800000000	                          call 0x400027e	       196	undo.c	FUNCTION_4	DO_1	SWITCH_1	CALL_2
+0x400027e	    0x488b05000000	            mov rax, qword [0x04000285] 	       197	undo.c	FUNCTION_4	DO_1	SWITCH_1	CALL_3
+0x4000285	        0x488b7810	            mov rdi, qword [rax + 0x10] 	       197	undo.c	FUNCTION_4	DO_1	SWITCH_1	CALL_3
+0x4000289	      0xe800000000	                          call 0x400028e	       197	undo.c	FUNCTION_4	DO_1	SWITCH_1	CALL_3
+0x400028e	            0xeb61	                           jmp 0x40002f1	       198	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x4000290	          0x4489e6	                           mov esi, r12d	       202	undo.c	FUNCTION_4	DO_1	SWITCH_1	CALL_4
+0x4000293	            0x89ef	                            mov edi, ebp	       202	undo.c	FUNCTION_4	DO_1	SWITCH_1	CALL_4
+0x4000295	      0xe800000000	                          call 0x400029a	       202	undo.c	FUNCTION_4	DO_1	SWITCH_1	CALL_4
+0x400029a	    0x892d00000000	            mov dword [0x040002a0], ebp 	       203	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x40002a0	            0xeb4f	                           jmp 0x40002f1	       204	undo.c	FUNCTION_4	DO_1	SWITCH_1
+0x40002a2	            0x85db	                           test ebx, ebx	       213	undo.c	FUNCTION_4	DO_1	SWITCH_1	IF_3
+0x40002a4	            0x7405	                            je 0x40002ab	       213	undo.c	FUNCTION_4	DO_1	SWITCH_1	IF_3
+0x40002a6	          0x83eb01	                              sub ebx, 1	       214	undo.c	FUNCTION_4	DO_1	SWITCH_1	IF_3
+0x40002a9	            0xeb46	                           jmp 0x40002f1	       214	undo.c	FUNCTION_4	DO_1	SWITCH_1	IF_3
+0x40002ab	      0xe800000000	                          call 0x40002b0	       216	undo.c	FUNCTION_4	DO_1	SWITCH_1	CALL_5
+0x40002b0	    0xc70500000000	               mov dword [0x040002ba], 0	       220	undo.c	FUNCTION_4	DO_1
+0x40002ba	    0x812500000000	      and dword [0x040002c4], 0xfffeffff	       221	undo.c	FUNCTION_4	DO_1	CALL_6
+0x40002c4	    0x488b1d000000	            mov rbx, qword [0x040002cb] 	       223	undo.c	FUNCTION_4	DO_1
+0x40002cb	          0x488b13	                    mov rdx, qword [rbx]	       224	undo.c	FUNCTION_4	DO_1
+0x40002ce	    0x488915000000	            mov qword [0x040002d5], rdx 	       224	undo.c	FUNCTION_4	DO_1
+0x40002d5	          0x4889de	                            mov rsi, rbx	       225	undo.c	FUNCTION_4	DO_1	CALL_7
+0x40002d8	      0xbfffffffff	                     mov edi, 0xffffffff	       225	undo.c	FUNCTION_4	DO_1	CALL_7
+0x40002dd	      0xe800000000	                          call 0x40002e2	       225	undo.c	FUNCTION_4	DO_1	CALL_7
+0x40002e2	          0x4889df	                            mov rdi, rbx	       227	undo.c	FUNCTION_4	DO_1	CALL_8
+0x40002e5	      0xe800000000	                          call 0x40002ea	       227	undo.c	FUNCTION_4	DO_1	CALL_8
+0x40002ea	      0xb801000000	                              mov eax, 1	       231	undo.c	FUNCTION_4
+0x40002ef	            0xeb4c	                           jmp 0x400033d	       231	undo.c	FUNCTION_4
+0x40002f1	    0xc70500000000	               mov dword [0x040002fb], 0	       220	undo.c	FUNCTION_4	DO_1
+0x40002fb	    0x812500000000	      and dword [0x04000305], 0xfffeffff	       221	undo.c	FUNCTION_4	DO_1	CALL_6
+0x4000305	    0x4c8b35000000	            mov r14, qword [0x0400030c] 	       223	undo.c	FUNCTION_4	DO_1
+0x400030c	          0x498b16	                    mov rdx, qword [r14]	       224	undo.c	FUNCTION_4	DO_1
+0x400030f	    0x488915000000	            mov qword [0x04000316], rdx 	       224	undo.c	FUNCTION_4	DO_1
+0x4000316	          0x4c89f6	                            mov rsi, r14	       225	undo.c	FUNCTION_4	DO_1	CALL_7
+0x4000319	          0x4489ef	                           mov edi, r13d	       225	undo.c	FUNCTION_4	DO_1	CALL_7
+0x400031c	      0xe800000000	                          call 0x4000321	       225	undo.c	FUNCTION_4	DO_1	CALL_7
+0x4000321	          0x4c89f7	                            mov rdi, r14	       227	undo.c	FUNCTION_4	DO_1	CALL_8
+0x4000324	      0xe800000000	                          call 0x4000329	       227	undo.c	FUNCTION_4	DO_1	CALL_8
+0x4000329	            0x85db	                           test ebx, ebx	       229	undo.c	FUNCTION_4
+0x400032b	     0xf85bafeffff	                           jne 0x40001eb	       229	undo.c	FUNCTION_4
+0x4000331	      0xb801000000	                              mov eax, 1	       231	undo.c	FUNCTION_4
+0x4000336	            0xeb05	                           jmp 0x400033d	       231	undo.c	FUNCTION_4
+0x4000338	      0xb800000000	                              mov eax, 0	       178	undo.c	FUNCTION_4	DO_1	IF_1
+0x400033d	              0x5b	                                 pop rbx	       232	undo.c	FUNCTION_4
+0x400033e	              0x5d	                                 pop rbp	       232	undo.c	FUNCTION_4
+0x400033f	            0x415c	                                 pop r12	       232	undo.c	FUNCTION_4
+0x4000341	            0x415d	                                 pop r13	       232	undo.c	FUNCTION_4
+0x4000343	            0x415e	                                 pop r14	       232	undo.c	FUNCTION_4
+0x4000345	              0xc3	                                     ret	       232	undo.c	FUNCTION_4
+_rl_copy_undo_entry	IF,0:ELSE,0:WHILE,0:FOR,0:functions,0:CALL,2:DO,0:SWITCH,0	39
+0x40000f7	            0x4156	                                push r14	       128	undo.c	FUNCTION_2
+0x40000f9	            0x4155	                                push r13	       128	undo.c	FUNCTION_2
+0x40000fb	            0x4154	                                push r12	       128	undo.c	FUNCTION_2
+0x40000fd	              0x55	                                push rbp	       128	undo.c	FUNCTION_2
+0x40000fe	              0x53	                                push rbx	       128	undo.c	FUNCTION_2
+0x40000ff	          0x4889fd	                            mov rbp, rdi	       128	undo.c	FUNCTION_2
+0x4000102	        0x448b670c	            mov r12d, dword [rdi + 0xc] 	       131	undo.c	FUNCTION_2	CALL_1
+0x4000106	        0x448b6f08	               mov r13d, dword [rdi + 8]	       131	undo.c	FUNCTION_2	CALL_1
+0x400010a	        0x448b7718	           mov r14d, dword [rdi + 0x18] 	       131	undo.c	FUNCTION_2	CALL_1
+0x400010e	      0xbf20000000	                           mov edi, 0x20	        79	undo.c	CALL_3
+0x4000113	      0xe800000000	                          call 0x4000118	        79	undo.c	CALL_3
+0x4000118	          0x4889c3	                            mov rbx, rax	        79	undo.c	CALL_3
+0x400011b	        0x44897018	            mov dword [rax + 0x18], r14d	        80	undo.c	
+0x400011f	        0x44896808	               mov dword [rax + 8], r13d	        81	undo.c	
+0x4000123	        0x4489600c	             mov dword [rax + 0xc], r12d	        82	undo.c	
+0x4000127	    0x48c740100000	               mov qword [rax + 0x10], 0	        83	undo.c	
+0x400012f	    0x48c700000000	                      mov qword [rax], 0	        85	undo.c	
+0x4000136	        0x488b6d10	            mov rbp, qword [rbp + 0x10] 	       132	undo.c	FUNCTION_2	CALL_2
+0x400013a	          0x4885ed	                           test rbp, rbp	       132	undo.c	FUNCTION_2	CALL_2
+0x400013d	            0x742a	                            je 0x4000169	       132	undo.c	FUNCTION_2	CALL_2
+0x400013f	      0xb800000000	                              mov eax, 0	       132	undo.c	FUNCTION_2	CALL_2
+0x4000144	    0x48c7c1ffffff	             mov rcx, 0xffffffffffffffff	       132	undo.c	FUNCTION_2	CALL_2
+0x400014b	          0x4889ef	                            mov rdi, rbp	       132	undo.c	FUNCTION_2	CALL_2
+0x400014e	            0xf2ae	              repne scasb al, byte [rdi]	       132	undo.c	FUNCTION_2	CALL_2
+0x4000150	          0x48f7d1	                                 not rcx	       132	undo.c	FUNCTION_2	CALL_2
+0x4000153	          0x4889cf	                            mov rdi, rcx	       132	undo.c	FUNCTION_2	CALL_2
+0x4000156	      0xe800000000	                          call 0x400015b	       132	undo.c	FUNCTION_2	CALL_2
+0x400015b	          0x4889ee	                            mov rsi, rbp	       110	string3.h	FUNCTION_13	CALL_3
+0x400015e	          0x4889c7	                            mov rdi, rax	       110	string3.h	FUNCTION_13	CALL_3
+0x4000161	      0xe800000000	                          call 0x4000166	       110	string3.h	FUNCTION_13	CALL_3
+0x4000166	          0x4889c5	                            mov rbp, rax	       110	string3.h	FUNCTION_13	CALL_3
+0x4000169	        0x48896b10	             mov qword [rbx + 0x10], rbp	       132	undo.c	FUNCTION_2	CALL_2
+0x400016d	          0x4889d8	                            mov rax, rbx	       134	undo.c	FUNCTION_2
+0x4000170	              0x5b	                                 pop rbx	       134	undo.c	FUNCTION_2
+0x4000171	              0x5d	                                 pop rbp	       134	undo.c	FUNCTION_2
+0x4000172	            0x415c	                                 pop r12	       134	undo.c	FUNCTION_2
+0x4000174	            0x415d	                                 pop r13	       134	undo.c	FUNCTION_2
+0x4000176	            0x415e	                                 pop r14	       134	undo.c	FUNCTION_2
+0x4000178	              0xc3	                                     ret	       134	undo.c	FUNCTION_2

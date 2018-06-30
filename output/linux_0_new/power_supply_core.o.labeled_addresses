@@ -1,0 +1,364 @@
+devm_power_supply_release	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,1:SWITCH,0:WHILE,0	2
+0x40005b0	          0x488b3e	                    mov rdi, qword [rsi]	       989	power_supply_core.c	FUNCTION_50	CALL_1
+0x40005b3	      0xe958ffffff	         jmp sym.power_supply_unregister	       989	power_supply_core.c	FUNCTION_50	CALL_1
+__power_supply_get_supplier_max_current	functions,0:ELSE,0:FOR,0:IF,2:DO,0:CALL,3:SWITCH,0:WHILE,0	29
+0x4000870	              0x53	                                push rbx	       376	power_supply_core.c	FUNCTION_16
+0x4000871	        0x4883ec10	                           sub rsp, 0x10	       376	power_supply_core.c	FUNCTION_16
+0x4000875	    0x488b9f980000	            mov rbx, qword [rdi + 0x98] 	       376	power_supply_core.c	FUNCTION_16
+0x400087c	    0x65488b042528	                mov rax, qword gs:[0x28]	       376	power_supply_core.c	FUNCTION_16
+0x4000885	      0x4889442408	                mov qword [rsp + 8], rax	       376	power_supply_core.c	FUNCTION_16
+0x400088a	            0x31c0	                            xor eax, eax	       376	power_supply_core.c	FUNCTION_16
+0x400088c	    0x48c704240000	                      mov qword [rsp], 0	       377	power_supply_core.c	FUNCTION_16
+0x4000894	          0x4889df	                            mov rdi, rbx	       381	power_supply_core.c	FUNCTION_16	IF_1	CALL_2
+0x4000897	      0xe8b4feffff	  call sym.__power_supply_is_supplied_by	       381	power_supply_core.c	FUNCTION_16	IF_1	CALL_2
+0x400089c	            0x84c0	                             test al, al	       381	power_supply_core.c	FUNCTION_16	IF_1	CALL_2
+0x400089e	            0x7518	                           jne 0x40008b8	       381	power_supply_core.c	FUNCTION_16	IF_1	CALL_2
+0x40008a0	            0x31c0	                            xor eax, eax	       387	power_supply_core.c	FUNCTION_16
+0x40008a2	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       388	power_supply_core.c	FUNCTION_16
+0x40008a7	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       388	power_supply_core.c	FUNCTION_16
+0x40008b0	            0x7526	                           jne 0x40008d8	       388	power_supply_core.c	FUNCTION_16
+0x40008b2	        0x4883c410	                           add rsp, 0x10	       388	power_supply_core.c	FUNCTION_16
+0x40008b6	              0x5b	                                 pop rbx	       388	power_supply_core.c	FUNCTION_16
+0x40008b7	              0xc3	                                     ret	       388	power_supply_core.c	FUNCTION_16
+0x40008b8	          0x488b03	                    mov rax, qword [rbx]	       382	power_supply_core.c	FUNCTION_16	IF_1	IF_2	CALL_3
+0x40008bb	          0x4889e2	                            mov rdx, rsp	       382	power_supply_core.c	FUNCTION_16	IF_1	IF_2	CALL_3
+0x40008be	      0xbe10000000	                           mov esi, 0x10	       382	power_supply_core.c	FUNCTION_16	IF_1	IF_2	CALL_3
+0x40008c3	          0x4889df	                            mov rdi, rbx	       382	power_supply_core.c	FUNCTION_16	IF_1	IF_2	CALL_3
+0x40008c6	        0x488b4020	            mov rax, qword [rax + 0x20] 	       382	power_supply_core.c	FUNCTION_16	IF_1	IF_2	CALL_3
+0x40008ca	      0xe800000000	                          call 0x40008cf	       382	power_supply_core.c	FUNCTION_16	IF_1	IF_2	CALL_3
+0x40008cf	            0x85c0	                           test eax, eax	       382	power_supply_core.c	FUNCTION_16	IF_1	IF_2	CALL_3
+0x40008d1	            0x75cd	                           jne 0x40008a0	       382	power_supply_core.c	FUNCTION_16	IF_1	IF_2	CALL_3
+0x40008d3	          0x8b0424	                    mov eax, dword [rsp]	       385	power_supply_core.c	FUNCTION_16	IF_1	IF_2
+0x40008d6	            0xebca	                           jmp 0x40008a2	       385	power_supply_core.c	FUNCTION_16	IF_1	IF_2
+0x40008d8	      0xe800000000	                          call 0x40008dd	       388	power_supply_core.c	FUNCTION_16
+power_supply_set_input_current_limit_from_supplier	functions,0:ELSE,0:FOR,0:IF,2:DO,0:CALL,2:SWITCH,0:WHILE,0	36
+0x40002d0	              0x53	                                push rbx	       391	power_supply_core.c	FUNCTION_17
+0x40002d1	        0x4883ec10	                           sub rsp, 0x10	       391	power_supply_core.c	FUNCTION_17
+0x40002d5	    0x65488b042528	                mov rax, qword gs:[0x28]	       391	power_supply_core.c	FUNCTION_17
+0x40002de	      0x4889442408	                mov qword [rsp + 8], rax	       391	power_supply_core.c	FUNCTION_17
+0x40002e3	            0x31c0	                            xor eax, eax	       391	power_supply_core.c	FUNCTION_17
+0x40002e5	          0x488b07	                    mov rax, qword [rdi]	       395	power_supply_core.c	FUNCTION_17	IF_1
+0x40002e8	    0x48c704240000	                      mov qword [rsp], 0	       392	power_supply_core.c	FUNCTION_17
+0x40002f0	      0x4883782800	               cmp qword [rax + 0x28], 0	       395	power_supply_core.c	FUNCTION_17	IF_1
+0x40002f5	            0x745a	                            je 0x4000351	       395	power_supply_core.c	FUNCTION_17	IF_1
+0x40002f7	          0x4889fa	                            mov rdx, rdi	       403	power_supply_core.c	FUNCTION_17	CALL_1
+0x40002fa	          0x4889fb	                            mov rbx, rdi	       403	power_supply_core.c	FUNCTION_17	CALL_1
+0x40002fd	    0x488b3d000000	            mov rdi, qword [0x04000304] 	       403	power_supply_core.c	FUNCTION_17	CALL_1
+0x4000304	            0x31f6	                            xor esi, esi	       403	power_supply_core.c	FUNCTION_17	CALL_1
+0x4000306	    0x48c7c1000000	                              mov rcx, 0	       403	power_supply_core.c	FUNCTION_17	CALL_1
+0x400030d	      0xe800000000	                          call 0x4000312	       403	power_supply_core.c	FUNCTION_17	CALL_1
+0x4000312	          0x83f800	                              cmp eax, 0	       405	power_supply_core.c	FUNCTION_17	IF_2
+0x4000315	            0x7e30	                           jle 0x4000347	       405	power_supply_core.c	FUNCTION_17	IF_2
+0x4000317	          0x890424	                    mov dword [rsp], eax	       408	power_supply_core.c	FUNCTION_17
+0x400031a	          0x488b03	                    mov rax, qword [rbx]	       410	power_supply_core.c	FUNCTION_17	CALL_2
+0x400031d	          0x4889e2	                            mov rdx, rsp	       410	power_supply_core.c	FUNCTION_17	CALL_2
+0x4000320	      0xbe23000000	                           mov esi, 0x23	       410	power_supply_core.c	FUNCTION_17	CALL_2
+0x4000325	          0x4889df	                            mov rdi, rbx	       410	power_supply_core.c	FUNCTION_17	CALL_2
+0x4000328	        0x488b4028	            mov rax, qword [rax + 0x28] 	       410	power_supply_core.c	FUNCTION_17	CALL_2
+0x400032c	      0xe800000000	                          call 0x4000331	       410	power_supply_core.c	FUNCTION_17	CALL_2
+0x4000331	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       412	power_supply_core.c	FUNCTION_17
+0x4000336	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       412	power_supply_core.c	FUNCTION_17
+0x400033f	            0x7517	                           jne 0x4000358	       412	power_supply_core.c	FUNCTION_17
+0x4000341	        0x4883c410	                           add rsp, 0x10	       412	power_supply_core.c	FUNCTION_17
+0x4000345	              0x5b	                                 pop rbx	       412	power_supply_core.c	FUNCTION_17
+0x4000346	              0xc3	                                     ret	       412	power_supply_core.c	FUNCTION_17
+0x4000347	      0xbaedffffff	                     mov edx, 0xffffffed	       406	power_supply_core.c	FUNCTION_17	IF_2
+0x400034c	           0xf44c2	                          cmove eax, edx	       406	power_supply_core.c	FUNCTION_17	IF_2
+0x400034f	            0xebe0	                           jmp 0x4000331	       406	power_supply_core.c	FUNCTION_17	IF_2
+0x4000351	      0xb8eaffffff	                     mov eax, 0xffffffea	       396	power_supply_core.c	FUNCTION_17	IF_1
+0x4000356	            0xebd9	                           jmp 0x4000331	       396	power_supply_core.c	FUNCTION_17	IF_1
+0x4000358	      0xe800000000	                          call 0x400035d	       412	power_supply_core.c	FUNCTION_17
+power_supply_am_i_supplied	functions,0:ELSE,0:FOR,0:IF,1:DO,0:CALL,2:SWITCH,0:WHILE,0	21
+0x4000210	        0x4883ec18	                           sub rsp, 0x18	       324	power_supply_core.c	FUNCTION_13
+0x4000214	    0x48c7c1000000	                              mov rcx, 0	       328	power_supply_core.c	FUNCTION_13	CALL_1
+0x400021b	            0x31f6	                            xor esi, esi	       328	power_supply_core.c	FUNCTION_13	CALL_1
+0x400021d	        0x48893c24	                    mov qword [rsp], rdi	       325	power_supply_core.c	FUNCTION_13
+0x4000221	    0x488b3d000000	            mov rdi, qword [0x04000228] 	       328	power_supply_core.c	FUNCTION_13	CALL_1
+0x4000228	          0x4889e2	                            mov rdx, rsp	       328	power_supply_core.c	FUNCTION_13	CALL_1
+0x400022b	    0x65488b042528	                mov rax, qword gs:[0x28]	       324	power_supply_core.c	FUNCTION_13
+0x4000234	      0x4889442410	             mov qword [rsp + 0x10], rax	       324	power_supply_core.c	FUNCTION_13
+0x4000239	            0x31c0	                            xor eax, eax	       324	power_supply_core.c	FUNCTION_13
+0x400023b	    0xc74424080000	                  mov dword [rsp + 8], 0	       325	power_supply_core.c	FUNCTION_13
+0x4000243	      0xe800000000	                          call 0x4000248	       328	power_supply_core.c	FUNCTION_13	CALL_1
+0x4000248	        0x8b542408	                mov edx, dword [rsp + 8]	       336	power_supply_core.c	FUNCTION_13
+0x400024c	            0x85d2	                           test edx, edx	       336	power_supply_core.c	FUNCTION_13
+0x400024e	      0xbaedffffff	                     mov edx, 0xffffffed	       336	power_supply_core.c	FUNCTION_13
+0x4000253	           0xf44c2	                          cmove eax, edx	       336	power_supply_core.c	FUNCTION_13
+0x4000256	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       337	power_supply_core.c	FUNCTION_13
+0x400025b	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       337	power_supply_core.c	FUNCTION_13
+0x4000264	            0x7505	                           jne 0x400026b	       337	power_supply_core.c	FUNCTION_13
+0x4000266	        0x4883c418	                           add rsp, 0x18	       337	power_supply_core.c	FUNCTION_13
+0x400026a	              0xc3	                                     ret	       337	power_supply_core.c	FUNCTION_13
+0x400026b	      0xe800000000	call sym.power_supply_is_system_supplied	       337	power_supply_core.c	FUNCTION_13
+__power_supply_changed_work	functions,0:ELSE,0:FOR,0:IF,2:DO,0:CALL,3:SWITCH,0:WHILE,0	17
+0x40008e0	              0x53	                                push rbx	        63	power_supply_core.c	FUNCTION_2
+0x40008e1	    0x488b9f980000	            mov rbx, qword [rdi + 0x98] 	        63	power_supply_core.c	FUNCTION_2
+0x40008e8	          0x4889f0	                            mov rax, rsi	        63	power_supply_core.c	FUNCTION_2
+0x40008eb	          0x4889c7	                            mov rdi, rax	        67	power_supply_core.c	FUNCTION_2	IF_1	CALL_2
+0x40008ee	          0x4889de	                            mov rsi, rbx	        67	power_supply_core.c	FUNCTION_2	IF_1	CALL_2
+0x40008f1	      0xe85afeffff	  call sym.__power_supply_is_supplied_by	        67	power_supply_core.c	FUNCTION_2	IF_1	CALL_2
+0x40008f6	            0x84c0	                             test al, al	        67	power_supply_core.c	FUNCTION_2	IF_1	CALL_2
+0x40008f8	            0x7414	                            je 0x400090e	        67	power_supply_core.c	FUNCTION_2	IF_1	CALL_2
+0x40008fa	          0x488b03	                    mov rax, qword [rbx]	        68	power_supply_core.c	FUNCTION_2	IF_1	IF_2
+0x40008fd	        0x488b4038	            mov rax, qword [rax + 0x38] 	        68	power_supply_core.c	FUNCTION_2	IF_1	IF_2
+0x4000901	          0x4885c0	                           test rax, rax	        68	power_supply_core.c	FUNCTION_2	IF_1	IF_2
+0x4000904	            0x7408	                            je 0x400090e	        68	power_supply_core.c	FUNCTION_2	IF_1	IF_2
+0x4000906	          0x4889df	                            mov rdi, rbx	        69	power_supply_core.c	FUNCTION_2	IF_1	CALL_3
+0x4000909	      0xe800000000	                          call 0x400090e	        69	power_supply_core.c	FUNCTION_2	IF_1	CALL_3
+0x400090e	            0x31c0	                            xor eax, eax	        73	power_supply_core.c	FUNCTION_2
+0x4000910	              0x5b	                                 pop rbx	        73	power_supply_core.c	FUNCTION_2
+0x4000911	              0xc3	                                     ret	        73	power_supply_core.c	FUNCTION_2
+power_supply_class_init	functions,0:ELSE,0:FOR,0:IF,1:DO,0:CALL,4:SWITCH,0:WHILE,0	13
+0x4000040	        0x4883ec10	                           sub rsp, 0x10	       341	power_supply_core.c	FUNCTION_14
+0x4000044	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	       341	power_supply_core.c	FUNCTION_14
+0x400004b	          0x830601	                      add dword [rsi], 1	       346	power_supply_core.c	FUNCTION_14
+0x400004e	    0x65488b042528	                mov rax, qword gs:[0x28]	       341	power_supply_core.c	FUNCTION_14
+0x4000057	      0x4889442408	                mov qword [rsp + 8], rax	       341	power_supply_core.c	FUNCTION_14
+0x400005c	            0x31c0	                            xor eax, eax	       341	power_supply_core.c	FUNCTION_14
+0x400005e	    0x48c704240000	                      mov qword [rsp], 0	       342	power_supply_core.c	FUNCTION_14
+0x4000066	          0x488b07	                    mov rax, qword [rdi]	       347	power_supply_core.c	FUNCTION_14	IF_1
+0x4000069	        0x83780801	                  cmp dword [rax + 8], 1	       347	power_supply_core.c	FUNCTION_14	IF_1
+0x400006d	            0x741a	                            je 0x4000089	       347	power_supply_core.c	FUNCTION_14	IF_1
+0x400006f	        0x488b4020	            mov rax, qword [rax + 0x20] 	       348	power_supply_core.c	FUNCTION_14	IF_1	IF_2	CALL_2
+0x4000073	          0x4889e2	                            mov rdx, rsp	       348	power_supply_core.c	FUNCTION_14	IF_1	IF_2	CALL_2
+0x4000076	      0xbe04000000	                              mov esi, 4	       348	power_supply_core.c	FUNCTION_14	IF_1	IF_2	CALL_2
+power_supply_register_no_ws	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,1:SWITCH,0:WHILE,0	2
+0x4000d20	            0x31c9	                            xor ecx, ecx	       981	power_supply_core.c	FUNCTION_49	CALL_1
+0x4000d22	      0xe959fcffff	         jmp sym.__power_supply_register	       981	power_supply_core.c	FUNCTION_49	CALL_1
+power_supply_deferred_register_work	functions,0:ELSE,0:FOR,0:IF,2:DO,0:CALL,4:SWITCH,0:WHILE,0	21
+0x4000410	              0x55	                                push rbp	       138	power_supply_core.c	FUNCTION_5
+0x4000411	    0x488dafd8fcff	                  lea rbp, [rdi - 0x328]	       139	power_supply_core.c	FUNCTION_5	CALL_1
+0x4000418	              0x53	                                push rbx	       138	power_supply_core.c	FUNCTION_5
+0x4000419	          0x4889fb	                            mov rbx, rdi	       138	power_supply_core.c	FUNCTION_5
+0x400041c	    0x488bbf10fdff	            mov rdi, qword [rdi - 0x2f0]	       142	power_supply_core.c	FUNCTION_5	IF_1
+0x4000423	          0x4885ff	                           test rdi, rdi	       142	power_supply_core.c	FUNCTION_5	IF_1
+0x4000426	            0x7409	                            je 0x4000431	       142	power_supply_core.c	FUNCTION_5	IF_1
+0x4000428	        0x4883c760	                           add rdi, 0x60	       143	power_supply_core.c	FUNCTION_5	CALL_2
+0x400042c	      0xe800000000	                          call 0x4000431	       143	power_supply_core.c	FUNCTION_5	CALL_2
+0x4000431	          0x4889ef	                            mov rdi, rbp	       145	power_supply_core.c	FUNCTION_5	CALL_3
+0x4000434	      0xe800000000	                          call 0x4000439	       145	power_supply_core.c	FUNCTION_5	CALL_3
+0x4000439	    0x488bbb10fdff	            mov rdi, qword [rbx - 0x2f0]	       147	power_supply_core.c	FUNCTION_5	IF_2
+0x4000440	          0x4885ff	                           test rdi, rdi	       147	power_supply_core.c	FUNCTION_5	IF_2
+0x4000443	            0x740b	                            je 0x4000450	       147	power_supply_core.c	FUNCTION_5	IF_2
+0x4000445	              0x5b	                                 pop rbx	       149	power_supply_core.c	FUNCTION_5
+0x4000446	              0x5d	                                 pop rbp	       149	power_supply_core.c	FUNCTION_5
+0x4000447	        0x4883c760	                           add rdi, 0x60	       148	power_supply_core.c	FUNCTION_5	CALL_4
+0x400044b	      0xe900000000	                           jmp 0x4000450	       148	power_supply_core.c	FUNCTION_5	CALL_4
+0x4000450	              0x5b	                                 pop rbx	       149	power_supply_core.c	FUNCTION_5
+0x4000451	              0x5d	                                 pop rbp	       149	power_supply_core.c	FUNCTION_5
+0x4000452	              0xc3	                                     ret	       149	power_supply_core.c	FUNCTION_5
+power_supply_powers	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,1:SWITCH,0:WHILE,0	4
+0x40003d0	        0x4883c610	                           add rsi, 0x10	       665	power_supply_core.c	FUNCTION_31	CALL_1
+0x40003d4	        0x4883c748	                           add rdi, 0x48	       665	power_supply_core.c	FUNCTION_31	CALL_1
+0x40003d8	    0x48c7c2000000	                              mov rdx, 0	       665	power_supply_core.c	FUNCTION_31	CALL_1
+0x40003df	      0xe900000000	                           jmp 0x40003e4	       665	power_supply_core.c	FUNCTION_31	CALL_1
+devm_power_supply_register	functions,0:ELSE,1:FOR,0:IF,2:DO,0:CALL,6:SWITCH,0:WHILE,0	39
+0x4000d30	            0x4155	                                push r13	      1010	power_supply_core.c	FUNCTION_51
+0x4000d32	            0x4154	                                push r12	      1010	power_supply_core.c	FUNCTION_51
+0x4000d34	          0x4989d5	                            mov r13, rdx	      1010	power_supply_core.c	FUNCTION_51
+0x4000d37	              0x55	                                push rbp	      1010	power_supply_core.c	FUNCTION_51
+0x4000d38	              0x53	                                push rbx	      1010	power_supply_core.c	FUNCTION_51
+0x4000d39	          0x4989fc	                            mov r12, rdi	      1010	power_supply_core.c	FUNCTION_51
+0x4000d3c	          0x4889f3	                            mov rbx, rsi	      1010	power_supply_core.c	FUNCTION_51
+0x4000d3f	    0x49c7c0000000	                               mov r8, 0	      1013	power_supply_core.c	FUNCTION_51	CALL_1
+0x4000d46	      0xb9ffffffff	                     mov ecx, 0xffffffff	      1013	power_supply_core.c	FUNCTION_51	CALL_1
+0x4000d4b	      0xbac0004001	                      mov edx, 0x14000c0	      1013	power_supply_core.c	FUNCTION_51	CALL_1
+0x4000d50	      0xbe08000000	                              mov esi, 8	      1013	power_supply_core.c	FUNCTION_51	CALL_1
+0x4000d55	    0x48c7c7000000	                              mov rdi, 0	      1013	power_supply_core.c	FUNCTION_51	CALL_1
+0x4000d5c	      0xe800000000	                          call 0x4000d61	      1013	power_supply_core.c	FUNCTION_51	CALL_1
+0x4000d61	          0x4889c5	                            mov rbp, rax	      1013	power_supply_core.c	FUNCTION_51	CALL_1
+0x4000d64	    0x48c7c0f4ffff	             mov rax, 0xfffffffffffffff4	      1016	power_supply_core.c	FUNCTION_51	CALL_2
+0x4000d6b	          0x4885ed	                           test rbp, rbp	      1015	power_supply_core.c	FUNCTION_51	IF_1
+0x4000d6e	            0x7430	                            je 0x4000da0	      1015	power_supply_core.c	FUNCTION_51	IF_1
+0x4000d70	          0x4889de	                            mov rsi, rbx	      1017	power_supply_core.c	FUNCTION_51	CALL_3
+0x4000d73	      0xb901000000	                              mov ecx, 1	      1017	power_supply_core.c	FUNCTION_51	CALL_3
+0x4000d78	          0x4c89ea	                            mov rdx, r13	      1017	power_supply_core.c	FUNCTION_51	CALL_3
+0x4000d7b	          0x4c89e7	                            mov rdi, r12	      1017	power_supply_core.c	FUNCTION_51	CALL_3
+0x4000d7e	      0xe8fdfbffff	        call sym.__power_supply_register	      1017	power_supply_core.c	FUNCTION_51	CALL_3
+0x4000d83	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1018	power_supply_core.c	FUNCTION_51	IF_2	CALL_4
+0x4000d89	          0x4889c3	                            mov rbx, rax	      1017	power_supply_core.c	FUNCTION_51	CALL_3
+0x4000d8c	            0x7719	                            ja 0x4000da7	      1018	power_supply_core.c	FUNCTION_51	IF_2	CALL_4
+0x4000d8e	        0x48894500	                    mov qword [rbp], rax	      1021	power_supply_core.c	FUNCTION_51	ELSE_1
+0x4000d92	          0x4889ee	                            mov rsi, rbp	      1022	power_supply_core.c	FUNCTION_51	ELSE_1	CALL_6
+0x4000d95	          0x4c89e7	                            mov rdi, r12	      1022	power_supply_core.c	FUNCTION_51	ELSE_1	CALL_6
+0x4000d98	      0xe800000000	                          call 0x4000d9d	      1022	power_supply_core.c	FUNCTION_51	ELSE_1	CALL_6
+0x4000d9d	          0x4889d8	                            mov rax, rbx	      1024	power_supply_core.c	FUNCTION_51
+0x4000da0	              0x5b	                                 pop rbx	      1025	power_supply_core.c	FUNCTION_51
+0x4000da1	              0x5d	                                 pop rbp	      1025	power_supply_core.c	FUNCTION_51
+0x4000da2	            0x415c	                                 pop r12	      1025	power_supply_core.c	FUNCTION_51
+0x4000da4	            0x415d	                                 pop r13	      1025	power_supply_core.c	FUNCTION_51
+0x4000da6	              0xc3	                                     ret	      1025	power_supply_core.c	FUNCTION_51
+0x4000da7	          0x4889ef	                            mov rdi, rbp	      1019	power_supply_core.c	FUNCTION_51	IF_2	CALL_5
+0x4000daa	      0xe800000000	                          call 0x4000daf	      1019	power_supply_core.c	FUNCTION_51	IF_2	CALL_5
+0x4000daf	          0x4889d8	                            mov rax, rbx	      1024	power_supply_core.c	FUNCTION_51
+0x4000db2	            0xebec	                           jmp 0x4000da0	      1024	power_supply_core.c	FUNCTION_51
+__power_supply_is_system_supplied	functions,0:ELSE,0:FOR,0:IF,2:DO,0:CALL,2:SWITCH,0:WHILE,0	25
+0x4000040	        0x4883ec10	                           sub rsp, 0x10	       341	power_supply_core.c	FUNCTION_14
+0x4000044	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	       341	power_supply_core.c	FUNCTION_14
+0x400004b	          0x830601	                      add dword [rsi], 1	       346	power_supply_core.c	FUNCTION_14
+0x400004e	    0x65488b042528	                mov rax, qword gs:[0x28]	       341	power_supply_core.c	FUNCTION_14
+0x4000057	      0x4889442408	                mov qword [rsp + 8], rax	       341	power_supply_core.c	FUNCTION_14
+0x400005c	            0x31c0	                            xor eax, eax	       341	power_supply_core.c	FUNCTION_14
+0x400005e	    0x48c704240000	                      mov qword [rsp], 0	       342	power_supply_core.c	FUNCTION_14
+0x4000066	          0x488b07	                    mov rax, qword [rdi]	       347	power_supply_core.c	FUNCTION_14	IF_1
+0x4000069	        0x83780801	                  cmp dword [rax + 8], 1	       347	power_supply_core.c	FUNCTION_14	IF_1
+0x400006d	            0x741a	                            je 0x4000089	       347	power_supply_core.c	FUNCTION_14	IF_1
+0x400006f	        0x488b4020	            mov rax, qword [rax + 0x20] 	       348	power_supply_core.c	FUNCTION_14	IF_1	IF_2	CALL_2
+0x4000073	          0x4889e2	                            mov rdx, rsp	       348	power_supply_core.c	FUNCTION_14	IF_1	IF_2	CALL_2
+0x4000076	      0xbe04000000	                              mov esi, 4	       348	power_supply_core.c	FUNCTION_14	IF_1	IF_2	CALL_2
+0x400007b	      0xe800000000	                          call 0x4000080	       348	power_supply_core.c	FUNCTION_14	IF_1	IF_2	CALL_2
+0x4000080	            0x85c0	                           test eax, eax	       348	power_supply_core.c	FUNCTION_14	IF_1	IF_2	CALL_2
+0x4000082	            0x7505	                           jne 0x4000089	       348	power_supply_core.c	FUNCTION_14	IF_1	IF_2	CALL_2
+0x4000084	          0x8b0424	                    mov eax, dword [rsp]	       350	power_supply_core.c	FUNCTION_14	IF_1	IF_2
+0x4000087	            0xeb02	                           jmp 0x400008b	       350	power_supply_core.c	FUNCTION_14	IF_1	IF_2
+0x4000089	            0x31c0	                            xor eax, eax	       352	power_supply_core.c	FUNCTION_14
+0x400008b	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       353	power_supply_core.c	FUNCTION_14
+0x4000090	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       353	power_supply_core.c	FUNCTION_14
+0x4000099	            0x7505	                           jne 0x40000a0	       353	power_supply_core.c	FUNCTION_14
+0x400009b	        0x4883c410	                           add rsp, 0x10	       353	power_supply_core.c	FUNCTION_14
+0x400009f	              0xc3	                                     ret	       353	power_supply_core.c	FUNCTION_14
+0x40000a0	      0xe800000000	                          call 0x40000a5	       353	power_supply_core.c	FUNCTION_14
+power_supply_match_device_by_name	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,2:SWITCH,0:WHILE,0	8
+0x4000360	    0x488b87980000	            mov rax, qword [rdi + 0x98] 	       433	power_supply_core.c	FUNCTION_19	CALL_2
+0x4000367	          0x488b00	                    mov rax, qword [rax]	       433	power_supply_core.c	FUNCTION_19	CALL_2
+0x400036a	          0x488b38	                    mov rdi, qword [rax]	       433	power_supply_core.c	FUNCTION_19	CALL_2
+0x400036d	      0xe800000000	                          call 0x4000372	       433	power_supply_core.c	FUNCTION_19	CALL_2
+0x4000372	            0x85c0	                           test eax, eax	       433	power_supply_core.c	FUNCTION_19	CALL_2
+0x4000374	           0xf94c0	                                 sete al	       433	power_supply_core.c	FUNCTION_19	CALL_2
+0x4000377	           0xfb6c0	                           movzx eax, al	       433	power_supply_core.c	FUNCTION_19	CALL_2
+0x400037a	              0xc3	                                     ret	       434	power_supply_core.c	FUNCTION_19
+__power_supply_am_i_supplied	functions,0:ELSE,0:FOR,0:IF,2:DO,0:CALL,3:SWITCH,0:WHILE,0	34
+0x40007f0	              0x55	                                push rbp	       308	power_supply_core.c	FUNCTION_12
+0x40007f1	              0x53	                                push rbx	       308	power_supply_core.c	FUNCTION_12
+0x40007f2	          0x4889f5	                            mov rbp, rsi	       308	power_supply_core.c	FUNCTION_12
+0x40007f5	        0x4883ec10	                           sub rsp, 0x10	       308	power_supply_core.c	FUNCTION_12
+0x40007f9	    0x488b9f980000	            mov rbx, qword [rdi + 0x98] 	       308	power_supply_core.c	FUNCTION_12
+0x4000800	          0x488b36	                    mov rsi, qword [rsi]	       313	power_supply_core.c	FUNCTION_12	IF_1	CALL_2
+0x4000803	    0x65488b042528	                mov rax, qword gs:[0x28]	       308	power_supply_core.c	FUNCTION_12
+0x400080c	      0x4889442408	                mov qword [rsp + 8], rax	       308	power_supply_core.c	FUNCTION_12
+0x4000811	            0x31c0	                            xor eax, eax	       308	power_supply_core.c	FUNCTION_12
+0x4000813	    0x48c704240000	                      mov qword [rsp], 0	       309	power_supply_core.c	FUNCTION_12
+0x400081b	          0x4889df	                            mov rdi, rbx	       313	power_supply_core.c	FUNCTION_12	IF_1	CALL_2
+0x400081e	      0xe82dffffff	  call sym.__power_supply_is_supplied_by	       313	power_supply_core.c	FUNCTION_12	IF_1	CALL_2
+0x4000823	            0x84c0	                             test al, al	       313	power_supply_core.c	FUNCTION_12	IF_1	CALL_2
+0x4000825	            0x7519	                           jne 0x4000840	       313	power_supply_core.c	FUNCTION_12	IF_1	CALL_2
+0x4000827	            0x31c0	                            xor eax, eax	       320	power_supply_core.c	FUNCTION_12
+0x4000829	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       321	power_supply_core.c	FUNCTION_12
+0x400082e	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       321	power_supply_core.c	FUNCTION_12
+0x4000837	            0x752b	                           jne 0x4000864	       321	power_supply_core.c	FUNCTION_12
+0x4000839	        0x4883c410	                           add rsp, 0x10	       321	power_supply_core.c	FUNCTION_12
+0x400083d	              0x5b	                                 pop rbx	       321	power_supply_core.c	FUNCTION_12
+0x400083e	              0x5d	                                 pop rbp	       321	power_supply_core.c	FUNCTION_12
+0x400083f	              0xc3	                                     ret	       321	power_supply_core.c	FUNCTION_12
+0x4000840	        0x83450801	                  add dword [rbp + 8], 1	       314	power_supply_core.c	FUNCTION_12	IF_1
+0x4000844	          0x4889e2	                            mov rdx, rsp	       315	power_supply_core.c	FUNCTION_12	IF_1	IF_2	CALL_3
+0x4000847	      0xbe04000000	                              mov esi, 4	       315	power_supply_core.c	FUNCTION_12	IF_1	IF_2	CALL_3
+0x400084c	          0x488b03	                    mov rax, qword [rbx]	       315	power_supply_core.c	FUNCTION_12	IF_1	IF_2	CALL_3
+0x400084f	          0x4889df	                            mov rdi, rbx	       315	power_supply_core.c	FUNCTION_12	IF_1	IF_2	CALL_3
+0x4000852	        0x488b4020	            mov rax, qword [rax + 0x20] 	       315	power_supply_core.c	FUNCTION_12	IF_1	IF_2	CALL_3
+0x4000856	      0xe800000000	                          call 0x400085b	       315	power_supply_core.c	FUNCTION_12	IF_1	IF_2	CALL_3
+0x400085b	            0x85c0	                           test eax, eax	       315	power_supply_core.c	FUNCTION_12	IF_1	IF_2	CALL_3
+0x400085d	            0x75c8	                           jne 0x4000827	       315	power_supply_core.c	FUNCTION_12	IF_1	IF_2	CALL_3
+0x400085f	          0x8b0424	                    mov eax, dword [rsp]	       317	power_supply_core.c	FUNCTION_12	IF_1	IF_2
+0x4000862	            0xebc5	                           jmp 0x4000829	       317	power_supply_core.c	FUNCTION_12	IF_1	IF_2
+0x4000864	      0xe800000000	                          call 0x4000869	       321	power_supply_core.c	FUNCTION_12
+power_supply_register	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,1:SWITCH,0:WHILE,0	2
+0x4000d10	      0xb901000000	                              mov ecx, 1	       958	power_supply_core.c	FUNCTION_48	CALL_1
+0x4000d15	      0xe966fcffff	         jmp sym.__power_supply_register	       958	power_supply_core.c	FUNCTION_48	CALL_1
+ps_set_cur_charge_cntl_limit	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,1:SWITCH,0:WHILE,0	17
+0x4000160	        0x4883ec10	                           sub rsp, 0x10	       776	power_supply_core.c	FUNCTION_40
+0x4000164	    0x488bbff00200	           mov rdi, qword [rdi + 0x2f0] 	       781	power_supply_core.c	FUNCTION_40
+0x400016b	    0x65488b042528	                mov rax, qword gs:[0x28]	       776	power_supply_core.c	FUNCTION_40
+0x4000174	      0x4889442408	                mov qword [rsp + 8], rax	       776	power_supply_core.c	FUNCTION_40
+0x4000179	            0x31c0	                            xor eax, eax	       776	power_supply_core.c	FUNCTION_40
+0x400017b	          0x893424	                    mov dword [rsp], esi	       782	power_supply_core.c	FUNCTION_40
+0x400017e	          0x4889e2	                            mov rdx, rsp	       783	power_supply_core.c	FUNCTION_40	CALL_1
+0x4000181	      0xbe21000000	                           mov esi, 0x21	       783	power_supply_core.c	FUNCTION_40	CALL_1
+0x4000186	          0x488b07	                    mov rax, qword [rdi]	       783	power_supply_core.c	FUNCTION_40	CALL_1
+0x4000189	        0x488b4028	            mov rax, qword [rax + 0x28] 	       783	power_supply_core.c	FUNCTION_40	CALL_1
+0x400018d	      0xe800000000	                          call 0x4000192	       783	power_supply_core.c	FUNCTION_40	CALL_1
+0x4000192	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       787	power_supply_core.c	FUNCTION_40
+0x4000197	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       787	power_supply_core.c	FUNCTION_40
+0x40001a0	            0x7505	                           jne 0x40001a7	       787	power_supply_core.c	FUNCTION_40
+0x40001a2	        0x4883c410	                           add rsp, 0x10	       787	power_supply_core.c	FUNCTION_40
+0x40001a6	              0xc3	                                     ret	       787	power_supply_core.c	FUNCTION_40
+0x40001a7	      0xe800000000	                          call 0x40001ac	       787	power_supply_core.c	FUNCTION_40
+devm_power_supply_register_no_ws	functions,0:ELSE,1:FOR,0:IF,2:DO,0:CALL,6:SWITCH,0:WHILE,0	39
+0x4000dc0	            0x4155	                                push r13	      1046	power_supply_core.c	FUNCTION_52
+0x4000dc2	            0x4154	                                push r12	      1046	power_supply_core.c	FUNCTION_52
+0x4000dc4	          0x4989d5	                            mov r13, rdx	      1046	power_supply_core.c	FUNCTION_52
+0x4000dc7	              0x55	                                push rbp	      1046	power_supply_core.c	FUNCTION_52
+0x4000dc8	              0x53	                                push rbx	      1046	power_supply_core.c	FUNCTION_52
+0x4000dc9	          0x4989fc	                            mov r12, rdi	      1046	power_supply_core.c	FUNCTION_52
+0x4000dcc	          0x4889f3	                            mov rbx, rsi	      1046	power_supply_core.c	FUNCTION_52
+0x4000dcf	    0x49c7c0000000	                               mov r8, 0	      1049	power_supply_core.c	FUNCTION_52	CALL_1
+0x4000dd6	      0xb9ffffffff	                     mov ecx, 0xffffffff	      1049	power_supply_core.c	FUNCTION_52	CALL_1
+0x4000ddb	      0xbac0004001	                      mov edx, 0x14000c0	      1049	power_supply_core.c	FUNCTION_52	CALL_1
+0x4000de0	      0xbe08000000	                              mov esi, 8	      1049	power_supply_core.c	FUNCTION_52	CALL_1
+0x4000de5	    0x48c7c7000000	                              mov rdi, 0	      1049	power_supply_core.c	FUNCTION_52	CALL_1
+0x4000dec	      0xe800000000	                          call 0x4000df1	      1049	power_supply_core.c	FUNCTION_52	CALL_1
+0x4000df1	          0x4889c5	                            mov rbp, rax	      1049	power_supply_core.c	FUNCTION_52	CALL_1
+0x4000df4	    0x48c7c0f4ffff	             mov rax, 0xfffffffffffffff4	      1052	power_supply_core.c	FUNCTION_52	CALL_2
+0x4000dfb	          0x4885ed	                           test rbp, rbp	      1051	power_supply_core.c	FUNCTION_52	IF_1
+0x4000dfe	            0x742d	                            je 0x4000e2d	      1051	power_supply_core.c	FUNCTION_52	IF_1
+0x4000e00	            0x31c9	                            xor ecx, ecx	      1053	power_supply_core.c	FUNCTION_52	CALL_3
+0x4000e02	          0x4889de	                            mov rsi, rbx	      1053	power_supply_core.c	FUNCTION_52	CALL_3
+0x4000e05	          0x4c89ea	                            mov rdx, r13	      1053	power_supply_core.c	FUNCTION_52	CALL_3
+0x4000e08	          0x4c89e7	                            mov rdi, r12	      1053	power_supply_core.c	FUNCTION_52	CALL_3
+0x4000e0b	      0xe870fbffff	        call sym.__power_supply_register	      1053	power_supply_core.c	FUNCTION_52	CALL_3
+0x4000e10	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	      1054	power_supply_core.c	FUNCTION_52	IF_2	CALL_4
+0x4000e16	          0x4889c3	                            mov rbx, rax	      1053	power_supply_core.c	FUNCTION_52	CALL_3
+0x4000e19	            0x7719	                            ja 0x4000e34	      1054	power_supply_core.c	FUNCTION_52	IF_2	CALL_4
+0x4000e1b	        0x48894500	                    mov qword [rbp], rax	      1057	power_supply_core.c	FUNCTION_52	ELSE_1
+0x4000e1f	          0x4889ee	                            mov rsi, rbp	      1058	power_supply_core.c	FUNCTION_52	ELSE_1	CALL_6
+0x4000e22	          0x4c89e7	                            mov rdi, r12	      1058	power_supply_core.c	FUNCTION_52	ELSE_1	CALL_6
+0x4000e25	      0xe800000000	                          call 0x4000e2a	      1058	power_supply_core.c	FUNCTION_52	ELSE_1	CALL_6
+0x4000e2a	          0x4889d8	                            mov rax, rbx	      1060	power_supply_core.c	FUNCTION_52
+0x4000e2d	              0x5b	                                 pop rbx	      1061	power_supply_core.c	FUNCTION_52
+0x4000e2e	              0x5d	                                 pop rbp	      1061	power_supply_core.c	FUNCTION_52
+0x4000e2f	            0x415c	                                 pop r12	      1061	power_supply_core.c	FUNCTION_52
+0x4000e31	            0x415d	                                 pop r13	      1061	power_supply_core.c	FUNCTION_52
+0x4000e33	              0xc3	                                     ret	      1061	power_supply_core.c	FUNCTION_52
+0x4000e34	          0x4889ef	                            mov rdi, rbp	      1055	power_supply_core.c	FUNCTION_52	IF_2	CALL_5
+0x4000e37	      0xe800000000	                          call 0x4000e3c	      1055	power_supply_core.c	FUNCTION_52	IF_2	CALL_5
+0x4000e3c	          0x4889d8	                            mov rax, rbx	      1060	power_supply_core.c	FUNCTION_52
+0x4000e3f	            0xebec	                           jmp 0x4000e2d	      1060	power_supply_core.c	FUNCTION_52
+power_supply_dev_release	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,3:SWITCH,0:WHILE,0	2
+0x4000500	        0x4883ef38	                           sub rdi, 0x38	       673	power_supply_core.c	FUNCTION_32	CALL_3
+0x4000504	      0xe900000000	                           jmp 0x4000509	       673	power_supply_core.c	FUNCTION_32	CALL_3
+power_supply_reg_notifier	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,1:SWITCH,0:WHILE,0	3
+0x40003f0	          0x4889fe	                            mov rsi, rdi	       677	power_supply_core.c	FUNCTION_33
+0x40003f3	    0x48c7c7000000	                              mov rdi, 0	       678	power_supply_core.c	FUNCTION_33	CALL_1
+0x40003fa	      0xe900000000	                           jmp 0x40003ff	       678	power_supply_core.c	FUNCTION_33	CALL_1
+power_supply_is_system_supplied	functions,0:ELSE,0:FOR,0:IF,1:DO,0:CALL,1:SWITCH,0:WHILE,0	20
+0x4000270	        0x4883ec10	                           sub rsp, 0x10	       356	power_supply_core.c	FUNCTION_15
+0x4000274	    0x488b3d000000	            mov rdi, qword [0x0400027b] 	       360	power_supply_core.c	FUNCTION_15	CALL_1
+0x400027b	    0x48c7c1000000	                              mov rcx, 0	       360	power_supply_core.c	FUNCTION_15	CALL_1
+0x4000282	      0x488d542404	                      lea rdx, [rsp + 4]	       360	power_supply_core.c	FUNCTION_15	CALL_1
+0x4000287	            0x31f6	                            xor esi, esi	       360	power_supply_core.c	FUNCTION_15	CALL_1
+0x4000289	    0xc74424040000	                  mov dword [rsp + 4], 0	       358	power_supply_core.c	FUNCTION_15
+0x4000291	    0x65488b042528	                mov rax, qword gs:[0x28]	       356	power_supply_core.c	FUNCTION_15
+0x400029a	      0x4889442408	                mov qword [rsp + 8], rax	       356	power_supply_core.c	FUNCTION_15
+0x400029f	            0x31c0	                            xor eax, eax	       356	power_supply_core.c	FUNCTION_15
+0x40002a1	      0xe800000000	                          call 0x40002a6	       360	power_supply_core.c	FUNCTION_15	CALL_1
+0x40002a6	        0x8b542404	                mov edx, dword [rsp + 4]	       370	power_supply_core.c	FUNCTION_15
+0x40002aa	            0x85d2	                           test edx, edx	       370	power_supply_core.c	FUNCTION_15
+0x40002ac	      0xba01000000	                              mov edx, 1	       370	power_supply_core.c	FUNCTION_15
+0x40002b1	           0xf44c2	                          cmove eax, edx	       370	power_supply_core.c	FUNCTION_15
+0x40002b4	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       371	power_supply_core.c	FUNCTION_15
+0x40002b9	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       371	power_supply_core.c	FUNCTION_15
+0x40002c2	            0x7505	                           jne 0x40002c9	       371	power_supply_core.c	FUNCTION_15
+0x40002c4	        0x4883c410	                           add rsp, 0x10	       371	power_supply_core.c	FUNCTION_15
+0x40002c8	              0xc3	                                     ret	       371	power_supply_core.c	FUNCTION_15
+0x40002c9	      0xe800000000	                          call 0x40002ce	       371	power_supply_core.c	FUNCTION_15
+power_supply_get_drvdata	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,0:SWITCH,0:WHILE,0	2
+0x40001b0	        0x488b4730	            mov rax, qword [rdi + 0x30] 	      1087	power_supply_core.c	FUNCTION_54
+0x40001b4	              0xc3	                                     ret	      1088	power_supply_core.c	FUNCTION_54
+power_supply_unreg_notifier	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,1:SWITCH,0:WHILE,0	3
+0x4000400	          0x4889fe	                            mov rsi, rdi	       683	power_supply_core.c	FUNCTION_34
+0x4000403	    0x48c7c7000000	                              mov rdi, 0	       684	power_supply_core.c	FUNCTION_34	CALL_1
+0x400040a	      0xe900000000	                           jmp 0x400040f	       684	power_supply_core.c	FUNCTION_34	CALL_1
+power_supply_class_exit	functions,0:ELSE,0:FOR,0:IF,0:DO,0:CALL,1:SWITCH,0:WHILE,0	3
+0x4000040	        0x4883ec10	                           sub rsp, 0x10	       341	power_supply_core.c	FUNCTION_14
+0x4000044	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	       341	power_supply_core.c	FUNCTION_14
+0x400004b	              0x83	                                 invalid	       346	power_supply_core.c	FUNCTION_14

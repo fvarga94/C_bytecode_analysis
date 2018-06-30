@@ -1,0 +1,156 @@
+i915_vma_put_fence	DO,0:WHILE,0:ELSE,0:IF,2:functions,0:CALL,1:FOR,0:SWITCH,0	12
+0x4000570	    0x488bbfb00000	            mov rdi, qword [rdi + 0xb0] 	       290	i915_gem_fence_reg.c	FUNCTION_6
+0x4000577	          0x4885ff	                           test rdi, rdi	       292	i915_gem_fence_reg.c	FUNCTION_6	IF_1
+0x400057a	            0x740e	                            je 0x400058a	       292	i915_gem_fence_reg.c	FUNCTION_6	IF_1
+0x400057c	          0x8b4720	            mov eax, dword [rdi + 0x20] 	       295	i915_gem_fence_reg.c	FUNCTION_6	IF_2
+0x400057f	            0x85c0	                           test eax, eax	       295	i915_gem_fence_reg.c	FUNCTION_6	IF_2
+0x4000581	            0x750a	                           jne 0x400058d	       295	i915_gem_fence_reg.c	FUNCTION_6	IF_2
+0x4000583	            0x31f6	                            xor esi, esi	       298	i915_gem_fence_reg.c	FUNCTION_6	CALL_1
+0x4000585	      0xe976fdffff	                    jmp sym.fence_update	       298	i915_gem_fence_reg.c	FUNCTION_6	CALL_1
+0x400058a	            0x31c0	                            xor eax, eax	       293	i915_gem_fence_reg.c	FUNCTION_6	IF_1
+0x400058c	              0xc3	                                     ret	       293	i915_gem_fence_reg.c	FUNCTION_6	IF_1
+0x400058d	      0xb8f0ffffff	                     mov eax, 0xfffffff0	       296	i915_gem_fence_reg.c	FUNCTION_6	IF_2
+0x4000592	              0xc3	                                     ret	       299	i915_gem_fence_reg.c	FUNCTION_6
+i915_gem_revoke_fences	DO,0:WHILE,0:ELSE,0:IF,1:functions,0:CALL,3:FOR,1:SWITCH,0	21
+0x4000810	    0x8b87c0540000	          mov eax, dword [rdi + 0x54c0] 	       453	i915_gem_fence_reg.c	FUNCTION_11	FOR_1
+0x4000816	            0x85c0	                           test eax, eax	       453	i915_gem_fence_reg.c	FUNCTION_11	FOR_1
+0x4000818	            0x7e33	                           jle 0x400084d	       453	i915_gem_fence_reg.c	FUNCTION_11	FOR_1
+0x400081a	            0x4154	                                push r12	       448	i915_gem_fence_reg.c	FUNCTION_11
+0x400081c	              0x55	                                push rbp	       448	i915_gem_fence_reg.c	FUNCTION_11
+0x400081d	    0x488dafd84e00	                 lea rbp, [rdi + 0x4ed8]	       448	i915_gem_fence_reg.c	FUNCTION_11
+0x4000824	              0x53	                                push rbx	       448	i915_gem_fence_reg.c	FUNCTION_11
+0x4000825	          0x4989fc	                            mov r12, rdi	       448	i915_gem_fence_reg.c	FUNCTION_11
+0x4000828	            0x31db	                            xor ebx, ebx	       448	i915_gem_fence_reg.c	FUNCTION_11
+0x400082a	        0x488b7d00	                    mov rdi, qword [rbp]	       458	i915_gem_fence_reg.c	FUNCTION_11	FOR_1	IF_1
+0x400082e	          0x4885ff	                           test rdi, rdi	       458	i915_gem_fence_reg.c	FUNCTION_11	FOR_1	IF_1
+0x4000831	            0x7405	                            je 0x4000838	       458	i915_gem_fence_reg.c	FUNCTION_11	FOR_1	IF_1
+0x4000833	      0xe800000000	                          call 0x4000838	       459	i915_gem_fence_reg.c	FUNCTION_11	FOR_1	CALL_3
+0x4000838	          0x83c301	                              add ebx, 1	       453	i915_gem_fence_reg.c	FUNCTION_11	FOR_1
+0x400083b	        0x4883c530	                           add rbp, 0x30	       453	i915_gem_fence_reg.c	FUNCTION_11	FOR_1
+0x400083f	    0x41399c24c054	          cmp dword [r12 + 0x54c0], ebx 	       453	i915_gem_fence_reg.c	FUNCTION_11	FOR_1
+0x4000847	            0x7fe1	                            jg 0x400082a	       453	i915_gem_fence_reg.c	FUNCTION_11	FOR_1
+0x4000849	              0x5b	                                 pop rbx	       461	i915_gem_fence_reg.c	FUNCTION_11
+0x400084a	              0x5d	                                 pop rbp	       461	i915_gem_fence_reg.c	FUNCTION_11
+0x400084b	            0x415c	                                 pop r12	       461	i915_gem_fence_reg.c	FUNCTION_11
+0x400084d	            0xf3c3	                                     ret	       461	i915_gem_fence_reg.c	FUNCTION_11
+i915_gem_detect_bit_6_swizzle	DO,0:WHILE,0:ELSE,10:IF,14:functions,0:CALL,1:FOR,0:SWITCH,1	120
+0x4000900	            0x4155	                                push r13	       556	i915_gem_fence_reg.c	FUNCTION_13
+0x4000902	            0x4154	                                push r12	       556	i915_gem_fence_reg.c	FUNCTION_13
+0x4000904	              0x55	                                push rbp	       556	i915_gem_fence_reg.c	FUNCTION_13
+0x4000905	              0x53	                                push rbx	       556	i915_gem_fence_reg.c	FUNCTION_13
+0x4000906	          0x4889fb	                            mov rbx, rdi	       556	i915_gem_fence_reg.c	FUNCTION_13
+0x4000909	     0xfb6875c0600	          movzx eax, byte [rdi + 0x65c] 	       560	i915_gem_fence_reg.c	FUNCTION_13	IF_1
+0x4000910	            0x3c07	                               cmp al, 7	       560	i915_gem_fence_reg.c	FUNCTION_13	IF_1
+0x4000912	            0x770e	                            ja 0x4000922	       560	i915_gem_fence_reg.c	FUNCTION_13	IF_1
+0x4000914	    0x8b9764060000	           mov edx, dword [rdi + 0x664] 	       560	i915_gem_fence_reg.c	FUNCTION_13	IF_1
+0x400091a	    0xf7c200000400	                       test edx, 0x40000	       560	i915_gem_fence_reg.c	FUNCTION_13	IF_1
+0x4000920	            0x7419	                            je 0x400093b	       560	i915_gem_fence_reg.c	FUNCTION_13	IF_1
+0x4000922	          0x4531e4	                          xor r12d, r12d	       708	i915_gem_fence_reg.c	FUNCTION_13	IF_14
+0x4000925	            0x31ed	                            xor ebp, ebp	       707	i915_gem_fence_reg.c	FUNCTION_13	IF_14
+0x4000927	    0x89ab64600000	          mov dword [rbx + 0x6064], ebp 	       711	i915_gem_fence_reg.c	FUNCTION_13
+0x400092d	    0x4489a3686000	         mov dword [rbx + 0x6068], r12d 	       712	i915_gem_fence_reg.c	FUNCTION_13
+0x4000934	              0x5b	                                 pop rbx	       713	i915_gem_fence_reg.c	FUNCTION_13
+0x4000935	              0x5d	                                 pop rbp	       713	i915_gem_fence_reg.c	FUNCTION_13
+0x4000936	            0x415c	                                 pop r12	       713	i915_gem_fence_reg.c	FUNCTION_13
+0x4000938	            0x415d	                                 pop r13	       713	i915_gem_fence_reg.c	FUNCTION_13
+0x400093a	              0xc3	                                     ret	       713	i915_gem_fence_reg.c	FUNCTION_13
+0x400093b	            0x3c05	                               cmp al, 5	       570	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2
+0x400093d	            0x7635	                           jbe 0x4000974	       570	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2
+0x400093f	    0x80bf684e0000	              cmp byte [rdi + 0x4e68], 0	       571	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3
+0x4000946	    0x488b87f80700	           mov rax, qword [rdi + 0x7f8] 	       572	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3	IF_4
+0x400094d	      0xba01000000	                              mov edx, 1	       572	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3	IF_4
+0x4000952	     0xf84ab000000	                            je 0x4000a03	       571	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3
+0x4000958	      0xbe00500400	                        mov esi, 0x45000	       572	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3	IF_4
+0x400095d	      0xe800000000	                          call 0x4000962	       572	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3	IF_4
+0x4000962	          0xf6c420	                           test ah, 0x20	       572	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3	IF_4
+0x4000965	            0x74bb	                            je 0x4000922	       572	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3	IF_4
+0x4000967	    0x41bc01000000	                             mov r12d, 1	       575	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3	IF_4
+0x400096d	      0xbd02000000	                              mov ebp, 2	       574	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3	IF_4
+0x4000972	            0xebb3	                           jmp 0x4000927	       574	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	IF_3	IF_4
+0x4000974	     0xfb7875a0600	          movzx eax, word [rdi + 0x65a] 	       599	i915_gem_fence_reg.c	FUNCTION_13	ELSE_5	IF_6
+0x400097b	            0xa810	                           test al, 0x10	       599	i915_gem_fence_reg.c	FUNCTION_13	ELSE_5	IF_6
+0x400097d	            0x75e8	                           jne 0x4000967	       599	i915_gem_fence_reg.c	FUNCTION_13	ELSE_5	IF_6
+0x400097f	            0xa802	                              test al, 2	       605	i915_gem_fence_reg.c	FUNCTION_13	ELSE_6	IF_7
+0x4000981	            0x759f	                           jne 0x4000922	       605	i915_gem_fence_reg.c	FUNCTION_13	ELSE_6	IF_7
+0x4000983	    0xf68777060000	              test byte [rdi + 0x677], 1	       611	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8
+0x400098a	            0x750c	                           jne 0x4000998	       611	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8
+0x400098c	    0x81e2a0000000	                           and edx, 0xa0	       612	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8
+0x4000992	     0xf841a010000	                            je 0x4000ab2	       612	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8
+0x4000998	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       623	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8
+0x400099f	      0xba01000000	                              mov edx, 1	       623	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8
+0x40009a4	      0xbe00020100	                        mov esi, 0x10200	       623	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8
+0x40009a9	          0x4889df	                            mov rdi, rbx	       623	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8
+0x40009ac	      0xe800000000	                          call 0x40009b1	       623	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8
+0x40009b1	          0x4189c5	                           mov r13d, eax	       623	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8
+0x40009b4	          0x83e003	                              and eax, 3	       624	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1
+0x40009b7	          0x83f801	                              cmp eax, 1	       624	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1
+0x40009ba	     0xf86a9000000	                           jbe 0x4000a69	       624	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1
+0x40009c0	          0x83f802	                              cmp eax, 2	       624	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1
+0x40009c3	            0x7471	                            je 0x4000a36	       624	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1
+0x40009c5	    0x41bc05000000	                             mov r12d, 5	       558	i915_gem_fence_reg.c	FUNCTION_13
+0x40009cb	      0xbd05000000	                              mov ebp, 5	       557	i915_gem_fence_reg.c	FUNCTION_13
+0x40009d0	    0xf6835a060000	              test byte [rbx + 0x65a], 8	       650	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_11
+0x40009d7	     0xf8596000000	                           jne 0x4000a73	       650	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_11
+0x40009dd	        0x4183fdff	            cmp r13d, 0xffffffffffffffff	       656	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_12
+0x40009e1	     0xf84ba000000	                            je 0x4000aa1	       656	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_12
+0x40009e7	          0x83fd05	                              cmp ebp, 5	       695	i915_gem_fence_reg.c	FUNCTION_13	IF_14
+0x40009ea	            0x740a	                            je 0x40009f6	       695	i915_gem_fence_reg.c	FUNCTION_13	IF_14
+0x40009ec	        0x4183fc05	                             cmp r12d, 5	       695	i915_gem_fence_reg.c	FUNCTION_13	IF_14
+0x40009f0	     0xf8531ffffff	                           jne 0x4000927	       695	i915_gem_fence_reg.c	FUNCTION_13	IF_14
+0x40009f6	    0x48838b005600	           or qword [rbx + 0x5600], 0x20	       706	i915_gem_fence_reg.c	FUNCTION_13	IF_14
+0x40009fe	      0xe91fffffff	                           jmp 0x4000922	       706	i915_gem_fence_reg.c	FUNCTION_13	IF_14
+0x4000a03	      0xbe04501400	                       mov esi, 0x145004	       582	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3
+0x4000a08	      0xe800000000	                          call 0x4000a0d	       582	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3
+0x4000a0d	            0x89c5	                            mov ebp, eax	       582	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3
+0x4000a0f	      0xba01000000	                              mov edx, 1	       583	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3
+0x4000a14	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       583	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3
+0x4000a1b	      0xbe08501400	                       mov esi, 0x145008	       583	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3
+0x4000a20	          0x4889df	                            mov rdi, rbx	       583	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3
+0x4000a23	      0xe800000000	                          call 0x4000a28	       583	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3
+0x4000a28	          0x6639e8	                              cmp ax, bp	       591	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3	IF_5
+0x4000a2b	     0xf85f1feffff	                           jne 0x4000922	       591	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3	IF_5
+0x4000a31	      0xe931ffffff	                           jmp 0x4000967	       591	i915_gem_fence_reg.c	FUNCTION_13	ELSE_1	IF_2	ELSE_3	IF_5
+0x4000a36	    0x41f7c5000400	                        test r13d, 0x400	       631	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	IF_9
+0x4000a3d	     0xf85ae000000	                           jne 0x4000af1	       631	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	IF_9
+0x4000a43	          0x4489e8	                           mov eax, r13d	       637	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_8	IF_10
+0x4000a46	      0x2500020000	                          and eax, 0x200	       637	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_8	IF_10
+0x4000a4b	          0x83f801	                              cmp eax, 1	       644	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_9
+0x4000a4e	          0x4519e4	                          sbb r12d, r12d	       644	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_9
+0x4000a51	        0x4183e4fd	                    and r12d, 0xfffffffd	       644	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_9
+0x4000a55	        0x4183c406	                             add r12d, 6	       644	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_9
+0x4000a59	          0x83f801	                              cmp eax, 1	       644	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_9
+0x4000a5c	            0x19ed	                            sbb ebp, ebp	       644	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_9
+0x4000a5e	          0x83e5fd	                     and ebp, 0xfffffffd	       644	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_9
+0x4000a61	          0x83c507	                              add ebp, 7	       644	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_9
+0x4000a64	      0xe967ffffff	                           jmp 0x40009d0	       644	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	ELSE_9
+0x4000a69	          0x4531e4	                          xor r12d, r12d	       628	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1
+0x4000a6c	            0x31ed	                            xor ebp, ebp	       627	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1
+0x4000a6e	      0xe95dffffff	                           jmp 0x40009d0	       627	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1
+0x4000a73	    0x488b83f80700	           mov rax, qword [rbx + 0x7f8] 	       651	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_11
+0x4000a7a	      0xba01000000	                              mov edx, 1	       651	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_11
+0x4000a7f	      0xbe04020100	                        mov esi, 0x10204	       651	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_11
+0x4000a84	          0x4889df	                            mov rdi, rbx	       651	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_11
+0x4000a87	      0xe800000000	                          call 0x4000a8c	       651	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_11
+0x4000a8c	      0xa900001000	                      test eax, 0x100000	       650	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_11
+0x4000a91	     0xf8546ffffff	                           jne 0x40009dd	       650	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_11
+0x4000a97	        0x4183fdff	            cmp r13d, 0xffffffffffffffff	       656	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_12
+0x4000a9b	     0xf8555ffffff	                           jne 0x40009f6	       656	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_12
+0x4000aa1	    0x48c7c7000000	                              mov rdi, 0	       657	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_12	CALL_1
+0x4000aa8	      0xe800000000	                          call 0x4000aad	       657	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_12	CALL_1
+0x4000aad	      0xe944ffffff	                           jmp 0x40009f6	       657	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	IF_12	CALL_1
+0x4000ab2	    0x488b87f00700	           mov rax, qword [rdi + 0x7f0] 	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000ab9	      0xba01000000	                              mov edx, 1	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000abe	      0xbe06020100	                        mov esi, 0x10206	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000ac3	      0xe800000000	                          call 0x4000ac8	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000ac8	            0x89c5	                            mov ebp, eax	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000aca	      0xba01000000	                              mov edx, 1	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000acf	    0x488b83f00700	           mov rax, qword [rbx + 0x7f0] 	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000ad6	      0xbe06060100	                        mov esi, 0x10606	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000adb	          0x4889df	                            mov rdi, rbx	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000ade	      0xe800000000	                          call 0x4000ae3	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000ae3	          0x6639c5	                              cmp bp, ax	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000ae6	     0xf850affffff	                           jne 0x40009f6	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000aec	      0xe976feffff	                           jmp 0x4000967	       689	i915_gem_fence_reg.c	FUNCTION_13	ELSE_10	IF_13
+0x4000af1	    0x41bc01000000	                             mov r12d, 1	       636	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	IF_9
+0x4000af7	      0xbd02000000	                              mov ebp, 2	       635	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	IF_9
+0x4000afc	      0xe9cffeffff	                           jmp 0x40009d0	       635	i915_gem_fence_reg.c	FUNCTION_13	ELSE_7	IF_8	SWITCH_1	IF_9

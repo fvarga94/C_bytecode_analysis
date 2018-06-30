@@ -1,0 +1,1602 @@
+clamp_max	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,0:IF,1	15
+0x40001fa	              0x55	                                push rbp	       157	archive-zip.c	FUNCTION_4
+0x40001fb	          0x4889e5	                            mov rbp, rsp	       157	archive-zip.c	FUNCTION_4
+0x40001fe	        0x48897df8	                mov qword [rbp - 8], rdi	       157	archive-zip.c	FUNCTION_4
+0x4000202	        0x488975f0	             mov qword [rbp - 0x10], rsi	       157	archive-zip.c	FUNCTION_4
+0x4000206	        0x488955e8	             mov qword [rbp - 0x18], rdx	       157	archive-zip.c	FUNCTION_4
+0x400020a	        0x488b45f8	                mov rax, qword [rbp - 8]	       158	archive-zip.c	FUNCTION_4	IF_1
+0x400020e	        0x483b45f0	             cmp rax, qword [rbp - 0x10]	       158	archive-zip.c	FUNCTION_4	IF_1
+0x4000212	            0x7706	                            ja 0x400021a	       158	archive-zip.c	FUNCTION_4	IF_1
+0x4000214	        0x488b45f8	                mov rax, qword [rbp - 8]	       159	archive-zip.c	FUNCTION_4	IF_1
+0x4000218	            0xeb0e	                           jmp 0x4000228	       159	archive-zip.c	FUNCTION_4	IF_1
+0x400021a	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       160	archive-zip.c	FUNCTION_4
+0x400021e	    0xc70001000000	                      mov dword [rax], 1	       160	archive-zip.c	FUNCTION_4
+0x4000224	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       161	archive-zip.c	FUNCTION_4
+0x4000228	              0x5d	                                 pop rbp	       162	archive-zip.c	FUNCTION_4
+0x4000229	              0xc3	                                     ret	       162	archive-zip.c	FUNCTION_4
+copy_le32_clamp	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,2:IF,0	19
+0x4000266	              0x55	                                push rbp	       170	archive-zip.c	FUNCTION_6
+0x4000267	          0x4889e5	                            mov rbp, rsp	       170	archive-zip.c	FUNCTION_6
+0x400026a	        0x4883ec18	                           sub rsp, 0x18	       170	archive-zip.c	FUNCTION_6
+0x400026e	        0x48897df8	                mov qword [rbp - 8], rdi	       170	archive-zip.c	FUNCTION_6
+0x4000272	        0x488975f0	             mov qword [rbp - 0x10], rsi	       170	archive-zip.c	FUNCTION_6
+0x4000276	        0x488955e8	             mov qword [rbp - 0x18], rdx	       170	archive-zip.c	FUNCTION_6
+0x400027a	        0x488b55e8	             mov rdx, qword [rbp - 0x18]	       171	archive-zip.c	FUNCTION_6	CALL_2
+0x400027e	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       171	archive-zip.c	FUNCTION_6	CALL_2
+0x4000282	      0xbeffffffff	                     mov esi, 0xffffffff	       171	archive-zip.c	FUNCTION_6	CALL_2
+0x4000287	          0x4889c7	                            mov rdi, rax	       171	archive-zip.c	FUNCTION_6	CALL_2
+0x400028a	      0xe86bffffff	                      call sym.clamp_max	       171	archive-zip.c	FUNCTION_6	CALL_2
+0x400028f	            0x89c2	                            mov edx, eax	       171	archive-zip.c	FUNCTION_6	CALL_2
+0x4000291	        0x488b45f8	                mov rax, qword [rbp - 8]	       171	archive-zip.c	FUNCTION_6	CALL_2
+0x4000295	            0x89d6	                            mov esi, edx	       171	archive-zip.c	FUNCTION_6	CALL_2
+0x4000297	          0x4889c7	                            mov rdi, rax	       171	archive-zip.c	FUNCTION_6	CALL_2
+0x400029a	      0xe879feffff	                      call sym.copy_le32	       171	archive-zip.c	FUNCTION_6	CALL_2
+0x400029f	              0x90	                                     nop	       172	archive-zip.c	FUNCTION_6
+0x40002a0	              0xc9	                                   leave	       172	archive-zip.c	FUNCTION_6
+0x40002a1	              0xc3	                                     ret	       172	archive-zip.c	FUNCTION_6
+has_only_ascii	SWITCH,0:ELSE,0:DO,0:FOR,1:functions,0:WHILE,0:CALL,0:IF,2	20
+0x40005f8	              0x55	                                push rbp	       256	archive-zip.c	FUNCTION_12
+0x40005f9	          0x4889e5	                            mov rbp, rsp	       256	archive-zip.c	FUNCTION_12
+0x40005fc	        0x48897de8	             mov qword [rbp - 0x18], rdi	       256	archive-zip.c	FUNCTION_12
+0x4000600	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       258	archive-zip.c	FUNCTION_12	FOR_1
+0x4000604	        0x488d5001	                      lea rdx, [rax + 1]	       258	archive-zip.c	FUNCTION_12	FOR_1
+0x4000608	        0x488955e8	             mov qword [rbp - 0x18], rdx	       258	archive-zip.c	FUNCTION_12	FOR_1
+0x400060c	           0xfb600	                   movzx eax, byte [rax]	       258	archive-zip.c	FUNCTION_12	FOR_1
+0x400060f	           0xfbec0	                           movsx eax, al	       258	archive-zip.c	FUNCTION_12	FOR_1
+0x4000612	          0x8945fc	                mov dword [rbp - 4], eax	       258	archive-zip.c	FUNCTION_12	FOR_1
+0x4000615	        0x837dfc00	                  cmp dword [rbp - 4], 0	       259	archive-zip.c	FUNCTION_12	FOR_1	IF_1
+0x4000619	            0x7507	                           jne 0x4000622	       259	archive-zip.c	FUNCTION_12	FOR_1	IF_1
+0x400061b	      0xb801000000	                              mov eax, 1	       260	archive-zip.c	FUNCTION_12	FOR_1	IF_1
+0x4000620	            0xeb0f	                           jmp 0x4000631	       260	archive-zip.c	FUNCTION_12	FOR_1	IF_1
+0x4000622	          0x8b45fc	                mov eax, dword [rbp - 4]	       261	archive-zip.c	FUNCTION_12	FOR_1	IF_2
+0x4000625	          0x83e080	                     and eax, 0xffffff80	       261	archive-zip.c	FUNCTION_12	FOR_1	IF_2
+0x4000628	            0x85c0	                           test eax, eax	       261	archive-zip.c	FUNCTION_12	FOR_1	IF_2
+0x400062a	            0x74d4	                            je 0x4000600	       261	archive-zip.c	FUNCTION_12	FOR_1	IF_2
+0x400062c	      0xb800000000	                              mov eax, 0	       262	archive-zip.c	FUNCTION_12	FOR_1	IF_2
+0x4000631	              0x5d	                                 pop rbp	       264	archive-zip.c	FUNCTION_12
+0x4000632	              0xc3	                                     ret	       264	archive-zip.c	FUNCTION_12
+clamp32	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,0:IF,0	10
+0x40002f2	              0x55	                                push rbp	       184	archive-zip.c	FUNCTION_8
+0x40002f3	          0x4889e5	                            mov rbp, rsp	       184	archive-zip.c	FUNCTION_8
+0x40002f6	        0x48897de8	             mov qword [rbp - 0x18], rdi	       184	archive-zip.c	FUNCTION_8
+0x40002fa	      0xb8ffffffff	                     mov eax, 0xffffffff	       185	archive-zip.c	FUNCTION_8
+0x40002ff	        0x488945f8	                mov qword [rbp - 8], rax	       185	archive-zip.c	FUNCTION_8
+0x4000303	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       186	archive-zip.c	FUNCTION_8
+0x4000307	        0x483945f8	                cmp qword [rbp - 8], rax	       186	archive-zip.c	FUNCTION_8
+0x400030b	      0x480f4645f8	             cmovbe rax, qword [rbp - 8]	       186	archive-zip.c	FUNCTION_8
+0x4000310	              0x5d	                                 pop rbp	       187	archive-zip.c	FUNCTION_8
+0x4000311	              0xc3	                                     ret	       187	archive-zip.c	FUNCTION_8
+write_zip64_trailer	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,16:IF,0	99
+0x4001705	              0x55	                                push rbp	       551	archive-zip.c	FUNCTION_15
+0x4001706	          0x4889e5	                            mov rbp, rsp	       551	archive-zip.c	FUNCTION_15
+0x4001709	        0x4883ec70	                           sub rsp, 0x70	       551	archive-zip.c	FUNCTION_15
+0x400170d	    0x64488b042528	                mov rax, qword fs:[0x28]	       551	archive-zip.c	FUNCTION_15
+0x4001716	        0x488945f8	                mov qword [rbp - 8], rax	       551	archive-zip.c	FUNCTION_15
+0x400171a	            0x31c0	                            xor eax, eax	       551	archive-zip.c	FUNCTION_15
+0x400171c	        0x488d45b0	                   lea rax, [rbp - 0x50]	       555	archive-zip.c	FUNCTION_15	CALL_1
+0x4001720	      0xbe504b0606	                      mov esi, 0x6064b50	       555	archive-zip.c	FUNCTION_15	CALL_1
+0x4001725	          0x4889c7	                            mov rdi, rax	       555	archive-zip.c	FUNCTION_15	CALL_1
+0x4001728	      0xe8ebe9ffff	                      call sym.copy_le32	       555	archive-zip.c	FUNCTION_15	CALL_1
+0x400172d	        0x488d45b0	                   lea rax, [rbp - 0x50]	       556	archive-zip.c	FUNCTION_15	CALL_2
+0x4001731	        0x4883c004	                              add rax, 4	       556	archive-zip.c	FUNCTION_15	CALL_2
+0x4001735	      0xbe2c000000	                           mov esi, 0x2c	       556	archive-zip.c	FUNCTION_15	CALL_2
+0x400173a	          0x4889c7	                            mov rdi, rax	       556	archive-zip.c	FUNCTION_15	CALL_2
+0x400173d	      0xe81feaffff	                      call sym.copy_le64	       556	archive-zip.c	FUNCTION_15	CALL_2
+0x4001742	    0x8b0500000000	            mov eax, dword [0x04001748] 	       557	archive-zip.c	FUNCTION_15	CALL_3
+0x4001748	        0x488d55b0	                   lea rdx, [rbp - 0x50]	       557	archive-zip.c	FUNCTION_15	CALL_3
+0x400174c	        0x4883c20c	                            add rdx, 0xc	       557	archive-zip.c	FUNCTION_15	CALL_3
+0x4001750	            0x89c6	                            mov esi, eax	       557	archive-zip.c	FUNCTION_15	CALL_3
+0x4001752	          0x4889d7	                            mov rdi, rdx	       557	archive-zip.c	FUNCTION_15	CALL_3
+0x4001755	      0xe895e9ffff	                      call sym.copy_le16	       557	archive-zip.c	FUNCTION_15	CALL_3
+0x400175a	        0x488d45b0	                   lea rax, [rbp - 0x50]	       558	archive-zip.c	FUNCTION_15	CALL_4
+0x400175e	        0x4883c00e	                            add rax, 0xe	       558	archive-zip.c	FUNCTION_15	CALL_4
+0x4001762	      0xbe2d000000	                           mov esi, 0x2d	       558	archive-zip.c	FUNCTION_15	CALL_4
+0x4001767	          0x4889c7	                            mov rdi, rax	       558	archive-zip.c	FUNCTION_15	CALL_4
+0x400176a	      0xe880e9ffff	                      call sym.copy_le16	       558	archive-zip.c	FUNCTION_15	CALL_4
+0x400176f	        0x488d45b0	                   lea rax, [rbp - 0x50]	       559	archive-zip.c	FUNCTION_15	CALL_5
+0x4001773	        0x4883c010	                           add rax, 0x10	       559	archive-zip.c	FUNCTION_15	CALL_5
+0x4001777	      0xbe00000000	                              mov esi, 0	       559	archive-zip.c	FUNCTION_15	CALL_5
+0x400177c	          0x4889c7	                            mov rdi, rax	       559	archive-zip.c	FUNCTION_15	CALL_5
+0x400177f	      0xe894e9ffff	                      call sym.copy_le32	       559	archive-zip.c	FUNCTION_15	CALL_5
+0x4001784	        0x488d45b0	                   lea rax, [rbp - 0x50]	       560	archive-zip.c	FUNCTION_15	CALL_6
+0x4001788	        0x4883c014	                           add rax, 0x14	       560	archive-zip.c	FUNCTION_15	CALL_6
+0x400178c	      0xbe00000000	                              mov esi, 0	       560	archive-zip.c	FUNCTION_15	CALL_6
+0x4001791	          0x4889c7	                            mov rdi, rax	       560	archive-zip.c	FUNCTION_15	CALL_6
+0x4001794	      0xe87fe9ffff	                      call sym.copy_le32	       560	archive-zip.c	FUNCTION_15	CALL_6
+0x4001799	    0x488b05000000	            mov rax, qword [0x040017a0] 	       561	archive-zip.c	FUNCTION_15	CALL_7
+0x40017a0	        0x488d55b0	                   lea rdx, [rbp - 0x50]	       561	archive-zip.c	FUNCTION_15	CALL_7
+0x40017a4	        0x4883c218	                           add rdx, 0x18	       561	archive-zip.c	FUNCTION_15	CALL_7
+0x40017a8	          0x4889c6	                            mov rsi, rax	       561	archive-zip.c	FUNCTION_15	CALL_7
+0x40017ab	          0x4889d7	                            mov rdi, rdx	       561	archive-zip.c	FUNCTION_15	CALL_7
+0x40017ae	      0xe8aee9ffff	                      call sym.copy_le64	       561	archive-zip.c	FUNCTION_15	CALL_7
+0x40017b3	    0x488b05000000	            mov rax, qword [0x040017ba] 	       562	archive-zip.c	FUNCTION_15	CALL_8
+0x40017ba	        0x488d55b0	                   lea rdx, [rbp - 0x50]	       562	archive-zip.c	FUNCTION_15	CALL_8
+0x40017be	        0x4883c220	                           add rdx, 0x20	       562	archive-zip.c	FUNCTION_15	CALL_8
+0x40017c2	          0x4889c6	                            mov rsi, rax	       562	archive-zip.c	FUNCTION_15	CALL_8
+0x40017c5	          0x4889d7	                            mov rdi, rdx	       562	archive-zip.c	FUNCTION_15	CALL_8
+0x40017c8	      0xe894e9ffff	                      call sym.copy_le64	       562	archive-zip.c	FUNCTION_15	CALL_8
+0x40017cd	    0x488b05000000	            mov rax, qword [0x040017d4] 	       563	archive-zip.c	FUNCTION_15	CALL_9
+0x40017d4	        0x488d55b0	                   lea rdx, [rbp - 0x50]	       563	archive-zip.c	FUNCTION_15	CALL_9
+0x40017d8	        0x4883c228	                           add rdx, 0x28	       563	archive-zip.c	FUNCTION_15	CALL_9
+0x40017dc	          0x4889c6	                            mov rsi, rax	       563	archive-zip.c	FUNCTION_15	CALL_9
+0x40017df	          0x4889d7	                            mov rdi, rdx	       563	archive-zip.c	FUNCTION_15	CALL_9
+0x40017e2	      0xe87ae9ffff	                      call sym.copy_le64	       563	archive-zip.c	FUNCTION_15	CALL_9
+0x40017e7	    0x488b05000000	            mov rax, qword [0x040017ee] 	       564	archive-zip.c	FUNCTION_15	CALL_10
+0x40017ee	        0x488d55b0	                   lea rdx, [rbp - 0x50]	       564	archive-zip.c	FUNCTION_15	CALL_10
+0x40017f2	        0x4883c230	                           add rdx, 0x30	       564	archive-zip.c	FUNCTION_15	CALL_10
+0x40017f6	          0x4889c6	                            mov rsi, rax	       564	archive-zip.c	FUNCTION_15	CALL_10
+0x40017f9	          0x4889d7	                            mov rdi, rdx	       564	archive-zip.c	FUNCTION_15	CALL_10
+0x40017fc	      0xe860e9ffff	                      call sym.copy_le64	       564	archive-zip.c	FUNCTION_15	CALL_10
+0x4001801	        0x488d4590	                   lea rax, [rbp - 0x70]	       566	archive-zip.c	FUNCTION_15	CALL_11
+0x4001805	      0xbe504b0607	                      mov esi, 0x7064b50	       566	archive-zip.c	FUNCTION_15	CALL_11
+0x400180a	          0x4889c7	                            mov rdi, rax	       566	archive-zip.c	FUNCTION_15	CALL_11
+0x400180d	      0xe806e9ffff	                      call sym.copy_le32	       566	archive-zip.c	FUNCTION_15	CALL_11
+0x4001812	        0x488d4590	                   lea rax, [rbp - 0x70]	       567	archive-zip.c	FUNCTION_15	CALL_12
+0x4001816	        0x4883c004	                              add rax, 4	       567	archive-zip.c	FUNCTION_15	CALL_12
+0x400181a	      0xbe00000000	                              mov esi, 0	       567	archive-zip.c	FUNCTION_15	CALL_12
+0x400181f	          0x4889c7	                            mov rdi, rax	       567	archive-zip.c	FUNCTION_15	CALL_12
+0x4001822	      0xe8f1e8ffff	                      call sym.copy_le32	       567	archive-zip.c	FUNCTION_15	CALL_12
+0x4001827	    0x488b15000000	            mov rdx, qword [0x0400182e] 	       568	archive-zip.c	FUNCTION_15	CALL_13
+0x400182e	    0x488b05000000	            mov rax, qword [0x04001835] 	       568	archive-zip.c	FUNCTION_15	CALL_13
+0x4001835	          0x4801c2	                            add rdx, rax	       568	archive-zip.c	FUNCTION_15	CALL_13
+0x4001838	        0x488d4590	                   lea rax, [rbp - 0x70]	       568	archive-zip.c	FUNCTION_15	CALL_13
+0x400183c	        0x4883c008	                              add rax, 8	       568	archive-zip.c	FUNCTION_15	CALL_13
+0x4001840	          0x4889d6	                            mov rsi, rdx	       568	archive-zip.c	FUNCTION_15	CALL_13
+0x4001843	          0x4889c7	                            mov rdi, rax	       568	archive-zip.c	FUNCTION_15	CALL_13
+0x4001846	      0xe816e9ffff	                      call sym.copy_le64	       568	archive-zip.c	FUNCTION_15	CALL_13
+0x400184b	        0x488d4590	                   lea rax, [rbp - 0x70]	       569	archive-zip.c	FUNCTION_15	CALL_14
+0x400184f	        0x4883c010	                           add rax, 0x10	       569	archive-zip.c	FUNCTION_15	CALL_14
+0x4001853	      0xbe01000000	                              mov esi, 1	       569	archive-zip.c	FUNCTION_15	CALL_14
+0x4001858	          0x4889c7	                            mov rdi, rax	       569	archive-zip.c	FUNCTION_15	CALL_14
+0x400185b	      0xe8b8e8ffff	                      call sym.copy_le32	       569	archive-zip.c	FUNCTION_15	CALL_14
+0x4001860	        0x488d45b0	                   lea rax, [rbp - 0x50]	       571	archive-zip.c	FUNCTION_15	CALL_15
+0x4001864	      0xba38000000	                           mov edx, 0x38	       571	archive-zip.c	FUNCTION_15	CALL_15
+0x4001869	          0x4889c6	                            mov rsi, rax	       571	archive-zip.c	FUNCTION_15	CALL_15
+0x400186c	      0xbf01000000	                              mov edi, 1	       571	archive-zip.c	FUNCTION_15	CALL_15
+0x4001871	      0xe800000000	                          call 0x4001876	       571	archive-zip.c	FUNCTION_15	CALL_15
+0x4001876	        0x488d4590	                   lea rax, [rbp - 0x70]	       572	archive-zip.c	FUNCTION_15	CALL_16
+0x400187a	      0xba14000000	                           mov edx, 0x14	       572	archive-zip.c	FUNCTION_15	CALL_16
+0x400187f	          0x4889c6	                            mov rsi, rax	       572	archive-zip.c	FUNCTION_15	CALL_16
+0x4001882	      0xbf01000000	                              mov edi, 1	       572	archive-zip.c	FUNCTION_15	CALL_16
+0x4001887	      0xe800000000	                          call 0x400188c	       572	archive-zip.c	FUNCTION_15	CALL_16
+0x400188c	              0x90	                                     nop	       573	archive-zip.c	FUNCTION_15
+0x400188d	        0x488b45f8	                mov rax, qword [rbp - 8]	       573	archive-zip.c	FUNCTION_15
+0x4001891	    0x644833042528	                xor rax, qword fs:[0x28]	       573	archive-zip.c	FUNCTION_15
+0x400189a	            0x7405	                            je 0x40018a1	       573	archive-zip.c	FUNCTION_15
+0x400189c	      0xe800000000	                          call 0x40018a1	       573	archive-zip.c	FUNCTION_15
+0x40018a1	              0xc9	                                   leave	       573	archive-zip.c	FUNCTION_15
+0x40018a2	              0xc3	                                     ret	       573	archive-zip.c	FUNCTION_15
+init_zip_archiver	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,1:IF,0	7
+0x4001ba6	              0x55	                                push rbp	       647	archive-zip.c	FUNCTION_20
+0x4001ba7	          0x4889e5	                            mov rbp, rsp	       647	archive-zip.c	FUNCTION_20
+0x4001baa	      0xbf00000000	                              mov edi, 0	       648	archive-zip.c	FUNCTION_20	CALL_1
+0x4001baf	      0xe800000000	                          call 0x4001bb4	       648	archive-zip.c	FUNCTION_20	CALL_1
+0x4001bb4	              0x90	                                     nop	       649	archive-zip.c	FUNCTION_20
+0x4001bb5	              0x5d	                                 pop rbp	       649	archive-zip.c	FUNCTION_20
+0x4001bb6	              0xc3	                                     ret	       649	archive-zip.c	FUNCTION_20
+archive_zip_config	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,1:IF,0	13
+0x4001afc	              0x55	                                push rbp	       616	archive-zip.c	FUNCTION_18
+0x4001afd	          0x4889e5	                            mov rbp, rsp	       616	archive-zip.c	FUNCTION_18
+0x4001b00	        0x4883ec20	                           sub rsp, 0x20	       616	archive-zip.c	FUNCTION_18
+0x4001b04	        0x48897df8	                mov qword [rbp - 8], rdi	       616	archive-zip.c	FUNCTION_18
+0x4001b08	        0x488975f0	             mov qword [rbp - 0x10], rsi	       616	archive-zip.c	FUNCTION_18
+0x4001b0c	        0x488955e8	             mov qword [rbp - 0x18], rdx	       616	archive-zip.c	FUNCTION_18
+0x4001b10	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       617	archive-zip.c	FUNCTION_18	CALL_1
+0x4001b14	        0x488b45f8	                mov rax, qword [rbp - 8]	       617	archive-zip.c	FUNCTION_18	CALL_1
+0x4001b18	          0x4889d6	                            mov rsi, rdx	       617	archive-zip.c	FUNCTION_18	CALL_1
+0x4001b1b	          0x4889c7	                            mov rdi, rax	       617	archive-zip.c	FUNCTION_18	CALL_1
+0x4001b1e	      0xe800000000	                          call 0x4001b23	       617	archive-zip.c	FUNCTION_18	CALL_1
+0x4001b23	              0xc9	                                   leave	       618	archive-zip.c	FUNCTION_18
+0x4001b24	              0xc3	                                     ret	       618	archive-zip.c	FUNCTION_18
+copy_le32	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,0:IF,0	26
+0x4000118	              0x55	                                push rbp	       137	archive-zip.c	FUNCTION_2
+0x4000119	          0x4889e5	                            mov rbp, rsp	       137	archive-zip.c	FUNCTION_2
+0x400011c	        0x48897df8	                mov qword [rbp - 8], rdi	       137	archive-zip.c	FUNCTION_2
+0x4000120	          0x8975f4	              mov dword [rbp - 0xc], esi	       137	archive-zip.c	FUNCTION_2
+0x4000123	          0x8b45f4	              mov eax, dword [rbp - 0xc]	       138	archive-zip.c	FUNCTION_2
+0x4000126	            0x89c2	                            mov edx, eax	       138	archive-zip.c	FUNCTION_2
+0x4000128	        0x488b45f8	                mov rax, qword [rbp - 8]	       138	archive-zip.c	FUNCTION_2
+0x400012c	            0x8810	                      mov byte [rax], dl	       138	archive-zip.c	FUNCTION_2
+0x400012e	        0x488b45f8	                mov rax, qword [rbp - 8]	       139	archive-zip.c	FUNCTION_2
+0x4000132	        0x4883c001	                              add rax, 1	       139	archive-zip.c	FUNCTION_2
+0x4000136	          0x8b55f4	              mov edx, dword [rbp - 0xc]	       139	archive-zip.c	FUNCTION_2
+0x4000139	          0xc1ea08	                              shr edx, 8	       139	archive-zip.c	FUNCTION_2
+0x400013c	            0x8810	                      mov byte [rax], dl	       139	archive-zip.c	FUNCTION_2
+0x400013e	        0x488b45f8	                mov rax, qword [rbp - 8]	       140	archive-zip.c	FUNCTION_2
+0x4000142	        0x4883c002	                              add rax, 2	       140	archive-zip.c	FUNCTION_2
+0x4000146	          0x8b55f4	              mov edx, dword [rbp - 0xc]	       140	archive-zip.c	FUNCTION_2
+0x4000149	          0xc1ea10	                           shr edx, 0x10	       140	archive-zip.c	FUNCTION_2
+0x400014c	            0x8810	                      mov byte [rax], dl	       140	archive-zip.c	FUNCTION_2
+0x400014e	        0x488b45f8	                mov rax, qword [rbp - 8]	       141	archive-zip.c	FUNCTION_2
+0x4000152	        0x4883c003	                              add rax, 3	       141	archive-zip.c	FUNCTION_2
+0x4000156	          0x8b55f4	              mov edx, dword [rbp - 0xc]	       141	archive-zip.c	FUNCTION_2
+0x4000159	          0xc1ea18	                           shr edx, 0x18	       141	archive-zip.c	FUNCTION_2
+0x400015c	            0x8810	                      mov byte [rax], dl	       141	archive-zip.c	FUNCTION_2
+0x400015e	              0x90	                                     nop	       142	archive-zip.c	FUNCTION_2
+0x400015f	              0x5d	                                 pop rbp	       142	archive-zip.c	FUNCTION_2
+0x4000160	              0xc3	                                     ret	       142	archive-zip.c	FUNCTION_2
+copy_le16_clamp	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,2:IF,0	19
+0x400022a	              0x55	                                push rbp	       165	archive-zip.c	FUNCTION_5
+0x400022b	          0x4889e5	                            mov rbp, rsp	       165	archive-zip.c	FUNCTION_5
+0x400022e	        0x4883ec18	                           sub rsp, 0x18	       165	archive-zip.c	FUNCTION_5
+0x4000232	        0x48897df8	                mov qword [rbp - 8], rdi	       165	archive-zip.c	FUNCTION_5
+0x4000236	        0x488975f0	             mov qword [rbp - 0x10], rsi	       165	archive-zip.c	FUNCTION_5
+0x400023a	        0x488955e8	             mov qword [rbp - 0x18], rdx	       165	archive-zip.c	FUNCTION_5
+0x400023e	        0x488b55e8	             mov rdx, qword [rbp - 0x18]	       166	archive-zip.c	FUNCTION_5	CALL_2
+0x4000242	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       166	archive-zip.c	FUNCTION_5	CALL_2
+0x4000246	      0xbeffff0000	                         mov esi, 0xffff	       166	archive-zip.c	FUNCTION_5	CALL_2
+0x400024b	          0x4889c7	                            mov rdi, rax	       166	archive-zip.c	FUNCTION_5	CALL_2
+0x400024e	      0xe8a7ffffff	                      call sym.clamp_max	       166	archive-zip.c	FUNCTION_5	CALL_2
+0x4000253	            0x89c2	                            mov edx, eax	       166	archive-zip.c	FUNCTION_5	CALL_2
+0x4000255	        0x488b45f8	                mov rax, qword [rbp - 8]	       166	archive-zip.c	FUNCTION_5	CALL_2
+0x4000259	            0x89d6	                            mov esi, edx	       166	archive-zip.c	FUNCTION_5	CALL_2
+0x400025b	          0x4889c7	                            mov rdi, rax	       166	archive-zip.c	FUNCTION_5	CALL_2
+0x400025e	      0xe88cfeffff	                      call sym.copy_le16	       166	archive-zip.c	FUNCTION_5	CALL_2
+0x4000263	              0x90	                                     nop	       167	archive-zip.c	FUNCTION_5
+0x4000264	              0xc9	                                   leave	       167	archive-zip.c	FUNCTION_5
+0x4000265	              0xc3	                                     ret	       167	archive-zip.c	FUNCTION_5
+zlib_deflate_raw	SWITCH,0:ELSE,0:DO,1:FOR,0:functions,0:WHILE,0:CALL,6:IF,1	60
+0x4000312	              0x55	                                push rbp	       192	archive-zip.c	FUNCTION_9
+0x4000313	          0x4889e5	                            mov rbp, rsp	       192	archive-zip.c	FUNCTION_9
+0x4000316	    0x4881ecf00000	                           sub rsp, 0xf0	       192	archive-zip.c	FUNCTION_9
+0x400031d	    0x4889bd28ffff	             mov qword [rbp - 0xd8], rdi	       192	archive-zip.c	FUNCTION_9
+0x4000324	    0x4889b520ffff	             mov qword [rbp - 0xe0], rsi	       192	archive-zip.c	FUNCTION_9
+0x400032b	    0x89951cffffff	             mov dword [rbp - 0xe4], edx	       192	archive-zip.c	FUNCTION_9
+0x4000331	    0x48898d10ffff	             mov qword [rbp - 0xf0], rcx	       192	archive-zip.c	FUNCTION_9
+0x4000338	    0x64488b042528	                mov rax, qword fs:[0x28]	       192	archive-zip.c	FUNCTION_9
+0x4000341	        0x488945f8	                mov qword [rbp - 8], rax	       192	archive-zip.c	FUNCTION_9
+0x4000345	            0x31c0	                            xor eax, eax	       192	archive-zip.c	FUNCTION_9
+0x4000347	    0x8b951cffffff	             mov edx, dword [rbp - 0xe4]	       198	archive-zip.c	FUNCTION_9	CALL_1
+0x400034d	    0x488d8550ffff	                   lea rax, [rbp - 0xb0]	       198	archive-zip.c	FUNCTION_9	CALL_1
+0x4000354	            0x89d6	                            mov esi, edx	       198	archive-zip.c	FUNCTION_9	CALL_1
+0x4000356	          0x4889c7	                            mov rdi, rax	       198	archive-zip.c	FUNCTION_9	CALL_1
+0x4000359	      0xe800000000	                          call 0x400035e	       198	archive-zip.c	FUNCTION_9	CALL_1
+0x400035e	    0x488b9520ffff	             mov rdx, qword [rbp - 0xe0]	       199	archive-zip.c	FUNCTION_9	CALL_2
+0x4000365	    0x488d8550ffff	                   lea rax, [rbp - 0xb0]	       199	archive-zip.c	FUNCTION_9	CALL_2
+0x400036c	          0x4889d6	                            mov rsi, rdx	       199	archive-zip.c	FUNCTION_9	CALL_2
+0x400036f	          0x4889c7	                            mov rdi, rax	       199	archive-zip.c	FUNCTION_9	CALL_2
+0x4000372	      0xe800000000	                          call 0x4000377	       199	archive-zip.c	FUNCTION_9	CALL_2
+0x4000377	    0x48898540ffff	             mov qword [rbp - 0xc0], rax	       199	archive-zip.c	FUNCTION_9	CALL_2
+0x400037e	    0x488b8540ffff	             mov rax, qword [rbp - 0xc0]	       200	archive-zip.c	FUNCTION_9	CALL_3
+0x4000385	          0x4889c7	                            mov rdi, rax	       200	archive-zip.c	FUNCTION_9	CALL_3
+0x4000388	      0xe800000000	                          call 0x400038d	       200	archive-zip.c	FUNCTION_9	CALL_3
+0x400038d	    0x48898548ffff	             mov qword [rbp - 0xb8], rax	       200	archive-zip.c	FUNCTION_9	CALL_3
+0x4000394	    0x488b8528ffff	             mov rax, qword [rbp - 0xd8]	       202	archive-zip.c	FUNCTION_9
+0x400039b	        0x488945e0	             mov qword [rbp - 0x20], rax	       202	archive-zip.c	FUNCTION_9
+0x400039f	    0x488b8520ffff	             mov rax, qword [rbp - 0xe0]	       203	archive-zip.c	FUNCTION_9
+0x40003a6	        0x488945c0	             mov qword [rbp - 0x40], rax	       203	archive-zip.c	FUNCTION_9
+0x40003aa	    0x488b8548ffff	             mov rax, qword [rbp - 0xb8]	       204	archive-zip.c	FUNCTION_9
+0x40003b1	        0x488945e8	             mov qword [rbp - 0x18], rax	       204	archive-zip.c	FUNCTION_9
+0x40003b5	    0x488b8540ffff	             mov rax, qword [rbp - 0xc0]	       205	archive-zip.c	FUNCTION_9
+0x40003bc	        0x488945c8	             mov qword [rbp - 0x38], rax	       205	archive-zip.c	FUNCTION_9
+0x40003c0	    0x488d8550ffff	                   lea rax, [rbp - 0xb0]	       208	archive-zip.c	FUNCTION_9	DO_1	CALL_4
+0x40003c7	      0xbe04000000	                              mov esi, 4	       208	archive-zip.c	FUNCTION_9	DO_1	CALL_4
+0x40003cc	          0x4889c7	                            mov rdi, rax	       208	archive-zip.c	FUNCTION_9	DO_1	CALL_4
+0x40003cf	      0xe800000000	                          call 0x40003d4	       208	archive-zip.c	FUNCTION_9	DO_1	CALL_4
+0x40003d4	    0x89853cffffff	             mov dword [rbp - 0xc4], eax	       208	archive-zip.c	FUNCTION_9	DO_1	CALL_4
+0x40003da	    0x83bd3cffffff	               cmp dword [rbp - 0xc4], 0	       209	archive-zip.c	FUNCTION_9	DO_1
+0x40003e1	            0x74dd	                            je 0x40003c0	       209	archive-zip.c	FUNCTION_9	DO_1
+0x40003e3	    0x83bd3cffffff	               cmp dword [rbp - 0xc4], 1	       211	archive-zip.c	FUNCTION_9	IF_1
+0x40003ea	            0x7416	                            je 0x4000402	       211	archive-zip.c	FUNCTION_9	IF_1
+0x40003ec	    0x488b8548ffff	             mov rax, qword [rbp - 0xb8]	       212	archive-zip.c	FUNCTION_9	IF_1	CALL_5
+0x40003f3	          0x4889c7	                            mov rdi, rax	       212	archive-zip.c	FUNCTION_9	IF_1	CALL_5
+0x40003f6	      0xe800000000	                          call 0x40003fb	       212	archive-zip.c	FUNCTION_9	IF_1	CALL_5
+0x40003fb	      0xb800000000	                              mov eax, 0	       213	archive-zip.c	FUNCTION_9	IF_1
+0x4000400	            0xeb24	                           jmp 0x4000426	       213	archive-zip.c	FUNCTION_9	IF_1
+0x4000402	    0x488d8550ffff	                   lea rax, [rbp - 0xb0]	       216	archive-zip.c	FUNCTION_9	CALL_6
+0x4000409	          0x4889c7	                            mov rdi, rax	       216	archive-zip.c	FUNCTION_9	CALL_6
+0x400040c	      0xe800000000	                          call 0x4000411	       216	archive-zip.c	FUNCTION_9	CALL_6
+0x4000411	        0x488b55d8	             mov rdx, qword [rbp - 0x28]	       217	archive-zip.c	FUNCTION_9
+0x4000415	    0x488b8510ffff	             mov rax, qword [rbp - 0xf0]	       217	archive-zip.c	FUNCTION_9
+0x400041c	          0x488910	                    mov qword [rax], rdx	       217	archive-zip.c	FUNCTION_9
+0x400041f	    0x488b8548ffff	             mov rax, qword [rbp - 0xb8]	       219	archive-zip.c	FUNCTION_9
+0x4000426	        0x488b4df8	                mov rcx, qword [rbp - 8]	       220	archive-zip.c	FUNCTION_9
+0x400042a	    0x6448330c2528	                xor rcx, qword fs:[0x28]	       220	archive-zip.c	FUNCTION_9
+0x4000433	            0x7405	                            je 0x400043a	       220	archive-zip.c	FUNCTION_9
+0x4000435	      0xe800000000	                          call 0x400043a	       220	archive-zip.c	FUNCTION_9
+0x400043a	              0xc9	                                   leave	       220	archive-zip.c	FUNCTION_9
+0x400043b	              0xc3	                                     ret	       220	archive-zip.c	FUNCTION_9
+set_zip_header_data_desc	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,3:IF,0	31
+0x4000595	              0x55	                                push rbp	       249	archive-zip.c	FUNCTION_11
+0x4000596	          0x4889e5	                            mov rbp, rsp	       249	archive-zip.c	FUNCTION_11
+0x4000599	        0x4883ec20	                           sub rsp, 0x20	       249	archive-zip.c	FUNCTION_11
+0x400059d	        0x48897df8	                mov qword [rbp - 8], rdi	       249	archive-zip.c	FUNCTION_11
+0x40005a1	        0x488975f0	             mov qword [rbp - 0x10], rsi	       249	archive-zip.c	FUNCTION_11
+0x40005a5	        0x488955e8	             mov qword [rbp - 0x18], rdx	       249	archive-zip.c	FUNCTION_11
+0x40005a9	        0x48894de0	             mov qword [rbp - 0x20], rcx	       249	archive-zip.c	FUNCTION_11
+0x40005ad	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       250	archive-zip.c	FUNCTION_11	CALL_1
+0x40005b1	            0x89c2	                            mov edx, eax	       250	archive-zip.c	FUNCTION_11	CALL_1
+0x40005b3	        0x488b45f8	                mov rax, qword [rbp - 8]	       250	archive-zip.c	FUNCTION_11	CALL_1
+0x40005b7	        0x4883c00e	                            add rax, 0xe	       250	archive-zip.c	FUNCTION_11	CALL_1
+0x40005bb	            0x89d6	                            mov esi, edx	       250	archive-zip.c	FUNCTION_11	CALL_1
+0x40005bd	          0x4889c7	                            mov rdi, rax	       250	archive-zip.c	FUNCTION_11	CALL_1
+0x40005c0	      0xe853fbffff	                      call sym.copy_le32	       250	archive-zip.c	FUNCTION_11	CALL_1
+0x40005c5	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       251	archive-zip.c	FUNCTION_11	CALL_2
+0x40005c9	            0x89c2	                            mov edx, eax	       251	archive-zip.c	FUNCTION_11	CALL_2
+0x40005cb	        0x488b45f8	                mov rax, qword [rbp - 8]	       251	archive-zip.c	FUNCTION_11	CALL_2
+0x40005cf	        0x4883c012	                           add rax, 0x12	       251	archive-zip.c	FUNCTION_11	CALL_2
+0x40005d3	            0x89d6	                            mov esi, edx	       251	archive-zip.c	FUNCTION_11	CALL_2
+0x40005d5	          0x4889c7	                            mov rdi, rax	       251	archive-zip.c	FUNCTION_11	CALL_2
+0x40005d8	      0xe83bfbffff	                      call sym.copy_le32	       251	archive-zip.c	FUNCTION_11	CALL_2
+0x40005dd	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       252	archive-zip.c	FUNCTION_11	CALL_3
+0x40005e1	            0x89c2	                            mov edx, eax	       252	archive-zip.c	FUNCTION_11	CALL_3
+0x40005e3	        0x488b45f8	                mov rax, qword [rbp - 8]	       252	archive-zip.c	FUNCTION_11	CALL_3
+0x40005e7	        0x4883c016	                           add rax, 0x16	       252	archive-zip.c	FUNCTION_11	CALL_3
+0x40005eb	            0x89d6	                            mov esi, edx	       252	archive-zip.c	FUNCTION_11	CALL_3
+0x40005ed	          0x4889c7	                            mov rdi, rax	       252	archive-zip.c	FUNCTION_11	CALL_3
+0x40005f0	      0xe823fbffff	                      call sym.copy_le32	       252	archive-zip.c	FUNCTION_11	CALL_3
+0x40005f5	              0x90	                                     nop	       253	archive-zip.c	FUNCTION_11
+0x40005f6	              0xc9	                                   leave	       253	archive-zip.c	FUNCTION_11
+0x40005f7	              0xc3	                                     ret	       253	archive-zip.c	FUNCTION_11
+copy_le16	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,0:IF,0	16
+0x40000ef	              0x55	                                push rbp	       131	archive-zip.c	FUNCTION_1
+0x40000f0	          0x4889e5	                            mov rbp, rsp	       131	archive-zip.c	FUNCTION_1
+0x40000f3	        0x48897df8	                mov qword [rbp - 8], rdi	       131	archive-zip.c	FUNCTION_1
+0x40000f7	          0x8975f4	              mov dword [rbp - 0xc], esi	       131	archive-zip.c	FUNCTION_1
+0x40000fa	          0x8b45f4	              mov eax, dword [rbp - 0xc]	       132	archive-zip.c	FUNCTION_1
+0x40000fd	            0x89c2	                            mov edx, eax	       132	archive-zip.c	FUNCTION_1
+0x40000ff	        0x488b45f8	                mov rax, qword [rbp - 8]	       132	archive-zip.c	FUNCTION_1
+0x4000103	            0x8810	                      mov byte [rax], dl	       132	archive-zip.c	FUNCTION_1
+0x4000105	        0x488b45f8	                mov rax, qword [rbp - 8]	       133	archive-zip.c	FUNCTION_1
+0x4000109	        0x4883c001	                              add rax, 1	       133	archive-zip.c	FUNCTION_1
+0x400010d	          0x8b55f4	              mov edx, dword [rbp - 0xc]	       133	archive-zip.c	FUNCTION_1
+0x4000110	          0xc1ea08	                              shr edx, 8	       133	archive-zip.c	FUNCTION_1
+0x4000113	            0x8810	                      mov byte [rax], dl	       133	archive-zip.c	FUNCTION_1
+0x4000115	              0x90	                                     nop	       134	archive-zip.c	FUNCTION_1
+0x4000116	              0x5d	                                 pop rbp	       134	archive-zip.c	FUNCTION_1
+0x4000117	              0xc3	                                     ret	       134	archive-zip.c	FUNCTION_1
+copy_le64	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,0:IF,0	46
+0x4000161	              0x55	                                push rbp	       145	archive-zip.c	FUNCTION_3
+0x4000162	          0x4889e5	                            mov rbp, rsp	       145	archive-zip.c	FUNCTION_3
+0x4000165	        0x48897df8	                mov qword [rbp - 8], rdi	       145	archive-zip.c	FUNCTION_3
+0x4000169	        0x488975f0	             mov qword [rbp - 0x10], rsi	       145	archive-zip.c	FUNCTION_3
+0x400016d	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       146	archive-zip.c	FUNCTION_3
+0x4000171	            0x89c2	                            mov edx, eax	       146	archive-zip.c	FUNCTION_3
+0x4000173	        0x488b45f8	                mov rax, qword [rbp - 8]	       146	archive-zip.c	FUNCTION_3
+0x4000177	            0x8810	                      mov byte [rax], dl	       146	archive-zip.c	FUNCTION_3
+0x4000179	        0x488b45f8	                mov rax, qword [rbp - 8]	       147	archive-zip.c	FUNCTION_3
+0x400017d	        0x4883c001	                              add rax, 1	       147	archive-zip.c	FUNCTION_3
+0x4000181	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       147	archive-zip.c	FUNCTION_3
+0x4000185	        0x48c1ea08	                              shr rdx, 8	       147	archive-zip.c	FUNCTION_3
+0x4000189	            0x8810	                      mov byte [rax], dl	       147	archive-zip.c	FUNCTION_3
+0x400018b	        0x488b45f8	                mov rax, qword [rbp - 8]	       148	archive-zip.c	FUNCTION_3
+0x400018f	        0x4883c002	                              add rax, 2	       148	archive-zip.c	FUNCTION_3
+0x4000193	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       148	archive-zip.c	FUNCTION_3
+0x4000197	        0x48c1ea10	                           shr rdx, 0x10	       148	archive-zip.c	FUNCTION_3
+0x400019b	            0x8810	                      mov byte [rax], dl	       148	archive-zip.c	FUNCTION_3
+0x400019d	        0x488b45f8	                mov rax, qword [rbp - 8]	       149	archive-zip.c	FUNCTION_3
+0x40001a1	        0x4883c003	                              add rax, 3	       149	archive-zip.c	FUNCTION_3
+0x40001a5	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       149	archive-zip.c	FUNCTION_3
+0x40001a9	        0x48c1ea18	                           shr rdx, 0x18	       149	archive-zip.c	FUNCTION_3
+0x40001ad	            0x8810	                      mov byte [rax], dl	       149	archive-zip.c	FUNCTION_3
+0x40001af	        0x488b45f8	                mov rax, qword [rbp - 8]	       150	archive-zip.c	FUNCTION_3
+0x40001b3	        0x4883c004	                              add rax, 4	       150	archive-zip.c	FUNCTION_3
+0x40001b7	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       150	archive-zip.c	FUNCTION_3
+0x40001bb	        0x48c1ea20	                           shr rdx, 0x20	       150	archive-zip.c	FUNCTION_3
+0x40001bf	            0x8810	                      mov byte [rax], dl	       150	archive-zip.c	FUNCTION_3
+0x40001c1	        0x488b45f8	                mov rax, qword [rbp - 8]	       151	archive-zip.c	FUNCTION_3
+0x40001c5	        0x4883c005	                              add rax, 5	       151	archive-zip.c	FUNCTION_3
+0x40001c9	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       151	archive-zip.c	FUNCTION_3
+0x40001cd	        0x48c1ea28	                           shr rdx, 0x28	       151	archive-zip.c	FUNCTION_3
+0x40001d1	            0x8810	                      mov byte [rax], dl	       151	archive-zip.c	FUNCTION_3
+0x40001d3	        0x488b45f8	                mov rax, qword [rbp - 8]	       152	archive-zip.c	FUNCTION_3
+0x40001d7	        0x4883c006	                              add rax, 6	       152	archive-zip.c	FUNCTION_3
+0x40001db	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       152	archive-zip.c	FUNCTION_3
+0x40001df	        0x48c1ea30	                           shr rdx, 0x30	       152	archive-zip.c	FUNCTION_3
+0x40001e3	            0x8810	                      mov byte [rax], dl	       152	archive-zip.c	FUNCTION_3
+0x40001e5	        0x488b45f8	                mov rax, qword [rbp - 8]	       153	archive-zip.c	FUNCTION_3
+0x40001e9	        0x4883c007	                              add rax, 7	       153	archive-zip.c	FUNCTION_3
+0x40001ed	        0x488b55f0	             mov rdx, qword [rbp - 0x10]	       153	archive-zip.c	FUNCTION_3
+0x40001f1	        0x48c1ea38	                           shr rdx, 0x38	       153	archive-zip.c	FUNCTION_3
+0x40001f5	            0x8810	                      mov byte [rax], dl	       153	archive-zip.c	FUNCTION_3
+0x40001f7	              0x90	                                     nop	       154	archive-zip.c	FUNCTION_3
+0x40001f8	              0x5d	                                 pop rbp	       154	archive-zip.c	FUNCTION_3
+0x40001f9	              0xc3	                                     ret	       154	archive-zip.c	FUNCTION_3
+strbuf_addch	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,2:IF,1	33
+0x4000081	              0x55	                                push rbp	       226	strbuf.h	FUNCTION_24
+0x4000082	          0x4889e5	                            mov rbp, rsp	       226	strbuf.h	FUNCTION_24
+0x4000085	        0x4883ec10	                           sub rsp, 0x10	       226	strbuf.h	FUNCTION_24
+0x4000089	        0x48897df8	                mov qword [rbp - 8], rdi	       226	strbuf.h	FUNCTION_24
+0x400008d	          0x8975f4	              mov dword [rbp - 0xc], esi	       226	strbuf.h	FUNCTION_24
+0x4000090	        0x488b45f8	                mov rax, qword [rbp - 8]	       227	strbuf.h	FUNCTION_24	IF_1	CALL_1
+0x4000094	          0x4889c7	                            mov rdi, rax	       227	strbuf.h	FUNCTION_24	IF_1	CALL_1
+0x4000097	      0xe8afffffff	                   call sym.strbuf_avail	       227	strbuf.h	FUNCTION_24	IF_1	CALL_1
+0x400009c	          0x4885c0	                           test rax, rax	       227	strbuf.h	FUNCTION_24	IF_1	CALL_1
+0x400009f	            0x7511	                           jne 0x40000b2	       227	strbuf.h	FUNCTION_24	IF_1	CALL_1
+0x40000a1	        0x488b45f8	                mov rax, qword [rbp - 8]	       228	strbuf.h	FUNCTION_24	CALL_2
+0x40000a5	      0xbe01000000	                              mov esi, 1	       228	strbuf.h	FUNCTION_24	CALL_2
+0x40000aa	          0x4889c7	                            mov rdi, rax	       228	strbuf.h	FUNCTION_24	CALL_2
+0x40000ad	      0xe800000000	                          call 0x40000b2	       228	strbuf.h	FUNCTION_24	CALL_2
+0x40000b2	        0x488b45f8	                mov rax, qword [rbp - 8]	       229	strbuf.h	FUNCTION_24
+0x40000b6	        0x488b7010	            mov rsi, qword [rax + 0x10] 	       229	strbuf.h	FUNCTION_24
+0x40000ba	        0x488b45f8	                mov rax, qword [rbp - 8]	       229	strbuf.h	FUNCTION_24
+0x40000be	        0x488b4008	                mov rax, qword [rax + 8]	       229	strbuf.h	FUNCTION_24
+0x40000c2	        0x488d4801	                      lea rcx, [rax + 1]	       229	strbuf.h	FUNCTION_24
+0x40000c6	        0x488b55f8	                mov rdx, qword [rbp - 8]	       229	strbuf.h	FUNCTION_24
+0x40000ca	        0x48894a08	                mov qword [rdx + 8], rcx	       229	strbuf.h	FUNCTION_24
+0x40000ce	          0x4801f0	                            add rax, rsi	       229	strbuf.h	FUNCTION_24
+0x40000d1	          0x8b55f4	              mov edx, dword [rbp - 0xc]	       229	strbuf.h	FUNCTION_24
+0x40000d4	            0x8810	                      mov byte [rax], dl	       229	strbuf.h	FUNCTION_24
+0x40000d6	        0x488b45f8	                mov rax, qword [rbp - 8]	       230	strbuf.h	FUNCTION_24
+0x40000da	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       230	strbuf.h	FUNCTION_24
+0x40000de	        0x488b45f8	                mov rax, qword [rbp - 8]	       230	strbuf.h	FUNCTION_24
+0x40000e2	        0x488b4008	                mov rax, qword [rax + 8]	       230	strbuf.h	FUNCTION_24
+0x40000e6	          0x4801d0	                            add rax, rdx	       230	strbuf.h	FUNCTION_24
+0x40000e9	          0xc60000	                       mov byte [rax], 0	       230	strbuf.h	FUNCTION_24
+0x40000ec	              0x90	                                     nop	       231	strbuf.h	FUNCTION_24
+0x40000ed	              0xc9	                                   leave	       231	strbuf.h	FUNCTION_24
+0x40000ee	              0xc3	                                     ret	       231	strbuf.h	FUNCTION_24
+dos_time	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,3:IF,1	70
+0x4001a13	              0x55	                                push rbp	       599	archive-zip.c	FUNCTION_17
+0x4001a14	          0x4889e5	                            mov rbp, rsp	       599	archive-zip.c	FUNCTION_17
+0x4001a17	        0x4883ec40	                           sub rsp, 0x40	       599	archive-zip.c	FUNCTION_17
+0x4001a1b	        0x48897dd8	             mov qword [rbp - 0x28], rdi	       599	archive-zip.c	FUNCTION_17
+0x4001a1f	        0x488975d0	             mov qword [rbp - 0x30], rsi	       599	archive-zip.c	FUNCTION_17
+0x4001a23	        0x488955c8	             mov qword [rbp - 0x38], rdx	       599	archive-zip.c	FUNCTION_17
+0x4001a27	    0x64488b042528	                mov rax, qword fs:[0x28]	       599	archive-zip.c	FUNCTION_17
+0x4001a30	        0x488945f8	                mov qword [rbp - 8], rax	       599	archive-zip.c	FUNCTION_17
+0x4001a34	            0x31c0	                            xor eax, eax	       599	archive-zip.c	FUNCTION_17
+0x4001a36	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       603	archive-zip.c	FUNCTION_17	IF_1	CALL_1
+0x4001a3a	          0x488b00	                    mov rax, qword [rax]	       603	archive-zip.c	FUNCTION_17	IF_1	CALL_1
+0x4001a3d	          0x4889c7	                            mov rdi, rax	       603	archive-zip.c	FUNCTION_17	IF_1	CALL_1
+0x4001a40	      0xe800000000	                          call 0x4001a45	       603	archive-zip.c	FUNCTION_17	IF_1	CALL_1
+0x4001a45	            0x85c0	                           test eax, eax	       603	archive-zip.c	FUNCTION_17	IF_1	CALL_1
+0x4001a47	            0x7419	                            je 0x4001a62	       603	archive-zip.c	FUNCTION_17	IF_1	CALL_1
+0x4001a49	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       604	archive-zip.c	FUNCTION_17	IF_1	CALL_2
+0x4001a4d	          0x488b00	                    mov rax, qword [rax]	       604	archive-zip.c	FUNCTION_17	IF_1	CALL_2
+0x4001a50	          0x4889c6	                            mov rsi, rax	       604	archive-zip.c	FUNCTION_17	IF_1	CALL_2
+0x4001a53	      0xbf00000000	                              mov edi, 0	       604	archive-zip.c	FUNCTION_17	IF_1	CALL_2
+0x4001a58	      0xb800000000	                              mov eax, 0	       604	archive-zip.c	FUNCTION_17	IF_1	CALL_2
+0x4001a5d	      0xe800000000	                          call 0x4001a62	       604	archive-zip.c	FUNCTION_17	IF_1	CALL_2
+0x4001a62	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       606	archive-zip.c	FUNCTION_17
+0x4001a66	          0x488b00	                    mov rax, qword [rax]	       606	archive-zip.c	FUNCTION_17
+0x4001a69	        0x488945e8	             mov qword [rbp - 0x18], rax	       606	archive-zip.c	FUNCTION_17
+0x4001a6d	        0x488d45e8	                   lea rax, [rbp - 0x18]	       607	archive-zip.c	FUNCTION_17	CALL_3
+0x4001a71	          0x4889c7	                            mov rdi, rax	       607	archive-zip.c	FUNCTION_17	CALL_3
+0x4001a74	      0xe800000000	                          call 0x4001a79	       607	archive-zip.c	FUNCTION_17	CALL_3
+0x4001a79	        0x488945f0	             mov qword [rbp - 0x10], rax	       607	archive-zip.c	FUNCTION_17	CALL_3
+0x4001a7d	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       608	archive-zip.c	FUNCTION_17
+0x4001a81	          0x4889c2	                            mov rdx, rax	       608	archive-zip.c	FUNCTION_17
+0x4001a84	        0x488b45d8	             mov rax, qword [rbp - 0x28]	       608	archive-zip.c	FUNCTION_17
+0x4001a88	          0x488910	                    mov qword [rax], rdx	       608	archive-zip.c	FUNCTION_17
+0x4001a8b	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       610	archive-zip.c	FUNCTION_17
+0x4001a8f	          0x8b500c	              mov edx, dword [rax + 0xc]	       610	archive-zip.c	FUNCTION_17
+0x4001a92	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       610	archive-zip.c	FUNCTION_17
+0x4001a96	          0x8b4010	            mov eax, dword [rax + 0x10] 	       610	archive-zip.c	FUNCTION_17
+0x4001a99	          0x83c001	                              add eax, 1	       610	archive-zip.c	FUNCTION_17
+0x4001a9c	          0xc1e005	                              shl eax, 5	       610	archive-zip.c	FUNCTION_17
+0x4001a9f	             0x1c2	                            add edx, eax	       610	archive-zip.c	FUNCTION_17
+0x4001aa1	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       611	archive-zip.c	FUNCTION_17
+0x4001aa5	          0x8b4014	            mov eax, dword [rax + 0x14] 	       611	archive-zip.c	FUNCTION_17
+0x4001aa8	          0x83e850	                           sub eax, 0x50	       611	archive-zip.c	FUNCTION_17
+0x4001aab	          0xc1e009	                              shl eax, 9	       611	archive-zip.c	FUNCTION_17
+0x4001aae	             0x1c2	                            add edx, eax	       610	archive-zip.c	FUNCTION_17
+0x4001ab0	        0x488b45d0	             mov rax, qword [rbp - 0x30]	       610	archive-zip.c	FUNCTION_17
+0x4001ab4	            0x8910	                    mov dword [rax], edx	       610	archive-zip.c	FUNCTION_17
+0x4001ab6	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       612	archive-zip.c	FUNCTION_17
+0x4001aba	            0x8b00	                    mov eax, dword [rax]	       612	archive-zip.c	FUNCTION_17
+0x4001abc	            0x89c2	                            mov edx, eax	       612	archive-zip.c	FUNCTION_17
+0x4001abe	          0xc1ea1f	                           shr edx, 0x1f	       612	archive-zip.c	FUNCTION_17
+0x4001ac1	             0x1d0	                            add eax, edx	       612	archive-zip.c	FUNCTION_17
+0x4001ac3	            0xd1f8	                              sar eax, 1	       612	archive-zip.c	FUNCTION_17
+0x4001ac5	            0x89c2	                            mov edx, eax	       612	archive-zip.c	FUNCTION_17
+0x4001ac7	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       612	archive-zip.c	FUNCTION_17
+0x4001acb	          0x8b4004	                mov eax, dword [rax + 4]	       612	archive-zip.c	FUNCTION_17
+0x4001ace	          0xc1e005	                              shl eax, 5	       612	archive-zip.c	FUNCTION_17
+0x4001ad1	             0x1c2	                            add edx, eax	       612	archive-zip.c	FUNCTION_17
+0x4001ad3	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       612	archive-zip.c	FUNCTION_17
+0x4001ad7	          0x8b4008	                mov eax, dword [rax + 8]	       612	archive-zip.c	FUNCTION_17
+0x4001ada	          0xc1e00b	                            shl eax, 0xb	       612	archive-zip.c	FUNCTION_17
+0x4001add	             0x1c2	                            add edx, eax	       612	archive-zip.c	FUNCTION_17
+0x4001adf	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       612	archive-zip.c	FUNCTION_17
+0x4001ae3	            0x8910	                    mov dword [rax], edx	       612	archive-zip.c	FUNCTION_17
+0x4001ae5	              0x90	                                     nop	       613	archive-zip.c	FUNCTION_17
+0x4001ae6	        0x488b45f8	                mov rax, qword [rbp - 8]	       613	archive-zip.c	FUNCTION_17
+0x4001aea	    0x644833042528	                xor rax, qword fs:[0x28]	       613	archive-zip.c	FUNCTION_17
+0x4001af3	            0x7405	                            je 0x4001afa	       613	archive-zip.c	FUNCTION_17
+0x4001af5	      0xe800000000	                          call 0x4001afa	       613	archive-zip.c	FUNCTION_17
+0x4001afa	              0xc9	                                   leave	       613	archive-zip.c	FUNCTION_17
+0x4001afb	              0xc3	                                     ret	       613	archive-zip.c	FUNCTION_17
+write_zip_archive	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,6:IF,1	33
+0x4001b25	              0x55	                                push rbp	       622	archive-zip.c	FUNCTION_19
+0x4001b26	          0x4889e5	                            mov rbp, rsp	       622	archive-zip.c	FUNCTION_19
+0x4001b29	        0x4883ec20	                           sub rsp, 0x20	       622	archive-zip.c	FUNCTION_19
+0x4001b2d	        0x48897de8	             mov qword [rbp - 0x18], rdi	       622	archive-zip.c	FUNCTION_19
+0x4001b31	        0x488975e0	             mov qword [rbp - 0x20], rsi	       622	archive-zip.c	FUNCTION_19
+0x4001b35	      0xbe00000000	                              mov esi, 0	       625	archive-zip.c	FUNCTION_19	CALL_1
+0x4001b3a	      0xbf00000000	                              mov edi, 0	       625	archive-zip.c	FUNCTION_19	CALL_1
+0x4001b3f	      0xe800000000	                          call 0x4001b44	       625	archive-zip.c	FUNCTION_19	CALL_1
+0x4001b44	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       627	archive-zip.c	FUNCTION_19	CALL_2
+0x4001b48	        0x4883c028	                           add rax, 0x28	       627	archive-zip.c	FUNCTION_19	CALL_2
+0x4001b4c	      0xba00000000	                              mov edx, 0	       627	archive-zip.c	FUNCTION_19	CALL_2
+0x4001b51	      0xbe00000000	                              mov esi, 0	       627	archive-zip.c	FUNCTION_19	CALL_2
+0x4001b56	          0x4889c7	                            mov rdi, rax	       627	archive-zip.c	FUNCTION_19	CALL_2
+0x4001b59	      0xe8b5feffff	                       call sym.dos_time	       627	archive-zip.c	FUNCTION_19	CALL_2
+0x4001b5e	      0xbe00000000	                              mov esi, 0	       629	archive-zip.c	FUNCTION_19	CALL_3
+0x4001b63	      0xbf00000000	                              mov edi, 0	       629	archive-zip.c	FUNCTION_19	CALL_3
+0x4001b68	      0xe800000000	                          call 0x4001b6d	       629	archive-zip.c	FUNCTION_19	CALL_3
+0x4001b6d	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       631	archive-zip.c	FUNCTION_19	CALL_4
+0x4001b71	      0xbe00000000	                              mov esi, 0	       631	archive-zip.c	FUNCTION_19	CALL_4
+0x4001b76	          0x4889c7	                            mov rdi, rax	       631	archive-zip.c	FUNCTION_19	CALL_4
+0x4001b79	      0xe800000000	                          call 0x4001b7e	       631	archive-zip.c	FUNCTION_19	CALL_4
+0x4001b7e	          0x8945fc	                mov dword [rbp - 4], eax	       631	archive-zip.c	FUNCTION_19	CALL_4
+0x4001b81	        0x837dfc00	                  cmp dword [rbp - 4], 0	       632	archive-zip.c	FUNCTION_19	IF_1
+0x4001b85	            0x7510	                           jne 0x4001b97	       632	archive-zip.c	FUNCTION_19	IF_1
+0x4001b87	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       633	archive-zip.c	FUNCTION_19	CALL_5
+0x4001b8b	        0x488b4018	            mov rax, qword [rax + 0x18] 	       633	archive-zip.c	FUNCTION_19	CALL_5
+0x4001b8f	          0x4889c7	                            mov rdi, rax	       633	archive-zip.c	FUNCTION_19	CALL_5
+0x4001b92	      0xe80cfdffff	              call sym.write_zip_trailer	       633	archive-zip.c	FUNCTION_19	CALL_5
+0x4001b97	      0xbf00000000	                              mov edi, 0	       635	archive-zip.c	FUNCTION_19	CALL_6
+0x4001b9c	      0xe800000000	                          call 0x4001ba1	       635	archive-zip.c	FUNCTION_19	CALL_6
+0x4001ba1	          0x8b45fc	                mov eax, dword [rbp - 4]	       637	archive-zip.c	FUNCTION_19
+0x4001ba4	              0xc9	                                   leave	       638	archive-zip.c	FUNCTION_19
+0x4001ba5	              0xc3	                                     ret	       638	archive-zip.c	FUNCTION_19
+entry_is_binary	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,3:IF,2	29
+0x4000633	              0x55	                                push rbp	       267	archive-zip.c	FUNCTION_13
+0x4000634	          0x4889e5	                            mov rbp, rsp	       267	archive-zip.c	FUNCTION_13
+0x4000637	        0x4883ec30	                           sub rsp, 0x30	       267	archive-zip.c	FUNCTION_13
+0x400063b	        0x48897de8	             mov qword [rbp - 0x18], rdi	       267	archive-zip.c	FUNCTION_13
+0x400063f	        0x488975e0	             mov qword [rbp - 0x20], rsi	       267	archive-zip.c	FUNCTION_13
+0x4000643	        0x488955d8	             mov qword [rbp - 0x28], rdx	       267	archive-zip.c	FUNCTION_13
+0x4000647	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       268	archive-zip.c	FUNCTION_13	CALL_1
+0x400064b	          0x4889c7	                            mov rdi, rax	       268	archive-zip.c	FUNCTION_13	CALL_1
+0x400064e	      0xe800000000	                          call 0x4000653	       268	archive-zip.c	FUNCTION_13	CALL_1
+0x4000653	        0x488945f8	                mov qword [rbp - 8], rax	       268	archive-zip.c	FUNCTION_13	CALL_1
+0x4000657	      0x48837df800	                  cmp qword [rbp - 8], 0	       269	archive-zip.c	FUNCTION_13	IF_1
+0x400065c	            0x750e	                           jne 0x400066c	       269	archive-zip.c	FUNCTION_13	IF_1
+0x400065e	      0xbf00000000	                              mov edi, 0	       270	archive-zip.c	FUNCTION_13	CALL_2
+0x4000663	      0xe800000000	                          call 0x4000668	       270	archive-zip.c	FUNCTION_13	CALL_2
+0x4000668	        0x488945f8	                mov qword [rbp - 8], rax	       270	archive-zip.c	FUNCTION_13	CALL_2
+0x400066c	        0x488b45f8	                mov rax, qword [rbp - 8]	       271	archive-zip.c	FUNCTION_13	IF_2
+0x4000670	          0x8b4010	            mov eax, dword [rax + 0x10] 	       271	archive-zip.c	FUNCTION_13	IF_2
+0x4000673	          0x83f8ff	             cmp eax, 0xffffffffffffffff	       271	archive-zip.c	FUNCTION_13	IF_2
+0x4000676	            0x7409	                            je 0x4000681	       271	archive-zip.c	FUNCTION_13	IF_2
+0x4000678	        0x488b45f8	                mov rax, qword [rbp - 8]	       272	archive-zip.c	FUNCTION_13	IF_2
+0x400067c	          0x8b4010	            mov eax, dword [rax + 0x10] 	       272	archive-zip.c	FUNCTION_13	IF_2
+0x400067f	            0xeb13	                           jmp 0x4000694	       272	archive-zip.c	FUNCTION_13	IF_2
+0x4000681	        0x488b55d8	             mov rdx, qword [rbp - 0x28]	       273	archive-zip.c	FUNCTION_13	CALL_3
+0x4000685	        0x488b45e0	             mov rax, qword [rbp - 0x20]	       273	archive-zip.c	FUNCTION_13	CALL_3
+0x4000689	          0x4889d6	                            mov rsi, rdx	       273	archive-zip.c	FUNCTION_13	CALL_3
+0x400068c	          0x4889c7	                            mov rdi, rax	       273	archive-zip.c	FUNCTION_13	CALL_3
+0x400068f	      0xe800000000	                          call 0x4000694	       273	archive-zip.c	FUNCTION_13	CALL_3
+0x4000694	              0xc9	                                   leave	       274	archive-zip.c	FUNCTION_13
+0x4000695	              0xc3	                                     ret	       274	archive-zip.c	FUNCTION_13
+strbuf_avail	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,0:IF,0	18
+0x400004b	              0x55	                                push rbp	       140	strbuf.h	FUNCTION_22
+0x400004c	          0x4889e5	                            mov rbp, rsp	       140	strbuf.h	FUNCTION_22
+0x400004f	        0x48897df8	                mov qword [rbp - 8], rdi	       140	strbuf.h	FUNCTION_22
+0x4000053	        0x488b45f8	                mov rax, qword [rbp - 8]	       141	strbuf.h	FUNCTION_22
+0x4000057	          0x488b00	                    mov rax, qword [rax]	       141	strbuf.h	FUNCTION_22
+0x400005a	          0x4885c0	                           test rax, rax	       141	strbuf.h	FUNCTION_22
+0x400005d	            0x741b	                            je 0x400007a	       141	strbuf.h	FUNCTION_22
+0x400005f	        0x488b45f8	                mov rax, qword [rbp - 8]	       141	strbuf.h	FUNCTION_22
+0x4000063	          0x488b10	                    mov rdx, qword [rax]	       141	strbuf.h	FUNCTION_22
+0x4000066	        0x488b45f8	                mov rax, qword [rbp - 8]	       141	strbuf.h	FUNCTION_22
+0x400006a	        0x488b4008	                mov rax, qword [rax + 8]	       141	strbuf.h	FUNCTION_22
+0x400006e	          0x4829c2	                            sub rdx, rax	       141	strbuf.h	FUNCTION_22
+0x4000071	          0x4889d0	                            mov rax, rdx	       141	strbuf.h	FUNCTION_22
+0x4000074	        0x4883e801	                              sub rax, 1	       141	strbuf.h	FUNCTION_22
+0x4000078	            0xeb05	                           jmp 0x400007f	       141	strbuf.h	FUNCTION_22
+0x400007a	      0xb800000000	                              mov eax, 0	       141	strbuf.h	FUNCTION_22
+0x400007f	              0x5d	                                 pop rbp	       142	strbuf.h	FUNCTION_22
+0x4000080	              0xc3	                                     ret	       142	strbuf.h	FUNCTION_22
+write_zip_trailer	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,13:IF,2	90
+0x40018a3	              0x55	                                push rbp	       576	archive-zip.c	FUNCTION_16
+0x40018a4	          0x4889e5	                            mov rbp, rsp	       576	archive-zip.c	FUNCTION_16
+0x40018a7	        0x4883ec40	                           sub rsp, 0x40	       576	archive-zip.c	FUNCTION_16
+0x40018ab	        0x48897dc8	             mov qword [rbp - 0x38], rdi	       576	archive-zip.c	FUNCTION_16
+0x40018af	    0x64488b042528	                mov rax, qword fs:[0x28]	       576	archive-zip.c	FUNCTION_16
+0x40018b8	        0x488945f8	                mov qword [rbp - 8], rax	       576	archive-zip.c	FUNCTION_16
+0x40018bc	            0x31c0	                            xor eax, eax	       576	archive-zip.c	FUNCTION_16
+0x40018be	    0xc745dc000000	               mov dword [rbp - 0x24], 0	       578	archive-zip.c	FUNCTION_16
+0x40018c5	        0x488d45e0	                   lea rax, [rbp - 0x20]	       580	archive-zip.c	FUNCTION_16	CALL_1
+0x40018c9	      0xbe504b0506	                      mov esi, 0x6054b50	       580	archive-zip.c	FUNCTION_16	CALL_1
+0x40018ce	          0x4889c7	                            mov rdi, rax	       580	archive-zip.c	FUNCTION_16	CALL_1
+0x40018d1	      0xe842e8ffff	                      call sym.copy_le32	       580	archive-zip.c	FUNCTION_16	CALL_1
+0x40018d6	        0x488d45e0	                   lea rax, [rbp - 0x20]	       581	archive-zip.c	FUNCTION_16	CALL_2
+0x40018da	        0x4883c004	                              add rax, 4	       581	archive-zip.c	FUNCTION_16	CALL_2
+0x40018de	      0xbe00000000	                              mov esi, 0	       581	archive-zip.c	FUNCTION_16	CALL_2
+0x40018e3	          0x4889c7	                            mov rdi, rax	       581	archive-zip.c	FUNCTION_16	CALL_2
+0x40018e6	      0xe804e8ffff	                      call sym.copy_le16	       581	archive-zip.c	FUNCTION_16	CALL_2
+0x40018eb	        0x488d45e0	                   lea rax, [rbp - 0x20]	       582	archive-zip.c	FUNCTION_16	CALL_3
+0x40018ef	        0x4883c006	                              add rax, 6	       582	archive-zip.c	FUNCTION_16	CALL_3
+0x40018f3	      0xbe00000000	                              mov esi, 0	       582	archive-zip.c	FUNCTION_16	CALL_3
+0x40018f8	          0x4889c7	                            mov rdi, rax	       582	archive-zip.c	FUNCTION_16	CALL_3
+0x40018fb	      0xe8efe7ffff	                      call sym.copy_le16	       582	archive-zip.c	FUNCTION_16	CALL_3
+0x4001900	    0x488b05000000	            mov rax, qword [0x04001907] 	       583	archive-zip.c	FUNCTION_16	CALL_4
+0x4001907	        0x488d55dc	                   lea rdx, [rbp - 0x24]	       583	archive-zip.c	FUNCTION_16	CALL_4
+0x400190b	        0x488d4de0	                   lea rcx, [rbp - 0x20]	       583	archive-zip.c	FUNCTION_16	CALL_4
+0x400190f	        0x4883c108	                              add rcx, 8	       583	archive-zip.c	FUNCTION_16	CALL_4
+0x4001913	          0x4889c6	                            mov rsi, rax	       583	archive-zip.c	FUNCTION_16	CALL_4
+0x4001916	          0x4889cf	                            mov rdi, rcx	       583	archive-zip.c	FUNCTION_16	CALL_4
+0x4001919	      0xe80ce9ffff	                call sym.copy_le16_clamp	       583	archive-zip.c	FUNCTION_16	CALL_4
+0x400191e	    0x488b05000000	            mov rax, qword [0x04001925] 	       585	archive-zip.c	FUNCTION_16	CALL_5
+0x4001925	        0x488d55dc	                   lea rdx, [rbp - 0x24]	       585	archive-zip.c	FUNCTION_16	CALL_5
+0x4001929	        0x488d4de0	                   lea rcx, [rbp - 0x20]	       585	archive-zip.c	FUNCTION_16	CALL_5
+0x400192d	        0x4883c10a	                            add rcx, 0xa	       585	archive-zip.c	FUNCTION_16	CALL_5
+0x4001931	          0x4889c6	                            mov rsi, rax	       585	archive-zip.c	FUNCTION_16	CALL_5
+0x4001934	          0x4889cf	                            mov rdi, rcx	       585	archive-zip.c	FUNCTION_16	CALL_5
+0x4001937	      0xe8eee8ffff	                call sym.copy_le16_clamp	       585	archive-zip.c	FUNCTION_16	CALL_5
+0x400193c	    0x488b05000000	            mov rax, qword [0x04001943] 	       586	archive-zip.c	FUNCTION_16	CALL_6
+0x4001943	            0x89c2	                            mov edx, eax	       586	archive-zip.c	FUNCTION_16	CALL_6
+0x4001945	        0x488d45e0	                   lea rax, [rbp - 0x20]	       586	archive-zip.c	FUNCTION_16	CALL_6
+0x4001949	        0x4883c00c	                            add rax, 0xc	       586	archive-zip.c	FUNCTION_16	CALL_6
+0x400194d	            0x89d6	                            mov esi, edx	       586	archive-zip.c	FUNCTION_16	CALL_6
+0x400194f	          0x4889c7	                            mov rdi, rax	       586	archive-zip.c	FUNCTION_16	CALL_6
+0x4001952	      0xe8c1e7ffff	                      call sym.copy_le32	       586	archive-zip.c	FUNCTION_16	CALL_6
+0x4001957	    0x488b05000000	            mov rax, qword [0x0400195e] 	       587	archive-zip.c	FUNCTION_16	CALL_7
+0x400195e	        0x488d55dc	                   lea rdx, [rbp - 0x24]	       587	archive-zip.c	FUNCTION_16	CALL_7
+0x4001962	        0x488d4de0	                   lea rcx, [rbp - 0x20]	       587	archive-zip.c	FUNCTION_16	CALL_7
+0x4001966	        0x4883c110	                           add rcx, 0x10	       587	archive-zip.c	FUNCTION_16	CALL_7
+0x400196a	          0x4889c6	                            mov rsi, rax	       587	archive-zip.c	FUNCTION_16	CALL_7
+0x400196d	          0x4889cf	                            mov rdi, rcx	       587	archive-zip.c	FUNCTION_16	CALL_7
+0x4001970	      0xe8f1e8ffff	                call sym.copy_le32_clamp	       587	archive-zip.c	FUNCTION_16	CALL_7
+0x4001975	      0x48837dc800	               cmp qword [rbp - 0x38], 0	       588	archive-zip.c	FUNCTION_16	CALL_8
+0x400197a	            0x7407	                            je 0x4001983	       588	archive-zip.c	FUNCTION_16	CALL_8
+0x400197c	      0xba28000000	                           mov edx, 0x28	       588	archive-zip.c	FUNCTION_16	CALL_8
+0x4001981	            0xeb05	                           jmp 0x4001988	       588	archive-zip.c	FUNCTION_16	CALL_8
+0x4001983	      0xba00000000	                              mov edx, 0	       588	archive-zip.c	FUNCTION_16	CALL_8
+0x4001988	        0x488d45e0	                   lea rax, [rbp - 0x20]	       588	archive-zip.c	FUNCTION_16	CALL_8
+0x400198c	        0x4883c014	                           add rax, 0x14	       588	archive-zip.c	FUNCTION_16	CALL_8
+0x4001990	            0x89d6	                            mov esi, edx	       588	archive-zip.c	FUNCTION_16	CALL_8
+0x4001992	          0x4889c7	                            mov rdi, rax	       588	archive-zip.c	FUNCTION_16	CALL_8
+0x4001995	      0xe855e7ffff	                      call sym.copy_le16	       588	archive-zip.c	FUNCTION_16	CALL_8
+0x400199a	    0x488b15000000	            mov rdx, qword [0x040019a1] 	       590	archive-zip.c	FUNCTION_16	CALL_9
+0x40019a1	    0x488b05000000	            mov rax, qword [0x040019a8] 	       590	archive-zip.c	FUNCTION_16	CALL_9
+0x40019a8	          0x4889c6	                            mov rsi, rax	       590	archive-zip.c	FUNCTION_16	CALL_9
+0x40019ab	      0xbf01000000	                              mov edi, 1	       590	archive-zip.c	FUNCTION_16	CALL_9
+0x40019b0	      0xe800000000	                          call 0x40019b5	       590	archive-zip.c	FUNCTION_16	CALL_9
+0x40019b5	          0x8b45dc	             mov eax, dword [rbp - 0x24]	       591	archive-zip.c	FUNCTION_16	IF_1
+0x40019b8	            0x85c0	                           test eax, eax	       591	archive-zip.c	FUNCTION_16	IF_1
+0x40019ba	            0x7405	                            je 0x40019c1	       591	archive-zip.c	FUNCTION_16	IF_1
+0x40019bc	      0xe844fdffff	            call sym.write_zip64_trailer	       592	archive-zip.c	FUNCTION_16	CALL_10
+0x40019c1	        0x488d45e0	                   lea rax, [rbp - 0x20]	       593	archive-zip.c	FUNCTION_16	CALL_11
+0x40019c5	      0xba16000000	                           mov edx, 0x16	       593	archive-zip.c	FUNCTION_16	CALL_11
+0x40019ca	          0x4889c6	                            mov rsi, rax	       593	archive-zip.c	FUNCTION_16	CALL_11
+0x40019cd	      0xbf01000000	                              mov edi, 1	       593	archive-zip.c	FUNCTION_16	CALL_11
+0x40019d2	      0xe800000000	                          call 0x40019d7	       593	archive-zip.c	FUNCTION_16	CALL_11
+0x40019d7	      0x48837dc800	               cmp qword [rbp - 0x38], 0	       594	archive-zip.c	FUNCTION_16	IF_2
+0x40019dc	            0x741e	                            je 0x40019fc	       594	archive-zip.c	FUNCTION_16	IF_2
+0x40019de	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       595	archive-zip.c	FUNCTION_16	CALL_13
+0x40019e2	          0x4889c7	                            mov rdi, rax	       595	archive-zip.c	FUNCTION_16	CALL_13
+0x40019e5	      0xe800000000	                          call 0x40019ea	       595	archive-zip.c	FUNCTION_16	CALL_13
+0x40019ea	      0xba28000000	                           mov edx, 0x28	       595	archive-zip.c	FUNCTION_16	CALL_13
+0x40019ef	          0x4889c6	                            mov rsi, rax	       595	archive-zip.c	FUNCTION_16	CALL_13
+0x40019f2	      0xbf01000000	                              mov edi, 1	       595	archive-zip.c	FUNCTION_16	CALL_13
+0x40019f7	      0xe800000000	                          call 0x40019fc	       595	archive-zip.c	FUNCTION_16	CALL_13
+0x40019fc	              0x90	                                     nop	       596	archive-zip.c	FUNCTION_16
+0x40019fd	        0x488b45f8	                mov rax, qword [rbp - 8]	       596	archive-zip.c	FUNCTION_16
+0x4001a01	    0x644833042528	                xor rax, qword fs:[0x28]	       596	archive-zip.c	FUNCTION_16
+0x4001a0a	            0x7405	                            je 0x4001a11	       596	archive-zip.c	FUNCTION_16
+0x4001a0c	      0xe800000000	                          call 0x4001a11	       596	archive-zip.c	FUNCTION_16
+0x4001a11	              0xc9	                                   leave	       596	archive-zip.c	FUNCTION_16
+0x4001a12	              0xc3	                                     ret	       596	archive-zip.c	FUNCTION_16
+strbuf_add_le	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,1:CALL,1:IF,0	25
+0x40002a2	              0x55	                                push rbp	       175	archive-zip.c	FUNCTION_7
+0x40002a3	          0x4889e5	                            mov rbp, rsp	       175	archive-zip.c	FUNCTION_7
+0x40002a6	        0x4883ec20	                           sub rsp, 0x20	       175	archive-zip.c	FUNCTION_7
+0x40002aa	        0x48897df8	                mov qword [rbp - 8], rdi	       175	archive-zip.c	FUNCTION_7
+0x40002ae	        0x488975f0	             mov qword [rbp - 0x10], rsi	       175	archive-zip.c	FUNCTION_7
+0x40002b2	        0x488955e8	             mov qword [rbp - 0x18], rdx	       175	archive-zip.c	FUNCTION_7
+0x40002b6	            0xeb1a	                           jmp 0x40002d2	       176	archive-zip.c	FUNCTION_7	WHILE_1
+0x40002b8	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       177	archive-zip.c	FUNCTION_7	WHILE_1	CALL_1
+0x40002bc	           0xfb6d0	                           movzx edx, al	       177	archive-zip.c	FUNCTION_7	WHILE_1	CALL_1
+0x40002bf	        0x488b45f8	                mov rax, qword [rbp - 8]	       177	archive-zip.c	FUNCTION_7	WHILE_1	CALL_1
+0x40002c3	            0x89d6	                            mov esi, edx	       177	archive-zip.c	FUNCTION_7	WHILE_1	CALL_1
+0x40002c5	          0x4889c7	                            mov rdi, rax	       177	archive-zip.c	FUNCTION_7	WHILE_1	CALL_1
+0x40002c8	      0xe8b4fdffff	                   call sym.strbuf_addch	       177	archive-zip.c	FUNCTION_7	WHILE_1	CALL_1
+0x40002cd	      0x48c16de808	               shr qword [rbp - 0x18], 8	       178	archive-zip.c	FUNCTION_7	WHILE_1
+0x40002d2	        0x488b45f0	             mov rax, qword [rbp - 0x10]	       176	archive-zip.c	FUNCTION_7	WHILE_1
+0x40002d6	        0x488d50ff	                      lea rdx, [rax - 1]	       176	archive-zip.c	FUNCTION_7	WHILE_1
+0x40002da	        0x488955f0	             mov qword [rbp - 0x10], rdx	       176	archive-zip.c	FUNCTION_7	WHILE_1
+0x40002de	          0x4885c0	                           test rax, rax	       176	archive-zip.c	FUNCTION_7	WHILE_1
+0x40002e1	            0x75d5	                           jne 0x40002b8	       176	archive-zip.c	FUNCTION_7	WHILE_1
+0x40002e3	      0x48837de800	               cmp qword [rbp - 0x18], 0	       180	archive-zip.c	FUNCTION_7
+0x40002e8	           0xf95c0	                                setne al	       180	archive-zip.c	FUNCTION_7
+0x40002eb	           0xfb6c0	                           movzx eax, al	       180	archive-zip.c	FUNCTION_7
+0x40002ee	            0xf7d8	                                 neg eax	       180	archive-zip.c	FUNCTION_7
+0x40002f0	              0xc9	                                   leave	       181	archive-zip.c	FUNCTION_7
+0x40002f1	              0xc3	                                     ret	       181	archive-zip.c	FUNCTION_7
+write_zip_entry	SWITCH,0:ELSE,7:DO,0:FOR,2:functions,0:WHILE,0:CALL,92:IF,38	808
+0x4000696	              0x55	                                push rbp	       282	archive-zip.c	FUNCTION_14
+0x4000697	          0x4889e5	                            mov rbp, rsp	       282	archive-zip.c	FUNCTION_14
+0x400069a	    0x4881ecd0c100	                         sub rsp, 0xc1d0	       282	archive-zip.c	FUNCTION_14
+0x40006a1	    0x4889bd583eff	           mov qword [rbp - 0xc1a8], rdi	       282	archive-zip.c	FUNCTION_14
+0x40006a8	    0x4889b5503eff	           mov qword [rbp - 0xc1b0], rsi	       282	archive-zip.c	FUNCTION_14
+0x40006af	    0x488995483eff	           mov qword [rbp - 0xc1b8], rdx	       282	archive-zip.c	FUNCTION_14
+0x40006b6	    0x48898d403eff	           mov qword [rbp - 0xc1c0], rcx	       282	archive-zip.c	FUNCTION_14
+0x40006bd	    0x4489853c3eff	           mov dword [rbp - 0xc1c4], r8d	       282	archive-zip.c	FUNCTION_14
+0x40006c4	    0x64488b042528	                mov rax, qword fs:[0x28]	       282	archive-zip.c	FUNCTION_14
+0x40006cd	        0x488945f8	                mov qword [rbp - 8], rax	       282	archive-zip.c	FUNCTION_14
+0x40006d1	            0x31c0	                            xor eax, eax	       282	archive-zip.c	FUNCTION_14
+0x40006d3	    0x488b05000000	            mov rax, qword [0x040006da] 	       284	archive-zip.c	FUNCTION_14
+0x40006da	    0x488985d83eff	           mov qword [rbp - 0xc128], rax	       284	archive-zip.c	FUNCTION_14
+0x40006e1	    0x48c785883eff	             mov qword [rbp - 0xc178], 9	       287	archive-zip.c	FUNCTION_14
+0x40006ec	    0xc785603effff	             mov dword [rbp - 0xc1a0], 0	       288	archive-zip.c	FUNCTION_14
+0x40006f6	    0x48c785a83eff	             mov qword [rbp - 0xc158], 0	       294	archive-zip.c	FUNCTION_14
+0x4000701	    0x48c785b83eff	             mov qword [rbp - 0xc148], 0	       296	archive-zip.c	FUNCTION_14
+0x400070c	    0x48c785c03eff	             mov qword [rbp - 0xc140], 0	       297	archive-zip.c	FUNCTION_14
+0x4000717	    0xc785683effff	   mov dword [rbp - 0xc198], 0xffffffff 	       299	archive-zip.c	FUNCTION_14
+0x4000721	    0x488b85583eff	           mov rax, qword [rbp - 0xc1a8]	       300	archive-zip.c	FUNCTION_14
+0x4000728	        0x488b5008	                mov rdx, qword [rax + 8]	       300	archive-zip.c	FUNCTION_14
+0x400072c	    0x488b85483eff	           mov rax, qword [rbp - 0xc1b8]	       300	archive-zip.c	FUNCTION_14
+0x4000733	          0x4801d0	                            add rax, rdx	       300	archive-zip.c	FUNCTION_14
+0x4000736	    0x488985e03eff	           mov qword [rbp - 0xc120], rax	       300	archive-zip.c	FUNCTION_14
+0x400073d	    0xc7856c3effff	             mov dword [rbp - 0xc194], 0	       301	archive-zip.c	FUNCTION_14
+0x4000747	    0xc785703effff	           mov dword [rbp - 0xc190], 0xa	       302	archive-zip.c	FUNCTION_14
+0x4000751	    0x48c785c83eff	             mov qword [rbp - 0xc138], 9	       303	archive-zip.c	FUNCTION_14
+0x400075c	    0x48c785d03eff	             mov qword [rbp - 0xc130], 0	       304	archive-zip.c	FUNCTION_14
+0x4000767	      0xba00000000	                              mov edx, 0	       306	archive-zip.c	FUNCTION_14	CALL_1
+0x400076c	      0xbe00000000	                              mov esi, 0	       306	archive-zip.c	FUNCTION_14	CALL_1
+0x4000771	      0xbf00000000	                              mov edi, 0	       306	archive-zip.c	FUNCTION_14	CALL_1
+0x4000776	      0xe800000000	                          call 0x400077b	       306	archive-zip.c	FUNCTION_14	CALL_1
+0x400077b	    0x488985983eff	           mov qword [rbp - 0xc168], rax	       306	archive-zip.c	FUNCTION_14	CALL_1
+0x4000782	    0x488b85483eff	           mov rax, qword [rbp - 0xc1b8]	       308	archive-zip.c	FUNCTION_14	IF_1	CALL_2
+0x4000789	          0x4889c7	                            mov rdi, rax	       308	archive-zip.c	FUNCTION_14	IF_1	CALL_2
+0x400078c	      0xe867feffff	                 call sym.has_only_ascii	       308	archive-zip.c	FUNCTION_14	IF_1	CALL_2
+0x4000791	            0x85c0	                           test eax, eax	       308	archive-zip.c	FUNCTION_14	IF_1	CALL_2
+0x4000793	            0x7539	                           jne 0x40007ce	       308	archive-zip.c	FUNCTION_14	IF_1	CALL_2
+0x4000795	    0x488b85483eff	           mov rax, qword [rbp - 0xc1b8]	       309	archive-zip.c	FUNCTION_14	IF_1	IF_2	CALL_3
+0x400079c	          0x4889c7	                            mov rdi, rax	       309	archive-zip.c	FUNCTION_14	IF_1	IF_2	CALL_3
+0x400079f	      0xe800000000	                          call 0x40007a4	       309	archive-zip.c	FUNCTION_14	IF_1	IF_2	CALL_3
+0x40007a4	            0x85c0	                           test eax, eax	       309	archive-zip.c	FUNCTION_14	IF_1	IF_2	CALL_3
+0x40007a6	            0x740d	                            je 0x40007b5	       309	archive-zip.c	FUNCTION_14	IF_1	IF_2	CALL_3
+0x40007a8	    0x48818dc03eff	          or qword [rbp - 0xc140], 0x800	       310	archive-zip.c	FUNCTION_14	IF_1	IF_2
+0x40007b3	            0xeb19	                           jmp 0x40007ce	       310	archive-zip.c	FUNCTION_14	IF_1	IF_2
+0x40007b5	    0x488b85483eff	           mov rax, qword [rbp - 0xc1b8]	       312	archive-zip.c	FUNCTION_14	IF_1	CALL_4
+0x40007bc	          0x4889c6	                            mov rsi, rax	       312	archive-zip.c	FUNCTION_14	IF_1	CALL_4
+0x40007bf	      0xbf00000000	                              mov edi, 0	       312	archive-zip.c	FUNCTION_14	IF_1	CALL_4
+0x40007c4	      0xb800000000	                              mov eax, 0	       312	archive-zip.c	FUNCTION_14	IF_1	CALL_4
+0x40007c9	      0xe800000000	                          call 0x40007ce	       312	archive-zip.c	FUNCTION_14	IF_1	CALL_4
+0x40007ce	    0x4881bd403eff	       cmp qword [rbp - 0xc1c0], 0xffff 	       315	archive-zip.c	FUNCTION_14	IF_3
+0x40007d9	            0x763e	                           jbe 0x4000819	       315	archive-zip.c	FUNCTION_14	IF_3
+0x40007db	    0x488b85503eff	           mov rax, qword [rbp - 0xc1b0]	       316	archive-zip.c	FUNCTION_14	IF_3
+0x40007e2	          0x4889c7	                            mov rdi, rax	       316	archive-zip.c	FUNCTION_14	IF_3
+0x40007e5	      0xe800000000	                          call 0x40007ea	       316	archive-zip.c	FUNCTION_14	IF_3
+0x40007ea	          0x4889c2	                            mov rdx, rax	       316	archive-zip.c	FUNCTION_14	IF_3
+0x40007ed	    0x488b85403eff	           mov rax, qword [rbp - 0xc1c0]	       316	archive-zip.c	FUNCTION_14	IF_3
+0x40007f4	            0x89c6	                            mov esi, eax	       316	archive-zip.c	FUNCTION_14	IF_3
+0x40007f6	    0x488b85483eff	           mov rax, qword [rbp - 0xc1b8]	       316	archive-zip.c	FUNCTION_14	IF_3
+0x40007fd	          0x4889c1	                            mov rcx, rax	       316	archive-zip.c	FUNCTION_14	IF_3
+0x4000800	      0xbf00000000	                              mov edi, 0	       316	archive-zip.c	FUNCTION_14	IF_3
+0x4000805	      0xb800000000	                              mov eax, 0	       316	archive-zip.c	FUNCTION_14	IF_3
+0x400080a	      0xe800000000	                          call 0x400080f	       316	archive-zip.c	FUNCTION_14	IF_3
+0x400080f	      0xe82cf8ffff	                    call sym.const_error	       316	archive-zip.c	FUNCTION_14	IF_3
+0x4000814	      0xe9d60e0000	                           jmp 0x40016ef	       316	archive-zip.c	FUNCTION_14	IF_3
+0x4000819	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       320	archive-zip.c	FUNCTION_14	IF_4	CALL_7
+0x400081f	      0x2500f00000	                         and eax, 0xf000	       320	archive-zip.c	FUNCTION_14	IF_4	CALL_7
+0x4000824	      0x3d00400000	                         cmp eax, 0x4000	       320	archive-zip.c	FUNCTION_14	IF_4	CALL_7
+0x4000829	            0x7412	                            je 0x400083d	       320	archive-zip.c	FUNCTION_14	IF_4	CALL_7
+0x400082b	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       320	archive-zip.c	FUNCTION_14	IF_4	CALL_7
+0x4000831	      0x2500f00000	                         and eax, 0xf000	       320	archive-zip.c	FUNCTION_14	IF_4	CALL_7
+0x4000836	      0x3d00e00000	                         cmp eax, 0xe000	       320	archive-zip.c	FUNCTION_14	IF_4	CALL_7
+0x400083b	            0x7546	                           jne 0x4000883	       320	archive-zip.c	FUNCTION_14	IF_4	CALL_7
+0x400083d	    0xc785643effff	             mov dword [rbp - 0xc19c], 0	       321	archive-zip.c	FUNCTION_14	IF_4
+0x4000847	    0x48c785903eff	         mov qword [rbp - 0xc170], 0x10 	       322	archive-zip.c	FUNCTION_14	IF_4
+0x4000852	    0x48c785a03eff	             mov qword [rbp - 0xc160], 0	       323	archive-zip.c	FUNCTION_14	IF_4
+0x400085d	    0x48c785803eff	             mov qword [rbp - 0xc180], 0	       324	archive-zip.c	FUNCTION_14	IF_4
+0x4000868	    0x48c785783eff	             mov qword [rbp - 0xc188], 0	       325	archive-zip.c	FUNCTION_14	IF_4
+0x4000873	    0x48c785b03eff	             mov qword [rbp - 0xc150], 0	       326	archive-zip.c	FUNCTION_14	IF_4
+0x400087e	      0xe9f7020000	                           jmp 0x4000b7a	       326	archive-zip.c	FUNCTION_14	IF_4
+0x4000883	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       327	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_9
+0x4000889	      0x2500f00000	                         and eax, 0xf000	       327	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_9
+0x400088e	      0x3d00800000	                         cmp eax, 0x8000	       327	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_9
+0x4000893	            0x7416	                            je 0x40008ab	       327	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_9
+0x4000895	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       327	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_9
+0x400089b	      0x2500f00000	                         and eax, 0xf000	       327	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_9
+0x40008a0	      0x3d00a00000	                         cmp eax, 0xa000	       327	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_9
+0x40008a5	     0xf859c020000	                           jne 0x4000b47	       327	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_9
+0x40008ab	    0x488b05000000	            mov rax, qword [0x040008b2] 	       328	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_10
+0x40008b2	    0x488d95803eff	                 lea rdx, [rbp - 0xc180]	       328	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_10
+0x40008b9	    0x488b8d503eff	           mov rcx, qword [rbp - 0xc1b0]	       328	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_10
+0x40008c0	          0x4889ce	                            mov rsi, rcx	       328	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_10
+0x40008c3	          0x4889c7	                            mov rdi, rax	       328	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_10
+0x40008c6	      0xe800000000	                          call 0x40008cb	       328	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_10
+0x40008cb	    0x8985003fffff	           mov dword [rbp - 0xc100], eax	       328	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_10
+0x40008d1	    0xc785643effff	             mov dword [rbp - 0xc19c], 0	       331	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x40008db	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x40008e1	      0x2500f00000	                         and eax, 0xf000	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x40008e6	      0x3d00a00000	                         cmp eax, 0xa000	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x40008eb	            0x7512	                           jne 0x40008ff	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x40008ed	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x40008f3	       0xdff010000	                           or eax, 0x1ff	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x40008f8	          0xc1e010	                           shl eax, 0x10	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x40008fb	            0x89c0	                            mov eax, eax	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x40008fd	            0xeb1f	                           jmp 0x400091e	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x40008ff	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       333	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x4000905	          0x83e049	                           and eax, 0x49	       333	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x4000908	            0x85c0	                           test eax, eax	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x400090a	            0x740d	                            je 0x4000919	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x400090c	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       333	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x4000912	          0xc1e010	                           shl eax, 0x10	       333	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x4000915	            0x89c0	                            mov eax, eax	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x4000917	            0xeb05	                           jmp 0x400091e	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x4000919	      0xb800000000	                              mov eax, 0	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x400091e	    0x488985903eff	           mov qword [rbp - 0xc170], rax	       332	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_11
+0x4000925	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       334	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_6	CALL_12
+0x400092b	      0x2500f00000	                         and eax, 0xf000	       334	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_6	CALL_12
+0x4000930	      0x3d00a00000	                         cmp eax, 0xa000	       334	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_6	CALL_12
+0x4000935	            0x740d	                            je 0x4000944	       334	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_6	CALL_12
+0x4000937	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       334	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_6	CALL_12
+0x400093d	          0x83e049	                           and eax, 0x49	       334	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_6	CALL_12
+0x4000940	            0x85c0	                           test eax, eax	       334	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_6	CALL_12
+0x4000942	            0x740a	                            je 0x400094e	       334	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_6	CALL_12
+0x4000944	    0xc7856c3effff	        mov dword [rbp - 0xc194], 0x317 	       335	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_6
+0x400094e	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x4000954	      0x2500f00000	                         and eax, 0xf000	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x4000959	      0x3d00800000	                         cmp eax, 0x8000	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x400095e	            0x7524	                           jne 0x4000984	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x4000960	    0x488b85583eff	           mov rax, qword [rbp - 0xc1a8]	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x4000967	          0x8b404c	            mov eax, dword [rax + 0x4c] 	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x400096a	            0x85c0	                           test eax, eax	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x400096c	            0x7416	                            je 0x4000984	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x400096e	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x4000975	          0x4885c0	                           test rax, rax	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x4000978	            0x740a	                            je 0x4000984	       336	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7	CALL_13
+0x400097a	    0xc785643effff	             mov dword [rbp - 0xc19c], 8	       337	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_7
+0x4000984	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x400098a	      0x2500f00000	                         and eax, 0xf000	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x400098f	      0x3d00800000	                         cmp eax, 0x8000	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x4000994	     0xf85bd000000	                           jne 0x4000a57	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x400099a	    0x8b85003fffff	           mov eax, dword [rbp - 0xc100]	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x40009a0	          0x83f803	                              cmp eax, 3	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x40009a3	     0xf85ae000000	                           jne 0x4000a57	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x40009a9	    0x488b85583eff	           mov rax, qword [rbp - 0xc1a8]	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x40009b0	         0xfb64048	           movzx eax, byte [rax + 0x48] 	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x40009b4	          0x83e004	                              and eax, 4	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x40009b7	            0x84c0	                             test al, al	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x40009b9	     0xf8598000000	                           jne 0x4000a57	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x40009bf	    0x488b95803eff	           mov rdx, qword [rbp - 0xc180]	       340	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8
+0x40009c6	    0x488b05000000	            mov rax, qword [0x040009cd] 	       340	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8
+0x40009cd	          0x4839c2	                            cmp rdx, rax	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x40009d0	     0xf8681000000	                           jbe 0x4000a57	       339	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_14
+0x40009d6	    0x488d95803eff	                 lea rdx, [rbp - 0xc180]	       341	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_15
+0x40009dd	    0x488db5003fff	                 lea rsi, [rbp - 0xc100]	       341	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_15
+0x40009e4	    0x488b85503eff	           mov rax, qword [rbp - 0xc1b0]	       341	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_15
+0x40009eb	      0xb900000000	                              mov ecx, 0	       341	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_15
+0x40009f0	          0x4889c7	                            mov rdi, rax	       341	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_15
+0x40009f3	      0xe800000000	                          call 0x40009f8	       341	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_15
+0x40009f8	    0x488985b83eff	           mov qword [rbp - 0xc148], rax	       341	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	CALL_15
+0x40009ff	    0x4883bdb83eff	             cmp qword [rbp - 0xc148], 0	       342	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a07	            0x752b	                           jne 0x4000a34	       342	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a09	    0x488b85503eff	           mov rax, qword [rbp - 0xc1b0]	       343	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a10	          0x4889c7	                            mov rdi, rax	       343	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a13	      0xe800000000	                          call 0x4000a18	       343	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a18	          0x4889c6	                            mov rsi, rax	       343	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a1b	      0xbf00000000	                              mov edi, 0	       343	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a20	      0xb800000000	                              mov eax, 0	       343	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a25	      0xe800000000	                          call 0x4000a2a	       343	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a2a	      0xe811f6ffff	                    call sym.const_error	       343	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a2f	      0xe9bb0c0000	                           jmp 0x40016ef	       343	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8	IF_9
+0x4000a34	    0x48838dc03eff	              or qword [rbp - 0xc140], 8	       345	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8
+0x4000a3c	    0x48c785b03eff	             mov qword [rbp - 0xc150], 0	       346	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8
+0x4000a47	    0x48c785a03eff	             mov qword [rbp - 0xc160], 0	       346	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8
+0x4000a52	      0xe9d0000000	                           jmp 0x4000b27	       346	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	IF_8
+0x4000a57	    0x4c8d85803eff	                  lea r8, [rbp - 0xc180]	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a5e	    0x488dbd003fff	                 lea rdi, [rbp - 0xc100]	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a65	    0x8b8d3c3effff	           mov ecx, dword [rbp - 0xc1c4]	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a6b	    0x488b95503eff	           mov rdx, qword [rbp - 0xc1b0]	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a72	    0x488bb5483eff	           mov rsi, qword [rbp - 0xc1b8]	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a79	    0x488b85583eff	           mov rax, qword [rbp - 0xc1a8]	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a80	          0x4d89c1	                              mov r9, r8	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a83	          0x4989f8	                             mov r8, rdi	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a86	          0x4889c7	                            mov rdi, rax	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a89	      0xe800000000	                          call 0x4000a8e	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a8e	    0x488985b03eff	           mov qword [rbp - 0xc150], rax	       348	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_17
+0x4000a95	    0x4883bdb03eff	             cmp qword [rbp - 0xc150], 0	       350	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000a9d	            0x752b	                           jne 0x4000aca	       350	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000a9f	    0x488b85503eff	           mov rax, qword [rbp - 0xc1b0]	       351	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000aa6	          0x4889c7	                            mov rdi, rax	       351	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000aa9	      0xe800000000	                          call 0x4000aae	       351	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000aae	          0x4889c6	                            mov rsi, rax	       351	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000ab1	      0xbf00000000	                              mov edi, 0	       351	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000ab6	      0xb800000000	                              mov eax, 0	       351	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000abb	      0xe800000000	                          call 0x4000ac0	       351	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000ac0	      0xe87bf5ffff	                    call sym.const_error	       351	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000ac5	      0xe9250c0000	                           jmp 0x40016ef	       351	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	IF_10
+0x4000aca	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       353	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_19
+0x4000ad1	            0x89c2	                            mov edx, eax	       353	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_19
+0x4000ad3	    0x488b8db03eff	           mov rcx, qword [rbp - 0xc150]	       353	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_19
+0x4000ada	    0x488b85983eff	           mov rax, qword [rbp - 0xc168]	       353	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_19
+0x4000ae1	          0x4889ce	                            mov rsi, rcx	       353	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_19
+0x4000ae4	          0x4889c7	                            mov rdi, rax	       353	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_19
+0x4000ae7	      0xe800000000	                          call 0x4000aec	       353	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_19
+0x4000aec	    0x488985983eff	           mov qword [rbp - 0xc168], rax	       353	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_19
+0x4000af3	    0x488b95803eff	           mov rdx, qword [rbp - 0xc180]	       354	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_20
+0x4000afa	    0x488b8db03eff	           mov rcx, qword [rbp - 0xc150]	       354	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_20
+0x4000b01	    0x488b85e03eff	           mov rax, qword [rbp - 0xc120]	       354	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_20
+0x4000b08	          0x4889ce	                            mov rsi, rcx	       354	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_20
+0x4000b0b	          0x4889c7	                            mov rdi, rax	       354	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_20
+0x4000b0e	      0xe820fbffff	                call sym.entry_is_binary	       354	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_20
+0x4000b13	    0x8985683effff	           mov dword [rbp - 0xc198], eax	       354	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3	CALL_20
+0x4000b19	    0x488b85b03eff	           mov rax, qword [rbp - 0xc150]	       356	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3
+0x4000b20	    0x488985a03eff	           mov qword [rbp - 0xc160], rax	       356	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	ELSE_3
+0x4000b27	    0x83bd643effff	             cmp dword [rbp - 0xc19c], 0	       358	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x4000b2e	            0x7509	                           jne 0x4000b39	       358	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x4000b30	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       358	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x4000b37	            0xeb05	                           jmp 0x4000b3e	       358	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x4000b39	      0xb800000000	                              mov eax, 0	       358	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x4000b3e	    0x488985783eff	           mov qword [rbp - 0xc188], rax	       358	archive-zip.c	FUNCTION_14	ELSE_2	IF_5
+0x4000b45	            0xeb33	                           jmp 0x4000b7a	       327	archive-zip.c	FUNCTION_14	ELSE_2	IF_5	CALL_9
+0x4000b47	    0x488b85503eff	           mov rax, qword [rbp - 0xc1b0]	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b4e	          0x4889c7	                            mov rdi, rax	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b51	      0xe800000000	                          call 0x4000b56	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b56	          0x4889c2	                            mov rdx, rax	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b59	    0x8b853c3effff	           mov eax, dword [rbp - 0xc1c4]	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b5f	            0x89c6	                            mov esi, eax	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b61	      0xbf00000000	                              mov edi, 0	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b66	      0xb800000000	                              mov eax, 0	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b6b	      0xe800000000	                          call 0x4000b70	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b70	      0xe8cbf4ffff	                    call sym.const_error	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b75	      0xe9750b0000	                           jmp 0x40016ef	       360	archive-zip.c	FUNCTION_14	ELSE_4
+0x4000b7a	    0x8b0500000000	            mov eax, dword [0x04000b80] 	       364	archive-zip.c	FUNCTION_14	IF_11
+0x4000b80	    0x39856c3effff	          cmp dword [rbp - 0xc194], eax 	       364	archive-zip.c	FUNCTION_14	IF_11
+0x4000b86	            0x760c	                           jbe 0x4000b94	       364	archive-zip.c	FUNCTION_14	IF_11
+0x4000b88	    0x8b856c3effff	           mov eax, dword [rbp - 0xc194]	       365	archive-zip.c	FUNCTION_14	IF_11
+0x4000b8e	    0x890500000000	            mov dword [0x04000b94], eax 	       365	archive-zip.c	FUNCTION_14	IF_11
+0x4000b94	    0x4883bdb03eff	             cmp qword [rbp - 0xc150], 0	       367	archive-zip.c	FUNCTION_14	IF_12
+0x4000b9c	     0xf8488000000	                            je 0x4000c2a	       367	archive-zip.c	FUNCTION_14	IF_12
+0x4000ba2	    0x83bd643effff	            cmp dword [rbp - 0xc19c], 8 	       367	archive-zip.c	FUNCTION_14	IF_12
+0x4000ba9	            0x757f	                           jne 0x4000c2a	       367	archive-zip.c	FUNCTION_14	IF_12
+0x4000bab	    0x488b85583eff	           mov rax, qword [rbp - 0xc1a8]	       368	archive-zip.c	FUNCTION_14	IF_12	CALL_22
+0x4000bb2	          0x8b504c	            mov edx, dword [rax + 0x4c] 	       368	archive-zip.c	FUNCTION_14	IF_12	CALL_22
+0x4000bb5	    0x488bb5803eff	           mov rsi, qword [rbp - 0xc180]	       368	archive-zip.c	FUNCTION_14	IF_12	CALL_22
+0x4000bbc	    0x488d8d783eff	                 lea rcx, [rbp - 0xc188]	       368	archive-zip.c	FUNCTION_14	IF_12	CALL_22
+0x4000bc3	    0x488b85b03eff	           mov rax, qword [rbp - 0xc150]	       368	archive-zip.c	FUNCTION_14	IF_12	CALL_22
+0x4000bca	          0x4889c7	                            mov rdi, rax	       368	archive-zip.c	FUNCTION_14	IF_12	CALL_22
+0x4000bcd	      0xe840f7ffff	               call sym.zlib_deflate_raw	       368	archive-zip.c	FUNCTION_14	IF_12	CALL_22
+0x4000bd2	    0x488985a83eff	           mov qword [rbp - 0xc158], rax	       368	archive-zip.c	FUNCTION_14	IF_12	CALL_22
+0x4000bd9	    0x488b85a83eff	           mov rax, qword [rbp - 0xc158]	       368	archive-zip.c	FUNCTION_14	IF_12	CALL_22
+0x4000be0	    0x488985a03eff	           mov qword [rbp - 0xc160], rax	       368	archive-zip.c	FUNCTION_14	IF_12	CALL_22
+0x4000be7	    0x4883bda03eff	             cmp qword [rbp - 0xc160], 0	       371	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000bef	            0x7413	                            je 0x4000c04	       371	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000bf1	    0x488b95783eff	           mov rdx, qword [rbp - 0xc188]	       371	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000bf8	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       371	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000bff	          0x4839c2	                            cmp rdx, rax	       371	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000c02	            0x7226	                            jb 0x4000c2a	       371	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000c04	    0x488b85b03eff	           mov rax, qword [rbp - 0xc150]	       372	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000c0b	    0x488985a03eff	           mov qword [rbp - 0xc160], rax	       372	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000c12	    0xc785643effff	             mov dword [rbp - 0xc19c], 0	       373	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000c1c	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       374	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000c23	    0x488985783eff	           mov qword [rbp - 0xc188], rax	       374	archive-zip.c	FUNCTION_14	IF_12	IF_13
+0x4000c2a	    0x488d85a03fff	                 lea rax, [rbp - 0xc060]	       378	archive-zip.c	FUNCTION_14	CALL_23
+0x4000c31	      0xbe55540000	                         mov esi, 0x5455	       378	archive-zip.c	FUNCTION_14	CALL_23
+0x4000c36	          0x4889c7	                            mov rdi, rax	       378	archive-zip.c	FUNCTION_14	CALL_23
+0x4000c39	      0xe8b1f4ffff	                      call sym.copy_le16	       378	archive-zip.c	FUNCTION_14	CALL_23
+0x4000c3e	    0x488d85a03fff	                 lea rax, [rbp - 0xc060]	       379	archive-zip.c	FUNCTION_14	CALL_24
+0x4000c45	        0x4883c002	                              add rax, 2	       379	archive-zip.c	FUNCTION_14	CALL_24
+0x4000c49	      0xbe05000000	                              mov esi, 5	       379	archive-zip.c	FUNCTION_14	CALL_24
+0x4000c4e	          0x4889c7	                            mov rdi, rax	       379	archive-zip.c	FUNCTION_14	CALL_24
+0x4000c51	      0xe899f4ffff	                      call sym.copy_le16	       379	archive-zip.c	FUNCTION_14	CALL_24
+0x4000c56	    0xc685a43fffff	              mov byte [rbp - 0xc05c], 1	       380	archive-zip.c	FUNCTION_14
+0x4000c5d	    0x488b85583eff	           mov rax, qword [rbp - 0xc1a8]	       381	archive-zip.c	FUNCTION_14	CALL_25
+0x4000c64	        0x488b4028	            mov rax, qword [rax + 0x28] 	       381	archive-zip.c	FUNCTION_14	CALL_25
+0x4000c68	            0x89c2	                            mov edx, eax	       381	archive-zip.c	FUNCTION_14	CALL_25
+0x4000c6a	    0x488d85a03fff	                 lea rax, [rbp - 0xc060]	       381	archive-zip.c	FUNCTION_14	CALL_25
+0x4000c71	        0x4883c005	                              add rax, 5	       381	archive-zip.c	FUNCTION_14	CALL_25
+0x4000c75	            0x89d6	                            mov esi, edx	       381	archive-zip.c	FUNCTION_14	CALL_25
+0x4000c77	          0x4889c7	                            mov rdi, rax	       381	archive-zip.c	FUNCTION_14	CALL_25
+0x4000c7a	      0xe899f4ffff	                      call sym.copy_le32	       381	archive-zip.c	FUNCTION_14	CALL_25
+0x4000c7f	    0x488b95803eff	           mov rdx, qword [rbp - 0xc180]	       383	archive-zip.c	FUNCTION_14	IF_14
+0x4000c86	      0xb8ffffffff	                     mov eax, 0xffffffff	       383	archive-zip.c	FUNCTION_14	IF_14
+0x4000c8b	          0x4839c2	                            cmp rdx, rax	       383	archive-zip.c	FUNCTION_14	IF_14
+0x4000c8e	            0x7711	                            ja 0x4000ca1	       383	archive-zip.c	FUNCTION_14	IF_14
+0x4000c90	    0x488b95783eff	           mov rdx, qword [rbp - 0xc188]	       383	archive-zip.c	FUNCTION_14	IF_14
+0x4000c97	      0xb8ffffffff	                     mov eax, 0xffffffff	       383	archive-zip.c	FUNCTION_14	IF_14
+0x4000c9c	          0x4839c2	                            cmp rdx, rax	       383	archive-zip.c	FUNCTION_14	IF_14
+0x4000c9f	            0x760a	                           jbe 0x4000cab	       383	archive-zip.c	FUNCTION_14	IF_14
+0x4000ca1	    0xc785603effff	             mov dword [rbp - 0xc1a0], 1	       384	archive-zip.c	FUNCTION_14	IF_14
+0x4000cab	    0x4883bdb83eff	             cmp qword [rbp - 0xc148], 0	       385	archive-zip.c	FUNCTION_14	IF_15
+0x4000cb3	            0x7419	                            je 0x4000cce	       385	archive-zip.c	FUNCTION_14	IF_15
+0x4000cb5	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       385	archive-zip.c	FUNCTION_14	IF_15
+0x4000cbc	    0x483dffffff7f	                     cmp rax, 0x7fffffff	       385	archive-zip.c	FUNCTION_14	IF_15
+0x4000cc2	            0x760a	                           jbe 0x4000cce	       385	archive-zip.c	FUNCTION_14	IF_15
+0x4000cc4	    0xc785603effff	             mov dword [rbp - 0xc1a0], 1	       386	archive-zip.c	FUNCTION_14	IF_15
+0x4000cce	    0x83bd603effff	             cmp dword [rbp - 0xc1a0], 0	       388	archive-zip.c	FUNCTION_14	IF_16
+0x4000cd5	            0x740a	                            je 0x4000ce1	       388	archive-zip.c	FUNCTION_14	IF_16
+0x4000cd7	    0xc785703effff	         mov dword [rbp - 0xc190], 0x2d 	       389	archive-zip.c	FUNCTION_14	IF_16
+0x4000ce1	    0x488d85d03fff	                 lea rax, [rbp - 0xc030]	       391	archive-zip.c	FUNCTION_14	CALL_26
+0x4000ce8	      0xbe504b0304	                      mov esi, 0x4034b50	       391	archive-zip.c	FUNCTION_14	CALL_26
+0x4000ced	          0x4889c7	                            mov rdi, rax	       391	archive-zip.c	FUNCTION_14	CALL_26
+0x4000cf0	      0xe823f4ffff	                      call sym.copy_le32	       391	archive-zip.c	FUNCTION_14	CALL_26
+0x4000cf5	    0x8b85703effff	           mov eax, dword [rbp - 0xc190]	       392	archive-zip.c	FUNCTION_14	CALL_27
+0x4000cfb	    0x488d95d03fff	                 lea rdx, [rbp - 0xc030]	       392	archive-zip.c	FUNCTION_14	CALL_27
+0x4000d02	        0x4883c204	                              add rdx, 4	       392	archive-zip.c	FUNCTION_14	CALL_27
+0x4000d06	            0x89c6	                            mov esi, eax	       392	archive-zip.c	FUNCTION_14	CALL_27
+0x4000d08	          0x4889d7	                            mov rdi, rdx	       392	archive-zip.c	FUNCTION_14	CALL_27
+0x4000d0b	      0xe8dff3ffff	                      call sym.copy_le16	       392	archive-zip.c	FUNCTION_14	CALL_27
+0x4000d10	    0x488b85c03eff	           mov rax, qword [rbp - 0xc140]	       393	archive-zip.c	FUNCTION_14	CALL_28
+0x4000d17	            0x89c2	                            mov edx, eax	       393	archive-zip.c	FUNCTION_14	CALL_28
+0x4000d19	    0x488d85d03fff	                 lea rax, [rbp - 0xc030]	       393	archive-zip.c	FUNCTION_14	CALL_28
+0x4000d20	        0x4883c006	                              add rax, 6	       393	archive-zip.c	FUNCTION_14	CALL_28
+0x4000d24	            0x89d6	                            mov esi, edx	       393	archive-zip.c	FUNCTION_14	CALL_28
+0x4000d26	          0x4889c7	                            mov rdi, rax	       393	archive-zip.c	FUNCTION_14	CALL_28
+0x4000d29	      0xe8c1f3ffff	                      call sym.copy_le16	       393	archive-zip.c	FUNCTION_14	CALL_28
+0x4000d2e	    0x8b85643effff	           mov eax, dword [rbp - 0xc19c]	       394	archive-zip.c	FUNCTION_14	CALL_29
+0x4000d34	    0x488d95d03fff	                 lea rdx, [rbp - 0xc030]	       394	archive-zip.c	FUNCTION_14	CALL_29
+0x4000d3b	        0x4883c208	                              add rdx, 8	       394	archive-zip.c	FUNCTION_14	CALL_29
+0x4000d3f	            0x89c6	                            mov esi, eax	       394	archive-zip.c	FUNCTION_14	CALL_29
+0x4000d41	          0x4889d7	                            mov rdi, rdx	       394	archive-zip.c	FUNCTION_14	CALL_29
+0x4000d44	      0xe8a6f3ffff	                      call sym.copy_le16	       394	archive-zip.c	FUNCTION_14	CALL_29
+0x4000d49	    0x8b0500000000	            mov eax, dword [0x04000d4f] 	       395	archive-zip.c	FUNCTION_14	CALL_30
+0x4000d4f	            0x89c2	                            mov edx, eax	       395	archive-zip.c	FUNCTION_14	CALL_30
+0x4000d51	    0x488d85d03fff	                 lea rax, [rbp - 0xc030]	       395	archive-zip.c	FUNCTION_14	CALL_30
+0x4000d58	        0x4883c00a	                            add rax, 0xa	       395	archive-zip.c	FUNCTION_14	CALL_30
+0x4000d5c	            0x89d6	                            mov esi, edx	       395	archive-zip.c	FUNCTION_14	CALL_30
+0x4000d5e	          0x4889c7	                            mov rdi, rax	       395	archive-zip.c	FUNCTION_14	CALL_30
+0x4000d61	      0xe889f3ffff	                      call sym.copy_le16	       395	archive-zip.c	FUNCTION_14	CALL_30
+0x4000d66	    0x8b0500000000	            mov eax, dword [0x04000d6c] 	       396	archive-zip.c	FUNCTION_14	CALL_31
+0x4000d6c	            0x89c2	                            mov edx, eax	       396	archive-zip.c	FUNCTION_14	CALL_31
+0x4000d6e	    0x488d85d03fff	                 lea rax, [rbp - 0xc030]	       396	archive-zip.c	FUNCTION_14	CALL_31
+0x4000d75	        0x4883c00c	                            add rax, 0xc	       396	archive-zip.c	FUNCTION_14	CALL_31
+0x4000d79	            0x89d6	                            mov esi, edx	       396	archive-zip.c	FUNCTION_14	CALL_31
+0x4000d7b	          0x4889c7	                            mov rdi, rax	       396	archive-zip.c	FUNCTION_14	CALL_31
+0x4000d7e	      0xe86cf3ffff	                      call sym.copy_le16	       396	archive-zip.c	FUNCTION_14	CALL_31
+0x4000d83	    0x83bd603effff	             cmp dword [rbp - 0xc1a0], 0	       397	archive-zip.c	FUNCTION_14	IF_17
+0x4000d8a	            0x742d	                            je 0x4000db9	       397	archive-zip.c	FUNCTION_14	IF_17
+0x4000d8c	    0x488b95983eff	           mov rdx, qword [rbp - 0xc168]	       398	archive-zip.c	FUNCTION_14	IF_17	CALL_32
+0x4000d93	    0x488d85d03fff	                 lea rax, [rbp - 0xc030]	       398	archive-zip.c	FUNCTION_14	IF_17	CALL_32
+0x4000d9a	          0x4889d1	                            mov rcx, rdx	       398	archive-zip.c	FUNCTION_14	IF_17	CALL_32
+0x4000d9d	      0xbaffffffff	                     mov edx, 0xffffffff	       398	archive-zip.c	FUNCTION_14	IF_17	CALL_32
+0x4000da2	      0xbeffffffff	                     mov esi, 0xffffffff	       398	archive-zip.c	FUNCTION_14	IF_17	CALL_32
+0x4000da7	          0x4889c7	                            mov rdi, rax	       398	archive-zip.c	FUNCTION_14	IF_17	CALL_32
+0x4000daa	      0xe8e6f7ffff	       call sym.set_zip_header_data_desc	       398	archive-zip.c	FUNCTION_14	IF_17	CALL_32
+0x4000daf	    0x488385883eff	          add qword [rbp - 0xc178], 0x14	       399	archive-zip.c	FUNCTION_14	IF_17
+0x4000db7	            0xeb24	                           jmp 0x4000ddd	       399	archive-zip.c	FUNCTION_14	IF_17
+0x4000db9	    0x488b95783eff	           mov rdx, qword [rbp - 0xc188]	       401	archive-zip.c	FUNCTION_14	ELSE_5	CALL_33
+0x4000dc0	    0x488bb5803eff	           mov rsi, qword [rbp - 0xc180]	       401	archive-zip.c	FUNCTION_14	ELSE_5	CALL_33
+0x4000dc7	    0x488b8d983eff	           mov rcx, qword [rbp - 0xc168]	       401	archive-zip.c	FUNCTION_14	ELSE_5	CALL_33
+0x4000dce	    0x488d85d03fff	                 lea rax, [rbp - 0xc030]	       401	archive-zip.c	FUNCTION_14	ELSE_5	CALL_33
+0x4000dd5	          0x4889c7	                            mov rdi, rax	       401	archive-zip.c	FUNCTION_14	ELSE_5	CALL_33
+0x4000dd8	      0xe8b8f7ffff	       call sym.set_zip_header_data_desc	       401	archive-zip.c	FUNCTION_14	ELSE_5	CALL_33
+0x4000ddd	    0x488b85403eff	           mov rax, qword [rbp - 0xc1c0]	       403	archive-zip.c	FUNCTION_14	CALL_34
+0x4000de4	            0x89c2	                            mov edx, eax	       403	archive-zip.c	FUNCTION_14	CALL_34
+0x4000de6	    0x488d85d03fff	                 lea rax, [rbp - 0xc030]	       403	archive-zip.c	FUNCTION_14	CALL_34
+0x4000ded	        0x4883c01a	                           add rax, 0x1a	       403	archive-zip.c	FUNCTION_14	CALL_34
+0x4000df1	            0x89d6	                            mov esi, edx	       403	archive-zip.c	FUNCTION_14	CALL_34
+0x4000df3	          0x4889c7	                            mov rdi, rax	       403	archive-zip.c	FUNCTION_14	CALL_34
+0x4000df6	      0xe8f4f2ffff	                      call sym.copy_le16	       403	archive-zip.c	FUNCTION_14	CALL_34
+0x4000dfb	    0x488b85883eff	           mov rax, qword [rbp - 0xc178]	       404	archive-zip.c	FUNCTION_14	CALL_35
+0x4000e02	            0x89c2	                            mov edx, eax	       404	archive-zip.c	FUNCTION_14	CALL_35
+0x4000e04	    0x488d85d03fff	                 lea rax, [rbp - 0xc030]	       404	archive-zip.c	FUNCTION_14	CALL_35
+0x4000e0b	        0x4883c01c	                           add rax, 0x1c	       404	archive-zip.c	FUNCTION_14	CALL_35
+0x4000e0f	            0x89d6	                            mov esi, edx	       404	archive-zip.c	FUNCTION_14	CALL_35
+0x4000e11	          0x4889c7	                            mov rdi, rax	       404	archive-zip.c	FUNCTION_14	CALL_35
+0x4000e14	      0xe8d6f2ffff	                      call sym.copy_le16	       404	archive-zip.c	FUNCTION_14	CALL_35
+0x4000e19	    0x488d85d03fff	                 lea rax, [rbp - 0xc030]	       405	archive-zip.c	FUNCTION_14	CALL_36
+0x4000e20	      0xba1e000000	                           mov edx, 0x1e	       405	archive-zip.c	FUNCTION_14	CALL_36
+0x4000e25	          0x4889c6	                            mov rsi, rax	       405	archive-zip.c	FUNCTION_14	CALL_36
+0x4000e28	      0xbf01000000	                              mov edi, 1	       405	archive-zip.c	FUNCTION_14	CALL_36
+0x4000e2d	      0xe800000000	                          call 0x4000e32	       405	archive-zip.c	FUNCTION_14	CALL_36
+0x4000e32	    0x488b05000000	            mov rax, qword [0x04000e39] 	       406	archive-zip.c	FUNCTION_14
+0x4000e39	        0x4883c01e	                           add rax, 0x1e	       406	archive-zip.c	FUNCTION_14
+0x4000e3d	    0x488905000000	            mov qword [0x04000e44], rax 	       406	archive-zip.c	FUNCTION_14
+0x4000e44	    0x488b95403eff	           mov rdx, qword [rbp - 0xc1c0]	       407	archive-zip.c	FUNCTION_14	CALL_37
+0x4000e4b	    0x488b85483eff	           mov rax, qword [rbp - 0xc1b8]	       407	archive-zip.c	FUNCTION_14	CALL_37
+0x4000e52	          0x4889c6	                            mov rsi, rax	       407	archive-zip.c	FUNCTION_14	CALL_37
+0x4000e55	      0xbf01000000	                              mov edi, 1	       407	archive-zip.c	FUNCTION_14	CALL_37
+0x4000e5a	      0xe800000000	                          call 0x4000e5f	       407	archive-zip.c	FUNCTION_14	CALL_37
+0x4000e5f	    0x488b15000000	            mov rdx, qword [0x04000e66] 	       408	archive-zip.c	FUNCTION_14
+0x4000e66	    0x488b85403eff	           mov rax, qword [rbp - 0xc1c0]	       408	archive-zip.c	FUNCTION_14
+0x4000e6d	          0x4801d0	                            add rax, rdx	       408	archive-zip.c	FUNCTION_14
+0x4000e70	    0x488905000000	            mov qword [0x04000e77], rax 	       408	archive-zip.c	FUNCTION_14
+0x4000e77	    0x488d85a03fff	                 lea rax, [rbp - 0xc060]	       409	archive-zip.c	FUNCTION_14	CALL_38
+0x4000e7e	      0xba09000000	                              mov edx, 9	       409	archive-zip.c	FUNCTION_14	CALL_38
+0x4000e83	          0x4889c6	                            mov rsi, rax	       409	archive-zip.c	FUNCTION_14	CALL_38
+0x4000e86	      0xbf01000000	                              mov edi, 1	       409	archive-zip.c	FUNCTION_14	CALL_38
+0x4000e8b	      0xe800000000	                          call 0x4000e90	       409	archive-zip.c	FUNCTION_14	CALL_38
+0x4000e90	    0x488b05000000	            mov rax, qword [0x04000e97] 	       410	archive-zip.c	FUNCTION_14
+0x4000e97	        0x4883c009	                              add rax, 9	       410	archive-zip.c	FUNCTION_14
+0x4000e9b	    0x488905000000	            mov qword [0x04000ea2], rax 	       410	archive-zip.c	FUNCTION_14
+0x4000ea2	    0x83bd603effff	             cmp dword [rbp - 0xc1a0], 0	       411	archive-zip.c	FUNCTION_14	IF_18
+0x4000ea9	     0xf8491000000	                            je 0x4000f40	       411	archive-zip.c	FUNCTION_14	IF_18
+0x4000eaf	    0x488d85b03fff	                 lea rax, [rbp - 0xc050]	       412	archive-zip.c	FUNCTION_14	IF_18	CALL_39
+0x4000eb6	      0xbe01000000	                              mov esi, 1	       412	archive-zip.c	FUNCTION_14	IF_18	CALL_39
+0x4000ebb	          0x4889c7	                            mov rdi, rax	       412	archive-zip.c	FUNCTION_14	IF_18	CALL_39
+0x4000ebe	      0xe82cf2ffff	                      call sym.copy_le16	       412	archive-zip.c	FUNCTION_14	IF_18	CALL_39
+0x4000ec3	    0x488d85b03fff	                 lea rax, [rbp - 0xc050]	       413	archive-zip.c	FUNCTION_14	IF_18	CALL_40
+0x4000eca	        0x4883c002	                              add rax, 2	       413	archive-zip.c	FUNCTION_14	IF_18	CALL_40
+0x4000ece	      0xbe10000000	                           mov esi, 0x10	       413	archive-zip.c	FUNCTION_14	IF_18	CALL_40
+0x4000ed3	          0x4889c7	                            mov rdi, rax	       413	archive-zip.c	FUNCTION_14	IF_18	CALL_40
+0x4000ed6	      0xe814f2ffff	                      call sym.copy_le16	       413	archive-zip.c	FUNCTION_14	IF_18	CALL_40
+0x4000edb	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       414	archive-zip.c	FUNCTION_14	IF_18	CALL_41
+0x4000ee2	    0x488d95b03fff	                 lea rdx, [rbp - 0xc050]	       414	archive-zip.c	FUNCTION_14	IF_18	CALL_41
+0x4000ee9	        0x4883c204	                              add rdx, 4	       414	archive-zip.c	FUNCTION_14	IF_18	CALL_41
+0x4000eed	          0x4889c6	                            mov rsi, rax	       414	archive-zip.c	FUNCTION_14	IF_18	CALL_41
+0x4000ef0	          0x4889d7	                            mov rdi, rdx	       414	archive-zip.c	FUNCTION_14	IF_18	CALL_41
+0x4000ef3	      0xe869f2ffff	                      call sym.copy_le64	       414	archive-zip.c	FUNCTION_14	IF_18	CALL_41
+0x4000ef8	    0x488b85783eff	           mov rax, qword [rbp - 0xc188]	       415	archive-zip.c	FUNCTION_14	IF_18	CALL_42
+0x4000eff	    0x488d95b03fff	                 lea rdx, [rbp - 0xc050]	       415	archive-zip.c	FUNCTION_14	IF_18	CALL_42
+0x4000f06	        0x4883c20c	                            add rdx, 0xc	       415	archive-zip.c	FUNCTION_14	IF_18	CALL_42
+0x4000f0a	          0x4889c6	                            mov rsi, rax	       415	archive-zip.c	FUNCTION_14	IF_18	CALL_42
+0x4000f0d	          0x4889d7	                            mov rdi, rdx	       415	archive-zip.c	FUNCTION_14	IF_18	CALL_42
+0x4000f10	      0xe84cf2ffff	                      call sym.copy_le64	       415	archive-zip.c	FUNCTION_14	IF_18	CALL_42
+0x4000f15	    0x488d85b03fff	                 lea rax, [rbp - 0xc050]	       416	archive-zip.c	FUNCTION_14	IF_18	CALL_43
+0x4000f1c	      0xba14000000	                           mov edx, 0x14	       416	archive-zip.c	FUNCTION_14	IF_18	CALL_43
+0x4000f21	          0x4889c6	                            mov rsi, rax	       416	archive-zip.c	FUNCTION_14	IF_18	CALL_43
+0x4000f24	      0xbf01000000	                              mov edi, 1	       416	archive-zip.c	FUNCTION_14	IF_18	CALL_43
+0x4000f29	      0xe800000000	                          call 0x4000f2e	       416	archive-zip.c	FUNCTION_14	IF_18	CALL_43
+0x4000f2e	    0x488b05000000	            mov rax, qword [0x04000f35] 	       417	archive-zip.c	FUNCTION_14	IF_18
+0x4000f35	        0x4883c014	                           add rax, 0x14	       417	archive-zip.c	FUNCTION_14	IF_18
+0x4000f39	    0x488905000000	            mov qword [0x04000f40], rax 	       417	archive-zip.c	FUNCTION_14	IF_18
+0x4000f40	    0x4883bdb83eff	             cmp qword [rbp - 0xc148], 0	       420	archive-zip.c	FUNCTION_14	IF_19
+0x4000f48	     0xf8425010000	                            je 0x4001073	       420	archive-zip.c	FUNCTION_14	IF_19
+0x4000f4e	    0x83bd643effff	             cmp dword [rbp - 0xc19c], 0	       420	archive-zip.c	FUNCTION_14	IF_19
+0x4000f55	     0xf8518010000	                           jne 0x4001073	       420	archive-zip.c	FUNCTION_14	IF_19
+0x4000f5b	    0x488d8df07fff	                 lea rcx, [rbp - 0x8010]	       425	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_44
+0x4000f62	    0x488b85b83eff	           mov rax, qword [rbp - 0xc148]	       425	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_44
+0x4000f69	      0xba00400000	                         mov edx, 0x4000	       425	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_44
+0x4000f6e	          0x4889ce	                            mov rsi, rcx	       425	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_44
+0x4000f71	          0x4889c7	                            mov rdi, rax	       425	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_44
+0x4000f74	      0xe800000000	                          call 0x4000f79	       425	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_44
+0x4000f79	    0x488985e83eff	           mov qword [rbp - 0xc118], rax	       425	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_44
+0x4000f80	    0x4883bde83eff	             cmp qword [rbp - 0xc118], 0	       426	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_20
+0x4000f88	            0x7e78	                           jle 0x4001002	       426	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_20
+0x4000f8a	    0x488b85e83eff	           mov rax, qword [rbp - 0xc118]	       428	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_45
+0x4000f91	            0x89c2	                            mov edx, eax	       428	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_45
+0x4000f93	    0x488d8df07fff	                 lea rcx, [rbp - 0x8010]	       428	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_45
+0x4000f9a	    0x488b85983eff	           mov rax, qword [rbp - 0xc168]	       428	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_45
+0x4000fa1	          0x4889ce	                            mov rsi, rcx	       428	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_45
+0x4000fa4	          0x4889c7	                            mov rdi, rax	       428	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_45
+0x4000fa7	      0xe800000000	                          call 0x4000fac	       428	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_45
+0x4000fac	    0x488985983eff	           mov qword [rbp - 0xc168], rax	       428	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_45
+0x4000fb3	    0x83bd683effff	cmp dword [rbp - 0xc198], 0xffffffffffffffff	       429	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_21
+0x4000fba	            0x7526	                           jne 0x4000fe2	       429	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_21
+0x4000fbc	    0x488b95e83eff	           mov rdx, qword [rbp - 0xc118]	       430	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_21	CALL_46
+0x4000fc3	    0x488d8df07fff	                 lea rcx, [rbp - 0x8010]	       430	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_21	CALL_46
+0x4000fca	    0x488b85e03eff	           mov rax, qword [rbp - 0xc120]	       430	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_21	CALL_46
+0x4000fd1	          0x4889ce	                            mov rsi, rcx	       430	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_21	CALL_46
+0x4000fd4	          0x4889c7	                            mov rdi, rax	       430	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_21	CALL_46
+0x4000fd7	      0xe857f6ffff	                call sym.entry_is_binary	       430	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_21	CALL_46
+0x4000fdc	    0x8985683effff	           mov dword [rbp - 0xc198], eax	       430	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_21	CALL_46
+0x4000fe2	    0x488b95e83eff	           mov rdx, qword [rbp - 0xc118]	       432	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_47
+0x4000fe9	    0x488d85f07fff	                 lea rax, [rbp - 0x8010]	       432	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_47
+0x4000ff0	          0x4889c6	                            mov rsi, rax	       432	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_47
+0x4000ff3	      0xbf01000000	                              mov edi, 1	       432	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_47
+0x4000ff8	      0xe800000000	                          call 0x4000ffd	       432	archive-zip.c	FUNCTION_14	IF_19	FOR_1	CALL_47
+0x4000ffd	      0xe959ffffff	                           jmp 0x4000f5b	       433	archive-zip.c	FUNCTION_14	IF_19	FOR_1
+0x4001002	              0x90	                                     nop	       427	archive-zip.c	FUNCTION_14	IF_19	FOR_1	IF_20
+0x4001003	    0x488b85b83eff	           mov rax, qword [rbp - 0xc148]	       434	archive-zip.c	FUNCTION_14	IF_19	CALL_48
+0x400100a	          0x4889c7	                            mov rdi, rax	       434	archive-zip.c	FUNCTION_14	IF_19	CALL_48
+0x400100d	      0xe800000000	                          call 0x4001012	       434	archive-zip.c	FUNCTION_14	IF_19	CALL_48
+0x4001012	    0x4883bde83eff	             cmp qword [rbp - 0xc118], 0	       435	archive-zip.c	FUNCTION_14	IF_19	IF_22
+0x400101a	            0x740c	                            je 0x4001028	       435	archive-zip.c	FUNCTION_14	IF_19	IF_22
+0x400101c	    0x488b85e83eff	           mov rax, qword [rbp - 0xc118]	       436	archive-zip.c	FUNCTION_14	IF_19	IF_22
+0x4001023	      0xe9c7060000	                           jmp 0x40016ef	       436	archive-zip.c	FUNCTION_14	IF_19	IF_22
+0x4001028	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       438	archive-zip.c	FUNCTION_14	IF_19
+0x400102f	    0x488985783eff	           mov qword [rbp - 0xc188], rax	       438	archive-zip.c	FUNCTION_14	IF_19
+0x4001036	    0x488b15000000	            mov rdx, qword [0x0400103d] 	       439	archive-zip.c	FUNCTION_14	IF_19
+0x400103d	    0x488b85783eff	           mov rax, qword [rbp - 0xc188]	       439	archive-zip.c	FUNCTION_14	IF_19
+0x4001044	          0x4801d0	                            add rax, rdx	       439	archive-zip.c	FUNCTION_14	IF_19
+0x4001047	    0x488905000000	            mov qword [0x0400104e], rax 	       439	archive-zip.c	FUNCTION_14	IF_19
+0x400104e	    0x488b8d783eff	           mov rcx, qword [rbp - 0xc188]	       441	archive-zip.c	FUNCTION_14	IF_19	CALL_49
+0x4001055	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       441	archive-zip.c	FUNCTION_14	IF_19	CALL_49
+0x400105c	    0x488b95983eff	           mov rdx, qword [rbp - 0xc168]	       441	archive-zip.c	FUNCTION_14	IF_19	CALL_49
+0x4001063	          0x4889ce	                            mov rsi, rcx	       441	archive-zip.c	FUNCTION_14	IF_19	CALL_49
+0x4001066	          0x4889c7	                            mov rdi, rax	       441	archive-zip.c	FUNCTION_14	IF_19	CALL_49
+0x4001069	      0xe8cef3ffff	            call sym.write_zip_data_desc	       441	archive-zip.c	FUNCTION_14	IF_19	CALL_49
+0x400106e	      0xe90a030000	                           jmp 0x400137d	       420	archive-zip.c	FUNCTION_14	IF_19
+0x4001073	    0x4883bdb83eff	             cmp qword [rbp - 0xc148], 0	       442	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x400107b	     0xf84bd020000	                            je 0x400133e	       442	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x4001081	    0x83bd643effff	            cmp dword [rbp - 0xc19c], 8 	       442	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x4001088	     0xf85b0020000	                           jne 0x400133e	       442	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x400108e	    0x488b85583eff	           mov rax, qword [rbp - 0xc1a8]	       450	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_50
+0x4001095	          0x8b504c	            mov edx, dword [rax + 0x4c] 	       450	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_50
+0x4001098	    0x488d85003fff	                 lea rax, [rbp - 0xc100]	       450	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_50
+0x400109f	            0x89d6	                            mov esi, edx	       450	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_50
+0x40010a1	          0x4889c7	                            mov rdi, rax	       450	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_50
+0x40010a4	      0xe800000000	                          call 0x40010a9	       450	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_50
+0x40010a9	    0x48c785783eff	             mov qword [rbp - 0xc188], 0	       452	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40010b4	    0x488d85f07fff	                 lea rax, [rbp - 0x8010]	       453	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40010bb	    0x488985983fff	           mov qword [rbp - 0xc068], rax	       453	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40010c2	    0x48c785783fff	        mov qword [rbp - 0xc088], 0x8000	       454	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40010cd	    0x488d8df03fff	                 lea rcx, [rbp - 0xc010]	       457	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_51
+0x40010d4	    0x488b85b83eff	           mov rax, qword [rbp - 0xc148]	       457	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_51
+0x40010db	      0xba00400000	                         mov edx, 0x4000	       457	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_51
+0x40010e0	          0x4889ce	                            mov rsi, rcx	       457	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_51
+0x40010e3	          0x4889c7	                            mov rdi, rax	       457	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_51
+0x40010e6	      0xe800000000	                          call 0x40010eb	       457	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_51
+0x40010eb	    0x488985f03eff	           mov qword [rbp - 0xc110], rax	       457	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_51
+0x40010f2	    0x4883bdf03eff	             cmp qword [rbp - 0xc110], 0	       458	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_24
+0x40010fa	     0xf8e2b010000	                           jle 0x400122b	       458	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_24
+0x4001100	    0x488b85f03eff	           mov rax, qword [rbp - 0xc110]	       460	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_52
+0x4001107	            0x89c2	                            mov edx, eax	       460	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_52
+0x4001109	    0x488d8df03fff	                 lea rcx, [rbp - 0xc010]	       460	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_52
+0x4001110	    0x488b85983eff	           mov rax, qword [rbp - 0xc168]	       460	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_52
+0x4001117	          0x4889ce	                            mov rsi, rcx	       460	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_52
+0x400111a	          0x4889c7	                            mov rdi, rax	       460	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_52
+0x400111d	      0xe800000000	                          call 0x4001122	       460	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_52
+0x4001122	    0x488985983eff	           mov qword [rbp - 0xc168], rax	       460	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_52
+0x4001129	    0x83bd683effff	cmp dword [rbp - 0xc198], 0xffffffffffffffff	       461	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_25
+0x4001130	            0x7526	                           jne 0x4001158	       461	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_25
+0x4001132	    0x488b95f03eff	           mov rdx, qword [rbp - 0xc110]	       462	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_25	CALL_53
+0x4001139	    0x488d8df03fff	                 lea rcx, [rbp - 0xc010]	       462	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_25	CALL_53
+0x4001140	    0x488b85e03eff	           mov rax, qword [rbp - 0xc120]	       462	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_25	CALL_53
+0x4001147	          0x4889ce	                            mov rsi, rcx	       462	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_25	CALL_53
+0x400114a	          0x4889c7	                            mov rdi, rax	       462	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_25	CALL_53
+0x400114d	      0xe8e1f4ffff	                call sym.entry_is_binary	       462	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_25	CALL_53
+0x4001152	    0x8985683effff	           mov dword [rbp - 0xc198], eax	       462	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_25	CALL_53
+0x4001158	    0x488d85f03fff	                 lea rax, [rbp - 0xc010]	       465	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x400115f	    0x488985903fff	           mov qword [rbp - 0xc070], rax	       465	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x4001166	    0x488b85f03eff	           mov rax, qword [rbp - 0xc110]	       466	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x400116d	    0x488985703fff	           mov qword [rbp - 0xc090], rax	       466	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x4001174	    0x488d85003fff	                 lea rax, [rbp - 0xc100]	       467	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_54
+0x400117b	      0xbe00000000	                              mov esi, 0	       467	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_54
+0x4001180	          0x4889c7	                            mov rdi, rax	       467	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_54
+0x4001183	      0xe800000000	                          call 0x4001188	       467	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_54
+0x4001188	    0x8985743effff	           mov dword [rbp - 0xc18c], eax	       467	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_54
+0x400118e	    0x83bd743effff	             cmp dword [rbp - 0xc18c], 0	       468	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_26
+0x4001195	            0x7417	                            je 0x40011ae	       468	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_26
+0x4001197	    0x8b85743effff	           mov eax, dword [rbp - 0xc18c]	       469	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_55
+0x400119d	            0x89c6	                            mov esi, eax	       469	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_55
+0x400119f	      0xbf00000000	                              mov edi, 0	       469	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_55
+0x40011a4	      0xb800000000	                              mov eax, 0	       469	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_55
+0x40011a9	      0xe800000000	                          call 0x40011ae	       469	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	CALL_55
+0x40011ae	    0x488b85983fff	           mov rax, qword [rbp - 0xc068]	       470	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x40011b5	          0x4889c2	                            mov rdx, rax	       470	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x40011b8	    0x488d85f07fff	                 lea rax, [rbp - 0x8010]	       470	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x40011bf	          0x4829c2	                            sub rdx, rax	       470	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x40011c2	          0x4889d0	                            mov rax, rdx	       470	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x40011c5	    0x488985f83eff	           mov qword [rbp - 0xc108], rax	       470	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x40011cc	    0x4883bdf83eff	             cmp qword [rbp - 0xc108], 0	       472	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27
+0x40011d4	     0xf84f3feffff	                            je 0x40010cd	       472	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27
+0x40011da	    0x488b95f83eff	           mov rdx, qword [rbp - 0xc108]	       473	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27	CALL_56
+0x40011e1	    0x488d85f07fff	                 lea rax, [rbp - 0x8010]	       473	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27	CALL_56
+0x40011e8	          0x4889c6	                            mov rsi, rax	       473	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27	CALL_56
+0x40011eb	      0xbf01000000	                              mov edi, 1	       473	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27	CALL_56
+0x40011f0	      0xe800000000	                          call 0x40011f5	       473	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27	CALL_56
+0x40011f5	    0x488b95783eff	           mov rdx, qword [rbp - 0xc188]	       474	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27
+0x40011fc	    0x488b85f83eff	           mov rax, qword [rbp - 0xc108]	       474	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27
+0x4001203	          0x4801d0	                            add rax, rdx	       474	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27
+0x4001206	    0x488985783eff	           mov qword [rbp - 0xc188], rax	       474	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27
+0x400120d	    0x488d85f07fff	                 lea rax, [rbp - 0x8010]	       475	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27
+0x4001214	    0x488985983fff	           mov qword [rbp - 0xc068], rax	       475	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27
+0x400121b	    0x48c785783fff	        mov qword [rbp - 0xc088], 0x8000	       476	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_27
+0x4001226	      0xe9a2feffff	                           jmp 0x40010cd	       479	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2
+0x400122b	              0x90	                                     nop	       459	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	FOR_2	IF_24
+0x400122c	    0x488b85b83eff	           mov rax, qword [rbp - 0xc148]	       480	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_57
+0x4001233	          0x4889c7	                            mov rdi, rax	       480	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_57
+0x4001236	      0xe800000000	                          call 0x400123b	       480	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_57
+0x400123b	    0x4883bdf03eff	             cmp qword [rbp - 0xc110], 0	       481	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	IF_28
+0x4001243	            0x740c	                            je 0x4001251	       481	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	IF_28
+0x4001245	    0x488b85f03eff	           mov rax, qword [rbp - 0xc110]	       482	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	IF_28
+0x400124c	      0xe99e040000	                           jmp 0x40016ef	       482	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	IF_28
+0x4001251	    0x488d85f03fff	                 lea rax, [rbp - 0xc010]	       484	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x4001258	    0x488985903fff	           mov qword [rbp - 0xc070], rax	       484	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x400125f	    0x48c785703fff	             mov qword [rbp - 0xc090], 0	       485	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x400126a	    0x488d85003fff	                 lea rax, [rbp - 0xc100]	       486	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_58
+0x4001271	      0xbe04000000	                              mov esi, 4	       486	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_58
+0x4001276	          0x4889c7	                            mov rdi, rax	       486	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_58
+0x4001279	      0xe800000000	                          call 0x400127e	       486	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_58
+0x400127e	    0x8985743effff	           mov dword [rbp - 0xc18c], eax	       486	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_58
+0x4001284	    0x83bd743effff	            cmp dword [rbp - 0xc18c], 1 	       487	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	IF_29
+0x400128b	            0x7417	                            je 0x40012a4	       487	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	IF_29
+0x400128d	    0x8b85743effff	           mov eax, dword [rbp - 0xc18c]	       488	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_59
+0x4001293	            0x89c6	                            mov esi, eax	       488	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_59
+0x4001295	      0xbf00000000	                              mov edi, 0	       488	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_59
+0x400129a	      0xb800000000	                              mov eax, 0	       488	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_59
+0x400129f	      0xe800000000	                          call 0x40012a4	       488	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_59
+0x40012a4	    0x488d85003fff	                 lea rax, [rbp - 0xc100]	       490	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_60
+0x40012ab	          0x4889c7	                            mov rdi, rax	       490	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_60
+0x40012ae	      0xe800000000	                          call 0x40012b3	       490	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_60
+0x40012b3	    0x488b85983fff	           mov rax, qword [rbp - 0xc068]	       491	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40012ba	          0x4889c2	                            mov rdx, rax	       491	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40012bd	    0x488d85f07fff	                 lea rax, [rbp - 0x8010]	       491	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40012c4	          0x4829c2	                            sub rdx, rax	       491	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40012c7	          0x4889d0	                            mov rax, rdx	       491	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40012ca	    0x488985f83eff	           mov qword [rbp - 0xc108], rax	       491	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40012d1	    0x488b95f83eff	           mov rdx, qword [rbp - 0xc108]	       492	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_61
+0x40012d8	    0x488d85f07fff	                 lea rax, [rbp - 0x8010]	       492	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_61
+0x40012df	          0x4889c6	                            mov rsi, rax	       492	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_61
+0x40012e2	      0xbf01000000	                              mov edi, 1	       492	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_61
+0x40012e7	      0xe800000000	                          call 0x40012ec	       492	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_61
+0x40012ec	    0x488b95783eff	           mov rdx, qword [rbp - 0xc188]	       493	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40012f3	    0x488b85f83eff	           mov rax, qword [rbp - 0xc108]	       493	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40012fa	          0x4801d0	                            add rax, rdx	       493	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x40012fd	    0x488985783eff	           mov qword [rbp - 0xc188], rax	       493	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x4001304	    0x488b15000000	            mov rdx, qword [0x0400130b] 	       494	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x400130b	    0x488b85783eff	           mov rax, qword [rbp - 0xc188]	       494	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x4001312	          0x4801d0	                            add rax, rdx	       494	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x4001315	    0x488905000000	            mov qword [0x0400131c], rax 	       494	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x400131c	    0x488b8d783eff	           mov rcx, qword [rbp - 0xc188]	       496	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_62
+0x4001323	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       496	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_62
+0x400132a	    0x488b95983eff	           mov rdx, qword [rbp - 0xc168]	       496	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_62
+0x4001331	          0x4889ce	                            mov rsi, rcx	       496	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_62
+0x4001334	          0x4889c7	                            mov rdi, rax	       496	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_62
+0x4001337	      0xe800f1ffff	            call sym.write_zip_data_desc	       496	archive-zip.c	FUNCTION_14	ELSE_6	IF_23	CALL_62
+0x400133c	            0xeb3f	                           jmp 0x400137d	       442	archive-zip.c	FUNCTION_14	ELSE_6	IF_23
+0x400133e	    0x488b85783eff	           mov rax, qword [rbp - 0xc188]	       497	archive-zip.c	FUNCTION_14	ELSE_7	IF_30
+0x4001345	          0x4885c0	                           test rax, rax	       497	archive-zip.c	FUNCTION_14	ELSE_7	IF_30
+0x4001348	            0x7433	                            je 0x400137d	       497	archive-zip.c	FUNCTION_14	ELSE_7	IF_30
+0x400134a	    0x488b95783eff	           mov rdx, qword [rbp - 0xc188]	       498	archive-zip.c	FUNCTION_14	ELSE_7	IF_30	CALL_63
+0x4001351	    0x488b85a03eff	           mov rax, qword [rbp - 0xc160]	       498	archive-zip.c	FUNCTION_14	ELSE_7	IF_30	CALL_63
+0x4001358	          0x4889c6	                            mov rsi, rax	       498	archive-zip.c	FUNCTION_14	ELSE_7	IF_30	CALL_63
+0x400135b	      0xbf01000000	                              mov edi, 1	       498	archive-zip.c	FUNCTION_14	ELSE_7	IF_30	CALL_63
+0x4001360	      0xe800000000	                          call 0x4001365	       498	archive-zip.c	FUNCTION_14	ELSE_7	IF_30	CALL_63
+0x4001365	    0x488b15000000	            mov rdx, qword [0x0400136c] 	       499	archive-zip.c	FUNCTION_14	ELSE_7	IF_30
+0x400136c	    0x488b85783eff	           mov rax, qword [rbp - 0xc188]	       499	archive-zip.c	FUNCTION_14	ELSE_7	IF_30
+0x4001373	          0x4801d0	                            add rax, rdx	       499	archive-zip.c	FUNCTION_14	ELSE_7	IF_30
+0x4001376	    0x488905000000	            mov qword [0x0400137d], rax 	       499	archive-zip.c	FUNCTION_14	ELSE_7	IF_30
+0x400137d	    0x488b85a83eff	           mov rax, qword [rbp - 0xc158]	       502	archive-zip.c	FUNCTION_14	CALL_64
+0x4001384	          0x4889c7	                            mov rdi, rax	       502	archive-zip.c	FUNCTION_14	CALL_64
+0x4001387	      0xe800000000	                          call 0x400138c	       502	archive-zip.c	FUNCTION_14	CALL_64
+0x400138c	    0x488b85b03eff	           mov rax, qword [rbp - 0xc150]	       503	archive-zip.c	FUNCTION_14	CALL_65
+0x4001393	          0x4889c7	                            mov rdi, rax	       503	archive-zip.c	FUNCTION_14	CALL_65
+0x4001396	      0xe800000000	                          call 0x400139b	       503	archive-zip.c	FUNCTION_14	CALL_65
+0x400139b	    0x488b95783eff	           mov rdx, qword [rbp - 0xc188]	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013a2	      0xb8ffffffff	                     mov eax, 0xffffffff	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013a7	          0x4839c2	                            cmp rdx, rax	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013aa	            0x771f	                            ja 0x40013cb	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013ac	    0x488b95803eff	           mov rdx, qword [rbp - 0xc180]	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013b3	      0xb8ffffffff	                     mov eax, 0xffffffff	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013b8	          0x4839c2	                            cmp rdx, rax	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013bb	            0x770e	                            ja 0x40013cb	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013bd	      0xb8ffffffff	                     mov eax, 0xffffffff	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013c2	    0x483985d83eff	          cmp qword [rbp - 0xc128], rax 	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013c9	            0x7664	                           jbe 0x400142f	       505	archive-zip.c	FUNCTION_14	IF_31
+0x40013cb	    0x488b95783eff	           mov rdx, qword [rbp - 0xc188]	       507	archive-zip.c	FUNCTION_14	IF_31	IF_32
+0x40013d2	      0xb8feffffff	                     mov eax, 0xfffffffe	       507	archive-zip.c	FUNCTION_14	IF_31	IF_32
+0x40013d7	          0x4839c2	                            cmp rdx, rax	       507	archive-zip.c	FUNCTION_14	IF_31	IF_32
+0x40013da	            0x7608	                           jbe 0x40013e4	       507	archive-zip.c	FUNCTION_14	IF_31	IF_32
+0x40013dc	    0x488385d03eff	             add qword [rbp - 0xc130], 8	       508	archive-zip.c	FUNCTION_14	IF_31	IF_32
+0x40013e4	    0x488b95803eff	           mov rdx, qword [rbp - 0xc180]	       509	archive-zip.c	FUNCTION_14	IF_31	IF_33
+0x40013eb	      0xb8feffffff	                     mov eax, 0xfffffffe	       509	archive-zip.c	FUNCTION_14	IF_31	IF_33
+0x40013f0	          0x4839c2	                            cmp rdx, rax	       509	archive-zip.c	FUNCTION_14	IF_31	IF_33
+0x40013f3	            0x7608	                           jbe 0x40013fd	       509	archive-zip.c	FUNCTION_14	IF_31	IF_33
+0x40013f5	    0x488385d03eff	             add qword [rbp - 0xc130], 8	       510	archive-zip.c	FUNCTION_14	IF_31	IF_33
+0x40013fd	      0xb8feffffff	                     mov eax, 0xfffffffe	       511	archive-zip.c	FUNCTION_14	IF_31	IF_34
+0x4001402	    0x483985d83eff	          cmp qword [rbp - 0xc128], rax 	       511	archive-zip.c	FUNCTION_14	IF_31	IF_34
+0x4001409	            0x7608	                           jbe 0x4001413	       511	archive-zip.c	FUNCTION_14	IF_31	IF_34
+0x400140b	    0x488385d03eff	             add qword [rbp - 0xc130], 8	       512	archive-zip.c	FUNCTION_14	IF_31	IF_34
+0x4001413	    0x488b95d03eff	           mov rdx, qword [rbp - 0xc130]	       513	archive-zip.c	FUNCTION_14	IF_31
+0x400141a	    0x488b85c83eff	           mov rax, qword [rbp - 0xc138]	       513	archive-zip.c	FUNCTION_14	IF_31
+0x4001421	          0x4801d0	                            add rax, rdx	       513	archive-zip.c	FUNCTION_14	IF_31
+0x4001424	        0x4883c004	                              add rax, 4	       513	archive-zip.c	FUNCTION_14	IF_31
+0x4001428	    0x488985c83eff	           mov qword [rbp - 0xc138], rax	       513	archive-zip.c	FUNCTION_14	IF_31
+0x400142f	      0xba504b0102	                      mov edx, 0x2014b50	       516	archive-zip.c	FUNCTION_14	CALL_66
+0x4001434	      0xbe04000000	                              mov esi, 4	       516	archive-zip.c	FUNCTION_14	CALL_66
+0x4001439	      0xbf00000000	                              mov edi, 0	       516	archive-zip.c	FUNCTION_14	CALL_66
+0x400143e	      0xe85feeffff	                  call sym.strbuf_add_le	       516	archive-zip.c	FUNCTION_14	CALL_66
+0x4001443	    0x8b856c3effff	           mov eax, dword [rbp - 0xc194]	       517	archive-zip.c	FUNCTION_14	CALL_67
+0x4001449	          0x4889c2	                            mov rdx, rax	       517	archive-zip.c	FUNCTION_14	CALL_67
+0x400144c	      0xbe02000000	                              mov esi, 2	       517	archive-zip.c	FUNCTION_14	CALL_67
+0x4001451	      0xbf00000000	                              mov edi, 0	       517	archive-zip.c	FUNCTION_14	CALL_67
+0x4001456	      0xe847eeffff	                  call sym.strbuf_add_le	       517	archive-zip.c	FUNCTION_14	CALL_67
+0x400145b	    0x8b85703effff	           mov eax, dword [rbp - 0xc190]	       518	archive-zip.c	FUNCTION_14	CALL_68
+0x4001461	          0x4889c2	                            mov rdx, rax	       518	archive-zip.c	FUNCTION_14	CALL_68
+0x4001464	      0xbe02000000	                              mov esi, 2	       518	archive-zip.c	FUNCTION_14	CALL_68
+0x4001469	      0xbf00000000	                              mov edi, 0	       518	archive-zip.c	FUNCTION_14	CALL_68
+0x400146e	      0xe82feeffff	                  call sym.strbuf_add_le	       518	archive-zip.c	FUNCTION_14	CALL_68
+0x4001473	    0x488b85c03eff	           mov rax, qword [rbp - 0xc140]	       519	archive-zip.c	FUNCTION_14	CALL_69
+0x400147a	          0x4889c2	                            mov rdx, rax	       519	archive-zip.c	FUNCTION_14	CALL_69
+0x400147d	      0xbe02000000	                              mov esi, 2	       519	archive-zip.c	FUNCTION_14	CALL_69
+0x4001482	      0xbf00000000	                              mov edi, 0	       519	archive-zip.c	FUNCTION_14	CALL_69
+0x4001487	      0xe816eeffff	                  call sym.strbuf_add_le	       519	archive-zip.c	FUNCTION_14	CALL_69
+0x400148c	    0x8b85643effff	           mov eax, dword [rbp - 0xc19c]	       520	archive-zip.c	FUNCTION_14	CALL_70
+0x4001492	            0x4898	                                    cdqe	       520	archive-zip.c	FUNCTION_14	CALL_70
+0x4001494	          0x4889c2	                            mov rdx, rax	       520	archive-zip.c	FUNCTION_14	CALL_70
+0x4001497	      0xbe02000000	                              mov esi, 2	       520	archive-zip.c	FUNCTION_14	CALL_70
+0x400149c	      0xbf00000000	                              mov edi, 0	       520	archive-zip.c	FUNCTION_14	CALL_70
+0x40014a1	      0xe8fcedffff	                  call sym.strbuf_add_le	       520	archive-zip.c	FUNCTION_14	CALL_70
+0x40014a6	    0x8b0500000000	            mov eax, dword [0x040014ac] 	       521	archive-zip.c	FUNCTION_14	CALL_71
+0x40014ac	            0x4898	                                    cdqe	       521	archive-zip.c	FUNCTION_14	CALL_71
+0x40014ae	          0x4889c2	                            mov rdx, rax	       521	archive-zip.c	FUNCTION_14	CALL_71
+0x40014b1	      0xbe02000000	                              mov esi, 2	       521	archive-zip.c	FUNCTION_14	CALL_71
+0x40014b6	      0xbf00000000	                              mov edi, 0	       521	archive-zip.c	FUNCTION_14	CALL_71
+0x40014bb	      0xe8e2edffff	                  call sym.strbuf_add_le	       521	archive-zip.c	FUNCTION_14	CALL_71
+0x40014c0	    0x8b0500000000	            mov eax, dword [0x040014c6] 	       522	archive-zip.c	FUNCTION_14	CALL_72
+0x40014c6	            0x4898	                                    cdqe	       522	archive-zip.c	FUNCTION_14	CALL_72
+0x40014c8	          0x4889c2	                            mov rdx, rax	       522	archive-zip.c	FUNCTION_14	CALL_72
+0x40014cb	      0xbe02000000	                              mov esi, 2	       522	archive-zip.c	FUNCTION_14	CALL_72
+0x40014d0	      0xbf00000000	                              mov edi, 0	       522	archive-zip.c	FUNCTION_14	CALL_72
+0x40014d5	      0xe8c8edffff	                  call sym.strbuf_add_le	       522	archive-zip.c	FUNCTION_14	CALL_72
+0x40014da	    0x488b85983eff	           mov rax, qword [rbp - 0xc168]	       523	archive-zip.c	FUNCTION_14	CALL_73
+0x40014e1	          0x4889c2	                            mov rdx, rax	       523	archive-zip.c	FUNCTION_14	CALL_73
+0x40014e4	      0xbe04000000	                              mov esi, 4	       523	archive-zip.c	FUNCTION_14	CALL_73
+0x40014e9	      0xbf00000000	                              mov edi, 0	       523	archive-zip.c	FUNCTION_14	CALL_73
+0x40014ee	      0xe8afedffff	                  call sym.strbuf_add_le	       523	archive-zip.c	FUNCTION_14	CALL_73
+0x40014f3	    0x488b85783eff	           mov rax, qword [rbp - 0xc188]	       524	archive-zip.c	FUNCTION_14	CALL_75
+0x40014fa	          0x4889c7	                            mov rdi, rax	       524	archive-zip.c	FUNCTION_14	CALL_75
+0x40014fd	      0xe8f0edffff	                        call sym.clamp32	       524	archive-zip.c	FUNCTION_14	CALL_75
+0x4001502	            0x89c0	                            mov eax, eax	       524	archive-zip.c	FUNCTION_14	CALL_75
+0x4001504	          0x4889c2	                            mov rdx, rax	       524	archive-zip.c	FUNCTION_14	CALL_75
+0x4001507	      0xbe04000000	                              mov esi, 4	       524	archive-zip.c	FUNCTION_14	CALL_75
+0x400150c	      0xbf00000000	                              mov edi, 0	       524	archive-zip.c	FUNCTION_14	CALL_75
+0x4001511	      0xe88cedffff	                  call sym.strbuf_add_le	       524	archive-zip.c	FUNCTION_14	CALL_75
+0x4001516	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       525	archive-zip.c	FUNCTION_14	CALL_77
+0x400151d	          0x4889c7	                            mov rdi, rax	       525	archive-zip.c	FUNCTION_14	CALL_77
+0x4001520	      0xe8cdedffff	                        call sym.clamp32	       525	archive-zip.c	FUNCTION_14	CALL_77
+0x4001525	            0x89c0	                            mov eax, eax	       525	archive-zip.c	FUNCTION_14	CALL_77
+0x4001527	          0x4889c2	                            mov rdx, rax	       525	archive-zip.c	FUNCTION_14	CALL_77
+0x400152a	      0xbe04000000	                              mov esi, 4	       525	archive-zip.c	FUNCTION_14	CALL_77
+0x400152f	      0xbf00000000	                              mov edi, 0	       525	archive-zip.c	FUNCTION_14	CALL_77
+0x4001534	      0xe869edffff	                  call sym.strbuf_add_le	       525	archive-zip.c	FUNCTION_14	CALL_77
+0x4001539	    0x488b85403eff	           mov rax, qword [rbp - 0xc1c0]	       526	archive-zip.c	FUNCTION_14	CALL_78
+0x4001540	          0x4889c2	                            mov rdx, rax	       526	archive-zip.c	FUNCTION_14	CALL_78
+0x4001543	      0xbe02000000	                              mov esi, 2	       526	archive-zip.c	FUNCTION_14	CALL_78
+0x4001548	      0xbf00000000	                              mov edi, 0	       526	archive-zip.c	FUNCTION_14	CALL_78
+0x400154d	      0xe850edffff	                  call sym.strbuf_add_le	       526	archive-zip.c	FUNCTION_14	CALL_78
+0x4001552	    0x488b85c83eff	           mov rax, qword [rbp - 0xc138]	       527	archive-zip.c	FUNCTION_14	CALL_79
+0x4001559	          0x4889c2	                            mov rdx, rax	       527	archive-zip.c	FUNCTION_14	CALL_79
+0x400155c	      0xbe02000000	                              mov esi, 2	       527	archive-zip.c	FUNCTION_14	CALL_79
+0x4001561	      0xbf00000000	                              mov edi, 0	       527	archive-zip.c	FUNCTION_14	CALL_79
+0x4001566	      0xe837edffff	                  call sym.strbuf_add_le	       527	archive-zip.c	FUNCTION_14	CALL_79
+0x400156b	      0xba00000000	                              mov edx, 0	       528	archive-zip.c	FUNCTION_14	CALL_80
+0x4001570	      0xbe02000000	                              mov esi, 2	       528	archive-zip.c	FUNCTION_14	CALL_80
+0x4001575	      0xbf00000000	                              mov edi, 0	       528	archive-zip.c	FUNCTION_14	CALL_80
+0x400157a	      0xe823edffff	                  call sym.strbuf_add_le	       528	archive-zip.c	FUNCTION_14	CALL_80
+0x400157f	      0xba00000000	                              mov edx, 0	       529	archive-zip.c	FUNCTION_14	CALL_81
+0x4001584	      0xbe02000000	                              mov esi, 2	       529	archive-zip.c	FUNCTION_14	CALL_81
+0x4001589	      0xbf00000000	                              mov edi, 0	       529	archive-zip.c	FUNCTION_14	CALL_81
+0x400158e	      0xe80fedffff	                  call sym.strbuf_add_le	       529	archive-zip.c	FUNCTION_14	CALL_81
+0x4001593	    0x83bd683effff	             cmp dword [rbp - 0xc198], 0	       530	archive-zip.c	FUNCTION_14	CALL_82
+0x400159a	           0xf94c0	                                 sete al	       530	archive-zip.c	FUNCTION_14	CALL_82
+0x400159d	           0xfb6c0	                           movzx eax, al	       530	archive-zip.c	FUNCTION_14	CALL_82
+0x40015a0	          0x4889c2	                            mov rdx, rax	       530	archive-zip.c	FUNCTION_14	CALL_82
+0x40015a3	      0xbe02000000	                              mov esi, 2	       530	archive-zip.c	FUNCTION_14	CALL_82
+0x40015a8	      0xbf00000000	                              mov edi, 0	       530	archive-zip.c	FUNCTION_14	CALL_82
+0x40015ad	      0xe8f0ecffff	                  call sym.strbuf_add_le	       530	archive-zip.c	FUNCTION_14	CALL_82
+0x40015b2	    0x488b85903eff	           mov rax, qword [rbp - 0xc170]	       531	archive-zip.c	FUNCTION_14	CALL_83
+0x40015b9	          0x4889c2	                            mov rdx, rax	       531	archive-zip.c	FUNCTION_14	CALL_83
+0x40015bc	      0xbe04000000	                              mov esi, 4	       531	archive-zip.c	FUNCTION_14	CALL_83
+0x40015c1	      0xbf00000000	                              mov edi, 0	       531	archive-zip.c	FUNCTION_14	CALL_83
+0x40015c6	      0xe8d7ecffff	                  call sym.strbuf_add_le	       531	archive-zip.c	FUNCTION_14	CALL_83
+0x40015cb	    0x488b85d83eff	           mov rax, qword [rbp - 0xc128]	       532	archive-zip.c	FUNCTION_14	CALL_85
+0x40015d2	          0x4889c7	                            mov rdi, rax	       532	archive-zip.c	FUNCTION_14	CALL_85
+0x40015d5	      0xe818edffff	                        call sym.clamp32	       532	archive-zip.c	FUNCTION_14	CALL_85
+0x40015da	            0x89c0	                            mov eax, eax	       532	archive-zip.c	FUNCTION_14	CALL_85
+0x40015dc	          0x4889c2	                            mov rdx, rax	       532	archive-zip.c	FUNCTION_14	CALL_85
+0x40015df	      0xbe04000000	                              mov esi, 4	       532	archive-zip.c	FUNCTION_14	CALL_85
+0x40015e4	      0xbf00000000	                              mov edi, 0	       532	archive-zip.c	FUNCTION_14	CALL_85
+0x40015e9	      0xe8b4ecffff	                  call sym.strbuf_add_le	       532	archive-zip.c	FUNCTION_14	CALL_85
+0x40015ee	    0x488b95403eff	           mov rdx, qword [rbp - 0xc1c0]	       533	archive-zip.c	FUNCTION_14	CALL_86
+0x40015f5	    0x488b85483eff	           mov rax, qword [rbp - 0xc1b8]	       533	archive-zip.c	FUNCTION_14	CALL_86
+0x40015fc	          0x4889c6	                            mov rsi, rax	       533	archive-zip.c	FUNCTION_14	CALL_86
+0x40015ff	      0xbf00000000	                              mov edi, 0	       533	archive-zip.c	FUNCTION_14	CALL_86
+0x4001604	      0xe800000000	                          call 0x4001609	       533	archive-zip.c	FUNCTION_14	CALL_86
+0x4001609	    0x488d85a03fff	                 lea rax, [rbp - 0xc060]	       534	archive-zip.c	FUNCTION_14	CALL_87
+0x4001610	      0xba09000000	                              mov edx, 9	       534	archive-zip.c	FUNCTION_14	CALL_87
+0x4001615	          0x4889c6	                            mov rsi, rax	       534	archive-zip.c	FUNCTION_14	CALL_87
+0x4001618	      0xbf00000000	                              mov edi, 0	       534	archive-zip.c	FUNCTION_14	CALL_87
+0x400161d	      0xe800000000	                          call 0x4001622	       534	archive-zip.c	FUNCTION_14	CALL_87
+0x4001622	    0x4883bdd03eff	             cmp qword [rbp - 0xc130], 0	       535	archive-zip.c	FUNCTION_14	IF_35
+0x400162a	     0xf84a8000000	                            je 0x40016d8	       535	archive-zip.c	FUNCTION_14	IF_35
+0x4001630	      0xba01000000	                              mov edx, 1	       536	archive-zip.c	FUNCTION_14	IF_35	CALL_88
+0x4001635	      0xbe02000000	                              mov esi, 2	       536	archive-zip.c	FUNCTION_14	IF_35	CALL_88
+0x400163a	      0xbf00000000	                              mov edi, 0	       536	archive-zip.c	FUNCTION_14	IF_35	CALL_88
+0x400163f	      0xe85eecffff	                  call sym.strbuf_add_le	       536	archive-zip.c	FUNCTION_14	IF_35	CALL_88
+0x4001644	    0x488b85d03eff	           mov rax, qword [rbp - 0xc130]	       537	archive-zip.c	FUNCTION_14	IF_35	CALL_89
+0x400164b	          0x4889c2	                            mov rdx, rax	       537	archive-zip.c	FUNCTION_14	IF_35	CALL_89
+0x400164e	      0xbe02000000	                              mov esi, 2	       537	archive-zip.c	FUNCTION_14	IF_35	CALL_89
+0x4001653	      0xbf00000000	                              mov edi, 0	       537	archive-zip.c	FUNCTION_14	IF_35	CALL_89
+0x4001658	      0xe845ecffff	                  call sym.strbuf_add_le	       537	archive-zip.c	FUNCTION_14	IF_35	CALL_89
+0x400165d	    0x488b95803eff	           mov rdx, qword [rbp - 0xc180]	       538	archive-zip.c	FUNCTION_14	IF_35	IF_36
+0x4001664	      0xb8feffffff	                     mov eax, 0xfffffffe	       538	archive-zip.c	FUNCTION_14	IF_35	IF_36
+0x4001669	          0x4839c2	                            cmp rdx, rax	       538	archive-zip.c	FUNCTION_14	IF_35	IF_36
+0x400166c	            0x7619	                           jbe 0x4001687	       538	archive-zip.c	FUNCTION_14	IF_35	IF_36
+0x400166e	    0x488b85803eff	           mov rax, qword [rbp - 0xc180]	       539	archive-zip.c	FUNCTION_14	IF_35	CALL_90
+0x4001675	          0x4889c2	                            mov rdx, rax	       539	archive-zip.c	FUNCTION_14	IF_35	CALL_90
+0x4001678	      0xbe08000000	                              mov esi, 8	       539	archive-zip.c	FUNCTION_14	IF_35	CALL_90
+0x400167d	      0xbf00000000	                              mov edi, 0	       539	archive-zip.c	FUNCTION_14	IF_35	CALL_90
+0x4001682	      0xe81becffff	                  call sym.strbuf_add_le	       539	archive-zip.c	FUNCTION_14	IF_35	CALL_90
+0x4001687	    0x488b95783eff	           mov rdx, qword [rbp - 0xc188]	       540	archive-zip.c	FUNCTION_14	IF_35	IF_37
+0x400168e	      0xb8feffffff	                     mov eax, 0xfffffffe	       540	archive-zip.c	FUNCTION_14	IF_35	IF_37
+0x4001693	          0x4839c2	                            cmp rdx, rax	       540	archive-zip.c	FUNCTION_14	IF_35	IF_37
+0x4001696	            0x7619	                           jbe 0x40016b1	       540	archive-zip.c	FUNCTION_14	IF_35	IF_37
+0x4001698	    0x488b85783eff	           mov rax, qword [rbp - 0xc188]	       541	archive-zip.c	FUNCTION_14	IF_35	CALL_91
+0x400169f	          0x4889c2	                            mov rdx, rax	       541	archive-zip.c	FUNCTION_14	IF_35	CALL_91
+0x40016a2	      0xbe08000000	                              mov esi, 8	       541	archive-zip.c	FUNCTION_14	IF_35	CALL_91
+0x40016a7	      0xbf00000000	                              mov edi, 0	       541	archive-zip.c	FUNCTION_14	IF_35	CALL_91
+0x40016ac	      0xe8f1ebffff	                  call sym.strbuf_add_le	       541	archive-zip.c	FUNCTION_14	IF_35	CALL_91
+0x40016b1	      0xb8feffffff	                     mov eax, 0xfffffffe	       542	archive-zip.c	FUNCTION_14	IF_35	IF_38
+0x40016b6	    0x483985d83eff	          cmp qword [rbp - 0xc128], rax 	       542	archive-zip.c	FUNCTION_14	IF_35	IF_38
+0x40016bd	            0x7619	                           jbe 0x40016d8	       542	archive-zip.c	FUNCTION_14	IF_35	IF_38
+0x40016bf	    0x488b85d83eff	           mov rax, qword [rbp - 0xc128]	       543	archive-zip.c	FUNCTION_14	IF_35	CALL_92
+0x40016c6	          0x4889c2	                            mov rdx, rax	       543	archive-zip.c	FUNCTION_14	IF_35	CALL_92
+0x40016c9	      0xbe08000000	                              mov esi, 8	       543	archive-zip.c	FUNCTION_14	IF_35	CALL_92
+0x40016ce	      0xbf00000000	                              mov edi, 0	       543	archive-zip.c	FUNCTION_14	IF_35	CALL_92
+0x40016d3	      0xe8caebffff	                  call sym.strbuf_add_le	       543	archive-zip.c	FUNCTION_14	IF_35	CALL_92
+0x40016d8	    0x488b05000000	            mov rax, qword [0x040016df] 	       545	archive-zip.c	FUNCTION_14
+0x40016df	        0x4883c001	                              add rax, 1	       545	archive-zip.c	FUNCTION_14
+0x40016e3	    0x488905000000	            mov qword [0x040016ea], rax 	       545	archive-zip.c	FUNCTION_14
+0x40016ea	      0xb800000000	                              mov eax, 0	       547	archive-zip.c	FUNCTION_14
+0x40016ef	        0x488b4df8	                mov rcx, qword [rbp - 8]	       548	archive-zip.c	FUNCTION_14
+0x40016f3	    0x6448330c2528	                xor rcx, qword fs:[0x28]	       548	archive-zip.c	FUNCTION_14
+0x40016fc	            0x7405	                            je 0x4001703	       548	archive-zip.c	FUNCTION_14
+0x40016fe	      0xe800000000	                          call 0x4001703	       548	archive-zip.c	FUNCTION_14
+0x4001703	              0xc9	                                   leave	       548	archive-zip.c	FUNCTION_14
+0x4001704	              0xc3	                                     ret	       548	archive-zip.c	FUNCTION_14
+write_zip_data_desc	SWITCH,0:ELSE,1:DO,0:FOR,0:functions,0:WHILE,0:CALL,10:IF,1	87
+0x400043c	              0x55	                                push rbp	       225	archive-zip.c	FUNCTION_10
+0x400043d	          0x4889e5	                            mov rbp, rsp	       225	archive-zip.c	FUNCTION_10
+0x4000440	        0x4883ec50	                           sub rsp, 0x50	       225	archive-zip.c	FUNCTION_10
+0x4000444	        0x48897dc8	             mov qword [rbp - 0x38], rdi	       225	archive-zip.c	FUNCTION_10
+0x4000448	        0x488975c0	             mov qword [rbp - 0x40], rsi	       225	archive-zip.c	FUNCTION_10
+0x400044c	        0x488955b8	             mov qword [rbp - 0x48], rdx	       225	archive-zip.c	FUNCTION_10
+0x4000450	    0x64488b042528	                mov rax, qword fs:[0x28]	       225	archive-zip.c	FUNCTION_10
+0x4000459	        0x488945f8	                mov qword [rbp - 8], rax	       225	archive-zip.c	FUNCTION_10
+0x400045d	            0x31c0	                            xor eax, eax	       225	archive-zip.c	FUNCTION_10
+0x400045f	      0xb8feffffff	                     mov eax, 0xfffffffe	       226	archive-zip.c	FUNCTION_10	IF_1
+0x4000464	        0x483945c8	            cmp qword [rbp - 0x38], rax 	       226	archive-zip.c	FUNCTION_10	IF_1
+0x4000468	            0x770f	                            ja 0x4000479	       226	archive-zip.c	FUNCTION_10	IF_1
+0x400046a	      0xb8feffffff	                     mov eax, 0xfffffffe	       226	archive-zip.c	FUNCTION_10	IF_1
+0x400046f	        0x483945c0	            cmp qword [rbp - 0x40], rax 	       226	archive-zip.c	FUNCTION_10	IF_1
+0x4000473	     0xf8684000000	                           jbe 0x40004fd	       226	archive-zip.c	FUNCTION_10	IF_1
+0x4000479	        0x488d45d0	                   lea rax, [rbp - 0x30]	       228	archive-zip.c	FUNCTION_10	IF_1	CALL_1
+0x400047d	      0xbe504b0708	                      mov esi, 0x8074b50	       228	archive-zip.c	FUNCTION_10	IF_1	CALL_1
+0x4000482	          0x4889c7	                            mov rdi, rax	       228	archive-zip.c	FUNCTION_10	IF_1	CALL_1
+0x4000485	      0xe88efcffff	                      call sym.copy_le32	       228	archive-zip.c	FUNCTION_10	IF_1	CALL_1
+0x400048a	        0x488b45b8	             mov rax, qword [rbp - 0x48]	       229	archive-zip.c	FUNCTION_10	IF_1	CALL_2
+0x400048e	            0x89c2	                            mov edx, eax	       229	archive-zip.c	FUNCTION_10	IF_1	CALL_2
+0x4000490	        0x488d45d0	                   lea rax, [rbp - 0x30]	       229	archive-zip.c	FUNCTION_10	IF_1	CALL_2
+0x4000494	        0x4883c004	                              add rax, 4	       229	archive-zip.c	FUNCTION_10	IF_1	CALL_2
+0x4000498	            0x89d6	                            mov esi, edx	       229	archive-zip.c	FUNCTION_10	IF_1	CALL_2
+0x400049a	          0x4889c7	                            mov rdi, rax	       229	archive-zip.c	FUNCTION_10	IF_1	CALL_2
+0x400049d	      0xe876fcffff	                      call sym.copy_le32	       229	archive-zip.c	FUNCTION_10	IF_1	CALL_2
+0x40004a2	        0x488b45c0	             mov rax, qword [rbp - 0x40]	       230	archive-zip.c	FUNCTION_10	IF_1	CALL_3
+0x40004a6	        0x488d55d0	                   lea rdx, [rbp - 0x30]	       230	archive-zip.c	FUNCTION_10	IF_1	CALL_3
+0x40004aa	        0x4883c208	                              add rdx, 8	       230	archive-zip.c	FUNCTION_10	IF_1	CALL_3
+0x40004ae	          0x4889c6	                            mov rsi, rax	       230	archive-zip.c	FUNCTION_10	IF_1	CALL_3
+0x40004b1	          0x4889d7	                            mov rdi, rdx	       230	archive-zip.c	FUNCTION_10	IF_1	CALL_3
+0x40004b4	      0xe8a8fcffff	                      call sym.copy_le64	       230	archive-zip.c	FUNCTION_10	IF_1	CALL_3
+0x40004b9	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       231	archive-zip.c	FUNCTION_10	IF_1	CALL_4
+0x40004bd	        0x488d55d0	                   lea rdx, [rbp - 0x30]	       231	archive-zip.c	FUNCTION_10	IF_1	CALL_4
+0x40004c1	        0x4883c210	                           add rdx, 0x10	       231	archive-zip.c	FUNCTION_10	IF_1	CALL_4
+0x40004c5	          0x4889c6	                            mov rsi, rax	       231	archive-zip.c	FUNCTION_10	IF_1	CALL_4
+0x40004c8	          0x4889d7	                            mov rdi, rdx	       231	archive-zip.c	FUNCTION_10	IF_1	CALL_4
+0x40004cb	      0xe891fcffff	                      call sym.copy_le64	       231	archive-zip.c	FUNCTION_10	IF_1	CALL_4
+0x40004d0	        0x488d45d0	                   lea rax, [rbp - 0x30]	       232	archive-zip.c	FUNCTION_10	IF_1	CALL_5
+0x40004d4	      0xba18000000	                           mov edx, 0x18	       232	archive-zip.c	FUNCTION_10	IF_1	CALL_5
+0x40004d9	          0x4889c6	                            mov rsi, rax	       232	archive-zip.c	FUNCTION_10	IF_1	CALL_5
+0x40004dc	      0xbf01000000	                              mov edi, 1	       232	archive-zip.c	FUNCTION_10	IF_1	CALL_5
+0x40004e1	      0xe800000000	                          call 0x40004e6	       232	archive-zip.c	FUNCTION_10	IF_1	CALL_5
+0x40004e6	    0x488b05000000	            mov rax, qword [0x040004ed] 	       233	archive-zip.c	FUNCTION_10	IF_1
+0x40004ed	        0x4883c018	                           add rax, 0x18	       233	archive-zip.c	FUNCTION_10	IF_1
+0x40004f1	    0x488905000000	            mov qword [0x040004f8], rax 	       233	archive-zip.c	FUNCTION_10	IF_1
+0x40004f8	      0xe981000000	                           jmp 0x400057e	       226	archive-zip.c	FUNCTION_10	IF_1
+0x40004fd	        0x488d45d0	                   lea rax, [rbp - 0x30]	       236	archive-zip.c	FUNCTION_10	ELSE_1	CALL_6
+0x4000501	      0xbe504b0708	                      mov esi, 0x8074b50	       236	archive-zip.c	FUNCTION_10	ELSE_1	CALL_6
+0x4000506	          0x4889c7	                            mov rdi, rax	       236	archive-zip.c	FUNCTION_10	ELSE_1	CALL_6
+0x4000509	      0xe80afcffff	                      call sym.copy_le32	       236	archive-zip.c	FUNCTION_10	ELSE_1	CALL_6
+0x400050e	        0x488b45b8	             mov rax, qword [rbp - 0x48]	       237	archive-zip.c	FUNCTION_10	ELSE_1	CALL_7
+0x4000512	            0x89c2	                            mov edx, eax	       237	archive-zip.c	FUNCTION_10	ELSE_1	CALL_7
+0x4000514	        0x488d45d0	                   lea rax, [rbp - 0x30]	       237	archive-zip.c	FUNCTION_10	ELSE_1	CALL_7
+0x4000518	        0x4883c004	                              add rax, 4	       237	archive-zip.c	FUNCTION_10	ELSE_1	CALL_7
+0x400051c	            0x89d6	                            mov esi, edx	       237	archive-zip.c	FUNCTION_10	ELSE_1	CALL_7
+0x400051e	          0x4889c7	                            mov rdi, rax	       237	archive-zip.c	FUNCTION_10	ELSE_1	CALL_7
+0x4000521	      0xe8f2fbffff	                      call sym.copy_le32	       237	archive-zip.c	FUNCTION_10	ELSE_1	CALL_7
+0x4000526	        0x488b45c0	             mov rax, qword [rbp - 0x40]	       238	archive-zip.c	FUNCTION_10	ELSE_1	CALL_8
+0x400052a	            0x89c2	                            mov edx, eax	       238	archive-zip.c	FUNCTION_10	ELSE_1	CALL_8
+0x400052c	        0x488d45d0	                   lea rax, [rbp - 0x30]	       238	archive-zip.c	FUNCTION_10	ELSE_1	CALL_8
+0x4000530	        0x4883c008	                              add rax, 8	       238	archive-zip.c	FUNCTION_10	ELSE_1	CALL_8
+0x4000534	            0x89d6	                            mov esi, edx	       238	archive-zip.c	FUNCTION_10	ELSE_1	CALL_8
+0x4000536	          0x4889c7	                            mov rdi, rax	       238	archive-zip.c	FUNCTION_10	ELSE_1	CALL_8
+0x4000539	      0xe8dafbffff	                      call sym.copy_le32	       238	archive-zip.c	FUNCTION_10	ELSE_1	CALL_8
+0x400053e	        0x488b45c8	             mov rax, qword [rbp - 0x38]	       239	archive-zip.c	FUNCTION_10	ELSE_1	CALL_9
+0x4000542	            0x89c2	                            mov edx, eax	       239	archive-zip.c	FUNCTION_10	ELSE_1	CALL_9
+0x4000544	        0x488d45d0	                   lea rax, [rbp - 0x30]	       239	archive-zip.c	FUNCTION_10	ELSE_1	CALL_9
+0x4000548	        0x4883c00c	                            add rax, 0xc	       239	archive-zip.c	FUNCTION_10	ELSE_1	CALL_9
+0x400054c	            0x89d6	                            mov esi, edx	       239	archive-zip.c	FUNCTION_10	ELSE_1	CALL_9
+0x400054e	          0x4889c7	                            mov rdi, rax	       239	archive-zip.c	FUNCTION_10	ELSE_1	CALL_9
+0x4000551	      0xe8c2fbffff	                      call sym.copy_le32	       239	archive-zip.c	FUNCTION_10	ELSE_1	CALL_9
+0x4000556	        0x488d45d0	                   lea rax, [rbp - 0x30]	       240	archive-zip.c	FUNCTION_10	ELSE_1	CALL_10
+0x400055a	      0xba10000000	                           mov edx, 0x10	       240	archive-zip.c	FUNCTION_10	ELSE_1	CALL_10
+0x400055f	          0x4889c6	                            mov rsi, rax	       240	archive-zip.c	FUNCTION_10	ELSE_1	CALL_10
+0x4000562	      0xbf01000000	                              mov edi, 1	       240	archive-zip.c	FUNCTION_10	ELSE_1	CALL_10
+0x4000567	      0xe800000000	                          call 0x400056c	       240	archive-zip.c	FUNCTION_10	ELSE_1	CALL_10
+0x400056c	    0x488b05000000	            mov rax, qword [0x04000573] 	       241	archive-zip.c	FUNCTION_10	ELSE_1
+0x4000573	        0x4883c010	                           add rax, 0x10	       241	archive-zip.c	FUNCTION_10	ELSE_1
+0x4000577	    0x488905000000	            mov qword [0x0400057e], rax 	       241	archive-zip.c	FUNCTION_10	ELSE_1
+0x400057e	              0x90	                                     nop	       243	archive-zip.c	FUNCTION_10
+0x400057f	        0x488b45f8	                mov rax, qword [rbp - 8]	       243	archive-zip.c	FUNCTION_10
+0x4000583	    0x644833042528	                xor rax, qword fs:[0x28]	       243	archive-zip.c	FUNCTION_10
+0x400058c	            0x7405	                            je 0x4000593	       243	archive-zip.c	FUNCTION_10
+0x400058e	      0xe800000000	                          call 0x4000593	       243	archive-zip.c	FUNCTION_10
+0x4000593	              0xc9	                                   leave	       243	archive-zip.c	FUNCTION_10
+0x4000594	              0xc3	                                     ret	       243	archive-zip.c	FUNCTION_10
+const_error	SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0:WHILE,0:CALL,0:IF,0	5
+0x4000040	              0x55	                                push rbp	       447	git-compat-util.h	FUNCTION_37
+0x4000041	          0x4889e5	                            mov rbp, rsp	       447	git-compat-util.h	FUNCTION_37
+0x4000044	      0xb8ffffffff	                     mov eax, 0xffffffff	       448	git-compat-util.h	FUNCTION_37
+0x4000049	              0x5d	                                 pop rbp	       449	git-compat-util.h	FUNCTION_37
+0x400004a	              0xc3	                                     ret	       449	git-compat-util.h	FUNCTION_37

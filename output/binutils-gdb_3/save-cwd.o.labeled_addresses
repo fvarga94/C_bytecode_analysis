@@ -1,0 +1,19 @@
+restore_cwd	FOR,0:ELSE,1:WHILE,0:SWITCH,0:functions,0:CALL,2:IF,1:DO,0	8
+0x40000a0	            0x8b07	                    mov eax, dword [rdi]	        87	save-cwd.c	FUNCTION_2	IF_1
+0x40000a2	            0x85c0	                           test eax, eax	        87	save-cwd.c	FUNCTION_2	IF_1
+0x40000a4	            0x780a	                            js 0x40000b0	        87	save-cwd.c	FUNCTION_2	IF_1
+0x40000a6	            0x89c7	                            mov edi, eax	        88	save-cwd.c	FUNCTION_2	CALL_1
+0x40000a8	      0xe900000000	                           jmp 0x40000ad	        88	save-cwd.c	FUNCTION_2	CALL_1
+0x40000ad	           0xf1f00	                         nop dword [rax]	        88	save-cwd.c	FUNCTION_2	CALL_1
+0x40000b0	        0x488b7f08	                mov rdi, qword [rdi + 8]	        90	save-cwd.c	FUNCTION_2	CALL_2
+0x40000b4	      0xe900000000	                           jmp 0x40000b9	        90	save-cwd.c	FUNCTION_2	CALL_2
+free_cwd	FOR,0:ELSE,0:WHILE,0:SWITCH,0:functions,0:CALL,1:IF,1:DO,0	9
+0x40000c0	              0x53	                                push rbx	        95	save-cwd.c	FUNCTION_3
+0x40000c1	          0x4889fb	                            mov rbx, rdi	        95	save-cwd.c	FUNCTION_3
+0x40000c4	            0x8b3f	                    mov edi, dword [rdi]	        96	save-cwd.c	FUNCTION_3	IF_1
+0x40000c6	            0x85ff	                           test edi, edi	        96	save-cwd.c	FUNCTION_3	IF_1
+0x40000c8	            0x7805	                            js 0x40000cf	        96	save-cwd.c	FUNCTION_3	IF_1
+0x40000ca	      0xe800000000	                          call 0x40000cf	        97	save-cwd.c	FUNCTION_3	IF_1
+0x40000cf	        0x488b7b08	                mov rdi, qword [rbx + 8]	        98	save-cwd.c	FUNCTION_3	CALL_1
+0x40000d3	              0x5b	                                 pop rbx	        99	save-cwd.c	FUNCTION_3
+0x40000d4	      0xe900000000	                           jmp 0x40000d9	        98	save-cwd.c	FUNCTION_3	CALL_1

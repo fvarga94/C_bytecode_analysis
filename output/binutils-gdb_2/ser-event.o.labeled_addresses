@@ -1,0 +1,49 @@
+make_serial_event	ELSE,0:FOR,0:CALL,1:IF,0:DO,0:functions,0:WHILE,0:SWITCH,0	2
+0x4000120	      0xbf00000000	                              mov edi, 0	       165	ser-event.c	FUNCTION_4	CALL_1
+0x4000125	      0xe900000000	                           jmp 0x400012a	       165	ser-event.c	FUNCTION_4	CALL_1
+serial_event_close	ELSE,0:FOR,0:CALL,4:IF,0:DO,0:functions,0:WHILE,0:SWITCH,0	17
+0x4000040	              0x55	                                push rbp	        95	ser-event.c	FUNCTION_2
+0x4000041	              0x53	                                push rbx	        95	ser-event.c	FUNCTION_2
+0x4000042	          0x4889fb	                            mov rbx, rdi	        95	ser-event.c	FUNCTION_2
+0x4000045	        0x4883ec08	                              sub rsp, 8	        95	ser-event.c	FUNCTION_2
+0x4000049	        0x488b6f18	            mov rbp, qword [rdi + 0x18] 	        96	ser-event.c	FUNCTION_2
+0x400004d	          0x8b7f04	                mov edi, dword [rdi + 4]	        98	ser-event.c	FUNCTION_2	CALL_1
+0x4000050	      0xe800000000	                          call 0x4000055	        98	ser-event.c	FUNCTION_2	CALL_1
+0x4000055	          0x8b7d00	                    mov edi, dword [rbp]	       100	ser-event.c	FUNCTION_2	CALL_2
+0x4000058	      0xe800000000	                          call 0x400005d	       100	ser-event.c	FUNCTION_2	CALL_2
+0x400005d	    0xc74304ffffff	        mov dword [rbx + 4], 0xffffffff 	       105	ser-event.c	FUNCTION_2
+0x4000064	          0x4889ef	                            mov rdi, rbp	        60	common-utils.h	FUNCTION_8
+0x4000067	      0xe800000000	                          call 0x400006c	        60	common-utils.h	FUNCTION_8
+0x400006c	    0x48c743180000	               mov qword [rbx + 0x18], 0	       108	ser-event.c	FUNCTION_2
+0x4000074	        0x4883c408	                              add rsp, 8	       109	ser-event.c	FUNCTION_2
+0x4000078	              0x5b	                                 pop rbx	       109	ser-event.c	FUNCTION_2
+0x4000079	              0x5d	                                 pop rbp	       109	ser-event.c	FUNCTION_2
+0x400007a	              0xc3	                                     ret	       109	ser-event.c	FUNCTION_2
+serial_event_set	ELSE,0:FOR,0:CALL,2:IF,0:DO,1:functions,0:WHILE,0:SWITCH,0	24
+0x4000140	              0x53	                                push rbx	       182	ser-event.c	FUNCTION_6
+0x4000141	        0x4883ec10	                           sub rsp, 0x10	       182	ser-event.c	FUNCTION_6
+0x4000145	        0x488b5f18	            mov rbx, qword [rdi + 0x18] 	       184	ser-event.c	FUNCTION_6
+0x4000149	    0x64488b042528	                mov rax, qword fs:[0x28]	       182	ser-event.c	FUNCTION_6
+0x4000152	      0x4889442408	                mov qword [rsp + 8], rax	       182	ser-event.c	FUNCTION_6
+0x4000157	            0x31c0	                            xor eax, eax	       182	ser-event.c	FUNCTION_6
+0x4000159	      0xc64424072b	                mov byte [rsp + 7], 0x2b	       187	ser-event.c	FUNCTION_6
+0x400015e	            0xeb0a	                           jmp 0x400016a	       187	ser-event.c	FUNCTION_6
+0x4000160	      0xe800000000	                          call 0x4000165	       193	ser-event.c	FUNCTION_6
+0x4000165	          0x833804	                      cmp dword [rax], 4	       193	ser-event.c	FUNCTION_6
+0x4000168	            0x7515	                           jne 0x400017f	       193	ser-event.c	FUNCTION_6
+0x400016a	            0x8b3b	                    mov edi, dword [rbx]	       191	ser-event.c	FUNCTION_6	DO_1	CALL_1
+0x400016c	      0x488d742407	                      lea rsi, [rsp + 7]	       191	ser-event.c	FUNCTION_6	DO_1	CALL_1
+0x4000171	      0xba01000000	                              mov edx, 1	       191	ser-event.c	FUNCTION_6	DO_1	CALL_1
+0x4000176	      0xe800000000	                          call 0x400017b	       191	ser-event.c	FUNCTION_6	DO_1	CALL_1
+0x400017b	            0x85c0	                           test eax, eax	       193	ser-event.c	FUNCTION_6
+0x400017d	            0x78e1	                            js 0x4000160	       193	ser-event.c	FUNCTION_6
+0x400017f	      0x488b442408	                mov rax, qword [rsp + 8]	       197	ser-event.c	FUNCTION_6
+0x4000184	    0x644833042528	                xor rax, qword fs:[0x28]	       197	ser-event.c	FUNCTION_6
+0x400018d	            0x7506	                           jne 0x4000195	       197	ser-event.c	FUNCTION_6
+0x400018f	        0x4883c410	                           add rsp, 0x10	       197	ser-event.c	FUNCTION_6
+0x4000193	              0x5b	                                 pop rbx	       197	ser-event.c	FUNCTION_6
+0x4000194	              0xc3	                                     ret	       197	ser-event.c	FUNCTION_6
+0x4000195	      0xe800000000	                          call 0x400019a	       197	ser-event.c	FUNCTION_6
+serial_event_fd	ELSE,0:FOR,0:CALL,0:IF,0:DO,0:functions,0:WHILE,0:SWITCH,0	2
+0x4000130	          0x8b4704	                mov eax, dword [rdi + 4]	       175	ser-event.c	FUNCTION_5
+0x4000133	              0xc3	                                     ret	       176	ser-event.c	FUNCTION_5

@@ -1,0 +1,230 @@
+nfs3_have_delegation	CALL,0:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	2
+0x4000090	            0x31c0	                            xor eax, eax	       914	nfs3proc.c	FUNCTION_43
+0x4000092	              0xc3	                                     ret	       914	nfs3proc.c	FUNCTION_43
+nfs3_proc_fsinfo	CALL,2:SWITCH,0:FOR,0:IF,1:ELSE,0:DO,0:WHILE,0:functions,0	24
+0x4000f10	            0x4154	                                push r12	       756	nfs3proc.c	FUNCTION_29
+0x4000f12	              0x55	                                push rbp	       756	nfs3proc.c	FUNCTION_29
+0x4000f13	          0x4989d4	                            mov r12, rdx	       756	nfs3proc.c	FUNCTION_29
+0x4000f16	              0x53	                                push rbx	       756	nfs3proc.c	FUNCTION_29
+0x4000f17	          0x4889fb	                            mov rbx, rdi	       756	nfs3proc.c	FUNCTION_29
+0x4000f1a	        0x488b7f28	            mov rdi, qword [rdi + 0x28] 	       759	nfs3proc.c	FUNCTION_29	CALL_1
+0x4000f1e	          0x4889f5	                            mov rbp, rsi	       756	nfs3proc.c	FUNCTION_29
+0x4000f21	      0xe87affffff	                 call sym.do_proc_fsinfo	       759	nfs3proc.c	FUNCTION_29	CALL_1
+0x4000f26	            0x85c0	                           test eax, eax	       760	nfs3proc.c	FUNCTION_29	IF_1
+0x4000f28	            0x741f	                            je 0x4000f49	       760	nfs3proc.c	FUNCTION_29	IF_1
+0x4000f2a	          0x488b13	                    mov rdx, qword [rbx]	       760	nfs3proc.c	FUNCTION_29	IF_1
+0x4000f2d	    0x488bbad80000	            mov rdi, qword [rdx + 0xd8] 	       760	nfs3proc.c	FUNCTION_29	IF_1
+0x4000f34	        0x483b7b28	            cmp rdi, qword [rbx + 0x28] 	       760	nfs3proc.c	FUNCTION_29	IF_1
+0x4000f38	            0x740f	                            je 0x4000f49	       760	nfs3proc.c	FUNCTION_29	IF_1
+0x4000f3a	              0x5b	                                 pop rbx	       763	nfs3proc.c	FUNCTION_29
+0x4000f3b	          0x4c89e2	                            mov rdx, r12	       761	nfs3proc.c	FUNCTION_29	CALL_2
+0x4000f3e	          0x4889ee	                            mov rsi, rbp	       761	nfs3proc.c	FUNCTION_29	CALL_2
+0x4000f41	              0x5d	                                 pop rbp	       763	nfs3proc.c	FUNCTION_29
+0x4000f42	            0x415c	                                 pop r12	       763	nfs3proc.c	FUNCTION_29
+0x4000f44	      0xe957ffffff	                  jmp sym.do_proc_fsinfo	       761	nfs3proc.c	FUNCTION_29	CALL_2
+0x4000f49	              0x5b	                                 pop rbx	       763	nfs3proc.c	FUNCTION_29
+0x4000f4a	              0x5d	                                 pop rbp	       763	nfs3proc.c	FUNCTION_29
+0x4000f4b	            0x415c	                                 pop r12	       763	nfs3proc.c	FUNCTION_29
+0x4000f4d	              0xc3	                                     ret	       763	nfs3proc.c	FUNCTION_29
+nfs3_proc_rename_setup	CALL,0:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	2
+0x4000050	    0x48c707000000	                      mov qword [rdi], 0	       443	nfs3proc.c	FUNCTION_18
+0x4000057	              0xc3	                                     ret	       443	nfs3proc.c	FUNCTION_18
+nfs3_proc_getattr	CALL,3:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	22
+0x4000dc0	              0x53	                                push rbx	       105	nfs3proc.c	FUNCTION_5
+0x4000dc1	          0x4889fb	                            mov rbx, rdi	       105	nfs3proc.c	FUNCTION_5
+0x4000dc4	          0x4889d7	                            mov rdi, rdx	       114	nfs3proc.c	FUNCTION_5	CALL_2
+0x4000dc7	        0x4883ec28	                           sub rsp, 0x28	       105	nfs3proc.c	FUNCTION_5
+0x4000dcb	    0x65488b042528	                mov rax, qword gs:[0x28]	       105	nfs3proc.c	FUNCTION_5
+0x4000dd4	      0x4889442420	             mov qword [rsp + 0x20], rax	       105	nfs3proc.c	FUNCTION_5
+0x4000dd9	            0x31c0	                            xor eax, eax	       105	nfs3proc.c	FUNCTION_5
+0x4000ddb	      0x4889742408	                mov qword [rsp + 8], rsi	       106	nfs3proc.c	FUNCTION_5
+0x4000de0	      0x4889542410	             mov qword [rsp + 0x10], rdx	       106	nfs3proc.c	FUNCTION_5
+0x4000de5	    0x48c744241800	               mov qword [rsp + 0x18], 0	       106	nfs3proc.c	FUNCTION_5
+0x4000dee	    0x48c704240000	                      mov qword [rsp], 0	       106	nfs3proc.c	FUNCTION_5
+0x4000df6	      0xe800000000	                          call 0x4000dfb	       114	nfs3proc.c	FUNCTION_5	CALL_2
+0x4000dfb	        0x488b7b28	            mov rdi, qword [rbx + 0x28] 	       115	nfs3proc.c	FUNCTION_5
+0x4000dff	          0x4889e6	                            mov rsi, rsp	       115	nfs3proc.c	FUNCTION_5
+0x4000e02	      0xe829f6ffff	  call sym.nfs3_rpc_wrapper.constprop.13	       115	nfs3proc.c	FUNCTION_5
+0x4000e07	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	       118	nfs3proc.c	FUNCTION_5
+0x4000e0c	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       118	nfs3proc.c	FUNCTION_5
+0x4000e15	            0x7506	                           jne 0x4000e1d	       118	nfs3proc.c	FUNCTION_5
+0x4000e17	        0x4883c428	                           add rsp, 0x28	       118	nfs3proc.c	FUNCTION_5
+0x4000e1b	              0x5b	                                 pop rbx	       118	nfs3proc.c	FUNCTION_5
+0x4000e1c	              0xc3	                                     ret	       118	nfs3proc.c	FUNCTION_5
+0x4000e1d	      0xe800000000	                          call 0x4000e22	       118	nfs3proc.c	FUNCTION_5
+nfs3_proc_statfs	CALL,3:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	22
+0x4000e30	              0x53	                                push rbx	       716	nfs3proc.c	FUNCTION_27
+0x4000e31	          0x4889fb	                            mov rbx, rdi	       716	nfs3proc.c	FUNCTION_27
+0x4000e34	        0x4883ec28	                           sub rsp, 0x28	       716	nfs3proc.c	FUNCTION_27
+0x4000e38	          0x488b3a	                    mov rdi, qword [rdx]	       725	nfs3proc.c	FUNCTION_27	CALL_2
+0x4000e3b	    0x65488b042528	                mov rax, qword gs:[0x28]	       716	nfs3proc.c	FUNCTION_27
+0x4000e44	      0x4889442420	             mov qword [rsp + 0x20], rax	       716	nfs3proc.c	FUNCTION_27
+0x4000e49	            0x31c0	                            xor eax, eax	       716	nfs3proc.c	FUNCTION_27
+0x4000e4b	      0x4889742408	                mov qword [rsp + 8], rsi	       717	nfs3proc.c	FUNCTION_27
+0x4000e50	      0x4889542410	             mov qword [rsp + 0x10], rdx	       717	nfs3proc.c	FUNCTION_27
+0x4000e55	    0x48c744241800	               mov qword [rsp + 0x18], 0	       717	nfs3proc.c	FUNCTION_27
+0x4000e5e	    0x48c704240000	                      mov qword [rsp], 0	       717	nfs3proc.c	FUNCTION_27
+0x4000e66	      0xe800000000	                          call 0x4000e6b	       725	nfs3proc.c	FUNCTION_27	CALL_2
+0x4000e6b	        0x488b7b28	            mov rdi, qword [rbx + 0x28] 	       726	nfs3proc.c	FUNCTION_27
+0x4000e6f	          0x4889e6	                            mov rsi, rsp	       726	nfs3proc.c	FUNCTION_27
+0x4000e72	      0xe8b9f5ffff	  call sym.nfs3_rpc_wrapper.constprop.13	       726	nfs3proc.c	FUNCTION_27
+0x4000e77	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	       729	nfs3proc.c	FUNCTION_27
+0x4000e7c	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       729	nfs3proc.c	FUNCTION_27
+0x4000e85	            0x7506	                           jne 0x4000e8d	       729	nfs3proc.c	FUNCTION_27
+0x4000e87	        0x4883c428	                           add rsp, 0x28	       729	nfs3proc.c	FUNCTION_27
+0x4000e8b	              0x5b	                                 pop rbx	       729	nfs3proc.c	FUNCTION_27
+0x4000e8c	              0xc3	                                     ret	       729	nfs3proc.c	FUNCTION_27
+0x4000e8d	      0xe800000000	                          call 0x4000e92	       729	nfs3proc.c	FUNCTION_27
+nfs3_proc_write_setup	CALL,0:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	2
+0x4000070	    0x48c706000000	                      mov qword [rsi], 0	       828	nfs3proc.c	FUNCTION_35
+0x4000077	              0xc3	                                     ret	       828	nfs3proc.c	FUNCTION_35
+nfs3_proc_get_root	CALL,2:SWITCH,0:FOR,0:IF,1:ELSE,0:DO,0:WHILE,0:functions,0	24
+0x4000d80	            0x4154	                                push r12	        90	nfs3proc.c	FUNCTION_4
+0x4000d82	              0x55	                                push rbp	        90	nfs3proc.c	FUNCTION_4
+0x4000d83	          0x4989d4	                            mov r12, rdx	        90	nfs3proc.c	FUNCTION_4
+0x4000d86	              0x53	                                push rbx	        90	nfs3proc.c	FUNCTION_4
+0x4000d87	          0x4889fb	                            mov rbx, rdi	        90	nfs3proc.c	FUNCTION_4
+0x4000d8a	        0x488b7f28	            mov rdi, qword [rdi + 0x28] 	        93	nfs3proc.c	FUNCTION_4	CALL_1
+0x4000d8e	          0x4889f5	                            mov rbp, rsi	        90	nfs3proc.c	FUNCTION_4
+0x4000d91	      0xe85affffff	               call sym.do_proc_get_root	        93	nfs3proc.c	FUNCTION_4	CALL_1
+0x4000d96	            0x85c0	                           test eax, eax	        94	nfs3proc.c	FUNCTION_4	IF_1
+0x4000d98	            0x741f	                            je 0x4000db9	        94	nfs3proc.c	FUNCTION_4	IF_1
+0x4000d9a	          0x488b13	                    mov rdx, qword [rbx]	        94	nfs3proc.c	FUNCTION_4	IF_1
+0x4000d9d	    0x488bbad80000	            mov rdi, qword [rdx + 0xd8] 	        94	nfs3proc.c	FUNCTION_4	IF_1
+0x4000da4	        0x483b7b28	            cmp rdi, qword [rbx + 0x28] 	        94	nfs3proc.c	FUNCTION_4	IF_1
+0x4000da8	            0x740f	                            je 0x4000db9	        94	nfs3proc.c	FUNCTION_4	IF_1
+0x4000daa	              0x5b	                                 pop rbx	        97	nfs3proc.c	FUNCTION_4
+0x4000dab	          0x4c89e2	                            mov rdx, r12	        95	nfs3proc.c	FUNCTION_4	CALL_2
+0x4000dae	          0x4889ee	                            mov rsi, rbp	        95	nfs3proc.c	FUNCTION_4	CALL_2
+0x4000db1	              0x5d	                                 pop rbp	        97	nfs3proc.c	FUNCTION_4
+0x4000db2	            0x415c	                                 pop r12	        97	nfs3proc.c	FUNCTION_4
+0x4000db4	      0xe937ffffff	                jmp sym.do_proc_get_root	        95	nfs3proc.c	FUNCTION_4	CALL_2
+0x4000db9	              0x5b	                                 pop rbx	        97	nfs3proc.c	FUNCTION_4
+0x4000dba	              0x5d	                                 pop rbp	        97	nfs3proc.c	FUNCTION_4
+0x4000dbb	            0x415c	                                 pop r12	        97	nfs3proc.c	FUNCTION_4
+0x4000dbd	              0xc3	                                     ret	        97	nfs3proc.c	FUNCTION_4
+nfs3_read_done	CALL,4:SWITCH,0:FOR,0:IF,2:ELSE,0:DO,0:WHILE,0:functions,0	28
+0x4000210	    0x488b86080300	           mov rax, qword [rsi + 0x308] 	       787	nfs3proc.c	FUNCTION_31	IF_1
+0x4000217	          0x4885c0	                           test rax, rax	       787	nfs3proc.c	FUNCTION_31	IF_1
+0x400021a	            0x7405	                            je 0x4000221	       787	nfs3proc.c	FUNCTION_31	IF_1
+0x400021c	      0xe900000000	                           jmp 0x4000221	       788	nfs3proc.c	FUNCTION_31	CALL_1
+0x4000221	              0x55	                                push rbp	       784	nfs3proc.c	FUNCTION_31
+0x4000222	              0x53	                                push rbx	       784	nfs3proc.c	FUNCTION_31
+0x4000223	          0x4889f3	                            mov rbx, rsi	       784	nfs3proc.c	FUNCTION_31
+0x4000226	    0x817f04f0fdff	        cmp dword [rdi + 4], 0xfffffdf0 	        50	nfs3proc.c	FUNCTION_2	IF_1
+0x400022d	          0x488b2e	                    mov rbp, qword [rsi]	       785	nfs3proc.c	FUNCTION_31
+0x4000230	            0x741c	                            je 0x400024e	        50	nfs3proc.c	FUNCTION_2	IF_1
+0x4000232	          0x4889ef	                            mov rdi, rbp	       793	nfs3proc.c	FUNCTION_31	CALL_3
+0x4000235	      0xe800000000	                          call 0x400023a	       793	nfs3proc.c	FUNCTION_31	CALL_3
+0x400023a	    0x488db3780100	                  lea rsi, [rbx + 0x178]	       794	nfs3proc.c	FUNCTION_31	CALL_4
+0x4000241	          0x4889ef	                            mov rdi, rbp	       794	nfs3proc.c	FUNCTION_31	CALL_4
+0x4000244	      0xe800000000	                          call 0x4000249	       794	nfs3proc.c	FUNCTION_31	CALL_4
+0x4000249	            0x31c0	                            xor eax, eax	       795	nfs3proc.c	FUNCTION_31
+0x400024b	              0x5b	                                 pop rbx	       796	nfs3proc.c	FUNCTION_31
+0x400024c	              0x5d	                                 pop rbp	       796	nfs3proc.c	FUNCTION_31
+0x400024d	              0xc3	                                     ret	       796	nfs3proc.c	FUNCTION_31
+0x400024e	        0x488b4528	            mov rax, qword [rbp + 0x28] 	       796	nfs3proc.c	FUNCTION_31
+0x4000252	    0x488b80080400	           mov rax, qword [rax + 0x408] 	       796	nfs3proc.c	FUNCTION_31
+0x4000259	        0x488b4040	            mov rax, qword [rax + 0x40] 	        29	iostat.h	FUNCTION_44	CALL_1
+0x400025d	    0x6548ff800001	              inc qword gs:[rax + 0x100]	        29	iostat.h	FUNCTION_44	CALL_1
+0x4000265	      0xe876ffffff	call sym.nfs3_async_handle_jukebox.part.7	        29	iostat.h	FUNCTION_44	CALL_1
+0x400026a	            0x85c0	                           test eax, eax	       790	nfs3proc.c	FUNCTION_31	IF_2	CALL_2
+0x400026c	            0x74c4	                            je 0x4000232	       790	nfs3proc.c	FUNCTION_31	IF_2	CALL_2
+0x400026e	      0xb8f5ffffff	                     mov eax, 0xfffffff5	       791	nfs3proc.c	FUNCTION_31	IF_2
+0x4000273	            0xebd6	                           jmp 0x400024b	       791	nfs3proc.c	FUNCTION_31	IF_2
+nfs3_proc_read_setup	CALL,0:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	2
+0x4000060	    0x48c706000000	                      mov qword [rsi], 0	       801	nfs3proc.c	FUNCTION_32
+0x4000067	              0xc3	                                     ret	       801	nfs3proc.c	FUNCTION_32
+nfs3_proc_unlink_setup	CALL,0:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	2
+0x4000040	    0x48c707000000	                      mov qword [rdi], 0	       419	nfs3proc.c	FUNCTION_15
+0x4000047	              0xc3	                                     ret	       419	nfs3proc.c	FUNCTION_15
+do_proc_get_root	CALL,4:SWITCH,0:FOR,0:IF,1:ELSE,0:DO,0:WHILE,0:functions,0	36
+0x4000cf0	              0x55	                                push rbp	        63	nfs3proc.c	FUNCTION_3
+0x4000cf1	              0x53	                                push rbx	        63	nfs3proc.c	FUNCTION_3
+0x4000cf2	          0x4889fd	                            mov rbp, rdi	        63	nfs3proc.c	FUNCTION_3
+0x4000cf5	          0x4889d3	                            mov rbx, rdx	        63	nfs3proc.c	FUNCTION_3
+0x4000cf8	        0x4883ec28	                           sub rsp, 0x28	        63	nfs3proc.c	FUNCTION_3
+0x4000cfc	          0x488b3a	                    mov rdi, qword [rdx]	        72	nfs3proc.c	FUNCTION_3	CALL_2
+0x4000cff	    0x65488b042528	                mov rax, qword gs:[0x28]	        63	nfs3proc.c	FUNCTION_3
+0x4000d08	      0x4889442420	             mov qword [rsp + 0x20], rax	        63	nfs3proc.c	FUNCTION_3
+0x4000d0d	            0x31c0	                            xor eax, eax	        63	nfs3proc.c	FUNCTION_3
+0x4000d0f	      0x4889742408	                mov qword [rsp + 8], rsi	        64	nfs3proc.c	FUNCTION_3
+0x4000d14	      0x4889542410	             mov qword [rsp + 0x10], rdx	        64	nfs3proc.c	FUNCTION_3
+0x4000d19	    0x48c744241800	               mov qword [rsp + 0x18], 0	        64	nfs3proc.c	FUNCTION_3
+0x4000d22	    0x48c704240000	                      mov qword [rsp], 0	        64	nfs3proc.c	FUNCTION_3
+0x4000d2a	      0xe800000000	                          call 0x4000d2f	        72	nfs3proc.c	FUNCTION_3	CALL_2
+0x4000d2f	          0x4889ef	                            mov rdi, rbp	        73	nfs3proc.c	FUNCTION_3
+0x4000d32	          0x4889e6	                            mov rsi, rsp	        73	nfs3proc.c	FUNCTION_3
+0x4000d35	      0xe8f6f6ffff	  call sym.nfs3_rpc_wrapper.constprop.13	        73	nfs3proc.c	FUNCTION_3
+0x4000d3a	            0x85c0	                           test eax, eax	        75	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d3c	            0x750b	                           jne 0x4000d49	        75	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d3e	          0x488b13	                    mov rdx, qword [rbx]	        75	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d41	    0xf7027f7c0200	               test dword [rdx], 0x27c7f	        75	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d47	            0x7417	                            je 0x4000d60	        75	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d49	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	        82	nfs3proc.c	FUNCTION_3
+0x4000d4e	    0x6548330c2528	                xor rcx, qword gs:[0x28]	        82	nfs3proc.c	FUNCTION_3
+0x4000d57	            0x7521	                           jne 0x4000d7a	        82	nfs3proc.c	FUNCTION_3
+0x4000d59	        0x4883c428	                           add rsp, 0x28	        82	nfs3proc.c	FUNCTION_3
+0x4000d5d	              0x5b	                                 pop rbx	        82	nfs3proc.c	FUNCTION_3
+0x4000d5e	              0x5d	                                 pop rbp	        82	nfs3proc.c	FUNCTION_3
+0x4000d5f	              0xc3	                                     ret	        82	nfs3proc.c	FUNCTION_3
+0x4000d60	          0x4889e6	                            mov rsi, rsp	        78	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d63	          0x4889ef	                            mov rdi, rbp	        78	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d66	      0x4889542410	             mov qword [rsp + 0x10], rdx	        77	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d6b	    0x48c704240000	                      mov qword [rsp], 0	        76	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d73	      0xe8b8f6ffff	  call sym.nfs3_rpc_wrapper.constprop.13	        78	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d78	            0xebcf	                           jmp 0x4000d49	        78	nfs3proc.c	FUNCTION_3	IF_1
+0x4000d7a	      0xe800000000	                          call 0x4000d7f	        82	nfs3proc.c	FUNCTION_3
+nfs3_proc_commit_setup	CALL,0:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	2
+0x4000080	    0x48c706000000	                      mov qword [rsi], 0	       849	nfs3proc.c	FUNCTION_38
+0x4000087	              0xc3	                                     ret	       849	nfs3proc.c	FUNCTION_38
+do_proc_fsinfo	CALL,3:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	22
+0x4000ea0	              0x53	                                push rbx	       734	nfs3proc.c	FUNCTION_28
+0x4000ea1	          0x4889fb	                            mov rbx, rdi	       734	nfs3proc.c	FUNCTION_28
+0x4000ea4	        0x4883ec28	                           sub rsp, 0x28	       734	nfs3proc.c	FUNCTION_28
+0x4000ea8	          0x488b3a	                    mov rdi, qword [rdx]	       743	nfs3proc.c	FUNCTION_28	CALL_2
+0x4000eab	    0x65488b042528	                mov rax, qword gs:[0x28]	       734	nfs3proc.c	FUNCTION_28
+0x4000eb4	      0x4889442420	             mov qword [rsp + 0x20], rax	       734	nfs3proc.c	FUNCTION_28
+0x4000eb9	            0x31c0	                            xor eax, eax	       734	nfs3proc.c	FUNCTION_28
+0x4000ebb	      0x4889742408	                mov qword [rsp + 8], rsi	       735	nfs3proc.c	FUNCTION_28
+0x4000ec0	      0x4889542410	             mov qword [rsp + 0x10], rdx	       735	nfs3proc.c	FUNCTION_28
+0x4000ec5	    0x48c744241800	               mov qword [rsp + 0x18], 0	       735	nfs3proc.c	FUNCTION_28
+0x4000ece	    0x48c704240000	                      mov qword [rsp], 0	       735	nfs3proc.c	FUNCTION_28
+0x4000ed6	      0xe800000000	                          call 0x4000edb	       743	nfs3proc.c	FUNCTION_28	CALL_2
+0x4000edb	          0x4889df	                            mov rdi, rbx	       744	nfs3proc.c	FUNCTION_28
+0x4000ede	          0x4889e6	                            mov rsi, rsp	       744	nfs3proc.c	FUNCTION_28
+0x4000ee1	      0xe84af5ffff	  call sym.nfs3_rpc_wrapper.constprop.13	       744	nfs3proc.c	FUNCTION_28
+0x4000ee6	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	       747	nfs3proc.c	FUNCTION_28
+0x4000eeb	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       747	nfs3proc.c	FUNCTION_28
+0x4000ef4	            0x7506	                           jne 0x4000efc	       747	nfs3proc.c	FUNCTION_28
+0x4000ef6	        0x4883c428	                           add rsp, 0x28	       747	nfs3proc.c	FUNCTION_28
+0x4000efa	              0x5b	                                 pop rbx	       747	nfs3proc.c	FUNCTION_28
+0x4000efb	              0xc3	                                     ret	       747	nfs3proc.c	FUNCTION_28
+0x4000efc	      0xe800000000	                          call 0x4000f01	       747	nfs3proc.c	FUNCTION_28
+nfs3_proc_pgio_rpc_prepare	CALL,1:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	3
+0x4000150	      0xe800000000	                          call 0x4000155	       807	nfs3proc.c	FUNCTION_33	CALL_1
+0x4000155	            0x31c0	                            xor eax, eax	       809	nfs3proc.c	FUNCTION_33
+0x4000157	              0xc3	                                     ret	       809	nfs3proc.c	FUNCTION_33
+nfs3_proc_pathconf	CALL,3:SWITCH,0:FOR,0:IF,0:ELSE,0:DO,0:WHILE,0:functions,0	22
+0x4000f50	              0x53	                                push rbx	       768	nfs3proc.c	FUNCTION_30
+0x4000f51	          0x4889fb	                            mov rbx, rdi	       768	nfs3proc.c	FUNCTION_30
+0x4000f54	        0x4883ec28	                           sub rsp, 0x28	       768	nfs3proc.c	FUNCTION_30
+0x4000f58	          0x488b3a	                    mov rdi, qword [rdx]	       777	nfs3proc.c	FUNCTION_30	CALL_2
+0x4000f5b	    0x65488b042528	                mov rax, qword gs:[0x28]	       768	nfs3proc.c	FUNCTION_30
+0x4000f64	      0x4889442420	             mov qword [rsp + 0x20], rax	       768	nfs3proc.c	FUNCTION_30
+0x4000f69	            0x31c0	                            xor eax, eax	       768	nfs3proc.c	FUNCTION_30
+0x4000f6b	      0x4889742408	                mov qword [rsp + 8], rsi	       769	nfs3proc.c	FUNCTION_30
+0x4000f70	      0x4889542410	             mov qword [rsp + 0x10], rdx	       769	nfs3proc.c	FUNCTION_30
+0x4000f75	    0x48c744241800	               mov qword [rsp + 0x18], 0	       769	nfs3proc.c	FUNCTION_30
+0x4000f7e	    0x48c704240000	                      mov qword [rsp], 0	       769	nfs3proc.c	FUNCTION_30
+0x4000f86	      0xe800000000	                          call 0x4000f8b	       777	nfs3proc.c	FUNCTION_30	CALL_2
+0x4000f8b	        0x488b7b28	            mov rdi, qword [rbx + 0x28] 	       778	nfs3proc.c	FUNCTION_30
+0x4000f8f	          0x4889e6	                            mov rsi, rsp	       778	nfs3proc.c	FUNCTION_30
+0x4000f92	      0xe899f4ffff	  call sym.nfs3_rpc_wrapper.constprop.13	       778	nfs3proc.c	FUNCTION_30
+0x4000f97	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	       781	nfs3proc.c	FUNCTION_30
+0x4000f9c	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       781	nfs3proc.c	FUNCTION_30
+0x4000fa5	            0x7506	                           jne 0x4000fad	       781	nfs3proc.c	FUNCTION_30
+0x4000fa7	        0x4883c428	                           add rsp, 0x28	       781	nfs3proc.c	FUNCTION_30
+0x4000fab	              0x5b	                                 pop rbx	       781	nfs3proc.c	FUNCTION_30
+0x4000fac	              0xc3	                                     ret	       781	nfs3proc.c	FUNCTION_30
+0x4000fad	      0xe800000000	                          call 0x4000fb2	       781	nfs3proc.c	FUNCTION_30

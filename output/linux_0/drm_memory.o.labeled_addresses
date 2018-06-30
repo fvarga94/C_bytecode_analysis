@@ -1,0 +1,110 @@
+drm_unbind_agp	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,1:FOR,0:DO,0:functions,0	1
+0x4000260	      0xe900000000	                   jmp section_end..text	       111	drm_memory.c	FUNCTION_4	CALL_1
+drm_bind_agp	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,1:FOR,0:DO,0:functions,0	2
+0x4000250	            0x89f6	                            mov esi, esi	       105	drm_memory.c	FUNCTION_3	CALL_1
+0x4000252	      0xe900000000	                           jmp 0x4000257	       105	drm_memory.c	FUNCTION_3	CALL_1
+drm_get_max_iomem	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,1:FOR,1:DO,0:functions,0	12
+0x4000040	    0x488b15000000	            mov rdx, qword [0x04000047] 	       158	drm_memory.c	FUNCTION_9	FOR_1
+0x4000047	            0x31c0	                            xor eax, eax	       158	drm_memory.c	FUNCTION_9	FOR_1
+0x4000049	          0x4885d2	                           test rdx, rdx	       158	drm_memory.c	FUNCTION_9	FOR_1
+0x400004c	            0x7416	                            je 0x4000064	       158	drm_memory.c	FUNCTION_9	FOR_1
+0x400004e	        0x488b4a08	                mov rcx, qword [rdx + 8]	       159	drm_memory.c	FUNCTION_9	FOR_1	CALL_1
+0x4000052	        0x488b5230	            mov rdx, qword [rdx + 0x30] 	       158	drm_memory.c	FUNCTION_9	FOR_1
+0x4000056	          0x4839c8	                            cmp rax, rcx	       159	drm_memory.c	FUNCTION_9	FOR_1	CALL_1
+0x4000059	        0x480f42c1	                          cmovb rax, rcx	       159	drm_memory.c	FUNCTION_9	FOR_1	CALL_1
+0x400005d	          0x4885d2	                           test rdx, rdx	       158	drm_memory.c	FUNCTION_9	FOR_1
+0x4000060	            0x75ec	                           jne 0x400004e	       158	drm_memory.c	FUNCTION_9	FOR_1
+0x4000062	            0xf3c3	                                     ret	       158	drm_memory.c	FUNCTION_9	FOR_1
+0x4000064	            0xf3c3	                                     ret	       163	drm_memory.c	FUNCTION_9
+drm_legacy_ioremapfree	SWITCH,0:WHILE,0:IF,2:ELSE,1:CALL,2:FOR,0:DO,0:functions,0	18
+0x4000160	        0x488b4718	            mov rax, qword [rdi + 0x18] 	       143	drm_memory.c	FUNCTION_8	IF_1
+0x4000164	          0x4885c0	                           test rax, rax	       143	drm_memory.c	FUNCTION_8	IF_1
+0x4000167	            0x742b	                            je 0x4000194	       143	drm_memory.c	FUNCTION_8	IF_1
+0x4000169	      0x48837f0800	                  cmp qword [rdi + 8], 0	       143	drm_memory.c	FUNCTION_8	IF_1
+0x400016e	            0x7424	                            je 0x4000194	       143	drm_memory.c	FUNCTION_8	IF_1
+0x4000170	    0x488b96b80100	           mov rdx, qword [rsi + 0x1b8] 	       146	drm_memory.c	FUNCTION_8	IF_2
+0x4000177	          0x4885d2	                           test rdx, rdx	       146	drm_memory.c	FUNCTION_8	IF_2
+0x400017a	            0x7410	                            je 0x400018c	       146	drm_memory.c	FUNCTION_8	IF_2
+0x400017c	    0x8b9284000000	            mov edx, dword [rdx + 0x84] 	       146	drm_memory.c	FUNCTION_8	IF_2
+0x4000182	            0x85d2	                           test edx, edx	       146	drm_memory.c	FUNCTION_8	IF_2
+0x4000184	            0x7406	                            je 0x400018c	       146	drm_memory.c	FUNCTION_8	IF_2
+0x4000186	        0x837f1003	               cmp dword [rdi + 0x10], 3	       146	drm_memory.c	FUNCTION_8	IF_2
+0x400018a	            0x740a	                            je 0x4000196	       146	drm_memory.c	FUNCTION_8	IF_2
+0x400018c	          0x4889c7	                            mov rdi, rax	       149	drm_memory.c	FUNCTION_8	CALL_2
+0x400018f	      0xe900000000	                           jmp 0x4000194	       149	drm_memory.c	FUNCTION_8	CALL_2
+0x4000194	            0xf3c3	                                     ret	       149	drm_memory.c	FUNCTION_8	CALL_2
+0x4000196	          0x4889c7	                            mov rdi, rax	       147	drm_memory.c	FUNCTION_8	CALL_1
+0x4000199	      0xe900000000	                           jmp 0x400019e	       147	drm_memory.c	FUNCTION_8	CALL_1
+drm_free_agp	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,1:FOR,0:DO,0:functions,0	1
+0x4000240	      0xe900000000	                           jmp 0x4000245	        99	drm_memory.c	FUNCTION_2	CALL_1
+agp_remap	SWITCH,0:WHILE,0:IF,0:ELSE,0:CALL,0:FOR,0:DO,0:functions,0	70
+0x4000070	            0x4155	                                push r13	        55	drm_memory.c	FUNCTION_1
+0x4000072	            0x4154	                                push r12	        55	drm_memory.c	FUNCTION_1
+0x4000074	    0x4881c6ff0f00	                          add rsi, 0xfff	        57	drm_memory.c	FUNCTION_1	CALL_1
+0x400007b	              0x55	                                push rbp	        55	drm_memory.c	FUNCTION_1
+0x400007c	              0x53	                                push rbx	        55	drm_memory.c	FUNCTION_1
+0x400007d	    0x4881e600f0ff	             and rsi, 0xfffffffffffff000	        57	drm_memory.c	FUNCTION_1	CALL_1
+0x4000084	    0x488b8ab80100	           mov rcx, qword [rdx + 0x1b8] 	        69	drm_memory.c	FUNCTION_1	CALL_3
+0x400008b	          0x4989f4	                            mov r12, rsi	        56	drm_memory.c	FUNCTION_1
+0x400008e	          0x4801fe	                            add rsi, rdi	        71	drm_memory.c	FUNCTION_1	IF_1
+0x4000091	        0x49c1ec0c	                            shr r12, 0xc	        56	drm_memory.c	FUNCTION_1
+0x4000095	        0x488b4150	            mov rax, qword [rcx + 0x50] 	        69	drm_memory.c	FUNCTION_1	CALL_3
+0x4000099	        0x4883c150	                           add rcx, 0x50	        69	drm_memory.c	FUNCTION_1	CALL_3
+0x400009d	          0x4839c1	                            cmp rcx, rax	        69	drm_memory.c	FUNCTION_1	CALL_3
+0x40000a0	        0x488d58e0	                   lea rbx, [rax - 0x20]	        69	drm_memory.c	FUNCTION_1	CALL_3
+0x40000a4	            0x7427	                            je 0x40000cd	        69	drm_memory.c	FUNCTION_1	CALL_3
+0x40000a6	        0x488b4310	            mov rax, qword [rbx + 0x10] 	        70	drm_memory.c	FUNCTION_1	IF_1
+0x40000aa	          0x4839f8	                            cmp rax, rdi	        70	drm_memory.c	FUNCTION_1	IF_1
+0x40000ad	            0x7711	                            ja 0x40000c0	        70	drm_memory.c	FUNCTION_1	IF_1
+0x40000af	          0x8b5318	            mov edx, dword [rbx + 0x18] 	        71	drm_memory.c	FUNCTION_1	IF_1
+0x40000b2	          0xc1e20c	                            shl edx, 0xc	        71	drm_memory.c	FUNCTION_1	IF_1
+0x40000b5	          0x4863d2	                         movsxd rdx, edx	        71	drm_memory.c	FUNCTION_1	IF_1
+0x40000b8	          0x4801d0	                            add rax, rdx	        71	drm_memory.c	FUNCTION_1	IF_1
+0x40000bb	          0x4839f0	                            cmp rax, rsi	        71	drm_memory.c	FUNCTION_1	IF_1
+0x40000be	            0x7316	                           jae 0x40000d6	        71	drm_memory.c	FUNCTION_1	IF_1
+0x40000c0	        0x488b4320	            mov rax, qword [rbx + 0x20] 	        69	drm_memory.c	FUNCTION_1	CALL_3
+0x40000c4	          0x4839c1	                            cmp rcx, rax	        69	drm_memory.c	FUNCTION_1	CALL_3
+0x40000c7	        0x488d58e0	                   lea rbx, [rax - 0x20]	        69	drm_memory.c	FUNCTION_1	CALL_3
+0x40000cb	            0x75d9	                           jne 0x40000a6	        69	drm_memory.c	FUNCTION_1	CALL_3
+0x40000cd	              0x5b	                                 pop rbx	        94	drm_memory.c	FUNCTION_1
+0x40000ce	            0x31c0	                            xor eax, eax	        75	drm_memory.c	FUNCTION_1	IF_2
+0x40000d0	              0x5d	                                 pop rbp	        94	drm_memory.c	FUNCTION_1
+0x40000d1	            0x415c	                                 pop r12	        94	drm_memory.c	FUNCTION_1
+0x40000d3	            0x415d	                                 pop r13	        94	drm_memory.c	FUNCTION_1
+0x40000d5	              0xc3	                                     ret	        94	drm_memory.c	FUNCTION_1
+0x40000d6	          0x4889fd	                            mov rbp, rdi	        94	drm_memory.c	FUNCTION_1
+0x40000d9	    0x4a8d3ce50000	                        lea rdi, [r12*8]	        83	drm_memory.c	FUNCTION_1	CALL_4
+0x40000e1	      0xe800000000	                          call 0x40000e6	        83	drm_memory.c	FUNCTION_1	CALL_4
+0x40000e6	          0x4885c0	                           test rax, rax	        84	drm_memory.c	FUNCTION_1	IF_3
+0x40000e9	          0x4989c5	                            mov r13, rax	        83	drm_memory.c	FUNCTION_1	CALL_4
+0x40000ec	            0x74df	                            je 0x40000cd	        84	drm_memory.c	FUNCTION_1	IF_3
+0x40000ee	        0x482b6b10	             sub rbp, qword [rbx + 0x10]	        87	drm_memory.c	FUNCTION_1
+0x40000f2	        0x488b4b08	                mov rcx, qword [rbx + 8]	        87	drm_memory.c	FUNCTION_1
+0x40000f6	            0x31c0	                            xor eax, eax	        88	drm_memory.c	FUNCTION_1	FOR_1
+0x40000f8	        0x48c1ed0c	                            shr rbp, 0xc	        87	drm_memory.c	FUNCTION_1
+0x40000fc	    0x488d14ed0000	                        lea rdx, [rbp*8]	        87	drm_memory.c	FUNCTION_1
+0x4000104	        0x48035118	             add rdx, qword [rcx + 0x18]	        87	drm_memory.c	FUNCTION_1
+0x4000108	          0x4d85e4	                           test r12, r12	        88	drm_memory.c	FUNCTION_1	FOR_1
+0x400010b	            0x7412	                            je 0x400011f	        88	drm_memory.c	FUNCTION_1	FOR_1
+0x400010d	        0x488b0cc2	            mov rcx, qword [rdx + rax*8]	        89	drm_memory.c	FUNCTION_1	FOR_1
+0x4000111	      0x49894cc500	            mov qword [r13 + rax*8], rcx	        89	drm_memory.c	FUNCTION_1	FOR_1
+0x4000116	        0x4883c001	                              add rax, 1	        88	drm_memory.c	FUNCTION_1	FOR_1
+0x400011a	          0x4939c4	                            cmp r12, rax	        88	drm_memory.c	FUNCTION_1	FOR_1
+0x400011d	            0x75ee	                           jne 0x400010d	        88	drm_memory.c	FUNCTION_1	FOR_1
+0x400011f	     0xfb70d000000	           movzx ecx, word [0x04000126] 	        90	drm_memory.c	FUNCTION_1	CALL_5
+0x4000126	    0x48b863010000	          movabs rax, 0x8000000000000163	        90	drm_memory.c	FUNCTION_1	CALL_5
+0x4000130	          0x4489e6	                           mov esi, r12d	        90	drm_memory.c	FUNCTION_1	CALL_5
+0x4000133	          0x4c89ef	                            mov rdi, r13	        90	drm_memory.c	FUNCTION_1	CALL_5
+0x4000136	      0xba01000000	                              mov edx, 1	        90	drm_memory.c	FUNCTION_1	CALL_5
+0x400013b	          0x4809c1	                             or rcx, rax	        90	drm_memory.c	FUNCTION_1	CALL_5
+0x400013e	    0x48230d000000	             and rcx, qword [0x04000145]	        90	drm_memory.c	FUNCTION_1	CALL_5
+0x4000145	      0xe800000000	                          call 0x400014a	        90	drm_memory.c	FUNCTION_1	CALL_5
+0x400014a	          0x4c89ef	                            mov rdi, r13	        91	drm_memory.c	FUNCTION_1	CALL_6
+0x400014d	          0x4889c3	                            mov rbx, rax	        90	drm_memory.c	FUNCTION_1	CALL_5
+0x4000150	      0xe800000000	                          call 0x4000155	        91	drm_memory.c	FUNCTION_1	CALL_6
+0x4000155	          0x4889d8	                            mov rax, rbx	        93	drm_memory.c	FUNCTION_1
+0x4000158	              0x5b	                                 pop rbx	        94	drm_memory.c	FUNCTION_1
+0x4000159	              0x5d	                                 pop rbp	        94	drm_memory.c	FUNCTION_1
+0x400015a	            0x415c	                                 pop r12	        94	drm_memory.c	FUNCTION_1
+0x400015c	            0x415d	                                 pop r13	        94	drm_memory.c	FUNCTION_1
+0x400015e	              0xc3	                                     ret	        94	drm_memory.c	FUNCTION_1

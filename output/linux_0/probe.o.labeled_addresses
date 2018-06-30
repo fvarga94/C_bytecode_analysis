@@ -1,0 +1,1208 @@
+pcibus_class_init	FOR,0:IF,0:WHILE,0:functions,0:CALL,1:DO,0:SWITCH,0:ELSE,0	6
+0x4000040	      0xb801000000	                              mov eax, 1	        71	probe.c	FUNCTION_2
+0x4000045	              0xc3	                                     ret	        71	probe.c	FUNCTION_2
+0x4000046	    0x662e0f1f8400	                 nop word cs:[rax + rax]	        71	probe.c	FUNCTION_2
+0x4000050	              0x48	                                 invalid	       527	probe.c	FUNCTION_15	IF_1
+0x4000051	              0x8b	                                 invalid	       527	probe.c	FUNCTION_15	IF_1
+0x4000052	              0x87	                                 invalid	       527	probe.c	FUNCTION_15	IF_1
+find_anything	FOR,0:IF,0:WHILE,0:functions,0:CALL,0:DO,0:SWITCH,0:ELSE,0	2
+0x4000040	      0xb801000000	                              mov eax, 1	        71	probe.c	FUNCTION_2
+0x4000045	              0xc3	                                     ret	        71	probe.c	FUNCTION_2
+pci_rescan_bus	FOR,0:IF,0:WHILE,0:functions,0:CALL,3:DO,0:SWITCH,0:ELSE,0	14
+0x40037e0	              0x55	                                push rbp	      2988	probe.c	FUNCTION_89
+0x40037e1	              0x53	                                push rbx	      2988	probe.c	FUNCTION_89
+0x40037e2	            0x31f6	                            xor esi, esi	      2712	probe.c	FUNCTION_76	CALL_1
+0x40037e4	          0x4889fb	                            mov rbx, rdi	      2988	probe.c	FUNCTION_89
+0x40037e7	      0xe854fdffff	      call sym.pci_scan_child_bus_extend	      2712	probe.c	FUNCTION_76	CALL_1
+0x40037ec	          0x4889df	                            mov rdi, rbx	      2992	probe.c	FUNCTION_89	CALL_2
+0x40037ef	            0x89c5	                            mov ebp, eax	      2712	probe.c	FUNCTION_76	CALL_1
+0x40037f1	      0xe800000000	                          call 0x40037f6	      2992	probe.c	FUNCTION_89	CALL_2
+0x40037f6	          0x4889df	                            mov rdi, rbx	      2993	probe.c	FUNCTION_89	CALL_3
+0x40037f9	      0xe800000000	                          call 0x40037fe	      2993	probe.c	FUNCTION_89	CALL_3
+0x40037fe	            0x89e8	                            mov eax, ebp	      2996	probe.c	FUNCTION_89
+0x4003800	              0x5b	                                 pop rbx	      2996	probe.c	FUNCTION_89
+0x4003801	              0x5d	                                 pop rbp	      2996	probe.c	FUNCTION_89
+0x4003802	              0xc3	                                     ret	      2996	probe.c	FUNCTION_89
+pci_release_dev	FOR,0:IF,0:WHILE,0:functions,0:CALL,8:DO,0:SWITCH,0:ELSE,0	20
+0x4000270	              0x55	                                push rbp	      2022	probe.c	FUNCTION_55
+0x4000271	              0x53	                                push rbx	      2022	probe.c	FUNCTION_55
+0x4000272	    0x488d9f60ffff	                   lea rbx, [rdi - 0xa0]	      2025	probe.c	FUNCTION_55	CALL_1
+0x4000279	          0x4889fd	                            mov rbp, rdi	      2022	probe.c	FUNCTION_55
+0x400027c	          0x4889df	                            mov rdi, rbx	      2008	probe.c	FUNCTION_54	CALL_1
+0x400027f	      0xe800000000	                          call 0x4000284	      2008	probe.c	FUNCTION_54	CALL_1
+0x4000284	          0x4889df	                            mov rdi, rbx	      2010	probe.c	FUNCTION_54	CALL_3
+0x4000287	      0xe800000000	                          call 0x400028c	      2010	probe.c	FUNCTION_54	CALL_3
+0x400028c	          0x4889df	                            mov rdi, rbx	      2028	probe.c	FUNCTION_55	CALL_4
+0x400028f	      0xe800000000	                          call 0x4000294	      2028	probe.c	FUNCTION_55	CALL_4
+0x4000294	    0x488bbd70ffff	             mov rdi, qword [rbp - 0x90]	      2029	probe.c	FUNCTION_55	CALL_5
+0x400029b	      0xe800000000	                          call 0x40002a0	      2029	probe.c	FUNCTION_55	CALL_5
+0x40002a0	    0x488bbde80600	           mov rdi, qword [rbp + 0x6e8] 	      2030	probe.c	FUNCTION_55	CALL_6
+0x40002a7	      0xe800000000	                          call 0x40002ac	      2030	probe.c	FUNCTION_55	CALL_6
+0x40002ac	        0x488b7db8	             mov rdi, qword [rbp - 0x48]	      2031	probe.c	FUNCTION_55	CALL_7
+0x40002b0	      0xe800000000	                          call 0x40002b5	      2031	probe.c	FUNCTION_55	CALL_7
+0x40002b5	          0x4889df	                            mov rdi, rbx	      2032	probe.c	FUNCTION_55	CALL_8
+0x40002b8	              0x5b	                                 pop rbx	      2033	probe.c	FUNCTION_55
+0x40002b9	              0x5d	                                 pop rbp	      2033	probe.c	FUNCTION_55
+0x40002ba	      0xe900000000	                           jmp 0x40002bf	      2032	probe.c	FUNCTION_55	CALL_8
+pci_bus_release_busn_res	FOR,0:IF,1:WHILE,0:functions,0:CALL,2:DO,0:SWITCH,0:ELSE,0	22
+0x4003aa0	    0x4883bf980000	               cmp qword [rdi + 0x98], 0	      2852	probe.c	FUNCTION_84	IF_1
+0x4003aa8	            0x7451	                            je 0x4003afb	      2852	probe.c	FUNCTION_84	IF_1
+0x4003aaa	    0x4883bfa80000	               cmp qword [rdi + 0xa8], 0	      2852	probe.c	FUNCTION_84	IF_1
+0x4003ab2	            0x7447	                            je 0x4003afb	      2852	probe.c	FUNCTION_84	IF_1
+0x4003ab4	              0x55	                                push rbp	      2848	probe.c	FUNCTION_84
+0x4003ab5	    0x488daf800000	                   lea rbp, [rdi + 0x80]	      2849	probe.c	FUNCTION_84
+0x4003abc	              0x53	                                push rbx	      2848	probe.c	FUNCTION_84
+0x4003abd	          0x4889fb	                            mov rbx, rdi	      2848	probe.c	FUNCTION_84
+0x4003ac0	          0x4889ef	                            mov rdi, rbp	      2855	probe.c	FUNCTION_84	CALL_1
+0x4003ac3	      0xe800000000	                          call 0x4003ac8	      2855	probe.c	FUNCTION_84	CALL_1
+0x4003ac8	    0x488db3200100	                  lea rsi, [rbx + 0x120]	      2856	probe.c	FUNCTION_84	CALL_2
+0x4003acf	          0x4889e9	                            mov rcx, rbp	      2856	probe.c	FUNCTION_84	CALL_2
+0x4003ad2	            0x85c0	                           test eax, eax	      2856	probe.c	FUNCTION_84	CALL_2
+0x4003ad4	              0x5b	                                 pop rbx	      2859	probe.c	FUNCTION_84
+0x4003ad5	              0x5d	                                 pop rbp	      2859	probe.c	FUNCTION_84
+0x4003ad6	    0x49c7c0000000	                               mov r8, 0	      2856	probe.c	FUNCTION_84	CALL_2
+0x4003add	    0x48c7c0000000	                              mov rax, 0	      2856	probe.c	FUNCTION_84	CALL_2
+0x4003ae4	    0x48c7c2000000	                              mov rdx, 0	      2856	probe.c	FUNCTION_84	CALL_2
+0x4003aeb	        0x4c0f45c0	                          cmovne r8, rax	      2856	probe.c	FUNCTION_84	CALL_2
+0x4003aef	    0x48c7c7000000	                              mov rdi, 0	      2856	probe.c	FUNCTION_84	CALL_2
+0x4003af6	      0xe900000000	                           jmp 0x4003afb	      2856	probe.c	FUNCTION_84	CALL_2
+0x4003afb	            0xf3c3	                                     ret	      2856	probe.c	FUNCTION_84	CALL_2
+pci_scan_root_bus	FOR,0:IF,4:WHILE,0:functions,0:CALL,6:DO,0:SWITCH,0:ELSE,0	51
+0x4003a00	          0x498b00	                     mov rax, qword [r8]	      2908	probe.c	FUNCTION_86	CALL_1
+0x4003a03	              0x55	                                push rbp	      2902	probe.c	FUNCTION_86
+0x4003a04	            0x89f5	                            mov ebp, esi	      2902	probe.c	FUNCTION_86
+0x4003a06	              0x53	                                push rbx	      2902	probe.c	FUNCTION_86
+0x4003a07	          0x4939c0	                             cmp r8, rax	      2908	probe.c	FUNCTION_86	CALL_1
+0x4003a0a	            0x750a	                           jne 0x4003a16	      2908	probe.c	FUNCTION_86	CALL_1
+0x4003a0c	            0xeb31	                           jmp 0x4003a3f	      2908	probe.c	FUNCTION_86	CALL_1
+0x4003a0e	          0x488b00	                    mov rax, qword [rax]	      2908	probe.c	FUNCTION_86	CALL_1
+0x4003a11	          0x4939c0	                             cmp r8, rax	      2908	probe.c	FUNCTION_86	CALL_1
+0x4003a14	            0x7429	                            je 0x4003a3f	      2908	probe.c	FUNCTION_86	CALL_1
+0x4003a16	        0x488b7010	            mov rsi, qword [rax + 0x10] 	      2909	probe.c	FUNCTION_86	IF_1
+0x4003a1a	        0xf6461910	           test byte [rsi + 0x19], 0x10 	      2909	probe.c	FUNCTION_86	IF_1
+0x4003a1e	            0x74ee	                            je 0x4003a0e	      2909	probe.c	FUNCTION_86	IF_1
+0x4003a20	            0x89ee	                            mov esi, ebp	      2914	probe.c	FUNCTION_86	CALL_2
+0x4003a22	      0xe800000000	                          call 0x4003a27	      2914	probe.c	FUNCTION_86	CALL_2
+0x4003a27	          0x4885c0	                           test rax, rax	      2915	probe.c	FUNCTION_86	IF_2
+0x4003a2a	          0x4889c3	                            mov rbx, rax	      2914	probe.c	FUNCTION_86	CALL_2
+0x4003a2d	            0x745f	                            je 0x4003a8e	      2915	probe.c	FUNCTION_86	IF_2
+0x4003a2f	            0x31f6	                            xor esi, esi	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003a31	          0x4889c7	                            mov rdi, rax	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003a34	      0xe807fbffff	      call sym.pci_scan_child_bus_extend	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003a39	          0x4889d8	                            mov rax, rbx	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003a3c	              0x5b	                                 pop rbx	      2931	probe.c	FUNCTION_86
+0x4003a3d	              0x5d	                                 pop rbp	      2931	probe.c	FUNCTION_86
+0x4003a3e	              0xc3	                                     ret	      2931	probe.c	FUNCTION_86
+0x4003a3f	            0x89ee	                            mov esi, ebp	      2914	probe.c	FUNCTION_86	CALL_2
+0x4003a41	      0xe800000000	                          call 0x4003a46	      2914	probe.c	FUNCTION_86	CALL_2
+0x4003a46	          0x4889c3	                            mov rbx, rax	      2914	probe.c	FUNCTION_86	CALL_2
+0x4003a49	            0x31c0	                            xor eax, eax	      2916	probe.c	FUNCTION_86	IF_2
+0x4003a4b	          0x4885db	                           test rbx, rbx	      2915	probe.c	FUNCTION_86	IF_2
+0x4003a4e	            0x74ec	                            je 0x4003a3c	      2915	probe.c	FUNCTION_86	IF_2
+0x4003a50	    0x488dbb200100	                  lea rdi, [rbx + 0x120]	      2919	probe.c	FUNCTION_86	IF_3	CALL_3
+0x4003a57	            0x89ea	                            mov edx, ebp	      2919	probe.c	FUNCTION_86	IF_3	CALL_3
+0x4003a59	    0x48c7c6000000	                              mov rsi, 0	      2919	probe.c	FUNCTION_86	IF_3	CALL_3
+0x4003a60	      0xe800000000	                          call 0x4003a65	      2919	probe.c	FUNCTION_86	IF_3	CALL_3
+0x4003a65	      0xbaff000000	                           mov edx, 0xff	      2922	probe.c	FUNCTION_86	IF_3	CALL_4
+0x4003a6a	            0x89ee	                            mov esi, ebp	      2922	probe.c	FUNCTION_86	IF_3	CALL_4
+0x4003a6c	          0x4889df	                            mov rdi, rbx	      2922	probe.c	FUNCTION_86	IF_3	CALL_4
+0x4003a6f	      0xe800000000	                          call 0x4003a74	      2922	probe.c	FUNCTION_86	IF_3	CALL_4
+0x4003a74	          0x4889df	                            mov rdi, rbx	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003a77	            0x31f6	                            xor esi, esi	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003a79	      0xe8c2faffff	      call sym.pci_scan_child_bus_extend	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003a7e	          0x4889df	                            mov rdi, rbx	      2928	probe.c	FUNCTION_86	CALL_6
+0x4003a81	            0x89c6	                            mov esi, eax	      2928	probe.c	FUNCTION_86	CALL_6
+0x4003a83	      0xe800000000	                          call 0x4003a88	      2928	probe.c	FUNCTION_86	CALL_6
+0x4003a88	          0x4889d8	                            mov rax, rbx	      2928	probe.c	FUNCTION_86	CALL_6
+0x4003a8b	              0x5b	                                 pop rbx	      2931	probe.c	FUNCTION_86
+0x4003a8c	              0x5d	                                 pop rbp	      2931	probe.c	FUNCTION_86
+0x4003a8d	              0xc3	                                     ret	      2931	probe.c	FUNCTION_86
+0x4003a8e	            0x31c0	                            xor eax, eax	      2916	probe.c	FUNCTION_86	IF_2
+0x4003a90	            0xebaa	                           jmp 0x4003a3c	      2916	probe.c	FUNCTION_86	IF_2
+pci_lock_rescan_remove	FOR,0:IF,0:WHILE,0:functions,0:CALL,1:DO,0:SWITCH,0:ELSE,0	2
+0x40002c0	    0x48c7c7000000	                              mov rdi, 0	      3007	probe.c	FUNCTION_90	CALL_1
+0x40002c7	      0xe900000000	                           jmp 0x40002cc	      3007	probe.c	FUNCTION_90	CALL_1
+no_pci_devices	FOR,0:IF,0:WHILE,0:functions,0:CALL,2:DO,0:SWITCH,0:ELSE,0	14
+0x4000090	              0x53	                                push rbx	        79	probe.c	FUNCTION_3
+0x4000091	            0x31d2	                            xor edx, edx	        83	probe.c	FUNCTION_3	CALL_1
+0x4000093	            0x31f6	                            xor esi, esi	        83	probe.c	FUNCTION_3	CALL_1
+0x4000095	    0x48c7c1000000	                              mov rcx, 0	        83	probe.c	FUNCTION_3	CALL_1
+0x400009c	    0x48c7c7000000	                              mov rdi, 0	        83	probe.c	FUNCTION_3	CALL_1
+0x40000a3	      0xe800000000	                          call 0x40000a8	        83	probe.c	FUNCTION_3	CALL_1
+0x40000a8	          0x4889c3	                            mov rbx, rax	        83	probe.c	FUNCTION_3	CALL_1
+0x40000ab	          0x4889c7	                            mov rdi, rax	        85	probe.c	FUNCTION_3	CALL_2
+0x40000ae	      0xe800000000	                          call 0x40000b3	        85	probe.c	FUNCTION_3	CALL_2
+0x40000b3	            0x31c0	                            xor eax, eax	        86	probe.c	FUNCTION_3
+0x40000b5	          0x4885db	                           test rbx, rbx	        86	probe.c	FUNCTION_3
+0x40000b8	           0xf94c0	                                 sete al	        86	probe.c	FUNCTION_3
+0x40000bb	              0x5b	                                 pop rbx	        87	probe.c	FUNCTION_3
+0x40000bc	              0xc3	                                     ret	        87	probe.c	FUNCTION_3
+pci_unlock_rescan_remove	FOR,0:IF,0:WHILE,0:functions,0:CALL,1:DO,0:SWITCH,0:ELSE,0	2
+0x40002d0	    0x48c7c7000000	                              mov rdi, 0	      3013	probe.c	FUNCTION_91	CALL_1
+0x40002d7	      0xe900000000	                           jmp 0x40002dc	      3013	probe.c	FUNCTION_91	CALL_1
+pci_read_bridge_bases	FOR,1:IF,2:WHILE,0:functions,1:CALL,6:DO,0:SWITCH,0:ELSE,0	235
+0x4000de0	            0x4157	                                push r15	       468	probe.c	FUNCTION_13
+0x4000de2	            0x4156	                                push r14	       468	probe.c	FUNCTION_13
+0x4000de4	            0x4155	                                push r13	       468	probe.c	FUNCTION_13
+0x4000de6	            0x4154	                                push r12	       468	probe.c	FUNCTION_13
+0x4000de8	              0x55	                                push rbp	       468	probe.c	FUNCTION_13
+0x4000de9	              0x53	                                push rbx	       468	probe.c	FUNCTION_13
+0x4000dea	        0x4883ec38	                           sub rsp, 0x38	       468	probe.c	FUNCTION_13
+0x4000dee	        0x4c8b6f38	            mov r13, qword [rdi + 0x38] 	       469	probe.c	FUNCTION_13
+0x4000df2	    0x65488b042528	                mov rax, qword gs:[0x28]	       468	probe.c	FUNCTION_13
+0x4000dfb	      0x4889442430	             mov qword [rsp + 0x30], rax	       468	probe.c	FUNCTION_13
+0x4000e00	            0x31c0	                            xor eax, eax	       468	probe.c	FUNCTION_13
+0x4000e02	      0x48837f1000	               cmp qword [rdi + 0x10], 0	       473	probe.c	FUNCTION_13	IF_1	CALL_1
+0x4000e07	     0xf8402030000	                            je 0x400110f	       473	probe.c	FUNCTION_13	IF_1	CALL_1
+0x4000e0d	    0x41f685390600	              test byte [r13 + 0x639], 1	       476	probe.c	FUNCTION_13	CALL_2
+0x4000e15	    0x4d8da5a00000	                   lea r12, [r13 + 0xa0]	       476	probe.c	FUNCTION_13	CALL_2
+0x4000e1c	    0x48c7c0000000	                              mov rax, 0	       476	probe.c	FUNCTION_13	CALL_2
+0x4000e23	    0x488d97800000	                   lea rdx, [rdi + 0x80]	       476	probe.c	FUNCTION_13	CALL_2
+0x4000e2a	    0x48c7c1000000	                              mov rcx, 0	       476	probe.c	FUNCTION_13	CALL_2
+0x4000e31	          0x4889fd	                            mov rbp, rdi	       476	probe.c	FUNCTION_13	CALL_2
+0x4000e34	    0x48c7c6000000	                              mov rsi, 0	       476	probe.c	FUNCTION_13	CALL_2
+0x4000e3b	          0x4c89e7	                            mov rdi, r12	       476	probe.c	FUNCTION_13	CALL_2
+0x4000e3e	        0x480f45c8	                         cmovne rcx, rax	       476	probe.c	FUNCTION_13	CALL_2
+0x4000e42	      0xe800000000	                          call 0x4000e47	       476	probe.c	FUNCTION_13	CALL_2
+0x4000e47	          0x4889ef	                            mov rdi, rbp	       480	probe.c	FUNCTION_13	CALL_3
+0x4000e4a	      0xe800000000	                          call 0x4000e4f	       480	probe.c	FUNCTION_13	CALL_3
+0x4000e4f	    0x498d85380500	                  lea rax, [r13 + 0x538]	       482	probe.c	FUNCTION_13	FOR_1
+0x4000e56	        0x4c8b7538	            mov r14, qword [rbp + 0x38] 	       482	probe.c	FUNCTION_13	FOR_1
+0x4000e5a	      0x488d542418	                   lea rdx, [rsp + 0x18]	       369	probe.c	FUNCTION_10	CALL_1
+0x4000e5f	      0xbe1c000000	                           mov esi, 0x1c	       369	probe.c	FUNCTION_10	CALL_1
+0x4000e64	        0x48894550	            mov qword [rbp + 0x50], rax 	       482	probe.c	FUNCTION_13	FOR_1
+0x4000e68	      0x4889442408	                mov qword [rsp + 8], rax	       482	probe.c	FUNCTION_13	FOR_1
+0x4000e6d	    0x498d85780500	                  lea rax, [r13 + 0x578]	       482	probe.c	FUNCTION_13	FOR_1
+0x4000e74	          0x4c89f7	                            mov rdi, r14	       369	probe.c	FUNCTION_10	CALL_1
+0x4000e77	        0x48894558	            mov qword [rbp + 0x58], rax 	       482	probe.c	FUNCTION_13	FOR_1
+0x4000e7b	    0x498d85b80500	                  lea rax, [r13 + 0x5b8]	       482	probe.c	FUNCTION_13	FOR_1
+0x4000e82	        0x48894560	            mov qword [rbp + 0x60], rax 	       482	probe.c	FUNCTION_13	FOR_1
+0x4000e86	    0x498d85f80500	                  lea rax, [r13 + 0x5f8]	       482	probe.c	FUNCTION_13	FOR_1
+0x4000e8d	        0x48894568	            mov qword [rbp + 0x68], rax 	       482	probe.c	FUNCTION_13	FOR_1
+0x4000e91	    0x410fb6863c06	          movzx eax, byte [r14 + 0x63c] 	       362	probe.c	FUNCTION_10	IF_1
+0x4000e99	          0x83e008	                              and eax, 8	       362	probe.c	FUNCTION_10	IF_1
+0x4000e9c	            0x3c01	                               cmp al, 1	       365	probe.c	FUNCTION_10	IF_1
+0x4000e9e	          0x4d19c0	                              sbb r8, r8	       365	probe.c	FUNCTION_10	IF_1
+0x4000ea1	    0x4181e0000c00	                          and r8d, 0xc00	       365	probe.c	FUNCTION_10	IF_1
+0x4000ea8	    0x4981c0000400	                           add r8, 0x400	       365	probe.c	FUNCTION_10	IF_1
+0x4000eaf	            0x3c01	                               cmp al, 1	       365	probe.c	FUNCTION_10	IF_1
+0x4000eb1	          0x4819db	                            sbb rbx, rbx	       365	probe.c	FUNCTION_10	IF_1
+0x4000eb4	        0x4c890424	                     mov qword [rsp], r8	       365	probe.c	FUNCTION_10	IF_1
+0x4000eb8	      0x4c89442410	              mov qword [rsp + 0x10], r8	       365	probe.c	FUNCTION_10	IF_1
+0x4000ebd	      0xe800000000	                          call 0x4000ec2	       369	probe.c	FUNCTION_10	CALL_1
+0x4000ec2	      0x488d54241a	                   lea rdx, [rsp + 0x1a]	       370	probe.c	FUNCTION_10	CALL_2
+0x4000ec7	      0xbe1d000000	                           mov esi, 0x1d	       370	probe.c	FUNCTION_10	CALL_2
+0x4000ecc	          0x4c89f7	                            mov rdi, r14	       370	probe.c	FUNCTION_10	CALL_2
+0x4000ecf	        0x4883e3f4	             and rbx, 0xfffffffffffffff4	       365	probe.c	FUNCTION_10	IF_1
+0x4000ed3	      0xe800000000	                          call 0x4000ed8	       370	probe.c	FUNCTION_10	CALL_2
+0x4000ed8	    0x440fb67c2418	          movzx r15d, byte [rsp + 0x18] 	       371	probe.c	FUNCTION_10
+0x4000ede	       0xfb654241a	           movzx edx, byte [rsp + 0x1a] 	       372	probe.c	FUNCTION_10
+0x4000ee3	        0x4883eb04	                              sub rbx, 4	       365	probe.c	FUNCTION_10	IF_1
+0x4000ee7	        0x4c8b0424	                     mov r8, qword [rsp]	       374	probe.c	FUNCTION_10	IF_2
+0x4000eeb	          0x4c89f8	                            mov rax, r15	       371	probe.c	FUNCTION_10
+0x4000eee	          0x4921df	                            and r15, rbx	       371	probe.c	FUNCTION_10
+0x4000ef1	          0x4821d3	                            and rbx, rdx	       372	probe.c	FUNCTION_10
+0x4000ef4	          0x83e00f	                            and eax, 0xf	       374	probe.c	FUNCTION_10	IF_2
+0x4000ef7	        0x49c1e708	                              shl r15, 8	       371	probe.c	FUNCTION_10
+0x4000efb	        0x48c1e308	                              shl rbx, 8	       372	probe.c	FUNCTION_10
+0x4000eff	            0x3c01	                               cmp al, 1	       374	probe.c	FUNCTION_10	IF_2
+0x4000f01	     0xf8485020000	                            je 0x400118c	       374	probe.c	FUNCTION_10	IF_2
+0x4000f07	          0x4939df	                            cmp r15, rbx	       383	probe.c	FUNCTION_10	IF_3
+0x4000f0a	            0x7754	                            ja 0x4000f60	       383	probe.c	FUNCTION_10	IF_3
+0x4000f0c	       0xfb6442418	           movzx eax, byte [rsp + 0x18] 	       384	probe.c	FUNCTION_10	IF_3
+0x4000f11	      0x488d542420	                   lea rdx, [rsp + 0x20]	       387	probe.c	FUNCTION_10	IF_3	CALL_5
+0x4000f16	          0x83e00f	                            and eax, 0xf	       384	probe.c	FUNCTION_10	IF_3
+0x4000f19	          0x80cc01	                                or ah, 1	       384	probe.c	FUNCTION_10	IF_3
+0x4000f1c	    0x498985500500	            mov qword [r13 + 0x550], rax	       384	probe.c	FUNCTION_10	IF_3
+0x4000f23	      0x4a8d4403ff	                 lea rax, [rbx + r8 - 1]	       386	probe.c	FUNCTION_10	IF_3
+0x4000f28	      0x488b5c2408	                mov rbx, qword [rsp + 8]	       387	probe.c	FUNCTION_10	IF_3	CALL_5
+0x4000f2d	      0x4c897c2420	             mov qword [rsp + 0x20], r15	       385	probe.c	FUNCTION_10	IF_3
+0x4000f32	      0x4889442428	             mov qword [rsp + 0x28], rax	       386	probe.c	FUNCTION_10	IF_3
+0x4000f37	        0x498b7e10	            mov rdi, qword [r14 + 0x10] 	       387	probe.c	FUNCTION_10	IF_3	CALL_5
+0x4000f3b	          0x4889de	                            mov rsi, rbx	       387	probe.c	FUNCTION_10	IF_3	CALL_5
+0x4000f3e	      0xe800000000	                          call 0x4000f43	       387	probe.c	FUNCTION_10	IF_3	CALL_5
+0x4000f43	    0x498db6a00000	                   lea rsi, [r14 + 0xa0]	       388	probe.c	FUNCTION_10	IF_3	CALL_6
+0x4000f4a	          0x4889d9	                            mov rcx, rbx	       388	probe.c	FUNCTION_10	IF_3	CALL_6
+0x4000f4d	    0x48c7c2000000	                              mov rdx, 0	       388	probe.c	FUNCTION_10	IF_3	CALL_6
+0x4000f54	    0x48c7c7000000	                              mov rdi, 0	       388	probe.c	FUNCTION_10	IF_3	CALL_6
+0x4000f5b	      0xe800000000	                          call 0x4000f60	       388	probe.c	FUNCTION_10	IF_3	CALL_6
+0x4000f60	        0x488b5d38	            mov rbx, qword [rbp + 0x38] 	       388	probe.c	FUNCTION_10	IF_3	CALL_6
+0x4000f64	      0x488d54241a	                   lea rdx, [rsp + 0x1a]	       401	probe.c	FUNCTION_11	CALL_1
+0x4000f69	      0xbe20000000	                           mov esi, 0x20	       401	probe.c	FUNCTION_11	CALL_1
+0x4000f6e	        0x4c8b7558	            mov r14, qword [rbp + 0x58] 	       401	probe.c	FUNCTION_11	CALL_1
+0x4000f72	          0x4889df	                            mov rdi, rbx	       401	probe.c	FUNCTION_11	CALL_1
+0x4000f75	      0xe800000000	                          call 0x4000f7a	       401	probe.c	FUNCTION_11	CALL_1
+0x4000f7a	      0x488d54241c	                   lea rdx, [rsp + 0x1c]	       402	probe.c	FUNCTION_11	CALL_2
+0x4000f7f	      0xbe22000000	                           mov esi, 0x22	       402	probe.c	FUNCTION_11	CALL_2
+0x4000f84	          0x4889df	                            mov rdi, rbx	       402	probe.c	FUNCTION_11	CALL_2
+0x4000f87	      0xe800000000	                          call 0x4000f8c	       402	probe.c	FUNCTION_11	CALL_2
+0x4000f8c	       0xfb74c241a	           movzx ecx, word [rsp + 0x1a] 	       403	probe.c	FUNCTION_11
+0x4000f91	       0xfb744241c	           movzx eax, word [rsp + 0x1c] 	       404	probe.c	FUNCTION_11
+0x4000f96	          0x4889ca	                            mov rdx, rcx	       403	probe.c	FUNCTION_11
+0x4000f99	        0x4883e0f0	             and rax, 0xfffffffffffffff0	       404	probe.c	FUNCTION_11
+0x4000f9d	    0x81e2f0ff0000	                         and edx, 0xfff0	       403	probe.c	FUNCTION_11
+0x4000fa3	        0x48c1e010	                           shl rax, 0x10	       404	probe.c	FUNCTION_11
+0x4000fa7	        0x48c1e210	                           shl rdx, 0x10	       403	probe.c	FUNCTION_11
+0x4000fab	          0x4839c2	                            cmp rdx, rax	       405	probe.c	FUNCTION_11	IF_1
+0x4000fae	            0x7748	                            ja 0x4000ff8	       405	probe.c	FUNCTION_11	IF_1
+0x4000fb0	          0x83e10f	                            and ecx, 0xf	       406	probe.c	FUNCTION_11	IF_1
+0x4000fb3	    0x4805ffff0f00	                        add rax, 0xfffff	       408	probe.c	FUNCTION_11	IF_1
+0x4000fb9	          0x4c89f6	                            mov rsi, r14	       409	probe.c	FUNCTION_11	IF_1	CALL_3
+0x4000fbc	          0x80cd02	                                or ch, 2	       406	probe.c	FUNCTION_11	IF_1
+0x4000fbf	        0x49894e18	             mov qword [r14 + 0x18], rcx	       406	probe.c	FUNCTION_11	IF_1
+0x4000fc3	      0x4889542420	             mov qword [rsp + 0x20], rdx	       407	probe.c	FUNCTION_11	IF_1
+0x4000fc8	      0x488d542420	                   lea rdx, [rsp + 0x20]	       409	probe.c	FUNCTION_11	IF_1	CALL_3
+0x4000fcd	      0x4889442428	             mov qword [rsp + 0x28], rax	       408	probe.c	FUNCTION_11	IF_1
+0x4000fd2	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	       409	probe.c	FUNCTION_11	IF_1	CALL_3
+0x4000fd6	      0xe800000000	                          call 0x4000fdb	       409	probe.c	FUNCTION_11	IF_1	CALL_3
+0x4000fdb	    0x488db3a00000	                   lea rsi, [rbx + 0xa0]	       410	probe.c	FUNCTION_11	IF_1	CALL_4
+0x4000fe2	          0x4c89f1	                            mov rcx, r14	       410	probe.c	FUNCTION_11	IF_1	CALL_4
+0x4000fe5	    0x48c7c2000000	                              mov rdx, 0	       410	probe.c	FUNCTION_11	IF_1	CALL_4
+0x4000fec	    0x48c7c7000000	                              mov rdi, 0	       410	probe.c	FUNCTION_11	IF_1	CALL_4
+0x4000ff3	      0xe800000000	                          call 0x4000ff8	       410	probe.c	FUNCTION_11	IF_1	CALL_4
+0x4000ff8	        0x4c8b7538	            mov r14, qword [rbp + 0x38] 	       410	probe.c	FUNCTION_11	IF_1	CALL_4
+0x4000ffc	      0x488d542418	                   lea rdx, [rsp + 0x18]	       424	probe.c	FUNCTION_12	CALL_1
+0x4001001	      0xbe24000000	                           mov esi, 0x24	       424	probe.c	FUNCTION_12	CALL_1
+0x4001006	        0x4c8b7d60	            mov r15, qword [rbp + 0x60] 	       424	probe.c	FUNCTION_12	CALL_1
+0x400100a	          0x4c89f7	                            mov rdi, r14	       424	probe.c	FUNCTION_12	CALL_1
+0x400100d	      0xe800000000	                          call 0x4001012	       424	probe.c	FUNCTION_12	CALL_1
+0x4001012	      0x488d54241a	                   lea rdx, [rsp + 0x1a]	       425	probe.c	FUNCTION_12	CALL_2
+0x4001017	      0xbe26000000	                           mov esi, 0x26	       425	probe.c	FUNCTION_12	CALL_2
+0x400101c	          0x4c89f7	                            mov rdi, r14	       425	probe.c	FUNCTION_12	CALL_2
+0x400101f	      0xe800000000	                          call 0x4001024	       425	probe.c	FUNCTION_12	CALL_2
+0x4001024	       0xfb7442418	           movzx eax, word [rsp + 0x18] 	       426	probe.c	FUNCTION_12
+0x4001029	       0xfb75c241a	           movzx ebx, word [rsp + 0x1a] 	       427	probe.c	FUNCTION_12
+0x400102e	          0x4889c1	                            mov rcx, rax	       426	probe.c	FUNCTION_12
+0x4001031	        0x4883e3f0	             and rbx, 0xfffffffffffffff0	       427	probe.c	FUNCTION_12
+0x4001035	          0x83e00f	                            and eax, 0xf	       429	probe.c	FUNCTION_12	IF_1
+0x4001038	    0x81e1f0ff0000	                         and ecx, 0xfff0	       426	probe.c	FUNCTION_12
+0x400103e	        0x48c1e310	                           shl rbx, 0x10	       427	probe.c	FUNCTION_12
+0x4001042	        0x48c1e110	                           shl rcx, 0x10	       426	probe.c	FUNCTION_12
+0x4001046	        0x6683f801	                               cmp ax, 1	       429	probe.c	FUNCTION_12	IF_1
+0x400104a	     0xf84ed000000	                            je 0x400113d	       429	probe.c	FUNCTION_12	IF_1
+0x4001050	          0x4839d9	                            cmp rcx, rbx	       455	probe.c	FUNCTION_12	IF_4
+0x4001053	            0x775a	                            ja 0x40010af	       455	probe.c	FUNCTION_12	IF_4
+0x4001055	       0xfb7542418	           movzx edx, word [rsp + 0x18] 	       456	probe.c	FUNCTION_12	IF_4
+0x400105a	          0x4889d0	                            mov rax, rdx	       457	probe.c	FUNCTION_12	IF_4
+0x400105d	          0x83e00f	                            and eax, 0xf	       457	probe.c	FUNCTION_12	IF_4
+0x4001060	          0x80cc22	                             or ah, 0x22	       457	probe.c	FUNCTION_12	IF_4
+0x4001063	          0x83e201	                              and edx, 1	       458	probe.c	FUNCTION_12	IF_4	IF_5
+0x4001066	     0xf85c6000000	                           jne 0x4001132	       458	probe.c	FUNCTION_12	IF_4	IF_5
+0x400106c	    0x4881c3ffff0f	                        add rbx, 0xfffff	       461	probe.c	FUNCTION_12	IF_4
+0x4001073	        0x49894718	             mov qword [r15 + 0x18], rax	       459	probe.c	FUNCTION_12	IF_4	IF_5
+0x4001077	      0x48894c2420	             mov qword [rsp + 0x20], rcx	       460	probe.c	FUNCTION_12	IF_4
+0x400107c	      0x48895c2428	             mov qword [rsp + 0x28], rbx	       461	probe.c	FUNCTION_12	IF_4
+0x4001081	        0x498b7e10	            mov rdi, qword [r14 + 0x10] 	       462	probe.c	FUNCTION_12	IF_4	CALL_6
+0x4001085	      0x488d542420	                   lea rdx, [rsp + 0x20]	       462	probe.c	FUNCTION_12	IF_4	CALL_6
+0x400108a	          0x4c89fe	                            mov rsi, r15	       462	probe.c	FUNCTION_12	IF_4	CALL_6
+0x400108d	      0xe800000000	                          call 0x4001092	       462	probe.c	FUNCTION_12	IF_4	CALL_6
+0x4001092	    0x498db6a00000	                   lea rsi, [r14 + 0xa0]	       463	probe.c	FUNCTION_12	IF_4	CALL_7
+0x4001099	          0x4c89f9	                            mov rcx, r15	       463	probe.c	FUNCTION_12	IF_4	CALL_7
+0x400109c	    0x48c7c2000000	                              mov rdx, 0	       463	probe.c	FUNCTION_12	IF_4	CALL_7
+0x40010a3	    0x48c7c7000000	                              mov rdi, 0	       463	probe.c	FUNCTION_12	IF_4	CALL_7
+0x40010aa	      0xe800000000	                          call 0x40010af	       463	probe.c	FUNCTION_12	IF_4	CALL_7
+0x40010af	            0x31db	                            xor ebx, ebx	       463	probe.c	FUNCTION_12	IF_4	CALL_7
+0x40010b1	    0x41f685390600	              test byte [r13 + 0x639], 1	       488	probe.c	FUNCTION_13	IF_2
+0x40010b9	            0x7505	                           jne 0x40010c0	       488	probe.c	FUNCTION_13	IF_2
+0x40010bb	            0xeb52	                           jmp 0x400110f	       488	probe.c	FUNCTION_13	IF_2
+0x40010bd	          0x83c301	                              add ebx, 1	       489	probe.c	FUNCTION_13	IF_2	FUNCTION_1
+0x40010c0	        0x488b7d10	            mov rdi, qword [rbp + 0x10] 	       489	probe.c	FUNCTION_13	IF_2	FUNCTION_1
+0x40010c4	            0x89de	                            mov esi, ebx	       489	probe.c	FUNCTION_13	IF_2	FUNCTION_1
+0x40010c6	      0xe800000000	                          call 0x40010cb	       489	probe.c	FUNCTION_13	IF_2	FUNCTION_1
+0x40010cb	          0x4885c0	                           test rax, rax	       489	probe.c	FUNCTION_13	IF_2	FUNCTION_1
+0x40010ce	            0x743a	                            je 0x400110a	       489	probe.c	FUNCTION_13	IF_2	FUNCTION_1
+0x40010d0	      0x4883781800	               cmp qword [rax + 0x18], 0	       490	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1
+0x40010d5	            0x74e6	                            je 0x40010bd	       490	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1
+0x40010d7	          0x4889c6	                            mov rsi, rax	       491	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_1
+0x40010da	          0x4889ef	                            mov rdi, rbp	       491	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_1
+0x40010dd	      0xba01000000	                              mov edx, 1	       491	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_1
+0x40010e2	        0x48890424	                    mov qword [rsp], rax	       491	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_1
+0x40010e6	      0xe800000000	                          call 0x40010eb	       491	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_1
+0x40010eb	        0x488b0424	                    mov rax, qword [rsp]	       493	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_2
+0x40010ef	    0x48c7c2000000	                              mov rdx, 0	       493	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_2
+0x40010f6	          0x4c89e6	                            mov rsi, r12	       493	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_2
+0x40010f9	    0x48c7c7000000	                              mov rdi, 0	       493	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_2
+0x4001100	          0x4889c1	                            mov rcx, rax	       493	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_2
+0x4001103	      0xe800000000	                          call 0x4001108	       493	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_2
+0x4001108	            0xebb3	                           jmp 0x40010bd	       493	probe.c	FUNCTION_13	IF_2	FUNCTION_1	IF_1	CALL_2
+0x400110a	          0x83fb03	                              cmp ebx, 3	       489	probe.c	FUNCTION_13	IF_2	FUNCTION_1
+0x400110d	            0x7eae	                           jle 0x40010bd	       489	probe.c	FUNCTION_13	IF_2	FUNCTION_1
+0x400110f	      0x488b442430	            mov rax, qword [rsp + 0x30] 	       499	probe.c	FUNCTION_13
+0x4001114	    0x654833042528	                xor rax, qword gs:[0x28]	       499	probe.c	FUNCTION_13
+0x400111d	     0xf85ae000000	                           jne 0x40011d1	       499	probe.c	FUNCTION_13
+0x4001123	        0x4883c438	                           add rsp, 0x38	       499	probe.c	FUNCTION_13
+0x4001127	              0x5b	                                 pop rbx	       499	probe.c	FUNCTION_13
+0x4001128	              0x5d	                                 pop rbp	       499	probe.c	FUNCTION_13
+0x4001129	            0x415c	                                 pop r12	       499	probe.c	FUNCTION_13
+0x400112b	            0x415d	                                 pop r13	       499	probe.c	FUNCTION_13
+0x400112d	            0x415e	                                 pop r14	       499	probe.c	FUNCTION_13
+0x400112f	            0x415f	                                 pop r15	       499	probe.c	FUNCTION_13
+0x4001131	              0xc3	                                     ret	       499	probe.c	FUNCTION_13
+0x4001132	    0x480d00001000	                        or rax, 0x100000	       459	probe.c	FUNCTION_12	IF_4	IF_5
+0x4001138	      0xe92fffffff	                           jmp 0x400106c	       459	probe.c	FUNCTION_12	IF_4	IF_5
+0x400113d	      0x488d54241c	                   lea rdx, [rsp + 0x1c]	       432	probe.c	FUNCTION_12	IF_1	CALL_3
+0x4001142	      0xbe28000000	                           mov esi, 0x28	       432	probe.c	FUNCTION_12	IF_1	CALL_3
+0x4001147	          0x4c89f7	                            mov rdi, r14	       432	probe.c	FUNCTION_12	IF_1	CALL_3
+0x400114a	        0x48890c24	                    mov qword [rsp], rcx	       432	probe.c	FUNCTION_12	IF_1	CALL_3
+0x400114e	      0xe800000000	                          call 0x4001153	       432	probe.c	FUNCTION_12	IF_1	CALL_3
+0x4001153	      0x488d542420	                   lea rdx, [rsp + 0x20]	       433	probe.c	FUNCTION_12	IF_1	CALL_4
+0x4001158	      0xbe2c000000	                           mov esi, 0x2c	       433	probe.c	FUNCTION_12	IF_1	CALL_4
+0x400115d	          0x4c89f7	                            mov rdi, r14	       433	probe.c	FUNCTION_12	IF_1	CALL_4
+0x4001160	      0xe800000000	                          call 0x4001165	       433	probe.c	FUNCTION_12	IF_1	CALL_4
+0x4001165	        0x8b54241c	            mov edx, dword [rsp + 0x1c] 	       440	probe.c	FUNCTION_12	IF_1	IF_2
+0x4001169	        0x8b442420	            mov eax, dword [rsp + 0x20] 	       440	probe.c	FUNCTION_12	IF_1	IF_2
+0x400116d	        0x488b0c24	                    mov rcx, qword [rsp]	       440	probe.c	FUNCTION_12	IF_1	IF_2
+0x4001171	            0x39c2	                            cmp edx, eax	       440	probe.c	FUNCTION_12	IF_1	IF_2
+0x4001173	     0xf87d7feffff	                            ja 0x4001050	       440	probe.c	FUNCTION_12	IF_1	IF_2
+0x4001179	        0x48c1e220	                           shl rdx, 0x20	       441	probe.c	FUNCTION_12	IF_1	IF_2
+0x400117d	        0x48c1e020	                           shl rax, 0x20	       442	probe.c	FUNCTION_12	IF_1	IF_2
+0x4001181	          0x4809d1	                             or rcx, rdx	       441	probe.c	FUNCTION_12	IF_1	IF_2
+0x4001184	          0x4809c3	                             or rbx, rax	       442	probe.c	FUNCTION_12	IF_1	IF_2
+0x4001187	      0xe9c4feffff	                           jmp 0x4001050	       442	probe.c	FUNCTION_12	IF_1	IF_2
+0x400118c	      0x488d54241c	                   lea rdx, [rsp + 0x1c]	       377	probe.c	FUNCTION_10	IF_2	CALL_3
+0x4001191	      0xbe30000000	                           mov esi, 0x30	       377	probe.c	FUNCTION_10	IF_2	CALL_3
+0x4001196	          0x4c89f7	                            mov rdi, r14	       377	probe.c	FUNCTION_10	IF_2	CALL_3
+0x4001199	      0xe800000000	                          call 0x400119e	       377	probe.c	FUNCTION_10	IF_2	CALL_3
+0x400119e	      0x488d542420	                   lea rdx, [rsp + 0x20]	       378	probe.c	FUNCTION_10	IF_2	CALL_4
+0x40011a3	      0xbe32000000	                           mov esi, 0x32	       378	probe.c	FUNCTION_10	IF_2	CALL_4
+0x40011a8	          0x4c89f7	                            mov rdi, r14	       378	probe.c	FUNCTION_10	IF_2	CALL_4
+0x40011ab	      0xe800000000	                          call 0x40011b0	       378	probe.c	FUNCTION_10	IF_2	CALL_4
+0x40011b0	       0xfb744241c	           movzx eax, word [rsp + 0x1c] 	       379	probe.c	FUNCTION_10	IF_2
+0x40011b5	        0x4c8b0424	                     mov r8, qword [rsp]	       380	probe.c	FUNCTION_10	IF_2
+0x40011b9	        0x48c1e010	                           shl rax, 0x10	       379	probe.c	FUNCTION_10	IF_2
+0x40011bd	          0x4909c7	                             or r15, rax	       379	probe.c	FUNCTION_10	IF_2
+0x40011c0	       0xfb7442420	           movzx eax, word [rsp + 0x20] 	       380	probe.c	FUNCTION_10	IF_2
+0x40011c5	        0x48c1e010	                           shl rax, 0x10	       380	probe.c	FUNCTION_10	IF_2
+0x40011c9	          0x4809c3	                             or rbx, rax	       380	probe.c	FUNCTION_10	IF_2
+0x40011cc	      0xe936fdffff	                           jmp 0x4000f07	       380	probe.c	FUNCTION_10	IF_2
+0x40011d1	      0xe800000000	                          call 0x40011d6	       499	probe.c	FUNCTION_13
+pci_scan_bus	FOR,0:IF,1:WHILE,0:functions,0:CALL,7:DO,0:SWITCH,0:ELSE,1	46
+0x4003730	            0x4154	                                push r12	      2936	probe.c	FUNCTION_87
+0x4003732	              0x55	                                push rbp	      2936	probe.c	FUNCTION_87
+0x4003733	          0x4889f5	                            mov rbp, rsi	      2936	probe.c	FUNCTION_87
+0x4003736	              0x53	                                push rbx	      2936	probe.c	FUNCTION_87
+0x4003737	    0x48c7c6000000	                              mov rsi, 0	      2940	probe.c	FUNCTION_87	CALL_2
+0x400373e	            0x89fb	                            mov ebx, edi	      2936	probe.c	FUNCTION_87
+0x4003740	          0x4989d4	                            mov r12, rdx	      2936	probe.c	FUNCTION_87
+0x4003743	        0x4883ec18	                           sub rsp, 0x18	      2936	probe.c	FUNCTION_87
+0x4003747	          0x4889e7	                            mov rdi, rsp	      2940	probe.c	FUNCTION_87	CALL_2
+0x400374a	        0x48892424	                    mov qword [rsp], rsp	      2937	probe.c	FUNCTION_87	CALL_1
+0x400374e	      0x4889642408	                mov qword [rsp + 8], rsp	      2937	probe.c	FUNCTION_87	CALL_1
+0x4003753	    0x65488b042528	                mov rax, qword gs:[0x28]	      2936	probe.c	FUNCTION_87
+0x400375c	      0x4889442410	             mov qword [rsp + 0x10], rax	      2936	probe.c	FUNCTION_87
+0x4003761	            0x31c0	                            xor eax, eax	      2936	probe.c	FUNCTION_87
+0x4003763	      0xe800000000	                          call 0x4003768	      2940	probe.c	FUNCTION_87	CALL_2
+0x4003768	    0x48c7c6000000	                              mov rsi, 0	      2941	probe.c	FUNCTION_87	CALL_3
+0x400376f	          0x4889e7	                            mov rdi, rsp	      2941	probe.c	FUNCTION_87	CALL_3
+0x4003772	      0xe800000000	                          call 0x4003777	      2941	probe.c	FUNCTION_87	CALL_3
+0x4003777	    0x48c7c6000000	                              mov rsi, 0	      2942	probe.c	FUNCTION_87	CALL_4
+0x400377e	          0x4889e7	                            mov rdi, rsp	      2942	probe.c	FUNCTION_87	CALL_4
+0x4003781	      0xe800000000	                          call 0x4003786	      2942	probe.c	FUNCTION_87	CALL_4
+0x4003786	            0x89de	                            mov esi, ebx	      2943	probe.c	FUNCTION_87	CALL_5
+0x4003788	            0x31ff	                            xor edi, edi	      2943	probe.c	FUNCTION_87	CALL_5
+0x400378a	          0x4989e0	                             mov r8, rsp	      2943	probe.c	FUNCTION_87	CALL_5
+0x400378d	          0x4c89e1	                            mov rcx, r12	      2943	probe.c	FUNCTION_87	CALL_5
+0x4003790	          0x4889ea	                            mov rdx, rbp	      2943	probe.c	FUNCTION_87	CALL_5
+0x4003793	      0xe800000000	                          call 0x4003798	      2943	probe.c	FUNCTION_87	CALL_5
+0x4003798	          0x4885c0	                           test rax, rax	      2944	probe.c	FUNCTION_87	IF_1
+0x400379b	          0x4889c3	                            mov rbx, rax	      2943	probe.c	FUNCTION_87	CALL_5
+0x400379e	            0x7426	                            je 0x40037c6	      2944	probe.c	FUNCTION_87	IF_1
+0x40037a0	            0x31f6	                            xor esi, esi	      2712	probe.c	FUNCTION_76	CALL_1
+0x40037a2	          0x4889c7	                            mov rdi, rax	      2712	probe.c	FUNCTION_76	CALL_1
+0x40037a5	      0xe896fdffff	      call sym.pci_scan_child_bus_extend	      2712	probe.c	FUNCTION_76	CALL_1
+0x40037aa	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	      2950	probe.c	FUNCTION_87
+0x40037af	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      2950	probe.c	FUNCTION_87
+0x40037b8	          0x4889d8	                            mov rax, rbx	      2950	probe.c	FUNCTION_87
+0x40037bb	            0x7513	                           jne 0x40037d0	      2950	probe.c	FUNCTION_87
+0x40037bd	        0x4883c418	                           add rsp, 0x18	      2950	probe.c	FUNCTION_87
+0x40037c1	              0x5b	                                 pop rbx	      2950	probe.c	FUNCTION_87
+0x40037c2	              0x5d	                                 pop rbp	      2950	probe.c	FUNCTION_87
+0x40037c3	            0x415c	                                 pop r12	      2950	probe.c	FUNCTION_87
+0x40037c5	              0xc3	                                     ret	      2950	probe.c	FUNCTION_87
+0x40037c6	          0x4889e7	                            mov rdi, rsp	      2947	probe.c	FUNCTION_87	ELSE_1	CALL_7
+0x40037c9	      0xe800000000	                          call 0x40037ce	      2947	probe.c	FUNCTION_87	ELSE_1	CALL_7
+0x40037ce	            0xebda	                           jmp 0x40037aa	      2947	probe.c	FUNCTION_87	ELSE_1	CALL_7
+0x40037d0	      0xe800000000	                          call 0x40037d5	      2950	probe.c	FUNCTION_87
+pci_scan_child_bus_extend	FOR,2:IF,6:WHILE,0:functions,3:CALL,10:DO,0:SWITCH,0:ELSE,0	139
+0x4003540	            0x4157	                                push r15	      2580	probe.c	FUNCTION_75
+0x4003542	            0x4156	                                push r14	      2580	probe.c	FUNCTION_75
+0x4003544	            0x4155	                                push r13	      2580	probe.c	FUNCTION_75
+0x4003546	            0x4154	                                push r12	      2580	probe.c	FUNCTION_75
+0x4003548	              0x55	                                push rbp	      2580	probe.c	FUNCTION_75
+0x4003549	              0x53	                                push rbx	      2580	probe.c	FUNCTION_75
+0x400354a	          0x4889fd	                            mov rbp, rdi	      2580	probe.c	FUNCTION_75
+0x400354d	            0x31db	                            xor ebx, ebx	      2590	probe.c	FUNCTION_75	FOR_1
+0x400354f	        0x4883ec10	                           sub rsp, 0x10	      2580	probe.c	FUNCTION_75
+0x4003553	    0x488b87800000	            mov rax, qword [rdi + 0x80] 	      2582	probe.c	FUNCTION_75
+0x400355a	          0x893424	                    mov dword [rsp], esi	      2580	probe.c	FUNCTION_75
+0x400355d	      0x4889442408	                mov qword [rsp + 8], rax	      2582	probe.c	FUNCTION_75
+0x4003562	            0x89de	                            mov esi, ebx	      2591	probe.c	FUNCTION_75	FOR_1	CALL_2
+0x4003564	          0x4889ef	                            mov rdi, rbp	      2591	probe.c	FUNCTION_75	FOR_1	CALL_2
+0x4003567	          0x83c308	                              add ebx, 8	      2590	probe.c	FUNCTION_75	FOR_1
+0x400356a	      0xe800000000	                          call 0x400356f	      2591	probe.c	FUNCTION_75	FOR_1	CALL_2
+0x400356f	    0x81fb00010000	                          cmp ebx, 0x100	      2590	probe.c	FUNCTION_75	FOR_1
+0x4003575	            0x75eb	                           jne 0x4003562	      2590	probe.c	FUNCTION_75	FOR_1
+0x4003577	    0xf68500040000	              test byte [rbp + 0x400], 1	      2615	probe.c	FUNCTION_75	IF_3
+0x400357e	     0xf8475010000	                            je 0x40036f9	      2615	probe.c	FUNCTION_75	IF_3
+0x4003584	        0x4c8b7d28	            mov r15, qword [rbp + 0x28] 	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x4003588	        0x4c8d6d28	                   lea r13, [rbp + 0x28]	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x400358c	          0x4d39ef	                            cmp r15, r13	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x400358f	     0xf8478010000	                            je 0x400370d	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x4003595	          0x4c89f8	                            mov rax, r15	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x4003598	          0x4531e4	                          xor r12d, r12d	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x400359b	    0xc74424040000	                  mov dword [rsp + 4], 0	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035a3	            0xeb08	                           jmp 0x40035ad	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035a5	          0x488b00	                    mov rax, qword [rax]	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035a8	          0x4c39e8	                            cmp rax, r13	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035ab	            0x7425	                            je 0x40035d2	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035ad	         0xfb64849	           movzx ecx, byte [rax + 0x49] 	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035b1	          0x8d51ff	                      lea edx, [rcx - 1]	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035b4	          0x80fa01	                               cmp dl, 1	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035b7	            0x77ec	                            ja 0x40035a5	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035b9	    0xf6803b060000	          test byte [rax + 0x63b], 0x40 	      2627	probe.c	FUNCTION_75	FUNCTION_1	IF_1
+0x40035c0	     0xf8402010000	                            je 0x40036c8	      2627	probe.c	FUNCTION_75	FUNCTION_1	IF_1
+0x40035c6	          0x488b00	                    mov rax, qword [rax]	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035c9	        0x4183c401	                             add r12d, 1	      2628	probe.c	FUNCTION_75	FUNCTION_1	IF_1
+0x40035cd	          0x4c39e8	                            cmp rax, r13	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035d0	            0x75db	                           jne 0x40035ad	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035d2	      0x448b742408	               mov r14d, dword [rsp + 8]	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035d7	            0x31db	                            xor ebx, ebx	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035d9	            0xeb08	                           jmp 0x40035e3	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x40035db	          0x4d8b3f	                    mov r15, qword [r15]	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x40035de	          0x4d39ef	                            cmp r15, r13	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x40035e1	            0x742f	                            je 0x4003612	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x40035e3	      0x410fb64749	           movzx eax, byte [r15 + 0x49] 	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x40035e8	          0x83e801	                              sub eax, 1	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x40035eb	            0x3c01	                               cmp al, 1	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x40035ed	            0x77ec	                            ja 0x40035db	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x40035ef	          0x4531c0	                            xor r8d, r8d	      2640	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2	CALL_1
+0x40035f2	            0x31c9	                            xor ecx, ecx	      2640	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2	CALL_1
+0x40035f4	          0x4489f2	                           mov edx, r14d	      2640	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2	CALL_1
+0x40035f7	          0x4c89fe	                            mov rsi, r15	      2640	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2	CALL_1
+0x40035fa	          0x4889ef	                            mov rdi, rbp	      2640	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2	CALL_1
+0x40035fd	          0x4401f3	                           add ebx, r14d	      2640	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2	CALL_1
+0x4003600	      0xe8cbf8ffff	         call sym.pci_scan_bridge_extend	      2640	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2	CALL_1
+0x4003605	          0x4d8b3f	                    mov r15, qword [r15]	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x4003608	            0x29c3	                            sub ebx, eax	      2641	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x400360a	          0x4189c6	                           mov r14d, eax	      2640	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2	CALL_1
+0x400360d	          0x4d39ef	                            cmp r15, r13	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x4003610	            0x75d1	                           jne 0x40035e3	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x4003612	        0x4c8b7d28	            mov r15, qword [rbp + 0x28] 	      2638	probe.c	FUNCTION_75	ELSE_1	FUNCTION_2
+0x4003616	          0x4d39ef	                            cmp r15, r13	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x4003619	            0x750a	                           jne 0x4003625	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x400361b	            0xeb4f	                           jmp 0x400366c	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x400361d	          0x4d8b3f	                    mov r15, qword [r15]	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x4003620	          0x4d39ef	                            cmp r15, r13	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x4003623	            0x7447	                            je 0x400366c	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x4003625	      0x410fb64749	           movzx eax, byte [r15 + 0x49] 	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x400362a	          0x83e801	                              sub eax, 1	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x400362d	            0x3c01	                               cmp al, 1	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x400362f	            0x77ec	                            ja 0x400361d	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x4003631	          0x4585e4	                         test r12d, r12d	      2648	probe.c	FUNCTION_75	FUNCTION_3	IF_1
+0x4003634	     0xf8598000000	                           jne 0x40036d2	      2648	probe.c	FUNCTION_75	FUNCTION_3	IF_1
+0x400363a	      0x837c240401	                  cmp dword [rsp + 4], 1	      2648	probe.c	FUNCTION_75	FUNCTION_3	IF_1
+0x400363f	          0x8b0c24	                    mov ecx, dword [rsp]	      2656	probe.c	FUNCTION_75	FUNCTION_3	IF_1
+0x4003642	     0xf858a000000	                           jne 0x40036d2	      2648	probe.c	FUNCTION_75	FUNCTION_3	IF_1
+0x4003648	          0x4489f2	                           mov edx, r14d	      2668	probe.c	FUNCTION_75	FUNCTION_3	CALL_2
+0x400364b	          0x4c89fe	                            mov rsi, r15	      2668	probe.c	FUNCTION_75	FUNCTION_3	CALL_2
+0x400364e	    0x41b801000000	                              mov r8d, 1	      2668	probe.c	FUNCTION_75	FUNCTION_3	CALL_2
+0x4003654	          0x4889ef	                            mov rdi, rbp	      2668	probe.c	FUNCTION_75	FUNCTION_3	CALL_2
+0x4003657	          0x4429f3	                           sub ebx, r14d	      2668	probe.c	FUNCTION_75	FUNCTION_3	CALL_2
+0x400365a	      0xe871f8ffff	         call sym.pci_scan_bridge_extend	      2668	probe.c	FUNCTION_75	FUNCTION_3	CALL_2
+0x400365f	          0x4d8b3f	                    mov r15, qword [r15]	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x4003662	             0x1c3	                            add ebx, eax	      2669	probe.c	FUNCTION_75	FUNCTION_3
+0x4003664	          0x4189c6	                           mov r14d, eax	      2668	probe.c	FUNCTION_75	FUNCTION_3	CALL_2
+0x4003667	          0x4d39ef	                            cmp r15, r13	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x400366a	            0x75b9	                           jne 0x4003625	      2645	probe.c	FUNCTION_75	FUNCTION_3
+0x400366c	        0x488b4538	            mov rax, qword [rbp + 0x38] 	      2677	probe.c	FUNCTION_75	IF_4
+0x4003670	          0x4885c0	                           test rax, rax	      2677	probe.c	FUNCTION_75	IF_4
+0x4003673	            0x7441	                            je 0x40036b6	      2677	probe.c	FUNCTION_75	IF_4
+0x4003675	    0xf6803b060000	          test byte [rax + 0x63b], 0x40 	      2677	probe.c	FUNCTION_75	IF_4
+0x400367c	            0x7438	                            je 0x40036b6	      2677	probe.c	FUNCTION_75	IF_4
+0x400367e	    0x8b0500000000	            mov eax, dword [0x04003684] 	      2678	probe.c	FUNCTION_75	IF_4	CALL_8
+0x4003684	          0x8b1424	                    mov edx, dword [rsp]	      2678	probe.c	FUNCTION_75	IF_4	CALL_8
+0x4003687	          0x83e801	                              sub eax, 1	      2678	probe.c	FUNCTION_75	IF_4	CALL_8
+0x400368a	          0x4189d5	                           mov r13d, edx	      2678	probe.c	FUNCTION_75	IF_4	CALL_8
+0x400368d	            0x39d0	                            cmp eax, edx	      2678	probe.c	FUNCTION_75	IF_4	CALL_8
+0x400368f	      0x488b542408	                mov rdx, qword [rsp + 8]	      2680	probe.c	FUNCTION_75	IF_4	IF_5
+0x4003694	        0x440f43e8	                        cmovae r13d, eax	      2678	probe.c	FUNCTION_75	IF_4	CALL_8
+0x4003698	          0x4489f0	                           mov eax, r14d	      2680	probe.c	FUNCTION_75	IF_4	IF_5
+0x400369b	            0x29d0	                            sub eax, edx	      2680	probe.c	FUNCTION_75	IF_4	IF_5
+0x400369d	          0x4139c5	                           cmp r13d, eax	      2680	probe.c	FUNCTION_75	IF_4	IF_5
+0x40036a0	            0x7614	                           jbe 0x40036b6	      2680	probe.c	FUNCTION_75	IF_4	IF_5
+0x40036a2	    0x488b85880000	            mov rax, qword [rbp + 0x88] 	      2684	probe.c	FUNCTION_75	IF_4	IF_5	IF_6
+0x40036a9	          0x4401ea	                           add edx, r13d	      2681	probe.c	FUNCTION_75	IF_4	IF_5
+0x40036ac	          0x4989d6	                            mov r14, rdx	      2681	probe.c	FUNCTION_75	IF_4	IF_5
+0x40036af	          0x4839c2	                            cmp rdx, rax	      2685	probe.c	FUNCTION_75	IF_4	IF_5	IF_6
+0x40036b2	        0x440f47f0	                         cmova r14d, eax	      2685	probe.c	FUNCTION_75	IF_4	IF_5	IF_6
+0x40036b6	        0x4883c410	                           add rsp, 0x10	      2701	probe.c	FUNCTION_75
+0x40036ba	          0x4489f0	                           mov eax, r14d	      2701	probe.c	FUNCTION_75
+0x40036bd	              0x5b	                                 pop rbx	      2701	probe.c	FUNCTION_75
+0x40036be	              0x5d	                                 pop rbp	      2701	probe.c	FUNCTION_75
+0x40036bf	            0x415c	                                 pop r12	      2701	probe.c	FUNCTION_75
+0x40036c1	            0x415d	                                 pop r13	      2701	probe.c	FUNCTION_75
+0x40036c3	            0x415e	                                 pop r14	      2701	probe.c	FUNCTION_75
+0x40036c5	            0x415f	                                 pop r15	      2701	probe.c	FUNCTION_75
+0x40036c7	              0xc3	                                     ret	      2701	probe.c	FUNCTION_75
+0x40036c8	      0x8344240401	                  add dword [rsp + 4], 1	      2630	probe.c	FUNCTION_75	FUNCTION_1	ELSE_1
+0x40036cd	      0xe9d3feffff	                           jmp 0x40035a5	      2630	probe.c	FUNCTION_75	FUNCTION_1	ELSE_1
+0x40036d2	            0x31c9	                            xor ecx, ecx	      2646	probe.c	FUNCTION_75	FUNCTION_3
+0x40036d4	    0x41f6873b0600	          test byte [r15 + 0x63b], 0x40 	      2657	probe.c	FUNCTION_75	FUNCTION_3	ELSE_1	IF_2
+0x40036dc	     0xf8466ffffff	                            je 0x4003648	      2657	probe.c	FUNCTION_75	FUNCTION_3	ELSE_1	IF_2
+0x40036e2	          0x8b0424	                    mov eax, dword [rsp]	      2663	probe.c	FUNCTION_75	FUNCTION_3	ELSE_1	IF_2
+0x40036e5	            0x31d2	                            xor edx, edx	      2663	probe.c	FUNCTION_75	FUNCTION_3	ELSE_1	IF_2
+0x40036e7	          0x8b0c24	                    mov ecx, dword [rsp]	      2664	probe.c	FUNCTION_75	FUNCTION_3	ELSE_1	IF_2	CALL_1
+0x40036ea	          0x41f7f4	                                div r12d	      2663	probe.c	FUNCTION_75	FUNCTION_3	ELSE_1	IF_2
+0x40036ed	            0x29d9	                            sub ecx, ebx	      2664	probe.c	FUNCTION_75	FUNCTION_3	ELSE_1	IF_2	CALL_1
+0x40036ef	            0x39c8	                            cmp eax, ecx	      2664	probe.c	FUNCTION_75	FUNCTION_3	ELSE_1	IF_2	CALL_1
+0x40036f1	           0xf46c8	                         cmovbe ecx, eax	      2664	probe.c	FUNCTION_75	FUNCTION_3	ELSE_1	IF_2	CALL_1
+0x40036f4	      0xe94fffffff	                           jmp 0x4003648	      2664	probe.c	FUNCTION_75	FUNCTION_3	ELSE_1	IF_2	CALL_1
+0x40036f9	          0x4889ef	                            mov rdi, rbp	      2617	probe.c	FUNCTION_75	IF_3	CALL_7
+0x40036fc	      0xe800000000	                          call 0x4003701	      2617	probe.c	FUNCTION_75	IF_3	CALL_7
+0x4003701	    0x808d00040000	                or byte [rbp + 0x400], 1	      2618	probe.c	FUNCTION_75	IF_3
+0x4003708	      0xe977feffff	                           jmp 0x4003584	      2618	probe.c	FUNCTION_75	IF_3
+0x400370d	      0x448b742408	               mov r14d, dword [rsp + 8]	      2626	probe.c	FUNCTION_75	FUNCTION_1
+0x4003712	      0xe955ffffff	                           jmp 0x400366c	      2626	probe.c	FUNCTION_75	FUNCTION_1
+pci_hp_add_bridge	FOR,1:IF,3:WHILE,0:functions,0:CALL,5:DO,0:SWITCH,0:ELSE,0	56
+0x4003810	            0x4156	                                push r14	      3041	probe.c	FUNCTION_94
+0x4003812	            0x4155	                                push r13	      3041	probe.c	FUNCTION_94
+0x4003814	            0x4154	                                push r12	      3041	probe.c	FUNCTION_94
+0x4003816	              0x55	                                push rbp	      3041	probe.c	FUNCTION_94
+0x4003817	          0x4889fd	                            mov rbp, rdi	      3041	probe.c	FUNCTION_94
+0x400381a	              0x53	                                push rbx	      3041	probe.c	FUNCTION_94
+0x400381b	        0x4c8b7710	            mov r14, qword [rdi + 0x10] 	      3042	probe.c	FUNCTION_94
+0x400381f	    0x498b86800000	            mov rax, qword [r14 + 0x80] 	      3043	probe.c	FUNCTION_94
+0x4003826	    0x4d8ba6880000	            mov r12, qword [r14 + 0x88] 	      3045	probe.c	FUNCTION_94
+0x400382d	          0x4439e0	                           cmp eax, r12d	      3047	probe.c	FUNCTION_94	FOR_1
+0x4003830	            0x7f64	                            jg 0x4003896	      3047	probe.c	FUNCTION_94	FOR_1
+0x4003832	            0x89c3	                            mov ebx, eax	      3047	probe.c	FUNCTION_94	FOR_1
+0x4003834	          0x4589e5	                          mov r13d, r12d	      3047	probe.c	FUNCTION_94	FOR_1
+0x4003837	            0xeb08	                           jmp 0x4003841	      3047	probe.c	FUNCTION_94	FOR_1
+0x4003839	          0x83c301	                              add ebx, 1	      3047	probe.c	FUNCTION_94	FOR_1
+0x400383c	          0x4139dd	                           cmp r13d, ebx	      3047	probe.c	FUNCTION_94	FOR_1
+0x400383f	            0x7c55	                            jl 0x4003896	      3047	probe.c	FUNCTION_94	FOR_1
+0x4003841	    0x498b86d00000	            mov rax, qword [r14 + 0xd0] 	        44	pci.h	
+0x4003848	            0x89de	                            mov esi, ebx	      3048	probe.c	FUNCTION_94	FOR_1	IF_1	CALL_2
+0x400384a	            0x8b38	                    mov edi, dword [rax]	      3048	probe.c	FUNCTION_94	FOR_1	IF_1	CALL_2
+0x400384c	      0xe800000000	                          call 0x4003851	      3048	probe.c	FUNCTION_94	FOR_1	IF_1	CALL_2
+0x4003851	          0x4885c0	                           test rax, rax	      3048	probe.c	FUNCTION_94	FOR_1	IF_1	CALL_2
+0x4003854	            0x75e3	                           jne 0x4003839	      3048	probe.c	FUNCTION_94	FOR_1	IF_1	CALL_2
+0x4003856	          0x8d53ff	                      lea edx, [rbx - 1]	      1236	probe.c	FUNCTION_30	CALL_1
+0x4003859	          0x4531c0	                            xor r8d, r8d	      1236	probe.c	FUNCTION_30	CALL_1
+0x400385c	            0x31c9	                            xor ecx, ecx	      1236	probe.c	FUNCTION_30	CALL_1
+0x400385e	          0x4889ee	                            mov rsi, rbp	      1236	probe.c	FUNCTION_30	CALL_1
+0x4003861	          0x4c89f7	                            mov rdi, r14	      1236	probe.c	FUNCTION_30	CALL_1
+0x4003864	      0xe867f6ffff	         call sym.pci_scan_bridge_extend	      1236	probe.c	FUNCTION_30	CALL_1
+0x4003869	          0x4489e1	                           mov ecx, r12d	      3066	probe.c	FUNCTION_94	CALL_5
+0x400386c	          0x4889ee	                            mov rsi, rbp	      3066	probe.c	FUNCTION_94	CALL_5
+0x400386f	          0x4c89f7	                            mov rdi, r14	      3066	probe.c	FUNCTION_94	CALL_5
+0x4003872	            0x29c1	                            sub ecx, eax	      3066	probe.c	FUNCTION_94	CALL_5
+0x4003874	    0x41b801000000	                              mov r8d, 1	      3066	probe.c	FUNCTION_94	CALL_5
+0x400387a	            0x89c2	                            mov edx, eax	      3066	probe.c	FUNCTION_94	CALL_5
+0x400387c	      0xe84ff6ffff	         call sym.pci_scan_bridge_extend	      3066	probe.c	FUNCTION_94	CALL_5
+0x4003881	            0x31c0	                            xor eax, eax	      3068	probe.c	FUNCTION_94	IF_3
+0x4003883	      0x48837d1800	               cmp qword [rbp + 0x18], 0	      3068	probe.c	FUNCTION_94	IF_3
+0x4003888	              0x5b	                                 pop rbx	      3072	probe.c	FUNCTION_94
+0x4003889	              0x5d	                                 pop rbp	      3072	probe.c	FUNCTION_94
+0x400388a	            0x415c	                                 pop r12	      3072	probe.c	FUNCTION_94
+0x400388c	           0xf94c0	                                 sete al	      3068	probe.c	FUNCTION_94	IF_3
+0x400388f	            0xf7d8	                                 neg eax	      3068	probe.c	FUNCTION_94	IF_3
+0x4003891	            0x415d	                                 pop r13	      3072	probe.c	FUNCTION_94
+0x4003893	            0x415e	                                 pop r14	      3072	probe.c	FUNCTION_94
+0x4003895	              0xc3	                                     ret	      3072	probe.c	FUNCTION_94
+0x4003896	    0x488dbda00000	                   lea rdi, [rbp + 0xa0]	      3052	probe.c	FUNCTION_94	IF_2	CALL_3
+0x400389d	    0x48c7c6000000	                              mov rsi, 0	      3052	probe.c	FUNCTION_94	IF_2	CALL_3
+0x40038a4	      0xe800000000	                          call 0x40038a9	      3052	probe.c	FUNCTION_94	IF_2	CALL_3
+0x40038a9	      0xb8ffffffff	                     mov eax, 0xffffffff	      3053	probe.c	FUNCTION_94	IF_2
+0x40038ae	              0x5b	                                 pop rbx	      3072	probe.c	FUNCTION_94
+0x40038af	              0x5d	                                 pop rbp	      3072	probe.c	FUNCTION_94
+0x40038b0	            0x415c	                                 pop r12	      3072	probe.c	FUNCTION_94
+0x40038b2	            0x415d	                                 pop r13	      3072	probe.c	FUNCTION_94
+0x40038b4	            0x415e	                                 pop r14	      3072	probe.c	FUNCTION_94
+0x40038b6	              0xc3	                                     ret	      3072	probe.c	FUNCTION_94
+pcie_bus_configure_settings	FOR,0:IF,4:WHILE,0:functions,0:CALL,5:DO,0:SWITCH,0:ELSE,0	54
+0x4000780	              0x55	                                push rbp	      2528	probe.c	FUNCTION_73
+0x4000781	              0x53	                                push rbx	      2528	probe.c	FUNCTION_73
+0x4000782	          0x4889fb	                            mov rbx, rdi	      2528	probe.c	FUNCTION_73
+0x4000785	        0x4883ec10	                           sub rsp, 0x10	      2528	probe.c	FUNCTION_73
+0x4000789	        0x488b7f38	            mov rdi, qword [rdi + 0x38] 	      2531	probe.c	FUNCTION_73	IF_1
+0x400078d	    0x65488b042528	                mov rax, qword gs:[0x28]	      2528	probe.c	FUNCTION_73
+0x4000796	      0x4889442408	                mov qword [rsp + 8], rax	      2528	probe.c	FUNCTION_73
+0x400079b	            0x31c0	                            xor eax, eax	      2528	probe.c	FUNCTION_73
+0x400079d	      0xc644240700	                   mov byte [rsp + 7], 0	      2529	probe.c	FUNCTION_73
+0x40007a2	          0x4885ff	                           test rdi, rdi	      2531	probe.c	FUNCTION_73	IF_1
+0x40007a5	            0x7406	                            je 0x40007ad	      2531	probe.c	FUNCTION_73	IF_1
+0x40007a7	        0x807f4c00	                cmp byte [rdi + 0x4c], 0	      2534	probe.c	FUNCTION_73	IF_2	CALL_1
+0x40007ab	            0x751b	                           jne 0x40007c8	      2534	probe.c	FUNCTION_73	IF_2	CALL_1
+0x40007ad	      0x488b442408	                mov rax, qword [rsp + 8]	      2554	probe.c	FUNCTION_73
+0x40007b2	    0x654833042528	                xor rax, qword gs:[0x28]	      2554	probe.c	FUNCTION_73
+0x40007bb	     0xf8588000000	                           jne 0x4000849	      2554	probe.c	FUNCTION_73
+0x40007c1	        0x4883c410	                           add rsp, 0x10	      2554	probe.c	FUNCTION_73
+0x40007c5	              0x5b	                                 pop rbx	      2554	probe.c	FUNCTION_73
+0x40007c6	              0x5d	                                 pop rbp	      2554	probe.c	FUNCTION_73
+0x40007c7	              0xc3	                                     ret	      2554	probe.c	FUNCTION_73
+0x40007c8	    0x8b0500000000	            mov eax, dword [0x040007ce] 	      2542	probe.c	FUNCTION_73	IF_3
+0x40007ce	      0x488d6c2407	                      lea rbp, [rsp + 7]	      2542	probe.c	FUNCTION_73	IF_3
+0x40007d3	          0x83f802	                              cmp eax, 2	      2545	probe.c	FUNCTION_73	IF_4
+0x40007d6	            0x7421	                            je 0x40007f9	      2545	probe.c	FUNCTION_73	IF_4
+0x40007d8	          0x83f801	                              cmp eax, 1	      2505	probe.c	FUNCTION_72	IF_2
+0x40007db	            0x7608	                           jbe 0x40007e5	      2505	probe.c	FUNCTION_72	IF_2
+0x40007dd	          0x4889ee	                            mov rsi, rbp	      2505	probe.c	FUNCTION_72	IF_2
+0x40007e0	      0xe82bfeffff	 call sym.pcie_bus_configure_set.part.39	      2505	probe.c	FUNCTION_72	IF_2
+0x40007e5	          0x4889ea	                            mov rdx, rbp	      2553	probe.c	FUNCTION_73	CALL_5
+0x40007e8	    0x48c7c6000000	                              mov rsi, 0	      2553	probe.c	FUNCTION_73	CALL_5
+0x40007ef	          0x4889df	                            mov rdi, rbx	      2553	probe.c	FUNCTION_73	CALL_5
+0x40007f2	      0xe800000000	                          call 0x40007f7	      2553	probe.c	FUNCTION_73	CALL_5
+0x40007f7	            0xebb4	                           jmp 0x40007ad	      2553	probe.c	FUNCTION_73	CALL_5
+0x40007f9	         0xfb6474f	           movzx eax, byte [rdi + 0x4f] 	      2546	probe.c	FUNCTION_73	IF_4
+0x40007fd	          0x83e007	                              and eax, 7	      2546	probe.c	FUNCTION_73	IF_4
+0x4000800	    0xf6873b060000	          test byte [rdi + 0x63b], 0x40 	      2419	probe.c	FUNCTION_69	IF_2
+0x4000807	        0x88442407	                  mov byte [rsp + 7], al	      2546	probe.c	FUNCTION_73	IF_4
+0x400080b	            0x7413	                            je 0x4000820	      2419	probe.c	FUNCTION_69	IF_2
+0x400080d	         0xfb74752	           movzx eax, word [rdi + 0x52] 	      2419	probe.c	FUNCTION_69	IF_2
+0x4000811	      0x25f0000000	                           and eax, 0xf0	      2419	probe.c	FUNCTION_69	IF_2
+0x4000816	          0x83f840	                           cmp eax, 0x40	      2419	probe.c	FUNCTION_69	IF_2
+0x4000819	            0x7405	                            je 0x4000820	      2419	probe.c	FUNCTION_69	IF_2
+0x400081b	      0xc644240700	                   mov byte [rsp + 7], 0	      2421	probe.c	FUNCTION_69	IF_2
+0x4000820	      0x488d6c2407	                      lea rbp, [rsp + 7]	      2549	probe.c	FUNCTION_73	IF_4	CALL_3
+0x4000825	          0x4889df	                            mov rdi, rbx	      2549	probe.c	FUNCTION_73	IF_4	CALL_3
+0x4000828	    0x48c7c6000000	                              mov rsi, 0	      2549	probe.c	FUNCTION_73	IF_4	CALL_3
+0x400082f	          0x4889ea	                            mov rdx, rbp	      2549	probe.c	FUNCTION_73	IF_4	CALL_3
+0x4000832	      0xe800000000	                          call 0x4000837	      2549	probe.c	FUNCTION_73	IF_4	CALL_3
+0x4000837	        0x488b7b38	            mov rdi, qword [rbx + 0x38] 	      2552	probe.c	FUNCTION_73	CALL_4
+0x400083b	        0x807f4c00	                cmp byte [rdi + 0x4c], 0	      2502	probe.c	FUNCTION_72	IF_1	CALL_1
+0x400083f	            0x74a4	                            je 0x40007e5	      2502	probe.c	FUNCTION_72	IF_1	CALL_1
+0x4000841	    0x8b0500000000	            mov eax, dword [0x04000847] 	      2502	probe.c	FUNCTION_72	IF_1	CALL_1
+0x4000847	            0xeb8f	                           jmp 0x40007d8	      2502	probe.c	FUNCTION_72	IF_1	CALL_1
+0x4000849	      0xe800000000	                          call 0x400084e	      2554	probe.c	FUNCTION_73
+pci_setup_device	FOR,0:IF,9:WHILE,0:functions,0:CALL,40:DO,0:SWITCH,1:ELSE,0	312
+0x4001390	            0x4155	                                push r13	      1508	probe.c	FUNCTION_43
+0x4001392	            0x4154	                                push r12	      1508	probe.c	FUNCTION_43
+0x4001394	      0xbe0e000000	                            mov esi, 0xe	      1447	probe.c	FUNCTION_40	CALL_1
+0x4001399	              0x55	                                push rbp	      1508	probe.c	FUNCTION_43
+0x400139a	              0x53	                                push rbx	      1508	probe.c	FUNCTION_43
+0x400139b	          0x4889fb	                            mov rbx, rdi	      1508	probe.c	FUNCTION_43
+0x400139e	    0x4c8da3a00000	                   lea r12, [rbx + 0xa0]	      1534	probe.c	FUNCTION_43	CALL_5
+0x40013a5	            0x31ed	                            xor ebp, ebp	      1313	probe.c	FUNCTION_34
+0x40013a7	        0x4883ec20	                           sub rsp, 0x20	      1508	probe.c	FUNCTION_43
+0x40013ab	      0x488d542408	                      lea rdx, [rsp + 8]	      1447	probe.c	FUNCTION_40	CALL_1
+0x40013b0	    0x65488b042528	                mov rax, qword gs:[0x28]	      1508	probe.c	FUNCTION_43
+0x40013b9	      0x4889442418	             mov qword [rsp + 0x18], rax	      1508	probe.c	FUNCTION_43
+0x40013be	            0x31c0	                            xor eax, eax	      1508	probe.c	FUNCTION_43
+0x40013c0	      0xe800000000	                          call 0x40013c5	      1447	probe.c	FUNCTION_40	CALL_1
+0x40013c5	        0x488b5310	            mov rdx, qword [rbx + 0x10] 	      1518	probe.c	FUNCTION_43
+0x40013c9	       0xfb6442408	               movzx eax, byte [rsp + 8]	      1448	probe.c	FUNCTION_40
+0x40013ce	          0x4889df	                            mov rdi, rbx	      1524	probe.c	FUNCTION_43	CALL_2
+0x40013d1	    0x488b8ad00000	            mov rcx, qword [rdx + 0xd0] 	      1518	probe.c	FUNCTION_43
+0x40013d8	        0x48894b20	             mov qword [rbx + 0x20], rcx	      1518	probe.c	FUNCTION_43
+0x40013dc	    0x488b92180100	           mov rdx, qword [rdx + 0x118] 	      1519	probe.c	FUNCTION_43
+0x40013e3	    0x48c783200100	              mov qword [rbx + 0x120], 0	      1520	probe.c	FUNCTION_43
+0x40013ee	    0xc7839c000000	               mov dword [rbx + 0x9c], 1	      1523	probe.c	FUNCTION_43
+0x40013f8	    0x488993a00000	             mov qword [rbx + 0xa0], rdx	      1519	probe.c	FUNCTION_43
+0x40013ff	            0x89c2	                            mov edx, eax	      1521	probe.c	FUNCTION_43
+0x4001401	          0xc0e807	                               shr al, 7	      1522	probe.c	FUNCTION_43
+0x4001404	          0x83e27f	                           and edx, 0x7f	      1521	probe.c	FUNCTION_43
+0x4001407	             0x1c0	                            add eax, eax	      1522	probe.c	FUNCTION_43
+0x4001409	          0x885349	               mov byte [rbx + 0x49], dl	      1521	probe.c	FUNCTION_43
+0x400140c	     0xfb693390600	          movzx edx, byte [rbx + 0x639] 	      1522	probe.c	FUNCTION_43
+0x4001413	          0x83e2fd	                     and edx, 0xfffffffd	      1522	probe.c	FUNCTION_43
+0x4001416	             0x9d0	                             or eax, edx	      1522	probe.c	FUNCTION_43
+0x4001418	    0x888339060000	              mov byte [rbx + 0x639], al	      1522	probe.c	FUNCTION_43
+0x400141e	      0xe800000000	                          call 0x4001423	      1524	probe.c	FUNCTION_43	CALL_2
+0x4001423	          0x4889df	                            mov rdi, rbx	      1526	probe.c	FUNCTION_43	CALL_3
+0x4001426	      0xe800000000	                          call 0x400142b	      1526	probe.c	FUNCTION_43	CALL_3
+0x400142b	      0xb8ffffffff	                     mov eax, 0xffffffff	      1532	probe.c	FUNCTION_43
+0x4001430	        0x448b4b38	            mov r9d, dword [rbx + 0x38] 	      1536	probe.c	FUNCTION_43	CALL_7
+0x4001434	    0x48c7c6000000	                              mov rsi, 0	      1534	probe.c	FUNCTION_43	CALL_5
+0x400143b	        0x48894368	             mov qword [rbx + 0x68], rax	      1532	probe.c	FUNCTION_43
+0x400143f	        0x488b4310	            mov rax, qword [rbx + 0x10] 	      1535	probe.c	FUNCTION_43	CALL_6
+0x4001443	          0x4c89e7	                            mov rdi, r12	      1534	probe.c	FUNCTION_43	CALL_5
+0x4001446	          0x4589c8	                            mov r8d, r9d	      1534	probe.c	FUNCTION_43	CALL_5
+0x4001449	        0x4183e107	                              and r9d, 7	      1534	probe.c	FUNCTION_43	CALL_5
+0x400144d	     0xfb688e00000	           movzx ecx, byte [rax + 0xe0] 	      1534	probe.c	FUNCTION_43	CALL_5
+0x4001454	    0x488b80d00000	            mov rax, qword [rax + 0xd0] 	        44	pci.h	
+0x400145b	        0x41c1e803	                              shr r8d, 3	      1534	probe.c	FUNCTION_43	CALL_5
+0x400145f	        0x4183e01f	                           and r8d, 0x1f	      1534	probe.c	FUNCTION_43	CALL_5
+0x4001463	            0x8b10	                    mov edx, dword [rax]	      1534	probe.c	FUNCTION_43	CALL_5
+0x4001465	      0xe800000000	                          call 0x400146a	      1534	probe.c	FUNCTION_43	CALL_5
+0x400146a	      0x488d542408	                      lea rdx, [rsp + 8]	      1422	probe.c	FUNCTION_38	CALL_1
+0x400146f	      0xbe08000000	                              mov esi, 8	      1422	probe.c	FUNCTION_38	CALL_1
+0x4001474	          0x4889df	                            mov rdi, rbx	      1422	probe.c	FUNCTION_38	CALL_1
+0x4001477	      0xe800000000	                          call 0x400147c	      1422	probe.c	FUNCTION_38	CALL_1
+0x400147c	        0x8b442408	                mov eax, dword [rsp + 8]	      1423	probe.c	FUNCTION_38
+0x4001480	         0xfb74b3c	           movzx ecx, word [rbx + 0x3c] 	      1543	probe.c	FUNCTION_43	CALL_9
+0x4001484	    0x48c7c2000000	                              mov rdx, 0	      1543	probe.c	FUNCTION_43	CALL_9
+0x400148b	      0x440fb64b49	           movzx r9d, byte [rbx + 0x49] 	      1543	probe.c	FUNCTION_43	CALL_9
+0x4001490	      0x440fb7433e	           movzx r8d, word [rbx + 0x3e] 	      1543	probe.c	FUNCTION_43	CALL_9
+0x4001495	          0x4c89e6	                            mov rsi, r12	      1543	probe.c	FUNCTION_43	CALL_9
+0x4001498	    0x48c7c7000000	                              mov rdi, 0	      1543	probe.c	FUNCTION_43	CALL_9
+0x400149f	          0x884348	               mov byte [rbx + 0x48], al	      1540	probe.c	FUNCTION_43
+0x40014a2	          0xc1e808	                              shr eax, 8	      1541	probe.c	FUNCTION_43
+0x40014a5	              0x50	                                push rax	      1543	probe.c	FUNCTION_43	CALL_9
+0x40014a6	          0x894344	             mov dword [rbx + 0x44], eax	      1541	probe.c	FUNCTION_43
+0x40014a9	      0xe800000000	                          call 0x40014ae	      1543	probe.c	FUNCTION_43	CALL_9
+0x40014ae	          0x4889df	                            mov rdi, rbx	      1547	probe.c	FUNCTION_43	CALL_10
+0x40014b1	      0xe800000000	                          call 0x40014b6	      1547	probe.c	FUNCTION_43	CALL_10
+0x40014b6	    0x898370030000	            mov dword [rbx + 0x370], eax	      1547	probe.c	FUNCTION_43	CALL_10
+0x40014bc	              0x58	                                 pop rax	      1547	probe.c	FUNCTION_43	CALL_10
+0x40014bd	            0x89ee	                            mov esi, ebp	      1316	probe.c	FUNCTION_34	WHILE_1	CALL_1
+0x40014bf	      0xba0b000000	                            mov edx, 0xb	      1316	probe.c	FUNCTION_34	WHILE_1	CALL_1
+0x40014c4	          0x4889df	                            mov rdi, rbx	      1316	probe.c	FUNCTION_34	WHILE_1	CALL_1
+0x40014c7	      0xe800000000	                          call 0x40014cc	      1316	probe.c	FUNCTION_34	WHILE_1	CALL_1
+0x40014cc	            0x85c0	                           test eax, eax	      1316	probe.c	FUNCTION_34	WHILE_1	CALL_1
+0x40014ce	            0x89c5	                            mov ebp, eax	      1316	probe.c	FUNCTION_34	WHILE_1	CALL_1
+0x40014d0	            0x7428	                            je 0x40014fa	      1316	probe.c	FUNCTION_34	WHILE_1	CALL_1
+0x40014d2	          0x8d7504	                      lea esi, [rbp + 4]	      1318	probe.c	FUNCTION_34	WHILE_1	CALL_2
+0x40014d5	      0x488d542408	                      lea rdx, [rsp + 8]	      1318	probe.c	FUNCTION_34	WHILE_1	CALL_2
+0x40014da	          0x4889df	                            mov rdi, rbx	      1318	probe.c	FUNCTION_34	WHILE_1	CALL_2
+0x40014dd	      0xe800000000	                          call 0x40014e2	      1318	probe.c	FUNCTION_34	WHILE_1	CALL_2
+0x40014e2	    0x66817b3c8680	          cmp word [rbx + 0x3c], 0x8086 	      1321	probe.c	FUNCTION_34	WHILE_1	IF_1
+0x40014e8	            0x75d3	                           jne 0x40014bd	      1321	probe.c	FUNCTION_34	WHILE_1	IF_1
+0x40014ea	    0x66817c240834	              cmp word [rsp + 8], 0x1234	      1321	probe.c	FUNCTION_34	WHILE_1	IF_1
+0x40014f1	            0x75ca	                           jne 0x40014bd	      1321	probe.c	FUNCTION_34	WHILE_1	IF_1
+0x40014f3	    0x808b3b060000	             or byte [rbx + 0x63b], 0x80	      1323	probe.c	FUNCTION_34	WHILE_1	IF_1
+0x40014fa	            0x31ff	                            xor edi, edi	      1556	probe.c	FUNCTION_43	CALL_12
+0x40014fc	    0xc78380000000	               mov dword [rbx + 0x80], 5	      1553	probe.c	FUNCTION_43
+0x4001506	          0x4889de	                            mov rsi, rbx	      1556	probe.c	FUNCTION_43	CALL_12
+0x4001509	      0xe800000000	                          call 0x400150e	      1556	probe.c	FUNCTION_43	CALL_12
+0x400150e	          0x8b6b44	            mov ebp, dword [rbx + 0x44] 	      1559	probe.c	FUNCTION_43
+0x4001511	          0xc1ed08	                              shr ebp, 8	      1559	probe.c	FUNCTION_43
+0x4001514	    0xf6833c060000	          test byte [rbx + 0x63c], 0x40 	      1561	probe.c	FUNCTION_43	IF_1
+0x400151b	     0xf85e8000000	                           jne 0x4001609	      1561	probe.c	FUNCTION_43	IF_1
+0x4001521	      0x488d542406	                      lea rdx, [rsp + 6]	      1480	probe.c	FUNCTION_42	CALL_1
+0x4001526	      0xbe04000000	                              mov esi, 4	      1480	probe.c	FUNCTION_42	CALL_1
+0x400152b	          0x4889df	                            mov rdi, rbx	      1480	probe.c	FUNCTION_42	CALL_1
+0x400152e	      0xe800000000	                          call 0x4001533	      1480	probe.c	FUNCTION_42	CALL_1
+0x4001533	    0x440fb76c2406	              movzx r13d, word [rsp + 6]	      1481	probe.c	FUNCTION_42
+0x4001539	      0xbe04000000	                              mov esi, 4	      1482	probe.c	FUNCTION_42	CALL_2
+0x400153e	          0x4889df	                            mov rdi, rbx	      1482	probe.c	FUNCTION_42	CALL_2
+0x4001541	    0x664181f50004	                         xor r13w, 0x400	      1481	probe.c	FUNCTION_42
+0x4001547	        0x410fb7d5	                         movzx edx, r13w	      1482	probe.c	FUNCTION_42	CALL_2
+0x400154b	      0xe800000000	                          call 0x4001550	      1482	probe.c	FUNCTION_42	CALL_2
+0x4001550	      0x488d542408	                      lea rdx, [rsp + 8]	      1483	probe.c	FUNCTION_42	CALL_3
+0x4001555	      0xbe04000000	                              mov esi, 4	      1483	probe.c	FUNCTION_42	CALL_3
+0x400155a	          0x4889df	                            mov rdi, rbx	      1483	probe.c	FUNCTION_42	CALL_3
+0x400155d	      0xe800000000	                          call 0x4001562	      1483	probe.c	FUNCTION_42	CALL_3
+0x4001562	       0xfb7542406	               movzx edx, word [rsp + 6]	      1485	probe.c	FUNCTION_42	CALL_4
+0x4001567	      0xbe04000000	                              mov esi, 4	      1485	probe.c	FUNCTION_42	CALL_4
+0x400156c	          0x4889df	                            mov rdi, rbx	      1485	probe.c	FUNCTION_42	CALL_4
+0x400156f	      0xe800000000	                          call 0x4001574	      1485	probe.c	FUNCTION_42	CALL_4
+0x4001574	    0x6644396c2408	                cmp word [rsp + 8], r13w	      1492	probe.c	FUNCTION_42	IF_1
+0x400157a	     0xfb6933c0600	          movzx edx, byte [rbx + 0x63c] 	      1571	probe.c	FUNCTION_43	CALL_16
+0x4001581	         0xfb64b49	           movzx ecx, byte [rbx + 0x49] 	      1573	probe.c	FUNCTION_43	SWITCH_1
+0x4001585	           0xf95c0	                                setne al	      1571	probe.c	FUNCTION_43	CALL_16
+0x4001588	          0x83e2fb	                     and edx, 0xfffffffb	      1571	probe.c	FUNCTION_43	CALL_16
+0x400158b	          0xc1e002	                              shl eax, 2	      1571	probe.c	FUNCTION_43	CALL_16
+0x400158e	             0x9d0	                             or eax, edx	      1571	probe.c	FUNCTION_43	CALL_16
+0x4001590	          0x80f901	                               cmp cl, 1	      1573	probe.c	FUNCTION_43	SWITCH_1
+0x4001593	    0x88833c060000	              mov byte [rbx + 0x63c], al	      1571	probe.c	FUNCTION_43	CALL_16
+0x4001599	     0xf84d7010000	                            je 0x4001776	      1573	probe.c	FUNCTION_43	SWITCH_1
+0x400159f	     0xf82b2000000	                            jb 0x4001657	      1573	probe.c	FUNCTION_43	SWITCH_1
+0x40015a5	          0x80f902	                               cmp cl, 2	      1573	probe.c	FUNCTION_43	SWITCH_1
+0x40015a8	            0x7436	                            je 0x40015e0	      1573	probe.c	FUNCTION_43	SWITCH_1
+0x40015aa	           0xfb6d1	                           movzx edx, cl	      1656	probe.c	FUNCTION_43	SWITCH_1	CALL_39
+0x40015ad	    0x48c7c6000000	                              mov rsi, 0	      1656	probe.c	FUNCTION_43	SWITCH_1	CALL_39
+0x40015b4	          0x4c89e7	                            mov rdi, r12	      1656	probe.c	FUNCTION_43	SWITCH_1	CALL_39
+0x40015b7	      0xe800000000	                          call 0x40015bc	      1656	probe.c	FUNCTION_43	SWITCH_1	CALL_39
+0x40015bc	      0xb8fbffffff	                     mov eax, 0xfffffffb	      1658	probe.c	FUNCTION_43	SWITCH_1
+0x40015c1	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	      1668	probe.c	FUNCTION_43
+0x40015c6	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      1668	probe.c	FUNCTION_43
+0x40015cf	     0xf855a030000	                           jne 0x400192f	      1668	probe.c	FUNCTION_43
+0x40015d5	        0x4883c420	                           add rsp, 0x20	      1668	probe.c	FUNCTION_43
+0x40015d9	              0x5b	                                 pop rbx	      1668	probe.c	FUNCTION_43
+0x40015da	              0x5d	                                 pop rbp	      1668	probe.c	FUNCTION_43
+0x40015db	            0x415c	                                 pop r12	      1668	probe.c	FUNCTION_43
+0x40015dd	            0x415d	                                 pop r13	      1668	probe.c	FUNCTION_43
+0x40015df	              0xc3	                                     ret	      1668	probe.c	FUNCTION_43
+0x40015e0	    0x81fd07060000	                          cmp ebp, 0x607	      1647	probe.c	FUNCTION_43	SWITCH_1	IF_9
+0x40015e6	     0xf8438020000	                            je 0x4001824	      1647	probe.c	FUNCTION_43	SWITCH_1	IF_9
+0x40015ec	          0x8b5344	            mov edx, dword [rbx + 0x44] 	      1661	probe.c	FUNCTION_43	SWITCH_1	CALL_40
+0x40015ef	    0x48c7c6000000	                              mov rsi, 0	      1661	probe.c	FUNCTION_43	SWITCH_1	CALL_40
+0x40015f6	          0x4c89e7	                            mov rdi, r12	      1661	probe.c	FUNCTION_43	SWITCH_1	CALL_40
+0x40015f9	      0xe800000000	                          call 0x40015fe	      1661	probe.c	FUNCTION_43	SWITCH_1	CALL_40
+0x40015fe	    0xc74344000000	               mov dword [rbx + 0x44], 0	      1663	probe.c	FUNCTION_43	SWITCH_1
+0x4001605	            0x31c0	                            xor eax, eax	      1667	probe.c	FUNCTION_43
+0x4001607	            0xebb8	                           jmp 0x40015c1	      1667	probe.c	FUNCTION_43
+0x4001609	      0x488d542404	                      lea rdx, [rsp + 4]	      1562	probe.c	FUNCTION_43	IF_1	CALL_13
+0x400160e	      0xbe04000000	                              mov esi, 4	      1562	probe.c	FUNCTION_43	IF_1	CALL_13
+0x4001613	          0x4889df	                            mov rdi, rbx	      1562	probe.c	FUNCTION_43	IF_1	CALL_13
+0x4001616	      0xe800000000	                          call 0x400161b	      1562	probe.c	FUNCTION_43	IF_1	CALL_13
+0x400161b	      0xf644240403	                  test byte [rsp + 4], 3	      1563	probe.c	FUNCTION_43	IF_1	IF_2
+0x4001620	     0xf84fbfeffff	                            je 0x4001521	      1563	probe.c	FUNCTION_43	IF_1	IF_2
+0x4001626	          0x4c89e7	                            mov rdi, r12	      1564	probe.c	FUNCTION_43	IF_1	IF_2	CALL_14
+0x4001629	    0x48c7c6000000	                              mov rsi, 0	      1564	probe.c	FUNCTION_43	IF_1	IF_2	CALL_14
+0x4001630	      0xe800000000	                          call 0x4001635	      1564	probe.c	FUNCTION_43	IF_1	IF_2	CALL_14
+0x4001635	       0xfb7442404	               movzx eax, word [rsp + 4]	      1566	probe.c	FUNCTION_43	IF_1	IF_2
+0x400163a	      0xbe04000000	                              mov esi, 4	      1567	probe.c	FUNCTION_43	IF_1	IF_2	CALL_15
+0x400163f	          0x4889df	                            mov rdi, rbx	      1567	probe.c	FUNCTION_43	IF_1	IF_2	CALL_15
+0x4001642	          0x83e0fc	                     and eax, 0xfffffffc	      1566	probe.c	FUNCTION_43	IF_1	IF_2
+0x4001645	           0xfb7d0	                           movzx edx, ax	      1567	probe.c	FUNCTION_43	IF_1	IF_2	CALL_15
+0x4001648	      0x6689442404	                  mov word [rsp + 4], ax	      1566	probe.c	FUNCTION_43	IF_1	IF_2
+0x400164d	      0xe800000000	                          call 0x4001652	      1567	probe.c	FUNCTION_43	IF_1	IF_2	CALL_15
+0x4001652	      0xe9cafeffff	                           jmp 0x4001521	      1567	probe.c	FUNCTION_43	IF_1	IF_2	CALL_15
+0x4001657	    0x81fd04060000	                          cmp ebp, 0x604	      1575	probe.c	FUNCTION_43	SWITCH_1	IF_3
+0x400165d	            0x748d	                            je 0x40015ec	      1575	probe.c	FUNCTION_43	SWITCH_1	IF_3
+0x400165f	    0xf6833b060000	          test byte [rbx + 0x63b], 0x10 	      1249	probe.c	FUNCTION_31	IF_1
+0x4001666	     0xf8407020000	                            je 0x4001873	      1249	probe.c	FUNCTION_31	IF_1
+0x400166c	        0xc6435100	                mov byte [rbx + 0x51], 0	      1250	probe.c	FUNCTION_31	IF_1
+0x4001670	    0xc78374030000	              mov dword [rbx + 0x374], 0	      1251	probe.c	FUNCTION_31	IF_1
+0x400167a	      0xba30000000	                           mov edx, 0x30	      1578	probe.c	FUNCTION_43	SWITCH_1	CALL_18
+0x400167f	      0xbe06000000	                              mov esi, 6	      1578	probe.c	FUNCTION_43	SWITCH_1	CALL_18
+0x4001684	          0x4889df	                            mov rdi, rbx	      1578	probe.c	FUNCTION_43	SWITCH_1	CALL_18
+0x4001687	      0xe8c4f6ffff	                 call sym.pci_read_bases	      1578	probe.c	FUNCTION_43	SWITCH_1	CALL_18
+0x400168c	        0x488d5340	                   lea rdx, [rbx + 0x40]	      1580	probe.c	FUNCTION_43	SWITCH_1	CALL_19
+0x4001690	      0xbe2c000000	                           mov esi, 0x2c	      1435	probe.c	FUNCTION_39	CALL_1
+0x4001695	          0x4889df	                            mov rdi, rbx	      1435	probe.c	FUNCTION_39	CALL_1
+0x4001698	      0xe800000000	                          call 0x400169d	      1435	probe.c	FUNCTION_39	CALL_1
+0x400169d	        0x488d5342	                   lea rdx, [rbx + 0x42]	      1580	probe.c	FUNCTION_43	SWITCH_1	CALL_19
+0x40016a1	      0xbe2e000000	                           mov esi, 0x2e	      1436	probe.c	FUNCTION_39	CALL_2
+0x40016a6	          0x4889df	                            mov rdi, rbx	      1436	probe.c	FUNCTION_39	CALL_2
+0x40016a9	      0xe800000000	                          call 0x40016ae	      1436	probe.c	FUNCTION_39	CALL_2
+0x40016ae	    0x81fd01010000	                          cmp ebp, 0x101	      1588	probe.c	FUNCTION_43	SWITCH_1	IF_4
+0x40016b4	     0xf854bffffff	                           jne 0x4001605	      1588	probe.c	FUNCTION_43	SWITCH_1	IF_4
+0x40016ba	      0x488d542406	                      lea rdx, [rsp + 6]	      1590	probe.c	FUNCTION_43	SWITCH_1	IF_4	CALL_20
+0x40016bf	      0xbe09000000	                              mov esi, 9	      1590	probe.c	FUNCTION_43	SWITCH_1	IF_4	CALL_20
+0x40016c4	          0x4889df	                            mov rdi, rbx	      1590	probe.c	FUNCTION_43	SWITCH_1	IF_4	CALL_20
+0x40016c7	      0xe800000000	                          call 0x40016cc	      1590	probe.c	FUNCTION_43	SWITCH_1	IF_4	CALL_20
+0x40016cc	       0xfb6442406	               movzx eax, byte [rsp + 6]	      1591	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x40016d1	            0xa801	                              test al, 1	      1591	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x40016d3	     0xf84be010000	                            je 0x4001897	      1591	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x40016d9	            0xa804	                              test al, 4	      1607	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6
+0x40016db	     0xf8524ffffff	                           jne 0x4001605	      1607	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6
+0x40016e1	    0x488dabf80300	                  lea rbp, [rbx + 0x3f8]	      1610	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6
+0x40016e8	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	      1612	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_25
+0x40016ec	      0x488d542408	                      lea rdx, [rsp + 8]	      1612	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_25
+0x40016f1	    0x48c783100400	         mov qword [rbx + 0x410], 0x110 	      1611	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6
+0x40016fc	    0x48c744240870	              mov qword [rsp + 8], 0x170	      1608	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6
+0x4001705	          0x4889ee	                            mov rsi, rbp	      1612	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_25
+0x4001708	    0x48c744241077	          mov qword [rsp + 0x10], 0x177 	      1609	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6
+0x4001711	      0xe800000000	                          call 0x4001716	      1612	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_25
+0x4001716	          0x4889ea	                            mov rdx, rbp	      1613	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_26
+0x4001719	    0x48c7c6000000	                              mov rsi, 0	      1613	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_26
+0x4001720	          0x4c89e7	                            mov rdi, r12	      1613	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_26
+0x4001723	      0xe800000000	                          call 0x4001728	      1613	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_26
+0x4001728	    0x488dab380400	                  lea rbp, [rbx + 0x438]	      1617	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6
+0x400172f	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	      1619	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_27
+0x4001733	      0x488d542408	                      lea rdx, [rsp + 8]	      1619	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_27
+0x4001738	    0x48c783500400	         mov qword [rbx + 0x450], 0x110 	      1618	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6
+0x4001743	    0x48c744240876	              mov qword [rsp + 8], 0x376	      1615	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6
+0x400174c	          0x4889ee	                            mov rsi, rbp	      1619	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_27
+0x400174f	    0x48c744241076	          mov qword [rsp + 0x10], 0x376 	      1616	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6
+0x4001758	      0xe800000000	                          call 0x400175d	      1619	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_27
+0x400175d	          0x4889ea	                            mov rdx, rbp	      1620	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_28
+0x4001760	    0x48c7c6000000	                              mov rsi, 0	      1620	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_28
+0x4001767	          0x4c89e7	                            mov rdi, r12	      1620	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_28
+0x400176a	      0xe800000000	                          call 0x400176f	      1620	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_6	CALL_28
+0x400176f	            0x31c0	                            xor eax, eax	      1667	probe.c	FUNCTION_43
+0x4001771	      0xe94bfeffff	                           jmp 0x40015c1	      1667	probe.c	FUNCTION_43
+0x4001776	    0x81fd04060000	                          cmp ebp, 0x604	      1627	probe.c	FUNCTION_43	SWITCH_1	IF_7
+0x400177c	     0xf856afeffff	                           jne 0x40015ec	      1627	probe.c	FUNCTION_43	SWITCH_1	IF_7
+0x4001782	    0xf6833b060000	          test byte [rbx + 0x63b], 0x10 	      1249	probe.c	FUNCTION_31	IF_1
+0x4001789	     0xf84f1000000	                            je 0x4001880	      1249	probe.c	FUNCTION_31	IF_1
+0x400178f	        0xc6435100	                mov byte [rbx + 0x51], 0	      1250	probe.c	FUNCTION_31	IF_1
+0x4001793	    0xc78374030000	              mov dword [rbx + 0x374], 0	      1251	probe.c	FUNCTION_31	IF_1
+0x400179d	        0x807b4401	                cmp byte [rbx + 0x44], 1	      1636	probe.c	FUNCTION_43	SWITCH_1
+0x40017a1	     0xfb693390600	          movzx edx, byte [rbx + 0x639] 	      1636	probe.c	FUNCTION_43	SWITCH_1
+0x40017a8	      0xbe02000000	                              mov esi, 2	      1637	probe.c	FUNCTION_43	SWITCH_1	CALL_30
+0x40017ad	          0x4889df	                            mov rdi, rbx	      1637	probe.c	FUNCTION_43	SWITCH_1	CALL_30
+0x40017b0	           0xf94c0	                                 sete al	      1636	probe.c	FUNCTION_43	SWITCH_1
+0x40017b3	          0x83e2fe	                     and edx, 0xfffffffe	      1636	probe.c	FUNCTION_43	SWITCH_1
+0x40017b6	             0x9d0	                             or eax, edx	      1636	probe.c	FUNCTION_43	SWITCH_1
+0x40017b8	      0xba38000000	                           mov edx, 0x38	      1637	probe.c	FUNCTION_43	SWITCH_1	CALL_30
+0x40017bd	    0x888339060000	              mov byte [rbx + 0x639], al	      1636	probe.c	FUNCTION_43	SWITCH_1
+0x40017c3	      0xe888f5ffff	                 call sym.pci_read_bases	      1637	probe.c	FUNCTION_43	SWITCH_1	CALL_30
+0x40017c8	      0x488d542408	                      lea rdx, [rsp + 8]	      1306	probe.c	FUNCTION_33	CALL_1
+0x40017cd	      0xbe14000000	                           mov esi, 0x14	      1306	probe.c	FUNCTION_33	CALL_1
+0x40017d2	          0x4889df	                            mov rdi, rbx	      1306	probe.c	FUNCTION_33	CALL_1
+0x40017d5	      0xe800000000	                          call 0x40017da	      1306	probe.c	FUNCTION_33	CALL_1
+0x40017da	      0xf644240840	               test byte [rsp + 8], 0x40	      1307	probe.c	FUNCTION_33	IF_1
+0x40017df	            0x7407	                            je 0x40017e8	      1307	probe.c	FUNCTION_33	IF_1
+0x40017e1	    0x808b3b060000	            or byte [rbx + 0x63b], 0x40 	      1308	probe.c	FUNCTION_33	IF_1
+0x40017e8	      0xbe0d000000	                            mov esi, 0xd	      1639	probe.c	FUNCTION_43	SWITCH_1	CALL_32
+0x40017ed	          0x4889df	                            mov rdi, rbx	      1639	probe.c	FUNCTION_43	SWITCH_1	CALL_32
+0x40017f0	      0xe800000000	                          call 0x40017f5	      1639	probe.c	FUNCTION_43	SWITCH_1	CALL_32
+0x40017f5	            0x85c0	                           test eax, eax	      1640	probe.c	FUNCTION_43	SWITCH_1	IF_8
+0x40017f7	            0x89c5	                            mov ebp, eax	      1639	probe.c	FUNCTION_43	SWITCH_1	CALL_32
+0x40017f9	     0xf8406feffff	                            je 0x4001605	      1640	probe.c	FUNCTION_43	SWITCH_1	IF_8
+0x40017ff	        0x488d5340	                   lea rdx, [rbx + 0x40]	      1641	probe.c	FUNCTION_43	SWITCH_1	IF_8	CALL_33
+0x4001803	          0x8d7004	                      lea esi, [rax + 4]	      1641	probe.c	FUNCTION_43	SWITCH_1	IF_8	CALL_33
+0x4001806	          0x4889df	                            mov rdi, rbx	      1641	probe.c	FUNCTION_43	SWITCH_1	IF_8	CALL_33
+0x4001809	      0xe800000000	                          call 0x400180e	      1641	probe.c	FUNCTION_43	SWITCH_1	IF_8	CALL_33
+0x400180e	        0x488d5342	                   lea rdx, [rbx + 0x42]	      1642	probe.c	FUNCTION_43	SWITCH_1	IF_8	CALL_34
+0x4001812	          0x8d7506	                      lea esi, [rbp + 6]	      1642	probe.c	FUNCTION_43	SWITCH_1	IF_8	CALL_34
+0x4001815	          0x4889df	                            mov rdi, rbx	      1642	probe.c	FUNCTION_43	SWITCH_1	IF_8	CALL_34
+0x4001818	      0xe800000000	                          call 0x400181d	      1642	probe.c	FUNCTION_43	SWITCH_1	IF_8	CALL_34
+0x400181d	            0x31c0	                            xor eax, eax	      1667	probe.c	FUNCTION_43
+0x400181f	      0xe99dfdffff	                           jmp 0x40015c1	      1667	probe.c	FUNCTION_43
+0x4001824	    0xf6833b060000	          test byte [rbx + 0x63b], 0x10 	      1249	probe.c	FUNCTION_31	IF_1
+0x400182b	            0x7460	                            je 0x400188d	      1249	probe.c	FUNCTION_31	IF_1
+0x400182d	        0xc6435100	                mov byte [rbx + 0x51], 0	      1250	probe.c	FUNCTION_31	IF_1
+0x4001831	    0xc78374030000	              mov dword [rbx + 0x374], 0	      1251	probe.c	FUNCTION_31	IF_1
+0x400183b	            0x31d2	                            xor edx, edx	      1650	probe.c	FUNCTION_43	SWITCH_1	CALL_36
+0x400183d	      0xbe01000000	                              mov esi, 1	      1650	probe.c	FUNCTION_43	SWITCH_1	CALL_36
+0x4001842	          0x4889df	                            mov rdi, rbx	      1650	probe.c	FUNCTION_43	SWITCH_1	CALL_36
+0x4001845	      0xe806f5ffff	                 call sym.pci_read_bases	      1650	probe.c	FUNCTION_43	SWITCH_1	CALL_36
+0x400184a	        0x488d5340	                   lea rdx, [rbx + 0x40]	      1651	probe.c	FUNCTION_43	SWITCH_1	CALL_37
+0x400184e	      0xbe40000000	                           mov esi, 0x40	      1651	probe.c	FUNCTION_43	SWITCH_1	CALL_37
+0x4001853	          0x4889df	                            mov rdi, rbx	      1651	probe.c	FUNCTION_43	SWITCH_1	CALL_37
+0x4001856	      0xe800000000	                          call 0x400185b	      1651	probe.c	FUNCTION_43	SWITCH_1	CALL_37
+0x400185b	        0x488d5342	                   lea rdx, [rbx + 0x42]	      1652	probe.c	FUNCTION_43	SWITCH_1	CALL_38
+0x400185f	      0xbe42000000	                           mov esi, 0x42	      1652	probe.c	FUNCTION_43	SWITCH_1	CALL_38
+0x4001864	          0x4889df	                            mov rdi, rbx	      1652	probe.c	FUNCTION_43	SWITCH_1	CALL_38
+0x4001867	      0xe800000000	                          call 0x400186c	      1652	probe.c	FUNCTION_43	SWITCH_1	CALL_38
+0x400186c	            0x31c0	                            xor eax, eax	      1667	probe.c	FUNCTION_43
+0x400186e	      0xe94efdffff	                           jmp 0x40015c1	      1653	probe.c	FUNCTION_43	SWITCH_1
+0x4001873	          0x4889df	                            mov rdi, rbx	      1653	probe.c	FUNCTION_43	SWITCH_1
+0x4001876	      0xe815ebffff	           call sym.pci_read_irq.part.35	      1653	probe.c	FUNCTION_43	SWITCH_1
+0x400187b	      0xe9fafdffff	                           jmp 0x400167a	      1653	probe.c	FUNCTION_43	SWITCH_1
+0x4001880	          0x4889df	                            mov rdi, rbx	      1653	probe.c	FUNCTION_43	SWITCH_1
+0x4001883	      0xe808ebffff	           call sym.pci_read_irq.part.35	      1653	probe.c	FUNCTION_43	SWITCH_1
+0x4001888	      0xe910ffffff	                           jmp 0x400179d	      1653	probe.c	FUNCTION_43	SWITCH_1
+0x400188d	          0x4889df	                            mov rdi, rbx	      1653	probe.c	FUNCTION_43	SWITCH_1
+0x4001890	      0xe8fbeaffff	           call sym.pci_read_irq.part.35	      1653	probe.c	FUNCTION_43	SWITCH_1
+0x4001895	            0xeba4	                           jmp 0x400183b	      1653	probe.c	FUNCTION_43	SWITCH_1
+0x4001897	    0x488dab780300	                  lea rbp, [rbx + 0x378]	      1594	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x400189e	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	      1596	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_21
+0x40018a2	      0x488d542408	                      lea rdx, [rsp + 8]	      1596	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_21
+0x40018a7	    0x48c783900300	         mov qword [rbx + 0x390], 0x110 	      1595	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x40018b2	    0x48c7442408f0	              mov qword [rsp + 8], 0x1f0	      1592	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x40018bb	          0x4889ee	                            mov rsi, rbp	      1596	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_21
+0x40018be	    0x48c7442410f7	          mov qword [rsp + 0x10], 0x1f7 	      1593	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x40018c7	      0xe800000000	                          call 0x40018cc	      1596	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_21
+0x40018cc	          0x4889ea	                            mov rdx, rbp	      1597	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_22
+0x40018cf	    0x48c7c6000000	                              mov rsi, 0	      1597	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_22
+0x40018d6	          0x4c89e7	                            mov rdi, r12	      1597	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_22
+0x40018d9	      0xe800000000	                          call 0x40018de	      1597	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_22
+0x40018de	    0x488dabb80300	                  lea rbp, [rbx + 0x3b8]	      1601	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x40018e5	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	      1603	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_23
+0x40018e9	      0x488d542408	                      lea rdx, [rsp + 8]	      1603	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_23
+0x40018ee	    0x48c783d00300	         mov qword [rbx + 0x3d0], 0x110 	      1602	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x40018f9	    0x48c7442408f6	              mov qword [rsp + 8], 0x3f6	      1599	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x4001902	          0x4889ee	                            mov rsi, rbp	      1603	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_23
+0x4001905	    0x48c7442410f6	          mov qword [rsp + 0x10], 0x3f6 	      1600	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5
+0x400190e	      0xe800000000	                          call 0x4001913	      1603	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_23
+0x4001913	          0x4889ea	                            mov rdx, rbp	      1604	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_24
+0x4001916	    0x48c7c6000000	                              mov rsi, 0	      1604	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_24
+0x400191d	          0x4c89e7	                            mov rdi, r12	      1604	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_24
+0x4001920	      0xe800000000	                          call 0x4001925	      1604	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_24
+0x4001925	       0xfb6442406	               movzx eax, byte [rsp + 6]	      1604	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_24
+0x400192a	      0xe9aafdffff	                           jmp 0x40016d9	      1604	probe.c	FUNCTION_43	SWITCH_1	IF_4	IF_5	CALL_24
+0x400192f	      0xe800000000	                          call 0x4001934	      1668	probe.c	FUNCTION_43
+pci_rescan_bus_bridge_resize	FOR,0:IF,0:WHILE,0:functions,0:CALL,3:DO,0:SWITCH,0:ELSE,0	18
+0x4003b00	            0x4154	                                push r12	      2965	probe.c	FUNCTION_88
+0x4003b02	              0x55	                                push rbp	      2965	probe.c	FUNCTION_88
+0x4003b03	            0x31f6	                            xor esi, esi	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003b05	              0x53	                                push rbx	      2965	probe.c	FUNCTION_88
+0x4003b06	        0x488b5f18	            mov rbx, qword [rdi + 0x18] 	      2967	probe.c	FUNCTION_88
+0x4003b0a	          0x4889fd	                            mov rbp, rdi	      2965	probe.c	FUNCTION_88
+0x4003b0d	          0x4889df	                            mov rdi, rbx	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003b10	      0xe82bfaffff	      call sym.pci_scan_child_bus_extend	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003b15	          0x4889ef	                            mov rdi, rbp	      2971	probe.c	FUNCTION_88	CALL_2
+0x4003b18	          0x4189c4	                           mov r12d, eax	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003b1b	      0xe800000000	                          call 0x4003b20	      2971	probe.c	FUNCTION_88	CALL_2
+0x4003b20	          0x4889df	                            mov rdi, rbx	      2973	probe.c	FUNCTION_88	CALL_3
+0x4003b23	      0xe800000000	                          call 0x4003b28	      2973	probe.c	FUNCTION_88	CALL_3
+0x4003b28	          0x4489e0	                           mov eax, r12d	      2976	probe.c	FUNCTION_88
+0x4003b2b	              0x5b	                                 pop rbx	      2976	probe.c	FUNCTION_88
+0x4003b2c	              0x5d	                                 pop rbp	      2976	probe.c	FUNCTION_88
+0x4003b2d	            0x415c	                                 pop r12	      2976	probe.c	FUNCTION_88
+0x4003b2f	              0xc3	                                     ret	      2976	probe.c	FUNCTION_88
+pci_release_host_bridge_dev	FOR,0:IF,0:WHILE,0:functions,0:CALL,3:DO,0:SWITCH,0:ELSE,0	11
+0x4000150	              0x53	                                push rbx	       532	probe.c	FUNCTION_16
+0x4000151	    0x488b87100300	           mov rax, qword [rdi + 0x310] 	       527	probe.c	FUNCTION_15	IF_1
+0x4000158	          0x4889fb	                            mov rbx, rdi	       532	probe.c	FUNCTION_16
+0x400015b	          0x4885c0	                           test rax, rax	       527	probe.c	FUNCTION_15	IF_1
+0x400015e	            0x7405	                            je 0x4000165	       527	probe.c	FUNCTION_15	IF_1
+0x4000160	      0xe800000000	                          call 0x4000165	       528	probe.c	FUNCTION_15	CALL_2
+0x4000165	    0x488dbbf00200	                  lea rdi, [rbx + 0x2f0]	       580	probe.c	FUNCTION_19	CALL_1
+0x400016c	      0xe800000000	                          call 0x4000171	       580	probe.c	FUNCTION_19	CALL_1
+0x4000171	          0x4889df	                            mov rdi, rbx	       582	probe.c	FUNCTION_19	CALL_2
+0x4000174	              0x5b	                                 pop rbx	       535	probe.c	FUNCTION_16
+0x4000175	      0xe900000000	                           jmp 0x400017a	       582	probe.c	FUNCTION_19	CALL_2
+pci_sort_breadthfirst	FOR,0:IF,0:WHILE,0:functions,0:CALL,1:DO,0:SWITCH,0:ELSE,0	8
+0x40000aa	              0xc3	                                     ret	        83	probe.c	FUNCTION_3	CALL_1
+0x40000ab	          0x4889c7	                            mov rdi, rax	        85	probe.c	FUNCTION_3	CALL_2
+0x40000ae	      0xe800000000	                          call 0x40000b3	        85	probe.c	FUNCTION_3	CALL_2
+0x40000b3	            0x31c0	                            xor eax, eax	        86	probe.c	FUNCTION_3
+0x40000b5	          0x4885db	                           test rbx, rbx	        86	probe.c	FUNCTION_3
+0x40000b8	           0xf94c0	                                 sete al	        86	probe.c	FUNCTION_3
+0x40000bb	              0x5b	                                 pop rbx	        87	probe.c	FUNCTION_3
+0x40000bc	              0xc3	                                     ret	        87	probe.c	FUNCTION_3
+release_pcibus_dev	FOR,0:IF,0:WHILE,0:functions,0:CALL,5:DO,0:SWITCH,0:ELSE,0	9
+0x40000c0	              0x53	                                push rbx	        94	probe.c	FUNCTION_4
+0x40000c1	    0x488d9fe0feff	                  lea rbx, [rdi - 0x120]	        95	probe.c	FUNCTION_4	CALL_1
+0x40000c8	        0x488b7ff8	                mov rdi, qword [rdi - 8]	        97	probe.c	FUNCTION_4	CALL_2
+0x40000cc	      0xe800000000	                          call 0x40000d1	        97	probe.c	FUNCTION_4	CALL_2
+0x40000d1	          0x4889df	                            mov rdi, rbx	        98	probe.c	FUNCTION_4	CALL_3
+0x40000d4	      0xe800000000	                          call 0x40000d9	        98	probe.c	FUNCTION_4	CALL_3
+0x40000d9	          0x4889df	                            mov rdi, rbx	       100	probe.c	FUNCTION_4	CALL_5
+0x40000dc	              0x5b	                                 pop rbx	       101	probe.c	FUNCTION_4
+0x40000dd	      0xe900000000	                           jmp 0x40000e2	       100	probe.c	FUNCTION_4	CALL_5
+pci_host_probe	FOR,0:IF,2:WHILE,0:functions,0:CALL,9:DO,0:SWITCH,0:ELSE,1	40
+0x4003970	            0x4154	                                push r12	      2766	probe.c	FUNCTION_81
+0x4003972	              0x55	                                push rbp	      2766	probe.c	FUNCTION_81
+0x4003973	              0x53	                                push rbx	      2766	probe.c	FUNCTION_81
+0x4003974	          0x4889fb	                            mov rbx, rdi	      2766	probe.c	FUNCTION_81
+0x4003977	        0x4883ec08	                              sub rsp, 8	      2766	probe.c	FUNCTION_81
+0x400397b	      0xe800000000	                          call 0x4003980	      2770	probe.c	FUNCTION_81	CALL_1
+0x4003980	            0x85c0	                           test eax, eax	      2771	probe.c	FUNCTION_81	IF_1
+0x4003982	            0x7859	                            js 0x40039dd	      2771	probe.c	FUNCTION_81	IF_1
+0x4003984	    0xf60500000000	               test byte [0x0400398b], 4	      2783	probe.c	FUNCTION_81	IF_2	CALL_3
+0x400398b	    0x4c8ba3d00200	           mov r12, qword [rbx + 0x2d0] 	      2776	probe.c	FUNCTION_81
+0x4003992	          0x4c89e7	                            mov rdi, r12	      2784	probe.c	FUNCTION_81	IF_2	CALL_4
+0x4003995	            0x7418	                            je 0x40039af	      2783	probe.c	FUNCTION_81	IF_2	CALL_3
+0x4003997	      0xe800000000	                          call 0x400399c	      2784	probe.c	FUNCTION_81	IF_2	CALL_4
+0x400399c	          0x4c89e7	                            mov rdi, r12	      2793	probe.c	FUNCTION_81	CALL_9
+0x400399f	      0xe800000000	                          call 0x40039a4	      2793	probe.c	FUNCTION_81	CALL_9
+0x40039a4	            0x31c0	                            xor eax, eax	      2794	probe.c	FUNCTION_81
+0x40039a6	        0x4883c408	                              add rsp, 8	      2795	probe.c	FUNCTION_81
+0x40039aa	              0x5b	                                 pop rbx	      2795	probe.c	FUNCTION_81
+0x40039ab	              0x5d	                                 pop rbp	      2795	probe.c	FUNCTION_81
+0x40039ac	            0x415c	                                 pop r12	      2795	probe.c	FUNCTION_81
+0x40039ae	              0xc3	                                     ret	      2795	probe.c	FUNCTION_81
+0x40039af	      0xe800000000	                          call 0x40039b4	      2786	probe.c	FUNCTION_81	ELSE_1	CALL_5
+0x40039b4	          0x4c89e7	                            mov rdi, r12	      2787	probe.c	FUNCTION_81	ELSE_1	CALL_6
+0x40039b7	      0x498d6c2418	                   lea rbp, [r12 + 0x18]	      2789	probe.c	FUNCTION_81	ELSE_1	CALL_7
+0x40039bc	      0xe800000000	                          call 0x40039c1	      2787	probe.c	FUNCTION_81	ELSE_1	CALL_6
+0x40039c1	      0x498b5c2418	            mov rbx, qword [r12 + 0x18] 	      2789	probe.c	FUNCTION_81	ELSE_1	CALL_7
+0x40039c6	          0x4839eb	                            cmp rbx, rbp	      2789	probe.c	FUNCTION_81	ELSE_1	CALL_7
+0x40039c9	            0x74d1	                            je 0x400399c	      2789	probe.c	FUNCTION_81	ELSE_1	CALL_7
+0x40039cb	          0x4889df	                            mov rdi, rbx	      2790	probe.c	FUNCTION_81	ELSE_1	CALL_8
+0x40039ce	      0xe800000000	                          call 0x40039d3	      2790	probe.c	FUNCTION_81	ELSE_1	CALL_8
+0x40039d3	          0x488b1b	                    mov rbx, qword [rbx]	      2789	probe.c	FUNCTION_81	ELSE_1	CALL_7
+0x40039d6	          0x4839eb	                            cmp rbx, rbp	      2789	probe.c	FUNCTION_81	ELSE_1	CALL_7
+0x40039d9	            0x75f0	                           jne 0x40039cb	      2789	probe.c	FUNCTION_81	ELSE_1	CALL_7
+0x40039db	            0xebbf	                           jmp 0x400399c	      2789	probe.c	FUNCTION_81	ELSE_1	CALL_7
+0x40039dd	          0x488b3b	                    mov rdi, qword [rbx]	      2772	probe.c	FUNCTION_81	IF_1	CALL_2
+0x40039e0	    0x48c7c6000000	                              mov rsi, 0	      2772	probe.c	FUNCTION_81	IF_1	CALL_2
+0x40039e7	        0x89442404	                mov dword [rsp + 4], eax	      2772	probe.c	FUNCTION_81	IF_1	CALL_2
+0x40039eb	      0xe800000000	                          call 0x40039f0	      2772	probe.c	FUNCTION_81	IF_1	CALL_2
+0x40039f0	        0x8b442404	                mov eax, dword [rsp + 4]	      2773	probe.c	FUNCTION_81	IF_1
+0x40039f4	            0xebb0	                           jmp 0x40039a6	      2773	probe.c	FUNCTION_81	IF_1
+pci_scan_root_bus_bridge	FOR,0:IF,5:WHILE,0:functions,0:CALL,6:DO,0:SWITCH,0:ELSE,0	53
+0x40038c0	          0x4885ff	                           test rdi, rdi	      2868	probe.c	FUNCTION_85	IF_1
+0x40038c3	     0xf84a1000000	                            je 0x400396a	      2868	probe.c	FUNCTION_85	IF_1
+0x40038c9	              0x55	                                push rbp	      2862	probe.c	FUNCTION_85
+0x40038ca	              0x53	                                push rbx	      2862	probe.c	FUNCTION_85
+0x40038cb	    0x488d8ff00200	                  lea rcx, [rdi + 0x2f0]	      2871	probe.c	FUNCTION_85	CALL_1
+0x40038d2	    0x488b87f00200	           mov rax, qword [rdi + 0x2f0] 	      2871	probe.c	FUNCTION_85	CALL_1
+0x40038d9	          0x4889fb	                            mov rbx, rdi	      2871	probe.c	FUNCTION_85	CALL_1
+0x40038dc	          0x4839c1	                            cmp rcx, rax	      2871	probe.c	FUNCTION_85	CALL_1
+0x40038df	            0x750a	                           jne 0x40038eb	      2871	probe.c	FUNCTION_85	CALL_1
+0x40038e1	            0xeb31	                           jmp 0x4003914	      2871	probe.c	FUNCTION_85	CALL_1
+0x40038e3	          0x488b00	                    mov rax, qword [rax]	      2871	probe.c	FUNCTION_85	CALL_1
+0x40038e6	          0x4839c8	                            cmp rax, rcx	      2871	probe.c	FUNCTION_85	CALL_1
+0x40038e9	            0x7429	                            je 0x4003914	      2871	probe.c	FUNCTION_85	CALL_1
+0x40038eb	        0x488b5010	            mov rdx, qword [rax + 0x10] 	      2872	probe.c	FUNCTION_85	IF_2
+0x40038ef	        0xf6421910	           test byte [rdx + 0x19], 0x10 	      2872	probe.c	FUNCTION_85	IF_2
+0x40038f3	            0x74ee	                            je 0x40038e3	      2872	probe.c	FUNCTION_85	IF_2
+0x40038f5	          0x4889df	                            mov rdi, rbx	      2877	probe.c	FUNCTION_85	CALL_2
+0x40038f8	      0xe803f0ffff	       call sym.pci_register_host_bridge	      2877	probe.c	FUNCTION_85	CALL_2
+0x40038fd	            0x85c0	                           test eax, eax	      2878	probe.c	FUNCTION_85	IF_3
+0x40038ff	            0x7810	                            js 0x4003911	      2878	probe.c	FUNCTION_85	IF_3
+0x4003901	    0x488bbbd00200	           mov rdi, qword [rbx + 0x2d0] 	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003908	            0x31f6	                            xor esi, esi	      2712	probe.c	FUNCTION_76	CALL_1
+0x400390a	      0xe831fcffff	      call sym.pci_scan_child_bus_extend	      2712	probe.c	FUNCTION_76	CALL_1
+0x400390f	            0x31c0	                            xor eax, eax	      2896	probe.c	FUNCTION_85
+0x4003911	              0x5b	                                 pop rbx	      2897	probe.c	FUNCTION_85
+0x4003912	              0x5d	                                 pop rbp	      2897	probe.c	FUNCTION_85
+0x4003913	              0xc3	                                     ret	      2897	probe.c	FUNCTION_85
+0x4003914	          0x4889df	                            mov rdi, rbx	      2877	probe.c	FUNCTION_85	CALL_2
+0x4003917	      0xe8e4efffff	       call sym.pci_register_host_bridge	      2877	probe.c	FUNCTION_85	CALL_2
+0x400391c	            0x85c0	                           test eax, eax	      2878	probe.c	FUNCTION_85	IF_3
+0x400391e	            0x78f1	                            js 0x4003911	      2878	probe.c	FUNCTION_85	IF_3
+0x4003920	    0x488babd00200	           mov rbp, qword [rbx + 0x2d0] 	      2881	probe.c	FUNCTION_85
+0x4003927	    0x8b9be8020000	           mov ebx, dword [rbx + 0x2e8] 	      2882	probe.c	FUNCTION_85
+0x400392d	    0x48c7c6000000	                              mov rsi, 0	      2885	probe.c	FUNCTION_85	IF_4	CALL_3
+0x4003934	    0x488dbd200100	                  lea rdi, [rbp + 0x120]	      2885	probe.c	FUNCTION_85	IF_4	CALL_3
+0x400393b	            0x89da	                            mov edx, ebx	      2885	probe.c	FUNCTION_85	IF_4	CALL_3
+0x400393d	      0xe800000000	                          call 0x4003942	      2885	probe.c	FUNCTION_85	IF_4	CALL_3
+0x4003942	      0xbaff000000	                           mov edx, 0xff	      2888	probe.c	FUNCTION_85	IF_4	CALL_4
+0x4003947	            0x89de	                            mov esi, ebx	      2888	probe.c	FUNCTION_85	IF_4	CALL_4
+0x4003949	          0x4889ef	                            mov rdi, rbp	      2888	probe.c	FUNCTION_85	IF_4	CALL_4
+0x400394c	      0xe800000000	                          call 0x4003951	      2888	probe.c	FUNCTION_85	IF_4	CALL_4
+0x4003951	          0x4889ef	                            mov rdi, rbp	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003954	            0x31f6	                            xor esi, esi	      2712	probe.c	FUNCTION_76	CALL_1
+0x4003956	      0xe8e5fbffff	      call sym.pci_scan_child_bus_extend	      2712	probe.c	FUNCTION_76	CALL_1
+0x400395b	          0x4889ef	                            mov rdi, rbp	      2894	probe.c	FUNCTION_85	CALL_6
+0x400395e	            0x89c6	                            mov esi, eax	      2894	probe.c	FUNCTION_85	CALL_6
+0x4003960	      0xe800000000	                          call 0x4003965	      2894	probe.c	FUNCTION_85	CALL_6
+0x4003965	            0x31c0	                            xor eax, eax	      2896	probe.c	FUNCTION_85
+0x4003967	              0x5b	                                 pop rbx	      2897	probe.c	FUNCTION_85
+0x4003968	              0x5d	                                 pop rbp	      2897	probe.c	FUNCTION_85
+0x4003969	              0xc3	                                     ret	      2897	probe.c	FUNCTION_85
+0x400396a	      0xb8eaffffff	                     mov eax, 0xffffffea	      2869	probe.c	FUNCTION_85	IF_1
+0x400396f	              0xc3	                                     ret	      2897	probe.c	FUNCTION_85
+pcibios_root_bridge_prepare	FOR,0:IF,0:WHILE,0:functions,0:CALL,0:DO,0:SWITCH,0:ELSE,0	2
+0x4002360	            0x31c0	                            xor eax, eax	      2726	probe.c	FUNCTION_77
+0x4002362	              0xc3	                                     ret	      2726	probe.c	FUNCTION_77
+pci_bus_update_busn_res_end	FOR,0:IF,2:WHILE,0:functions,0:CALL,3:DO,0:SWITCH,0:ELSE,0	69
+0x4002d90	            0x4154	                                push r12	      2826	probe.c	FUNCTION_83
+0x4002d92	              0x55	                                push rbp	      2826	probe.c	FUNCTION_83
+0x4002d93	          0x4863d6	                         movsxd rdx, esi	      2826	probe.c	FUNCTION_83
+0x4002d96	              0x53	                                push rbx	      2826	probe.c	FUNCTION_83
+0x4002d97	          0x4889fb	                            mov rbx, rdi	      2826	probe.c	FUNCTION_83
+0x4002d9a	        0x4883ec48	                           sub rsp, 0x48	      2826	probe.c	FUNCTION_83
+0x4002d9e	    0x488bb7800000	            mov rsi, qword [rdi + 0x80] 	      2828	probe.c	FUNCTION_83
+0x4002da5	    0x65488b042528	                mov rax, qword gs:[0x28]	      2826	probe.c	FUNCTION_83
+0x4002dae	      0x4889442440	             mov qword [rsp + 0x40], rax	      2826	probe.c	FUNCTION_83
+0x4002db3	            0x31c0	                            xor eax, eax	      2826	probe.c	FUNCTION_83
+0x4002db5	    0x488b87880000	            mov rax, qword [rdi + 0x88] 	      2828	probe.c	FUNCTION_83
+0x4002dbc	          0x4839d6	                            cmp rsi, rdx	      2832	probe.c	FUNCTION_83	IF_1
+0x4002dbf	        0x48893424	                    mov qword [rsp], rsi	      2828	probe.c	FUNCTION_83
+0x4002dc3	      0x4889442408	                mov qword [rsp + 8], rax	      2828	probe.c	FUNCTION_83
+0x4002dc8	    0x488b87900000	            mov rax, qword [rdi + 0x90] 	      2828	probe.c	FUNCTION_83
+0x4002dcf	      0x4889442410	             mov qword [rsp + 0x10], rax	      2828	probe.c	FUNCTION_83
+0x4002dd4	    0x488b87980000	            mov rax, qword [rdi + 0x98] 	      2828	probe.c	FUNCTION_83
+0x4002ddb	      0x4889442418	             mov qword [rsp + 0x18], rax	      2828	probe.c	FUNCTION_83
+0x4002de0	    0x488b87a00000	            mov rax, qword [rdi + 0xa0] 	      2828	probe.c	FUNCTION_83
+0x4002de7	      0x4889442420	             mov qword [rsp + 0x20], rax	      2828	probe.c	FUNCTION_83
+0x4002dec	    0x488b87a80000	            mov rax, qword [rdi + 0xa8] 	      2828	probe.c	FUNCTION_83
+0x4002df3	      0x4889442428	             mov qword [rsp + 0x28], rax	      2828	probe.c	FUNCTION_83
+0x4002df8	    0x488b87b00000	            mov rax, qword [rdi + 0xb0] 	      2828	probe.c	FUNCTION_83
+0x4002dff	      0x4889442430	             mov qword [rsp + 0x30], rax	      2828	probe.c	FUNCTION_83
+0x4002e04	    0x488b87b80000	            mov rax, qword [rdi + 0xb8] 	      2828	probe.c	FUNCTION_83
+0x4002e0b	      0x4889442438	             mov qword [rsp + 0x38], rax	      2828	probe.c	FUNCTION_83
+0x4002e10	      0xb8eaffffff	                     mov eax, 0xffffffea	      2833	probe.c	FUNCTION_83	IF_1
+0x4002e15	            0x7779	                            ja 0x4002e90	      2832	probe.c	FUNCTION_83	IF_1
+0x4002e17	          0x4889d5	                            mov rbp, rdx	      2832	probe.c	FUNCTION_83	IF_1
+0x4002e1a	          0x4829f2	                            sub rdx, rsi	      2836	probe.c	FUNCTION_83	CALL_1
+0x4002e1d	        0x4883ef80	             sub rdi, 0xffffffffffffff80	      2836	probe.c	FUNCTION_83	CALL_1
+0x4002e21	        0x4883c201	                              add rdx, 1	      2836	probe.c	FUNCTION_83	CALL_1
+0x4002e25	      0xe800000000	                          call 0x4002e2a	      2836	probe.c	FUNCTION_83	CALL_1
+0x4002e2a	            0x85c0	                           test eax, eax	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e2c	          0x4189c4	                           mov r12d, eax	      2836	probe.c	FUNCTION_83	CALL_1
+0x4002e2f	            0x742c	                            je 0x4002e5d	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e31	    0x488db3200100	                  lea rsi, [rbx + 0x120]	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e38	          0x4189e9	                            mov r9d, ebp	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e3b	    0x49c7c0000000	                               mov r8, 0	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e42	          0x4889e1	                            mov rcx, rsp	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e45	    0x48c7c2000000	                              mov rdx, 0	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e4c	    0x48c7c7000000	                              mov rdi, 0	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e53	      0xe800000000	                          call 0x4002e58	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e58	          0x4489e0	                           mov eax, r12d	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e5b	            0xeb33	                           jmp 0x4002e90	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e5d	    0x488db3200100	                  lea rsi, [rbx + 0x120]	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e64	          0x4189e9	                            mov r9d, ebp	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e67	    0x49c7c0000000	                               mov r8, 0	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e6e	          0x4889e1	                            mov rcx, rsp	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e71	    0x48c7c2000000	                              mov rdx, 0	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e78	    0x48c7c7000000	                              mov rdi, 0	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e7f	      0xe800000000	                          call 0x4002e84	      2837	probe.c	FUNCTION_83	CALL_2
+0x4002e84	    0x4883bba80000	               cmp qword [rbx + 0xa8], 0	      2841	probe.c	FUNCTION_83	IF_2
+0x4002e8c	            0x741b	                            je 0x4002ea9	      2841	probe.c	FUNCTION_83	IF_2
+0x4002e8e	            0x31c0	                            xor eax, eax	      2842	probe.c	FUNCTION_83	CALL_3
+0x4002e90	      0x488b4c2440	            mov rcx, qword [rsp + 0x40] 	      2845	probe.c	FUNCTION_83
+0x4002e95	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      2845	probe.c	FUNCTION_83
+0x4002e9e	            0x751f	                           jne 0x4002ebf	      2845	probe.c	FUNCTION_83
+0x4002ea0	        0x4883c448	                           add rsp, 0x48	      2845	probe.c	FUNCTION_83
+0x4002ea4	              0x5b	                                 pop rbx	      2845	probe.c	FUNCTION_83
+0x4002ea5	              0x5d	                                 pop rbp	      2845	probe.c	FUNCTION_83
+0x4002ea6	            0x415c	                                 pop r12	      2845	probe.c	FUNCTION_83
+0x4002ea8	              0xc3	                                     ret	      2845	probe.c	FUNCTION_83
+0x4002ea9	    0x8b9388000000	            mov edx, dword [rbx + 0x88] 	      2842	probe.c	FUNCTION_83	CALL_3
+0x4002eaf	    0x8bb380000000	            mov esi, dword [rbx + 0x80] 	      2842	probe.c	FUNCTION_83	CALL_3
+0x4002eb5	          0x4889df	                            mov rdi, rbx	      2842	probe.c	FUNCTION_83	CALL_3
+0x4002eb8	      0xe800000000	                          call 0x4002ebd	      2842	probe.c	FUNCTION_83	CALL_3
+0x4002ebd	            0xebcf	                           jmp 0x4002e8e	      2842	probe.c	FUNCTION_83	CALL_3
+0x4002ebf	      0xe800000000	                          call 0x4002ec4	      2845	probe.c	FUNCTION_83

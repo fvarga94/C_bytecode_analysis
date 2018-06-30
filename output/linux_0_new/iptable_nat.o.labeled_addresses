@@ -1,0 +1,33 @@
+iptable_nat_do_chain	CALL,1:functions,0:ELSE,0:FOR,0:IF,0:SWITCH,0:WHILE,0:DO,0	5
+0x4000080	        0x488b4220	            mov rax, qword [rdx + 0x20] 	        39	iptable_nat.c	FUNCTION_1	CALL_1
+0x4000084	          0x4889f7	                            mov rdi, rsi	        38	iptable_nat.c	FUNCTION_1
+0x4000087	          0x4889d6	                            mov rsi, rdx	        38	iptable_nat.c	FUNCTION_1
+0x400008a	    0x488b90680400	           mov rdx, qword [rax + 0x468] 	        39	iptable_nat.c	FUNCTION_1	CALL_1
+0x4000091	      0xe900000000	                           jmp 0x4000096	        39	iptable_nat.c	FUNCTION_1	CALL_1
+iptable_nat_ipv4_local_fn	CALL,1:functions,0:ELSE,0:FOR,0:IF,0:SWITCH,0:WHILE,0:DO,0	2
+0x40000a0	    0x48c7c1000000	                              mov rcx, 0	        67	iptable_nat.c	FUNCTION_5	CALL_1
+0x40000a7	      0xe900000000	                           jmp 0x40000ac	        67	iptable_nat.c	FUNCTION_5	CALL_1
+iptable_nat_ipv4_fn	CALL,1:functions,0:ELSE,0:FOR,0:IF,0:SWITCH,0:WHILE,0:DO,0	2
+0x4000070	    0x48c7c1000000	                              mov rcx, 0	        46	iptable_nat.c	FUNCTION_2	CALL_1
+0x4000077	      0xe900000000	                           jmp 0x400007c	        46	iptable_nat.c	FUNCTION_2	CALL_1
+iptable_nat_exit	CALL,1:functions,0:ELSE,0:FOR,0:IF,0:SWITCH,0:WHILE,0:DO,0	3
+0x4000040	    0x488bb7680400	           mov rsi, qword [rdi + 0x468] 	       124	iptable_nat.c	FUNCTION_7	IF_1
+0x4000047	          0x4885f6	                           test rsi, rsi	       124	iptable_nat.c	FUNCTION_7	IF_1
+0x400004a	            0x741c	                            je 0x4000068	       124	iptable_nat.c	FUNCTION_7	IF_1
+iptable_nat_ipv4_in	CALL,1:functions,0:ELSE,0:FOR,0:IF,0:SWITCH,0:WHILE,0:DO,0	2
+0x40000c0	    0x48c7c1000000	                              mov rcx, 0	        53	iptable_nat.c	FUNCTION_3	CALL_1
+0x40000c7	      0xe900000000	                           jmp 0x40000cc	        53	iptable_nat.c	FUNCTION_3	CALL_1
+iptable_nat_ipv4_out	CALL,1:functions,0:ELSE,0:FOR,0:IF,0:SWITCH,0:WHILE,0:DO,0	2
+0x40000b0	    0x48c7c1000000	                              mov rcx, 0	        60	iptable_nat.c	FUNCTION_4	CALL_1
+0x40000b7	      0xe900000000	                           jmp 0x40000bc	        60	iptable_nat.c	FUNCTION_4	CALL_1
+iptable_nat_net_exit	CALL,1:functions,0:ELSE,0:FOR,0:IF,1:SWITCH,0:WHILE,0:DO,0	10
+0x4000040	    0x488bb7680400	           mov rsi, qword [rdi + 0x468] 	       124	iptable_nat.c	FUNCTION_7	IF_1
+0x4000047	          0x4885f6	                           test rsi, rsi	       124	iptable_nat.c	FUNCTION_7	IF_1
+0x400004a	            0x741c	                            je 0x4000068	       124	iptable_nat.c	FUNCTION_7	IF_1
+0x400004c	              0x53	                                push rbx	       123	iptable_nat.c	FUNCTION_7
+0x400004d	    0x48c7c2000000	                              mov rdx, 0	       126	iptable_nat.c	FUNCTION_7	CALL_1
+0x4000054	          0x4889fb	                            mov rbx, rdi	       126	iptable_nat.c	FUNCTION_7	CALL_1
+0x4000057	      0xe800000000	                          call 0x400005c	       126	iptable_nat.c	FUNCTION_7	CALL_1
+0x400005c	    0x48c783680400	              mov qword [rbx + 0x468], 0	       127	iptable_nat.c	FUNCTION_7
+0x4000067	              0x5b	                                 pop rbx	       128	iptable_nat.c	FUNCTION_7
+0x4000068	            0xf3c3	                                     ret	       128	iptable_nat.c	FUNCTION_7

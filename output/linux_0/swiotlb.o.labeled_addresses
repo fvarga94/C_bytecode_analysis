@@ -1,0 +1,135 @@
+swiotlb_nr_tbl	DO,0:FOR,0:IF,0:CALL,0:WHILE,0:ELSE,0:functions,0:SWITCH,0	2
+0x4000040	    0x488b05000000	            mov rax, qword [0x04000047] 	       132	swiotlb.c	FUNCTION_2
+0x4000047	              0xc3	                                     ret	       132	swiotlb.c	FUNCTION_2
+swiotlb_unmap_page	DO,0:FOR,0:IF,0:CALL,1:WHILE,0:ELSE,0:functions,0:SWITCH,0	1
+0x4000ee0	            0xebce	                    jmp sym.unmap_single	       876	swiotlb.c	FUNCTION_25	CALL_1
+swiotlb_size_or_default	DO,0:FOR,0:IF,0:CALL,0:WHILE,0:ELSE,0:functions,0:SWITCH,0	6
+0x40004b0	    0x488b05000000	            mov rax, qword [0x040004b7] 	       155	swiotlb.c	FUNCTION_5
+0x40004b7	      0xba00000004	  mov edx, loc.imp.trace_event_raw_init 	       157	swiotlb.c	FUNCTION_5
+0x40004bc	        0x48c1e00b	                            shl rax, 0xb	       155	swiotlb.c	FUNCTION_5
+0x40004c0	          0x4885c0	                           test rax, rax	       157	swiotlb.c	FUNCTION_5
+0x40004c3	        0x480f44c2	                          cmove rax, rdx	       157	swiotlb.c	FUNCTION_5
+0x40004c7	              0xc3	                                     ret	       158	swiotlb.c	FUNCTION_5
+swiotlb_max_segment	DO,0:FOR,0:IF,0:CALL,0:WHILE,0:ELSE,0:functions,0:SWITCH,0	2
+0x4000050	    0x8b0500000000	            mov eax, dword [0x04000056] 	       138	swiotlb.c	FUNCTION_3
+0x4000056	              0xc3	                                     ret	       138	swiotlb.c	FUNCTION_3
+swiotlb_dma_mapping_error	DO,0:FOR,0:IF,0:CALL,1:WHILE,0:ELSE,0:functions,0:SWITCH,0	8
+0x4000060	    0x488b87200200	           mov rax, qword [rdi + 0x220] 	      1030	swiotlb.c	FUNCTION_34	CALL_1
+0x4000067	    0x488b15000000	            mov rdx, qword [0x0400006e] 	      1030	swiotlb.c	FUNCTION_34	CALL_1
+0x400006e	        0x48c1e00c	                            shl rax, 0xc	      1030	swiotlb.c	FUNCTION_34	CALL_1
+0x4000072	          0x4829c2	                            sub rdx, rax	      1030	swiotlb.c	FUNCTION_34	CALL_1
+0x4000075	          0x4839f2	                            cmp rdx, rsi	      1030	swiotlb.c	FUNCTION_34	CALL_1
+0x4000078	           0xf94c0	                                 sete al	      1030	swiotlb.c	FUNCTION_34	CALL_1
+0x400007b	           0xfb6c0	                           movzx eax, al	      1030	swiotlb.c	FUNCTION_34	CALL_1
+0x400007e	              0xc3	                                     ret	      1031	swiotlb.c	FUNCTION_34
+swiotlb_sync_sg_for_device	DO,0:FOR,0:IF,0:CALL,1:WHILE,0:ELSE,0:functions,0:SWITCH,0	30
+0x40012f0	            0x85d2	                           test edx, edx	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x40012f2	            0x7e49	                           jle 0x400133d	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x40012f4	            0x4156	                                push r14	      1023	swiotlb.c	FUNCTION_33
+0x40012f6	          0x4989fe	                            mov r14, rdi	      1023	swiotlb.c	FUNCTION_33
+0x40012f9	            0x4155	                                push r13	      1023	swiotlb.c	FUNCTION_33
+0x40012fb	          0x4189cd	                           mov r13d, ecx	      1023	swiotlb.c	FUNCTION_33
+0x40012fe	            0x4154	                                push r12	      1023	swiotlb.c	FUNCTION_33
+0x4001300	          0x4189d4	                           mov r12d, edx	      1023	swiotlb.c	FUNCTION_33
+0x4001303	              0x55	                                push rbp	      1023	swiotlb.c	FUNCTION_33
+0x4001304	            0x31ed	                            xor ebp, ebp	      1023	swiotlb.c	FUNCTION_33
+0x4001306	              0x53	                                push rbx	      1023	swiotlb.c	FUNCTION_33
+0x4001307	          0x4889f3	                            mov rbx, rsi	      1023	swiotlb.c	FUNCTION_33
+0x400130a	          0x8b5318	            mov edx, dword [rbx + 0x18] 	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x400130d	        0x488b7310	            mov rsi, qword [rbx + 0x10] 	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x4001311	    0x41b801000000	                              mov r8d, 1	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x4001317	          0x4489e9	                           mov ecx, r13d	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x400131a	          0x4c89f7	                            mov rdi, r14	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x400131d	          0x83c501	                              add ebp, 1	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x4001320	      0xe87bffffff	            call sym.swiotlb_sync_single	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x4001325	          0x4889df	                            mov rdi, rbx	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x4001328	      0xe800000000	                          call 0x400132d	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x400132d	          0x4139ec	                           cmp r12d, ebp	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x4001330	          0x4889c3	                            mov rbx, rax	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x4001333	            0x75d5	                           jne 0x400130a	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x4001335	              0x5b	                                 pop rbx	      1025	swiotlb.c	FUNCTION_33
+0x4001336	              0x5d	                                 pop rbp	      1025	swiotlb.c	FUNCTION_33
+0x4001337	            0x415c	                                 pop r12	      1025	swiotlb.c	FUNCTION_33
+0x4001339	            0x415d	                                 pop r13	      1025	swiotlb.c	FUNCTION_33
+0x400133b	            0x415e	                                 pop r14	      1025	swiotlb.c	FUNCTION_33
+0x400133d	            0xf3c3	                                     ret	      1025	swiotlb.c	FUNCTION_33
+swiotlb_dma_supported	DO,0:FOR,0:IF,0:CALL,1:WHILE,0:ELSE,0:functions,0:SWITCH,0	9
+0x4001390	    0x488b05000000	            mov rax, qword [0x04001397] 	      1042	swiotlb.c	FUNCTION_35	CALL_1
+0x4001397	    0x488b97200200	           mov rdx, qword [rdi + 0x220] 	      1042	swiotlb.c	FUNCTION_35	CALL_1
+0x400139e	        0x4883e801	                              sub rax, 1	      1042	swiotlb.c	FUNCTION_35	CALL_1
+0x40013a2	        0x48c1e20c	                            shl rdx, 0xc	      1042	swiotlb.c	FUNCTION_35	CALL_1
+0x40013a6	          0x4829d0	                            sub rax, rdx	      1042	swiotlb.c	FUNCTION_35	CALL_1
+0x40013a9	          0x4839c6	                            cmp rsi, rax	      1042	swiotlb.c	FUNCTION_35	CALL_1
+0x40013ac	           0xf93c0	                                setae al	      1042	swiotlb.c	FUNCTION_35	CALL_1
+0x40013af	           0xfb6c0	                           movzx eax, al	      1042	swiotlb.c	FUNCTION_35	CALL_1
+0x40013b2	              0xc3	                                     ret	      1043	swiotlb.c	FUNCTION_35
+swiotlb_sync_sg_for_cpu	DO,0:FOR,0:IF,0:CALL,1:WHILE,0:ELSE,0:functions,0:SWITCH,0	30
+0x4001340	            0x85d2	                           test edx, edx	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x4001342	            0x7e46	                           jle 0x400138a	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x4001344	            0x4156	                                push r14	      1016	swiotlb.c	FUNCTION_32
+0x4001346	          0x4989fe	                            mov r14, rdi	      1016	swiotlb.c	FUNCTION_32
+0x4001349	            0x4155	                                push r13	      1016	swiotlb.c	FUNCTION_32
+0x400134b	          0x4189cd	                           mov r13d, ecx	      1016	swiotlb.c	FUNCTION_32
+0x400134e	            0x4154	                                push r12	      1016	swiotlb.c	FUNCTION_32
+0x4001350	          0x4189d4	                           mov r12d, edx	      1016	swiotlb.c	FUNCTION_32
+0x4001353	              0x55	                                push rbp	      1016	swiotlb.c	FUNCTION_32
+0x4001354	            0x31ed	                            xor ebp, ebp	      1016	swiotlb.c	FUNCTION_32
+0x4001356	              0x53	                                push rbx	      1016	swiotlb.c	FUNCTION_32
+0x4001357	          0x4889f3	                            mov rbx, rsi	      1016	swiotlb.c	FUNCTION_32
+0x400135a	          0x8b5318	            mov edx, dword [rbx + 0x18] 	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x400135d	        0x488b7310	            mov rsi, qword [rbx + 0x10] 	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x4001361	          0x4531c0	                            xor r8d, r8d	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x4001364	          0x4489e9	                           mov ecx, r13d	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x4001367	          0x4c89f7	                            mov rdi, r14	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x400136a	          0x83c501	                              add ebp, 1	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x400136d	      0xe82effffff	            call sym.swiotlb_sync_single	      1009	swiotlb.c	FUNCTION_31	CALL_2
+0x4001372	          0x4889df	                            mov rdi, rbx	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x4001375	      0xe800000000	                          call 0x400137a	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x400137a	          0x4139ec	                           cmp r12d, ebp	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x400137d	          0x4889c3	                            mov rbx, rax	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x4001380	            0x75d8	                           jne 0x400135a	      1008	swiotlb.c	FUNCTION_31	CALL_1
+0x4001382	              0x5b	                                 pop rbx	      1018	swiotlb.c	FUNCTION_32
+0x4001383	              0x5d	                                 pop rbp	      1018	swiotlb.c	FUNCTION_32
+0x4001384	            0x415c	                                 pop r12	      1018	swiotlb.c	FUNCTION_32
+0x4001386	            0x415d	                                 pop r13	      1018	swiotlb.c	FUNCTION_32
+0x4001388	            0x415e	                                 pop r14	      1018	swiotlb.c	FUNCTION_32
+0x400138a	            0xf3c3	                                     ret	      1018	swiotlb.c	FUNCTION_32
+swiotlb_sync_single_for_cpu	DO,0:FOR,0:IF,0:CALL,1:WHILE,0:ELSE,0:functions,0:SWITCH,0	2
+0x40012d0	          0x4531c0	                            xor r8d, r8d	       913	swiotlb.c	FUNCTION_27	CALL_1
+0x40012d3	            0xebcb	             jmp sym.swiotlb_sync_single	       913	swiotlb.c	FUNCTION_27	CALL_1
+swiotlb_sync_single_for_device	DO,0:FOR,0:IF,0:CALL,1:WHILE,0:ELSE,0:functions,0:SWITCH,0	2
+0x40012e0	    0x41b801000000	                              mov r8d, 1	       920	swiotlb.c	FUNCTION_28	CALL_1
+0x40012e6	            0xebb8	             jmp sym.swiotlb_sync_single	       920	swiotlb.c	FUNCTION_28	CALL_1
+map_single	DO,0:FOR,0:IF,1:CALL,3:WHILE,0:ELSE,0:functions,0:SWITCH,0	32
+0x4000b80	              0x53	                                push rbx	       601	swiotlb.c	FUNCTION_16
+0x4000b81	          0x4889fb	                            mov rbx, rdi	       601	swiotlb.c	FUNCTION_16
+0x4000b84	        0x4883ec10	                           sub rsp, 0x10	       601	swiotlb.c	FUNCTION_16
+0x4000b88	    0x833d00000000	               cmp dword [0x04000b8f], 2	       604	swiotlb.c	FUNCTION_16	IF_1
+0x4000b8f	      0x4889742408	                mov qword [rsp + 8], rsi	       601	swiotlb.c	FUNCTION_16
+0x4000b94	            0x742e	                            je 0x4000bc4	       604	swiotlb.c	FUNCTION_16	IF_1
+0x4000b96	    0x488b87200200	           mov rax, qword [rdi + 0x220] 	       611	swiotlb.c	FUNCTION_16	CALL_3
+0x4000b9d	    0x488b35000000	            mov rsi, qword [0x04000ba4] 	       611	swiotlb.c	FUNCTION_16	CALL_3
+0x4000ba4	          0x4d89c1	                              mov r9, r8	       611	swiotlb.c	FUNCTION_16	CALL_3
+0x4000ba7	          0x4189c8	                            mov r8d, ecx	       611	swiotlb.c	FUNCTION_16	CALL_3
+0x4000baa	          0x4889d1	                            mov rcx, rdx	       611	swiotlb.c	FUNCTION_16	CALL_3
+0x4000bad	      0x488b542408	                mov rdx, qword [rsp + 8]	       611	swiotlb.c	FUNCTION_16	CALL_3
+0x4000bb2	        0x48c1e00c	                            shl rax, 0xc	       611	swiotlb.c	FUNCTION_16	CALL_3
+0x4000bb6	          0x4829c6	                            sub rsi, rax	       611	swiotlb.c	FUNCTION_16	CALL_3
+0x4000bb9	      0xe800000000	                          call 0x4000bbe	       611	swiotlb.c	FUNCTION_16	CALL_3
+0x4000bbe	        0x4883c410	                           add rsp, 0x10	       613	swiotlb.c	FUNCTION_16
+0x4000bc2	              0x5b	                                 pop rbx	       613	swiotlb.c	FUNCTION_16
+0x4000bc3	              0xc3	                                     ret	       613	swiotlb.c	FUNCTION_16
+0x4000bc4	    0x48c7c6000000	                              mov rsi, 0	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000bcb	    0x48c7c7000000	                              mov rdi, 0	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000bd2	      0xe800000000	                          call 0x4000bd7	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000bd7	            0x89c2	                            mov edx, eax	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000bd9	    0x48c7c0ffffff	             mov rax, 0xffffffffffffffff	       607	swiotlb.c	FUNCTION_16	IF_1
+0x4000be0	            0x85d2	                           test edx, edx	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000be2	            0x74da	                            je 0x4000bbe	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000be4	      0x488d542408	                      lea rdx, [rsp + 8]	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000be9	    0x48c7c6000000	                              mov rsi, 0	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000bf0	          0x4889df	                            mov rdi, rbx	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000bf3	        0x48890424	                    mov qword [rsp], rax	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000bf7	      0xe800000000	                          call 0x4000bfc	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000bfc	        0x488b0424	                    mov rax, qword [rsp]	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1
+0x4000c00	            0xebbc	                           jmp 0x4000bbe	       605	swiotlb.c	FUNCTION_16	IF_1	CALL_1

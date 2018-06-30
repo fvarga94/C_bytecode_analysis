@@ -1,0 +1,30 @@
+cavium_ptp_put	WHILE,0:CALL,1:functions,0:FOR,0:SWITCH,0:ELSE,0:IF,1:DO,0	5
+0x4000140	          0x4885ff	                           test rdi, rdi	        78	cavium_ptp.c	FUNCTION_3	IF_1
+0x4000143	            0x7408	                            je 0x400014d	        78	cavium_ptp.c	FUNCTION_3	IF_1
+0x4000145	          0x488b3f	                    mov rdi, qword [rdi]	        80	cavium_ptp.c	FUNCTION_3	CALL_1
+0x4000148	      0xe900000000	                           jmp 0x400014d	        80	cavium_ptp.c	FUNCTION_3	CALL_1
+0x400014d	            0xf3c3	                                     ret	        80	cavium_ptp.c	FUNCTION_3	CALL_1
+cavium_ptp_enable	WHILE,0:CALL,0:functions,0:FOR,0:SWITCH,0:ELSE,0:IF,0:DO,0	2
+0x4000120	      0xb8a1ffffff	                     mov eax, 0xffffffa1	       207	cavium_ptp.c	FUNCTION_8
+0x4000125	              0xc3	                                     ret	       207	cavium_ptp.c	FUNCTION_8
+cavium_ptp_get	WHILE,0:CALL,6:functions,0:FOR,0:SWITCH,0:ELSE,0:IF,3:DO,0	20
+0x4000150	              0x53	                                push rbx	        57	cavium_ptp.c	FUNCTION_2
+0x4000151	            0x31d2	                            xor edx, edx	        61	cavium_ptp.c	FUNCTION_2	CALL_1
+0x4000153	      0xbe0ca00000	                         mov esi, 0xa00c	        61	cavium_ptp.c	FUNCTION_2	CALL_1
+0x4000158	      0xbf7d170000	                         mov edi, 0x177d	        61	cavium_ptp.c	FUNCTION_2	CALL_1
+0x400015d	    0x48c7c3edffff	             mov rbx, 0xffffffffffffffed	        64	cavium_ptp.c	FUNCTION_2	CALL_2
+0x4000164	      0xe800000000	                          call 0x4000169	        61	cavium_ptp.c	FUNCTION_2	CALL_1
+0x4000169	          0x4885c0	                           test rax, rax	        63	cavium_ptp.c	FUNCTION_2	IF_1
+0x400016c	            0x7415	                            je 0x4000183	        63	cavium_ptp.c	FUNCTION_2	IF_1
+0x400016e	    0x488b98380100	           mov rbx, qword [rax + 0x138] 	        63	cavium_ptp.c	FUNCTION_2	IF_1
+0x4000175	          0x4885db	                           test rbx, rbx	        67	cavium_ptp.c	FUNCTION_2	IF_2
+0x4000178	            0x740e	                            je 0x4000188	        67	cavium_ptp.c	FUNCTION_2	IF_2
+0x400017a	    0x4881fb00f0ff	             cmp rbx, 0xfffffffffffff000	        69	cavium_ptp.c	FUNCTION_2	IF_3	CALL_5
+0x4000181	            0x770c	                            ja 0x400018f	        69	cavium_ptp.c	FUNCTION_2	IF_3	CALL_5
+0x4000183	          0x4889d8	                            mov rax, rbx	        73	cavium_ptp.c	FUNCTION_2
+0x4000186	              0x5b	                                 pop rbx	        73	cavium_ptp.c	FUNCTION_2
+0x4000187	              0xc3	                                     ret	        73	cavium_ptp.c	FUNCTION_2
+0x4000188	    0x48c7c3fbfdff	             mov rbx, 0xfffffffffffffdfb	        68	cavium_ptp.c	FUNCTION_2	CALL_4
+0x400018f	          0x4889c7	                            mov rdi, rax	        70	cavium_ptp.c	FUNCTION_2	CALL_6
+0x4000192	      0xe800000000	                          call 0x4000197	        70	cavium_ptp.c	FUNCTION_2	CALL_6
+0x4000197	            0xebea	                           jmp 0x4000183	        70	cavium_ptp.c	FUNCTION_2	CALL_6

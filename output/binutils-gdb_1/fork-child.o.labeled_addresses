@@ -1,0 +1,124 @@
+restore_old_foreground_pgrp	SWITCH,0:FOR,0:IF,0:ELSE,0:functions,0:WHILE,0:DO,0:CALL,1	3
+0x4000040	    0x8b3500000000	            mov esi, dword [0x04000046] 	        38	fork-child.c	FUNCTION_1	CALL_1
+0x4000046	    0x8b3d00000000	            mov edi, dword [0x0400004c] 	        38	fork-child.c	FUNCTION_1	CALL_1
+0x400004c	      0xe900000000	                           jmp 0x4000051	        38	fork-child.c	FUNCTION_1	CALL_1
+postfork_child_hook	SWITCH,0:FOR,0:IF,1:ELSE,0:functions,0:WHILE,0:DO,0:CALL,3	10
+0x40000e0	        0x4883ec08	                              sub rsp, 8	        75	fork-child.c	FUNCTION_4
+0x40000e4	      0xe800000000	                          call 0x40000e9	        81	fork-child.c	FUNCTION_4	CALL_1
+0x40000e9	          0x83f8ff	             cmp eax, 0xffffffffffffffff	        82	fork-child.c	FUNCTION_4	IF_1
+0x40000ec	            0x740a	                            je 0x40000f8	        82	fork-child.c	FUNCTION_4	IF_1
+0x40000ee	        0x4883c408	                              add rsp, 8	        84	fork-child.c	FUNCTION_4
+0x40000f2	              0xc3	                                     ret	        84	fork-child.c	FUNCTION_4
+0x40000f3	       0xf1f440000	                   nop dword [rax + rax]	        84	fork-child.c	FUNCTION_4
+0x40000f8	      0xbf00000000	                              mov edi, 0	        83	fork-child.c	FUNCTION_4	CALL_3
+0x40000fd	        0x4883c408	                              add rsp, 8	        84	fork-child.c	FUNCTION_4
+0x4000101	      0xe900000000	                           jmp 0x4000106	        83	fork-child.c	FUNCTION_4	CALL_3
+post_fork_inferior	SWITCH,0:FOR,0:IF,0:ELSE,0:functions,0:WHILE,0:DO,0:CALL,10	68
+0x4000130	            0x4154	                                push r12	        99	fork-child.c	FUNCTION_6
+0x4000132	              0x55	                                push rbp	        99	fork-child.c	FUNCTION_6
+0x4000133	          0x4989f4	                            mov r12, rsi	        99	fork-child.c	FUNCTION_6
+0x4000136	              0x53	                                push rbx	        99	fork-child.c	FUNCTION_6
+0x4000137	            0x89fd	                            mov ebp, edi	        99	fork-child.c	FUNCTION_6
+0x4000139	        0x4883ec20	                           sub rsp, 0x20	        99	fork-child.c	FUNCTION_6
+0x400013d	    0x64488b042528	                mov rax, qword fs:[0x28]	        99	fork-child.c	FUNCTION_6
+0x4000146	      0x4889442418	             mov qword [rsp + 0x18], rax	        99	fork-child.c	FUNCTION_6
+0x400014b	            0x31c0	                            xor eax, eax	        99	fork-child.c	FUNCTION_6
+0x400014d	      0xe800000000	                          call 0x4000152	       100	fork-child.c	FUNCTION_6	CALL_1
+0x4000152	      0xbe01000000	                              mov esi, 1	       102	fork-child.c	FUNCTION_6	CALL_2
+0x4000157	      0xbf16000000	                           mov edi, 0x16	       102	fork-child.c	FUNCTION_6	CALL_2
+0x400015c	          0x4889c3	                            mov rbx, rax	       100	fork-child.c	FUNCTION_6	CALL_1
+0x400015f	      0xe800000000	                          call 0x4000164	       102	fork-child.c	FUNCTION_6	CALL_2
+0x4000164	      0xbe01000000	                              mov esi, 1	       103	fork-child.c	FUNCTION_6	CALL_3
+0x4000169	      0xbf15000000	                           mov edi, 0x15	       103	fork-child.c	FUNCTION_6	CALL_3
+0x400016e	      0xe800000000	                          call 0x4000173	       103	fork-child.c	FUNCTION_6	CALL_3
+0x4000173	    0x488b3d000000	            mov rdi, qword [0x0400017a] 	       104	fork-child.c	FUNCTION_6	CALL_4
+0x400017a	      0xe800000000	                          call 0x400017f	       104	fork-child.c	FUNCTION_6	CALL_4
+0x400017f	            0x89c7	                            mov edi, eax	       105	fork-child.c	FUNCTION_6	CALL_5
+0x4000181	    0x890500000000	            mov dword [0x04000187], eax 	       104	fork-child.c	FUNCTION_6	CALL_4
+0x4000187	      0xe800000000	                          call 0x400018c	       105	fork-child.c	FUNCTION_6	CALL_5
+0x400018c	    0x8b3d00000000	            mov edi, dword [0x04000192] 	       106	fork-child.c	FUNCTION_6	CALL_6
+0x4000192	            0x89ee	                            mov esi, ebp	       106	fork-child.c	FUNCTION_6	CALL_6
+0x4000194	    0x890500000000	            mov dword [0x0400019a], eax 	       105	fork-child.c	FUNCTION_6	CALL_5
+0x400019a	      0xe800000000	                          call 0x400019f	       106	fork-child.c	FUNCTION_6	CALL_6
+0x400019f	      0xbf00000000	                              mov edi, 0	       107	fork-child.c	FUNCTION_6	CALL_7
+0x40001a4	      0xe800000000	                          call 0x40001a9	       107	fork-child.c	FUNCTION_6	CALL_7
+0x40001a9	    0x488d8b180500	                  lea rcx, [rbx + 0x518]	       111	fork-child.c	FUNCTION_6
+0x40001b0	    0x4c8d83380500	                   lea r8, [rbx + 0x538]	       111	fork-child.c	FUNCTION_6
+0x40001b7	      0xba01000000	                              mov edx, 1	       111	fork-child.c	FUNCTION_6
+0x40001bc	            0x89ee	                            mov esi, ebp	       111	fork-child.c	FUNCTION_6
+0x40001be	          0x4889e7	                            mov rdi, rsp	       111	fork-child.c	FUNCTION_6
+0x40001c1	      0xe800000000	                          call 0x40001c6	       111	fork-child.c	FUNCTION_6
+0x40001c6	    0x488b05000000	            mov rax, qword [0x040001cd] 	       112	fork-child.c	FUNCTION_6
+0x40001cd	    0x488b93180500	           mov rdx, qword [rbx + 0x518] 	       113	fork-child.c	FUNCTION_6
+0x40001d4	        0x48895030	             mov qword [rax + 0x30], rdx	       113	fork-child.c	FUNCTION_6
+0x40001d8	    0x488b93200500	           mov rdx, qword [rbx + 0x520] 	       113	fork-child.c	FUNCTION_6
+0x40001df	    0xc74028020000	               mov dword [rax + 0x28], 2	       112	fork-child.c	FUNCTION_6
+0x40001e6	        0x48895038	             mov qword [rax + 0x38], rdx	       113	fork-child.c	FUNCTION_6
+0x40001ea	    0x488b93280500	           mov rdx, qword [rbx + 0x528] 	       113	fork-child.c	FUNCTION_6
+0x40001f1	        0x48895040	             mov qword [rax + 0x40], rdx	       113	fork-child.c	FUNCTION_6
+0x40001f5	    0x488b93300500	           mov rdx, qword [rbx + 0x530] 	       113	fork-child.c	FUNCTION_6
+0x40001fc	        0x48895048	             mov qword [rax + 0x48], rdx	       113	fork-child.c	FUNCTION_6
+0x4000200	          0x4863c5	                         movsxd rax, ebp	       114	fork-child.c	FUNCTION_6
+0x4000203	    0x488905000000	            mov qword [0x0400020a], rax 	       114	fork-child.c	FUNCTION_6
+0x400020a	    0x488b05000000	            mov rax, qword [0x04000211] 	       115	fork-child.c	FUNCTION_6	CALL_9
+0x4000211	        0x488b4008	                mov rax, qword [rax + 8]	       115	fork-child.c	FUNCTION_6	CALL_9
+0x4000215	          0x4885c0	                           test rax, rax	       115	fork-child.c	FUNCTION_6	CALL_9
+0x4000218	            0x7402	                            je 0x400021c	       115	fork-child.c	FUNCTION_6	CALL_9
+0x400021a	            0xffd0	                                call rax	       115	fork-child.c	FUNCTION_6	CALL_9
+0x400021c	    0x488b3d000000	            mov rdi, qword [0x04000223] 	        98	stdio2.h	CALL_10
+0x4000223	            0x31c0	                            xor eax, eax	        98	stdio2.h	CALL_10
+0x4000225	          0x4189e8	                            mov r8d, ebp	        98	stdio2.h	CALL_10
+0x4000228	          0x4c89e1	                            mov rcx, r12	        98	stdio2.h	CALL_10
+0x400022b	      0xba00000000	                              mov edx, 0	        98	stdio2.h	CALL_10
+0x4000230	      0xbe01000000	                              mov esi, 1	        98	stdio2.h	CALL_10
+0x4000235	      0xe800000000	                          call 0x400023a	        98	stdio2.h	CALL_10
+0x400023a	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       117	fork-child.c	FUNCTION_6	CALL_10
+0x400023f	    0x644833042528	                xor rax, qword fs:[0x28]	       117	fork-child.c	FUNCTION_6	CALL_10
+0x4000248	            0x7514	                           jne 0x400025e	       117	fork-child.c	FUNCTION_6	CALL_10
+0x400024a	    0x488b3d000000	            mov rdi, qword [0x04000251] 	       117	fork-child.c	FUNCTION_6	CALL_10
+0x4000251	        0x4883c420	                           add rsp, 0x20	       118	fork-child.c	FUNCTION_6
+0x4000255	              0x5b	                                 pop rbx	       118	fork-child.c	FUNCTION_6
+0x4000256	              0x5d	                                 pop rbp	       118	fork-child.c	FUNCTION_6
+0x4000257	            0x415c	                                 pop r12	       118	fork-child.c	FUNCTION_6
+0x4000259	      0xe900000000	                           jmp 0x400025e	       117	fork-child.c	FUNCTION_6	CALL_10
+0x400025e	      0xe800000000	                  call section_end..data	       117	fork-child.c	FUNCTION_6	CALL_10
+gdb_flush_out_err	SWITCH,0:FOR,0:IF,0:ELSE,0:functions,0:WHILE,0:DO,0:CALL,2	6
+0x4000110	        0x4883ec08	                              sub rsp, 8	        90	fork-child.c	FUNCTION_5
+0x4000114	    0x488b3d000000	            mov rdi, qword [0x0400011b] 	        91	fork-child.c	FUNCTION_5	CALL_1
+0x400011b	      0xe800000000	                          call 0x4000120	        91	fork-child.c	FUNCTION_5	CALL_1
+0x4000120	    0x488b3d000000	            mov rdi, qword [0x04000127] 	        92	fork-child.c	FUNCTION_5	CALL_2
+0x4000127	        0x4883c408	                              add rsp, 8	        93	fork-child.c	FUNCTION_5
+0x400012b	      0xe900000000	jmp sym.post_fork_inferior_int_charconst	        92	fork-child.c	FUNCTION_5	CALL_2
+prefork_hook	SWITCH,0:FOR,0:IF,1:ELSE,0:functions,0:WHILE,0:DO,0:CALL,5	30
+0x4000060	              0x55	                                push rbp	        46	fork-child.c	FUNCTION_2
+0x4000061	              0x53	                                push rbx	        46	fork-child.c	FUNCTION_2
+0x4000062	          0x4889fd	                            mov rbp, rdi	        46	fork-child.c	FUNCTION_2
+0x4000065	        0x4883ec08	                              sub rsp, 8	        46	fork-child.c	FUNCTION_2
+0x4000069	      0xe800000000	                          call 0x400006e	        47	fork-child.c	FUNCTION_2	CALL_1
+0x400006e	          0x4889c3	                            mov rbx, rax	        47	fork-child.c	FUNCTION_2	CALL_1
+0x4000071	    0x8b0500000000	            mov eax, dword [0x04000077] 	        48	fork-child.c	FUNCTION_2	IF_1
+0x4000077	            0x85c0	                           test eax, eax	        48	fork-child.c	FUNCTION_2	IF_1
+0x4000079	            0x7414	                            je 0x400008f	        48	fork-child.c	FUNCTION_2	IF_1
+0x400007b	          0x4889ee	                            mov rsi, rbp	        50	fork-child.c	FUNCTION_2	IF_1	CALL_2
+0x400007e	      0xbf00000000	                              mov edi, 0	        50	fork-child.c	FUNCTION_2	IF_1	CALL_2
+0x4000083	            0x31c0	                            xor eax, eax	        50	fork-child.c	FUNCTION_2	IF_1	CALL_2
+0x4000085	      0xe800000000	                          call 0x400008a	        50	fork-child.c	FUNCTION_2	IF_1	CALL_2
+0x400008a	      0xe800000000	                          call 0x400008f	        51	fork-child.c	FUNCTION_2	IF_1	CALL_3
+0x400008f	            0x31f6	                            xor esi, esi	        55	fork-child.c	FUNCTION_2	CALL_4
+0x4000091	      0xbf16000000	                           mov edi, 0x16	        55	fork-child.c	FUNCTION_2	CALL_4
+0x4000096	      0xe800000000	                          call 0x400009b	        55	fork-child.c	FUNCTION_2	CALL_4
+0x400009b	            0x31f6	                            xor esi, esi	        56	fork-child.c	FUNCTION_2	CALL_5
+0x400009d	      0xbf15000000	                           mov edi, 0x15	        56	fork-child.c	FUNCTION_2	CALL_5
+0x40000a2	      0xe800000000	                          call 0x40000a7	        56	fork-child.c	FUNCTION_2	CALL_5
+0x40000a7	    0x488b05000000	            mov rax, qword [0x040000ae] 	        61	fork-child.c	FUNCTION_2
+0x40000ae	          0x488903	                    mov qword [rbx], rax	        61	fork-child.c	FUNCTION_2
+0x40000b1	    0x488b05000000	            mov rax, qword [0x040000b8] 	        61	fork-child.c	FUNCTION_2
+0x40000b8	        0x48894308	                mov qword [rbx + 8], rax	        61	fork-child.c	FUNCTION_2
+0x40000bc	    0x488b05000000	            mov rax, qword [0x040000c3] 	        61	fork-child.c	FUNCTION_2
+0x40000c3	        0x48894310	             mov qword [rbx + 0x10], rax	        61	fork-child.c	FUNCTION_2
+0x40000c7	        0x4883c408	                              add rsp, 8	        62	fork-child.c	FUNCTION_2
+0x40000cb	              0x5b	                                 pop rbx	        62	fork-child.c	FUNCTION_2
+0x40000cc	              0x5d	                                 pop rbp	        62	fork-child.c	FUNCTION_2
+0x40000cd	              0xc3	                                     ret	        62	fork-child.c	FUNCTION_2
+postfork_hook	SWITCH,0:FOR,0:IF,0:ELSE,0:functions,0:WHILE,0:DO,0:CALL,0	1
+0x40000d0	            0xf3c3	                                     ret	        68	fork-child.c	FUNCTION_3

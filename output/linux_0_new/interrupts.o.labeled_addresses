@@ -1,0 +1,25 @@
+proc_interrupts_init	SWITCH,0:CALL,1:IF,0:DO,0:FOR,0:WHILE,0:functions,0:ELSE,0	7
+0x4000040	    0x486305000000	         movsxd rax, dword [0x04000047] 	        14	interrupts.c	FUNCTION_1
+0x4000047	          0x483906	                    cmp qword [rsi], rax	        14	interrupts.c	FUNCTION_1
+0x400004a	      0xb800000000	                              mov eax, 0	        14	interrupts.c	FUNCTION_1
+0x400004f	        0x480f4ec6	                         cmovle rax, rsi	        14	interrupts.c	FUNCTION_1
+0x4000053	              0xc3	                                     ret	        15	interrupts.c	FUNCTION_1
+0x4000054	            0x6690	                                     nop	        15	interrupts.c	FUNCTION_1
+0x4000056	    0x662e0f1f8400	                 nop word cs:[rax + rax]	        15	interrupts.c	FUNCTION_1
+int_seq_stop	SWITCH,0:CALL,0:IF,0:DO,0:FOR,0:WHILE,0:functions,0:ELSE,0	1
+0x4000080	            0xf3c3	                                     ret	        26	interrupts.c	FUNCTION_3
+int_seq_start	SWITCH,0:CALL,0:IF,0:DO,0:FOR,0:WHILE,0:functions,0:ELSE,0	5
+0x4000040	    0x486305000000	         movsxd rax, dword [0x04000047] 	        14	interrupts.c	FUNCTION_1
+0x4000047	          0x483906	                    cmp qword [rsi], rax	        14	interrupts.c	FUNCTION_1
+0x400004a	      0xb800000000	                              mov eax, 0	        14	interrupts.c	FUNCTION_1
+0x400004f	        0x480f4ec6	                         cmovle rax, rsi	        14	interrupts.c	FUNCTION_1
+0x4000053	              0xc3	                                     ret	        15	interrupts.c	FUNCTION_1
+int_seq_next	SWITCH,0:CALL,0:IF,1:DO,0:FOR,0:WHILE,0:functions,0:ELSE,0	8
+0x4000060	          0x488b02	                    mov rax, qword [rdx]	        19	interrupts.c	FUNCTION_2
+0x4000063	        0x4883c001	                              add rax, 1	        19	interrupts.c	FUNCTION_2
+0x4000067	          0x488902	                    mov qword [rdx], rax	        19	interrupts.c	FUNCTION_2
+0x400006a	    0x48630d000000	         movsxd rcx, dword [0x04000071] 	        20	interrupts.c	FUNCTION_2	IF_1
+0x4000071	          0x4839c8	                            cmp rax, rcx	        22	interrupts.c	FUNCTION_2
+0x4000074	      0xb800000000	                              mov eax, 0	        22	interrupts.c	FUNCTION_2
+0x4000079	        0x480f4ec2	                         cmovle rax, rdx	        22	interrupts.c	FUNCTION_2
+0x400007d	              0xc3	                                     ret	        23	interrupts.c	FUNCTION_2

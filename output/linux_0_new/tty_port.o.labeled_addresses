@@ -1,0 +1,103 @@
+tty_port_register_device_serdev	ELSE,0:CALL,1:functions,0:SWITCH,0:IF,0:WHILE,0:FOR,0:DO,0	10
+0x40002b0	          0x4989f1	                             mov r9, rsi	       184	tty_port.c	FUNCTION_8
+0x40002b3	          0x4189d2	                           mov r10d, edx	       184	tty_port.c	FUNCTION_8
+0x40002b6	          0x4989cb	                            mov r11, rcx	       184	tty_port.c	FUNCTION_8
+0x40002b9	      0xe800000000	                          call 0x40002be	       158	tty_port.c	FUNCTION_7	CALL_1
+0x40002be	          0x4531c0	                            xor r8d, r8d	       166	tty_port.c	FUNCTION_7	CALL_4
+0x40002c1	            0x31c9	                            xor ecx, ecx	       166	tty_port.c	FUNCTION_7	CALL_4
+0x40002c3	          0x4c89da	                            mov rdx, r11	       166	tty_port.c	FUNCTION_7	CALL_4
+0x40002c6	          0x4489d6	                           mov esi, r10d	       166	tty_port.c	FUNCTION_7	CALL_4
+0x40002c9	          0x4c89cf	                             mov rdi, r9	       166	tty_port.c	FUNCTION_7	CALL_4
+0x40002cc	      0xe900000000	                           jmp 0x40002d1	       166	tty_port.c	FUNCTION_7	CALL_4
+tty_port_install	ELSE,0:CALL,1:functions,0:SWITCH,0:IF,0:WHILE,0:FOR,0:DO,0	5
+0x4000580	          0x4889f0	                            mov rax, rsi	       661	tty_port.c	FUNCTION_29
+0x4000583	    0x4889bab80200	            mov qword [rdx + 0x2b8], rdi	       662	tty_port.c	FUNCTION_29
+0x400058a	          0x4889d6	                            mov rsi, rdx	       663	tty_port.c	FUNCTION_29	CALL_1
+0x400058d	          0x4889c7	                            mov rdi, rax	       663	tty_port.c	FUNCTION_29	CALL_1
+0x4000590	      0xe900000000	                           jmp 0x4000595	       663	tty_port.c	FUNCTION_29	CALL_1
+tty_port_free_xmit_buf	ELSE,0:CALL,3:functions,0:SWITCH,0:IF,1:WHILE,0:FOR,0:DO,0	16
+0x40003e0	              0x55	                                push rbp	       227	tty_port.c	FUNCTION_11
+0x40003e1	    0x488daf200100	                  lea rbp, [rdi + 0x120]	       228	tty_port.c	FUNCTION_11	CALL_1
+0x40003e8	              0x53	                                push rbx	       227	tty_port.c	FUNCTION_11
+0x40003e9	          0x4889fb	                            mov rbx, rdi	       227	tty_port.c	FUNCTION_11
+0x40003ec	          0x4889ef	                            mov rdi, rbp	       228	tty_port.c	FUNCTION_11	CALL_1
+0x40003ef	      0xe800000000	                          call 0x40003f4	       228	tty_port.c	FUNCTION_11	CALL_1
+0x40003f4	    0x488bbb400100	           mov rdi, qword [rbx + 0x140] 	       229	tty_port.c	FUNCTION_11	IF_1
+0x40003fb	          0x4885ff	                           test rdi, rdi	       229	tty_port.c	FUNCTION_11	IF_1
+0x40003fe	            0x7412	                            je 0x4000412	       229	tty_port.c	FUNCTION_11	IF_1
+0x4000400	            0x31f6	                            xor esi, esi	       230	tty_port.c	FUNCTION_11	IF_1	CALL_2
+0x4000402	      0xe800000000	                          call 0x4000407	       230	tty_port.c	FUNCTION_11	IF_1	CALL_2
+0x4000407	    0x48c783400100	              mov qword [rbx + 0x140], 0	       231	tty_port.c	FUNCTION_11	IF_1
+0x4000412	          0x4889ef	                            mov rdi, rbp	       233	tty_port.c	FUNCTION_11	CALL_3
+0x4000415	              0x5b	                                 pop rbx	       234	tty_port.c	FUNCTION_11
+0x4000416	              0x5d	                                 pop rbp	       234	tty_port.c	FUNCTION_11
+0x4000417	      0xe900000000	                           jmp 0x400041c	       233	tty_port.c	FUNCTION_11	CALL_3
+tty_port_link_device	ELSE,0:CALL,1:functions,0:SWITCH,0:IF,1:WHILE,0:FOR,0:DO,0	8
+0x4000250	          0x395634	            cmp dword [rsi + 0x34], edx 	        90	tty_port.c	FUNCTION_4	IF_1	CALL_1
+0x4000253	            0x760e	                           jbe 0x4000263	        90	tty_port.c	FUNCTION_4	IF_1	CALL_1
+0x4000255	    0x488b86880000	            mov rax, qword [rsi + 0x88] 	        92	tty_port.c	FUNCTION_4
+0x400025c	            0x89d2	                            mov edx, edx	        92	tty_port.c	FUNCTION_4
+0x400025e	        0x48893cd0	            mov qword [rax + rdx*8], rdi	        92	tty_port.c	FUNCTION_4
+0x4000262	              0xc3	                                     ret	        92	tty_port.c	FUNCTION_4
+0x4000263	             0xf0b	                                     ud2	        92	tty_port.c	FUNCTION_4
+0x4000265	              0xc3	                                     ret	        90	tty_port.c	FUNCTION_4	IF_1	CALL_1
+tty_port_alloc_xmit_buf	ELSE,0:CALL,3:functions,0:SWITCH,0:IF,2:WHILE,0:FOR,0:DO,0	20
+0x4000300	              0x55	                                push rbp	       214	tty_port.c	FUNCTION_10
+0x4000301	    0x488daf200100	                  lea rbp, [rdi + 0x120]	       216	tty_port.c	FUNCTION_10	CALL_1
+0x4000308	              0x53	                                push rbx	       214	tty_port.c	FUNCTION_10
+0x4000309	          0x4889fb	                            mov rbx, rdi	       214	tty_port.c	FUNCTION_10
+0x400030c	          0x4889ef	                            mov rdi, rbp	       216	tty_port.c	FUNCTION_10	CALL_1
+0x400030f	      0xe800000000	                          call 0x4000314	       216	tty_port.c	FUNCTION_10	CALL_1
+0x4000314	    0x4883bb400100	              cmp qword [rbx + 0x140], 0	       217	tty_port.c	FUNCTION_10	IF_1
+0x400031c	            0x7418	                            je 0x4000336	       217	tty_port.c	FUNCTION_10	IF_1
+0x400031e	          0x4889ef	                            mov rdi, rbp	       219	tty_port.c	FUNCTION_10	CALL_3
+0x4000321	      0xe800000000	                          call 0x4000326	       219	tty_port.c	FUNCTION_10	CALL_3
+0x4000326	    0x4883bb400100	              cmp qword [rbx + 0x140], 1	       222	tty_port.c	FUNCTION_10
+0x400032e	              0x5b	                                 pop rbx	       223	tty_port.c	FUNCTION_10
+0x400032f	              0x5d	                                 pop rbp	       223	tty_port.c	FUNCTION_10
+0x4000330	            0x19c0	                            sbb eax, eax	       222	tty_port.c	FUNCTION_10
+0x4000332	          0x83e0f4	                     and eax, 0xfffffff4	       222	tty_port.c	FUNCTION_10
+0x4000335	              0xc3	                                     ret	       223	tty_port.c	FUNCTION_10
+0x4000336	      0xbfc0004001	                      mov edi, 0x14000c0	       218	tty_port.c	FUNCTION_10	CALL_2
+0x400033b	      0xe800000000	                          call 0x4000340	       218	tty_port.c	FUNCTION_10	CALL_2
+0x4000340	    0x488983400100	            mov qword [rbx + 0x140], rax	       218	tty_port.c	FUNCTION_10	CALL_2
+0x4000347	            0xebd5	                           jmp 0x400031e	       218	tty_port.c	FUNCTION_10	CALL_2
+tty_port_default_wakeup	ELSE,0:CALL,3:functions,0:SWITCH,0:IF,1:WHILE,0:FOR,0:DO,0	12
+0x4000bb0	              0x53	                                push rbx	        46	tty_port.c	FUNCTION_2
+0x4000bb1	      0xe800000000	                          call 0x4000bb6	        47	tty_port.c	FUNCTION_2	CALL_1
+0x4000bb6	          0x4885c0	                           test rax, rax	        49	tty_port.c	FUNCTION_2	IF_1
+0x4000bb9	            0x7414	                            je 0x4000bcf	        49	tty_port.c	FUNCTION_2	IF_1
+0x4000bbb	          0x4889c3	                            mov rbx, rax	        49	tty_port.c	FUNCTION_2	IF_1
+0x4000bbe	          0x4889c7	                            mov rdi, rax	        50	tty_port.c	FUNCTION_2	IF_1	CALL_2
+0x4000bc1	      0xe800000000	                          call 0x4000bc6	        50	tty_port.c	FUNCTION_2	IF_1	CALL_2
+0x4000bc6	          0x4889df	                            mov rdi, rbx	        51	tty_port.c	FUNCTION_2	IF_1	CALL_3
+0x4000bc9	              0x5b	                                 pop rbx	        53	tty_port.c	FUNCTION_2
+0x4000bca	      0xe900000000	                           jmp 0x4000bcf	        51	tty_port.c	FUNCTION_2	IF_1	CALL_3
+0x4000bcf	              0x5b	                                 pop rbx	        53	tty_port.c	FUNCTION_2
+0x4000bd0	              0xc3	                                     ret	        53	tty_port.c	FUNCTION_2
+tty_port_unregister_device	ELSE,0:CALL,2:functions,0:SWITCH,0:IF,1:WHILE,0:FOR,0:DO,0	3
+0x40002f0	          0x4889f7	                            mov rdi, rsi	       202	tty_port.c	FUNCTION_9
+0x40002f3	            0x89d6	                            mov esi, edx	       209	tty_port.c	FUNCTION_9	CALL_2
+0x40002f5	      0xe900000000	                           jmp 0x40002fa	       209	tty_port.c	FUNCTION_9	CALL_2
+tty_port_tty_wakeup	ELSE,0:CALL,1:functions,0:SWITCH,0:IF,0:WHILE,0:FOR,0:DO,0	3
+0x4000040	    0x488b87a00000	            mov rax, qword [rdi + 0xa0] 	       390	tty_port.c	FUNCTION_20	CALL_1
+0x4000047	        0x488b4008	                mov rax, qword [rax + 8]	       390	tty_port.c	FUNCTION_20	CALL_1
+0x400004b	      0xe900000000	         jmp sym.tty_port_carrier_raised	       390	tty_port.c	FUNCTION_20	CALL_1
+tty_port_tty_hangup	ELSE,0:CALL,4:functions,0:SWITCH,0:IF,1:WHILE,0:FOR,0:DO,0	17
+0x4000be0	              0x55	                                push rbp	       374	tty_port.c	FUNCTION_19
+0x4000be1	              0x53	                                push rbx	       374	tty_port.c	FUNCTION_19
+0x4000be2	            0x89f5	                            mov ebp, esi	       374	tty_port.c	FUNCTION_19
+0x4000be4	      0xe800000000	                          call 0x4000be9	       375	tty_port.c	FUNCTION_19	CALL_1
+0x4000be9	          0x4885c0	                           test rax, rax	       377	tty_port.c	FUNCTION_19	IF_1	CALL_2
+0x4000bec	          0x4889c3	                            mov rbx, rax	       375	tty_port.c	FUNCTION_19	CALL_1
+0x4000bef	            0x7416	                            je 0x4000c07	       377	tty_port.c	FUNCTION_19	IF_1	CALL_2
+0x4000bf1	          0x4084ed	                           test bpl, bpl	       377	tty_port.c	FUNCTION_19	IF_1	CALL_2
+0x4000bf4	            0x7409	                            je 0x4000bff	       377	tty_port.c	FUNCTION_19	IF_1	CALL_2
+0x4000bf6	    0xf68019010000	              test byte [rax + 0x119], 8	       377	tty_port.c	FUNCTION_19	IF_1	CALL_2
+0x4000bfd	            0x7508	                           jne 0x4000c07	       377	tty_port.c	FUNCTION_19	IF_1	CALL_2
+0x4000bff	          0x4889df	                            mov rdi, rbx	       378	tty_port.c	FUNCTION_19	CALL_3
+0x4000c02	      0xe800000000	                          call 0x4000c07	       378	tty_port.c	FUNCTION_19	CALL_3
+0x4000c07	          0x4889df	                            mov rdi, rbx	       379	tty_port.c	FUNCTION_19	CALL_4
+0x4000c0a	              0x5b	                                 pop rbx	       380	tty_port.c	FUNCTION_19
+0x4000c0b	              0x5d	                                 pop rbp	       380	tty_port.c	FUNCTION_19
+0x4000c0c	      0xe900000000	                   jmp section_end..text	       379	tty_port.c	FUNCTION_19	CALL_4

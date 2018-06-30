@@ -1,0 +1,28 @@
+migrate_prep_local	DO,0:SWITCH,0:ELSE,0:FOR,0:CALL,1:IF,0:functions,0:WHILE,0	3
+0x4001310	      0xe800000000	                          call 0x4001315	        79	migrate.c	FUNCTION_2	CALL_1
+0x4001315	            0x31c0	                            xor eax, eax	        82	migrate.c	FUNCTION_2
+0x4001317	              0xc3	                                     ret	        82	migrate.c	FUNCTION_2
+remove_migration_ptes	DO,0:SWITCH,0:ELSE,1:FOR,0:CALL,2:IF,1:functions,0:WHILE,0	23
+0x40015a0	        0x4883ec30	                           sub rsp, 0x30	       290	migrate.c	FUNCTION_7
+0x40015a4	          0x4889f0	                            mov rax, rsi	       290	migrate.c	FUNCTION_7
+0x40015a7	    0x65488b0c2528	                mov rcx, qword gs:[0x28]	       290	migrate.c	FUNCTION_7
+0x40015b0	      0x48894c2428	             mov qword [rsp + 0x28], rcx	       290	migrate.c	FUNCTION_7
+0x40015b5	            0x31c9	                            xor ecx, ecx	       290	migrate.c	FUNCTION_7
+0x40015b7	            0x84d2	                             test dl, dl	       296	migrate.c	FUNCTION_7	IF_1
+0x40015b9	        0x48893c24	                    mov qword [rsp], rdi	       291	migrate.c	FUNCTION_7
+0x40015bd	    0x48c744241000	               mov qword [rsp + 0x10], 0	       291	migrate.c	FUNCTION_7
+0x40015c6	    0x48c744241800	               mov qword [rsp + 0x18], 0	       291	migrate.c	FUNCTION_7
+0x40015cf	    0x48c744242000	               mov qword [rsp + 0x20], 0	       291	migrate.c	FUNCTION_7
+0x40015d8	          0x4889e6	                            mov rsi, rsp	       297	migrate.c	FUNCTION_7	CALL_1
+0x40015db	    0x48c744240800	                  mov qword [rsp + 8], 0	       291	migrate.c	FUNCTION_7
+0x40015e4	          0x4889c7	                            mov rdi, rax	       297	migrate.c	FUNCTION_7	CALL_1
+0x40015e7	            0x751a	                           jne 0x4001603	       296	migrate.c	FUNCTION_7	IF_1
+0x40015e9	      0xe800000000	                          call 0x40015ee	       299	migrate.c	FUNCTION_7	CALL_2
+0x40015ee	      0x488b442428	            mov rax, qword [rsp + 0x28] 	       300	migrate.c	FUNCTION_7
+0x40015f3	    0x654833042528	                xor rax, qword gs:[0x28]	       300	migrate.c	FUNCTION_7
+0x40015fc	            0x750c	                           jne 0x400160a	       300	migrate.c	FUNCTION_7
+0x40015fe	        0x4883c430	                           add rsp, 0x30	       300	migrate.c	FUNCTION_7
+0x4001602	              0xc3	                                     ret	       300	migrate.c	FUNCTION_7
+0x4001603	      0xe800000000	                          call 0x4001608	       297	migrate.c	FUNCTION_7	CALL_1
+0x4001608	            0xebe4	                           jmp 0x40015ee	       297	migrate.c	FUNCTION_7	CALL_1
+0x400160a	      0xe800000000	                          call 0x400160f	       300	migrate.c	FUNCTION_7

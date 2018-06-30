@@ -1,0 +1,25 @@
+svc_set_client	CALL,1:functions,0:IF,0:FOR,0:DO,0:SWITCH,0:ELSE,0:WHILE,0	4
+0x4000040	    0x488b87500100	           mov rax, qword [rdi + 0x150] 	        68	svcauth.c	FUNCTION_2	CALL_1
+0x4000047	    0x48c787e81a00	            mov qword [rdi + 0x1ae8], 0 	        67	svcauth.c	FUNCTION_2
+0x4000052	        0x488b4030	            mov rax, qword [rax + 0x30] 	        68	svcauth.c	FUNCTION_2	CALL_1
+0x4000056	      0xe900000000	                           jmp 0x400005b	        68	svcauth.c	FUNCTION_2	CALL_1
+auth_domain_find	CALL,1:functions,0:IF,0:FOR,0:DO,0:SWITCH,0:ELSE,0:WHILE,0	2
+0x40002d0	            0x31f6	                            xor esi, esi	       170	svcauth.c	FUNCTION_9	CALL_1
+0x40002d2	      0xe929ffffff	              jmp sym.auth_domain_lookup	       170	svcauth.c	FUNCTION_9	CALL_1
+svc_authorise	CALL,2:functions,0:IF,1:FOR,0:DO,0:SWITCH,0:ELSE,0:WHILE,0	16
+0x40002e0	              0x55	                                push rbp	        77	svcauth.c	FUNCTION_3
+0x40002e1	              0x53	                                push rbx	        77	svcauth.c	FUNCTION_3
+0x40002e2	            0x31ed	                            xor ebp, ebp	        77	svcauth.c	FUNCTION_3
+0x40002e4	    0x488b9f500100	           mov rbx, qword [rdi + 0x150] 	        78	svcauth.c	FUNCTION_3
+0x40002eb	    0x48c787500100	              mov qword [rdi + 0x150], 0	        81	svcauth.c	FUNCTION_3
+0x40002f6	          0x4885db	                           test rbx, rbx	        83	svcauth.c	FUNCTION_3	IF_1
+0x40002f9	            0x7414	                            je 0x400030f	        83	svcauth.c	FUNCTION_3	IF_1
+0x40002fb	        0x488b4320	            mov rax, qword [rbx + 0x20] 	        84	svcauth.c	FUNCTION_3	IF_1	CALL_1
+0x40002ff	      0xe800000000	                          call 0x4000304	        84	svcauth.c	FUNCTION_3	IF_1	CALL_1
+0x4000304	        0x488b7b08	                mov rdi, qword [rbx + 8]	        85	svcauth.c	FUNCTION_3	IF_1	CALL_2
+0x4000308	            0x89c5	                            mov ebp, eax	        84	svcauth.c	FUNCTION_3	IF_1	CALL_1
+0x400030a	      0xe800000000	                          call 0x400030f	        85	svcauth.c	FUNCTION_3	IF_1	CALL_2
+0x400030f	            0x89e8	                            mov eax, ebp	        88	svcauth.c	FUNCTION_3
+0x4000311	              0x5b	                                 pop rbx	        88	svcauth.c	FUNCTION_3
+0x4000312	              0x5d	                                 pop rbp	        88	svcauth.c	FUNCTION_3
+0x4000313	              0xc3	                                     ret	        88	svcauth.c	FUNCTION_3

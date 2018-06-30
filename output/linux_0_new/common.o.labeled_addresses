@@ -1,0 +1,74 @@
+usb_state_string	functions,0:DO,0:SWITCH,0:FOR,0:CALL,1:WHILE,0:IF,1:ELSE,0	6
+0x4000080	          0x83ff08	                              cmp edi, 8	        91	common.c	FUNCTION_4	IF_1	CALL_1
+0x4000083	    0x48c7c0000000	                              mov rax, 0	        92	common.c	FUNCTION_4	IF_1
+0x400008a	            0x770a	                            ja 0x4000096	        91	common.c	FUNCTION_4	IF_1	CALL_1
+0x400008c	            0x89ff	                            mov edi, edi	        94	common.c	FUNCTION_4
+0x400008e	    0x488b04fd0000	                  mov rax, qword [rdi*8]	        94	common.c	FUNCTION_4
+0x4000096	            0xf3c3	                                     ret	        95	common.c	FUNCTION_4
+usb_speed_string	functions,0:DO,0:SWITCH,0:FOR,0:CALL,1:WHILE,0:IF,1:ELSE,0	7
+0x4000060	          0x83ff06	                              cmp edi, 6	        56	common.c	FUNCTION_2	IF_1	CALL_1
+0x4000063	    0x48c7c0000000	                              mov rax, 0	        56	common.c	FUNCTION_2	IF_1	CALL_1
+0x400006a	            0x7602	                           jbe 0x400006e	        56	common.c	FUNCTION_2	IF_1	CALL_1
+0x400006c	            0xf3c3	                                     ret	        59	common.c	FUNCTION_2
+0x400006e	            0x89ff	                            mov edi, edi	        59	common.c	FUNCTION_2
+0x4000070	    0x488b04fd0000	                  mov rax, qword [rdi*8]	        59	common.c	FUNCTION_2
+0x4000078	              0xc3	                                     ret	        59	common.c	FUNCTION_2
+usb_get_dr_mode	functions,0:DO,0:SWITCH,0:FOR,0:CALL,2:WHILE,0:IF,1:ELSE,0	25
+0x4000110	              0x53	                                push rbx	       114	common.c	FUNCTION_6
+0x4000111	    0x48c7c6000000	                              mov rsi, 0	       118	common.c	FUNCTION_6	CALL_1
+0x4000118	            0x31db	                            xor ebx, ebx	       120	common.c	FUNCTION_6	IF_1
+0x400011a	        0x4883ec10	                           sub rsp, 0x10	       114	common.c	FUNCTION_6
+0x400011e	          0x4889e2	                            mov rdx, rsp	       118	common.c	FUNCTION_6	CALL_1
+0x4000121	    0x65488b042528	                mov rax, qword gs:[0x28]	       114	common.c	FUNCTION_6
+0x400012a	      0x4889442408	                mov qword [rsp + 8], rax	       114	common.c	FUNCTION_6
+0x400012f	            0x31c0	                            xor eax, eax	       114	common.c	FUNCTION_6
+0x4000131	      0xe800000000	                          call 0x4000136	       118	common.c	FUNCTION_6	CALL_1
+0x4000136	            0x85c0	                           test eax, eax	       119	common.c	FUNCTION_6	IF_1
+0x4000138	            0x781a	                            js 0x4000154	       119	common.c	FUNCTION_6	IF_1
+0x400013a	        0x488b1424	                    mov rdx, qword [rsp]	       109	common.c	FUNCTION_5	CALL_2
+0x400013e	      0xbe04000000	                              mov esi, 4	       109	common.c	FUNCTION_5	CALL_2
+0x4000143	    0x48c7c7000000	                              mov rdi, 0	       109	common.c	FUNCTION_5	CALL_2
+0x400014a	      0xe800000000	                          call 0x400014f	       109	common.c	FUNCTION_5	CALL_2
+0x400014f	            0x85c0	                           test eax, eax	       110	common.c	FUNCTION_5
+0x4000151	           0xf49d8	                         cmovns ebx, eax	       110	common.c	FUNCTION_5
+0x4000154	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       123	common.c	FUNCTION_6
+0x4000159	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       123	common.c	FUNCTION_6
+0x4000162	            0x89d8	                            mov eax, ebx	       123	common.c	FUNCTION_6
+0x4000164	            0x7506	                           jne 0x400016c	       123	common.c	FUNCTION_6
+0x4000166	        0x4883c410	                           add rsp, 0x10	       123	common.c	FUNCTION_6
+0x400016a	              0x5b	                                 pop rbx	       123	common.c	FUNCTION_6
+0x400016b	              0xc3	                                     ret	       123	common.c	FUNCTION_6
+0x400016c	      0xe800000000	                  call section_end..text	       123	common.c	FUNCTION_6
+usb_otg_state_string	functions,0:DO,0:SWITCH,0:FOR,0:CALL,1:WHILE,0:IF,1:ELSE,0	6
+0x4000040	          0x83ff0d	                            cmp edi, 0xd	        37	common.c	FUNCTION_1	IF_1	CALL_1
+0x4000043	    0x48c7c0000000	                              mov rax, 0	        38	common.c	FUNCTION_1	IF_1
+0x400004a	            0x770a	                            ja 0x4000056	        37	common.c	FUNCTION_1	IF_1	CALL_1
+0x400004c	            0x89ff	                            mov edi, edi	        40	common.c	FUNCTION_1
+0x400004e	    0x488b04fd0000	                  mov rax, qword [rdi*8]	        40	common.c	FUNCTION_1
+0x4000056	            0xf3c3	                                     ret	        41	common.c	FUNCTION_1
+usb_get_maximum_speed	functions,0:DO,0:SWITCH,0:FOR,0:CALL,3:WHILE,0:IF,1:ELSE,0	25
+0x40000a0	              0x53	                                push rbx	        63	common.c	FUNCTION_3
+0x40000a1	    0x48c7c6000000	                              mov rsi, 0	        67	common.c	FUNCTION_3	CALL_1
+0x40000a8	            0x31db	                            xor ebx, ebx	        69	common.c	FUNCTION_3	IF_1
+0x40000aa	        0x4883ec10	                           sub rsp, 0x10	        63	common.c	FUNCTION_3
+0x40000ae	          0x4889e2	                            mov rdx, rsp	        67	common.c	FUNCTION_3	CALL_1
+0x40000b1	    0x65488b042528	                mov rax, qword gs:[0x28]	        63	common.c	FUNCTION_3
+0x40000ba	      0x4889442408	                mov qword [rsp + 8], rax	        63	common.c	FUNCTION_3
+0x40000bf	            0x31c0	                            xor eax, eax	        63	common.c	FUNCTION_3
+0x40000c1	      0xe800000000	                          call 0x40000c6	        67	common.c	FUNCTION_3	CALL_1
+0x40000c6	            0x85c0	                           test eax, eax	        68	common.c	FUNCTION_3	IF_1
+0x40000c8	            0x781a	                            js 0x40000e4	        68	common.c	FUNCTION_3	IF_1
+0x40000ca	        0x488b1424	                    mov rdx, qword [rsp]	        71	common.c	FUNCTION_3	CALL_3
+0x40000ce	      0xbe07000000	                              mov esi, 7	        71	common.c	FUNCTION_3	CALL_3
+0x40000d3	    0x48c7c7000000	                              mov rdi, 0	        71	common.c	FUNCTION_3	CALL_3
+0x40000da	      0xe800000000	                          call 0x40000df	        71	common.c	FUNCTION_3	CALL_3
+0x40000df	            0x85c0	                           test eax, eax	        73	common.c	FUNCTION_3
+0x40000e1	           0xf49d8	                         cmovns ebx, eax	        73	common.c	FUNCTION_3
+0x40000e4	      0x488b4c2408	                mov rcx, qword [rsp + 8]	        74	common.c	FUNCTION_3
+0x40000e9	    0x6548330c2528	                xor rcx, qword gs:[0x28]	        74	common.c	FUNCTION_3
+0x40000f2	            0x89d8	                            mov eax, ebx	        74	common.c	FUNCTION_3
+0x40000f4	            0x7506	                           jne 0x40000fc	        74	common.c	FUNCTION_3
+0x40000f6	        0x4883c410	                           add rsp, 0x10	        74	common.c	FUNCTION_3
+0x40000fa	              0x5b	                                 pop rbx	        74	common.c	FUNCTION_3
+0x40000fb	              0xc3	                                     ret	        74	common.c	FUNCTION_3
+0x40000fc	      0xe800000000	                          call 0x4000101	        74	common.c	FUNCTION_3

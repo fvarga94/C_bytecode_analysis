@@ -1,0 +1,29 @@
+mincore_unmapped_range	DO,0:CALL,1:ELSE,0:WHILE,0:functions,0:IF,0:FOR,0:SWITCH,0	10
+0x4000210	              0x53	                                push rbx	       108	mincore.c	FUNCTION_4
+0x4000211	          0x4889d3	                            mov rbx, rdx	       108	mincore.c	FUNCTION_4
+0x4000214	        0x488b4a40	            mov rcx, qword [rdx + 0x40] 	       109	mincore.c	FUNCTION_4	CALL_1
+0x4000218	        0x488b5238	            mov rdx, qword [rdx + 0x38] 	       109	mincore.c	FUNCTION_4	CALL_1
+0x400021c	      0xe82fffffff	       call sym.__mincore_unmapped_range	       109	mincore.c	FUNCTION_4	CALL_1
+0x4000221	            0x4898	                                    cdqe	       109	mincore.c	FUNCTION_4	CALL_1
+0x4000223	        0x48014340	            add qword [rbx + 0x40], rax 	       109	mincore.c	FUNCTION_4	CALL_1
+0x4000227	            0x31c0	                            xor eax, eax	       112	mincore.c	FUNCTION_4
+0x4000229	              0x5b	                                 pop rbx	       112	mincore.c	FUNCTION_4
+0x400022a	              0xc3	                                     ret	       112	mincore.c	FUNCTION_4
+mincore_hugetlb	DO,0:CALL,3:ELSE,0:WHILE,0:functions,0:IF,0:FOR,1:SWITCH,0	17
+0x4000040	          0x4885ff	                           test rdi, rdi	        35	mincore.c	FUNCTION_1	CALL_2
+0x4000043	        0x498b4040	              mov rax, qword [r8 + 0x40]	        29	mincore.c	FUNCTION_1
+0x4000047	            0x742a	                            je 0x4000073	        35	mincore.c	FUNCTION_1	CALL_2
+0x4000049	    0x48f7079fffff	    test qword [rdi], 0xffffffffffffff9f	        35	mincore.c	FUNCTION_1	CALL_2
+0x4000050	        0x400f95c6	                               setne sil	        35	mincore.c	FUNCTION_1	CALL_2
+0x4000054	          0x4839ca	                            cmp rdx, rcx	        36	mincore.c	FUNCTION_1	FOR_1
+0x4000057	            0x7413	                            je 0x400006c	        36	mincore.c	FUNCTION_1	FOR_1
+0x4000059	    0x4881c2001000	                         add rdx, 0x1000	        36	mincore.c	FUNCTION_1	FOR_1
+0x4000060	          0x408830	                     mov byte [rax], sil	        37	mincore.c	FUNCTION_1	FOR_1
+0x4000063	        0x4883c001	                              add rax, 1	        36	mincore.c	FUNCTION_1	FOR_1
+0x4000067	          0x4839d1	                            cmp rcx, rdx	        36	mincore.c	FUNCTION_1	FOR_1
+0x400006a	            0x75ed	                           jne 0x4000059	        36	mincore.c	FUNCTION_1	FOR_1
+0x400006c	        0x49894040	              mov qword [r8 + 0x40], rax	        38	mincore.c	FUNCTION_1
+0x4000070	            0x31c0	                            xor eax, eax	        43	mincore.c	FUNCTION_1
+0x4000072	              0xc3	                                     ret	        43	mincore.c	FUNCTION_1
+0x4000073	            0x31f6	                            xor esi, esi	        43	mincore.c	FUNCTION_1
+0x4000075	            0xebdd	                           jmp 0x4000054	        43	mincore.c	FUNCTION_1

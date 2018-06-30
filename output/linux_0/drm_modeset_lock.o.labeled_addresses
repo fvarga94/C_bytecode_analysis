@@ -1,0 +1,23 @@
+drm_modeset_lock_single_interruptible	IF,0:ELSE,0:FOR,0:CALL,1:SWITCH,0:DO,0:WHILE,0:functions,0	2
+0x40000c0	            0x31f6	                            xor esi, esi	       355	drm_modeset_lock.c	FUNCTION_11	CALL_1
+0x40000c2	      0xe900000000	                           jmp 0x40000c7	       355	drm_modeset_lock.c	FUNCTION_11	CALL_1
+drm_modeset_unlock_all	IF,1:ELSE,0:FOR,0:CALL,5:SWITCH,0:DO,0:WHILE,0:functions,0	19
+0x4000170	              0x55	                                push rbp	       145	drm_modeset_lock.c	FUNCTION_2
+0x4000171	              0x53	                                push rbx	       145	drm_modeset_lock.c	FUNCTION_2
+0x4000172	    0x488baf500200	           mov rbp, qword [rdi + 0x250] 	       147	drm_modeset_lock.c	FUNCTION_2
+0x4000179	          0x4885ed	                           test rbp, rbp	       149	drm_modeset_lock.c	FUNCTION_2	IF_1	CALL_1
+0x400017c	            0x742c	                            je 0x40001aa	       149	drm_modeset_lock.c	FUNCTION_2	IF_1	CALL_1
+0x400017e	          0x4889fb	                            mov rbx, rdi	       149	drm_modeset_lock.c	FUNCTION_2	IF_1	CALL_1
+0x4000181	    0x48c787500200	              mov qword [rdi + 0x250], 0	       152	drm_modeset_lock.c	FUNCTION_2
+0x400018c	          0x4889ef	                            mov rdi, rbp	       153	drm_modeset_lock.c	FUNCTION_2	CALL_2
+0x400018f	      0xe800000000	                          call 0x4000194	       153	drm_modeset_lock.c	FUNCTION_2	CALL_2
+0x4000194	          0x4889ef	                            mov rdi, rbp	       156	drm_modeset_lock.c	FUNCTION_2	CALL_4
+0x4000197	      0xe800000000	                          call 0x400019c	       156	drm_modeset_lock.c	FUNCTION_2	CALL_4
+0x400019c	    0x488dbbf80100	                  lea rdi, [rbx + 0x1f8]	       158	drm_modeset_lock.c	FUNCTION_2	CALL_5
+0x40001a3	              0x5b	                                 pop rbx	       159	drm_modeset_lock.c	FUNCTION_2
+0x40001a4	              0x5d	                                 pop rbp	       159	drm_modeset_lock.c	FUNCTION_2
+0x40001a5	      0xe900000000	                           jmp 0x40001aa	       158	drm_modeset_lock.c	FUNCTION_2	CALL_5
+0x40001aa	             0xf0b	                                     ud2	       158	drm_modeset_lock.c	FUNCTION_2	CALL_5
+0x40001ac	              0x5b	                                 pop rbx	       159	drm_modeset_lock.c	FUNCTION_2
+0x40001ad	              0x5d	                                 pop rbp	       159	drm_modeset_lock.c	FUNCTION_2
+0x40001ae	              0xc3	                                     ret	       159	drm_modeset_lock.c	FUNCTION_2

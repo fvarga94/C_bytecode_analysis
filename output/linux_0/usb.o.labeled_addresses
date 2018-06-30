@@ -1,0 +1,436 @@
+usb_free_coherent	IF,2:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	9
+0x40006a0	          0x4885ff	                           test rdi, rdi	       907	usb.c	FUNCTION_33	IF_1
+0x40006a3	            0x7413	                            je 0x40006b8	       907	usb.c	FUNCTION_33	IF_1
+0x40006a5	        0x488b7f40	            mov rdi, qword [rdi + 0x40] 	       907	usb.c	FUNCTION_33	IF_1
+0x40006a9	          0x4885ff	                           test rdi, rdi	       909	usb.c	FUNCTION_33	IF_2
+0x40006ac	            0x740a	                            je 0x40006b8	       909	usb.c	FUNCTION_33	IF_2
+0x40006ae	          0x4885d2	                           test rdx, rdx	       909	usb.c	FUNCTION_33	IF_2
+0x40006b1	            0x7405	                            je 0x40006b8	       909	usb.c	FUNCTION_33	IF_2
+0x40006b3	      0xe900000000	                           jmp 0x40006b8	       911	usb.c	FUNCTION_33	CALL_1
+0x40006b8	            0xf3c3	                                     ret	       911	usb.c	FUNCTION_33	CALL_1
+usb_dev_resume	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	3
+0x4000450	      0xbe10000000	                           mov esi, 0x10	       469	usb.c	FUNCTION_17	CALL_1
+0x4000455	      0xe800000000	                          call 0x400045a	       469	usb.c	FUNCTION_17	CALL_1
+0x400045a	            0xf3c3	                                     ret	       470	usb.c	FUNCTION_17
+usb_get_dev	IF,1:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	9
+0x4000570	          0x4885ff	                           test rdi, rdi	       688	usb.c	FUNCTION_25	IF_1
+0x4000573	              0x53	                                push rbx	       687	usb.c	FUNCTION_25
+0x4000574	          0x4889fb	                            mov rbx, rdi	       687	usb.c	FUNCTION_25
+0x4000577	            0x740c	                            je 0x4000585	       688	usb.c	FUNCTION_25	IF_1
+0x4000579	    0x488dbf980000	                   lea rdi, [rdi + 0x98]	       689	usb.c	FUNCTION_25	CALL_1
+0x4000580	      0xe800000000	                          call 0x4000585	       689	usb.c	FUNCTION_25	CALL_1
+0x4000585	          0x4889d8	                            mov rax, rbx	       691	usb.c	FUNCTION_25
+0x4000588	              0x5b	                                 pop rbx	       691	usb.c	FUNCTION_25
+0x4000589	              0xc3	                                     ret	       691	usb.c	FUNCTION_25
+usb_find_common_endpoints_reverse	IF,5:DO,0:CALL,1:functions,0:SWITCH,0:FOR,1:WHILE,0:ELSE,0	46
+0x40001a0	          0x4885f6	                           test rsi, rsi	       192	usb.c	FUNCTION_4	IF_1
+0x40001a3	            0x4154	                                push r12	       188	usb.c	FUNCTION_4
+0x40001a5	          0x4989f2	                            mov r10, rsi	       188	usb.c	FUNCTION_4
+0x40001a8	              0x55	                                push rbp	       188	usb.c	FUNCTION_4
+0x40001a9	          0x4989fc	                            mov r12, rdi	       188	usb.c	FUNCTION_4
+0x40001ac	              0x53	                                push rbx	       188	usb.c	FUNCTION_4
+0x40001ad	          0x4989d3	                            mov r11, rdx	       188	usb.c	FUNCTION_4
+0x40001b0	          0x4889cb	                            mov rbx, rcx	       188	usb.c	FUNCTION_4
+0x40001b3	          0x4c89c5	                             mov rbp, r8	       188	usb.c	FUNCTION_4
+0x40001b6	            0x7407	                            je 0x40001bf	       192	usb.c	FUNCTION_4	IF_1
+0x40001b8	    0x48c706000000	                      mov qword [rsi], 0	       193	usb.c	FUNCTION_4	IF_1
+0x40001bf	          0x4d85db	                           test r11, r11	       194	usb.c	FUNCTION_4	IF_2
+0x40001c2	            0x7407	                            je 0x40001cb	       194	usb.c	FUNCTION_4	IF_2
+0x40001c4	    0x49c703000000	                      mov qword [r11], 0	       195	usb.c	FUNCTION_4	IF_2
+0x40001cb	          0x4885db	                           test rbx, rbx	       196	usb.c	FUNCTION_4	IF_3
+0x40001ce	            0x7407	                            je 0x40001d7	       196	usb.c	FUNCTION_4	IF_3
+0x40001d0	    0x48c703000000	                      mov qword [rbx], 0	       197	usb.c	FUNCTION_4	IF_3
+0x40001d7	          0x4885ed	                           test rbp, rbp	       198	usb.c	FUNCTION_4	IF_4
+0x40001da	            0x7408	                            je 0x40001e4	       198	usb.c	FUNCTION_4	IF_4
+0x40001dc	    0x48c745000000	                      mov qword [rbp], 0	       199	usb.c	FUNCTION_4	IF_4
+0x40001e4	    0x450fb64c2404	               movzx r9d, byte [r12 + 4]	       201	usb.c	FUNCTION_4	FOR_1
+0x40001ea	            0xeb25	                           jmp 0x4000211	       201	usb.c	FUNCTION_4	FOR_1
+0x40001ec	          0x4963c1	                         movsxd rax, r9d	       202	usb.c	FUNCTION_4	FOR_1
+0x40001ef	          0x4989e8	                             mov r8, rbp	       204	usb.c	FUNCTION_4	FOR_1	IF_5	CALL_1
+0x40001f2	          0x4889d9	                            mov rcx, rbx	       204	usb.c	FUNCTION_4	FOR_1	IF_5	CALL_1
+0x40001f5	        0x488d3c80	                  lea rdi, [rax + rax*4]	       202	usb.c	FUNCTION_4	FOR_1
+0x40001f9	          0x4c89da	                            mov rdx, r11	       204	usb.c	FUNCTION_4	FOR_1	IF_5	CALL_1
+0x40001fc	          0x4c89d6	                            mov rsi, r10	       204	usb.c	FUNCTION_4	FOR_1	IF_5	CALL_1
+0x40001ff	        0x48c1e704	                              shl rdi, 4	       202	usb.c	FUNCTION_4	FOR_1
+0x4000203	      0x49037c2418	             add rdi, qword [r12 + 0x18]	       202	usb.c	FUNCTION_4	FOR_1
+0x4000208	      0xe843feffff	                 call sym.match_endpoint	       204	usb.c	FUNCTION_4	FOR_1	IF_5	CALL_1
+0x400020d	            0x84c0	                             test al, al	       204	usb.c	FUNCTION_4	FOR_1	IF_5	CALL_1
+0x400020f	            0x7514	                           jne 0x4000225	       204	usb.c	FUNCTION_4	FOR_1	IF_5	CALL_1
+0x4000211	        0x4183e901	                              sub r9d, 1	       201	usb.c	FUNCTION_4	FOR_1
+0x4000215	        0x4183f9ff	             cmp r9d, 0xffffffffffffffff	       201	usb.c	FUNCTION_4	FOR_1
+0x4000219	            0x75d1	                           jne 0x40001ec	       201	usb.c	FUNCTION_4	FOR_1
+0x400021b	              0x5b	                                 pop rbx	       209	usb.c	FUNCTION_4
+0x400021c	      0xb8faffffff	                     mov eax, 0xfffffffa	       208	usb.c	FUNCTION_4
+0x4000221	              0x5d	                                 pop rbp	       209	usb.c	FUNCTION_4
+0x4000222	            0x415c	                                 pop r12	       209	usb.c	FUNCTION_4
+0x4000224	              0xc3	                                     ret	       209	usb.c	FUNCTION_4
+0x4000225	              0x5b	                                 pop rbx	       209	usb.c	FUNCTION_4
+0x4000226	            0x31c0	                            xor eax, eax	       205	usb.c	FUNCTION_4	FOR_1	IF_5
+0x4000228	              0x5d	                                 pop rbp	       209	usb.c	FUNCTION_4
+0x4000229	            0x415c	                                 pop r12	       209	usb.c	FUNCTION_4
+0x400022b	              0xc3	                                     ret	       209	usb.c	FUNCTION_4
+usb_put_dev	IF,1:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	5
+0x4000340	          0x4885ff	                           test rdi, rdi	       703	usb.c	FUNCTION_26	IF_1
+0x4000343	            0x740c	                            je 0x4000351	       703	usb.c	FUNCTION_26	IF_1
+0x4000345	    0x4881c7980000	                           add rdi, 0x98	       704	usb.c	FUNCTION_26	CALL_1
+0x400034c	      0xe900000000	                           jmp 0x4000351	       704	usb.c	FUNCTION_26	CALL_1
+0x4000351	            0xf3c3	                                     ret	       704	usb.c	FUNCTION_26	CALL_1
+__usb_get_extra_descriptor	IF,2:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,1:ELSE,0	31
+0x40002e0	          0x83fe01	                              cmp esi, 1	       837	usb.c	FUNCTION_31	WHILE_1
+0x40002e3	          0x4189d0	                            mov r8d, edx	       834	usb.c	FUNCTION_31
+0x40002e6	            0x7628	                           jbe 0x4000310	       837	usb.c	FUNCTION_31	WHILE_1
+0x40002e8	           0xfb607	                   movzx eax, byte [rdi]	       840	usb.c	FUNCTION_31	WHILE_1	IF_1
+0x40002eb	            0x3c01	                               cmp al, 1	       840	usb.c	FUNCTION_31	WHILE_1	IF_1
+0x40002ed	            0x762d	                           jbe 0x400031c	       840	usb.c	FUNCTION_31	WHILE_1	IF_1
+0x40002ef	          0x3a5701	                  cmp dl, byte [rdi + 1]	       849	usb.c	FUNCTION_31	WHILE_1	IF_2
+0x40002f2	            0x750f	                           jne 0x4000303	       849	usb.c	FUNCTION_31	WHILE_1	IF_2
+0x40002f4	            0xeb20	                           jmp 0x4000316	       849	usb.c	FUNCTION_31	WHILE_1	IF_2
+0x40002f6	           0xfb607	                   movzx eax, byte [rdi]	       840	usb.c	FUNCTION_31	WHILE_1	IF_1
+0x40002f9	            0x3c01	                               cmp al, 1	       840	usb.c	FUNCTION_31	WHILE_1	IF_1
+0x40002fb	            0x761f	                           jbe 0x400031c	       840	usb.c	FUNCTION_31	WHILE_1	IF_1
+0x40002fd	        0x44384701	                 cmp byte [rdi + 1], r8b	       849	usb.c	FUNCTION_31	WHILE_1	IF_2
+0x4000301	            0x7413	                            je 0x4000316	       849	usb.c	FUNCTION_31	WHILE_1	IF_2
+0x4000303	           0xfb6d0	                           movzx edx, al	       854	usb.c	FUNCTION_31	WHILE_1
+0x4000306	            0x29c6	                            sub esi, eax	       855	usb.c	FUNCTION_31	WHILE_1
+0x4000308	          0x4801d7	                            add rdi, rdx	       854	usb.c	FUNCTION_31	WHILE_1
+0x400030b	          0x83fe01	                              cmp esi, 1	       837	usb.c	FUNCTION_31	WHILE_1
+0x400030e	            0x77e6	                            ja 0x40002f6	       837	usb.c	FUNCTION_31	WHILE_1
+0x4000310	      0xb8ffffffff	                     mov eax, 0xffffffff	       857	usb.c	FUNCTION_31
+0x4000315	              0xc3	                                     ret	       858	usb.c	FUNCTION_31
+0x4000316	          0x488939	                    mov qword [rcx], rdi	       850	usb.c	FUNCTION_31	WHILE_1	IF_2
+0x4000319	            0x31c0	                            xor eax, eax	       851	usb.c	FUNCTION_31	WHILE_1	IF_2
+0x400031b	              0xc3	                                     ret	       851	usb.c	FUNCTION_31	WHILE_1	IF_2
+0x400031c	         0xfb65701	               movzx edx, byte [rdi + 1]	       841	usb.c	FUNCTION_31	WHILE_1	IF_1	CALL_1
+0x4000320	    0x488b35000000	            mov rsi, qword [0x04000327] 	       841	usb.c	FUNCTION_31	WHILE_1	IF_1	CALL_1
+0x4000327	           0xfb6c8	                           movzx ecx, al	       841	usb.c	FUNCTION_31	WHILE_1	IF_1	CALL_1
+0x400032a	    0x48c7c7000000	                              mov rdi, 0	       841	usb.c	FUNCTION_31	WHILE_1	IF_1	CALL_1
+0x4000331	      0xe800000000	                          call 0x4000336	       841	usb.c	FUNCTION_31	WHILE_1	IF_1	CALL_1
+0x4000336	      0xb8ffffffff	                     mov eax, 0xffffffff	       846	usb.c	FUNCTION_31	WHILE_1	IF_1
+0x400033b	              0xc3	                                     ret	       846	usb.c	FUNCTION_31	WHILE_1	IF_1
+match_endpoint	IF,6:DO,0:CALL,3:functions,0:SWITCH,1:FOR,0:WHILE,0:ELSE,2	65
+0x4000050	         0xfb64703	               movzx eax, byte [rdi + 3]	        83	usb.c	FUNCTION_2	SWITCH_1	CALL_1
+0x4000054	          0x83e003	                              and eax, 3	        83	usb.c	FUNCTION_2	SWITCH_1	CALL_1
+0x4000057	            0x3c02	                               cmp al, 2	        83	usb.c	FUNCTION_2	SWITCH_1	CALL_1
+0x4000059	            0x741c	                            je 0x4000077	        83	usb.c	FUNCTION_2	SWITCH_1	CALL_1
+0x400005b	            0x3c03	                               cmp al, 3	        83	usb.c	FUNCTION_2	SWITCH_1	CALL_1
+0x400005d	            0x7515	                           jne 0x4000074	        83	usb.c	FUNCTION_2	SWITCH_1	CALL_1
+0x400005f	            0x31c0	                            xor eax, eax	        97	usb.c	FUNCTION_2	SWITCH_1
+0x4000061	        0x807f0200	                   cmp byte [rdi + 2], 0	        99	usb.c	FUNCTION_2	SWITCH_1	IF_4	CALL_3
+0x4000065	            0x7855	                            js 0x40000bc	        99	usb.c	FUNCTION_2	SWITCH_1	IF_4	CALL_3
+0x4000067	          0x4d85c0	                             test r8, r8	       105	usb.c	FUNCTION_2	SWITCH_1	ELSE_2	IF_6
+0x400006a	            0x7406	                            je 0x4000072	       105	usb.c	FUNCTION_2	SWITCH_1	ELSE_2	IF_6
+0x400006c	        0x49833800	                       cmp qword [r8], 0	       105	usb.c	FUNCTION_2	SWITCH_1	ELSE_2	IF_6
+0x4000070	            0x746a	                            je 0x40000dc	       105	usb.c	FUNCTION_2	SWITCH_1	ELSE_2	IF_6
+0x4000072	            0xf3c3	                                     ret	       118	usb.c	FUNCTION_2
+0x4000074	            0x31c0	                            xor eax, eax	       113	usb.c	FUNCTION_2	SWITCH_1
+0x4000076	              0xc3	                                     ret	       113	usb.c	FUNCTION_2	SWITCH_1
+0x4000077	            0x31c0	                            xor eax, eax	        97	usb.c	FUNCTION_2	SWITCH_1
+0x4000079	        0x807f0200	                   cmp byte [rdi + 2], 0	        85	usb.c	FUNCTION_2	SWITCH_1	IF_1	CALL_2
+0x400007d	            0x784d	                            js 0x40000cc	        85	usb.c	FUNCTION_2	SWITCH_1	IF_1	CALL_2
+0x400007f	          0x4885d2	                           test rdx, rdx	        91	usb.c	FUNCTION_2	SWITCH_1	ELSE_1	IF_3
+0x4000082	            0x746f	                            je 0x40000f3	        91	usb.c	FUNCTION_2	SWITCH_1	ELSE_1	IF_3
+0x4000084	        0x48833a00	                      cmp qword [rdx], 0	        91	usb.c	FUNCTION_2	SWITCH_1	ELSE_1	IF_3
+0x4000088	            0x75e8	                           jne 0x4000072	        91	usb.c	FUNCTION_2	SWITCH_1	ELSE_1	IF_3
+0x400008a	          0x4885f6	                           test rsi, rsi	       117	usb.c	FUNCTION_2
+0x400008d	          0x48893a	                    mov qword [rdx], rdi	        92	usb.c	FUNCTION_2	SWITCH_1	ELSE_1	IF_3
+0x4000090	            0x7409	                            je 0x400009b	       117	usb.c	FUNCTION_2
+0x4000092	        0x48833e00	                      cmp qword [rsi], 0	       116	usb.c	FUNCTION_2
+0x4000096	            0x74dc	                            je 0x4000074	       116	usb.c	FUNCTION_2
+0x4000098	          0x488b3a	                    mov rdi, qword [rdx]	       116	usb.c	FUNCTION_2
+0x400009b	          0x4885ff	                           test rdi, rdi	       116	usb.c	FUNCTION_2
+0x400009e	            0x74d4	                            je 0x4000074	       116	usb.c	FUNCTION_2
+0x40000a0	          0x4885c9	                           test rcx, rcx	       116	usb.c	FUNCTION_2
+0x40000a3	            0x7406	                            je 0x40000ab	       116	usb.c	FUNCTION_2
+0x40000a5	        0x48833900	                      cmp qword [rcx], 0	       117	usb.c	FUNCTION_2
+0x40000a9	            0x74c9	                            je 0x4000074	       117	usb.c	FUNCTION_2
+0x40000ab	          0x4d85c0	                             test r8, r8	       117	usb.c	FUNCTION_2
+0x40000ae	            0x7406	                            je 0x40000b6	       117	usb.c	FUNCTION_2
+0x40000b0	        0x49833800	                       cmp qword [r8], 0	       117	usb.c	FUNCTION_2
+0x40000b4	            0x74be	                            je 0x4000074	       117	usb.c	FUNCTION_2
+0x40000b6	      0xb801000000	                              mov eax, 1	       117	usb.c	FUNCTION_2
+0x40000bb	              0xc3	                                     ret	       116	usb.c	FUNCTION_2
+0x40000bc	          0x4885c9	                           test rcx, rcx	       100	usb.c	FUNCTION_2	SWITCH_1	IF_4	IF_5
+0x40000bf	            0x7436	                            je 0x40000f7	       100	usb.c	FUNCTION_2	SWITCH_1	IF_4	IF_5
+0x40000c1	        0x48833900	                      cmp qword [rcx], 0	       100	usb.c	FUNCTION_2	SWITCH_1	IF_4	IF_5
+0x40000c5	            0x75ab	                           jne 0x4000072	       100	usb.c	FUNCTION_2	SWITCH_1	IF_4	IF_5
+0x40000c7	          0x488939	                    mov qword [rcx], rdi	       101	usb.c	FUNCTION_2	SWITCH_1	IF_4	IF_5
+0x40000ca	            0xeb13	                           jmp 0x40000df	       102	usb.c	FUNCTION_2	SWITCH_1	IF_4	IF_5
+0x40000cc	          0x4885f6	                           test rsi, rsi	        86	usb.c	FUNCTION_2	SWITCH_1	IF_1	IF_2
+0x40000cf	            0x7424	                            je 0x40000f5	        86	usb.c	FUNCTION_2	SWITCH_1	IF_1	IF_2
+0x40000d1	        0x48833e00	                      cmp qword [rsi], 0	        86	usb.c	FUNCTION_2	SWITCH_1	IF_1	IF_2
+0x40000d5	            0x759b	                           jne 0x4000072	        86	usb.c	FUNCTION_2	SWITCH_1	IF_1	IF_2
+0x40000d7	          0x48893e	                    mov qword [rsi], rdi	        87	usb.c	FUNCTION_2	SWITCH_1	IF_1	IF_2
+0x40000da	            0xeb0b	                           jmp 0x40000e7	        87	usb.c	FUNCTION_2	SWITCH_1	IF_1	IF_2
+0x40000dc	          0x498938	                     mov qword [r8], rdi	       106	usb.c	FUNCTION_2	SWITCH_1	ELSE_2	IF_6
+0x40000df	          0x4885f6	                           test rsi, rsi	       117	usb.c	FUNCTION_2
+0x40000e2	            0x7408	                            je 0x40000ec	       117	usb.c	FUNCTION_2
+0x40000e4	          0x488b3e	                    mov rdi, qword [rsi]	       117	usb.c	FUNCTION_2
+0x40000e7	          0x4885ff	                           test rdi, rdi	       116	usb.c	FUNCTION_2
+0x40000ea	            0x7488	                            je 0x4000074	       116	usb.c	FUNCTION_2
+0x40000ec	          0x4885d2	                           test rdx, rdx	       116	usb.c	FUNCTION_2
+0x40000ef	            0x75a7	                           jne 0x4000098	       116	usb.c	FUNCTION_2
+0x40000f1	            0xebad	                           jmp 0x40000a0	       116	usb.c	FUNCTION_2
+0x40000f3	            0xf3c3	                                     ret	       116	usb.c	FUNCTION_2
+0x40000f5	            0xf3c3	                                     ret	       116	usb.c	FUNCTION_2
+0x40000f7	            0xf3c3	                                     ret	       116	usb.c	FUNCTION_2
+usb_alloc_coherent	IF,1:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	8
+0x4000680	          0x4885ff	                           test rdi, rdi	       887	usb.c	FUNCTION_32	IF_1
+0x4000683	            0x740e	                            je 0x4000693	       887	usb.c	FUNCTION_32	IF_1
+0x4000685	        0x488b7f40	            mov rdi, qword [rdi + 0x40] 	       887	usb.c	FUNCTION_32	IF_1
+0x4000689	          0x4885ff	                           test rdi, rdi	       887	usb.c	FUNCTION_32	IF_1
+0x400068c	            0x7405	                            je 0x4000693	       887	usb.c	FUNCTION_32	IF_1
+0x400068e	      0xe900000000	                           jmp 0x4000693	       889	usb.c	FUNCTION_32	CALL_1
+0x4000693	            0x31c0	                            xor eax, eax	       890	usb.c	FUNCTION_32
+0x4000695	              0xc3	                                     ret	       890	usb.c	FUNCTION_32
+usb_find_common_endpoints	IF,5:DO,0:CALL,1:functions,0:SWITCH,0:FOR,1:WHILE,0:ELSE,0	49
+0x4000100	          0x4885f6	                           test rsi, rsi	       146	usb.c	FUNCTION_3	IF_1
+0x4000103	            0x4154	                                push r12	       142	usb.c	FUNCTION_3
+0x4000105	          0x4989fa	                            mov r10, rdi	       142	usb.c	FUNCTION_3
+0x4000108	              0x55	                                push rbp	       142	usb.c	FUNCTION_3
+0x4000109	          0x4989f3	                            mov r11, rsi	       142	usb.c	FUNCTION_3
+0x400010c	              0x53	                                push rbx	       142	usb.c	FUNCTION_3
+0x400010d	          0x4889cd	                            mov rbp, rcx	       142	usb.c	FUNCTION_3
+0x4000110	          0x4889d3	                            mov rbx, rdx	       142	usb.c	FUNCTION_3
+0x4000113	          0x4d89c4	                             mov r12, r8	       142	usb.c	FUNCTION_3
+0x4000116	            0x7407	                            je 0x400011f	       146	usb.c	FUNCTION_3	IF_1
+0x4000118	    0x48c706000000	                      mov qword [rsi], 0	       147	usb.c	FUNCTION_3	IF_1
+0x400011f	          0x4885db	                           test rbx, rbx	       148	usb.c	FUNCTION_3	IF_2
+0x4000122	            0x7407	                            je 0x400012b	       148	usb.c	FUNCTION_3	IF_2
+0x4000124	    0x48c703000000	                      mov qword [rbx], 0	       149	usb.c	FUNCTION_3	IF_2
+0x400012b	          0x4885ed	                           test rbp, rbp	       150	usb.c	FUNCTION_3	IF_3
+0x400012e	            0x7408	                            je 0x4000138	       150	usb.c	FUNCTION_3	IF_3
+0x4000130	    0x48c745000000	                      mov qword [rbp], 0	       151	usb.c	FUNCTION_3	IF_3
+0x4000138	          0x4d85e4	                           test r12, r12	       152	usb.c	FUNCTION_3	IF_4
+0x400013b	            0x7408	                            je 0x4000145	       152	usb.c	FUNCTION_3	IF_4
+0x400013d	    0x49c704240000	                      mov qword [r12], 0	       153	usb.c	FUNCTION_3	IF_4
+0x4000145	          0x4531c9	                            xor r9d, r9d	       155	usb.c	FUNCTION_3	FOR_1
+0x4000148	      0x41807a0400	                   cmp byte [r10 + 4], 0	       155	usb.c	FUNCTION_3	FOR_1
+0x400014d	            0x7510	                           jne 0x400015f	       155	usb.c	FUNCTION_3	FOR_1
+0x400014f	            0xeb39	                           jmp 0x400018a	       155	usb.c	FUNCTION_3	FOR_1
+0x4000151	      0x410fb64204	               movzx eax, byte [r10 + 4]	       155	usb.c	FUNCTION_3	FOR_1
+0x4000156	        0x4183c101	                              add r9d, 1	       155	usb.c	FUNCTION_3	FOR_1
+0x400015a	          0x4439c8	                            cmp eax, r9d	       155	usb.c	FUNCTION_3	FOR_1
+0x400015d	            0x7e2b	                           jle 0x400018a	       155	usb.c	FUNCTION_3	FOR_1
+0x400015f	          0x4963c1	                         movsxd rax, r9d	       156	usb.c	FUNCTION_3	FOR_1
+0x4000162	          0x4d89e0	                             mov r8, r12	       158	usb.c	FUNCTION_3	FOR_1	IF_5	CALL_1
+0x4000165	          0x4889e9	                            mov rcx, rbp	       158	usb.c	FUNCTION_3	FOR_1	IF_5	CALL_1
+0x4000168	        0x488d3c80	                  lea rdi, [rax + rax*4]	       156	usb.c	FUNCTION_3	FOR_1
+0x400016c	          0x4889da	                            mov rdx, rbx	       158	usb.c	FUNCTION_3	FOR_1	IF_5	CALL_1
+0x400016f	          0x4c89de	                            mov rsi, r11	       158	usb.c	FUNCTION_3	FOR_1	IF_5	CALL_1
+0x4000172	        0x48c1e704	                              shl rdi, 4	       156	usb.c	FUNCTION_3	FOR_1
+0x4000176	        0x49037a18	             add rdi, qword [r10 + 0x18]	       156	usb.c	FUNCTION_3	FOR_1
+0x400017a	      0xe8d1feffff	                 call sym.match_endpoint	       158	usb.c	FUNCTION_3	FOR_1	IF_5	CALL_1
+0x400017f	            0x84c0	                             test al, al	       158	usb.c	FUNCTION_3	FOR_1	IF_5	CALL_1
+0x4000181	            0x74ce	                            je 0x4000151	       158	usb.c	FUNCTION_3	FOR_1	IF_5	CALL_1
+0x4000183	              0x5b	                                 pop rbx	       163	usb.c	FUNCTION_3
+0x4000184	            0x31c0	                            xor eax, eax	       159	usb.c	FUNCTION_3	FOR_1	IF_5
+0x4000186	              0x5d	                                 pop rbp	       163	usb.c	FUNCTION_3
+0x4000187	            0x415c	                                 pop r12	       163	usb.c	FUNCTION_3
+0x4000189	              0xc3	                                     ret	       163	usb.c	FUNCTION_3
+0x400018a	              0x5b	                                 pop rbx	       163	usb.c	FUNCTION_3
+0x400018b	      0xb8faffffff	                     mov eax, 0xfffffffa	       162	usb.c	FUNCTION_3
+0x4000190	              0x5d	                                 pop rbp	       163	usb.c	FUNCTION_3
+0x4000191	            0x415c	                                 pop r12	       163	usb.c	FUNCTION_3
+0x4000193	              0xc3	                                     ret	       163	usb.c	FUNCTION_3
+usb_get_current_frame_number	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	1
+0x4000670	      0xe900000000	                           jmp 0x4000675	       822	usb.c	FUNCTION_30	CALL_1
+usb_for_each_dev	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	17
+0x40003e0	        0x4883ec18	                           sub rsp, 0x18	       395	usb.c	FUNCTION_11
+0x40003e4	    0x48c7c1000000	                              mov rcx, 0	       398	usb.c	FUNCTION_11	CALL_1
+0x40003eb	        0x48893c24	                    mov qword [rsp], rdi	       396	usb.c	FUNCTION_11
+0x40003ef	      0x4889742408	                mov qword [rsp + 8], rsi	       396	usb.c	FUNCTION_11
+0x40003f4	          0x4889e2	                            mov rdx, rsp	       398	usb.c	FUNCTION_11	CALL_1
+0x40003f7	            0x31f6	                            xor esi, esi	       398	usb.c	FUNCTION_11	CALL_1
+0x40003f9	    0x48c7c7000000	                              mov rdi, 0	       398	usb.c	FUNCTION_11	CALL_1
+0x4000400	    0x65488b042528	                mov rax, qword gs:[0x28]	       395	usb.c	FUNCTION_11
+0x4000409	      0x4889442410	             mov qword [rsp + 0x10], rax	       395	usb.c	FUNCTION_11
+0x400040e	            0x31c0	                            xor eax, eax	       395	usb.c	FUNCTION_11
+0x4000410	      0xe800000000	                          call 0x4000415	       398	usb.c	FUNCTION_11	CALL_1
+0x4000415	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       399	usb.c	FUNCTION_11
+0x400041a	    0x654833142528	                xor rdx, qword gs:[0x28]	       399	usb.c	FUNCTION_11
+0x4000423	            0x7505	                           jne 0x400042a	       399	usb.c	FUNCTION_11
+0x4000425	        0x4883c418	                           add rsp, 0x18	       399	usb.c	FUNCTION_11
+0x4000429	              0xc3	                                     ret	       399	usb.c	FUNCTION_11
+0x400042a	      0xe800000000	                          call 0x400042f	       399	usb.c	FUNCTION_11
+usb_debugfs_cleanup	IF,0:DO,0:CALL,2:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	6
+0x4000040	     0xfb605000000	           movzx eax, byte [0x04000047] 	        63	usb.c	FUNCTION_1
+0x4000047	              0xc3	                                     ret	        64	usb.c	FUNCTION_1
+0x4000048	     0xf1f84000000	                   nop dword [rax + rax]	        64	usb.c	FUNCTION_1
+0x4000050	         0xfb64703	               movzx eax, byte [rdi + 3]	        83	usb.c	FUNCTION_2	SWITCH_1	CALL_1
+0x4000054	          0x83e003	                              and eax, 3	        83	usb.c	FUNCTION_2	SWITCH_1	CALL_1
+0x4000057	              0x3c	                                 invalid	        83	usb.c	FUNCTION_2	SWITCH_1	CALL_1
+usb_get_intf	IF,1:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	9
+0x4000590	          0x4885ff	                           test rdi, rdi	       722	usb.c	FUNCTION_27	IF_1
+0x4000593	              0x53	                                push rbx	       721	usb.c	FUNCTION_27
+0x4000594	          0x4889fb	                            mov rbx, rdi	       721	usb.c	FUNCTION_27
+0x4000597	            0x7409	                            je 0x40005a2	       722	usb.c	FUNCTION_27	IF_1
+0x4000599	        0x488d7f30	                   lea rdi, [rdi + 0x30]	       723	usb.c	FUNCTION_27	CALL_1
+0x400059d	      0xe800000000	                          call 0x40005a2	       723	usb.c	FUNCTION_27	CALL_1
+0x40005a2	          0x4889d8	                            mov rax, rbx	       725	usb.c	FUNCTION_27
+0x40005a5	              0x5b	                                 pop rbx	       725	usb.c	FUNCTION_27
+0x40005a6	              0xc3	                                     ret	       725	usb.c	FUNCTION_27
+usb_dev_complete	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	1
+0x4000490	      0xe900000000	                           jmp 0x4000495	       459	usb.c	FUNCTION_15	CALL_1
+usb_dev_restore	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	3
+0x4000430	      0xbe40000000	                           mov esi, 0x40	       489	usb.c	FUNCTION_21	CALL_1
+0x4000435	      0xe800000000	                          call 0x400043a	       489	usb.c	FUNCTION_21	CALL_1
+0x400043a	            0xf3c3	                                     ret	       490	usb.c	FUNCTION_21
+usb_dev_poweroff	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	3
+0x4000460	      0xbe04000000	                              mov esi, 4	       484	usb.c	FUNCTION_20	CALL_1
+0x4000465	      0xe800000000	                          call 0x400046a	       484	usb.c	FUNCTION_20	CALL_1
+0x400046a	            0xf3c3	                                     ret	       485	usb.c	FUNCTION_20
+usb_dev_uevent	IF,2:DO,0:CALL,3:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	24
+0x4000520	              0x55	                                push rbp	       428	usb.c	FUNCTION_13
+0x4000521	              0x53	                                push rbx	       428	usb.c	FUNCTION_13
+0x4000522	          0x4889f3	                            mov rbx, rsi	       428	usb.c	FUNCTION_13
+0x4000525	        0x488b47a8	             mov rax, qword [rdi - 0x58]	       433	usb.c	FUNCTION_13	IF_1	CALL_2
+0x4000529	          0x4889fd	                            mov rbp, rdi	       428	usb.c	FUNCTION_13
+0x400052c	    0x48c7c6000000	                              mov rsi, 0	       433	usb.c	FUNCTION_13	IF_1	CALL_2
+0x4000533	          0x4889df	                            mov rdi, rbx	       433	usb.c	FUNCTION_13	IF_1	CALL_2
+0x4000536	          0x8b5010	            mov edx, dword [rax + 0x10] 	       433	usb.c	FUNCTION_13	IF_1	CALL_2
+0x4000539	      0xe800000000	                          call 0x400053e	       433	usb.c	FUNCTION_13	IF_1	CALL_2
+0x400053e	            0x85c0	                           test eax, eax	       433	usb.c	FUNCTION_13	IF_1	CALL_2
+0x4000540	            0x751c	                           jne 0x400055e	       433	usb.c	FUNCTION_13	IF_1	CALL_2
+0x4000542	    0x8b9568ffffff	             mov edx, dword [rbp - 0x98]	       436	usb.c	FUNCTION_13	IF_2	CALL_3
+0x4000548	    0x48c7c6000000	                              mov rsi, 0	       436	usb.c	FUNCTION_13	IF_2	CALL_3
+0x400054f	          0x4889df	                            mov rdi, rbx	       436	usb.c	FUNCTION_13	IF_2	CALL_3
+0x4000552	      0xe800000000	                          call 0x4000557	       436	usb.c	FUNCTION_13	IF_2	CALL_3
+0x4000557	            0x85c0	                           test eax, eax	       436	usb.c	FUNCTION_13	IF_2	CALL_3
+0x4000559	            0x7503	                           jne 0x400055e	       436	usb.c	FUNCTION_13	IF_2	CALL_3
+0x400055b	              0x5b	                                 pop rbx	       440	usb.c	FUNCTION_13
+0x400055c	              0x5d	                                 pop rbp	       440	usb.c	FUNCTION_13
+0x400055d	              0xc3	                                     ret	       440	usb.c	FUNCTION_13
+0x400055e	      0xb8f4ffffff	                     mov eax, 0xfffffff4	       434	usb.c	FUNCTION_13	IF_1
+0x4000563	              0x5b	                                 pop rbx	       440	usb.c	FUNCTION_13
+0x4000564	              0x5d	                                 pop rbp	       440	usb.c	FUNCTION_13
+0x4000565	              0xc3	                                     ret	       440	usb.c	FUNCTION_13
+usb_find_interface	IF,0:DO,0:CALL,3:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	28
+0x4000370	              0x53	                                push rbx	       353	usb.c	FUNCTION_9
+0x4000371	        0x4883c768	                           add rdi, 0x68	       358	usb.c	FUNCTION_9
+0x4000375	    0x48c7c1000000	                              mov rcx, 0	       360	usb.c	FUNCTION_9	CALL_1
+0x400037c	        0x4883ec18	                           sub rsp, 0x18	       353	usb.c	FUNCTION_9
+0x4000380	          0x893424	                    mov dword [rsp], esi	       357	usb.c	FUNCTION_9
+0x4000383	      0x48897c2408	                mov qword [rsp + 8], rdi	       358	usb.c	FUNCTION_9
+0x4000388	            0x31f6	                            xor esi, esi	       360	usb.c	FUNCTION_9	CALL_1
+0x400038a	          0x4889e2	                            mov rdx, rsp	       360	usb.c	FUNCTION_9	CALL_1
+0x400038d	    0x48c7c7000000	                              mov rdi, 0	       360	usb.c	FUNCTION_9	CALL_1
+0x4000394	    0x65488b042528	                mov rax, qword gs:[0x28]	       353	usb.c	FUNCTION_9
+0x400039d	      0x4889442410	             mov qword [rsp + 0x10], rax	       353	usb.c	FUNCTION_9
+0x40003a2	            0x31c0	                            xor eax, eax	       353	usb.c	FUNCTION_9
+0x40003a4	      0xe800000000	                          call 0x40003a9	       360	usb.c	FUNCTION_9	CALL_1
+0x40003a9	          0x4889c3	                            mov rbx, rax	       360	usb.c	FUNCTION_9	CALL_1
+0x40003ac	          0x4889c7	                            mov rdi, rax	       363	usb.c	FUNCTION_9	CALL_2
+0x40003af	      0xe800000000	                          call 0x40003b4	       363	usb.c	FUNCTION_9	CALL_2
+0x40003b4	          0x4885db	                           test rbx, rbx	       365	usb.c	FUNCTION_9	CALL_3
+0x40003b7	            0x741a	                            je 0x40003d3	       365	usb.c	FUNCTION_9	CALL_3
+0x40003b9	        0x488d43d0	                   lea rax, [rbx - 0x30]	       365	usb.c	FUNCTION_9	CALL_3
+0x40003bd	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       366	usb.c	FUNCTION_9
+0x40003c2	    0x654833142528	                xor rdx, qword gs:[0x28]	       366	usb.c	FUNCTION_9
+0x40003cb	            0x750a	                           jne 0x40003d7	       366	usb.c	FUNCTION_9
+0x40003cd	        0x4883c418	                           add rsp, 0x18	       366	usb.c	FUNCTION_9
+0x40003d1	              0x5b	                                 pop rbx	       366	usb.c	FUNCTION_9
+0x40003d2	              0xc3	                                     ret	       366	usb.c	FUNCTION_9
+0x40003d3	            0x31c0	                            xor eax, eax	       365	usb.c	FUNCTION_9	CALL_3
+0x40003d5	            0xebe6	                           jmp 0x40003bd	       365	usb.c	FUNCTION_9	CALL_3
+0x40003d7	      0xe800000000	                          call 0x40003dc	       366	usb.c	FUNCTION_9
+usb_ifnum_to_if	IF,2:DO,0:CALL,0:functions,0:SWITCH,0:FOR,1:WHILE,0:ELSE,0	25
+0x4000230	    0x488b8f900300	           mov rcx, qword [rdi + 0x390] 	       275	usb.c	FUNCTION_6
+0x4000237	          0x4885c9	                           test rcx, rcx	       278	usb.c	FUNCTION_6	IF_1
+0x400023a	            0x7446	                            je 0x4000282	       278	usb.c	FUNCTION_6	IF_1
+0x400023c	         0xfb67904	               movzx edi, byte [rcx + 4]	       280	usb.c	FUNCTION_6	FOR_1
+0x4000240	          0x4084ff	                           test dil, dil	       280	usb.c	FUNCTION_6	FOR_1
+0x4000243	            0x743d	                            je 0x4000282	       280	usb.c	FUNCTION_6	FOR_1
+0x4000245	    0x488b81980000	            mov rax, qword [rcx + 0x98] 	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x400024c	          0x488b10	                    mov rdx, qword [rax]	       282	usb.c	FUNCTION_6	FOR_1	IF_2
+0x400024f	         0xfb65202	               movzx edx, byte [rdx + 2]	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x4000253	            0x39d6	                            cmp esi, edx	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x4000255	            0x742d	                            je 0x4000284	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x4000257	          0x8d47ff	                      lea eax, [rdi - 1]	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x400025a	    0x488d91a00000	                   lea rdx, [rcx + 0xa0]	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x4000261	    0x488dbcc1a000	          lea rdi, [rcx + rax*8 + 0xa0] 	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x4000269	            0xeb12	                           jmp 0x400027d	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x400026b	          0x488b02	                    mov rax, qword [rdx]	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x400026e	        0x4883c208	                              add rdx, 8	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x4000272	          0x488b08	                    mov rcx, qword [rax]	       282	usb.c	FUNCTION_6	FOR_1	IF_2
+0x4000275	         0xfb64902	               movzx ecx, byte [rcx + 2]	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x4000279	            0x39f1	                            cmp ecx, esi	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x400027b	            0x7407	                            je 0x4000284	       281	usb.c	FUNCTION_6	FOR_1	IF_2
+0x400027d	          0x4839fa	                            cmp rdx, rdi	       280	usb.c	FUNCTION_6	FOR_1
+0x4000280	            0x75e9	                           jne 0x400026b	       280	usb.c	FUNCTION_6	FOR_1
+0x4000282	            0x31c0	                            xor eax, eax	       279	usb.c	FUNCTION_6	IF_1
+0x4000284	            0xf3c3	                                     ret	       286	usb.c	FUNCTION_6
+usb_dev_suspend	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	3
+0x4000480	      0xbe02000000	                              mov esi, 2	       464	usb.c	FUNCTION_16	CALL_1
+0x4000485	      0xe800000000	                          call 0x400048a	       464	usb.c	FUNCTION_16	CALL_1
+0x400048a	            0xf3c3	                                     ret	       465	usb.c	FUNCTION_16
+usb_dev_freeze	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	3
+0x4000470	      0xbe01000000	                              mov esi, 1	       474	usb.c	FUNCTION_18	CALL_1
+0x4000475	      0xe800000000	                          call 0x400047a	       474	usb.c	FUNCTION_18	CALL_1
+0x400047a	            0xf3c3	                                     ret	       475	usb.c	FUNCTION_18
+usb_put_intf	IF,1:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	5
+0x4000360	          0x4885ff	                           test rdi, rdi	       738	usb.c	FUNCTION_28	IF_1
+0x4000363	            0x7409	                            je 0x400036e	       738	usb.c	FUNCTION_28	IF_1
+0x4000365	        0x4883c730	                           add rdi, 0x30	       739	usb.c	FUNCTION_28	CALL_1
+0x4000369	      0xe900000000	                           jmp 0x400036e	       739	usb.c	FUNCTION_28	CALL_1
+0x400036e	            0xf3c3	                                     ret	       739	usb.c	FUNCTION_28	CALL_1
+usb_dev_thaw	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	3
+0x4000440	      0xbe20000000	                           mov esi, 0x20	       479	usb.c	FUNCTION_19	CALL_1
+0x4000445	      0xe800000000	                          call 0x400044a	       479	usb.c	FUNCTION_19	CALL_1
+0x400044a	            0xf3c3	                                     ret	       480	usb.c	FUNCTION_19
+usb_devnode	IF,0:DO,0:CALL,2:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	6
+0x4000500	        0x488b47a8	             mov rax, qword [rdi - 0x58]	       515	usb.c	FUNCTION_22	CALL_2
+0x4000504	    0x8b8f68ffffff	             mov ecx, dword [rdi - 0x98]	       515	usb.c	FUNCTION_22	CALL_2
+0x400050a	    0x48c7c6000000	                              mov rsi, 0	       515	usb.c	FUNCTION_22	CALL_2
+0x4000511	      0xbfc0004001	                      mov edi, 0x14000c0	       515	usb.c	FUNCTION_22	CALL_2
+0x4000516	          0x8b5010	            mov edx, dword [rax + 0x10] 	       515	usb.c	FUNCTION_22	CALL_2
+0x4000519	      0xe900000000	                           jmp 0x400051e	       515	usb.c	FUNCTION_22	CALL_2
+usb_dev_prepare	IF,0:DO,0:CALL,0:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	2
+0x40002d0	            0x31c0	                            xor eax, eax	       454	usb.c	FUNCTION_14
+0x40002d2	              0xc3	                                     ret	       454	usb.c	FUNCTION_14
+usb_release_dev	IF,0:DO,0:CALL,10:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	23
+0x40004a0	            0x4154	                                push r12	       410	usb.c	FUNCTION_12
+0x40004a2	              0x55	                                push rbp	       410	usb.c	FUNCTION_12
+0x40004a3	    0x488daf68ffff	                   lea rbp, [rdi - 0x98]	       414	usb.c	FUNCTION_12	CALL_1
+0x40004aa	              0x53	                                push rbx	       410	usb.c	FUNCTION_12
+0x40004ab	        0x4c8b67a8	             mov r12, qword [rdi - 0x58]	       415	usb.c	FUNCTION_12	CALL_2
+0x40004af	          0x4889fb	                            mov rbx, rdi	       410	usb.c	FUNCTION_12
+0x40004b2	          0x4889ef	                            mov rdi, rbp	       417	usb.c	FUNCTION_12	CALL_3
+0x40004b5	      0xe800000000	                          call 0x40004ba	       417	usb.c	FUNCTION_12	CALL_3
+0x40004ba	          0x4889ef	                            mov rdi, rbp	       418	usb.c	FUNCTION_12	CALL_4
+0x40004bd	      0xe800000000	                          call 0x40004c2	       418	usb.c	FUNCTION_12	CALL_4
+0x40004c2	          0x4c89e7	                            mov rdi, r12	       420	usb.c	FUNCTION_12	CALL_6
+0x40004c5	      0xe800000000	                          call 0x40004ca	       420	usb.c	FUNCTION_12	CALL_6
+0x40004ca	    0x488bbb180400	           mov rdi, qword [rbx + 0x418] 	       421	usb.c	FUNCTION_12	CALL_7
+0x40004d1	      0xe800000000	                          call 0x40004d6	       421	usb.c	FUNCTION_12	CALL_7
+0x40004d6	    0x488bbb200400	           mov rdi, qword [rbx + 0x420] 	       422	usb.c	FUNCTION_12	CALL_8
+0x40004dd	      0xe800000000	                          call 0x40004e2	       422	usb.c	FUNCTION_12	CALL_8
+0x40004e2	    0x488bbb280400	           mov rdi, qword [rbx + 0x428] 	       423	usb.c	FUNCTION_12	CALL_9
+0x40004e9	      0xe800000000	                          call 0x40004ee	       423	usb.c	FUNCTION_12	CALL_9
+0x40004ee	          0x4889ef	                            mov rdi, rbp	       424	usb.c	FUNCTION_12	CALL_10
+0x40004f1	              0x5b	                                 pop rbx	       425	usb.c	FUNCTION_12
+0x40004f2	              0x5d	                                 pop rbp	       425	usb.c	FUNCTION_12
+0x40004f3	            0x415c	                                 pop r12	       425	usb.c	FUNCTION_12
+0x40004f5	      0xe900000000	                           jmp 0x40004fa	       424	usb.c	FUNCTION_12	CALL_10
+usb_altnum_to_altsetting	IF,1:DO,0:CALL,0:functions,0:SWITCH,0:FOR,1:WHILE,0:ELSE,0	22
+0x4000290	        0x448b4710	            mov r8d, dword [rdi + 0x10] 	       314	usb.c	FUNCTION_7	FOR_1
+0x4000294	          0x4585c0	                           test r8d, r8d	       314	usb.c	FUNCTION_7	FOR_1
+0x4000297	            0x742a	                            je 0x40002c3	       314	usb.c	FUNCTION_7	FOR_1
+0x4000299	          0x488b3f	                    mov rdi, qword [rdi]	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x400029c	         0xfb64703	               movzx eax, byte [rdi + 3]	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002a0	            0x39c6	                            cmp esi, eax	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002a2	            0x7422	                            je 0x40002c6	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002a4	            0x31d2	                            xor edx, edx	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002a6	            0xeb13	                           jmp 0x40002bb	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002a8	          0x4863c2	                         movsxd rax, edx	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002ab	        0x488d0480	                  lea rax, [rax + rax*4]	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002af	        0x488d04c7	                  lea rax, [rdi + rax*8]	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002b3	         0xfb64803	               movzx ecx, byte [rax + 3]	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002b7	            0x39f1	                            cmp ecx, esi	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002b9	            0x740e	                            je 0x40002c9	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002bb	          0x83c201	                              add edx, 1	       314	usb.c	FUNCTION_7	FOR_1
+0x40002be	          0x4439c2	                            cmp edx, r8d	       314	usb.c	FUNCTION_7	FOR_1
+0x40002c1	            0x75e5	                           jne 0x40002a8	       314	usb.c	FUNCTION_7	FOR_1
+0x40002c3	            0x31c0	                            xor eax, eax	       318	usb.c	FUNCTION_7
+0x40002c5	              0xc3	                                     ret	       318	usb.c	FUNCTION_7
+0x40002c6	          0x4889f8	                            mov rax, rdi	       315	usb.c	FUNCTION_7	FOR_1	IF_1
+0x40002c9	            0xf3c3	                                     ret	       319	usb.c	FUNCTION_7

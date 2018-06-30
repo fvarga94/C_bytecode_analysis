@@ -1,0 +1,1380 @@
+smtp_get_message	SWITCH,0:FOR,2:DO,0:IF,3:CALL,1:WHILE,0:functions,0:ELSE,1	43
+0x40001f0	              0x55	                                push rbp	       234	smtp.c	FUNCTION_2
+0x40001f1	              0x53	                                push rbx	       234	smtp.c	FUNCTION_2
+0x40001f2	          0x4889f5	                            mov rbp, rsi	       234	smtp.c	FUNCTION_2
+0x40001f5	          0x4889fb	                            mov rbx, rdi	       234	smtp.c	FUNCTION_2
+0x40001f8	        0x4883ec08	                              sub rsp, 8	       234	smtp.c	FUNCTION_2
+0x40001fc	      0xe800000000	                          call 0x4000201	       235	smtp.c	FUNCTION_2	CALL_1
+0x4000201	        0x4883f804	                              cmp rax, 4	       238	smtp.c	FUNCTION_2	IF_1
+0x4000205	        0x488d1403	                    lea rdx, [rbx + rax]	       258	smtp.c	FUNCTION_2	ELSE_1
+0x4000209	            0x7658	                           jbe 0x4000263	       238	smtp.c	FUNCTION_2	IF_1
+0x400020b	         0xfb64b04	               movzx ecx, byte [rbx + 4]	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x400020f	        0x4883e804	                              sub rax, 4	       240	smtp.c	FUNCTION_2	IF_1
+0x4000213	        0x488d5304	                      lea rdx, [rbx + 4]	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x4000217	          0x80f909	                               cmp cl, 9	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x400021a	            0x740c	                            je 0x4000228	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x400021c	          0x80f920	                            cmp cl, 0x20	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x400021f	            0x751c	                           jne 0x400023d	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x4000221	     0xf1f80000000	                         nop dword [rax]	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x4000228	        0x4883c201	                              add rdx, 1	       242	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x400022c	           0xfb60a	                   movzx ecx, byte [rdx]	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x400022f	        0x4883e801	                              sub rax, 1	       242	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x4000233	          0x80f920	                            cmp cl, 0x20	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x4000236	            0x74f0	                            je 0x4000228	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x4000238	          0x80f909	                               cmp cl, 9	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x400023b	            0x74eb	                            je 0x4000228	       241	smtp.c	FUNCTION_2	IF_1	FOR_1
+0x400023d	    0x49b800260000	                  movabs r8, 0x100002600	       247	smtp.c	FUNCTION_2	IF_1	FOR_2	IF_2
+0x4000247	    0x660f1f840000	                    nop word [rax + rax]	       247	smtp.c	FUNCTION_2	IF_1	FOR_2	IF_2
+0x4000250	          0x4885c0	                           test rax, rax	       246	smtp.c	FUNCTION_2	IF_1	FOR_2
+0x4000253	            0x740e	                            je 0x4000263	       246	smtp.c	FUNCTION_2	IF_1	FOR_2
+0x4000255	       0xfb64c02ff	         movzx ecx, byte [rdx + rax - 1]	       247	smtp.c	FUNCTION_2	IF_1	FOR_2	IF_2
+0x400025a	          0x80f920	                            cmp cl, 0x20	       247	smtp.c	FUNCTION_2	IF_1	FOR_2	IF_2
+0x400025d	            0x7611	                           jbe 0x4000270	       247	smtp.c	FUNCTION_2	IF_1	FOR_2	IF_2
+0x400025f	        0xc6040200	                 mov byte [rdx + rax], 0	       253	smtp.c	FUNCTION_2	IF_1	IF_3
+0x4000263	        0x48895500	                    mov qword [rbp], rdx	       260	smtp.c	FUNCTION_2	ELSE_1
+0x4000267	        0x4883c408	                              add rsp, 8	       261	smtp.c	FUNCTION_2	ELSE_1
+0x400026b	              0x5b	                                 pop rbx	       261	smtp.c	FUNCTION_2	ELSE_1
+0x400026c	              0x5d	                                 pop rbp	       261	smtp.c	FUNCTION_2	ELSE_1
+0x400026d	              0xc3	                                     ret	       261	smtp.c	FUNCTION_2	ELSE_1
+0x400026e	            0x6690	                                     nop	       261	smtp.c	FUNCTION_2	ELSE_1
+0x4000270	        0x490fa3c8	                              bt r8, rcx	       247	smtp.c	FUNCTION_2	IF_1	FOR_2	IF_2
+0x4000274	        0x488d78ff	                      lea rdi, [rax - 1]	       247	smtp.c	FUNCTION_2	IF_1	FOR_2	IF_2
+0x4000278	            0x73e5	                           jae 0x400025f	       247	smtp.c	FUNCTION_2	IF_1	FOR_2	IF_2
+0x400027a	          0x4889f8	                            mov rax, rdi	       247	smtp.c	FUNCTION_2	IF_1	FOR_2	IF_2
+0x400027d	            0xebd1	                           jmp 0x4000250	       247	smtp.c	FUNCTION_2	IF_1	FOR_2	IF_2
+smtp_setup_connection	SWITCH,0:FOR,0:DO,0:IF,1:CALL,1:WHILE,0:functions,0:ELSE,0	18
+0x4000040	    0x488b05000000	            mov rax, qword [0x04000047] 	      1108	smtp.c	FUNCTION_28	CALL_1
+0x4000047	              0x53	                                push rbx	      1443	smtp.c	FUNCTION_38
+0x4000048	      0xbe01000000	                              mov esi, 1	      1108	smtp.c	FUNCTION_28	CALL_1
+0x400004d	          0x488b1f	                    mov rbx, qword [rdi]	      1444	smtp.c	FUNCTION_38
+0x4000050	    0xc68798030000	               mov byte [rdi + 0x398], 0	      1448	smtp.c	FUNCTION_38
+0x4000057	      0xbf28000000	                           mov edi, 0x28	      1108	smtp.c	FUNCTION_28	CALL_1
+0x400005c	            0xff10	                        call qword [rax]	      1108	smtp.c	FUNCTION_28	CALL_1
+0x400005e	          0x4885c0	                           test rax, rax	      1109	smtp.c	FUNCTION_28	IF_1
+0x4000061	    0x488983e80100	            mov qword [rbx + 0x1e8], rax	      1108	smtp.c	FUNCTION_28	CALL_1
+0x4000068	            0x7416	                            je 0x4000080	      1109	smtp.c	FUNCTION_28	IF_1
+0x400006a	    0x488383185100	             add qword [rbx + 0x5118], 1	      1455	smtp.c	FUNCTION_38
+0x4000072	            0x31c0	                            xor eax, eax	      1457	smtp.c	FUNCTION_38
+0x4000074	              0x5b	                                 pop rbx	      1458	smtp.c	FUNCTION_38
+0x4000075	              0xc3	                                     ret	      1458	smtp.c	FUNCTION_38
+0x4000076	    0x662e0f1f8400	                 nop word cs:[rax + rax]	      1458	smtp.c	FUNCTION_38
+0x4000080	      0xb81b000000	                           mov eax, 0x1b	      1110	smtp.c	FUNCTION_28	IF_1
+0x4000085	              0x5b	                                 pop rbx	      1458	smtp.c	FUNCTION_38
+0x4000086	              0xc3	                                     ret	      1458	smtp.c	FUNCTION_38
+smtp_disconnect	SWITCH,0:FOR,0:DO,0:IF,2:CALL,5:WHILE,0:functions,0:ELSE,0	47
+0x40000b0	              0x55	                                push rbp	      1352	smtp.c	FUNCTION_34
+0x40000b1	              0x53	                                push rbx	      1352	smtp.c	FUNCTION_34
+0x40000b2	    0x488daf500600	                  lea rbp, [rdi + 0x650]	      1352	smtp.c	FUNCTION_34
+0x40000b9	          0x4889fb	                            mov rbx, rdi	      1352	smtp.c	FUNCTION_34
+0x40000bc	        0x4883ec08	                              sub rsp, 8	      1352	smtp.c	FUNCTION_34
+0x40000c0	          0x4084f6	                           test sil, sil	      1361	smtp.c	FUNCTION_34	IF_1
+0x40000c3	            0x751c	                           jne 0x40000e1	      1361	smtp.c	FUNCTION_34	IF_1
+0x40000c5	    0x488b87a80600	           mov rax, qword [rdi + 0x6a8] 	      1361	smtp.c	FUNCTION_34	IF_1
+0x40000cc	    0x488daf500600	                  lea rbp, [rdi + 0x650]	      1361	smtp.c	FUNCTION_34	IF_1
+0x40000d3	          0x4885c0	                           test rax, rax	      1361	smtp.c	FUNCTION_34	IF_1
+0x40000d6	            0x7409	                            je 0x40000e1	      1361	smtp.c	FUNCTION_34	IF_1
+0x40000d8	    0x80b8a7030000	               cmp byte [rax + 0x3a7], 0	      1361	smtp.c	FUNCTION_34	IF_1
+0x40000df	            0x753f	                           jne 0x4000120	      1361	smtp.c	FUNCTION_34	IF_1
+0x40000e1	          0x4889ef	                            mov rdi, rbp	      1366	smtp.c	FUNCTION_34	CALL_3
+0x40000e4	      0xe800000000	                          call 0x40000e9	      1366	smtp.c	FUNCTION_34	CALL_3
+0x40000e9	    0x8bb3e4060000	           mov esi, dword [rbx + 0x6e4] 	      1369	smtp.c	FUNCTION_34	CALL_4
+0x40000ef	          0x4889df	                            mov rdi, rbx	      1369	smtp.c	FUNCTION_34	CALL_4
+0x40000f2	      0xe800000000	                          call 0x40000f7	      1369	smtp.c	FUNCTION_34	CALL_4
+0x40000f7	    0x488b05000000	            mov rax, qword [0x040000fe] 	      1372	smtp.c	FUNCTION_34	CALL_5
+0x40000fe	    0x488bbbc80600	           mov rdi, qword [rbx + 0x6c8] 	      1372	smtp.c	FUNCTION_34	CALL_5
+0x4000105	            0xff10	                        call qword [rax]	      1372	smtp.c	FUNCTION_34	CALL_5
+0x4000107	    0x48c783c80600	              mov qword [rbx + 0x6c8], 0	      1372	smtp.c	FUNCTION_34	CALL_5
+0x4000112	        0x4883c408	                              add rsp, 8	      1375	smtp.c	FUNCTION_34
+0x4000116	            0x31c0	                            xor eax, eax	      1375	smtp.c	FUNCTION_34
+0x4000118	              0x5b	                                 pop rbx	      1375	smtp.c	FUNCTION_34
+0x4000119	              0x5d	                                 pop rbp	      1375	smtp.c	FUNCTION_34
+0x400011a	              0xc3	                                     ret	      1375	smtp.c	FUNCTION_34
+0x400011b	       0xf1f440000	                   nop dword [rax + rax]	      1375	smtp.c	FUNCTION_34
+0x4000120	    0x488d15000000	                   lea rdx, [0x04000127]	       646	smtp.c	FUNCTION_14	CALL_1
+0x4000127	    0x488d35000000	                   lea rsi, [0x0400012e]	       646	smtp.c	FUNCTION_14	CALL_1
+0x400012e	            0x31c0	                            xor eax, eax	       646	smtp.c	FUNCTION_14	CALL_1
+0x4000130	          0x4889ef	                            mov rdi, rbp	       646	smtp.c	FUNCTION_14	CALL_1
+0x4000133	      0xe800000000	                          call 0x4000138	       646	smtp.c	FUNCTION_14	CALL_1
+0x4000138	            0x85c0	                           test eax, eax	       648	smtp.c	FUNCTION_14	IF_1
+0x400013a	            0x75a5	                           jne 0x40000e1	       648	smtp.c	FUNCTION_14	IF_1
+0x400013c	    0xc783c0060000	           mov dword [rbx + 0x6c0], 0xc 	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4000146	            0xeb0c	                           jmp 0x4000154	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4000148	     0xf1f84000000	                   nop dword [rax + rax]	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4000150	            0x85c0	                           test eax, eax	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x4000152	            0x758d	                           jne 0x40000e1	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x4000154	      0xbe01000000	                              mov esi, 1	      1095	smtp.c	FUNCTION_27	CALL_1
+0x4000159	          0x4889ef	                            mov rdi, rbp	      1095	smtp.c	FUNCTION_27	CALL_1
+0x400015c	      0xe800000000	                          call 0x4000161	      1095	smtp.c	FUNCTION_27	CALL_1
+0x4000161	    0x8b93c0060000	           mov edx, dword [rbx + 0x6c0] 	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x4000167	            0x85d2	                           test edx, edx	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x4000169	            0x75e5	                           jne 0x4000150	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x400016b	      0xe971ffffff	                           jmp 0x40000e1	      1094	smtp.c	FUNCTION_27	WHILE_1
+Curl_smtp_escape_eob	SWITCH,0:FOR,1:DO,0:IF,10:CALL,7:WHILE,0:functions,0:ELSE,5	159
+0x4001a00	            0x4157	                                push r15	      1546	smtp.c	FUNCTION_42
+0x4001a02	            0x4156	                                push r14	      1546	smtp.c	FUNCTION_42
+0x4001a04	            0x4155	                                push r13	      1546	smtp.c	FUNCTION_42
+0x4001a06	            0x4154	                                push r12	      1546	smtp.c	FUNCTION_42
+0x4001a08	          0x4989f5	                            mov r13, rsi	      1546	smtp.c	FUNCTION_42
+0x4001a0b	              0x55	                                push rbp	      1546	smtp.c	FUNCTION_42
+0x4001a0c	              0x53	                                push rbx	      1546	smtp.c	FUNCTION_42
+0x4001a0d	        0x4883ec28	                           sub rsp, 0x28	      1546	smtp.c	FUNCTION_42
+0x4001a11	          0x4c8b3f	                    mov r15, qword [rdi]	      1555	smtp.c	FUNCTION_42
+0x4001a14	    0x4d8bb7b04d00	          mov r14, qword [r15 + 0x4db0] 	      1557	smtp.c	FUNCTION_42
+0x4001a1b	    0x4d8ba7e80100	           mov r12, qword [r15 + 0x1e8] 	      1556	smtp.c	FUNCTION_42
+0x4001a22	          0x4d85f6	                           test r14, r14	      1563	smtp.c	FUNCTION_42	IF_1
+0x4001a25	            0x740e	                            je 0x4001a35	      1563	smtp.c	FUNCTION_42	IF_1
+0x4001a27	    0x4180bf720500	               cmp byte [r15 + 0x572], 0	      1563	smtp.c	FUNCTION_42	IF_1
+0x4001a2f	     0xf84db010000	                            je 0x4001c10	      1563	smtp.c	FUNCTION_42	IF_1
+0x4001a35	    0x498b87900700	           mov rax, qword [r15 + 0x790] 	      1566	smtp.c	FUNCTION_42	IF_1	CALL_1
+0x4001a3c	        0x488d3c00	                    lea rdi, [rax + rax]	      1566	smtp.c	FUNCTION_42	IF_1	CALL_1
+0x4001a40	    0x488b05000000	            mov rax, qword [0x04001a47] 	      1566	smtp.c	FUNCTION_42	IF_1	CALL_1
+0x4001a47	            0xff10	                        call qword [rax]	      1566	smtp.c	FUNCTION_42	IF_1	CALL_1
+0x4001a49	          0x4885c0	                           test rax, rax	      1567	smtp.c	FUNCTION_42	IF_1	IF_2
+0x4001a4c	      0x4c89742410	             mov qword [rsp + 0x10], r14	      1557	smtp.c	FUNCTION_42
+0x4001a51	      0x4889442418	             mov qword [rsp + 0x18], rax	      1566	smtp.c	FUNCTION_42	IF_1	CALL_1
+0x4001a56	          0x4989c6	                            mov r14, rax	      1566	smtp.c	FUNCTION_42	IF_1	CALL_1
+0x4001a59	     0xf84f0010000	                            je 0x4001c4f	      1567	smtp.c	FUNCTION_42	IF_1	IF_2
+0x4001a5f	            0x31ed	                            xor ebp, ebp	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001a61	          0x4d85ed	                           test r13, r13	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001a64	      0x4d8b442418	              mov r8, qword [r12 + 0x18]	      1575	smtp.c	FUNCTION_42
+0x4001a69	     0xf8e67010000	                           jle 0x4001bd6	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001a6f	          0x4c89f1	                            mov rcx, r14	        53	string3.h	FUNCTION_43	CALL_3
+0x4001a72	            0x31db	                            xor ebx, ebx	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001a74	          0x4d89ee	                            mov r14, r13	        53	string3.h	FUNCTION_43	CALL_3
+0x4001a77	          0x4c89c2	                             mov rdx, r8	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001a7a	    0x4c8d0d000000	                    lea r9, [0x04001a81]	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001a81	          0x4d89c5	                             mov r13, r8	        53	string3.h	FUNCTION_43	CALL_3
+0x4001a84	            0xeb28	                           jmp 0x4001aae	        53	string3.h	FUNCTION_43	CALL_3
+0x4001a86	    0x662e0f1f8400	                 nop word cs:[rax + rax]	        53	string3.h	FUNCTION_43	CALL_3
+0x4001a90	          0x4885d2	                           test rdx, rdx	      1589	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5
+0x4001a93	            0x755b	                           jne 0x4001af0	      1589	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5
+0x4001a95	          0x880429	                mov byte [rcx + rbp], al	      1616	smtp.c	FUNCTION_42	FOR_1	ELSE_4	IF_8
+0x4001a98	      0x498b542418	            mov rdx, qword [r12 + 0x18] 	      1616	smtp.c	FUNCTION_42	FOR_1	ELSE_4	IF_8
+0x4001a9d	        0x4883c501	                              add rbp, 1	      1616	smtp.c	FUNCTION_42	FOR_1	ELSE_4	IF_8
+0x4001aa1	        0x4883c301	                              add rbx, 1	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001aa5	          0x4939de	                            cmp r14, rbx	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001aa8	     0xf84fa000000	                            je 0x4001ba8	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001aae	          0x4889de	                            mov rsi, rbx	      1580	smtp.c	FUNCTION_42	FOR_1	IF_3
+0x4001ab1	    0x4903b7d80100	            add rsi, qword [r15 + 0x1d8]	      1580	smtp.c	FUNCTION_42	FOR_1	IF_3
+0x4001ab8	           0xfb606	                   movzx eax, byte [rsi]	      1580	smtp.c	FUNCTION_42	FOR_1	IF_3
+0x4001abb	        0x41380411	                 cmp byte [r9 + rdx], al	      1580	smtp.c	FUNCTION_42	FOR_1	IF_3
+0x4001abf	            0x75cf	                           jne 0x4001a90	      1580	smtp.c	FUNCTION_42	FOR_1	IF_3
+0x4001ac1	        0x4883c201	                              add rdx, 1	      1581	smtp.c	FUNCTION_42	FOR_1	IF_3
+0x4001ac5	        0x4883fa02	                              cmp rdx, 2	      1584	smtp.c	FUNCTION_42	FOR_1	IF_3	IF_4
+0x4001ac9	      0x4989542418	             mov qword [r12 + 0x18], rdx	      1581	smtp.c	FUNCTION_42	FOR_1	IF_3
+0x4001ace	            0x7478	                            je 0x4001b48	      1584	smtp.c	FUNCTION_42	FOR_1	IF_3	IF_4
+0x4001ad0	        0x4883fa05	                              cmp rdx, 5	      1584	smtp.c	FUNCTION_42	FOR_1	IF_3	IF_4
+0x4001ad4	            0x7472	                            je 0x4001b48	      1584	smtp.c	FUNCTION_42	FOR_1	IF_3	IF_4
+0x4001ad6	        0x4883fa03	                              cmp rdx, 3	      1607	smtp.c	FUNCTION_42	FOR_1	ELSE_3	IF_7
+0x4001ada	    0x41c644242000	                mov byte [r12 + 0x20], 0	      1587	smtp.c	FUNCTION_42	FOR_1	IF_3	ELSE_1
+0x4001ae0	            0x7472	                            je 0x4001b54	      1607	smtp.c	FUNCTION_42	FOR_1	ELSE_3	IF_7
+0x4001ae2	          0x4885d2	                           test rdx, rdx	      1615	smtp.c	FUNCTION_42	FOR_1	ELSE_4	IF_8
+0x4001ae5	            0x75ba	                           jne 0x4001aa1	      1615	smtp.c	FUNCTION_42	FOR_1	ELSE_4	IF_8
+0x4001ae7	           0xfb606	                   movzx eax, byte [rsi]	      1615	smtp.c	FUNCTION_42	FOR_1	ELSE_4	IF_8
+0x4001aea	            0xeba9	                           jmp 0x4001a95	      1615	smtp.c	FUNCTION_42	FOR_1	ELSE_4	IF_8
+0x4001aec	         0xf1f4000	                         nop dword [rax]	      1615	smtp.c	FUNCTION_42	FOR_1	ELSE_4	IF_8
+0x4001af0	    0x488d05000000	                   lea rax, [0x04001af7]	        53	string3.h	FUNCTION_43	CALL_3
+0x4001af7	        0x488d3c29	                    lea rdi, [rcx + rbp]	        53	string3.h	FUNCTION_43	CALL_3
+0x4001afb	          0x4c29ea	                            sub rdx, r13	        53	string3.h	FUNCTION_43	CALL_3
+0x4001afe	      0x4c894c2408	                 mov qword [rsp + 8], r9	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b03	        0x48890c24	                    mov qword [rsp], rcx	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b07	          0x4c29ed	                            sub rbp, r13	      1592	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5
+0x4001b0a	      0x498d740500	                    lea rsi, [r13 + rax]	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b0f	      0xe800000000	                          call 0x4001b14	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b14	          0x4889de	                            mov rsi, rbx	      1595	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	IF_6
+0x4001b17	    0x4903b7d80100	            add rsi, qword [r15 + 0x1d8]	      1595	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	IF_6
+0x4001b1e	      0x49036c2418	             add rbp, qword [r12 + 0x18]	      1592	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5
+0x4001b23	            0x31d2	                            xor edx, edx	      1596	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	IF_6
+0x4001b25	        0x488b0c24	                    mov rcx, qword [rsp]	      1596	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	IF_6
+0x4001b29	      0x4c8b4c2408	                 mov r9, qword [rsp + 8]	      1596	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	IF_6
+0x4001b2e	          0x803e0d	                     cmp byte [rsi], 0xd	      1596	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	IF_6
+0x4001b31	    0x41c644242000	                mov byte [r12 + 0x20], 0	      1603	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	ELSE_3
+0x4001b37	           0xf94c2	                                 sete dl	      1596	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	IF_6
+0x4001b3a	          0x4531ed	                          xor r13d, r13d	      1600	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	ELSE_3
+0x4001b3d	      0x4989542418	             mov qword [r12 + 0x18], rdx	      1600	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	ELSE_3
+0x4001b42	            0xeb9e	                           jmp 0x4001ae2	      1600	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	ELSE_3
+0x4001b44	         0xf1f4000	                         nop dword [rax]	      1600	smtp.c	FUNCTION_42	FOR_1	ELSE_1	ELSE_2	IF_5	ELSE_3
+0x4001b48	        0x4883fa03	                              cmp rdx, 3	      1607	smtp.c	FUNCTION_42	FOR_1	ELSE_3	IF_7
+0x4001b4c	    0x41c644242001	                mov byte [r12 + 0x20], 1	      1585	smtp.c	FUNCTION_42	FOR_1	IF_3	IF_4
+0x4001b52	            0x758e	                           jne 0x4001ae2	      1607	smtp.c	FUNCTION_42	FOR_1	ELSE_3	IF_7
+0x4001b54	    0x488d05000000	                   lea rax, [0x04001b5b]	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b5b	        0x488d3c29	                    lea rdi, [rcx + rbp]	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b5f	      0xba04000000	                              mov edx, 4	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b64	          0x4c29ea	                            sub rdx, r13	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b67	          0x4c29ed	                            sub rbp, r13	      1611	smtp.c	FUNCTION_42	FOR_1	ELSE_3	IF_7
+0x4001b6a	        0x4883c301	                              add rbx, 1	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001b6e	      0x498d740500	                    lea rsi, [r13 + rax]	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b73	      0x4c894c2408	                 mov qword [rsp + 8], r9	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b78	        0x48890c24	                    mov qword [rsp], rcx	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b7c	        0x4883c504	                              add rbp, 4	      1611	smtp.c	FUNCTION_42	FOR_1	ELSE_3	IF_7
+0x4001b80	          0x4531ed	                          xor r13d, r13d	      1613	smtp.c	FUNCTION_42	FOR_1	ELSE_3	IF_7
+0x4001b83	      0xe800000000	                          call 0x4001b88	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b88	            0x31d2	                            xor edx, edx	        53	string3.h	FUNCTION_43	CALL_3
+0x4001b8a	          0x4939de	                            cmp r14, rbx	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001b8d	    0x49c744241800	               mov qword [r12 + 0x18], 0	      1612	smtp.c	FUNCTION_42	FOR_1	ELSE_3	IF_7
+0x4001b96	        0x488b0c24	                    mov rcx, qword [rsp]	      1612	smtp.c	FUNCTION_42	FOR_1	ELSE_3	IF_7
+0x4001b9a	      0x4c8b4c2408	                 mov r9, qword [rsp + 8]	      1612	smtp.c	FUNCTION_42	FOR_1	ELSE_3	IF_7
+0x4001b9f	     0xf8509ffffff	                           jne 0x4001aae	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001ba5	           0xf1f00	                         nop dword [rax]	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001ba8	          0x4d89e8	                             mov r8, r13	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001bab	          0x4d89f5	                            mov r13, r14	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001bae	          0x4989ce	                            mov r14, rcx	      1579	smtp.c	FUNCTION_42	FOR_1
+0x4001bb1	          0x4939d0	                             cmp r8, rdx	      1619	smtp.c	FUNCTION_42	IF_9
+0x4001bb4	            0x7420	                            je 0x4001bd6	      1619	smtp.c	FUNCTION_42	IF_9
+0x4001bb6	        0x488d3c29	                    lea rdi, [rcx + rbp]	        53	string3.h	FUNCTION_43	CALL_3
+0x4001bba	        0x4b8d3401	                      lea rsi, [r9 + r8]	        53	string3.h	FUNCTION_43	CALL_3
+0x4001bbe	          0x4c29c2	                             sub rdx, r8	        53	string3.h	FUNCTION_43	CALL_3
+0x4001bc1	        0x4c890424	                     mov qword [rsp], r8	        53	string3.h	FUNCTION_43	CALL_3
+0x4001bc5	      0xe800000000	                          call 0x4001bca	        53	string3.h	FUNCTION_43	CALL_3
+0x4001bca	        0x4c8b0424	                     mov r8, qword [rsp]	      1622	smtp.c	FUNCTION_42	IF_9
+0x4001bce	          0x4c29c5	                             sub rbp, r8	      1622	smtp.c	FUNCTION_42	IF_9
+0x4001bd1	      0x49036c2418	             add rbp, qword [r12 + 0x18]	      1622	smtp.c	FUNCTION_42	IF_9
+0x4001bd6	          0x4c39ed	                            cmp rbp, r13	      1626	smtp.c	FUNCTION_42	IF_10
+0x4001bd9	            0x7455	                            je 0x4001c30	      1626	smtp.c	FUNCTION_42	IF_10
+0x4001bdb	    0x488b05000000	            mov rax, qword [0x04001be2] 	      1634	smtp.c	FUNCTION_42	IF_10	CALL_6
+0x4001be2	    0x4d89b7d80100	            mov qword [r15 + 0x1d8], r14	      1628	smtp.c	FUNCTION_42	IF_10
+0x4001be9	    0x4d89b7b04d00	          mov qword [r15 + 0x4db0], r14 	      1631	smtp.c	FUNCTION_42	IF_10
+0x4001bf0	      0x488b7c2410	            mov rdi, qword [rsp + 0x10] 	      1634	smtp.c	FUNCTION_42	IF_10	CALL_6
+0x4001bf5	            0xff10	                        call qword [rax]	      1634	smtp.c	FUNCTION_42	IF_10	CALL_6
+0x4001bf7	    0x4989afd00100	            mov qword [r15 + 0x1d0], rbp	      1637	smtp.c	FUNCTION_42	IF_10
+0x4001bfe	            0x31c0	                            xor eax, eax	      1642	smtp.c	FUNCTION_42
+0x4001c00	        0x4883c428	                           add rsp, 0x28	      1643	smtp.c	FUNCTION_42
+0x4001c04	              0x5b	                                 pop rbx	      1643	smtp.c	FUNCTION_42
+0x4001c05	              0x5d	                                 pop rbp	      1643	smtp.c	FUNCTION_42
+0x4001c06	            0x415c	                                 pop r12	      1643	smtp.c	FUNCTION_42
+0x4001c08	            0x415d	                                 pop r13	      1643	smtp.c	FUNCTION_42
+0x4001c0a	            0x415e	                                 pop r14	      1643	smtp.c	FUNCTION_42
+0x4001c0c	            0x415f	                                 pop r15	      1643	smtp.c	FUNCTION_42
+0x4001c0e	              0xc3	                                     ret	      1643	smtp.c	FUNCTION_42
+0x4001c0f	              0x90	                                     nop	      1643	smtp.c	FUNCTION_42
+0x4001c10	    0x48c744241000	               mov qword [rsp + 0x10], 0	      1559	smtp.c	FUNCTION_42
+0x4001c19	    0x48c744241800	               mov qword [rsp + 0x18], 0	      1558	smtp.c	FUNCTION_42
+0x4001c22	      0xe938feffff	                           jmp 0x4001a5f	      1558	smtp.c	FUNCTION_42
+0x4001c27	    0x660f1f840000	                    nop word [rax + rax]	      1558	smtp.c	FUNCTION_42
+0x4001c30	    0x488b05000000	            mov rax, qword [0x04001c37] 	      1640	smtp.c	FUNCTION_42	CALL_7
+0x4001c37	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	      1640	smtp.c	FUNCTION_42	CALL_7
+0x4001c3c	            0xff10	                        call qword [rax]	      1640	smtp.c	FUNCTION_42	CALL_7
+0x4001c3e	        0x4883c428	                           add rsp, 0x28	      1643	smtp.c	FUNCTION_42
+0x4001c42	            0x31c0	                            xor eax, eax	      1642	smtp.c	FUNCTION_42
+0x4001c44	              0x5b	                                 pop rbx	      1643	smtp.c	FUNCTION_42
+0x4001c45	              0x5d	                                 pop rbp	      1643	smtp.c	FUNCTION_42
+0x4001c46	            0x415c	                                 pop r12	      1643	smtp.c	FUNCTION_42
+0x4001c48	            0x415d	                                 pop r13	      1643	smtp.c	FUNCTION_42
+0x4001c4a	            0x415e	                                 pop r14	      1643	smtp.c	FUNCTION_42
+0x4001c4c	            0x415f	                                 pop r15	      1643	smtp.c	FUNCTION_42
+0x4001c4e	              0xc3	                                     ret	      1643	smtp.c	FUNCTION_42
+0x4001c4f	    0x488d35000000	                   lea rsi, [0x04001c56]	      1568	smtp.c	FUNCTION_42	IF_1	IF_2	CALL_2
+0x4001c56	            0x31c0	                            xor eax, eax	      1568	smtp.c	FUNCTION_42	IF_1	IF_2	CALL_2
+0x4001c58	          0x4c89ff	                            mov rdi, r15	      1568	smtp.c	FUNCTION_42	IF_1	IF_2	CALL_2
+0x4001c5b	      0xe800000000	                          call 0x4001c60	      1568	smtp.c	FUNCTION_42	IF_1	IF_2	CALL_2
+0x4001c60	      0xb81b000000	                           mov eax, 0x1b	      1570	smtp.c	FUNCTION_42	IF_1	IF_2
+0x4001c65	            0xeb99	                           jmp 0x4001c00	      1570	smtp.c	FUNCTION_42	IF_1	IF_2
+smtp_getsock	SWITCH,0:FOR,0:DO,0:IF,0:CALL,1:WHILE,0:functions,0:ELSE,0	2
+0x4000170	    0x4881c7500600	                          add rdi, 0x650	      1119	smtp.c	FUNCTION_29	CALL_1
+0x4000177	      0xe900000000	                           jmp 0x400017c	      1119	smtp.c	FUNCTION_29	CALL_1
+smtp_statemach_act	SWITCH,1:FOR,0:DO,1:IF,5:CALL,15:WHILE,0:functions,0:ELSE,0	619
+0x4000e70	            0x4157	                                push r15	       987	smtp.c	FUNCTION_25
+0x4000e72	            0x4156	                                push r14	       987	smtp.c	FUNCTION_25
+0x4000e74	            0x4155	                                push r13	       987	smtp.c	FUNCTION_25
+0x4000e76	            0x4154	                                push r12	       987	smtp.c	FUNCTION_25
+0x4000e78	              0x55	                                push rbp	       987	smtp.c	FUNCTION_25
+0x4000e79	              0x53	                                push rbx	       987	smtp.c	FUNCTION_25
+0x4000e7a	    0x488daf500600	                  lea rbp, [rdi + 0x650]	       993	smtp.c	FUNCTION_25
+0x4000e81	          0x4889fb	                            mov rbx, rdi	       987	smtp.c	FUNCTION_25
+0x4000e84	        0x4883ec78	                           sub rsp, 0x78	       987	smtp.c	FUNCTION_25
+0x4000e88	    0x448baf580200	          mov r13d, dword [rdi + 0x258] 	       989	smtp.c	FUNCTION_25
+0x4000e8f	    0x64488b042528	                mov rax, qword fs:[0x28]	       987	smtp.c	FUNCTION_25
+0x4000e98	      0x4889442468	             mov qword [rsp + 0x68], rax	       987	smtp.c	FUNCTION_25
+0x4000e9d	            0x31c0	                            xor eax, eax	       987	smtp.c	FUNCTION_25
+0x4000e9f	    0x83bfc0060000	              cmp dword [rdi + 0x6c0], 5	       997	smtp.c	FUNCTION_25	IF_1
+0x4000ea6	          0x488b07	                    mov rax, qword [rdi]	       990	smtp.c	FUNCTION_25
+0x4000ea9	    0x48c744245800	               mov qword [rsp + 0x58], 0	       994	smtp.c	FUNCTION_25
+0x4000eb2	      0x4889442408	                mov qword [rsp + 8], rax	       990	smtp.c	FUNCTION_25
+0x4000eb7	     0xf84b3080000	                            je 0x4001770	       997	smtp.c	FUNCTION_25	IF_1
+0x4000ebd	    0x4883bf800600	              cmp qword [rdi + 0x680], 0	      1001	smtp.c	FUNCTION_25	IF_2
+0x4000ec5	     0xf85f5070000	                           jne 0x40016c0	      1001	smtp.c	FUNCTION_25	IF_2
+0x4000ecb	      0x488d442460	                   lea rax, [rsp + 0x60]	       825	smtp.c	FUNCTION_19	CALL_1
+0x4000ed0	      0x4c8d7c2458	                   lea r15, [rsp + 0x58]	       825	smtp.c	FUNCTION_19	CALL_1
+0x4000ed5	      0x4c8d742454	                   lea r14, [rsp + 0x54]	       825	smtp.c	FUNCTION_19	CALL_1
+0x4000eda	      0x4889442410	             mov qword [rsp + 0x10], rax	       825	smtp.c	FUNCTION_19	CALL_1
+0x4000edf	    0x488d87d00600	                  lea rax, [rdi + 0x6d0]	       825	smtp.c	FUNCTION_19	CALL_1
+0x4000ee6	      0x4889442418	             mov qword [rsp + 0x18], rax	       825	smtp.c	FUNCTION_19	CALL_1
+0x4000eeb	    0x488d87c40600	                  lea rax, [rdi + 0x6c4]	       380	smtp.c	FUNCTION_7	CALL_1
+0x4000ef2	      0x4889442440	             mov qword [rsp + 0x40], rax	       380	smtp.c	FUNCTION_7	CALL_1
+0x4000ef7	    0x660f1f840000	                    nop word [rax + rax]	       380	smtp.c	FUNCTION_7	CALL_1
+0x4000f00	          0x4889ee	                            mov rsi, rbp	      1006	smtp.c	FUNCTION_25	DO_1	CALL_3
+0x4000f03	          0x4c89f9	                            mov rcx, r15	      1006	smtp.c	FUNCTION_25	DO_1	CALL_3
+0x4000f06	          0x4c89f2	                            mov rdx, r14	      1006	smtp.c	FUNCTION_25	DO_1	CALL_3
+0x4000f09	          0x4489ef	                           mov edi, r13d	      1006	smtp.c	FUNCTION_25	DO_1	CALL_3
+0x4000f0c	      0xe800000000	                          call 0x4000f11	      1006	smtp.c	FUNCTION_25	DO_1	CALL_3
+0x4000f11	            0x85c0	                           test eax, eax	      1007	smtp.c	FUNCTION_25	DO_1	IF_3
+0x4000f13	            0x89c6	                            mov esi, eax	      1006	smtp.c	FUNCTION_25	DO_1	CALL_3
+0x4000f15	     0xf853b060000	                           jne 0x4001556	      1007	smtp.c	FUNCTION_25	DO_1	IF_3
+0x4000f1b	    0x8b93c0060000	           mov edx, dword [rbx + 0x6c0] 	      1011	smtp.c	FUNCTION_25	DO_1	IF_4
+0x4000f21	          0x83fa0c	                            cmp edx, 0xc	      1011	smtp.c	FUNCTION_25	DO_1	IF_4
+0x4000f24	     0xf84fe030000	                            je 0x4001328	      1011	smtp.c	FUNCTION_25	DO_1	IF_4
+0x4000f2a	      0x448b442454	            mov r8d, dword [rsp + 0x54] 	      1011	smtp.c	FUNCTION_25	DO_1	IF_4
+0x4000f2f	        0x4183f801	                              cmp r8d, 1	      1011	smtp.c	FUNCTION_25	DO_1	IF_4
+0x4000f33	     0xf840f040000	                            je 0x4001348	      1011	smtp.c	FUNCTION_25	DO_1	IF_4
+0x4000f39	      0x488b442408	                mov rax, qword [rsp + 8]	      1012	smtp.c	FUNCTION_25	DO_1	IF_4
+0x4000f3e	          0x4585c0	                           test r8d, r8d	      1014	smtp.c	FUNCTION_25	DO_1	IF_5
+0x4000f41	    0x448980d85100	          mov dword [rax + 0x51d8], r8d 	      1012	smtp.c	FUNCTION_25	DO_1	IF_4
+0x4000f48	     0xf8492000000	                            je 0x4000fe0	      1014	smtp.c	FUNCTION_25	DO_1	IF_5
+0x4000f4e	          0x83fa0b	                            cmp edx, 0xb	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4000f51	     0xf8749030000	                            ja 0x40012a0	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4000f57	    0x488d0d000000	                   lea rcx, [0x04000f5e]	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4000f5e	        0x48630491	         movsxd rax, dword [rcx + rdx*4]	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4000f62	          0x4801c1	                            add rcx, rax	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4000f65	            0xffe1	                                 jmp rcx	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4000f67	    0x660f1f840000	                    nop word [rax + rax]	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4000f70	    0x418d8038ffff	                    lea eax, [r8 - 0xc8]	       918	smtp.c	FUNCTION_22	IF_1
+0x4000f77	          0x488b3b	                    mov rdi, qword [rbx]	       913	smtp.c	FUNCTION_22
+0x4000f7a	          0x83f863	                           cmp eax, 0x63	       918	smtp.c	FUNCTION_22	IF_1
+0x4000f7d	     0xf87ed030000	                            ja 0x4001370	       918	smtp.c	FUNCTION_22	IF_1
+0x4000f83	    0x488b97e80100	           mov rdx, qword [rdi + 0x1e8] 	       914	smtp.c	FUNCTION_22
+0x4000f8a	        0x488b4210	            mov rax, qword [rdx + 0x10] 	       923	smtp.c	FUNCTION_22	ELSE_1
+0x4000f8e	        0x488b4008	                mov rax, qword [rax + 8]	       923	smtp.c	FUNCTION_22	ELSE_1
+0x4000f92	          0x4885c0	                           test rax, rax	       925	smtp.c	FUNCTION_22	ELSE_1	IF_2
+0x4000f95	        0x48894210	             mov qword [rdx + 0x10], rax	       923	smtp.c	FUNCTION_22	ELSE_1
+0x4000f99	     0xf8471080000	                            je 0x4001810	       925	smtp.c	FUNCTION_22	ELSE_1	IF_2
+0x4000f9f	          0x488b10	                    mov rdx, qword [rax]	       623	smtp.c	FUNCTION_13	IF_1
+0x4000fa2	          0x803a3c	                    cmp byte [rdx], 0x3c	       623	smtp.c	FUNCTION_13	IF_1
+0x4000fa5	     0xf84dc040000	                            je 0x4001487	       623	smtp.c	FUNCTION_13	IF_1
+0x4000fab	    0x488d35000000	                   lea rsi, [0x04000fb2]	       627	smtp.c	FUNCTION_13	ELSE_1	CALL_2
+0x4000fb2	          0x4889ef	                            mov rdi, rbp	       627	smtp.c	FUNCTION_13	ELSE_1	CALL_2
+0x4000fb5	            0x31c0	                            xor eax, eax	       627	smtp.c	FUNCTION_13	ELSE_1	CALL_2
+0x4000fb7	      0xe800000000	                          call 0x4000fbc	       627	smtp.c	FUNCTION_13	ELSE_1	CALL_2
+0x4000fbc	            0x85c0	                           test eax, eax	       629	smtp.c	FUNCTION_13	IF_2
+0x4000fbe	            0x7522	                           jne 0x4000fe2	       629	smtp.c	FUNCTION_13	IF_2
+0x4000fc0	    0xc783c0060000	              mov dword [rbx + 0x6c0], 9	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4000fca	          0x4889ef	                            mov rdi, rbp	      1066	smtp.c	FUNCTION_25	CALL_15
+0x4000fcd	      0xe800000000	                          call 0x4000fd2	      1066	smtp.c	FUNCTION_25	CALL_15
+0x4000fd2	            0x84c0	                             test al, al	      1066	smtp.c	FUNCTION_25	CALL_15
+0x4000fd4	     0xf8526ffffff	                           jne 0x4000f00	      1066	smtp.c	FUNCTION_25	CALL_15
+0x4000fda	    0x660f1f440000	                    nop word [rax + rax]	      1066	smtp.c	FUNCTION_25	CALL_15
+0x4000fe0	            0x31c0	                            xor eax, eax	       786	smtp.c	FUNCTION_17	ELSE_2	IF_8	CALL_11
+0x4000fe2	      0x488b742468	            mov rsi, qword [rsp + 0x68] 	      1069	smtp.c	FUNCTION_25
+0x4000fe7	    0x644833342528	                xor rsi, qword fs:[0x28]	      1069	smtp.c	FUNCTION_25
+0x4000ff0	     0xf85fb090000	                           jne 0x40019f1	      1069	smtp.c	FUNCTION_25
+0x4000ff6	        0x4883c478	                           add rsp, 0x78	      1069	smtp.c	FUNCTION_25
+0x4000ffa	              0x5b	                                 pop rbx	      1069	smtp.c	FUNCTION_25
+0x4000ffb	              0x5d	                                 pop rbp	      1069	smtp.c	FUNCTION_25
+0x4000ffc	            0x415c	                                 pop r12	      1069	smtp.c	FUNCTION_25
+0x4000ffe	            0x415d	                                 pop r13	      1069	smtp.c	FUNCTION_25
+0x4001000	            0x415e	                                 pop r14	      1069	smtp.c	FUNCTION_25
+0x4001002	            0x415f	                                 pop r15	      1069	smtp.c	FUNCTION_25
+0x4001004	              0xc3	                                     ret	      1069	smtp.c	FUNCTION_25
+0x4001005	           0xf1f00	                         nop dword [rax]	      1069	smtp.c	FUNCTION_25
+0x4001008	    0x418d8038ffff	                    lea eax, [r8 - 0xc8]	       897	smtp.c	FUNCTION_21	IF_1
+0x400100f	          0x488b3b	                    mov rdi, qword [rbx]	       893	smtp.c	FUNCTION_21
+0x4001012	          0x83f863	                           cmp eax, 0x63	       897	smtp.c	FUNCTION_21	IF_1
+0x4001015	     0xf8655040000	                           jbe 0x4001470	       897	smtp.c	FUNCTION_21	IF_1
+0x400101b	    0x488d35000000	                   lea rsi, [0x04001022]	       898	smtp.c	FUNCTION_21	IF_1	CALL_1
+0x4001022	            0x31c0	                            xor eax, eax	       898	smtp.c	FUNCTION_21	IF_1	CALL_1
+0x4001024	          0x4489c2	                            mov edx, r8d	       898	smtp.c	FUNCTION_21	IF_1	CALL_1
+0x4001027	      0xe800000000	                          call 0x400102c	       898	smtp.c	FUNCTION_21	IF_1	CALL_1
+0x400102c	      0xb837000000	                           mov eax, 0x37	       899	smtp.c	FUNCTION_21	IF_1
+0x4001031	            0xebaf	                           jmp 0x4000fe2	       899	smtp.c	FUNCTION_21	IF_1
+0x4001033	       0xf1f440000	                   nop dword [rax + rax]	       899	smtp.c	FUNCTION_21	IF_1
+0x4001038	          0x4c8b23	                    mov r12, qword [rbx]	       847	smtp.c	FUNCTION_20
+0x400103b	        0x89742438	             mov dword [rsp + 0x38], esi	       847	smtp.c	FUNCTION_20
+0x400103f	      0x4489442430	             mov dword [rsp + 0x30], r8d	       847	smtp.c	FUNCTION_20
+0x4001044	    0x498b9424200d	           mov rdx, qword [r12 + 0xd20] 	       849	smtp.c	FUNCTION_20
+0x400104c	    0x4d8b8c24e801	            mov r9, qword [r12 + 0x1e8] 	       848	smtp.c	FUNCTION_20
+0x4001054	          0x4889d7	                            mov rdi, rdx	       850	smtp.c	FUNCTION_20	CALL_1
+0x4001057	      0x4c894c2428	              mov qword [rsp + 0x28], r9	       848	smtp.c	FUNCTION_20
+0x400105c	      0x4889542420	             mov qword [rsp + 0x20], rdx	       850	smtp.c	FUNCTION_20	CALL_1
+0x4001061	      0xe800000000	                          call 0x4001066	       850	smtp.c	FUNCTION_20	CALL_1
+0x4001066	      0x4c8b4c2428	              mov r9, qword [rsp + 0x28]	       854	smtp.c	FUNCTION_20	IF_1
+0x400106b	      0x448b442430	            mov r8d, dword [rsp + 0x30] 	       854	smtp.c	FUNCTION_20	IF_1
+0x4001070	      0x488b542420	            mov rdx, qword [rsp + 0x20] 	       854	smtp.c	FUNCTION_20	IF_1
+0x4001075	        0x8b742438	            mov esi, dword [rsp + 0x38] 	       854	smtp.c	FUNCTION_20	IF_1
+0x4001079	        0x498b7910	              mov rdi, qword [r9 + 0x10]	       854	smtp.c	FUNCTION_20	IF_1
+0x400107d	    0x418d8838ffff	                    lea ecx, [r8 - 0xc8]	       854	smtp.c	FUNCTION_20	IF_1
+0x4001084	          0x4885ff	                           test rdi, rdi	       854	smtp.c	FUNCTION_20	IF_1
+0x4001087	     0xf84b3070000	                            je 0x4001840	       854	smtp.c	FUNCTION_20	IF_1
+0x400108d	          0x83f963	                           cmp ecx, 0x63	       854	smtp.c	FUNCTION_20	IF_1
+0x4001090	     0xf87fa020000	                            ja 0x4001390	       854	smtp.c	FUNCTION_20	IF_1
+0x4001096	    0x4180bc24e107	               cmp byte [r12 + 0x7e1], 0	       861	smtp.c	FUNCTION_20	ELSE_1	IF_2
+0x400109f	     0xf842b060000	                            je 0x40016d0	       861	smtp.c	FUNCTION_20	ELSE_1	IF_2
+0x40010a5	        0x4183f801	                              cmp r8d, 1	       867	smtp.c	FUNCTION_20	ELSE_1	IF_3
+0x40010a9	     0xf8430020000	                            je 0x40012df	       867	smtp.c	FUNCTION_20	ELSE_1	IF_3
+0x40010af	          0x4885ff	                           test rdi, rdi	       868	smtp.c	FUNCTION_20	ELSE_1	IF_3	IF_4
+0x40010b2	     0xf8407020000	                            je 0x40012bf	       868	smtp.c	FUNCTION_20	ELSE_1	IF_3	IF_4
+0x40010b8	        0x488b4708	                mov rax, qword [rdi + 8]	       869	smtp.c	FUNCTION_20	ELSE_1	IF_3	IF_4
+0x40010bc	          0x4885c0	                           test rax, rax	       871	smtp.c	FUNCTION_20	ELSE_1	IF_3	IF_4	IF_5
+0x40010bf	        0x49894110	              mov qword [r9 + 0x10], rax	       869	smtp.c	FUNCTION_20	ELSE_1	IF_3	IF_4
+0x40010c3	     0xf84f6010000	                            je 0x40012bf	       871	smtp.c	FUNCTION_20	ELSE_1	IF_3	IF_4	IF_5
+0x40010c9	          0x488b03	                    mov rax, qword [rbx]	       481	smtp.c	FUNCTION_11
+0x40010cc	    0x488b80e80100	           mov rax, qword [rax + 0x1e8] 	       481	smtp.c	FUNCTION_11
+0x40010d3	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       484	smtp.c	FUNCTION_11	IF_1
+0x40010d7	          0x4885d2	                           test rdx, rdx	       484	smtp.c	FUNCTION_11	IF_1
+0x40010da	     0xf8459080000	                            je 0x4001939	       484	smtp.c	FUNCTION_11	IF_1
+0x40010e0	          0x488b0a	                    mov rcx, qword [rdx]	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x40010e3	        0x488b5008	                mov rdx, qword [rax + 8]	       486	smtp.c	FUNCTION_11	IF_1
+0x40010e7	          0x4885d2	                           test rdx, rdx	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x40010ea	     0xf84d8080000	                            je 0x40019c8	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x40010f0	          0x803a00	                       cmp byte [rdx], 0	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x40010f3	    0x488d05000000	                   lea rax, [0x040010fa]	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x40010fa	        0x480f44d0	                          cmove rdx, rax	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x40010fe	    0x488d35000000	                   lea rsi, [0x04001105]	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x4001105	          0x4889ef	                            mov rdi, rbp	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x4001108	            0x31c0	                            xor eax, eax	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x400110a	      0xe800000000	                          call 0x400110f	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x400110f	            0x85c0	                           test eax, eax	       494	smtp.c	FUNCTION_11	IF_2
+0x4001111	     0xf85cbfeffff	                           jne 0x4000fe2	       494	smtp.c	FUNCTION_11	IF_2
+0x4001117	    0xc783c0060000	              mov dword [rbx + 0x6c0], 7	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001121	      0xe9b9010000	                           jmp 0x40012df	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001126	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001130	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       825	smtp.c	FUNCTION_19	CALL_1
+0x4001135	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	       825	smtp.c	FUNCTION_19	CALL_1
+0x400113a	          0x4889de	                            mov rsi, rbx	       825	smtp.c	FUNCTION_19	CALL_1
+0x400113d	          0x4489c2	                            mov edx, r8d	       825	smtp.c	FUNCTION_19	CALL_1
+0x4001140	          0x4c8b23	                    mov r12, qword [rbx]	       819	smtp.c	FUNCTION_19
+0x4001143	      0xe800000000	                          call 0x4001148	       825	smtp.c	FUNCTION_19	CALL_1
+0x4001148	            0x85c0	                           test eax, eax	       826	smtp.c	FUNCTION_19	IF_1
+0x400114a	            0x89c6	                            mov esi, eax	       825	smtp.c	FUNCTION_19	CALL_1
+0x400114c	     0xf8504040000	                           jne 0x4001556	       826	smtp.c	FUNCTION_19	IF_1
+0x4001152	        0x8b442460	            mov eax, dword [rsp + 0x60] 	       827	smtp.c	FUNCTION_19	IF_1	SWITCH_1
+0x4001156	            0x85c0	                           test eax, eax	       827	smtp.c	FUNCTION_19	IF_1	SWITCH_1
+0x4001158	     0xf84e2030000	                            je 0x4001540	       827	smtp.c	FUNCTION_19	IF_1	SWITCH_1
+0x400115e	          0x83f802	                              cmp eax, 2	       827	smtp.c	FUNCTION_19	IF_1	SWITCH_1
+0x4001161	     0xf856a010000	                           jne 0x40012d1	       827	smtp.c	FUNCTION_19	IF_1	SWITCH_1
+0x4001167	    0xc783c0060000	              mov dword [rbx + 0x6c0], 0	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001171	      0xe95b010000	                           jmp 0x40012d1	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001176	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001180	          0x488b03	                    mov rax, qword [rbx]	       703	smtp.c	FUNCTION_17
+0x4001183	      0x4489442428	             mov dword [rsp + 0x28], r8d	       703	smtp.c	FUNCTION_17
+0x4001188	    0x4c8ba0200d00	           mov r12, qword [rax + 0xd20] 	       705	smtp.c	FUNCTION_17
+0x400118f	      0x4889442420	             mov qword [rsp + 0x20], rax	       705	smtp.c	FUNCTION_17
+0x4001194	          0x4c89e7	                            mov rdi, r12	       706	smtp.c	FUNCTION_17	CALL_1
+0x4001197	      0xe800000000	                          call 0x400119c	       706	smtp.c	FUNCTION_17	CALL_1
+0x400119c	      0x448b442428	            mov r8d, dword [rsp + 0x28] 	       711	smtp.c	FUNCTION_17	IF_1
+0x40011a1	          0x4989c1	                             mov r9, rax	       706	smtp.c	FUNCTION_17	CALL_1
+0x40011a4	    0x418d8038ffff	                    lea eax, [r8 - 0xc8]	       711	smtp.c	FUNCTION_17	IF_1
+0x40011ab	          0x83f863	                           cmp eax, 0x63	       711	smtp.c	FUNCTION_17	IF_1
+0x40011ae	     0xf86ec020000	                           jbe 0x40014a0	       711	smtp.c	FUNCTION_17	IF_1
+0x40011b4	        0x4183f801	                              cmp r8d, 1	       711	smtp.c	FUNCTION_17	IF_1
+0x40011b8	     0xf84e2020000	                            je 0x40014a0	       711	smtp.c	FUNCTION_17	IF_1
+0x40011be	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       712	smtp.c	FUNCTION_17	IF_1	IF_2
+0x40011c3	    0x83b8f0070000	              cmp dword [rax + 0x7f0], 1	       712	smtp.c	FUNCTION_17	IF_1	IF_2
+0x40011ca	            0x760d	                           jbe 0x40011d9	       712	smtp.c	FUNCTION_17	IF_1	IF_2
+0x40011cc	    0x80bb90020000	               cmp byte [rbx + 0x290], 0	       712	smtp.c	FUNCTION_17	IF_1	IF_2
+0x40011d3	     0xf8427040000	                            je 0x4001600	       712	smtp.c	FUNCTION_17	IF_1	IF_2
+0x40011d9	    0x488b93c80600	           mov rdx, qword [rbx + 0x6c8] 	       341	smtp.c	FUNCTION_5	CALL_1
+0x40011e0	    0x488d35000000	                   lea rsi, [0x040011e7]	       341	smtp.c	FUNCTION_5	CALL_1
+0x40011e7	            0x31c0	                            xor eax, eax	       341	smtp.c	FUNCTION_5	CALL_1
+0x40011e9	    0xc783e4060000	              mov dword [rbx + 0x6e4], 0	       337	smtp.c	FUNCTION_5
+0x40011f3	          0x4889ef	                            mov rdi, rbp	       341	smtp.c	FUNCTION_5	CALL_1
+0x40011f6	      0xe800000000	                          call 0x40011fb	       341	smtp.c	FUNCTION_5	CALL_1
+0x40011fb	            0x85c0	                           test eax, eax	       343	smtp.c	FUNCTION_5	IF_1
+0x40011fd	     0xf85dffdffff	                           jne 0x4000fe2	       343	smtp.c	FUNCTION_5	IF_1
+0x4001203	    0xc783c0060000	              mov dword [rbx + 0x6c0], 3	       296	smtp.c	ELSE_1	FUNCTION_3
+0x400120d	      0xe9cd000000	                           jmp 0x40012df	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001212	    0x660f1f440000	                    nop word [rax + rax]	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001218	    0x418d8038ffff	                    lea eax, [r8 - 0xc8]	       664	smtp.c	FUNCTION_15	IF_1
+0x400121f	          0x83f863	                           cmp eax, 0x63	       664	smtp.c	FUNCTION_15	IF_1
+0x4001222	     0xf86f0010000	                           jbe 0x4001418	       664	smtp.c	FUNCTION_15	IF_1
+0x4001228	          0x488b3b	                    mov rdi, qword [rbx]	       665	smtp.c	FUNCTION_15	IF_1	CALL_1
+0x400122b	    0x488d35000000	                   lea rsi, [0x04001232]	       665	smtp.c	FUNCTION_15	IF_1	CALL_1
+0x4001232	            0x31c0	                            xor eax, eax	       665	smtp.c	FUNCTION_15	IF_1	CALL_1
+0x4001234	          0x4489c2	                            mov edx, r8d	       665	smtp.c	FUNCTION_15	IF_1	CALL_1
+0x4001237	      0xe800000000	                          call 0x400123c	       665	smtp.c	FUNCTION_15	IF_1	CALL_1
+0x400123c	      0xb808000000	                              mov eax, 8	       666	smtp.c	FUNCTION_15	IF_1
+0x4001241	      0xe99cfdffff	                           jmp 0x4000fe2	       666	smtp.c	FUNCTION_15	IF_1
+0x4001246	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       666	smtp.c	FUNCTION_15	IF_1
+0x4001250	    0x4181f8dc0000	                           cmp r8d, 0xdc	       684	smtp.c	FUNCTION_16	IF_1
+0x4001257	          0x488b3b	                    mov rdi, qword [rbx]	       680	smtp.c	FUNCTION_16
+0x400125a	     0xf8468010000	                            je 0x40013c8	       684	smtp.c	FUNCTION_16	IF_1
+0x4001260	    0x83bff0070000	              cmp dword [rdi + 0x7f0], 1	       685	smtp.c	FUNCTION_16	IF_1	IF_2
+0x4001267	     0xf84ab020000	                            je 0x4001518	       685	smtp.c	FUNCTION_16	IF_1	IF_2
+0x400126d	    0x488d35000000	                   lea rsi, [0x04001274]	       686	smtp.c	FUNCTION_16	IF_1	IF_2	CALL_1
+0x4001274	            0x31c0	                            xor eax, eax	       686	smtp.c	FUNCTION_16	IF_1	IF_2	CALL_1
+0x4001276	          0x4489c2	                            mov edx, r8d	       686	smtp.c	FUNCTION_16	IF_1	IF_2	CALL_1
+0x4001279	      0xe800000000	                          call 0x400127e	       686	smtp.c	FUNCTION_16	IF_1	IF_2	CALL_1
+0x400127e	      0xb840000000	                           mov eax, 0x40	       687	smtp.c	FUNCTION_16	IF_1	IF_2
+0x4001283	      0xe95afdffff	                           jmp 0x4000fe2	       687	smtp.c	FUNCTION_16	IF_1	IF_2
+0x4001288	     0xf1f84000000	                   nop dword [rax + rax]	       687	smtp.c	FUNCTION_16	IF_1	IF_2
+0x4001290	    0x418d8038ffff	                    lea eax, [r8 - 0xc8]	       802	smtp.c	FUNCTION_18	IF_1
+0x4001297	          0x83f863	                           cmp eax, 0x63	       802	smtp.c	FUNCTION_18	IF_1
+0x400129a	     0xf8710030000	                            ja 0x40015b0	       802	smtp.c	FUNCTION_18	IF_1
+0x40012a0	    0xc783c0060000	              mov dword [rbx + 0x6c0], 0	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40012aa	      0xe931fdffff	                           jmp 0x4000fe0	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40012af	              0x90	                                     nop	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40012b0	    0x4181f8fa0000	                           cmp r8d, 0xfa	       978	smtp.c	FUNCTION_24	IF_1
+0x40012b7	      0xb838000000	                           mov eax, 0x38	       978	smtp.c	FUNCTION_24	IF_1
+0x40012bc	           0xf45f0	                         cmovne esi, eax	       978	smtp.c	FUNCTION_24	IF_1
+0x40012bf	    0xc783c0060000	              mov dword [rbx + 0x6c0], 0	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40012c9	            0x85f6	                           test esi, esi	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012cb	     0xf8585020000	                           jne 0x4001556	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012d1	    0x8b83c0060000	           mov eax, dword [rbx + 0x6c0] 	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012d7	            0x85c0	                           test eax, eax	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012d9	     0xf8401fdffff	                            je 0x4000fe0	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012df	          0x4889ef	                            mov rdi, rbp	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012e2	      0xe800000000	                          call 0x40012e7	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012e7	            0x84c0	                             test al, al	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012e9	     0xf8511fcffff	                           jne 0x4000f00	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012ef	      0xe9ecfcffff	                           jmp 0x4000fe0	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012f4	         0xf1f4000	                         nop dword [rax]	      1066	smtp.c	FUNCTION_25	CALL_15
+0x40012f8	    0x4181f8620100	                          cmp r8d, 0x162	       949	smtp.c	FUNCTION_23	IF_1
+0x40012ff	          0x488b3b	                    mov rdi, qword [rbx]	       945	smtp.c	FUNCTION_23
+0x4001302	     0xf8478030000	                            je 0x4001680	       949	smtp.c	FUNCTION_23	IF_1
+0x4001308	    0x488d35000000	                   lea rsi, [0x0400130f]	       950	smtp.c	FUNCTION_23	IF_1	CALL_1
+0x400130f	            0x31c0	                            xor eax, eax	       950	smtp.c	FUNCTION_23	IF_1	CALL_1
+0x4001311	          0x4489c2	                            mov edx, r8d	       950	smtp.c	FUNCTION_23	IF_1	CALL_1
+0x4001314	      0xe800000000	                          call 0x4001319	       950	smtp.c	FUNCTION_23	IF_1	CALL_1
+0x4001319	      0xb837000000	                           mov eax, 0x37	       951	smtp.c	FUNCTION_23	IF_1
+0x400131e	      0xe9bffcffff	                           jmp 0x4000fe2	       951	smtp.c	FUNCTION_23	IF_1
+0x4001323	       0xf1f440000	                   nop dword [rax + rax]	       951	smtp.c	FUNCTION_23	IF_1
+0x4001328	        0x8b442454	            mov eax, dword [rsp + 0x54] 	      1014	smtp.c	FUNCTION_25	DO_1	IF_5
+0x400132c	            0x85c0	                           test eax, eax	      1014	smtp.c	FUNCTION_25	DO_1	IF_5
+0x400132e	     0xf84acfcffff	                            je 0x4000fe0	      1014	smtp.c	FUNCTION_25	DO_1	IF_5
+0x4001334	    0xc783c0060000	              mov dword [rbx + 0x6c0], 0	       296	smtp.c	ELSE_1	FUNCTION_3
+0x400133e	      0xe99dfcffff	                           jmp 0x4000fe0	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001343	       0xf1f440000	                   nop dword [rax + rax]	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001348	          0x83fa0b	                            cmp edx, 0xb	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x400134b	     0xf874fffffff	                            ja 0x40012a0	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4001351	    0x488d05000000	                   lea rax, [0x04001358]	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4001358	    0x488d3d000000	                   lea rdi, [0x0400135f]	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x400135f	        0x48630490	         movsxd rax, dword [rax + rdx*4]	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4001363	          0x4801f8	                            add rax, rdi	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4001366	            0xffe0	                                 jmp rax	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4001368	     0xf1f84000000	                   nop dword [rax + rax]	      1018	smtp.c	FUNCTION_25	DO_1	SWITCH_1
+0x4001370	    0x488d35000000	                   lea rsi, [0x04001377]	       919	smtp.c	FUNCTION_22	IF_1	CALL_1
+0x4001377	            0x31c0	                            xor eax, eax	       919	smtp.c	FUNCTION_22	IF_1	CALL_1
+0x4001379	          0x4489c2	                            mov edx, r8d	       919	smtp.c	FUNCTION_22	IF_1	CALL_1
+0x400137c	      0xe800000000	                          call 0x4001381	       919	smtp.c	FUNCTION_22	IF_1	CALL_1
+0x4001381	      0xb837000000	                           mov eax, 0x37	       920	smtp.c	FUNCTION_22	IF_1
+0x4001386	      0xe957fcffff	                           jmp 0x4000fe2	       920	smtp.c	FUNCTION_22	IF_1
+0x400138b	       0xf1f440000	                   nop dword [rax + rax]	       920	smtp.c	FUNCTION_22	IF_1
+0x4001390	    0x4181f8290200	                          cmp r8d, 0x229	       854	smtp.c	FUNCTION_20	IF_1
+0x4001397	     0xf84f9fcffff	                            je 0x4001096	       854	smtp.c	FUNCTION_20	IF_1
+0x400139d	        0x4183f801	                              cmp r8d, 1	       855	smtp.c	FUNCTION_20	IF_1
+0x40013a1	     0xf84effcffff	                            je 0x4001096	       855	smtp.c	FUNCTION_20	IF_1
+0x40013a7	    0x488d35000000	                   lea rsi, [0x040013ae]	       856	smtp.c	FUNCTION_20	IF_1	CALL_2
+0x40013ae	            0x31c0	                            xor eax, eax	       856	smtp.c	FUNCTION_20	IF_1	CALL_2
+0x40013b0	          0x4489c2	                            mov edx, r8d	       856	smtp.c	FUNCTION_20	IF_1	CALL_2
+0x40013b3	          0x4c89e7	                            mov rdi, r12	       856	smtp.c	FUNCTION_20	IF_1	CALL_2
+0x40013b6	      0xe800000000	                          call 0x40013bb	       856	smtp.c	FUNCTION_20	IF_1	CALL_2
+0x40013bb	      0xb838000000	                           mov eax, 0x38	       857	smtp.c	FUNCTION_20	IF_1
+0x40013c0	      0xe91dfcffff	                           jmp 0x4000fe2	       857	smtp.c	FUNCTION_20	IF_1
+0x40013c5	           0xf1f00	                         nop dword [rax]	       857	smtp.c	FUNCTION_20	IF_1
+0x40013c8	      0x488b542440	            mov rdx, qword [rsp + 0x40] 	       380	smtp.c	FUNCTION_7	CALL_1
+0x40013cd	            0x31f6	                            xor esi, esi	       380	smtp.c	FUNCTION_7	CALL_1
+0x40013cf	          0x4889df	                            mov rdi, rbx	       380	smtp.c	FUNCTION_7	CALL_1
+0x40013d2	      0xe800000000	                          call 0x40013d7	       380	smtp.c	FUNCTION_7	CALL_1
+0x40013d7	            0x85c0	                           test eax, eax	       382	smtp.c	FUNCTION_7	IF_1
+0x40013d9	     0xf8503fcffff	                           jne 0x4000fe2	       382	smtp.c	FUNCTION_7	IF_1
+0x40013df	    0x83bbc0060000	              cmp dword [rbx + 0x6c0], 5	       383	smtp.c	FUNCTION_7	IF_1	IF_2
+0x40013e6	            0x740a	                            je 0x40013f2	       383	smtp.c	FUNCTION_7	IF_1	IF_2
+0x40013e8	    0xc783c0060000	              mov dword [rbx + 0x6c0], 5	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40013f2	    0x80bbc4060000	               cmp byte [rbx + 0x6c4], 0	       386	smtp.c	FUNCTION_7	IF_1	IF_3
+0x40013f9	     0xf84e0feffff	                            je 0x40012df	       386	smtp.c	FUNCTION_7	IF_1	IF_3
+0x40013ff	    0x488d05000000	                   lea rax, [0x04001406]	       178	smtp.c	
+0x4001406	    0xc68398030000	               mov byte [rbx + 0x398], 1	       181	smtp.c	
+0x400140d	    0x488983e00300	            mov qword [rbx + 0x3e0], rax	       178	smtp.c	
+0x4001414	         0xf1f4000	                         nop dword [rax]	       178	smtp.c	
+0x4001418	    0x488b93c80600	           mov rdx, qword [rbx + 0x6c8] 	       318	smtp.c	FUNCTION_4	CALL_1
+0x400141f	    0x488d35000000	                   lea rsi, [0x04001426]	       318	smtp.c	FUNCTION_4	CALL_1
+0x4001426	            0x31c0	                            xor eax, eax	       318	smtp.c	FUNCTION_4	CALL_1
+0x4001428	    0xc783dc060000	              mov dword [rbx + 0x6dc], 0	       311	smtp.c	FUNCTION_4
+0x4001432	    0xc783e4060000	              mov dword [rbx + 0x6e4], 0	       312	smtp.c	FUNCTION_4
+0x400143c	          0x4889ef	                            mov rdi, rbp	       318	smtp.c	FUNCTION_4	CALL_1
+0x400143f	    0xc683f0060000	               mov byte [rbx + 0x6f0], 0	       314	smtp.c	FUNCTION_4
+0x4001446	    0xc683f2060000	               mov byte [rbx + 0x6f2], 0	       315	smtp.c	FUNCTION_4
+0x400144d	      0xe800000000	                          call 0x4001452	       318	smtp.c	FUNCTION_4	CALL_1
+0x4001452	            0x85c0	                           test eax, eax	       320	smtp.c	FUNCTION_4	IF_1
+0x4001454	     0xf8588fbffff	                           jne 0x4000fe2	       320	smtp.c	FUNCTION_4	IF_1
+0x400145a	    0xc783c0060000	              mov dword [rbx + 0x6c0], 2	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001464	      0xe976feffff	                           jmp 0x40012df	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001469	     0xf1f80000000	                         nop dword [rax]	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001470	    0x488b87e80100	           mov rax, qword [rdi + 0x1e8] 	       623	smtp.c	FUNCTION_13	IF_1
+0x4001477	        0x488b4010	            mov rax, qword [rax + 0x10] 	       623	smtp.c	FUNCTION_13	IF_1
+0x400147b	          0x488b10	                    mov rdx, qword [rax]	       623	smtp.c	FUNCTION_13	IF_1
+0x400147e	          0x803a3c	                    cmp byte [rdx], 0x3c	       623	smtp.c	FUNCTION_13	IF_1
+0x4001481	     0xf8524fbffff	                           jne 0x4000fab	       623	smtp.c	FUNCTION_13	IF_1
+0x4001487	    0x488d35000000	                   lea rsi, [0x0400148e]	       624	smtp.c	FUNCTION_13	IF_1	CALL_1
+0x400148e	          0x4889ef	                            mov rdi, rbp	       624	smtp.c	FUNCTION_13	IF_1	CALL_1
+0x4001491	            0x31c0	                            xor eax, eax	       624	smtp.c	FUNCTION_13	IF_1	CALL_1
+0x4001493	      0xe800000000	                          call 0x4001498	       624	smtp.c	FUNCTION_13	IF_1	CALL_1
+0x4001498	      0xe91ffbffff	                           jmp 0x4000fbc	       624	smtp.c	FUNCTION_13	IF_1	CALL_1
+0x400149d	           0xf1f00	                         nop dword [rax]	       624	smtp.c	FUNCTION_13	IF_1	CALL_1
+0x40014a0	        0x498d49fc	                       lea rcx, [r9 - 4]	       721	smtp.c	FUNCTION_17	ELSE_2
+0x40014a4	      0x4d8d542404	                      lea r10, [r12 + 4]	       720	smtp.c	FUNCTION_17	ELSE_2
+0x40014a9	        0x4883f907	                              cmp rcx, 7	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x40014ad	     0xf87ad000000	                            ja 0x4001560	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x40014b3	        0x4883f903	                              cmp rcx, 3	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x40014b7	     0xf8763020000	                            ja 0x4001720	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x40014bd	           0xf1f00	                         nop dword [rax]	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x40014c0	        0x4183f801	                              cmp r8d, 1	       771	smtp.c	FUNCTION_17	ELSE_2	IF_8
+0x40014c4	     0xf8407feffff	                            je 0x40012d1	       771	smtp.c	FUNCTION_17	ELSE_2	IF_8
+0x40014ca	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       772	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9
+0x40014cf	    0x8b80f0070000	           mov eax, dword [rax + 0x7f0] 	       772	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9
+0x40014d5	            0x85c0	                           test eax, eax	       772	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9
+0x40014d7	            0x743f	                            je 0x4001518	       772	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9
+0x40014d9	    0x80bb90020000	               cmp byte [rbx + 0x290], 0	       772	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9
+0x40014e0	            0x7536	                           jne 0x4001518	       772	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9
+0x40014e2	    0x80bbf0060000	               cmp byte [rbx + 0x6f0], 0	       774	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	IF_10
+0x40014e9	     0xf85aa040000	                           jne 0x4001999	       774	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	IF_10
+0x40014ef	          0x83f801	                              cmp eax, 1	       777	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	ELSE_5	IF_11
+0x40014f2	            0x7424	                            je 0x4001518	       777	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	ELSE_5	IF_11
+0x40014f4	      0x488b7c2420	            mov rdi, qword [rsp + 0x20] 	       781	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	ELSE_6	CALL_10
+0x40014f9	    0x488d35000000	                   lea rsi, [0x04001500]	       781	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	ELSE_6	CALL_10
+0x4001500	            0x31c0	                            xor eax, eax	       781	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	ELSE_6	CALL_10
+0x4001502	      0xe800000000	                          call 0x4001507	       781	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	ELSE_6	CALL_10
+0x4001507	      0xb840000000	                           mov eax, 0x40	       782	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	ELSE_6
+0x400150c	      0xe9d1faffff	                           jmp 0x4000fe2	       782	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	ELSE_6
+0x4001511	     0xf1f80000000	                         nop dword [rax]	       782	smtp.c	FUNCTION_17	ELSE_2	IF_8	IF_9	ELSE_6
+0x4001518	    0x80bbf2060000	               cmp byte [rbx + 0x6f2], 0	       449	smtp.c	FUNCTION_10	IF_1
+0x400151f	     0xf85fb000000	                           jne 0x4001620	       449	smtp.c	FUNCTION_10	IF_1
+0x4001525	    0xc783c0060000	              mov dword [rbx + 0x6c0], 0	       296	smtp.c	ELSE_1	FUNCTION_3
+0x400152f	            0x31c0	                            xor eax, eax	       452	smtp.c	FUNCTION_10	IF_1
+0x4001531	            0x89c6	                            mov esi, eax	       690	smtp.c	FUNCTION_16	IF_1	CALL_2
+0x4001533	      0xe991fdffff	                           jmp 0x40012c9	       690	smtp.c	FUNCTION_16	IF_1	CALL_2
+0x4001538	     0xf1f84000000	                   nop dword [rax + rax]	       690	smtp.c	FUNCTION_16	IF_1	CALL_2
+0x4001540	    0x488d35000000	                   lea rsi, [0x04001547]	       832	smtp.c	FUNCTION_19	IF_1	SWITCH_1	CALL_3
+0x4001547	          0x4c89e7	                            mov rdi, r12	       832	smtp.c	FUNCTION_19	IF_1	SWITCH_1	CALL_3
+0x400154a	            0x31c0	                            xor eax, eax	       832	smtp.c	FUNCTION_19	IF_1	SWITCH_1	CALL_3
+0x400154c	      0xe800000000	                          call 0x4001551	       832	smtp.c	FUNCTION_19	IF_1	SWITCH_1	CALL_3
+0x4001551	      0xbe43000000	                           mov esi, 0x43	       833	smtp.c	FUNCTION_19	IF_1	SWITCH_1
+0x4001556	            0x89f0	                            mov eax, esi	       833	smtp.c	FUNCTION_19	IF_1	SWITCH_1
+0x4001558	      0xe985faffff	                           jmp 0x4000fe2	       833	smtp.c	FUNCTION_19	IF_1	SWITCH_1
+0x400155d	           0xf1f00	                         nop dword [rax]	       833	smtp.c	FUNCTION_19	IF_1	SWITCH_1
+0x4001560	    0x488d35000000	                   lea rsi, [0x04001567]	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x4001567	          0x4c89d7	                            mov rdi, r10	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x400156a	      0xba08000000	                              mov edx, 8	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x400156f	      0x448944244c	             mov dword [rsp + 0x4c], r8d	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x4001574	      0x4c894c2438	              mov qword [rsp + 0x38], r9	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x4001579	      0x48894c2430	             mov qword [rsp + 0x30], rcx	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x400157e	      0x4c89542428	             mov qword [rsp + 0x28], r10	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x4001583	      0xe800000000	                          call 0x4001588	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x4001588	            0x85c0	                           test eax, eax	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x400158a	      0x4c8b542428	            mov r10, qword [rsp + 0x28] 	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x400158f	      0x488b4c2430	            mov rcx, qword [rsp + 0x30] 	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x4001594	      0x4c8b4c2438	              mov r9, qword [rsp + 0x38]	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x4001599	      0x448b44244c	            mov r8d, dword [rsp + 0x4c] 	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x400159e	     0xf857c010000	                           jne 0x4001720	       724	smtp.c	FUNCTION_17	ELSE_2	IF_3	CALL_4
+0x40015a4	    0xc683f0060000	               mov byte [rbx + 0x6f0], 1	       725	smtp.c	FUNCTION_17	ELSE_2	IF_3
+0x40015ab	      0xe910ffffff	                           jmp 0x40014c0	       725	smtp.c	FUNCTION_17	ELSE_2	IF_3
+0x40015b0	          0x488b3b	                    mov rdi, qword [rbx]	       803	smtp.c	FUNCTION_18	IF_1	CALL_1
+0x40015b3	    0x488d35000000	                   lea rsi, [0x040015ba]	       803	smtp.c	FUNCTION_18	IF_1	CALL_1
+0x40015ba	            0x31c0	                            xor eax, eax	       803	smtp.c	FUNCTION_18	IF_1	CALL_1
+0x40015bc	          0x4489c2	                            mov edx, r8d	       803	smtp.c	FUNCTION_18	IF_1	CALL_1
+0x40015bf	      0xe800000000	                          call 0x40015c4	       803	smtp.c	FUNCTION_18	IF_1	CALL_1
+0x40015c4	      0xb809000000	                              mov eax, 9	       804	smtp.c	FUNCTION_18	IF_1
+0x40015c9	      0xe914faffff	                           jmp 0x4000fe2	       804	smtp.c	FUNCTION_18	IF_1
+0x40015ce	            0x6690	                                     nop	       804	smtp.c	FUNCTION_18	IF_1
+0x40015d0	          0x488b3b	                    mov rdi, qword [rbx]	       680	smtp.c	FUNCTION_16
+0x40015d3	    0x83bff0070000	              cmp dword [rdi + 0x7f0], 1	       685	smtp.c	FUNCTION_16	IF_1	IF_2
+0x40015da	     0xf858dfcffff	                           jne 0x400126d	       685	smtp.c	FUNCTION_16	IF_1	IF_2
+0x40015e0	      0xe933ffffff	                           jmp 0x4001518	       685	smtp.c	FUNCTION_16	IF_1	IF_2
+0x40015e5	           0xf1f00	                         nop dword [rax]	       685	smtp.c	FUNCTION_16	IF_1	IF_2
+0x40015e8	          0x488b3b	                    mov rdi, qword [rbx]	       945	smtp.c	FUNCTION_23
+0x40015eb	      0xe918fdffff	                           jmp 0x4001308	       945	smtp.c	FUNCTION_23
+0x40015f0	      0xbe38000000	                           mov esi, 0x38	       978	smtp.c	FUNCTION_24	IF_1
+0x40015f5	      0xe9c5fcffff	                           jmp 0x40012bf	       978	smtp.c	FUNCTION_24	IF_1
+0x40015fa	    0x660f1f440000	                    nop word [rax + rax]	       978	smtp.c	FUNCTION_24	IF_1
+0x4001600	    0x488d35000000	                   lea rsi, [0x04001607]	       715	smtp.c	FUNCTION_17	IF_1	ELSE_1	CALL_3
+0x4001607	          0x4889c7	                            mov rdi, rax	       715	smtp.c	FUNCTION_17	IF_1	ELSE_1	CALL_3
+0x400160a	          0x4489c2	                            mov edx, r8d	       715	smtp.c	FUNCTION_17	IF_1	ELSE_1	CALL_3
+0x400160d	            0x31c0	                            xor eax, eax	       715	smtp.c	FUNCTION_17	IF_1	ELSE_1	CALL_3
+0x400160f	      0xe800000000	                          call 0x4001614	       715	smtp.c	FUNCTION_17	IF_1	ELSE_1	CALL_3
+0x4001614	      0xb809000000	                              mov eax, 9	       716	smtp.c	FUNCTION_17	IF_1	ELSE_1
+0x4001619	      0xe9c4f9ffff	                           jmp 0x4000fe2	       716	smtp.c	FUNCTION_17	IF_1	ELSE_1
+0x400161e	            0x6690	                                     nop	       716	smtp.c	FUNCTION_17	IF_1	ELSE_1
+0x4001620	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	       450	smtp.c	FUNCTION_10	IF_1	CALL_1
+0x4001625	          0x4889de	                            mov rsi, rbx	       450	smtp.c	FUNCTION_10	IF_1	CALL_1
+0x4001628	      0xe800000000	                          call 0x400162d	       450	smtp.c	FUNCTION_10	IF_1	CALL_1
+0x400162d	            0x84c0	                             test al, al	       449	smtp.c	FUNCTION_10	IF_1
+0x400162f	     0xf84f0feffff	                            je 0x4001525	       449	smtp.c	FUNCTION_10	IF_1
+0x4001635	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       456	smtp.c	FUNCTION_10	CALL_3
+0x400163a	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	       456	smtp.c	FUNCTION_10	CALL_3
+0x400163f	            0x31d2	                            xor edx, edx	       456	smtp.c	FUNCTION_10	CALL_3
+0x4001641	          0x4889de	                            mov rsi, rbx	       456	smtp.c	FUNCTION_10	CALL_3
+0x4001644	      0xe800000000	                          call 0x4001649	       456	smtp.c	FUNCTION_10	CALL_3
+0x4001649	            0x85c0	                           test eax, eax	       458	smtp.c	FUNCTION_10	IF_2
+0x400164b	     0xf85e0feffff	                           jne 0x4001531	       458	smtp.c	FUNCTION_10	IF_2
+0x4001651	      0x837c246001	               cmp dword [rsp + 0x60], 1	       459	smtp.c	FUNCTION_10	IF_2	IF_3
+0x4001656	     0xf8478030000	                            je 0x40019d4	       459	smtp.c	FUNCTION_10	IF_2	IF_3
+0x400165c	          0x488b3b	                    mov rdi, qword [rbx]	       463	smtp.c	FUNCTION_10	IF_2	ELSE_1	CALL_5
+0x400165f	    0x488d35000000	                   lea rsi, [0x04001666]	       463	smtp.c	FUNCTION_10	IF_2	ELSE_1	CALL_5
+0x4001666	            0x31c0	                            xor eax, eax	       463	smtp.c	FUNCTION_10	IF_2	ELSE_1	CALL_5
+0x4001668	      0xe800000000	                          call 0x400166d	       463	smtp.c	FUNCTION_10	IF_2	ELSE_1	CALL_5
+0x400166d	      0xb843000000	                           mov eax, 0x43	       463	smtp.c	FUNCTION_10	IF_2	ELSE_1	CALL_5
+0x4001672	            0x89c6	                            mov esi, eax	       690	smtp.c	FUNCTION_16	IF_1	CALL_2
+0x4001674	      0xe950fcffff	                           jmp 0x40012c9	       690	smtp.c	FUNCTION_16	IF_1	CALL_2
+0x4001679	     0xf1f80000000	                         nop dword [rax]	       690	smtp.c	FUNCTION_16	IF_1	CALL_2
+0x4001680	    0x488bb7505100	          mov rsi, qword [rdi + 0x5150] 	       955	smtp.c	FUNCTION_23	ELSE_1	CALL_2
+0x4001687	      0xe800000000	                          call 0x400168c	       955	smtp.c	FUNCTION_23	ELSE_1	CALL_2
+0x400168c	        0x4883ec08	                              sub rsp, 8	       958	smtp.c	FUNCTION_23	ELSE_1	CALL_3
+0x4001690	            0x31c9	                            xor ecx, ecx	       958	smtp.c	FUNCTION_23	ELSE_1	CALL_3
+0x4001692	    0x48c7c2ffffff	             mov rdx, 0xffffffffffffffff	       958	smtp.c	FUNCTION_23	ELSE_1	CALL_3
+0x4001699	            0x6a00	                                  push 0	       958	smtp.c	FUNCTION_23	ELSE_1	CALL_3
+0x400169b	          0x4531c9	                            xor r9d, r9d	       958	smtp.c	FUNCTION_23	ELSE_1	CALL_3
+0x400169e	          0x4531c0	                            xor r8d, r8d	       958	smtp.c	FUNCTION_23	ELSE_1	CALL_3
+0x40016a1	      0xbeffffffff	                     mov esi, 0xffffffff	       958	smtp.c	FUNCTION_23	ELSE_1	CALL_3
+0x40016a6	          0x4889df	                            mov rdi, rbx	       958	smtp.c	FUNCTION_23	ELSE_1	CALL_3
+0x40016a9	      0xe800000000	                          call 0x40016ae	       958	smtp.c	FUNCTION_23	ELSE_1	CALL_3
+0x40016ae	              0x5a	                                 pop rdx	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40016af	    0xc783c0060000	              mov dword [rbx + 0x6c0], 0	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40016b9	              0x59	                                 pop rcx	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40016ba	      0xe921f9ffff	                           jmp 0x4000fe0	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40016bf	              0x90	                                     nop	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40016c0	          0x4889ef	                            mov rdi, rbp	      1002	smtp.c	FUNCTION_25	CALL_2
+0x40016c3	      0xe800000000	                          call 0x40016c8	      1002	smtp.c	FUNCTION_25	CALL_2
+0x40016c8	      0xe915f9ffff	                           jmp 0x4000fe2	      1002	smtp.c	FUNCTION_25	CALL_2
+0x40016cd	           0xf1f00	                         nop dword [rax]	      1002	smtp.c	FUNCTION_25	CALL_2
+0x40016d0	        0x4c8d2402	                    lea r12, [rdx + rax]	       862	smtp.c	FUNCTION_20	ELSE_1	IF_2
+0x40016d4	        0x488d4801	                      lea rcx, [rax + 1]	       863	smtp.c	FUNCTION_20	ELSE_1	IF_2	CALL_3
+0x40016d8	      0xbe01000000	                              mov esi, 1	       863	smtp.c	FUNCTION_20	ELSE_1	IF_2	CALL_3
+0x40016dd	          0x4889df	                            mov rdi, rbx	       863	smtp.c	FUNCTION_20	ELSE_1	IF_2	CALL_3
+0x40016e0	      0x4489442420	             mov dword [rsp + 0x20], r8d	       863	smtp.c	FUNCTION_20	ELSE_1	IF_2	CALL_3
+0x40016e5	      0x4c894c2428	              mov qword [rsp + 0x28], r9	       863	smtp.c	FUNCTION_20	ELSE_1	IF_2	CALL_3
+0x40016ea	      0x41c604240a	                     mov byte [r12], 0xa	       862	smtp.c	FUNCTION_20	ELSE_1	IF_2
+0x40016ef	      0xe800000000	                          call 0x40016f4	       863	smtp.c	FUNCTION_20	ELSE_1	IF_2	CALL_3
+0x40016f4	      0x448b442420	            mov r8d, dword [rsp + 0x20] 	       867	smtp.c	FUNCTION_20	ELSE_1	IF_3
+0x40016f9	            0x89c6	                            mov esi, eax	       863	smtp.c	FUNCTION_20	ELSE_1	IF_2	CALL_3
+0x40016fb	      0x41c6042400	                       mov byte [r12], 0	       864	smtp.c	FUNCTION_20	ELSE_1	IF_2
+0x4001700	        0x4183f801	                              cmp r8d, 1	       867	smtp.c	FUNCTION_20	ELSE_1	IF_3
+0x4001704	     0xf84bffbffff	                            je 0x40012c9	       867	smtp.c	FUNCTION_20	ELSE_1	IF_3
+0x400170a	      0x4c8b4c2428	              mov r9, qword [rsp + 0x28]	       867	smtp.c	FUNCTION_20	ELSE_1	IF_3
+0x400170f	        0x498b7910	              mov rdi, qword [r9 + 0x10]	       867	smtp.c	FUNCTION_20	ELSE_1	IF_3
+0x4001713	      0xe997f9ffff	                           jmp 0x40010af	       867	smtp.c	FUNCTION_20	ELSE_1	IF_3
+0x4001718	     0xf1f84000000	                   nop dword [rax + rax]	       867	smtp.c	FUNCTION_20	ELSE_1	IF_3
+0x4001720	    0x488d35000000	                   lea rsi, [0x04001727]	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x4001727	          0x4c89d7	                            mov rdi, r10	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x400172a	      0xba04000000	                              mov edx, 4	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x400172f	      0x448944244c	             mov dword [rsp + 0x4c], r8d	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x4001734	      0x4c894c2438	              mov qword [rsp + 0x38], r9	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x4001739	      0x48894c2430	             mov qword [rsp + 0x30], rcx	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x400173e	      0x4c89542428	             mov qword [rsp + 0x28], r10	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x4001743	      0xe800000000	                          call 0x4001748	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x4001748	            0x85c0	                           test eax, eax	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x400174a	      0x4c8b542428	            mov r10, qword [rsp + 0x28] 	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x400174f	      0x488b4c2430	            mov rcx, qword [rsp + 0x30] 	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x4001754	      0x4c8b4c2438	              mov r9, qword [rsp + 0x38]	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x4001759	      0x448b44244c	            mov r8d, dword [rsp + 0x4c] 	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x400175e	     0xf85ec000000	                           jne 0x4001850	       728	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4	CALL_5
+0x4001764	    0xc683f1060000	               mov byte [rbx + 0x6f1], 1	       729	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4
+0x400176b	      0xe950fdffff	                           jmp 0x40014c0	       729	smtp.c	FUNCTION_17	ELSE_2	ELSE_3	IF_4
+0x4001770	    0x488d97c40600	                  lea rdx, [rdi + 0x6c4]	       380	smtp.c	FUNCTION_7	CALL_1
+0x4001777	            0x31f6	                            xor esi, esi	       380	smtp.c	FUNCTION_7	CALL_1
+0x4001779	      0xe800000000	                          call 0x400177e	       380	smtp.c	FUNCTION_7	CALL_1
+0x400177e	            0x85c0	                           test eax, eax	       382	smtp.c	FUNCTION_7	IF_1
+0x4001780	     0xf855cf8ffff	                           jne 0x4000fe2	       382	smtp.c	FUNCTION_7	IF_1
+0x4001786	    0x83bbc0060000	              cmp dword [rbx + 0x6c0], 5	       383	smtp.c	FUNCTION_7	IF_1	IF_2
+0x400178d	            0x740a	                            je 0x4001799	       383	smtp.c	FUNCTION_7	IF_1	IF_2
+0x400178f	    0xc783c0060000	              mov dword [rbx + 0x6c0], 5	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001799	    0x80bbc4060000	               cmp byte [rbx + 0x6c4], 0	       386	smtp.c	FUNCTION_7	IF_1	IF_3
+0x40017a0	     0xf843af8ffff	                            je 0x4000fe0	       386	smtp.c	FUNCTION_7	IF_1	IF_3
+0x40017a6	    0x488d05000000	                   lea rax, [0x040017ad]	       178	smtp.c	
+0x40017ad	    0x488b93c80600	           mov rdx, qword [rbx + 0x6c8] 	       318	smtp.c	FUNCTION_4	CALL_1
+0x40017b4	    0x488d35000000	                   lea rsi, [0x040017bb]	       318	smtp.c	FUNCTION_4	CALL_1
+0x40017bb	    0xc68398030000	               mov byte [rbx + 0x398], 1	       181	smtp.c	
+0x40017c2	    0xc783dc060000	              mov dword [rbx + 0x6dc], 0	       311	smtp.c	FUNCTION_4
+0x40017cc	          0x4889ef	                            mov rdi, rbp	       318	smtp.c	FUNCTION_4	CALL_1
+0x40017cf	    0x488983e00300	            mov qword [rbx + 0x3e0], rax	       178	smtp.c	
+0x40017d6	    0xc783e4060000	              mov dword [rbx + 0x6e4], 0	       312	smtp.c	FUNCTION_4
+0x40017e0	            0x31c0	                            xor eax, eax	       318	smtp.c	FUNCTION_4	CALL_1
+0x40017e2	    0xc683f0060000	               mov byte [rbx + 0x6f0], 0	       314	smtp.c	FUNCTION_4
+0x40017e9	    0xc683f2060000	               mov byte [rbx + 0x6f2], 0	       315	smtp.c	FUNCTION_4
+0x40017f0	      0xe800000000	                          call 0x40017f5	       318	smtp.c	FUNCTION_4	CALL_1
+0x40017f5	            0x85c0	                           test eax, eax	       320	smtp.c	FUNCTION_4	IF_1
+0x40017f7	     0xf85e5f7ffff	                           jne 0x4000fe2	       320	smtp.c	FUNCTION_4	IF_1
+0x40017fd	    0xc783c0060000	              mov dword [rbx + 0x6c0], 2	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001807	      0xe9d6f7ffff	                           jmp 0x4000fe2	       296	smtp.c	ELSE_1	FUNCTION_3
+0x400180c	         0xf1f4000	                         nop dword [rax]	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001810	    0x488d15000000	                   lea rdx, [0x04001817]	       930	smtp.c	FUNCTION_22	ELSE_1	ELSE_2	CALL_3
+0x4001817	    0x488d35000000	                   lea rsi, [0x0400181e]	       930	smtp.c	FUNCTION_22	ELSE_1	ELSE_2	CALL_3
+0x400181e	            0x31c0	                            xor eax, eax	       930	smtp.c	FUNCTION_22	ELSE_1	ELSE_2	CALL_3
+0x4001820	          0x4889ef	                            mov rdi, rbp	       930	smtp.c	FUNCTION_22	ELSE_1	ELSE_2	CALL_3
+0x4001823	      0xe800000000	                          call 0x4001828	       930	smtp.c	FUNCTION_22	ELSE_1	ELSE_2	CALL_3
+0x4001828	            0x85c0	                           test eax, eax	       932	smtp.c	FUNCTION_22	ELSE_1	ELSE_2	IF_3
+0x400182a	     0xf85b2f7ffff	                           jne 0x4000fe2	       932	smtp.c	FUNCTION_22	ELSE_1	ELSE_2	IF_3
+0x4001830	    0xc783c0060000	            mov dword [rbx + 0x6c0], 0xa	       296	smtp.c	ELSE_1	FUNCTION_3
+0x400183a	      0xe9a0faffff	                           jmp 0x40012df	       296	smtp.c	ELSE_1	FUNCTION_3
+0x400183f	              0x90	                                     nop	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4001840	          0x83f963	                           cmp ecx, 0x63	       855	smtp.c	FUNCTION_20	IF_1
+0x4001843	     0xf8754fbffff	                            ja 0x400139d	       855	smtp.c	FUNCTION_20	IF_1
+0x4001849	      0xe948f8ffff	                           jmp 0x4001096	       855	smtp.c	FUNCTION_20	IF_1
+0x400184e	            0x6690	                                     nop	       855	smtp.c	FUNCTION_20	IF_1
+0x4001850	        0x4883f904	                              cmp rcx, 4	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x4001854	      0x4c894c2430	              mov qword [rsp + 0x30], r9	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x4001859	     0xf8661fcffff	                           jbe 0x40014c0	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x400185f	    0x488d35000000	                   lea rsi, [0x04001866]	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x4001866	      0xba05000000	                              mov edx, 5	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x400186b	          0x4c89d7	                            mov rdi, r10	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x400186e	      0x4489442428	             mov dword [rsp + 0x28], r8d	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x4001873	      0xe800000000	                          call 0x4001878	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x4001878	            0x85c0	                           test eax, eax	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x400187a	      0x448b442428	            mov r8d, dword [rsp + 0x28] 	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x400187f	     0xf853bfcffff	                           jne 0x40014c0	       732	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	CALL_6
+0x4001885	      0x4c8b4c2430	              mov r9, qword [rsp + 0x30]	       744	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x400188a	    0xc683f2060000	               mov byte [rbx + 0x6f2], 1	       733	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5
+0x4001891	        0x4983e909	                               sub r9, 9	       744	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x4001895	     0xf8425fcffff	                            je 0x40014c0	       744	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x400189b	      0x498d7c2409	                      lea rdi, [r12 + 9]	       736	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5
+0x40018a0	      0x48896c2438	             mov qword [rsp + 0x38], rbp	       757	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018a5	    0x49ba00260000	                 movabs r10, 0x100002600	       757	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018af	      0x44896c2430	            mov dword [rsp + 0x30], r13d	       757	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018b4	      0x448944244c	             mov dword [rsp + 0x4c], r8d	       757	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018b9	          0x4c89cd	                             mov rbp, r9	       757	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018bc	         0xf1f4000	                         nop dword [rax]	       757	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018c0	           0xfb607	                   movzx eax, byte [rdi]	       745	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x40018c3	            0x3c20	                            cmp al, 0x20	       745	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x40018c5	     0xf86a5000000	                           jbe 0x4001970	       745	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x40018cb	          0x4989fc	                            mov r12, rdi	       745	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x40018ce	          0x4531ed	                          xor r13d, r13d	       766	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1
+0x40018d1	            0xeb16	                           jmp 0x40018e9	       766	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1
+0x40018d3	       0xf1f440000	                   nop dword [rax + rax]	       766	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1
+0x40018d8	        0x4983c501	                              add r13, 1	       759	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018dc	        0x4983c401	                              add r12, 1	       759	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018e0	          0x4939ed	                            cmp r13, rbp	       756	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018e3	     0xf839f000000	                           jae 0x4001988	       756	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018e9	      0x410fb60424	                   movzx eax, byte [r12]	       756	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018ee	            0x3c20	                            cmp al, 0x20	       756	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018f0	            0x77e6	                            ja 0x40018d8	       756	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018f2	        0x490fa3c2	                             bt r10, rax	       757	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018f6	            0x73e0	                           jae 0x40018d8	       757	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x40018f8	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       762	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	CALL_7
+0x40018fd	          0x4c89ee	                            mov rsi, r13	       762	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	CALL_7
+0x4001900	      0x4c89542428	             mov qword [rsp + 0x28], r10	       762	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	CALL_7
+0x4001905	      0xe800000000	                          call 0x400190a	       762	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	CALL_7
+0x400190a	            0x85c0	                           test eax, eax	       763	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	IF_7
+0x400190c	      0x4c8b542428	            mov r10, qword [rsp + 0x28] 	       763	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	IF_7
+0x4001911	            0x7407	                            je 0x400191a	       763	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	IF_7
+0x4001913	      0x4c3b6c2460	            cmp r13, qword [rsp + 0x60] 	       763	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	IF_7
+0x4001918	            0x7477	                            je 0x4001991	       763	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	IF_7
+0x400191a	          0x4c29ed	                            sub rbp, r13	       767	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1
+0x400191d	          0x4c89e7	                            mov rdi, r12	       766	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1
+0x4001920	          0x4885ed	                           test rbp, rbp	       744	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x4001923	            0x759b	                           jne 0x40018c0	       744	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x4001925	      0x448b6c2430	           mov r13d, dword [rsp + 0x30] 	       744	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x400192a	      0x488b6c2438	            mov rbp, qword [rsp + 0x38] 	       744	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x400192f	      0x448b44244c	            mov r8d, dword [rsp + 0x4c] 	       744	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x4001934	      0xe987fbffff	                           jmp 0x40014c0	       744	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x4001939	        0x488b5008	                mov rdx, qword [rax + 8]	       491	smtp.c	FUNCTION_11	ELSE_1
+0x400193d	          0x4885d2	                           test rdx, rdx	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4001940	     0xf849f000000	                            je 0x40019e5	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4001946	          0x803a00	                       cmp byte [rdx], 0	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4001949	    0x488d05000000	                   lea rax, [0x04001950]	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4001950	        0x480f44d0	                          cmove rdx, rax	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4001954	    0x488d35000000	                   lea rsi, [0x0400195b]	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x400195b	          0x4889ef	                            mov rdi, rbp	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x400195e	            0x31c0	                            xor eax, eax	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4001960	      0xe800000000	                          call 0x4001965	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4001965	      0xe9a5f7ffff	                           jmp 0x400110f	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x400196a	    0x660f1f440000	                    nop word [rax + rax]	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4001970	        0x490fa3c2	                             bt r10, rax	       746	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x4001974	     0xf8351ffffff	                           jae 0x40018cb	       746	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x400197a	        0x4883c701	                              add rdi, 1	       748	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x400197e	        0x4883ed01	                              sub rbp, 1	       749	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x4001982	            0xeb9c	                           jmp 0x4001920	       749	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x4001984	         0xf1f4000	                         nop dword [rax]	       749	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	WHILE_1
+0x4001988	        0x4e8d242f	                    lea r12, [rdi + r13]	       756	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x400198c	      0xe967ffffff	                           jmp 0x40018f8	       756	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	FOR_2
+0x4001991	     0x983dc060000	             or dword [rbx + 0x6dc], eax	       764	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	IF_7
+0x4001997	            0xeb81	                           jmp 0x400191a	       764	smtp.c	FUNCTION_17	ELSE_2	ELSE_4	IF_5	FOR_1	IF_7
+0x4001999	    0x488d15000000	                   lea rdx, [0x040019a0]	       360	smtp.c	FUNCTION_6	CALL_1
+0x40019a0	    0x488d35000000	                   lea rsi, [0x040019a7]	       360	smtp.c	FUNCTION_6	CALL_1
+0x40019a7	            0x31c0	                            xor eax, eax	       360	smtp.c	FUNCTION_6	CALL_1
+0x40019a9	          0x4889ef	                            mov rdi, rbp	       360	smtp.c	FUNCTION_6	CALL_1
+0x40019ac	      0xe800000000	                          call 0x40019b1	       360	smtp.c	FUNCTION_6	CALL_1
+0x40019b1	            0x85c0	                           test eax, eax	       362	smtp.c	FUNCTION_6	IF_1
+0x40019b3	     0xf8529f6ffff	                           jne 0x4000fe2	       362	smtp.c	FUNCTION_6	IF_1
+0x40019b9	    0xc783c0060000	              mov dword [rbx + 0x6c0], 4	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40019c3	      0xe917f9ffff	                           jmp 0x40012df	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40019c8	    0x488d15000000	                   lea rdx, [0x040019cf]	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x40019cf	      0xe92af7ffff	                           jmp 0x40010fe	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x40019d4	    0xc783c0060000	              mov dword [rbx + 0x6c0], 6	       296	smtp.c	ELSE_1	FUNCTION_3
+0x40019de	            0x89c6	                            mov esi, eax	       690	smtp.c	FUNCTION_16	IF_1	CALL_2
+0x40019e0	      0xe9e4f8ffff	                           jmp 0x40012c9	       690	smtp.c	FUNCTION_16	IF_1	CALL_2
+0x40019e5	    0x488d15000000	                   lea rdx, [0x040019ec]	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x40019ec	      0xe963ffffff	                           jmp 0x4001954	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x40019f1	      0xe800000000	                          call 0x40019f6	      1069	smtp.c	FUNCTION_25
+smtp_parse_url_path	SWITCH,0:FOR,0:DO,0:IF,2:CALL,2:WHILE,0:functions,0:ELSE,1	34
+0x4000280	              0x55	                                push rbp	      1506	smtp.c	FUNCTION_40
+0x4000281	              0x53	                                push rbx	      1506	smtp.c	FUNCTION_40
+0x4000282	          0x4889fb	                            mov rbx, rdi	      1506	smtp.c	FUNCTION_40
+0x4000285	    0x4881ec180400	                          sub rsp, 0x418	      1506	smtp.c	FUNCTION_40
+0x400028c	          0x488b3f	                    mov rdi, qword [rdi]	      1508	smtp.c	FUNCTION_40
+0x400028f	    0x64488b042528	                mov rax, qword fs:[0x28]	      1506	smtp.c	FUNCTION_40
+0x4000298	    0x488984240804	            mov qword [rsp + 0x408], rax	      1506	smtp.c	FUNCTION_40
+0x40002a0	            0x31c0	                            xor eax, eax	      1506	smtp.c	FUNCTION_40
+0x40002a2	    0x488bb7185100	          mov rsi, qword [rdi + 0x5118] 	      1510	smtp.c	FUNCTION_40
+0x40002a9	          0x803e00	                       cmp byte [rsi], 0	      1514	smtp.c	FUNCTION_40	IF_1
+0x40002ac	            0x743a	                            je 0x40002e8	      1514	smtp.c	FUNCTION_40	IF_1
+0x40002ae	    0x488d8bc80600	                  lea rcx, [rbx + 0x6c8]	      1522	smtp.c	FUNCTION_40	CALL_2
+0x40002b5	          0x4531c0	                            xor r8d, r8d	      1522	smtp.c	FUNCTION_40	CALL_2
+0x40002b8	            0x31d2	                            xor edx, edx	      1522	smtp.c	FUNCTION_40	CALL_2
+0x40002ba	    0x41b901000000	                              mov r9d, 1	      1522	smtp.c	FUNCTION_40	CALL_2
+0x40002c0	      0xe800000000	                          call 0x40002c5	      1522	smtp.c	FUNCTION_40	CALL_2
+0x40002c5	    0x488b94240804	           mov rdx, qword [rsp + 0x408] 	      1523	smtp.c	FUNCTION_40
+0x40002cd	    0x644833142528	                xor rdx, qword fs:[0x28]	      1523	smtp.c	FUNCTION_40
+0x40002d6	            0x7530	                           jne 0x4000308	      1523	smtp.c	FUNCTION_40
+0x40002d8	    0x4881c4180400	                          add rsp, 0x418	      1523	smtp.c	FUNCTION_40
+0x40002df	              0x5b	                                 pop rbx	      1523	smtp.c	FUNCTION_40
+0x40002e0	              0x5d	                                 pop rbp	      1523	smtp.c	FUNCTION_40
+0x40002e1	              0xc3	                                     ret	      1523	smtp.c	FUNCTION_40
+0x40002e2	    0x660f1f440000	                    nop word [rax + rax]	      1523	smtp.c	FUNCTION_40
+0x40002e8	      0xbe01040000	                          mov esi, 0x401	      1515	smtp.c	FUNCTION_40	IF_1	IF_2	CALL_1
+0x40002ed	          0x4889e7	                            mov rdi, rsp	      1515	smtp.c	FUNCTION_40	IF_1	IF_2	CALL_1
+0x40002f0	      0xe800000000	                          call 0x40002f5	      1515	smtp.c	FUNCTION_40	IF_1	IF_2	CALL_1
+0x40002f5	            0x85c0	                           test eax, eax	      1515	smtp.c	FUNCTION_40	IF_1	IF_2	CALL_1
+0x40002f7	          0x488b3b	                    mov rdi, qword [rbx]	      1515	smtp.c	FUNCTION_40	IF_1	IF_2	CALL_1
+0x40002fa	          0x4889e6	                            mov rsi, rsp	      1516	smtp.c	FUNCTION_40	IF_1	IF_2
+0x40002fd	            0x74af	                            je 0x40002ae	      1515	smtp.c	FUNCTION_40	IF_1	IF_2	CALL_1
+0x40002ff	    0x488d35000000	                   lea rsi, [0x04000306]	      1518	smtp.c	FUNCTION_40	IF_1	ELSE_1
+0x4000306	            0xeba6	                           jmp 0x40002ae	      1518	smtp.c	FUNCTION_40	IF_1	ELSE_1
+0x4000308	      0xe800000000	                          call 0x400030d	      1523	smtp.c	FUNCTION_40
+smtp_do	SWITCH,0:FOR,0:DO,0:IF,1:CALL,2:WHILE,0:functions,0:ELSE,0	322
+0x4000700	            0x4157	                                push r15	      1329	smtp.c	FUNCTION_33
+0x4000702	            0x4156	                                push r14	      1329	smtp.c	FUNCTION_33
+0x4000704	          0x4989ff	                            mov r15, rdi	      1329	smtp.c	FUNCTION_33
+0x4000707	            0x4155	                                push r13	      1329	smtp.c	FUNCTION_33
+0x4000709	            0x4154	                                push r12	      1329	smtp.c	FUNCTION_33
+0x400070b	              0x55	                                push rbp	      1329	smtp.c	FUNCTION_33
+0x400070c	              0x53	                                push rbx	      1329	smtp.c	FUNCTION_33
+0x400070d	          0x4889f5	                            mov rbp, rsi	      1329	smtp.c	FUNCTION_33
+0x4000710	        0x4883ec18	                           sub rsp, 0x18	      1329	smtp.c	FUNCTION_33
+0x4000714	          0x488b3f	                    mov rdi, qword [rdi]	      1329	smtp.c	FUNCTION_33
+0x4000717	          0xc60600	                       mov byte [rsi], 0	      1332	smtp.c	FUNCTION_33
+0x400071a	    0x488bb7600800	           mov rsi, qword [rdi + 0x860] 	      1536	smtp.c	FUNCTION_41
+0x4000721	          0x4885f6	                           test rsi, rsi	      1539	smtp.c	FUNCTION_41	IF_1
+0x4000724	            0x743a	                            je 0x4000760	      1539	smtp.c	FUNCTION_41	IF_1
+0x4000726	    0x488b87e80100	           mov rax, qword [rdi + 0x1e8] 	      1540	smtp.c	FUNCTION_41	CALL_1
+0x400072d	          0x4531c0	                            xor r8d, r8d	      1540	smtp.c	FUNCTION_41	CALL_1
+0x4000730	            0x31d2	                            xor edx, edx	      1540	smtp.c	FUNCTION_41	CALL_1
+0x4000732	    0x41b901000000	                              mov r9d, 1	      1540	smtp.c	FUNCTION_41	CALL_1
+0x4000738	        0x488d4808	                      lea rcx, [rax + 8]	      1540	smtp.c	FUNCTION_41	CALL_1
+0x400073c	      0xe800000000	                          call 0x4000741	      1540	smtp.c	FUNCTION_41	CALL_1
+0x4000741	            0x85c0	                           test eax, eax	      1336	smtp.c	FUNCTION_33	IF_1
+0x4000743	     0xf8427020000	                            je 0x4000970	      1336	smtp.c	FUNCTION_33	IF_1
+0x4000749	        0x4883c418	                           add rsp, 0x18	      1342	smtp.c	FUNCTION_33
+0x400074d	              0x5b	                                 pop rbx	      1342	smtp.c	FUNCTION_33
+0x400074e	              0x5d	                                 pop rbp	      1342	smtp.c	FUNCTION_33
+0x400074f	            0x415c	                                 pop r12	      1342	smtp.c	FUNCTION_33
+0x4000751	            0x415d	                                 pop r13	      1342	smtp.c	FUNCTION_33
+0x4000753	            0x415e	                                 pop r14	      1342	smtp.c	FUNCTION_33
+0x4000755	            0x415f	                                 pop r15	      1342	smtp.c	FUNCTION_33
+0x4000757	              0xc3	                                     ret	      1342	smtp.c	FUNCTION_33
+0x4000758	     0xf1f84000000	                   nop dword [rax + rax]	      1342	smtp.c	FUNCTION_33
+0x4000760	          0x4889fb	                            mov rbx, rdi	      1539	smtp.c	FUNCTION_41	IF_1
+0x4000763	            0x31f6	                            xor esi, esi	      1427	smtp.c	FUNCTION_37	CALL_1
+0x4000765	          0x4889df	                            mov rdi, rbx	      1427	smtp.c	FUNCTION_37	CALL_1
+0x4000768	    0x48c783c00000	mov qword [rbx + 0xc0], 0xffffffffffffffff	      1424	smtp.c	FUNCTION_37
+0x4000773	      0xe800000000	                          call 0x4000778	      1427	smtp.c	FUNCTION_37	CALL_1
+0x4000778	            0x31f6	                            xor esi, esi	      1428	smtp.c	FUNCTION_37	CALL_2
+0x400077a	          0x4889df	                            mov rdi, rbx	      1428	smtp.c	FUNCTION_37	CALL_2
+0x400077d	      0xe800000000	                          call 0x4000782	      1428	smtp.c	FUNCTION_37	CALL_2
+0x4000782	    0x48c7c6ffffff	             mov rsi, 0xffffffffffffffff	      1429	smtp.c	FUNCTION_37	CALL_3
+0x4000789	          0x4889df	                            mov rdi, rbx	      1429	smtp.c	FUNCTION_37	CALL_3
+0x400078c	      0xe800000000	                          call 0x4000791	      1429	smtp.c	FUNCTION_37	CALL_3
+0x4000791	    0x48c7c6ffffff	             mov rsi, 0xffffffffffffffff	      1430	smtp.c	FUNCTION_37	CALL_4
+0x4000798	          0x4889df	                            mov rdi, rbx	      1430	smtp.c	FUNCTION_37	CALL_4
+0x400079b	      0xe800000000	                          call 0x40007a0	      1430	smtp.c	FUNCTION_37	CALL_4
+0x40007a0	          0x4d8b37	                    mov r14, qword [r15]	      1277	smtp.c	FUNCTION_32
+0x40007a3	    0x4180bee10700	               cmp byte [r14 + 0x7e1], 0	      1282	smtp.c	FUNCTION_32	IF_1
+0x40007ab	    0x498b86e80100	           mov rax, qword [r14 + 0x1e8] 	      1278	smtp.c	FUNCTION_32
+0x40007b2	            0x7406	                            je 0x40007ba	      1282	smtp.c	FUNCTION_32	IF_1
+0x40007b4	    0xc70001000000	                      mov dword [rax], 1	      1284	smtp.c	FUNCTION_32	IF_1
+0x40007ba	        0xc6450000	                       mov byte [rbp], 0	      1287	smtp.c	FUNCTION_32
+0x40007be	    0x4180bee20700	               cmp byte [r14 + 0x7e2], 0	      1298	smtp.c	FUNCTION_32	IF_2
+0x40007c6	    0x498b96500a00	           mov rdx, qword [r14 + 0xa50] 	      1290	smtp.c	FUNCTION_32
+0x40007cd	        0xc6402001	                mov byte [rax + 0x20], 1	      1294	smtp.c	FUNCTION_32
+0x40007d1	    0x48c740180200	               mov qword [rax + 0x18], 2	      1295	smtp.c	FUNCTION_32
+0x40007d9	        0x48895010	             mov qword [rax + 0x10], rdx	      1290	smtp.c	FUNCTION_32
+0x40007dd	     0xf85f5000000	                           jne 0x40008d8	      1298	smtp.c	FUNCTION_32	IF_2
+0x40007e3	    0x458b8ec80300	           mov r9d, dword [r14 + 0x3c8] 	      1298	smtp.c	FUNCTION_32	IF_2
+0x40007ea	          0x4585c9	                           test r9d, r9d	      1298	smtp.c	FUNCTION_32	IF_2
+0x40007ed	     0xf85e5000000	                           jne 0x40008d8	      1298	smtp.c	FUNCTION_32	IF_2
+0x40007f3	          0x4885d2	                           test rdx, rdx	       484	smtp.c	FUNCTION_11	IF_1
+0x40007f6	     0xf84a4030000	                            je 0x4000ba0	       484	smtp.c	FUNCTION_11	IF_1
+0x40007fc	          0x488b0a	                    mov rcx, qword [rdx]	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x40007ff	        0x488b5008	                mov rdx, qword [rax + 8]	       486	smtp.c	FUNCTION_11	IF_1
+0x4000803	          0x4885d2	                           test rdx, rdx	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x4000806	     0xf84d4030000	                            je 0x4000be0	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x400080c	          0x803a00	                       cmp byte [rdx], 0	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x400080f	    0x488d05000000	                   lea rax, [0x04000816]	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x4000816	        0x480f44d0	                          cmove rdx, rax	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x400081a	    0x498d9f500600	                  lea rbx, [r15 + 0x650]	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x4000821	    0x488d35000000	                   lea rsi, [0x04000828]	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x4000828	            0x31c0	                            xor eax, eax	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x400082a	          0x4889df	                            mov rdi, rbx	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x400082d	      0xe800000000	                          call 0x4000832	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x4000832	            0x85c0	                           test eax, eax	       494	smtp.c	FUNCTION_11	IF_2
+0x4000834	     0xf850fffffff	                           jne 0x4000749	       494	smtp.c	FUNCTION_11	IF_2
+0x400083a	    0x41c787c00600	              mov dword [r15 + 0x6c0], 7	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4000845	    0x498b87e00300	           mov rax, qword [r15 + 0x3e0] 	      1077	smtp.c	FUNCTION_26	IF_1
+0x400084c	    0xf68084000000	               test byte [rax + 0x84], 1	      1077	smtp.c	FUNCTION_26	IF_1
+0x4000853	            0x740e	                            je 0x4000863	      1077	smtp.c	FUNCTION_26	IF_1
+0x4000855	    0x4180bfc40600	               cmp byte [r15 + 0x6c4], 0	      1077	smtp.c	FUNCTION_26	IF_1
+0x400085d	     0xf84e5020000	                            je 0x4000b48	      1077	smtp.c	FUNCTION_26	IF_1
+0x4000863	            0x31f6	                            xor esi, esi	      1083	smtp.c	FUNCTION_26	CALL_2
+0x4000865	          0x4889df	                            mov rdi, rbx	      1083	smtp.c	FUNCTION_26	CALL_2
+0x4000868	      0xe800000000	                          call 0x400086d	      1083	smtp.c	FUNCTION_26	CALL_2
+0x400086d	    0x418bb7c00600	           mov esi, dword [r15 + 0x6c0] 	      1084	smtp.c	FUNCTION_26
+0x4000874	            0x85f6	                           test esi, esi	      1084	smtp.c	FUNCTION_26
+0x4000876	           0xf94c2	                                 sete dl	      1084	smtp.c	FUNCTION_26
+0x4000879	            0x85c0	                           test eax, eax	      1436	smtp.c	FUNCTION_37	IF_1
+0x400087b	          0x885500	                      mov byte [rbp], dl	      1084	smtp.c	FUNCTION_26
+0x400087e	     0xf85c5feffff	                           jne 0x4000749	      1436	smtp.c	FUNCTION_37	IF_1
+0x4000884	            0x31c0	                            xor eax, eax	      1436	smtp.c	FUNCTION_37	IF_1
+0x4000886	            0x84d2	                             test dl, dl	      1436	smtp.c	FUNCTION_37	IF_1
+0x4000888	     0xf84bbfeffff	                            je 0x4000749	      1436	smtp.c	FUNCTION_37	IF_1
+0x400088e	          0x498b17	                    mov rdx, qword [r15]	      1380	smtp.c	FUNCTION_35
+0x4000891	    0x488b92e80100	           mov rdx, qword [rdx + 0x1e8] 	      1384	smtp.c	FUNCTION_35	IF_1
+0x4000898	            0x8b0a	                    mov ecx, dword [rdx]	      1384	smtp.c	FUNCTION_35	IF_1
+0x400089a	            0x85c9	                           test ecx, ecx	      1384	smtp.c	FUNCTION_35	IF_1
+0x400089c	     0xf84a7feffff	                            je 0x4000749	      1384	smtp.c	FUNCTION_35	IF_1
+0x40008a2	        0x8944240c	              mov dword [rsp + 0xc], eax	      1384	smtp.c	FUNCTION_35	IF_1
+0x40008a6	        0x4883ec08	                              sub rsp, 8	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008aa	    0x41b9ffffffff	                     mov r9d, 0xffffffff	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008b0	            0x6a00	                                  push 0	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008b2	    0x48c7c2ffffff	             mov rdx, 0xffffffffffffffff	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008b9	          0x4531c0	                            xor r8d, r8d	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008bc	            0x31c9	                            xor ecx, ecx	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008be	          0x4489ce	                            mov esi, r9d	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008c1	          0x4c89ff	                            mov rdi, r15	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008c4	      0xe800000000	                          call 0x40008c9	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008c9	              0x58	                                 pop rax	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008ca	              0x5a	                                 pop rdx	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008cb	        0x8b44240c	              mov eax, dword [rsp + 0xc]	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008cf	      0xe975feffff	                           jmp 0x4000749	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008d4	         0xf1f4000	                         nop dword [rax]	      1386	smtp.c	FUNCTION_35	CALL_1
+0x40008d8	          0x4885d2	                           test rdx, rdx	      1298	smtp.c	FUNCTION_32	IF_2
+0x40008db	     0xf84bf020000	                            je 0x4000ba0	      1298	smtp.c	FUNCTION_32	IF_2
+0x40008e1	    0x498bb6e00900	           mov rsi, qword [r14 + 0x9e0] 	       515	smtp.c	FUNCTION_12	IF_1
+0x40008e8	          0x4885f6	                           test rsi, rsi	       515	smtp.c	FUNCTION_12	IF_1
+0x40008eb	     0xf84df010000	                            je 0x4000ad0	       515	smtp.c	FUNCTION_12	IF_1
+0x40008f1	          0x803e3c	                    cmp byte [rsi], 0x3c	       518	smtp.c	FUNCTION_12	ELSE_1	IF_2
+0x40008f4	     0xf846e010000	                            je 0x4000a68	       518	smtp.c	FUNCTION_12	ELSE_1	IF_2
+0x40008fa	    0x488d3d000000	                   lea rdi, [0x04000901]	       521	smtp.c	FUNCTION_12	CALL_3
+0x4000901	            0x31c0	                            xor eax, eax	       521	smtp.c	FUNCTION_12	CALL_3
+0x4000903	      0xe800000000	                          call 0x4000908	       521	smtp.c	FUNCTION_12	CALL_3
+0x4000908	          0x4989c4	                            mov r12, rax	       521	smtp.c	FUNCTION_12	CALL_3
+0x400090b	          0x4d85e4	                           test r12, r12	       523	smtp.c	FUNCTION_12	IF_3
+0x400090e	      0xb81b000000	                           mov eax, 0x1b	       524	smtp.c	FUNCTION_12	IF_3
+0x4000913	     0xf8430feffff	                            je 0x4000749	       523	smtp.c	FUNCTION_12	IF_3
+0x4000919	    0x498bb6e80900	           mov rsi, qword [r14 + 0x9e8] 	       527	smtp.c	FUNCTION_12	IF_4
+0x4000920	          0x4885f6	                           test rsi, rsi	       527	smtp.c	FUNCTION_12	IF_4
+0x4000923	            0x745b	                            je 0x4000980	       527	smtp.c	FUNCTION_12	IF_4
+0x4000925	    0x458b87e40600	           mov r8d, dword [r15 + 0x6e4] 	       527	smtp.c	FUNCTION_12	IF_4
+0x400092c	          0x4585c0	                           test r8d, r8d	       527	smtp.c	FUNCTION_12	IF_4
+0x400092f	            0x744f	                            je 0x4000980	       527	smtp.c	FUNCTION_12	IF_4
+0x4000931	          0x803e00	                       cmp byte [rsi], 0	       528	smtp.c	FUNCTION_12	IF_4	IF_5
+0x4000934	     0xf8546010000	                           jne 0x4000a80	       528	smtp.c	FUNCTION_12	IF_4	IF_5
+0x400093a	    0x488b05000000	            mov rax, qword [0x04000941] 	       532	smtp.c	FUNCTION_12	IF_4	CALL_5
+0x4000941	    0x488d3d000000	                   lea rdi, [0x04000948]	       532	smtp.c	FUNCTION_12	IF_4	CALL_5
+0x4000948	            0xff10	                        call qword [rax]	       532	smtp.c	FUNCTION_12	IF_4	CALL_5
+0x400094a	          0x4989c5	                            mov r13, rax	       532	smtp.c	FUNCTION_12	IF_4	CALL_5
+0x400094d	          0x4d85ed	                           test r13, r13	       534	smtp.c	FUNCTION_12	IF_4	IF_6
+0x4000950	            0x7531	                           jne 0x4000983	       534	smtp.c	FUNCTION_12	IF_4	IF_6
+0x4000952	    0x488b05000000	            mov rax, qword [0x04000959] 	       535	smtp.c	FUNCTION_12	IF_4	IF_6	CALL_6
+0x4000959	          0x4c89e7	                            mov rdi, r12	       535	smtp.c	FUNCTION_12	IF_4	IF_6	CALL_6
+0x400095c	            0xff10	                        call qword [rax]	       535	smtp.c	FUNCTION_12	IF_4	IF_6	CALL_6
+0x400095e	      0xb81b000000	                           mov eax, 0x1b	       537	smtp.c	FUNCTION_12	IF_4	IF_6
+0x4000963	      0xe9e1fdffff	                           jmp 0x4000749	       537	smtp.c	FUNCTION_12	IF_4	IF_6
+0x4000968	     0xf1f84000000	                   nop dword [rax + rax]	       537	smtp.c	FUNCTION_12	IF_4	IF_6
+0x4000970	          0x498b1f	                    mov rbx, qword [r15]	       537	smtp.c	FUNCTION_12	IF_4	IF_6
+0x4000973	      0xe9ebfdffff	                           jmp 0x4000763	       537	smtp.c	FUNCTION_12	IF_4	IF_6
+0x4000978	     0xf1f84000000	                   nop dword [rax + rax]	       537	smtp.c	FUNCTION_12	IF_4	IF_6
+0x4000980	          0x4531ed	                          xor r13d, r13d	       509	smtp.c	FUNCTION_12
+0x4000983	    0x418bbec80300	           mov edi, dword [r14 + 0x3c8] 	       542	smtp.c	FUNCTION_12	IF_7
+0x400098a	            0x85ff	                           test edi, edi	       542	smtp.c	FUNCTION_12	IF_7
+0x400098c	     0xf855e010000	                           jne 0x4000af0	       542	smtp.c	FUNCTION_12	IF_7
+0x4000992	    0x4180bff10600	               cmp byte [r15 + 0x6f1], 0	       574	smtp.c	FUNCTION_12	IF_12
+0x400099a	            0x745c	                            je 0x40009f8	       574	smtp.c	FUNCTION_12	IF_12
+0x400099c	    0x498bb6505100	          mov rsi, qword [r14 + 0x5150] 	       574	smtp.c	FUNCTION_12	IF_12
+0x40009a3	          0x4885f6	                           test rsi, rsi	       574	smtp.c	FUNCTION_12	IF_12
+0x40009a6	     0xf8ef4000000	                           jle 0x4000aa0	       574	smtp.c	FUNCTION_12	IF_12
+0x40009ac	    0x488d3d000000	                   lea rdi, [0x040009b3]	       575	smtp.c	FUNCTION_12	IF_12	CALL_15
+0x40009b3	            0x31c0	                            xor eax, eax	       575	smtp.c	FUNCTION_12	IF_12	CALL_15
+0x40009b5	      0xe800000000	                          call 0x40009ba	       575	smtp.c	FUNCTION_12	IF_12	CALL_15
+0x40009ba	          0x4885c0	                           test rax, rax	       577	smtp.c	FUNCTION_12	IF_12	IF_13
+0x40009bd	          0x4989c6	                            mov r14, rax	       575	smtp.c	FUNCTION_12	IF_12	CALL_15
+0x40009c0	     0xf8477020000	                            je 0x4000c3d	       577	smtp.c	FUNCTION_12	IF_12	IF_13
+0x40009c6	          0x4d85ed	                           test r13, r13	       592	smtp.c	FUNCTION_12	ELSE_5	IF_16
+0x40009c9	     0xf84a9010000	                            je 0x4000b78	       592	smtp.c	FUNCTION_12	ELSE_5	IF_16
+0x40009cf	    0x498d9f500600	                  lea rbx, [r15 + 0x650]	       593	smtp.c	FUNCTION_12	ELSE_5	IF_16	CALL_20
+0x40009d6	    0x488d35000000	                   lea rsi, [0x040009dd]	       593	smtp.c	FUNCTION_12	ELSE_5	IF_16	CALL_20
+0x40009dd	          0x4d89f0	                             mov r8, r14	       593	smtp.c	FUNCTION_12	ELSE_5	IF_16	CALL_20
+0x40009e0	          0x4c89e9	                            mov rcx, r13	       593	smtp.c	FUNCTION_12	ELSE_5	IF_16	CALL_20
+0x40009e3	          0x4c89e2	                            mov rdx, r12	       593	smtp.c	FUNCTION_12	ELSE_5	IF_16	CALL_20
+0x40009e6	            0x31c0	                            xor eax, eax	       593	smtp.c	FUNCTION_12	ELSE_5	IF_16	CALL_20
+0x40009e8	          0x4889df	                            mov rdi, rbx	       593	smtp.c	FUNCTION_12	ELSE_5	IF_16	CALL_20
+0x40009eb	      0xe800000000	                          call 0x40009f0	       593	smtp.c	FUNCTION_12	ELSE_5	IF_16	CALL_20
+0x40009f0	            0xeb2d	                           jmp 0x4000a1f	       593	smtp.c	FUNCTION_12	ELSE_5	IF_16	CALL_20
+0x40009f2	    0x660f1f440000	                    nop word [rax + rax]	       593	smtp.c	FUNCTION_12	ELSE_5	IF_16	CALL_20
+0x40009f8	          0x4d85ed	                           test r13, r13	       586	smtp.c	FUNCTION_12	IF_14
+0x40009fb	     0xf85a8000000	                           jne 0x4000aa9	       586	smtp.c	FUNCTION_12	IF_14
+0x4000a01	    0x498d9f500600	                  lea rbx, [r15 + 0x650]	       587	smtp.c	FUNCTION_12	IF_14	CALL_18
+0x4000a08	    0x488d35000000	                   lea rsi, [0x04000a0f]	       587	smtp.c	FUNCTION_12	IF_14	CALL_18
+0x4000a0f	          0x4c89e2	                            mov rdx, r12	       587	smtp.c	FUNCTION_12	IF_14	CALL_18
+0x4000a12	            0x31c0	                            xor eax, eax	       587	smtp.c	FUNCTION_12	IF_14	CALL_18
+0x4000a14	          0x4531f6	                          xor r14d, r14d	       587	smtp.c	FUNCTION_12	IF_14	CALL_18
+0x4000a17	          0x4889df	                            mov rdi, rbx	       587	smtp.c	FUNCTION_12	IF_14	CALL_18
+0x4000a1a	      0xe800000000	                          call 0x4000a1f	       587	smtp.c	FUNCTION_12	IF_14	CALL_18
+0x4000a1f	        0x8944240c	              mov dword [rsp + 0xc], eax	       587	smtp.c	FUNCTION_12	IF_14	CALL_18
+0x4000a23	    0x488b05000000	            mov rax, qword [0x04000a2a] 	       599	smtp.c	FUNCTION_12	CALL_22
+0x4000a2a	          0x4c89e7	                            mov rdi, r12	       599	smtp.c	FUNCTION_12	CALL_22
+0x4000a2d	            0xff10	                        call qword [rax]	       599	smtp.c	FUNCTION_12	CALL_22
+0x4000a2f	    0x488b05000000	            mov rax, qword [0x04000a36] 	       600	smtp.c	FUNCTION_12	CALL_23
+0x4000a36	          0x4c89ef	                            mov rdi, r13	       600	smtp.c	FUNCTION_12	CALL_23
+0x4000a39	            0xff10	                        call qword [rax]	       600	smtp.c	FUNCTION_12	CALL_23
+0x4000a3b	    0x488b05000000	            mov rax, qword [0x04000a42] 	       601	smtp.c	FUNCTION_12	CALL_24
+0x4000a42	          0x4c89f7	                            mov rdi, r14	       601	smtp.c	FUNCTION_12	CALL_24
+0x4000a45	            0xff10	                        call qword [rax]	       601	smtp.c	FUNCTION_12	CALL_24
+0x4000a47	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       603	smtp.c	FUNCTION_12	IF_17
+0x4000a4b	            0x85c0	                           test eax, eax	       603	smtp.c	FUNCTION_12	IF_17
+0x4000a4d	     0xf85f6fcffff	                           jne 0x4000749	       603	smtp.c	FUNCTION_12	IF_17
+0x4000a53	    0x41c787c00600	              mov dword [r15 + 0x6c0], 8	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4000a5e	      0xe9e2fdffff	                           jmp 0x4000845	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4000a63	       0xf1f440000	                   nop dword [rax + rax]	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4000a68	    0x488d3d000000	                   lea rdi, [0x04000a6f]	       519	smtp.c	FUNCTION_12	ELSE_1	IF_2
+0x4000a6f	            0x31c0	                            xor eax, eax	       519	smtp.c	FUNCTION_12	ELSE_1	IF_2
+0x4000a71	      0xe800000000	                          call 0x4000a76	       519	smtp.c	FUNCTION_12	ELSE_1	IF_2
+0x4000a76	          0x4989c4	                            mov r12, rax	       519	smtp.c	FUNCTION_12	ELSE_1	IF_2
+0x4000a79	      0xe98dfeffff	                           jmp 0x400090b	       519	smtp.c	FUNCTION_12	ELSE_1	IF_2
+0x4000a7e	            0x6690	                                     nop	       519	smtp.c	FUNCTION_12	ELSE_1	IF_2
+0x4000a80	    0x488d3d000000	                   lea rdi, [0x04000a87]	       529	smtp.c	FUNCTION_12	IF_4	CALL_4
+0x4000a87	            0x31c0	                            xor eax, eax	       529	smtp.c	FUNCTION_12	IF_4	CALL_4
+0x4000a89	      0xe800000000	                          call 0x4000a8e	       529	smtp.c	FUNCTION_12	IF_4	CALL_4
+0x4000a8e	          0x4989c5	                            mov r13, rax	       529	smtp.c	FUNCTION_12	IF_4	CALL_4
+0x4000a91	      0xe9b7feffff	                           jmp 0x400094d	       529	smtp.c	FUNCTION_12	IF_4	CALL_4
+0x4000a96	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       529	smtp.c	FUNCTION_12	IF_4	CALL_4
+0x4000aa0	          0x4d85ed	                           test r13, r13	       586	smtp.c	FUNCTION_12	IF_14
+0x4000aa3	     0xf8458ffffff	                            je 0x4000a01	       586	smtp.c	FUNCTION_12	IF_14
+0x4000aa9	    0x498d9f500600	                  lea rbx, [r15 + 0x650]	       590	smtp.c	FUNCTION_12	ELSE_4	IF_15	CALL_19
+0x4000ab0	    0x488d35000000	                   lea rsi, [0x04000ab7]	       590	smtp.c	FUNCTION_12	ELSE_4	IF_15	CALL_19
+0x4000ab7	          0x4c89e9	                            mov rcx, r13	       590	smtp.c	FUNCTION_12	ELSE_4	IF_15	CALL_19
+0x4000aba	          0x4c89e2	                            mov rdx, r12	       590	smtp.c	FUNCTION_12	ELSE_4	IF_15	CALL_19
+0x4000abd	            0x31c0	                            xor eax, eax	       590	smtp.c	FUNCTION_12	ELSE_4	IF_15	CALL_19
+0x4000abf	          0x4531f6	                          xor r14d, r14d	       590	smtp.c	FUNCTION_12	ELSE_4	IF_15	CALL_19
+0x4000ac2	          0x4889df	                            mov rdi, rbx	       590	smtp.c	FUNCTION_12	ELSE_4	IF_15	CALL_19
+0x4000ac5	      0xe800000000	                          call 0x4000aca	       590	smtp.c	FUNCTION_12	ELSE_4	IF_15	CALL_19
+0x4000aca	      0xe950ffffff	                           jmp 0x4000a1f	       590	smtp.c	FUNCTION_12	ELSE_4	IF_15	CALL_19
+0x4000acf	              0x90	                                     nop	       590	smtp.c	FUNCTION_12	ELSE_4	IF_15	CALL_19
+0x4000ad0	    0x488b05000000	            mov rax, qword [0x04000ad7] 	       517	smtp.c	FUNCTION_12	CALL_1
+0x4000ad7	    0x488d3d000000	                   lea rdi, [0x04000ade]	       517	smtp.c	FUNCTION_12	CALL_1
+0x4000ade	            0xff10	                        call qword [rax]	       517	smtp.c	FUNCTION_12	CALL_1
+0x4000ae0	          0x4989c4	                            mov r12, rax	       517	smtp.c	FUNCTION_12	CALL_1
+0x4000ae3	      0xe923feffff	                           jmp 0x400090b	       517	smtp.c	FUNCTION_12	CALL_1
+0x4000ae8	     0xf1f84000000	                   nop dword [rax + rax]	       517	smtp.c	FUNCTION_12	CALL_1
+0x4000af0	    0x4183a6300400	     and dword [r14 + 0x430], 0xfffffffd	       544	smtp.c	FUNCTION_12	IF_7
+0x4000af8	    0x498d9eb00300	                  lea rbx, [r14 + 0x3b0]	       547	smtp.c	FUNCTION_12	IF_7	CALL_7
+0x4000aff	    0x498bb6980300	           mov rsi, qword [r14 + 0x398] 	       547	smtp.c	FUNCTION_12	IF_7	CALL_7
+0x4000b06	            0x31d2	                            xor edx, edx	       547	smtp.c	FUNCTION_12	IF_7	CALL_7
+0x4000b08	          0x4889df	                            mov rdi, rbx	       547	smtp.c	FUNCTION_12	IF_7	CALL_7
+0x4000b0b	      0xe800000000	                          call 0x4000b10	       547	smtp.c	FUNCTION_12	IF_7	CALL_7
+0x4000b10	            0x31c9	                            xor ecx, ecx	       548	smtp.c	FUNCTION_12	IF_7	CALL_8
+0x4000b12	            0x31d2	                            xor edx, edx	       548	smtp.c	FUNCTION_12	IF_7	CALL_8
+0x4000b14	            0x31f6	                            xor esi, esi	       548	smtp.c	FUNCTION_12	IF_7	CALL_8
+0x4000b16	          0x4889df	                            mov rdi, rbx	       548	smtp.c	FUNCTION_12	IF_7	CALL_8
+0x4000b19	      0xe800000000	                          call 0x4000b1e	       548	smtp.c	FUNCTION_12	IF_7	CALL_8
+0x4000b1e	            0x85c0	                           test eax, eax	       551	smtp.c	FUNCTION_12	IF_7	IF_8
+0x4000b20	     0xf84ca000000	                            je 0x4000bf0	       551	smtp.c	FUNCTION_12	IF_7	IF_8
+0x4000b26	    0x488b1d000000	            mov rbx, qword [0x04000b2d] 	       561	smtp.c	FUNCTION_12	IF_7	IF_11	CALL_12
+0x4000b2d	        0x8944240c	              mov dword [rsp + 0xc], eax	       561	smtp.c	FUNCTION_12	IF_7	IF_11	CALL_12
+0x4000b31	          0x4c89e7	                            mov rdi, r12	       561	smtp.c	FUNCTION_12	IF_7	IF_11	CALL_12
+0x4000b34	            0xff13	                        call qword [rbx]	       561	smtp.c	FUNCTION_12	IF_7	IF_11	CALL_12
+0x4000b36	          0x4c89ef	                            mov rdi, r13	       562	smtp.c	FUNCTION_12	IF_7	IF_11	CALL_13
+0x4000b39	            0xff13	                        call qword [rbx]	       562	smtp.c	FUNCTION_12	IF_7	IF_11	CALL_13
+0x4000b3b	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       562	smtp.c	FUNCTION_12	IF_7	IF_11	CALL_13
+0x4000b3f	      0xe905fcffff	                           jmp 0x4000749	       562	smtp.c	FUNCTION_12	IF_7	IF_11	CALL_13
+0x4000b44	         0xf1f4000	                         nop dword [rax]	       562	smtp.c	FUNCTION_12	IF_7	IF_11	CALL_13
+0x4000b48	    0x498d97c40600	                  lea rdx, [r15 + 0x6c4]	      1078	smtp.c	FUNCTION_26	IF_1	CALL_1
+0x4000b4f	            0x31f6	                            xor esi, esi	      1078	smtp.c	FUNCTION_26	IF_1	CALL_1
+0x4000b51	          0x4c89ff	                            mov rdi, r15	      1078	smtp.c	FUNCTION_26	IF_1	CALL_1
+0x4000b54	      0xe800000000	                          call 0x4000b59	      1078	smtp.c	FUNCTION_26	IF_1	CALL_1
+0x4000b59	            0x85c0	                           test eax, eax	      1079	smtp.c	FUNCTION_26	IF_1	IF_2
+0x4000b5b	     0xf85e8fbffff	                           jne 0x4000749	      1079	smtp.c	FUNCTION_26	IF_1	IF_2
+0x4000b61	    0x4180bfc40600	               cmp byte [r15 + 0x6c4], 0	      1079	smtp.c	FUNCTION_26	IF_1	IF_2
+0x4000b69	     0xf85f4fcffff	                           jne 0x4000863	      1079	smtp.c	FUNCTION_26	IF_1	IF_2
+0x4000b6f	         0xfb65500	                   movzx edx, byte [rbp]	      1079	smtp.c	FUNCTION_26	IF_1	IF_2
+0x4000b73	      0xe90cfdffff	                           jmp 0x4000884	      1079	smtp.c	FUNCTION_26	IF_1	IF_2
+0x4000b78	    0x498d9f500600	                  lea rbx, [r15 + 0x650]	       596	smtp.c	FUNCTION_12	ELSE_6	CALL_21
+0x4000b7f	    0x488d35000000	                   lea rsi, [0x04000b86]	       596	smtp.c	FUNCTION_12	ELSE_6	CALL_21
+0x4000b86	          0x4c89f1	                            mov rcx, r14	       596	smtp.c	FUNCTION_12	ELSE_6	CALL_21
+0x4000b89	          0x4c89e2	                            mov rdx, r12	       596	smtp.c	FUNCTION_12	ELSE_6	CALL_21
+0x4000b8c	            0x31c0	                            xor eax, eax	       596	smtp.c	FUNCTION_12	ELSE_6	CALL_21
+0x4000b8e	          0x4889df	                            mov rdi, rbx	       596	smtp.c	FUNCTION_12	ELSE_6	CALL_21
+0x4000b91	      0xe800000000	                          call 0x4000b96	       596	smtp.c	FUNCTION_12	ELSE_6	CALL_21
+0x4000b96	      0xe984feffff	                           jmp 0x4000a1f	       596	smtp.c	FUNCTION_12	ELSE_6	CALL_21
+0x4000b9b	       0xf1f440000	                   nop dword [rax + rax]	       596	smtp.c	FUNCTION_12	ELSE_6	CALL_21
+0x4000ba0	        0x488b5008	                mov rdx, qword [rax + 8]	       491	smtp.c	FUNCTION_11	ELSE_1
+0x4000ba4	          0x4885d2	                           test rdx, rdx	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000ba7	     0xf84ab000000	                            je 0x4000c58	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000bad	          0x803a00	                       cmp byte [rdx], 0	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000bb0	    0x488d05000000	                   lea rax, [0x04000bb7]	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000bb7	        0x480f44d0	                          cmove rdx, rax	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000bbb	    0x498d9f500600	                  lea rbx, [r15 + 0x650]	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000bc2	    0x488d35000000	                   lea rsi, [0x04000bc9]	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000bc9	            0x31c0	                            xor eax, eax	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000bcb	          0x4889df	                            mov rdi, rbx	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000bce	      0xe800000000	                          call 0x4000bd3	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000bd3	      0xe95afcffff	                           jmp 0x4000832	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000bd8	     0xf1f84000000	                   nop dword [rax + rax]	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000be0	    0x488d15000000	                   lea rdx, [0x04000be7]	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x4000be7	      0xe92efcffff	                           jmp 0x400081a	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x4000bec	         0xf1f4000	                         nop dword [rax]	       485	smtp.c	FUNCTION_11	IF_1	CALL_1
+0x4000bf0	    0x488d35000000	                   lea rsi, [0x04000bf7]	       552	smtp.c	FUNCTION_12	IF_7	IF_8	IF_9	CALL_9
+0x4000bf7	          0x4c89ff	                            mov rdi, r15	       552	smtp.c	FUNCTION_12	IF_7	IF_8	IF_9	CALL_9
+0x4000bfa	      0xe800000000	                          call 0x4000bff	       552	smtp.c	FUNCTION_12	IF_7	IF_8	IF_9	CALL_9
+0x4000bff	          0x4885c0	                           test rax, rax	       552	smtp.c	FUNCTION_12	IF_7	IF_8	IF_9	CALL_9
+0x4000c02	            0x7460	                            je 0x4000c64	       552	smtp.c	FUNCTION_12	IF_7	IF_8	IF_9	CALL_9
+0x4000c04	          0x4889df	                            mov rdi, rbx	       558	smtp.c	FUNCTION_12	IF_7	CALL_11
+0x4000c07	      0xe800000000	                          call 0x4000c0c	       558	smtp.c	FUNCTION_12	IF_7	CALL_11
+0x4000c0c	            0x85c0	                           test eax, eax	       560	smtp.c	FUNCTION_12	IF_7	IF_11
+0x4000c0e	     0xf8512ffffff	                           jne 0x4000b26	       560	smtp.c	FUNCTION_12	IF_7	IF_11
+0x4000c14	          0x4889df	                            mov rdi, rbx	       566	smtp.c	FUNCTION_12	IF_7	CALL_14
+0x4000c17	      0xe800000000	                          call 0x4000c1c	       566	smtp.c	FUNCTION_12	IF_7	CALL_14
+0x4000c1c	    0x498986505100	          mov qword [r14 + 0x5150], rax 	       566	smtp.c	FUNCTION_12	IF_7	CALL_14
+0x4000c23	    0x488b05000000	            mov rax, qword [0x04000c2a] 	       569	smtp.c	FUNCTION_12	IF_7
+0x4000c2a	    0x49899e705100	          mov qword [r14 + 0x5170], rbx 	       570	smtp.c	FUNCTION_12	IF_7
+0x4000c31	    0x498986685100	          mov qword [r14 + 0x5168], rax 	       569	smtp.c	FUNCTION_12	IF_7
+0x4000c38	      0xe955fdffff	                           jmp 0x4000992	       569	smtp.c	FUNCTION_12	IF_7
+0x4000c3d	    0x488b1d000000	            mov rbx, qword [0x04000c44] 	       578	smtp.c	FUNCTION_12	IF_12	IF_13	CALL_16
+0x4000c44	          0x4c89e7	                            mov rdi, r12	       578	smtp.c	FUNCTION_12	IF_12	IF_13	CALL_16
+0x4000c47	            0xff13	                        call qword [rbx]	       578	smtp.c	FUNCTION_12	IF_12	IF_13	CALL_16
+0x4000c49	          0x4c89ef	                            mov rdi, r13	       579	smtp.c	FUNCTION_12	IF_12	IF_13	CALL_17
+0x4000c4c	            0xff13	                        call qword [rbx]	       579	smtp.c	FUNCTION_12	IF_12	IF_13	CALL_17
+0x4000c4e	      0xb81b000000	                           mov eax, 0x1b	       581	smtp.c	FUNCTION_12	IF_12	IF_13
+0x4000c53	      0xe9f1faffff	                           jmp 0x4000749	       581	smtp.c	FUNCTION_12	IF_12	IF_13
+0x4000c58	    0x488d15000000	                   lea rdx, [0x04000c5f]	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000c5f	      0xe957ffffff	                           jmp 0x4000bbb	       490	smtp.c	FUNCTION_11	ELSE_1	CALL_2
+0x4000c64	    0x498dbe000400	                  lea rdi, [r14 + 0x400]	       553	smtp.c	FUNCTION_12	IF_7	IF_8	IF_9	CALL_10
+0x4000c6b	    0x488d35000000	                   lea rsi, [0x04000c72]	       553	smtp.c	FUNCTION_12	IF_7	IF_8	IF_9	CALL_10
+0x4000c72	            0x31c0	                            xor eax, eax	       553	smtp.c	FUNCTION_12	IF_7	IF_8	IF_9	CALL_10
+0x4000c74	      0xe800000000	                          call 0x4000c79	       553	smtp.c	FUNCTION_12	IF_7	IF_8	IF_9	CALL_10
+0x4000c79	            0x85c0	                           test eax, eax	       557	smtp.c	FUNCTION_12	IF_7	IF_10
+0x4000c7b	            0x7487	                            je 0x4000c04	       557	smtp.c	FUNCTION_12	IF_7	IF_10
+0x4000c7d	      0xe9a4feffff	                           jmp 0x4000b26	       557	smtp.c	FUNCTION_12	IF_7	IF_10
+smtp_continue_auth	SWITCH,0:FOR,0:DO,0:IF,0:CALL,1:WHILE,0:functions,0:ELSE,0	5
+0x4000090	          0x4889f2	                            mov rdx, rsi	       428	smtp.c	FUNCTION_9
+0x4000093	    0x488d35000000	                   lea rsi, [0x0400009a]	       431	smtp.c	FUNCTION_9	CALL_1
+0x400009a	    0x4881c7500600	                          add rdi, 0x650	       431	smtp.c	FUNCTION_9	CALL_1
+0x40000a1	            0x31c0	                            xor eax, eax	       431	smtp.c	FUNCTION_9	CALL_1
+0x40000a3	      0xe900000000	                           jmp 0x40000a8	       431	smtp.c	FUNCTION_9	CALL_1
+smtp_done	SWITCH,0:FOR,0:DO,0:IF,7:CALL,10:WHILE,0:functions,0:ELSE,3	121
+0x4000310	            0x4157	                                push r15	      1184	smtp.c	FUNCTION_31
+0x4000312	            0x4156	                                push r14	      1184	smtp.c	FUNCTION_31
+0x4000314	            0x4155	                                push r13	      1184	smtp.c	FUNCTION_31
+0x4000316	            0x4154	                                push r12	      1184	smtp.c	FUNCTION_31
+0x4000318	              0x55	                                push rbp	      1184	smtp.c	FUNCTION_31
+0x4000319	              0x53	                                push rbx	      1184	smtp.c	FUNCTION_31
+0x400031a	        0x4883ec28	                           sub rsp, 0x28	      1184	smtp.c	FUNCTION_31
+0x400031e	          0x4c8b2f	                    mov r13, qword [rdi]	      1186	smtp.c	FUNCTION_31
+0x4000321	    0x64488b042528	                mov rax, qword fs:[0x28]	      1184	smtp.c	FUNCTION_31
+0x400032a	      0x4889442418	             mov qword [rsp + 0x18], rax	      1184	smtp.c	FUNCTION_31
+0x400032f	            0x31c0	                            xor eax, eax	      1184	smtp.c	FUNCTION_31
+0x4000331	    0x498bade80100	           mov rbp, qword [r13 + 0x1e8] 	      1187	smtp.c	FUNCTION_31
+0x4000338	          0x4885ed	                           test rbp, rbp	      1195	smtp.c	FUNCTION_31	IF_1
+0x400033b	     0xf847f010000	                            je 0x40004c0	      1195	smtp.c	FUNCTION_31	IF_1
+0x4000341	    0x4883bfa80600	              cmp qword [rdi + 0x6a8], 0	      1195	smtp.c	FUNCTION_31	IF_1
+0x4000349	          0x4889fb	                            mov rbx, rdi	      1195	smtp.c	FUNCTION_31	IF_1
+0x400034c	     0xf842d010000	                            je 0x400047f	      1195	smtp.c	FUNCTION_31	IF_1
+0x4000352	    0x488b05000000	            mov rax, qword [0x04000359] 	      1199	smtp.c	FUNCTION_31	CALL_1
+0x4000359	          0x4189f4	                           mov r12d, esi	      1199	smtp.c	FUNCTION_31	CALL_1
+0x400035c	        0x488b7d08	                mov rdi, qword [rbp + 8]	      1199	smtp.c	FUNCTION_31	CALL_1
+0x4000360	            0xff10	                        call qword [rax]	      1199	smtp.c	FUNCTION_31	CALL_1
+0x4000362	          0x4585e4	                         test r12d, r12d	      1201	smtp.c	FUNCTION_31	IF_2
+0x4000365	    0x48c745080000	                  mov qword [rbp + 8], 0	      1199	smtp.c	FUNCTION_31	CALL_1
+0x400036d	     0xf85f5000000	                           jne 0x4000468	      1201	smtp.c	FUNCTION_31	IF_2
+0x4000373	    0x4180bd010800	               cmp byte [r13 + 0x801], 0	      1205	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x400037b	     0xf85f4000000	                           jne 0x4000475	      1205	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x4000381	    0x4983bd500a00	              cmp qword [r13 + 0xa50], 0	      1205	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x4000389	     0xf84e6000000	                            je 0x4000475	      1205	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x400038f	    0x4180bde20700	               cmp byte [r13 + 0x7e2], 0	      1205	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x4000397	     0xf840b010000	                            je 0x40004a8	      1205	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x400039d	        0x807d2000	                cmp byte [rbp + 0x20], 0	      1215	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4
+0x40003a1	            0x7511	                           jne 0x40003b4	      1215	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4
+0x40003a3	          0x488b03	                    mov rax, qword [rbx]	      1215	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4
+0x40003a6	    0x4883b8505100	             cmp qword [rax + 0x5150], 0	      1215	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4
+0x40003ae	     0xf8514010000	                           jne 0x40004c8	      1215	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4
+0x40003b4	    0x488b05000000	            mov rax, qword [0x040003bb] 	      1216	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4	CALL_3
+0x40003bb	    0x488d3d000000	                   lea rdi, [0x040003c2]	      1216	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4	CALL_3
+0x40003c2	    0x41be03000000	                             mov r14d, 3	      1217	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4
+0x40003c8	    0x41bf03000000	                             mov r15d, 3	      1217	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4
+0x40003ce	            0xff10	                        call qword [rax]	      1216	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4	CALL_3
+0x40003d0	          0x4989c4	                            mov r12, rax	      1216	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_4	CALL_3
+0x40003d3	          0x4d85e4	                           test r12, r12	      1224	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_5
+0x40003d6	      0xb81b000000	                           mov eax, 0x1b	      1225	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_5
+0x40003db	     0xf849e000000	                            je 0x400047f	      1224	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_5
+0x40003e1	    0x8bb3fc030000	           mov esi, dword [rbx + 0x3fc] 	      1228	smtp.c	FUNCTION_31	ELSE_1	IF_3	CALL_5
+0x40003e7	      0x4c8d442410	                    lea r8, [rsp + 0x10]	      1228	smtp.c	FUNCTION_31	ELSE_1	IF_3	CALL_5
+0x40003ec	          0x4c89f1	                            mov rcx, r14	      1228	smtp.c	FUNCTION_31	ELSE_1	IF_3	CALL_5
+0x40003ef	          0x4c89e2	                            mov rdx, r12	      1228	smtp.c	FUNCTION_31	ELSE_1	IF_3	CALL_5
+0x40003f2	          0x4889df	                            mov rdi, rbx	      1228	smtp.c	FUNCTION_31	ELSE_1	IF_3	CALL_5
+0x40003f5	      0xe800000000	                          call 0x40003fa	      1228	smtp.c	FUNCTION_31	ELSE_1	IF_3	CALL_5
+0x40003fa	            0x85c0	                           test eax, eax	      1229	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_6
+0x40003fc	     0xf85ee000000	                           jne 0x40004f0	      1229	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_6
+0x4000402	      0x488b442410	            mov rax, qword [rsp + 0x10] 	      1234	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_7
+0x4000407	    0x4c8dab500600	                  lea r13, [rbx + 0x650]	      1188	smtp.c	FUNCTION_31
+0x400040e	          0x4939c7	                            cmp r15, rax	      1234	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_7
+0x4000411	     0xf84f2000000	                            je 0x4000509	      1234	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_7
+0x4000417	          0x4929c7	                            sub r15, rax	      1239	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_7
+0x400041a	    0x4c89a3780600	            mov qword [rbx + 0x678], r12	      1237	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_7
+0x4000421	    0x4c89b3880600	            mov qword [rbx + 0x688], r14	      1238	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_7
+0x4000428	    0x4c89bb800600	            mov qword [rbx + 0x680], r15	      1239	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_7
+0x400042f	    0xc783c0060000	           mov dword [rbx + 0x6c0], 0xb 	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4000439	            0xeb0a	                           jmp 0x4000445	       296	smtp.c	ELSE_1	FUNCTION_3
+0x400043b	       0xf1f440000	                   nop dword [rax + rax]	       296	smtp.c	ELSE_1	FUNCTION_3
+0x4000440	          0x4585e4	                         test r12d, r12d	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x4000443	            0x7530	                           jne 0x4000475	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x4000445	      0xbe01000000	                              mov esi, 1	      1095	smtp.c	FUNCTION_27	CALL_1
+0x400044a	          0x4c89ef	                            mov rdi, r13	      1095	smtp.c	FUNCTION_27	CALL_1
+0x400044d	      0xe800000000	                          call 0x4000452	      1095	smtp.c	FUNCTION_27	CALL_1
+0x4000452	          0x4189c4	                           mov r12d, eax	      1095	smtp.c	FUNCTION_27	CALL_1
+0x4000455	    0x8b83c0060000	           mov eax, dword [rbx + 0x6c0] 	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x400045b	            0x85c0	                           test eax, eax	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x400045d	            0x75e1	                           jne 0x4000440	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x400045f	            0xeb14	                           jmp 0x4000475	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x4000461	     0xf1f80000000	                         nop dword [rax]	      1094	smtp.c	FUNCTION_27	WHILE_1
+0x4000468	      0xbe01000000	                              mov esi, 1	      1202	smtp.c	FUNCTION_31	IF_2	CALL_2
+0x400046d	          0x4889df	                            mov rdi, rbx	      1202	smtp.c	FUNCTION_31	IF_2	CALL_2
+0x4000470	      0xe800000000	                          call 0x4000475	      1202	smtp.c	FUNCTION_31	IF_2	CALL_2
+0x4000475	    0xc74500000000	                      mov dword [rbp], 0	      1260	smtp.c	FUNCTION_31
+0x400047c	          0x4489e0	                           mov eax, r12d	      1262	smtp.c	FUNCTION_31
+0x400047f	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	      1263	smtp.c	FUNCTION_31
+0x4000484	    0x644833142528	                xor rdx, qword fs:[0x28]	      1263	smtp.c	FUNCTION_31
+0x400048d	     0xf8594000000	                           jne 0x4000527	      1263	smtp.c	FUNCTION_31
+0x4000493	        0x4883c428	                           add rsp, 0x28	      1263	smtp.c	FUNCTION_31
+0x4000497	              0x5b	                                 pop rbx	      1263	smtp.c	FUNCTION_31
+0x4000498	              0x5d	                                 pop rbp	      1263	smtp.c	FUNCTION_31
+0x4000499	            0x415c	                                 pop r12	      1263	smtp.c	FUNCTION_31
+0x400049b	            0x415d	                                 pop r13	      1263	smtp.c	FUNCTION_31
+0x400049d	            0x415e	                                 pop r14	      1263	smtp.c	FUNCTION_31
+0x400049f	            0x415f	                                 pop r15	      1263	smtp.c	FUNCTION_31
+0x40004a1	              0xc3	                                     ret	      1263	smtp.c	FUNCTION_31
+0x40004a2	    0x660f1f440000	                    nop word [rax + rax]	      1263	smtp.c	FUNCTION_31
+0x40004a8	    0x418b95c80300	           mov edx, dword [r13 + 0x3c8] 	      1206	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x40004af	            0x85d2	                           test edx, edx	      1206	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x40004b1	            0x74c2	                            je 0x4000475	      1206	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x40004b3	      0xe9e5feffff	                           jmp 0x400039d	      1206	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x40004b8	     0xf1f84000000	                   nop dword [rax + rax]	      1206	smtp.c	FUNCTION_31	ELSE_1	IF_3
+0x40004c0	            0x31c0	                            xor eax, eax	      1196	smtp.c	FUNCTION_31	IF_1
+0x40004c2	            0xebbb	                           jmp 0x400047f	      1196	smtp.c	FUNCTION_31	IF_1
+0x40004c4	         0xf1f4000	                         nop dword [rax]	      1196	smtp.c	FUNCTION_31	IF_1
+0x40004c8	    0x488b05000000	            mov rax, qword [0x040004cf] 	      1220	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_2	CALL_4
+0x40004cf	    0x488d3d000000	                   lea rdi, [0x040004d6]	      1220	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_2	CALL_4
+0x40004d6	    0x41be05000000	                             mov r14d, 5	      1220	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_2	CALL_4
+0x40004dc	    0x41bf05000000	                             mov r15d, 5	      1221	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_2
+0x40004e2	            0xff10	                        call qword [rax]	      1220	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_2	CALL_4
+0x40004e4	          0x4989c4	                            mov r12, rax	      1220	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_2	CALL_4
+0x40004e7	      0xe9e7feffff	                           jmp 0x40003d3	      1220	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_2	CALL_4
+0x40004ec	         0xf1f4000	                         nop dword [rax]	      1220	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_2	CALL_4
+0x40004f0	        0x8944240c	              mov dword [rsp + 0xc], eax	      1220	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_2	CALL_4
+0x40004f4	    0x488b05000000	            mov rax, qword [0x040004fb] 	      1230	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_6	CALL_6
+0x40004fb	          0x4c89e7	                            mov rdi, r12	      1230	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_6	CALL_6
+0x40004fe	            0xff10	                        call qword [rax]	      1230	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_6	CALL_6
+0x4000500	        0x8b44240c	              mov eax, dword [rsp + 0xc]	      1231	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_6
+0x4000504	      0xe976ffffff	                           jmp 0x400047f	      1231	smtp.c	FUNCTION_31	ELSE_1	IF_3	IF_6
+0x4000509	      0xe800000000	                          call 0x400050e	      1243	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_3	CALL_7
+0x400050e	        0x49894540	             mov qword [r13 + 0x40], rax	      1243	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_3	CALL_7
+0x4000512	    0x488b05000000	            mov rax, qword [0x04000519] 	      1245	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_3	CALL_8
+0x4000519	          0x4c89e7	                            mov rdi, r12	      1245	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_3	CALL_8
+0x400051c	        0x49895548	             mov qword [r13 + 0x48], rdx	      1243	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_3	CALL_7
+0x4000520	            0xff10	                        call qword [rax]	      1245	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_3	CALL_8
+0x4000522	      0xe908ffffff	                           jmp 0x400042f	      1245	smtp.c	FUNCTION_31	ELSE_1	IF_3	ELSE_3	CALL_8
+0x4000527	      0xe800000000	                          call 0x400052c	      1263	smtp.c	FUNCTION_31

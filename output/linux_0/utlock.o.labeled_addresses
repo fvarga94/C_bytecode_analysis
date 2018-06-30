@@ -1,0 +1,89 @@
+acpi_ut_delete_rw_lock	WHILE,0:FOR,0:ELSE,0:functions,0:DO,0:CALL,2:SWITCH,0:IF,0	11
+0x4000077	              0x53	                                push rbx	        43	utlock.c	FUNCTION_2
+0x4000078	          0x4889fb	                            mov rbx, rdi	        43	utlock.c	FUNCTION_2
+0x400007b	        0x488b7f08	                mov rdi, qword [rdi + 8]	        45	utlock.c	FUNCTION_2	CALL_1
+0x400007f	      0xe800000000	                          call 0x4000084	        45	utlock.c	FUNCTION_2	CALL_1
+0x4000084	          0x488b3b	                    mov rdi, qword [rbx]	        46	utlock.c	FUNCTION_2	CALL_2
+0x4000087	      0xe800000000	                          call 0x400008c	        46	utlock.c	FUNCTION_2	CALL_2
+0x400008c	    0xc74310000000	               mov dword [rbx + 0x10], 0	        48	utlock.c	FUNCTION_2
+0x4000093	    0x48c743080000	                  mov qword [rbx + 8], 0	        49	utlock.c	FUNCTION_2
+0x400009b	    0x48c703000000	                      mov qword [rbx], 0	        50	utlock.c	FUNCTION_2
+0x40000a2	              0x5b	                                 pop rbx	        51	utlock.c	FUNCTION_2
+0x40000a3	              0xc3	                                     ret	        51	utlock.c	FUNCTION_2
+acpi_ut_release_read_lock	WHILE,0:FOR,0:ELSE,0:functions,0:DO,0:CALL,4:SWITCH,0:IF,2	22
+0x40000f5	              0x55	                                push rbp	        94	utlock.c	FUNCTION_4
+0x40000f6	              0x53	                                push rbx	        94	utlock.c	FUNCTION_4
+0x40000f7	          0x4889fb	                            mov rbx, rdi	        94	utlock.c	FUNCTION_4
+0x40000fa	        0x488b7f08	                mov rdi, qword [rdi + 8]	        97	utlock.c	FUNCTION_4	CALL_1
+0x40000fe	      0xbaffff0000	                         mov edx, 0xffff	        97	utlock.c	FUNCTION_4	CALL_1
+0x4000103	      0xbe01000000	                              mov esi, 1	        97	utlock.c	FUNCTION_4	CALL_1
+0x4000108	      0xe800000000	                          call 0x400010d	        97	utlock.c	FUNCTION_4	CALL_1
+0x400010d	            0x85c0	                           test eax, eax	        98	utlock.c	FUNCTION_4	IF_1	CALL_2
+0x400010f	            0x89c5	                            mov ebp, eax	        97	utlock.c	FUNCTION_4	CALL_1
+0x4000111	            0x7520	                           jne 0x4000133	        98	utlock.c	FUNCTION_4	IF_1	CALL_2
+0x4000113	          0xff4b10	                  dec dword [rbx + 0x10]	       105	utlock.c	FUNCTION_4	IF_2
+0x4000116	            0x750d	                           jne 0x4000125	       105	utlock.c	FUNCTION_4	IF_2
+0x4000118	          0x488b3b	                    mov rdi, qword [rbx]	       106	utlock.c	FUNCTION_4	IF_2	CALL_3
+0x400011b	      0xbe01000000	                              mov esi, 1	       106	utlock.c	FUNCTION_4	IF_2	CALL_3
+0x4000120	      0xe800000000	                          call 0x4000125	       106	utlock.c	FUNCTION_4	IF_2	CALL_3
+0x4000125	        0x488b7b08	                mov rdi, qword [rbx + 8]	       109	utlock.c	FUNCTION_4	CALL_4
+0x4000129	      0xbe01000000	                              mov esi, 1	       109	utlock.c	FUNCTION_4	CALL_4
+0x400012e	      0xe800000000	                          call 0x4000133	       109	utlock.c	FUNCTION_4	CALL_4
+0x4000133	            0x89e8	                            mov eax, ebp	       111	utlock.c	FUNCTION_4
+0x4000135	              0x5b	                                 pop rbx	       111	utlock.c	FUNCTION_4
+0x4000136	              0x5d	                                 pop rbp	       111	utlock.c	FUNCTION_4
+0x4000137	              0xc3	                                     ret	       111	utlock.c	FUNCTION_4
+acpi_ut_acquire_read_lock	WHILE,0:FOR,0:ELSE,0:functions,0:DO,0:CALL,4:SWITCH,0:IF,2	27
+0x40000a4	              0x55	                                push rbp	        72	utlock.c	FUNCTION_3
+0x40000a5	              0x53	                                push rbx	        72	utlock.c	FUNCTION_3
+0x40000a6	          0x4889fb	                            mov rbx, rdi	        72	utlock.c	FUNCTION_3
+0x40000a9	        0x488b7f08	                mov rdi, qword [rdi + 8]	        75	utlock.c	FUNCTION_3	CALL_1
+0x40000ad	      0xbaffff0000	                         mov edx, 0xffff	        75	utlock.c	FUNCTION_3	CALL_1
+0x40000b2	      0xbe01000000	                              mov esi, 1	        75	utlock.c	FUNCTION_3	CALL_1
+0x40000b7	      0xe800000000	                          call 0x40000bc	        75	utlock.c	FUNCTION_3	CALL_1
+0x40000bc	            0x85c0	                           test eax, eax	        76	utlock.c	FUNCTION_3	IF_1	CALL_2
+0x40000be	            0x89c5	                            mov ebp, eax	        75	utlock.c	FUNCTION_3	CALL_1
+0x40000c0	            0x752e	                           jne 0x40000f0	        76	utlock.c	FUNCTION_3	IF_1	CALL_2
+0x40000c2	          0x8b4310	            mov eax, dword [rbx + 0x10] 	        82	utlock.c	FUNCTION_3
+0x40000c5	            0xffc0	                                 inc eax	        82	utlock.c	FUNCTION_3
+0x40000c7	          0x894310	             mov dword [rbx + 0x10], eax	        82	utlock.c	FUNCTION_3
+0x40000ca	            0xffc8	                                 dec eax	        83	utlock.c	FUNCTION_3	IF_2
+0x40000cc	            0x7514	                           jne 0x40000e2	        83	utlock.c	FUNCTION_3	IF_2
+0x40000ce	          0x488b3b	                    mov rdi, qword [rbx]	        84	utlock.c	FUNCTION_3	IF_2
+0x40000d1	      0xbaffff0000	                         mov edx, 0xffff	        84	utlock.c	FUNCTION_3	IF_2
+0x40000d6	      0xbe01000000	                              mov esi, 1	        84	utlock.c	FUNCTION_3	IF_2
+0x40000db	      0xe800000000	                          call 0x40000e0	        84	utlock.c	FUNCTION_3	IF_2
+0x40000e0	            0x89c5	                            mov ebp, eax	        84	utlock.c	FUNCTION_3	IF_2
+0x40000e2	        0x488b7b08	                mov rdi, qword [rbx + 8]	        89	utlock.c	FUNCTION_3	CALL_4
+0x40000e6	      0xbe01000000	                              mov esi, 1	        89	utlock.c	FUNCTION_3	CALL_4
+0x40000eb	      0xe800000000	                          call 0x40000f0	        89	utlock.c	FUNCTION_3	CALL_4
+0x40000f0	            0x89e8	                            mov eax, ebp	        91	utlock.c	FUNCTION_3
+0x40000f2	              0x5b	                                 pop rbx	        91	utlock.c	FUNCTION_3
+0x40000f3	              0x5d	                                 pop rbp	        91	utlock.c	FUNCTION_3
+0x40000f4	              0xc3	                                     ret	        91	utlock.c	FUNCTION_3
+acpi_ut_release_write_lock	WHILE,0:FOR,0:ELSE,0:functions,0:DO,0:CALL,1:SWITCH,0:IF,0	3
+0x400014a	          0x488b3f	                    mov rdi, qword [rdi]	       140	utlock.c	FUNCTION_6	CALL_1
+0x400014d	      0xbe01000000	                              mov esi, 1	       140	utlock.c	FUNCTION_6	CALL_1
+0x4000152	      0xe900000000	                   jmp section_end..text	       140	utlock.c	FUNCTION_6	CALL_1
+acpi_ut_acquire_write_lock	WHILE,0:FOR,0:ELSE,0:functions,0:DO,0:CALL,1:SWITCH,0:IF,0	4
+0x4000138	          0x488b3f	                    mov rdi, qword [rdi]	       133	utlock.c	FUNCTION_5	CALL_1
+0x400013b	      0xbaffff0000	                         mov edx, 0xffff	       133	utlock.c	FUNCTION_5	CALL_1
+0x4000140	      0xbe01000000	                              mov esi, 1	       133	utlock.c	FUNCTION_5	CALL_1
+0x4000145	      0xe900000000	      jmp sym.acpi_ut_release_write_lock	       133	utlock.c	FUNCTION_5	CALL_1
+acpi_ut_create_rw_lock	WHILE,0:FOR,0:ELSE,0:functions,0:DO,0:CALL,3:SWITCH,0:IF,1	16
+0x4000040	              0x53	                                push rbx	        29	utlock.c	FUNCTION_1
+0x4000041	        0x488d5708	                      lea rdx, [rdi + 8]	        33	utlock.c	FUNCTION_1	CALL_1
+0x4000045	    0xc74710000000	               mov dword [rdi + 0x10], 0	        32	utlock.c	FUNCTION_1
+0x400004c	          0x4889fb	                            mov rbx, rdi	        29	utlock.c	FUNCTION_1
+0x400004f	      0xbe01000000	                              mov esi, 1	        33	utlock.c	FUNCTION_1	CALL_1
+0x4000054	      0xbf01000000	                              mov edi, 1	        33	utlock.c	FUNCTION_1	CALL_1
+0x4000059	      0xe800000000	                          call 0x400005e	        33	utlock.c	FUNCTION_1	CALL_1
+0x400005e	            0x85c0	                           test eax, eax	        34	utlock.c	FUNCTION_1	IF_1	CALL_2
+0x4000060	            0x7513	                           jne 0x4000075	        34	utlock.c	FUNCTION_1	IF_1	CALL_2
+0x4000062	          0x4889da	                            mov rdx, rbx	        38	utlock.c	FUNCTION_1	CALL_3
+0x4000065	      0xbe01000000	                              mov esi, 1	        38	utlock.c	FUNCTION_1	CALL_3
+0x400006a	      0xbf01000000	                              mov edi, 1	        38	utlock.c	FUNCTION_1	CALL_3
+0x400006f	              0x5b	                                 pop rbx	        40	utlock.c	FUNCTION_1
+0x4000070	      0xe900000000	                           jmp 0x4000075	        38	utlock.c	FUNCTION_1	CALL_3
+0x4000075	              0x5b	                                 pop rbx	        40	utlock.c	FUNCTION_1
+0x4000076	              0xc3	                                     ret	        40	utlock.c	FUNCTION_1

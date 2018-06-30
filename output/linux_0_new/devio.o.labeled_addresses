@@ -1,0 +1,319 @@
+usbdev_notify	WHILE,0:CALL,1:IF,0:DO,0:SWITCH,1:FOR,0:functions,0:ELSE,0	6
+0x40008e0	        0x4883fe02	                              cmp rsi, 2	      2622	devio.c	FUNCTION_83	SWITCH_1
+0x40008e4	            0x7508	                           jne 0x40008ee	      2622	devio.c	FUNCTION_83	SWITCH_1
+0x40008e6	          0x4889d7	                            mov rdi, rdx	      2622	devio.c	FUNCTION_83	SWITCH_1
+0x40008e9	      0xe802ffffff	                  call sym.usbdev_remove	      2626	devio.c	FUNCTION_83	SWITCH_1	CALL_1
+0x40008ee	      0xb801000000	                              mov eax, 1	      2630	devio.c	FUNCTION_83
+0x40008f3	              0xc3	                                     ret	      2630	devio.c	FUNCTION_83
+usbdev_vm_close	WHILE,0:CALL,1:IF,0:DO,0:SWITCH,0:FOR,0:functions,0:ELSE,0	3
+0x40004c0	    0x488bbfa80000	            mov rdi, qword [rdi + 0xa8] 	       196	devio.c	FUNCTION_6
+0x40004c7	        0x488d7710	                   lea rsi, [rdi + 0x10]	       198	devio.c	FUNCTION_6	CALL_1
+0x40004cb	      0xe950ffffff	        jmp sym.dec_usb_memory_use_count	       198	devio.c	FUNCTION_6	CALL_1
+usbdev_compat_ioctl	WHILE,0:CALL,2:IF,0:DO,0:SWITCH,0:FOR,0:functions,0:ELSE,0	4
+0x4004550	            0x89d2	                            mov edx, edx	      2560	devio.c	FUNCTION_80	CALL_2
+0x4004552	      0xe8b9eeffff	                call sym.usbdev_do_ioctl	      2560	devio.c	FUNCTION_80	CALL_2
+0x4004557	            0x4898	                                    cdqe	      2562	devio.c	FUNCTION_80
+0x4004559	              0xc3	                                     ret	      2563	devio.c	FUNCTION_80
+driver_suspend	WHILE,0:CALL,0:IF,0:DO,0:SWITCH,0:FOR,0:functions,0:ELSE,0	2
+0x4000110	            0x31c0	                            xor eax, eax	       707	devio.c	FUNCTION_25
+0x4000112	              0xc3	                                     ret	       707	devio.c	FUNCTION_25
+usbdev_ioctl	WHILE,0:CALL,1:IF,0:DO,0:SWITCH,0:FOR,0:functions,0:ELSE,0	3
+0x4004560	      0xe8abeeffff	                call sym.usbdev_do_ioctl	      2549	devio.c	FUNCTION_79	CALL_1
+0x4004565	            0x4898	                                    cdqe	      2551	devio.c	FUNCTION_79
+0x4004567	              0xc3	                                     ret	      2552	devio.c	FUNCTION_79
+match_devt	WHILE,0:CALL,0:IF,0:DO,0:SWITCH,0:FOR,0:functions,0:ELSE,0	4
+0x4000130	            0x31c0	                            xor eax, eax	       951	devio.c	FUNCTION_34
+0x4000132	    0x39b760020000	           cmp dword [rdi + 0x260], esi 	       951	devio.c	FUNCTION_34
+0x4000138	           0xf94c0	                                 sete al	       951	devio.c	FUNCTION_34
+0x400013b	              0xc3	                                     ret	       952	devio.c	FUNCTION_34
+driver_probe	WHILE,0:CALL,0:IF,0:DO,0:SWITCH,0:FOR,0:functions,0:ELSE,0	2
+0x4000100	      0xb8edffffff	                     mov eax, 0xffffffed	       675	devio.c	FUNCTION_23
+0x4000105	              0xc3	                                     ret	       675	devio.c	FUNCTION_23
+snoop_urb_data	WHILE,0:CALL,4:IF,2:DO,0:SWITCH,0:FOR,1:functions,0:ELSE,0	72
+0x40006f0	    0x393500000000	            cmp dword [0x040006f6], esi 	       496	devio.c	FUNCTION_16	CALL_1
+0x40006f6	            0x4156	                                push r14	       493	devio.c	FUNCTION_16
+0x40006f8	     0xf4635000000	          cmovbe esi, dword [0x040006ff]	       496	devio.c	FUNCTION_16	CALL_1
+0x40006ff	            0x4155	                                push r13	       493	devio.c	FUNCTION_16
+0x4000701	            0x4154	                                push r12	       493	devio.c	FUNCTION_16
+0x4000703	              0x55	                                push rbp	       493	devio.c	FUNCTION_16
+0x4000704	              0x53	                                push rbx	       493	devio.c	FUNCTION_16
+0x4000705	            0x89f3	                            mov ebx, esi	       496	devio.c	FUNCTION_16	CALL_1
+0x4000707	            0x85db	                           test ebx, ebx	       497	devio.c	FUNCTION_16	IF_1
+0x4000709	           0xf94c0	                                 sete al	       497	devio.c	FUNCTION_16	IF_1
+0x400070c	    0x380500000000	               cmp byte [0x04000712], al	       497	devio.c	FUNCTION_16	IF_1
+0x4000712	     0xf869f000000	                           jbe 0x40007b7	       497	devio.c	FUNCTION_16	IF_1
+0x4000718	    0x8b8784000000	            mov eax, dword [rdi + 0x84] 	       500	devio.c	FUNCTION_16	IF_2
+0x400071e	          0x4989fe	                            mov r14, rdi	       500	devio.c	FUNCTION_16	IF_2
+0x4000721	            0x85c0	                           test eax, eax	       500	devio.c	FUNCTION_16	IF_2
+0x4000723	     0xf8497000000	                            je 0x40007c0	       500	devio.c	FUNCTION_16	IF_2
+0x4000729	            0x85db	                           test ebx, ebx	       506	devio.c	FUNCTION_16	FOR_1
+0x400072b	     0xf8486000000	                            je 0x40007b7	       506	devio.c	FUNCTION_16	FOR_1
+0x4000731	          0x4531e4	                          xor r12d, r12d	       506	devio.c	FUNCTION_16	FOR_1
+0x4000734	            0x85c0	                           test eax, eax	       506	devio.c	FUNCTION_16	FOR_1
+0x4000736	      0xbd00400000	                         mov ebp, 0x4000	       507	devio.c	FUNCTION_16	FOR_1
+0x400073b	            0x7f06	                            jg 0x4000743	       506	devio.c	FUNCTION_16	FOR_1
+0x400073d	            0xeb78	                           jmp 0x40007b7	       506	devio.c	FUNCTION_16	FOR_1
+0x400073f	            0x85db	                           test ebx, ebx	       506	devio.c	FUNCTION_16	FOR_1
+0x4000741	            0x7474	                            je 0x40007b7	       506	devio.c	FUNCTION_16	FOR_1
+0x4000743	    0x81fb00400000	                         cmp ebx, 0x4000	       507	devio.c	FUNCTION_16	FOR_1
+0x4000749	          0x4963d4	                        movsxd rdx, r12d	       509	devio.c	FUNCTION_16	FOR_1	CALL_4
+0x400074c	          0x4189ed	                           mov r13d, ebp	       507	devio.c	FUNCTION_16	FOR_1
+0x400074f	        0x440f46eb	                        cmovbe r13d, ebx	       507	devio.c	FUNCTION_16	FOR_1
+0x4000753	        0x48c1e205	                              shl rdx, 5	       509	devio.c	FUNCTION_16	FOR_1	CALL_4
+0x4000757	        0x49035678	             add rdx, qword [r14 + 0x78]	       509	devio.c	FUNCTION_16	FOR_1	CALL_4
+0x400075b	          0x4489e9	                           mov ecx, r13d	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x400075e	    0x41b801000000	                              mov r8d, 1	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x4000764	    0x48c7c6000000	                              mov rsi, 0	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x400076b	    0x48c7c7000000	                              mov rdi, 0	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x4000772	          0x4429eb	                           sub ebx, r13d	       510	devio.c	FUNCTION_16	FOR_1
+0x4000775	        0x4183c401	                             add r12d, 1	       506	devio.c	FUNCTION_16	FOR_1
+0x4000779	          0x488b02	                    mov rax, qword [rdx]	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x400077c	          0x8b5208	                mov edx, dword [rdx + 8]	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x400077f	            0x6a01	                                  push 1	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x4000781	              0x51	                                push rcx	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x4000782	      0xb920000000	                           mov ecx, 0x20	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x4000787	        0x4883e0fc	             and rax, 0xfffffffffffffffc	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x400078b	    0x482b05000000	             sub rax, qword [0x04000792]	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x4000792	        0x48c1f806	                              sar rax, 6	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x4000796	        0x48c1e00c	                            shl rax, 0xc	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x400079a	    0x480305000000	             add rax, qword [0x040007a1]	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x40007a1	        0x4c8d0c10	                     lea r9, [rax + rdx]	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x40007a5	            0x31d2	                            xor edx, edx	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x40007a7	      0xe800000000	                          call 0x40007ac	       508	devio.c	FUNCTION_16	FOR_1	CALL_3
+0x40007ac	    0x4539a6840000	           cmp dword [r14 + 0x84], r12d 	       506	devio.c	FUNCTION_16	FOR_1
+0x40007b3	              0x58	                                 pop rax	       506	devio.c	FUNCTION_16	FOR_1
+0x40007b4	              0x5a	                                 pop rdx	       506	devio.c	FUNCTION_16	FOR_1
+0x40007b5	            0x7f88	                            jg 0x400073f	       506	devio.c	FUNCTION_16	FOR_1
+0x40007b7	              0x5b	                                 pop rbx	       512	devio.c	FUNCTION_16
+0x40007b8	              0x5d	                                 pop rbp	       512	devio.c	FUNCTION_16
+0x40007b9	            0x415c	                                 pop r12	       512	devio.c	FUNCTION_16
+0x40007bb	            0x415d	                                 pop r13	       512	devio.c	FUNCTION_16
+0x40007bd	            0x415e	                                 pop r14	       512	devio.c	FUNCTION_16
+0x40007bf	              0xc3	                                     ret	       512	devio.c	FUNCTION_16
+0x40007c0	            0x6a01	                                  push 1	       501	devio.c	FUNCTION_16	IF_2	CALL_2
+0x40007c2	              0x53	                                push rbx	       501	devio.c	FUNCTION_16	IF_2	CALL_2
+0x40007c3	      0xb920000000	                           mov ecx, 0x20	       501	devio.c	FUNCTION_16	IF_2	CALL_2
+0x40007c8	        0x4c8b4f68	              mov r9, qword [rdi + 0x68]	       501	devio.c	FUNCTION_16	IF_2	CALL_2
+0x40007cc	    0x48c7c6000000	                              mov rsi, 0	       501	devio.c	FUNCTION_16	IF_2	CALL_2
+0x40007d3	    0x41b801000000	                              mov r8d, 1	       501	devio.c	FUNCTION_16	IF_2	CALL_2
+0x40007d9	            0x31d2	                            xor edx, edx	       501	devio.c	FUNCTION_16	IF_2	CALL_2
+0x40007db	    0x48c7c7000000	                              mov rdi, 0	       501	devio.c	FUNCTION_16	IF_2	CALL_2
+0x40007e2	      0xe800000000	                          call 0x40007e7	       501	devio.c	FUNCTION_16	IF_2	CALL_2
+0x40007e7	              0x59	                                 pop rcx	       503	devio.c	FUNCTION_16	IF_2
+0x40007e8	              0x5e	                                 pop rsi	       503	devio.c	FUNCTION_16	IF_2
+0x40007e9	            0xebcc	                           jmp 0x40007b7	       503	devio.c	FUNCTION_16	IF_2
+usb_devio_cleanup	WHILE,0:CALL,3:IF,0:DO,0:SWITCH,0:FOR,0:functions,0:ELSE,0	7
+0x4004570	    0x48c7c7000000	                              mov rdi, 0	      2666	devio.c	FUNCTION_85	CALL_1
+0x4004577	      0xe800000000	                          call 0x400457c	      2666	devio.c	FUNCTION_85	CALL_1
+0x400457c	    0x48c7c7000000	                              mov rdi, 0	      2667	devio.c	FUNCTION_85	CALL_2
+0x4004583	      0xe800000000	                          call 0x4004588	      2667	devio.c	FUNCTION_85	CALL_2
+0x4004588	      0xbe00200000	                         mov esi, 0x2000	      2668	devio.c	FUNCTION_85	CALL_3
+0x400458d	      0xbf0000d00b	                      mov edi, 0xbd00000	      2668	devio.c	FUNCTION_85	CALL_3
+0x4004592	      0xe900000000	                   jmp section_end..text	      2668	devio.c	FUNCTION_85	CALL_3
+driver_resume	WHILE,0:CALL,0:IF,0:DO,0:SWITCH,0:FOR,0:functions,0:ELSE,0	2
+0x4000120	            0x31c0	                            xor eax, eax	       712	devio.c	FUNCTION_26
+0x4000122	              0xc3	                                     ret	       712	devio.c	FUNCTION_26
+processcompl_compat	WHILE,0:CALL,10:IF,9:DO,0:SWITCH,0:FOR,1:functions,0:ELSE,0	101
+0x4002e80	            0x4155	                                push r13	      2001	devio.c	FUNCTION_62
+0x4002e82	            0x4154	                                push r12	      2001	devio.c	FUNCTION_62
+0x4002e84	          0x4989f5	                            mov r13, rsi	      2001	devio.c	FUNCTION_62
+0x4002e87	              0x55	                                push rbp	      2001	devio.c	FUNCTION_62
+0x4002e88	              0x53	                                push rbx	      2001	devio.c	FUNCTION_62
+0x4002e89	          0x4889fb	                            mov rbx, rdi	      2001	devio.c	FUNCTION_62
+0x4002e8c	        0x488b6f40	            mov rbp, qword [rdi + 0x40] 	      2002	devio.c	FUNCTION_62
+0x4002e90	        0x4c8b6738	            mov r12, qword [rdi + 0x38] 	      2003	devio.c	FUNCTION_62
+0x4002e94	    0x8b85a4000000	            mov eax, dword [rbp + 0xa4] 	      1823	devio.c	FUNCTION_52	IF_1
+0x4002e9a	            0x85c0	                           test eax, eax	      1823	devio.c	FUNCTION_52	IF_1
+0x4002e9c	            0x7e33	                           jle 0x4002ed1	      1823	devio.c	FUNCTION_52	IF_1
+0x4002e9e	          0x83e801	                              sub eax, 1	      1823	devio.c	FUNCTION_52	IF_1
+0x4002ea1	    0x488d95c80000	                   lea rdx, [rbp + 0xc8]	      1823	devio.c	FUNCTION_52	IF_1
+0x4002ea8	    0xc7858c000000	               mov dword [rbp + 0x8c], 0	      1824	devio.c	FUNCTION_52	IF_1
+0x4002eb2	        0x48c1e004	                              shl rax, 4	      1824	devio.c	FUNCTION_52	IF_1
+0x4002eb6	            0x31c9	                            xor ecx, ecx	      1825	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002eb8	    0x488db405d800	            lea rsi, [rbp + rax + 0xd8] 	      1825	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002ec0	             0x30a	                    add ecx, dword [rdx]	      1826	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002ec2	        0x4883c210	                           add rdx, 0x10	      1826	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002ec6	          0x4839f2	                            cmp rdx, rsi	      1825	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002ec9	            0x75f5	                           jne 0x4002ec0	      1825	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002ecb	    0x898d8c000000	            mov dword [rbp + 0x8c], ecx 	      1825	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002ed1	        0x488b7b30	            mov rdi, qword [rbx + 0x30] 	      2008	devio.c	FUNCTION_62	IF_1
+0x4002ed5	          0x4885ff	                           test rdi, rdi	      2008	devio.c	FUNCTION_62	IF_1
+0x4002ed8	            0x740e	                            je 0x4002ee8	      2008	devio.c	FUNCTION_62	IF_1
+0x4002eda	    0x8b858c000000	            mov eax, dword [rbp + 0x8c] 	      2008	devio.c	FUNCTION_62	IF_1
+0x4002ee0	            0x85c0	                           test eax, eax	      2008	devio.c	FUNCTION_62	IF_1
+0x4002ee2	     0xf85e7000000	                           jne 0x4002fcf	      2008	devio.c	FUNCTION_62	IF_1
+0x4002ee8	          0x8b4354	            mov eax, dword [rbx + 0x54] 	      2012	devio.c	FUNCTION_62	IF_3	CALL_3
+0x4002eeb	      0x498d4c2404	                      lea rcx, [r12 + 4]	      2012	devio.c	FUNCTION_62	IF_3	CALL_3
+0x4002ef0	      0xe800000000	                          call 0x4002ef5	      2012	devio.c	FUNCTION_62	IF_3	CALL_3
+0x4002ef5	            0x85c0	                           test eax, eax	      2012	devio.c	FUNCTION_62	IF_3	CALL_3
+0x4002ef7	     0xf85c6000000	                           jne 0x4002fc3	      2012	devio.c	FUNCTION_62	IF_3	CALL_3
+0x4002efd	      0x498d4c2414	                   lea rcx, [r12 + 0x14]	      2014	devio.c	FUNCTION_62	IF_4	CALL_4
+0x4002f02	    0x8b858c000000	            mov eax, dword [rbp + 0x8c] 	      2014	devio.c	FUNCTION_62	IF_4	CALL_4
+0x4002f08	      0xe800000000	                          call 0x4002f0d	      2014	devio.c	FUNCTION_62	IF_4	CALL_4
+0x4002f0d	            0x85c0	                           test eax, eax	      2014	devio.c	FUNCTION_62	IF_4	CALL_4
+0x4002f0f	     0xf85ae000000	                           jne 0x4002fc3	      2014	devio.c	FUNCTION_62	IF_4	CALL_4
+0x4002f15	      0x498d4c2420	                   lea rcx, [r12 + 0x20]	      2016	devio.c	FUNCTION_62	IF_5	CALL_5
+0x4002f1a	    0x8b85ac000000	            mov eax, dword [rbp + 0xac] 	      2016	devio.c	FUNCTION_62	IF_5	CALL_5
+0x4002f20	      0xe800000000	                          call 0x4002f25	      2016	devio.c	FUNCTION_62	IF_5	CALL_5
+0x4002f25	            0x85c0	                           test eax, eax	      2016	devio.c	FUNCTION_62	IF_5	CALL_5
+0x4002f27	     0xf8596000000	                           jne 0x4002fc3	      2016	devio.c	FUNCTION_62	IF_5	CALL_5
+0x4002f2d	        0x488b4550	            mov rax, qword [rbp + 0x50] 	      2016	devio.c	FUNCTION_62	IF_5	CALL_5
+0x4002f31	         0xfb64003	               movzx eax, byte [rax + 3]	      2019	devio.c	FUNCTION_62	IF_6	CALL_6
+0x4002f35	          0x83e003	                              and eax, 3	      2019	devio.c	FUNCTION_62	IF_6	CALL_6
+0x4002f38	            0x3c01	                               cmp al, 1	      2019	devio.c	FUNCTION_62	IF_6	CALL_6
+0x4002f3a	            0x7416	                            je 0x4002f52	      2019	devio.c	FUNCTION_62	IF_6	CALL_6
+0x4002f3c	          0x4489e0	                           mov eax, r12d	      2030	devio.c	FUNCTION_62	IF_9	CALL_10
+0x4002f3f	          0x4c89e9	                            mov rcx, r13	      2030	devio.c	FUNCTION_62	IF_9	CALL_10
+0x4002f42	      0xe800000000	                          call 0x4002f47	      2030	devio.c	FUNCTION_62	IF_9	CALL_10
+0x4002f47	            0x85c0	                           test eax, eax	      2030	devio.c	FUNCTION_62	IF_9	CALL_10
+0x4002f49	            0x7578	                           jne 0x4002fc3	      2030	devio.c	FUNCTION_62	IF_9	CALL_10
+0x4002f4b	              0x5b	                                 pop rbx	      2033	devio.c	FUNCTION_62
+0x4002f4c	              0x5d	                                 pop rbp	      2033	devio.c	FUNCTION_62
+0x4002f4d	            0x415c	                                 pop r12	      2033	devio.c	FUNCTION_62
+0x4002f4f	            0x415d	                                 pop r13	      2033	devio.c	FUNCTION_62
+0x4002f51	              0xc3	                                     ret	      2033	devio.c	FUNCTION_62
+0x4002f52	    0x8bbda4000000	            mov edi, dword [rbp + 0xa4] 	      2020	devio.c	FUNCTION_62	IF_6	FOR_1
+0x4002f58	            0x85ff	                           test edi, edi	      2020	devio.c	FUNCTION_62	IF_6	FOR_1
+0x4002f5a	            0x74e0	                            je 0x4002f3c	      2020	devio.c	FUNCTION_62	IF_6	FOR_1
+0x4002f5c	      0x498d4c2430	                   lea rcx, [r12 + 0x30]	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002f61	    0x8b85c8000000	            mov eax, dword [rbp + 0xc8] 	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002f67	      0xe800000000	                          call 0x4002f6c	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002f6c	            0x85c0	                           test eax, eax	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002f6e	            0x7553	                           jne 0x4002fc3	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002f70	      0x498d4c2434	                   lea rcx, [r12 + 0x34]	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002f75	    0x8b85cc000000	            mov eax, dword [rbp + 0xcc] 	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002f7b	      0xe800000000	                          call 0x4002f80	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002f80	            0x31f6	                            xor esi, esi	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002f82	    0x4881c5dc0000	                           add rbp, 0xdc	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002f89	            0x85c0	                           test eax, eax	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002f8b	            0x7536	                           jne 0x4002fc3	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002f8d	          0x83c601	                              add esi, 1	      2020	devio.c	FUNCTION_62	IF_6	FOR_1
+0x4002f90	            0x39f7	                            cmp edi, esi	      2020	devio.c	FUNCTION_62	IF_6	FOR_1
+0x4002f92	            0x74a8	                            je 0x4002f3c	      2020	devio.c	FUNCTION_62	IF_6	FOR_1
+0x4002f94	            0x89f0	                            mov eax, esi	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002f96	        0x488d0440	                  lea rax, [rax + rax*2]	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002f9a	      0x498d548420	          lea rdx, [r12 + rax*4 + 0x20] 	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002f9f	          0x8b45fc	                mov eax, dword [rbp - 4]	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002fa2	        0x488d4a10	                   lea rcx, [rdx + 0x10]	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002fa6	      0xe800000000	                          call 0x4002fab	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002fab	            0x85c0	                           test eax, eax	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002fad	            0x7514	                           jne 0x4002fc3	      2021	devio.c	FUNCTION_62	IF_6	FOR_1	IF_7	CALL_7
+0x4002faf	        0x488d4a14	                   lea rcx, [rdx + 0x14]	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002fb3	          0x8b4500	                    mov eax, dword [rbp]	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002fb6	      0xe800000000	                          call 0x4002fbb	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002fbb	        0x4883c510	                           add rbp, 0x10	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002fbf	            0x85c0	                           test eax, eax	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002fc1	            0x74ca	                            je 0x4002f8d	      2024	devio.c	FUNCTION_62	IF_6	FOR_1	IF_8	CALL_8
+0x4002fc3	              0x5b	                                 pop rbx	      2033	devio.c	FUNCTION_62
+0x4002fc4	      0xb8f2ffffff	                     mov eax, 0xfffffff2	      2010	devio.c	FUNCTION_62	IF_1	IF_2
+0x4002fc9	              0x5d	                                 pop rbp	      2033	devio.c	FUNCTION_62
+0x4002fca	            0x415c	                                 pop r12	      2033	devio.c	FUNCTION_62
+0x4002fcc	            0x415d	                                 pop r13	      2033	devio.c	FUNCTION_62
+0x4002fce	              0xc3	                                     ret	      2033	devio.c	FUNCTION_62
+0x4002fcf	          0x4889ee	                            mov rsi, rbp	      2009	devio.c	FUNCTION_62	IF_1	IF_2	CALL_2
+0x4002fd2	      0xe859fcffff	          call sym.copy_urb_data_to_user	      2009	devio.c	FUNCTION_62	IF_1	IF_2	CALL_2
+0x4002fd7	            0x85c0	                           test eax, eax	      2009	devio.c	FUNCTION_62	IF_1	IF_2	CALL_2
+0x4002fd9	     0xf8409ffffff	                            je 0x4002ee8	      2009	devio.c	FUNCTION_62	IF_1	IF_2	CALL_2
+0x4002fdf	            0xebe2	                           jmp 0x4002fc3	      2009	devio.c	FUNCTION_62	IF_1	IF_2	CALL_2
+processcompl	WHILE,0:CALL,9:IF,9:DO,0:SWITCH,0:FOR,1:functions,0:ELSE,0	101
+0x4002d10	            0x4155	                                push r13	      1832	devio.c	FUNCTION_53
+0x4002d12	            0x4154	                                push r12	      1832	devio.c	FUNCTION_53
+0x4002d14	          0x4989f5	                            mov r13, rsi	      1832	devio.c	FUNCTION_53
+0x4002d17	              0x55	                                push rbp	      1832	devio.c	FUNCTION_53
+0x4002d18	              0x53	                                push rbx	      1832	devio.c	FUNCTION_53
+0x4002d19	          0x4889fb	                            mov rbx, rdi	      1832	devio.c	FUNCTION_53
+0x4002d1c	        0x488b6f40	            mov rbp, qword [rdi + 0x40] 	      1833	devio.c	FUNCTION_53
+0x4002d20	        0x4c8b6738	            mov r12, qword [rdi + 0x38] 	      1834	devio.c	FUNCTION_53
+0x4002d24	    0x8b85a4000000	            mov eax, dword [rbp + 0xa4] 	      1823	devio.c	FUNCTION_52	IF_1
+0x4002d2a	            0x85c0	                           test eax, eax	      1823	devio.c	FUNCTION_52	IF_1
+0x4002d2c	            0x7e33	                           jle 0x4002d61	      1823	devio.c	FUNCTION_52	IF_1
+0x4002d2e	          0x83e801	                              sub eax, 1	      1823	devio.c	FUNCTION_52	IF_1
+0x4002d31	    0x488d95c80000	                   lea rdx, [rbp + 0xc8]	      1823	devio.c	FUNCTION_52	IF_1
+0x4002d38	    0xc7858c000000	               mov dword [rbp + 0x8c], 0	      1824	devio.c	FUNCTION_52	IF_1
+0x4002d42	        0x48c1e004	                              shl rax, 4	      1824	devio.c	FUNCTION_52	IF_1
+0x4002d46	            0x31c9	                            xor ecx, ecx	      1825	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002d48	    0x488db405d800	            lea rsi, [rbp + rax + 0xd8] 	      1825	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002d50	             0x30a	                    add ecx, dword [rdx]	      1826	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002d52	        0x4883c210	                           add rdx, 0x10	      1826	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002d56	          0x4839f2	                            cmp rdx, rsi	      1825	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002d59	            0x75f5	                           jne 0x4002d50	      1825	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002d5b	    0x898d8c000000	            mov dword [rbp + 0x8c], ecx 	      1825	devio.c	FUNCTION_52	IF_1	FOR_1
+0x4002d61	        0x488b7b30	            mov rdi, qword [rbx + 0x30] 	      1839	devio.c	FUNCTION_53	IF_1
+0x4002d65	          0x4885ff	                           test rdi, rdi	      1839	devio.c	FUNCTION_53	IF_1
+0x4002d68	            0x740e	                            je 0x4002d78	      1839	devio.c	FUNCTION_53	IF_1
+0x4002d6a	    0x8b858c000000	            mov eax, dword [rbp + 0x8c] 	      1839	devio.c	FUNCTION_53	IF_1
+0x4002d70	            0x85c0	                           test eax, eax	      1839	devio.c	FUNCTION_53	IF_1
+0x4002d72	     0xf85e7000000	                           jne 0x4002e5f	      1839	devio.c	FUNCTION_53	IF_1
+0x4002d78	          0x8b4354	            mov eax, dword [rbx + 0x54] 	      1843	devio.c	FUNCTION_53	IF_3	CALL_3
+0x4002d7b	      0x498d4c2404	                      lea rcx, [r12 + 4]	      1843	devio.c	FUNCTION_53	IF_3	CALL_3
+0x4002d80	      0xe800000000	                          call 0x4002d85	      1843	devio.c	FUNCTION_53	IF_3	CALL_3
+0x4002d85	            0x85c0	                           test eax, eax	      1843	devio.c	FUNCTION_53	IF_3	CALL_3
+0x4002d87	     0xf85c6000000	                           jne 0x4002e53	      1843	devio.c	FUNCTION_53	IF_3	CALL_3
+0x4002d8d	      0x498d4c241c	                   lea rcx, [r12 + 0x1c]	      1845	devio.c	FUNCTION_53	IF_4	CALL_4
+0x4002d92	    0x8b858c000000	            mov eax, dword [rbp + 0x8c] 	      1845	devio.c	FUNCTION_53	IF_4	CALL_4
+0x4002d98	      0xe800000000	                          call 0x4002d9d	      1845	devio.c	FUNCTION_53	IF_4	CALL_4
+0x4002d9d	            0x85c0	                           test eax, eax	      1845	devio.c	FUNCTION_53	IF_4	CALL_4
+0x4002d9f	     0xf85ae000000	                           jne 0x4002e53	      1845	devio.c	FUNCTION_53	IF_4	CALL_4
+0x4002da5	      0x498d4c2428	                   lea rcx, [r12 + 0x28]	      1847	devio.c	FUNCTION_53	IF_5	CALL_5
+0x4002daa	    0x8b85ac000000	            mov eax, dword [rbp + 0xac] 	      1847	devio.c	FUNCTION_53	IF_5	CALL_5
+0x4002db0	      0xe800000000	                          call 0x4002db5	      1847	devio.c	FUNCTION_53	IF_5	CALL_5
+0x4002db5	            0x85c0	                           test eax, eax	      1847	devio.c	FUNCTION_53	IF_5	CALL_5
+0x4002db7	     0xf8596000000	                           jne 0x4002e53	      1847	devio.c	FUNCTION_53	IF_5	CALL_5
+0x4002dbd	        0x488b4550	            mov rax, qword [rbp + 0x50] 	      1847	devio.c	FUNCTION_53	IF_5	CALL_5
+0x4002dc1	         0xfb64003	               movzx eax, byte [rax + 3]	      1850	devio.c	FUNCTION_53	IF_6	CALL_6
+0x4002dc5	          0x83e003	                              and eax, 3	      1850	devio.c	FUNCTION_53	IF_6	CALL_6
+0x4002dc8	            0x3c01	                               cmp al, 1	      1850	devio.c	FUNCTION_53	IF_6	CALL_6
+0x4002dca	            0x7416	                            je 0x4002de2	      1850	devio.c	FUNCTION_53	IF_6	CALL_6
+0x4002dcc	          0x4c89e0	                            mov rax, r12	      1861	devio.c	FUNCTION_53	IF_9	CALL_9
+0x4002dcf	          0x4c89e9	                            mov rcx, r13	      1861	devio.c	FUNCTION_53	IF_9	CALL_9
+0x4002dd2	      0xe800000000	                          call 0x4002dd7	      1861	devio.c	FUNCTION_53	IF_9	CALL_9
+0x4002dd7	            0x85c0	                           test eax, eax	      1861	devio.c	FUNCTION_53	IF_9	CALL_9
+0x4002dd9	            0x7578	                           jne 0x4002e53	      1861	devio.c	FUNCTION_53	IF_9	CALL_9
+0x4002ddb	              0x5b	                                 pop rbx	      1867	devio.c	FUNCTION_53
+0x4002ddc	              0x5d	                                 pop rbp	      1867	devio.c	FUNCTION_53
+0x4002ddd	            0x415c	                                 pop r12	      1867	devio.c	FUNCTION_53
+0x4002ddf	            0x415d	                                 pop r13	      1867	devio.c	FUNCTION_53
+0x4002de1	              0xc3	                                     ret	      1867	devio.c	FUNCTION_53
+0x4002de2	    0x8bbda4000000	            mov edi, dword [rbp + 0xa4] 	      1851	devio.c	FUNCTION_53	IF_6	FOR_1
+0x4002de8	            0x85ff	                           test edi, edi	      1851	devio.c	FUNCTION_53	IF_6	FOR_1
+0x4002dea	            0x74e0	                            je 0x4002dcc	      1851	devio.c	FUNCTION_53	IF_6	FOR_1
+0x4002dec	      0x498d4c243c	                   lea rcx, [r12 + 0x3c]	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002df1	    0x8b85c8000000	            mov eax, dword [rbp + 0xc8] 	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002df7	      0xe800000000	                          call 0x4002dfc	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002dfc	            0x85c0	                           test eax, eax	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002dfe	            0x7553	                           jne 0x4002e53	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002e00	      0x498d4c2440	                   lea rcx, [r12 + 0x40]	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e05	    0x8b85cc000000	            mov eax, dword [rbp + 0xcc] 	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e0b	      0xe800000000	                          call 0x4002e10	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e10	            0x31f6	                            xor esi, esi	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e12	    0x4881c5dc0000	                           add rbp, 0xdc	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e19	            0x85c0	                           test eax, eax	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e1b	            0x7536	                           jne 0x4002e53	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e1d	          0x83c601	                              add esi, 1	      1851	devio.c	FUNCTION_53	IF_6	FOR_1
+0x4002e20	            0x39f7	                            cmp edi, esi	      1851	devio.c	FUNCTION_53	IF_6	FOR_1
+0x4002e22	            0x74a8	                            je 0x4002dcc	      1851	devio.c	FUNCTION_53	IF_6	FOR_1
+0x4002e24	            0x89f0	                            mov eax, esi	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002e26	        0x488d0440	                  lea rax, [rax + rax*2]	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002e2a	      0x498d548430	          lea rdx, [r12 + rax*4 + 0x30] 	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002e2f	          0x8b45fc	                mov eax, dword [rbp - 4]	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002e32	        0x488d4a0c	                    lea rcx, [rdx + 0xc]	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002e36	      0xe800000000	                          call 0x4002e3b	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002e3b	            0x85c0	                           test eax, eax	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002e3d	            0x7514	                           jne 0x4002e53	      1852	devio.c	FUNCTION_53	IF_6	FOR_1	IF_7	CALL_7
+0x4002e3f	        0x488d4a10	                   lea rcx, [rdx + 0x10]	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e43	          0x8b4500	                    mov eax, dword [rbp]	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e46	      0xe800000000	                          call 0x4002e4b	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e4b	        0x4883c510	                           add rbp, 0x10	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e4f	            0x85c0	                           test eax, eax	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e51	            0x74ca	                            je 0x4002e1d	      1855	devio.c	FUNCTION_53	IF_6	FOR_1	IF_8	CALL_8
+0x4002e53	              0x5b	                                 pop rbx	      1867	devio.c	FUNCTION_53
+0x4002e54	      0xb8f2ffffff	                     mov eax, 0xfffffff2	      1866	devio.c	FUNCTION_53
+0x4002e59	              0x5d	                                 pop rbp	      1867	devio.c	FUNCTION_53
+0x4002e5a	            0x415c	                                 pop r12	      1867	devio.c	FUNCTION_53
+0x4002e5c	            0x415d	                                 pop r13	      1867	devio.c	FUNCTION_53
+0x4002e5e	              0xc3	                                     ret	      1867	devio.c	FUNCTION_53
+0x4002e5f	          0x4889ee	                            mov rsi, rbp	      1840	devio.c	FUNCTION_53	IF_1	IF_2	CALL_2
+0x4002e62	      0xe8c9fdffff	          call sym.copy_urb_data_to_user	      1840	devio.c	FUNCTION_53	IF_1	IF_2	CALL_2
+0x4002e67	            0x85c0	                           test eax, eax	      1840	devio.c	FUNCTION_53	IF_1	IF_2	CALL_2
+0x4002e69	     0xf8409ffffff	                            je 0x4002d78	      1840	devio.c	FUNCTION_53	IF_1	IF_2	CALL_2
+0x4002e6f	            0xebe2	                           jmp 0x4002e53	      1840	devio.c	FUNCTION_53	IF_1	IF_2	CALL_2

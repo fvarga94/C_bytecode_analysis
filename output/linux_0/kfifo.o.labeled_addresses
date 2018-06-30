@@ -1,0 +1,387 @@
+__kfifo_dma_in_finish_r	FOR,0:CALL,2:SWITCH,0:DO,0:functions,0:IF,0:ELSE,0:WHILE,0	23
+0x4000090	    0x8d0cd5000000	                        lea ecx, [rdx*8]	       577	kfifo.c	FUNCTION_30
+0x4000097	      0xb801000000	                              mov eax, 1	       577	kfifo.c	FUNCTION_30
+0x400009c	        0x4c8b4710	              mov r8, qword [rdi + 0x10]	       437	kfifo.c	FUNCTION_20
+0x40000a0	            0xd3e0	                             shl eax, cl	       437	kfifo.c	FUNCTION_20
+0x40000a2	          0x83e801	                              sub eax, 1	       437	kfifo.c	FUNCTION_20
+0x40000a5	            0x39f0	                            cmp eax, esi	       437	kfifo.c	FUNCTION_20
+0x40000a7	           0xf46f0	                         cmovbe esi, eax	       437	kfifo.c	FUNCTION_20
+0x40000aa	          0x8b4708	                mov eax, dword [rdi + 8]	       436	kfifo.c	FUNCTION_20
+0x40000ad	            0x89c1	                            mov ecx, eax	       439	kfifo.c	FUNCTION_20	CALL_1
+0x40000af	            0x230f	                    and ecx, dword [rdi]	       439	kfifo.c	FUNCTION_20	CALL_1
+0x40000b1	        0x4883fa01	                              cmp rdx, 1	       441	kfifo.c	FUNCTION_20	IF_1
+0x40000b5	        0x41883408	                mov byte [r8 + rcx], sil	       439	kfifo.c	FUNCTION_20	CALL_1
+0x40000b9	            0x7610	                           jbe 0x40000cb	       441	kfifo.c	FUNCTION_20	IF_1
+0x40000bb	            0x8b0f	                    mov ecx, dword [rdi]	       442	kfifo.c	FUNCTION_20	CALL_2
+0x40000bd	          0x83c101	                              add ecx, 1	       442	kfifo.c	FUNCTION_20	CALL_2
+0x40000c0	            0x21c8	                            and eax, ecx	       442	kfifo.c	FUNCTION_20	CALL_2
+0x40000c2	            0x89f1	                            mov ecx, esi	       442	kfifo.c	FUNCTION_20	CALL_2
+0x40000c4	          0xc1e908	                              shr ecx, 8	       442	kfifo.c	FUNCTION_20	CALL_2
+0x40000c7	        0x41880c00	                 mov byte [r8 + rax], cl	       442	kfifo.c	FUNCTION_20	CALL_2
+0x40000cb	             0x317	                    add edx, dword [rdi]	       580	kfifo.c	FUNCTION_30
+0x40000cd	             0x1d6	                            add esi, edx	       580	kfifo.c	FUNCTION_30
+0x40000cf	            0x8937	                    mov dword [rdi], esi	       580	kfifo.c	FUNCTION_30
+0x40000d1	              0xc3	                                     ret	       580	kfifo.c	FUNCTION_30
+__kfifo_in	FOR,0:CALL,2:SWITCH,0:DO,0:functions,0:IF,1:ELSE,0:WHILE,0	21
+0x40002c0	              0x55	                                push rbp	       128	kfifo.c	FUNCTION_6
+0x40002c1	              0x53	                                push rbx	       128	kfifo.c	FUNCTION_6
+0x40002c2	          0x4889fb	                            mov rbx, rdi	       128	kfifo.c	FUNCTION_6
+0x40002c5	          0x448b0f	                    mov r9d, dword [rdi]	       128	kfifo.c	FUNCTION_6
+0x40002c8	          0x8b6b04	                mov ebp, dword [rbx + 4]	        35	kfifo.c	FUNCTION_1
+0x40002cb	          0x4889f1	                            mov rcx, rsi	       128	kfifo.c	FUNCTION_6
+0x40002ce	          0x8b7f08	                mov edi, dword [rdi + 8]	       128	kfifo.c	FUNCTION_6
+0x40002d1	          0x8b730c	              mov esi, dword [rbx + 0xc]	       135	kfifo.c	FUNCTION_6	CALL_2
+0x40002d4	             0x1fd	                            add ebp, edi	        35	kfifo.c	FUNCTION_1
+0x40002d6	          0x83c501	                              add ebp, 1	        35	kfifo.c	FUNCTION_1
+0x40002d9	          0x4429cd	                            sub ebp, r9d	        35	kfifo.c	FUNCTION_1
+0x40002dc	            0x39ea	                            cmp edx, ebp	        35	kfifo.c	FUNCTION_1
+0x40002de	           0xf46ea	                         cmovbe ebp, edx	        35	kfifo.c	FUNCTION_1
+0x40002e1	        0x488d5310	                   lea rdx, [rbx + 0x10]	        35	kfifo.c	FUNCTION_1
+0x40002e5	          0x4189e8	                            mov r8d, ebp	       135	kfifo.c	FUNCTION_6	CALL_2
+0x40002e8	      0xe863ffffff	           call sym.kfifo_copy_in.isra.2	       135	kfifo.c	FUNCTION_6	CALL_2
+0x40002ed	             0x12b	                    add dword [rbx], ebp	       136	kfifo.c	FUNCTION_6
+0x40002ef	            0x89e8	                            mov eax, ebp	       138	kfifo.c	FUNCTION_6
+0x40002f1	              0x5b	                                 pop rbx	       138	kfifo.c	FUNCTION_6
+0x40002f2	              0x5d	                                 pop rbp	       138	kfifo.c	FUNCTION_6
+0x40002f3	              0xc3	                                     ret	       138	kfifo.c	FUNCTION_6
+__kfifo_from_user	FOR,0:CALL,3:SWITCH,0:DO,0:functions,0:IF,3:ELSE,1:WHILE,0	45
+0x4000970	            0x4154	                                push r12	       225	kfifo.c	FUNCTION_11
+0x4000972	          0x4989f2	                            mov r10, rsi	       225	kfifo.c	FUNCTION_11
+0x4000975	              0x55	                                push rbp	       225	kfifo.c	FUNCTION_11
+0x4000976	              0x53	                                push rbx	       225	kfifo.c	FUNCTION_11
+0x4000977	          0x8b770c	              mov esi, dword [rdi + 0xc]	       228	kfifo.c	FUNCTION_11
+0x400097a	          0x4889fd	                            mov rbp, rdi	       225	kfifo.c	FUNCTION_11
+0x400097d	          0x4889d0	                            mov rax, rdx	       225	kfifo.c	FUNCTION_11
+0x4000980	          0x83fe01	                              cmp esi, 1	       231	kfifo.c	FUNCTION_11	IF_1
+0x4000983	            0x7407	                            je 0x400098c	       231	kfifo.c	FUNCTION_11	IF_1
+0x4000985	            0x89f7	                            mov edi, esi	       232	kfifo.c	FUNCTION_11	IF_1
+0x4000987	            0x31d2	                            xor edx, edx	       232	kfifo.c	FUNCTION_11	IF_1
+0x4000989	          0x48f7f7	                                 div rdi	       232	kfifo.c	FUNCTION_11	IF_1
+0x400098c	          0x8b7d08	                mov edi, dword [rbp + 8]	       232	kfifo.c	FUNCTION_11	IF_1
+0x400098f	          0x8b5504	                mov edx, dword [rbp + 4]	       235	kfifo.c	FUNCTION_11	IF_2
+0x4000992	        0x448b4d00	                    mov r9d, dword [rbp]	       235	kfifo.c	FUNCTION_11	IF_2
+0x4000996	              0x51	                                push rcx	       238	kfifo.c	FUNCTION_11	CALL_2
+0x4000997	          0x4c89d1	                            mov rcx, r10	       238	kfifo.c	FUNCTION_11	CALL_2
+0x400099a	             0x1fa	                            add edx, edi	       235	kfifo.c	FUNCTION_11	IF_2
+0x400099c	          0x83c201	                              add edx, 1	       235	kfifo.c	FUNCTION_11	IF_2
+0x400099f	          0x4429ca	                            sub edx, r9d	       235	kfifo.c	FUNCTION_11	IF_2
+0x40009a2	          0x4839d0	                            cmp rax, rdx	       235	kfifo.c	FUNCTION_11	IF_2
+0x40009a5	          0x4889d3	                            mov rbx, rdx	       235	kfifo.c	FUNCTION_11	IF_2
+0x40009a8	        0x488d5510	                   lea rdx, [rbp + 0x10]	       235	kfifo.c	FUNCTION_11	IF_2
+0x40009ac	        0x480f46d8	                         cmovbe rbx, rax	       235	kfifo.c	FUNCTION_11	IF_2
+0x40009b0	          0x4189d8	                            mov r8d, ebx	       238	kfifo.c	FUNCTION_11	CALL_2
+0x40009b3	          0x4189dc	                           mov r12d, ebx	       238	kfifo.c	FUNCTION_11	CALL_2
+0x40009b6	      0xe805ffffff	    call sym.kfifo_copy_from_user.isra.7	       238	kfifo.c	FUNCTION_11	CALL_2
+0x40009bb	              0x5a	                                 pop rdx	       239	kfifo.c	FUNCTION_11	IF_3	CALL_3
+0x40009bc	            0x31d2	                            xor edx, edx	       243	kfifo.c	FUNCTION_11	ELSE_1
+0x40009be	          0x4885c0	                           test rax, rax	       239	kfifo.c	FUNCTION_11	IF_3	CALL_3
+0x40009c1	            0x750b	                           jne 0x40009ce	       239	kfifo.c	FUNCTION_11	IF_3	CALL_3
+0x40009c3	        0x44016500	                   add dword [rbp], r12d	       244	kfifo.c	FUNCTION_11
+0x40009c7	            0x89d0	                            mov eax, edx	       246	kfifo.c	FUNCTION_11
+0x40009c9	              0x5b	                                 pop rbx	       246	kfifo.c	FUNCTION_11
+0x40009ca	              0x5d	                                 pop rbp	       246	kfifo.c	FUNCTION_11
+0x40009cb	            0x415c	                                 pop r12	       246	kfifo.c	FUNCTION_11
+0x40009cd	              0xc3	                                     ret	       246	kfifo.c	FUNCTION_11
+0x40009ce	          0x4129c4	                           sub r12d, eax	       246	kfifo.c	FUNCTION_11
+0x40009d1	      0xbaf2ffffff	                     mov edx, 0xfffffff2	       241	kfifo.c	FUNCTION_11	IF_3
+0x40009d6	        0x44016500	                   add dword [rbp], r12d	       244	kfifo.c	FUNCTION_11
+0x40009da	              0x5b	                                 pop rbx	       246	kfifo.c	FUNCTION_11
+0x40009db	            0x89d0	                            mov eax, edx	       246	kfifo.c	FUNCTION_11
+0x40009dd	              0x5d	                                 pop rbp	       246	kfifo.c	FUNCTION_11
+0x40009de	            0x415c	                                 pop r12	       246	kfifo.c	FUNCTION_11
+0x40009e0	              0xc3	                                     ret	       246	kfifo.c	FUNCTION_11
+__kfifo_dma_out_prepare	FOR,0:CALL,1:SWITCH,0:DO,0:functions,0:IF,1:ELSE,0:WHILE,0	16
+0x40007c0	        0x448b5704	               mov r10d, dword [rdi + 4]	       387	kfifo.c	FUNCTION_17
+0x40007c4	            0x8b07	                    mov eax, dword [rdi]	       387	kfifo.c	FUNCTION_17
+0x40007c6	          0x4989f3	                            mov r11, rsi	       384	kfifo.c	FUNCTION_17
+0x40007c9	          0x4189d0	                            mov r8d, edx	       384	kfifo.c	FUNCTION_17
+0x40007cc	          0x8b770c	              mov esi, dword [rdi + 0xc]	       391	kfifo.c	FUNCTION_17	CALL_1
+0x40007cf	        0x488d5710	                   lea rdx, [rdi + 0x10]	       391	kfifo.c	FUNCTION_17	CALL_1
+0x40007d3	          0x8b7f08	                mov edi, dword [rdi + 8]	       391	kfifo.c	FUNCTION_17	CALL_1
+0x40007d6	          0x4429d0	                           sub eax, r10d	       387	kfifo.c	FUNCTION_17
+0x40007d9	            0x4152	                                push r10	       391	kfifo.c	FUNCTION_17	CALL_1
+0x40007db	            0x39c8	                            cmp eax, ecx	       391	kfifo.c	FUNCTION_17	CALL_1
+0x40007dd	           0xf46c8	                         cmovbe ecx, eax	       391	kfifo.c	FUNCTION_17	CALL_1
+0x40007e0	          0x4189c9	                            mov r9d, ecx	       391	kfifo.c	FUNCTION_17	CALL_1
+0x40007e3	          0x4c89d9	                            mov rcx, r11	       391	kfifo.c	FUNCTION_17	CALL_1
+0x40007e6	      0xe8e5feffff	              call sym.setup_sgl.isra.11	       391	kfifo.c	FUNCTION_17	CALL_1
+0x40007eb	              0x5a	                                 pop rdx	       391	kfifo.c	FUNCTION_17	CALL_1
+0x40007ec	              0xc3	                                     ret	       392	kfifo.c	FUNCTION_17
+kfifo_out_copy_r	FOR,0:CALL,2:SWITCH,0:DO,0:functions,0:IF,1:ELSE,0:WHILE,0	30
+0x4000440	          0x4989fa	                            mov r10, rdi	       467	kfifo.c	FUNCTION_23
+0x4000443	              0x53	                                push rbx	       467	kfifo.c	FUNCTION_23
+0x4000444	          0x8b7f04	                mov edi, dword [rdi + 4]	       467	kfifo.c	FUNCTION_23
+0x4000447	        0x418b4208	                mov eax, dword [r10 + 8]	       467	kfifo.c	FUNCTION_23
+0x400044b	          0x4989f3	                            mov r11, rsi	       467	kfifo.c	FUNCTION_23
+0x400044e	        0x498b7210	            mov rsi, qword [r10 + 0x10] 	       467	kfifo.c	FUNCTION_23
+0x4000452	          0x4189f9	                            mov r9d, edi	       417	kfifo.c	FUNCTION_19	CALL_1
+0x4000455	          0x4121c1	                            and r9d, eax	       417	kfifo.c	FUNCTION_19	CALL_1
+0x4000458	        0x4883f901	                              cmp rcx, 1	       419	kfifo.c	FUNCTION_19	IF_1
+0x400045c	      0x420fb61c0e	              movzx ebx, byte [rsi + r9]	       417	kfifo.c	FUNCTION_19	CALL_1
+0x4000461	            0x740e	                            je 0x4000471	       419	kfifo.c	FUNCTION_19	IF_1
+0x4000463	          0x83c701	                              add edi, 1	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000466	            0x21f8	                            and eax, edi	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000468	         0xfb60406	             movzx eax, byte [rsi + rax]	       420	kfifo.c	FUNCTION_19	CALL_2
+0x400046c	          0xc1e008	                              shl eax, 8	       420	kfifo.c	FUNCTION_19	CALL_2
+0x400046f	             0x9c3	                             or ebx, eax	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000471	          0x418918	                     mov dword [r8], ebx	       468	kfifo.c	FUNCTION_23	CALL_1
+0x4000474	        0x458b4a04	                mov r9d, dword [r10 + 4]	       473	kfifo.c	FUNCTION_23	CALL_2
+0x4000478	            0x39da	                            cmp edx, ebx	       473	kfifo.c	FUNCTION_23	CALL_2
+0x400047a	        0x418b720c	              mov esi, dword [r10 + 0xc]	       473	kfifo.c	FUNCTION_23	CALL_2
+0x400047e	        0x418b7a08	                mov edi, dword [r10 + 8]	       473	kfifo.c	FUNCTION_23	CALL_2
+0x4000482	           0xf46da	                         cmovbe ebx, edx	       473	kfifo.c	FUNCTION_23	CALL_2
+0x4000485	        0x498d5210	                   lea rdx, [r10 + 0x10]	       473	kfifo.c	FUNCTION_23	CALL_2
+0x4000489	          0x4189d8	                            mov r8d, ebx	       473	kfifo.c	FUNCTION_23	CALL_2
+0x400048c	          0x4101c9	                            add r9d, ecx	       473	kfifo.c	FUNCTION_23	CALL_2
+0x400048f	          0x4c89d9	                            mov rcx, r11	       473	kfifo.c	FUNCTION_23	CALL_2
+0x4000492	      0xe8e9feffff	          call sym.kfifo_copy_out.isra.4	       473	kfifo.c	FUNCTION_23	CALL_2
+0x4000497	            0x89d8	                            mov eax, ebx	       475	kfifo.c	FUNCTION_23
+0x4000499	              0x5b	                                 pop rbx	       475	kfifo.c	FUNCTION_23
+0x400049a	              0xc3	                                     ret	       475	kfifo.c	FUNCTION_23
+__kfifo_from_user_r	FOR,0:CALL,5:SWITCH,0:DO,0:functions,0:IF,2:ELSE,0:WHILE,0	68
+0x40009f0	          0x4989c9	                             mov r9, rcx	       514	kfifo.c	FUNCTION_27
+0x40009f3	    0x428d0cc50000	                         lea ecx, [r8*8]	       514	kfifo.c	FUNCTION_27
+0x40009fb	      0xb801000000	                              mov eax, 1	       514	kfifo.c	FUNCTION_27
+0x4000a00	            0x4155	                                push r13	       514	kfifo.c	FUNCTION_27
+0x4000a02	            0x4154	                                push r12	       514	kfifo.c	FUNCTION_27
+0x4000a04	            0xd3e0	                             shl eax, cl	       514	kfifo.c	FUNCTION_27
+0x4000a06	              0x55	                                push rbp	       514	kfifo.c	FUNCTION_27
+0x4000a07	              0x53	                                push rbx	       514	kfifo.c	FUNCTION_27
+0x4000a08	          0x83e801	                              sub eax, 1	       514	kfifo.c	FUNCTION_27
+0x4000a0b	            0x89d3	                            mov ebx, edx	       514	kfifo.c	FUNCTION_27
+0x4000a0d	          0x8b4f08	                mov ecx, dword [rdi + 8]	       514	kfifo.c	FUNCTION_27
+0x4000a10	            0x39d0	                            cmp eax, edx	       514	kfifo.c	FUNCTION_27
+0x4000a12	          0x448b17	                   mov r10d, dword [rdi]	       514	kfifo.c	FUNCTION_27
+0x4000a15	           0xf46d8	                         cmovbe ebx, eax	       514	kfifo.c	FUNCTION_27
+0x4000a18	          0x8b4704	                mov eax, dword [rdi + 4]	       519	kfifo.c	FUNCTION_27	IF_1	CALL_2
+0x4000a1b	            0x89da	                            mov edx, ebx	       519	kfifo.c	FUNCTION_27	IF_1	CALL_2
+0x4000a1d	          0x4c01c2	                             add rdx, r8	       519	kfifo.c	FUNCTION_27	IF_1	CALL_2
+0x4000a20	             0x1c8	                            add eax, ecx	       519	kfifo.c	FUNCTION_27	IF_1	CALL_2
+0x4000a22	          0x83c001	                              add eax, 1	       519	kfifo.c	FUNCTION_27	IF_1	CALL_2
+0x4000a25	          0x4429d0	                           sub eax, r10d	       519	kfifo.c	FUNCTION_27	IF_1	CALL_2
+0x4000a28	          0x4839c2	                            cmp rdx, rax	       519	kfifo.c	FUNCTION_27	IF_1	CALL_2
+0x4000a2b	            0x7763	                            ja 0x4000a90	       519	kfifo.c	FUNCTION_27	IF_1	CALL_2
+0x4000a2d	        0x488b5710	            mov rdx, qword [rdi + 0x10] 	       437	kfifo.c	FUNCTION_20
+0x4000a31	          0x4121ca	                           and r10d, ecx	       439	kfifo.c	FUNCTION_20	CALL_1
+0x4000a34	        0x4983f801	                               cmp r8, 1	       441	kfifo.c	FUNCTION_20	IF_1
+0x4000a38	        0x42881c12	                mov byte [rdx + r10], bl	       439	kfifo.c	FUNCTION_20	CALL_1
+0x4000a3c	            0x760f	                           jbe 0x4000a4d	       441	kfifo.c	FUNCTION_20	IF_1
+0x4000a3e	            0x8b07	                    mov eax, dword [rdi]	       442	kfifo.c	FUNCTION_20	CALL_2
+0x4000a40	          0x83c001	                              add eax, 1	       442	kfifo.c	FUNCTION_20	CALL_2
+0x4000a43	            0x21c1	                            and ecx, eax	       442	kfifo.c	FUNCTION_20	CALL_2
+0x4000a45	            0x89d8	                            mov eax, ebx	       442	kfifo.c	FUNCTION_20	CALL_2
+0x4000a47	          0xc1e808	                              shr eax, 8	       442	kfifo.c	FUNCTION_20	CALL_2
+0x4000a4a	          0x88040a	                mov byte [rdx + rcx], al	       442	kfifo.c	FUNCTION_20	CALL_2
+0x4000a4d	          0x4889fd	                            mov rbp, rdi	       442	kfifo.c	FUNCTION_20	CALL_2
+0x4000a50	        0x488d5710	                   lea rdx, [rdi + 0x10]	       442	kfifo.c	FUNCTION_20	CALL_2
+0x4000a54	          0x4889f1	                            mov rcx, rsi	       442	kfifo.c	FUNCTION_20	CALL_2
+0x4000a57	          0x4d89cd	                             mov r13, r9	       442	kfifo.c	FUNCTION_20	CALL_2
+0x4000a5a	          0x8b770c	              mov esi, dword [rdi + 0xc]	       526	kfifo.c	FUNCTION_27	CALL_4
+0x4000a5d	          0x8b7f08	                mov edi, dword [rdi + 8]	       526	kfifo.c	FUNCTION_27	CALL_4
+0x4000a60	            0x4151	                                 push r9	       526	kfifo.c	FUNCTION_27	CALL_4
+0x4000a62	        0x448b4d00	                    mov r9d, dword [rbp]	       526	kfifo.c	FUNCTION_27	CALL_4
+0x4000a66	          0x4d89c4	                             mov r12, r8	       526	kfifo.c	FUNCTION_27	CALL_4
+0x4000a69	          0x4501c1	                            add r9d, r8d	       526	kfifo.c	FUNCTION_27	CALL_4
+0x4000a6c	          0x4189d8	                            mov r8d, ebx	       526	kfifo.c	FUNCTION_27	CALL_4
+0x4000a6f	      0xe84cfeffff	    call sym.kfifo_copy_from_user.isra.7	       526	kfifo.c	FUNCTION_27	CALL_4
+0x4000a74	          0x4885c0	                           test rax, rax	       527	kfifo.c	FUNCTION_27	IF_2	CALL_5
+0x4000a77	              0x5a	                                 pop rdx	       527	kfifo.c	FUNCTION_27	IF_2	CALL_5
+0x4000a78	            0x7526	                           jne 0x4000aa0	       527	kfifo.c	FUNCTION_27	IF_2	CALL_5
+0x4000a7a	        0x448b4500	                    mov r8d, dword [rbp]	       531	kfifo.c	FUNCTION_27
+0x4000a7e	            0x31c0	                            xor eax, eax	       532	kfifo.c	FUNCTION_27
+0x4000a80	          0x4501e0	                           add r8d, r12d	       531	kfifo.c	FUNCTION_27
+0x4000a83	          0x4401c3	                            add ebx, r8d	       531	kfifo.c	FUNCTION_27
+0x4000a86	          0x895d00	                    mov dword [rbp], ebx	       531	kfifo.c	FUNCTION_27
+0x4000a89	              0x5b	                                 pop rbx	       533	kfifo.c	FUNCTION_27
+0x4000a8a	              0x5d	                                 pop rbp	       533	kfifo.c	FUNCTION_27
+0x4000a8b	            0x415c	                                 pop r12	       533	kfifo.c	FUNCTION_27
+0x4000a8d	            0x415d	                                 pop r13	       533	kfifo.c	FUNCTION_27
+0x4000a8f	              0xc3	                                     ret	       533	kfifo.c	FUNCTION_27
+0x4000a90	    0x41c701000000	                       mov dword [r9], 0	       520	kfifo.c	FUNCTION_27	IF_1
+0x4000a97	            0x31c0	                            xor eax, eax	       521	kfifo.c	FUNCTION_27	IF_1
+0x4000a99	              0x5b	                                 pop rbx	       533	kfifo.c	FUNCTION_27
+0x4000a9a	              0x5d	                                 pop rbp	       533	kfifo.c	FUNCTION_27
+0x4000a9b	            0x415c	                                 pop r12	       533	kfifo.c	FUNCTION_27
+0x4000a9d	            0x415d	                                 pop r13	       533	kfifo.c	FUNCTION_27
+0x4000a9f	              0xc3	                                     ret	       533	kfifo.c	FUNCTION_27
+0x4000aa0	    0x41c745000000	                      mov dword [r13], 0	       528	kfifo.c	FUNCTION_27	IF_2
+0x4000aa8	      0xb8f2ffffff	                     mov eax, 0xfffffff2	       529	kfifo.c	FUNCTION_27	IF_2
+0x4000aad	            0xebda	                           jmp 0x4000a89	       529	kfifo.c	FUNCTION_27	IF_2
+__kfifo_dma_in_prepare	FOR,0:CALL,2:SWITCH,0:DO,0:functions,0:IF,1:ELSE,0:WHILE,0	18
+0x4000780	          0x4889f8	                            mov rax, rdi	       371	kfifo.c	FUNCTION_16
+0x4000783	          0x448b17	                   mov r10d, dword [rdi]	       371	kfifo.c	FUNCTION_16
+0x4000786	          0x8b7f08	                mov edi, dword [rdi + 8]	       371	kfifo.c	FUNCTION_16
+0x4000789	        0x448b4804	                mov r9d, dword [rax + 4]	        35	kfifo.c	FUNCTION_1
+0x400078d	          0x4989f3	                            mov r11, rsi	       371	kfifo.c	FUNCTION_16
+0x4000790	          0x8b700c	              mov esi, dword [rax + 0xc]	       378	kfifo.c	FUNCTION_16	CALL_2
+0x4000793	          0x4189d0	                            mov r8d, edx	       371	kfifo.c	FUNCTION_16
+0x4000796	        0x488d5010	                   lea rdx, [rax + 0x10]	       371	kfifo.c	FUNCTION_16
+0x400079a	            0x4152	                                push r10	       378	kfifo.c	FUNCTION_16	CALL_2
+0x400079c	          0x4101f9	                            add r9d, edi	        35	kfifo.c	FUNCTION_1
+0x400079f	        0x4183c101	                              add r9d, 1	        35	kfifo.c	FUNCTION_1
+0x40007a3	          0x4529d1	                           sub r9d, r10d	        35	kfifo.c	FUNCTION_1
+0x40007a6	          0x4439c9	                            cmp ecx, r9d	       378	kfifo.c	FUNCTION_16	CALL_2
+0x40007a9	        0x440f46c9	                         cmovbe r9d, ecx	       378	kfifo.c	FUNCTION_16	CALL_2
+0x40007ad	          0x4c89d9	                            mov rcx, r11	       378	kfifo.c	FUNCTION_16	CALL_2
+0x40007b0	      0xe81bffffff	              call sym.setup_sgl.isra.11	       378	kfifo.c	FUNCTION_16	CALL_2
+0x40007b5	              0x5a	                                 pop rdx	       378	kfifo.c	FUNCTION_16	CALL_2
+0x40007b6	              0xc3	                                     ret	       379	kfifo.c	FUNCTION_16
+__kfifo_free	FOR,0:CALL,1:SWITCH,0:DO,0:functions,0:IF,0:ELSE,0:WHILE,0	11
+0x4000210	              0x53	                                push rbx	        70	kfifo.c	FUNCTION_3
+0x4000211	          0x4889fb	                            mov rbx, rdi	        70	kfifo.c	FUNCTION_3
+0x4000214	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	        71	kfifo.c	FUNCTION_3	CALL_1
+0x4000218	      0xe800000000	                          call 0x400021d	        71	kfifo.c	FUNCTION_3	CALL_1
+0x400021d	    0xc70300000000	                      mov dword [rbx], 0	        72	kfifo.c	FUNCTION_3
+0x4000223	    0xc74304000000	                  mov dword [rbx + 4], 0	        73	kfifo.c	FUNCTION_3
+0x400022a	    0xc7430c000000	                mov dword [rbx + 0xc], 0	        74	kfifo.c	FUNCTION_3
+0x4000231	    0x48c743100000	               mov qword [rbx + 0x10], 0	        75	kfifo.c	FUNCTION_3
+0x4000239	    0xc74308000000	                  mov dword [rbx + 8], 0	        76	kfifo.c	FUNCTION_3
+0x4000240	              0x5b	                                 pop rbx	        77	kfifo.c	FUNCTION_3
+0x4000241	              0xc3	                                     ret	        77	kfifo.c	FUNCTION_3
+__kfifo_out	FOR,0:CALL,1:SWITCH,0:DO,0:functions,0:IF,0:ELSE,0:WHILE,0	19
+0x4000410	              0x55	                                push rbp	       181	kfifo.c	FUNCTION_9
+0x4000411	              0x53	                                push rbx	       181	kfifo.c	FUNCTION_9
+0x4000412	          0x4889f1	                            mov rcx, rsi	       181	kfifo.c	FUNCTION_9
+0x4000415	        0x448b4f04	                mov r9d, dword [rdi + 4]	       170	kfifo.c	FUNCTION_8
+0x4000419	            0x8b2f	                    mov ebp, dword [rdi]	       170	kfifo.c	FUNCTION_8
+0x400041b	          0x4889fb	                            mov rbx, rdi	       181	kfifo.c	FUNCTION_9
+0x400041e	          0x8b770c	              mov esi, dword [rdi + 0xc]	       174	kfifo.c	FUNCTION_8	CALL_1
+0x4000421	          0x4429cd	                            sub ebp, r9d	       170	kfifo.c	FUNCTION_8
+0x4000424	            0x39ea	                            cmp edx, ebp	       170	kfifo.c	FUNCTION_8
+0x4000426	           0xf46ea	                         cmovbe ebp, edx	       170	kfifo.c	FUNCTION_8
+0x4000429	        0x488d5710	                   lea rdx, [rdi + 0x10]	       170	kfifo.c	FUNCTION_8
+0x400042d	          0x8b7f08	                mov edi, dword [rdi + 8]	       174	kfifo.c	FUNCTION_8	CALL_1
+0x4000430	          0x4189e8	                            mov r8d, ebp	       174	kfifo.c	FUNCTION_8	CALL_1
+0x4000433	      0xe848ffffff	          call sym.kfifo_copy_out.isra.4	       174	kfifo.c	FUNCTION_8	CALL_1
+0x4000438	           0x16b04	                add dword [rbx + 4], ebp	       183	kfifo.c	FUNCTION_9
+0x400043b	            0x89e8	                            mov eax, ebp	       185	kfifo.c	FUNCTION_9
+0x400043d	              0x5b	                                 pop rbx	       185	kfifo.c	FUNCTION_9
+0x400043e	              0x5d	                                 pop rbp	       185	kfifo.c	FUNCTION_9
+0x400043f	              0xc3	                                     ret	       185	kfifo.c	FUNCTION_9
+__kfifo_to_user_r	FOR,0:CALL,3:SWITCH,0:DO,0:functions,0:IF,3:ELSE,0:WHILE,0	50
+0x4000bd0	        0x448b4f04	                mov r9d, dword [rdi + 4]	       542	kfifo.c	FUNCTION_28	IF_1
+0x4000bd4	          0x44390f	                    cmp dword [rdi], r9d	       542	kfifo.c	FUNCTION_28	IF_1
+0x4000bd7	            0x7474	                            je 0x4000c4d	       542	kfifo.c	FUNCTION_28	IF_1
+0x4000bd9	            0x4155	                                push r13	       538	kfifo.c	FUNCTION_28
+0x4000bdb	          0x4889f8	                            mov rax, rdi	       538	kfifo.c	FUNCTION_28
+0x4000bde	            0x4154	                                push r12	       538	kfifo.c	FUNCTION_28
+0x4000be0	              0x55	                                push rbp	       538	kfifo.c	FUNCTION_28
+0x4000be1	              0x53	                                push rbx	       538	kfifo.c	FUNCTION_28
+0x4000be2	          0x4589ca	                           mov r10d, r9d	       417	kfifo.c	FUNCTION_19	CALL_1
+0x4000be5	          0x8b7f08	                mov edi, dword [rdi + 8]	       417	kfifo.c	FUNCTION_19	CALL_1
+0x4000be8	        0x4c8b5810	            mov r11, qword [rax + 0x10] 	       417	kfifo.c	FUNCTION_19	CALL_1
+0x4000bec	          0x4121fa	                           and r10d, edi	       417	kfifo.c	FUNCTION_19	CALL_1
+0x4000bef	        0x4983f801	                               cmp r8, 1	       419	kfifo.c	FUNCTION_19	IF_1
+0x4000bf3	      0x470fb62413	            movzx r12d, byte [r11 + r10]	       417	kfifo.c	FUNCTION_19	CALL_1
+0x4000bf8	            0x7413	                            je 0x4000c0d	       419	kfifo.c	FUNCTION_19	IF_1
+0x4000bfa	        0x458d5101	                      lea r10d, [r9 + 1]	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000bfe	          0x4121fa	                           and r10d, edi	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000c01	      0x470fb61413	            movzx r10d, byte [r11 + r10]	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000c06	        0x41c1e208	                             shl r10d, 8	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000c0a	          0x4509d4	                           or r12d, r10d	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000c0d	          0x4c89c5	                             mov rbp, r8	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000c10	          0x4589e0	                           mov r8d, r12d	       548	kfifo.c	FUNCTION_28	IF_2
+0x4000c13	          0x4989cd	                            mov r13, rcx	       548	kfifo.c	FUNCTION_28	IF_2
+0x4000c16	          0x4939d0	                             cmp r8, rdx	       551	kfifo.c	FUNCTION_28	CALL_2
+0x4000c19	          0x4889f1	                            mov rcx, rsi	       551	kfifo.c	FUNCTION_28	CALL_2
+0x4000c1c	          0x8b700c	              mov esi, dword [rax + 0xc]	       551	kfifo.c	FUNCTION_28	CALL_2
+0x4000c1f	        0x4c0f47c2	                           cmova r8, rdx	       551	kfifo.c	FUNCTION_28	CALL_2
+0x4000c23	            0x4155	                                push r13	       551	kfifo.c	FUNCTION_28	CALL_2
+0x4000c25	        0x488d5010	                   lea rdx, [rax + 0x10]	       551	kfifo.c	FUNCTION_28	CALL_2
+0x4000c29	          0x4101e9	                            add r9d, ebp	       551	kfifo.c	FUNCTION_28	CALL_2
+0x4000c2c	          0x4889c3	                            mov rbx, rax	       551	kfifo.c	FUNCTION_28	CALL_2
+0x4000c2f	      0xe87cfeffff	      call sym.kfifo_copy_to_user.isra.8	       551	kfifo.c	FUNCTION_28	CALL_2
+0x4000c34	          0x4885c0	                           test rax, rax	       552	kfifo.c	FUNCTION_28	IF_3	CALL_3
+0x4000c37	              0x5a	                                 pop rdx	       552	kfifo.c	FUNCTION_28	IF_3	CALL_3
+0x4000c38	            0x751c	                           jne 0x4000c56	       552	kfifo.c	FUNCTION_28	IF_3	CALL_3
+0x4000c3a	           0x36b04	                add ebp, dword [rbx + 4]	       556	kfifo.c	FUNCTION_28
+0x4000c3d	            0x31c0	                            xor eax, eax	       557	kfifo.c	FUNCTION_28
+0x4000c3f	          0x4101ec	                           add r12d, ebp	       556	kfifo.c	FUNCTION_28
+0x4000c42	        0x44896304	               mov dword [rbx + 4], r12d	       556	kfifo.c	FUNCTION_28
+0x4000c46	              0x5b	                                 pop rbx	       558	kfifo.c	FUNCTION_28
+0x4000c47	              0x5d	                                 pop rbp	       558	kfifo.c	FUNCTION_28
+0x4000c48	            0x415c	                                 pop r12	       558	kfifo.c	FUNCTION_28
+0x4000c4a	            0x415d	                                 pop r13	       558	kfifo.c	FUNCTION_28
+0x4000c4c	              0xc3	                                     ret	       558	kfifo.c	FUNCTION_28
+0x4000c4d	    0xc70100000000	                      mov dword [rcx], 0	       543	kfifo.c	FUNCTION_28	IF_1
+0x4000c53	            0x31c0	                            xor eax, eax	       544	kfifo.c	FUNCTION_28	IF_1
+0x4000c55	              0xc3	                                     ret	       558	kfifo.c	FUNCTION_28
+0x4000c56	    0x41c745000000	                      mov dword [r13], 0	       553	kfifo.c	FUNCTION_28	IF_3
+0x4000c5e	      0xb8f2ffffff	                     mov eax, 0xfffffff2	       554	kfifo.c	FUNCTION_28	IF_3
+0x4000c63	            0xebe1	                           jmp 0x4000c46	       554	kfifo.c	FUNCTION_28	IF_3
+__kfifo_to_user	FOR,0:CALL,2:SWITCH,0:DO,0:functions,0:IF,3:ELSE,1:WHILE,0	42
+0x4000b60	            0x4154	                                push r12	       285	kfifo.c	FUNCTION_13
+0x4000b62	          0x4989f2	                            mov r10, rsi	       285	kfifo.c	FUNCTION_13
+0x4000b65	              0x55	                                push rbp	       285	kfifo.c	FUNCTION_13
+0x4000b66	              0x53	                                push rbx	       285	kfifo.c	FUNCTION_13
+0x4000b67	          0x8b770c	              mov esi, dword [rdi + 0xc]	       288	kfifo.c	FUNCTION_13
+0x4000b6a	          0x4889fd	                            mov rbp, rdi	       285	kfifo.c	FUNCTION_13
+0x4000b6d	          0x4889d0	                            mov rax, rdx	       285	kfifo.c	FUNCTION_13
+0x4000b70	          0x83fe01	                              cmp esi, 1	       291	kfifo.c	FUNCTION_13	IF_1
+0x4000b73	            0x7407	                            je 0x4000b7c	       291	kfifo.c	FUNCTION_13	IF_1
+0x4000b75	            0x89f7	                            mov edi, esi	       292	kfifo.c	FUNCTION_13	IF_1
+0x4000b77	            0x31d2	                            xor edx, edx	       292	kfifo.c	FUNCTION_13	IF_1
+0x4000b79	          0x48f7f7	                                 div rdi	       292	kfifo.c	FUNCTION_13	IF_1
+0x4000b7c	        0x448b4d04	                mov r9d, dword [rbp + 4]	       294	kfifo.c	FUNCTION_13
+0x4000b80	          0x8b5d00	                    mov ebx, dword [rbp]	       295	kfifo.c	FUNCTION_13	IF_2
+0x4000b83	        0x488d5510	                   lea rdx, [rbp + 0x10]	       295	kfifo.c	FUNCTION_13	IF_2
+0x4000b87	          0x8b7d08	                mov edi, dword [rbp + 8]	       297	kfifo.c	FUNCTION_13	CALL_1
+0x4000b8a	              0x51	                                push rcx	       297	kfifo.c	FUNCTION_13	CALL_1
+0x4000b8b	          0x4c89d1	                            mov rcx, r10	       297	kfifo.c	FUNCTION_13	CALL_1
+0x4000b8e	          0x4429cb	                            sub ebx, r9d	       295	kfifo.c	FUNCTION_13	IF_2
+0x4000b91	          0x4839d8	                            cmp rax, rbx	       295	kfifo.c	FUNCTION_13	IF_2
+0x4000b94	        0x480f46d8	                         cmovbe rbx, rax	       295	kfifo.c	FUNCTION_13	IF_2
+0x4000b98	          0x4189d8	                            mov r8d, ebx	       297	kfifo.c	FUNCTION_13	CALL_1
+0x4000b9b	          0x4189dc	                           mov r12d, ebx	       297	kfifo.c	FUNCTION_13	CALL_1
+0x4000b9e	      0xe80dffffff	      call sym.kfifo_copy_to_user.isra.8	       297	kfifo.c	FUNCTION_13	CALL_1
+0x4000ba3	              0x5a	                                 pop rdx	       298	kfifo.c	FUNCTION_13	IF_3	CALL_2
+0x4000ba4	            0x31d2	                            xor edx, edx	       302	kfifo.c	FUNCTION_13	ELSE_1
+0x4000ba6	          0x4885c0	                           test rax, rax	       298	kfifo.c	FUNCTION_13	IF_3	CALL_2
+0x4000ba9	            0x750b	                           jne 0x4000bb6	       298	kfifo.c	FUNCTION_13	IF_3	CALL_2
+0x4000bab	        0x44016504	               add dword [rbp + 4], r12d	       303	kfifo.c	FUNCTION_13
+0x4000baf	            0x89d0	                            mov eax, edx	       305	kfifo.c	FUNCTION_13
+0x4000bb1	              0x5b	                                 pop rbx	       305	kfifo.c	FUNCTION_13
+0x4000bb2	              0x5d	                                 pop rbp	       305	kfifo.c	FUNCTION_13
+0x4000bb3	            0x415c	                                 pop r12	       305	kfifo.c	FUNCTION_13
+0x4000bb5	              0xc3	                                     ret	       305	kfifo.c	FUNCTION_13
+0x4000bb6	          0x4129c4	                           sub r12d, eax	       305	kfifo.c	FUNCTION_13
+0x4000bb9	      0xbaf2ffffff	                     mov edx, 0xfffffff2	       300	kfifo.c	FUNCTION_13	IF_3
+0x4000bbe	        0x44016504	               add dword [rbp + 4], r12d	       303	kfifo.c	FUNCTION_13
+0x4000bc2	              0x5b	                                 pop rbx	       305	kfifo.c	FUNCTION_13
+0x4000bc3	            0x89d0	                            mov eax, edx	       305	kfifo.c	FUNCTION_13
+0x4000bc5	              0x5d	                                 pop rbp	       305	kfifo.c	FUNCTION_13
+0x4000bc6	            0x415c	                                 pop r12	       305	kfifo.c	FUNCTION_13
+0x4000bc8	              0xc3	                                     ret	       305	kfifo.c	FUNCTION_13
+__kfifo_dma_out_finish_r	FOR,0:CALL,1:SWITCH,0:DO,0:functions,0:IF,0:ELSE,0:WHILE,0	17
+0x40000e0	          0x8b4f04	                mov ecx, dword [rdi + 4]	       599	kfifo.c	FUNCTION_32
+0x40000e3	          0x8b5708	                mov edx, dword [rdi + 8]	       599	kfifo.c	FUNCTION_32
+0x40000e6	        0x4c8b4710	              mov r8, qword [rdi + 0x10]	       599	kfifo.c	FUNCTION_32
+0x40000ea	            0x89c8	                            mov eax, ecx	       417	kfifo.c	FUNCTION_19	CALL_1
+0x40000ec	            0x21d0	                            and eax, edx	       417	kfifo.c	FUNCTION_19	CALL_1
+0x40000ee	        0x4883fe01	                              cmp rsi, 1	       419	kfifo.c	FUNCTION_19	IF_1
+0x40000f2	      0x410fb60400	              movzx eax, byte [r8 + rax]	       417	kfifo.c	FUNCTION_19	CALL_1
+0x40000f7	            0x7411	                            je 0x400010a	       419	kfifo.c	FUNCTION_19	IF_1
+0x40000f9	        0x448d4901	                      lea r9d, [rcx + 1]	       420	kfifo.c	FUNCTION_19	CALL_2
+0x40000fd	          0x4421ca	                            and edx, r9d	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000100	      0x410fb61410	              movzx edx, byte [r8 + rdx]	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000105	          0xc1e208	                              shl edx, 8	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000108	             0x9d0	                             or eax, edx	       420	kfifo.c	FUNCTION_19	CALL_2
+0x400010a	             0x1ce	                            add esi, ecx	       603	kfifo.c	FUNCTION_32
+0x400010c	             0x1f0	                            add eax, esi	       603	kfifo.c	FUNCTION_32
+0x400010e	          0x894704	                mov dword [rdi + 4], eax	       603	kfifo.c	FUNCTION_32
+0x4000111	              0xc3	                                     ret	       603	kfifo.c	FUNCTION_32
+__kfifo_len_r	FOR,0:CALL,1:SWITCH,0:DO,0:functions,0:IF,0:ELSE,0:WHILE,0	14
+0x4000060	          0x8b4f04	                mov ecx, dword [rdi + 4]	       446	kfifo.c	FUNCTION_21
+0x4000063	          0x8b5708	                mov edx, dword [rdi + 8]	       446	kfifo.c	FUNCTION_21
+0x4000066	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	       446	kfifo.c	FUNCTION_21
+0x400006a	            0x89c8	                            mov eax, ecx	       417	kfifo.c	FUNCTION_19	CALL_1
+0x400006c	            0x21d0	                            and eax, edx	       417	kfifo.c	FUNCTION_19	CALL_1
+0x400006e	        0x4883fe01	                              cmp rsi, 1	       419	kfifo.c	FUNCTION_19	IF_1
+0x4000072	         0xfb60407	             movzx eax, byte [rdi + rax]	       417	kfifo.c	FUNCTION_19	CALL_1
+0x4000076	            0x740e	                            je 0x4000086	       419	kfifo.c	FUNCTION_19	IF_1
+0x4000078	          0x83c101	                              add ecx, 1	       420	kfifo.c	FUNCTION_19	CALL_2
+0x400007b	            0x21ca	                            and edx, ecx	       420	kfifo.c	FUNCTION_19	CALL_2
+0x400007d	         0xfb61417	             movzx edx, byte [rdi + rdx]	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000081	          0xc1e208	                              shl edx, 8	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000084	             0x9d0	                             or eax, edx	       420	kfifo.c	FUNCTION_19	CALL_2
+0x4000086	            0xf3c3	                                     ret	       448	kfifo.c	FUNCTION_21

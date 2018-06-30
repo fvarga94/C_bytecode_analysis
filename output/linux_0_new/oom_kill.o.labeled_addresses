@@ -1,0 +1,43 @@
+oom_init	IF,0:WHILE,0:ELSE,0:FOR,0:CALL,1:functions,0:DO,0:SWITCH,0	9
+0x4000070	    0x488b87800000	            mov rax, qword [rdi + 0x80] 	       658	oom_kill.c	FUNCTION_20	CALL_1
+0x4000077	          0x4885c0	                           test rax, rax	       658	oom_kill.c	FUNCTION_20	CALL_1
+0x400007a	     0xf84bb000000	                            je 0x400013b	       658	oom_kill.c	FUNCTION_20	CALL_1
+0x4000080	        0x488d55cc	                   lea rdx, [rbp - 0x34]	       658	oom_kill.c	FUNCTION_20	CALL_1
+0x4000084	        0x488d75d0	                   lea rsi, [rbp - 0x30]	       658	oom_kill.c	FUNCTION_20	CALL_1
+0x4000088	      0xbf24000000	                           mov edi, 0x24	       658	oom_kill.c	FUNCTION_20	CALL_1
+0x400008d	      0xe800000000	                          call 0x4000092	       658	oom_kill.c	FUNCTION_20	CALL_1
+0x4000092	          0x4885c0	                           test rax, rax	       658	oom_kill.c	FUNCTION_20	CALL_1
+0x4000095	     0xf8484000000	                            je 0x400011f	       658	oom_kill.c	FUNCTION_20	CALL_1
+unregister_oom_notifier	IF,0:WHILE,0:ELSE,0:FOR,0:CALL,1:functions,0:DO,0:SWITCH,0	3
+0x4000a90	          0x4889fe	                            mov rsi, rdi	      1007	oom_kill.c	FUNCTION_31
+0x4000a93	    0x48c7c7000000	                              mov rdi, 0	      1008	oom_kill.c	FUNCTION_31	CALL_1
+0x4000a9a	      0xe900000000	                           jmp 0x4000a9f	      1008	oom_kill.c	FUNCTION_31	CALL_1
+register_oom_notifier	IF,0:WHILE,0:ELSE,0:FOR,0:CALL,1:functions,0:DO,0:SWITCH,0	3
+0x4000a80	          0x4889fe	                            mov rsi, rdi	      1001	oom_kill.c	FUNCTION_30
+0x4000a83	    0x48c7c7000000	                              mov rdi, 0	      1002	oom_kill.c	FUNCTION_30	CALL_1
+0x4000a8a	      0xe900000000	                           jmp 0x4000a8f	      1002	oom_kill.c	FUNCTION_30	CALL_1
+pagefault_out_of_memory	IF,2:WHILE,0:ELSE,0:FOR,0:CALL,4:functions,0:DO,0:SWITCH,0	24
+0x4002640	              0x53	                                push rbx	      1098	oom_kill.c	FUNCTION_33
+0x4002641	      0xb907000000	                              mov ecx, 7	      1099	oom_kill.c	FUNCTION_33
+0x4002646	        0x4883ec40	                           sub rsp, 0x40	      1098	oom_kill.c	FUNCTION_33
+0x400264a	    0x65488b042528	                mov rax, qword gs:[0x28]	      1098	oom_kill.c	FUNCTION_33
+0x4002653	      0x4889442438	             mov qword [rsp + 0x38], rax	      1098	oom_kill.c	FUNCTION_33
+0x4002658	            0x31c0	                            xor eax, eax	      1098	oom_kill.c	FUNCTION_33
+0x400265a	          0x4889e7	                            mov rdi, rsp	      1099	oom_kill.c	FUNCTION_33
+0x400265d	          0xf348ab	              rep stosq qword [rdi], rax	      1099	oom_kill.c	FUNCTION_33
+0x4002660	    0x48c7c7000000	                              mov rdi, 0	      1110	oom_kill.c	FUNCTION_33	IF_2	CALL_2
+0x4002667	      0xe800000000	                          call 0x400266c	      1110	oom_kill.c	FUNCTION_33	IF_2	CALL_2
+0x400266c	            0x85c0	                           test eax, eax	      1110	oom_kill.c	FUNCTION_33	IF_2	CALL_2
+0x400266e	            0x7516	                           jne 0x4002686	      1110	oom_kill.c	FUNCTION_33	IF_2	CALL_2
+0x4002670	      0x488b442438	            mov rax, qword [rsp + 0x38] 	      1114	oom_kill.c	FUNCTION_33
+0x4002675	    0x654833042528	                xor rax, qword gs:[0x28]	      1114	oom_kill.c	FUNCTION_33
+0x400267e	            0x751c	                           jne 0x400269c	      1114	oom_kill.c	FUNCTION_33
+0x4002680	        0x4883c440	                           add rsp, 0x40	      1114	oom_kill.c	FUNCTION_33
+0x4002684	              0x5b	                                 pop rbx	      1114	oom_kill.c	FUNCTION_33
+0x4002685	              0xc3	                                     ret	      1114	oom_kill.c	FUNCTION_33
+0x4002686	          0x4889e7	                            mov rdi, rsp	      1112	oom_kill.c	FUNCTION_33	CALL_3
+0x4002689	      0xe800000000	                          call 0x400268e	      1112	oom_kill.c	FUNCTION_33	CALL_3
+0x400268e	    0x48c7c7000000	                              mov rdi, 0	      1113	oom_kill.c	FUNCTION_33	CALL_4
+0x4002695	      0xe800000000	                          call 0x400269a	      1113	oom_kill.c	FUNCTION_33	CALL_4
+0x400269a	            0xebd4	                           jmp 0x4002670	      1113	oom_kill.c	FUNCTION_33	CALL_4
+0x400269c	      0xe800000000	                  call section_end..text	      1114	oom_kill.c	FUNCTION_33

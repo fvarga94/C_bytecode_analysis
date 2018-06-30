@@ -1,0 +1,857 @@
+pci_wch_ch38x_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,1	3
+0x40011f0	    0x818af8000000	     or dword [rdx + 0xf8], section_end.	      1635	8250_pci.c	FUNCTION_62
+0x40011fa	    0xc7820c010000	           mov dword [rdx + 0x10c], 0xc 	      1636	8250_pci.c	FUNCTION_62
+0x4001204	      0xe937ffffff	               jmp sym.pci_default_setup	      1637	8250_pci.c	FUNCTION_62	CALL_1
+pci_inteli960ni_init	functions,0:WHILE,0:DO,0:FOR,0:IF,2:ELSE,0:SWITCH,0:CALL,2	20
+0x4000800	        0x4883ec10	                           sub rsp, 0x10	       215	8250_pci.c	FUNCTION_7
+0x4000804	    0x65488b042528	                mov rax, qword gs:[0x28]	       215	8250_pci.c	FUNCTION_7
+0x400080d	      0x4889442408	                mov qword [rsp + 8], rax	       215	8250_pci.c	FUNCTION_7
+0x4000812	            0x31c0	                            xor eax, eax	       215	8250_pci.c	FUNCTION_7
+0x4000814	        0xf6474310	           test byte [rdi + 0x43], 0x10 	       218	8250_pci.c	FUNCTION_7	IF_1
+0x4000818	            0x7430	                            je 0x400084a	       218	8250_pci.c	FUNCTION_7	IF_1
+0x400081a	      0x488d542404	                      lea rdx, [rsp + 4]	       222	8250_pci.c	FUNCTION_7	CALL_1
+0x400081f	      0xbe44000000	                           mov esi, 0x44	       222	8250_pci.c	FUNCTION_7	CALL_1
+0x4000824	      0xe800000000	                          call 0x4000829	       222	8250_pci.c	FUNCTION_7	CALL_1
+0x4000829	    0x817c24040010	            cmp dword [rsp + 4], 0x1000 	       223	8250_pci.c	FUNCTION_7	IF_2
+0x4000831	            0x7417	                            je 0x400084a	       223	8250_pci.c	FUNCTION_7	IF_2
+0x4000833	            0x31c0	                            xor eax, eax	       227	8250_pci.c	FUNCTION_7
+0x4000835	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       228	8250_pci.c	FUNCTION_7
+0x400083a	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       228	8250_pci.c	FUNCTION_7
+0x4000843	            0x750c	                           jne 0x4000851	       228	8250_pci.c	FUNCTION_7
+0x4000845	        0x4883c410	                           add rsp, 0x10	       228	8250_pci.c	FUNCTION_7
+0x4000849	              0xc3	                                     ret	       228	8250_pci.c	FUNCTION_7
+0x400084a	      0xb8edffffff	                     mov eax, 0xffffffed	       219	8250_pci.c	FUNCTION_7	IF_1
+0x400084f	            0xebe4	                           jmp 0x4000835	       219	8250_pci.c	FUNCTION_7	IF_1
+0x4000851	      0xe800000000	                          call 0x4000856	       228	8250_pci.c	FUNCTION_7
+titan_400l_800l_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,1:CALL,1	20
+0x4000fa0	            0x89c8	                            mov eax, ecx	       639	8250_pci.c	FUNCTION_22
+0x4000fa2	          0x4989d1	                             mov r9, rdx	       639	8250_pci.c	FUNCTION_22
+0x4000fa5	          0x8b4e14	            mov ecx, dword [rsi + 0x14] 	       640	8250_pci.c	FUNCTION_22
+0x4000fa8	            0x85c0	                           test eax, eax	       642	8250_pci.c	FUNCTION_22	SWITCH_1
+0x4000faa	      0xba01000000	                              mov edx, 1	       642	8250_pci.c	FUNCTION_22	SWITCH_1
+0x4000faf	            0x740a	                            je 0x4000fbb	       642	8250_pci.c	FUNCTION_22	SWITCH_1
+0x4000fb1	          0x83f801	                              cmp eax, 1	       642	8250_pci.c	FUNCTION_22	SWITCH_1
+0x4000fb4	      0xba02000000	                              mov edx, 2	       642	8250_pci.c	FUNCTION_22	SWITCH_1
+0x4000fb9	            0x750f	                           jne 0x4000fca	       642	8250_pci.c	FUNCTION_22	SWITCH_1
+0x4000fbb	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       654	8250_pci.c	FUNCTION_22	CALL_1
+0x4000fbf	          0x488b3f	                    mov rdi, qword [rdi]	       654	8250_pci.c	FUNCTION_22	CALL_1
+0x4000fc2	          0x4c89ce	                             mov rsi, r9	       654	8250_pci.c	FUNCTION_22	CALL_1
+0x4000fc5	      0xe966feffff	              jmp sym.setup_port.isra.10	       654	8250_pci.c	FUNCTION_22	CALL_1
+0x4000fca	          0x8d48fe	                      lea ecx, [rax - 2]	       651	8250_pci.c	FUNCTION_22	SWITCH_1
+0x4000fcd	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       654	8250_pci.c	FUNCTION_22	CALL_1
+0x4000fd1	          0x488b3f	                    mov rdi, qword [rdi]	       654	8250_pci.c	FUNCTION_22	CALL_1
+0x4000fd4	         0xfaf4e0c	             imul ecx, dword [rsi + 0xc]	       651	8250_pci.c	FUNCTION_22	SWITCH_1
+0x4000fd8	      0xba04000000	                              mov edx, 4	       651	8250_pci.c	FUNCTION_22	SWITCH_1
+0x4000fdd	          0x4c89ce	                             mov rsi, r9	       654	8250_pci.c	FUNCTION_22	CALL_1
+0x4000fe0	      0xe94bfeffff	              jmp sym.setup_port.isra.10	       654	8250_pci.c	FUNCTION_22	CALL_1
+pciserial_detach_ports	functions,0:WHILE,0:DO,0:FOR,1:IF,1:ELSE,0:SWITCH,0:CALL,3	26
+0x4000b50	              0x55	                                push rbp	      3570	8250_pci.c	FUNCTION_71
+0x4000b51	              0x53	                                push rbx	      3570	8250_pci.c	FUNCTION_71
+0x4000b52	            0x31db	                            xor ebx, ebx	      3570	8250_pci.c	FUNCTION_71
+0x4000b54	          0x8b4708	                mov eax, dword [rdi + 8]	      3574	8250_pci.c	FUNCTION_71	FOR_1
+0x4000b57	          0x4889fd	                            mov rbp, rdi	      3570	8250_pci.c	FUNCTION_71
+0x4000b5a	            0x85c0	                           test eax, eax	      3574	8250_pci.c	FUNCTION_71	FOR_1
+0x4000b5c	            0x7414	                            je 0x4000b72	      3574	8250_pci.c	FUNCTION_71	FOR_1
+0x4000b5e	          0x4863c3	                         movsxd rax, ebx	      3575	8250_pci.c	FUNCTION_71	CALL_1
+0x4000b61	          0x83c301	                              add ebx, 1	      3574	8250_pci.c	FUNCTION_71	FOR_1
+0x4000b64	        0x8b7c8520	    mov edi, dword [rbp + rax*4 + 0x20] 	      3575	8250_pci.c	FUNCTION_71	CALL_1
+0x4000b68	      0xe800000000	                          call 0x4000b6d	      3575	8250_pci.c	FUNCTION_71	CALL_1
+0x4000b6d	          0x395d08	                cmp dword [rbp + 8], ebx	      3574	8250_pci.c	FUNCTION_71	FOR_1
+0x4000b70	            0x77ec	                            ja 0x4000b5e	      3574	8250_pci.c	FUNCTION_71	FOR_1
+0x4000b72	        0x4c8b4d00	                     mov r9, qword [rbp]	      3580	8250_pci.c	FUNCTION_71	CALL_2
+0x4000b76	          0x4c89cf	                             mov rdi, r9	      3580	8250_pci.c	FUNCTION_71	CALL_2
+0x4000b79	      0xe8d2f5ffff	                     call sym.find_quirk	      3580	8250_pci.c	FUNCTION_71	CALL_2
+0x4000b7e	        0x488b4028	            mov rax, qword [rax + 0x28] 	      3581	8250_pci.c	FUNCTION_71	IF_1
+0x4000b82	          0x4885c0	                           test rax, rax	      3581	8250_pci.c	FUNCTION_71	IF_1
+0x4000b85	            0x740a	                            je 0x4000b91	      3581	8250_pci.c	FUNCTION_71	IF_1
+0x4000b87	              0x5b	                                 pop rbx	      3583	8250_pci.c	FUNCTION_71
+0x4000b88	              0x5d	                                 pop rbp	      3583	8250_pci.c	FUNCTION_71
+0x4000b89	          0x4c89cf	                             mov rdi, r9	      3582	8250_pci.c	FUNCTION_71	CALL_3
+0x4000b8c	      0xe900000000	                           jmp 0x4000b91	      3582	8250_pci.c	FUNCTION_71	CALL_3
+0x4000b91	              0x5b	                                 pop rbx	      3583	8250_pci.c	FUNCTION_71
+0x4000b92	              0x5d	                                 pop rbp	      3583	8250_pci.c	FUNCTION_71
+0x4000b93	              0xc3	                                     ret	      3583	8250_pci.c	FUNCTION_71
+kt_serial_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,1	5
+0x4001250	    0x818af8000000	or dword [rdx + 0xf8], loc.imp.pcim_enable_device	      1595	8250_pci.c	FUNCTION_58
+0x400125a	    0x808aa3000000	                 or byte [rdx + 0xa3], 1	      1548	8250_pci.c	FUNCTION_55
+0x4001261	    0x48c742180000	               mov qword [rdx + 0x18], 0	      1596	8250_pci.c	FUNCTION_58
+0x4001269	    0x48c742780000	               mov qword [rdx + 0x78], 0	      1597	8250_pci.c	FUNCTION_58
+0x4001271	      0xe9cafeffff	               jmp sym.pci_default_setup	      1554	8250_pci.c	FUNCTION_55	CALL_2
+pci_timedia_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,1:CALL,1	25
+0x4000f40	          0x4889d0	                            mov rax, rdx	       605	8250_pci.c	FUNCTION_21
+0x4000f43	            0x89ca	                            mov edx, ecx	       605	8250_pci.c	FUNCTION_21
+0x4000f45	          0x8b4e14	            mov ecx, dword [rsi + 0x14] 	       606	8250_pci.c	FUNCTION_21
+0x4000f48	          0x83fa07	                              cmp edx, 7	       608	8250_pci.c	FUNCTION_21	SWITCH_1
+0x4000f4b	            0x773c	                            ja 0x4000f89	       608	8250_pci.c	FUNCTION_21	SWITCH_1
+0x4000f4d	          0x4189d0	                            mov r8d, edx	       608	8250_pci.c	FUNCTION_21	SWITCH_1
+0x4000f50	    0x4e8b04c50000	                    mov r8, qword [r8*8]	       608	8250_pci.c	FUNCTION_21	SWITCH_1
+0x4000f58	      0xe900000000	                           jmp 0x4000f5d	       608	8250_pci.c	FUNCTION_21	SWITCH_1
+0x4000f5d	          0x8b4e0c	              mov ecx, dword [rsi + 0xc]	       620	8250_pci.c	FUNCTION_21	SWITCH_1
+0x4000f60	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f64	          0x488b3f	                    mov rdi, qword [rdi]	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f67	          0x83ea02	                              sub edx, 2	       626	8250_pci.c	FUNCTION_21	SWITCH_1
+0x4000f6a	          0x4889c6	                            mov rsi, rax	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f6d	      0xe9befeffff	              jmp sym.setup_port.isra.10	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f72	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f76	          0x488b3f	                    mov rdi, qword [rdi]	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f79	      0xba01000000	                              mov edx, 1	       608	8250_pci.c	FUNCTION_21	SWITCH_1
+0x4000f7e	          0x4889c6	                            mov rsi, rax	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f81	      0xe9aafeffff	              jmp sym.setup_port.isra.10	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f86	          0x8b4e0c	              mov ecx, dword [rsi + 0xc]	       613	8250_pci.c	FUNCTION_21	SWITCH_1
+0x4000f89	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f8d	          0x488b3f	                    mov rdi, qword [rdi]	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f90	            0x31d2	                            xor edx, edx	       615	8250_pci.c	FUNCTION_21	SWITCH_1
+0x4000f92	          0x4889c6	                            mov rsi, rax	       629	8250_pci.c	FUNCTION_21	CALL_1
+0x4000f95	      0xe996feffff	              jmp sym.setup_port.isra.10	       629	8250_pci.c	FUNCTION_21	CALL_1
+pci_siig_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,1:ELSE,0:SWITCH,0:CALL,2	17
+0x4000ff0	          0x83f903	                              cmp ecx, 3	       514	8250_pci.c	FUNCTION_18	IF_1
+0x4000ff3	          0x4889d0	                            mov rax, rdx	       511	8250_pci.c	FUNCTION_18
+0x4000ff6	            0x8b16	                    mov edx, dword [rsi]	       512	8250_pci.c	FUNCTION_18	CALL_1
+0x4000ff8	            0x7e1a	                           jle 0x4001014	       514	8250_pci.c	FUNCTION_18	IF_1
+0x4000ffa	          0x488b3f	                    mov rdi, qword [rdi]	       519	8250_pci.c	FUNCTION_18	CALL_2
+0x4000ffd	    0x8d0ccde0ffff	                 lea ecx, [rcx*8 - 0x20]	       519	8250_pci.c	FUNCTION_18	CALL_2
+0x4001004	      0xba04000000	                              mov edx, 4	       516	8250_pci.c	FUNCTION_18	IF_1
+0x4001009	          0x4531c0	                            xor r8d, r8d	       519	8250_pci.c	FUNCTION_18	CALL_2
+0x400100c	          0x4889c6	                            mov rsi, rax	       519	8250_pci.c	FUNCTION_18	CALL_2
+0x400100f	      0xe91cfeffff	              jmp sym.setup_port.isra.10	       519	8250_pci.c	FUNCTION_18	CALL_2
+0x4001014	          0x488b3f	                    mov rdi, qword [rdi]	       519	8250_pci.c	FUNCTION_18	CALL_2
+0x4001017	          0x83e207	                              and edx, 7	       519	8250_pci.c	FUNCTION_18	CALL_2
+0x400101a	          0x4531c0	                            xor r8d, r8d	       519	8250_pci.c	FUNCTION_18	CALL_2
+0x400101d	             0x1ca	                            add edx, ecx	       519	8250_pci.c	FUNCTION_18	CALL_2
+0x400101f	          0x4889c6	                            mov rsi, rax	       519	8250_pci.c	FUNCTION_18	CALL_2
+0x4001022	            0x31c9	                            xor ecx, ecx	       512	8250_pci.c	FUNCTION_18	CALL_1
+0x4001024	      0xe907feffff	              jmp sym.setup_port.isra.10	       519	8250_pci.c	FUNCTION_18	CALL_2
+pci_netmos_init	functions,0:WHILE,0:DO,0:FOR,0:IF,3:ELSE,0:SWITCH,1:CALL,2	49
+0x40001f0	         0xfb75742	           movzx edx, word [rdi + 0x42] 	       823	8250_pci.c	FUNCTION_29
+0x40001f4	         0xfb74f3e	           movzx ecx, word [rdi + 0x3e] 	       827	8250_pci.c	FUNCTION_29	IF_1
+0x40001f8	          0x83e20f	                            and edx, 0xf	       827	8250_pci.c	FUNCTION_29	IF_1
+0x40001fb	      0x6681f90199	                          cmp cx, 0x9901	       827	8250_pci.c	FUNCTION_29	IF_1
+0x4000200	            0x7439	                            je 0x400023b	       827	8250_pci.c	FUNCTION_29	IF_1
+0x4000202	      0x6681f96598	                          cmp cx, 0x9865	       827	8250_pci.c	FUNCTION_29	IF_1
+0x4000207	            0x7432	                            je 0x400023b	       827	8250_pci.c	FUNCTION_29	IF_1
+0x4000209	    0x817f40141099	      cmp dword [rdi + 0x40], 0x2991014 	       831	8250_pci.c	FUNCTION_29	IF_2
+0x4000210	            0x7429	                            je 0x400023b	       831	8250_pci.c	FUNCTION_29	IF_2
+0x4000212	    0x8db100670000	                 lea esi, [rcx + 0x6700]	       831	8250_pci.c	FUNCTION_29	IF_2
+0x4000218	              0x53	                                push rbx	       823	8250_pci.c	FUNCTION_29
+0x4000219	           0xfb7c2	                           movzx eax, dx	       823	8250_pci.c	FUNCTION_29
+0x400021c	          0x4889fb	                            mov rbx, rdi	       823	8250_pci.c	FUNCTION_29
+0x400021f	        0x6683fe22	                            cmp si, 0x22	       823	8250_pci.c	FUNCTION_29
+0x4000223	            0x7710	                            ja 0x4000235	       823	8250_pci.c	FUNCTION_29
+0x4000225	    0x48bf11000400	                 movabs rdi, 0x400040011	       823	8250_pci.c	FUNCTION_29
+0x400022f	        0x480fa3f7	                             bt rdi, rsi	       823	8250_pci.c	FUNCTION_29
+0x4000233	            0x7209	                            jb 0x400023e	       823	8250_pci.c	FUNCTION_29
+0x4000235	            0x85c0	                           test eax, eax	       847	8250_pci.c	FUNCTION_29	IF_3
+0x4000237	            0x7428	                            je 0x4000261	       847	8250_pci.c	FUNCTION_29	IF_3
+0x4000239	              0x5b	                                 pop rbx	       853	8250_pci.c	FUNCTION_29
+0x400023a	              0xc3	                                     ret	       853	8250_pci.c	FUNCTION_29
+0x400023b	            0x31c0	                            xor eax, eax	       829	8250_pci.c	FUNCTION_29	IF_1
+0x400023d	              0xc3	                                     ret	       829	8250_pci.c	FUNCTION_29	IF_1
+0x400023e	         0xfb67344	           movzx esi, byte [rbx + 0x44] 	       797	8250_pci.c	FUNCTION_28
+0x4000242	          0x83fe02	                              cmp esi, 2	       799	8250_pci.c	FUNCTION_28	IF_1
+0x4000245	            0x7430	                            je 0x4000277	       799	8250_pci.c	FUNCTION_28	IF_1
+0x4000247	      0x6681f90099	                          cmp cx, 0x9900	       802	8250_pci.c	FUNCTION_28	IF_2
+0x400024c	            0x7504	                           jne 0x4000252	       802	8250_pci.c	FUNCTION_28	IF_2
+0x400024e	            0x85f6	                           test esi, esi	       802	8250_pci.c	FUNCTION_28	IF_2
+0x4000250	            0x742c	                            je 0x400027e	       802	8250_pci.c	FUNCTION_28	IF_2
+0x4000252	          0x4889de	                            mov rsi, rbx	       818	8250_pci.c	FUNCTION_28	CALL_2
+0x4000255	    0x48c7c7000000	                              mov rdi, 0	       818	8250_pci.c	FUNCTION_28	CALL_2
+0x400025c	      0xe83fffffff	                    call sym.moan_device	       818	8250_pci.c	FUNCTION_28	CALL_2
+0x4000261	          0x4889de	                            mov rsi, rbx	       848	8250_pci.c	FUNCTION_29	IF_3	CALL_2
+0x4000264	    0x48c7c7000000	                              mov rdi, 0	       848	8250_pci.c	FUNCTION_29	IF_3	CALL_2
+0x400026b	      0xe830ffffff	                    call sym.moan_device	       848	8250_pci.c	FUNCTION_29	IF_3	CALL_2
+0x4000270	      0xb8edffffff	                     mov eax, 0xffffffed	       849	8250_pci.c	FUNCTION_29	IF_3
+0x4000275	              0x5b	                                 pop rbx	       853	8250_pci.c	FUNCTION_29
+0x4000276	              0xc3	                                     ret	       853	8250_pci.c	FUNCTION_29
+0x4000277	      0xb801000000	                              mov eax, 1	       799	8250_pci.c	FUNCTION_28	IF_1
+0x400027c	              0x5b	                                 pop rbx	       853	8250_pci.c	FUNCTION_29
+0x400027d	              0xc3	                                     ret	       853	8250_pci.c	FUNCTION_29
+0x400027e	          0x6685d2	                             test dx, dx	       810	8250_pci.c	FUNCTION_28	IF_2	IF_3
+0x4000281	            0x75b6	                           jne 0x4000239	       810	8250_pci.c	FUNCTION_28	IF_2	IF_3
+0x4000283	    0x488dbba00000	                   lea rdi, [rbx + 0xa0]	       813	8250_pci.c	FUNCTION_28	IF_2	CALL_1
+0x400028a	    0x48c7c6000000	                              mov rsi, 0	       813	8250_pci.c	FUNCTION_28	IF_2	CALL_1
+0x4000291	      0xe800000000	                          call 0x4000296	       813	8250_pci.c	FUNCTION_28	IF_2	CALL_1
+0x4000296	            0xebc9	                           jmp 0x4000261	       813	8250_pci.c	FUNCTION_28	IF_2	CALL_1
+pci_omegapci_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,1	6
+0x4000f20	          0x488b3f	                    mov rdi, qword [rdi]	      1375	8250_pci.c	FUNCTION_50	CALL_1
+0x4000f23	          0x4889d6	                            mov rsi, rdx	      1374	8250_pci.c	FUNCTION_50
+0x4000f26	          0xc1e103	                              shl ecx, 3	      1375	8250_pci.c	FUNCTION_50	CALL_1
+0x4000f29	          0x4531c0	                            xor r8d, r8d	      1375	8250_pci.c	FUNCTION_50	CALL_1
+0x4000f2c	      0xba02000000	                              mov edx, 2	      1375	8250_pci.c	FUNCTION_50	CALL_1
+0x4000f31	      0xe9fafeffff	              jmp sym.setup_port.isra.10	      1375	8250_pci.c	FUNCTION_50	CALL_1
+sbs_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,2:ELSE,2:SWITCH,0:CALL,1	18
+0x4001030	          0x83f903	                              cmp ecx, 3	       361	8250_pci.c	FUNCTION_12	IF_1
+0x4001033	          0x4989d1	                             mov r9, rdx	       356	8250_pci.c	FUNCTION_12
+0x4001036	          0x8b4614	            mov eax, dword [rsi + 0x14] 	       357	8250_pci.c	FUNCTION_12
+0x4001039	            0x7f17	                            jg 0x4001052	       361	8250_pci.c	FUNCTION_12	IF_1
+0x400103b	         0xfaf4e0c	             imul ecx, dword [rsi + 0xc]	       363	8250_pci.c	FUNCTION_12	IF_1
+0x400103f	             0x1c1	                            add ecx, eax	       363	8250_pci.c	FUNCTION_12	IF_1
+0x4001041	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       370	8250_pci.c	FUNCTION_12	CALL_1
+0x4001045	          0x488b3f	                    mov rdi, qword [rdi]	       370	8250_pci.c	FUNCTION_12	CALL_1
+0x4001048	            0x31d2	                            xor edx, edx	       370	8250_pci.c	FUNCTION_12	CALL_1
+0x400104a	          0x4c89ce	                             mov rsi, r9	       370	8250_pci.c	FUNCTION_12	CALL_1
+0x400104d	      0xe9defdffff	              jmp sym.setup_port.isra.10	       370	8250_pci.c	FUNCTION_12	CALL_1
+0x4001052	          0x83f907	                              cmp ecx, 7	       364	8250_pci.c	FUNCTION_12	ELSE_1	IF_2
+0x4001055	            0x7f0d	                            jg 0x4001064	       364	8250_pci.c	FUNCTION_12	ELSE_1	IF_2
+0x4001057	         0xfaf4e0c	             imul ecx, dword [rsi + 0xc]	       366	8250_pci.c	FUNCTION_12	ELSE_1	IF_2
+0x400105b	    0x8d8c08000c00	           lea ecx, [rax + rcx + 0xc00] 	       366	8250_pci.c	FUNCTION_12	ELSE_1	IF_2
+0x4001062	            0xebdd	                           jmp 0x4001041	       366	8250_pci.c	FUNCTION_12	ELSE_1	IF_2
+0x4001064	      0xb801000000	                              mov eax, 1	       371	8250_pci.c	FUNCTION_12
+0x4001069	              0xc3	                                     ret	       371	8250_pci.c	FUNCTION_12
+pci_default_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,2:ELSE,1:SWITCH,0:CALL,3	42
+0x4001140	              0x53	                                push rbx	      1312	8250_pci.c	FUNCTION_47
+0x4001141	            0x89cb	                            mov ebx, ecx	      1312	8250_pci.c	FUNCTION_47
+0x4001143	            0x8b0e	                    mov ecx, dword [rsi]	      1315	8250_pci.c	FUNCTION_47	CALL_1
+0x4001145	          0x4989d2	                            mov r10, rdx	      1312	8250_pci.c	FUNCTION_47
+0x4001148	        0x448b4e14	            mov r9d, dword [rsi + 0x14] 	      1313	8250_pci.c	FUNCTION_47
+0x400114c	            0x89ca	                            mov edx, ecx	      1315	8250_pci.c	FUNCTION_47	CALL_1
+0x400114e	          0x83e207	                              and edx, 7	      1315	8250_pci.c	FUNCTION_47	CALL_1
+0x4001151	          0xf6c108	                              test cl, 8	      1316	8250_pci.c	FUNCTION_47	IF_1
+0x4001154	            0x7453	                            je 0x40011a9	      1316	8250_pci.c	FUNCTION_47	IF_1
+0x4001156	             0x1da	                            add edx, ebx	      1317	8250_pci.c	FUNCTION_47	IF_1
+0x4001158	          0x4589cb	                           mov r11d, r9d	      1313	8250_pci.c	FUNCTION_47
+0x400115b	          0x488b3f	                    mov rdi, qword [rdi]	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x400115e	            0x89d0	                            mov eax, edx	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x4001160	        0x48c1e006	                              shl rax, 6	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x4001164	          0x4801f8	                            add rax, rdi	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x4001167	    0x4c8b80780300	            mov r8, qword [rax + 0x378] 	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x400116e	    0x488b80800300	           mov rax, qword [rax + 0x380] 	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x4001175	          0x4d85c0	                             test r8, r8	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x4001178	            0x7505	                           jne 0x400117f	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x400117a	          0x4885c0	                           test rax, rax	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x400117d	            0x7407	                            je 0x4001186	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x400117f	          0x4c29c0	                             sub rax, r8	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x4001182	        0x4883c001	                              add rax, 1	      1321	8250_pci.c	FUNCTION_47	CALL_2
+0x4001186	          0x80e501	                               and ch, 1	      1324	8250_pci.c	FUNCTION_47	IF_2
+0x4001189	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	      1322	8250_pci.c	FUNCTION_47
+0x400118d	            0x740e	                            je 0x400119d	      1324	8250_pci.c	FUNCTION_47	IF_2
+0x400118f	        0x418d4803	                       lea ecx, [r8 + 3]	      1324	8250_pci.c	FUNCTION_47	IF_2
+0x4001193	          0x4c29c8	                             sub rax, r9	      1324	8250_pci.c	FUNCTION_47	IF_2
+0x4001196	          0x48d3e8	                             shr rax, cl	      1324	8250_pci.c	FUNCTION_47	IF_2
+0x4001199	            0x39c3	                            cmp ebx, eax	      1324	8250_pci.c	FUNCTION_47	IF_2
+0x400119b	            0x7319	                           jae 0x40011b6	      1324	8250_pci.c	FUNCTION_47	IF_2
+0x400119d	              0x5b	                                 pop rbx	      1328	8250_pci.c	FUNCTION_47
+0x400119e	          0x4489d9	                           mov ecx, r11d	      1327	8250_pci.c	FUNCTION_47	CALL_3
+0x40011a1	          0x4c89d6	                            mov rsi, r10	      1327	8250_pci.c	FUNCTION_47	CALL_3
+0x40011a4	      0xe987fcffff	              jmp sym.setup_port.isra.10	      1327	8250_pci.c	FUNCTION_47	CALL_3
+0x40011a9	        0x448b5e0c	            mov r11d, dword [rsi + 0xc] 	      1319	8250_pci.c	FUNCTION_47	ELSE_1
+0x40011ad	        0x440fafdb	                          imul r11d, ebx	      1319	8250_pci.c	FUNCTION_47	ELSE_1
+0x40011b1	          0x4501cb	                           add r11d, r9d	      1319	8250_pci.c	FUNCTION_47	ELSE_1
+0x40011b4	            0xeba5	                           jmp 0x400115b	      1319	8250_pci.c	FUNCTION_47	ELSE_1
+0x40011b6	      0xb801000000	                              mov eax, 1	      1328	8250_pci.c	FUNCTION_47
+0x40011bb	              0x5b	                                 pop rbx	      1328	8250_pci.c	FUNCTION_47
+0x40011bc	              0xc3	                                     ret	      1328	8250_pci.c	FUNCTION_47
+pci_eg20t_init	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,0	2
+0x4000140	            0x31c0	                            xor eax, eax	      1608	8250_pci.c	FUNCTION_59
+0x4000142	              0xc3	                                     ret	      1608	8250_pci.c	FUNCTION_59
+pci_pericom_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,3:ELSE,1:SWITCH,0:CALL,3	45
+0x4001070	              0x53	                                push rbx	      1333	8250_pci.c	FUNCTION_48
+0x4001071	            0x8b1e	                    mov ebx, dword [rsi]	      1336	8250_pci.c	FUNCTION_48	CALL_1
+0x4001073	          0x4989d2	                            mov r10, rdx	      1333	8250_pci.c	FUNCTION_48
+0x4001076	          0x4189cb	                           mov r11d, ecx	      1333	8250_pci.c	FUNCTION_48
+0x4001079	          0x8b4e14	            mov ecx, dword [rsi + 0x14] 	      1334	8250_pci.c	FUNCTION_48
+0x400107c	            0x89da	                            mov edx, ebx	      1336	8250_pci.c	FUNCTION_48	CALL_1
+0x400107e	          0x83e207	                              and edx, 7	      1336	8250_pci.c	FUNCTION_48	CALL_1
+0x4001081	          0xf6c308	                              test bl, 8	      1337	8250_pci.c	FUNCTION_48	IF_1
+0x4001084	            0x7462	                            je 0x40010e8	      1337	8250_pci.c	FUNCTION_48	IF_1
+0x4001086	          0x4401da	                           add edx, r11d	      1338	8250_pci.c	FUNCTION_48	IF_1
+0x4001089	          0x4189c9	                            mov r9d, ecx	      1334	8250_pci.c	FUNCTION_48
+0x400108c	        0x4183fb03	                             cmp r11d, 3	      1343	8250_pci.c	FUNCTION_48	IF_2
+0x4001090	      0xb838000000	                           mov eax, 0x38	      1343	8250_pci.c	FUNCTION_48	IF_2
+0x4001095	          0x488b3f	                    mov rdi, qword [rdi]	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x4001098	        0x440f44c8	                          cmove r9d, eax	      1343	8250_pci.c	FUNCTION_48	IF_2
+0x400109c	            0x89d0	                            mov eax, edx	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x400109e	        0x48c1e006	                              shl rax, 6	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x40010a2	          0x4801f8	                            add rax, rdi	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x40010a5	    0x4c8b80780300	            mov r8, qword [rax + 0x378] 	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x40010ac	    0x488b80800300	           mov rax, qword [rax + 0x380] 	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x40010b3	          0x4d85c0	                             test r8, r8	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x40010b6	            0x7505	                           jne 0x40010bd	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x40010b8	          0x4885c0	                           test rax, rax	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x40010bb	            0x7407	                            je 0x40010c4	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x40010bd	          0x4c29c0	                             sub rax, r8	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x40010c0	        0x4883c001	                              add rax, 1	      1345	8250_pci.c	FUNCTION_48	CALL_2
+0x40010c4	          0x80e701	                               and bh, 1	      1348	8250_pci.c	FUNCTION_48	IF_3
+0x40010c7	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	      1346	8250_pci.c	FUNCTION_48
+0x40010cb	            0x740f	                            je 0x40010dc	      1348	8250_pci.c	FUNCTION_48	IF_3
+0x40010cd	          0x4829c8	                            sub rax, rcx	      1348	8250_pci.c	FUNCTION_48	IF_3
+0x40010d0	        0x418d4803	                       lea ecx, [r8 + 3]	      1348	8250_pci.c	FUNCTION_48	IF_3
+0x40010d4	          0x48d3e8	                             shr rax, cl	      1348	8250_pci.c	FUNCTION_48	IF_3
+0x40010d7	          0x4139c3	                           cmp r11d, eax	      1348	8250_pci.c	FUNCTION_48	IF_3
+0x40010da	            0x7319	                           jae 0x40010f5	      1348	8250_pci.c	FUNCTION_48	IF_3
+0x40010dc	              0x5b	                                 pop rbx	      1352	8250_pci.c	FUNCTION_48
+0x40010dd	          0x4489c9	                            mov ecx, r9d	      1351	8250_pci.c	FUNCTION_48	CALL_3
+0x40010e0	          0x4c89d6	                            mov rsi, r10	      1351	8250_pci.c	FUNCTION_48	CALL_3
+0x40010e3	      0xe948fdffff	              jmp sym.setup_port.isra.10	      1351	8250_pci.c	FUNCTION_48	CALL_3
+0x40010e8	        0x448b4e0c	              mov r9d, dword [rsi + 0xc]	      1340	8250_pci.c	FUNCTION_48	ELSE_1
+0x40010ec	        0x450fafcb	                          imul r9d, r11d	      1340	8250_pci.c	FUNCTION_48	ELSE_1
+0x40010f0	          0x4101c9	                            add r9d, ecx	      1340	8250_pci.c	FUNCTION_48	ELSE_1
+0x40010f3	            0xeb97	                           jmp 0x400108c	      1340	8250_pci.c	FUNCTION_48	ELSE_1
+0x40010f5	      0xb801000000	                              mov eax, 1	      1352	8250_pci.c	FUNCTION_48
+0x40010fa	              0x5b	                                 pop rbx	      1352	8250_pci.c	FUNCTION_48
+0x40010fb	              0xc3	                                     ret	      1352	8250_pci.c	FUNCTION_48
+pci_fintek_rs485_config	functions,0:WHILE,0:DO,0:FOR,0:IF,5:ELSE,4:SWITCH,0:CALL,5	86
+0x40002a0	            0x4156	                                push r14	      1398	8250_pci.c	FUNCTION_52
+0x40002a2	            0x4155	                                push r13	      1398	8250_pci.c	FUNCTION_52
+0x40002a4	            0x4154	                                push r12	      1398	8250_pci.c	FUNCTION_52
+0x40002a6	              0x55	                                push rbp	      1398	8250_pci.c	FUNCTION_52
+0x40002a7	          0x4889fd	                            mov rbp, rdi	      1398	8250_pci.c	FUNCTION_52
+0x40002aa	              0x53	                                push rbx	      1398	8250_pci.c	FUNCTION_52
+0x40002ab	          0x4889f3	                            mov rbx, rsi	      1398	8250_pci.c	FUNCTION_52
+0x40002ae	        0x4883ec10	                           sub rsp, 0x10	      1398	8250_pci.c	FUNCTION_52
+0x40002b2	    0x4c8bb7800100	           mov r14, qword [rdi + 0x180] 	      1401	8250_pci.c	FUNCTION_52
+0x40002b9	    0x65488b042528	                mov rax, qword gs:[0x28]	      1398	8250_pci.c	FUNCTION_52
+0x40002c2	      0x4889442408	                mov qword [rsp + 8], rax	      1398	8250_pci.c	FUNCTION_52
+0x40002c7	            0x31c0	                            xor eax, eax	      1398	8250_pci.c	FUNCTION_52
+0x40002c9	    0x488b87380100	           mov rax, qword [rdi + 0x138] 	      1399	8250_pci.c	FUNCTION_52	CALL_1
+0x40002d0	      0x488d542407	                      lea rdx, [rsp + 7]	      1403	8250_pci.c	FUNCTION_52	CALL_2
+0x40002d5	    0x4c8da860ffff	                   lea r13, [rax - 0xa0]	      1399	8250_pci.c	FUNCTION_52	CALL_1
+0x40002dc	        0x410fb606	                   movzx eax, byte [r14]	      1403	8250_pci.c	FUNCTION_52	CALL_2
+0x40002e0	          0x4c89ef	                            mov rdi, r13	      1403	8250_pci.c	FUNCTION_52	CALL_2
+0x40002e3	    0x8d34c5470000	                 lea esi, [rax*8 + 0x47]	      1403	8250_pci.c	FUNCTION_52	CALL_2
+0x40002ea	      0xe800000000	                          call 0x40002ef	      1403	8250_pci.c	FUNCTION_52	CALL_2
+0x40002ef	          0x4885db	                           test rbx, rbx	      1405	8250_pci.c	FUNCTION_52	IF_1
+0x40002f2	     0xf8405010000	                            je 0x40003fd	      1405	8250_pci.c	FUNCTION_52	IF_1
+0x40002f8	            0x8b03	                    mov eax, dword [rbx]	      1407	8250_pci.c	FUNCTION_52	ELSE_1	IF_2
+0x40002fa	            0xa801	                              test al, 1	      1407	8250_pci.c	FUNCTION_52	ELSE_1	IF_2
+0x40002fc	     0xf85a8000000	                           jne 0x40003aa	      1407	8250_pci.c	FUNCTION_52	ELSE_1	IF_2
+0x4000302	    0x4c8da5600100	                  lea r12, [rbp + 0x160]	      1407	8250_pci.c	FUNCTION_52	ELSE_1	IF_2
+0x4000309	    0x48c703000000	                      mov qword [rbx], 0	      1410	8250_pci.c	FUNCTION_52	CALL_4
+0x4000310	    0x48c743080000	                  mov qword [rbx + 8], 0	      1410	8250_pci.c	FUNCTION_52	CALL_4
+0x4000318	    0x48c743100000	               mov qword [rbx + 0x10], 0	      1410	8250_pci.c	FUNCTION_52	CALL_4
+0x4000320	    0x48c743180000	               mov qword [rbx + 0x18], 0	      1410	8250_pci.c	FUNCTION_52	CALL_4
+0x4000328	            0x8b03	                    mov eax, dword [rbx]	      1413	8250_pci.c	FUNCTION_52
+0x400032a	            0x89c2	                            mov edx, eax	      1413	8250_pci.c	FUNCTION_52
+0x400032c	          0x83e203	                              and edx, 3	      1413	8250_pci.c	FUNCTION_52
+0x400032f	            0xa801	                              test al, 1	      1415	8250_pci.c	FUNCTION_52	IF_3
+0x4000331	            0x8913	                    mov dword [rbx], edx	      1413	8250_pci.c	FUNCTION_52
+0x4000333	     0xf8594000000	                           jne 0x40003cd	      1415	8250_pci.c	FUNCTION_52	IF_3
+0x4000339	       0xfb6542407	               movzx edx, byte [rsp + 7]	      1431	8250_pci.c	FUNCTION_52	ELSE_4
+0x400033e	          0x83e2cf	                     and edx, 0xffffffcf	      1431	8250_pci.c	FUNCTION_52	ELSE_4
+0x4000341	        0x88542407	                  mov byte [rsp + 7], dl	      1431	8250_pci.c	FUNCTION_52	ELSE_4
+0x4000345	        0x410fb606	                   movzx eax, byte [r14]	      1434	8250_pci.c	FUNCTION_52	CALL_5
+0x4000349	           0xfb6d2	                           movzx edx, dl	      1434	8250_pci.c	FUNCTION_52	CALL_5
+0x400034c	          0x4c89ef	                            mov rdi, r13	      1434	8250_pci.c	FUNCTION_52	CALL_5
+0x400034f	    0x8d34c5470000	                 lea esi, [rax*8 + 0x47]	      1434	8250_pci.c	FUNCTION_52	CALL_5
+0x4000356	      0xe800000000	                          call 0x400035b	      1434	8250_pci.c	FUNCTION_52	CALL_5
+0x400035b	          0x4c39e3	                            cmp rbx, r12	      1436	8250_pci.c	FUNCTION_52	IF_5
+0x400035e	            0x742b	                            je 0x400038b	      1436	8250_pci.c	FUNCTION_52	IF_5
+0x4000360	          0x488b03	                    mov rax, qword [rbx]	      1437	8250_pci.c	FUNCTION_52	IF_5
+0x4000363	    0x488985600100	           mov qword [rbp + 0x160], rax 	      1437	8250_pci.c	FUNCTION_52	IF_5
+0x400036a	        0x488b4308	                mov rax, qword [rbx + 8]	      1437	8250_pci.c	FUNCTION_52	IF_5
+0x400036e	    0x488985680100	           mov qword [rbp + 0x168], rax 	      1437	8250_pci.c	FUNCTION_52	IF_5
+0x4000375	        0x488b4310	            mov rax, qword [rbx + 0x10] 	      1437	8250_pci.c	FUNCTION_52	IF_5
+0x4000379	    0x488985700100	           mov qword [rbp + 0x170], rax 	      1437	8250_pci.c	FUNCTION_52	IF_5
+0x4000380	        0x488b4318	            mov rax, qword [rbx + 0x18] 	      1437	8250_pci.c	FUNCTION_52	IF_5
+0x4000384	    0x488985780100	           mov qword [rbp + 0x178], rax 	      1437	8250_pci.c	FUNCTION_52	IF_5
+0x400038b	            0x31c0	                            xor eax, eax	      1440	8250_pci.c	FUNCTION_52
+0x400038d	      0x488b4c2408	                mov rcx, qword [rsp + 8]	      1440	8250_pci.c	FUNCTION_52
+0x4000392	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      1440	8250_pci.c	FUNCTION_52
+0x400039b	            0x756f	                           jne 0x400040c	      1440	8250_pci.c	FUNCTION_52
+0x400039d	        0x4883c410	                           add rsp, 0x10	      1440	8250_pci.c	FUNCTION_52
+0x40003a1	              0x5b	                                 pop rbx	      1440	8250_pci.c	FUNCTION_52
+0x40003a2	              0x5d	                                 pop rbp	      1440	8250_pci.c	FUNCTION_52
+0x40003a3	            0x415c	                                 pop r12	      1440	8250_pci.c	FUNCTION_52
+0x40003a5	            0x415d	                                 pop r13	      1440	8250_pci.c	FUNCTION_52
+0x40003a7	            0x415e	                                 pop r14	      1440	8250_pci.c	FUNCTION_52
+0x40003a9	              0xc3	                                     ret	      1440	8250_pci.c	FUNCTION_52
+0x40003aa	          0x83e003	                              and eax, 3	      1413	8250_pci.c	FUNCTION_52
+0x40003ad	    0x4c8da5600100	                  lea r12, [rbp + 0x160]	      1413	8250_pci.c	FUNCTION_52
+0x40003b4	    0x48c7430c0000	                mov qword [rbx + 0xc], 0	      1408	8250_pci.c	FUNCTION_52	ELSE_1	IF_2
+0x40003bc	    0x48c743140000	               mov qword [rbx + 0x14], 0	      1408	8250_pci.c	FUNCTION_52	ELSE_1	IF_2
+0x40003c4	    0xc7431c000000	               mov dword [rbx + 0x1c], 0	      1408	8250_pci.c	FUNCTION_52	ELSE_1	IF_2
+0x40003cb	            0x8903	                    mov dword [rbx], eax	      1413	8250_pci.c	FUNCTION_52
+0x40003cd	          0xf60302	                      test byte [rbx], 2	      1419	8250_pci.c	FUNCTION_52	IF_3	IF_4
+0x40003d0	       0xfb6542407	               movzx edx, byte [rsp + 7]	      1417	8250_pci.c	FUNCTION_52	IF_3
+0x40003d5	            0x741d	                            je 0x40003f4	      1419	8250_pci.c	FUNCTION_52	IF_3	IF_4
+0x40003d7	          0x83e2df	                     and edx, 0xffffffdf	      1421	8250_pci.c	FUNCTION_52	IF_3	IF_4
+0x40003da	          0x83ca10	                            or edx, 0x10	      1421	8250_pci.c	FUNCTION_52	IF_3	IF_4
+0x40003dd	        0x88542407	                  mov byte [rsp + 7], dl	      1421	8250_pci.c	FUNCTION_52	IF_3	IF_4
+0x40003e1	    0xc74308000000	                  mov dword [rbx + 8], 0	      1427	8250_pci.c	FUNCTION_52	IF_3
+0x40003e8	    0xc74304000000	                  mov dword [rbx + 4], 0	      1428	8250_pci.c	FUNCTION_52	IF_3
+0x40003ef	      0xe951ffffff	                           jmp 0x4000345	      1428	8250_pci.c	FUNCTION_52	IF_3
+0x40003f4	          0x83ca30	                            or edx, 0x30	      1424	8250_pci.c	FUNCTION_52	IF_3	ELSE_3
+0x40003f7	        0x88542407	                  mov byte [rsp + 7], dl	      1424	8250_pci.c	FUNCTION_52	IF_3	ELSE_3
+0x40003fb	            0xebe4	                           jmp 0x40003e1	      1424	8250_pci.c	FUNCTION_52	IF_3	ELSE_3
+0x40003fd	    0x488d9d600100	                  lea rbx, [rbp + 0x160]	      1406	8250_pci.c	FUNCTION_52	IF_1
+0x4000404	          0x4989dc	                            mov r12, rbx	      1406	8250_pci.c	FUNCTION_52	IF_1
+0x4000407	      0xe91cffffff	                           jmp 0x4000328	      1406	8250_pci.c	FUNCTION_52	IF_1
+0x400040c	      0xe800000000	                          call 0x4000411	      1440	8250_pci.c	FUNCTION_52
+pciserial_suspend_one	functions,0:WHILE,0:DO,0:FOR,0:IF,1:ELSE,0:SWITCH,0:CALL,3	6
+0x4000c30	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      3711	8250_pci.c	FUNCTION_77
+0x4000c37	          0x4885ff	                           test rdi, rdi	      3715	8250_pci.c	FUNCTION_77	IF_1
+0x4000c3a	            0x7405	                            je 0x4000c41	      3715	8250_pci.c	FUNCTION_77	IF_1
+0x4000c3c	      0xe800000000	                          call 0x4000c41	      3716	8250_pci.c	FUNCTION_77	CALL_3
+0x4000c41	            0x31c0	                            xor eax, eax	      3719	8250_pci.c	FUNCTION_77
+0x4000c43	              0xc3	                                     ret	      3719	8250_pci.c	FUNCTION_77
+pciserial_suspend_ports	functions,0:WHILE,0:DO,0:FOR,1:IF,2:ELSE,0:SWITCH,0:CALL,2	26
+0x4000be0	              0x55	                                push rbp	      3593	8250_pci.c	FUNCTION_73
+0x4000be1	              0x53	                                push rbx	      3593	8250_pci.c	FUNCTION_73
+0x4000be2	            0x31db	                            xor ebx, ebx	      3593	8250_pci.c	FUNCTION_73
+0x4000be4	          0x8b4708	                mov eax, dword [rdi + 8]	      3596	8250_pci.c	FUNCTION_73	FOR_1
+0x4000be7	          0x4889fd	                            mov rbp, rdi	      3593	8250_pci.c	FUNCTION_73
+0x4000bea	            0x85c0	                           test eax, eax	      3596	8250_pci.c	FUNCTION_73	FOR_1
+0x4000bec	            0x7418	                            je 0x4000c06	      3596	8250_pci.c	FUNCTION_73	FOR_1
+0x4000bee	          0x4863c3	                         movsxd rax, ebx	      3597	8250_pci.c	FUNCTION_73	FOR_1	IF_1
+0x4000bf1	        0x8b7c8520	    mov edi, dword [rbp + rax*4 + 0x20] 	      3597	8250_pci.c	FUNCTION_73	FOR_1	IF_1
+0x4000bf5	            0x85ff	                           test edi, edi	      3597	8250_pci.c	FUNCTION_73	FOR_1	IF_1
+0x4000bf7	            0x7805	                            js 0x4000bfe	      3597	8250_pci.c	FUNCTION_73	FOR_1	IF_1
+0x4000bf9	      0xe800000000	                          call 0x4000bfe	      3598	8250_pci.c	FUNCTION_73	FOR_1	IF_1
+0x4000bfe	          0x83c301	                              add ebx, 1	      3596	8250_pci.c	FUNCTION_73	FOR_1
+0x4000c01	          0x395d08	                cmp dword [rbp + 8], ebx	      3596	8250_pci.c	FUNCTION_73	FOR_1
+0x4000c04	            0x77e8	                            ja 0x4000bee	      3596	8250_pci.c	FUNCTION_73	FOR_1
+0x4000c06	        0x488b4510	            mov rax, qword [rbp + 0x10] 	      3603	8250_pci.c	FUNCTION_73	IF_2
+0x4000c0a	        0x488b4028	            mov rax, qword [rax + 0x28] 	      3603	8250_pci.c	FUNCTION_73	IF_2
+0x4000c0e	          0x4885c0	                           test rax, rax	      3603	8250_pci.c	FUNCTION_73	IF_2
+0x4000c11	            0x740b	                            je 0x4000c1e	      3603	8250_pci.c	FUNCTION_73	IF_2
+0x4000c13	        0x488b7d00	                    mov rdi, qword [rbp]	      3604	8250_pci.c	FUNCTION_73	CALL_2
+0x4000c17	              0x5b	                                 pop rbx	      3605	8250_pci.c	FUNCTION_73
+0x4000c18	              0x5d	                                 pop rbp	      3605	8250_pci.c	FUNCTION_73
+0x4000c19	      0xe900000000	                           jmp 0x4000c1e	      3604	8250_pci.c	FUNCTION_73	CALL_2
+0x4000c1e	              0x5b	                                 pop rbx	      3605	8250_pci.c	FUNCTION_73
+0x4000c1f	              0x5d	                                 pop rbp	      3605	8250_pci.c	FUNCTION_73
+0x4000c20	              0xc3	                                     ret	      3605	8250_pci.c	FUNCTION_73
+pci_ite887x_exit	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,2	18
+0x4000860	        0x4883ec10	                           sub rsp, 0x10	       978	8250_pci.c	FUNCTION_31
+0x4000864	      0xbe60000000	                           mov esi, 0x60	       981	8250_pci.c	FUNCTION_31	CALL_1
+0x4000869	      0x488d542404	                      lea rdx, [rsp + 4]	       981	8250_pci.c	FUNCTION_31	CALL_1
+0x400086e	    0x65488b042528	                mov rax, qword gs:[0x28]	       978	8250_pci.c	FUNCTION_31
+0x4000877	      0x4889442408	                mov qword [rsp + 8], rax	       978	8250_pci.c	FUNCTION_31
+0x400087c	            0x31c0	                            xor eax, eax	       978	8250_pci.c	FUNCTION_31
+0x400087e	      0xe800000000	                          call 0x4000883	       981	8250_pci.c	FUNCTION_31	CALL_1
+0x4000883	       0xfb7742404	               movzx esi, word [rsp + 4]	       982	8250_pci.c	FUNCTION_31
+0x4000888	      0xba20000000	                           mov edx, 0x20	       983	8250_pci.c	FUNCTION_31	CALL_2
+0x400088d	    0x48c7c7000000	                              mov rdi, 0	       983	8250_pci.c	FUNCTION_31	CALL_2
+0x4000894	        0x89742404	                mov dword [rsp + 4], esi	       982	8250_pci.c	FUNCTION_31
+0x4000898	      0xe800000000	                          call 0x400089d	       983	8250_pci.c	FUNCTION_31	CALL_2
+0x400089d	      0x488b442408	                mov rax, qword [rsp + 8]	       984	8250_pci.c	FUNCTION_31
+0x40008a2	    0x654833042528	                xor rax, qword gs:[0x28]	       984	8250_pci.c	FUNCTION_31
+0x40008ab	            0x7505	                           jne 0x40008b2	       984	8250_pci.c	FUNCTION_31
+0x40008ad	        0x4883c410	                           add rsp, 0x10	       984	8250_pci.c	FUNCTION_31
+0x40008b1	              0xc3	                                     ret	       984	8250_pci.c	FUNCTION_31
+0x40008b2	      0xe800000000	                          call 0x40008b7	       984	8250_pci.c	FUNCTION_31
+pci_timedia_init	functions,0:WHILE,0:DO,0:FOR,2:IF,1:ELSE,0:SWITCH,0:CALL,1	31
+0x40000a0	    0x49c7c1000000	                               mov r9, 0	       584	8250_pci.c	FUNCTION_20
+0x40000a7	      0xb825400000	                         mov eax, 0x4025	       584	8250_pci.c	FUNCTION_20
+0x40000ac	    0x48c7c1000000	                              mov rcx, 0	       584	8250_pci.c	FUNCTION_20
+0x40000b3	          0x4531c0	                            xor r8d, r8d	       584	8250_pci.c	FUNCTION_20
+0x40000b6	          0x6685c0	                             test ax, ax	       590	8250_pci.c	FUNCTION_20	FOR_1	FOR_2
+0x40000b9	            0x7421	                            je 0x40000dc	       590	8250_pci.c	FUNCTION_20	FOR_1	FOR_2
+0x40000bb	         0xfb77742	           movzx esi, word [rdi + 0x42] 	       591	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x40000bf	          0x6639f0	                              cmp ax, si	       591	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x40000c2	            0x742f	                            je 0x40000f3	       591	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x40000c4	            0x31c0	                            xor eax, eax	       591	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x40000c6	            0xeb05	                           jmp 0x40000cd	       591	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x40000c8	          0x6639f2	                              cmp dx, si	       591	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x40000cb	            0x7426	                            je 0x40000f3	       591	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x40000cd	          0x83c001	                              add eax, 1	       590	8250_pci.c	FUNCTION_20	FOR_1	FOR_2
+0x40000d0	          0x4863d0	                         movsxd rdx, eax	       590	8250_pci.c	FUNCTION_20	FOR_1	FOR_2
+0x40000d3	         0xfb71451	           movzx edx, word [rcx + rdx*2]	       590	8250_pci.c	FUNCTION_20	FOR_1	FOR_2
+0x40000d7	          0x6685d2	                             test dx, dx	       590	8250_pci.c	FUNCTION_20	FOR_1	FOR_2
+0x40000da	            0x75ec	                           jne 0x40000c8	       590	8250_pci.c	FUNCTION_20	FOR_1	FOR_2
+0x40000dc	        0x4183c001	                              add r8d, 1	       588	8250_pci.c	FUNCTION_20	FOR_1	CALL_1
+0x40000e0	        0x4983c110	                            add r9, 0x10	       588	8250_pci.c	FUNCTION_20	FOR_1	CALL_1
+0x40000e4	        0x4183f804	                              cmp r8d, 4	       588	8250_pci.c	FUNCTION_20	FOR_1	CALL_1
+0x40000e8	            0x7418	                            je 0x4000102	       588	8250_pci.c	FUNCTION_20	FOR_1	CALL_1
+0x40000ea	        0x498b4908	                 mov rcx, qword [r9 + 8]	       588	8250_pci.c	FUNCTION_20	FOR_1	CALL_1
+0x40000ee	           0xfb701	                   movzx eax, word [rcx]	       588	8250_pci.c	FUNCTION_20	FOR_1	CALL_1
+0x40000f1	            0xebc3	                           jmp 0x40000b6	       588	8250_pci.c	FUNCTION_20	FOR_1	CALL_1
+0x40000f3	          0x4d63c0	                          movsxd r8, r8d	       592	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x40000f6	        0x49c1e004	                               shl r8, 4	       592	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x40000fa	    0x418b80000000	                     mov eax, dword [r8]	       592	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x4000101	              0xc3	                                     ret	       592	8250_pci.c	FUNCTION_20	FOR_1	FOR_2	IF_1
+0x4000102	            0x31c0	                            xor eax, eax	       594	8250_pci.c	FUNCTION_20
+0x4000104	              0xc3	                                     ret	       595	8250_pci.c	FUNCTION_20
+pci_timedia_probe	functions,0:WHILE,0:DO,0:FOR,0:IF,1:ELSE,0:SWITCH,0:CALL,1	12
+0x40006e0	         0xfb75742	           movzx edx, word [rdi + 0x42] 	       573	8250_pci.c	FUNCTION_19	IF_1
+0x40006e4	            0x89d0	                            mov eax, edx	       573	8250_pci.c	FUNCTION_19	IF_1
+0x40006e6	        0x6625f000	                            and ax, 0xf0	       573	8250_pci.c	FUNCTION_19	IF_1
+0x40006ea	        0x6683f86f	                            cmp ax, 0x6f	       573	8250_pci.c	FUNCTION_19	IF_1
+0x40006ee	            0x7703	                            ja 0x40006f3	       573	8250_pci.c	FUNCTION_19	IF_1
+0x40006f0	            0x31c0	                            xor eax, eax	       580	8250_pci.c	FUNCTION_19
+0x40006f2	              0xc3	                                     ret	       581	8250_pci.c	FUNCTION_19
+0x40006f3	    0x4881c7a00000	                           add rdi, 0xa0	       574	8250_pci.c	FUNCTION_19	IF_1	CALL_1
+0x40006fa	    0x48c7c6000000	                              mov rsi, 0	       574	8250_pci.c	FUNCTION_19	IF_1	CALL_1
+0x4000701	      0xe800000000	                          call 0x4000706	       574	8250_pci.c	FUNCTION_19	IF_1	CALL_1
+0x4000706	      0xb8edffffff	                     mov eax, 0xffffffed	       577	8250_pci.c	FUNCTION_19	IF_1
+0x400070b	              0xc3	                                     ret	       577	8250_pci.c	FUNCTION_19	IF_1
+pciserial_resume_one	functions,0:WHILE,0:DO,0:FOR,0:IF,2:ELSE,0:SWITCH,0:CALL,5	21
+0x4000c90	              0x55	                                push rbp	      3722	8250_pci.c	FUNCTION_78
+0x4000c91	              0x53	                                push rbx	      3722	8250_pci.c	FUNCTION_78
+0x4000c92	    0x488baf980000	            mov rbp, qword [rdi + 0x98] 	      3722	8250_pci.c	FUNCTION_78
+0x4000c99	          0x4885ed	                           test rbp, rbp	      3727	8250_pci.c	FUNCTION_78	IF_1
+0x4000c9c	            0x741e	                            je 0x4000cbc	      3727	8250_pci.c	FUNCTION_78	IF_1
+0x4000c9e	    0x488d8760ffff	                   lea rax, [rdi - 0xa0]	      3727	8250_pci.c	FUNCTION_78	IF_1
+0x4000ca5	          0x4889fb	                            mov rbx, rdi	      3727	8250_pci.c	FUNCTION_78	IF_1
+0x4000ca8	          0x4889c7	                            mov rdi, rax	      3731	8250_pci.c	FUNCTION_78	IF_1	CALL_3
+0x4000cab	      0xe800000000	                          call 0x4000cb0	      3731	8250_pci.c	FUNCTION_78	IF_1	CALL_3
+0x4000cb0	            0x85c0	                           test eax, eax	      3733	8250_pci.c	FUNCTION_78	IF_1	IF_2
+0x4000cb2	            0x750d	                           jne 0x4000cc1	      3733	8250_pci.c	FUNCTION_78	IF_1	IF_2
+0x4000cb4	          0x4889ef	                            mov rdi, rbp	      3735	8250_pci.c	FUNCTION_78	IF_1	CALL_5
+0x4000cb7	      0xe800000000	                          call 0x4000cbc	      3735	8250_pci.c	FUNCTION_78	IF_1	CALL_5
+0x4000cbc	            0x31c0	                            xor eax, eax	      3738	8250_pci.c	FUNCTION_78
+0x4000cbe	              0x5b	                                 pop rbx	      3738	8250_pci.c	FUNCTION_78
+0x4000cbf	              0x5d	                                 pop rbp	      3738	8250_pci.c	FUNCTION_78
+0x4000cc0	              0xc3	                                     ret	      3738	8250_pci.c	FUNCTION_78
+0x4000cc1	    0x48c7c6000000	                              mov rsi, 0	      3734	8250_pci.c	FUNCTION_78	IF_1	CALL_4
+0x4000cc8	          0x4889df	                            mov rdi, rbx	      3734	8250_pci.c	FUNCTION_78	IF_1	CALL_4
+0x4000ccb	      0xe800000000	                          call 0x4000cd0	      3734	8250_pci.c	FUNCTION_78	IF_1	CALL_4
+0x4000cd0	            0xebe2	                           jmp 0x4000cb4	      3734	8250_pci.c	FUNCTION_78	IF_1	CALL_4
+ce4100_serial_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,1	14
+0x4001100	              0x53	                                push rbx	      1358	8250_pci.c	FUNCTION_49
+0x4001101	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	      1361	8250_pci.c	FUNCTION_49	CALL_1
+0x4001105	          0x4889d3	                            mov rbx, rdx	      1358	8250_pci.c	FUNCTION_49
+0x4001108	          0x488b3f	                    mov rdi, qword [rdi]	      1361	8250_pci.c	FUNCTION_49	CALL_1
+0x400110b	            0x89ca	                            mov edx, ecx	      1358	8250_pci.c	FUNCTION_49
+0x400110d	          0x4889de	                            mov rsi, rbx	      1361	8250_pci.c	FUNCTION_49	CALL_1
+0x4001110	            0x31c9	                            xor ecx, ecx	      1361	8250_pci.c	FUNCTION_49	CALL_1
+0x4001112	      0xe819fdffff	             call sym.setup_port.isra.10	      1361	8250_pci.c	FUNCTION_49	CALL_1
+0x4001117	    0xc683a2000000	                mov byte [rbx + 0xa2], 3	      1362	8250_pci.c	FUNCTION_49
+0x400111e	    0xc7830c010000	           mov dword [rbx + 0x10c], 0xf 	      1363	8250_pci.c	FUNCTION_49
+0x4001128	    0x818bf8000000	       or dword [rbx + 0xf8], 0x28000000	      1364	8250_pci.c	FUNCTION_49
+0x4001132	    0xc683a1000000	                mov byte [rbx + 0xa1], 2	      1365	8250_pci.c	FUNCTION_49
+0x4001139	              0x5b	                                 pop rbx	      1368	8250_pci.c	FUNCTION_49
+0x400113a	              0xc3	                                     ret	      1368	8250_pci.c	FUNCTION_49
+pci_asix_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,1	2
+0x40011e0	    0x66838ac40100	             or word [rdx + 0x1c4], 0x10	      1056	8250_pci.c	FUNCTION_34
+0x40011e8	      0xe953ffffff	               jmp sym.pci_default_setup	      1057	8250_pci.c	FUNCTION_34	CALL_1
+pciserial_remove_one	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,2	7
+0x4000bc0	              0x53	                                push rbx	      3703	8250_pci.c	FUNCTION_76
+0x4000bc1	    0x488b9f380100	           mov rbx, qword [rdi + 0x138] 	      3703	8250_pci.c	FUNCTION_76
+0x4000bc8	          0x4889df	                            mov rdi, rbx	      3587	8250_pci.c	FUNCTION_72	CALL_1
+0x4000bcb	      0xe880ffffff	         call sym.pciserial_detach_ports	      3587	8250_pci.c	FUNCTION_72	CALL_1
+0x4000bd0	          0x4889df	                            mov rdi, rbx	      3588	8250_pci.c	FUNCTION_72	CALL_2
+0x4000bd3	              0x5b	                                 pop rbx	      3707	8250_pci.c	FUNCTION_76
+0x4000bd4	      0xe900000000	                           jmp 0x4000bd9	      3588	8250_pci.c	FUNCTION_72	CALL_2
+find_quirk	functions,0:WHILE,0:DO,0:FOR,1:IF,1:ELSE,0:SWITCH,0:CALL,4	28
+0x4000150	         0xfb74f3c	           movzx ecx, word [rdi + 0x3c] 	      2419	8250_pci.c	FUNCTION_64
+0x4000154	         0xfb7773e	           movzx esi, word [rdi + 0x3e] 	      2419	8250_pci.c	FUNCTION_64
+0x4000158	    0x48c7c0000000	                              mov rax, 0	      2422	8250_pci.c	FUNCTION_64	FOR_1
+0x400015f	      0x440fb74740	           movzx r8d, word [rdi + 0x40] 	      2422	8250_pci.c	FUNCTION_64	FOR_1
+0x4000164	         0xfb77f42	           movzx edi, word [rdi + 0x42] 	      2422	8250_pci.c	FUNCTION_64	FOR_1
+0x4000168	            0xeb09	                           jmp 0x4000173	      2422	8250_pci.c	FUNCTION_64	FOR_1
+0x400016a	          0x83faff	             cmp edx, 0xffffffffffffffff	      2423	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_1
+0x400016d	            0x740a	                            je 0x4000179	      2423	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_1
+0x400016f	        0x4883c030	                           add rax, 0x30	      2422	8250_pci.c	FUNCTION_64	FOR_1
+0x4000173	            0x8b10	                    mov edx, dword [rax]	      2423	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_1
+0x4000175	            0x39ca	                            cmp edx, ecx	      2423	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_1
+0x4000177	            0x75f1	                           jne 0x400016a	      2423	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_1
+0x4000179	          0x8b5004	                mov edx, dword [rax + 4]	      2424	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_2
+0x400017c	          0x83faff	             cmp edx, 0xffffffffffffffff	      2423	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_1
+0x400017f	            0x7404	                            je 0x4000185	      2423	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_1
+0x4000181	            0x39f2	                            cmp edx, esi	      2423	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_1
+0x4000183	            0x75ea	                           jne 0x400016f	      2423	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_1
+0x4000185	          0x8b5008	                mov edx, dword [rax + 8]	      2425	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_3
+0x4000188	          0x83faff	             cmp edx, 0xffffffffffffffff	      2424	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_2
+0x400018b	            0x7405	                            je 0x4000192	      2424	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_2
+0x400018d	          0x4439c2	                            cmp edx, r8d	      2424	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_2
+0x4000190	            0x75dd	                           jne 0x400016f	      2424	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_2
+0x4000192	          0x8b500c	              mov edx, dword [rax + 0xc]	      2426	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_4
+0x4000195	          0x83faff	             cmp edx, 0xffffffffffffffff	      2425	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_3
+0x4000198	            0x7404	                            je 0x400019e	      2425	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_3
+0x400019a	            0x39fa	                            cmp edx, edi	      2425	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_3
+0x400019c	            0x75d1	                           jne 0x400016f	      2425	8250_pci.c	FUNCTION_64	FOR_1	IF_1	CALL_3
+0x400019e	            0xf3c3	                                     ret	      2429	8250_pci.c	FUNCTION_64
+pciserial_resume_ports	functions,0:WHILE,0:DO,0:FOR,1:IF,2:ELSE,0:SWITCH,0:CALL,2	24
+0x4000c50	              0x55	                                push rbp	      3609	8250_pci.c	FUNCTION_74
+0x4000c51	              0x53	                                push rbx	      3609	8250_pci.c	FUNCTION_74
+0x4000c52	          0x4889fd	                            mov rbp, rdi	      3609	8250_pci.c	FUNCTION_74
+0x4000c55	        0x488b4710	            mov rax, qword [rdi + 0x10] 	      3615	8250_pci.c	FUNCTION_74	IF_1
+0x4000c59	        0x488b4018	            mov rax, qword [rax + 0x18] 	      3615	8250_pci.c	FUNCTION_74	IF_1
+0x4000c5d	          0x4885c0	                           test rax, rax	      3615	8250_pci.c	FUNCTION_74	IF_1
+0x4000c60	            0x7408	                            je 0x4000c6a	      3615	8250_pci.c	FUNCTION_74	IF_1
+0x4000c62	          0x488b3f	                    mov rdi, qword [rdi]	      3616	8250_pci.c	FUNCTION_74	CALL_1
+0x4000c65	      0xe800000000	                          call 0x4000c6a	      3616	8250_pci.c	FUNCTION_74	CALL_1
+0x4000c6a	          0x8b4508	                mov eax, dword [rbp + 8]	      3618	8250_pci.c	FUNCTION_74	FOR_1
+0x4000c6d	            0x31db	                            xor ebx, ebx	      3618	8250_pci.c	FUNCTION_74	FOR_1
+0x4000c6f	            0x85c0	                           test eax, eax	      3618	8250_pci.c	FUNCTION_74	FOR_1
+0x4000c71	            0x7418	                            je 0x4000c8b	      3618	8250_pci.c	FUNCTION_74	FOR_1
+0x4000c73	          0x4863c3	                         movsxd rax, ebx	      3619	8250_pci.c	FUNCTION_74	FOR_1	IF_2
+0x4000c76	        0x8b7c8520	    mov edi, dword [rbp + rax*4 + 0x20] 	      3619	8250_pci.c	FUNCTION_74	FOR_1	IF_2
+0x4000c7a	            0x85ff	                           test edi, edi	      3619	8250_pci.c	FUNCTION_74	FOR_1	IF_2
+0x4000c7c	            0x7805	                            js 0x4000c83	      3619	8250_pci.c	FUNCTION_74	FOR_1	IF_2
+0x4000c7e	      0xe800000000	                          call 0x4000c83	      3620	8250_pci.c	FUNCTION_74	FOR_1	IF_2
+0x4000c83	          0x83c301	                              add ebx, 1	      3618	8250_pci.c	FUNCTION_74	FOR_1
+0x4000c86	          0x395d08	                cmp dword [rbp + 8], ebx	      3618	8250_pci.c	FUNCTION_74	FOR_1
+0x4000c89	            0x77e8	                            ja 0x4000c73	      3618	8250_pci.c	FUNCTION_74	FOR_1
+0x4000c8b	              0x5b	                                 pop rbx	      3621	8250_pci.c	FUNCTION_74
+0x4000c8c	              0x5d	                                 pop rbp	      3621	8250_pci.c	FUNCTION_74
+0x4000c8d	              0xc3	                                     ret	      3621	8250_pci.c	FUNCTION_74
+pci_xircom_init	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,1	4
+0x40006d0	      0xbf64000000	                           mov edi, 0x64	       659	8250_pci.c	FUNCTION_23	CALL_1
+0x40006d5	      0xe800000000	                          call 0x40006da	       659	8250_pci.c	FUNCTION_23	CALL_1
+0x40006da	            0x31c0	                            xor eax, eax	       661	8250_pci.c	FUNCTION_23
+0x40006dc	              0xc3	                                     ret	       661	8250_pci.c	FUNCTION_23
+kt_handle_break	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,2	1
+0x4000b40	      0xe900000000	                           jmp 0x4000b45	      1565	8250_pci.c	FUNCTION_56	CALL_2
+pci_wch_ch355_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,1	3
+0x4001210	    0x818af8000000	     or dword [rdx + 0xf8], section_end.	      1625	8250_pci.c	FUNCTION_61
+0x400121a	    0xc7820c010000	              mov dword [rdx + 0x10c], 4	      1626	8250_pci.c	FUNCTION_61
+0x4001224	      0xe917ffffff	               jmp sym.pci_default_setup	      1627	8250_pci.c	FUNCTION_61	CALL_1
+pci_quatech_exit	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,0	1
+0x4000110	            0xf3c3	                                     ret	      1306	8250_pci.c	FUNCTION_46
+pci_fintek_init	functions,0:WHILE,0:DO,0:FOR,1:IF,2:ELSE,1:SWITCH,1:CALL,15	111
+0x40004d0	            0x4157	                                push r15	      1474	8250_pci.c	FUNCTION_54
+0x40004d2	            0x4156	                                push r14	      1474	8250_pci.c	FUNCTION_54
+0x40004d4	            0x4155	                                push r13	      1474	8250_pci.c	FUNCTION_54
+0x40004d6	            0x4154	                                push r12	      1474	8250_pci.c	FUNCTION_54
+0x40004d8	              0x55	                                push rbp	      1474	8250_pci.c	FUNCTION_54
+0x40004d9	              0x53	                                push rbx	      1474	8250_pci.c	FUNCTION_54
+0x40004da	        0x4883ec28	                           sub rsp, 0x28	      1474	8250_pci.c	FUNCTION_54
+0x40004de	    0x65488b042528	                mov rax, qword gs:[0x28]	      1474	8250_pci.c	FUNCTION_54
+0x40004e7	      0x4889442420	             mov qword [rsp + 0x20], rax	      1474	8250_pci.c	FUNCTION_54
+0x40004ec	            0x31c0	                            xor eax, eax	      1474	8250_pci.c	FUNCTION_54
+0x40004ee	    0xf687d1040000	              test byte [rdi + 0x4d1], 1	      1482	8250_pci.c	FUNCTION_54	IF_1	CALL_2
+0x40004f5	     0xf84ba010000	                            je 0x40006b5	      1482	8250_pci.c	FUNCTION_54	IF_1	CALL_2
+0x40004fb	    0xf68791040000	              test byte [rdi + 0x491], 1	      1482	8250_pci.c	FUNCTION_54	IF_1	CALL_2
+0x4000502	          0x4889fd	                            mov rbp, rdi	      1482	8250_pci.c	FUNCTION_54	IF_1	CALL_2
+0x4000505	     0xf84aa010000	                            je 0x40006b5	      1482	8250_pci.c	FUNCTION_54	IF_1	CALL_2
+0x400050b	    0xf68751040000	              test byte [rdi + 0x451], 1	      1483	8250_pci.c	FUNCTION_54	IF_1	CALL_3
+0x4000512	     0xf849d010000	                            je 0x40006b5	      1483	8250_pci.c	FUNCTION_54	IF_1	CALL_3
+0x4000518	      0x440fb7773e	          movzx r14d, word [rdi + 0x3e] 	      1487	8250_pci.c	FUNCTION_54	SWITCH_1
+0x400051d	    0x664181fe0811	                        cmp r14w, 0x1108	      1487	8250_pci.c	FUNCTION_54	SWITCH_1
+0x4000523	     0xf8447010000	                            je 0x4000670	      1487	8250_pci.c	FUNCTION_54	SWITCH_1
+0x4000529	    0x664181fe1211	                        cmp r14w, 0x1112	      1487	8250_pci.c	FUNCTION_54	SWITCH_1
+0x400052f	            0x743b	                            je 0x400056c	      1487	8250_pci.c	FUNCTION_54	SWITCH_1
+0x4000531	    0x664181fe0411	                        cmp r14w, 0x1104	      1487	8250_pci.c	FUNCTION_54	SWITCH_1
+0x4000537	     0xf8433010000	                            je 0x4000670	      1487	8250_pci.c	FUNCTION_54	SWITCH_1
+0x400053d	    0xc7442404eaff	        mov dword [rsp + 4], 0xffffffea 	      1496	8250_pci.c	FUNCTION_54	SWITCH_1
+0x4000545	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	      1542	8250_pci.c	FUNCTION_54
+0x400054a	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      1542	8250_pci.c	FUNCTION_54
+0x4000553	        0x8b442404	                mov eax, dword [rsp + 4]	      1542	8250_pci.c	FUNCTION_54
+0x4000557	     0xf8565010000	                           jne 0x40006c2	      1542	8250_pci.c	FUNCTION_54
+0x400055d	        0x4883c428	                           add rsp, 0x28	      1542	8250_pci.c	FUNCTION_54
+0x4000561	              0x5b	                                 pop rbx	      1542	8250_pci.c	FUNCTION_54
+0x4000562	              0x5d	                                 pop rbp	      1542	8250_pci.c	FUNCTION_54
+0x4000563	            0x415c	                                 pop r12	      1542	8250_pci.c	FUNCTION_54
+0x4000565	            0x415d	                                 pop r13	      1542	8250_pci.c	FUNCTION_54
+0x4000567	            0x415e	                                 pop r14	      1542	8250_pci.c	FUNCTION_54
+0x4000569	            0x415f	                                 pop r15	      1542	8250_pci.c	FUNCTION_54
+0x400056b	              0xc3	                                     ret	      1542	8250_pci.c	FUNCTION_54
+0x400056c	    0x488b97780400	           mov rdx, qword [rdi + 0x478] 	      1501	8250_pci.c	FUNCTION_54	CALL_6
+0x4000573	    0x488b87b80400	           mov rax, qword [rdi + 0x4b8] 	      1500	8250_pci.c	FUNCTION_54	CALL_5
+0x400057a	    0x4c8bbf380100	           mov r15, qword [rdi + 0x138] 	      1500	8250_pci.c	FUNCTION_54	CALL_5
+0x4000581	    0xc74424040c00	                mov dword [rsp + 4], 0xc	      1502	8250_pci.c	FUNCTION_54	CALL_7
+0x4000589	    0xc704240c0000	                    mov dword [rsp], 0xc	      1493	8250_pci.c	FUNCTION_54	SWITCH_1
+0x4000590	      0x4889542410	             mov qword [rsp + 0x10], rdx	      1501	8250_pci.c	FUNCTION_54	CALL_6
+0x4000595	    0x488b97380400	           mov rdx, qword [rdi + 0x438] 	      1502	8250_pci.c	FUNCTION_54	CALL_7
+0x400059c	      0x4889442408	                mov qword [rsp + 8], rax	      1500	8250_pci.c	FUNCTION_54	CALL_5
+0x40005a1	      0x4889542418	             mov qword [rsp + 0x18], rdx	      1502	8250_pci.c	FUNCTION_54	CALL_7
+0x40005a6	        0x4d8d6f20	                   lea r13, [r15 + 0x20]	      1502	8250_pci.c	FUNCTION_54	CALL_7
+0x40005aa	    0x41bc40000000	                          mov r12d, 0x40	      1493	8250_pci.c	FUNCTION_54	SWITCH_1
+0x40005b0	          0x4531f6	                          xor r14d, r14d	      1493	8250_pci.c	FUNCTION_54	SWITCH_1
+0x40005b3	            0xeb34	                           jmp 0x40005e9	      1493	8250_pci.c	FUNCTION_54	SWITCH_1
+0x40005b5	        0x418b7d00	                    mov edi, dword [r13]	      1531	8250_pci.c	FUNCTION_54	FOR_1	IF_2	CALL_13
+0x40005b9	      0xe800000000	                          call 0x40005be	      1531	8250_pci.c	FUNCTION_54	FOR_1	IF_2	CALL_13
+0x40005be	            0x31f6	                            xor esi, esi	      1532	8250_pci.c	FUNCTION_54	FOR_1	IF_2	CALL_14
+0x40005c0	          0x4889c7	                            mov rdi, rax	      1532	8250_pci.c	FUNCTION_54	FOR_1	IF_2	CALL_14
+0x40005c3	      0xe8d8fcffff	        call sym.pci_fintek_rs485_config	      1532	8250_pci.c	FUNCTION_54	FOR_1	IF_2	CALL_14
+0x40005c8	        0x4183c601	                             add r14d, 1	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x40005cc	        0x4183c408	                             add r12d, 8	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x40005d0	        0x4983c504	                              add r13, 4	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x40005d4	        0x443b3424	                   cmp r14d, dword [rsp]	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x40005d8	     0xf8467ffffff	                            je 0x4000545	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x40005de	          0x4489f0	                           mov eax, r14d	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x40005e1	          0xc1e802	                              shr eax, 2	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x40005e4	      0x488b44c408	       mov rax, qword [rsp + rax*8 + 8] 	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x40005e9	    0x4a8d1cf50000	                        lea rbx, [r14*8]	      1509	8250_pci.c	FUNCTION_54	FOR_1
+0x40005f1	          0x83e0e0	                     and eax, 0xffffffe0	      1509	8250_pci.c	FUNCTION_54	FOR_1
+0x40005f4	      0xba01000000	                              mov edx, 1	      1512	8250_pci.c	FUNCTION_54	FOR_1	CALL_8
+0x40005f9	          0x4489e6	                           mov esi, r12d	      1512	8250_pci.c	FUNCTION_54	FOR_1	CALL_8
+0x40005fc	          0x4889ef	                            mov rdi, rbp	      1512	8250_pci.c	FUNCTION_54	FOR_1	CALL_8
+0x40005ff	          0x83e318	                           and ebx, 0x18	      1509	8250_pci.c	FUNCTION_54	FOR_1
+0x4000602	          0x4801c3	                            add rbx, rax	      1509	8250_pci.c	FUNCTION_54	FOR_1
+0x4000605	      0xe800000000	                          call 0x400060a	      1512	8250_pci.c	FUNCTION_54	FOR_1	CALL_8
+0x400060a	      0x418d742401	                      lea esi, [r12 + 1]	      1515	8250_pci.c	FUNCTION_54	FOR_1	CALL_9
+0x400060f	      0xba33000000	                           mov edx, 0x33	      1515	8250_pci.c	FUNCTION_54	FOR_1	CALL_9
+0x4000614	          0x4889ef	                            mov rdi, rbp	      1515	8250_pci.c	FUNCTION_54	FOR_1	CALL_9
+0x4000617	      0xe800000000	                          call 0x400061c	      1515	8250_pci.c	FUNCTION_54	FOR_1	CALL_9
+0x400061c	      0x418d742404	                      lea esi, [r12 + 4]	      1518	8250_pci.c	FUNCTION_54	FOR_1	CALL_10
+0x4000621	           0xfb6d3	                           movzx edx, bl	      1518	8250_pci.c	FUNCTION_54	FOR_1	CALL_10
+0x4000624	          0x4889ef	                            mov rdi, rbp	      1518	8250_pci.c	FUNCTION_54	FOR_1	CALL_10
+0x4000627	      0xe800000000	                          call 0x400062c	      1518	8250_pci.c	FUNCTION_54	FOR_1	CALL_10
+0x400062c	      0x418d742405	                      lea esi, [r12 + 5]	      1522	8250_pci.c	FUNCTION_54	FOR_1	CALL_11
+0x4000631	           0xfb6d7	                           movzx edx, bh	      1522	8250_pci.c	FUNCTION_54	FOR_1	CALL_11
+0x4000634	          0x4889ef	                            mov rdi, rbp	      1522	8250_pci.c	FUNCTION_54	FOR_1	CALL_11
+0x4000637	      0xe800000000	                          call 0x400063c	      1522	8250_pci.c	FUNCTION_54	FOR_1	CALL_11
+0x400063c	     0xfb695740300	          movzx edx, byte [rbp + 0x374] 	      1525	8250_pci.c	FUNCTION_54	FOR_1	CALL_12
+0x4000643	      0x418d742406	                      lea esi, [r12 + 6]	      1525	8250_pci.c	FUNCTION_54	FOR_1	CALL_12
+0x4000648	          0x4889ef	                            mov rdi, rbp	      1525	8250_pci.c	FUNCTION_54	FOR_1	CALL_12
+0x400064b	      0xe800000000	                          call 0x4000650	      1525	8250_pci.c	FUNCTION_54	FOR_1	CALL_12
+0x4000650	          0x4d85ff	                           test r15, r15	      1527	8250_pci.c	FUNCTION_54	FOR_1	IF_2
+0x4000653	     0xf855cffffff	                           jne 0x40005b5	      1527	8250_pci.c	FUNCTION_54	FOR_1	IF_2
+0x4000659	      0x418d742407	                      lea esi, [r12 + 7]	      1537	8250_pci.c	FUNCTION_54	FOR_1	ELSE_1	CALL_15
+0x400065e	      0xba01000000	                              mov edx, 1	      1537	8250_pci.c	FUNCTION_54	FOR_1	ELSE_1	CALL_15
+0x4000663	          0x4889ef	                            mov rdi, rbp	      1537	8250_pci.c	FUNCTION_54	FOR_1	ELSE_1	CALL_15
+0x4000666	      0xe800000000	                          call 0x400066b	      1537	8250_pci.c	FUNCTION_54	FOR_1	ELSE_1	CALL_15
+0x400066b	      0xe958ffffff	                           jmp 0x40005c8	      1537	8250_pci.c	FUNCTION_54	FOR_1	ELSE_1	CALL_15
+0x4000670	    0x488b95780400	           mov rdx, qword [rbp + 0x478] 	      1501	8250_pci.c	FUNCTION_54	CALL_6
+0x4000677	        0x410fb6c6	                         movzx eax, r14b	      1490	8250_pci.c	FUNCTION_54	SWITCH_1
+0x400067b	    0x4c8bbd380100	           mov r15, qword [rbp + 0x138] 	      1490	8250_pci.c	FUNCTION_54	SWITCH_1
+0x4000682	            0x89c1	                            mov ecx, eax	      1490	8250_pci.c	FUNCTION_54	SWITCH_1
+0x4000684	          0x890424	                    mov dword [rsp], eax	      1490	8250_pci.c	FUNCTION_54	SWITCH_1
+0x4000687	        0x89442404	                mov dword [rsp + 4], eax	      1490	8250_pci.c	FUNCTION_54	SWITCH_1
+0x400068b	    0x488b85b80400	           mov rax, qword [rbp + 0x4b8] 	      1500	8250_pci.c	FUNCTION_54	CALL_5
+0x4000692	            0x85c9	                           test ecx, ecx	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x4000694	      0x4889542410	             mov qword [rsp + 0x10], rdx	      1501	8250_pci.c	FUNCTION_54	CALL_6
+0x4000699	    0x488b95380400	           mov rdx, qword [rbp + 0x438] 	      1502	8250_pci.c	FUNCTION_54	CALL_7
+0x40006a0	      0x4889442408	                mov qword [rsp + 8], rax	      1500	8250_pci.c	FUNCTION_54	CALL_5
+0x40006a5	      0x4889542418	             mov qword [rsp + 0x18], rdx	      1502	8250_pci.c	FUNCTION_54	CALL_7
+0x40006aa	     0xf85f6feffff	                           jne 0x40005a6	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x40006b0	      0xe990feffff	                           jmp 0x4000545	      1504	8250_pci.c	FUNCTION_54	FOR_1
+0x40006b5	    0xc7442404edff	        mov dword [rsp + 4], 0xffffffed 	      1485	8250_pci.c	FUNCTION_54	IF_1
+0x40006bd	      0xe983feffff	                           jmp 0x4000545	      1485	8250_pci.c	FUNCTION_54	IF_1
+0x40006c2	      0xe800000000	                          call 0x40006c7	      1542	8250_pci.c	FUNCTION_54
+addidata_apci7800_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,4:ELSE,3:SWITCH,0:CALL,2	34
+0x40016e0	          0x4989d1	                             mov r9, rdx	       105	8250_pci.c	FUNCTION_3
+0x40016e3	            0x8b16	                    mov edx, dword [rsi]	       107	8250_pci.c	FUNCTION_3	CALL_1
+0x40016e5	          0x8b4614	            mov eax, dword [rsi + 0x14] 	       106	8250_pci.c	FUNCTION_3
+0x40016e8	          0x83e207	                              and edx, 7	       107	8250_pci.c	FUNCTION_3	CALL_1
+0x40016eb	          0x83f901	                              cmp ecx, 1	       109	8250_pci.c	FUNCTION_3	IF_1
+0x40016ee	            0x7e1a	                           jle 0x400170a	       109	8250_pci.c	FUNCTION_3	IF_1
+0x40016f0	        0x448d41fe	                      lea r8d, [rcx - 2]	       111	8250_pci.c	FUNCTION_3	ELSE_1	IF_2
+0x40016f4	        0x4183f801	                              cmp r8d, 1	       111	8250_pci.c	FUNCTION_3	ELSE_1	IF_2
+0x40016f8	            0x7625	                           jbe 0x400171f	       111	8250_pci.c	FUNCTION_3	ELSE_1	IF_2
+0x40016fa	        0x448d41fc	                      lea r8d, [rcx - 4]	       114	8250_pci.c	FUNCTION_3	ELSE_2	IF_3
+0x40016fe	        0x4183f801	                              cmp r8d, 1	       114	8250_pci.c	FUNCTION_3	ELSE_2	IF_3
+0x4001702	            0x7636	                           jbe 0x400173a	       114	8250_pci.c	FUNCTION_3	ELSE_2	IF_3
+0x4001704	          0x83c203	                              add edx, 3	       118	8250_pci.c	FUNCTION_3	ELSE_3	IF_4
+0x4001707	          0x83e906	                              sub ecx, 6	       119	8250_pci.c	FUNCTION_3	ELSE_3	IF_4
+0x400170a	         0xfaf4e0c	             imul ecx, dword [rsi + 0xc]	       119	8250_pci.c	FUNCTION_3	ELSE_3	IF_4
+0x400170e	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x4001712	          0x488b3f	                    mov rdi, qword [rdi]	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x4001715	          0x4c89ce	                             mov rsi, r9	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x4001718	             0x1c1	                            add ecx, eax	       119	8250_pci.c	FUNCTION_3	ELSE_3	IF_4
+0x400171a	      0xe911f7ffff	              jmp sym.setup_port.isra.10	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x400171f	      0x440faf460c	             imul r8d, dword [rsi + 0xc]	       113	8250_pci.c	FUNCTION_3	ELSE_1	IF_2
+0x4001724	          0x488b3f	                    mov rdi, qword [rdi]	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x4001727	          0x83c201	                              add edx, 1	       112	8250_pci.c	FUNCTION_3	ELSE_1	IF_2
+0x400172a	        0x418d0c00	                     lea ecx, [r8 + rax]	       113	8250_pci.c	FUNCTION_3	ELSE_1	IF_2
+0x400172e	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x4001732	          0x4c89ce	                             mov rsi, r9	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x4001735	      0xe9f6f6ffff	              jmp sym.setup_port.isra.10	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x400173a	      0x440faf460c	             imul r8d, dword [rsi + 0xc]	       116	8250_pci.c	FUNCTION_3	ELSE_2	IF_3
+0x400173f	          0x488b3f	                    mov rdi, qword [rdi]	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x4001742	          0x83c202	                              add edx, 2	       115	8250_pci.c	FUNCTION_3	ELSE_2	IF_3
+0x4001745	        0x418d0c00	                     lea ecx, [r8 + rax]	       116	8250_pci.c	FUNCTION_3	ELSE_2	IF_3
+0x4001749	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x400174d	          0x4c89ce	                             mov rsi, r9	       122	8250_pci.c	FUNCTION_3	CALL_2
+0x4001750	      0xe9dbf6ffff	              jmp sym.setup_port.isra.10	       122	8250_pci.c	FUNCTION_3	CALL_2
+serial8250_io_error_detected	functions,0:WHILE,0:DO,0:FOR,0:IF,2:ELSE,0:SWITCH,0:CALL,3	15
+0x4000ce0	          0x83fe03	                              cmp esi, 3	      5177	8250_pci.c	FUNCTION_79	IF_1
+0x4000ce3	            0x7424	                            je 0x4000d09	      5177	8250_pci.c	FUNCTION_79	IF_1
+0x4000ce5	              0x53	                                push rbx	      5174	8250_pci.c	FUNCTION_79
+0x4000ce6	          0x4889fb	                            mov rbx, rdi	      5174	8250_pci.c	FUNCTION_79
+0x4000ce9	    0x488bbf380100	           mov rdi, qword [rdi + 0x138] 	      5174	8250_pci.c	FUNCTION_79
+0x4000cf0	          0x4885ff	                           test rdi, rdi	      5180	8250_pci.c	FUNCTION_79	IF_2
+0x4000cf3	            0x7405	                            je 0x4000cfa	      5180	8250_pci.c	FUNCTION_79	IF_2
+0x4000cf5	      0xe856feffff	         call sym.pciserial_detach_ports	      5181	8250_pci.c	FUNCTION_79	CALL_2
+0x4000cfa	          0x4889df	                            mov rdi, rbx	      5183	8250_pci.c	FUNCTION_79	CALL_3
+0x4000cfd	      0xe800000000	                          call 0x4000d02	      5183	8250_pci.c	FUNCTION_79	CALL_3
+0x4000d02	      0xb803000000	                              mov eax, 3	      5185	8250_pci.c	FUNCTION_79
+0x4000d07	              0x5b	                                 pop rbx	      5186	8250_pci.c	FUNCTION_79
+0x4000d08	              0xc3	                                     ret	      5186	8250_pci.c	FUNCTION_79
+0x4000d09	      0xb804000000	                              mov eax, 4	      5178	8250_pci.c	FUNCTION_79	IF_1
+0x4000d0e	              0xc3	                                     ret	      5178	8250_pci.c	FUNCTION_79	IF_1
+pci_hp_diva_init	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,1:CALL,0	28
+0x4000040	         0xfb75742	           movzx edx, word [rdi + 0x42] 	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000044	      0x6681fa2312	                          cmp dx, 0x1223	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000049	            0x7440	                            je 0x400008b	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x400004b	            0x771a	                            ja 0x4000067	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x400004d	      0x6681fa4a10	                          cmp dx, 0x104a	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000052	      0xb802000000	                              mov eax, 2	       165	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000057	            0x740c	                            je 0x4000065	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000059	      0x6681fa4b10	                          cmp dx, 0x104b	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x400005e	      0xb804000000	                              mov eax, 4	       168	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000063	            0x752c	                           jne 0x4000091	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000065	            0xf3c3	                                     ret	       177	8250_pci.c	FUNCTION_5
+0x4000067	      0x6681fa2712	                          cmp dx, 0x1227	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x400006c	            0x7410	                            je 0x400007e	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x400006e	            0x7614	                           jbe 0x4000084	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000070	      0x6681fa8212	                          cmp dx, 0x1282	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000075	            0x7414	                            je 0x400008b	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000077	      0x6681fa2a13	                          cmp dx, 0x132a	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x400007c	            0x751a	                           jne 0x4000098	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x400007e	      0xb801000000	                              mov eax, 1	       172	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000083	              0xc3	                                     ret	       173	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000084	      0x6681fa2612	                          cmp dx, 0x1226	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000089	            0x750d	                           jne 0x4000098	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x400008b	      0xb803000000	                              mov eax, 3	       162	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000090	              0xc3	                                     ret	       162	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000091	      0x6681fa4910	                          cmp dx, 0x1049	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000096	            0x74f3	                            je 0x400008b	       157	8250_pci.c	FUNCTION_5	SWITCH_1
+0x4000098	            0x31c0	                            xor eax, eax	       155	8250_pci.c	FUNCTION_5
+0x400009a	              0xc3	                                     ret	       177	8250_pci.c	FUNCTION_5
+pci_hp_diva_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,4:ELSE,0:SWITCH,1:CALL,2	31
+0x4001630	          0x488b3f	                    mov rdi, qword [rdi]	       191	8250_pci.c	FUNCTION_6	SWITCH_1
+0x4001633	          0x4989d1	                             mov r9, rdx	       187	8250_pci.c	FUNCTION_6
+0x4001636	            0x8b16	                    mov edx, dword [rsi]	       189	8250_pci.c	FUNCTION_6	CALL_1
+0x4001638	          0x8b4614	            mov eax, dword [rsi + 0x14] 	       188	8250_pci.c	FUNCTION_6
+0x400163b	      0x440fb74742	           movzx r8d, word [rdi + 0x42] 	       191	8250_pci.c	FUNCTION_6	SWITCH_1
+0x4001640	          0x83e207	                              and edx, 7	       189	8250_pci.c	FUNCTION_6	CALL_1
+0x4001643	    0x664181f84b10	                         cmp r8w, 0x104b	       191	8250_pci.c	FUNCTION_6	SWITCH_1
+0x4001649	            0x7430	                            je 0x400167b	       191	8250_pci.c	FUNCTION_6	SWITCH_1
+0x400164b	    0x664181f88212	                         cmp r8w, 0x1282	       191	8250_pci.c	FUNCTION_6	SWITCH_1
+0x4001651	            0x752d	                           jne 0x4001680	       191	8250_pci.c	FUNCTION_6	SWITCH_1
+0x4001653	            0x85c9	                           test ecx, ecx	       197	8250_pci.c	FUNCTION_6	SWITCH_1	IF_2
+0x4001655	            0x7e12	                           jle 0x4001669	       197	8250_pci.c	FUNCTION_6	SWITCH_1	IF_2
+0x4001657	        0x448d4101	                      lea r8d, [rcx + 1]	       199	8250_pci.c	FUNCTION_6	SWITCH_1	IF_3
+0x400165b	          0x83c102	                              add ecx, 2	       200	8250_pci.c	FUNCTION_6	SWITCH_1	IF_3
+0x400165e	        0x4183f802	                              cmp r8d, 2	       199	8250_pci.c	FUNCTION_6	SWITCH_1	IF_3
+0x4001662	            0x7e2a	                           jle 0x400168e	       199	8250_pci.c	FUNCTION_6	SWITCH_1	IF_3
+0x4001664	      0xb818000000	                           mov eax, 0x18	       204	8250_pci.c	FUNCTION_6	IF_4
+0x4001669	         0xfaf4e0c	             imul ecx, dword [rsi + 0xc]	       208	8250_pci.c	FUNCTION_6	CALL_2
+0x400166d	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       208	8250_pci.c	FUNCTION_6	CALL_2
+0x4001671	          0x4c89ce	                             mov rsi, r9	       208	8250_pci.c	FUNCTION_6	CALL_2
+0x4001674	             0x1c1	                            add ecx, eax	       208	8250_pci.c	FUNCTION_6	CALL_2
+0x4001676	      0xe9b5f7ffff	              jmp sym.setup_port.isra.10	       208	8250_pci.c	FUNCTION_6	CALL_2
+0x400167b	          0x83f903	                              cmp ecx, 3	       193	8250_pci.c	FUNCTION_6	SWITCH_1	IF_1
+0x400167e	            0x7407	                            je 0x4001687	       193	8250_pci.c	FUNCTION_6	SWITCH_1	IF_1
+0x4001680	          0x83f902	                              cmp ecx, 2	       203	8250_pci.c	FUNCTION_6	IF_4
+0x4001683	            0x7fdf	                            jg 0x4001664	       203	8250_pci.c	FUNCTION_6	IF_4
+0x4001685	            0xebe2	                           jmp 0x4001669	       203	8250_pci.c	FUNCTION_6	IF_4
+0x4001687	      0xb904000000	                              mov ecx, 4	       203	8250_pci.c	FUNCTION_6	IF_4
+0x400168c	            0xebd6	                           jmp 0x4001664	       203	8250_pci.c	FUNCTION_6	IF_4
+0x400168e	      0xb902000000	                              mov ecx, 2	       203	8250_pci.c	FUNCTION_6	IF_4
+0x4001693	            0xebd4	                           jmp 0x4001669	       203	8250_pci.c	FUNCTION_6	IF_4
+pci_brcm_trumanage_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,0:ELSE,0:SWITCH,0:CALL,1	7
+0x40011c0	              0x53	                                push rbx	      1382	8250_pci.c	FUNCTION_51
+0x40011c1	          0x4889d3	                            mov rbx, rdx	      1382	8250_pci.c	FUNCTION_51
+0x40011c4	      0xe877ffffff	              call sym.pci_default_setup	      1383	8250_pci.c	FUNCTION_51	CALL_1
+0x40011c9	    0xc7830c010000	          mov dword [rbx + 0x10c], 0x19 	      1385	8250_pci.c	FUNCTION_51
+0x40011d3	    0x818bf8000000	       or dword [rbx + 0xf8], 0x28000000	      1386	8250_pci.c	FUNCTION_51
+0x40011dd	              0x5b	                                 pop rbx	      1388	8250_pci.c	FUNCTION_51
+0x40011de	              0xc3	                                     ret	      1388	8250_pci.c	FUNCTION_51
+pci_netmos_9900_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,1:ELSE,1:SWITCH,0:CALL,2	16
+0x40015f0	          0x4c8b0f	                     mov r9, qword [rdi]	       770	8250_pci.c	FUNCTION_27	IF_1
+0x40015f3	          0x4989d2	                            mov r10, rdx	       767	8250_pci.c	FUNCTION_27
+0x40015f6	    0x664181793e65	           cmp word [r9 + 0x3e], 0x9865 	       770	8250_pci.c	FUNCTION_27	IF_1
+0x40015fd	            0x740d	                            je 0x400160c	       770	8250_pci.c	FUNCTION_27	IF_1
+0x40015ff	      0x410fb74142	            movzx eax, word [r9 + 0x42] 	       770	8250_pci.c	FUNCTION_27	IF_1
+0x4001604	            0x30c0	                              xor al, al	       770	8250_pci.c	FUNCTION_27	IF_1
+0x4001606	        0x663d0030	                          cmp ax, 0x3000	       770	8250_pci.c	FUNCTION_27	IF_1
+0x400160a	            0x7408	                            je 0x4001614	       770	8250_pci.c	FUNCTION_27	IF_1
+0x400160c	          0x4c89d2	                            mov rdx, r10	       779	8250_pci.c	FUNCTION_27	ELSE_1	CALL_2
+0x400160f	      0xe92cfbffff	               jmp sym.pci_default_setup	       779	8250_pci.c	FUNCTION_27	ELSE_1	CALL_2
+0x4001614	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       777	8250_pci.c	FUNCTION_27	IF_1	CALL_1
+0x4001618	          0x8d1449	                  lea edx, [rcx + rcx*2]	       777	8250_pci.c	FUNCTION_27	IF_1	CALL_1
+0x400161b	          0x4c89d6	                            mov rsi, r10	       777	8250_pci.c	FUNCTION_27	IF_1	CALL_1
+0x400161e	            0x31c9	                            xor ecx, ecx	       777	8250_pci.c	FUNCTION_27	IF_1	CALL_1
+0x4001620	          0x4c89cf	                             mov rdi, r9	       777	8250_pci.c	FUNCTION_27	IF_1	CALL_1
+0x4001623	      0xe908f8ffff	              jmp sym.setup_port.isra.10	       777	8250_pci.c	FUNCTION_27	IF_1	CALL_1
+afavlab_setup	functions,0:WHILE,0:DO,0:FOR,0:IF,1:ELSE,1:SWITCH,0:CALL,2	16
+0x40016a0	          0x4989d1	                             mov r9, rdx	       132	8250_pci.c	FUNCTION_4
+0x40016a3	            0x8b16	                    mov edx, dword [rsi]	       135	8250_pci.c	FUNCTION_4	CALL_1
+0x40016a5	            0x89c8	                            mov eax, ecx	       132	8250_pci.c	FUNCTION_4
+0x40016a7	          0x8b4e14	            mov ecx, dword [rsi + 0x14] 	       133	8250_pci.c	FUNCTION_4
+0x40016aa	          0x83e207	                              and edx, 7	       135	8250_pci.c	FUNCTION_4	CALL_1
+0x40016ad	             0x1c2	                            add edx, eax	       135	8250_pci.c	FUNCTION_4	CALL_1
+0x40016af	          0x83f803	                              cmp eax, 3	       136	8250_pci.c	FUNCTION_4	IF_1
+0x40016b2	            0x7e0e	                           jle 0x40016c2	       136	8250_pci.c	FUNCTION_4	IF_1
+0x40016b4	          0x83e804	                              sub eax, 4	       140	8250_pci.c	FUNCTION_4	ELSE_1
+0x40016b7	      0xba04000000	                              mov edx, 4	       140	8250_pci.c	FUNCTION_4	ELSE_1
+0x40016bc	         0xfaf460c	             imul eax, dword [rsi + 0xc]	       140	8250_pci.c	FUNCTION_4	ELSE_1
+0x40016c0	             0x1c1	                            add ecx, eax	       140	8250_pci.c	FUNCTION_4	ELSE_1
+0x40016c2	        0x448b4610	            mov r8d, dword [rsi + 0x10] 	       143	8250_pci.c	FUNCTION_4	CALL_2
+0x40016c6	          0x488b3f	                    mov rdi, qword [rdi]	       143	8250_pci.c	FUNCTION_4	CALL_2
+0x40016c9	          0x4c89ce	                             mov rsi, r9	       143	8250_pci.c	FUNCTION_4	CALL_2
+0x40016cc	      0xe95ff7ffff	              jmp sym.setup_port.isra.10	       143	8250_pci.c	FUNCTION_4	CALL_2

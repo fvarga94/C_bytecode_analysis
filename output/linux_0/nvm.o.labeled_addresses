@@ -1,0 +1,233 @@
+e1000e_update_nvm_checksum_generic	ELSE,0:SWITCH,0:IF,2:CALL,4:WHILE,0:functions,0:FOR,1:DO,0	43
+0x40009c0	              0x55	                                push rbp	       597	nvm.c	FUNCTION_16
+0x40009c1	              0x53	                                push rbx	       597	nvm.c	FUNCTION_16
+0x40009c2	          0x4889fd	                            mov rbp, rdi	       597	nvm.c	FUNCTION_16
+0x40009c5	            0x31db	                            xor ebx, ebx	       599	nvm.c	FUNCTION_16
+0x40009c7	        0x4883ec10	                           sub rsp, 0x10	       597	nvm.c	FUNCTION_16
+0x40009cb	    0x65488b042528	                mov rax, qword gs:[0x28]	       597	nvm.c	FUNCTION_16
+0x40009d4	      0x4889442408	                mov qword [rsp + 8], rax	       597	nvm.c	FUNCTION_16
+0x40009d9	            0x31c0	                            xor eax, eax	       597	nvm.c	FUNCTION_16
+0x40009db	            0x31c0	                            xor eax, eax	       599	nvm.c	FUNCTION_16
+0x40009dd	      0x6689442404	                  mov word [rsp + 4], ax	       599	nvm.c	FUNCTION_16
+0x40009e2	            0xeb17	                           jmp 0x40009fb	       599	nvm.c	FUNCTION_16
+0x40009e4	       0xfb7442406	               movzx eax, word [rsp + 6]	       608	nvm.c	FUNCTION_16	FOR_1
+0x40009e9	          0x83c301	                              add ebx, 1	       608	nvm.c	FUNCTION_16	FOR_1
+0x40009ec	      0x6603442404	                  add ax, word [rsp + 4]	       608	nvm.c	FUNCTION_16	FOR_1
+0x40009f1	          0x83fb3f	                           cmp ebx, 0x3f	       602	nvm.c	FUNCTION_16	FOR_1
+0x40009f4	      0x6689442404	                  mov word [rsp + 4], ax	       608	nvm.c	FUNCTION_16	FOR_1
+0x40009f9	            0x7436	                            je 0x4000a31	       602	nvm.c	FUNCTION_16	FOR_1
+0x40009fb	    0x488b85280400	           mov rax, qword [rbp + 0x428] 	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000a02	      0x488d4c2406	                      lea rcx, [rsp + 6]	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000a07	      0xba01000000	                              mov edx, 1	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000a0c	            0x89de	                            mov esi, ebx	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000a0e	          0x4889ef	                            mov rdi, rbp	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000a11	      0xe800000000	                          call 0x4000a16	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000a16	            0x85c0	                           test eax, eax	       604	nvm.c	FUNCTION_16	FOR_1	IF_1
+0x4000a18	            0x74ca	                            je 0x40009e4	       604	nvm.c	FUNCTION_16	FOR_1	IF_1
+0x4000a1a	      0x488b742408	                mov rsi, qword [rsp + 8]	       616	nvm.c	FUNCTION_16
+0x4000a1f	    0x654833342528	                xor rsi, qword gs:[0x28]	       616	nvm.c	FUNCTION_16
+0x4000a28	            0x7533	                           jne 0x4000a5d	       616	nvm.c	FUNCTION_16
+0x4000a2a	        0x4883c410	                           add rsp, 0x10	       616	nvm.c	FUNCTION_16
+0x4000a2e	              0x5b	                                 pop rbx	       616	nvm.c	FUNCTION_16
+0x4000a2f	              0x5d	                                 pop rbp	       616	nvm.c	FUNCTION_16
+0x4000a30	              0xc3	                                     ret	       616	nvm.c	FUNCTION_16
+0x4000a31	      0xbababaffff	                     mov edx, 0xffffbaba	       610	nvm.c	FUNCTION_16
+0x4000a36	      0x488d4c2404	                      lea rcx, [rsp + 4]	       581	e1000.h	FUNCTION_27	CALL_1
+0x4000a3b	      0xbe3f000000	                           mov esi, 0x3f	       581	e1000.h	FUNCTION_27	CALL_1
+0x4000a40	            0x29c2	                            sub edx, eax	       610	nvm.c	FUNCTION_16
+0x4000a42	          0x4889ef	                            mov rdi, rbp	       581	e1000.h	FUNCTION_27	CALL_1
+0x4000a45	    0x488b85580400	           mov rax, qword [rbp + 0x458] 	       581	e1000.h	FUNCTION_27	CALL_1
+0x4000a4c	      0x6689542404	                  mov word [rsp + 4], dx	       610	nvm.c	FUNCTION_16
+0x4000a51	      0xba01000000	                              mov edx, 1	       581	e1000.h	FUNCTION_27	CALL_1
+0x4000a56	      0xe800000000	                          call 0x4000a5b	       581	e1000.h	FUNCTION_27	CALL_1
+0x4000a5b	            0xebbd	                           jmp 0x4000a1a	       615	nvm.c	FUNCTION_16
+0x4000a5d	      0xe800000000	                          call 0x4000a62	       616	nvm.c	FUNCTION_16
+e1000_read_pba_string_generic	ELSE,1:SWITCH,0:IF,11:CALL,13:WHILE,0:functions,0:FOR,2:DO,0	150
+0x4000680	            0x4155	                                push r13	       432	nvm.c	FUNCTION_13
+0x4000682	            0x4154	                                push r12	       432	nvm.c	FUNCTION_13
+0x4000684	              0x55	                                push rbp	       432	nvm.c	FUNCTION_13
+0x4000685	              0x53	                                push rbx	       432	nvm.c	FUNCTION_13
+0x4000686	        0x4883ec10	                           sub rsp, 0x10	       432	nvm.c	FUNCTION_13
+0x400068a	    0x65488b042528	                mov rax, qword gs:[0x28]	       432	nvm.c	FUNCTION_13
+0x4000693	      0x4889442408	                mov qword [rsp + 8], rax	       432	nvm.c	FUNCTION_13
+0x4000698	            0x31c0	                            xor eax, eax	       432	nvm.c	FUNCTION_13
+0x400069a	          0x4885f6	                           test rsi, rsi	       439	nvm.c	FUNCTION_13	IF_1
+0x400069d	     0xf84e9010000	                            je 0x400088c	       439	nvm.c	FUNCTION_13	IF_1
+0x40006a3	          0x4889fb	                            mov rbx, rdi	       439	nvm.c	FUNCTION_13	IF_1
+0x40006a6	          0x4989f4	                            mov r12, rsi	       439	nvm.c	FUNCTION_13	IF_1
+0x40006a9	          0x4189d5	                           mov r13d, edx	       439	nvm.c	FUNCTION_13	IF_1
+0x40006ac	    0x488b87280400	           mov rax, qword [rdi + 0x428] 	       575	e1000.h	FUNCTION_26	CALL_1
+0x40006b3	      0x488d4c2402	                      lea rcx, [rsp + 2]	       575	e1000.h	FUNCTION_26	CALL_1
+0x40006b8	      0xba01000000	                              mov edx, 1	       575	e1000.h	FUNCTION_26	CALL_1
+0x40006bd	      0xbe08000000	                              mov esi, 8	       575	e1000.h	FUNCTION_26	CALL_1
+0x40006c2	      0xe800000000	                          call 0x40006c7	       575	e1000.h	FUNCTION_26	CALL_1
+0x40006c7	            0x85c0	                           test eax, eax	       445	nvm.c	FUNCTION_13	IF_2
+0x40006c9	            0x89c5	                            mov ebp, eax	       575	e1000.h	FUNCTION_26	CALL_1
+0x40006cb	            0x7421	                            je 0x40006ee	       445	nvm.c	FUNCTION_13	IF_2
+0x40006cd	      0x488b7c2408	                mov rdi, qword [rsp + 8]	       527	nvm.c	FUNCTION_13
+0x40006d2	    0x6548333c2528	                xor rdi, qword gs:[0x28]	       527	nvm.c	FUNCTION_13
+0x40006db	            0x89e8	                            mov eax, ebp	       527	nvm.c	FUNCTION_13
+0x40006dd	     0xf85db010000	                           jne 0x40008be	       527	nvm.c	FUNCTION_13
+0x40006e3	        0x4883c410	                           add rsp, 0x10	       527	nvm.c	FUNCTION_13
+0x40006e7	              0x5b	                                 pop rbx	       527	nvm.c	FUNCTION_13
+0x40006e8	              0x5d	                                 pop rbp	       527	nvm.c	FUNCTION_13
+0x40006e9	            0x415c	                                 pop r12	       527	nvm.c	FUNCTION_13
+0x40006eb	            0x415d	                                 pop r13	       527	nvm.c	FUNCTION_13
+0x40006ed	              0xc3	                                     ret	       527	nvm.c	FUNCTION_13
+0x40006ee	    0x488b83280400	           mov rax, qword [rbx + 0x428] 	       575	e1000.h	FUNCTION_26	CALL_1
+0x40006f5	      0x488d4c2404	                      lea rcx, [rsp + 4]	       575	e1000.h	FUNCTION_26	CALL_1
+0x40006fa	      0xba01000000	                              mov edx, 1	       575	e1000.h	FUNCTION_26	CALL_1
+0x40006ff	      0xbe09000000	                              mov esi, 9	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000704	          0x4889df	                            mov rdi, rbx	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000707	      0xe800000000	                          call 0x400070c	       575	e1000.h	FUNCTION_26	CALL_1
+0x400070c	            0x85c0	                           test eax, eax	       451	nvm.c	FUNCTION_13	IF_3
+0x400070e	            0x89c5	                            mov ebp, eax	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000710	            0x75bb	                           jne 0x40006cd	       451	nvm.c	FUNCTION_13	IF_3
+0x4000712	       0xfb7442402	               movzx eax, word [rsp + 2]	       460	nvm.c	FUNCTION_13	IF_4
+0x4000717	        0x663dfafa	                          cmp ax, 0xfafa	       460	nvm.c	FUNCTION_13	IF_4
+0x400071b	     0xf84af000000	                            je 0x40007d0	       460	nvm.c	FUNCTION_13	IF_4
+0x4000721	        0x4183fd0a	                           cmp r13d, 0xa	       464	nvm.c	FUNCTION_13	IF_4	IF_5
+0x4000725	            0x7707	                            ja 0x400072e	       464	nvm.c	FUNCTION_13	IF_4	IF_5
+0x4000727	      0xbd11000000	                           mov ebp, 0x11	       466	nvm.c	FUNCTION_13	IF_4	IF_5
+0x400072c	            0xeb9f	                           jmp 0x40006cd	       466	nvm.c	FUNCTION_13	IF_4	IF_5
+0x400072e	            0x89c2	                            mov edx, eax	       470	nvm.c	FUNCTION_13	IF_4
+0x4000730	    0x41c64424062d	                mov byte [r12 + 6], 0x2d	       476	nvm.c	FUNCTION_13	IF_4
+0x4000736	    0x41c644240700	                   mov byte [r12 + 7], 0	       477	nvm.c	FUNCTION_13	IF_4
+0x400073c	        0x66c1ea0c	                             shr dx, 0xc	       470	nvm.c	FUNCTION_13	IF_4
+0x4000740	    0x41c644240a00	                 mov byte [r12 + 0xa], 0	       482	nvm.c	FUNCTION_13	IF_4
+0x4000746	          0x4c89e6	                            mov rsi, r12	       482	nvm.c	FUNCTION_13	IF_4
+0x4000749	        0x41881424	                      mov byte [r12], dl	       470	nvm.c	FUNCTION_13	IF_4
+0x400074d	            0x89c2	                            mov edx, eax	       471	nvm.c	FUNCTION_13	IF_4
+0x400074f	        0x66c1ea08	                               shr dx, 8	       471	nvm.c	FUNCTION_13	IF_4
+0x4000753	          0x83e20f	                            and edx, 0xf	       471	nvm.c	FUNCTION_13	IF_4
+0x4000756	      0x4188542401	                  mov byte [r12 + 1], dl	       471	nvm.c	FUNCTION_13	IF_4
+0x400075b	            0x89c2	                            mov edx, eax	       472	nvm.c	FUNCTION_13	IF_4
+0x400075d	          0x83e00f	                            and eax, 0xf	       473	nvm.c	FUNCTION_13	IF_4
+0x4000760	      0x4188442403	                  mov byte [r12 + 3], al	       473	nvm.c	FUNCTION_13	IF_4
+0x4000765	       0xfb7442404	               movzx eax, word [rsp + 4]	       474	nvm.c	FUNCTION_13	IF_4
+0x400076a	        0x66c1ea04	                               shr dx, 4	       472	nvm.c	FUNCTION_13	IF_4
+0x400076e	          0x83e20f	                            and edx, 0xf	       472	nvm.c	FUNCTION_13	IF_4
+0x4000771	      0x4188542402	                  mov byte [r12 + 2], dl	       472	nvm.c	FUNCTION_13	IF_4
+0x4000776	            0x89c2	                            mov edx, eax	       474	nvm.c	FUNCTION_13	IF_4
+0x4000778	        0x66c1ea0c	                             shr dx, 0xc	       474	nvm.c	FUNCTION_13	IF_4
+0x400077c	      0x4188542404	                  mov byte [r12 + 4], dl	       474	nvm.c	FUNCTION_13	IF_4
+0x4000781	            0x89c2	                            mov edx, eax	       475	nvm.c	FUNCTION_13	IF_4
+0x4000783	        0x66c1ea08	                               shr dx, 8	       475	nvm.c	FUNCTION_13	IF_4
+0x4000787	          0x83e20f	                            and edx, 0xf	       475	nvm.c	FUNCTION_13	IF_4
+0x400078a	      0x4188542405	                  mov byte [r12 + 5], dl	       475	nvm.c	FUNCTION_13	IF_4
+0x400078f	            0x89c2	                            mov edx, eax	       478	nvm.c	FUNCTION_13	IF_4
+0x4000791	          0x83e00f	                            and eax, 0xf	       479	nvm.c	FUNCTION_13	IF_4
+0x4000794	        0x66c1ea04	                               shr dx, 4	       478	nvm.c	FUNCTION_13	IF_4
+0x4000798	      0x4188442409	                  mov byte [r12 + 9], al	       479	nvm.c	FUNCTION_13	IF_4
+0x400079d	          0x83e20f	                            and edx, 0xf	       478	nvm.c	FUNCTION_13	IF_4
+0x40007a0	      0x4188542408	                  mov byte [r12 + 8], dl	       478	nvm.c	FUNCTION_13	IF_4
+0x40007a5	      0x498d54240a	                    lea rdx, [r12 + 0xa]	       478	nvm.c	FUNCTION_13	IF_4
+0x40007aa	            0xeb12	                           jmp 0x40007be	       478	nvm.c	FUNCTION_13	IF_4
+0x40007ac	          0x83c030	                           add eax, 0x30	       487	nvm.c	FUNCTION_13	IF_4	FOR_1	IF_6
+0x40007af	            0x8806	                      mov byte [rsi], al	       487	nvm.c	FUNCTION_13	IF_4	FOR_1	IF_6
+0x40007b1	        0x4883c601	                              add rsi, 1	       487	nvm.c	FUNCTION_13	IF_4	FOR_1	IF_6
+0x40007b5	          0x4839d6	                            cmp rsi, rdx	       485	nvm.c	FUNCTION_13	IF_4	FOR_1
+0x40007b8	     0xf840fffffff	                            je 0x40006cd	       485	nvm.c	FUNCTION_13	IF_4	FOR_1
+0x40007be	           0xfb606	                   movzx eax, byte [rsi]	       486	nvm.c	FUNCTION_13	IF_4	FOR_1	IF_6
+0x40007c1	            0x3c09	                               cmp al, 9	       486	nvm.c	FUNCTION_13	IF_4	FOR_1	IF_6
+0x40007c3	            0x76e7	                           jbe 0x40007ac	       486	nvm.c	FUNCTION_13	IF_4	FOR_1	IF_6
+0x40007c5	            0x3c0f	                             cmp al, 0xf	       488	nvm.c	FUNCTION_13	IF_4	FOR_1	ELSE_1	IF_7
+0x40007c7	            0x77e8	                            ja 0x40007b1	       488	nvm.c	FUNCTION_13	IF_4	FOR_1	ELSE_1	IF_7
+0x40007c9	          0x83c037	                           add eax, 0x37	       489	nvm.c	FUNCTION_13	IF_4	FOR_1	ELSE_1	IF_7
+0x40007cc	            0x8806	                      mov byte [rsi], al	       489	nvm.c	FUNCTION_13	IF_4	FOR_1	ELSE_1	IF_7
+0x40007ce	            0xebe1	                           jmp 0x40007b1	       489	nvm.c	FUNCTION_13	IF_4	FOR_1	ELSE_1	IF_7
+0x40007d0	       0xfb7742404	               movzx esi, word [rsp + 4]	       575	e1000.h	FUNCTION_26	CALL_1
+0x40007d5	    0x488b83280400	           mov rax, qword [rbx + 0x428] 	       575	e1000.h	FUNCTION_26	CALL_1
+0x40007dc	      0x488d4c2406	                      lea rcx, [rsp + 6]	       575	e1000.h	FUNCTION_26	CALL_1
+0x40007e1	      0xba01000000	                              mov edx, 1	       575	e1000.h	FUNCTION_26	CALL_1
+0x40007e6	          0x4889df	                            mov rdi, rbx	       575	e1000.h	FUNCTION_26	CALL_1
+0x40007e9	      0xe800000000	                          call 0x40007ee	       575	e1000.h	FUNCTION_26	CALL_1
+0x40007ee	            0x85c0	                           test eax, eax	       496	nvm.c	FUNCTION_13	IF_8
+0x40007f0	            0x89c5	                            mov ebp, eax	       575	e1000.h	FUNCTION_26	CALL_1
+0x40007f2	     0xf85d5feffff	                           jne 0x40006cd	       496	nvm.c	FUNCTION_13	IF_8
+0x40007f8	       0xfb7442406	               movzx eax, word [rsp + 6]	       501	nvm.c	FUNCTION_13	IF_9
+0x40007fd	          0x8d50ff	                      lea edx, [rax - 1]	       501	nvm.c	FUNCTION_13	IF_9
+0x4000800	        0x6683fafd	              cmp dx, 0xfffffffffffffffd	       501	nvm.c	FUNCTION_13	IF_9
+0x4000804	     0xf87aa000000	                            ja 0x40008b4	       501	nvm.c	FUNCTION_13	IF_9
+0x400080a	        0x8d4400ff	                lea eax, [rax + rax - 1]	       506	nvm.c	FUNCTION_13	IF_10
+0x400080e	          0x4139c5	                           cmp r13d, eax	       506	nvm.c	FUNCTION_13	IF_10
+0x4000811	     0xf8293000000	                            jb 0x40008aa	       506	nvm.c	FUNCTION_13	IF_10
+0x4000817	       0xfb7442404	               movzx eax, word [rsp + 4]	       512	nvm.c	FUNCTION_13
+0x400081c	          0x4531ed	                          xor r13d, r13d	       515	nvm.c	FUNCTION_13	FOR_2
+0x400081f	          0x6685d2	                             test dx, dx	       515	nvm.c	FUNCTION_13	FOR_2
+0x4000822	      0x6689542406	                  mov word [rsp + 6], dx	       513	nvm.c	FUNCTION_13
+0x4000827	          0x8d7001	                      lea esi, [rax + 1]	       512	nvm.c	FUNCTION_13
+0x400082a	      0x6689742404	                  mov word [rsp + 4], si	       512	nvm.c	FUNCTION_13
+0x400082f	            0x7531	                           jne 0x4000862	       515	nvm.c	FUNCTION_13	FOR_2
+0x4000831	            0xeb63	                           jmp 0x4000896	       515	nvm.c	FUNCTION_13	FOR_2
+0x4000833	       0xfb7542402	               movzx edx, word [rsp + 2]	       521	nvm.c	FUNCTION_13	FOR_2
+0x4000838	      0x4b8d442d00	                    lea rax, [r13 + r13]	       521	nvm.c	FUNCTION_13	FOR_2
+0x400083d	        0x4183c501	                             add r13d, 1	       515	nvm.c	FUNCTION_13	FOR_2
+0x4000841	      0x25feff0100	                        and eax, 0x1fffe	       521	nvm.c	FUNCTION_13	FOR_2
+0x4000846	            0x89d1	                            mov ecx, edx	       521	nvm.c	FUNCTION_13	FOR_2
+0x4000848	      0x4188540401	            mov byte [r12 + rax + 1], dl	       522	nvm.c	FUNCTION_13	FOR_2
+0x400084d	        0x66c1e908	                               shr cx, 8	       521	nvm.c	FUNCTION_13	FOR_2
+0x4000851	    0x6644396c2406	                cmp word [rsp + 6], r13w	       515	nvm.c	FUNCTION_13	FOR_2
+0x4000857	        0x41880c04	                mov byte [r12 + rax], cl	       521	nvm.c	FUNCTION_13	FOR_2
+0x400085b	            0x7639	                           jbe 0x4000896	       515	nvm.c	FUNCTION_13	FOR_2
+0x400085d	       0xfb7742404	               movzx esi, word [rsp + 4]	       515	nvm.c	FUNCTION_13	FOR_2
+0x4000862	          0x4401ee	                           add esi, r13d	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000865	    0x488b83280400	           mov rax, qword [rbx + 0x428] 	       575	e1000.h	FUNCTION_26	CALL_1
+0x400086c	      0x488d4c2402	                      lea rcx, [rsp + 2]	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000871	           0xfb7f6	                           movzx esi, si	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000874	      0xba01000000	                              mov edx, 1	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000879	          0x4889df	                            mov rdi, rbx	       575	e1000.h	FUNCTION_26	CALL_1
+0x400087c	      0xe800000000	                          call 0x4000881	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000881	            0x85c0	                           test eax, eax	       517	nvm.c	FUNCTION_13	FOR_2	IF_11
+0x4000883	            0x74ae	                            je 0x4000833	       517	nvm.c	FUNCTION_13	FOR_2	IF_11
+0x4000885	            0x89c5	                            mov ebp, eax	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000887	      0xe941feffff	                           jmp 0x40006cd	       575	e1000.h	FUNCTION_26	CALL_1
+0x400088c	      0xbdf0ffffff	                     mov ebp, 0xfffffff0	       441	nvm.c	FUNCTION_13	IF_1
+0x4000891	      0xe937feffff	                           jmp 0x40006cd	       441	nvm.c	FUNCTION_13	IF_1
+0x4000896	          0x4d01ed	                            add r13, r13	       524	nvm.c	FUNCTION_13
+0x4000899	    0x4181e5feff01	                       and r13d, 0x1fffe	       524	nvm.c	FUNCTION_13
+0x40008a0	      0x43c6042c00	                 mov byte [r12 + r13], 0	       524	nvm.c	FUNCTION_13
+0x40008a5	      0xe923feffff	                           jmp 0x40006cd	       526	nvm.c	FUNCTION_13
+0x40008aa	      0xbdefffffff	                     mov ebp, 0xffffffef	       508	nvm.c	FUNCTION_13	IF_10
+0x40008af	      0xe919feffff	                           jmp 0x40006cd	       508	nvm.c	FUNCTION_13	IF_10
+0x40008b4	      0xbdeeffffff	                     mov ebp, 0xffffffee	       503	nvm.c	FUNCTION_13	IF_9
+0x40008b9	      0xe90ffeffff	                           jmp 0x40006cd	       503	nvm.c	FUNCTION_13	IF_9
+0x40008be	      0xe800000000	                          call 0x40008c3	       527	nvm.c	FUNCTION_13
+e1000e_validate_nvm_checksum_generic	ELSE,0:SWITCH,0:IF,2:CALL,3:WHILE,0:functions,0:FOR,1:DO,0	37
+0x4000940	            0x4154	                                push r12	       566	nvm.c	FUNCTION_15
+0x4000942	              0x55	                                push rbp	       566	nvm.c	FUNCTION_15
+0x4000943	          0x4531e4	                          xor r12d, r12d	       568	nvm.c	FUNCTION_15
+0x4000946	              0x53	                                push rbx	       566	nvm.c	FUNCTION_15
+0x4000947	          0x4889fd	                            mov rbp, rdi	       566	nvm.c	FUNCTION_15
+0x400094a	            0x31db	                            xor ebx, ebx	       566	nvm.c	FUNCTION_15
+0x400094c	        0x4883ec10	                           sub rsp, 0x10	       566	nvm.c	FUNCTION_15
+0x4000950	    0x65488b042528	                mov rax, qword gs:[0x28]	       566	nvm.c	FUNCTION_15
+0x4000959	      0x4889442408	                mov qword [rsp + 8], rax	       566	nvm.c	FUNCTION_15
+0x400095e	            0x31c0	                            xor eax, eax	       566	nvm.c	FUNCTION_15
+0x4000960	            0xeb0e	                           jmp 0x4000970	       566	nvm.c	FUNCTION_15
+0x4000962	          0x83c301	                              add ebx, 1	       566	nvm.c	FUNCTION_15
+0x4000965	    0x664403642406	                add r12w, word [rsp + 6]	       577	nvm.c	FUNCTION_15	FOR_1
+0x400096b	          0x83fb40	                           cmp ebx, 0x40	       571	nvm.c	FUNCTION_15	FOR_1
+0x400096e	            0x7438	                            je 0x40009a8	       571	nvm.c	FUNCTION_15	FOR_1
+0x4000970	    0x488b85280400	           mov rax, qword [rbp + 0x428] 	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000977	      0x488d4c2406	                      lea rcx, [rsp + 6]	       575	e1000.h	FUNCTION_26	CALL_1
+0x400097c	      0xba01000000	                              mov edx, 1	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000981	            0x89de	                            mov esi, ebx	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000983	          0x4889ef	                            mov rdi, rbp	       575	e1000.h	FUNCTION_26	CALL_1
+0x4000986	      0xe800000000	                          call 0x400098b	       575	e1000.h	FUNCTION_26	CALL_1
+0x400098b	            0x85c0	                           test eax, eax	       573	nvm.c	FUNCTION_15	FOR_1	IF_1
+0x400098d	            0x74d3	                            je 0x4000962	       573	nvm.c	FUNCTION_15	FOR_1	IF_1
+0x400098f	      0x488b542408	                mov rdx, qword [rsp + 8]	       586	nvm.c	FUNCTION_15
+0x4000994	    0x654833142528	                xor rdx, qword gs:[0x28]	       586	nvm.c	FUNCTION_15
+0x400099d	            0x7518	                           jne 0x40009b7	       586	nvm.c	FUNCTION_15
+0x400099f	        0x4883c410	                           add rsp, 0x10	       586	nvm.c	FUNCTION_15
+0x40009a3	              0x5b	                                 pop rbx	       586	nvm.c	FUNCTION_15
+0x40009a4	              0x5d	                                 pop rbp	       586	nvm.c	FUNCTION_15
+0x40009a5	            0x415c	                                 pop r12	       586	nvm.c	FUNCTION_15
+0x40009a7	              0xc3	                                     ret	       586	nvm.c	FUNCTION_15
+0x40009a8	            0x31c0	                            xor eax, eax	       580	nvm.c	FUNCTION_15	IF_2
+0x40009aa	    0x664181fcbaba	                        cmp r12w, 0xbaba	       580	nvm.c	FUNCTION_15	IF_2
+0x40009b0	           0xf95c0	                                setne al	       580	nvm.c	FUNCTION_15	IF_2
+0x40009b3	            0xf7d8	                                 neg eax	       580	nvm.c	FUNCTION_15	IF_2
+0x40009b5	            0xebd8	                           jmp 0x400098f	       580	nvm.c	FUNCTION_15	IF_2
+0x40009b7	      0xe800000000	                          call 0x40009bc	       586	nvm.c	FUNCTION_15

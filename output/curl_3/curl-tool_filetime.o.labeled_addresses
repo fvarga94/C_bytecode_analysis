@@ -1,0 +1,40 @@
+setfiletime	CALL,11:ELSE,1:IF,6:functions,0:DO,0:FOR,0:WHILE,0:SWITCH,0	39
+0x40000e0	              0x55	                                push rbp	        89	tool_filetime.c	FUNCTION_2
+0x40000e1	              0x53	                                push rbx	        89	tool_filetime.c	FUNCTION_2
+0x40000e2	          0x4889fb	                            mov rbx, rdi	        89	tool_filetime.c	FUNCTION_2
+0x40000e5	        0x4883ec38	                           sub rsp, 0x38	        89	tool_filetime.c	FUNCTION_2
+0x40000e9	    0x64488b042528	                mov rax, qword fs:[0x28]	        89	tool_filetime.c	FUNCTION_2
+0x40000f2	      0x4889442428	             mov qword [rsp + 0x28], rax	        89	tool_filetime.c	FUNCTION_2
+0x40000f7	            0x31c0	                            xor eax, eax	        89	tool_filetime.c	FUNCTION_2
+0x40000f9	          0x4885ff	                           test rdi, rdi	        90	tool_filetime.c	FUNCTION_2	IF_1
+0x40000fc	            0x782d	                            js 0x400012b	        90	tool_filetime.c	FUNCTION_2	IF_1
+0x40000fe	          0x4889f7	                            mov rdi, rsi	        90	tool_filetime.c	FUNCTION_2	IF_1
+0x4000101	          0x4889e6	                            mov rsi, rsp	       135	tool_filetime.c	FUNCTION_2	IF_1	IF_5	CALL_8
+0x4000104	          0x4889d5	                            mov rbp, rdx	       135	tool_filetime.c	FUNCTION_2	IF_1	IF_5	CALL_8
+0x4000107	      0x48895c2410	             mov qword [rsp + 0x10], rbx	       133	tool_filetime.c	FUNCTION_2	IF_1
+0x400010c	        0x48891c24	                    mov qword [rsp], rbx	       133	tool_filetime.c	FUNCTION_2	IF_1
+0x4000110	    0x48c744241800	               mov qword [rsp + 0x18], 0	       134	tool_filetime.c	FUNCTION_2	IF_1
+0x4000119	    0x48c744240800	                  mov qword [rsp + 8], 0	       134	tool_filetime.c	FUNCTION_2	IF_1
+0x4000122	      0xe800000000	                          call 0x4000127	       135	tool_filetime.c	FUNCTION_2	IF_1	IF_5	CALL_8
+0x4000127	            0x85c0	                           test eax, eax	       135	tool_filetime.c	FUNCTION_2	IF_1	IF_5	CALL_8
+0x4000129	            0x751d	                           jne 0x4000148	       135	tool_filetime.c	FUNCTION_2	IF_1	IF_5	CALL_8
+0x400012b	      0x488b442428	            mov rax, qword [rsp + 0x28] 	       152	tool_filetime.c	FUNCTION_2
+0x4000130	    0x644833042528	                xor rax, qword fs:[0x28]	       152	tool_filetime.c	FUNCTION_2
+0x4000139	            0x7535	                           jne 0x4000170	       152	tool_filetime.c	FUNCTION_2
+0x400013b	        0x4883c438	                           add rsp, 0x38	       152	tool_filetime.c	FUNCTION_2
+0x400013f	              0x5b	                                 pop rbx	       152	tool_filetime.c	FUNCTION_2
+0x4000140	              0x5d	                                 pop rbp	       152	tool_filetime.c	FUNCTION_2
+0x4000141	              0xc3	                                     ret	       152	tool_filetime.c	FUNCTION_2
+0x4000142	    0x660f1f440000	                    nop word [rax + rax]	       152	tool_filetime.c	FUNCTION_2
+0x4000148	      0xe800000000	                          call 0x400014d	       138	tool_filetime.c	FUNCTION_2	IF_1	IF_5	CALL_9
+0x400014d	            0x8b38	                    mov edi, dword [rax]	       136	tool_filetime.c	FUNCTION_2	IF_1	IF_5
+0x400014f	      0xe800000000	                          call 0x4000154	       136	tool_filetime.c	FUNCTION_2	IF_1	IF_5
+0x4000154	          0x4889d9	                            mov rcx, rbx	        97	stdio2.h	CALL_9
+0x4000157	          0x4989c0	                             mov r8, rax	       136	tool_filetime.c	FUNCTION_2	IF_1	IF_5
+0x400015a	      0xba00000000	                              mov edx, 0	        97	stdio2.h	CALL_9
+0x400015f	      0xbe01000000	                              mov esi, 1	        97	stdio2.h	CALL_9
+0x4000164	          0x4889ef	                            mov rdi, rbp	        97	stdio2.h	CALL_9
+0x4000167	            0x31c0	                            xor eax, eax	        97	stdio2.h	CALL_9
+0x4000169	      0xe800000000	                          call 0x400016e	        97	stdio2.h	CALL_9
+0x400016e	            0xebbb	                           jmp 0x400012b	       152	tool_filetime.c	FUNCTION_2
+0x4000170	      0xe800000000	     call str.Failed_to_get_filetime:__s	       152	tool_filetime.c	FUNCTION_2

@@ -1,0 +1,145 @@
+get_new_element	WHILE,0:DO,0:ELSE,0:CALL,1:IF,0:SWITCH,0:FOR,0:functions,0	4
+0x4000040	    0x48833d000000	               cmp qword [0x04000048], 0	        55	vmcore.c	FUNCTION_2	IF_1
+0x4000048	      0xb8f0ffffff	                     mov eax, 0xfffffff0	        56	vmcore.c	FUNCTION_2	IF_1
+0x400004d	            0x7509	                           jne 0x4000058	        55	vmcore.c	FUNCTION_2	IF_1
+0x400004f	    0x48893d000000	            mov qword [0x04000056], rdi 	        57	vmcore.c	FUNCTION_2
+mmap_vmcore_fault	WHILE,0:DO,0:ELSE,0:CALL,9:IF,3:SWITCH,0:FOR,0:functions,0	2
+0x4000070	      0xb802000000	                              mov eax, 2	       298	vmcore.c	FUNCTION_14
+0x4000075	              0xc3	                                     ret	       298	vmcore.c	FUNCTION_14
+register_oldmem_pfn_is_ram	WHILE,0:DO,0:ELSE,0:CALL,0:IF,1:SWITCH,0:FOR,0:functions,0	6
+0x4000040	    0x48833d000000	               cmp qword [0x04000048], 0	        55	vmcore.c	FUNCTION_2	IF_1
+0x4000048	      0xb8f0ffffff	                     mov eax, 0xfffffff0	        56	vmcore.c	FUNCTION_2	IF_1
+0x400004d	            0x7509	                           jne 0x4000058	        55	vmcore.c	FUNCTION_2	IF_1
+0x400004f	    0x48893d000000	            mov qword [0x04000056], rdi 	        57	vmcore.c	FUNCTION_2
+0x4000056	            0x31c0	                            xor eax, eax	        58	vmcore.c	FUNCTION_2
+0x4000058	            0xf3c3	                                     ret	        59	vmcore.c	FUNCTION_2
+read_vmcore	WHILE,0:DO,0:ELSE,0:CALL,1:IF,0:SWITCH,0:FOR,0:functions,0	118
+0x4000220	            0x4157	                                push r15	       257	vmcore.c	FUNCTION_13
+0x4000222	            0x4156	                                push r14	       257	vmcore.c	FUNCTION_13
+0x4000224	            0x4155	                                push r13	       257	vmcore.c	FUNCTION_13
+0x4000226	            0x4154	                                push r12	       257	vmcore.c	FUNCTION_13
+0x4000228	              0x55	                                push rbp	       257	vmcore.c	FUNCTION_13
+0x4000229	              0x53	                                push rbx	       257	vmcore.c	FUNCTION_13
+0x400022a	        0x4883ec10	                           sub rsp, 0x10	       257	vmcore.c	FUNCTION_13
+0x400022e	    0x65488b042528	                mov rax, qword gs:[0x28]	       257	vmcore.c	FUNCTION_13
+0x4000237	      0x4889442408	                mov qword [rsp + 8], rax	       257	vmcore.c	FUNCTION_13
+0x400023c	            0x31c0	                            xor eax, eax	       257	vmcore.c	FUNCTION_13
+0x400023e	          0x4885d2	                           test rdx, rdx	       192	vmcore.c	FUNCTION_12	IF_1
+0x4000241	     0xf84cf000000	                            je 0x4000316	       192	vmcore.c	FUNCTION_12	IF_1
+0x4000247	          0x4989f6	                            mov r14, rsi	       192	vmcore.c	FUNCTION_12	IF_1
+0x400024a	    0x4c8b25000000	            mov r12, qword [0x04000251] 	       192	vmcore.c	FUNCTION_12	IF_1
+0x4000251	          0x488b31	                    mov rsi, qword [rcx]	       192	vmcore.c	FUNCTION_12	IF_1
+0x4000254	          0x4989cd	                            mov r13, rcx	       192	vmcore.c	FUNCTION_12	IF_1
+0x4000257	          0x4c39e6	                            cmp rsi, r12	       192	vmcore.c	FUNCTION_12	IF_1
+0x400025a	     0xf83b6000000	                           jae 0x4000316	       192	vmcore.c	FUNCTION_12	IF_1
+0x4000260	    0x488b05000000	            mov rax, qword [0x04000267] 	       200	vmcore.c	FUNCTION_12	IF_3
+0x4000267	          0x4929f4	                            sub r12, rsi	       196	vmcore.c	FUNCTION_12	IF_2
+0x400026a	          0x4c39e2	                            cmp rdx, r12	       196	vmcore.c	FUNCTION_12	IF_2
+0x400026d	        0x4c0f46e2	                         cmovbe r12, rdx	       196	vmcore.c	FUNCTION_12	IF_2
+0x4000271	          0x4531ff	                          xor r15d, r15d	       187	vmcore.c	FUNCTION_12
+0x4000274	          0x4839c6	                            cmp rsi, rax	       200	vmcore.c	FUNCTION_12	IF_3
+0x4000277	     0xf82bc000000	                            jb 0x4000339	       200	vmcore.c	FUNCTION_12	IF_3
+0x400027d	          0x4889c2	                            mov rdx, rax	       215	vmcore.c	FUNCTION_12	IF_6
+0x4000280	    0x480315000000	             add rdx, qword [0x04000287]	       215	vmcore.c	FUNCTION_12	IF_6
+0x4000287	          0x4839f2	                            cmp rdx, rsi	       215	vmcore.c	FUNCTION_12	IF_6
+0x400028a	     0xf87ee000000	                            ja 0x400037e	       215	vmcore.c	FUNCTION_12	IF_6
+0x4000290	    0x488b2d000000	            mov rbp, qword [0x04000297] 	       232	vmcore.c	FUNCTION_12	FUNCTION_1
+0x4000297	    0x4881fd000000	                              cmp rbp, 0	       232	vmcore.c	FUNCTION_12	FUNCTION_1
+0x400029e	            0x7521	                           jne 0x40002c1	       232	vmcore.c	FUNCTION_12	FUNCTION_1
+0x40002a0	            0xeb71	                           jmp 0x4000313	       232	vmcore.c	FUNCTION_12	FUNCTION_1
+0x40002a2	          0x4801d8	                            add rax, rbx	       242	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002a5	          0x4901de	                            add r14, rbx	       243	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002a8	          0x4901df	                            add r15, rbx	       244	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002ab	          0x4929dc	                            sub r12, rbx	       247	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1	IF_3
+0x40002ae	        0x49894500	                    mov qword [r13], rax	       242	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002b2	            0x745f	                            je 0x4000313	       247	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1	IF_3
+0x40002b4	        0x488b6d00	                    mov rbp, qword [rbp]	       232	vmcore.c	FUNCTION_12	FUNCTION_1
+0x40002b8	    0x4881fd000000	                              cmp rbp, 0	       232	vmcore.c	FUNCTION_12	FUNCTION_1
+0x40002bf	            0x7452	                            je 0x4000313	       232	vmcore.c	FUNCTION_12	FUNCTION_1
+0x40002c1	        0x488b5520	            mov rdx, qword [rbp + 0x20] 	       233	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002c5	        0x498b4500	                    mov rax, qword [r13]	       233	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002c9	          0x4889d3	                            mov rbx, rdx	       233	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002cc	        0x48035d18	             add rbx, qword [rbp + 0x18]	       233	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002d0	          0x4839d8	                            cmp rax, rbx	       233	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002d3	            0x73df	                           jae 0x40002b4	       233	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002d5	          0x4829c3	                            sub rbx, rax	       234	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1	CALL_1
+0x40002d8	          0x4889c7	                            mov rdi, rax	       237	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002db	          0x4c39e3	                            cmp rbx, r12	       234	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1	CALL_1
+0x40002de	        0x490f47dc	                          cmova rbx, r12	       234	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1	CALL_1
+0x40002e2	          0x4829d7	                            sub rdi, rdx	       237	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002e5	          0x4889fa	                            mov rdx, rdi	       237	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002e8	        0x48035510	             add rdx, qword [rbp + 0x10]	       237	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002ec	          0x4885db	                           test rbx, rbx	        95	vmcore.c	FUNCTION_5	IF_1
+0x40002ef	        0x48891424	                    mov qword [rsp], rdx	       237	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x40002f3	            0x74ad	                            je 0x40002a2	        95	vmcore.c	FUNCTION_5	IF_1
+0x40002f5	      0xb901000000	                              mov ecx, 1	        95	vmcore.c	FUNCTION_5	IF_1
+0x40002fa	          0x4889e2	                            mov rdx, rsp	        95	vmcore.c	FUNCTION_5	IF_1
+0x40002fd	          0x4889de	                            mov rsi, rbx	        95	vmcore.c	FUNCTION_5	IF_1
+0x4000300	          0x4c89f7	                            mov rdi, r14	        95	vmcore.c	FUNCTION_5	IF_1
+0x4000303	      0xe8c8fdffff	        call sym.read_from_oldmem.part.3	        95	vmcore.c	FUNCTION_5	IF_1
+0x4000308	          0x4885c0	                           test rax, rax	       239	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1	IF_2
+0x400030b	            0x7809	                            js 0x4000316	       239	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1	IF_2
+0x400030d	        0x498b4500	                    mov rax, qword [r13]	       239	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1	IF_2
+0x4000311	            0xeb8f	                           jmp 0x40002a2	       239	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1	IF_2
+0x4000313	          0x4c89f8	                            mov rax, r15	       244	vmcore.c	FUNCTION_12	FUNCTION_1	IF_1
+0x4000316	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       259	vmcore.c	FUNCTION_13
+0x400031b	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       259	vmcore.c	FUNCTION_13
+0x4000324	     0xf859e000000	                           jne 0x40003c8	       259	vmcore.c	FUNCTION_13
+0x400032a	        0x4883c410	                           add rsp, 0x10	       259	vmcore.c	FUNCTION_13
+0x400032e	              0x5b	                                 pop rbx	       259	vmcore.c	FUNCTION_13
+0x400032f	              0x5d	                                 pop rbp	       259	vmcore.c	FUNCTION_13
+0x4000330	            0x415c	                                 pop r12	       259	vmcore.c	FUNCTION_13
+0x4000332	            0x415d	                                 pop r13	       259	vmcore.c	FUNCTION_13
+0x4000334	            0x415e	                                 pop r14	       259	vmcore.c	FUNCTION_13
+0x4000336	            0x415f	                                 pop r15	       259	vmcore.c	FUNCTION_13
+0x4000338	              0xc3	                                     ret	       259	vmcore.c	FUNCTION_13
+0x4000339	          0x4829f0	                            sub rax, rsi	       201	vmcore.c	FUNCTION_12	IF_3	CALL_1
+0x400033c	          0x4c89f7	                            mov rdi, r14	       202	vmcore.c	FUNCTION_12	IF_3	IF_4	CALL_2
+0x400033f	          0x4c39e0	                            cmp rax, r12	       201	vmcore.c	FUNCTION_12	IF_3	CALL_1
+0x4000342	        0x490f47c4	                          cmova rax, r12	       201	vmcore.c	FUNCTION_12	IF_3	CALL_1
+0x4000346	    0x480335000000	             add rsi, qword [0x0400034d]	       202	vmcore.c	FUNCTION_12	IF_3	IF_4	CALL_2
+0x400034d	          0x4889c2	                            mov rdx, rax	       202	vmcore.c	FUNCTION_12	IF_3	IF_4	CALL_2
+0x4000350	          0x4989c7	                            mov r15, rax	       201	vmcore.c	FUNCTION_12	IF_3	CALL_1
+0x4000353	      0xe8a8feffff	            call sym.copy_to.constprop.9	       202	vmcore.c	FUNCTION_12	IF_3	IF_4	CALL_2
+0x4000358	            0x85c0	                           test eax, eax	       202	vmcore.c	FUNCTION_12	IF_3	IF_4	CALL_2
+0x400035a	            0x7560	                           jne 0x40003bc	       202	vmcore.c	FUNCTION_12	IF_3	IF_4	CALL_2
+0x400035c	          0x4c89fe	                            mov rsi, r15	       205	vmcore.c	FUNCTION_12	IF_3
+0x400035f	        0x49037500	                    add rsi, qword [r13]	       205	vmcore.c	FUNCTION_12	IF_3
+0x4000363	          0x4d29fc	                            sub r12, r15	       210	vmcore.c	FUNCTION_12	IF_3	IF_5
+0x4000366	          0x4c89f8	                            mov rax, r15	       211	vmcore.c	FUNCTION_12	IF_3	IF_5
+0x4000369	        0x49897500	                    mov qword [r13], rsi	       205	vmcore.c	FUNCTION_12	IF_3
+0x400036d	            0x74a7	                            je 0x4000316	       210	vmcore.c	FUNCTION_12	IF_3	IF_5
+0x400036f	          0x4d01fe	                            add r14, r15	       206	vmcore.c	FUNCTION_12	IF_3
+0x4000372	    0x488b05000000	            mov rax, qword [0x04000379] 	       206	vmcore.c	FUNCTION_12	IF_3
+0x4000379	      0xe9fffeffff	                           jmp 0x400027d	       206	vmcore.c	FUNCTION_12	IF_3
+0x400037e	          0x4829f2	                            sub rdx, rsi	       218	vmcore.c	FUNCTION_12	IF_6	CALL_3
+0x4000381	          0x4c89f7	                            mov rdi, r14	       220	vmcore.c	FUNCTION_12	IF_6	IF_7	CALL_4
+0x4000384	          0x4c39e2	                            cmp rdx, r12	       218	vmcore.c	FUNCTION_12	IF_6	CALL_3
+0x4000387	        0x490f47d4	                          cmova rdx, r12	       218	vmcore.c	FUNCTION_12	IF_6	CALL_3
+0x400038b	          0x4829c6	                            sub rsi, rax	       220	vmcore.c	FUNCTION_12	IF_6	IF_7	CALL_4
+0x400038e	    0x480335000000	             add rsi, qword [0x04000395]	       220	vmcore.c	FUNCTION_12	IF_6	IF_7	CALL_4
+0x4000395	          0x4889d3	                            mov rbx, rdx	       218	vmcore.c	FUNCTION_12	IF_6	CALL_3
+0x4000398	      0xe863feffff	            call sym.copy_to.constprop.9	       220	vmcore.c	FUNCTION_12	IF_6	IF_7	CALL_4
+0x400039d	            0x85c0	                           test eax, eax	       220	vmcore.c	FUNCTION_12	IF_6	IF_7	CALL_4
+0x400039f	            0x751b	                           jne 0x40003bc	       220	vmcore.c	FUNCTION_12	IF_6	IF_7	CALL_4
+0x40003a1	          0x4901df	                            add r15, rbx	       225	vmcore.c	FUNCTION_12	IF_6
+0x40003a4	        0x49015d00	                    add qword [r13], rbx	       223	vmcore.c	FUNCTION_12	IF_6
+0x40003a8	          0x4929dc	                            sub r12, rbx	       228	vmcore.c	FUNCTION_12	IF_6	IF_8
+0x40003ab	          0x4c89f8	                            mov rax, r15	       229	vmcore.c	FUNCTION_12	IF_6	IF_8
+0x40003ae	     0xf8462ffffff	                            je 0x4000316	       228	vmcore.c	FUNCTION_12	IF_6	IF_8
+0x40003b4	          0x4901de	                            add r14, rbx	       224	vmcore.c	FUNCTION_12	IF_6
+0x40003b7	      0xe9d4feffff	                           jmp 0x4000290	       224	vmcore.c	FUNCTION_12	IF_6
+0x40003bc	    0x48c7c0f2ffff	             mov rax, 0xfffffffffffffff2	       203	vmcore.c	FUNCTION_12	IF_3	IF_4
+0x40003c3	      0xe94effffff	                           jmp 0x4000316	       203	vmcore.c	FUNCTION_12	IF_3	IF_4
+0x40003c8	      0xe800000000	                          call 0x40003cd	       259	vmcore.c	FUNCTION_13
+elfcorehdr_free	WHILE,0:DO,0:ELSE,0:CALL,0:IF,0:SWITCH,0:FOR,0:functions,0	1
+0x40003e0	            0xf3c3	                                     ret	       139	vmcore.c	FUNCTION_7
+unregister_oldmem_pfn_is_ram	WHILE,0:DO,0:ELSE,0:CALL,1:IF,0:SWITCH,0:FOR,0:functions,0	3
+0x4000060	    0x48c705000000	               mov qword [0x0400006b], 0	        64	vmcore.c	FUNCTION_3
+0x400006b	           0xfaef8	                                  sfence	        65	vmcore.c	FUNCTION_3	CALL_1
+0x400006e	              0xc3	                                     ret	        65	vmcore.c	FUNCTION_3	CALL_1
+elfcorehdr_alloc	WHILE,0:DO,0:ELSE,0:CALL,0:IF,0:SWITCH,0:FOR,0:functions,0	2
+0x40003d0	            0x31c0	                            xor eax, eax	       133	vmcore.c	FUNCTION_6
+0x40003d2	              0xc3	                                     ret	       133	vmcore.c	FUNCTION_6
+remap_oldmem_pfn_range	WHILE,0:DO,0:ELSE,0:CALL,1:IF,0:SWITCH,0:FOR,0:functions,0	1
+0x4000410	      0xe900000000	                           jmp 0x4000415	       164	vmcore.c	FUNCTION_10	CALL_1

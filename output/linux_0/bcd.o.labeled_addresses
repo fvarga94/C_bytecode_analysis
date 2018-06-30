@@ -1,0 +1,20 @@
+_bin2bcd	SWITCH,0:ELSE,0:IF,0:functions,0:WHILE,0:FOR,0:DO,0:CALL,0	11
+0x4000060	            0x89f8	                            mov eax, edi	        13	bcd.c	FUNCTION_2
+0x4000062	      0xbacdcccccc	                     mov edx, 0xcccccccd	        13	bcd.c	FUNCTION_2
+0x4000067	            0xf7e2	                                 mul edx	        13	bcd.c	FUNCTION_2
+0x4000069	          0xc1ea03	                              shr edx, 3	        13	bcd.c	FUNCTION_2
+0x400006c	            0x89d0	                            mov eax, edx	        13	bcd.c	FUNCTION_2
+0x400006e	          0x8d1492	                  lea edx, [rdx + rdx*4]	        13	bcd.c	FUNCTION_2
+0x4000071	          0xc1e004	                              shl eax, 4	        13	bcd.c	FUNCTION_2
+0x4000074	             0x1d2	                            add edx, edx	        13	bcd.c	FUNCTION_2
+0x4000076	            0x29d7	                            sub edi, edx	        13	bcd.c	FUNCTION_2
+0x4000078	             0x1f8	                            add eax, edi	        13	bcd.c	FUNCTION_2
+0x400007a	              0xc3	                                     ret	        14	bcd.c	FUNCTION_2
+_bcd2bin	SWITCH,0:ELSE,0:IF,0:functions,0:WHILE,0:FOR,0:DO,0:CALL,0	7
+0x4000040	            0x89f8	                            mov eax, edi	         7	bcd.c	FUNCTION_1
+0x4000042	          0x83e70f	                            and edi, 0xf	         7	bcd.c	FUNCTION_1
+0x4000045	          0xc0e804	                               shr al, 4	         7	bcd.c	FUNCTION_1
+0x4000048	           0xfb6c0	                           movzx eax, al	         7	bcd.c	FUNCTION_1
+0x400004b	          0x8d0480	                  lea eax, [rax + rax*4]	         7	bcd.c	FUNCTION_1
+0x400004e	          0x8d0447	                  lea eax, [rdi + rax*2]	         7	bcd.c	FUNCTION_1
+0x4000051	              0xc3	                                     ret	         8	bcd.c	FUNCTION_1

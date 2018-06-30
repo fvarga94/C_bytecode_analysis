@@ -1,0 +1,56 @@
+ldsem_up_write	FOR,0:WHILE,0:functions,0:DO,0:IF,1:ELSE,0:CALL,3:SWITCH,0	7
+0x4000240	      0xbaffffffff	                     mov edx, 0xffffffff	       154	atomic64_64.h	FUNCTION_31	CALL_1
+0x4000245	          0x4889d0	                            mov rax, rdx	       154	atomic64_64.h	FUNCTION_31	CALL_1
+0x4000248	      0xf0480fc107	              lock xadd qword [rdi], rax	       154	atomic64_64.h	FUNCTION_31	CALL_1
+0x400024d	          0x4801d0	                            add rax, rdx	       435	tty_ldsem.c	FUNCTION_18	IF_1
+0x4000250	            0x7802	                            js 0x4000254	       435	tty_ldsem.c	FUNCTION_18	IF_1
+0x4000252	            0xf3c3	                                     ret	       435	tty_ldsem.c	FUNCTION_18	IF_1
+0x4000254	      0xe9b7feffff	                      jmp sym.ldsem_wake	       436	tty_ldsem.c	FUNCTION_18	CALL_3
+ldsem_down_read_trylock	FOR,0:WHILE,1:functions,0:DO,0:IF,1:ELSE,0:CALL,3:SWITCH,0	22
+0x40001b0	          0x488b0f	                    mov rcx, qword [rdi]	       373	tty_ldsem.c	FUNCTION_14
+0x40001b3	          0x4885c9	                           test rcx, rcx	       375	tty_ldsem.c	FUNCTION_14	WHILE_1
+0x40001b6	            0x7835	                            js 0x40001ed	       375	tty_ldsem.c	FUNCTION_14	WHILE_1
+0x40001b8	        0x488d5101	                      lea rdx, [rcx + 1]	       376	tty_ldsem.c	FUNCTION_14	WHILE_1	IF_1	CALL_1
+0x40001bc	          0x4889c8	                            mov rax, rcx	       177	atomic64_64.h	FUNCTION_35	CALL_1
+0x40001bf	      0xf0480fb117	           lock cmpxchg qword [rdi], rdx	       177	atomic64_64.h	FUNCTION_35	CALL_1
+0x40001c4	          0x4839c1	                            cmp rcx, rax	        90	tty_ldsem.c	FUNCTION_2	IF_1
+0x40001c7	          0x4889c2	                            mov rdx, rax	       177	atomic64_64.h	FUNCTION_35	CALL_1
+0x40001ca	            0x7505	                           jne 0x40001d1	        90	tty_ldsem.c	FUNCTION_2	IF_1
+0x40001cc	            0xeb19	                           jmp 0x40001e7	        90	tty_ldsem.c	FUNCTION_2	IF_1
+0x40001ce	          0x4889c2	                            mov rdx, rax	        90	tty_ldsem.c	FUNCTION_2	IF_1
+0x40001d1	          0x4885d2	                           test rdx, rdx	       375	tty_ldsem.c	FUNCTION_14	WHILE_1
+0x40001d4	            0x7817	                            js 0x40001ed	       375	tty_ldsem.c	FUNCTION_14	WHILE_1
+0x40001d6	        0x488d4a01	                      lea rcx, [rdx + 1]	       376	tty_ldsem.c	FUNCTION_14	WHILE_1	IF_1	CALL_1
+0x40001da	          0x4889d0	                            mov rax, rdx	       177	atomic64_64.h	FUNCTION_35	CALL_1
+0x40001dd	      0xf0480fb10f	           lock cmpxchg qword [rdi], rcx	       177	atomic64_64.h	FUNCTION_35	CALL_1
+0x40001e2	          0x4839d0	                            cmp rax, rdx	        90	tty_ldsem.c	FUNCTION_2	IF_1
+0x40001e5	            0x75e7	                           jne 0x40001ce	        90	tty_ldsem.c	FUNCTION_2	IF_1
+0x40001e7	      0xb801000000	                              mov eax, 1	       379	tty_ldsem.c	FUNCTION_14	WHILE_1	IF_1
+0x40001ec	              0xc3	                                     ret	       379	tty_ldsem.c	FUNCTION_14	WHILE_1	IF_1
+0x40001ed	            0x31c0	                            xor eax, eax	       382	tty_ldsem.c	FUNCTION_14
+0x40001ef	              0xc3	                                     ret	       382	tty_ldsem.c	FUNCTION_14
+ldsem_down_write_trylock	FOR,0:WHILE,1:functions,0:DO,0:IF,1:ELSE,0:CALL,3:SWITCH,0	15
+0x40001f0	          0x488b17	                    mov rdx, qword [rdi]	       399	tty_ldsem.c	FUNCTION_16
+0x40001f3	    0x48be01000000	          movabs rsi, 0xffffffff00000001	       402	tty_ldsem.c	FUNCTION_16	WHILE_1	IF_1	CALL_1
+0x40001fd	            0xeb03	                           jmp 0x4000202	       401	tty_ldsem.c	FUNCTION_16	WHILE_1
+0x40001ff	          0x4889c2	                            mov rdx, rax	        90	tty_ldsem.c	FUNCTION_2	IF_1
+0x4000202	            0x85d2	                           test edx, edx	       401	tty_ldsem.c	FUNCTION_16	WHILE_1
+0x4000204	            0x7517	                           jne 0x400021d	       401	tty_ldsem.c	FUNCTION_16	WHILE_1
+0x4000206	        0x488d0c32	                    lea rcx, [rdx + rsi]	       402	tty_ldsem.c	FUNCTION_16	WHILE_1	IF_1	CALL_1
+0x400020a	          0x4889d0	                            mov rax, rdx	       177	atomic64_64.h	FUNCTION_35	CALL_1
+0x400020d	      0xf0480fb10f	           lock cmpxchg qword [rdi], rcx	       177	atomic64_64.h	FUNCTION_35	CALL_1
+0x4000212	          0x4839d0	                            cmp rax, rdx	        90	tty_ldsem.c	FUNCTION_2	IF_1
+0x4000215	            0x75e8	                           jne 0x40001ff	        90	tty_ldsem.c	FUNCTION_2	IF_1
+0x4000217	      0xb801000000	                              mov eax, 1	       405	tty_ldsem.c	FUNCTION_16	WHILE_1	IF_1
+0x400021c	              0xc3	                                     ret	       409	tty_ldsem.c	FUNCTION_16
+0x400021d	            0x31c0	                            xor eax, eax	       408	tty_ldsem.c	FUNCTION_16
+0x400021f	              0xc3	                                     ret	       408	tty_ldsem.c	FUNCTION_16
+ldsem_up_read	FOR,0:WHILE,0:functions,0:DO,0:IF,1:ELSE,0:CALL,3:SWITCH,0	8
+0x4000220	    0x48c7c0ffffff	             mov rax, 0xffffffffffffffff	       154	atomic64_64.h	FUNCTION_31	CALL_1
+0x4000227	      0xf0480fc107	              lock xadd qword [rdi], rax	       154	atomic64_64.h	FUNCTION_31	CALL_1
+0x400022c	        0x4883e801	                              sub rax, 1	       421	tty_ldsem.c	FUNCTION_17	IF_1
+0x4000230	            0x7802	                            js 0x4000234	       421	tty_ldsem.c	FUNCTION_17	IF_1
+0x4000232	            0xf3c3	                                     ret	       421	tty_ldsem.c	FUNCTION_17	IF_1
+0x4000234	            0x85c0	                           test eax, eax	       421	tty_ldsem.c	FUNCTION_17	IF_1
+0x4000236	            0x75fa	                           jne 0x4000232	       421	tty_ldsem.c	FUNCTION_17	IF_1
+0x4000238	      0xe9d3feffff	                      jmp sym.ldsem_wake	       422	tty_ldsem.c	FUNCTION_17	CALL_3

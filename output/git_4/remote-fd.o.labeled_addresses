@@ -1,0 +1,162 @@
+cmd_remote_fd	SWITCH,0:DO,0:FOR,0:IF,4:functions,0:CALL,6:WHILE,0:ELSE,1	62
+0x40001c0	              0x55	                                push rbp	        57	remote-fd.c	FUNCTION_2
+0x40001c1	              0x53	                                push rbx	        57	remote-fd.c	FUNCTION_2
+0x40001c2	        0x4883ec28	                           sub rsp, 0x28	        57	remote-fd.c	FUNCTION_2
+0x40001c6	    0x64488b042528	                mov rax, qword fs:[0x28]	        57	remote-fd.c	FUNCTION_2
+0x40001cf	      0x4889442418	             mov qword [rsp + 0x18], rax	        57	remote-fd.c	FUNCTION_2
+0x40001d4	            0x31c0	                            xor eax, eax	        57	remote-fd.c	FUNCTION_2
+0x40001d6	          0x83ff03	                              cmp edi, 3	        62	remote-fd.c	FUNCTION_2	IF_1
+0x40001d9	     0xf85ad000000	                           jne 0x400028c	        62	remote-fd.c	FUNCTION_2	IF_1
+0x40001df	        0x488b7e10	            mov rdi, qword [rsi + 0x10] 	        65	remote-fd.c	FUNCTION_2	CALL_2
+0x40001e3	          0x4889f3	                            mov rbx, rsi	        65	remote-fd.c	FUNCTION_2	CALL_2
+0x40001e6	      0x488d742408	                      lea rsi, [rsp + 8]	        65	remote-fd.c	FUNCTION_2	CALL_2
+0x40001eb	      0xba0a000000	                            mov edx, 0xa	        65	remote-fd.c	FUNCTION_2	CALL_2
+0x40001f0	      0xe800000000	                          call 0x40001f5	        65	remote-fd.c	FUNCTION_2	CALL_2
+0x40001f5	      0x488b7c2408	                mov rdi, qword [rsp + 8]	        67	remote-fd.c	FUNCTION_2	IF_2
+0x40001fa	        0x48397b10	            cmp qword [rbx + 0x10], rdi 	        67	remote-fd.c	FUNCTION_2	IF_2
+0x40001fe	          0x4889c5	                            mov rbp, rax	        65	remote-fd.c	FUNCTION_2	CALL_2
+0x4000201	            0x747d	                            je 0x4000280	        67	remote-fd.c	FUNCTION_2	IF_2
+0x4000203	           0xfb607	                   movzx eax, byte [rdi]	        67	remote-fd.c	FUNCTION_2	IF_2
+0x4000206	            0x3c2f	                            cmp al, 0x2f	        67	remote-fd.c	FUNCTION_2	IF_2
+0x4000208	            0x7776	                            ja 0x4000280	        67	remote-fd.c	FUNCTION_2	IF_2
+0x400020a	    0x48ba01000000	              movabs rdx, 0x900000000001	        67	remote-fd.c	FUNCTION_2	IF_2
+0x4000214	        0x480fa3c2	                             bt rdx, rax	        67	remote-fd.c	FUNCTION_2	IF_2
+0x4000218	            0x7366	                           jae 0x4000280	        67	remote-fd.c	FUNCTION_2	IF_2
+0x400021a	            0x3c2f	                            cmp al, 0x2f	        70	remote-fd.c	FUNCTION_2	IF_3
+0x400021c	            0x745a	                            je 0x4000278	        70	remote-fd.c	FUNCTION_2	IF_3
+0x400021e	            0x84c0	                             test al, al	        70	remote-fd.c	FUNCTION_2	IF_3
+0x4000220	            0x7456	                            je 0x4000278	        70	remote-fd.c	FUNCTION_2	IF_3
+0x4000222	      0x488d742410	                   lea rsi, [rsp + 0x10]	        74	remote-fd.c	FUNCTION_2	ELSE_1	CALL_4
+0x4000227	        0x4883c701	                              add rdi, 1	        74	remote-fd.c	FUNCTION_2	ELSE_1	CALL_4
+0x400022b	      0xba0a000000	                            mov edx, 0xa	        74	remote-fd.c	FUNCTION_2	ELSE_1	CALL_4
+0x4000230	      0xe800000000	                          call 0x4000235	        74	remote-fd.c	FUNCTION_2	ELSE_1	CALL_4
+0x4000235	            0x89c6	                            mov esi, eax	        74	remote-fd.c	FUNCTION_2	ELSE_1	CALL_4
+0x4000237	      0x488b442408	                mov rax, qword [rsp + 8]	        76	remote-fd.c	FUNCTION_2	ELSE_1	IF_4
+0x400023c	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	        76	remote-fd.c	FUNCTION_2	ELSE_1	IF_4
+0x4000241	        0x4883c001	                              add rax, 1	        76	remote-fd.c	FUNCTION_2	ELSE_1	IF_4
+0x4000245	          0x4839c2	                            cmp rdx, rax	        76	remote-fd.c	FUNCTION_2	ELSE_1	IF_4
+0x4000248	            0x7436	                            je 0x4000280	        76	remote-fd.c	FUNCTION_2	ELSE_1	IF_4
+0x400024a	           0xfb602	                   movzx eax, byte [rdx]	        76	remote-fd.c	FUNCTION_2	ELSE_1	IF_4
+0x400024d	            0x3c2f	                            cmp al, 0x2f	        76	remote-fd.c	FUNCTION_2	ELSE_1	IF_4
+0x400024f	            0x7404	                            je 0x4000255	        76	remote-fd.c	FUNCTION_2	ELSE_1	IF_4
+0x4000251	            0x84c0	                             test al, al	        76	remote-fd.c	FUNCTION_2	ELSE_1	IF_4
+0x4000253	            0x752b	                           jne 0x4000280	        76	remote-fd.c	FUNCTION_2	ELSE_1	IF_4
+0x4000255	            0x89ef	                            mov edi, ebp	        80	remote-fd.c	FUNCTION_2	CALL_6
+0x4000257	      0xe8e4fdffff	                   call sym.command_loop	        80	remote-fd.c	FUNCTION_2	CALL_6
+0x400025c	            0x31c0	                            xor eax, eax	        82	remote-fd.c	FUNCTION_2
+0x400025e	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	        82	remote-fd.c	FUNCTION_2
+0x4000263	    0x6448330c2528	                xor rcx, qword fs:[0x28]	        82	remote-fd.c	FUNCTION_2
+0x400026c	            0x7528	                           jne 0x4000296	        82	remote-fd.c	FUNCTION_2
+0x400026e	        0x4883c428	                           add rsp, 0x28	        82	remote-fd.c	FUNCTION_2
+0x4000272	              0x5b	                                 pop rbx	        82	remote-fd.c	FUNCTION_2
+0x4000273	              0x5d	                                 pop rbp	        82	remote-fd.c	FUNCTION_2
+0x4000274	              0xc3	                                     ret	        82	remote-fd.c	FUNCTION_2
+0x4000275	           0xf1f00	                         nop dword [rax]	        82	remote-fd.c	FUNCTION_2
+0x4000278	            0x89ee	                            mov esi, ebp	        71	remote-fd.c	FUNCTION_2	IF_3
+0x400027a	            0xebd9	                           jmp 0x4000255	        71	remote-fd.c	FUNCTION_2	IF_3
+0x400027c	         0xf1f4000	                         nop dword [rax]	        71	remote-fd.c	FUNCTION_2	IF_3
+0x4000280	      0xbf00000000	                              mov edi, 0	        68	remote-fd.c	FUNCTION_2	CALL_3
+0x4000285	            0x31c0	                            xor eax, eax	        68	remote-fd.c	FUNCTION_2	CALL_3
+0x4000287	      0xe800000000	                          call 0x400028c	        68	remote-fd.c	FUNCTION_2	CALL_3
+0x400028c	      0xbf00000000	                              mov edi, 0	        63	remote-fd.c	FUNCTION_2	CALL_1
+0x4000291	      0xe800000000	                          call 0x4000296	        63	remote-fd.c	FUNCTION_2	CALL_1
+0x4000296	      0xe800000000	                    call str.Input_error	        82	remote-fd.c	FUNCTION_2
+command_loop	SWITCH,0:DO,0:FOR,0:IF,5:functions,0:CALL,12:WHILE,2:ELSE,2	98
+0x4000040	            0x4154	                                push r12	        25	remote-fd.c	FUNCTION_1
+0x4000042	              0x55	                                push rbp	        25	remote-fd.c	FUNCTION_1
+0x4000043	            0x89f5	                            mov ebp, esi	        25	remote-fd.c	FUNCTION_1
+0x4000045	              0x53	                                push rbx	        25	remote-fd.c	FUNCTION_1
+0x4000046	            0x89fb	                            mov ebx, edi	        25	remote-fd.c	FUNCTION_1
+0x4000048	    0x4881ec101000	                         sub rsp, 0x1010	        25	remote-fd.c	FUNCTION_1
+0x400004f	    0x64488b042528	                mov rax, qword fs:[0x28]	        25	remote-fd.c	FUNCTION_1
+0x4000058	    0x488984240810	          mov qword [rsp + 0x1008], rax 	        25	remote-fd.c	FUNCTION_1
+0x4000060	            0x31c0	                            xor eax, eax	        25	remote-fd.c	FUNCTION_1
+0x4000062	          0x4989e4	                            mov r12, rsp	        25	remote-fd.c	FUNCTION_1
+0x4000065	           0xf1f00	                         nop dword [rax]	        25	remote-fd.c	FUNCTION_1
+0x4000068	    0x488b15000000	            mov rdx, qword [0x0400006f] 	       263	stdio2.h	FUNCTION_16	CALL_8
+0x400006f	      0xbeff0f0000	                          mov esi, 0xfff	       263	stdio2.h	FUNCTION_16	CALL_8
+0x4000074	          0x4c89e7	                            mov rdi, r12	       263	stdio2.h	FUNCTION_16	CALL_8
+0x4000077	      0xe800000000	                          call 0x400007c	       263	stdio2.h	FUNCTION_16	CALL_8
+0x400007c	          0x4885c0	                           test rax, rax	        30	remote-fd.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x400007f	     0xf84a3000000	                            je 0x4000128	        30	remote-fd.c	FUNCTION_1	WHILE_1	IF_1	CALL_1
+0x4000085	          0x4c89e0	                            mov rax, r12	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x4000088	            0x8b08	                    mov ecx, dword [rax]	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x400008a	        0x4883c004	                              add rax, 4	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x400008e	    0x8d91fffefefe	              lea edx, [rcx - 0x1010101]	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x4000094	            0xf7d1	                                 not ecx	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x4000096	            0x21ca	                            and edx, ecx	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x4000098	    0x81e280808080	                     and edx, 0x80808080	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x400009e	            0x74e8	                            je 0x4000088	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x40000a0	            0x89d1	                            mov ecx, edx	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x40000a2	          0xc1e910	                           shr ecx, 0x10	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x40000a5	    0xf7c280800000	                        test edx, 0x8080	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x40000ab	           0xf44d1	                          cmove edx, ecx	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x40000ae	        0x488d4802	                      lea rcx, [rax + 2]	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x40000b2	            0x89d6	                            mov esi, edx	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x40000b4	        0x480f44c1	                          cmove rax, rcx	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x40000b8	          0x4000d6	                             add sil, dl	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x40000bb	        0x4883d803	                              sbb rax, 3	        36	remote-fd.c	FUNCTION_1	WHILE_1	CALL_4
+0x40000bf	          0x4c29e0	                            sub rax, r12	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000c2	            0x7438	                            je 0x40000fc	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000c4	       0xfb65404ff	         movzx edx, byte [rsp + rax - 1]	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000c9	        0x4883e801	                              sub rax, 1	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000cd	    0xf68200000000	                      test byte [rdx], 1	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000d4	            0x7426	                            je 0x40000fc	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000d6	          0x4c01e0	                            add rax, r12	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000d9	            0xeb16	                           jmp 0x40000f1	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000db	       0xf1f440000	                   nop dword [rax + rax]	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000e0	         0xfb652ff	               movzx edx, byte [rdx - 1]	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000e4	        0x4883e801	                              sub rax, 1	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000e8	    0xf68200000000	                      test byte [rdx], 1	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000ef	            0x740b	                            je 0x40000fc	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000f1	          0x4c39e0	                            cmp rax, r12	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000f4	          0x4889c2	                            mov rdx, rax	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000f7	          0xc60000	                       mov byte [rax], 0	        38	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2
+0x40000fa	            0x75e4	                           jne 0x40000e0	        37	remote-fd.c	FUNCTION_1	WHILE_1	WHILE_2	CALL_5
+0x40000fc	      0xbf00000000	                              mov edi, 0	        40	remote-fd.c	FUNCTION_1	WHILE_1	IF_3	CALL_6
+0x4000101	      0xb90d000000	                            mov ecx, 0xd	        40	remote-fd.c	FUNCTION_1	WHILE_1	IF_3	CALL_6
+0x4000106	          0x4c89e6	                            mov rsi, r12	        40	remote-fd.c	FUNCTION_1	WHILE_1	IF_3	CALL_6
+0x4000109	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        40	remote-fd.c	FUNCTION_1	WHILE_1	IF_3	CALL_6
+0x400010b	            0x754a	                           jne 0x4000157	        40	remote-fd.c	FUNCTION_1	WHILE_1	IF_3	CALL_6
+0x400010d	      0xbf00000000	                              mov edi, 0	       104	stdio2.h	CALL_12
+0x4000112	      0xe800000000	                          call 0x4000117	       104	stdio2.h	CALL_12
+0x4000117	    0x488b3d000000	            mov rdi, qword [0x0400011e] 	        42	remote-fd.c	FUNCTION_1	WHILE_1	IF_3	CALL_7
+0x400011e	      0xe800000000	                          call 0x4000123	        42	remote-fd.c	FUNCTION_1	WHILE_1	IF_3	CALL_7
+0x4000123	      0xe940ffffff	                           jmp 0x4000068	        53	remote-fd.c	FUNCTION_1	WHILE_1
+0x4000128	    0x488b3d000000	            mov rdi, qword [0x0400012f] 	        31	remote-fd.c	FUNCTION_1	WHILE_1	IF_1	IF_2	CALL_2
+0x400012f	      0xe800000000	                          call 0x4000134	        31	remote-fd.c	FUNCTION_1	WHILE_1	IF_1	IF_2	CALL_2
+0x4000134	            0x85c0	                           test eax, eax	        31	remote-fd.c	FUNCTION_1	WHILE_1	IF_1	IF_2	CALL_2
+0x4000136	            0x755f	                           jne 0x4000197	        31	remote-fd.c	FUNCTION_1	WHILE_1	IF_1	IF_2	CALL_2
+0x4000138	    0x488b84240810	          mov rax, qword [rsp + 0x1008] 	        54	remote-fd.c	FUNCTION_1
+0x4000140	    0x644833042528	                xor rax, qword fs:[0x28]	        54	remote-fd.c	FUNCTION_1
+0x4000149	            0x7567	                           jne 0x40001b2	        54	remote-fd.c	FUNCTION_1
+0x400014b	    0x4881c4101000	                         add rsp, 0x1010	        54	remote-fd.c	FUNCTION_1
+0x4000152	              0x5b	                                 pop rbx	        54	remote-fd.c	FUNCTION_1
+0x4000153	              0x5d	                                 pop rbp	        54	remote-fd.c	FUNCTION_1
+0x4000154	            0x415c	                                 pop r12	        54	remote-fd.c	FUNCTION_1
+0x4000156	              0xc3	                                     ret	        54	remote-fd.c	FUNCTION_1
+0x4000157	      0xbf00000000	                              mov edi, 0	        43	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	CALL_8
+0x400015c	      0xb908000000	                              mov ecx, 8	        43	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	CALL_8
+0x4000161	          0x4c89e6	                            mov rsi, r12	        43	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	CALL_8
+0x4000164	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        43	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	CALL_8
+0x4000166	            0x753b	                           jne 0x40001a3	        43	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	CALL_8
+0x4000168	      0xbf0a000000	                            mov edi, 0xa	       104	stdio2.h	CALL_12
+0x400016d	      0xe800000000	                          call 0x4000172	       104	stdio2.h	CALL_12
+0x4000172	    0x488b3d000000	            mov rdi, qword [0x04000179] 	        45	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	CALL_9
+0x4000179	      0xe800000000	                          call 0x400017e	        45	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	CALL_9
+0x400017e	            0x89ee	                            mov esi, ebp	        46	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	IF_5	CALL_10
+0x4000180	            0x89df	                            mov edi, ebx	        46	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	IF_5	CALL_10
+0x4000182	      0xe800000000	                          call 0x4000187	        46	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	IF_5	CALL_10
+0x4000187	            0x85c0	                           test eax, eax	        46	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	IF_5	CALL_10
+0x4000189	            0x74ad	                            je 0x4000138	        46	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	IF_5	CALL_10
+0x400018b	      0xbf00000000	                              mov edi, 0	        48	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	CALL_11
+0x4000190	            0x31c0	                            xor eax, eax	        48	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	CALL_11
+0x4000192	      0xe800000000	                          call 0x4000197	        48	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_1	IF_4	CALL_11
+0x4000197	      0xbf00000000	                              mov edi, 0	        32	remote-fd.c	FUNCTION_1	WHILE_1	IF_1	CALL_3
+0x400019c	            0x31c0	                            xor eax, eax	        32	remote-fd.c	FUNCTION_1	WHILE_1	IF_1	CALL_3
+0x400019e	      0xe800000000	                          call 0x40001a3	        32	remote-fd.c	FUNCTION_1	WHILE_1	IF_1	CALL_3
+0x40001a3	          0x4c89e6	                            mov rsi, r12	        51	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_2	CALL_12
+0x40001a6	      0xbf00000000	                              mov edi, 0	        51	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_2	CALL_12
+0x40001ab	            0x31c0	                            xor eax, eax	        51	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_2	CALL_12
+0x40001ad	      0xe800000000	                          call 0x40001b2	        51	remote-fd.c	FUNCTION_1	WHILE_1	ELSE_2	CALL_12
+0x40001b2	      0xe800000000	                          call 0x40001b7	        54	remote-fd.c	FUNCTION_1

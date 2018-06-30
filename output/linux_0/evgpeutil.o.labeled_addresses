@@ -1,0 +1,141 @@
+acpi_ev_delete_gpe_xrupt	functions,0:ELSE,1:DO,0:CALL,9:IF,4:WHILE,0:FOR,0:SWITCH,0	34
+0x40001ea	     0xfb705000000	           movzx eax, word [0x040001f1] 	       219	evgpeutil.c	FUNCTION_4	IF_1
+0x40001f1	              0x53	                                push rbx	       211	evgpeutil.c	FUNCTION_4
+0x40001f2	          0x4889fb	                            mov rbx, rdi	       211	evgpeutil.c	FUNCTION_4
+0x40001f5	          0x8b7f18	            mov edi, dword [rdi + 0x18] 	       219	evgpeutil.c	FUNCTION_4	IF_1
+0x40001f8	            0x39c7	                            cmp edi, eax	       219	evgpeutil.c	FUNCTION_4	IF_1
+0x40001fa	            0x750a	                           jne 0x4000206	       219	evgpeutil.c	FUNCTION_4	IF_1
+0x40001fc	    0x48c743100000	               mov qword [rbx + 0x10], 0	       220	evgpeutil.c	FUNCTION_4	IF_1
+0x4000204	            0xeb5b	                           jmp 0x4000261	       220	evgpeutil.c	FUNCTION_4	IF_1
+0x4000206	    0x48c7c6000000	                              mov rsi, 0	       226	evgpeutil.c	FUNCTION_4
+0x400020d	      0xe800000000	                          call 0x4000212	       226	evgpeutil.c	FUNCTION_4
+0x4000212	            0x85c0	                           test eax, eax	       229	evgpeutil.c	FUNCTION_4	IF_2	CALL_4
+0x4000214	            0x754d	                           jne 0x4000263	       229	evgpeutil.c	FUNCTION_4	IF_2	CALL_4
+0x4000216	    0x488b3d000000	            mov rdi, qword [0x0400021d] 	       235	evgpeutil.c	FUNCTION_4	CALL_6
+0x400021d	      0xe800000000	                          call 0x4000222	       235	evgpeutil.c	FUNCTION_4	CALL_6
+0x4000222	          0x488b0b	                    mov rcx, qword [rbx]	       236	evgpeutil.c	FUNCTION_4	IF_3
+0x4000225	        0x488b5308	                mov rdx, qword [rbx + 8]	       236	evgpeutil.c	FUNCTION_4	IF_3
+0x4000229	          0x4885c9	                           test rcx, rcx	       236	evgpeutil.c	FUNCTION_4	IF_3
+0x400022c	            0x7406	                            je 0x4000234	       236	evgpeutil.c	FUNCTION_4	IF_3
+0x400022e	        0x48895108	                mov qword [rcx + 8], rdx	       237	evgpeutil.c	FUNCTION_4	IF_3
+0x4000232	            0xeb07	                           jmp 0x400023b	       237	evgpeutil.c	FUNCTION_4	IF_3
+0x4000234	    0x488915000000	            mov qword [0x0400023b], rdx 	       241	evgpeutil.c	FUNCTION_4	ELSE_1
+0x400023b	        0x488b5308	                mov rdx, qword [rbx + 8]	       244	evgpeutil.c	FUNCTION_4	IF_4
+0x400023f	          0x4885d2	                           test rdx, rdx	       244	evgpeutil.c	FUNCTION_4	IF_4
+0x4000242	            0x7406	                            je 0x400024a	       244	evgpeutil.c	FUNCTION_4	IF_4
+0x4000244	          0x488b0b	                    mov rcx, qword [rbx]	       245	evgpeutil.c	FUNCTION_4	IF_4
+0x4000247	          0x48890a	                    mov qword [rdx], rcx	       245	evgpeutil.c	FUNCTION_4	IF_4
+0x400024a	    0x488b3d000000	            mov rdi, qword [0x04000251] 	       247	evgpeutil.c	FUNCTION_4	CALL_7
+0x4000251	          0x4889c6	                            mov rsi, rax	       247	evgpeutil.c	FUNCTION_4	CALL_7
+0x4000254	      0xe800000000	                          call 0x4000259	       247	evgpeutil.c	FUNCTION_4	CALL_7
+0x4000259	          0x4889df	                            mov rdi, rbx	        62	aclinuxex.h	FUNCTION_8	CALL_1
+0x400025c	      0xe800000000	                          call 0x4000261	        62	aclinuxex.h	FUNCTION_8	CALL_1
+0x4000261	            0x31c0	                            xor eax, eax	       252	evgpeutil.c	FUNCTION_4	CALL_9
+0x4000263	              0x5b	                                 pop rbx	       253	evgpeutil.c	FUNCTION_4
+0x4000264	              0xc3	                                     ret	       253	evgpeutil.c	FUNCTION_4
+acpi_ev_walk_gpe_list	functions,0:ELSE,0:DO,0:CALL,6:IF,2:WHILE,2:FOR,0:SWITCH,0	43
+0x4000040	            0x4156	                                push r14	        32	evgpeutil.c	FUNCTION_1
+0x4000042	            0x4155	                                push r13	        32	evgpeutil.c	FUNCTION_1
+0x4000044	          0x4989fd	                            mov r13, rdi	        32	evgpeutil.c	FUNCTION_1
+0x4000047	            0x4154	                                push r12	        32	evgpeutil.c	FUNCTION_1
+0x4000049	              0x55	                                push rbp	        32	evgpeutil.c	FUNCTION_1
+0x400004a	          0x4989f6	                            mov r14, rsi	        32	evgpeutil.c	FUNCTION_1
+0x400004d	              0x53	                                push rbx	        32	evgpeutil.c	FUNCTION_1
+0x400004e	              0x51	                                push rcx	        32	evgpeutil.c	FUNCTION_1
+0x400004f	    0x488b3d000000	            mov rdi, qword [0x04000056] 	        40	evgpeutil.c	FUNCTION_1	CALL_2
+0x4000056	      0xe800000000	                          call 0x400005b	        40	evgpeutil.c	FUNCTION_1	CALL_2
+0x400005b	    0x488b1d000000	            mov rbx, qword [0x04000062] 	        44	evgpeutil.c	FUNCTION_1
+0x4000062	          0x4989c4	                            mov r12, rax	        40	evgpeutil.c	FUNCTION_1	CALL_2
+0x4000065	          0x4885db	                           test rbx, rbx	        45	evgpeutil.c	FUNCTION_1	WHILE_1
+0x4000068	            0x7428	                            je 0x4000092	        45	evgpeutil.c	FUNCTION_1	WHILE_1
+0x400006a	        0x488b6b10	            mov rbp, qword [rbx + 0x10] 	        49	evgpeutil.c	FUNCTION_1	WHILE_1
+0x400006e	            0xeb04	                           jmp 0x4000074	        50	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2
+0x4000070	        0x488b6d10	            mov rbp, qword [rbp + 0x10] 	        64	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2
+0x4000074	          0x4885ed	                           test rbp, rbp	        50	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2
+0x4000077	            0x741d	                            je 0x4000096	        50	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2
+0x4000079	          0x4c89f2	                            mov rdx, r14	        54	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2
+0x400007c	          0x4889ee	                            mov rsi, rbp	        54	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2
+0x400007f	          0x4889df	                            mov rdi, rbx	        54	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2
+0x4000082	      0xe800000000	                          call 0x4000087	        54	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2
+0x4000087	            0x85c0	                           test eax, eax	        57	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2	IF_1	CALL_4
+0x4000089	            0x74e5	                            je 0x4000070	        57	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2	IF_1	CALL_4
+0x400008b	      0x3d07400000	                         cmp eax, 0x4007	        58	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2	IF_1	IF_2
+0x4000090	            0x750a	                           jne 0x400009c	        58	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2	IF_1	IF_2
+0x4000092	            0x31c0	                            xor eax, eax	        59	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2	IF_1	IF_2
+0x4000094	            0xeb06	                           jmp 0x400009c	        59	evgpeutil.c	FUNCTION_1	WHILE_1	WHILE_2	IF_1	IF_2
+0x4000096	        0x488b5b08	                mov rbx, qword [rbx + 8]	        67	evgpeutil.c	FUNCTION_1	WHILE_1
+0x400009a	            0xebc9	                           jmp 0x4000065	        67	evgpeutil.c	FUNCTION_1	WHILE_1
+0x400009c	    0x488b3d000000	            mov rdi, qword [0x040000a3] 	        71	evgpeutil.c	FUNCTION_1	CALL_5
+0x40000a3	          0x4c89e6	                            mov rsi, r12	        71	evgpeutil.c	FUNCTION_1	CALL_5
+0x40000a6	        0x89442404	                mov dword [rsp + 4], eax	        71	evgpeutil.c	FUNCTION_1	CALL_5
+0x40000aa	      0xe800000000	                          call 0x40000af	        71	evgpeutil.c	FUNCTION_1	CALL_5
+0x40000af	        0x8b442404	                mov eax, dword [rsp + 4]	        73	evgpeutil.c	FUNCTION_1
+0x40000b3	              0x5a	                                 pop rdx	        73	evgpeutil.c	FUNCTION_1
+0x40000b4	              0x5b	                                 pop rbx	        73	evgpeutil.c	FUNCTION_1
+0x40000b5	              0x5d	                                 pop rbp	        73	evgpeutil.c	FUNCTION_1
+0x40000b6	            0x415c	                                 pop r12	        73	evgpeutil.c	FUNCTION_1
+0x40000b8	            0x415d	                                 pop r13	        73	evgpeutil.c	FUNCTION_1
+0x40000ba	            0x415e	                                 pop r14	        73	evgpeutil.c	FUNCTION_1
+0x40000bc	              0xc3	                                     ret	        73	evgpeutil.c	FUNCTION_1
+acpi_ev_get_gpe_device	functions,0:ELSE,0:DO,0:CALL,0:IF,2:WHILE,0:FOR,0:SWITCH,0	13
+0x40000bd	         0xfb74e3c	           movzx ecx, word [rsi + 0x3c] 	        96	evgpeutil.c	FUNCTION_2
+0x40000c1	            0x31c0	                            xor eax, eax	       111	evgpeutil.c	FUNCTION_2
+0x40000c3	           0x34a04	                add ecx, dword [rdx + 4]	        96	evgpeutil.c	FUNCTION_2
+0x40000c6	            0x3b0a	                    cmp ecx, dword [rdx]	        98	evgpeutil.c	FUNCTION_2	IF_1
+0x40000c8	          0x894a04	                mov dword [rdx + 4], ecx	        96	evgpeutil.c	FUNCTION_2
+0x40000cb	            0x7619	                           jbe 0x40000e6	        98	evgpeutil.c	FUNCTION_2	IF_1
+0x40000cd	          0x488b06	                    mov rax, qword [rsi]	       103	evgpeutil.c	FUNCTION_2	IF_1	IF_2
+0x40000d0	        0x80780906	                   cmp byte [rax + 9], 6	       103	evgpeutil.c	FUNCTION_2	IF_1	IF_2
+0x40000d4	            0x7504	                           jne 0x40000da	       103	evgpeutil.c	FUNCTION_2	IF_1	IF_2
+0x40000d6	        0x48894210	             mov qword [rdx + 0x10], rax	       104	evgpeutil.c	FUNCTION_2	IF_1	IF_2
+0x40000da	    0xc74208000000	                  mov dword [rdx + 8], 0	       107	evgpeutil.c	FUNCTION_2	IF_1
+0x40000e1	      0xb807400000	                         mov eax, 0x4007	       108	evgpeutil.c	FUNCTION_2	IF_1
+0x40000e6	              0xc3	                                     ret	       112	evgpeutil.c	FUNCTION_2
+acpi_ev_delete_gpe_handlers	functions,0:ELSE,1:DO,0:CALL,7:IF,2:WHILE,1:FOR,2:SWITCH,0	47
+0x4000265	            0x4157	                                push r15	       273	evgpeutil.c	FUNCTION_5
+0x4000267	            0x4156	                                push r14	       273	evgpeutil.c	FUNCTION_5
+0x4000269	          0x4989f6	                            mov r14, rsi	       273	evgpeutil.c	FUNCTION_5
+0x400026c	            0x4155	                                push r13	       273	evgpeutil.c	FUNCTION_5
+0x400026e	            0x4154	                                push r12	       273	evgpeutil.c	FUNCTION_5
+0x4000270	          0x4531e4	                          xor r12d, r12d	       284	evgpeutil.c	FUNCTION_5	FOR_1
+0x4000273	              0x55	                                push rbp	       273	evgpeutil.c	FUNCTION_5
+0x4000274	              0x53	                                push rbx	       273	evgpeutil.c	FUNCTION_5
+0x4000275	        0x453b6638	           cmp r12d, dword [r14 + 0x38] 	       284	evgpeutil.c	FUNCTION_5	FOR_1
+0x4000279	            0x7364	                           jae 0x40002df	       284	evgpeutil.c	FUNCTION_5	FOR_1
+0x400027b	          0x4589e5	                          mov r13d, r12d	       284	evgpeutil.c	FUNCTION_5	FOR_1
+0x400027e	            0x31ed	                            xor ebp, ebp	       289	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2
+0x4000280	    0x4d69edc00000	                     imul r13, r13, 0xc0	       289	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2
+0x4000287	      0x498d5c2d00	                    lea rbx, [r13 + rbp]	       289	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2
+0x400028c	        0x49035e28	             add rbx, qword [r14 + 0x28]	       289	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2
+0x4000290	          0x8a4310	               mov al, byte [rbx + 0x10]	       289	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2
+0x4000293	          0x83e007	                              and eax, 7	       289	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2
+0x4000296	          0x8d50fe	                      lea edx, [rax - 2]	       293	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	IF_1	CALL_2
+0x4000299	          0x80e2fd	                            and dl, 0xfd	       293	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	IF_1	CALL_2
+0x400029c	            0x750a	                           jne 0x40002a8	       293	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	IF_1	CALL_2
+0x400029e	          0x488b3b	                    mov rdi, qword [rbx]	        62	aclinuxex.h	FUNCTION_8	CALL_1
+0x40002a1	      0xe800000000	                          call 0x40002a6	        62	aclinuxex.h	FUNCTION_8	CALL_1
+0x40002a6	            0xeb1a	                           jmp 0x40002c2	        62	aclinuxex.h	FUNCTION_8	CALL_1
+0x40002a8	            0x3c03	                               cmp al, 3	       304	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2	CALL_5
+0x40002aa	            0x7521	                           jne 0x40002cd	       304	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2	CALL_5
+0x40002ac	          0x488b3b	                    mov rdi, qword [rbx]	       309	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2
+0x40002af	          0x4885ff	                           test rdi, rdi	       310	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2	WHILE_1
+0x40002b2	            0x740e	                            je 0x40002c2	       310	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2	WHILE_1
+0x40002b4	        0x4c8b7f08	                mov r15, qword [rdi + 8]	       311	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2	WHILE_1
+0x40002b8	      0xe800000000	                          call 0x40002bd	        62	aclinuxex.h	FUNCTION_8	CALL_1
+0x40002bd	          0x4c89ff	                            mov rdi, r15	       313	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2	WHILE_1
+0x40002c0	            0xebed	                           jmp 0x40002af	       313	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2	WHILE_1
+0x40002c2	        0x806310f8	             and byte [rbx + 0x10], 0xf8	       317	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2
+0x40002c6	    0x48c703000000	                      mov qword [rbx], 0	       316	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2
+0x40002cd	        0x4883c518	                           add rbp, 0x18	       316	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2	ELSE_1	IF_2
+0x40002d1	    0x4881fdc00000	                           cmp rbp, 0xc0	       288	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2
+0x40002d8	            0x75ad	                           jne 0x4000287	       288	evgpeutil.c	FUNCTION_5	FOR_1	FOR_2
+0x40002da	          0x41ffc4	                                inc r12d	       284	evgpeutil.c	FUNCTION_5	FOR_1
+0x40002dd	            0xeb96	                           jmp 0x4000275	       284	evgpeutil.c	FUNCTION_5	FOR_1
+0x40002df	              0x5b	                                 pop rbx	       324	evgpeutil.c	FUNCTION_5
+0x40002e0	            0x31c0	                            xor eax, eax	       324	evgpeutil.c	FUNCTION_5
+0x40002e2	              0x5d	                                 pop rbp	       324	evgpeutil.c	FUNCTION_5
+0x40002e3	            0x415c	                                 pop r12	       324	evgpeutil.c	FUNCTION_5
+0x40002e5	            0x415d	                                 pop r13	       324	evgpeutil.c	FUNCTION_5
+0x40002e7	            0x415e	                                 pop r14	       324	evgpeutil.c	FUNCTION_5
+0x40002e9	            0x415f	                                 pop r15	       324	evgpeutil.c	FUNCTION_5
+0x40002eb	              0xc3	                                     ret	       324	evgpeutil.c	FUNCTION_5

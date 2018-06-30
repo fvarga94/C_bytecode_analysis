@@ -1,0 +1,47 @@
+dev_pm_enable_wake_irq_check	CALL,2:DO,0:WHILE,0:FOR,0:IF,3:ELSE,1:SWITCH,0:functions,0	16
+0x4000380	    0x488b87800100	           mov rax, qword [rdi + 0x180] 	       284	wakeirq.c	FUNCTION_8
+0x4000387	          0x4885c0	                           test rax, rax	       286	wakeirq.c	FUNCTION_8	IF_1
+0x400038a	            0x741a	                            je 0x40003a6	       286	wakeirq.c	FUNCTION_8	IF_1
+0x400038c	          0x8b5008	                mov edx, dword [rax + 8]	       286	wakeirq.c	FUNCTION_8	IF_1
+0x400038f	          0xf6c203	                              test dl, 3	       286	wakeirq.c	FUNCTION_8	IF_1
+0x4000392	            0x7412	                            je 0x40003a6	       286	wakeirq.c	FUNCTION_8	IF_1
+0x4000394	          0xf6c202	                              test dl, 2	       289	wakeirq.c	FUNCTION_8	IF_2	CALL_1
+0x4000397	            0x7408	                            je 0x40003a1	       289	wakeirq.c	FUNCTION_8	IF_2	CALL_1
+0x4000399	          0x8b780c	              mov edi, dword [rax + 0xc]	       299	wakeirq.c	FUNCTION_8	CALL_2
+0x400039c	      0xe900000000	                           jmp 0x40003a1	       299	wakeirq.c	FUNCTION_8	CALL_2
+0x40003a1	          0x4084f6	                           test sil, sil	       291	wakeirq.c	FUNCTION_8	ELSE_1	IF_3
+0x40003a4	            0x7502	                           jne 0x40003a8	       291	wakeirq.c	FUNCTION_8	ELSE_1	IF_3
+0x40003a6	            0xf3c3	                                     ret	       291	wakeirq.c	FUNCTION_8	ELSE_1	IF_3
+0x40003a8	          0x83ca02	                               or edx, 2	       292	wakeirq.c	FUNCTION_8	ELSE_1	IF_3
+0x40003ab	          0x895008	                mov dword [rax + 8], edx	       292	wakeirq.c	FUNCTION_8	ELSE_1	IF_3
+0x40003ae	            0xebe9	                           jmp 0x4000399	       293	wakeirq.c	FUNCTION_8	ELSE_1	IF_3
+dev_pm_enable_wake_irq	CALL,1:DO,0:WHILE,0:FOR,0:IF,1:ELSE,0:SWITCH,0:functions,0	8
+0x40000c0	    0x488b87800100	           mov rax, qword [rdi + 0x180] 	       243	wakeirq.c	FUNCTION_6
+0x40000c7	          0x4885c0	                           test rax, rax	       245	wakeirq.c	FUNCTION_6	IF_1
+0x40000ca	            0x7406	                            je 0x40000d2	       245	wakeirq.c	FUNCTION_6	IF_1
+0x40000cc	        0xf6400801	                  test byte [rax + 8], 1	       245	wakeirq.c	FUNCTION_6	IF_1
+0x40000d0	            0x7502	                           jne 0x40000d4	       245	wakeirq.c	FUNCTION_6	IF_1
+0x40000d2	            0xf3c3	                                     ret	       245	wakeirq.c	FUNCTION_6	IF_1
+0x40000d4	          0x8b780c	              mov edi, dword [rax + 0xc]	       246	wakeirq.c	FUNCTION_6	CALL_1
+0x40000d7	      0xe900000000	                           jmp 0x40000dc	       246	wakeirq.c	FUNCTION_6	CALL_1
+dev_pm_disable_wake_irq	CALL,1:DO,0:WHILE,0:FOR,0:IF,1:ELSE,0:SWITCH,0:functions,0	8
+0x40000e0	    0x488b87800100	           mov rax, qword [rdi + 0x180] 	       260	wakeirq.c	FUNCTION_7
+0x40000e7	          0x4885c0	                           test rax, rax	       262	wakeirq.c	FUNCTION_7	IF_1
+0x40000ea	            0x7406	                            je 0x40000f2	       262	wakeirq.c	FUNCTION_7	IF_1
+0x40000ec	        0xf6400801	                  test byte [rax + 8], 1	       262	wakeirq.c	FUNCTION_7	IF_1
+0x40000f0	            0x7502	                           jne 0x40000f4	       262	wakeirq.c	FUNCTION_7	IF_1
+0x40000f2	            0xf3c3	                                     ret	       262	wakeirq.c	FUNCTION_7	IF_1
+0x40000f4	          0x8b780c	              mov edi, dword [rax + 0xc]	       263	wakeirq.c	FUNCTION_7	CALL_1
+0x40000f7	      0xe900000000	                           jmp 0x40000fc	       263	wakeirq.c	FUNCTION_7	CALL_1
+dev_pm_disable_wake_irq_check	CALL,1:DO,0:WHILE,0:FOR,0:IF,2:ELSE,0:SWITCH,0:functions,0	11
+0x40003b0	    0x488b87800100	           mov rax, qword [rdi + 0x180] 	       311	wakeirq.c	FUNCTION_9
+0x40003b7	          0x4885c0	                           test rax, rax	       313	wakeirq.c	FUNCTION_9	IF_1
+0x40003ba	            0x740d	                            je 0x40003c9	       313	wakeirq.c	FUNCTION_9	IF_1
+0x40003bc	          0x8b5008	                mov edx, dword [rax + 8]	       313	wakeirq.c	FUNCTION_9	IF_1
+0x40003bf	          0xf6c203	                              test dl, 3	       313	wakeirq.c	FUNCTION_9	IF_1
+0x40003c2	            0x7405	                            je 0x40003c9	       313	wakeirq.c	FUNCTION_9	IF_1
+0x40003c4	          0x83e202	                              and edx, 2	       316	wakeirq.c	FUNCTION_9	IF_2
+0x40003c7	            0x7502	                           jne 0x40003cb	       316	wakeirq.c	FUNCTION_9	IF_2
+0x40003c9	            0xf3c3	                                     ret	       316	wakeirq.c	FUNCTION_9	IF_2
+0x40003cb	          0x8b780c	              mov edi, dword [rax + 0xc]	       317	wakeirq.c	FUNCTION_9	CALL_1
+0x40003ce	      0xe900000000	                           jmp 0x40003d3	       317	wakeirq.c	FUNCTION_9	CALL_1

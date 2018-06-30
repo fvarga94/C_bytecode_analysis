@@ -1,0 +1,40 @@
+usb_release_bos_descriptor	DO,0:SWITCH,0:IF,1:ELSE,0:WHILE,0:FOR,0:functions,0:CALL,2	12
+0x40018b0	    0x488b87800300	           mov rax, qword [rdi + 0x380] 	       905	config.c	FUNCTION_11	IF_1
+0x40018b7	          0x4885c0	                           test rax, rax	       905	config.c	FUNCTION_11	IF_1
+0x40018ba	            0x7424	                            je 0x40018e0	       905	config.c	FUNCTION_11	IF_1
+0x40018bc	              0x53	                                push rbx	       904	config.c	FUNCTION_11
+0x40018bd	          0x4889fb	                            mov rbx, rdi	       904	config.c	FUNCTION_11
+0x40018c0	          0x488b38	                    mov rdi, qword [rax]	       906	config.c	FUNCTION_11	IF_1	CALL_1
+0x40018c3	      0xe800000000	                          call 0x40018c8	       906	config.c	FUNCTION_11	IF_1	CALL_1
+0x40018c8	    0x488bbb800300	           mov rdi, qword [rbx + 0x380] 	       907	config.c	FUNCTION_11	IF_1	CALL_2
+0x40018cf	      0xe800000000	                          call 0x40018d4	       907	config.c	FUNCTION_11	IF_1	CALL_2
+0x40018d4	    0x48c783800300	              mov qword [rbx + 0x380], 0	       908	config.c	FUNCTION_11	IF_1
+0x40018df	              0x5b	                                 pop rbx	       910	config.c	FUNCTION_11
+0x40018e0	            0xf3c3	                                     ret	       910	config.c	FUNCTION_11
+usb_release_interface_cache	DO,0:SWITCH,0:IF,0:ELSE,0:WHILE,0:FOR,1:functions,0:CALL,4	26
+0x4000040	            0x4155	                                push r13	       423	config.c	FUNCTION_6
+0x4000042	            0x4154	                                push r12	       423	config.c	FUNCTION_6
+0x4000044	        0x4c8d6ffc	                      lea r13, [rdi - 4]	       424	config.c	FUNCTION_6	CALL_1
+0x4000048	              0x55	                                push rbp	       423	config.c	FUNCTION_6
+0x4000049	              0x53	                                push rbx	       423	config.c	FUNCTION_6
+0x400004a	            0x31db	                            xor ebx, ebx	       423	config.c	FUNCTION_6
+0x400004c	          0x8b47fc	                mov eax, dword [rdi - 4]	       427	config.c	FUNCTION_6	FOR_1
+0x400004f	          0x4989fc	                            mov r12, rdi	       427	config.c	FUNCTION_6	FOR_1
+0x4000052	            0x85c0	                           test eax, eax	       427	config.c	FUNCTION_6	FOR_1
+0x4000054	            0x7427	                            je 0x400007d	       427	config.c	FUNCTION_6	FOR_1
+0x4000056	          0x4863c3	                         movsxd rax, ebx	       430	config.c	FUNCTION_6	FOR_1	CALL_2
+0x4000059	          0x83c301	                              add ebx, 1	       427	config.c	FUNCTION_6	FOR_1
+0x400005c	        0x488d0480	                  lea rax, [rax + rax*4]	       430	config.c	FUNCTION_6	FOR_1	CALL_2
+0x4000060	        0x498d2cc4	                  lea rbp, [r12 + rax*8]	       430	config.c	FUNCTION_6	FOR_1	CALL_2
+0x4000064	        0x488b7d1c	            mov rdi, qword [rbp + 0x1c] 	       430	config.c	FUNCTION_6	FOR_1	CALL_2
+0x4000068	      0xe800000000	                          call 0x400006d	       430	config.c	FUNCTION_6	FOR_1	CALL_2
+0x400006d	        0x488b7d24	            mov rdi, qword [rbp + 0x24] 	       431	config.c	FUNCTION_6	FOR_1	CALL_3
+0x4000071	      0xe800000000	                          call 0x4000076	       431	config.c	FUNCTION_6	FOR_1	CALL_3
+0x4000076	      0x41395c24fc	                cmp dword [r12 - 4], ebx	       427	config.c	FUNCTION_6	FOR_1
+0x400007b	            0x77d9	                            ja 0x4000056	       427	config.c	FUNCTION_6	FOR_1
+0x400007d	              0x5b	                                 pop rbx	       434	config.c	FUNCTION_6
+0x400007e	          0x4c89ef	                            mov rdi, r13	       433	config.c	FUNCTION_6	CALL_4
+0x4000081	              0x5d	                                 pop rbp	       434	config.c	FUNCTION_6
+0x4000082	            0x415c	                                 pop r12	       434	config.c	FUNCTION_6
+0x4000084	            0x415d	                                 pop r13	       434	config.c	FUNCTION_6
+0x4000086	      0xe900000000	                           jmp 0x400008b	       433	config.c	FUNCTION_6	CALL_4

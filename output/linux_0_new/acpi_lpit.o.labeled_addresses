@@ -1,0 +1,114 @@
+lpit_read_residency_count_address	CALL,0:ELSE,0:IF,1:SWITCH,0:WHILE,0:functions,0:FOR,0:DO,0	8
+0x4000040	    0x488b05000000	            mov rax, qword [0x04000047] 	        96	acpi_lpit.c	FUNCTION_4	IF_1
+0x4000047	          0x4885c0	                           test rax, rax	        96	acpi_lpit.c	FUNCTION_4	IF_1
+0x400004a	            0x7406	                            je 0x4000052	        96	acpi_lpit.c	FUNCTION_4	IF_1
+0x400004c	          0x488907	                    mov qword [rdi], rax	        99	acpi_lpit.c	FUNCTION_4
+0x400004f	            0x31c0	                            xor eax, eax	       101	acpi_lpit.c	FUNCTION_4
+0x4000051	              0xc3	                                     ret	       101	acpi_lpit.c	FUNCTION_4
+0x4000052	      0xb8eaffffff	                     mov eax, 0xffffffea	        97	acpi_lpit.c	FUNCTION_4	IF_1
+0x4000057	              0xc3	                                     ret	       102	acpi_lpit.c	FUNCTION_4
+low_power_idle_cpu_residency_us_show	CALL,2:ELSE,0:IF,1:SWITCH,0:WHILE,0:functions,0:FOR,0:DO,0	23
+0x4000220	              0x53	                                push rbx	        82	acpi_lpit.c	FUNCTION_3
+0x4000221	            0x31f6	                            xor esi, esi	        86	acpi_lpit.c	FUNCTION_3	CALL_1
+0x4000223	          0x4889d3	                            mov rbx, rdx	        82	acpi_lpit.c	FUNCTION_3
+0x4000226	        0x4883ec10	                           sub rsp, 0x10	        82	acpi_lpit.c	FUNCTION_3
+0x400022a	          0x4889e7	                            mov rdi, rsp	        86	acpi_lpit.c	FUNCTION_3	CALL_1
+0x400022d	    0x65488b042528	                mov rax, qword gs:[0x28]	        82	acpi_lpit.c	FUNCTION_3
+0x4000236	      0x4889442408	                mov qword [rsp + 8], rax	        82	acpi_lpit.c	FUNCTION_3
+0x400023b	            0x31c0	                            xor eax, eax	        82	acpi_lpit.c	FUNCTION_3
+0x400023d	      0xe8befeffff	 call sym.lpit_read_residency_counter_us	        86	acpi_lpit.c	FUNCTION_3	CALL_1
+0x4000242	            0x85c0	                           test eax, eax	        87	acpi_lpit.c	FUNCTION_3	IF_1
+0x4000244	            0x7513	                           jne 0x4000259	        87	acpi_lpit.c	FUNCTION_3	IF_1
+0x4000246	        0x488b1424	                    mov rdx, qword [rsp]	        90	acpi_lpit.c	FUNCTION_3	CALL_2
+0x400024a	    0x48c7c6000000	                              mov rsi, 0	        90	acpi_lpit.c	FUNCTION_3	CALL_2
+0x4000251	          0x4889df	                            mov rdi, rbx	        90	acpi_lpit.c	FUNCTION_3	CALL_2
+0x4000254	      0xe800000000	                          call 0x4000259	        90	acpi_lpit.c	FUNCTION_3	CALL_2
+0x4000259	      0x488b4c2408	                mov rcx, qword [rsp + 8]	        91	acpi_lpit.c	FUNCTION_3
+0x400025e	    0x6548330c2528	                xor rcx, qword gs:[0x28]	        91	acpi_lpit.c	FUNCTION_3
+0x4000267	            0x4898	                                    cdqe	        90	acpi_lpit.c	FUNCTION_3	CALL_2
+0x4000269	            0x7506	                           jne 0x4000271	        91	acpi_lpit.c	FUNCTION_3
+0x400026b	        0x4883c410	                           add rsp, 0x10	        91	acpi_lpit.c	FUNCTION_3
+0x400026f	              0x5b	                                 pop rbx	        91	acpi_lpit.c	FUNCTION_3
+0x4000270	              0xc3	                                     ret	        91	acpi_lpit.c	FUNCTION_3
+0x4000271	      0xe800000000	                          call 0x4000276	        91	acpi_lpit.c	FUNCTION_3
+acpi_init_lpit	CALL,3:ELSE,0:IF,1:SWITCH,0:WHILE,0:functions,0:FOR,0:DO,0	56
+0x40002e0	              0x55	                                push rbp	       151	acpi_lpit.c	FUNCTION_7
+0x40002e1	              0x53	                                push rbx	       151	acpi_lpit.c	FUNCTION_7
+0x40002e2	            0x31f6	                            xor esi, esi	       156	acpi_lpit.c	FUNCTION_7	CALL_1
+0x40002e4	    0x48c7c7000000	                              mov rdi, 0	       156	acpi_lpit.c	FUNCTION_7	CALL_1
+0x40002eb	        0x4883ec10	                           sub rsp, 0x10	       151	acpi_lpit.c	FUNCTION_7
+0x40002ef	          0x4889e2	                            mov rdx, rsp	       156	acpi_lpit.c	FUNCTION_7	CALL_1
+0x40002f2	    0x65488b042528	                mov rax, qword gs:[0x28]	       151	acpi_lpit.c	FUNCTION_7
+0x40002fb	      0x4889442408	                mov qword [rsp + 8], rax	       151	acpi_lpit.c	FUNCTION_7
+0x4000300	            0x31c0	                            xor eax, eax	       151	acpi_lpit.c	FUNCTION_7
+0x4000302	      0xe800000000	                          call 0x4000307	       156	acpi_lpit.c	FUNCTION_7	CALL_1
+0x4000307	            0x85c0	                           test eax, eax	       158	acpi_lpit.c	FUNCTION_7	IF_1	CALL_2
+0x4000309	            0x7417	                            je 0x4000322	       158	acpi_lpit.c	FUNCTION_7	IF_1	CALL_2
+0x400030b	      0x488b442408	                mov rax, qword [rsp + 8]	       163	acpi_lpit.c	FUNCTION_7
+0x4000310	    0x654833042528	                xor rax, qword gs:[0x28]	       163	acpi_lpit.c	FUNCTION_7
+0x4000319	            0x757e	                           jne 0x4000399	       163	acpi_lpit.c	FUNCTION_7
+0x400031b	        0x4883c410	                           add rsp, 0x10	       163	acpi_lpit.c	FUNCTION_7
+0x400031f	              0x5b	                                 pop rbx	       163	acpi_lpit.c	FUNCTION_7
+0x4000320	              0x5d	                                 pop rbp	       163	acpi_lpit.c	FUNCTION_7
+0x4000321	              0xc3	                                     ret	       163	acpi_lpit.c	FUNCTION_7
+0x4000322	        0x488b0424	                    mov rax, qword [rsp]	       161	acpi_lpit.c	FUNCTION_7
+0x4000326	          0x8b6804	                mov ebp, dword [rax + 4]	       162	acpi_lpit.c	FUNCTION_7	CALL_3
+0x4000329	        0x488d5824	                   lea rbx, [rax + 0x24]	       161	acpi_lpit.c	FUNCTION_7
+0x400032d	        0x4883c05c	                           add rax, 0x5c	       134	acpi_lpit.c	FUNCTION_6	WHILE_1
+0x4000331	          0x4801dd	                            add rbp, rbx	       162	acpi_lpit.c	FUNCTION_7	CALL_3
+0x4000334	          0x4839c5	                            cmp rbp, rax	       134	acpi_lpit.c	FUNCTION_6	WHILE_1
+0x4000337	            0x76d2	                           jbe 0x400030b	       134	acpi_lpit.c	FUNCTION_6	WHILE_1
+0x4000339	            0x8b13	                    mov edx, dword [rbx]	       137	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1
+0x400033b	            0x85d2	                           test edx, edx	       137	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1
+0x400033d	            0x7519	                           jne 0x4000358	       137	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1
+0x400033f	          0x8b430c	              mov eax, dword [rbx + 0xc]	       137	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1
+0x4000342	            0x85c0	                           test eax, eax	       137	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1
+0x4000344	            0x7512	                           jne 0x4000358	       137	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1
+0x4000346	         0xfb64324	           movzx eax, byte [rbx + 0x24] 	       138	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x400034a	            0x84c0	                             test al, al	       138	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x400034c	            0x751b	                           jne 0x4000369	       138	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x400034e	    0x48833d000000	               cmp qword [0x04000356], 0	       138	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x4000356	            0x7430	                            je 0x4000388	       138	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	IF_2
+0x4000358	          0x8b4304	                mov eax, dword [rbx + 4]	       146	acpi_lpit.c	FUNCTION_6	WHILE_1
+0x400035b	          0x4801c3	                            add rbx, rax	       146	acpi_lpit.c	FUNCTION_6	WHILE_1
+0x400035e	        0x488d4338	                   lea rax, [rbx + 0x38]	       134	acpi_lpit.c	FUNCTION_6	WHILE_1
+0x4000362	          0x4839c5	                            cmp rbp, rax	       134	acpi_lpit.c	FUNCTION_6	WHILE_1
+0x4000365	            0x77d2	                            ja 0x4000339	       134	acpi_lpit.c	FUNCTION_6	WHILE_1
+0x4000367	            0xeba2	                           jmp 0x400030b	       134	acpi_lpit.c	FUNCTION_6	WHILE_1
+0x4000369	            0x3c7f	                            cmp al, 0x7f	       141	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	ELSE_1	IF_3
+0x400036b	            0x75eb	                           jne 0x4000358	       141	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	ELSE_1	IF_3
+0x400036d	    0x48833d000000	               cmp qword [0x04000375], 0	       141	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	ELSE_1	IF_3
+0x4000375	            0x75e1	                           jne 0x4000358	       141	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	ELSE_1	IF_3
+0x4000377	          0x4889de	                            mov rsi, rbx	       143	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	ELSE_1	IF_3	CALL_2
+0x400037a	    0x48c7c7000000	                              mov rdi, 0	       143	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	ELSE_1	IF_3	CALL_2
+0x4000381	      0xe8dafcffff	          call sym.lpit_update_residency	       143	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	ELSE_1	IF_3	CALL_2
+0x4000386	            0xebd0	                           jmp 0x4000358	       143	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	ELSE_1	IF_3	CALL_2
+0x4000388	          0x4889de	                            mov rsi, rbx	       140	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	IF_2	CALL_1
+0x400038b	    0x48c7c7000000	                              mov rdi, 0	       140	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	IF_2	CALL_1
+0x4000392	      0xe8c9fcffff	          call sym.lpit_update_residency	       140	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	IF_2	CALL_1
+0x4000397	            0xebbf	                           jmp 0x4000358	       140	acpi_lpit.c	FUNCTION_6	WHILE_1	IF_1	IF_2	CALL_1
+0x4000399	      0xe800000000	                  call section_end..text	       163	acpi_lpit.c	FUNCTION_7
+low_power_idle_system_residency_us_show	CALL,2:ELSE,0:IF,1:SWITCH,0:WHILE,0:functions,0:FOR,0:DO,0	23
+0x4000280	              0x53	                                push rbx	        67	acpi_lpit.c	FUNCTION_2
+0x4000281	      0xbe01000000	                              mov esi, 1	        71	acpi_lpit.c	FUNCTION_2	CALL_1
+0x4000286	          0x4889d3	                            mov rbx, rdx	        67	acpi_lpit.c	FUNCTION_2
+0x4000289	        0x4883ec10	                           sub rsp, 0x10	        67	acpi_lpit.c	FUNCTION_2
+0x400028d	          0x4889e7	                            mov rdi, rsp	        71	acpi_lpit.c	FUNCTION_2	CALL_1
+0x4000290	    0x65488b042528	                mov rax, qword gs:[0x28]	        67	acpi_lpit.c	FUNCTION_2
+0x4000299	      0x4889442408	                mov qword [rsp + 8], rax	        67	acpi_lpit.c	FUNCTION_2
+0x400029e	            0x31c0	                            xor eax, eax	        67	acpi_lpit.c	FUNCTION_2
+0x40002a0	      0xe85bfeffff	 call sym.lpit_read_residency_counter_us	        71	acpi_lpit.c	FUNCTION_2	CALL_1
+0x40002a5	            0x85c0	                           test eax, eax	        72	acpi_lpit.c	FUNCTION_2	IF_1
+0x40002a7	            0x7513	                           jne 0x40002bc	        72	acpi_lpit.c	FUNCTION_2	IF_1
+0x40002a9	        0x488b1424	                    mov rdx, qword [rsp]	        75	acpi_lpit.c	FUNCTION_2	CALL_2
+0x40002ad	    0x48c7c6000000	                              mov rsi, 0	        75	acpi_lpit.c	FUNCTION_2	CALL_2
+0x40002b4	          0x4889df	                            mov rdi, rbx	        75	acpi_lpit.c	FUNCTION_2	CALL_2
+0x40002b7	      0xe800000000	                          call 0x40002bc	        75	acpi_lpit.c	FUNCTION_2	CALL_2
+0x40002bc	      0x488b4c2408	                mov rcx, qword [rsp + 8]	        76	acpi_lpit.c	FUNCTION_2
+0x40002c1	    0x6548330c2528	                xor rcx, qword gs:[0x28]	        76	acpi_lpit.c	FUNCTION_2
+0x40002ca	            0x4898	                                    cdqe	        75	acpi_lpit.c	FUNCTION_2	CALL_2
+0x40002cc	            0x7506	                           jne 0x40002d4	        76	acpi_lpit.c	FUNCTION_2
+0x40002ce	        0x4883c410	                           add rsp, 0x10	        76	acpi_lpit.c	FUNCTION_2
+0x40002d2	              0x5b	                                 pop rbx	        76	acpi_lpit.c	FUNCTION_2
+0x40002d3	              0xc3	                                     ret	        76	acpi_lpit.c	FUNCTION_2
+0x40002d4	      0xe800000000	                          call 0x40002d9	        76	acpi_lpit.c	FUNCTION_2

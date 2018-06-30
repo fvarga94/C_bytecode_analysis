@@ -1,0 +1,43 @@
+inet_twsk_free	DO,0:IF,0:FOR,0:SWITCH,0:ELSE,0:WHILE,0:functions,0:CALL,4	19
+0x4000360	              0x55	                                push rbp	        66	inet_timewait_sock.c	FUNCTION_3
+0x4000361	              0x53	                                push rbx	        66	inet_timewait_sock.c	FUNCTION_3
+0x4000362	          0x4889fb	                            mov rbx, rdi	        66	inet_timewait_sock.c	FUNCTION_3
+0x4000365	        0x488b4728	            mov rax, qword [rdi + 0x28] 	        67	inet_timewait_sock.c	FUNCTION_3
+0x4000369	    0x488ba8680100	           mov rbp, qword [rax + 0x168] 	        67	inet_timewait_sock.c	FUNCTION_3
+0x4000370	    0x488b80580100	           mov rax, qword [rax + 0x158] 	        36	timewait_sock.h	FUNCTION_43	IF_1
+0x4000377	        0x488b5020	            mov rdx, qword [rax + 0x20] 	        36	timewait_sock.h	FUNCTION_43	IF_1
+0x400037b	          0x4885d2	                           test rdx, rdx	        36	timewait_sock.h	FUNCTION_43	IF_1
+0x400037e	            0x7410	                            je 0x4000390	        36	timewait_sock.h	FUNCTION_43	IF_1
+0x4000380	      0xe800000000	                          call 0x4000385	        37	timewait_sock.h	FUNCTION_43	CALL_1
+0x4000385	        0x488b4328	            mov rax, qword [rbx + 0x28] 	        37	timewait_sock.h	FUNCTION_43	CALL_1
+0x4000389	    0x488b80580100	           mov rax, qword [rax + 0x158] 	        37	timewait_sock.h	FUNCTION_43	CALL_1
+0x4000390	          0x488b38	                    mov rdi, qword [rax]	        72	inet_timewait_sock.c	FUNCTION_3	CALL_3
+0x4000393	          0x4889de	                            mov rsi, rbx	        72	inet_timewait_sock.c	FUNCTION_3	CALL_3
+0x4000396	      0xe800000000	                          call 0x400039b	        72	inet_timewait_sock.c	FUNCTION_3	CALL_3
+0x400039b	          0x4889ef	                            mov rdi, rbp	        73	inet_timewait_sock.c	FUNCTION_3	CALL_4
+0x400039e	              0x5b	                                 pop rbx	        74	inet_timewait_sock.c	FUNCTION_3
+0x400039f	              0x5d	                                 pop rbp	        74	inet_timewait_sock.c	FUNCTION_3
+0x40003a0	      0xe900000000	                           jmp 0x40003a5	        73	inet_timewait_sock.c	FUNCTION_3	CALL_4
+inet_twsk_deschedule_put	DO,0:IF,1:FOR,0:SWITCH,0:ELSE,0:WHILE,0:functions,0:CALL,3	11
+0x40004c0	              0x53	                                push rbx	       212	inet_timewait_sock.c	FUNCTION_10
+0x40004c1	          0x4889fb	                            mov rbx, rdi	       212	inet_timewait_sock.c	FUNCTION_10
+0x40004c4	    0x4881c7980000	                           add rdi, 0x98	       213	inet_timewait_sock.c	FUNCTION_10	IF_1	CALL_1
+0x40004cb	      0xe800000000	                          call 0x40004d0	       213	inet_timewait_sock.c	FUNCTION_10	IF_1	CALL_1
+0x40004d0	            0x85c0	                           test eax, eax	       213	inet_timewait_sock.c	FUNCTION_10	IF_1	CALL_1
+0x40004d2	            0x7408	                            je 0x40004dc	       213	inet_timewait_sock.c	FUNCTION_10	IF_1	CALL_1
+0x40004d4	          0x4889df	                            mov rdi, rbx	       214	inet_timewait_sock.c	FUNCTION_10	CALL_2
+0x40004d7	      0xe8f4feffff	                 call sym.inet_twsk_kill	       214	inet_timewait_sock.c	FUNCTION_10	CALL_2
+0x40004dc	          0x4889df	                            mov rdi, rbx	       215	inet_timewait_sock.c	FUNCTION_10	CALL_3
+0x40004df	              0x5b	                                 pop rbx	       216	inet_timewait_sock.c	FUNCTION_10
+0x40004e0	      0xe9cbfeffff	                   jmp sym.inet_twsk_put	       215	inet_timewait_sock.c	FUNCTION_10	CALL_3
+tw_timer_handler	DO,0:IF,1:FOR,0:SWITCH,0:ELSE,1:WHILE,0:functions,0:CALL,6	10
+0x4000490	          0x4889f8	                            mov rax, rdi	       144	inet_timewait_sock.c	FUNCTION_8
+0x4000493	    0x488dbf68ffff	                   lea rdi, [rdi - 0x98]	       145	inet_timewait_sock.c	FUNCTION_8	CALL_1
+0x400049a	        0xf640f801	                  test byte [rax - 8], 1	       147	inet_timewait_sock.c	FUNCTION_8	IF_1
+0x400049e	        0x488b4098	             mov rax, qword [rax - 0x68]	       148	inet_timewait_sock.c	FUNCTION_8	CALL_3
+0x40004a2	    0x488b80980100	           mov rax, qword [rax + 0x198] 	       148	inet_timewait_sock.c	FUNCTION_8	CALL_3
+0x40004a9	            0x750a	                           jne 0x40004b5	       147	inet_timewait_sock.c	FUNCTION_8	IF_1
+0x40004ab	      0x6548ff4058	               inc qword gs:[rax + 0x58]	       150	inet_timewait_sock.c	FUNCTION_8	CALL_5
+0x40004b0	      0xe91bffffff	                  jmp sym.inet_twsk_kill	       151	inet_timewait_sock.c	FUNCTION_8	CALL_6
+0x40004b5	      0x6548ff4068	               inc qword gs:[rax + 0x68]	       148	inet_timewait_sock.c	FUNCTION_8	CALL_3
+0x40004ba	      0xe911ffffff	                  jmp sym.inet_twsk_kill	       151	inet_timewait_sock.c	FUNCTION_8	CALL_6

@@ -1,0 +1,20 @@
+vfs_ustat	IF,1:ELSE,0:CALL,3:functions,0:WHILE,0:FOR,0:DO,0:SWITCH,0	19
+0x40004f0	              0x55	                                push rbp	       221	statfs.c	FUNCTION_14
+0x40004f1	              0x53	                                push rbx	       221	statfs.c	FUNCTION_14
+0x40004f2	          0x4889f5	                            mov rbp, rsi	       221	statfs.c	FUNCTION_14
+0x40004f5	      0xe800000000	                          call 0x40004fa	       222	statfs.c	FUNCTION_14	CALL_1
+0x40004fa	          0x4885c0	                           test rax, rax	       224	statfs.c	FUNCTION_14	IF_1
+0x40004fd	            0x741e	                            je 0x400051d	       224	statfs.c	FUNCTION_14	IF_1
+0x40004ff	        0x488b7868	            mov rdi, qword [rax + 0x68] 	       227	statfs.c	FUNCTION_14	CALL_2
+0x4000503	          0x4889ee	                            mov rsi, rbp	       227	statfs.c	FUNCTION_14	CALL_2
+0x4000506	          0x4889c3	                            mov rbx, rax	       227	statfs.c	FUNCTION_14	CALL_2
+0x4000509	      0xe852ffffff	               call sym.statfs_by_dentry	       227	statfs.c	FUNCTION_14	CALL_2
+0x400050e	          0x4889df	                            mov rdi, rbx	       228	statfs.c	FUNCTION_14	CALL_3
+0x4000511	            0x89c5	                            mov ebp, eax	       227	statfs.c	FUNCTION_14	CALL_2
+0x4000513	      0xe800000000	                          call 0x4000518	       228	statfs.c	FUNCTION_14	CALL_3
+0x4000518	            0x89e8	                            mov eax, ebp	       229	statfs.c	FUNCTION_14
+0x400051a	              0x5b	                                 pop rbx	       230	statfs.c	FUNCTION_14
+0x400051b	              0x5d	                                 pop rbp	       230	statfs.c	FUNCTION_14
+0x400051c	              0xc3	                                     ret	       230	statfs.c	FUNCTION_14
+0x400051d	      0xb8eaffffff	                     mov eax, 0xffffffea	       225	statfs.c	FUNCTION_14	IF_1
+0x4000522	            0xebf6	                           jmp 0x400051a	       225	statfs.c	FUNCTION_14	IF_1

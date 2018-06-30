@@ -1,0 +1,208 @@
+acpi_target_system_state	functions,0:IF,0:CALL,0:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	2
+0x4000040	    0x8b0500000000	            mov eax, dword [0x04000046] 	        99	sleep.c	FUNCTION_5
+0x4000046	              0xc3	                                     ret	        99	sleep.c	FUNCTION_5
+init_no_lps0	functions,0:IF,0:CALL,0:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	4
+0x400005e	          0x48d3e2	                             shl rdx, cl	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000061	          0x83e20d	                            and edx, 0xd	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000064	            0x7502	                           jne 0x4000068	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000066	            0xf3c3	                                     ret	       656	sleep.c	FUNCTION_26
+acpi_s2idle_wakeup	functions,0:IF,0:CALL,0:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	2
+0x4000be0	     0xfb605000000	           movzx eax, byte [0x04000be7] 	      1067	sleep.c	FUNCTION_40
+0x4000be7	              0xc3	                                     ret	      1067	sleep.c	FUNCTION_40
+acpi_s2idle_end	functions,0:IF,0:CALL,1:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	2
+0x4000160	    0xc60500000000	                mov byte [0x04000167], 0	      1029	sleep.c	FUNCTION_37
+0x4000167	      0xe900000000	                           jmp 0x400016c	      1030	sleep.c	FUNCTION_37	CALL_1
+acpi_no_s4_hw_signature	functions,0:IF,0:CALL,0:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	4
+0x4000068	          0x4863ff	                         movsxd rdi, edi	       650	sleep.c	FUNCTION_26	SWITCH_1
+0x400006b	              0x8b	                                 invalid	       652	sleep.c	FUNCTION_26	SWITCH_1
+0x400006c	             0x4bd	                            add al, 0xbd	       652	sleep.c	FUNCTION_26	SWITCH_1
+0x400006e	               0x0	                      add byte [rax], al	       652	sleep.c	FUNCTION_26	SWITCH_1
+acpi_pm_pre_suspend	functions,0:IF,0:CALL,2:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	4
+0x4000240	      0xe800000000	                          call 0x4000245	       406	sleep.c	FUNCTION_15	CALL_1
+0x4000245	      0xe800000000	                          call 0x400024a	       407	sleep.c	FUNCTION_15	CALL_2
+0x400024a	      0xe800000000	                          call 0x400024f	       408	sleep.c	FUNCTION_15	CALL_3
+0x400024f	      0xe900000000	                           jmp 0x4000254	       418	sleep.c	FUNCTION_16	CALL_2
+init_nvs_nosave	functions,0:IF,0:CALL,1:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	3
+0x4000054	           0x3770f	              add esi, dword [rdi + 0xf]	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000057	      0xba01000000	                              mov edx, 1	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x400005c	            0x89f9	                            mov ecx, edi	       654	sleep.c	FUNCTION_26	SWITCH_1
+acpi_sleep_state_supported	functions,0:IF,0:CALL,2:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	32
+0x4000040	    0x8b0500000000	            mov eax, dword [0x04000046] 	        99	sleep.c	FUNCTION_5
+0x4000046	              0xc3	                                     ret	        99	sleep.c	FUNCTION_5
+0x4000047	    0x660f1f840000	                    nop word [rax + rax]	        99	sleep.c	FUNCTION_5
+0x4000050	            0x31c0	                            xor eax, eax	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000052	          0x83ff03	                              cmp edi, 3	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000055	            0x770f	                            ja 0x4000066	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000057	      0xba01000000	                              mov edx, 1	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x400005c	            0x89f9	                            mov ecx, edi	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x400005e	          0x48d3e2	                             shl rdx, cl	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000061	          0x83e20d	                            and edx, 0xd	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000064	            0x7502	                           jne 0x4000068	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000066	            0xf3c3	                                     ret	       656	sleep.c	FUNCTION_26
+0x4000068	          0x4863ff	                         movsxd rdi, edi	       650	sleep.c	FUNCTION_26	SWITCH_1
+0x400006b	    0x8b04bd000000	                  mov eax, dword [rdi*4]	       652	sleep.c	FUNCTION_26	SWITCH_1
+0x4000072	     0xfb680000000	                   movzx eax, byte [rax]	       652	sleep.c	FUNCTION_26	SWITCH_1
+0x4000079	              0xc3	                                     ret	       656	sleep.c	FUNCTION_26
+0x400007a	    0x660f1f440000	                    nop word [rax + rax]	       656	sleep.c	FUNCTION_26
+0x4000080	            0x89fa	                            mov edx, edi	        40	sleep.c	FUNCTION_1	CALL_1
+0x4000082	    0x48c7c6000000	                              mov rsi, 0	        40	sleep.c	FUNCTION_1	CALL_1
+0x4000089	            0x31ff	                            xor edi, edi	        40	sleep.c	FUNCTION_1	CALL_1
+0x400008b	      0xe800000000	                          call 0x4000090	        40	sleep.c	FUNCTION_1	CALL_1
+0x4000090	            0x85c0	                           test eax, eax	        41	sleep.c	FUNCTION_1	IF_1	CALL_2
+0x4000092	            0x7405	                            je 0x4000099	        41	sleep.c	FUNCTION_1	IF_1	CALL_2
+0x4000094	          0x83f805	                              cmp eax, 5	        41	sleep.c	FUNCTION_1	IF_1	CALL_2
+0x4000097	            0x7502	                           jne 0x400009b	        41	sleep.c	FUNCTION_1	IF_1	CALL_2
+0x4000099	            0xf3c3	                                     ret	        41	sleep.c	FUNCTION_1	IF_1	CALL_2
+0x400009b	    0x48c7c7000000	                              mov rdi, 0	        46	sleep.c	FUNCTION_1	IF_1	CALL_3
+0x40000a2	      0xe900000000	                           jmp 0x40000a7	        46	sleep.c	FUNCTION_1	IF_1	CALL_3
+0x40000a7	    0x660f1f840000	                    nop word [rax + rax]	        46	sleep.c	FUNCTION_1	IF_1	CALL_3
+0x40000b0	              0xbf	                                 invalid	        53	sleep.c	FUNCTION_2	CALL_1
+0x40000b1	               0x5	                                 invalid	        53	sleep.c	FUNCTION_2	CALL_1
+0x40000b2	               0x0	                                 invalid	        53	sleep.c	FUNCTION_2	CALL_1
+find_powerf_dev	functions,0:IF,0:CALL,3:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	9
+0x40001c0	    0x4881ef500200	                          sub rdi, 0x250	       452	sleep.c	FUNCTION_19	CALL_2
+0x40001c7	      0xe800000000	                          call 0x40001cc	       452	sleep.c	FUNCTION_19	CALL_2
+0x40001cc	      0xb909000000	                              mov ecx, 9	       454	sleep.c	FUNCTION_19	CALL_3
+0x40001d1	          0x4889c6	                            mov rsi, rax	       454	sleep.c	FUNCTION_19	CALL_3
+0x40001d4	    0x48c7c7000000	                              mov rdi, 0	       454	sleep.c	FUNCTION_19	CALL_3
+0x40001db	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	       454	sleep.c	FUNCTION_19	CALL_3
+0x40001dd	           0xf94c0	                                 sete al	       454	sleep.c	FUNCTION_19	CALL_3
+0x40001e0	           0xfb6c0	                           movzx eax, al	       454	sleep.c	FUNCTION_19	CALL_3
+0x40001e3	              0xc3	                                     ret	       455	sleep.c	FUNCTION_19
+acpi_suspend_state_valid	functions,0:IF,0:CALL,0:DO,0:SWITCH,1:WHILE,0:FOR,0:ELSE,0	13
+0x4000050	            0x31c0	                            xor eax, eax	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000052	          0x83ff03	                              cmp edi, 3	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000055	            0x770f	                            ja 0x4000066	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000057	      0xba01000000	                              mov edx, 1	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x400005c	            0x89f9	                            mov ecx, edi	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x400005e	          0x48d3e2	                             shl rdx, cl	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000061	          0x83e20d	                            and edx, 0xd	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000064	            0x7502	                           jne 0x4000068	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000066	            0xf3c3	                                     ret	       656	sleep.c	FUNCTION_26
+0x4000068	          0x4863ff	                         movsxd rdi, edi	       650	sleep.c	FUNCTION_26	SWITCH_1
+0x400006b	    0x8b04bd000000	                  mov eax, dword [rdi*4]	       652	sleep.c	FUNCTION_26	SWITCH_1
+0x4000072	     0xfb680000000	                   movzx eax, byte [rax]	       652	sleep.c	FUNCTION_26	SWITCH_1
+0x4000079	              0xc3	                                     ret	       656	sleep.c	FUNCTION_26
+acpi_sleep_no_ec_events	functions,0:IF,0:CALL,0:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	6
+0x4000bf0	    0x803d00000000	                cmp byte [0x04000bf7], 0	      1071	sleep.c	FUNCTION_41
+0x4000bf7	      0xb801000000	                              mov eax, 1	      1071	sleep.c	FUNCTION_41
+0x4000bfc	            0x740b	                            je 0x4000c09	      1071	sleep.c	FUNCTION_41
+0x4000bfe	    0x48833d000000	               cmp qword [0x04000c06], 0	      1071	sleep.c	FUNCTION_41
+0x4000c06	           0xf94c0	                                 sete al	      1071	sleep.c	FUNCTION_41
+0x4000c09	            0xf3c3	                                     ret	      1072	sleep.c	FUNCTION_41
+init_nvs_save_s3	functions,0:IF,0:CALL,0:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	5
+0x4000040	    0x8b0500000000	            mov eax, dword [0x04000046] 	        99	sleep.c	FUNCTION_5
+0x4000046	              0xc3	                                     ret	        99	sleep.c	FUNCTION_5
+0x4000047	              0x66	                                 invalid	        99	sleep.c	FUNCTION_5
+0x4000048	               0xf	                                 invalid	        99	sleep.c	FUNCTION_5
+0x4000049	              0x1f	                                 invalid	        99	sleep.c	FUNCTION_5
+acpi_pm_end	functions,0:IF,0:CALL,3:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	5
+0x40001a0	      0xe800000000	                          call 0x40001a5	       519	sleep.c	FUNCTION_22	CALL_1
+0x40001a5	      0xe800000000	                          call 0x40001aa	       520	sleep.c	FUNCTION_22	CALL_2
+0x40001aa	            0x31ff	                            xor edi, edi	       526	sleep.c	FUNCTION_22	CALL_3
+0x40001ac	    0xc70500000000	               mov dword [0x040001b6], 0	       525	sleep.c	FUNCTION_22
+0x40001b6	      0xe9c5feffff	           jmp sym.acpi_sleep_tts_switch	       526	sleep.c	FUNCTION_22	CALL_3
+acpi_pm_prepare	functions,0:IF,1:CALL,2:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	7
+0x40003a0	    0x8b3d00000000	            mov edi, dword [0x040003a6] 	       429	sleep.c	FUNCTION_17	CALL_1
+0x40003a6	      0xe8c5ffffff	             call sym.acpi_sleep_prepare	       429	sleep.c	FUNCTION_17	CALL_1
+0x40003ab	            0x85c0	                           test eax, eax	       430	sleep.c	FUNCTION_17	IF_1
+0x40003ad	            0x7505	                           jne 0x40003b4	       430	sleep.c	FUNCTION_17	IF_1
+0x40003af	      0xe98cfeffff	             jmp sym.acpi_pm_pre_suspend	       444	sleep.c	FUNCTION_18	CALL_2
+0x40003b4	    0xc70500000000	               mov dword [0x040003be], 0	       431	sleep.c	FUNCTION_17	IF_1
+0x40003be	              0xc3	                                     ret	       447	sleep.c	FUNCTION_18
+acpi_pm_thaw	functions,0:IF,0:CALL,2:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	2
+0x40002e0	      0xe800000000	                          call 0x40002e5	      1163	sleep.c	FUNCTION_50	CALL_1
+0x40002e5	      0xe900000000	                           jmp 0x40002ea	      1164	sleep.c	FUNCTION_50	CALL_2
+acpi_s2idle_sync	functions,0:IF,0:CALL,3:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	5
+0x4000170	      0xe800000000	                          call 0x4000175	      1010	sleep.c	FUNCTION_35	CALL_1
+0x4000175	      0xe800000000	                          call 0x400017a	      1011	sleep.c	FUNCTION_35	CALL_2
+0x400017a	      0xe800000000	                          call 0x400017f	      1012	sleep.c	FUNCTION_35	CALL_3
+0x400017f	    0xc60500000000	                mov byte [0x04000186], 0	      1013	sleep.c	FUNCTION_35
+0x4000186	              0xc3	                                     ret	      1013	sleep.c	FUNCTION_35
+acpi_power_off_prepare	functions,0:IF,0:CALL,3:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	4
+0x40003c0	      0xbf05000000	                              mov edi, 5	      1245	sleep.c	FUNCTION_54
+0x40003c5	      0xe876ffffff	      call sym.acpi_sleep_prepare.part.2	      1245	sleep.c	FUNCTION_54
+0x40003ca	      0xe800000000	                          call 0x40003cf	      1248	sleep.c	FUNCTION_54	CALL_2
+0x40003cf	      0xe900000000	                           jmp 0x40003d4	      1249	sleep.c	FUNCTION_54	CALL_3
+acpi_save_bm_rld	functions,0:IF,0:CALL,1:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	5
+0x40000e0	    0x48c7c6000000	                              mov rsi, 0	      1079	sleep.c	FUNCTION_42	CALL_1
+0x40000e7	      0xbf0f000000	                            mov edi, 0xf	      1079	sleep.c	FUNCTION_42	CALL_1
+0x40000ec	      0xe800000000	                          call 0x40000f1	      1079	sleep.c	FUNCTION_42	CALL_1
+0x40000f1	            0x31c0	                            xor eax, eax	      1081	sleep.c	FUNCTION_42
+0x40000f3	              0xc3	                                     ret	      1081	sleep.c	FUNCTION_42
+acpi_sleep_no_blacklist	functions,0:IF,0:CALL,0:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	3
+0x4000088	              0x31	                      add byte [rcx], dh	        40	sleep.c	FUNCTION_1	CALL_1
+0x400008a	              0xff	                                 invalid	        40	sleep.c	FUNCTION_1	CALL_1
+0x400008b	      0xe800000000	                          call 0x4000090	        40	sleep.c	FUNCTION_1	CALL_1
+acpi_restore_bm_rld	functions,0:IF,1:CALL,2:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	19
+0x4000100	        0x4883ec10	                           sub rsp, 0x10	      1084	sleep.c	FUNCTION_43
+0x4000104	      0xbf0f000000	                            mov edi, 0xf	      1087	sleep.c	FUNCTION_43	CALL_1
+0x4000109	      0x488d742404	                      lea rsi, [rsp + 4]	      1087	sleep.c	FUNCTION_43	CALL_1
+0x400010e	    0xc74424040000	                  mov dword [rsp + 4], 0	      1085	sleep.c	FUNCTION_43
+0x4000116	    0x65488b042528	                mov rax, qword gs:[0x28]	      1084	sleep.c	FUNCTION_43
+0x400011f	      0x4889442408	                mov qword [rsp + 8], rax	      1084	sleep.c	FUNCTION_43
+0x4000124	            0x31c0	                            xor eax, eax	      1084	sleep.c	FUNCTION_43
+0x4000126	      0xe800000000	                          call 0x400012b	      1087	sleep.c	FUNCTION_43	CALL_1
+0x400012b	    0x8b3500000000	            mov esi, dword [0x04000131] 	      1088	sleep.c	FUNCTION_43	IF_1
+0x4000131	        0x39742404	                cmp dword [rsp + 4], esi	      1088	sleep.c	FUNCTION_43	IF_1
+0x4000135	            0x740a	                            je 0x4000141	      1088	sleep.c	FUNCTION_43	IF_1
+0x4000137	      0xbf0f000000	                            mov edi, 0xf	      1091	sleep.c	FUNCTION_43	CALL_2
+0x400013c	      0xe800000000	                          call 0x4000141	      1091	sleep.c	FUNCTION_43	CALL_2
+0x4000141	      0x488b442408	                mov rax, qword [rsp + 8]	      1092	sleep.c	FUNCTION_43
+0x4000146	    0x654833042528	                xor rax, qword gs:[0x28]	      1092	sleep.c	FUNCTION_43
+0x400014f	            0x7505	                           jne 0x4000156	      1092	sleep.c	FUNCTION_43
+0x4000151	        0x4883c410	                           add rsp, 0x10	      1092	sleep.c	FUNCTION_43
+0x4000155	              0xc3	                                     ret	      1092	sleep.c	FUNCTION_43
+0x4000156	      0xe800000000	                          call 0x400015b	      1092	sleep.c	FUNCTION_43
+acpi_hibernation_begin_old	functions,0:IF,3:CALL,4:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	22
+0x40003e0	              0x53	                                push rbx	      1186	sleep.c	FUNCTION_51
+0x40003e1	      0xbf04000000	                              mov edi, 4	      1193	sleep.c	FUNCTION_51	CALL_1
+0x40003e6	      0xe895fcffff	          call sym.acpi_sleep_tts_switch	      1193	sleep.c	FUNCTION_51	CALL_1
+0x40003eb	      0xbf04000000	                              mov edi, 4	      1193	sleep.c	FUNCTION_51	CALL_1
+0x40003f0	      0xe84bffffff	      call sym.acpi_sleep_prepare.part.2	      1193	sleep.c	FUNCTION_51	CALL_1
+0x40003f5	            0x85c0	                           test eax, eax	      1197	sleep.c	FUNCTION_51	IF_1
+0x40003f7	            0x89c3	                            mov ebx, eax	      1197	sleep.c	FUNCTION_51	IF_1
+0x40003f9	            0x7518	                           jne 0x4000413	      1197	sleep.c	FUNCTION_51	IF_1
+0x40003fb	    0x803d00000000	                cmp byte [0x04000402], 0	      1198	sleep.c	FUNCTION_51	IF_1	IF_2
+0x4000402	            0x7413	                            je 0x4000417	      1198	sleep.c	FUNCTION_51	IF_1	IF_2
+0x4000404	    0xc70500000000	               mov dword [0x0400040e], 4	      1201	sleep.c	FUNCTION_51	IF_1	IF_3
+0x400040e	      0xe800000000	                          call 0x4000413	      1202	sleep.c	FUNCTION_51	IF_1	IF_3	CALL_4
+0x4000413	            0x89d8	                            mov eax, ebx	      1206	sleep.c	FUNCTION_51
+0x4000415	              0x5b	                                 pop rbx	      1206	sleep.c	FUNCTION_51
+0x4000416	              0xc3	                                     ret	      1206	sleep.c	FUNCTION_51
+0x4000417	      0xe800000000	                          call 0x400041c	      1199	sleep.c	FUNCTION_51	IF_1	CALL_3
+0x400041c	            0x85c0	                           test eax, eax	      1200	sleep.c	FUNCTION_51	IF_1	IF_3
+0x400041e	            0x74e4	                            je 0x4000404	      1200	sleep.c	FUNCTION_51	IF_1	IF_3
+0x4000420	            0x89c3	                            mov ebx, eax	      1200	sleep.c	FUNCTION_51	IF_1	IF_3
+0x4000422	            0x89d8	                            mov eax, ebx	      1206	sleep.c	FUNCTION_51
+0x4000424	              0x5b	                                 pop rbx	      1206	sleep.c	FUNCTION_51
+0x4000425	              0xc3	                                     ret	      1206	sleep.c	FUNCTION_51
+acpi_s2idle_begin	functions,0:IF,0:CALL,1:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	4
+0x4000190	      0xe800000000	                          call 0x4000195	       959	sleep.c	FUNCTION_32	CALL_1
+0x4000195	    0xc60500000000	                mov byte [0x0400019c], 1	       960	sleep.c	FUNCTION_32
+0x400019c	            0x31c0	                            xor eax, eax	       962	sleep.c	FUNCTION_32
+0x400019e	              0xc3	                                     ret	       962	sleep.c	FUNCTION_32
+tts_notify_reboot	functions,0:IF,0:CALL,1:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	4
+0x40000b0	      0xbf05000000	                              mov edi, 5	        53	sleep.c	FUNCTION_2	CALL_1
+0x40000b5	      0xe8c6ffffff	          call sym.acpi_sleep_tts_switch	        53	sleep.c	FUNCTION_2	CALL_1
+0x40000ba	            0x31c0	                            xor eax, eax	        55	sleep.c	FUNCTION_2
+0x40000bc	              0xc3	                                     ret	        55	sleep.c	FUNCTION_2
+acpi_sleep_tts_switch	functions,0:IF,1:CALL,3:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	11
+0x4000080	            0x89fa	                            mov edx, edi	        40	sleep.c	FUNCTION_1	CALL_1
+0x4000082	    0x48c7c6000000	                              mov rsi, 0	        40	sleep.c	FUNCTION_1	CALL_1
+0x4000089	            0x31ff	                            xor edi, edi	        40	sleep.c	FUNCTION_1	CALL_1
+0x400008b	      0xe800000000	                          call 0x4000090	        40	sleep.c	FUNCTION_1	CALL_1
+0x4000090	            0x85c0	                           test eax, eax	        41	sleep.c	FUNCTION_1	IF_1	CALL_2
+0x4000092	            0x7405	                            je 0x4000099	        41	sleep.c	FUNCTION_1	IF_1	CALL_2
+0x4000094	          0x83f805	                              cmp eax, 5	        41	sleep.c	FUNCTION_1	IF_1	CALL_2
+0x4000097	            0x7502	                           jne 0x400009b	        41	sleep.c	FUNCTION_1	IF_1	CALL_2
+0x4000099	            0xf3c3	                                     ret	        41	sleep.c	FUNCTION_1	IF_1	CALL_2
+0x400009b	    0x48c7c7000000	                              mov rdi, 0	        46	sleep.c	FUNCTION_1	IF_1	CALL_3
+0x40000a2	      0xe900000000	                           jmp 0x40000a7	        46	sleep.c	FUNCTION_1	IF_1	CALL_3
+init_old_suspend_ordering	functions,0:IF,0:CALL,1:DO,0:SWITCH,0:WHILE,0:FOR,0:ELSE,0	6
+0x400004a	            0x8400	                     test byte [rax], al	        99	sleep.c	FUNCTION_5
+0x400004c	               0x0	                      add byte [rax], al	        99	sleep.c	FUNCTION_5
+0x400004e	               0x0	                      add byte [rax], al	        99	sleep.c	FUNCTION_5
+0x4000050	            0x31c0	                            xor eax, eax	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000052	              0x83	                                 invalid	       654	sleep.c	FUNCTION_26	SWITCH_1
+0x4000053	              0xff	                                 invalid	       654	sleep.c	FUNCTION_26	SWITCH_1

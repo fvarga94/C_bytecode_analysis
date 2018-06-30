@@ -1,0 +1,1008 @@
+uart_console_write	WHILE,0:SWITCH,0:IF,1:CALL,2:DO,0:ELSE,0:functions,0:FOR,1	34
+0x4000140	          0x8d42ff	                      lea eax, [rdx - 1]	      1845	serial_core.c	FUNCTION_56
+0x4000143	            0x85d2	                           test edx, edx	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x4000145	            0x4155	                                push r13	      1845	serial_core.c	FUNCTION_56
+0x4000147	            0x4154	                                push r12	      1845	serial_core.c	FUNCTION_56
+0x4000149	              0x55	                                push rbp	      1845	serial_core.c	FUNCTION_56
+0x400014a	      0x4c8d6c0601	                lea r13, [rsi + rax + 1]	      1845	serial_core.c	FUNCTION_56
+0x400014f	              0x53	                                push rbx	      1845	serial_core.c	FUNCTION_56
+0x4000150	            0x7447	                            je 0x4000199	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x4000152	          0x4989fc	                            mov r12, rdi	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x4000155	          0x4889f3	                            mov rbx, rsi	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x4000158	          0x4889cd	                            mov rbp, rcx	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x400015b	            0xeb11	                           jmp 0x400016e	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x400015d	        0x4883c301	                              add rbx, 1	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x4000161	          0x4c89e7	                            mov rdi, r12	      1851	serial_core.c	FUNCTION_56	FOR_1	CALL_2
+0x4000164	      0xe800000000	                          call 0x4000169	      1851	serial_core.c	FUNCTION_56	FOR_1	CALL_2
+0x4000169	          0x4c39eb	                            cmp rbx, r13	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x400016c	            0x742b	                            je 0x4000199	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x400016e	           0xfbe33	                   movsx esi, byte [rbx]	      1849	serial_core.c	FUNCTION_56	FOR_1	IF_1
+0x4000171	        0x4080fe0a	                            cmp sil, 0xa	      1849	serial_core.c	FUNCTION_56	FOR_1	IF_1
+0x4000175	            0x75e6	                           jne 0x400015d	      1849	serial_core.c	FUNCTION_56	FOR_1	IF_1
+0x4000177	      0xbe0d000000	                            mov esi, 0xd	      1850	serial_core.c	FUNCTION_56	FOR_1	CALL_1
+0x400017c	          0x4c89e7	                            mov rdi, r12	      1850	serial_core.c	FUNCTION_56	FOR_1	CALL_1
+0x400017f	        0x4883c301	                              add rbx, 1	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x4000183	      0xe800000000	                          call 0x4000188	      1850	serial_core.c	FUNCTION_56	FOR_1	CALL_1
+0x4000188	         0xfbe73ff	               movsx esi, byte [rbx - 1]	      1850	serial_core.c	FUNCTION_56	FOR_1	CALL_1
+0x400018c	          0x4c89e7	                            mov rdi, r12	      1851	serial_core.c	FUNCTION_56	FOR_1	CALL_2
+0x400018f	      0xe800000000	                          call 0x4000194	      1851	serial_core.c	FUNCTION_56	FOR_1	CALL_2
+0x4000194	          0x4c39eb	                            cmp rbx, r13	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x4000197	            0x75d5	                           jne 0x400016e	      1848	serial_core.c	FUNCTION_56	FOR_1
+0x4000199	              0x5b	                                 pop rbx	      1853	serial_core.c	FUNCTION_56
+0x400019a	              0x5d	                                 pop rbp	      1853	serial_core.c	FUNCTION_56
+0x400019b	            0x415c	                                 pop r12	      1853	serial_core.c	FUNCTION_56
+0x400019d	            0x415d	                                 pop r13	      1853	serial_core.c	FUNCTION_56
+0x400019f	              0xc3	                                     ret	      1853	serial_core.c	FUNCTION_56
+uart_get_divisor	WHILE,0:SWITCH,0:IF,1:CALL,1:DO,0:ELSE,1:functions,0:FOR,0	15
+0x4000100	    0x81fe00960000	                         cmp esi, 0x9600	       471	serial_core.c	FUNCTION_16	IF_1
+0x4000106	            0x7412	                            je 0x400011a	       471	serial_core.c	FUNCTION_16	IF_1
+0x4000108	          0xc1e604	                              shl esi, 4	       474	serial_core.c	FUNCTION_16	CALL_1
+0x400010b	            0x31d2	                            xor edx, edx	       474	serial_core.c	FUNCTION_16	CALL_1
+0x400010d	            0x89f0	                            mov eax, esi	       474	serial_core.c	FUNCTION_16	CALL_1
+0x400010f	            0xd1e8	                              shr eax, 1	       474	serial_core.c	FUNCTION_16	CALL_1
+0x4000111	     0x38798000000	             add eax, dword [rdi + 0x98]	       474	serial_core.c	FUNCTION_16	CALL_1
+0x4000117	            0xf7f6	                                 div esi	       474	serial_core.c	FUNCTION_16	CALL_1
+0x4000119	              0xc3	                                     ret	       477	serial_core.c	FUNCTION_16
+0x400011a	    0x8b87f8000000	            mov eax, dword [rdi + 0xf8] 	       471	serial_core.c	FUNCTION_16	IF_1
+0x4000120	      0x2530100000	                         and eax, 0x1030	       471	serial_core.c	FUNCTION_16	IF_1
+0x4000125	          0x83f830	                           cmp eax, 0x30	       471	serial_core.c	FUNCTION_16	IF_1
+0x4000128	            0x75de	                           jne 0x4000108	       471	serial_core.c	FUNCTION_16	IF_1
+0x400012a	    0x8b8718010000	           mov eax, dword [rdi + 0x118] 	       472	serial_core.c	FUNCTION_16	IF_1
+0x4000130	              0xc3	                                     ret	       472	serial_core.c	FUNCTION_16	IF_1
+uart_get_attr_close_delay	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000c40	              0x53	                                push rbx	      2601	serial_core.c	FUNCTION_80
+0x4000c41	          0x4889d3	                            mov rbx, rdx	      2601	serial_core.c	FUNCTION_80
+0x4000c44	        0x4883ec50	                           sub rsp, 0x50	      2601	serial_core.c	FUNCTION_80
+0x4000c48	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2605	serial_core.c	FUNCTION_80	CALL_2
+0x4000c4f	          0x4889e6	                            mov rsi, rsp	      2605	serial_core.c	FUNCTION_80	CALL_2
+0x4000c52	    0x65488b042528	                mov rax, qword gs:[0x28]	      2601	serial_core.c	FUNCTION_80
+0x4000c5b	      0x4889442448	             mov qword [rsp + 0x48], rax	      2601	serial_core.c	FUNCTION_80
+0x4000c60	            0x31c0	                            xor eax, eax	      2601	serial_core.c	FUNCTION_80
+0x4000c62	      0xe839fcffff	                  call sym.uart_get_info	      2605	serial_core.c	FUNCTION_80	CALL_2
+0x4000c67	       0xfb74c2420	           movzx ecx, word [rsp + 0x20] 	      2606	serial_core.c	FUNCTION_80	CALL_3
+0x4000c6c	    0x48c7c2000000	                              mov rdx, 0	      2606	serial_core.c	FUNCTION_80	CALL_3
+0x4000c73	      0xbe00100000	                         mov esi, 0x1000	      2606	serial_core.c	FUNCTION_80	CALL_3
+0x4000c78	          0x4889df	                            mov rdi, rbx	      2606	serial_core.c	FUNCTION_80	CALL_3
+0x4000c7b	      0xe800000000	                          call 0x4000c80	      2606	serial_core.c	FUNCTION_80	CALL_3
+0x4000c80	      0x488b542448	            mov rdx, qword [rsp + 0x48] 	      2607	serial_core.c	FUNCTION_80
+0x4000c85	    0x654833142528	                xor rdx, qword gs:[0x28]	      2607	serial_core.c	FUNCTION_80
+0x4000c8e	            0x7508	                           jne 0x4000c98	      2607	serial_core.c	FUNCTION_80
+0x4000c90	        0x4883c450	                           add rsp, 0x50	      2607	serial_core.c	FUNCTION_80
+0x4000c94	            0x4898	                                    cdqe	      2607	serial_core.c	FUNCTION_80
+0x4000c96	              0x5b	                                 pop rbx	      2607	serial_core.c	FUNCTION_80
+0x4000c97	              0xc3	                                     ret	      2607	serial_core.c	FUNCTION_80
+0x4000c98	      0xe800000000	                          call 0x4000c9d	      2607	serial_core.c	FUNCTION_80
+uart_get_attr_flags	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000d60	              0x53	                                push rbx	      2580	serial_core.c	FUNCTION_78
+0x4000d61	          0x4889d3	                            mov rbx, rdx	      2580	serial_core.c	FUNCTION_78
+0x4000d64	        0x4883ec50	                           sub rsp, 0x50	      2580	serial_core.c	FUNCTION_78
+0x4000d68	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2584	serial_core.c	FUNCTION_78	CALL_2
+0x4000d6f	          0x4889e6	                            mov rsi, rsp	      2584	serial_core.c	FUNCTION_78	CALL_2
+0x4000d72	    0x65488b042528	                mov rax, qword gs:[0x28]	      2580	serial_core.c	FUNCTION_78
+0x4000d7b	      0x4889442448	             mov qword [rsp + 0x48], rax	      2580	serial_core.c	FUNCTION_78
+0x4000d80	            0x31c0	                            xor eax, eax	      2580	serial_core.c	FUNCTION_78
+0x4000d82	      0xe819fbffff	                  call sym.uart_get_info	      2584	serial_core.c	FUNCTION_78	CALL_2
+0x4000d87	        0x8b4c2410	            mov ecx, dword [rsp + 0x10] 	      2585	serial_core.c	FUNCTION_78	CALL_3
+0x4000d8b	    0x48c7c2000000	                              mov rdx, 0	      2585	serial_core.c	FUNCTION_78	CALL_3
+0x4000d92	      0xbe00100000	                         mov esi, 0x1000	      2585	serial_core.c	FUNCTION_78	CALL_3
+0x4000d97	          0x4889df	                            mov rdi, rbx	      2585	serial_core.c	FUNCTION_78	CALL_3
+0x4000d9a	      0xe800000000	                          call 0x4000d9f	      2585	serial_core.c	FUNCTION_78	CALL_3
+0x4000d9f	      0x488b4c2448	            mov rcx, qword [rsp + 0x48] 	      2586	serial_core.c	FUNCTION_78
+0x4000da4	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      2586	serial_core.c	FUNCTION_78
+0x4000dad	            0x7508	                           jne 0x4000db7	      2586	serial_core.c	FUNCTION_78
+0x4000daf	        0x4883c450	                           add rsp, 0x50	      2586	serial_core.c	FUNCTION_78
+0x4000db3	            0x4898	                                    cdqe	      2586	serial_core.c	FUNCTION_78
+0x4000db5	              0x5b	                                 pop rbx	      2586	serial_core.c	FUNCTION_78
+0x4000db6	              0xc3	                                     ret	      2586	serial_core.c	FUNCTION_78
+0x4000db7	      0xe800000000	                          call 0x4000dbc	      2586	serial_core.c	FUNCTION_78
+uart_get_attr_uartclk	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	23
+0x4000ca0	              0x53	                                push rbx	      2527	serial_core.c	FUNCTION_73
+0x4000ca1	          0x4889d3	                            mov rbx, rdx	      2527	serial_core.c	FUNCTION_73
+0x4000ca4	        0x4883ec50	                           sub rsp, 0x50	      2527	serial_core.c	FUNCTION_73
+0x4000ca8	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2531	serial_core.c	FUNCTION_73	CALL_2
+0x4000caf	          0x4889e6	                            mov rsi, rsp	      2531	serial_core.c	FUNCTION_73	CALL_2
+0x4000cb2	    0x65488b042528	                mov rax, qword gs:[0x28]	      2527	serial_core.c	FUNCTION_73
+0x4000cbb	      0x4889442448	             mov qword [rsp + 0x48], rax	      2527	serial_core.c	FUNCTION_73
+0x4000cc0	            0x31c0	                            xor eax, eax	      2527	serial_core.c	FUNCTION_73
+0x4000cc2	      0xe8d9fbffff	                  call sym.uart_get_info	      2531	serial_core.c	FUNCTION_73	CALL_2
+0x4000cc7	        0x8b4c241c	            mov ecx, dword [rsp + 0x1c] 	      2532	serial_core.c	FUNCTION_73	CALL_3
+0x4000ccb	    0x48c7c2000000	                              mov rdx, 0	      2532	serial_core.c	FUNCTION_73	CALL_3
+0x4000cd2	      0xbe00100000	                         mov esi, 0x1000	      2532	serial_core.c	FUNCTION_73	CALL_3
+0x4000cd7	          0x4889df	                            mov rdi, rbx	      2532	serial_core.c	FUNCTION_73	CALL_3
+0x4000cda	          0xc1e104	                              shl ecx, 4	      2532	serial_core.c	FUNCTION_73	CALL_3
+0x4000cdd	      0xe800000000	                          call 0x4000ce2	      2532	serial_core.c	FUNCTION_73	CALL_3
+0x4000ce2	      0x488b542448	            mov rdx, qword [rsp + 0x48] 	      2533	serial_core.c	FUNCTION_73
+0x4000ce7	    0x654833142528	                xor rdx, qword gs:[0x28]	      2533	serial_core.c	FUNCTION_73
+0x4000cf0	            0x7508	                           jne 0x4000cfa	      2533	serial_core.c	FUNCTION_73
+0x4000cf2	        0x4883c450	                           add rsp, 0x50	      2533	serial_core.c	FUNCTION_73
+0x4000cf6	            0x4898	                                    cdqe	      2533	serial_core.c	FUNCTION_73
+0x4000cf8	              0x5b	                                 pop rbx	      2533	serial_core.c	FUNCTION_73
+0x4000cf9	              0xc3	                                     ret	      2533	serial_core.c	FUNCTION_73
+0x4000cfa	      0xe800000000	                          call 0x4000cff	      2533	serial_core.c	FUNCTION_73
+serial_match_port	WHILE,0:SWITCH,0:IF,0:CALL,1:DO,0:ELSE,0:functions,0:FOR,0	11
+0x40001a0	        0x488b4608	                mov rax, qword [rsi + 8]	      2064	serial_core.c	FUNCTION_62
+0x40001a4	        0x488b5038	            mov rdx, qword [rax + 0x38] 	      2064	serial_core.c	FUNCTION_62
+0x40001a8	          0x8b422c	            mov eax, dword [rdx + 0x2c] 	      2068	serial_core.c	FUNCTION_62
+0x40001ab	          0xc1e014	                           shl eax, 0x14	      2068	serial_core.c	FUNCTION_62
+0x40001ae	           0xb4230	              or eax, dword [rdx + 0x30]	      2068	serial_core.c	FUNCTION_62
+0x40001b1	          0x488b16	                    mov rdx, qword [rsi]	      2066	serial_core.c	FUNCTION_62
+0x40001b4	     0x3821c010000	            add eax, dword [rdx + 0x11c]	      2068	serial_core.c	FUNCTION_62
+0x40001ba	    0x3b8760020000	           cmp eax, dword [rdi + 0x260] 	      2068	serial_core.c	FUNCTION_62
+0x40001c0	           0xf94c0	                                 sete al	      2068	serial_core.c	FUNCTION_62
+0x40001c3	           0xfb6c0	                           movzx eax, al	      2068	serial_core.c	FUNCTION_62
+0x40001c6	              0xc3	                                     ret	      2069	serial_core.c	FUNCTION_62
+uart_open	WHILE,0:SWITCH,0:IF,1:CALL,1:DO,0:ELSE,0:functions,0:FOR,0	17
+0x40009b0	        0x488b4710	            mov rax, qword [rdi + 0x10] 	      1696	serial_core.c	FUNCTION_51
+0x40009b4	          0x4889f2	                            mov rdx, rsi	      1695	serial_core.c	FUNCTION_51
+0x40009b7	          0x4889f9	                            mov rcx, rdi	      1695	serial_core.c	FUNCTION_51
+0x40009ba	    0x488bb0980000	            mov rsi, qword [rax + 0x98] 	      1698	serial_core.c	FUNCTION_51
+0x40009c1	        0x48634720	         movsxd rax, dword [rdi + 0x20] 	      1698	serial_core.c	FUNCTION_51
+0x40009c5	        0x488d3c40	                  lea rdi, [rax + rax*2]	      1698	serial_core.c	FUNCTION_51
+0x40009c9	        0x488d04b8	                  lea rax, [rax + rdi*4]	      1698	serial_core.c	FUNCTION_51
+0x40009cd	        0x48c1e005	                              shl rax, 5	      1698	serial_core.c	FUNCTION_51
+0x40009d1	        0x48034630	             add rax, qword [rsi + 0x30]	      1698	serial_core.c	FUNCTION_51
+0x40009d5	          0x4889ce	                            mov rsi, rcx	      1702	serial_core.c	FUNCTION_51	CALL_1
+0x40009d8	          0x4889c7	                            mov rdi, rax	      1698	serial_core.c	FUNCTION_51
+0x40009db	    0x488981600200	            mov qword [rcx + 0x260], rax	      1700	serial_core.c	FUNCTION_51
+0x40009e2	      0xe800000000	                          call 0x40009e7	      1702	serial_core.c	FUNCTION_51	CALL_1
+0x40009e7	      0xba00000000	                              mov edx, 0	      1706	serial_core.c	FUNCTION_51
+0x40009ec	            0x85c0	                           test eax, eax	      1706	serial_core.c	FUNCTION_51
+0x40009ee	           0xf4fc2	                          cmovg eax, edx	      1706	serial_core.c	FUNCTION_51
+0x40009f1	              0xc3	                                     ret	      1707	serial_core.c	FUNCTION_51
+uart_get_attr_io_type	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000b20	              0x53	                                push rbx	      2632	serial_core.c	FUNCTION_83
+0x4000b21	          0x4889d3	                            mov rbx, rdx	      2632	serial_core.c	FUNCTION_83
+0x4000b24	        0x4883ec50	                           sub rsp, 0x50	      2632	serial_core.c	FUNCTION_83
+0x4000b28	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2636	serial_core.c	FUNCTION_83	CALL_2
+0x4000b2f	          0x4889e6	                            mov rsi, rsp	      2636	serial_core.c	FUNCTION_83	CALL_2
+0x4000b32	    0x65488b042528	                mov rax, qword gs:[0x28]	      2632	serial_core.c	FUNCTION_83
+0x4000b3b	      0x4889442448	             mov qword [rsp + 0x48], rax	      2632	serial_core.c	FUNCTION_83
+0x4000b40	            0x31c0	                            xor eax, eax	      2632	serial_core.c	FUNCTION_83
+0x4000b42	      0xe859fdffff	                  call sym.uart_get_info	      2636	serial_core.c	FUNCTION_83	CALL_2
+0x4000b47	       0xfbe4c2422	           movsx ecx, byte [rsp + 0x22] 	      2637	serial_core.c	FUNCTION_83	CALL_3
+0x4000b4c	    0x48c7c2000000	                              mov rdx, 0	      2637	serial_core.c	FUNCTION_83	CALL_3
+0x4000b53	      0xbe00100000	                         mov esi, 0x1000	      2637	serial_core.c	FUNCTION_83	CALL_3
+0x4000b58	          0x4889df	                            mov rdi, rbx	      2637	serial_core.c	FUNCTION_83	CALL_3
+0x4000b5b	      0xe800000000	                          call 0x4000b60	      2637	serial_core.c	FUNCTION_83	CALL_3
+0x4000b60	      0x488b542448	            mov rdx, qword [rsp + 0x48] 	      2638	serial_core.c	FUNCTION_83
+0x4000b65	    0x654833142528	                xor rdx, qword gs:[0x28]	      2638	serial_core.c	FUNCTION_83
+0x4000b6e	            0x7508	                           jne 0x4000b78	      2638	serial_core.c	FUNCTION_83
+0x4000b70	        0x4883c450	                           add rsp, 0x50	      2638	serial_core.c	FUNCTION_83
+0x4000b74	            0x4898	                                    cdqe	      2638	serial_core.c	FUNCTION_83
+0x4000b76	              0x5b	                                 pop rbx	      2638	serial_core.c	FUNCTION_83
+0x4000b77	              0xc3	                                     ret	      2638	serial_core.c	FUNCTION_83
+0x4000b78	      0xe800000000	                          call 0x4000b7d	      2638	serial_core.c	FUNCTION_83
+uart_set_options	WHILE,0:SWITCH,1:IF,4:CALL,6:DO,0:ELSE,1:functions,0:FOR,0	90
+0x40004a0	            0x4157	                                push r15	      1980	serial_core.c	FUNCTION_60
+0x40004a2	            0x4156	                                push r14	      1980	serial_core.c	FUNCTION_60
+0x40004a4	          0x4189ce	                           mov r14d, ecx	      1980	serial_core.c	FUNCTION_60
+0x40004a7	            0x4155	                                push r13	      1980	serial_core.c	FUNCTION_60
+0x40004a9	            0x4154	                                push r12	      1980	serial_core.c	FUNCTION_60
+0x40004ab	          0x4589cd	                           mov r13d, r9d	      1980	serial_core.c	FUNCTION_60
+0x40004ae	              0x55	                                push rbp	      1980	serial_core.c	FUNCTION_60
+0x40004af	              0x53	                                push rbx	      1980	serial_core.c	FUNCTION_60
+0x40004b0	          0x4889f5	                            mov rbp, rsi	      1980	serial_core.c	FUNCTION_60
+0x40004b3	          0x4889fb	                            mov rbx, rdi	      1980	serial_core.c	FUNCTION_60
+0x40004b6	            0x89d6	                            mov esi, edx	      1980	serial_core.c	FUNCTION_60
+0x40004b8	          0x4589c4	                           mov r12d, r8d	      1980	serial_core.c	FUNCTION_60
+0x40004bb	        0x4883ec38	                           sub rsp, 0x38	      1980	serial_core.c	FUNCTION_60
+0x40004bf	    0x65488b042528	                mov rax, qword gs:[0x28]	      1980	serial_core.c	FUNCTION_60
+0x40004c8	      0x4889442430	             mov qword [rsp + 0x30], rax	      1980	serial_core.c	FUNCTION_60
+0x40004cd	            0x31c0	                            xor eax, eax	      1980	serial_core.c	FUNCTION_60
+0x40004cf	    0x488b87e80000	            mov rax, qword [rdi + 0xe8] 	      1990	serial_core.c	FUNCTION_60	IF_1	CALL_1
+0x40004d6	          0x4885c0	                           test rax, rax	      1990	serial_core.c	FUNCTION_60	IF_1	CALL_1
+0x40004d9	            0x7410	                            je 0x40004eb	      1990	serial_core.c	FUNCTION_60	IF_1	CALL_1
+0x40004db	         0xfbf5042	           movsx edx, word [rax + 0x42] 	      1990	serial_core.c	FUNCTION_60	IF_1	CALL_1
+0x40004df	    0x3b971c010000	           cmp edx, dword [rdi + 0x11c] 	      1990	serial_core.c	FUNCTION_60	IF_1	CALL_1
+0x40004e5	     0xf84f7000000	                            je 0x40005e2	      1990	serial_core.c	FUNCTION_60	IF_1	CALL_1
+0x40004eb	    0xc70300000000	                      mov dword [rbx], 0	      1991	serial_core.c	FUNCTION_60	IF_1	CALL_2
+0x40004f1	      0x4c8d7c2404	                      lea r15, [rsp + 4]	      1995	serial_core.c	FUNCTION_60	CALL_4
+0x40004f6	      0x488d7c2408	                      lea rdi, [rsp + 8]	      1995	serial_core.c	FUNCTION_60	CALL_4
+0x40004fb	            0x31c0	                            xor eax, eax	      1995	serial_core.c	FUNCTION_60	CALL_4
+0x40004fd	    0x48c744240400	                  mov qword [rsp + 4], 0	      1995	serial_core.c	FUNCTION_60	CALL_4
+0x4000506	    0x48c744242800	               mov qword [rsp + 0x28], 0	      1995	serial_core.c	FUNCTION_60	CALL_4
+0x400050f	            0x89f2	                            mov edx, esi	      1998	serial_core.c	FUNCTION_60	CALL_5
+0x4000511	          0x4c89f9	                            mov rcx, r15	      1995	serial_core.c	FUNCTION_60	CALL_4
+0x4000514	          0x4829f9	                            sub rcx, rdi	      1995	serial_core.c	FUNCTION_60	CALL_4
+0x4000517	          0x83c12c	                           add ecx, 0x2c	      1995	serial_core.c	FUNCTION_60	CALL_4
+0x400051a	          0xc1e903	                              shr ecx, 3	      1995	serial_core.c	FUNCTION_60	CALL_4
+0x400051d	          0xf348ab	              rep stosq qword [rdi], rax	      1995	serial_core.c	FUNCTION_60	CALL_4
+0x4000520	          0x4c89ff	                            mov rdi, r15	      1998	serial_core.c	FUNCTION_60	CALL_5
+0x4000523	    0xc744240c800c	           mov dword [rsp + 0xc], 0xc80 	      1997	serial_core.c	FUNCTION_60
+0x400052b	      0xe800000000	                          call 0x4000530	      1998	serial_core.c	FUNCTION_60	CALL_5
+0x4000530	        0x4183fc07	                             cmp r12d, 7	      2000	serial_core.c	FUNCTION_60	IF_2
+0x4000534	     0xf849e000000	                            je 0x40005d8	      2000	serial_core.c	FUNCTION_60	IF_2
+0x400053a	      0x834c240c30	              or dword [rsp + 0xc], 0x30	      2003	serial_core.c	FUNCTION_60	ELSE_1
+0x400053f	        0x4183fe4f	                          cmp r14d, 0x4f	      2005	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x4000543	     0xf8486000000	                            je 0x40005cf	      2005	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x4000549	            0x7e63	                           jle 0x40005ae	      2005	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x400054b	        0x4183fe65	                          cmp r14d, 0x65	      2005	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x400054f	            0x7463	                            je 0x40005b4	      2005	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x4000551	        0x4183fe6f	                          cmp r14d, 0x6f	      2005	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x4000555	            0x7478	                            je 0x40005cf	      2005	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x4000557	        0x4183fd72	                          cmp r13d, 0x72	      2014	serial_core.c	FUNCTION_60	IF_3
+0x400055b	            0x7468	                            je 0x40005c5	      2014	serial_core.c	FUNCTION_60	IF_3
+0x400055d	    0x488b83100100	           mov rax, qword [rbx + 0x110] 	      2023	serial_core.c	FUNCTION_60	CALL_6
+0x4000564	    0x838b04010000	               or dword [rbx + 0x104], 2	      2021	serial_core.c	FUNCTION_60
+0x400056b	    0x48c7c2000000	                              mov rdx, 0	      2023	serial_core.c	FUNCTION_60	CALL_6
+0x4000572	          0x4c89fe	                            mov rsi, r15	      2023	serial_core.c	FUNCTION_60	CALL_6
+0x4000575	          0x4889df	                            mov rdi, rbx	      2023	serial_core.c	FUNCTION_60	CALL_6
+0x4000578	        0x488b4070	            mov rax, qword [rax + 0x70] 	      2023	serial_core.c	FUNCTION_60	CALL_6
+0x400057c	      0xe800000000	                          call 0x4000581	      2023	serial_core.c	FUNCTION_60	CALL_6
+0x4000581	          0x4885ed	                           test rbp, rbp	      2028	serial_core.c	FUNCTION_60	IF_4
+0x4000584	            0x7407	                            je 0x400058d	      2028	serial_core.c	FUNCTION_60	IF_4
+0x4000586	        0x8b44240c	              mov eax, dword [rsp + 0xc]	      2029	serial_core.c	FUNCTION_60	IF_4
+0x400058a	          0x894544	            mov dword [rbp + 0x44], eax 	      2029	serial_core.c	FUNCTION_60	IF_4
+0x400058d	            0x31c0	                            xor eax, eax	      2032	serial_core.c	FUNCTION_60
+0x400058f	      0x488b542430	            mov rdx, qword [rsp + 0x30] 	      2032	serial_core.c	FUNCTION_60
+0x4000594	    0x654833142528	                xor rdx, qword gs:[0x28]	      2032	serial_core.c	FUNCTION_60
+0x400059d	            0x7552	                           jne 0x40005f1	      2032	serial_core.c	FUNCTION_60
+0x400059f	        0x4883c438	                           add rsp, 0x38	      2032	serial_core.c	FUNCTION_60
+0x40005a3	              0x5b	                                 pop rbx	      2032	serial_core.c	FUNCTION_60
+0x40005a4	              0x5d	                                 pop rbp	      2032	serial_core.c	FUNCTION_60
+0x40005a5	            0x415c	                                 pop r12	      2032	serial_core.c	FUNCTION_60
+0x40005a7	            0x415d	                                 pop r13	      2032	serial_core.c	FUNCTION_60
+0x40005a9	            0x415e	                                 pop r14	      2032	serial_core.c	FUNCTION_60
+0x40005ab	            0x415f	                                 pop r15	      2032	serial_core.c	FUNCTION_60
+0x40005ad	              0xc3	                                     ret	      2032	serial_core.c	FUNCTION_60
+0x40005ae	        0x4183fe45	                          cmp r14d, 0x45	      2005	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x40005b2	            0x75a3	                           jne 0x4000557	      2005	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x40005b4	        0x8b44240c	              mov eax, dword [rsp + 0xc]	      2005	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x40005b8	          0x80cc01	                                or ah, 1	      2010	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x40005bb	        0x4183fd72	                          cmp r13d, 0x72	      2014	serial_core.c	FUNCTION_60	IF_3
+0x40005bf	        0x8944240c	              mov dword [rsp + 0xc], eax	      2010	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x40005c3	            0x7598	                           jne 0x400055d	      2014	serial_core.c	FUNCTION_60	IF_3
+0x40005c5	    0x814c240c0000	        or dword [rsp + 0xc], 0x80000000	      2015	serial_core.c	FUNCTION_60	IF_3
+0x40005cd	            0xeb8e	                           jmp 0x400055d	      2015	serial_core.c	FUNCTION_60	IF_3
+0x40005cf	        0x8b44240c	              mov eax, dword [rsp + 0xc]	      2007	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x40005d3	          0x80cc02	                                or ah, 2	      2007	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x40005d6	            0xebe0	                           jmp 0x40005b8	      2007	serial_core.c	FUNCTION_60	ELSE_1	SWITCH_1
+0x40005d8	      0x834c240c20	              or dword [rsp + 0xc], 0x20	      2001	serial_core.c	FUNCTION_60	IF_2
+0x40005dd	      0xe95dffffff	                           jmp 0x400053f	      2001	serial_core.c	FUNCTION_60	IF_2
+0x40005e2	        0xf6404004	               test byte [rax + 0x40], 4	      1990	serial_core.c	FUNCTION_60	IF_1	CALL_1
+0x40005e6	     0xf8505ffffff	                           jne 0x40004f1	      1990	serial_core.c	FUNCTION_60	IF_1	CALL_1
+0x40005ec	      0xe9fafeffff	                           jmp 0x40004eb	      1990	serial_core.c	FUNCTION_60	IF_1	CALL_1
+0x40005f1	      0xe800000000	                          call 0x40005f6	      2032	serial_core.c	FUNCTION_60
+uart_console_device	WHILE,0:SWITCH,0:IF,0:CALL,0:DO,0:ELSE,0:functions,0:FOR,0	5
+0x4004b60	         0xfbf5742	           movsx edx, word [rdi + 0x42] 	      2521	serial_core.c	FUNCTION_72
+0x4004b64	        0x488b4748	            mov rax, qword [rdi + 0x48] 	      2520	serial_core.c	FUNCTION_72
+0x4004b68	            0x8916	                    mov dword [rsi], edx	      2521	serial_core.c	FUNCTION_72
+0x4004b6a	        0x488b4038	            mov rax, qword [rax + 0x38] 	      2522	serial_core.c	FUNCTION_72
+0x4004b6e	              0xc3	                                     ret	      2523	serial_core.c	FUNCTION_72
+uart_parse_options	WHILE,1:SWITCH,0:IF,3:CALL,1:DO,0:ELSE,0:functions,0:FOR,0	42
+0x4000430	            0x4156	                                push r14	      1953	serial_core.c	FUNCTION_59
+0x4000432	            0x4155	                                push r13	      1953	serial_core.c	FUNCTION_59
+0x4000434	          0x4989f6	                            mov r14, rsi	      1953	serial_core.c	FUNCTION_59
+0x4000437	            0x4154	                                push r12	      1953	serial_core.c	FUNCTION_59
+0x4000439	              0x55	                                push rbp	      1953	serial_core.c	FUNCTION_59
+0x400043a	            0x31f6	                            xor esi, esi	      1956	serial_core.c	FUNCTION_59	CALL_1
+0x400043c	              0x53	                                push rbx	      1953	serial_core.c	FUNCTION_59
+0x400043d	          0x4989d4	                            mov r12, rdx	      1953	serial_core.c	FUNCTION_59
+0x4000440	          0x4889fb	                            mov rbx, rdi	      1953	serial_core.c	FUNCTION_59
+0x4000443	      0xba0a000000	                            mov edx, 0xa	      1956	serial_core.c	FUNCTION_59	CALL_1
+0x4000448	          0x4989cd	                            mov r13, rcx	      1953	serial_core.c	FUNCTION_59
+0x400044b	          0x4c89c5	                             mov rbp, r8	      1953	serial_core.c	FUNCTION_59
+0x400044e	      0xe800000000	                          call 0x4000453	      1956	serial_core.c	FUNCTION_59	CALL_1
+0x4000453	          0x418906	                    mov dword [r14], eax	      1956	serial_core.c	FUNCTION_59	CALL_1
+0x4000456	           0xfbe03	                   movsx eax, byte [rbx]	      1957	serial_core.c	FUNCTION_59	WHILE_1
+0x4000459	          0x8d50d0	                   lea edx, [rax - 0x30]	      1957	serial_core.c	FUNCTION_59	WHILE_1
+0x400045c	          0x80fa09	                               cmp dl, 9	      1957	serial_core.c	FUNCTION_59	WHILE_1
+0x400045f	            0x770f	                            ja 0x4000470	      1957	serial_core.c	FUNCTION_59	WHILE_1
+0x4000461	        0x4883c301	                              add rbx, 1	      1958	serial_core.c	FUNCTION_59	WHILE_1
+0x4000465	           0xfbe03	                   movsx eax, byte [rbx]	      1957	serial_core.c	FUNCTION_59	WHILE_1
+0x4000468	          0x8d50d0	                   lea edx, [rax - 0x30]	      1957	serial_core.c	FUNCTION_59	WHILE_1
+0x400046b	          0x80fa09	                               cmp dl, 9	      1957	serial_core.c	FUNCTION_59	WHILE_1
+0x400046e	            0x76f1	                           jbe 0x4000461	      1957	serial_core.c	FUNCTION_59	WHILE_1
+0x4000470	            0x84c0	                             test al, al	      1959	serial_core.c	FUNCTION_59	IF_1
+0x4000472	            0x7408	                            je 0x400047c	      1959	serial_core.c	FUNCTION_59	IF_1
+0x4000474	        0x4883c301	                              add rbx, 1	      1960	serial_core.c	FUNCTION_59	IF_1
+0x4000478	        0x41890424	                    mov dword [r12], eax	      1960	serial_core.c	FUNCTION_59	IF_1
+0x400047c	           0xfbe03	                   movsx eax, byte [rbx]	      1961	serial_core.c	FUNCTION_59	IF_2
+0x400047f	            0x84c0	                             test al, al	      1961	serial_core.c	FUNCTION_59	IF_2
+0x4000481	            0x7412	                            je 0x4000495	      1961	serial_core.c	FUNCTION_59	IF_2
+0x4000483	          0x83e830	                           sub eax, 0x30	      1962	serial_core.c	FUNCTION_59	IF_2
+0x4000486	        0x41894500	                    mov dword [r13], eax	      1962	serial_core.c	FUNCTION_59	IF_2
+0x400048a	         0xfbe4301	               movsx eax, byte [rbx + 1]	      1963	serial_core.c	FUNCTION_59	IF_3
+0x400048e	            0x84c0	                             test al, al	      1963	serial_core.c	FUNCTION_59	IF_3
+0x4000490	            0x7403	                            je 0x4000495	      1963	serial_core.c	FUNCTION_59	IF_3
+0x4000492	          0x894500	                    mov dword [rbp], eax	      1964	serial_core.c	FUNCTION_59	IF_3
+0x4000495	              0x5b	                                 pop rbx	      1965	serial_core.c	FUNCTION_59
+0x4000496	              0x5d	                                 pop rbp	      1965	serial_core.c	FUNCTION_59
+0x4000497	            0x415c	                                 pop r12	      1965	serial_core.c	FUNCTION_59
+0x4000499	            0x415d	                                 pop r13	      1965	serial_core.c	FUNCTION_59
+0x400049b	            0x415e	                                 pop r14	      1965	serial_core.c	FUNCTION_59
+0x400049d	              0xc3	                                     ret	      1965	serial_core.c	FUNCTION_59
+uart_get_attr_xmit_fifo_size	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000d00	              0x53	                                push rbx	      2590	serial_core.c	FUNCTION_79
+0x4000d01	          0x4889d3	                            mov rbx, rdx	      2590	serial_core.c	FUNCTION_79
+0x4000d04	        0x4883ec50	                           sub rsp, 0x50	      2590	serial_core.c	FUNCTION_79
+0x4000d08	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2594	serial_core.c	FUNCTION_79	CALL_2
+0x4000d0f	          0x4889e6	                            mov rsi, rsp	      2594	serial_core.c	FUNCTION_79	CALL_2
+0x4000d12	    0x65488b042528	                mov rax, qword gs:[0x28]	      2590	serial_core.c	FUNCTION_79
+0x4000d1b	      0x4889442448	             mov qword [rsp + 0x48], rax	      2590	serial_core.c	FUNCTION_79
+0x4000d20	            0x31c0	                            xor eax, eax	      2590	serial_core.c	FUNCTION_79
+0x4000d22	      0xe879fbffff	                  call sym.uart_get_info	      2594	serial_core.c	FUNCTION_79	CALL_2
+0x4000d27	        0x8b4c2414	            mov ecx, dword [rsp + 0x14] 	      2595	serial_core.c	FUNCTION_79	CALL_3
+0x4000d2b	    0x48c7c2000000	                              mov rdx, 0	      2595	serial_core.c	FUNCTION_79	CALL_3
+0x4000d32	      0xbe00100000	                         mov esi, 0x1000	      2595	serial_core.c	FUNCTION_79	CALL_3
+0x4000d37	          0x4889df	                            mov rdi, rbx	      2595	serial_core.c	FUNCTION_79	CALL_3
+0x4000d3a	      0xe800000000	                          call 0x4000d3f	      2595	serial_core.c	FUNCTION_79	CALL_3
+0x4000d3f	      0x488b4c2448	            mov rcx, qword [rsp + 0x48] 	      2596	serial_core.c	FUNCTION_79
+0x4000d44	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      2596	serial_core.c	FUNCTION_79
+0x4000d4d	            0x7508	                           jne 0x4000d57	      2596	serial_core.c	FUNCTION_79
+0x4000d4f	        0x4883c450	                           add rsp, 0x50	      2596	serial_core.c	FUNCTION_79
+0x4000d53	            0x4898	                                    cdqe	      2596	serial_core.c	FUNCTION_79
+0x4000d55	              0x5b	                                 pop rbx	      2596	serial_core.c	FUNCTION_79
+0x4000d56	              0xc3	                                     ret	      2596	serial_core.c	FUNCTION_79
+0x4000d57	      0xe800000000	                          call 0x4000d5c	      2596	serial_core.c	FUNCTION_79
+uart_get_rs485_mode	WHILE,0:SWITCH,0:IF,4:CALL,4:DO,0:ELSE,1:functions,0:FOR,0	54
+0x4001230	              0x55	                                push rbp	      3018	serial_core.c	FUNCTION_92
+0x4001231	              0x53	                                push rbx	      3018	serial_core.c	FUNCTION_92
+0x4001232	      0xb902000000	                              mov ecx, 2	      3022	serial_core.c	FUNCTION_92	CALL_1
+0x4001237	          0x4889f3	                            mov rbx, rsi	      3018	serial_core.c	FUNCTION_92
+0x400123a	    0x48c7c6000000	                              mov rsi, 0	      3022	serial_core.c	FUNCTION_92	CALL_1
+0x4001241	          0x4889fd	                            mov rbp, rdi	      3018	serial_core.c	FUNCTION_92
+0x4001244	        0x4883ec10	                           sub rsp, 0x10	      3018	serial_core.c	FUNCTION_92
+0x4001248	          0x4889e2	                            mov rdx, rsp	      3022	serial_core.c	FUNCTION_92	CALL_1
+0x400124b	    0x65488b042528	                mov rax, qword gs:[0x28]	      3018	serial_core.c	FUNCTION_92
+0x4001254	      0x4889442408	                mov qword [rsp + 8], rax	      3018	serial_core.c	FUNCTION_92
+0x4001259	            0x31c0	                            xor eax, eax	      3018	serial_core.c	FUNCTION_92
+0x400125b	      0xe800000000	                          call 0x4001260	      3022	serial_core.c	FUNCTION_92	CALL_1
+0x4001260	            0x85c0	                           test eax, eax	      3024	serial_core.c	FUNCTION_92	IF_1
+0x4001262	            0x7577	                           jne 0x40012db	      3024	serial_core.c	FUNCTION_92	IF_1
+0x4001264	          0x8b0424	                    mov eax, dword [rsp]	      3025	serial_core.c	FUNCTION_92	IF_1
+0x4001267	          0x894304	                mov dword [rbx + 4], eax	      3025	serial_core.c	FUNCTION_92	IF_1
+0x400126a	        0x8b442404	                mov eax, dword [rsp + 4]	      3026	serial_core.c	FUNCTION_92	IF_1
+0x400126e	          0x894308	                mov dword [rbx + 8], eax	      3026	serial_core.c	FUNCTION_92	IF_1
+0x4001271	            0x8b03	                    mov eax, dword [rbx]	      3038	serial_core.c	FUNCTION_92
+0x4001273	    0x48c7c6000000	                              mov rsi, 0	       119	property.h	FUNCTION_135	CALL_1
+0x400127a	          0x4889ef	                            mov rdi, rbp	       119	property.h	FUNCTION_135	CALL_1
+0x400127d	          0x83e0ea	                     and eax, 0xffffffea	      3038	serial_core.c	FUNCTION_92
+0x4001280	          0x83c802	                               or eax, 2	      3038	serial_core.c	FUNCTION_92
+0x4001283	            0x8903	                    mov dword [rbx], eax	      3038	serial_core.c	FUNCTION_92
+0x4001285	      0xe800000000	                          call 0x400128a	       119	property.h	FUNCTION_135	CALL_1
+0x400128a	            0x84c0	                             test al, al	      3040	serial_core.c	FUNCTION_92	IF_2	CALL_2
+0x400128c	            0x7403	                            je 0x4001291	      3040	serial_core.c	FUNCTION_92	IF_2	CALL_2
+0x400128e	          0x830b10	                    or dword [rbx], 0x10	      3041	serial_core.c	FUNCTION_92	IF_2
+0x4001291	    0x48c7c6000000	                              mov rsi, 0	       119	property.h	FUNCTION_135	CALL_1
+0x4001298	          0x4889ef	                            mov rdi, rbp	       119	property.h	FUNCTION_135	CALL_1
+0x400129b	      0xe800000000	                          call 0x40012a0	       119	property.h	FUNCTION_135	CALL_1
+0x40012a0	            0x84c0	                             test al, al	      3043	serial_core.c	FUNCTION_92	IF_3	CALL_3
+0x40012a2	            0x7403	                            je 0x40012a7	      3043	serial_core.c	FUNCTION_92	IF_3	CALL_3
+0x40012a4	          0x830b01	                       or dword [rbx], 1	      3044	serial_core.c	FUNCTION_92	IF_3
+0x40012a7	    0x48c7c6000000	                              mov rsi, 0	       119	property.h	FUNCTION_135	CALL_1
+0x40012ae	          0x4889ef	                            mov rdi, rbp	       119	property.h	FUNCTION_135	CALL_1
+0x40012b1	      0xe800000000	                          call 0x40012b6	       119	property.h	FUNCTION_135	CALL_1
+0x40012b6	            0x84c0	                             test al, al	      3046	serial_core.c	FUNCTION_92	IF_4	CALL_4
+0x40012b8	            0x740a	                            je 0x40012c4	      3046	serial_core.c	FUNCTION_92	IF_4	CALL_4
+0x40012ba	            0x8b03	                    mov eax, dword [rbx]	      3048	serial_core.c	FUNCTION_92	IF_4
+0x40012bc	          0x83e0fd	                     and eax, 0xfffffffd	      3048	serial_core.c	FUNCTION_92	IF_4
+0x40012bf	          0x83c804	                               or eax, 4	      3048	serial_core.c	FUNCTION_92	IF_4
+0x40012c2	            0x8903	                    mov dword [rbx], eax	      3048	serial_core.c	FUNCTION_92	IF_4
+0x40012c4	      0x488b442408	                mov rax, qword [rsp + 8]	      3050	serial_core.c	FUNCTION_92
+0x40012c9	    0x654833042528	                xor rax, qword gs:[0x28]	      3050	serial_core.c	FUNCTION_92
+0x40012d2	            0x7517	                           jne 0x40012eb	      3050	serial_core.c	FUNCTION_92
+0x40012d4	        0x4883c410	                           add rsp, 0x10	      3050	serial_core.c	FUNCTION_92
+0x40012d8	              0x5b	                                 pop rbx	      3050	serial_core.c	FUNCTION_92
+0x40012d9	              0x5d	                                 pop rbp	      3050	serial_core.c	FUNCTION_92
+0x40012da	              0xc3	                                     ret	      3050	serial_core.c	FUNCTION_92
+0x40012db	    0xc74304000000	                  mov dword [rbx + 4], 0	      3028	serial_core.c	FUNCTION_92	ELSE_1
+0x40012e2	    0xc74308000000	                  mov dword [rbx + 8], 0	      3029	serial_core.c	FUNCTION_92	ELSE_1
+0x40012e9	            0xeb86	                           jmp 0x4001271	      3029	serial_core.c	FUNCTION_92	ELSE_1
+0x40012eb	      0xe800000000	              call sym.uart_suspend_port	      3050	serial_core.c	FUNCTION_92
+uart_port_shutdown	WHILE,0:SWITCH,0:IF,2:CALL,5:DO,0:ELSE,0:functions,0:FOR,0	18
+0x40007b0	              0x53	                                push rbx	      1621	serial_core.c	FUNCTION_48
+0x40007b1	    0x488b9f980100	           mov rbx, qword [rdi + 0x198] 	      1621	serial_core.c	FUNCTION_48
+0x40007b8	            0x31c9	                            xor ecx, ecx	      1632	serial_core.c	FUNCTION_48	CALL_3
+0x40007ba	    0x4881c7d00000	                           add rdi, 0xd0	      1632	serial_core.c	FUNCTION_48	CALL_3
+0x40007c1	      0xba01000000	                              mov edx, 1	      1632	serial_core.c	FUNCTION_48	CALL_3
+0x40007c6	      0xbe01000000	                              mov esi, 1	      1632	serial_core.c	FUNCTION_48	CALL_3
+0x40007cb	      0xe800000000	                          call 0x40007d0	      1632	serial_core.c	FUNCTION_48	CALL_3
+0x40007d0	          0x4885db	                           test rbx, rbx	      1637	serial_core.c	FUNCTION_48	IF_1
+0x40007d3	            0x741f	                            je 0x40007f4	      1637	serial_core.c	FUNCTION_48	IF_1
+0x40007d5	    0x488b83100100	           mov rax, qword [rbx + 0x110] 	      1638	serial_core.c	FUNCTION_48	CALL_4
+0x40007dc	          0x4889df	                            mov rdi, rbx	      1638	serial_core.c	FUNCTION_48	CALL_4
+0x40007df	        0x488b4060	            mov rax, qword [rax + 0x60] 	      1638	serial_core.c	FUNCTION_48	CALL_4
+0x40007e3	      0xe800000000	                          call 0x40007e8	      1638	serial_core.c	FUNCTION_48	CALL_4
+0x40007e8	    0x8bbb88000000	            mov edi, dword [rbx + 0x88] 	      1644	serial_core.c	FUNCTION_48	CALL_5
+0x40007ee	              0x5b	                                 pop rbx	      1645	serial_core.c	FUNCTION_48
+0x40007ef	      0xe900000000	                           jmp 0x40007f4	      1644	serial_core.c	FUNCTION_48	CALL_5
+0x40007f4	              0x5b	                                 pop rbx	      1645	serial_core.c	FUNCTION_48
+0x40007f5	              0xc3	                                     ret	      1645	serial_core.c	FUNCTION_48
+uart_get_attr_iomem_reg_shift	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000a60	              0x53	                                push rbx	      2652	serial_core.c	FUNCTION_85
+0x4000a61	          0x4889d3	                            mov rbx, rdx	      2652	serial_core.c	FUNCTION_85
+0x4000a64	        0x4883ec50	                           sub rsp, 0x50	      2652	serial_core.c	FUNCTION_85
+0x4000a68	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2656	serial_core.c	FUNCTION_85	CALL_2
+0x4000a6f	          0x4889e6	                            mov rsi, rsp	      2656	serial_core.c	FUNCTION_85	CALL_2
+0x4000a72	    0x65488b042528	                mov rax, qword gs:[0x28]	      2652	serial_core.c	FUNCTION_85
+0x4000a7b	      0x4889442448	             mov qword [rsp + 0x48], rax	      2652	serial_core.c	FUNCTION_85
+0x4000a80	            0x31c0	                            xor eax, eax	      2652	serial_core.c	FUNCTION_85
+0x4000a82	      0xe819feffff	                  call sym.uart_get_info	      2656	serial_core.c	FUNCTION_85	CALL_2
+0x4000a87	       0xfb74c2438	           movzx ecx, word [rsp + 0x38] 	      2657	serial_core.c	FUNCTION_85	CALL_3
+0x4000a8c	    0x48c7c2000000	                              mov rdx, 0	      2657	serial_core.c	FUNCTION_85	CALL_3
+0x4000a93	      0xbe00100000	                         mov esi, 0x1000	      2657	serial_core.c	FUNCTION_85	CALL_3
+0x4000a98	          0x4889df	                            mov rdi, rbx	      2657	serial_core.c	FUNCTION_85	CALL_3
+0x4000a9b	      0xe800000000	                          call 0x4000aa0	      2657	serial_core.c	FUNCTION_85	CALL_3
+0x4000aa0	      0x488b542448	            mov rdx, qword [rsp + 0x48] 	      2658	serial_core.c	FUNCTION_85
+0x4000aa5	    0x654833142528	                xor rdx, qword gs:[0x28]	      2658	serial_core.c	FUNCTION_85
+0x4000aae	            0x7508	                           jne 0x4000ab8	      2658	serial_core.c	FUNCTION_85
+0x4000ab0	        0x4883c450	                           add rsp, 0x50	      2658	serial_core.c	FUNCTION_85
+0x4000ab4	            0x4898	                                    cdqe	      2658	serial_core.c	FUNCTION_85
+0x4000ab6	              0x5b	                                 pop rbx	      2658	serial_core.c	FUNCTION_85
+0x4000ab7	              0xc3	                                     ret	      2658	serial_core.c	FUNCTION_85
+0x4000ab8	      0xe800000000	                          call 0x4000abd	      2658	serial_core.c	FUNCTION_85
+uart_get_info	WHILE,0:SWITCH,0:IF,2:CALL,7:DO,0:ELSE,0:functions,0:FOR,0	70
+0x40008a0	            0x4156	                                push r14	       733	serial_core.c	FUNCTION_27
+0x40008a2	            0x31c0	                            xor eax, eax	       738	serial_core.c	FUNCTION_27	CALL_2
+0x40008a4	            0x4155	                                push r13	       733	serial_core.c	FUNCTION_27
+0x40008a6	      0xb909000000	                              mov ecx, 9	       738	serial_core.c	FUNCTION_27	CALL_2
+0x40008ab	          0x4989fd	                            mov r13, rdi	       733	serial_core.c	FUNCTION_27
+0x40008ae	          0x4889f7	                            mov rdi, rsi	       738	serial_core.c	FUNCTION_27	CALL_2
+0x40008b1	            0x4154	                                push r12	       733	serial_core.c	FUNCTION_27
+0x40008b3	              0x55	                                push rbp	       733	serial_core.c	FUNCTION_27
+0x40008b4	    0x4d8da5000100	                  lea r12, [r13 + 0x100]	       744	serial_core.c	FUNCTION_27	CALL_3
+0x40008bb	              0x53	                                push rbx	       733	serial_core.c	FUNCTION_27
+0x40008bc	          0x4889f3	                            mov rbx, rsi	       733	serial_core.c	FUNCTION_27
+0x40008bf	          0xf348ab	              rep stosq qword [rdi], rax	       738	serial_core.c	FUNCTION_27	CALL_2
+0x40008c2	          0x4c89e7	                            mov rdi, r12	       744	serial_core.c	FUNCTION_27	CALL_3
+0x40008c5	      0xe800000000	                          call 0x40008ca	       744	serial_core.c	FUNCTION_27	CALL_3
+0x40008ca	    0x498bad980100	           mov rbp, qword [r13 + 0x198] 	       744	serial_core.c	FUNCTION_27	CALL_3
+0x40008d1	          0x4885ed	                           test rbp, rbp	       746	serial_core.c	FUNCTION_27	IF_1
+0x40008d4	     0xf84cd000000	                            je 0x40009a7	       746	serial_core.c	FUNCTION_27	IF_1
+0x40008da	    0x8b850c010000	           mov eax, dword [rbp + 0x10c] 	       749	serial_core.c	FUNCTION_27
+0x40008e0	    0x41becdcccccc	                    mov r14d, 0xcccccccd	       758	serial_core.c	FUNCTION_27	CALL_5
+0x40008e6	            0x8903	                    mov dword [rbx], eax	       749	serial_core.c	FUNCTION_27
+0x40008e8	    0x8b851c010000	           mov eax, dword [rbp + 0x11c] 	       750	serial_core.c	FUNCTION_27
+0x40008ee	          0x894304	                mov dword [rbx + 4], eax	       750	serial_core.c	FUNCTION_27
+0x40008f1	        0x488b4508	                mov rax, qword [rbp + 8]	       751	serial_core.c	FUNCTION_27
+0x40008f5	          0x894308	                mov dword [rbx + 8], eax	       751	serial_core.c	FUNCTION_27
+0x40008f8	        0x4863450c	          movsxd rax, dword [rbp + 0xc] 	       753	serial_core.c	FUNCTION_27	IF_2
+0x40008fc	          0x89433c	             mov dword [rbx + 0x3c], eax	       753	serial_core.c	FUNCTION_27	IF_2
+0x40008ff	    0x8b8588000000	            mov eax, dword [rbp + 0x88] 	       754	serial_core.c	FUNCTION_27
+0x4000905	          0x89430c	              mov dword [rbx + 0xc], eax	       754	serial_core.c	FUNCTION_27
+0x4000908	    0x8b85f8000000	            mov eax, dword [rbp + 0xf8] 	       755	serial_core.c	FUNCTION_27
+0x400090e	          0x894310	             mov dword [rbx + 0x10], eax	       755	serial_core.c	FUNCTION_27
+0x4000911	    0x8b859c000000	            mov eax, dword [rbp + 0x9c] 	       756	serial_core.c	FUNCTION_27
+0x4000917	          0x894314	             mov dword [rbx + 0x14], eax	       756	serial_core.c	FUNCTION_27
+0x400091a	    0x8b8598000000	            mov eax, dword [rbp + 0x98] 	       757	serial_core.c	FUNCTION_27
+0x4000920	          0xc1e804	                              shr eax, 4	       757	serial_core.c	FUNCTION_27
+0x4000923	          0x89431c	             mov dword [rbx + 0x1c], eax	       757	serial_core.c	FUNCTION_27
+0x4000926	    0x418bbd480100	           mov edi, dword [r13 + 0x148] 	       758	serial_core.c	FUNCTION_27	CALL_5
+0x400092d	      0xe800000000	                          call 0x4000932	       758	serial_core.c	FUNCTION_27	CALL_5
+0x4000932	          0x41f7e6	                                mul r14d	       758	serial_core.c	FUNCTION_27	CALL_5
+0x4000935	          0xc1ea03	                              shr edx, 3	       758	serial_core.c	FUNCTION_27	CALL_5
+0x4000938	        0x66895320	               mov word [rbx + 0x20], dx	       758	serial_core.c	FUNCTION_27	CALL_5
+0x400093c	    0x418bbd4c0100	           mov edi, dword [r13 + 0x14c] 	       759	serial_core.c	FUNCTION_27
+0x4000943	      0xbaffffffff	                     mov edx, 0xffffffff	       759	serial_core.c	FUNCTION_27
+0x4000948	    0x81ffffff0000	                         cmp edi, 0xffff	       759	serial_core.c	FUNCTION_27
+0x400094e	            0x740b	                            je 0x400095b	       759	serial_core.c	FUNCTION_27
+0x4000950	      0xe800000000	                          call 0x4000955	       761	serial_core.c	FUNCTION_27	CALL_6
+0x4000955	          0x41f7e6	                                mul r14d	       759	serial_core.c	FUNCTION_27
+0x4000958	          0xc1ea03	                              shr edx, 3	       759	serial_core.c	FUNCTION_27
+0x400095b	        0x66895328	               mov word [rbx + 0x28], dx	       759	serial_core.c	FUNCTION_27
+0x400095f	    0x8b8518010000	           mov eax, dword [rbp + 0x118] 	       762	serial_core.c	FUNCTION_27
+0x4000965	          0x894318	             mov dword [rbx + 0x18], eax	       762	serial_core.c	FUNCTION_27
+0x4000968	     0xfb685400100	          movzx eax, byte [rbp + 0x140] 	       763	serial_core.c	FUNCTION_27
+0x400096f	          0x894324	             mov dword [rbx + 0x24], eax	       763	serial_core.c	FUNCTION_27
+0x4000972	     0xfb685a20000	           movzx eax, byte [rbp + 0xa2] 	       764	serial_core.c	FUNCTION_27
+0x4000979	          0x884322	               mov byte [rbx + 0x22], al	       764	serial_core.c	FUNCTION_27
+0x400097c	     0xfb685a10000	           movzx eax, byte [rbp + 0xa1] 	       765	serial_core.c	FUNCTION_27
+0x4000983	        0x66894338	               mov word [rbx + 0x38], ax	       765	serial_core.c	FUNCTION_27
+0x4000987	    0x488b85280100	           mov rax, qword [rbp + 0x128] 	       766	serial_core.c	FUNCTION_27
+0x400098e	        0x48894330	             mov qword [rbx + 0x30], rax	       766	serial_core.c	FUNCTION_27
+0x4000992	            0x31db	                            xor ebx, ebx	       768	serial_core.c	FUNCTION_27
+0x4000994	          0x4c89e7	                            mov rdi, r12	       770	serial_core.c	FUNCTION_27	CALL_7
+0x4000997	      0xe800000000	                          call 0x400099c	       770	serial_core.c	FUNCTION_27	CALL_7
+0x400099c	            0x89d8	                            mov eax, ebx	       772	serial_core.c	FUNCTION_27
+0x400099e	              0x5b	                                 pop rbx	       772	serial_core.c	FUNCTION_27
+0x400099f	              0x5d	                                 pop rbp	       772	serial_core.c	FUNCTION_27
+0x40009a0	            0x415c	                                 pop r12	       772	serial_core.c	FUNCTION_27
+0x40009a2	            0x415d	                                 pop r13	       772	serial_core.c	FUNCTION_27
+0x40009a4	            0x415e	                                 pop r14	       772	serial_core.c	FUNCTION_27
+0x40009a6	              0xc3	                                     ret	       772	serial_core.c	FUNCTION_27
+0x40009a7	      0xbbedffffff	                     mov ebx, 0xffffffed	       736	serial_core.c	FUNCTION_27
+0x40009ac	            0xebe6	                           jmp 0x4000994	       736	serial_core.c	FUNCTION_27
+uart_get_baud_rate	WHILE,0:SWITCH,1:IF,7:CALL,6:DO,0:ELSE,1:functions,0:FOR,1	91
+0x40001d0	            0x4157	                                push r15	       376	serial_core.c	FUNCTION_15
+0x40001d2	            0x4156	                                push r14	       376	serial_core.c	FUNCTION_15
+0x40001d4	          0x4989d7	                            mov r15, rdx	       376	serial_core.c	FUNCTION_15
+0x40001d7	            0x4155	                                push r13	       376	serial_core.c	FUNCTION_15
+0x40001d9	            0x4154	                                push r12	       376	serial_core.c	FUNCTION_15
+0x40001db	          0x4589c6	                           mov r14d, r8d	       376	serial_core.c	FUNCTION_15
+0x40001de	              0x55	                                push rbp	       376	serial_core.c	FUNCTION_15
+0x40001df	              0x53	                                push rbx	       376	serial_core.c	FUNCTION_15
+0x40001e0	          0x4889f5	                            mov rbp, rsi	       376	serial_core.c	FUNCTION_15
+0x40001e3	          0x4189cc	                           mov r12d, ecx	       376	serial_core.c	FUNCTION_15
+0x40001e6	        0x4883ec10	                           sub rsp, 0x10	       376	serial_core.c	FUNCTION_15
+0x40001ea	    0x8b87f8000000	            mov eax, dword [rdi + 0xf8] 	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x40001f0	      0x2530100000	                         and eax, 0x1030	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x40001f5	          0x83f820	                           cmp eax, 0x20	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x40001f8	     0xf84ee000000	                            je 0x40002ec	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x40001fe	     0xf86bc000000	                           jbe 0x40002c0	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x4000204	      0x3d00100000	                         cmp eax, 0x1000	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x4000209	    0xc74424040084	           mov dword [rsp + 4], 0x38400 	       391	serial_core.c	FUNCTION_15	SWITCH_1
+0x4000211	            0x7413	                            je 0x4000226	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x4000213	      0x3d10100000	                         cmp eax, 0x1010	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x4000218	    0xc74424040008	           mov dword [rsp + 4], 0x70800 	       394	serial_core.c	FUNCTION_15	SWITCH_1
+0x4000220	     0xf85ab000000	                           jne 0x40002d1	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x4000226	        0x418d46ff	                      lea eax, [r14 - 1]	       445	serial_core.c	FUNCTION_15	FOR_1	IF_6	ELSE_1	CALL_5
+0x400022a	          0x4531ed	                          xor r13d, r13d	       380	serial_core.c	FUNCTION_15
+0x400022d	            0x31db	                            xor ebx, ebx	       401	serial_core.c	FUNCTION_15	FOR_1
+0x400022f	        0x89442408	                mov dword [rsp + 8], eax	       445	serial_core.c	FUNCTION_15	FOR_1	IF_6	ELSE_1	CALL_5
+0x4000233	      0x418d442401	                      lea eax, [r12 + 1]	       442	serial_core.c	FUNCTION_15	FOR_1	IF_6	IF_7	CALL_4
+0x4000238	        0x8944240c	              mov dword [rsp + 0xc], eax	       442	serial_core.c	FUNCTION_15	FOR_1	IF_6	IF_7	CALL_4
+0x400023c	          0x4889ef	                            mov rdi, rbp	       402	serial_core.c	FUNCTION_15	FOR_1	CALL_1
+0x400023f	      0xe800000000	                          call 0x4000244	       402	serial_core.c	FUNCTION_15	FOR_1	CALL_1
+0x4000244	          0xf6c301	                              test bl, 1	       408	serial_core.c	FUNCTION_15	FOR_1	IF_1
+0x4000247	            0x754c	                           jne 0x4000295	       408	serial_core.c	FUNCTION_15	FOR_1	IF_1
+0x4000249	      0x3d00960000	                         cmp eax, 0x9600	       408	serial_core.c	FUNCTION_15	FOR_1	IF_1
+0x400024e	            0x7545	                           jne 0x4000295	       408	serial_core.c	FUNCTION_15	FOR_1	IF_1
+0x4000250	        0x8b442404	                mov eax, dword [rsp + 4]	       409	serial_core.c	FUNCTION_15	FOR_1	IF_1
+0x4000254	          0x4439e0	                           cmp eax, r12d	       419	serial_core.c	FUNCTION_15	FOR_1	IF_3
+0x4000257	            0x7205	                            jb 0x400025e	       419	serial_core.c	FUNCTION_15	FOR_1	IF_3
+0x4000259	          0x4439f0	                           cmp eax, r14d	       419	serial_core.c	FUNCTION_15	FOR_1	IF_3
+0x400025c	            0x7628	                           jbe 0x4000286	       419	serial_core.c	FUNCTION_15	FOR_1	IF_3
+0x400025e	    0x816508f0efff	         and dword [rbp + 8], 0xffffeff0	       426	serial_core.c	FUNCTION_15	FOR_1
+0x4000265	          0x4d85ff	                           test r15, r15	       427	serial_core.c	FUNCTION_15	FOR_1	IF_4
+0x4000268	            0x743c	                            je 0x40002a6	       427	serial_core.c	FUNCTION_15	FOR_1	IF_4
+0x400026a	          0x4c89ff	                            mov rdi, r15	       428	serial_core.c	FUNCTION_15	FOR_1	IF_4	CALL_2
+0x400026d	      0xe800000000	                          call 0x4000272	       428	serial_core.c	FUNCTION_15	FOR_1	IF_4	CALL_2
+0x4000272	          0x4585ed	                         test r13d, r13d	       429	serial_core.c	FUNCTION_15	FOR_1	IF_4	IF_5
+0x4000275	            0x7467	                            je 0x40002de	       429	serial_core.c	FUNCTION_15	FOR_1	IF_4	IF_5
+0x4000277	          0x83c301	                              add ebx, 1	       401	serial_core.c	FUNCTION_15	FOR_1
+0x400027a	          0x4531ff	                          xor r15d, r15d	       401	serial_core.c	FUNCTION_15	FOR_1
+0x400027d	          0x83fb02	                              cmp ebx, 2	       401	serial_core.c	FUNCTION_15	FOR_1
+0x4000280	            0x75ba	                           jne 0x400023c	       401	serial_core.c	FUNCTION_15	FOR_1
+0x4000282	             0xf0b	                                     ud2	       401	serial_core.c	FUNCTION_15	FOR_1
+0x4000284	            0x31c0	                            xor eax, eax	       451	serial_core.c	FUNCTION_15
+0x4000286	        0x4883c410	                           add rsp, 0x10	       452	serial_core.c	FUNCTION_15
+0x400028a	              0x5b	                                 pop rbx	       452	serial_core.c	FUNCTION_15
+0x400028b	              0x5d	                                 pop rbp	       452	serial_core.c	FUNCTION_15
+0x400028c	            0x415c	                                 pop r12	       452	serial_core.c	FUNCTION_15
+0x400028e	            0x415d	                                 pop r13	       452	serial_core.c	FUNCTION_15
+0x4000290	            0x415e	                                 pop r14	       452	serial_core.c	FUNCTION_15
+0x4000292	            0x415f	                                 pop r15	       452	serial_core.c	FUNCTION_15
+0x4000294	              0xc3	                                     ret	       452	serial_core.c	FUNCTION_15
+0x4000295	            0x85c0	                           test eax, eax	       414	serial_core.c	FUNCTION_15	FOR_1	IF_2
+0x4000297	            0x75bb	                           jne 0x4000254	       414	serial_core.c	FUNCTION_15	FOR_1	IF_2
+0x4000299	    0x41bd01000000	                             mov r13d, 1	       415	serial_core.c	FUNCTION_15	FOR_1	IF_2
+0x400029f	      0xb880250000	                         mov eax, 0x2580	       416	serial_core.c	FUNCTION_15	FOR_1	IF_2
+0x40002a4	            0xebae	                           jmp 0x4000254	       416	serial_core.c	FUNCTION_15	FOR_1	IF_2
+0x40002a6	          0x4585ed	                         test r13d, r13d	       440	serial_core.c	FUNCTION_15	FOR_1	IF_6
+0x40002a9	            0x75cc	                           jne 0x4000277	       440	serial_core.c	FUNCTION_15	FOR_1	IF_6
+0x40002ab	          0x4439e0	                           cmp eax, r12d	       441	serial_core.c	FUNCTION_15	FOR_1	IF_6	IF_7
+0x40002ae	            0x7749	                            ja 0x40002f9	       441	serial_core.c	FUNCTION_15	FOR_1	IF_6	IF_7
+0x40002b0	        0x8b74240c	              mov esi, dword [rsp + 0xc]	       442	serial_core.c	FUNCTION_15	FOR_1	IF_6	IF_7	CALL_4
+0x40002b4	          0x4889ef	                            mov rdi, rbp	       442	serial_core.c	FUNCTION_15	FOR_1	IF_6	IF_7	CALL_4
+0x40002b7	            0x89f2	                            mov edx, esi	       442	serial_core.c	FUNCTION_15	FOR_1	IF_6	IF_7	CALL_4
+0x40002b9	      0xe800000000	                          call 0x40002be	       442	serial_core.c	FUNCTION_15	FOR_1	IF_6	IF_7	CALL_4
+0x40002be	            0xebb7	                           jmp 0x4000277	       442	serial_core.c	FUNCTION_15	FOR_1	IF_6	IF_7	CALL_4
+0x40002c0	          0x83f810	                           cmp eax, 0x10	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x40002c3	    0xc744240400e1	            mov dword [rsp + 4], 0xe100 	       385	serial_core.c	FUNCTION_15	SWITCH_1
+0x40002cb	     0xf8455ffffff	                            je 0x4000226	       383	serial_core.c	FUNCTION_15	SWITCH_1
+0x40002d1	    0xc74424040096	            mov dword [rsp + 4], 0x9600 	       397	serial_core.c	FUNCTION_15	SWITCH_1
+0x40002d9	      0xe948ffffff	                           jmp 0x4000226	       398	serial_core.c	FUNCTION_15	SWITCH_1
+0x40002de	            0x89c2	                            mov edx, eax	       430	serial_core.c	FUNCTION_15	FOR_1	IF_4	IF_5	CALL_3
+0x40002e0	            0x89c6	                            mov esi, eax	       430	serial_core.c	FUNCTION_15	FOR_1	IF_4	IF_5	CALL_3
+0x40002e2	          0x4889ef	                            mov rdi, rbp	       430	serial_core.c	FUNCTION_15	FOR_1	IF_4	IF_5	CALL_3
+0x40002e5	      0xe800000000	                          call 0x40002ea	       430	serial_core.c	FUNCTION_15	FOR_1	IF_4	IF_5	CALL_3
+0x40002ea	            0xeb8b	                           jmp 0x4000277	       430	serial_core.c	FUNCTION_15	FOR_1	IF_4	IF_5	CALL_3
+0x40002ec	    0xc744240400c2	           mov dword [rsp + 4], 0x1c200 	       388	serial_core.c	FUNCTION_15	SWITCH_1
+0x40002f4	      0xe92dffffff	                           jmp 0x4000226	       388	serial_core.c	FUNCTION_15	SWITCH_1
+0x40002f9	        0x8b742408	                mov esi, dword [rsp + 8]	       445	serial_core.c	FUNCTION_15	FOR_1	IF_6	ELSE_1	CALL_5
+0x40002fd	          0x4889ef	                            mov rdi, rbp	       445	serial_core.c	FUNCTION_15	FOR_1	IF_6	ELSE_1	CALL_5
+0x4000300	            0x89f2	                            mov edx, esi	       445	serial_core.c	FUNCTION_15	FOR_1	IF_6	ELSE_1	CALL_5
+0x4000302	      0xe800000000	                          call 0x4000307	       445	serial_core.c	FUNCTION_15	FOR_1	IF_6	ELSE_1	CALL_5
+0x4000307	      0xe96bffffff	                           jmp 0x4000277	       445	serial_core.c	FUNCTION_15	FOR_1	IF_6	ELSE_1	CALL_5
+uart_get_attr_irq	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000dc0	              0x53	                                push rbx	      2570	serial_core.c	FUNCTION_77
+0x4000dc1	          0x4889d3	                            mov rbx, rdx	      2570	serial_core.c	FUNCTION_77
+0x4000dc4	        0x4883ec50	                           sub rsp, 0x50	      2570	serial_core.c	FUNCTION_77
+0x4000dc8	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2574	serial_core.c	FUNCTION_77	CALL_2
+0x4000dcf	          0x4889e6	                            mov rsi, rsp	      2574	serial_core.c	FUNCTION_77	CALL_2
+0x4000dd2	    0x65488b042528	                mov rax, qword gs:[0x28]	      2570	serial_core.c	FUNCTION_77
+0x4000ddb	      0x4889442448	             mov qword [rsp + 0x48], rax	      2570	serial_core.c	FUNCTION_77
+0x4000de0	            0x31c0	                            xor eax, eax	      2570	serial_core.c	FUNCTION_77
+0x4000de2	      0xe8b9faffff	                  call sym.uart_get_info	      2574	serial_core.c	FUNCTION_77	CALL_2
+0x4000de7	        0x8b4c240c	              mov ecx, dword [rsp + 0xc]	      2575	serial_core.c	FUNCTION_77	CALL_3
+0x4000deb	    0x48c7c2000000	                              mov rdx, 0	      2575	serial_core.c	FUNCTION_77	CALL_3
+0x4000df2	      0xbe00100000	                         mov esi, 0x1000	      2575	serial_core.c	FUNCTION_77	CALL_3
+0x4000df7	          0x4889df	                            mov rdi, rbx	      2575	serial_core.c	FUNCTION_77	CALL_3
+0x4000dfa	      0xe800000000	                          call 0x4000dff	      2575	serial_core.c	FUNCTION_77	CALL_3
+0x4000dff	      0x488b4c2448	            mov rcx, qword [rsp + 0x48] 	      2576	serial_core.c	FUNCTION_77
+0x4000e04	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      2576	serial_core.c	FUNCTION_77
+0x4000e0d	            0x7508	                           jne 0x4000e17	      2576	serial_core.c	FUNCTION_77
+0x4000e0f	        0x4883c450	                           add rsp, 0x50	      2576	serial_core.c	FUNCTION_77
+0x4000e13	            0x4898	                                    cdqe	      2576	serial_core.c	FUNCTION_77
+0x4000e15	              0x5b	                                 pop rbx	      2576	serial_core.c	FUNCTION_77
+0x4000e16	              0xc3	                                     ret	      2576	serial_core.c	FUNCTION_77
+0x4000e17	      0xe800000000	                          call 0x4000e1c	      2576	serial_core.c	FUNCTION_77
+uart_get_attr_port	WHILE,0:SWITCH,0:IF,1:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	25
+0x4000e20	              0x53	                                push rbx	      2556	serial_core.c	FUNCTION_76
+0x4000e21	          0x4889d3	                            mov rbx, rdx	      2556	serial_core.c	FUNCTION_76
+0x4000e24	        0x4883ec50	                           sub rsp, 0x50	      2556	serial_core.c	FUNCTION_76
+0x4000e28	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2561	serial_core.c	FUNCTION_76	CALL_2
+0x4000e2f	          0x4889e6	                            mov rsi, rsp	      2561	serial_core.c	FUNCTION_76	CALL_2
+0x4000e32	    0x65488b042528	                mov rax, qword gs:[0x28]	      2556	serial_core.c	FUNCTION_76
+0x4000e3b	      0x4889442448	             mov qword [rsp + 0x48], rax	      2556	serial_core.c	FUNCTION_76
+0x4000e40	            0x31c0	                            xor eax, eax	      2556	serial_core.c	FUNCTION_76
+0x4000e42	      0xe859faffff	                  call sym.uart_get_info	      2561	serial_core.c	FUNCTION_76	CALL_2
+0x4000e47	        0x8b4c243c	            mov ecx, dword [rsp + 0x3c] 	      2565	serial_core.c	FUNCTION_76	CALL_3
+0x4000e4b	        0x8b442408	                mov eax, dword [rsp + 8]	      2562	serial_core.c	FUNCTION_76
+0x4000e4f	    0x48c7c2000000	                              mov rdx, 0	      2565	serial_core.c	FUNCTION_76	CALL_3
+0x4000e56	      0xbe00100000	                         mov esi, 0x1000	      2565	serial_core.c	FUNCTION_76	CALL_3
+0x4000e5b	          0x4889df	                            mov rdi, rbx	      2565	serial_core.c	FUNCTION_76	CALL_3
+0x4000e5e	        0x48c1e120	                           shl rcx, 0x20	      2565	serial_core.c	FUNCTION_76	CALL_3
+0x4000e62	          0x4809c1	                             or rcx, rax	      2565	serial_core.c	FUNCTION_76	CALL_3
+0x4000e65	      0xe800000000	                          call 0x4000e6a	      2565	serial_core.c	FUNCTION_76	CALL_3
+0x4000e6a	      0x488b542448	            mov rdx, qword [rsp + 0x48] 	      2566	serial_core.c	FUNCTION_76
+0x4000e6f	    0x654833142528	                xor rdx, qword gs:[0x28]	      2566	serial_core.c	FUNCTION_76
+0x4000e78	            0x7508	                           jne 0x4000e82	      2566	serial_core.c	FUNCTION_76
+0x4000e7a	        0x4883c450	                           add rsp, 0x50	      2566	serial_core.c	FUNCTION_76
+0x4000e7e	            0x4898	                                    cdqe	      2566	serial_core.c	FUNCTION_76
+0x4000e80	              0x5b	                                 pop rbx	      2566	serial_core.c	FUNCTION_76
+0x4000e81	              0xc3	                                     ret	      2566	serial_core.c	FUNCTION_76
+0x4000e82	      0xe800000000	                          call 0x4000e87	      2566	serial_core.c	FUNCTION_76
+uart_get_attr_custom_divisor	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000b80	              0x53	                                push rbx	      2622	serial_core.c	FUNCTION_82
+0x4000b81	          0x4889d3	                            mov rbx, rdx	      2622	serial_core.c	FUNCTION_82
+0x4000b84	        0x4883ec50	                           sub rsp, 0x50	      2622	serial_core.c	FUNCTION_82
+0x4000b88	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2626	serial_core.c	FUNCTION_82	CALL_2
+0x4000b8f	          0x4889e6	                            mov rsi, rsp	      2626	serial_core.c	FUNCTION_82	CALL_2
+0x4000b92	    0x65488b042528	                mov rax, qword gs:[0x28]	      2622	serial_core.c	FUNCTION_82
+0x4000b9b	      0x4889442448	             mov qword [rsp + 0x48], rax	      2622	serial_core.c	FUNCTION_82
+0x4000ba0	            0x31c0	                            xor eax, eax	      2622	serial_core.c	FUNCTION_82
+0x4000ba2	      0xe8f9fcffff	                  call sym.uart_get_info	      2626	serial_core.c	FUNCTION_82	CALL_2
+0x4000ba7	        0x8b4c2418	            mov ecx, dword [rsp + 0x18] 	      2627	serial_core.c	FUNCTION_82	CALL_3
+0x4000bab	    0x48c7c2000000	                              mov rdx, 0	      2627	serial_core.c	FUNCTION_82	CALL_3
+0x4000bb2	      0xbe00100000	                         mov esi, 0x1000	      2627	serial_core.c	FUNCTION_82	CALL_3
+0x4000bb7	          0x4889df	                            mov rdi, rbx	      2627	serial_core.c	FUNCTION_82	CALL_3
+0x4000bba	      0xe800000000	                          call 0x4000bbf	      2627	serial_core.c	FUNCTION_82	CALL_3
+0x4000bbf	      0x488b4c2448	            mov rcx, qword [rsp + 0x48] 	      2628	serial_core.c	FUNCTION_82
+0x4000bc4	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      2628	serial_core.c	FUNCTION_82
+0x4000bcd	            0x7508	                           jne 0x4000bd7	      2628	serial_core.c	FUNCTION_82
+0x4000bcf	        0x4883c450	                           add rsp, 0x50	      2628	serial_core.c	FUNCTION_82
+0x4000bd3	            0x4898	                                    cdqe	      2628	serial_core.c	FUNCTION_82
+0x4000bd5	              0x5b	                                 pop rbx	      2628	serial_core.c	FUNCTION_82
+0x4000bd6	              0xc3	                                     ret	      2628	serial_core.c	FUNCTION_82
+0x4000bd7	      0xe800000000	                          call 0x4000bdc	      2628	serial_core.c	FUNCTION_82
+uart_break_ctl	WHILE,0:SWITCH,0:IF,2:CALL,4:DO,0:ELSE,0:functions,0:FOR,0	28
+0x4000750	            0x4154	                                push r12	      1083	serial_core.c	FUNCTION_34
+0x4000752	              0x55	                                push rbp	      1083	serial_core.c	FUNCTION_34
+0x4000753	          0x4189f4	                           mov r12d, esi	      1083	serial_core.c	FUNCTION_34
+0x4000756	              0x53	                                push rbx	      1083	serial_core.c	FUNCTION_34
+0x4000757	    0x488baf600200	           mov rbp, qword [rdi + 0x260] 	      1084	serial_core.c	FUNCTION_34
+0x400075e	    0x488d9d000100	                  lea rbx, [rbp + 0x100]	      1089	serial_core.c	FUNCTION_34	CALL_1
+0x4000765	          0x4889df	                            mov rdi, rbx	      1089	serial_core.c	FUNCTION_34	CALL_1
+0x4000768	      0xe800000000	                          call 0x400076d	      1089	serial_core.c	FUNCTION_34	CALL_1
+0x400076d	    0x488bbd980100	           mov rdi, qword [rbp + 0x198] 	      1089	serial_core.c	FUNCTION_34	CALL_1
+0x4000774	          0x4885ff	                           test rdi, rdi	      1091	serial_core.c	FUNCTION_34	IF_1
+0x4000777	            0x742e	                            je 0x40007a7	      1091	serial_core.c	FUNCTION_34	IF_1
+0x4000779	    0x8b870c010000	           mov eax, dword [rdi + 0x10c] 	      1094	serial_core.c	FUNCTION_34	IF_2
+0x400077f	            0x31ed	                            xor ebp, ebp	      1096	serial_core.c	FUNCTION_34
+0x4000781	            0x85c0	                           test eax, eax	      1094	serial_core.c	FUNCTION_34	IF_2
+0x4000783	            0x7413	                            je 0x4000798	      1094	serial_core.c	FUNCTION_34	IF_2
+0x4000785	    0x488b87100100	           mov rax, qword [rdi + 0x110] 	      1095	serial_core.c	FUNCTION_34	CALL_3
+0x400078c	          0x4489e6	                           mov esi, r12d	      1095	serial_core.c	FUNCTION_34	CALL_3
+0x400078f	        0x488b4050	            mov rax, qword [rax + 0x50] 	      1095	serial_core.c	FUNCTION_34	CALL_3
+0x4000793	      0xe800000000	                          call 0x4000798	      1095	serial_core.c	FUNCTION_34	CALL_3
+0x4000798	          0x4889df	                            mov rdi, rbx	      1098	serial_core.c	FUNCTION_34	CALL_4
+0x400079b	      0xe800000000	                          call 0x40007a0	      1098	serial_core.c	FUNCTION_34	CALL_4
+0x40007a0	            0x89e8	                            mov eax, ebp	      1100	serial_core.c	FUNCTION_34
+0x40007a2	              0x5b	                                 pop rbx	      1100	serial_core.c	FUNCTION_34
+0x40007a3	              0x5d	                                 pop rbp	      1100	serial_core.c	FUNCTION_34
+0x40007a4	            0x415c	                                 pop r12	      1100	serial_core.c	FUNCTION_34
+0x40007a6	              0xc3	                                     ret	      1100	serial_core.c	FUNCTION_34
+0x40007a7	      0xbdfbffffff	                     mov ebp, 0xfffffffb	      1087	serial_core.c	FUNCTION_34
+0x40007ac	            0xebea	                           jmp 0x4000798	      1087	serial_core.c	FUNCTION_34
+uart_update_timeout	WHILE,0:SWITCH,1:IF,2:CALL,0:DO,0:ELSE,0:functions,0:FOR,0	27
+0x40000a0	            0x89f1	                            mov ecx, esi	       320	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000a2	          0x4189d0	                            mov r8d, edx	       316	serial_core.c	FUNCTION_14
+0x40000a5	      0xb808000000	                              mov eax, 8	       325	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000aa	          0x83e130	                           and ecx, 0x30	       320	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000ad	          0x83f910	                           cmp ecx, 0x10	       320	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000b0	            0x7415	                            je 0x40000c7	       320	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000b2	          0x83f920	                           cmp ecx, 0x20	       320	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000b5	      0xb809000000	                              mov eax, 9	       328	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000ba	            0x740b	                            je 0x40000c7	       320	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000bc	          0x83f901	                              cmp ecx, 1	       331	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000bf	            0x19c0	                            sbb eax, eax	       331	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000c1	          0x83e0fd	                     and eax, 0xfffffffd	       331	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000c4	          0x83c00a	                            add eax, 0xa	       331	serial_core.c	FUNCTION_14	SWITCH_1
+0x40000c7	            0x89f2	                            mov edx, esi	       335	serial_core.c	FUNCTION_14	IF_1
+0x40000c9	          0x83e240	                           and edx, 0x40	       335	serial_core.c	FUNCTION_14	IF_1
+0x40000cc	          0x83fa01	                              cmp edx, 1	       336	serial_core.c	FUNCTION_14	IF_1
+0x40000cf	          0x83d8ff	             sbb eax, 0xffffffffffffffff	       336	serial_core.c	FUNCTION_14	IF_1
+0x40000d2	    0x81e600010000	                          and esi, 0x100	       337	serial_core.c	FUNCTION_14	IF_2
+0x40000d8	          0x83fe01	                              cmp esi, 1	       338	serial_core.c	FUNCTION_14	IF_2
+0x40000db	          0x83d8ff	             sbb eax, 0xffffffffffffffff	       338	serial_core.c	FUNCTION_14	IF_2
+0x40000de	    0x69979c000000	     imul edx, dword [rdi + 0x9c], 0x3e8	       349	serial_core.c	FUNCTION_14
+0x40000e8	           0xfafc2	                           imul eax, edx	       349	serial_core.c	FUNCTION_14
+0x40000eb	            0x31d2	                            xor edx, edx	       349	serial_core.c	FUNCTION_14
+0x40000ed	          0x41f7f0	                                 div r8d	       349	serial_core.c	FUNCTION_14
+0x40000f0	          0x83c014	                           add eax, 0x14	       349	serial_core.c	FUNCTION_14
+0x40000f3	    0x898708010000	            mov dword [rdi + 0x108], eax	       349	serial_core.c	FUNCTION_14
+0x40000f9	              0xc3	                                     ret	       349	serial_core.c	FUNCTION_14
+uart_set_ldisc	WHILE,0:SWITCH,0:IF,1:CALL,4:DO,0:ELSE,0:functions,0:FOR,0	22
+0x40006f0	            0x4154	                                push r12	      1400	serial_core.c	FUNCTION_42
+0x40006f2	              0x55	                                push rbp	      1400	serial_core.c	FUNCTION_42
+0x40006f3	              0x53	                                push rbx	      1400	serial_core.c	FUNCTION_42
+0x40006f4	    0x4c8ba7600200	           mov r12, qword [rdi + 0x260] 	      1401	serial_core.c	FUNCTION_42
+0x40006fb	          0x4889fb	                            mov rbx, rdi	      1400	serial_core.c	FUNCTION_42
+0x40006fe	    0x498dac240001	                  lea rbp, [r12 + 0x100]	      1404	serial_core.c	FUNCTION_42	CALL_1
+0x4000706	          0x4889ef	                            mov rdi, rbp	      1404	serial_core.c	FUNCTION_42	CALL_1
+0x4000709	      0xe800000000	                          call 0x400070e	      1404	serial_core.c	FUNCTION_42	CALL_1
+0x400070e	    0x498bbc249801	           mov rdi, qword [r12 + 0x198] 	      1404	serial_core.c	FUNCTION_42	CALL_1
+0x4000716	          0x4885ff	                           test rdi, rdi	      1406	serial_core.c	FUNCTION_42	IF_1
+0x4000719	            0x741c	                            je 0x4000737	      1406	serial_core.c	FUNCTION_42	IF_1
+0x400071b	    0x488b87100100	           mov rax, qword [rdi + 0x110] 	      1406	serial_core.c	FUNCTION_42	IF_1
+0x4000722	        0x488b4078	            mov rax, qword [rax + 0x78] 	      1406	serial_core.c	FUNCTION_42	IF_1
+0x4000726	          0x4885c0	                           test rax, rax	      1406	serial_core.c	FUNCTION_42	IF_1
+0x4000729	            0x740c	                            je 0x4000737	      1406	serial_core.c	FUNCTION_42	IF_1
+0x400072b	    0x488db3100100	                  lea rsi, [rbx + 0x110]	      1407	serial_core.c	FUNCTION_42	CALL_3
+0x4000732	      0xe800000000	                          call 0x4000737	      1407	serial_core.c	FUNCTION_42	CALL_3
+0x4000737	              0x5b	                                 pop rbx	      1409	serial_core.c	FUNCTION_42
+0x4000738	          0x4889ef	                            mov rdi, rbp	      1408	serial_core.c	FUNCTION_42	CALL_4
+0x400073b	              0x5d	                                 pop rbp	      1409	serial_core.c	FUNCTION_42
+0x400073c	            0x415c	                                 pop r12	      1409	serial_core.c	FUNCTION_42
+0x400073e	      0xe900000000	                           jmp 0x4000743	      1408	serial_core.c	FUNCTION_42	CALL_4
+uart_unregister_driver	WHILE,0:SWITCH,0:IF,0:CALL,4:DO,0:ELSE,0:functions,0:FOR,1	28
+0x4000a00	              0x55	                                push rbp	      2505	serial_core.c	FUNCTION_71
+0x4000a01	              0x53	                                push rbx	      2505	serial_core.c	FUNCTION_71
+0x4000a02	          0x4889fd	                            mov rbp, rdi	      2505	serial_core.c	FUNCTION_71
+0x4000a05	        0x488b5f38	            mov rbx, qword [rdi + 0x38] 	      2506	serial_core.c	FUNCTION_71
+0x4000a09	          0x4889df	                            mov rdi, rbx	      2509	serial_core.c	FUNCTION_71	CALL_1
+0x4000a0c	      0xe800000000	                          call 0x4000a11	      2509	serial_core.c	FUNCTION_71	CALL_1
+0x4000a11	          0x4889df	                            mov rdi, rbx	      2510	serial_core.c	FUNCTION_71	CALL_2
+0x4000a14	            0x31db	                            xor ebx, ebx	      2510	serial_core.c	FUNCTION_71	CALL_2
+0x4000a16	      0xe800000000	                          call 0x4000a1b	      2510	serial_core.c	FUNCTION_71	CALL_2
+0x4000a1b	          0x8b4520	            mov eax, dword [rbp + 0x20] 	      2511	serial_core.c	FUNCTION_71	FOR_1
+0x4000a1e	            0x85c0	                           test eax, eax	      2511	serial_core.c	FUNCTION_71	FOR_1
+0x4000a20	            0x741f	                            je 0x4000a41	      2511	serial_core.c	FUNCTION_71	FOR_1
+0x4000a22	            0x89d8	                            mov eax, ebx	      2512	serial_core.c	FUNCTION_71	CALL_3
+0x4000a24	          0x83c301	                              add ebx, 1	      2511	serial_core.c	FUNCTION_71	FOR_1
+0x4000a27	        0x488d1440	                  lea rdx, [rax + rax*2]	      2512	serial_core.c	FUNCTION_71	CALL_3
+0x4000a2b	        0x488d3c90	                  lea rdi, [rax + rdx*4]	      2512	serial_core.c	FUNCTION_71	CALL_3
+0x4000a2f	        0x48c1e705	                              shl rdi, 5	      2512	serial_core.c	FUNCTION_71	CALL_3
+0x4000a33	        0x48037d30	             add rdi, qword [rbp + 0x30]	      2512	serial_core.c	FUNCTION_71	CALL_3
+0x4000a37	      0xe800000000	                          call 0x4000a3c	      2512	serial_core.c	FUNCTION_71	CALL_3
+0x4000a3c	          0x395d20	            cmp dword [rbp + 0x20], ebx 	      2511	serial_core.c	FUNCTION_71	FOR_1
+0x4000a3f	            0x77e1	                            ja 0x4000a22	      2511	serial_core.c	FUNCTION_71	FOR_1
+0x4000a41	        0x488b7d30	            mov rdi, qword [rbp + 0x30] 	      2513	serial_core.c	FUNCTION_71	CALL_4
+0x4000a45	      0xe800000000	                          call 0x4000a4a	      2513	serial_core.c	FUNCTION_71	CALL_4
+0x4000a4a	    0x48c745300000	               mov qword [rbp + 0x30], 0	      2514	serial_core.c	FUNCTION_71
+0x4000a52	    0x48c745380000	               mov qword [rbp + 0x38], 0	      2515	serial_core.c	FUNCTION_71
+0x4000a5a	              0x5b	                                 pop rbx	      2516	serial_core.c	FUNCTION_71
+0x4000a5b	              0x5d	                                 pop rbp	      2516	serial_core.c	FUNCTION_71
+0x4000a5c	              0xc3	                                     ret	      2516	serial_core.c	FUNCTION_71
+uart_handle_dcd_change	WHILE,0:SWITCH,0:IF,6:CALL,7:DO,0:ELSE,1:functions,0:FOR,0	55
+0x4001180	            0x4156	                                push r14	      2912	serial_core.c	FUNCTION_89
+0x4001182	            0x4155	                                push r13	      2912	serial_core.c	FUNCTION_89
+0x4001184	          0x4189f6	                           mov r14d, esi	      2912	serial_core.c	FUNCTION_89
+0x4001187	            0x4154	                                push r12	      2912	serial_core.c	FUNCTION_89
+0x4001189	              0x55	                                push rbp	      2912	serial_core.c	FUNCTION_89
+0x400118a	              0x53	                                push rbx	      2912	serial_core.c	FUNCTION_89
+0x400118b	    0x4c8bafb00000	            mov r13, qword [rdi + 0xb0] 	      2913	serial_core.c	FUNCTION_89
+0x4001192	          0x4889fb	                            mov rbx, rdi	      2912	serial_core.c	FUNCTION_89
+0x4001195	    0x498bad880000	            mov rbp, qword [r13 + 0x88] 	      2914	serial_core.c	FUNCTION_89
+0x400119c	          0x4885ed	                           test rbp, rbp	      2919	serial_core.c	FUNCTION_89	IF_1
+0x400119f	            0x742f	                            je 0x40011d0	      2919	serial_core.c	FUNCTION_89	IF_1
+0x40011a1	          0x4889ef	                            mov rdi, rbp	      2920	serial_core.c	FUNCTION_89	IF_1	CALL_2
+0x40011a4	      0xe800000000	                          call 0x40011a9	      2920	serial_core.c	FUNCTION_89	IF_1	CALL_2
+0x40011a9	          0x4885c0	                           test rax, rax	      2921	serial_core.c	FUNCTION_89	IF_1	IF_2
+0x40011ac	          0x4989c4	                            mov r12, rax	      2920	serial_core.c	FUNCTION_89	IF_1	CALL_2
+0x40011af	            0x741f	                            je 0x40011d0	      2921	serial_core.c	FUNCTION_89	IF_1	IF_2
+0x40011b1	          0x488b00	                    mov rax, qword [rax]	      2922	serial_core.c	FUNCTION_89	IF_1	IF_2	IF_3
+0x40011b4	        0x488b4078	            mov rax, qword [rax + 0x78] 	      2922	serial_core.c	FUNCTION_89	IF_1	IF_2	IF_3
+0x40011b8	          0x4885c0	                           test rax, rax	      2922	serial_core.c	FUNCTION_89	IF_1	IF_2	IF_3
+0x40011bb	            0x740b	                            je 0x40011c8	      2922	serial_core.c	FUNCTION_89	IF_1	IF_2	IF_3
+0x40011bd	          0x4489f6	                           mov esi, r14d	      2923	serial_core.c	FUNCTION_89	IF_1	IF_2	CALL_3
+0x40011c0	          0x4889ef	                            mov rdi, rbp	      2923	serial_core.c	FUNCTION_89	IF_1	IF_2	CALL_3
+0x40011c3	      0xe800000000	                          call 0x40011c8	      2923	serial_core.c	FUNCTION_89	IF_1	IF_2	CALL_3
+0x40011c8	          0x4c89e7	                            mov rdi, r12	      2924	serial_core.c	FUNCTION_89	IF_1	IF_2	CALL_4
+0x40011cb	      0xe800000000	                          call 0x40011d0	      2924	serial_core.c	FUNCTION_89	IF_1	IF_2	CALL_4
+0x40011d0	    0x8383c4000000	               add dword [rbx + 0xc4], 1	      2928	serial_core.c	FUNCTION_89
+0x40011d7	    0xf683fc000000	               test byte [rbx + 0xfc], 2	      2930	serial_core.c	FUNCTION_89	IF_4	CALL_5
+0x40011de	            0x741a	                            je 0x40011fa	      2930	serial_core.c	FUNCTION_89	IF_4	CALL_5
+0x40011e0	          0x4585f6	                         test r14d, r14d	      2931	serial_core.c	FUNCTION_89	IF_4	IF_5
+0x40011e3	            0x751e	                           jne 0x4001203	      2931	serial_core.c	FUNCTION_89	IF_4	IF_5
+0x40011e5	          0x4885ed	                           test rbp, rbp	      2933	serial_core.c	FUNCTION_89	IF_4	ELSE_1	IF_6
+0x40011e8	            0x7410	                            je 0x40011fa	      2933	serial_core.c	FUNCTION_89	IF_4	ELSE_1	IF_6
+0x40011ea	              0x5b	                                 pop rbx	      2936	serial_core.c	FUNCTION_89
+0x40011eb	          0x4889ef	                            mov rdi, rbp	      2934	serial_core.c	FUNCTION_89	IF_4	ELSE_1	IF_6
+0x40011ee	              0x5d	                                 pop rbp	      2936	serial_core.c	FUNCTION_89
+0x40011ef	            0x415c	                                 pop r12	      2936	serial_core.c	FUNCTION_89
+0x40011f1	            0x415d	                                 pop r13	      2936	serial_core.c	FUNCTION_89
+0x40011f3	            0x415e	                                 pop r14	      2936	serial_core.c	FUNCTION_89
+0x40011f5	      0xe900000000	                           jmp 0x40011fa	      2934	serial_core.c	FUNCTION_89	IF_4	ELSE_1	IF_6
+0x40011fa	              0x5b	                                 pop rbx	      2936	serial_core.c	FUNCTION_89
+0x40011fb	              0x5d	                                 pop rbp	      2936	serial_core.c	FUNCTION_89
+0x40011fc	            0x415c	                                 pop r12	      2936	serial_core.c	FUNCTION_89
+0x40011fe	            0x415d	                                 pop r13	      2936	serial_core.c	FUNCTION_89
+0x4001200	            0x415e	                                 pop r14	      2936	serial_core.c	FUNCTION_89
+0x4001202	              0xc3	                                     ret	      2936	serial_core.c	FUNCTION_89
+0x4001203	              0x5b	                                 pop rbx	      2936	serial_core.c	FUNCTION_89
+0x4001204	    0x498dbdb80000	                   lea rdi, [r13 + 0xb8]	      2932	serial_core.c	FUNCTION_89	IF_4	CALL_6
+0x400120b	            0x31c9	                            xor ecx, ecx	      2932	serial_core.c	FUNCTION_89	IF_4	CALL_6
+0x400120d	      0xba01000000	                              mov edx, 1	      2932	serial_core.c	FUNCTION_89	IF_4	CALL_6
+0x4001212	              0x5d	                                 pop rbp	      2936	serial_core.c	FUNCTION_89
+0x4001213	            0x415c	                                 pop r12	      2936	serial_core.c	FUNCTION_89
+0x4001215	            0x415d	                                 pop r13	      2936	serial_core.c	FUNCTION_89
+0x4001217	            0x415e	                                 pop r14	      2936	serial_core.c	FUNCTION_89
+0x4001219	      0xbe01000000	                              mov esi, 1	      2932	serial_core.c	FUNCTION_89	IF_4	CALL_6
+0x400121e	      0xe900000000	                           jmp 0x4001223	      2932	serial_core.c	FUNCTION_89	IF_4	CALL_6
+uart_get_attr_closing_wait	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000be0	              0x53	                                push rbx	      2612	serial_core.c	FUNCTION_81
+0x4000be1	          0x4889d3	                            mov rbx, rdx	      2612	serial_core.c	FUNCTION_81
+0x4000be4	        0x4883ec50	                           sub rsp, 0x50	      2612	serial_core.c	FUNCTION_81
+0x4000be8	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2616	serial_core.c	FUNCTION_81	CALL_2
+0x4000bef	          0x4889e6	                            mov rsi, rsp	      2616	serial_core.c	FUNCTION_81	CALL_2
+0x4000bf2	    0x65488b042528	                mov rax, qword gs:[0x28]	      2612	serial_core.c	FUNCTION_81
+0x4000bfb	      0x4889442448	             mov qword [rsp + 0x48], rax	      2612	serial_core.c	FUNCTION_81
+0x4000c00	            0x31c0	                            xor eax, eax	      2612	serial_core.c	FUNCTION_81
+0x4000c02	      0xe899fcffff	                  call sym.uart_get_info	      2616	serial_core.c	FUNCTION_81	CALL_2
+0x4000c07	       0xfb74c2428	           movzx ecx, word [rsp + 0x28] 	      2617	serial_core.c	FUNCTION_81	CALL_3
+0x4000c0c	    0x48c7c2000000	                              mov rdx, 0	      2617	serial_core.c	FUNCTION_81	CALL_3
+0x4000c13	      0xbe00100000	                         mov esi, 0x1000	      2617	serial_core.c	FUNCTION_81	CALL_3
+0x4000c18	          0x4889df	                            mov rdi, rbx	      2617	serial_core.c	FUNCTION_81	CALL_3
+0x4000c1b	      0xe800000000	                          call 0x4000c20	      2617	serial_core.c	FUNCTION_81	CALL_3
+0x4000c20	      0x488b542448	            mov rdx, qword [rsp + 0x48] 	      2618	serial_core.c	FUNCTION_81
+0x4000c25	    0x654833142528	                xor rdx, qword gs:[0x28]	      2618	serial_core.c	FUNCTION_81
+0x4000c2e	            0x7508	                           jne 0x4000c38	      2618	serial_core.c	FUNCTION_81
+0x4000c30	        0x4883c450	                           add rsp, 0x50	      2618	serial_core.c	FUNCTION_81
+0x4000c34	            0x4898	                                    cdqe	      2618	serial_core.c	FUNCTION_81
+0x4000c36	              0x5b	                                 pop rbx	      2618	serial_core.c	FUNCTION_81
+0x4000c37	              0xc3	                                     ret	      2618	serial_core.c	FUNCTION_81
+0x4000c38	      0xe800000000	                          call 0x4000c3d	      2618	serial_core.c	FUNCTION_81
+uart_parse_earlycon	WHILE,0:SWITCH,0:IF,8:CALL,10:DO,0:ELSE,7:functions,0:FOR,0	79
+0x4000310	            0x4154	                                push r12	      1898	serial_core.c	FUNCTION_58
+0x4000312	              0x55	                                push rbp	      1898	serial_core.c	FUNCTION_58
+0x4000313	          0x4989f0	                             mov r8, rsi	      1898	serial_core.c	FUNCTION_58
+0x4000316	              0x53	                                push rbx	      1898	serial_core.c	FUNCTION_58
+0x4000317	          0x4889fb	                            mov rbx, rdi	      1898	serial_core.c	FUNCTION_58
+0x400031a	          0x4889cd	                            mov rbp, rcx	      1898	serial_core.c	FUNCTION_58
+0x400031d	    0x48c7c7000000	                              mov rdi, 0	      1899	serial_core.c	FUNCTION_58	IF_1	CALL_1
+0x4000324	      0xb905000000	                              mov ecx, 5	      1899	serial_core.c	FUNCTION_58	IF_1	CALL_1
+0x4000329	          0x4889de	                            mov rsi, rbx	      1899	serial_core.c	FUNCTION_58	IF_1	CALL_1
+0x400032c	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	      1899	serial_core.c	FUNCTION_58	IF_1	CALL_1
+0x400032e	          0x4989d4	                            mov r12, rdx	      1898	serial_core.c	FUNCTION_58
+0x4000331	            0x7538	                           jne 0x400036b	      1899	serial_core.c	FUNCTION_58	IF_1	CALL_1
+0x4000333	        0x41c60002	                        mov byte [r8], 2	      1900	serial_core.c	FUNCTION_58	IF_1
+0x4000337	        0x4883c305	                              add rbx, 5	      1901	serial_core.c	FUNCTION_58	IF_1
+0x400033b	            0x31d2	                            xor edx, edx	      1928	serial_core.c	FUNCTION_58	CALL_9
+0x400033d	            0x31f6	                            xor esi, esi	      1928	serial_core.c	FUNCTION_58	CALL_9
+0x400033f	          0x4889df	                            mov rdi, rbx	      1928	serial_core.c	FUNCTION_58	CALL_9
+0x4000342	      0xe800000000	                          call 0x4000347	      1928	serial_core.c	FUNCTION_58	CALL_9
+0x4000347	      0xbe2c000000	                           mov esi, 0x2c	      1929	serial_core.c	FUNCTION_58	CALL_10
+0x400034c	        0x49890424	                    mov qword [r12], rax	      1928	serial_core.c	FUNCTION_58	CALL_9
+0x4000350	          0x4889df	                            mov rdi, rbx	      1929	serial_core.c	FUNCTION_58	CALL_10
+0x4000353	      0xe800000000	                          call 0x4000358	      1929	serial_core.c	FUNCTION_58	CALL_10
+0x4000358	        0x4883f801	                              cmp rax, 1	      1931	serial_core.c	FUNCTION_58	IF_8
+0x400035c	        0x4883d8ff	             sbb rax, 0xffffffffffffffff	      1931	serial_core.c	FUNCTION_58	IF_8
+0x4000360	        0x48894500	                    mov qword [rbp], rax	      1933	serial_core.c	FUNCTION_58
+0x4000364	            0x31c0	                            xor eax, eax	      1934	serial_core.c	FUNCTION_58
+0x4000366	              0x5b	                                 pop rbx	      1935	serial_core.c	FUNCTION_58
+0x4000367	              0x5d	                                 pop rbp	      1935	serial_core.c	FUNCTION_58
+0x4000368	            0x415c	                                 pop r12	      1935	serial_core.c	FUNCTION_58
+0x400036a	              0xc3	                                     ret	      1935	serial_core.c	FUNCTION_58
+0x400036b	      0xb907000000	                              mov ecx, 7	      1902	serial_core.c	FUNCTION_58	ELSE_1	IF_2	CALL_2
+0x4000370	    0x48c7c7000000	                              mov rdi, 0	      1902	serial_core.c	FUNCTION_58	ELSE_1	IF_2	CALL_2
+0x4000377	          0x4889de	                            mov rsi, rbx	      1902	serial_core.c	FUNCTION_58	ELSE_1	IF_2	CALL_2
+0x400037a	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	      1902	serial_core.c	FUNCTION_58	ELSE_1	IF_2	CALL_2
+0x400037c	            0x750a	                           jne 0x4000388	      1902	serial_core.c	FUNCTION_58	ELSE_1	IF_2	CALL_2
+0x400037e	        0x41c60007	                        mov byte [r8], 7	      1903	serial_core.c	FUNCTION_58	ELSE_1	IF_2
+0x4000382	        0x4883c307	                              add rbx, 7	      1904	serial_core.c	FUNCTION_58	ELSE_1	IF_2
+0x4000386	            0xebb3	                           jmp 0x400033b	      1904	serial_core.c	FUNCTION_58	ELSE_1	IF_2
+0x4000388	      0xb907000000	                              mov ecx, 7	      1905	serial_core.c	FUNCTION_58	ELSE_2	IF_3	CALL_3
+0x400038d	    0x48c7c7000000	                              mov rdi, 0	      1905	serial_core.c	FUNCTION_58	ELSE_2	IF_3	CALL_3
+0x4000394	          0x4889de	                            mov rsi, rbx	      1905	serial_core.c	FUNCTION_58	ELSE_2	IF_3	CALL_3
+0x4000397	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	      1905	serial_core.c	FUNCTION_58	ELSE_2	IF_3	CALL_3
+0x4000399	            0x741d	                            je 0x40003b8	      1905	serial_core.c	FUNCTION_58	ELSE_2	IF_3	CALL_3
+0x400039b	      0xb909000000	                              mov ecx, 9	      1908	serial_core.c	FUNCTION_58	ELSE_3	IF_4	CALL_4
+0x40003a0	    0x48c7c7000000	                              mov rdi, 0	      1908	serial_core.c	FUNCTION_58	ELSE_3	IF_4	CALL_4
+0x40003a7	          0x4889de	                            mov rsi, rbx	      1908	serial_core.c	FUNCTION_58	ELSE_3	IF_4	CALL_4
+0x40003aa	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	      1908	serial_core.c	FUNCTION_58	ELSE_3	IF_4	CALL_4
+0x40003ac	            0x7517	                           jne 0x40003c5	      1908	serial_core.c	FUNCTION_58	ELSE_3	IF_4	CALL_4
+0x40003ae	        0x41c60006	                        mov byte [r8], 6	      1909	serial_core.c	FUNCTION_58	ELSE_3	IF_4
+0x40003b2	        0x4883c309	                              add rbx, 9	      1910	serial_core.c	FUNCTION_58	ELSE_3	IF_4
+0x40003b6	            0xeb83	                           jmp 0x400033b	      1910	serial_core.c	FUNCTION_58	ELSE_3	IF_4
+0x40003b8	        0x41c60003	                        mov byte [r8], 3	      1906	serial_core.c	FUNCTION_58	ELSE_2	IF_3
+0x40003bc	        0x4883c307	                              add rbx, 7	      1907	serial_core.c	FUNCTION_58	ELSE_2	IF_3
+0x40003c0	      0xe976ffffff	                           jmp 0x400033b	      1907	serial_core.c	FUNCTION_58	ELSE_2	IF_3
+0x40003c5	      0xb90d000000	                            mov ecx, 0xd	      1911	serial_core.c	FUNCTION_58	ELSE_4	IF_5	CALL_5
+0x40003ca	    0x48c7c7000000	                              mov rdi, 0	      1911	serial_core.c	FUNCTION_58	ELSE_4	IF_5	CALL_5
+0x40003d1	          0x4889de	                            mov rsi, rbx	      1911	serial_core.c	FUNCTION_58	ELSE_4	IF_5	CALL_5
+0x40003d4	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	      1911	serial_core.c	FUNCTION_58	ELSE_4	IF_5	CALL_5
+0x40003d6	            0x7420	                            je 0x40003f8	      1911	serial_core.c	FUNCTION_58	ELSE_4	IF_5	CALL_5
+0x40003d8	      0xb903000000	                              mov ecx, 3	      1915	serial_core.c	FUNCTION_58	ELSE_5	IF_6	CALL_7
+0x40003dd	    0x48c7c7000000	                              mov rdi, 0	      1915	serial_core.c	FUNCTION_58	ELSE_5	IF_6	CALL_7
+0x40003e4	          0x4889de	                            mov rsi, rbx	      1915	serial_core.c	FUNCTION_58	ELSE_5	IF_6	CALL_7
+0x40003e7	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	      1915	serial_core.c	FUNCTION_58	ELSE_5	IF_6	CALL_7
+0x40003e9	            0x751a	                           jne 0x4000405	      1915	serial_core.c	FUNCTION_58	ELSE_5	IF_6	CALL_7
+0x40003eb	        0x41c60000	                        mov byte [r8], 0	      1916	serial_core.c	FUNCTION_58	ELSE_5	IF_6
+0x40003ef	        0x4883c303	                              add rbx, 3	      1917	serial_core.c	FUNCTION_58	ELSE_5	IF_6
+0x40003f3	      0xe943ffffff	                           jmp 0x400033b	      1917	serial_core.c	FUNCTION_58	ELSE_5	IF_6
+0x40003f8	        0x41c60003	                        mov byte [r8], 3	      1912	serial_core.c	FUNCTION_58	ELSE_4	IF_5	CALL_6
+0x40003fc	        0x4883c30d	                            add rbx, 0xd	      1914	serial_core.c	FUNCTION_58	ELSE_4	IF_5
+0x4000400	      0xe936ffffff	                           jmp 0x400033b	      1914	serial_core.c	FUNCTION_58	ELSE_4	IF_5
+0x4000405	      0xb902000000	                              mov ecx, 2	      1918	serial_core.c	FUNCTION_58	ELSE_6	IF_7	CALL_8
+0x400040a	    0x48c7c7000000	                              mov rdi, 0	      1918	serial_core.c	FUNCTION_58	ELSE_6	IF_7	CALL_8
+0x4000411	          0x4889de	                            mov rsi, rbx	      1918	serial_core.c	FUNCTION_58	ELSE_6	IF_7	CALL_8
+0x4000414	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	      1918	serial_core.c	FUNCTION_58	ELSE_6	IF_7	CALL_8
+0x4000416	            0x7509	                           jne 0x4000421	      1918	serial_core.c	FUNCTION_58	ELSE_6	IF_7	CALL_8
+0x4000418	        0x41c60002	                        mov byte [r8], 2	      1919	serial_core.c	FUNCTION_58	ELSE_6	IF_7
+0x400041c	      0xe91affffff	                           jmp 0x400033b	      1919	serial_core.c	FUNCTION_58	ELSE_6	IF_7
+0x4000421	      0xb8eaffffff	                     mov eax, 0xffffffea	      1921	serial_core.c	FUNCTION_58	ELSE_7
+0x4000426	      0xe93bffffff	                           jmp 0x4000366	      1921	serial_core.c	FUNCTION_58	ELSE_7
+uart_get_attr_type	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000ef0	              0x53	                                push rbx	      2537	serial_core.c	FUNCTION_74
+0x4000ef1	          0x4889d3	                            mov rbx, rdx	      2537	serial_core.c	FUNCTION_74
+0x4000ef4	        0x4883ec50	                           sub rsp, 0x50	      2537	serial_core.c	FUNCTION_74
+0x4000ef8	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2541	serial_core.c	FUNCTION_74	CALL_2
+0x4000eff	          0x4889e6	                            mov rsi, rsp	      2541	serial_core.c	FUNCTION_74	CALL_2
+0x4000f02	    0x65488b042528	                mov rax, qword gs:[0x28]	      2537	serial_core.c	FUNCTION_74
+0x4000f0b	      0x4889442448	             mov qword [rsp + 0x48], rax	      2537	serial_core.c	FUNCTION_74
+0x4000f10	            0x31c0	                            xor eax, eax	      2537	serial_core.c	FUNCTION_74
+0x4000f12	      0xe889f9ffff	                  call sym.uart_get_info	      2541	serial_core.c	FUNCTION_74	CALL_2
+0x4000f17	          0x8b0c24	                    mov ecx, dword [rsp]	      2542	serial_core.c	FUNCTION_74	CALL_3
+0x4000f1a	    0x48c7c2000000	                              mov rdx, 0	      2542	serial_core.c	FUNCTION_74	CALL_3
+0x4000f21	      0xbe00100000	                         mov esi, 0x1000	      2542	serial_core.c	FUNCTION_74	CALL_3
+0x4000f26	          0x4889df	                            mov rdi, rbx	      2542	serial_core.c	FUNCTION_74	CALL_3
+0x4000f29	      0xe800000000	                          call 0x4000f2e	      2542	serial_core.c	FUNCTION_74	CALL_3
+0x4000f2e	      0x488b4c2448	            mov rcx, qword [rsp + 0x48] 	      2543	serial_core.c	FUNCTION_74
+0x4000f33	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      2543	serial_core.c	FUNCTION_74
+0x4000f3c	            0x7508	                           jne 0x4000f46	      2543	serial_core.c	FUNCTION_74
+0x4000f3e	        0x4883c450	                           add rsp, 0x50	      2543	serial_core.c	FUNCTION_74
+0x4000f42	            0x4898	                                    cdqe	      2543	serial_core.c	FUNCTION_74
+0x4000f44	              0x5b	                                 pop rbx	      2543	serial_core.c	FUNCTION_74
+0x4000f45	              0xc3	                                     ret	      2543	serial_core.c	FUNCTION_74
+0x4000f46	      0xe800000000	                          call 0x4000f4b	      2543	serial_core.c	FUNCTION_74
+uart_get_attr_iomem_base	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000ac0	              0x53	                                push rbx	      2642	serial_core.c	FUNCTION_84
+0x4000ac1	          0x4889d3	                            mov rbx, rdx	      2642	serial_core.c	FUNCTION_84
+0x4000ac4	        0x4883ec50	                           sub rsp, 0x50	      2642	serial_core.c	FUNCTION_84
+0x4000ac8	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2646	serial_core.c	FUNCTION_84	CALL_2
+0x4000acf	          0x4889e6	                            mov rsi, rsp	      2646	serial_core.c	FUNCTION_84	CALL_2
+0x4000ad2	    0x65488b042528	                mov rax, qword gs:[0x28]	      2642	serial_core.c	FUNCTION_84
+0x4000adb	      0x4889442448	             mov qword [rsp + 0x48], rax	      2642	serial_core.c	FUNCTION_84
+0x4000ae0	            0x31c0	                            xor eax, eax	      2642	serial_core.c	FUNCTION_84
+0x4000ae2	      0xe8b9fdffff	                  call sym.uart_get_info	      2646	serial_core.c	FUNCTION_84	CALL_2
+0x4000ae7	      0x488b4c2430	            mov rcx, qword [rsp + 0x30] 	      2647	serial_core.c	FUNCTION_84	CALL_3
+0x4000aec	    0x48c7c2000000	                              mov rdx, 0	      2647	serial_core.c	FUNCTION_84	CALL_3
+0x4000af3	      0xbe00100000	                         mov esi, 0x1000	      2647	serial_core.c	FUNCTION_84	CALL_3
+0x4000af8	          0x4889df	                            mov rdi, rbx	      2647	serial_core.c	FUNCTION_84	CALL_3
+0x4000afb	      0xe800000000	                          call 0x4000b00	      2647	serial_core.c	FUNCTION_84	CALL_3
+0x4000b00	      0x488b4c2448	            mov rcx, qword [rsp + 0x48] 	      2648	serial_core.c	FUNCTION_84
+0x4000b05	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      2648	serial_core.c	FUNCTION_84
+0x4000b0e	            0x7508	                           jne 0x4000b18	      2648	serial_core.c	FUNCTION_84
+0x4000b10	        0x4883c450	                           add rsp, 0x50	      2648	serial_core.c	FUNCTION_84
+0x4000b14	            0x4898	                                    cdqe	      2648	serial_core.c	FUNCTION_84
+0x4000b16	              0x5b	                                 pop rbx	      2648	serial_core.c	FUNCTION_84
+0x4000b17	              0xc3	                                     ret	      2648	serial_core.c	FUNCTION_84
+0x4000b18	      0xe800000000	                          call 0x4000b1d	      2648	serial_core.c	FUNCTION_84
+uart_get_attr_line	WHILE,0:SWITCH,0:IF,0:CALL,3:DO,0:ELSE,0:functions,0:FOR,0	22
+0x4000e90	              0x53	                                push rbx	      2546	serial_core.c	FUNCTION_75
+0x4000e91	          0x4889d3	                            mov rbx, rdx	      2546	serial_core.c	FUNCTION_75
+0x4000e94	        0x4883ec50	                           sub rsp, 0x50	      2546	serial_core.c	FUNCTION_75
+0x4000e98	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	      2550	serial_core.c	FUNCTION_75	CALL_2
+0x4000e9f	          0x4889e6	                            mov rsi, rsp	      2550	serial_core.c	FUNCTION_75	CALL_2
+0x4000ea2	    0x65488b042528	                mov rax, qword gs:[0x28]	      2546	serial_core.c	FUNCTION_75
+0x4000eab	      0x4889442448	             mov qword [rsp + 0x48], rax	      2546	serial_core.c	FUNCTION_75
+0x4000eb0	            0x31c0	                            xor eax, eax	      2546	serial_core.c	FUNCTION_75
+0x4000eb2	      0xe8e9f9ffff	                  call sym.uart_get_info	      2550	serial_core.c	FUNCTION_75	CALL_2
+0x4000eb7	        0x8b4c2404	                mov ecx, dword [rsp + 4]	      2551	serial_core.c	FUNCTION_75	CALL_3
+0x4000ebb	    0x48c7c2000000	                              mov rdx, 0	      2551	serial_core.c	FUNCTION_75	CALL_3
+0x4000ec2	      0xbe00100000	                         mov esi, 0x1000	      2551	serial_core.c	FUNCTION_75	CALL_3
+0x4000ec7	          0x4889df	                            mov rdi, rbx	      2551	serial_core.c	FUNCTION_75	CALL_3
+0x4000eca	      0xe800000000	                          call 0x4000ecf	      2551	serial_core.c	FUNCTION_75	CALL_3
+0x4000ecf	      0x488b4c2448	            mov rcx, qword [rsp + 0x48] 	      2552	serial_core.c	FUNCTION_75
+0x4000ed4	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      2552	serial_core.c	FUNCTION_75
+0x4000edd	            0x7508	                           jne 0x4000ee7	      2552	serial_core.c	FUNCTION_75
+0x4000edf	        0x4883c450	                           add rsp, 0x50	      2552	serial_core.c	FUNCTION_75
+0x4000ee3	            0x4898	                                    cdqe	      2552	serial_core.c	FUNCTION_75
+0x4000ee5	              0x5b	                                 pop rbx	      2552	serial_core.c	FUNCTION_75
+0x4000ee6	              0xc3	                                     ret	      2552	serial_core.c	FUNCTION_75
+0x4000ee7	      0xe800000000	                          call 0x4000eec	      2552	serial_core.c	FUNCTION_75
+uart_flush_chars	WHILE,0:SWITCH,0:IF,0:CALL,1:DO,0:ELSE,0:functions,0:FOR,0	1
+0x4002eb0	      0xe92bffffff	                      jmp sym.uart_start	       551	serial_core.c	FUNCTION_19	CALL_1

@@ -1,0 +1,410 @@
+dyn_string_copy	functions,0:IF,2:DO,0:CALL,3:WHILE,0:SWITCH,0:FOR,0:ELSE,0	24
+0x4000108	              0x55	                                push rbp	       185	dyn-string.c	FUNCTION_7
+0x4000109	              0x53	                                push rbx	       185	dyn-string.c	FUNCTION_7
+0x400010a	        0x4883ec08	                              sub rsp, 8	       185	dyn-string.c	FUNCTION_7
+0x400010e	          0x4839f7	                            cmp rdi, rsi	       186	dyn-string.c	FUNCTION_7	IF_1
+0x4000111	            0x7505	                           jne 0x4000118	       186	dyn-string.c	FUNCTION_7	IF_1
+0x4000113	      0xe800000000	                          call 0x4000118	       187	dyn-string.c	FUNCTION_7	CALL_1
+0x4000118	          0x4889fb	                            mov rbx, rdi	       187	dyn-string.c	FUNCTION_7	CALL_1
+0x400011b	          0x4889f5	                            mov rbp, rsi	       187	dyn-string.c	FUNCTION_7	CALL_1
+0x400011e	          0x8b7604	                mov esi, dword [rsi + 4]	       190	dyn-string.c	FUNCTION_7	IF_2	CALL_2
+0x4000121	      0xe800000000	                          call 0x4000126	       190	dyn-string.c	FUNCTION_7	IF_2	CALL_2
+0x4000126	      0xba00000000	                              mov edx, 0	       191	dyn-string.c	FUNCTION_7	IF_2
+0x400012b	          0x4885c0	                           test rax, rax	       190	dyn-string.c	FUNCTION_7	IF_2	CALL_2
+0x400012e	            0x7418	                            je 0x4000148	       190	dyn-string.c	FUNCTION_7	IF_2	CALL_2
+0x4000130	        0x488b7508	                mov rsi, qword [rbp + 8]	       110	string3.h	FUNCTION_25	CALL_3
+0x4000134	        0x488b7b08	                mov rdi, qword [rbx + 8]	       110	string3.h	FUNCTION_25	CALL_3
+0x4000138	      0xe800000000	                          call 0x400013d	       110	string3.h	FUNCTION_25	CALL_3
+0x400013d	          0x8b4504	                mov eax, dword [rbp + 4]	       195	dyn-string.c	FUNCTION_7
+0x4000140	          0x894304	                mov dword [rbx + 4], eax	       195	dyn-string.c	FUNCTION_7
+0x4000143	      0xba01000000	                              mov edx, 1	       196	dyn-string.c	FUNCTION_7
+0x4000148	            0x89d0	                            mov eax, edx	       197	dyn-string.c	FUNCTION_7
+0x400014a	        0x4883c408	                              add rsp, 8	       197	dyn-string.c	FUNCTION_7
+0x400014e	              0x5b	                                 pop rbx	       197	dyn-string.c	FUNCTION_7
+0x400014f	              0x5d	                                 pop rbp	       197	dyn-string.c	FUNCTION_7
+0x4000150	              0xc3	                                     ret	       197	dyn-string.c	FUNCTION_7
+dyn_string_init	functions,0:IF,2:DO,0:CALL,2:WHILE,0:SWITCH,0:FOR,0:ELSE,0	19
+0x4000040	              0x55	                                push rbp	        60	dyn-string.c	FUNCTION_1
+0x4000041	              0x53	                                push rbx	        60	dyn-string.c	FUNCTION_1
+0x4000042	        0x4883ec08	                              sub rsp, 8	        60	dyn-string.c	FUNCTION_1
+0x4000046	          0x4889fd	                            mov rbp, rdi	        60	dyn-string.c	FUNCTION_1
+0x4000049	            0x89f3	                            mov ebx, esi	        60	dyn-string.c	FUNCTION_1
+0x400004b	            0x85f6	                           test esi, esi	        62	dyn-string.c	FUNCTION_1	IF_1
+0x400004d	      0xb801000000	                              mov eax, 1	        63	dyn-string.c	FUNCTION_1	IF_1
+0x4000052	           0xf44d8	                          cmove ebx, eax	        63	dyn-string.c	FUNCTION_1	IF_1
+0x4000055	          0x4863fb	                         movsxd rdi, ebx	        70	dyn-string.c	FUNCTION_1	CALL_2
+0x4000058	      0xe800000000	                          call 0x400005d	        70	dyn-string.c	FUNCTION_1	CALL_2
+0x400005d	        0x48894508	                mov qword [rbp + 8], rax	        70	dyn-string.c	FUNCTION_1	CALL_2
+0x4000061	          0x895d00	                    mov dword [rbp], ebx	        72	dyn-string.c	FUNCTION_1
+0x4000064	    0xc74504000000	                  mov dword [rbp + 4], 0	        73	dyn-string.c	FUNCTION_1
+0x400006b	          0xc60000	                       mov byte [rax], 0	        74	dyn-string.c	FUNCTION_1
+0x400006e	      0xb801000000	                              mov eax, 1	        77	dyn-string.c	FUNCTION_1
+0x4000073	        0x4883c408	                              add rsp, 8	        77	dyn-string.c	FUNCTION_1
+0x4000077	              0x5b	                                 pop rbx	        77	dyn-string.c	FUNCTION_1
+0x4000078	              0x5d	                                 pop rbp	        77	dyn-string.c	FUNCTION_1
+0x4000079	              0xc3	                                     ret	        77	dyn-string.c	FUNCTION_1
+dyn_string_insert	functions,0:IF,2:DO,0:CALL,3:WHILE,0:SWITCH,0:FOR,1:ELSE,0	41
+0x40001a2	            0x4154	                                push r12	       245	dyn-string.c	FUNCTION_11
+0x40001a4	              0x55	                                push rbp	       245	dyn-string.c	FUNCTION_11
+0x40001a5	              0x53	                                push rbx	       245	dyn-string.c	FUNCTION_11
+0x40001a6	          0x4839fa	                            cmp rdx, rdi	       248	dyn-string.c	FUNCTION_11	IF_1
+0x40001a9	            0x7505	                           jne 0x40001b0	       248	dyn-string.c	FUNCTION_11	IF_1
+0x40001ab	      0xe800000000	                          call 0x40001b0	       249	dyn-string.c	FUNCTION_11	CALL_1
+0x40001b0	          0x4889fb	                            mov rbx, rdi	       249	dyn-string.c	FUNCTION_11	CALL_1
+0x40001b3	            0x89f5	                            mov ebp, esi	       249	dyn-string.c	FUNCTION_11	CALL_1
+0x40001b5	          0x4989d4	                            mov r12, rdx	       249	dyn-string.c	FUNCTION_11	CALL_1
+0x40001b8	          0x8b7204	                mov esi, dword [rdx + 4]	       251	dyn-string.c	FUNCTION_11	IF_2	CALL_2
+0x40001bb	           0x37704	                add esi, dword [rdi + 4]	       251	dyn-string.c	FUNCTION_11	IF_2	CALL_2
+0x40001be	      0xe800000000	                          call 0x40001c3	       251	dyn-string.c	FUNCTION_11	IF_2	CALL_2
+0x40001c3	          0x4885c0	                           test rax, rax	       251	dyn-string.c	FUNCTION_11	IF_2	CALL_2
+0x40001c6	            0x744c	                            je 0x4000214	       251	dyn-string.c	FUNCTION_11	IF_2	CALL_2
+0x40001c8	          0x8b4304	                mov eax, dword [rbx + 4]	       254	dyn-string.c	FUNCTION_11	FOR_1
+0x40001cb	            0x39e8	                            cmp eax, ebp	       254	dyn-string.c	FUNCTION_11	FOR_1
+0x40001cd	            0x7c20	                            jl 0x40001ef	       254	dyn-string.c	FUNCTION_11	FOR_1
+0x40001cf	        0x488b4b08	                mov rcx, qword [rbx + 8]	       255	dyn-string.c	FUNCTION_11	FOR_1
+0x40001d3	          0x4863d0	                         movsxd rdx, eax	       255	dyn-string.c	FUNCTION_11	FOR_1
+0x40001d6	         0xfb63411	             movzx esi, byte [rcx + rdx]	       255	dyn-string.c	FUNCTION_11	FOR_1
+0x40001da	            0x89c2	                            mov edx, eax	       255	dyn-string.c	FUNCTION_11	FOR_1
+0x40001dc	      0x4103542404	                add edx, dword [r12 + 4]	       255	dyn-string.c	FUNCTION_11	FOR_1
+0x40001e1	          0x4863d2	                         movsxd rdx, edx	       255	dyn-string.c	FUNCTION_11	FOR_1
+0x40001e4	        0x40883411	               mov byte [rcx + rdx], sil	       255	dyn-string.c	FUNCTION_11	FOR_1
+0x40001e8	          0x83e801	                              sub eax, 1	       254	dyn-string.c	FUNCTION_11	FOR_1
+0x40001eb	            0x39c5	                            cmp ebp, eax	       254	dyn-string.c	FUNCTION_11	FOR_1
+0x40001ed	            0x7ee0	                           jle 0x40001cf	       254	dyn-string.c	FUNCTION_11	FOR_1
+0x40001ef	      0x4963542404	            movsxd rdx, dword [r12 + 4] 	       126	string3.h	FUNCTION_27	CALL_3
+0x40001f4	      0x498b742408	                mov rsi, qword [r12 + 8]	       126	string3.h	FUNCTION_27	CALL_3
+0x40001f9	          0x4863fd	                         movsxd rdi, ebp	       126	string3.h	FUNCTION_27	CALL_3
+0x40001fc	        0x48037b08	                add rdi, qword [rbx + 8]	       126	string3.h	FUNCTION_27	CALL_3
+0x4000200	      0xe800000000	                          call 0x4000205	       126	string3.h	FUNCTION_27	CALL_3
+0x4000205	      0x418b442404	                mov eax, dword [r12 + 4]	       259	dyn-string.c	FUNCTION_11
+0x400020a	           0x14304	                add dword [rbx + 4], eax	       259	dyn-string.c	FUNCTION_11
+0x400020d	      0xb801000000	                              mov eax, 1	       260	dyn-string.c	FUNCTION_11
+0x4000212	            0xeb05	                           jmp 0x4000219	       260	dyn-string.c	FUNCTION_11
+0x4000214	      0xb800000000	                              mov eax, 0	       252	dyn-string.c	FUNCTION_11	IF_2
+0x4000219	              0x5b	                                 pop rbx	       261	dyn-string.c	FUNCTION_11
+0x400021a	              0x5d	                                 pop rbp	       261	dyn-string.c	FUNCTION_11
+0x400021b	            0x415c	                                 pop r12	       261	dyn-string.c	FUNCTION_11
+0x400021d	              0xc3	                                     ret	       261	dyn-string.c	FUNCTION_11
+dyn_string_substring	functions,0:IF,2:DO,0:CALL,2:WHILE,0:SWITCH,0:FOR,1:ELSE,0	48
+0x400041b	            0x4155	                                push r13	       366	dyn-string.c	FUNCTION_17
+0x400041d	            0x4154	                                push r12	       366	dyn-string.c	FUNCTION_17
+0x400041f	              0x55	                                push rbp	       366	dyn-string.c	FUNCTION_17
+0x4000420	              0x53	                                push rbx	       366	dyn-string.c	FUNCTION_17
+0x4000421	        0x4883ec08	                              sub rsp, 8	       366	dyn-string.c	FUNCTION_17
+0x4000425	          0x4189cd	                           mov r13d, ecx	       368	dyn-string.c	FUNCTION_17
+0x4000428	          0x4129d5	                           sub r13d, edx	       368	dyn-string.c	FUNCTION_17
+0x400042b	            0x39d1	                            cmp ecx, edx	       370	dyn-string.c	FUNCTION_17	IF_1
+0x400042d	            0x7c13	                            jl 0x4000442	       370	dyn-string.c	FUNCTION_17	IF_1
+0x400042f	          0x4889fd	                            mov rbp, rdi	       370	dyn-string.c	FUNCTION_17	IF_1
+0x4000432	          0x4989f4	                            mov r12, rsi	       370	dyn-string.c	FUNCTION_17	IF_1
+0x4000435	            0x89d3	                            mov ebx, edx	       370	dyn-string.c	FUNCTION_17	IF_1
+0x4000437	          0x8b4604	                mov eax, dword [rsi + 4]	       370	dyn-string.c	FUNCTION_17	IF_1
+0x400043a	            0x39c1	                            cmp ecx, eax	       370	dyn-string.c	FUNCTION_17	IF_1
+0x400043c	            0x7f04	                            jg 0x4000442	       370	dyn-string.c	FUNCTION_17	IF_1
+0x400043e	            0x39c2	                            cmp edx, eax	       370	dyn-string.c	FUNCTION_17	IF_1
+0x4000440	            0x7e05	                           jle 0x4000447	       370	dyn-string.c	FUNCTION_17	IF_1
+0x4000442	      0xe800000000	                          call 0x4000447	       371	dyn-string.c	FUNCTION_17	CALL_1
+0x4000447	          0x4489ee	                           mov esi, r13d	       374	dyn-string.c	FUNCTION_17	IF_2	CALL_2
+0x400044a	      0xe800000000	                          call 0x400044f	       374	dyn-string.c	FUNCTION_17	IF_2	CALL_2
+0x400044f	          0x4885c0	                           test rax, rax	       374	dyn-string.c	FUNCTION_17	IF_2	CALL_2
+0x4000452	            0x7440	                            je 0x4000494	       374	dyn-string.c	FUNCTION_17	IF_2	CALL_2
+0x4000454	          0x4489e8	                           mov eax, r13d	       377	dyn-string.c	FUNCTION_17	FOR_1
+0x4000457	          0x83e801	                              sub eax, 1	       377	dyn-string.c	FUNCTION_17	FOR_1
+0x400045a	            0x7822	                            js 0x400047e	       377	dyn-string.c	FUNCTION_17	FOR_1
+0x400045c	          0x8d1403	                    lea edx, [rbx + rax]	       378	dyn-string.c	FUNCTION_17	FOR_1
+0x400045f	          0x4863d2	                         movsxd rdx, edx	       378	dyn-string.c	FUNCTION_17	FOR_1
+0x4000462	      0x498b4c2408	                mov rcx, qword [r12 + 8]	       378	dyn-string.c	FUNCTION_17	FOR_1
+0x4000467	         0xfb63411	             movzx esi, byte [rcx + rdx]	       378	dyn-string.c	FUNCTION_17	FOR_1
+0x400046b	          0x4863d0	                         movsxd rdx, eax	       378	dyn-string.c	FUNCTION_17	FOR_1
+0x400046e	        0x488b4d08	                mov rcx, qword [rbp + 8]	       378	dyn-string.c	FUNCTION_17	FOR_1
+0x4000472	        0x40883411	               mov byte [rcx + rdx], sil	       378	dyn-string.c	FUNCTION_17	FOR_1
+0x4000476	          0x83e801	                              sub eax, 1	       377	dyn-string.c	FUNCTION_17	FOR_1
+0x4000479	          0x83f8ff	             cmp eax, 0xffffffffffffffff	       377	dyn-string.c	FUNCTION_17	FOR_1
+0x400047c	            0x75de	                           jne 0x400045c	       377	dyn-string.c	FUNCTION_17	FOR_1
+0x400047e	          0x4963c5	                        movsxd rax, r13d	       380	dyn-string.c	FUNCTION_17
+0x4000481	        0x488b5508	                mov rdx, qword [rbp + 8]	       380	dyn-string.c	FUNCTION_17
+0x4000485	        0xc6040200	                 mov byte [rdx + rax], 0	       380	dyn-string.c	FUNCTION_17
+0x4000489	        0x44896d04	               mov dword [rbp + 4], r13d	       382	dyn-string.c	FUNCTION_17
+0x400048d	      0xb801000000	                              mov eax, 1	       384	dyn-string.c	FUNCTION_17
+0x4000492	            0xeb05	                           jmp 0x4000499	       384	dyn-string.c	FUNCTION_17
+0x4000494	      0xb800000000	                              mov eax, 0	       375	dyn-string.c	FUNCTION_17	IF_2
+0x4000499	        0x4883c408	                              add rsp, 8	       385	dyn-string.c	FUNCTION_17
+0x400049d	              0x5b	                                 pop rbx	       385	dyn-string.c	FUNCTION_17
+0x400049e	              0x5d	                                 pop rbp	       385	dyn-string.c	FUNCTION_17
+0x400049f	            0x415c	                                 pop r12	       385	dyn-string.c	FUNCTION_17
+0x40004a1	            0x415d	                                 pop r13	       385	dyn-string.c	FUNCTION_17
+0x40004a3	              0xc3	                                     ret	       385	dyn-string.c	FUNCTION_17
+dyn_string_copy_cstr	functions,0:IF,1:DO,0:CALL,3:WHILE,0:SWITCH,0:FOR,0:ELSE,0	27
+0x4000151	            0x4154	                                push r12	       205	dyn-string.c	FUNCTION_8
+0x4000153	              0x55	                                push rbp	       205	dyn-string.c	FUNCTION_8
+0x4000154	              0x53	                                push rbx	       205	dyn-string.c	FUNCTION_8
+0x4000155	          0x4889fd	                            mov rbp, rdi	       205	dyn-string.c	FUNCTION_8
+0x4000158	          0x4989f4	                            mov r12, rsi	       205	dyn-string.c	FUNCTION_8
+0x400015b	      0xb800000000	                              mov eax, 0	       206	dyn-string.c	FUNCTION_8	CALL_1
+0x4000160	    0x48c7c1ffffff	             mov rcx, 0xffffffffffffffff	       206	dyn-string.c	FUNCTION_8	CALL_1
+0x4000167	          0x4889f7	                            mov rdi, rsi	       206	dyn-string.c	FUNCTION_8	CALL_1
+0x400016a	            0xf2ae	              repne scasb al, byte [rdi]	       206	dyn-string.c	FUNCTION_8	CALL_1
+0x400016c	          0x48f7d1	                                 not rcx	       206	dyn-string.c	FUNCTION_8	CALL_1
+0x400016f	        0x488d59ff	                      lea rbx, [rcx - 1]	       206	dyn-string.c	FUNCTION_8	CALL_1
+0x4000173	            0x89de	                            mov esi, ebx	       208	dyn-string.c	FUNCTION_8	IF_1	CALL_2
+0x4000175	          0x4889ef	                            mov rdi, rbp	       208	dyn-string.c	FUNCTION_8	IF_1	CALL_2
+0x4000178	      0xe800000000	                          call 0x400017d	       208	dyn-string.c	FUNCTION_8	IF_1	CALL_2
+0x400017d	      0xba00000000	                              mov edx, 0	       209	dyn-string.c	FUNCTION_8	IF_1
+0x4000182	          0x4885c0	                           test rax, rax	       208	dyn-string.c	FUNCTION_8	IF_1	CALL_2
+0x4000185	            0x7414	                            je 0x400019b	       208	dyn-string.c	FUNCTION_8	IF_1	CALL_2
+0x4000187	        0x488b7d08	                mov rdi, qword [rbp + 8]	       110	string3.h	FUNCTION_25	CALL_3
+0x400018b	          0x4c89e6	                            mov rsi, r12	       110	string3.h	FUNCTION_25	CALL_3
+0x400018e	      0xe800000000	                          call 0x4000193	       110	string3.h	FUNCTION_25	CALL_3
+0x4000193	          0x895d04	                mov dword [rbp + 4], ebx	       213	dyn-string.c	FUNCTION_8
+0x4000196	      0xba01000000	                              mov edx, 1	       214	dyn-string.c	FUNCTION_8
+0x400019b	            0x89d0	                            mov eax, edx	       215	dyn-string.c	FUNCTION_8
+0x400019d	              0x5b	                                 pop rbx	       215	dyn-string.c	FUNCTION_8
+0x400019e	              0x5d	                                 pop rbp	       215	dyn-string.c	FUNCTION_8
+0x400019f	            0x415c	                                 pop r12	       215	dyn-string.c	FUNCTION_8
+0x40001a1	              0xc3	                                     ret	       215	dyn-string.c	FUNCTION_8
+dyn_string_release	functions,0:IF,0:DO,0:CALL,1:WHILE,0:SWITCH,0:FOR,0:ELSE,0	6
+0x40000ba	              0x53	                                push rbx	       120	dyn-string.c	FUNCTION_4
+0x40000bb	        0x488b5f08	                mov rbx, qword [rdi + 8]	       122	dyn-string.c	FUNCTION_4
+0x40000bf	      0xe800000000	                          call 0x40000c4	       126	dyn-string.c	FUNCTION_4	CALL_1
+0x40000c4	          0x4889d8	                            mov rax, rbx	       129	dyn-string.c	FUNCTION_4
+0x40000c7	              0x5b	                                 pop rbx	       129	dyn-string.c	FUNCTION_4
+0x40000c8	              0xc3	                                     ret	       129	dyn-string.c	FUNCTION_4
+dyn_string_resize	functions,0:IF,2:DO,0:CALL,3:WHILE,1:SWITCH,0:FOR,0:ELSE,0	20
+0x40000c9	              0x53	                                push rbx	       140	dyn-string.c	FUNCTION_5
+0x40000ca	          0x4889fb	                            mov rbx, rdi	       140	dyn-string.c	FUNCTION_5
+0x40000cd	            0x8b17	                    mov edx, dword [rdi]	       141	dyn-string.c	FUNCTION_5
+0x40000cf	          0x83c601	                              add esi, 1	       144	dyn-string.c	FUNCTION_5
+0x40000d2	            0x39f2	                            cmp edx, esi	       147	dyn-string.c	FUNCTION_5	WHILE_1
+0x40000d4	            0x7d1e	                           jge 0x40000f4	       147	dyn-string.c	FUNCTION_5	WHILE_1
+0x40000d6	            0x89d0	                            mov eax, edx	       147	dyn-string.c	FUNCTION_5	WHILE_1
+0x40000d8	             0x1c0	                            add eax, eax	       148	dyn-string.c	FUNCTION_5	WHILE_1
+0x40000da	            0x39c6	                            cmp esi, eax	       147	dyn-string.c	FUNCTION_5	WHILE_1
+0x40000dc	            0x7ffa	                            jg 0x40000d8	       147	dyn-string.c	FUNCTION_5	WHILE_1
+0x40000de	            0x39c2	                            cmp edx, eax	       150	dyn-string.c	FUNCTION_5	IF_1
+0x40000e0	            0x7412	                            je 0x40000f4	       150	dyn-string.c	FUNCTION_5	IF_1
+0x40000e2	            0x8903	                    mov dword [rbx], eax	       152	dyn-string.c	FUNCTION_5	IF_1
+0x40000e4	          0x4863f0	                         movsxd rsi, eax	       162	dyn-string.c	FUNCTION_5	IF_1	CALL_3
+0x40000e7	        0x488b7b08	                mov rdi, qword [rbx + 8]	       162	dyn-string.c	FUNCTION_5	IF_1	CALL_3
+0x40000eb	      0xe800000000	                          call 0x40000f0	       162	dyn-string.c	FUNCTION_5	IF_1	CALL_3
+0x40000f0	        0x48894308	                mov qword [rbx + 8], rax	       162	dyn-string.c	FUNCTION_5	IF_1	CALL_3
+0x40000f4	          0x4889d8	                            mov rax, rbx	       167	dyn-string.c	FUNCTION_5
+0x40000f7	              0x5b	                                 pop rbx	       167	dyn-string.c	FUNCTION_5
+0x40000f8	              0xc3	                                     ret	       167	dyn-string.c	FUNCTION_5
+dyn_string_clear	functions,0:IF,0:DO,0:CALL,0:WHILE,0:SWITCH,0:FOR,0:ELSE,0	4
+0x40000f9	        0x488b4708	                mov rax, qword [rdi + 8]	       175	dyn-string.c	FUNCTION_6
+0x40000fd	          0xc60000	                       mov byte [rax], 0	       175	dyn-string.c	FUNCTION_6
+0x4000100	    0xc74704000000	                  mov dword [rdi + 4], 0	       176	dyn-string.c	FUNCTION_6
+0x4000107	              0xc3	                                     ret	       176	dyn-string.c	FUNCTION_6
+dyn_string_prepend	functions,0:IF,0:DO,0:CALL,1:WHILE,0:SWITCH,0:FOR,0:ELSE,0	6
+0x400021e	        0x4883ec08	                              sub rsp, 8	       224	dyn-string.c	FUNCTION_9
+0x4000222	          0x4889f2	                            mov rdx, rsi	       224	dyn-string.c	FUNCTION_9
+0x4000225	      0xbe00000000	                              mov esi, 0	       225	dyn-string.c	FUNCTION_9	CALL_1
+0x400022a	      0xe800000000	                          call 0x400022f	       225	dyn-string.c	FUNCTION_9	CALL_1
+0x400022f	        0x4883c408	                              add rsp, 8	       226	dyn-string.c	FUNCTION_9
+0x4000233	              0xc3	                                     ret	       226	dyn-string.c	FUNCTION_9
+dyn_string_insert_cstr	functions,0:IF,1:DO,0:CALL,3:WHILE,0:SWITCH,0:FOR,1:ELSE,0	47
+0x4000234	            0x4155	                                push r13	       270	dyn-string.c	FUNCTION_12
+0x4000236	            0x4154	                                push r12	       270	dyn-string.c	FUNCTION_12
+0x4000238	              0x55	                                push rbp	       270	dyn-string.c	FUNCTION_12
+0x4000239	              0x53	                                push rbx	       270	dyn-string.c	FUNCTION_12
+0x400023a	        0x4883ec08	                              sub rsp, 8	       270	dyn-string.c	FUNCTION_12
+0x400023e	          0x4889fd	                            mov rbp, rdi	       270	dyn-string.c	FUNCTION_12
+0x4000241	          0x4189f4	                           mov r12d, esi	       270	dyn-string.c	FUNCTION_12
+0x4000244	          0x4989d5	                            mov r13, rdx	       270	dyn-string.c	FUNCTION_12
+0x4000247	      0xb800000000	                              mov eax, 0	       272	dyn-string.c	FUNCTION_12	CALL_1
+0x400024c	    0x48c7c1ffffff	             mov rcx, 0xffffffffffffffff	       272	dyn-string.c	FUNCTION_12	CALL_1
+0x4000253	          0x4889d7	                            mov rdi, rdx	       272	dyn-string.c	FUNCTION_12	CALL_1
+0x4000256	            0xf2ae	              repne scasb al, byte [rdi]	       272	dyn-string.c	FUNCTION_12	CALL_1
+0x4000258	          0x48f7d1	                                 not rcx	       272	dyn-string.c	FUNCTION_12	CALL_1
+0x400025b	        0x488d59ff	                      lea rbx, [rcx - 1]	       272	dyn-string.c	FUNCTION_12	CALL_1
+0x400025f	            0x89de	                            mov esi, ebx	       274	dyn-string.c	FUNCTION_12	IF_1	CALL_2
+0x4000261	           0x37504	                add esi, dword [rbp + 4]	       274	dyn-string.c	FUNCTION_12	IF_1	CALL_2
+0x4000264	          0x4889ef	                            mov rdi, rbp	       274	dyn-string.c	FUNCTION_12	IF_1	CALL_2
+0x4000267	      0xe800000000	                          call 0x400026c	       274	dyn-string.c	FUNCTION_12	IF_1	CALL_2
+0x400026c	          0x4885c0	                           test rax, rax	       274	dyn-string.c	FUNCTION_12	IF_1	CALL_2
+0x400026f	            0x7441	                            je 0x40002b2	       274	dyn-string.c	FUNCTION_12	IF_1	CALL_2
+0x4000271	          0x8b4504	                mov eax, dword [rbp + 4]	       277	dyn-string.c	FUNCTION_12	FOR_1
+0x4000274	          0x4439e0	                           cmp eax, r12d	       277	dyn-string.c	FUNCTION_12	FOR_1
+0x4000277	            0x7c1d	                            jl 0x4000296	       277	dyn-string.c	FUNCTION_12	FOR_1
+0x4000279	        0x488b4d08	                mov rcx, qword [rbp + 8]	       278	dyn-string.c	FUNCTION_12	FOR_1
+0x400027d	          0x4863d0	                         movsxd rdx, eax	       278	dyn-string.c	FUNCTION_12	FOR_1
+0x4000280	         0xfb63411	             movzx esi, byte [rcx + rdx]	       278	dyn-string.c	FUNCTION_12	FOR_1
+0x4000284	          0x8d1418	                    lea edx, [rax + rbx]	       278	dyn-string.c	FUNCTION_12	FOR_1
+0x4000287	          0x4863d2	                         movsxd rdx, edx	       278	dyn-string.c	FUNCTION_12	FOR_1
+0x400028a	        0x40883411	               mov byte [rcx + rdx], sil	       278	dyn-string.c	FUNCTION_12	FOR_1
+0x400028e	          0x83e801	                              sub eax, 1	       277	dyn-string.c	FUNCTION_12	FOR_1
+0x4000291	          0x4139c4	                           cmp r12d, eax	       277	dyn-string.c	FUNCTION_12	FOR_1
+0x4000294	            0x7ee3	                           jle 0x4000279	       277	dyn-string.c	FUNCTION_12	FOR_1
+0x4000296	          0x4863d3	                         movsxd rdx, ebx	       126	string3.h	FUNCTION_27	CALL_3
+0x4000299	          0x4963fc	                        movsxd rdi, r12d	       126	string3.h	FUNCTION_27	CALL_3
+0x400029c	        0x48037d08	                add rdi, qword [rbp + 8]	       126	string3.h	FUNCTION_27	CALL_3
+0x40002a0	          0x4c89ee	                            mov rsi, r13	       126	string3.h	FUNCTION_27	CALL_3
+0x40002a3	      0xe800000000	                          call 0x40002a8	       126	string3.h	FUNCTION_27	CALL_3
+0x40002a8	           0x15d04	                add dword [rbp + 4], ebx	       282	dyn-string.c	FUNCTION_12
+0x40002ab	      0xb801000000	                              mov eax, 1	       283	dyn-string.c	FUNCTION_12
+0x40002b0	            0xeb05	                           jmp 0x40002b7	       283	dyn-string.c	FUNCTION_12
+0x40002b2	      0xb800000000	                              mov eax, 0	       275	dyn-string.c	FUNCTION_12	IF_1
+0x40002b7	        0x4883c408	                              add rsp, 8	       284	dyn-string.c	FUNCTION_12
+0x40002bb	              0x5b	                                 pop rbx	       284	dyn-string.c	FUNCTION_12
+0x40002bc	              0x5d	                                 pop rbp	       284	dyn-string.c	FUNCTION_12
+0x40002bd	            0x415c	                                 pop r12	       284	dyn-string.c	FUNCTION_12
+0x40002bf	            0x415d	                                 pop r13	       284	dyn-string.c	FUNCTION_12
+0x40002c1	              0xc3	                                     ret	       284	dyn-string.c	FUNCTION_12
+dyn_string_eq	functions,0:IF,1:DO,0:CALL,1:WHILE,0:SWITCH,0:FOR,0:ELSE,1	13
+0x40004a4	      0xb800000000	                              mov eax, 0	       394	dyn-string.c	FUNCTION_18	IF_1
+0x40004a9	          0x8b5604	                mov edx, dword [rsi + 4]	       393	dyn-string.c	FUNCTION_18	IF_1
+0x40004ac	          0x395704	                cmp dword [rdi + 4], edx	       393	dyn-string.c	FUNCTION_18	IF_1
+0x40004af	            0x751d	                           jne 0x40004ce	       393	dyn-string.c	FUNCTION_18	IF_1
+0x40004b1	        0x4883ec08	                              sub rsp, 8	       391	dyn-string.c	FUNCTION_18
+0x40004b5	        0x488b7608	                mov rsi, qword [rsi + 8]	       396	dyn-string.c	FUNCTION_18	CALL_1
+0x40004b9	        0x488b7f08	                mov rdi, qword [rdi + 8]	       396	dyn-string.c	FUNCTION_18	CALL_1
+0x40004bd	      0xe800000000	                          call 0x40004c2	       396	dyn-string.c	FUNCTION_18	CALL_1
+0x40004c2	            0x85c0	                           test eax, eax	       396	dyn-string.c	FUNCTION_18	CALL_1
+0x40004c4	           0xf94c0	                                 sete al	       396	dyn-string.c	FUNCTION_18	CALL_1
+0x40004c7	           0xfb6c0	                           movzx eax, al	       396	dyn-string.c	FUNCTION_18	CALL_1
+0x40004ca	        0x4883c408	                              add rsp, 8	       397	dyn-string.c	FUNCTION_18
+0x40004ce	            0xf3c3	                                     ret	       397	dyn-string.c	FUNCTION_18
+dyn_string_new	functions,0:IF,2:DO,0:CALL,5:WHILE,0:SWITCH,0:FOR,0:ELSE,0	15
+0x400007a	              0x55	                                push rbp	        87	dyn-string.c	FUNCTION_2
+0x400007b	              0x53	                                push rbx	        87	dyn-string.c	FUNCTION_2
+0x400007c	        0x4883ec08	                              sub rsp, 8	        87	dyn-string.c	FUNCTION_2
+0x4000080	            0x89fd	                            mov ebp, edi	        87	dyn-string.c	FUNCTION_2
+0x4000082	      0xbf10000000	                           mov edi, 0x10	        99	dyn-string.c	FUNCTION_2	CALL_4
+0x4000087	      0xe800000000	                          call 0x400008c	        99	dyn-string.c	FUNCTION_2	CALL_4
+0x400008c	          0x4889c3	                            mov rbx, rax	        99	dyn-string.c	FUNCTION_2	CALL_4
+0x400008f	            0x89ee	                            mov esi, ebp	       100	dyn-string.c	FUNCTION_2	CALL_5
+0x4000091	          0x4889c7	                            mov rdi, rax	       100	dyn-string.c	FUNCTION_2	CALL_5
+0x4000094	      0xe800000000	                          call 0x4000099	       100	dyn-string.c	FUNCTION_2	CALL_5
+0x4000099	          0x4889d8	                            mov rax, rbx	       103	dyn-string.c	FUNCTION_2
+0x400009c	        0x4883c408	                              add rsp, 8	       103	dyn-string.c	FUNCTION_2
+0x40000a0	              0x5b	                                 pop rbx	       103	dyn-string.c	FUNCTION_2
+0x40000a1	              0x5d	                                 pop rbp	       103	dyn-string.c	FUNCTION_2
+0x40000a2	              0xc3	                                     ret	       103	dyn-string.c	FUNCTION_2
+dyn_string_prepend_cstr	functions,0:IF,0:DO,0:CALL,1:WHILE,0:SWITCH,0:FOR,0:ELSE,0	6
+0x40002c2	        0x4883ec08	                              sub rsp, 8	       234	dyn-string.c	FUNCTION_10
+0x40002c6	          0x4889f2	                            mov rdx, rsi	       234	dyn-string.c	FUNCTION_10
+0x40002c9	      0xbe00000000	                              mov esi, 0	       235	dyn-string.c	FUNCTION_10	CALL_1
+0x40002ce	      0xe800000000	                          call 0x40002d3	       235	dyn-string.c	FUNCTION_10	CALL_1
+0x40002d3	        0x4883c408	                              add rsp, 8	       236	dyn-string.c	FUNCTION_10
+0x40002d7	              0xc3	                                     ret	       236	dyn-string.c	FUNCTION_10
+dyn_string_insert_char	functions,0:IF,1:DO,0:CALL,1:WHILE,0:SWITCH,0:FOR,1:ELSE,0	32
+0x40002d8	            0x4154	                                push r12	       292	dyn-string.c	FUNCTION_13
+0x40002da	              0x55	                                push rbp	       292	dyn-string.c	FUNCTION_13
+0x40002db	              0x53	                                push rbx	       292	dyn-string.c	FUNCTION_13
+0x40002dc	          0x4889fb	                            mov rbx, rdi	       292	dyn-string.c	FUNCTION_13
+0x40002df	            0x89f5	                            mov ebp, esi	       292	dyn-string.c	FUNCTION_13
+0x40002e1	          0x4189d4	                           mov r12d, edx	       292	dyn-string.c	FUNCTION_13
+0x40002e4	          0x8b4704	                mov eax, dword [rdi + 4]	       295	dyn-string.c	FUNCTION_13	IF_1	CALL_1
+0x40002e7	          0x8d7001	                      lea esi, [rax + 1]	       295	dyn-string.c	FUNCTION_13	IF_1	CALL_1
+0x40002ea	      0xe800000000	                          call 0x40002ef	       295	dyn-string.c	FUNCTION_13	IF_1	CALL_1
+0x40002ef	          0x4885c0	                           test rax, rax	       295	dyn-string.c	FUNCTION_13	IF_1	CALL_1
+0x40002f2	            0x7434	                            je 0x4000328	       295	dyn-string.c	FUNCTION_13	IF_1	CALL_1
+0x40002f4	          0x8b4304	                mov eax, dword [rbx + 4]	       298	dyn-string.c	FUNCTION_13	FOR_1
+0x40002f7	            0x39e8	                            cmp eax, ebp	       298	dyn-string.c	FUNCTION_13	FOR_1
+0x40002f9	            0x7c17	                            jl 0x4000312	       298	dyn-string.c	FUNCTION_13	FOR_1
+0x40002fb	        0x488b4b08	                mov rcx, qword [rbx + 8]	       299	dyn-string.c	FUNCTION_13	FOR_1
+0x40002ff	          0x4863d0	                         movsxd rdx, eax	       299	dyn-string.c	FUNCTION_13	FOR_1
+0x4000302	         0xfb63411	             movzx esi, byte [rcx + rdx]	       299	dyn-string.c	FUNCTION_13	FOR_1
+0x4000306	      0x4088741101	           mov byte [rcx + rdx + 1], sil	       299	dyn-string.c	FUNCTION_13	FOR_1
+0x400030b	          0x83e801	                              sub eax, 1	       298	dyn-string.c	FUNCTION_13	FOR_1
+0x400030e	            0x39c5	                            cmp ebp, eax	       298	dyn-string.c	FUNCTION_13	FOR_1
+0x4000310	            0x7ee9	                           jle 0x40002fb	       298	dyn-string.c	FUNCTION_13	FOR_1
+0x4000312	          0x4863ed	                         movsxd rbp, ebp	       301	dyn-string.c	FUNCTION_13
+0x4000315	        0x488b4308	                mov rax, qword [rbx + 8]	       301	dyn-string.c	FUNCTION_13
+0x4000319	        0x44882428	              mov byte [rax + rbp], r12b	       301	dyn-string.c	FUNCTION_13
+0x400031d	        0x83430401	                  add dword [rbx + 4], 1	       303	dyn-string.c	FUNCTION_13
+0x4000321	      0xb801000000	                              mov eax, 1	       304	dyn-string.c	FUNCTION_13
+0x4000326	            0xeb05	                           jmp 0x400032d	       304	dyn-string.c	FUNCTION_13
+0x4000328	      0xb800000000	                              mov eax, 0	       296	dyn-string.c	FUNCTION_13	IF_1
+0x400032d	              0x5b	                                 pop rbx	       305	dyn-string.c	FUNCTION_13
+0x400032e	              0x5d	                                 pop rbp	       305	dyn-string.c	FUNCTION_13
+0x400032f	            0x415c	                                 pop r12	       305	dyn-string.c	FUNCTION_13
+0x4000331	              0xc3	                                     ret	       305	dyn-string.c	FUNCTION_13
+dyn_string_append_cstr	functions,0:IF,1:DO,0:CALL,3:WHILE,0:SWITCH,0:FOR,0:ELSE,0	29
+0x4000378	            0x4154	                                push r12	       327	dyn-string.c	FUNCTION_15
+0x400037a	              0x55	                                push rbp	       327	dyn-string.c	FUNCTION_15
+0x400037b	              0x53	                                push rbx	       327	dyn-string.c	FUNCTION_15
+0x400037c	          0x4889fd	                            mov rbp, rdi	       327	dyn-string.c	FUNCTION_15
+0x400037f	          0x4989f4	                            mov r12, rsi	       327	dyn-string.c	FUNCTION_15
+0x4000382	      0xb800000000	                              mov eax, 0	       328	dyn-string.c	FUNCTION_15	CALL_1
+0x4000387	    0x48c7c1ffffff	             mov rcx, 0xffffffffffffffff	       328	dyn-string.c	FUNCTION_15	CALL_1
+0x400038e	          0x4889f7	                            mov rdi, rsi	       328	dyn-string.c	FUNCTION_15	CALL_1
+0x4000391	            0xf2ae	              repne scasb al, byte [rdi]	       328	dyn-string.c	FUNCTION_15	CALL_1
+0x4000393	          0x48f7d1	                                 not rcx	       328	dyn-string.c	FUNCTION_15	CALL_1
+0x4000396	        0x488d59ff	                      lea rbx, [rcx - 1]	       328	dyn-string.c	FUNCTION_15	CALL_1
+0x400039a	            0x89de	                            mov esi, ebx	       332	dyn-string.c	FUNCTION_15	IF_1	CALL_2
+0x400039c	           0x37504	                add esi, dword [rbp + 4]	       332	dyn-string.c	FUNCTION_15	IF_1	CALL_2
+0x400039f	          0x4889ef	                            mov rdi, rbp	       332	dyn-string.c	FUNCTION_15	IF_1	CALL_2
+0x40003a2	      0xe800000000	                          call 0x40003a7	       332	dyn-string.c	FUNCTION_15	IF_1	CALL_2
+0x40003a7	      0xba00000000	                              mov edx, 0	       333	dyn-string.c	FUNCTION_15	IF_1
+0x40003ac	          0x4885c0	                           test rax, rax	       332	dyn-string.c	FUNCTION_15	IF_1	CALL_2
+0x40003af	            0x7418	                            je 0x40003c9	       332	dyn-string.c	FUNCTION_15	IF_1	CALL_2
+0x40003b1	        0x48637d04	            movsxd rdi, dword [rbp + 4] 	       110	string3.h	FUNCTION_25	CALL_3
+0x40003b5	        0x48037d08	                add rdi, qword [rbp + 8]	       110	string3.h	FUNCTION_25	CALL_3
+0x40003b9	          0x4c89e6	                            mov rsi, r12	       110	string3.h	FUNCTION_25	CALL_3
+0x40003bc	      0xe800000000	                          call 0x40003c1	       110	string3.h	FUNCTION_25	CALL_3
+0x40003c1	           0x15d04	                add dword [rbp + 4], ebx	       335	dyn-string.c	FUNCTION_15
+0x40003c4	      0xba01000000	                              mov edx, 1	       336	dyn-string.c	FUNCTION_15
+0x40003c9	            0x89d0	                            mov eax, edx	       337	dyn-string.c	FUNCTION_15
+0x40003cb	              0x5b	                                 pop rbx	       337	dyn-string.c	FUNCTION_15
+0x40003cc	              0x5d	                                 pop rbp	       337	dyn-string.c	FUNCTION_15
+0x40003cd	            0x415c	                                 pop r12	       337	dyn-string.c	FUNCTION_15
+0x40003cf	              0xc3	                                     ret	       337	dyn-string.c	FUNCTION_15
+dyn_string_delete	functions,0:IF,0:DO,0:CALL,2:WHILE,0:SWITCH,0:FOR,0:ELSE,0	8
+0x40000a3	              0x53	                                push rbx	       109	dyn-string.c	FUNCTION_3
+0x40000a4	          0x4889fb	                            mov rbx, rdi	       109	dyn-string.c	FUNCTION_3
+0x40000a7	        0x488b7f08	                mov rdi, qword [rdi + 8]	       110	dyn-string.c	FUNCTION_3	CALL_1
+0x40000ab	      0xe800000000	                          call 0x40000b0	       110	dyn-string.c	FUNCTION_3	CALL_1
+0x40000b0	          0x4889df	                            mov rdi, rbx	       111	dyn-string.c	FUNCTION_3	CALL_2
+0x40000b3	      0xe800000000	                          call 0x40000b8	       111	dyn-string.c	FUNCTION_3	CALL_2
+0x40000b8	              0x5b	                                 pop rbx	       112	dyn-string.c	FUNCTION_3
+0x40000b9	              0xc3	                                     ret	       112	dyn-string.c	FUNCTION_3
+dyn_string_append_char	functions,0:IF,1:DO,0:CALL,1:WHILE,0:SWITCH,0:FOR,0:ELSE,0	24
+0x40003d0	              0x55	                                push rbp	       344	dyn-string.c	FUNCTION_16
+0x40003d1	              0x53	                                push rbx	       344	dyn-string.c	FUNCTION_16
+0x40003d2	        0x4883ec08	                              sub rsp, 8	       344	dyn-string.c	FUNCTION_16
+0x40003d6	          0x4889fb	                            mov rbx, rdi	       344	dyn-string.c	FUNCTION_16
+0x40003d9	            0x89f5	                            mov ebp, esi	       344	dyn-string.c	FUNCTION_16
+0x40003db	          0x8b4704	                mov eax, dword [rdi + 4]	       346	dyn-string.c	FUNCTION_16	IF_1	CALL_1
+0x40003de	          0x8d7001	                      lea esi, [rax + 1]	       346	dyn-string.c	FUNCTION_16	IF_1	CALL_1
+0x40003e1	      0xe800000000	                          call 0x40003e6	       346	dyn-string.c	FUNCTION_16	IF_1	CALL_1
+0x40003e6	          0x4885c0	                           test rax, rax	       346	dyn-string.c	FUNCTION_16	IF_1	CALL_1
+0x40003e9	            0x7424	                            je 0x400040f	       346	dyn-string.c	FUNCTION_16	IF_1	CALL_1
+0x40003eb	        0x48634304	            movsxd rax, dword [rbx + 4] 	       349	dyn-string.c	FUNCTION_16
+0x40003ef	        0x488b5308	                mov rdx, qword [rbx + 8]	       349	dyn-string.c	FUNCTION_16
+0x40003f3	        0x40882c02	               mov byte [rdx + rax], bpl	       349	dyn-string.c	FUNCTION_16
+0x40003f7	        0x48634304	            movsxd rax, dword [rbx + 4] 	       351	dyn-string.c	FUNCTION_16
+0x40003fb	        0x488b5308	                mov rdx, qword [rbx + 8]	       351	dyn-string.c	FUNCTION_16
+0x40003ff	      0xc644020100	             mov byte [rdx + rax + 1], 0	       351	dyn-string.c	FUNCTION_16
+0x4000404	        0x83430401	                  add dword [rbx + 4], 1	       353	dyn-string.c	FUNCTION_16
+0x4000408	      0xb801000000	                              mov eax, 1	       354	dyn-string.c	FUNCTION_16
+0x400040d	            0xeb05	                           jmp 0x4000414	       354	dyn-string.c	FUNCTION_16
+0x400040f	      0xb800000000	                              mov eax, 0	       347	dyn-string.c	FUNCTION_16	IF_1
+0x4000414	        0x4883c408	                              add rsp, 8	       355	dyn-string.c	FUNCTION_16
+0x4000418	              0x5b	                                 pop rbx	       355	dyn-string.c	FUNCTION_16
+0x4000419	              0x5d	                                 pop rbp	       355	dyn-string.c	FUNCTION_16
+0x400041a	              0xc3	                                     ret	       355	dyn-string.c	FUNCTION_16
+dyn_string_append	functions,0:IF,1:DO,0:CALL,2:WHILE,0:SWITCH,0:FOR,0:ELSE,0	23
+0x4000332	              0x55	                                push rbp	       313	dyn-string.c	FUNCTION_14
+0x4000333	              0x53	                                push rbx	       313	dyn-string.c	FUNCTION_14
+0x4000334	        0x4883ec08	                              sub rsp, 8	       313	dyn-string.c	FUNCTION_14
+0x4000338	          0x4889fb	                            mov rbx, rdi	       313	dyn-string.c	FUNCTION_14
+0x400033b	          0x4889f5	                            mov rbp, rsi	       313	dyn-string.c	FUNCTION_14
+0x400033e	          0x8b7604	                mov esi, dword [rsi + 4]	       314	dyn-string.c	FUNCTION_14	IF_1	CALL_1
+0x4000341	           0x37704	                add esi, dword [rdi + 4]	       314	dyn-string.c	FUNCTION_14	IF_1	CALL_1
+0x4000344	      0xe800000000	                          call 0x4000349	       314	dyn-string.c	FUNCTION_14	IF_1	CALL_1
+0x4000349	      0xba00000000	                              mov edx, 0	       315	dyn-string.c	FUNCTION_14	IF_1
+0x400034e	          0x4885c0	                           test rax, rax	       314	dyn-string.c	FUNCTION_14	IF_1	CALL_1
+0x4000351	            0x741c	                            je 0x400036f	       314	dyn-string.c	FUNCTION_14	IF_1	CALL_1
+0x4000353	        0x488b7508	                mov rsi, qword [rbp + 8]	       110	string3.h	FUNCTION_25	CALL_3
+0x4000357	        0x48637b04	            movsxd rdi, dword [rbx + 4] 	       110	string3.h	FUNCTION_25	CALL_3
+0x400035b	        0x48037b08	                add rdi, qword [rbx + 8]	       110	string3.h	FUNCTION_25	CALL_3
+0x400035f	      0xe800000000	                          call 0x4000364	       110	string3.h	FUNCTION_25	CALL_3
+0x4000364	          0x8b4504	                mov eax, dword [rbp + 4]	       317	dyn-string.c	FUNCTION_14
+0x4000367	           0x14304	                add dword [rbx + 4], eax	       317	dyn-string.c	FUNCTION_14
+0x400036a	      0xba01000000	                              mov edx, 1	       318	dyn-string.c	FUNCTION_14
+0x400036f	            0x89d0	                            mov eax, edx	       319	dyn-string.c	FUNCTION_14
+0x4000371	        0x4883c408	                              add rsp, 8	       319	dyn-string.c	FUNCTION_14
+0x4000375	              0x5b	                                 pop rbx	       319	dyn-string.c	FUNCTION_14
+0x4000376	              0x5d	                                 pop rbp	       319	dyn-string.c	FUNCTION_14
+0x4000377	              0xc3	                                     ret	       319	dyn-string.c	FUNCTION_14

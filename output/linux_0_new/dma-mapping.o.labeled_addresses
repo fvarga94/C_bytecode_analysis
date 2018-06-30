@@ -1,0 +1,70 @@
+dma_configure	ELSE,0:IF,1:FOR,0:DO,0:SWITCH,0:CALL,1:functions,0:WHILE,0	7
+0x40006b0	    0x488b87800000	            mov rax, qword [rdi + 0x80] 	       336	dma-mapping.c	FUNCTION_15	IF_1
+0x40006b7	    0x488b80800000	            mov rax, qword [rax + 0x80] 	       336	dma-mapping.c	FUNCTION_15	IF_1
+0x40006be	          0x4885c0	                           test rax, rax	       336	dma-mapping.c	FUNCTION_15	IF_1
+0x40006c1	            0x7405	                            je 0x40006c8	       336	dma-mapping.c	FUNCTION_15	IF_1
+0x40006c3	      0xe900000000	                           jmp 0x40006c8	       337	dma-mapping.c	FUNCTION_15	CALL_1
+0x40006c8	            0x31c0	                            xor eax, eax	       339	dma-mapping.c	FUNCTION_15
+0x40006ca	              0xc3	                                     ret	       339	dma-mapping.c	FUNCTION_15
+dma_deconfigure	ELSE,0:IF,0:FOR,0:DO,0:SWITCH,0:CALL,2:functions,0:WHILE,0	1
+0x40006d0	      0xe900000000	                   jmp section_end..text	       344	dma-mapping.c	FUNCTION_16	CALL_2
+dma_common_free_remap	ELSE,0:IF,1:FOR,0:DO,0:SWITCH,0:CALL,5:functions,0:WHILE,0	30
+0x4000650	            0x4154	                                push r12	       318	dma-mapping.c	FUNCTION_14
+0x4000652	              0x55	                                push rbp	       318	dma-mapping.c	FUNCTION_14
+0x4000653	          0x4989f4	                            mov r12, rsi	       318	dma-mapping.c	FUNCTION_14
+0x4000656	              0x53	                                push rbx	       318	dma-mapping.c	FUNCTION_14
+0x4000657	          0x4889d5	                            mov rbp, rdx	       318	dma-mapping.c	FUNCTION_14
+0x400065a	          0x4889fb	                            mov rbx, rdi	       318	dma-mapping.c	FUNCTION_14
+0x400065d	      0xe800000000	                          call 0x4000662	       319	dma-mapping.c	FUNCTION_14	CALL_1
+0x4000662	          0x4885c0	                           test rax, rax	       321	dma-mapping.c	FUNCTION_14	IF_1
+0x4000665	            0x740c	                            je 0x4000673	       321	dma-mapping.c	FUNCTION_14	IF_1
+0x4000667	          0x4889e9	                            mov rcx, rbp	       321	dma-mapping.c	FUNCTION_14	IF_1
+0x400066a	        0x48234818	             and rcx, qword [rax + 0x18]	       321	dma-mapping.c	FUNCTION_14	IF_1
+0x400066e	          0x4839cd	                            cmp rbp, rcx	       321	dma-mapping.c	FUNCTION_14	IF_1
+0x4000671	            0x7416	                            je 0x4000689	       321	dma-mapping.c	FUNCTION_14	IF_1
+0x4000673	          0x4889de	                            mov rsi, rbx	       322	dma-mapping.c	FUNCTION_14	IF_1	CALL_2
+0x4000676	    0x48c7c7000000	                              mov rdi, 0	       322	dma-mapping.c	FUNCTION_14	IF_1	CALL_2
+0x400067d	      0xe800000000	                          call 0x4000682	       322	dma-mapping.c	FUNCTION_14	IF_1	CALL_2
+0x4000682	             0xf0b	                                     ud2	       322	dma-mapping.c	FUNCTION_14	IF_1	CALL_2
+0x4000684	              0x5b	                                 pop rbx	       328	dma-mapping.c	FUNCTION_14
+0x4000685	              0x5d	                                 pop rbp	       328	dma-mapping.c	FUNCTION_14
+0x4000686	            0x415c	                                 pop r12	       328	dma-mapping.c	FUNCTION_14
+0x4000688	              0xc3	                                     ret	       328	dma-mapping.c	FUNCTION_14
+0x4000689	    0x498db424ff0f	                  lea rsi, [r12 + 0xfff]	       326	dma-mapping.c	FUNCTION_14	CALL_4
+0x4000691	          0x4889df	                            mov rdi, rbx	       326	dma-mapping.c	FUNCTION_14	CALL_4
+0x4000694	    0x4881e600f0ff	             and rsi, 0xfffffffffffff000	       326	dma-mapping.c	FUNCTION_14	CALL_4
+0x400069b	      0xe800000000	                          call 0x40006a0	       326	dma-mapping.c	FUNCTION_14	CALL_4
+0x40006a0	          0x4889df	                            mov rdi, rbx	       327	dma-mapping.c	FUNCTION_14	CALL_5
+0x40006a3	              0x5b	                                 pop rbx	       328	dma-mapping.c	FUNCTION_14
+0x40006a4	              0x5d	                                 pop rbp	       328	dma-mapping.c	FUNCTION_14
+0x40006a5	            0x415c	                                 pop r12	       328	dma-mapping.c	FUNCTION_14
+0x40006a7	      0xe900000000	                           jmp 0x40006ac	       327	dma-mapping.c	FUNCTION_14	CALL_5
+dma_common_pages_remap	ELSE,0:IF,1:FOR,0:DO,0:SWITCH,0:CALL,1:functions,0:WHILE,0	28
+0x4000520	            0x4154	                                push r12	       273	dma-mapping.c	FUNCTION_12
+0x4000522	              0x55	                                push rbp	       273	dma-mapping.c	FUNCTION_12
+0x4000523	          0x4889fd	                            mov rbp, rdi	       273	dma-mapping.c	FUNCTION_12
+0x4000526	              0x53	                                push rbx	       273	dma-mapping.c	FUNCTION_12
+0x4000527	          0x4889f7	                            mov rdi, rsi	       273	dma-mapping.c	FUNCTION_12
+0x400052a	          0x4889d6	                            mov rsi, rdx	       273	dma-mapping.c	FUNCTION_12
+0x400052d	          0x4c89c2	                             mov rdx, r8	       254	dma-mapping.c	FUNCTION_11	CALL_1
+0x4000530	          0x4989cc	                            mov r12, rcx	       273	dma-mapping.c	FUNCTION_12
+0x4000533	      0xe800000000	                          call 0x4000538	       254	dma-mapping.c	FUNCTION_11	CALL_1
+0x4000538	          0x4885c0	                           test rax, rax	       255	dma-mapping.c	FUNCTION_11	IF_1
+0x400053b	            0x742b	                            je 0x4000568	       255	dma-mapping.c	FUNCTION_11	IF_1
+0x400053d	          0x4889ea	                            mov rdx, rbp	       258	dma-mapping.c	FUNCTION_11	IF_2	CALL_2
+0x4000540	          0x4c89e6	                            mov rsi, r12	       258	dma-mapping.c	FUNCTION_11	IF_2	CALL_2
+0x4000543	          0x4889c7	                            mov rdi, rax	       258	dma-mapping.c	FUNCTION_11	IF_2	CALL_2
+0x4000546	          0x4889c3	                            mov rbx, rax	       258	dma-mapping.c	FUNCTION_11	IF_2	CALL_2
+0x4000549	      0xe800000000	                          call 0x400054e	       258	dma-mapping.c	FUNCTION_11	IF_2	CALL_2
+0x400054e	            0x85c0	                           test eax, eax	       258	dma-mapping.c	FUNCTION_11	IF_2	CALL_2
+0x4000550	            0x750d	                           jne 0x400055f	       258	dma-mapping.c	FUNCTION_11	IF_2	CALL_2
+0x4000552	        0x488b4308	                mov rax, qword [rbx + 8]	       282	dma-mapping.c	FUNCTION_12
+0x4000556	        0x48896b20	             mov qword [rbx + 0x20], rbp	       280	dma-mapping.c	FUNCTION_12
+0x400055a	              0x5b	                                 pop rbx	       283	dma-mapping.c	FUNCTION_12
+0x400055b	              0x5d	                                 pop rbp	       283	dma-mapping.c	FUNCTION_12
+0x400055c	            0x415c	                                 pop r12	       283	dma-mapping.c	FUNCTION_12
+0x400055e	              0xc3	                                     ret	       283	dma-mapping.c	FUNCTION_12
+0x400055f	        0x488b7b08	                mov rdi, qword [rbx + 8]	       259	dma-mapping.c	FUNCTION_11	IF_2	CALL_3
+0x4000563	      0xe800000000	                          call 0x4000568	       259	dma-mapping.c	FUNCTION_11	IF_2	CALL_3
+0x4000568	            0x31c0	                            xor eax, eax	       278	dma-mapping.c	FUNCTION_12	IF_1
+0x400056a	            0xebee	                           jmp 0x400055a	       278	dma-mapping.c	FUNCTION_12	IF_1

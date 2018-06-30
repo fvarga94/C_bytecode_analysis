@@ -1,0 +1,110 @@
+mdio_device_bus_match	functions,0:FOR,0:WHILE,0:CALL,3:DO,0:ELSE,0:IF,1:SWITCH,0	12
+0x4000290	    0x8b8680000000	            mov eax, dword [rsi + 0x80] 	        45	mdio_device.c	FUNCTION_3	IF_1
+0x4000296	            0x85c0	                           test eax, eax	        45	mdio_device.c	FUNCTION_3	IF_1
+0x4000298	            0x7818	                            js 0x40002b2	        45	mdio_device.c	FUNCTION_3	IF_1
+0x400029a	          0x488b36	                    mov rsi, qword [rsi]	        48	mdio_device.c	FUNCTION_3	CALL_3
+0x400029d	    0x4881c7e00200	                          add rdi, 0x2e0	        48	mdio_device.c	FUNCTION_3	CALL_3
+0x40002a4	      0xe800000000	                          call 0x40002a9	        48	mdio_device.c	FUNCTION_3	CALL_3
+0x40002a9	            0x85c0	                           test eax, eax	        48	mdio_device.c	FUNCTION_3	CALL_3
+0x40002ab	           0xf94c0	                                 sete al	        48	mdio_device.c	FUNCTION_3	CALL_3
+0x40002ae	           0xfb6c0	                           movzx eax, al	        48	mdio_device.c	FUNCTION_3	CALL_3
+0x40002b1	              0xc3	                                     ret	        48	mdio_device.c	FUNCTION_3	CALL_3
+0x40002b2	            0x31c0	                            xor eax, eax	        46	mdio_device.c	FUNCTION_3	IF_1
+0x40002b4	              0xc3	                                     ret	        49	mdio_device.c	FUNCTION_3
+mdio_remove	functions,0:FOR,0:WHILE,0:CALL,4:DO,0:ELSE,0:IF,1:SWITCH,0	15
+0x40000c0	    0x488b87880000	            mov rax, qword [rdi + 0x88] 	       169	mdio_device.c	FUNCTION_9	IF_1
+0x40000c7	    0x488b80900000	            mov rax, qword [rax + 0x90] 	       169	mdio_device.c	FUNCTION_9	IF_1
+0x40000ce	          0x4885c0	                           test rax, rax	       169	mdio_device.c	FUNCTION_9	IF_1
+0x40000d1	            0x741a	                            je 0x40000ed	       169	mdio_device.c	FUNCTION_9	IF_1
+0x40000d3	              0x53	                                push rbx	       164	mdio_device.c	FUNCTION_9
+0x40000d4	          0x4889fb	                            mov rbx, rdi	       164	mdio_device.c	FUNCTION_9
+0x40000d7	      0xe800000000	                          call 0x40000dc	       170	mdio_device.c	FUNCTION_9	IF_1	CALL_3
+0x40000dc	          0x4889df	                            mov rdi, rbx	       173	mdio_device.c	FUNCTION_9	IF_1	CALL_4
+0x40000df	      0xbe01000000	                              mov esi, 1	       173	mdio_device.c	FUNCTION_9	IF_1	CALL_4
+0x40000e4	      0xe800000000	                          call 0x40000e9	       173	mdio_device.c	FUNCTION_9	IF_1	CALL_4
+0x40000e9	            0x31c0	                            xor eax, eax	       177	mdio_device.c	FUNCTION_9
+0x40000eb	              0x5b	                                 pop rbx	       177	mdio_device.c	FUNCTION_9
+0x40000ec	              0xc3	                                     ret	       177	mdio_device.c	FUNCTION_9
+0x40000ed	            0x31c0	                            xor eax, eax	       177	mdio_device.c	FUNCTION_9
+0x40000ef	              0xc3	                                     ret	       177	mdio_device.c	FUNCTION_9
+mdio_probe	functions,0:FOR,0:WHILE,0:CALL,5:DO,0:ELSE,0:IF,2:SWITCH,0	28
+0x40000f0	              0x55	                                push rbp	       143	mdio_device.c	FUNCTION_8
+0x40000f1	              0x53	                                push rbx	       143	mdio_device.c	FUNCTION_8
+0x40000f2	            0x31c0	                            xor eax, eax	       147	mdio_device.c	FUNCTION_8
+0x40000f4	        0x4883ec08	                              sub rsp, 8	       143	mdio_device.c	FUNCTION_8
+0x40000f8	    0x488baf880000	            mov rbp, qword [rdi + 0x88] 	       145	mdio_device.c	FUNCTION_8
+0x40000ff	    0x4883bd880000	               cmp qword [rbp + 0x88], 0	       149	mdio_device.c	FUNCTION_8	IF_1
+0x4000107	            0x741d	                            je 0x4000126	       149	mdio_device.c	FUNCTION_8	IF_1
+0x4000109	            0x31f6	                            xor esi, esi	       151	mdio_device.c	FUNCTION_8	IF_1	CALL_3
+0x400010b	          0x4889fb	                            mov rbx, rdi	       151	mdio_device.c	FUNCTION_8	IF_1	CALL_3
+0x400010e	      0xe800000000	                          call 0x4000113	       151	mdio_device.c	FUNCTION_8	IF_1	CALL_3
+0x4000113	    0x488b85880000	            mov rax, qword [rbp + 0x88] 	       153	mdio_device.c	FUNCTION_8	IF_1	CALL_4
+0x400011a	          0x4889df	                            mov rdi, rbx	       153	mdio_device.c	FUNCTION_8	IF_1	CALL_4
+0x400011d	      0xe800000000	                          call 0x4000122	       153	mdio_device.c	FUNCTION_8	IF_1	CALL_4
+0x4000122	            0x85c0	                           test eax, eax	       154	mdio_device.c	FUNCTION_8	IF_1	IF_2
+0x4000124	            0x7507	                           jne 0x400012d	       154	mdio_device.c	FUNCTION_8	IF_1	IF_2
+0x4000126	        0x4883c408	                              add rsp, 8	       161	mdio_device.c	FUNCTION_8
+0x400012a	              0x5b	                                 pop rbx	       161	mdio_device.c	FUNCTION_8
+0x400012b	              0x5d	                                 pop rbp	       161	mdio_device.c	FUNCTION_8
+0x400012c	              0xc3	                                     ret	       161	mdio_device.c	FUNCTION_8
+0x400012d	          0x4889df	                            mov rdi, rbx	       156	mdio_device.c	FUNCTION_8	IF_1	IF_2	CALL_5
+0x4000130	      0xbe01000000	                              mov esi, 1	       156	mdio_device.c	FUNCTION_8	IF_1	IF_2	CALL_5
+0x4000135	        0x89442404	                mov dword [rsp + 4], eax	       156	mdio_device.c	FUNCTION_8	IF_1	IF_2	CALL_5
+0x4000139	      0xe800000000	                          call 0x400013e	       156	mdio_device.c	FUNCTION_8	IF_1	IF_2	CALL_5
+0x400013e	        0x8b442404	                mov eax, dword [rsp + 4]	       156	mdio_device.c	FUNCTION_8	IF_1	IF_2	CALL_5
+0x4000142	        0x4883c408	                              add rsp, 8	       161	mdio_device.c	FUNCTION_8
+0x4000146	              0x5b	                                 pop rbx	       161	mdio_device.c	FUNCTION_8
+0x4000147	              0x5d	                                 pop rbp	       161	mdio_device.c	FUNCTION_8
+0x4000148	              0xc3	                                     ret	       161	mdio_device.c	FUNCTION_8
+mdio_device_release	functions,0:FOR,0:WHILE,0:CALL,2:DO,0:ELSE,0:IF,0:SWITCH,0	1
+0x4000050	      0xe900000000	                           jmp 0x4000055	        37	mdio_device.c	FUNCTION_2	CALL_2
+mdio_driver_unregister	functions,0:FOR,0:WHILE,0:CALL,1:DO,0:ELSE,0:IF,0:SWITCH,0	1
+0x4000190	      0xe900000000	                           jmp 0x4000195	       210	mdio_device.c	FUNCTION_11	CALL_1
+mdio_device_reset	functions,0:FOR,0:WHILE,0:CALL,3:DO,0:ELSE,0:IF,2:SWITCH,0	18
+0x4000080	    0x4883bf200300	              cmp qword [rdi + 0x320], 0	       124	mdio_device.c	FUNCTION_7	IF_1
+0x4000088	            0x7417	                            je 0x40000a1	       124	mdio_device.c	FUNCTION_7	IF_1
+0x400008a	             0xf0b	                                     ud2	       124	mdio_device.c	FUNCTION_7	IF_1
+0x400008c	    0x8b872c030000	           mov eax, dword [rdi + 0x32c] 	       129	mdio_device.c	FUNCTION_7
+0x4000092	            0x85f6	                           test esi, esi	       129	mdio_device.c	FUNCTION_7
+0x4000094	     0xf4587280300	         cmovne eax, dword [rdi + 0x328]	       129	mdio_device.c	FUNCTION_7
+0x400009b	            0x89c7	                            mov edi, eax	       129	mdio_device.c	FUNCTION_7
+0x400009d	            0x85ff	                           test edi, edi	       130	mdio_device.c	FUNCTION_7	IF_2
+0x400009f	            0x7502	                           jne 0x40000a3	       130	mdio_device.c	FUNCTION_7	IF_2
+0x40000a1	            0xf3c3	                                     ret	       130	mdio_device.c	FUNCTION_7	IF_2
+0x40000a3	      0xbacdcccccc	                     mov edx, 0xcccccccd	       131	mdio_device.c	FUNCTION_7	CALL_3
+0x40000a8	            0xf7e2	                                 mul edx	       131	mdio_device.c	FUNCTION_7	CALL_3
+0x40000aa	      0xb864000000	                           mov eax, 0x64	       131	mdio_device.c	FUNCTION_7	CALL_3
+0x40000af	          0xc1ea03	                              shr edx, 3	       131	mdio_device.c	FUNCTION_7	CALL_3
+0x40000b2	          0x83fa64	                           cmp edx, 0x64	       131	mdio_device.c	FUNCTION_7	CALL_3
+0x40000b5	           0xf42d0	                          cmovb edx, eax	       131	mdio_device.c	FUNCTION_7	CALL_3
+0x40000b8	          0x8d343a	                    lea esi, [rdx + rdi]	       131	mdio_device.c	FUNCTION_7	CALL_3
+0x40000bb	      0xe900000000	                     jmp sym.mdio_remove	       131	mdio_device.c	FUNCTION_7	CALL_3
+mdio_device_remove	functions,0:FOR,0:WHILE,0:CALL,2:DO,0:ELSE,0:IF,0:SWITCH,0	6
+0x4000060	              0x53	                                push rbx	       114	mdio_device.c	FUNCTION_6
+0x4000061	          0x4889fb	                            mov rbx, rdi	       114	mdio_device.c	FUNCTION_6
+0x4000064	      0xe800000000	                          call 0x4000069	       115	mdio_device.c	FUNCTION_6	CALL_1
+0x4000069	          0x4889df	                            mov rdi, rbx	       116	mdio_device.c	FUNCTION_6	CALL_2
+0x400006c	              0x5b	                                 pop rbx	       117	mdio_device.c	FUNCTION_6
+0x400006d	      0xe900000000	                           jmp 0x4000072	       116	mdio_device.c	FUNCTION_6	CALL_2
+mdio_device_free	functions,0:FOR,0:WHILE,0:CALL,1:DO,0:ELSE,0:IF,0:SWITCH,0	1
+0x4000040	      0xe900000000	                           jmp 0x4000045	        31	mdio_device.c	FUNCTION_1	CALL_1
+mdio_driver_register	functions,0:FOR,0:WHILE,0:CALL,3:DO,0:ELSE,0:IF,1:SWITCH,0	19
+0x4000150	              0x55	                                push rbp	       184	mdio_device.c	FUNCTION_10
+0x4000151	              0x53	                                push rbx	       184	mdio_device.c	FUNCTION_10
+0x4000152	          0x4889fb	                            mov rbx, rdi	       184	mdio_device.c	FUNCTION_10
+0x4000155	    0x48c747080000	                  mov qword [rdi + 8], 0	       190	mdio_device.c	FUNCTION_10
+0x400015d	    0x48c747380000	               mov qword [rdi + 0x38], 0	       191	mdio_device.c	FUNCTION_10
+0x4000165	    0x48c747400000	               mov qword [rdi + 0x40], 0	       192	mdio_device.c	FUNCTION_10
+0x400016d	      0xe800000000	                          call 0x4000172	       194	mdio_device.c	FUNCTION_10	CALL_2
+0x4000172	            0x85c0	                           test eax, eax	       195	mdio_device.c	FUNCTION_10	IF_1
+0x4000174	            0x89c5	                            mov ebp, eax	       194	mdio_device.c	FUNCTION_10	CALL_2
+0x4000176	            0x7505	                           jne 0x400017d	       195	mdio_device.c	FUNCTION_10	IF_1
+0x4000178	            0x89e8	                            mov eax, ebp	       203	mdio_device.c	FUNCTION_10
+0x400017a	              0x5b	                                 pop rbx	       203	mdio_device.c	FUNCTION_10
+0x400017b	              0x5d	                                 pop rbp	       203	mdio_device.c	FUNCTION_10
+0x400017c	              0xc3	                                     ret	       203	mdio_device.c	FUNCTION_10
+0x400017d	          0x488b33	                    mov rsi, qword [rbx]	       196	mdio_device.c	FUNCTION_10	IF_1	CALL_3
+0x4000180	            0x89c2	                            mov edx, eax	       196	mdio_device.c	FUNCTION_10	IF_1	CALL_3
+0x4000182	    0x48c7c7000000	                              mov rdi, 0	       196	mdio_device.c	FUNCTION_10	IF_1	CALL_3
+0x4000189	      0xe800000000	                          call 0x400018e	       196	mdio_device.c	FUNCTION_10	IF_1	CALL_3
+0x400018e	            0xebe8	                           jmp 0x4000178	       199	mdio_device.c	FUNCTION_10	IF_1

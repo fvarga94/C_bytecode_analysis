@@ -1,0 +1,51 @@
+acpi_container_release	WHILE,0:DO,0:IF,0:ELSE,0:SWITCH,0:functions,0:FOR,0:CALL,2	1
+0x4000090	      0xe900000000	                           jmp 0x4000095	        57	container.c	FUNCTION_2	CALL_2
+container_device_detach	WHILE,0:DO,0:IF,1:ELSE,0:SWITCH,0:functions,0:FOR,0:CALL,2	7
+0x4000060	          0x4889f8	                            mov rax, rdi	        90	container.c	FUNCTION_4
+0x4000063	    0x488bbf480200	           mov rdi, qword [rdi + 0x248] 	        90	container.c	FUNCTION_4
+0x400006a	    0x48c780480200	              mov qword [rax + 0x248], 0	        93	container.c	FUNCTION_4
+0x4000075	          0x4885ff	                           test rdi, rdi	        94	container.c	FUNCTION_4	IF_1
+0x4000078	            0x7405	                            je 0x400007f	        94	container.c	FUNCTION_4	IF_1
+0x400007a	      0xe900000000	                           jmp 0x400007f	        95	container.c	FUNCTION_4	CALL_2
+0x400007f	            0xf3c3	                                     ret	        95	container.c	FUNCTION_4	CALL_2
+acpi_container_init	WHILE,0:DO,0:IF,0:ELSE,0:SWITCH,0:functions,0:FOR,0:CALL,1	2
+0x4000040	    0x488bbf480200	           mov rdi, qword [rdi + 0x248] 	       102	container.c	FUNCTION_5	CALL_2
+0x4000047	      0xbe04000000	                              mov esi, 4	       102	container.c	FUNCTION_5	CALL_2
+container_device_online	WHILE,0:DO,0:IF,0:ELSE,0:SWITCH,0:functions,0:FOR,0:CALL,2	4
+0x4000040	    0x488bbf480200	           mov rdi, qword [rdi + 0x248] 	       102	container.c	FUNCTION_5	CALL_2
+0x4000047	      0xbe04000000	                              mov esi, 4	       102	container.c	FUNCTION_5	CALL_2
+0x400004c	        0x4883c710	                           add rdi, 0x10	       102	container.c	FUNCTION_5	CALL_2
+0x4000050	      0xe900000000	                           jmp 0x4000055	       102	container.c	FUNCTION_5	CALL_2
+acpi_container_offline	WHILE,0:DO,0:IF,1:ELSE,0:SWITCH,0:functions,0:FOR,0:CALL,3	32
+0x40000a0	              0x55	                                push rbp	        43	container.c	FUNCTION_1
+0x40000a1	              0x53	                                push rbx	        43	container.c	FUNCTION_1
+0x40000a2	    0x488baf580200	           mov rbp, qword [rdi + 0x258] 	        44	container.c	FUNCTION_1	CALL_1
+0x40000a9	          0x4889ef	                            mov rdi, rbp	        44	container.c	FUNCTION_1	CALL_1
+0x40000ac	        0x4883ed10	                           sub rbp, 0x10	        44	container.c	FUNCTION_1	CALL_1
+0x40000b0	      0xe800000000	                          call 0x40000b5	        44	container.c	FUNCTION_1	CALL_1
+0x40000b5	            0x84c0	                             test al, al	        44	container.c	FUNCTION_1	CALL_1
+0x40000b7	      0xb800000000	                              mov eax, 0	        44	container.c	FUNCTION_1	CALL_1
+0x40000bc	        0x480f44e8	                          cmove rbp, rax	        44	container.c	FUNCTION_1	CALL_1
+0x40000c0	        0x488b4528	            mov rax, qword [rbp + 0x28] 	        48	container.c	FUNCTION_1	CALL_2
+0x40000c4	        0x4883c528	                           add rbp, 0x28	        48	container.c	FUNCTION_1	CALL_2
+0x40000c8	          0x4839c5	                            cmp rbp, rax	        48	container.c	FUNCTION_1	CALL_2
+0x40000cb	        0x488d58c8	                   lea rbx, [rax - 0x38]	        48	container.c	FUNCTION_1	CALL_2
+0x40000cf	            0x750f	                           jne 0x40000e0	        48	container.c	FUNCTION_1	CALL_2
+0x40000d1	            0xeb23	                           jmp 0x40000f6	        48	container.c	FUNCTION_1	CALL_2
+0x40000d3	        0x488b4338	            mov rax, qword [rbx + 0x38] 	        48	container.c	FUNCTION_1	CALL_2
+0x40000d7	          0x4839c5	                            cmp rbp, rax	        48	container.c	FUNCTION_1	CALL_2
+0x40000da	        0x488d58c8	                   lea rbx, [rax - 0x38]	        48	container.c	FUNCTION_1	CALL_2
+0x40000de	            0x7416	                            je 0x40000f6	        48	container.c	FUNCTION_1	CALL_2
+0x40000e0	            0x31f6	                            xor esi, esi	        49	container.c	FUNCTION_1	IF_1	CALL_3
+0x40000e2	          0x4889df	                            mov rdi, rbx	        49	container.c	FUNCTION_1	IF_1	CALL_3
+0x40000e5	      0xe800000000	                          call 0x40000ea	        49	container.c	FUNCTION_1	IF_1	CALL_3
+0x40000ea	            0x84c0	                             test al, al	        49	container.c	FUNCTION_1	IF_1	CALL_3
+0x40000ec	            0x75e5	                           jne 0x40000d3	        49	container.c	FUNCTION_1	IF_1	CALL_3
+0x40000ee	      0xb8f0ffffff	                     mov eax, 0xfffffff0	        50	container.c	FUNCTION_1	IF_1
+0x40000f3	              0x5b	                                 pop rbx	        53	container.c	FUNCTION_1
+0x40000f4	              0x5d	                                 pop rbp	        53	container.c	FUNCTION_1
+0x40000f5	              0xc3	                                     ret	        53	container.c	FUNCTION_1
+0x40000f6	            0x31c0	                            xor eax, eax	        52	container.c	FUNCTION_1
+0x40000f8	              0x5b	                                 pop rbx	        53	container.c	FUNCTION_1
+0x40000f9	              0x5d	                                 pop rbp	        53	container.c	FUNCTION_1
+0x40000fa	              0xc3	                                     ret	        53	container.c	FUNCTION_1

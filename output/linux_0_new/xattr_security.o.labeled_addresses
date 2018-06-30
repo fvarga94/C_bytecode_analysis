@@ -1,0 +1,53 @@
+ext4_xattr_security_get	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	6
+0x40000b0	          0x4889d7	                            mov rdi, rdx	        19	xattr_security.c	FUNCTION_1
+0x40000b3	      0xbe06000000	                              mov esi, 6	        20	xattr_security.c	FUNCTION_1	CALL_1
+0x40000b8	          0x4889ca	                            mov rdx, rcx	        19	xattr_security.c	FUNCTION_1
+0x40000bb	          0x4c89c1	                             mov rcx, r8	        19	xattr_security.c	FUNCTION_1
+0x40000be	          0x4d89c8	                              mov r8, r9	        20	xattr_security.c	FUNCTION_1	CALL_1
+0x40000c1	      0xe900000000	                           jmp 0x40000c6	        20	xattr_security.c	FUNCTION_1	CALL_1
+ext4_initxattrs	IF,1:DO,0:CALL,1:functions,0:SWITCH,0:FOR,1:WHILE,0:ELSE,0	30
+0x4000040	          0x488b0e	                    mov rcx, qword [rsi]	        42	xattr_security.c	FUNCTION_3	FOR_1
+0x4000043	          0x4885c9	                           test rcx, rcx	        42	xattr_security.c	FUNCTION_3	FOR_1
+0x4000046	            0x743f	                            je 0x4000087	        42	xattr_security.c	FUNCTION_3	FOR_1
+0x4000048	            0x4154	                                push r12	        37	xattr_security.c	FUNCTION_3
+0x400004a	          0x4989fc	                            mov r12, rdi	        37	xattr_security.c	FUNCTION_3
+0x400004d	              0x55	                                push rbp	        37	xattr_security.c	FUNCTION_3
+0x400004e	          0x4889d5	                            mov rbp, rdx	        37	xattr_security.c	FUNCTION_3
+0x4000051	              0x53	                                push rbx	        37	xattr_security.c	FUNCTION_3
+0x4000052	          0x4889f3	                            mov rbx, rsi	        37	xattr_security.c	FUNCTION_3
+0x4000055	            0xeb0c	                           jmp 0x4000063	        37	xattr_security.c	FUNCTION_3
+0x4000057	        0x4883c318	                           add rbx, 0x18	        42	xattr_security.c	FUNCTION_3	FOR_1
+0x400005b	          0x488b0b	                    mov rcx, qword [rbx]	        42	xattr_security.c	FUNCTION_3	FOR_1
+0x400005e	          0x4885c9	                           test rcx, rcx	        42	xattr_security.c	FUNCTION_3	FOR_1
+0x4000061	            0x741f	                            je 0x4000082	        42	xattr_security.c	FUNCTION_3	FOR_1
+0x4000063	            0x6a00	                                  push 0	        43	xattr_security.c	FUNCTION_3	FOR_1	CALL_1
+0x4000065	        0x4c8b4b10	              mov r9, qword [rbx + 0x10]	        43	xattr_security.c	FUNCTION_3	FOR_1	CALL_1
+0x4000069	      0xba06000000	                              mov edx, 6	        43	xattr_security.c	FUNCTION_3	FOR_1	CALL_1
+0x400006e	        0x4c8b4308	                 mov r8, qword [rbx + 8]	        43	xattr_security.c	FUNCTION_3	FOR_1	CALL_1
+0x4000072	          0x4c89e6	                            mov rsi, r12	        43	xattr_security.c	FUNCTION_3	FOR_1	CALL_1
+0x4000075	          0x4889ef	                            mov rdi, rbp	        43	xattr_security.c	FUNCTION_3	FOR_1	CALL_1
+0x4000078	      0xe800000000	                          call 0x400007d	        43	xattr_security.c	FUNCTION_3	FOR_1	CALL_1
+0x400007d	            0x85c0	                           test eax, eax	        47	xattr_security.c	FUNCTION_3	FOR_1	IF_1
+0x400007f	              0x5a	                                 pop rdx	        47	xattr_security.c	FUNCTION_3	FOR_1	IF_1
+0x4000080	            0x79d5	                           jns 0x4000057	        47	xattr_security.c	FUNCTION_3	FOR_1	IF_1
+0x4000082	              0x5b	                                 pop rbx	        51	xattr_security.c	FUNCTION_3
+0x4000083	              0x5d	                                 pop rbp	        51	xattr_security.c	FUNCTION_3
+0x4000084	            0x415c	                                 pop r12	        51	xattr_security.c	FUNCTION_3
+0x4000086	              0xc3	                                     ret	        51	xattr_security.c	FUNCTION_3
+0x4000087	            0x31c0	                            xor eax, eax	        40	xattr_security.c	FUNCTION_3
+0x4000089	              0xc3	                                     ret	        40	xattr_security.c	FUNCTION_3
+ext4_xattr_security_set	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	7
+0x4000090	          0x4889d7	                            mov rdi, rdx	        29	xattr_security.c	FUNCTION_2
+0x4000093	          0x4889ca	                            mov rdx, rcx	        29	xattr_security.c	FUNCTION_2
+0x4000096	          0x4c89c1	                             mov rcx, r8	        29	xattr_security.c	FUNCTION_2
+0x4000099	          0x4d89c8	                              mov r8, r9	        29	xattr_security.c	FUNCTION_2
+0x400009c	      0x448b4c2408	                mov r9d, dword [rsp + 8]	        30	xattr_security.c	FUNCTION_2	CALL_1
+0x40000a1	      0xbe06000000	                              mov esi, 6	        30	xattr_security.c	FUNCTION_2	CALL_1
+0x40000a6	      0xe900000000	                           jmp 0x40000ab	        30	xattr_security.c	FUNCTION_2	CALL_1
+ext4_init_security	IF,0:DO,0:CALL,1:functions,0:SWITCH,0:FOR,0:WHILE,0:ELSE,0	6
+0x40000d0	          0x4989f8	                             mov r8, rdi	        56	xattr_security.c	FUNCTION_4
+0x40000d3	          0x4889f7	                            mov rdi, rsi	        56	xattr_security.c	FUNCTION_4
+0x40000d6	          0x4889d6	                            mov rsi, rdx	        56	xattr_security.c	FUNCTION_4
+0x40000d9	          0x4889ca	                            mov rdx, rcx	        56	xattr_security.c	FUNCTION_4
+0x40000dc	    0x48c7c1000000	                              mov rcx, 0	        57	xattr_security.c	FUNCTION_4	CALL_1
+0x40000e3	      0xe900000000	                   jmp section_end..text	        57	xattr_security.c	FUNCTION_4	CALL_1

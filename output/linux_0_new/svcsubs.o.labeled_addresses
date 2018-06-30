@@ -1,0 +1,88 @@
+nlmsvc_match_sb	DO,0:FOR,0:IF,0:ELSE,0:WHILE,0:SWITCH,0:CALL,1:functions,0	6
+0x4000090	    0x488b86980000	            mov rax, qword [rsi + 0x98] 	       414	svcsubs.c	FUNCTION_20
+0x4000097	        0x488b4020	            mov rax, qword [rax + 0x20] 	       417	svcsubs.c	FUNCTION_20	CALL_1
+0x400009b	        0x48397828	            cmp qword [rax + 0x28], rdi 	       417	svcsubs.c	FUNCTION_20	CALL_1
+0x400009f	           0xf94c0	                                 sete al	       417	svcsubs.c	FUNCTION_20	CALL_1
+0x40000a2	           0xfb6c0	                           movzx eax, al	       417	svcsubs.c	FUNCTION_20	CALL_1
+0x40000a5	              0xc3	                                     ret	       418	svcsubs.c	FUNCTION_20
+nlmsvc_unlock_all_by_sb	DO,0:FOR,0:IF,0:ELSE,0:WHILE,0:SWITCH,0:CALL,1:functions,0	8
+0x40003a0	    0x48c7c2000000	                              mov rdx, 0	       431	svcsubs.c	FUNCTION_21	CALL_1
+0x40003a7	    0x48c7c6000000	                              mov rsi, 0	       431	svcsubs.c	FUNCTION_21	CALL_1
+0x40003ae	      0xe85dfeffff	             call sym.nlm_traverse_files	       431	svcsubs.c	FUNCTION_21	CALL_1
+0x40003b3	          0x83f801	                              cmp eax, 1	       432	svcsubs.c	FUNCTION_21
+0x40003b6	            0x19c0	                            sbb eax, eax	       432	svcsubs.c	FUNCTION_21
+0x40003b8	            0xf7d0	                                 not eax	       432	svcsubs.c	FUNCTION_21
+0x40003ba	          0x83e0fb	                     and eax, 0xfffffffb	       432	svcsubs.c	FUNCTION_21
+0x40003bd	              0xc3	                                     ret	       433	svcsubs.c	FUNCTION_21
+nlmsvc_same_host	DO,0:FOR,0:IF,0:ELSE,0:WHILE,0:SWITCH,0:CALL,0:functions,0	4
+0x4000080	            0x31c0	                            xor eax, eax	       345	svcsubs.c	FUNCTION_15
+0x4000082	          0x4839f7	                            cmp rdi, rsi	       345	svcsubs.c	FUNCTION_15
+0x4000085	           0xf94c0	                                 sete al	       345	svcsubs.c	FUNCTION_15
+0x4000088	              0xc3	                                     ret	       346	svcsubs.c	FUNCTION_15
+nlmsvc_mark_resources	DO,0:FOR,0:IF,0:ELSE,0:WHILE,0:SWITCH,0:CALL,2:functions,0	24
+0x4000750	      0x4c8d542408	                      lea r10, [rsp + 8]	       370	svcsubs.c	ELSE_1	FUNCTION_17
+0x4000755	        0x4883e4f0	             and rsp, 0xfffffffffffffff0	       370	svcsubs.c	ELSE_1	FUNCTION_17
+0x4000759	            0x31d2	                            xor edx, edx	       375	svcsubs.c	ELSE_1	FUNCTION_17	CALL_2
+0x400075b	    0x48c7c6000000	                              mov rsi, 0	       375	svcsubs.c	ELSE_1	FUNCTION_17	CALL_2
+0x4000762	        0x41ff72f8	                    push qword [r10 - 8]	       370	svcsubs.c	ELSE_1	FUNCTION_17
+0x4000766	              0x55	                                push rbp	       370	svcsubs.c	ELSE_1	FUNCTION_17
+0x4000767	          0x4889e5	                            mov rbp, rsp	       370	svcsubs.c	ELSE_1	FUNCTION_17
+0x400076a	            0x4152	                                push r10	       370	svcsubs.c	ELSE_1	FUNCTION_17
+0x400076c	    0x4881ec680200	                          sub rsp, 0x268	       370	svcsubs.c	ELSE_1	FUNCTION_17
+0x4000773	        0x48897d90	             mov qword [rbp - 0x70], rdi	       374	svcsubs.c	ELSE_1	FUNCTION_17
+0x4000777	    0x488dbd90fdff	                  lea rdi, [rbp - 0x270]	       375	svcsubs.c	ELSE_1	FUNCTION_17	CALL_2
+0x400077e	    0x65488b042528	                mov rax, qword gs:[0x28]	       370	svcsubs.c	ELSE_1	FUNCTION_17
+0x4000787	        0x488945e8	             mov qword [rbp - 0x18], rax	       370	svcsubs.c	ELSE_1	FUNCTION_17
+0x400078b	            0x31c0	                            xor eax, eax	       370	svcsubs.c	ELSE_1	FUNCTION_17
+0x400078d	      0xe87efaffff	             call sym.nlm_traverse_files	       375	svcsubs.c	ELSE_1	FUNCTION_17	CALL_2
+0x4000792	        0x488b45e8	             mov rax, qword [rbp - 0x18]	       376	svcsubs.c	ELSE_1	FUNCTION_17
+0x4000796	    0x654833042528	                xor rax, qword gs:[0x28]	       376	svcsubs.c	ELSE_1	FUNCTION_17
+0x400079f	            0x750f	                           jne 0x40007b0	       376	svcsubs.c	ELSE_1	FUNCTION_17
+0x40007a1	    0x4881c4680200	                          add rsp, 0x268	       376	svcsubs.c	ELSE_1	FUNCTION_17
+0x40007a8	            0x415a	                                 pop r10	       376	svcsubs.c	ELSE_1	FUNCTION_17
+0x40007aa	              0x5d	                                 pop rbp	       376	svcsubs.c	ELSE_1	FUNCTION_17
+0x40007ab	        0x498d62f8	                      lea rsp, [r10 - 8]	       376	svcsubs.c	ELSE_1	FUNCTION_17
+0x40007af	              0xc3	                                     ret	       376	svcsubs.c	ELSE_1	FUNCTION_17
+0x40007b0	      0xe800000000	                          call 0x40007b5	       376	svcsubs.c	ELSE_1	FUNCTION_17
+nlmsvc_invalidate_all	DO,0:FOR,0:IF,0:ELSE,0:WHILE,0:SWITCH,0:CALL,1:functions,0	4
+0x40007f0	            0x31d2	                            xor edx, edx	       409	svcsubs.c	FUNCTION_19	CALL_1
+0x40007f2	    0x48c7c6000000	                              mov rsi, 0	       409	svcsubs.c	FUNCTION_19	CALL_1
+0x40007f9	            0x31ff	                            xor edi, edi	       409	svcsubs.c	FUNCTION_19	CALL_1
+0x40007fb	      0xe910faffff	              jmp sym.nlm_traverse_files	       409	svcsubs.c	FUNCTION_19	CALL_1
+nlmsvc_always_match	DO,0:FOR,0:IF,0:ELSE,0:WHILE,0:SWITCH,0:CALL,0:functions,0	2
+0x4000040	      0xb801000000	                              mov eax, 1	       207	svcsubs.c	FUNCTION_9
+0x4000045	              0xc3	                                     ret	       207	svcsubs.c	FUNCTION_9
+nlmsvc_mark_host	DO,0:FOR,0:IF,1:ELSE,0:WHILE,0:SWITCH,0:CALL,0:functions,0	10
+0x4000050	    0x488b86000200	           mov rax, qword [rsi + 0x200] 	       334	svcsubs.c	FUNCTION_14	IF_1
+0x4000057	          0x4885c0	                           test rax, rax	       334	svcsubs.c	FUNCTION_14	IF_1
+0x400005a	            0x740c	                            je 0x4000068	       334	svcsubs.c	FUNCTION_14	IF_1
+0x400005c	    0x483b87000200	           cmp rax, qword [rdi + 0x200] 	       334	svcsubs.c	FUNCTION_14	IF_1
+0x4000063	            0x7403	                            je 0x4000068	       334	svcsubs.c	FUNCTION_14	IF_1
+0x4000065	            0x31c0	                            xor eax, eax	       338	svcsubs.c	FUNCTION_14
+0x4000067	              0xc3	                                     ret	       338	svcsubs.c	FUNCTION_14
+0x4000068	    0x808f36010000	                or byte [rdi + 0x136], 8	       336	svcsubs.c	FUNCTION_14	IF_1
+0x400006f	            0x31c0	                            xor eax, eax	       338	svcsubs.c	FUNCTION_14
+0x4000071	              0xc3	                                     ret	       338	svcsubs.c	FUNCTION_14
+nlmsvc_free_host_resources	DO,0:FOR,0:IF,1:ELSE,0:WHILE,0:SWITCH,0:CALL,4:functions,0	13
+0x40007c0	              0x53	                                push rbx	       383	svcsubs.c	FUNCTION_18
+0x40007c1	            0x31d2	                            xor edx, edx	       386	svcsubs.c	FUNCTION_18	IF_1	CALL_2
+0x40007c3	    0x48c7c6000000	                              mov rsi, 0	       386	svcsubs.c	FUNCTION_18	IF_1	CALL_2
+0x40007ca	          0x4889fb	                            mov rbx, rdi	       383	svcsubs.c	FUNCTION_18
+0x40007cd	      0xe83efaffff	             call sym.nlm_traverse_files	       386	svcsubs.c	FUNCTION_18	IF_1	CALL_2
+0x40007d2	            0x85c0	                           test eax, eax	       386	svcsubs.c	FUNCTION_18	IF_1	CALL_2
+0x40007d4	            0x7502	                           jne 0x40007d8	       386	svcsubs.c	FUNCTION_18	IF_1	CALL_2
+0x40007d6	              0x5b	                                 pop rbx	       392	svcsubs.c	FUNCTION_18
+0x40007d7	              0xc3	                                     ret	       392	svcsubs.c	FUNCTION_18
+0x40007d8	    0x488bb3280100	           mov rsi, qword [rbx + 0x128] 	       387	svcsubs.c	FUNCTION_18	IF_1	CALL_3
+0x40007df	    0x48c7c7000000	                              mov rdi, 0	       387	svcsubs.c	FUNCTION_18	IF_1	CALL_3
+0x40007e6	      0xe800000000	                          call 0x40007eb	       387	svcsubs.c	FUNCTION_18	IF_1	CALL_3
+0x40007eb	             0xf0b	                                     ud2	       387	svcsubs.c	FUNCTION_18	IF_1	CALL_3
+nlmsvc_unlock_all_by_ip	DO,0:FOR,0:IF,0:ELSE,0:WHILE,0:SWITCH,0:CALL,1:functions,0	8
+0x40003c0	            0x31d2	                            xor edx, edx	       454	svcsubs.c	FUNCTION_23	CALL_1
+0x40003c2	    0x48c7c6000000	                              mov rsi, 0	       454	svcsubs.c	FUNCTION_23	CALL_1
+0x40003c9	      0xe842feffff	             call sym.nlm_traverse_files	       454	svcsubs.c	FUNCTION_23	CALL_1
+0x40003ce	          0x83f801	                              cmp eax, 1	       455	svcsubs.c	FUNCTION_23
+0x40003d1	            0x19c0	                            sbb eax, eax	       455	svcsubs.c	FUNCTION_23
+0x40003d3	            0xf7d0	                                 not eax	       455	svcsubs.c	FUNCTION_23
+0x40003d5	          0x83e0fb	                     and eax, 0xfffffffb	       455	svcsubs.c	FUNCTION_23
+0x40003d8	              0xc3	                                     ret	       456	svcsubs.c	FUNCTION_23

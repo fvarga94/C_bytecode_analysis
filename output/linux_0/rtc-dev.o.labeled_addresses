@@ -1,0 +1,24 @@
+rtc_dev_fasync	DO,0:SWITCH,0:FOR,0:functions,0:IF,0:WHILE,0:ELSE,0:CALL,1	3
+0x40000c0	    0x488b86c80000	            mov rax, qword [rsi + 0xc8] 	       411	rtc-dev.c	FUNCTION_10	CALL_1
+0x40000c7	    0x488d88a00300	                  lea rcx, [rax + 0x3a0]	       411	rtc-dev.c	FUNCTION_10	CALL_1
+0x40000ce	      0xe900000000	                           jmp 0x40000d3	       411	rtc-dev.c	FUNCTION_10	CALL_1
+rtc_dev_prepare	DO,0:SWITCH,0:FOR,0:functions,0:IF,2:WHILE,0:ELSE,0:CALL,6	19
+0x4000780	    0x8b0500000000	            mov eax, dword [0x04000786] 	       451	rtc-dev.c	FUNCTION_12	IF_1
+0x4000786	            0x85c0	                           test eax, eax	       451	rtc-dev.c	FUNCTION_12	IF_1
+0x4000788	            0x740b	                            je 0x4000795	       451	rtc-dev.c	FUNCTION_12	IF_1
+0x400078a	    0x8b97d8020000	           mov edx, dword [rdi + 0x2d8] 	       454	rtc-dev.c	FUNCTION_12	IF_2
+0x4000790	          0x83fa0f	                            cmp edx, 0xf	       454	rtc-dev.c	FUNCTION_12	IF_2
+0x4000793	            0x7e01	                           jle 0x4000796	       454	rtc-dev.c	FUNCTION_12	IF_2
+0x4000795	              0xc3	                                     ret	       468	rtc-dev.c	FUNCTION_12
+0x4000796	      0x250000f0ff	                     and eax, 0xfff00000	       459	rtc-dev.c	FUNCTION_12	CALL_3
+0x400079b	              0x53	                                push rbx	       450	rtc-dev.c	FUNCTION_12
+0x400079c	          0x4889fb	                            mov rbx, rdi	       450	rtc-dev.c	FUNCTION_12
+0x400079f	             0x9d0	                             or eax, edx	       459	rtc-dev.c	FUNCTION_12	CALL_3
+0x40007a1	    0x488dbf080300	                  lea rdi, [rdi + 0x308]	       466	rtc-dev.c	FUNCTION_12	CALL_6
+0x40007a8	    0x48c7c6000000	                              mov rsi, 0	       466	rtc-dev.c	FUNCTION_12	CALL_6
+0x40007af	    0x898758ffffff	             mov dword [rdi - 0xa8], eax	       459	rtc-dev.c	FUNCTION_12	CALL_3
+0x40007b5	      0xe800000000	                          call 0x40007ba	       466	rtc-dev.c	FUNCTION_12	CALL_6
+0x40007ba	    0x488b83d00200	           mov rax, qword [rbx + 0x2d0] 	       467	rtc-dev.c	FUNCTION_12
+0x40007c1	    0x488983480300	            mov qword [rbx + 0x348], rax	       467	rtc-dev.c	FUNCTION_12
+0x40007c8	              0x5b	                                 pop rbx	       468	rtc-dev.c	FUNCTION_12
+0x40007c9	              0xc3	                                     ret	       468	rtc-dev.c	FUNCTION_12

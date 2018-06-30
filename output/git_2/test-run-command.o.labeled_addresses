@@ -1,4 +1,30 @@
-task_finished	CALL,1:DO,0:FOR,0:ELSE,0:functions,0:SWITCH,0:IF,0:WHILE,0	8
+no_job	IF,0:SWITCH,0:ELSE,0:FOR,0:WHILE,0:DO,0:functions,0:CALL,1	8
+0x4000040	        0x4883ec08	                              sub rsp, 8	        39	test-run-command.c	FUNCTION_2
+0x4000044	          0x4889f7	                            mov rdi, rsi	        39	test-run-command.c	FUNCTION_2
+0x4000047	      0xba1a000000	                           mov edx, 0x1a	       279	strbuf.h	FUNCTION_9	CALL_2
+0x400004c	      0xbe00000000	                              mov esi, 0	       279	strbuf.h	FUNCTION_9	CALL_2
+0x4000051	      0xe800000000	                          call 0x4000056	       279	strbuf.h	FUNCTION_9	CALL_2
+0x4000056	      0xb800000000	                              mov eax, 0	        42	test-run-command.c	FUNCTION_2
+0x400005b	        0x4883c408	                              add rsp, 8	        42	test-run-command.c	FUNCTION_2
+0x400005f	              0xc3	                                     ret	        42	test-run-command.c	FUNCTION_2
+parallel_next	IF,1:SWITCH,0:ELSE,0:FOR,0:WHILE,0:DO,0:functions,0:CALL,2	16
+0x4000080	      0xb800000000	                              mov eax, 0	        27	test-run-command.c	FUNCTION_1	IF_1
+0x4000085	    0x833d00000000	               cmp dword [0x0400008c], 3	        26	test-run-command.c	FUNCTION_1	IF_1
+0x400008c	            0x7f2f	                            jg 0x40000bd	        26	test-run-command.c	FUNCTION_1	IF_1
+0x400008e	              0x53	                                push rbx	        24	test-run-command.c	FUNCTION_1
+0x400008f	          0x4889f3	                            mov rbx, rsi	        24	test-run-command.c	FUNCTION_1
+0x4000092	        0x4883c708	                              add rdi, 8	        29	test-run-command.c	FUNCTION_1	CALL_1
+0x4000096	          0x488b32	                    mov rsi, qword [rdx]	        29	test-run-command.c	FUNCTION_1	CALL_1
+0x4000099	      0xe800000000	                          call 0x400009e	        29	test-run-command.c	FUNCTION_1	CALL_1
+0x400009e	      0xba1c000000	                           mov edx, 0x1c	       279	strbuf.h	FUNCTION_9	CALL_2
+0x40000a3	      0xbe00000000	                              mov esi, 0	       279	strbuf.h	FUNCTION_9	CALL_2
+0x40000a8	          0x4889df	                            mov rdi, rbx	       279	strbuf.h	FUNCTION_9	CALL_2
+0x40000ab	      0xe800000000	                          call 0x40000b0	       279	strbuf.h	FUNCTION_9	CALL_2
+0x40000b0	    0x830500000000	               add dword [0x040000b7], 1	        31	test-run-command.c	FUNCTION_1
+0x40000b7	      0xb801000000	                              mov eax, 1	        32	test-run-command.c	FUNCTION_1
+0x40000bc	              0x5b	                                 pop rbx	        33	test-run-command.c	FUNCTION_1
+0x40000bd	            0xf3c3	                                     ret	        33	test-run-command.c	FUNCTION_1
+task_finished	IF,0:SWITCH,0:ELSE,0:FOR,0:WHILE,0:DO,0:functions,0:CALL,1	8
 0x4000060	        0x4883ec08	                              sub rsp, 8	        48	test-run-command.c	FUNCTION_3
 0x4000064	          0x4889f7	                            mov rdi, rsi	        48	test-run-command.c	FUNCTION_3
 0x4000067	      0xba18000000	                           mov edx, 0x18	       279	strbuf.h	FUNCTION_9	CALL_2
@@ -7,150 +33,3 @@ task_finished	CALL,1:DO,0:FOR,0:ELSE,0:functions,0:SWITCH,0:IF,0:WHILE,0	8
 0x4000076	      0xb801000000	                              mov eax, 1	        51	test-run-command.c	FUNCTION_3
 0x400007b	        0x4883c408	                              add rsp, 8	        51	test-run-command.c	FUNCTION_3
 0x400007f	              0xc3	                                     ret	        51	test-run-command.c	FUNCTION_3
-no_job	CALL,1:DO,0:FOR,0:ELSE,0:functions,0:SWITCH,0:IF,0:WHILE,0	8
-0x4000040	        0x4883ec08	                              sub rsp, 8	        39	test-run-command.c	FUNCTION_2
-0x4000044	          0x4889f7	                            mov rdi, rsi	        39	test-run-command.c	FUNCTION_2
-0x4000047	      0xba1a000000	                           mov edx, 0x1a	       279	strbuf.h	FUNCTION_9	CALL_2
-0x400004c	      0xbe00000000	                              mov esi, 0	       279	strbuf.h	FUNCTION_9	CALL_2
-0x4000051	      0xe800000000	                          call 0x4000056	       279	strbuf.h	FUNCTION_9	CALL_2
-0x4000056	            0x31c0	                            xor eax, eax	        42	test-run-command.c	FUNCTION_2
-0x4000058	        0x4883c408	                              add rsp, 8	        42	test-run-command.c	FUNCTION_2
-0x400005c	              0xc3	                                     ret	        42	test-run-command.c	FUNCTION_2
-cmd__run_command	CALL,20:DO,0:FOR,0:ELSE,0:functions,0:SWITCH,0:IF,9:WHILE,1	137
-0x40000c0	            0x4155	                                push r13	        54	test-run-command.c	FUNCTION_4
-0x40000c2	            0x4154	                                push r12	        54	test-run-command.c	FUNCTION_4
-0x40000c4	      0xb90c000000	                            mov ecx, 0xc	        55	test-run-command.c	FUNCTION_4
-0x40000c9	              0x55	                                push rbp	        54	test-run-command.c	FUNCTION_4
-0x40000ca	              0x53	                                push rbx	        54	test-run-command.c	FUNCTION_4
-0x40000cb	            0x89fd	                            mov ebp, edi	        54	test-run-command.c	FUNCTION_4
-0x40000cd	        0x4883ec78	                           sub rsp, 0x78	        54	test-run-command.c	FUNCTION_4
-0x40000d1	    0x64488b042528	                mov rax, qword fs:[0x28]	        54	test-run-command.c	FUNCTION_4
-0x40000da	      0x4889442468	             mov qword [rsp + 0x68], rax	        54	test-run-command.c	FUNCTION_4
-0x40000df	            0x31c0	                            xor eax, eax	        54	test-run-command.c	FUNCTION_4
-0x40000e1	          0x4889e7	                            mov rdi, rsp	        55	test-run-command.c	FUNCTION_4
-0x40000e4	          0x83fd02	                              cmp ebp, 2	        58	test-run-command.c	FUNCTION_4	IF_1
-0x40000e7	          0xf348ab	              rep stosq qword [rdi], rax	        55	test-run-command.c	FUNCTION_4
-0x40000ea	    0x48c744240800	                  mov qword [rsp + 8], 0	        55	test-run-command.c	FUNCTION_4
-0x40000f3	    0x48c744241800	               mov qword [rsp + 0x18], 0	        55	test-run-command.c	FUNCTION_4
-0x40000fc	     0xf8e0e010000	                           jle 0x4000210	        58	test-run-command.c	FUNCTION_4	IF_1
-0x4000102	          0x4889f3	                            mov rbx, rsi	        58	test-run-command.c	FUNCTION_4	IF_1
-0x4000105	          0x4989e5	                            mov r13, rsp	        58	test-run-command.c	FUNCTION_4	IF_1
-0x4000108	      0x4c8d642418	                   lea r12, [rsp + 0x18]	        63	test-run-command.c	FUNCTION_4	WHILE_1	CALL_3
-0x400010d	            0xeb2f	                           jmp 0x400013e	        63	test-run-command.c	FUNCTION_4	WHILE_1	CALL_3
-0x400010f	              0x90	                                     nop	        63	test-run-command.c	FUNCTION_4	WHILE_1	CALL_3
-0x4000110	        0x807a016e	                cmp byte [rdx + 1], 0x6e	        60	test-run-command.c	FUNCTION_4	WHILE_1	CALL_1
-0x4000114	            0x7531	                           jne 0x4000147	        60	test-run-command.c	FUNCTION_4	WHILE_1	CALL_1
-0x4000116	        0x807a0276	                cmp byte [rdx + 2], 0x76	        60	test-run-command.c	FUNCTION_4	WHILE_1	CALL_1
-0x400011a	            0x752b	                           jne 0x4000147	        60	test-run-command.c	FUNCTION_4	WHILE_1	CALL_1
-0x400011c	        0x807a0300	                   cmp byte [rdx + 3], 0	        60	test-run-command.c	FUNCTION_4	WHILE_1	CALL_1
-0x4000120	            0x7525	                           jne 0x4000147	        60	test-run-command.c	FUNCTION_4	WHILE_1	CALL_1
-0x4000122	        0x488b7310	            mov rsi, qword [rbx + 0x10] 	        61	test-run-command.c	FUNCTION_4	WHILE_1	IF_2
-0x4000126	          0x4885f6	                           test rsi, rsi	        61	test-run-command.c	FUNCTION_4	WHILE_1	IF_2
-0x4000129	     0xf8440010000	                            je 0x400026f	        61	test-run-command.c	FUNCTION_4	WHILE_1	IF_2
-0x400012f	          0x4c89e7	                            mov rdi, r12	        63	test-run-command.c	FUNCTION_4	WHILE_1	CALL_3
-0x4000132	        0x4883c310	                           add rbx, 0x10	        64	test-run-command.c	FUNCTION_4	WHILE_1
-0x4000136	          0x83ed02	                              sub ebp, 2	        65	test-run-command.c	FUNCTION_4	WHILE_1
-0x4000139	      0xe800000000	                          call 0x400013e	        63	test-run-command.c	FUNCTION_4	WHILE_1	CALL_3
-0x400013e	        0x488b5308	                mov rdx, qword [rbx + 8]	        60	test-run-command.c	FUNCTION_4	WHILE_1	CALL_1
-0x4000142	          0x803a65	                    cmp byte [rdx], 0x65	        60	test-run-command.c	FUNCTION_4	WHILE_1	CALL_1
-0x4000145	            0x74c9	                            je 0x4000110	        60	test-run-command.c	FUNCTION_4	WHILE_1	CALL_1
-0x4000147	          0x83fd02	                              cmp ebp, 2	        67	test-run-command.c	FUNCTION_4	IF_3
-0x400014a	     0xf8ec0000000	                           jle 0x4000210	        67	test-run-command.c	FUNCTION_4	IF_3
-0x4000150	        0x488d4310	                   lea rax, [rbx + 0x10]	        69	test-run-command.c	FUNCTION_4
-0x4000154	      0xbf00000000	                              mov edi, 0	        71	test-run-command.c	FUNCTION_4	IF_4	CALL_4
-0x4000159	      0xb915000000	                           mov ecx, 0x15	        71	test-run-command.c	FUNCTION_4	IF_4	CALL_4
-0x400015e	          0x4889d6	                            mov rsi, rdx	        71	test-run-command.c	FUNCTION_4	IF_4	CALL_4
-0x4000161	        0x48890424	                    mov qword [rsp], rax	        69	test-run-command.c	FUNCTION_4
-0x4000165	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        71	test-run-command.c	FUNCTION_4	IF_4	CALL_4
-0x4000167	        0x400f97c5	                                seta bpl	        71	test-run-command.c	FUNCTION_4	IF_4	CALL_4
-0x400016b	           0xf92c0	                                 setb al	        71	test-run-command.c	FUNCTION_4	IF_4	CALL_4
-0x400016e	            0x29c5	                            sub ebp, eax	        71	test-run-command.c	FUNCTION_4	IF_4	CALL_4
-0x4000170	        0x400fbeed	                          movsx ebp, bpl	        71	test-run-command.c	FUNCTION_4	IF_4	CALL_4
-0x4000174	            0x85ed	                           test ebp, ebp	        71	test-run-command.c	FUNCTION_4	IF_4	CALL_4
-0x4000176	     0xf84ba000000	                            je 0x4000236	        71	test-run-command.c	FUNCTION_4	IF_4	CALL_4
-0x400017c	      0xbf00000000	                              mov edi, 0	        77	test-run-command.c	FUNCTION_4	IF_6	CALL_7
-0x4000181	      0xb90c000000	                            mov ecx, 0xc	        77	test-run-command.c	FUNCTION_4	IF_6	CALL_7
-0x4000186	          0x4889d6	                            mov rsi, rdx	        77	test-run-command.c	FUNCTION_4	IF_6	CALL_7
-0x4000189	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        77	test-run-command.c	FUNCTION_4	IF_6	CALL_7
-0x400018b	     0xf84ea000000	                            je 0x400027b	        77	test-run-command.c	FUNCTION_4	IF_6	CALL_7
-0x4000191	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	       280	stdlib.h	FUNCTION_16	CALL_2
-0x4000195	            0x31f6	                            xor esi, esi	       280	stdlib.h	FUNCTION_16	CALL_2
-0x4000197	      0xba0a000000	                            mov edx, 0xa	       280	stdlib.h	FUNCTION_16	CALL_2
-0x400019c	      0xe800000000	                          call 0x40001a1	       280	stdlib.h	FUNCTION_16	CALL_2
-0x40001a1	        0x488d5318	                   lea rdx, [rbx + 0x18]	        81	test-run-command.c	FUNCTION_4
-0x40001a5	      0xbf00000000	                              mov edi, 0	        83	test-run-command.c	FUNCTION_4	IF_7	CALL_11
-0x40001aa	      0xb915000000	                           mov ecx, 0x15	        83	test-run-command.c	FUNCTION_4	IF_7	CALL_11
-0x40001af	        0x48891424	                    mov qword [rsp], rdx	        81	test-run-command.c	FUNCTION_4
-0x40001b3	        0x488b5308	                mov rdx, qword [rbx + 8]	        83	test-run-command.c	FUNCTION_4	IF_7	CALL_11
-0x40001b7	          0x4889d6	                            mov rsi, rdx	        83	test-run-command.c	FUNCTION_4	IF_7	CALL_11
-0x40001ba	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        83	test-run-command.c	FUNCTION_4	IF_7	CALL_11
-0x40001bc	     0xf84c8000000	                            je 0x400028a	        83	test-run-command.c	FUNCTION_4	IF_7	CALL_11
-0x40001c2	      0xbf00000000	                              mov edi, 0	        87	test-run-command.c	FUNCTION_4	IF_8	CALL_14
-0x40001c7	      0xb912000000	                           mov ecx, 0x12	        87	test-run-command.c	FUNCTION_4	IF_8	CALL_14
-0x40001cc	          0x4889d6	                            mov rsi, rdx	        87	test-run-command.c	FUNCTION_4	IF_8	CALL_14
-0x40001cf	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        87	test-run-command.c	FUNCTION_4	IF_8	CALL_14
-0x40001d1	     0xf84cd000000	                            je 0x40002a4	        87	test-run-command.c	FUNCTION_4	IF_8	CALL_14
-0x40001d7	      0xbf00000000	                              mov edi, 0	        91	test-run-command.c	FUNCTION_4	IF_9	CALL_17
-0x40001dc	      0xb914000000	                           mov ecx, 0x14	        91	test-run-command.c	FUNCTION_4	IF_9	CALL_17
-0x40001e1	          0x4889d6	                            mov rsi, rdx	        91	test-run-command.c	FUNCTION_4	IF_9	CALL_17
-0x40001e4	            0xf3a6	  repe cmpsb byte [rsi], byte ptr [rdi] 	        91	test-run-command.c	FUNCTION_4	IF_9	CALL_17
-0x40001e6	     0xf84c2000000	                            je 0x40002ae	        91	test-run-command.c	FUNCTION_4	IF_9	CALL_17
-0x40001ec	    0x488b0d000000	            mov rcx, qword [0x040001f3] 	        97	stdio2.h	FUNCTION_23	CALL_1
-0x40001f3	      0xba0c000000	                            mov edx, 0xc	        97	stdio2.h	FUNCTION_23	CALL_1
-0x40001f8	      0xbe01000000	                              mov esi, 1	        97	stdio2.h	FUNCTION_23	CALL_1
-0x40001fd	      0xbf00000000	                              mov edi, 0	        97	stdio2.h	FUNCTION_23	CALL_1
-0x4000202	      0xe800000000	                          call 0x4000207	        97	stdio2.h	FUNCTION_23	CALL_1
-0x4000207	    0x660f1f840000	                    nop word [rax + rax]	        97	stdio2.h	FUNCTION_23	CALL_1
-0x4000210	      0xbd01000000	                              mov ebp, 1	        96	test-run-command.c	FUNCTION_4
-0x4000215	      0x488b4c2468	            mov rcx, qword [rsp + 0x68] 	        97	test-run-command.c	FUNCTION_4
-0x400021a	    0x6448330c2528	                xor rcx, qword fs:[0x28]	        97	test-run-command.c	FUNCTION_4
-0x4000223	            0x89e8	                            mov eax, ebp	        97	test-run-command.c	FUNCTION_4
-0x4000225	     0xf85a0000000	                           jne 0x40002cb	        97	test-run-command.c	FUNCTION_4
-0x400022b	        0x4883c478	                           add rsp, 0x78	        97	test-run-command.c	FUNCTION_4
-0x400022f	              0x5b	                                 pop rbx	        97	test-run-command.c	FUNCTION_4
-0x4000230	              0x5d	                                 pop rbp	        97	test-run-command.c	FUNCTION_4
-0x4000231	            0x415c	                                 pop r12	        97	test-run-command.c	FUNCTION_4
-0x4000233	            0x415d	                                 pop r13	        97	test-run-command.c	FUNCTION_4
-0x4000235	              0xc3	                                     ret	        97	test-run-command.c	FUNCTION_4
-0x4000236	          0x4c89ef	                            mov rdi, r13	        72	test-run-command.c	FUNCTION_4	IF_4	IF_5	CALL_5
-0x4000239	      0xe800000000	                          call 0x400023e	        72	test-run-command.c	FUNCTION_4	IF_4	IF_5	CALL_5
-0x400023e	            0x85c0	                           test eax, eax	        72	test-run-command.c	FUNCTION_4	IF_4	IF_5	CALL_5
-0x4000240	            0x790a	                           jns 0x400024c	        72	test-run-command.c	FUNCTION_4	IF_4	IF_5	CALL_5
-0x4000242	      0xe800000000	                          call 0x4000247	        72	test-run-command.c	FUNCTION_4	IF_4	IF_5	CALL_5
-0x4000247	          0x833802	                      cmp dword [rax], 2	        72	test-run-command.c	FUNCTION_4	IF_4	IF_5	CALL_5
-0x400024a	            0x74c9	                            je 0x4000215	        72	test-run-command.c	FUNCTION_4	IF_4	IF_5	CALL_5
-0x400024c	        0x488b4b08	                mov rcx, qword [rbx + 8]	        97	stdio2.h	FUNCTION_23	CALL_1
-0x4000250	    0x488b3d000000	            mov rdi, qword [0x04000257] 	        97	stdio2.h	FUNCTION_23	CALL_1
-0x4000257	      0xba00000000	                              mov edx, 0	        97	stdio2.h	FUNCTION_23	CALL_1
-0x400025c	      0xbe01000000	                              mov esi, 1	        97	stdio2.h	FUNCTION_23	CALL_1
-0x4000261	            0x31c0	                            xor eax, eax	        97	stdio2.h	FUNCTION_23	CALL_1
-0x4000263	      0xbd01000000	                              mov ebp, 1	        75	test-run-command.c	FUNCTION_4	IF_4
-0x4000268	      0xe800000000	                          call 0x400026d	        97	stdio2.h	FUNCTION_23	CALL_1
-0x400026d	            0xeba6	                           jmp 0x4000215	        75	test-run-command.c	FUNCTION_4	IF_4
-0x400026f	      0xbf00000000	                              mov edi, 0	        62	test-run-command.c	FUNCTION_4	WHILE_1	CALL_2
-0x4000274	            0x31c0	                            xor eax, eax	        62	test-run-command.c	FUNCTION_4	WHILE_1	CALL_2
-0x4000276	      0xe800000000	                          call 0x400027b	        62	test-run-command.c	FUNCTION_4	WHILE_1	CALL_2
-0x400027b	          0x4c89ef	                            mov rdi, r13	        78	test-run-command.c	FUNCTION_4	CALL_9
-0x400027e	      0xe800000000	                          call 0x4000283	        78	test-run-command.c	FUNCTION_4	CALL_9
-0x4000283	            0x89c7	                            mov edi, eax	        78	test-run-command.c	FUNCTION_4	CALL_9
-0x4000285	      0xe800000000	                          call 0x400028a	        78	test-run-command.c	FUNCTION_4	CALL_9
-0x400028a	          0x4d89e8	                             mov r8, r13	        84	test-run-command.c	FUNCTION_4	IF_7	CALL_13
-0x400028d	            0x31c9	                            xor ecx, ecx	        84	test-run-command.c	FUNCTION_4	IF_7	CALL_13
-0x400028f	            0x89c7	                            mov edi, eax	        88	test-run-command.c	FUNCTION_4	IF_8	CALL_16
-0x4000291	            0x31d2	                            xor edx, edx	        88	test-run-command.c	FUNCTION_4	IF_8	CALL_16
-0x4000293	      0xbe00000000	                              mov esi, 0	        88	test-run-command.c	FUNCTION_4	IF_8	CALL_16
-0x4000298	      0xe800000000	                          call 0x400029d	        88	test-run-command.c	FUNCTION_4	IF_8	CALL_16
-0x400029d	            0x89c7	                            mov edi, eax	        88	test-run-command.c	FUNCTION_4	IF_8	CALL_16
-0x400029f	      0xe800000000	                          call 0x40002a4	        88	test-run-command.c	FUNCTION_4	IF_8	CALL_16
-0x40002a4	          0x4d89e8	                             mov r8, r13	        88	test-run-command.c	FUNCTION_4	IF_8	CALL_16
-0x40002a7	      0xb900000000	                              mov ecx, 0	        88	test-run-command.c	FUNCTION_4	IF_8	CALL_16
-0x40002ac	            0xebe1	                           jmp 0x400028f	        88	test-run-command.c	FUNCTION_4	IF_8	CALL_16
-0x40002ae	            0x89c7	                            mov edi, eax	        92	test-run-command.c	FUNCTION_4	IF_9	CALL_19
-0x40002b0	          0x4d89e8	                             mov r8, r13	        92	test-run-command.c	FUNCTION_4	IF_9	CALL_19
-0x40002b3	      0xb900000000	                              mov ecx, 0	        92	test-run-command.c	FUNCTION_4	IF_9	CALL_19
-0x40002b8	            0x31d2	                            xor edx, edx	        92	test-run-command.c	FUNCTION_4	IF_9	CALL_19
-0x40002ba	      0xbe00000000	                              mov esi, 0	        92	test-run-command.c	FUNCTION_4	IF_9	CALL_19
-0x40002bf	      0xe800000000	                          call 0x40002c4	        92	test-run-command.c	FUNCTION_4	IF_9	CALL_19
-0x40002c4	            0x89c7	                            mov edi, eax	        92	test-run-command.c	FUNCTION_4	IF_9	CALL_19
-0x40002c6	      0xe800000000	                          call 0x40002cb	        92	test-run-command.c	FUNCTION_4	IF_9	CALL_19
-0x40002cb	      0xe800000000	      call str.no_further_jobs_available	        97	test-run-command.c	FUNCTION_4

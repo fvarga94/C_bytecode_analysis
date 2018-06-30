@@ -1,0 +1,495 @@
+pnp_setup_reserve_mem	ELSE,0:DO,0:SWITCH,0:FOR,1:IF,1:CALL,1:functions,0:WHILE,0	14
+0x40000ca	            0x4839	               add byte [rax + 0x39], cl	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000cd	        0xd0741448	          sal byte [rsp + rdx + 0x48], 1	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000d1	          0x3b7010	            cmp esi, dword [rax + 0x10] 	       696	resource.c	FUNCTION_24	IF_1
+0x40000d4	            0x7206	                            jb 0x40000dc	       696	resource.c	FUNCTION_24	IF_1
+0x40000d6	        0x483b7818	            cmp rdi, qword [rax + 0x18] 	       696	resource.c	FUNCTION_24	IF_1
+0x40000da	            0x761e	                           jbe 0x40000fa	       696	resource.c	FUNCTION_24	IF_1
+0x40000dc	          0x488b00	                    mov rax, qword [rax]	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000df	          0x4839d0	                            cmp rax, rdx	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000e2	            0x75ec	                           jne 0x40000d0	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000e4	    0x488b89e00200	           mov rcx, qword [rcx + 0x2e0] 	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000eb	    0x4881e9e00200	                          sub rcx, 0x2e0	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000f2	          0x4c39c1	                             cmp rcx, r8	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000f5	            0x75c6	                           jne 0x40000bd	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000f7	              0x31	                                 invalid	       700	resource.c	FUNCTION_24
+pnp_range_reserved	ELSE,0:DO,0:SWITCH,0:FOR,0:IF,0:CALL,0:functions,1:WHILE,0	24
+0x40000a0	    0x488b05000000	            mov rax, qword [0x040000a7] 	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000a7	    0x49b800000000	                            movabs r8, 0	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000b1	    0x488d8820fdff	                  lea rcx, [rax - 0x2e0]	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000b8	          0x4c39c1	                             cmp rcx, r8	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000bb	            0x743a	                            je 0x40000f7	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000bd	    0x488b81580300	           mov rax, qword [rcx + 0x358] 	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000c4	    0x488d91580300	                  lea rdx, [rcx + 0x358]	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000cb	          0x4839d0	                            cmp rax, rdx	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000ce	            0x7414	                            je 0x40000e4	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000d0	        0x483b7010	            cmp rsi, qword [rax + 0x10] 	       696	resource.c	FUNCTION_24	IF_1
+0x40000d4	            0x7206	                            jb 0x40000dc	       696	resource.c	FUNCTION_24	IF_1
+0x40000d6	        0x483b7818	            cmp rdi, qword [rax + 0x18] 	       696	resource.c	FUNCTION_24	IF_1
+0x40000da	            0x761e	                           jbe 0x40000fa	       696	resource.c	FUNCTION_24	IF_1
+0x40000dc	          0x488b00	                    mov rax, qword [rax]	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000df	          0x4839d0	                            cmp rax, rdx	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000e2	            0x75ec	                           jne 0x40000d0	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000e4	    0x488b89e00200	           mov rcx, qword [rcx + 0x2e0] 	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000eb	    0x4881e9e00200	                          sub rcx, 0x2e0	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000f2	          0x4c39c1	                             cmp rcx, r8	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000f5	            0x75c6	                           jne 0x40000bd	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000f7	            0x31c0	                            xor eax, eax	       700	resource.c	FUNCTION_24
+0x40000f9	              0xc3	                                     ret	       700	resource.c	FUNCTION_24
+0x40000fa	      0xb801000000	                              mov eax, 1	       697	resource.c	FUNCTION_24	IF_1
+0x40000ff	              0xc3	                                     ret	       701	resource.c	FUNCTION_24
+pnp_setup_reserve_dma	ELSE,0:DO,0:SWITCH,0:FOR,1:IF,1:CALL,1:functions,0:WHILE,0	21
+0x400006e	          0x8b4828	            mov ecx, dword [rax + 0x28] 	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000071	    0x81e1001f0000	                         and ecx, 0x1f00	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000077	          0x4839ce	                            cmp rsi, rcx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400007a	            0x75e9	                           jne 0x4000065	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400007c	            0x85d2	                           test edx, edx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400007e	          0x8d4aff	                      lea ecx, [rdx - 1]	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000081	            0x740d	                            je 0x4000090	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000083	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000086	            0x89ca	                            mov edx, ecx	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000088	          0x4839f8	                            cmp rax, rdi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400008b	            0x75e0	                           jne 0x400006d	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400008d	            0x31c0	                            xor eax, eax	       493	resource.c	FUNCTION_15
+0x400008f	              0xc3	                                     ret	       494	resource.c	FUNCTION_15
+0x4000090	        0x4883c010	                           add rax, 0x10	       491	resource.c	FUNCTION_15	FUNCTION_1	IF_1
+0x4000094	              0xc3	                                     ret	       491	resource.c	FUNCTION_15	FUNCTION_1	IF_1
+0x4000095	              0x90	                                     nop	       491	resource.c	FUNCTION_15	FUNCTION_1	IF_1
+0x4000096	              0x66	                                 invalid	       491	resource.c	FUNCTION_15	FUNCTION_1	IF_1
+0x4000097	              0x2e	                                 invalid	       491	resource.c	FUNCTION_15	FUNCTION_1	IF_1
+0x4000098	               0xf	                                 invalid	       491	resource.c	FUNCTION_15	FUNCTION_1	IF_1
+0x4000099	              0x1f	                                 invalid	       491	resource.c	FUNCTION_15	FUNCTION_1	IF_1
+0x400009a	            0x8400	                     test byte [rax], al	       491	resource.c	FUNCTION_15	FUNCTION_1	IF_1
+pnp_check_dma	ELSE,0:DO,0:SWITCH,0:FOR,2:IF,7:CALL,3:functions,1:WHILE,0	118
+0x4000bc0	        0xf6461b10	           test byte [rsi + 0x1b], 0x10 	       426	resource.c	FUNCTION_13	IF_1
+0x4000bc4	     0xf856b010000	                           jne 0x4000d35	       426	resource.c	FUNCTION_13	IF_1
+0x4000bca	            0x4154	                                push r12	       417	resource.c	FUNCTION_13
+0x4000bcc	              0x55	                                push rbp	       417	resource.c	FUNCTION_13
+0x4000bcd	              0x53	                                push rbx	       417	resource.c	FUNCTION_13
+0x4000bce	          0x4c8b26	                    mov r12, qword [rsi]	       430	resource.c	FUNCTION_13	IF_2
+0x4000bd1	        0x4983fc04	                              cmp r12, 4	       430	resource.c	FUNCTION_13	IF_2
+0x4000bd5	     0xf842d010000	                            je 0x4000d08	       430	resource.c	FUNCTION_13	IF_2
+0x4000bdb	        0x4983fc07	                              cmp r12, 7	       430	resource.c	FUNCTION_13	IF_2
+0x4000bdf	    0x48c7c0000000	                              mov rax, 0	       430	resource.c	FUNCTION_13	IF_2
+0x4000be6	     0xf871c010000	                            ja 0x4000d08	       430	resource.c	FUNCTION_13	IF_2
+0x4000bec	          0x486310	                 movsxd rdx, dword [rax]	       435	resource.c	FUNCTION_13	FOR_1	IF_3
+0x4000bef	          0x4939d4	                            cmp r12, rdx	       435	resource.c	FUNCTION_13	FOR_1	IF_3
+0x4000bf2	     0xf8410010000	                            je 0x4000d08	       435	resource.c	FUNCTION_13	FOR_1	IF_3
+0x4000bf8	        0x4883c004	                              add rax, 4	       435	resource.c	FUNCTION_13	FOR_1	IF_3
+0x4000bfc	    0x483d00000000	                              cmp rax, 0	       434	resource.c	FUNCTION_13	FOR_1
+0x4000c02	            0x75e8	                           jne 0x4000bec	       434	resource.c	FUNCTION_13	FOR_1
+0x4000c04	    0x4c8b9f580300	           mov r11, qword [rdi + 0x358] 	       434	resource.c	FUNCTION_13	FOR_1
+0x4000c0b	    0x4c8d87580300	                   lea r8, [rdi + 0x358]	       434	resource.c	FUNCTION_13	FOR_1
+0x4000c12	          0x4531d2	                          xor r10d, r10d	       434	resource.c	FUNCTION_13	FOR_1
+0x4000c15	          0x4d39d8	                             cmp r8, r11	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000c18	          0x4589d1	                           mov r9d, r10d	       440	resource.c	FUNCTION_13	FOR_2	CALL_1
+0x4000c1b	            0x743b	                            je 0x4000c58	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000c1d	          0x4c89d8	                            mov rax, r11	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000c20	            0xeb08	                           jmp 0x4000c2a	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000c22	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000c25	          0x4939c0	                             cmp r8, rax	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000c28	            0x742e	                            je 0x4000c58	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000c2a	        0x488b5028	            mov rdx, qword [rax + 0x28] 	       477	resource.c	FUNCTION_14
+0x4000c2e	          0x4889d1	                            mov rcx, rdx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000c31	    0x81e1001f0000	                         and ecx, 0x1f00	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000c37	    0x4881f9000800	                          cmp rcx, 0x800	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000c3e	            0x75e2	                           jne 0x4000c22	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000c40	          0x4585c9	                           test r9d, r9d	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000c43	        0x418d49ff	                       lea ecx, [r9 - 1]	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000c47	     0xf84c2000000	                            je 0x4000d0f	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000c4d	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000c50	          0x4189c9	                            mov r9d, ecx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000c53	          0x4939c0	                             cmp r8, rax	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000c56	            0x75d2	                           jne 0x4000c2a	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000c58	    0x8b8748030000	           mov eax, dword [rdi + 0x348] 	       449	resource.c	FUNCTION_13	IF_6
+0x4000c5e	          0x4889f3	                            mov rbx, rsi	       449	resource.c	FUNCTION_13	IF_6
+0x4000c61	          0x4889fd	                            mov rbp, rdi	       449	resource.c	FUNCTION_13	IF_6
+0x4000c64	            0x85c0	                           test eax, eax	       449	resource.c	FUNCTION_13	IF_6
+0x4000c66	     0xf8489000000	                            je 0x4000cf5	       449	resource.c	FUNCTION_13	IF_6
+0x4000c6c	    0x488b05000000	            mov rax, qword [0x04000c73] 	       456	resource.c	FUNCTION_13	FUNCTION_1
+0x4000c73	    0x49bb00000000	                           movabs r11, 0	       456	resource.c	FUNCTION_13	FUNCTION_1
+0x4000c7d	    0x4c8d9020fdff	                  lea r10, [rax - 0x2e0]	       456	resource.c	FUNCTION_13	FUNCTION_1
+0x4000c84	          0x4d39da	                            cmp r10, r11	       456	resource.c	FUNCTION_13	FUNCTION_1
+0x4000c87	            0x7465	                            je 0x4000cee	       456	resource.c	FUNCTION_13	FUNCTION_1
+0x4000c89	          0x4c39d5	                            cmp rbp, r10	       457	resource.c	FUNCTION_13	FUNCTION_1	IF_1
+0x4000c8c	            0x744d	                            je 0x4000cdb	       457	resource.c	FUNCTION_13	FUNCTION_1	IF_1
+0x4000c8e	    0x4d8b8a580300	            mov r9, qword [r10 + 0x358] 	       457	resource.c	FUNCTION_13	FUNCTION_1	IF_1
+0x4000c95	    0x498db2580300	                  lea rsi, [r10 + 0x358]	       457	resource.c	FUNCTION_13	FUNCTION_1	IF_1
+0x4000c9c	          0x4531c0	                            xor r8d, r8d	       457	resource.c	FUNCTION_13	FUNCTION_1	IF_1
+0x4000c9f	          0x4c39ce	                             cmp rsi, r9	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000ca2	          0x4489c7	                            mov edi, r8d	       460	resource.c	FUNCTION_13	FUNCTION_1	FOR_1	CALL_1
+0x4000ca5	            0x7434	                            je 0x4000cdb	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000ca7	          0x4c89c8	                             mov rax, r9	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000caa	            0xeb08	                           jmp 0x4000cb4	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000cac	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000caf	          0x4839f0	                            cmp rax, rsi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000cb2	            0x7427	                            je 0x4000cdb	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000cb4	        0x488b5028	            mov rdx, qword [rax + 0x28] 	       477	resource.c	FUNCTION_14
+0x4000cb8	          0x4889d1	                            mov rcx, rdx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000cbb	    0x81e1001f0000	                         and ecx, 0x1f00	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000cc1	    0x4881f9000800	                          cmp rcx, 0x800	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000cc8	            0x75e2	                           jne 0x4000cac	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000cca	            0x85ff	                           test edi, edi	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000ccc	          0x8d4fff	                      lea ecx, [rdi - 1]	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000ccf	            0x746a	                            je 0x4000d3b	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000cd1	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000cd4	            0x89cf	                            mov edi, ecx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000cd6	          0x4839f0	                            cmp rax, rsi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000cd9	            0x75d9	                           jne 0x4000cb4	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000cdb	    0x4d8b92e00200	           mov r10, qword [r10 + 0x2e0] 	       456	resource.c	FUNCTION_13	FUNCTION_1
+0x4000ce2	    0x4981eae00200	                          sub r10, 0x2e0	       456	resource.c	FUNCTION_13	FUNCTION_1
+0x4000ce9	          0x4d39da	                            cmp r10, r11	       456	resource.c	FUNCTION_13	FUNCTION_1
+0x4000cec	            0x759b	                           jne 0x4000c89	       456	resource.c	FUNCTION_13	FUNCTION_1
+0x4000cee	      0xb801000000	                              mov eax, 1	       427	resource.c	FUNCTION_13	IF_1
+0x4000cf3	            0xeb15	                           jmp 0x4000d0a	       427	resource.c	FUNCTION_13	IF_1
+0x4000cf5	    0x48c7c6000000	                              mov rsi, 0	       450	resource.c	FUNCTION_13	IF_6	IF_7	CALL_2
+0x4000cfc	          0x4489e7	                           mov edi, r12d	       450	resource.c	FUNCTION_13	IF_6	IF_7	CALL_2
+0x4000cff	      0xe800000000	                          call 0x4000d04	       450	resource.c	FUNCTION_13	IF_6	IF_7	CALL_2
+0x4000d04	            0x85c0	                           test eax, eax	       450	resource.c	FUNCTION_13	IF_6	IF_7	CALL_2
+0x4000d06	            0x7458	                            je 0x4000d60	       450	resource.c	FUNCTION_13	IF_6	IF_7	CALL_2
+0x4000d08	            0x31c0	                            xor eax, eax	       431	resource.c	FUNCTION_13	IF_2
+0x4000d0a	              0x5b	                                 pop rbx	       472	resource.c	FUNCTION_13
+0x4000d0b	              0x5d	                                 pop rbp	       472	resource.c	FUNCTION_13
+0x4000d0c	            0x415c	                                 pop r12	       472	resource.c	FUNCTION_13
+0x4000d0e	              0xc3	                                     ret	       472	resource.c	FUNCTION_13
+0x4000d0f	          0x4889c1	                            mov rcx, rax	       440	resource.c	FUNCTION_13	FOR_2	CALL_1
+0x4000d12	        0x4883c110	                           add rcx, 0x10	       440	resource.c	FUNCTION_13	FOR_2	CALL_1
+0x4000d16	     0xf843cffffff	                            je 0x4000c58	       440	resource.c	FUNCTION_13	FOR_2	CALL_1
+0x4000d1c	          0x4839ce	                            cmp rsi, rcx	       441	resource.c	FUNCTION_13	FOR_2	IF_4
+0x4000d1f	            0x740b	                            je 0x4000d2c	       441	resource.c	FUNCTION_13	FOR_2	IF_4
+0x4000d21	          0x80e608	                               and dh, 8	       441	resource.c	FUNCTION_13	FOR_2	IF_4
+0x4000d24	            0x7406	                            je 0x4000d2c	       441	resource.c	FUNCTION_13	FOR_2	IF_4
+0x4000d26	        0x4c3b6010	            cmp r12, qword [rax + 0x10] 	       442	resource.c	FUNCTION_13	FOR_2	IF_4	IF_5
+0x4000d2a	            0x74dc	                            je 0x4000d08	       442	resource.c	FUNCTION_13	FOR_2	IF_4	IF_5
+0x4000d2c	        0x4183c201	                             add r10d, 1	       440	resource.c	FUNCTION_13	FOR_2	CALL_1
+0x4000d30	      0xe9e0feffff	                           jmp 0x4000c15	       440	resource.c	FUNCTION_13	FOR_2	CALL_1
+0x4000d35	      0xb801000000	                              mov eax, 1	       427	resource.c	FUNCTION_13	IF_1
+0x4000d3a	              0xc3	                                     ret	       472	resource.c	FUNCTION_13
+0x4000d3b	        0x4883f8f0	             cmp rax, 0xfffffffffffffff0	       459	resource.c	FUNCTION_13	FUNCTION_1	FOR_1
+0x4000d3f	            0x749a	                            je 0x4000cdb	       459	resource.c	FUNCTION_13	FUNCTION_1	FOR_1
+0x4000d41	          0xf6c608	                              test dh, 8	       462	resource.c	FUNCTION_13	FUNCTION_1	FOR_1	IF_2
+0x4000d44	            0x7411	                            je 0x4000d57	       462	resource.c	FUNCTION_13	FUNCTION_1	FOR_1	IF_2
+0x4000d46	    0xf7c200000010	                    test edx, 0x10000000	       463	resource.c	FUNCTION_13	FUNCTION_1	FOR_1	IF_2	IF_3
+0x4000d4c	            0x7509	                           jne 0x4000d57	       463	resource.c	FUNCTION_13	FUNCTION_1	FOR_1	IF_2	IF_3
+0x4000d4e	          0x488b3b	                    mov rdi, qword [rbx]	       465	resource.c	FUNCTION_13	FUNCTION_1	FOR_1	IF_2	IF_4
+0x4000d51	        0x48397810	            cmp qword [rax + 0x10], rdi 	       465	resource.c	FUNCTION_13	FUNCTION_1	FOR_1	IF_2	IF_4
+0x4000d55	            0x74b1	                            je 0x4000d08	       465	resource.c	FUNCTION_13	FUNCTION_1	FOR_1	IF_2	IF_4
+0x4000d57	        0x4183c001	                              add r8d, 1	       461	resource.c	FUNCTION_13	FUNCTION_1	FOR_1
+0x4000d5b	      0xe93fffffff	                           jmp 0x4000c9f	       461	resource.c	FUNCTION_13	FUNCTION_1	FOR_1
+0x4000d60	            0x8b3b	                    mov edi, dword [rbx]	       452	resource.c	FUNCTION_13	IF_6	CALL_3
+0x4000d62	      0xe800000000	                          call 0x4000d67	       452	resource.c	FUNCTION_13	IF_6	CALL_3
+0x4000d67	      0xe900ffffff	                           jmp 0x4000c6c	       452	resource.c	FUNCTION_13	IF_6	CALL_3
+pnp_check_mem	ELSE,0:DO,0:SWITCH,0:FOR,2:IF,6:CALL,3:functions,1:WHILE,0	141
+0x40006c0	        0xf6461b10	           test byte [rsi + 0x1b], 0x10 	       240	resource.c	FUNCTION_8	IF_1
+0x40006c4	     0xf856a010000	                           jne 0x4000834	       240	resource.c	FUNCTION_8	IF_1
+0x40006ca	            0x4154	                                push r12	       230	resource.c	FUNCTION_8
+0x40006cc	              0x55	                                push rbp	       230	resource.c	FUNCTION_8
+0x40006cd	          0x4889fd	                            mov rbp, rdi	       230	resource.c	FUNCTION_8
+0x40006d0	              0x53	                                push rbx	       230	resource.c	FUNCTION_8
+0x40006d1	    0x8b8748030000	           mov eax, dword [rdi + 0x348] 	       245	resource.c	FUNCTION_8	IF_2
+0x40006d7	          0x4889f3	                            mov rbx, rsi	       245	resource.c	FUNCTION_8	IF_2
+0x40006da	            0x85c0	                           test eax, eax	       245	resource.c	FUNCTION_8	IF_2
+0x40006dc	     0xf8483010000	                            je 0x4000865	       245	resource.c	FUNCTION_8	IF_2
+0x40006e2	        0x4c8b5308	                mov r10, qword [rbx + 8]	       245	resource.c	FUNCTION_8	IF_2
+0x40006e6	            0x31d2	                            xor edx, edx	       230	resource.c	FUNCTION_8
+0x40006e8	          0x8d0c12	                    lea ecx, [rdx + rdx]	       253	resource.c	FUNCTION_8	FOR_1
+0x40006eb	          0x4863c1	                         movsxd rax, ecx	       253	resource.c	FUNCTION_8	FOR_1
+0x40006ee	    0x486334850000	               movsxd rsi, dword [rax*4]	       253	resource.c	FUNCTION_8	FOR_1
+0x40006f6	          0x4c39d6	                            cmp rsi, r10	       255	resource.c	FUNCTION_8	FOR_1	IF_4
+0x40006f9	          0x4889f0	                            mov rax, rsi	       253	resource.c	FUNCTION_8	FOR_1
+0x40006fc	            0x771b	                            ja 0x4000719	       255	resource.c	FUNCTION_8	FOR_1	IF_4
+0x40006fe	          0x83c101	                              add ecx, 1	       254	resource.c	FUNCTION_8	FOR_1
+0x4000701	          0x4863c9	                         movsxd rcx, ecx	       254	resource.c	FUNCTION_8	FOR_1
+0x4000704	     0x3048d000000	                  add eax, dword [rcx*4]	       255	resource.c	FUNCTION_8	FOR_1	IF_4
+0x400070b	          0x83e801	                              sub eax, 1	       255	resource.c	FUNCTION_8	FOR_1	IF_4
+0x400070e	            0x4898	                                    cdqe	       255	resource.c	FUNCTION_8	FOR_1	IF_4
+0x4000710	          0x483b03	                    cmp rax, qword [rbx]	       255	resource.c	FUNCTION_8	FOR_1	IF_4
+0x4000713	     0xf8314010000	                           jae 0x400082d	       255	resource.c	FUNCTION_8	FOR_1	IF_4
+0x4000719	          0x83c201	                              add edx, 1	       252	resource.c	FUNCTION_8	FOR_1
+0x400071c	          0x83fa08	                              cmp edx, 8	       252	resource.c	FUNCTION_8	FOR_1
+0x400071f	            0x75c7	                           jne 0x40006e8	       252	resource.c	FUNCTION_8	FOR_1
+0x4000721	    0x4c8b8d580300	            mov r9, qword [rbp + 0x358] 	       252	resource.c	FUNCTION_8	FOR_1
+0x4000728	    0x488db5580300	                  lea rsi, [rbp + 0x358]	       252	resource.c	FUNCTION_8	FOR_1
+0x400072f	          0x4531c0	                            xor r8d, r8d	       252	resource.c	FUNCTION_8	FOR_1
+0x4000732	          0x4c39ce	                             cmp rsi, r9	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000735	          0x4489c7	                            mov edi, r8d	       260	resource.c	FUNCTION_8	FOR_2	CALL_3
+0x4000738	            0x7438	                            je 0x4000772	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400073a	          0x4c89c8	                             mov rax, r9	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400073d	            0xeb08	                           jmp 0x4000747	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400073f	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000742	          0x4839f0	                            cmp rax, rsi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000745	            0x742b	                            je 0x4000772	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000747	        0x488b5028	            mov rdx, qword [rax + 0x28] 	       477	resource.c	FUNCTION_14
+0x400074b	          0x4889d1	                            mov rcx, rdx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400074e	    0x81e1001f0000	                         and ecx, 0x1f00	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000754	    0x4881f9000200	                          cmp rcx, 0x200	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400075b	            0x75e2	                           jne 0x400073f	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400075d	            0x85ff	                           test edi, edi	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400075f	          0x8d4fff	                      lea ecx, [rdi - 1]	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000762	     0xf8496000000	                            je 0x40007fe	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000768	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400076b	            0x89cf	                            mov edi, ecx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400076d	          0x4839f0	                            cmp rax, rsi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000770	            0x75d5	                           jne 0x4000747	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000772	    0x488b05000000	            mov rax, qword [0x04000779] 	       270	resource.c	FUNCTION_8	FUNCTION_1
+0x4000779	    0x49bc00000000	                           movabs r12, 0	       270	resource.c	FUNCTION_8	FUNCTION_1
+0x4000783	    0x4c8d9820fdff	                  lea r11, [rax - 0x2e0]	       270	resource.c	FUNCTION_8	FUNCTION_1
+0x400078a	          0x4d39e3	                            cmp r11, r12	       270	resource.c	FUNCTION_8	FUNCTION_1
+0x400078d	            0x7465	                            je 0x40007f4	       270	resource.c	FUNCTION_8	FUNCTION_1
+0x400078f	          0x4c39dd	                            cmp rbp, r11	       271	resource.c	FUNCTION_8	FUNCTION_1	IF_1
+0x4000792	            0x744d	                            je 0x40007e1	       271	resource.c	FUNCTION_8	FUNCTION_1	IF_1
+0x4000794	    0x4d8b8b580300	            mov r9, qword [r11 + 0x358] 	       271	resource.c	FUNCTION_8	FUNCTION_1	IF_1
+0x400079b	    0x498db3580300	                  lea rsi, [r11 + 0x358]	       271	resource.c	FUNCTION_8	FUNCTION_1	IF_1
+0x40007a2	          0x4531c0	                            xor r8d, r8d	       271	resource.c	FUNCTION_8	FUNCTION_1	IF_1
+0x40007a5	          0x4c39ce	                             cmp rsi, r9	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40007a8	          0x4489c7	                            mov edi, r8d	       274	resource.c	FUNCTION_8	FUNCTION_1	FOR_1	CALL_1
+0x40007ab	            0x7434	                            je 0x40007e1	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40007ad	          0x4c89c8	                             mov rax, r9	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40007b0	            0xeb08	                           jmp 0x40007ba	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40007b2	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40007b5	          0x4839f0	                            cmp rax, rsi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40007b8	            0x7427	                            je 0x40007e1	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40007ba	        0x488b5028	            mov rdx, qword [rax + 0x28] 	       477	resource.c	FUNCTION_14
+0x40007be	          0x4889d1	                            mov rcx, rdx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40007c1	    0x81e1001f0000	                         and ecx, 0x1f00	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40007c7	    0x4881f9000200	                          cmp rcx, 0x200	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40007ce	            0x75e2	                           jne 0x40007b2	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40007d0	            0x85ff	                           test edi, edi	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40007d2	          0x8d4fff	                      lea ecx, [rdi - 1]	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40007d5	            0x7463	                            je 0x400083a	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40007d7	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40007da	            0x89cf	                            mov edi, ecx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40007dc	          0x4839f0	                            cmp rax, rsi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40007df	            0x75d9	                           jne 0x40007ba	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40007e1	    0x4d8b9be00200	           mov r11, qword [r11 + 0x2e0] 	       270	resource.c	FUNCTION_8	FUNCTION_1
+0x40007e8	    0x4981ebe00200	                          sub r11, 0x2e0	       270	resource.c	FUNCTION_8	FUNCTION_1
+0x40007ef	          0x4d39e3	                            cmp r11, r12	       270	resource.c	FUNCTION_8	FUNCTION_1
+0x40007f2	            0x759b	                           jne 0x400078f	       270	resource.c	FUNCTION_8	FUNCTION_1
+0x40007f4	              0x5b	                                 pop rbx	       290	resource.c	FUNCTION_8
+0x40007f5	      0xb801000000	                              mov eax, 1	       241	resource.c	FUNCTION_8	IF_1
+0x40007fa	              0x5d	                                 pop rbp	       290	resource.c	FUNCTION_8
+0x40007fb	            0x415c	                                 pop r12	       290	resource.c	FUNCTION_8
+0x40007fd	              0xc3	                                     ret	       290	resource.c	FUNCTION_8
+0x40007fe	          0x4889c1	                            mov rcx, rax	       260	resource.c	FUNCTION_8	FOR_2	CALL_3
+0x4000801	        0x4883c110	                           add rcx, 0x10	       260	resource.c	FUNCTION_8	FOR_2	CALL_3
+0x4000805	     0xf8467ffffff	                            je 0x4000772	       260	resource.c	FUNCTION_8	FOR_2	CALL_3
+0x400080b	          0x4839cb	                            cmp rbx, rcx	       261	resource.c	FUNCTION_8	FOR_2	IF_5
+0x400080e	            0x7414	                            je 0x4000824	       261	resource.c	FUNCTION_8	FOR_2	IF_5
+0x4000810	          0x80e602	                               and dh, 2	       261	resource.c	FUNCTION_8	FOR_2	IF_5
+0x4000813	            0x740f	                            je 0x4000824	       261	resource.c	FUNCTION_8	FOR_2	IF_5
+0x4000815	        0x4c395010	            cmp qword [rax + 0x10], r10 	       264	resource.c	FUNCTION_8	FOR_2	IF_5	IF_6
+0x4000819	            0x7709	                            ja 0x4000824	       264	resource.c	FUNCTION_8	FOR_2	IF_5	IF_6
+0x400081b	          0x488b3b	                    mov rdi, qword [rbx]	       264	resource.c	FUNCTION_8	FOR_2	IF_5	IF_6
+0x400081e	        0x48397818	            cmp qword [rax + 0x18], rdi 	       264	resource.c	FUNCTION_8	FOR_2	IF_5	IF_6
+0x4000822	            0x7309	                           jae 0x400082d	       264	resource.c	FUNCTION_8	FOR_2	IF_5	IF_6
+0x4000824	        0x4183c001	                              add r8d, 1	       260	resource.c	FUNCTION_8	FOR_2	CALL_3
+0x4000828	      0xe905ffffff	                           jmp 0x4000732	       260	resource.c	FUNCTION_8	FOR_2	CALL_3
+0x400082d	              0x5b	                                 pop rbx	       290	resource.c	FUNCTION_8
+0x400082e	            0x31c0	                            xor eax, eax	       247	resource.c	FUNCTION_8	IF_2	IF_3
+0x4000830	              0x5d	                                 pop rbp	       290	resource.c	FUNCTION_8
+0x4000831	            0x415c	                                 pop r12	       290	resource.c	FUNCTION_8
+0x4000833	              0xc3	                                     ret	       290	resource.c	FUNCTION_8
+0x4000834	      0xb801000000	                              mov eax, 1	       241	resource.c	FUNCTION_8	IF_1
+0x4000839	              0xc3	                                     ret	       290	resource.c	FUNCTION_8
+0x400083a	        0x4883f8f0	             cmp rax, 0xfffffffffffffff0	       273	resource.c	FUNCTION_8	FUNCTION_1	FOR_1
+0x400083e	            0x74a1	                            je 0x40007e1	       273	resource.c	FUNCTION_8	FUNCTION_1	FOR_1
+0x4000840	          0xf6c602	                              test dh, 2	       276	resource.c	FUNCTION_8	FUNCTION_1	FOR_1	IF_2
+0x4000843	            0x7417	                            je 0x400085c	       276	resource.c	FUNCTION_8	FUNCTION_1	FOR_1	IF_2
+0x4000845	    0xf7c200002010	                    test edx, 0x10200000	       279	resource.c	FUNCTION_8	FUNCTION_1	FOR_1	IF_2	IF_4
+0x400084b	            0x750f	                           jne 0x400085c	       279	resource.c	FUNCTION_8	FUNCTION_1	FOR_1	IF_2	IF_4
+0x400084d	        0x4c395010	            cmp qword [rax + 0x10], r10 	       283	resource.c	FUNCTION_8	FUNCTION_1	FOR_1	IF_2	IF_5
+0x4000851	            0x7709	                            ja 0x400085c	       283	resource.c	FUNCTION_8	FUNCTION_1	FOR_1	IF_2	IF_5
+0x4000853	          0x488b3b	                    mov rdi, qword [rbx]	       283	resource.c	FUNCTION_8	FUNCTION_1	FOR_1	IF_2	IF_5
+0x4000856	        0x48397818	            cmp qword [rax + 0x18], rdi 	       283	resource.c	FUNCTION_8	FUNCTION_1	FOR_1	IF_2	IF_5
+0x400085a	            0x73d1	                           jae 0x400082d	       283	resource.c	FUNCTION_8	FUNCTION_1	FOR_1	IF_2	IF_5
+0x400085c	        0x4183c001	                              add r8d, 1	       275	resource.c	FUNCTION_8	FUNCTION_1	FOR_1
+0x4000860	      0xe940ffffff	                           jmp 0x40007a5	       275	resource.c	FUNCTION_8	FUNCTION_1	FOR_1
+0x4000865	        0x488b4308	                mov rax, qword [rbx + 8]	       246	resource.c	FUNCTION_8	IF_2	IF_3	CALL_1
+0x4000869	          0x488b36	                    mov rsi, qword [rsi]	       246	resource.c	FUNCTION_8	IF_2	IF_3	CALL_1
+0x400086c	          0x4531c0	                            xor r8d, r8d	       246	resource.c	FUNCTION_8	IF_2	IF_3	CALL_1
+0x400086f	    0x48c7c1000000	                              mov rcx, 0	       246	resource.c	FUNCTION_8	IF_2	IF_3	CALL_1
+0x4000876	    0x48c7c7000000	                              mov rdi, 0	       246	resource.c	FUNCTION_8	IF_2	IF_3	CALL_1
+0x400087d	        0x488d5001	                      lea rdx, [rax + 1]	       246	resource.c	FUNCTION_8	IF_2	IF_3	CALL_1
+0x4000881	          0x4829f2	                            sub rdx, rsi	       246	resource.c	FUNCTION_8	IF_2	IF_3	CALL_1
+0x4000884	      0xe800000000	                          call 0x4000889	       246	resource.c	FUNCTION_8	IF_2	IF_3	CALL_1
+0x4000889	          0x4885c0	                           test rax, rax	       246	resource.c	FUNCTION_8	IF_2	IF_3	CALL_1
+0x400088c	            0x749f	                            je 0x400082d	       246	resource.c	FUNCTION_8	IF_2	IF_3	CALL_1
+0x400088e	        0x488b4308	                mov rax, qword [rbx + 8]	       248	resource.c	FUNCTION_8	IF_2	CALL_2
+0x4000892	          0x488b33	                    mov rsi, qword [rbx]	       248	resource.c	FUNCTION_8	IF_2	CALL_2
+0x4000895	    0x48c7c7000000	                              mov rdi, 0	       248	resource.c	FUNCTION_8	IF_2	CALL_2
+0x400089c	        0x488d5001	                      lea rdx, [rax + 1]	       248	resource.c	FUNCTION_8	IF_2	CALL_2
+0x40008a0	          0x4829f2	                            sub rdx, rsi	       248	resource.c	FUNCTION_8	IF_2	CALL_2
+0x40008a3	      0xe800000000	                          call 0x40008a8	       248	resource.c	FUNCTION_8	IF_2	CALL_2
+0x40008a8	      0xe935feffff	                           jmp 0x40006e2	       248	resource.c	FUNCTION_8	IF_2	CALL_2
+pnp_test_handler	ELSE,0:DO,0:SWITCH,0:FOR,0:IF,0:CALL,0:functions,0:WHILE,0	2
+0x4000040	      0xb801000000	                              mov eax, 1	       295	resource.c	FUNCTION_9
+0x4000045	              0xc3	                                     ret	       295	resource.c	FUNCTION_9
+pnp_setup_reserve_io	ELSE,0:DO,0:SWITCH,0:FOR,1:IF,1:CALL,1:functions,0:WHILE,0	13
+0x400009c	               0x0	                      add byte [rax], al	       491	resource.c	FUNCTION_15	FUNCTION_1	IF_1
+0x400009e	               0x0	                      add byte [rax], al	       491	resource.c	FUNCTION_15	FUNCTION_1	IF_1
+0x40000a0	    0x488b05000000	            mov rax, qword [0x040000a7] 	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000a7	    0x49b800000000	                            movabs r8, 0	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000b1	    0x488d8820fdff	                  lea rcx, [rax - 0x2e0]	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000b8	          0x4c39c1	                             cmp rcx, r8	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000bb	            0x743a	                            je 0x40000f7	       692	resource.c	FUNCTION_24	FUNCTION_1
+0x40000bd	    0x488b81580300	           mov rax, qword [rcx + 0x358] 	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000c4	              0x48	                                 invalid	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000c5	              0x8d	                                 invalid	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000c6	              0x91	                           xchg eax, ecx	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000c7	              0x58	                                 pop rax	       693	resource.c	FUNCTION_24	FUNCTION_1
+0x40000c8	             0x300	                    add eax, dword [rax]	       693	resource.c	FUNCTION_24	FUNCTION_1
+pnp_check_port	ELSE,0:DO,0:SWITCH,0:FOR,2:IF,6:CALL,3:functions,1:WHILE,0	141
+0x40004d0	        0xf6461b10	           test byte [rsi + 0x1b], 0x10 	       177	resource.c	FUNCTION_7	IF_1
+0x40004d4	     0xf856a010000	                           jne 0x4000644	       177	resource.c	FUNCTION_7	IF_1
+0x40004da	            0x4154	                                push r12	       167	resource.c	FUNCTION_7
+0x40004dc	              0x55	                                push rbp	       167	resource.c	FUNCTION_7
+0x40004dd	          0x4889fd	                            mov rbp, rdi	       167	resource.c	FUNCTION_7
+0x40004e0	              0x53	                                push rbx	       167	resource.c	FUNCTION_7
+0x40004e1	    0x8b8748030000	           mov eax, dword [rdi + 0x348] 	       182	resource.c	FUNCTION_7	IF_2
+0x40004e7	          0x4889f3	                            mov rbx, rsi	       182	resource.c	FUNCTION_7	IF_2
+0x40004ea	            0x85c0	                           test eax, eax	       182	resource.c	FUNCTION_7	IF_2
+0x40004ec	     0xf8483010000	                            je 0x4000675	       182	resource.c	FUNCTION_7	IF_2
+0x40004f2	        0x4c8b5308	                mov r10, qword [rbx + 8]	       182	resource.c	FUNCTION_7	IF_2
+0x40004f6	            0x31d2	                            xor edx, edx	       167	resource.c	FUNCTION_7
+0x40004f8	          0x8d0c12	                    lea ecx, [rdx + rdx]	       190	resource.c	FUNCTION_7	FOR_1
+0x40004fb	          0x4863c1	                         movsxd rax, ecx	       190	resource.c	FUNCTION_7	FOR_1
+0x40004fe	    0x486334850000	               movsxd rsi, dword [rax*4]	       190	resource.c	FUNCTION_7	FOR_1
+0x4000506	          0x4c39d6	                            cmp rsi, r10	       192	resource.c	FUNCTION_7	FOR_1	IF_4
+0x4000509	          0x4889f0	                            mov rax, rsi	       190	resource.c	FUNCTION_7	FOR_1
+0x400050c	            0x771b	                            ja 0x4000529	       192	resource.c	FUNCTION_7	FOR_1	IF_4
+0x400050e	          0x83c101	                              add ecx, 1	       191	resource.c	FUNCTION_7	FOR_1
+0x4000511	          0x4863c9	                         movsxd rcx, ecx	       191	resource.c	FUNCTION_7	FOR_1
+0x4000514	     0x3048d000000	                  add eax, dword [rcx*4]	       192	resource.c	FUNCTION_7	FOR_1	IF_4
+0x400051b	          0x83e801	                              sub eax, 1	       192	resource.c	FUNCTION_7	FOR_1	IF_4
+0x400051e	            0x4898	                                    cdqe	       192	resource.c	FUNCTION_7	FOR_1	IF_4
+0x4000520	          0x483b03	                    cmp rax, qword [rbx]	       192	resource.c	FUNCTION_7	FOR_1	IF_4
+0x4000523	     0xf8314010000	                           jae 0x400063d	       192	resource.c	FUNCTION_7	FOR_1	IF_4
+0x4000529	          0x83c201	                              add edx, 1	       189	resource.c	FUNCTION_7	FOR_1
+0x400052c	          0x83fa08	                              cmp edx, 8	       189	resource.c	FUNCTION_7	FOR_1
+0x400052f	            0x75c7	                           jne 0x40004f8	       189	resource.c	FUNCTION_7	FOR_1
+0x4000531	    0x4c8b8d580300	            mov r9, qword [rbp + 0x358] 	       189	resource.c	FUNCTION_7	FOR_1
+0x4000538	    0x488db5580300	                  lea rsi, [rbp + 0x358]	       189	resource.c	FUNCTION_7	FOR_1
+0x400053f	          0x4531c0	                            xor r8d, r8d	       189	resource.c	FUNCTION_7	FOR_1
+0x4000542	          0x4c39ce	                             cmp rsi, r9	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000545	          0x4489c7	                            mov edi, r8d	       197	resource.c	FUNCTION_7	FOR_2	CALL_3
+0x4000548	            0x7438	                            je 0x4000582	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400054a	          0x4c89c8	                             mov rax, r9	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400054d	            0xeb08	                           jmp 0x4000557	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400054f	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000552	          0x4839f0	                            cmp rax, rsi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000555	            0x742b	                            je 0x4000582	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000557	        0x488b5028	            mov rdx, qword [rax + 0x28] 	       477	resource.c	FUNCTION_14
+0x400055b	          0x4889d1	                            mov rcx, rdx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400055e	    0x81e1001f0000	                         and ecx, 0x1f00	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000564	    0x4881f9000100	                          cmp rcx, 0x100	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400056b	            0x75e2	                           jne 0x400054f	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400056d	            0x85ff	                           test edi, edi	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400056f	          0x8d4fff	                      lea ecx, [rdi - 1]	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000572	     0xf8496000000	                            je 0x400060e	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x4000578	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400057b	            0x89cf	                            mov edi, ecx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x400057d	          0x4839f0	                            cmp rax, rsi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000580	            0x75d5	                           jne 0x4000557	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000582	    0x488b05000000	            mov rax, qword [0x04000589] 	       207	resource.c	FUNCTION_7	FUNCTION_1
+0x4000589	    0x49bc00000000	                           movabs r12, 0	       207	resource.c	FUNCTION_7	FUNCTION_1
+0x4000593	    0x4c8d9820fdff	                  lea r11, [rax - 0x2e0]	       207	resource.c	FUNCTION_7	FUNCTION_1
+0x400059a	          0x4d39e3	                            cmp r11, r12	       207	resource.c	FUNCTION_7	FUNCTION_1
+0x400059d	            0x7465	                            je 0x4000604	       207	resource.c	FUNCTION_7	FUNCTION_1
+0x400059f	          0x4c39dd	                            cmp rbp, r11	       208	resource.c	FUNCTION_7	FUNCTION_1	IF_1
+0x40005a2	            0x744d	                            je 0x40005f1	       208	resource.c	FUNCTION_7	FUNCTION_1	IF_1
+0x40005a4	    0x4d8b8b580300	            mov r9, qword [r11 + 0x358] 	       208	resource.c	FUNCTION_7	FUNCTION_1	IF_1
+0x40005ab	    0x498db3580300	                  lea rsi, [r11 + 0x358]	       208	resource.c	FUNCTION_7	FUNCTION_1	IF_1
+0x40005b2	          0x4531c0	                            xor r8d, r8d	       208	resource.c	FUNCTION_7	FUNCTION_1	IF_1
+0x40005b5	          0x4c39ce	                             cmp rsi, r9	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40005b8	          0x4489c7	                            mov edi, r8d	       211	resource.c	FUNCTION_7	FUNCTION_1	FOR_1	CALL_1
+0x40005bb	            0x7434	                            je 0x40005f1	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40005bd	          0x4c89c8	                             mov rax, r9	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40005c0	            0xeb08	                           jmp 0x40005ca	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40005c2	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40005c5	          0x4839f0	                            cmp rax, rsi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40005c8	            0x7427	                            je 0x40005f1	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40005ca	        0x488b5028	            mov rdx, qword [rax + 0x28] 	       477	resource.c	FUNCTION_14
+0x40005ce	          0x4889d1	                            mov rcx, rdx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40005d1	    0x81e1001f0000	                         and ecx, 0x1f00	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40005d7	    0x4881f9000100	                          cmp rcx, 0x100	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40005de	            0x75e2	                           jne 0x40005c2	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40005e0	            0x85ff	                           test edi, edi	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40005e2	          0x8d4fff	                      lea ecx, [rdi - 1]	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40005e5	            0x7463	                            je 0x400064a	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40005e7	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40005ea	            0x89cf	                            mov edi, ecx	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1
+0x40005ec	          0x4839f0	                            cmp rax, rsi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40005ef	            0x75d9	                           jne 0x40005ca	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x40005f1	    0x4d8b9be00200	           mov r11, qword [r11 + 0x2e0] 	       207	resource.c	FUNCTION_7	FUNCTION_1
+0x40005f8	    0x4981ebe00200	                          sub r11, 0x2e0	       207	resource.c	FUNCTION_7	FUNCTION_1
+0x40005ff	          0x4d39e3	                            cmp r11, r12	       207	resource.c	FUNCTION_7	FUNCTION_1
+0x4000602	            0x759b	                           jne 0x400059f	       207	resource.c	FUNCTION_7	FUNCTION_1
+0x4000604	              0x5b	                                 pop rbx	       227	resource.c	FUNCTION_7
+0x4000605	      0xb801000000	                              mov eax, 1	       178	resource.c	FUNCTION_7	IF_1
+0x400060a	              0x5d	                                 pop rbp	       227	resource.c	FUNCTION_7
+0x400060b	            0x415c	                                 pop r12	       227	resource.c	FUNCTION_7
+0x400060d	              0xc3	                                     ret	       227	resource.c	FUNCTION_7
+0x400060e	          0x4889c1	                            mov rcx, rax	       197	resource.c	FUNCTION_7	FOR_2	CALL_3
+0x4000611	        0x4883c110	                           add rcx, 0x10	       197	resource.c	FUNCTION_7	FOR_2	CALL_3
+0x4000615	     0xf8467ffffff	                            je 0x4000582	       197	resource.c	FUNCTION_7	FOR_2	CALL_3
+0x400061b	          0x4839cb	                            cmp rbx, rcx	       198	resource.c	FUNCTION_7	FOR_2	IF_5
+0x400061e	            0x7414	                            je 0x4000634	       198	resource.c	FUNCTION_7	FOR_2	IF_5
+0x4000620	          0x80e601	                               and dh, 1	       198	resource.c	FUNCTION_7	FOR_2	IF_5
+0x4000623	            0x740f	                            je 0x4000634	       198	resource.c	FUNCTION_7	FOR_2	IF_5
+0x4000625	        0x4c395010	            cmp qword [rax + 0x10], r10 	       201	resource.c	FUNCTION_7	FOR_2	IF_5	IF_6
+0x4000629	            0x7709	                            ja 0x4000634	       201	resource.c	FUNCTION_7	FOR_2	IF_5	IF_6
+0x400062b	          0x488b3b	                    mov rdi, qword [rbx]	       201	resource.c	FUNCTION_7	FOR_2	IF_5	IF_6
+0x400062e	        0x48397818	            cmp qword [rax + 0x18], rdi 	       201	resource.c	FUNCTION_7	FOR_2	IF_5	IF_6
+0x4000632	            0x7309	                           jae 0x400063d	       201	resource.c	FUNCTION_7	FOR_2	IF_5	IF_6
+0x4000634	        0x4183c001	                              add r8d, 1	       197	resource.c	FUNCTION_7	FOR_2	CALL_3
+0x4000638	      0xe905ffffff	                           jmp 0x4000542	       197	resource.c	FUNCTION_7	FOR_2	CALL_3
+0x400063d	              0x5b	                                 pop rbx	       227	resource.c	FUNCTION_7
+0x400063e	            0x31c0	                            xor eax, eax	       184	resource.c	FUNCTION_7	IF_2	IF_3
+0x4000640	              0x5d	                                 pop rbp	       227	resource.c	FUNCTION_7
+0x4000641	            0x415c	                                 pop r12	       227	resource.c	FUNCTION_7
+0x4000643	              0xc3	                                     ret	       227	resource.c	FUNCTION_7
+0x4000644	      0xb801000000	                              mov eax, 1	       178	resource.c	FUNCTION_7	IF_1
+0x4000649	              0xc3	                                     ret	       227	resource.c	FUNCTION_7
+0x400064a	        0x4883f8f0	             cmp rax, 0xfffffffffffffff0	       210	resource.c	FUNCTION_7	FUNCTION_1	FOR_1
+0x400064e	            0x74a1	                            je 0x40005f1	       210	resource.c	FUNCTION_7	FUNCTION_1	FOR_1
+0x4000650	          0xf6c601	                              test dh, 1	       213	resource.c	FUNCTION_7	FUNCTION_1	FOR_1	IF_2
+0x4000653	            0x7417	                            je 0x400066c	       213	resource.c	FUNCTION_7	FUNCTION_1	FOR_1	IF_2
+0x4000655	    0xf7c200002010	                    test edx, 0x10200000	       216	resource.c	FUNCTION_7	FUNCTION_1	FOR_1	IF_2	IF_4
+0x400065b	            0x750f	                           jne 0x400066c	       216	resource.c	FUNCTION_7	FUNCTION_1	FOR_1	IF_2	IF_4
+0x400065d	        0x4c395010	            cmp qword [rax + 0x10], r10 	       220	resource.c	FUNCTION_7	FUNCTION_1	FOR_1	IF_2	IF_5
+0x4000661	            0x7709	                            ja 0x400066c	       220	resource.c	FUNCTION_7	FUNCTION_1	FOR_1	IF_2	IF_5
+0x4000663	          0x488b3b	                    mov rdi, qword [rbx]	       220	resource.c	FUNCTION_7	FUNCTION_1	FOR_1	IF_2	IF_5
+0x4000666	        0x48397818	            cmp qword [rax + 0x18], rdi 	       220	resource.c	FUNCTION_7	FUNCTION_1	FOR_1	IF_2	IF_5
+0x400066a	            0x73d1	                           jae 0x400063d	       220	resource.c	FUNCTION_7	FUNCTION_1	FOR_1	IF_2	IF_5
+0x400066c	        0x4183c001	                              add r8d, 1	       212	resource.c	FUNCTION_7	FUNCTION_1	FOR_1
+0x4000670	      0xe940ffffff	                           jmp 0x40005b5	       212	resource.c	FUNCTION_7	FUNCTION_1	FOR_1
+0x4000675	        0x488b4308	                mov rax, qword [rbx + 8]	       183	resource.c	FUNCTION_7	IF_2	IF_3	CALL_1
+0x4000679	          0x488b36	                    mov rsi, qword [rsi]	       183	resource.c	FUNCTION_7	IF_2	IF_3	CALL_1
+0x400067c	          0x4531c0	                            xor r8d, r8d	       183	resource.c	FUNCTION_7	IF_2	IF_3	CALL_1
+0x400067f	    0x48c7c1000000	                              mov rcx, 0	       183	resource.c	FUNCTION_7	IF_2	IF_3	CALL_1
+0x4000686	    0x48c7c7000000	                              mov rdi, 0	       183	resource.c	FUNCTION_7	IF_2	IF_3	CALL_1
+0x400068d	        0x488d5001	                      lea rdx, [rax + 1]	       183	resource.c	FUNCTION_7	IF_2	IF_3	CALL_1
+0x4000691	          0x4829f2	                            sub rdx, rsi	       183	resource.c	FUNCTION_7	IF_2	IF_3	CALL_1
+0x4000694	      0xe800000000	                          call 0x4000699	       183	resource.c	FUNCTION_7	IF_2	IF_3	CALL_1
+0x4000699	          0x4885c0	                           test rax, rax	       183	resource.c	FUNCTION_7	IF_2	IF_3	CALL_1
+0x400069c	            0x749f	                            je 0x400063d	       183	resource.c	FUNCTION_7	IF_2	IF_3	CALL_1
+0x400069e	        0x488b4308	                mov rax, qword [rbx + 8]	       185	resource.c	FUNCTION_7	IF_2	CALL_2
+0x40006a2	          0x488b33	                    mov rsi, qword [rbx]	       185	resource.c	FUNCTION_7	IF_2	CALL_2
+0x40006a5	    0x48c7c7000000	                              mov rdi, 0	       185	resource.c	FUNCTION_7	IF_2	CALL_2
+0x40006ac	        0x488d5001	                      lea rdx, [rax + 1]	       185	resource.c	FUNCTION_7	IF_2	CALL_2
+0x40006b0	          0x4829f2	                            sub rdx, rsi	       185	resource.c	FUNCTION_7	IF_2	CALL_2
+0x40006b3	      0xe800000000	                          call 0x40006b8	       185	resource.c	FUNCTION_7	IF_2	CALL_2
+0x40006b8	      0xe935feffff	                           jmp 0x40004f2	       185	resource.c	FUNCTION_7	IF_2	CALL_2
+pnp_setup_reserve_irq	ELSE,0:DO,0:SWITCH,0:FOR,1:IF,1:CALL,1:functions,0:WHILE,0	12
+0x4000040	      0xb801000000	                              mov eax, 1	       295	resource.c	FUNCTION_9
+0x4000045	              0xc3	                                     ret	       295	resource.c	FUNCTION_9
+0x4000046	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       295	resource.c	FUNCTION_9
+0x4000050	    0x488b87580300	           mov rax, qword [rdi + 0x358] 	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000057	    0x4881c7580300	                          add rdi, 0x358	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400005e	          0x4839f8	                            cmp rax, rdi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000061	            0x750a	                           jne 0x400006d	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000063	            0xeb28	                           jmp 0x400008d	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000065	          0x488b00	                    mov rax, qword [rax]	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x4000068	          0x4839f8	                            cmp rax, rdi	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400006b	            0x7420	                            je 0x400008d	       488	resource.c	FUNCTION_15	FUNCTION_1
+0x400006d	              0x48	                                 invalid	       490	resource.c	FUNCTION_15	FUNCTION_1	IF_1	CALL_1

@@ -1,0 +1,110 @@
+focaltech_disconnect	IF,0:ELSE,0:FOR,0:DO,0:SWITCH,0:WHILE,0:functions,0:CALL,2	13
+0x40001a0	              0x53	                                push rbx	       304	focaltech.c	FUNCTION_10
+0x40001a1	          0x4889fb	                            mov rbx, rdi	       304	focaltech.c	FUNCTION_10
+0x40001a4	        0x488d7f10	                   lea rdi, [rdi + 0x10]	       299	focaltech.c	FUNCTION_9	CALL_1
+0x40001a8	      0xbaf6000000	                           mov edx, 0xf6	       299	focaltech.c	FUNCTION_9	CALL_1
+0x40001ad	            0x31f6	                            xor esi, esi	       299	focaltech.c	FUNCTION_9	CALL_1
+0x40001af	      0xe800000000	                          call 0x40001b4	       299	focaltech.c	FUNCTION_9	CALL_1
+0x40001b4	          0x4889df	                            mov rdi, rbx	       300	focaltech.c	FUNCTION_9	CALL_2
+0x40001b7	      0xe800000000	                          call 0x40001bc	       300	focaltech.c	FUNCTION_9	CALL_2
+0x40001bc	          0x488b3b	                    mov rdi, qword [rbx]	       306	focaltech.c	FUNCTION_10	CALL_2
+0x40001bf	      0xe800000000	                          call 0x40001c4	       306	focaltech.c	FUNCTION_10	CALL_2
+0x40001c4	    0x48c703000000	                      mov qword [rbx], 0	       307	focaltech.c	FUNCTION_10
+0x40001cb	              0x5b	                                 pop rbx	       308	focaltech.c	FUNCTION_10
+0x40001cc	              0xc3	                                     ret	       308	focaltech.c	FUNCTION_10
+focaltech_reconnect	IF,1:ELSE,0:FOR,0:DO,0:SWITCH,0:WHILE,0:functions,0:CALL,3	22
+0x4000140	              0x53	                                push rbx	       311	focaltech.c	FUNCTION_11
+0x4000141	            0x31f6	                            xor esi, esi	       299	focaltech.c	FUNCTION_9	CALL_1
+0x4000143	          0x4889fb	                            mov rbx, rdi	       311	focaltech.c	FUNCTION_11
+0x4000146	      0xbaf6000000	                           mov edx, 0xf6	       299	focaltech.c	FUNCTION_9	CALL_1
+0x400014b	        0x4883c710	                           add rdi, 0x10	       299	focaltech.c	FUNCTION_9	CALL_1
+0x400014f	        0x4883ec08	                              sub rsp, 8	       311	focaltech.c	FUNCTION_11
+0x4000153	      0xe800000000	                          call 0x4000158	       299	focaltech.c	FUNCTION_9	CALL_1
+0x4000158	          0x4889df	                            mov rdi, rbx	       300	focaltech.c	FUNCTION_9	CALL_2
+0x400015b	      0xe800000000	                          call 0x4000160	       300	focaltech.c	FUNCTION_9	CALL_2
+0x4000160	          0x4889df	                            mov rdi, rbx	       316	focaltech.c	FUNCTION_11	CALL_2
+0x4000163	      0xe8e8feffff	      call sym.focaltech_switch_protocol	       316	focaltech.c	FUNCTION_11	CALL_2
+0x4000168	            0x85c0	                           test eax, eax	       317	focaltech.c	FUNCTION_11	IF_1
+0x400016a	            0x741f	                            je 0x400018b	       317	focaltech.c	FUNCTION_11	IF_1
+0x400016c	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	       318	focaltech.c	FUNCTION_11	IF_1	CALL_3
+0x4000170	    0x48c7c6000000	                              mov rsi, 0	       318	focaltech.c	FUNCTION_11	IF_1	CALL_3
+0x4000177	        0x89442404	                mov dword [rsp + 4], eax	       318	focaltech.c	FUNCTION_11	IF_1	CALL_3
+0x400017b	    0x4881c7580100	                          add rdi, 0x158	       318	focaltech.c	FUNCTION_11	IF_1	CALL_3
+0x4000182	      0xe800000000	                          call 0x4000187	       318	focaltech.c	FUNCTION_11	IF_1	CALL_3
+0x4000187	        0x8b442404	                mov eax, dword [rsp + 4]	       318	focaltech.c	FUNCTION_11	IF_1	CALL_3
+0x400018b	        0x4883c408	                              add rsp, 8	       323	focaltech.c	FUNCTION_11
+0x400018f	              0x5b	                                 pop rbx	       323	focaltech.c	FUNCTION_11
+0x4000190	              0xc3	                                     ret	       323	focaltech.c	FUNCTION_11
+focaltech_detect	IF,2:ELSE,0:FOR,0:DO,0:SWITCH,0:WHILE,0:functions,0:CALL,1	18
+0x40004d0	              0x55	                                push rbp	        40	focaltech.c	FUNCTION_1
+0x40004d1	              0x53	                                push rbx	        40	focaltech.c	FUNCTION_1
+0x40004d2	            0x89f5	                            mov ebp, esi	        40	focaltech.c	FUNCTION_1
+0x40004d4	    0x48c7c6000000	                              mov rsi, 0	        41	focaltech.c	FUNCTION_1	IF_1	CALL_1
+0x40004db	          0x4889fb	                            mov rbx, rdi	        40	focaltech.c	FUNCTION_1
+0x40004de	      0xe800000000	                          call 0x40004e3	        41	focaltech.c	FUNCTION_1	IF_1	CALL_1
+0x40004e3	            0x84c0	                             test al, al	        41	focaltech.c	FUNCTION_1	IF_1	CALL_1
+0x40004e5	            0x7420	                            je 0x4000507	        41	focaltech.c	FUNCTION_1	IF_1	CALL_1
+0x40004e7	            0x31c0	                            xor eax, eax	        49	focaltech.c	FUNCTION_1
+0x40004e9	          0x4084ed	                           test bpl, bpl	        44	focaltech.c	FUNCTION_1	IF_2
+0x40004ec	            0x7416	                            je 0x4000504	        44	focaltech.c	FUNCTION_1	IF_2
+0x40004ee	    0x48c783c00000	               mov qword [rbx + 0xc0], 0	        45	focaltech.c	FUNCTION_1	IF_2
+0x40004f9	    0x48c783c80000	               mov qword [rbx + 0xc8], 0	        46	focaltech.c	FUNCTION_1	IF_2
+0x4000504	              0x5b	                                 pop rbx	        50	focaltech.c	FUNCTION_1
+0x4000505	              0x5d	                                 pop rbp	        50	focaltech.c	FUNCTION_1
+0x4000506	              0xc3	                                     ret	        50	focaltech.c	FUNCTION_1
+0x4000507	      0xb8edffffff	                     mov eax, 0xffffffed	        42	focaltech.c	FUNCTION_1	IF_1
+0x400050c	            0xebf6	                           jmp 0x4000504	        42	focaltech.c	FUNCTION_1	IF_1
+focaltech_switch_protocol	IF,6:ELSE,0:FOR,0:DO,0:SWITCH,0:WHILE,0:functions,0:CALL,6	53
+0x4000050	              0x53	                                push rbx	       270	focaltech.c	FUNCTION_8
+0x4000051	        0x488d5f10	                   lea rbx, [rdi + 0x10]	       271	focaltech.c	FUNCTION_8
+0x4000055	      0xbaf8100000	                         mov edx, 0x10f8	       275	focaltech.c	FUNCTION_8	IF_1	CALL_1
+0x400005a	        0x4883ec10	                           sub rsp, 0x10	       270	focaltech.c	FUNCTION_8
+0x400005e	          0x4889df	                            mov rdi, rbx	       275	focaltech.c	FUNCTION_8	IF_1	CALL_1
+0x4000061	      0x488d742405	                      lea rsi, [rsp + 5]	       275	focaltech.c	FUNCTION_8	IF_1	CALL_1
+0x4000066	      0xc644240500	                   mov byte [rsp + 5], 0	       274	focaltech.c	FUNCTION_8
+0x400006b	    0x65488b042528	                mov rax, qword gs:[0x28]	       270	focaltech.c	FUNCTION_8
+0x4000074	      0x4889442408	                mov qword [rsp + 8], rax	       270	focaltech.c	FUNCTION_8
+0x4000079	            0x31c0	                            xor eax, eax	       270	focaltech.c	FUNCTION_8
+0x400007b	      0xe800000000	                          call 0x4000080	       275	focaltech.c	FUNCTION_8	IF_1	CALL_1
+0x4000080	            0x85c0	                           test eax, eax	       275	focaltech.c	FUNCTION_8	IF_1	CALL_1
+0x4000082	     0xf8589000000	                           jne 0x4000111	       275	focaltech.c	FUNCTION_8	IF_1	CALL_1
+0x4000088	      0x488d742405	                      lea rsi, [rsp + 5]	       278	focaltech.c	FUNCTION_8	IF_2	CALL_2
+0x400008d	      0xbaf8100000	                         mov edx, 0x10f8	       278	focaltech.c	FUNCTION_8	IF_2	CALL_2
+0x4000092	          0x4889df	                            mov rdi, rbx	       278	focaltech.c	FUNCTION_8	IF_2	CALL_2
+0x4000095	      0xe800000000	                          call 0x400009a	       278	focaltech.c	FUNCTION_8	IF_2	CALL_2
+0x400009a	            0x85c0	                           test eax, eax	       278	focaltech.c	FUNCTION_8	IF_2	CALL_2
+0x400009c	            0x7573	                           jne 0x4000111	       278	focaltech.c	FUNCTION_8	IF_2	CALL_2
+0x400009e	      0x488d742405	                      lea rsi, [rsp + 5]	       281	focaltech.c	FUNCTION_8	IF_3	CALL_3
+0x40000a3	      0xbaf8100000	                         mov edx, 0x10f8	       281	focaltech.c	FUNCTION_8	IF_3	CALL_3
+0x40000a8	          0x4889df	                            mov rdi, rbx	       281	focaltech.c	FUNCTION_8	IF_3	CALL_3
+0x40000ab	      0xe800000000	                          call 0x40000b0	       281	focaltech.c	FUNCTION_8	IF_3	CALL_3
+0x40000b0	            0x85c0	                           test eax, eax	       281	focaltech.c	FUNCTION_8	IF_3	CALL_3
+0x40000b2	            0x755d	                           jne 0x4000111	       281	focaltech.c	FUNCTION_8	IF_3	CALL_3
+0x40000b4	      0x488d742405	                      lea rsi, [rsp + 5]	       285	focaltech.c	FUNCTION_8	IF_4	CALL_4
+0x40000b9	      0xbaf8100000	                         mov edx, 0x10f8	       285	focaltech.c	FUNCTION_8	IF_4	CALL_4
+0x40000be	          0x4889df	                            mov rdi, rbx	       285	focaltech.c	FUNCTION_8	IF_4	CALL_4
+0x40000c1	      0xc644240501	                   mov byte [rsp + 5], 1	       284	focaltech.c	FUNCTION_8
+0x40000c6	      0xe800000000	                          call 0x40000cb	       285	focaltech.c	FUNCTION_8	IF_4	CALL_4
+0x40000cb	            0x85c0	                           test eax, eax	       285	focaltech.c	FUNCTION_8	IF_4	CALL_4
+0x40000cd	            0x7542	                           jne 0x4000111	       285	focaltech.c	FUNCTION_8	IF_4	CALL_4
+0x40000cf	      0x488d742405	                      lea rsi, [rsp + 5]	       288	focaltech.c	FUNCTION_8	IF_5	CALL_5
+0x40000d4	      0xbae6000000	                           mov edx, 0xe6	       288	focaltech.c	FUNCTION_8	IF_5	CALL_5
+0x40000d9	          0x4889df	                            mov rdi, rbx	       288	focaltech.c	FUNCTION_8	IF_5	CALL_5
+0x40000dc	      0xe800000000	                          call 0x40000e1	       288	focaltech.c	FUNCTION_8	IF_5	CALL_5
+0x40000e1	            0x85c0	                           test eax, eax	       288	focaltech.c	FUNCTION_8	IF_5	CALL_5
+0x40000e3	            0x752c	                           jne 0x4000111	       288	focaltech.c	FUNCTION_8	IF_5	CALL_5
+0x40000e5	      0x488d742405	                      lea rsi, [rsp + 5]	       291	focaltech.c	FUNCTION_8	IF_6	CALL_6
+0x40000ea	      0xbaf4000000	                           mov edx, 0xf4	       291	focaltech.c	FUNCTION_8	IF_6	CALL_6
+0x40000ef	          0x4889df	                            mov rdi, rbx	       291	focaltech.c	FUNCTION_8	IF_6	CALL_6
+0x40000f2	      0xe800000000	                          call 0x40000f7	       291	focaltech.c	FUNCTION_8	IF_6	CALL_6
+0x40000f7	            0x85c0	                           test eax, eax	       291	focaltech.c	FUNCTION_8	IF_6	CALL_6
+0x40000f9	            0x7516	                           jne 0x4000111	       291	focaltech.c	FUNCTION_8	IF_6	CALL_6
+0x40000fb	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       295	focaltech.c	FUNCTION_8
+0x4000100	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       295	focaltech.c	FUNCTION_8
+0x4000109	            0x750d	                           jne 0x4000118	       295	focaltech.c	FUNCTION_8
+0x400010b	        0x4883c410	                           add rsp, 0x10	       295	focaltech.c	FUNCTION_8
+0x400010f	              0x5b	                                 pop rbx	       295	focaltech.c	FUNCTION_8
+0x4000110	              0xc3	                                     ret	       295	focaltech.c	FUNCTION_8
+0x4000111	      0xb8fbffffff	                     mov eax, 0xfffffffb	       276	focaltech.c	FUNCTION_8	IF_1
+0x4000116	            0xebe3	                           jmp 0x40000fb	       276	focaltech.c	FUNCTION_8	IF_1
+0x4000118	      0xe800000000	                          call 0x400011d	       295	focaltech.c	FUNCTION_8

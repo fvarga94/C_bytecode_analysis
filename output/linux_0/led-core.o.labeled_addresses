@@ -1,0 +1,47 @@
+led_sysfs_disable	DO,0:CALL,1:FOR,0:SWITCH,0:IF,0:functions,0:ELSE,0:WHILE,0	2
+0x40000b0	    0x814f10000002	          or dword [rdi + 0x10], 0x20000	       318	led-core.c	FUNCTION_16
+0x40000b7	              0xc3	                                     ret	       318	led-core.c	FUNCTION_16
+led_update_brightness	DO,0:CALL,1:FOR,0:SWITCH,0:IF,2:functions,0:ELSE,0:WHILE,0	20
+0x4000080	        0x488b4730	            mov rax, qword [rdi + 0x30] 	       301	led-core.c	FUNCTION_15	IF_1
+0x4000084	              0x55	                                push rbp	       298	led-core.c	FUNCTION_15
+0x4000085	            0x31ed	                            xor ebp, ebp	       299	led-core.c	FUNCTION_15
+0x4000087	              0x53	                                push rbx	       298	led-core.c	FUNCTION_15
+0x4000088	          0x4885c0	                           test rax, rax	       301	led-core.c	FUNCTION_15	IF_1
+0x400008b	            0x740f	                            je 0x400009c	       301	led-core.c	FUNCTION_15	IF_1
+0x400008d	          0x4889fb	                            mov rbx, rdi	       301	led-core.c	FUNCTION_15	IF_1
+0x4000090	      0xe800000000	                          call 0x4000095	       302	led-core.c	FUNCTION_15	IF_1	CALL_1
+0x4000095	            0x85c0	                           test eax, eax	       303	led-core.c	FUNCTION_15	IF_1	IF_2
+0x4000097	            0x7808	                            js 0x40000a1	       303	led-core.c	FUNCTION_15	IF_1	IF_2
+0x4000099	          0x894308	                mov dword [rbx + 8], eax	       304	led-core.c	FUNCTION_15	IF_1	IF_2
+0x400009c	            0x89e8	                            mov eax, ebp	       310	led-core.c	FUNCTION_15
+0x400009e	              0x5b	                                 pop rbx	       310	led-core.c	FUNCTION_15
+0x400009f	              0x5d	                                 pop rbp	       310	led-core.c	FUNCTION_15
+0x40000a0	              0xc3	                                     ret	       310	led-core.c	FUNCTION_15
+0x40000a1	            0x89c5	                            mov ebp, eax	       310	led-core.c	FUNCTION_15
+0x40000a3	            0x89e8	                            mov eax, ebp	       310	led-core.c	FUNCTION_15
+0x40000a5	              0x5b	                                 pop rbx	       310	led-core.c	FUNCTION_15
+0x40000a6	              0x5d	                                 pop rbp	       310	led-core.c	FUNCTION_15
+0x40000a7	              0xc3	                                     ret	       310	led-core.c	FUNCTION_15
+led_sysfs_enable	DO,0:CALL,1:FOR,0:SWITCH,0:IF,0:functions,0:ELSE,0:WHILE,0	2
+0x40000c0	    0x816710fffffd	      and dword [rdi + 0x10], 0xfffdffff	       327	led-core.c	FUNCTION_17
+0x40000c7	              0xc3	                                     ret	       327	led-core.c	FUNCTION_17
+led_set_brightness_sync	DO,0:CALL,2:FOR,0:SWITCH,0:IF,2:functions,0:ELSE,0:WHILE,0	19
+0x4000040	      0x48837f6800	               cmp qword [rdi + 0x68], 0	       285	led-core.c	FUNCTION_14	IF_1
+0x4000045	            0x752e	                           jne 0x4000075	       285	led-core.c	FUNCTION_14	IF_1
+0x4000047	      0x48837f7000	               cmp qword [rdi + 0x70], 0	       285	led-core.c	FUNCTION_14	IF_1
+0x400004c	            0x7527	                           jne 0x4000075	       285	led-core.c	FUNCTION_14	IF_1
+0x400004e	          0x39770c	              cmp dword [rdi + 0xc], esi	       288	led-core.c	FUNCTION_14	CALL_1
+0x4000051	         0xf46770c	           cmovbe esi, dword [rdi + 0xc]	       288	led-core.c	FUNCTION_14	CALL_1
+0x4000055	        0xf6471001	               test byte [rdi + 0x10], 1	       290	led-core.c	FUNCTION_14	IF_2
+0x4000059	          0x897708	                mov dword [rdi + 8], esi	       288	led-core.c	FUNCTION_14	CALL_1
+0x400005c	            0x750e	                           jne 0x400006c	       290	led-core.c	FUNCTION_14	IF_2
+0x400005e	        0x488b4728	            mov rax, qword [rdi + 0x28] 	        42	led-core.c	FUNCTION_2	IF_1
+0x4000062	          0x4885c0	                           test rax, rax	        42	led-core.c	FUNCTION_2	IF_1
+0x4000065	            0x7408	                            je 0x400006f	        42	led-core.c	FUNCTION_2	IF_1
+0x4000067	      0xe900000000	                           jmp 0x400006c	        45	led-core.c	FUNCTION_2	CALL_1
+0x400006c	            0x31c0	                            xor eax, eax	       291	led-core.c	FUNCTION_14	IF_2
+0x400006e	              0xc3	                                     ret	       291	led-core.c	FUNCTION_14	IF_2
+0x400006f	      0xb8f4fdffff	                     mov eax, 0xfffffdf4	        43	led-core.c	FUNCTION_2	IF_1
+0x4000074	              0xc3	                                     ret	       294	led-core.c	FUNCTION_14
+0x4000075	      0xb8f0ffffff	                     mov eax, 0xfffffff0	       286	led-core.c	FUNCTION_14	IF_1
+0x400007a	              0xc3	                                     ret	       286	led-core.c	FUNCTION_14	IF_1

@@ -1,0 +1,310 @@
+seq_buf_print_seq	DO,0:SWITCH,0:WHILE,0:functions,0:ELSE,0:IF,0:CALL,2:FOR,0	6
+0x4000040	        0x488b5610	            mov rdx, qword [rsi + 0x10] 	        44	seq_buf.c	FUNCTION_9	FUNCTION_2	CALL_2
+0x4000044	        0x48395608	                cmp qword [rsi + 8], rdx	        44	seq_buf.c	FUNCTION_9	FUNCTION_2	CALL_2
+0x4000048	      0x480f465608	             cmovbe rdx, qword [rsi + 8]	        44	seq_buf.c	FUNCTION_9	FUNCTION_2	CALL_2
+0x400004d	          0x488b36	                    mov rsi, qword [rsi]	        44	seq_buf.c	FUNCTION_9	FUNCTION_2	CALL_2
+0x4000050	            0x89d2	                            mov edx, edx	        44	seq_buf.c	FUNCTION_9	FUNCTION_2	CALL_2
+0x4000052	      0xe900000000	                           jmp 0x4000057	        44	seq_buf.c	FUNCTION_9	FUNCTION_2	CALL_2
+seq_buf_putc	DO,0:SWITCH,0:WHILE,0:functions,0:ELSE,0:IF,1:CALL,3:FOR,0	18
+0x4000200	        0x488b4708	                mov rax, qword [rdi + 8]	       167	seq_buf.c	FUNCTION_9	FUNCTION_7	CALL_1
+0x4000204	          0x4885c0	                           test rax, rax	       167	seq_buf.c	FUNCTION_9	FUNCTION_7	CALL_1
+0x4000207	            0x741b	                            je 0x4000224	       167	seq_buf.c	FUNCTION_9	FUNCTION_7	CALL_1
+0x4000209	        0x488b5710	            mov rdx, qword [rdi + 0x10] 	       167	seq_buf.c	FUNCTION_9	FUNCTION_7	CALL_1
+0x400020d	        0x488d4a01	                      lea rcx, [rdx + 1]	        30	seq_buf.c	FUNCTION_9	FUNCTION_1
+0x4000211	          0x4839c8	                            cmp rax, rcx	       169	seq_buf.c	FUNCTION_9	FUNCTION_7	IF_1	CALL_2
+0x4000214	            0x7212	                            jb 0x4000228	       169	seq_buf.c	FUNCTION_9	FUNCTION_7	IF_1	CALL_2
+0x4000216	          0x488b07	                    mov rax, qword [rdi]	       170	seq_buf.c	FUNCTION_9	FUNCTION_7	IF_1
+0x4000219	        0x48894f10	             mov qword [rdi + 0x10], rcx	       170	seq_buf.c	FUNCTION_9	FUNCTION_7	IF_1
+0x400021d	        0x40883410	               mov byte [rax + rdx], sil	       170	seq_buf.c	FUNCTION_9	FUNCTION_7	IF_1
+0x4000221	            0x31c0	                            xor eax, eax	       171	seq_buf.c	FUNCTION_9	FUNCTION_7	IF_1
+0x4000223	              0xc3	                                     ret	       171	seq_buf.c	FUNCTION_9	FUNCTION_7	IF_1
+0x4000224	             0xf0b	                                     ud2	       171	seq_buf.c	FUNCTION_9	FUNCTION_7	IF_1
+0x4000226	            0xebe1	                           jmp 0x4000209	       167	seq_buf.c	FUNCTION_9	FUNCTION_7	CALL_1
+0x4000228	        0x4883c001	                              add rax, 1	        53	seq_buf.h	FUNCTION_6
+0x400022c	        0x48894710	             mov qword [rdi + 0x10], rax	        53	seq_buf.h	FUNCTION_6
+0x4000230	      0xb8ffffffff	                     mov eax, 0xffffffff	       174	seq_buf.c	FUNCTION_9	FUNCTION_7
+0x4000235	              0xc3	                                     ret	       175	seq_buf.c	FUNCTION_9	FUNCTION_7
+seq_buf_bprintf	DO,0:SWITCH,0:WHILE,0:functions,0:ELSE,0:IF,2:CALL,4:FOR,0	33
+0x4000130	              0x53	                                push rbx	       114	seq_buf.c	FUNCTION_9	FUNCTION_5
+0x4000131	        0x4c8b4708	                 mov r8, qword [rdi + 8]	       114	seq_buf.c	FUNCTION_9	FUNCTION_5
+0x4000135	          0x4889fb	                            mov rbx, rdi	       114	seq_buf.c	FUNCTION_9	FUNCTION_5
+0x4000138	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	       114	seq_buf.c	FUNCTION_9	FUNCTION_5
+0x400013c	    0x41b900000000	                              mov r9d, 0	        65	seq_buf.h	FUNCTION_7
+0x4000142	          0x4489c0	                            mov eax, r8d	        65	seq_buf.h	FUNCTION_7
+0x4000145	            0x29f8	                            sub eax, edi	        65	seq_buf.h	FUNCTION_7
+0x4000147	          0x4939f8	                             cmp r8, rdi	        65	seq_buf.h	FUNCTION_7
+0x400014a	        0x490f42c1	                           cmovb rax, r9	        65	seq_buf.h	FUNCTION_7
+0x400014e	          0x4d85c0	                             test r8, r8	       118	seq_buf.c	FUNCTION_9	FUNCTION_5	CALL_2
+0x4000151	            0x742d	                            je 0x4000180	       118	seq_buf.c	FUNCTION_9	FUNCTION_5	CALL_2
+0x4000153	          0x4939f8	                             cmp r8, rdi	       120	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1
+0x4000156	            0x762a	                           jbe 0x4000182	       120	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1
+0x4000158	          0x48033b	                    add rdi, qword [rbx]	       121	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	CALL_3
+0x400015b	          0x4889d1	                            mov rcx, rdx	       121	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	CALL_3
+0x400015e	          0x4889f2	                            mov rdx, rsi	       121	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	CALL_3
+0x4000161	          0x4889c6	                            mov rsi, rax	       121	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	CALL_3
+0x4000164	      0xe800000000	                          call 0x4000169	       121	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	CALL_3
+0x4000169	            0x4898	                                    cdqe	       122	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	IF_2
+0x400016b	        0x48034310	             add rax, qword [rbx + 0x10]	       122	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	IF_2
+0x400016f	        0x4c8b4308	                 mov r8, qword [rbx + 8]	       122	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	IF_2
+0x4000173	          0x4c39c0	                             cmp rax, r8	       122	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	IF_2
+0x4000176	            0x730a	                           jae 0x4000182	       122	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	IF_2
+0x4000178	        0x48894310	             mov qword [rbx + 0x10], rax	       123	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	IF_2
+0x400017c	            0x31c0	                            xor eax, eax	       124	seq_buf.c	FUNCTION_9	FUNCTION_5	IF_1	IF_2
+0x400017e	              0x5b	                                 pop rbx	       129	seq_buf.c	FUNCTION_9	FUNCTION_5
+0x400017f	              0xc3	                                     ret	       129	seq_buf.c	FUNCTION_9	FUNCTION_5
+0x4000180	             0xf0b	                                     ud2	       129	seq_buf.c	FUNCTION_9	FUNCTION_5
+0x4000182	        0x4983c001	                               add r8, 1	        53	seq_buf.h	FUNCTION_6
+0x4000186	      0xb8ffffffff	                     mov eax, 0xffffffff	       128	seq_buf.c	FUNCTION_9	FUNCTION_5
+0x400018b	        0x4c894310	              mov qword [rbx + 0x10], r8	        53	seq_buf.h	FUNCTION_6
+0x400018f	              0x5b	                                 pop rbx	       129	seq_buf.c	FUNCTION_9	FUNCTION_5
+0x4000190	              0xc3	                                     ret	       129	seq_buf.c	FUNCTION_9	FUNCTION_5
+seq_buf_putmem	DO,0:SWITCH,0:WHILE,0:functions,0:ELSE,0:IF,1:CALL,4:FOR,0	26
+0x4000240	              0x55	                                push rbp	       190	seq_buf.c	FUNCTION_9	FUNCTION_8
+0x4000241	              0x53	                                push rbx	       190	seq_buf.c	FUNCTION_9	FUNCTION_8
+0x4000242	        0x488b4f08	                mov rcx, qword [rdi + 8]	       191	seq_buf.c	FUNCTION_9	FUNCTION_8	CALL_1
+0x4000246	          0x4885c9	                           test rcx, rcx	       191	seq_buf.c	FUNCTION_9	FUNCTION_8	CALL_1
+0x4000249	            0x742a	                            je 0x4000275	       191	seq_buf.c	FUNCTION_9	FUNCTION_8	CALL_1
+0x400024b	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       191	seq_buf.c	FUNCTION_9	FUNCTION_8	CALL_1
+0x400024f	            0x89d5	                            mov ebp, edx	       193	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1	CALL_2
+0x4000251	      0x488d540500	                    lea rdx, [rbp + rax]	       193	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1	CALL_2
+0x4000256	          0x4839d1	                            cmp rcx, rdx	       193	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1	CALL_2
+0x4000259	            0x721e	                            jb 0x4000279	       193	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1	CALL_2
+0x400025b	          0x480307	                    add rax, qword [rdi]	       194	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1	CALL_3
+0x400025e	          0x4889fb	                            mov rbx, rdi	       194	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1	CALL_3
+0x4000261	          0x4889ea	                            mov rdx, rbp	       194	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1	CALL_3
+0x4000264	          0x4889c7	                            mov rdi, rax	       194	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1	CALL_3
+0x4000267	      0xe800000000	                          call 0x400026c	       194	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1	CALL_3
+0x400026c	        0x48016b10	            add qword [rbx + 0x10], rbp 	       195	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1
+0x4000270	            0x31c0	                            xor eax, eax	       196	seq_buf.c	FUNCTION_9	FUNCTION_8	IF_1
+0x4000272	              0x5b	                                 pop rbx	       200	seq_buf.c	FUNCTION_9	FUNCTION_8
+0x4000273	              0x5d	                                 pop rbp	       200	seq_buf.c	FUNCTION_9	FUNCTION_8
+0x4000274	              0xc3	                                     ret	       200	seq_buf.c	FUNCTION_9	FUNCTION_8
+0x4000275	             0xf0b	                                     ud2	       200	seq_buf.c	FUNCTION_9	FUNCTION_8
+0x4000277	            0xebd2	                           jmp 0x400024b	       191	seq_buf.c	FUNCTION_9	FUNCTION_8	CALL_1
+0x4000279	        0x4883c101	                              add rcx, 1	        53	seq_buf.h	FUNCTION_6
+0x400027d	      0xb8ffffffff	                     mov eax, 0xffffffff	       199	seq_buf.c	FUNCTION_9	FUNCTION_8
+0x4000282	        0x48894f10	             mov qword [rdi + 0x10], rcx	        53	seq_buf.h	FUNCTION_6
+0x4000286	            0xebea	                           jmp 0x4000272	       199	seq_buf.c	FUNCTION_9	FUNCTION_8
+seq_buf_vprintf	DO,0:SWITCH,0:WHILE,0:functions,0:ELSE,0:IF,2:CALL,3:FOR,0	29
+0x4000060	              0x53	                                push rbx	        58	seq_buf.c	FUNCTION_9	FUNCTION_3
+0x4000061	        0x4c8b4708	                 mov r8, qword [rdi + 8]	        61	seq_buf.c	FUNCTION_9	FUNCTION_3	CALL_1
+0x4000065	          0x4889fb	                            mov rbx, rdi	        58	seq_buf.c	FUNCTION_9	FUNCTION_3
+0x4000068	          0x4d85c0	                             test r8, r8	        61	seq_buf.c	FUNCTION_9	FUNCTION_3	CALL_1
+0x400006b	            0x7434	                            je 0x40000a1	        61	seq_buf.c	FUNCTION_9	FUNCTION_3	CALL_1
+0x400006d	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	        63	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1
+0x4000071	          0x4939f8	                             cmp r8, rdi	        63	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1
+0x4000074	            0x762d	                           jbe 0x40000a3	        63	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1
+0x4000076	          0x4929f8	                             sub r8, rdi	        64	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	CALL_2
+0x4000079	          0x48033b	                    add rdi, qword [rbx]	        64	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	CALL_2
+0x400007c	          0x4889d1	                            mov rcx, rdx	        64	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	CALL_2
+0x400007f	          0x4889f2	                            mov rdx, rsi	        64	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	CALL_2
+0x4000082	          0x4c89c6	                             mov rsi, r8	        64	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	CALL_2
+0x4000085	      0xe800000000	                          call 0x400008a	        64	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	CALL_2
+0x400008a	            0x4898	                                    cdqe	        65	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	IF_2
+0x400008c	        0x48034310	             add rax, qword [rbx + 0x10]	        65	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	IF_2
+0x4000090	        0x4c8b4308	                 mov r8, qword [rbx + 8]	        65	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	IF_2
+0x4000094	          0x4c39c0	                             cmp rax, r8	        65	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	IF_2
+0x4000097	            0x730a	                           jae 0x40000a3	        65	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	IF_2
+0x4000099	        0x48894310	             mov qword [rbx + 0x10], rax	        66	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	IF_2
+0x400009d	            0x31c0	                            xor eax, eax	        67	seq_buf.c	FUNCTION_9	FUNCTION_3	IF_1	IF_2
+0x400009f	              0x5b	                                 pop rbx	        72	seq_buf.c	FUNCTION_9	FUNCTION_3
+0x40000a0	              0xc3	                                     ret	        72	seq_buf.c	FUNCTION_9	FUNCTION_3
+0x40000a1	             0xf0b	                                     ud2	        72	seq_buf.c	FUNCTION_9	FUNCTION_3
+0x40000a3	        0x4983c001	                               add r8, 1	        53	seq_buf.h	FUNCTION_6
+0x40000a7	      0xb8ffffffff	                     mov eax, 0xffffffff	        71	seq_buf.c	FUNCTION_9	FUNCTION_3
+0x40000ac	        0x4c894310	              mov qword [rbx + 0x10], r8	        53	seq_buf.h	FUNCTION_6
+0x40000b0	              0x5b	                                 pop rbx	        72	seq_buf.c	FUNCTION_9	FUNCTION_3
+0x40000b1	              0xc3	                                     ret	        72	seq_buf.c	FUNCTION_9	FUNCTION_3
+seq_buf_putmem_hex	DO,0:SWITCH,0:WHILE,1:functions,10:ELSE,0:IF,2:CALL,19:FOR,2	69
+0x4000290	            0x4156	                                push r14	       219	seq_buf.c	FUNCTION_9
+0x4000292	            0x4155	                                push r13	       219	seq_buf.c	FUNCTION_9
+0x4000294	          0x4989fe	                            mov r14, rdi	       219	seq_buf.c	FUNCTION_9
+0x4000297	            0x4154	                                push r12	       219	seq_buf.c	FUNCTION_9
+0x4000299	              0x55	                                push rbp	       219	seq_buf.c	FUNCTION_9
+0x400029a	          0x4989f4	                            mov r12, rsi	       219	seq_buf.c	FUNCTION_9
+0x400029d	              0x53	                                push rbx	       219	seq_buf.c	FUNCTION_9
+0x400029e	          0x4189d5	                           mov r13d, edx	       219	seq_buf.c	FUNCTION_9
+0x40002a1	        0x4883ec20	                           sub rsp, 0x20	       219	seq_buf.c	FUNCTION_9
+0x40002a5	    0x65488b042528	                mov rax, qword gs:[0x28]	       219	seq_buf.c	FUNCTION_9
+0x40002ae	      0x4889442418	             mov qword [rsp + 0x18], rax	       219	seq_buf.c	FUNCTION_9
+0x40002b3	            0x31c0	                            xor eax, eax	       219	seq_buf.c	FUNCTION_9
+0x40002b5	      0x48837f0800	                  cmp qword [rdi + 8], 0	       225	seq_buf.c	CALL_1
+0x40002ba	     0xf84ac000000	                            je 0x400036c	       225	seq_buf.c	CALL_1
+0x40002c0	      0xbd10000000	                           mov ebp, 0x10	       228	seq_buf.c	WHILE_1	CALL_2
+0x40002c5	          0x4585ed	                         test r13d, r13d	       227	seq_buf.c	WHILE_1
+0x40002c8	            0x7457	                            je 0x4000321	       227	seq_buf.c	WHILE_1
+0x40002ca	        0x4183fd10	                          cmp r13d, 0x10	       228	seq_buf.c	WHILE_1	CALL_2
+0x40002ce	            0x89ee	                            mov esi, ebp	       228	seq_buf.c	WHILE_1	CALL_2
+0x40002d0	      0x488d542407	                      lea rdx, [rsp + 7]	       228	seq_buf.c	WHILE_1	CALL_2
+0x40002d5	        0x410f46f5	                        cmovbe esi, r13d	       228	seq_buf.c	WHILE_1	CALL_2
+0x40002d9	          0x8d5eff	                      lea ebx, [rsi - 1]	       232	seq_buf.c	WHILE_1	FOR_1	FOR_2
+0x40002dc	          0x4863c3	                         movsxd rax, ebx	       234	seq_buf.c	WHILE_1	FOR_1	FOR_2	CALL_3
+0x40002df	          0x83eb01	                              sub ebx, 1	       232	seq_buf.c	WHILE_1	FOR_1	FOR_2
+0x40002e2	        0x4883c202	                              add rdx, 2	       232	seq_buf.c	WHILE_1	FOR_1	FOR_2
+0x40002e6	      0x410fb60404	             movzx eax, byte [r12 + rax]	       234	seq_buf.c	WHILE_1	FOR_1	FOR_2	CALL_3
+0x40002eb	            0x89c1	                            mov ecx, eax	       234	seq_buf.c	WHILE_1	FOR_1	FOR_2	CALL_3
+0x40002ed	          0x83e00f	                            and eax, 0xf	       235	seq_buf.c	WHILE_1	FOR_1	FOR_2	CALL_4
+0x40002f0	          0xc0e904	                               shr cl, 4	       234	seq_buf.c	WHILE_1	FOR_1	FOR_2	CALL_3
+0x40002f3	     0xfb680000000	                   movzx eax, byte [rax]	       235	seq_buf.c	WHILE_1	FOR_1	FOR_2	CALL_4
+0x40002fa	          0x83e10f	                            and ecx, 0xf	       234	seq_buf.c	WHILE_1	FOR_1	FOR_2	CALL_3
+0x40002fd	     0xfb689000000	                   movzx ecx, byte [rcx]	       234	seq_buf.c	WHILE_1	FOR_1	FOR_2	CALL_3
+0x4000304	          0x8842ff	                  mov byte [rdx - 1], al	       235	seq_buf.c	WHILE_1	FOR_1	FOR_2	CALL_4
+0x4000307	          0x884afe	                  mov byte [rdx - 2], cl	       234	seq_buf.c	WHILE_1	FOR_1	FOR_2	CALL_3
+0x400030a	          0x83fbff	             cmp ebx, 0xffffffffffffffff	       232	seq_buf.c	WHILE_1	FOR_1	FOR_2
+0x400030d	            0x75cd	                           jne 0x40002dc	       232	seq_buf.c	WHILE_1	FOR_1	FOR_2
+0x400030f	        0x8d5436fe	                lea edx, [rsi + rsi - 2]	       232	seq_buf.c	WHILE_1	FOR_1	FOR_2
+0x4000313	          0x8d4202	                      lea eax, [rdx + 2]	       232	seq_buf.c	WHILE_1	FOR_1	FOR_2
+0x4000316	            0x89c1	                            mov ecx, eax	       237	seq_buf.c	WHILE_1	FOR_1	IF_1	CALL_5
+0x4000318	            0xd1f9	                              sar ecx, 1	       237	seq_buf.c	WHILE_1	FOR_1	IF_1	CALL_5
+0x400031a	          0x4139cd	                           cmp r13d, ecx	       237	seq_buf.c	WHILE_1	FOR_1	IF_1	CALL_5
+0x400031d	            0x7321	                           jae 0x4000340	       237	seq_buf.c	WHILE_1	FOR_1	IF_1	CALL_5
+0x400031f	             0xf0b	                                     ud2	       237	seq_buf.c	WHILE_1	FOR_1	IF_1	CALL_5
+0x4000321	            0x31c0	                            xor eax, eax	       248	seq_buf.c	WHILE_1
+0x4000323	      0x488b7c2418	            mov rdi, qword [rsp + 0x18] 	       249	seq_buf.c	WHILE_1
+0x4000328	    0x6548333c2528	                xor rdi, qword gs:[0x28]	       249	seq_buf.c	WHILE_1
+0x4000331	            0x7540	                           jne 0x4000373	       249	seq_buf.c	WHILE_1
+0x4000333	        0x4883c420	                           add rsp, 0x20	       249	seq_buf.c	WHILE_1
+0x4000337	              0x5b	                                 pop rbx	       249	seq_buf.c	WHILE_1
+0x4000338	              0x5d	                                 pop rbp	       249	seq_buf.c	WHILE_1
+0x4000339	            0x415c	                                 pop r12	       249	seq_buf.c	WHILE_1
+0x400033b	            0x415d	                                 pop r13	       249	seq_buf.c	WHILE_1
+0x400033d	            0x415e	                                 pop r14	       249	seq_buf.c	WHILE_1
+0x400033f	              0xc3	                                     ret	       249	seq_buf.c	WHILE_1
+0x4000340	      0x488d742407	                      lea rsi, [rsp + 7]	       244	seq_buf.c	WHILE_1	FOR_1	CALL_6
+0x4000345	            0x4898	                                    cdqe	       242	seq_buf.c	WHILE_1	FOR_1
+0x4000347	          0x83c203	                              add edx, 3	       244	seq_buf.c	WHILE_1	FOR_1	CALL_6
+0x400034a	          0x4c89f7	                            mov rdi, r14	       244	seq_buf.c	WHILE_1	FOR_1	CALL_6
+0x400034d	          0x4129cd	                           sub r13d, ecx	       241	seq_buf.c	WHILE_1	FOR_1
+0x4000350	      0xc644040720	         mov byte [rsp + rax + 7], 0x20 	       242	seq_buf.c	WHILE_1	FOR_1
+0x4000355	      0xe800000000	                          call 0x400035a	       244	seq_buf.c	WHILE_1	FOR_1	CALL_6
+0x400035a	        0x498b4610	            mov rax, qword [r14 + 0x10] 	       245	seq_buf.c	WHILE_1	FOR_1	IF_2	CALL_7
+0x400035e	        0x49394608	                cmp qword [r14 + 8], rax	       245	seq_buf.c	WHILE_1	FOR_1	IF_2	CALL_7
+0x4000362	     0xf835dffffff	                           jae 0x40002c5	       245	seq_buf.c	WHILE_1	FOR_1	IF_2	CALL_7
+0x4000368	            0x89d8	                            mov eax, ebx	       246	seq_buf.c	WHILE_1	FOR_1	IF_2
+0x400036a	            0xebb7	                           jmp 0x4000323	       246	seq_buf.c	WHILE_1	FOR_1	IF_2
+0x400036c	             0xf0b	                                     ud2	       246	seq_buf.c	WHILE_1	FOR_1	IF_2
+0x400036e	      0xe94dffffff	                           jmp 0x40002c0	       225	seq_buf.c	CALL_1
+0x4000373	      0xe800000000	                          call 0x4000378	       249	seq_buf.c	WHILE_1
+seq_buf_printf	DO,0:SWITCH,0:WHILE,0:functions,0:ELSE,0:IF,0:CALL,3:FOR,0	26
+0x40000c0	              0x55	                                push rbp	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000c1	          0x4889e5	                            mov rbp, rsp	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000c4	            0x4152	                                push r10	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000c6	        0x4c8d5510	                   lea r10, [rbp + 0x10]	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000ca	        0x4883ec50	                           sub rsp, 0x50	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000ce	        0x488955d8	             mov qword [rbp - 0x28], rdx	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000d2	        0x488d55a8	                   lea rdx, [rbp - 0x58]	        89	seq_buf.c	FUNCTION_9	FUNCTION_4	CALL_2
+0x40000d6	    0x65488b042528	                mov rax, qword gs:[0x28]	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000df	        0x488945c0	             mov qword [rbp - 0x40], rax	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000e3	            0x31c0	                            xor eax, eax	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000e5	        0x488d45c8	                   lea rax, [rbp - 0x38]	        88	seq_buf.c	FUNCTION_9	FUNCTION_4	CALL_1
+0x40000e9	        0x48894de0	             mov qword [rbp - 0x20], rcx	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000ed	        0x4c8945e8	              mov qword [rbp - 0x18], r8	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000f1	        0x4c894df0	              mov qword [rbp - 0x10], r9	        84	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x40000f5	    0xc745a8100000	           mov dword [rbp - 0x58], 0x10 	        88	seq_buf.c	FUNCTION_9	FUNCTION_4	CALL_1
+0x40000fc	        0x4c8955b0	             mov qword [rbp - 0x50], r10	        88	seq_buf.c	FUNCTION_9	FUNCTION_4	CALL_1
+0x4000100	        0x488945b8	             mov qword [rbp - 0x48], rax	        88	seq_buf.c	FUNCTION_9	FUNCTION_4	CALL_1
+0x4000104	      0xe800000000	                          call 0x4000109	        89	seq_buf.c	FUNCTION_9	FUNCTION_4	CALL_2
+0x4000109	        0x488b4dc0	             mov rcx, qword [rbp - 0x40]	        93	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x400010d	    0x6548330c2528	                xor rcx, qword gs:[0x28]	        93	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x4000116	            0x7508	                           jne 0x4000120	        93	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x4000118	        0x4883c450	                           add rsp, 0x50	        93	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x400011c	            0x415a	                                 pop r10	        93	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x400011e	              0x5d	                                 pop rbp	        93	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x400011f	              0xc3	                                     ret	        93	seq_buf.c	FUNCTION_9	FUNCTION_4
+0x4000120	      0xe800000000	                          call 0x4000125	        93	seq_buf.c	FUNCTION_9	FUNCTION_4
+seq_buf_path	DO,0:SWITCH,0:WHILE,0:functions,0:ELSE,0:IF,3:CALL,6:FOR,0	63
+0x4000380	            0x4154	                                push r12	       262	seq_buf.c	FUNCTION_1
+0x4000382	              0x55	                                push rbp	       262	seq_buf.c	FUNCTION_1
+0x4000383	          0x4989d4	                            mov r12, rdx	       262	seq_buf.c	FUNCTION_1
+0x4000386	              0x53	                                push rbx	       262	seq_buf.c	FUNCTION_1
+0x4000387	          0x4889fb	                            mov rbx, rdi	       262	seq_buf.c	FUNCTION_1
+0x400038a	          0x4889f7	                            mov rdi, rsi	       262	seq_buf.c	FUNCTION_1
+0x400038d	        0x488b5308	                mov rdx, qword [rbx + 8]	        84	seq_buf.h	FUNCTION_9	CALL_1
+0x4000391	        0x488b4310	            mov rax, qword [rbx + 0x10] 	        84	seq_buf.h	FUNCTION_9	CALL_1
+0x4000395	        0x488d4a01	                      lea rcx, [rdx + 1]	        84	seq_buf.h	FUNCTION_9	CALL_1
+0x4000399	          0x4839c8	                            cmp rax, rcx	        84	seq_buf.h	FUNCTION_9	CALL_1
+0x400039c	            0x777f	                            ja 0x400041d	        84	seq_buf.h	FUNCTION_9	CALL_1
+0x400039e	          0x4839d0	                            cmp rax, rdx	        86	seq_buf.h	FUNCTION_9	IF_1
+0x40003a1	            0x724e	                            jb 0x40003f1	        86	seq_buf.h	FUNCTION_9	IF_1
+0x40003a3	            0x31ed	                            xor ebp, ebp	        91	seq_buf.h	FUNCTION_9
+0x40003a5	          0x4885d2	                           test rdx, rdx	       267	seq_buf.c	FUNCTION_1	CALL_2
+0x40003a8	            0x7565	                           jne 0x400040f	       267	seq_buf.c	FUNCTION_1	CALL_2
+0x40003aa	             0xf0b	                                     ud2	       267	seq_buf.c	FUNCTION_1	CALL_2
+0x40003ac	          0x4885d2	                           test rdx, rdx	       269	seq_buf.c	FUNCTION_1	IF_1
+0x40003af	            0x745e	                            je 0x400040f	       269	seq_buf.c	FUNCTION_1	IF_1
+0x40003b1	          0x4889ee	                            mov rsi, rbp	       270	seq_buf.c	FUNCTION_1	IF_1	CALL_3
+0x40003b4	      0xe800000000	                          call 0x40003b9	       270	seq_buf.c	FUNCTION_1	IF_1	CALL_3
+0x40003b9	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       271	seq_buf.c	FUNCTION_1	IF_1	IF_2	CALL_4
+0x40003bf	            0x7746	                            ja 0x4000407	       271	seq_buf.c	FUNCTION_1	IF_1	IF_2	CALL_4
+0x40003c1	          0x4c89e2	                            mov rdx, r12	       272	seq_buf.c	FUNCTION_1	IF_1	IF_2	CALL_5
+0x40003c4	          0x4889c6	                            mov rsi, rax	       272	seq_buf.c	FUNCTION_1	IF_1	IF_2	CALL_5
+0x40003c7	          0x4889ef	                            mov rdi, rbp	       272	seq_buf.c	FUNCTION_1	IF_1	IF_2	CALL_5
+0x40003ca	      0xe800000000	                          call 0x40003cf	       272	seq_buf.c	FUNCTION_1	IF_1	IF_2	CALL_5
+0x40003cf	          0x4885c0	                           test rax, rax	       273	seq_buf.c	FUNCTION_1	IF_1	IF_2	IF_3
+0x40003d2	            0x7433	                            je 0x4000407	       273	seq_buf.c	FUNCTION_1	IF_1	IF_2	IF_3
+0x40003d4	          0x4829e8	                            sub rax, rbp	       274	seq_buf.c	FUNCTION_1	IF_1	IF_2	IF_3
+0x40003d7	            0x85c0	                           test eax, eax	       106	seq_buf.h	FUNCTION_10	IF_1
+0x40003d9	            0x784b	                            js 0x4000426	       106	seq_buf.h	FUNCTION_10	IF_1
+0x40003db	          0x4863d0	                         movsxd rdx, eax	       110	seq_buf.h	FUNCTION_10	ELSE_1	CALL_2
+0x40003de	        0x48035310	             add rdx, qword [rbx + 0x10]	       110	seq_buf.h	FUNCTION_10	ELSE_1	CALL_2
+0x40003e2	        0x483b5308	                cmp rdx, qword [rbx + 8]	       110	seq_buf.h	FUNCTION_10	ELSE_1	CALL_2
+0x40003e6	            0x773c	                            ja 0x4000424	       110	seq_buf.h	FUNCTION_10	ELSE_1	CALL_2
+0x40003e8	        0x48895310	             mov qword [rbx + 0x10], rdx	       111	seq_buf.h	FUNCTION_10	ELSE_1
+0x40003ec	              0x5b	                                 pop rbx	       280	seq_buf.c	FUNCTION_1
+0x40003ed	              0x5d	                                 pop rbp	       280	seq_buf.c	FUNCTION_1
+0x40003ee	            0x415c	                                 pop r12	       280	seq_buf.c	FUNCTION_1
+0x40003f0	              0xc3	                                     ret	       280	seq_buf.c	FUNCTION_1
+0x40003f1	          0x4889d6	                            mov rsi, rdx	        88	seq_buf.h	FUNCTION_9	IF_1
+0x40003f4	          0x4889c5	                            mov rbp, rax	        87	seq_buf.h	FUNCTION_9	IF_1
+0x40003f7	          0x48032b	                    add rbp, qword [rbx]	        87	seq_buf.h	FUNCTION_9	IF_1
+0x40003fa	          0x4829c6	                            sub rsi, rax	        88	seq_buf.h	FUNCTION_9	IF_1
+0x40003fd	          0x4885d2	                           test rdx, rdx	       267	seq_buf.c	FUNCTION_1	CALL_2
+0x4000400	          0x4889f2	                            mov rdx, rsi	        88	seq_buf.h	FUNCTION_9	IF_1
+0x4000403	            0x75ac	                           jne 0x40003b1	       267	seq_buf.c	FUNCTION_1	CALL_2
+0x4000405	            0xeba3	                           jmp 0x40003aa	       267	seq_buf.c	FUNCTION_1	CALL_2
+0x4000407	        0x488b4308	                mov rax, qword [rbx + 8]	       267	seq_buf.c	FUNCTION_1	CALL_2
+0x400040b	        0x488d4801	                      lea rcx, [rax + 1]	       267	seq_buf.c	FUNCTION_1	CALL_2
+0x400040f	      0xb8ffffffff	                     mov eax, 0xffffffff	        88	seq_buf.h	FUNCTION_9	IF_1
+0x4000414	        0x48894b10	             mov qword [rbx + 0x10], rcx	        53	seq_buf.h	FUNCTION_6
+0x4000418	              0x5b	                                 pop rbx	       280	seq_buf.c	FUNCTION_1
+0x4000419	              0x5d	                                 pop rbp	       280	seq_buf.c	FUNCTION_1
+0x400041a	            0x415c	                                 pop r12	       280	seq_buf.c	FUNCTION_1
+0x400041c	              0xc3	                                     ret	       280	seq_buf.c	FUNCTION_1
+0x400041d	             0xf0b	                                     ud2	       280	seq_buf.c	FUNCTION_1
+0x400041f	      0xe97affffff	                           jmp 0x400039e	        84	seq_buf.h	FUNCTION_9	CALL_1
+0x4000424	             0xf0b	                                     ud2	        84	seq_buf.h	FUNCTION_9	CALL_1
+0x4000426	        0x488b4b08	                mov rcx, qword [rbx + 8]	       110	seq_buf.h	FUNCTION_10	ELSE_1	CALL_2
+0x400042a	        0x4883c101	                              add rcx, 1	       110	seq_buf.h	FUNCTION_10	ELSE_1	CALL_2
+0x400042e	            0xebe4	                           jmp 0x4000414	       110	seq_buf.h	FUNCTION_10	ELSE_1	CALL_2
+seq_buf_puts	DO,0:SWITCH,0:WHILE,0:functions,0:ELSE,0:IF,1:CALL,5:FOR,0	31
+0x40001a0	            0x4154	                                push r12	       142	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001a2	              0x55	                                push rbp	       142	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001a3	          0x4889fd	                            mov rbp, rdi	       142	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001a6	              0x53	                                push rbx	       142	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001a7	          0x4889f7	                            mov rdi, rsi	       143	seq_buf.c	FUNCTION_9	FUNCTION_6	CALL_1
+0x40001aa	          0x4989f4	                            mov r12, rsi	       142	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001ad	      0xe800000000	                          call 0x40001b2	       143	seq_buf.c	FUNCTION_9	FUNCTION_6	CALL_1
+0x40001b2	        0x488b5508	                mov rdx, qword [rbp + 8]	       145	seq_buf.c	FUNCTION_9	FUNCTION_6	CALL_2
+0x40001b6	          0x4885d2	                           test rdx, rdx	       145	seq_buf.c	FUNCTION_9	FUNCTION_6	CALL_2
+0x40001b9	            0x7429	                            je 0x40001e4	       145	seq_buf.c	FUNCTION_9	FUNCTION_6	CALL_2
+0x40001bb	        0x488b7d10	            mov rdi, qword [rbp + 0x10] 	       145	seq_buf.c	FUNCTION_9	FUNCTION_6	CALL_2
+0x40001bf	            0x89c3	                            mov ebx, eax	       145	seq_buf.c	FUNCTION_9	FUNCTION_6	CALL_2
+0x40001c1	        0x488d043b	                    lea rax, [rbx + rdi]	       147	seq_buf.c	FUNCTION_9	FUNCTION_6	IF_1	CALL_3
+0x40001c5	          0x4839c2	                            cmp rdx, rax	       147	seq_buf.c	FUNCTION_9	FUNCTION_6	IF_1	CALL_3
+0x40001c8	            0x721e	                            jb 0x40001e8	       147	seq_buf.c	FUNCTION_9	FUNCTION_6	IF_1	CALL_3
+0x40001ca	        0x48037d00	                    add rdi, qword [rbp]	       148	seq_buf.c	FUNCTION_9	FUNCTION_6	IF_1	CALL_4
+0x40001ce	          0x4889da	                            mov rdx, rbx	       148	seq_buf.c	FUNCTION_9	FUNCTION_6	IF_1	CALL_4
+0x40001d1	          0x4c89e6	                            mov rsi, r12	       148	seq_buf.c	FUNCTION_9	FUNCTION_6	IF_1	CALL_4
+0x40001d4	      0xe800000000	                          call 0x40001d9	       148	seq_buf.c	FUNCTION_9	FUNCTION_6	IF_1	CALL_4
+0x40001d9	        0x48015d10	            add qword [rbp + 0x10], rbx 	       149	seq_buf.c	FUNCTION_9	FUNCTION_6	IF_1
+0x40001dd	            0x31c0	                            xor eax, eax	       150	seq_buf.c	FUNCTION_9	FUNCTION_6	IF_1
+0x40001df	              0x5b	                                 pop rbx	       154	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001e0	              0x5d	                                 pop rbp	       154	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001e1	            0x415c	                                 pop r12	       154	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001e3	              0xc3	                                     ret	       154	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001e4	             0xf0b	                                     ud2	       154	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001e6	            0xebd3	                           jmp 0x40001bb	       145	seq_buf.c	FUNCTION_9	FUNCTION_6	CALL_2
+0x40001e8	        0x4883c201	                              add rdx, 1	        53	seq_buf.h	FUNCTION_6
+0x40001ec	      0xb8ffffffff	                     mov eax, 0xffffffff	       153	seq_buf.c	FUNCTION_9	FUNCTION_6
+0x40001f1	        0x48895510	            mov qword [rbp + 0x10], rdx 	        53	seq_buf.h	FUNCTION_6
+0x40001f5	            0xebe8	                           jmp 0x40001df	       153	seq_buf.c	FUNCTION_9	FUNCTION_6

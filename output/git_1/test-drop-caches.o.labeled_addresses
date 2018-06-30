@@ -1,8 +1,24 @@
-cmd__drop_caches	IF,0:WHILE,0:functions,0:FOR,0:DO,0:ELSE,0:SWITCH,0:CALL,2	7
-0x4000040	        0x4883ec08	                              sub rsp, 8	       154	test-drop-caches.c	FUNCTION_10
+cmd_dropcaches	DO,0:SWITCH,0:IF,0:ELSE,0:FOR,0:CALL,1:WHILE,0:functions,0	6
+0x4000050	              0x55	                                push rbp	       123	test-drop-caches.c	FUNCTION_5
+0x4000051	          0x4889e5	                            mov rbp, rsp	       123	test-drop-caches.c	FUNCTION_5
+0x4000054	      0xbf00000000	                              mov edi, 0	       124	test-drop-caches.c	FUNCTION_5	CALL_1
+0x4000059	      0xe800000000	                          call 0x400005e	       124	test-drop-caches.c	FUNCTION_5	CALL_1
+0x400005e	              0x5d	                                 pop rbp	       125	test-drop-caches.c	FUNCTION_5
+0x400005f	              0xc3	                                     ret	       125	test-drop-caches.c	FUNCTION_5
+cmd_sync	DO,0:SWITCH,0:IF,0:ELSE,0:FOR,0:CALL,0:WHILE,0:functions,0	6
+0x4000040	              0x55	                                push rbp	       118	test-drop-caches.c	FUNCTION_4
+0x4000041	          0x4889e5	                            mov rbp, rsp	       118	test-drop-caches.c	FUNCTION_4
 0x4000044	      0xbf00000000	                              mov edi, 0	       119	test-drop-caches.c	FUNCTION_4	CALL_1
 0x4000049	      0xe800000000	                          call 0x400004e	       119	test-drop-caches.c	FUNCTION_4	CALL_1
-0x400004e	      0xbf00000000	                              mov edi, 0	       124	test-drop-caches.c	FUNCTION_5	CALL_1
-0x4000053	      0xe800000000	                          call 0x4000058	       124	test-drop-caches.c	FUNCTION_5	CALL_1
-0x4000058	        0x4883c408	                              add rsp, 8	       157	test-drop-caches.c	FUNCTION_10
-0x400005c	              0xc3	                                     ret	       157	test-drop-caches.c	FUNCTION_10
+0x400004e	              0x5d	                                 pop rbp	       120	test-drop-caches.c	FUNCTION_4
+0x400004f	              0xc3	                                     ret	       120	test-drop-caches.c	FUNCTION_4
+cmd__drop_caches	DO,0:SWITCH,0:IF,0:ELSE,0:FOR,0:CALL,2:WHILE,0:functions,0	9
+0x4000060	              0x55	                                push rbp	       154	test-drop-caches.c	FUNCTION_10
+0x4000061	          0x4889e5	                            mov rbp, rsp	       154	test-drop-caches.c	FUNCTION_10
+0x4000064	        0x4883ec10	                           sub rsp, 0x10	       154	test-drop-caches.c	FUNCTION_10
+0x4000068	          0x897dfc	                mov dword [rbp - 4], edi	       154	test-drop-caches.c	FUNCTION_10
+0x400006b	        0x488975f0	             mov qword [rbp - 0x10], rsi	       154	test-drop-caches.c	FUNCTION_10
+0x400006f	      0xe8ccffffff	                       call sym.cmd_sync	       155	test-drop-caches.c	FUNCTION_10	CALL_1
+0x4000074	      0xe8d7ffffff	                 call sym.cmd_dropcaches	       156	test-drop-caches.c	FUNCTION_10	CALL_2
+0x4000079	              0xc9	                                   leave	       157	test-drop-caches.c	FUNCTION_10
+0x400007a	              0xc3	                                     ret	       157	test-drop-caches.c	FUNCTION_10

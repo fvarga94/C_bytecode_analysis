@@ -1,0 +1,1083 @@
+estimate_bisect_steps	functions,0:IF,1:FOR,0:CALL,2:SWITCH,0:DO,0:ELSE,0:WHILE,0	23
+0x4000ef5	      0xb800000000	                              mov eax, 0	      1041	bisect.c	FUNCTION_38	IF_1
+0x4000efa	          0x83ff02	                              cmp edi, 2	      1040	bisect.c	FUNCTION_38	IF_1
+0x4000efd	            0x7e35	                           jle 0x4000f34	      1040	bisect.c	FUNCTION_38	IF_1
+0x4000eff	          0x83ff01	                              cmp edi, 1	      1015	bisect.c	FUNCTION_36	FOR_1
+0x4000f02	            0x7e13	                           jle 0x4000f17	      1015	bisect.c	FUNCTION_36	FOR_1
+0x4000f04	            0x89fa	                            mov edx, edi	      1015	bisect.c	FUNCTION_36	FOR_1
+0x4000f06	      0xb900000000	                              mov ecx, 0	      1015	bisect.c	FUNCTION_36	FOR_1
+0x4000f0b	          0x83c101	                              add ecx, 1	      1016	bisect.c	FUNCTION_36	FOR_1
+0x4000f0e	            0xd1fa	                              sar edx, 1	      1015	bisect.c	FUNCTION_36	FOR_1
+0x4000f10	          0x83fa01	                              cmp edx, 1	      1015	bisect.c	FUNCTION_36	FOR_1
+0x4000f13	            0x7ff6	                            jg 0x4000f0b	      1015	bisect.c	FUNCTION_36	FOR_1
+0x4000f15	            0xeb05	                           jmp 0x4000f1c	      1015	bisect.c	FUNCTION_36	FOR_1
+0x4000f17	      0xb900000000	                              mov ecx, 0	      1015	bisect.c	FUNCTION_36	FOR_1
+0x4000f1c	      0xb801000000	                              mov eax, 1	      1023	bisect.c	FUNCTION_37
+0x4000f21	            0xd3e0	                             shl eax, cl	      1023	bisect.c	FUNCTION_37
+0x4000f23	            0x29c7	                            sub edi, eax	      1047	bisect.c	FUNCTION_38
+0x4000f25	          0x8d147f	                  lea edx, [rdi + rdi*2]	      1047	bisect.c	FUNCTION_38
+0x4000f28	            0x39d0	                            cmp eax, edx	      1047	bisect.c	FUNCTION_38
+0x4000f2a	           0xf9dc0	                                setge al	      1047	bisect.c	FUNCTION_38
+0x4000f2d	           0xfb6c0	                           movzx eax, al	      1047	bisect.c	FUNCTION_38
+0x4000f30	            0x29c1	                            sub ecx, eax	      1047	bisect.c	FUNCTION_38
+0x4000f32	            0x89c8	                            mov eax, ecx	      1047	bisect.c	FUNCTION_38
+0x4000f34	            0xf3c3	                                     ret	      1048	bisect.c	FUNCTION_38
+bisect_common	functions,0:IF,2:FOR,0:CALL,3:SWITCH,0:DO,0:ELSE,0:WHILE,0	15
+0x4000607	              0x53	                                push rbx	       648	bisect.c	FUNCTION_22
+0x4000608	          0x4889fb	                            mov rbx, rdi	       648	bisect.c	FUNCTION_22
+0x400060b	      0xe800000000	                          call 0x4000610	       649	bisect.c	FUNCTION_22	IF_1	CALL_1
+0x4000610	            0x85c0	                           test eax, eax	       649	bisect.c	FUNCTION_22	IF_1	CALL_1
+0x4000612	            0x740f	                            je 0x4000623	       649	bisect.c	FUNCTION_22	IF_1	CALL_1
+0x4000614	      0xbf00000000	                              mov edi, 0	       650	bisect.c	FUNCTION_22	CALL_2
+0x4000619	      0xb800000000	                              mov eax, 0	       650	bisect.c	FUNCTION_22	CALL_2
+0x400061e	      0xe800000000	                          call 0x4000623	       650	bisect.c	FUNCTION_22	CALL_2
+0x4000623	        0xf6437520	           test byte [rbx + 0x75], 0x20 	       651	bisect.c	FUNCTION_22	IF_2
+0x4000627	            0x740d	                            je 0x4000636	       651	bisect.c	FUNCTION_22	IF_2
+0x4000629	      0xbe00000000	                              mov esi, 0	       652	bisect.c	FUNCTION_22	CALL_3
+0x400062e	          0x4889df	                            mov rdi, rbx	       652	bisect.c	FUNCTION_22	CALL_3
+0x4000631	      0xe800000000	                          call 0x4000636	       652	bisect.c	FUNCTION_22	CALL_3
+0x4000636	              0x5b	                                 pop rbx	       653	bisect.c	FUNCTION_22
+0x4000637	              0xc3	                                     ret	       653	bisect.c	FUNCTION_22
+register_ref	functions,0:IF,3:FOR,0:CALL,10:SWITCH,0:DO,0:ELSE,2:WHILE,0	66
+0x4000200	              0x55	                                push rbp	       419	bisect.c	FUNCTION_12
+0x4000201	              0x53	                                push rbx	       419	bisect.c	FUNCTION_12
+0x4000202	        0x4883ec28	                           sub rsp, 0x28	       419	bisect.c	FUNCTION_12
+0x4000206	          0x4889fb	                            mov rbx, rdi	       419	bisect.c	FUNCTION_12
+0x4000209	          0x4889f5	                            mov rbp, rsi	       419	bisect.c	FUNCTION_12
+0x400020c	    0x64488b042528	                mov rax, qword fs:[0x28]	       419	bisect.c	FUNCTION_12
+0x4000215	      0x4889442418	             mov qword [rsp + 0x18], rax	       419	bisect.c	FUNCTION_12
+0x400021a	            0x31c0	                            xor eax, eax	       419	bisect.c	FUNCTION_12
+0x400021c	    0x48c704240000	                      mov qword [rsp], 0	       420	bisect.c	FUNCTION_12
+0x4000224	    0x48c744240800	                  mov qword [rsp + 8], 0	       420	bisect.c	FUNCTION_12
+0x400022d	    0x48c744241000	               mov qword [rsp + 0x10], 0	       420	bisect.c	FUNCTION_12
+0x4000236	    0x488b35000000	            mov rsi, qword [0x0400023d] 	       421	bisect.c	FUNCTION_12	CALL_1
+0x400023d	    0x48c7c1ffffff	             mov rcx, 0xffffffffffffffff	       279	strbuf.h	FUNCTION_76	CALL_2
+0x4000244	          0x4889f7	                            mov rdi, rsi	       279	strbuf.h	FUNCTION_76	CALL_2
+0x4000247	            0xf2ae	              repne scasb al, byte [rdi]	       279	strbuf.h	FUNCTION_76	CALL_2
+0x4000249	          0x48f7d1	                                 not rcx	       279	strbuf.h	FUNCTION_76	CALL_2
+0x400024c	        0x488d51ff	                      lea rdx, [rcx - 1]	       279	strbuf.h	FUNCTION_76	CALL_2
+0x4000250	          0x4889e7	                            mov rdi, rsp	       279	strbuf.h	FUNCTION_76	CALL_2
+0x4000253	      0xe800000000	                          call 0x4000258	       279	strbuf.h	FUNCTION_76	CALL_2
+0x4000258	      0xba01000000	                              mov edx, 1	       279	strbuf.h	FUNCTION_76	CALL_2
+0x400025d	      0xbe00000000	                              mov esi, 0	       279	strbuf.h	FUNCTION_76	CALL_2
+0x4000262	          0x4889e7	                            mov rdi, rsp	       279	strbuf.h	FUNCTION_76	CALL_2
+0x4000265	      0xe800000000	                          call 0x400026a	       279	strbuf.h	FUNCTION_76	CALL_2
+0x400026a	    0x488b35000000	            mov rsi, qword [0x04000271] 	       424	bisect.c	FUNCTION_12	IF_1	CALL_3
+0x4000271	          0x4889df	                            mov rdi, rbx	       424	bisect.c	FUNCTION_12	IF_1	CALL_3
+0x4000274	      0xe800000000	                          call 0x4000279	       424	bisect.c	FUNCTION_12	IF_1	CALL_3
+0x4000279	            0x85c0	                           test eax, eax	       424	bisect.c	FUNCTION_12	IF_1	CALL_3
+0x400027b	            0x7528	                           jne 0x40002a5	       424	bisect.c	FUNCTION_12	IF_1	CALL_3
+0x400027d	      0xbf14000000	                           mov edi, 0x14	       425	bisect.c	FUNCTION_12	IF_1	CALL_4
+0x4000282	      0xe800000000	                          call 0x4000287	       425	bisect.c	FUNCTION_12	IF_1	CALL_4
+0x4000287	    0x488905000000	            mov qword [0x0400028e], rax 	       425	bisect.c	FUNCTION_12	IF_1	CALL_4
+0x400028e	        0x488b5500	                    mov rdx, qword [rbp]	        53	string3.h	FUNCTION_110	CALL_3
+0x4000292	          0x488910	                    mov qword [rax], rdx	        53	string3.h	FUNCTION_110	CALL_3
+0x4000295	        0x488b5508	                mov rdx, qword [rbp + 8]	        53	string3.h	FUNCTION_110	CALL_3
+0x4000299	        0x48895008	                mov qword [rax + 8], rdx	        53	string3.h	FUNCTION_110	CALL_3
+0x400029d	          0x8b5510	            mov edx, dword [rbp + 0x10] 	        53	string3.h	FUNCTION_110	CALL_3
+0x40002a0	          0x895010	             mov dword [rax + 0x10], edx	        53	string3.h	FUNCTION_110	CALL_3
+0x40002a3	            0xeb3e	                           jmp 0x40002e3	        53	string3.h	FUNCTION_110	CALL_3
+0x40002a5	      0x488b742410	            mov rsi, qword [rsp + 0x10] 	       427	bisect.c	FUNCTION_12	ELSE_1	IF_2	CALL_6
+0x40002aa	          0x4889df	                            mov rdi, rbx	       427	bisect.c	FUNCTION_12	ELSE_1	IF_2	CALL_6
+0x40002ad	      0xe800000000	                          call 0x40002b2	       427	bisect.c	FUNCTION_12	ELSE_1	IF_2	CALL_6
+0x40002b2	            0x85c0	                           test eax, eax	       427	bisect.c	FUNCTION_12	ELSE_1	IF_2	CALL_6
+0x40002b4	            0x740f	                            je 0x40002c5	       427	bisect.c	FUNCTION_12	ELSE_1	IF_2	CALL_6
+0x40002b6	          0x4889ee	                            mov rsi, rbp	       428	bisect.c	FUNCTION_12	ELSE_1	IF_2	CALL_7
+0x40002b9	      0xbf00000000	                              mov edi, 0	       428	bisect.c	FUNCTION_12	ELSE_1	IF_2	CALL_7
+0x40002be	      0xe800000000	                          call 0x40002c3	       428	bisect.c	FUNCTION_12	ELSE_1	IF_2	CALL_7
+0x40002c3	            0xeb1e	                           jmp 0x40002e3	       428	bisect.c	FUNCTION_12	ELSE_1	IF_2	CALL_7
+0x40002c5	      0xbe00000000	                              mov esi, 0	       429	bisect.c	FUNCTION_12	ELSE_2	IF_3	CALL_8
+0x40002ca	          0x4889df	                            mov rdi, rbx	       429	bisect.c	FUNCTION_12	ELSE_2	IF_3	CALL_8
+0x40002cd	      0xe800000000	                          call 0x40002d2	       429	bisect.c	FUNCTION_12	ELSE_2	IF_3	CALL_8
+0x40002d2	            0x85c0	                           test eax, eax	       429	bisect.c	FUNCTION_12	ELSE_2	IF_3	CALL_8
+0x40002d4	            0x740d	                            je 0x40002e3	       429	bisect.c	FUNCTION_12	ELSE_2	IF_3	CALL_8
+0x40002d6	          0x4889ee	                            mov rsi, rbp	       430	bisect.c	FUNCTION_12	ELSE_2	IF_3	CALL_9
+0x40002d9	      0xbf00000000	                              mov edi, 0	       430	bisect.c	FUNCTION_12	ELSE_2	IF_3	CALL_9
+0x40002de	      0xe800000000	                          call 0x40002e3	       430	bisect.c	FUNCTION_12	ELSE_2	IF_3	CALL_9
+0x40002e3	          0x4889e7	                            mov rdi, rsp	       433	bisect.c	FUNCTION_12	CALL_10
+0x40002e6	      0xe800000000	                          call 0x40002eb	       433	bisect.c	FUNCTION_12	CALL_10
+0x40002eb	      0xb800000000	                              mov eax, 0	       436	bisect.c	FUNCTION_12
+0x40002f0	      0x488b5c2418	            mov rbx, qword [rsp + 0x18] 	       436	bisect.c	FUNCTION_12
+0x40002f5	    0x6448331c2528	                xor rbx, qword fs:[0x28]	       436	bisect.c	FUNCTION_12
+0x40002fe	            0x7405	                            je 0x4000305	       436	bisect.c	FUNCTION_12
+0x4000300	      0xe800000000	                          call 0x4000305	       436	bisect.c	FUNCTION_12
+0x4000305	        0x4883c428	                           add rsp, 0x28	       436	bisect.c	FUNCTION_12
+0x4000309	              0x5b	                                 pop rbx	       436	bisect.c	FUNCTION_12
+0x400030a	              0x5d	                                 pop rbp	       436	bisect.c	FUNCTION_12
+0x400030b	              0xc3	                                     ret	       436	bisect.c	FUNCTION_12
+find_bisection	functions,0:IF,4:FOR,1:CALL,6:SWITCH,0:DO,0:ELSE,0:WHILE,0	346
+0x40007df	            0x4157	                                push r15	       369	bisect.c	FUNCTION_11
+0x40007e1	            0x4156	                                push r14	       369	bisect.c	FUNCTION_11
+0x40007e3	            0x4155	                                push r13	       369	bisect.c	FUNCTION_11
+0x40007e5	            0x4154	                                push r12	       369	bisect.c	FUNCTION_11
+0x40007e7	              0x55	                                push rbp	       369	bisect.c	FUNCTION_11
+0x40007e8	              0x53	                                push rbx	       369	bisect.c	FUNCTION_11
+0x40007e9	        0x4883ec58	                           sub rsp, 0x58	       369	bisect.c	FUNCTION_11
+0x40007ed	      0x48897c2418	             mov qword [rsp + 0x18], rdi	       369	bisect.c	FUNCTION_11
+0x40007f2	      0x4889742420	             mov qword [rsp + 0x20], rsi	       369	bisect.c	FUNCTION_11
+0x40007f7	        0x48891424	                    mov qword [rsp], rdx	       369	bisect.c	FUNCTION_11
+0x40007fb	          0x4189cd	                           mov r13d, ecx	       369	bisect.c	FUNCTION_11
+0x40007fe	    0x64488b1c2528	                mov rbx, qword fs:[0x28]	       369	bisect.c	FUNCTION_11
+0x4000807	      0x48895c2448	             mov qword [rsp + 0x48], rbx	       369	bisect.c	FUNCTION_11
+0x400080c	            0x31db	                            xor ebx, ebx	       369	bisect.c	FUNCTION_11
+0x400080e	          0x4c8b27	                    mov r12, qword [rdi]	       380	bisect.c	FUNCTION_11	FOR_1
+0x4000811	          0x4d85e4	                           test r12, r12	       380	bisect.c	FUNCTION_11	FOR_1
+0x4000814	     0xf8447040000	                            je 0x4000c61	       380	bisect.c	FUNCTION_11	FOR_1
+0x400081a	    0x41bf00000000	                             mov r15d, 0	       380	bisect.c	FUNCTION_11	FOR_1
+0x4000820	    0x41be00000000	                             mov r14d, 0	       380	bisect.c	FUNCTION_11	FOR_1
+0x4000826	          0x4c89e7	                            mov rdi, r12	       380	bisect.c	FUNCTION_11	FOR_1
+0x4000829	          0x488b07	                    mov rax, qword [rdi]	       383	bisect.c	FUNCTION_11	FOR_1
+0x400082c	            0x8b00	                    mov eax, dword [rax]	       383	bisect.c	FUNCTION_11	FOR_1
+0x400082e	          0xc1e804	                              shr eax, 4	       383	bisect.c	FUNCTION_11	FOR_1
+0x4000831	      0x25ffffff07	                      and eax, 0x7ffffff	       383	bisect.c	FUNCTION_11	FOR_1
+0x4000836	        0x488b6f08	                mov rbp, qword [rdi + 8]	       385	bisect.c	FUNCTION_11	FOR_1
+0x400083a	            0xa802	                              test al, 2	       386	bisect.c	FUNCTION_11	FOR_1	IF_1
+0x400083c	            0x7407	                            je 0x4000845	       386	bisect.c	FUNCTION_11	FOR_1	IF_1
+0x400083e	      0xe800000000	                          call 0x4000843	       387	bisect.c	FUNCTION_11	FOR_1	IF_1	CALL_1
+0x4000843	            0xeb15	                           jmp 0x400085a	       388	bisect.c	FUNCTION_11	FOR_1	IF_1
+0x4000845	        0x48895f08	                mov qword [rdi + 8], rbx	       390	bisect.c	FUNCTION_11	FOR_1
+0x4000849	          0x83e004	                              and eax, 4	       392	bisect.c	FUNCTION_11	FOR_1	IF_2
+0x400084c	          0x83f801	                              cmp eax, 1	       393	bisect.c	FUNCTION_11	FOR_1	IF_2
+0x400084f	        0x4183d600	                             adc r14d, 0	       393	bisect.c	FUNCTION_11	FOR_1	IF_2
+0x4000853	        0x4183c701	                             add r15d, 1	       394	bisect.c	FUNCTION_11	FOR_1
+0x4000857	          0x4889fb	                            mov rbx, rdi	       394	bisect.c	FUNCTION_11	FOR_1
+0x400085a	          0x4889ef	                            mov rdi, rbp	       394	bisect.c	FUNCTION_11	FOR_1
+0x400085d	          0x4885ed	                           test rbp, rbp	       380	bisect.c	FUNCTION_11	FOR_1
+0x4000860	            0x75c7	                           jne 0x4000829	       380	bisect.c	FUNCTION_11	FOR_1
+0x4000862	        0x488b0424	                    mov rax, qword [rsp]	       399	bisect.c	FUNCTION_11
+0x4000866	          0x448930	                   mov dword [rax], r14d	       399	bisect.c	FUNCTION_11
+0x4000869	          0x4963ff	                        movsxd rdi, r15d	       400	bisect.c	FUNCTION_11	CALL_2
+0x400086c	      0xbe04000000	                              mov esi, 4	       400	bisect.c	FUNCTION_11	CALL_2
+0x4000871	      0xe800000000	                          call 0x4000876	       400	bisect.c	FUNCTION_11	CALL_2
+0x4000876	          0x4889c5	                            mov rbp, rax	       400	bisect.c	FUNCTION_11	CALL_2
+0x4000879	          0x4885db	                           test rbx, rbx	       264	bisect.c	FUNCTION_10	FOR_1
+0x400087c	     0xf8497010000	                            je 0x4000a19	       264	bisect.c	FUNCTION_10	FOR_1
+0x4000882	          0x4889df	                            mov rdi, rbx	       264	bisect.c	FUNCTION_10	FOR_1
+0x4000885	    0x41bf00000000	                             mov r15d, 0	       264	bisect.c	FUNCTION_10	FOR_1
+0x400088b	      0xb800000000	                              mov eax, 0	       264	bisect.c	FUNCTION_10	FOR_1
+0x4000890	          0x488b17	                    mov rdx, qword [rdi]	       265	bisect.c	FUNCTION_10	FOR_1
+0x4000893	            0x8b32	                    mov esi, dword [rdx]	       266	bisect.c	FUNCTION_10	FOR_1
+0x4000895	          0xc1ee04	                              shr esi, 4	       266	bisect.c	FUNCTION_10	FOR_1
+0x4000898	    0x81e6ffffff07	                      and esi, 0x7ffffff	       266	bisect.c	FUNCTION_10	FOR_1
+0x400089e	        0x448d4001	                      lea r8d, [rax + 1]	       268	bisect.c	FUNCTION_10	FOR_1
+0x40008a2	            0x4898	                                    cdqe	       268	bisect.c	FUNCTION_10	FOR_1
+0x40008a4	      0x488d448500	                  lea rax, [rbp + rax*4]	       268	bisect.c	FUNCTION_10	FOR_1
+0x40008a9	        0x48894218	             mov qword [rdx + 0x18], rax	       268	bisect.c	FUNCTION_10	FOR_1
+0x40008ad	        0x488b5230	            mov rdx, qword [rdx + 0x30] 	        90	bisect.c	FUNCTION_5	FOR_1
+0x40008b1	          0x4885d2	                           test rdx, rdx	        90	bisect.c	FUNCTION_5	FOR_1
+0x40008b4	            0x742a	                            je 0x40008e0	        90	bisect.c	FUNCTION_5	FOR_1
+0x40008b6	      0xb900000000	                              mov ecx, 0	        90	bisect.c	FUNCTION_5	FOR_1
+0x40008bb	          0x488b02	                    mov rax, qword [rdx]	        91	bisect.c	FUNCTION_5	FOR_1	IF_1
+0x40008be	            0x8b00	                    mov eax, dword [rax]	        91	bisect.c	FUNCTION_5	FOR_1	IF_1
+0x40008c0	          0xc1e804	                              shr eax, 4	        91	bisect.c	FUNCTION_5	FOR_1	IF_1
+0x40008c3	          0x83e002	                              and eax, 2	        91	bisect.c	FUNCTION_5	FOR_1	IF_1
+0x40008c6	          0x83f801	                              cmp eax, 1	        93	bisect.c	FUNCTION_5	FOR_1
+0x40008c9	          0x83d100	                              adc ecx, 0	        93	bisect.c	FUNCTION_5	FOR_1
+0x40008cc	        0x488b5208	                mov rdx, qword [rdx + 8]	        90	bisect.c	FUNCTION_5	FOR_1
+0x40008d0	          0x4885d2	                           test rdx, rdx	        90	bisect.c	FUNCTION_5	FOR_1
+0x40008d3	            0x75e6	                           jne 0x40008bb	        90	bisect.c	FUNCTION_5	FOR_1
+0x40008d5	            0x85c9	                           test ecx, ecx	       269	bisect.c	FUNCTION_10	FOR_1	SWITCH_1	CALL_1
+0x40008d7	            0x7407	                            je 0x40008e0	       269	bisect.c	FUNCTION_10	FOR_1	SWITCH_1	CALL_1
+0x40008d9	          0x83f901	                              cmp ecx, 1	       269	bisect.c	FUNCTION_10	FOR_1	SWITCH_1	CALL_1
+0x40008dc	            0x741b	                            je 0x40008f9	       269	bisect.c	FUNCTION_10	FOR_1	SWITCH_1	CALL_1
+0x40008de	            0xeb28	                           jmp 0x4000908	       269	bisect.c	FUNCTION_10	FOR_1	SWITCH_1	CALL_1
+0x40008e0	        0x40f6c604	                             test sil, 4	       271	bisect.c	FUNCTION_10	FOR_1	SWITCH_1	IF_1
+0x40008e4	            0x752f	                           jne 0x4000915	       271	bisect.c	FUNCTION_10	FOR_1	SWITCH_1	IF_1
+0x40008e6	          0x488b07	                    mov rax, qword [rdi]	        82	bisect.c	FUNCTION_4
+0x40008e9	        0x488b4018	            mov rax, qword [rax + 0x18] 	        82	bisect.c	FUNCTION_4
+0x40008ed	    0xc70001000000	                      mov dword [rax], 1	        82	bisect.c	FUNCTION_4
+0x40008f3	        0x4183c701	                             add r15d, 1	       273	bisect.c	FUNCTION_10	FOR_1	SWITCH_1	IF_1
+0x40008f7	            0xeb1c	                           jmp 0x4000915	       273	bisect.c	FUNCTION_10	FOR_1	SWITCH_1	IF_1
+0x40008f9	          0x488b07	                    mov rax, qword [rdi]	        82	bisect.c	FUNCTION_4
+0x40008fc	        0x488b4018	            mov rax, qword [rax + 0x18] 	        82	bisect.c	FUNCTION_4
+0x4000900	    0xc700ffffffff	            mov dword [rax], 0xffffffff 	        82	bisect.c	FUNCTION_4
+0x4000906	            0xeb0d	                           jmp 0x4000915	        82	bisect.c	FUNCTION_4
+0x4000908	          0x488b07	                    mov rax, qword [rdi]	        82	bisect.c	FUNCTION_4
+0x400090b	        0x488b4018	            mov rax, qword [rax + 0x18] 	        82	bisect.c	FUNCTION_4
+0x400090f	    0xc700feffffff	            mov dword [rax], 0xfffffffe 	        82	bisect.c	FUNCTION_4
+0x4000915	        0x488b7f08	                mov rdi, qword [rdi + 8]	       264	bisect.c	FUNCTION_10	FOR_1
+0x4000919	          0x4489c0	                            mov eax, r8d	       268	bisect.c	FUNCTION_10	FOR_1
+0x400091c	          0x4885ff	                           test rdi, rdi	       264	bisect.c	FUNCTION_10	FOR_1
+0x400091f	     0xf856bffffff	                           jne 0x4000890	       264	bisect.c	FUNCTION_10	FOR_1
+0x4000925	          0x4989dc	                            mov r12, rbx	       264	bisect.c	FUNCTION_10	FOR_1
+0x4000928	        0x498b0424	                    mov rax, qword [r12]	       308	bisect.c	FUNCTION_10	FOR_2	IF_2
+0x400092c	          0xf60020	                   test byte [rax], 0x20	       308	bisect.c	FUNCTION_10	FOR_2	IF_2
+0x400092f	            0x7559	                           jne 0x400098a	       308	bisect.c	FUNCTION_10	FOR_2	IF_2
+0x4000931	        0x488b4018	            mov rax, qword [rax + 0x18] 	        77	bisect.c	FUNCTION_3
+0x4000935	          0x8338fe	     cmp dword [rax], 0xfffffffffffffffe	       310	bisect.c	FUNCTION_10	FOR_2	IF_3	CALL_5
+0x4000938	            0x7550	                           jne 0x400098a	       310	bisect.c	FUNCTION_10	FOR_2	IF_3	CALL_5
+0x400093a	          0x4c89e7	                            mov rdi, r12	       312	bisect.c	FUNCTION_10	FOR_2	CALL_7
+0x400093d	      0xe8fef6ffff	                 call sym.count_distance	       312	bisect.c	FUNCTION_10	FOR_2	CALL_7
+0x4000942	        0x498b1424	                    mov rdx, qword [r12]	        82	bisect.c	FUNCTION_4
+0x4000946	        0x488b5218	            mov rdx, qword [rdx + 0x18] 	        82	bisect.c	FUNCTION_4
+0x400094a	            0x8902	                    mov dword [rdx], eax	        82	bisect.c	FUNCTION_4
+0x400094c	          0x4889d8	                            mov rax, rbx	        82	bisect.c	FUNCTION_4
+0x400094f	          0x488b10	                    mov rdx, qword [rax]	        67	bisect.c	FUNCTION_2	WHILE_1
+0x4000952	    0x8122ffffefff	             and dword [rdx], 0xffefffff	        68	bisect.c	FUNCTION_2	WHILE_1
+0x4000958	        0x488b4008	                mov rax, qword [rax + 8]	        69	bisect.c	FUNCTION_2	WHILE_1
+0x400095c	          0x4885c0	                           test rax, rax	        66	bisect.c	FUNCTION_2	WHILE_1
+0x400095f	            0x75ee	                           jne 0x400094f	        66	bisect.c	FUNCTION_2	WHILE_1
+0x4000961	          0x4585ed	                         test r13d, r13d	       316	bisect.c	FUNCTION_10	FOR_2	IF_4	CALL_9
+0x4000964	            0x7520	                           jne 0x4000986	       316	bisect.c	FUNCTION_10	FOR_2	IF_4	CALL_9
+0x4000966	        0x498b0424	                    mov rax, qword [r12]	       103	bisect.c	FUNCTION_6	IF_1
+0x400096a	          0xf60040	                   test byte [rax], 0x40	       103	bisect.c	FUNCTION_6	IF_1
+0x400096d	            0x7517	                           jne 0x4000986	       103	bisect.c	FUNCTION_6	IF_1
+0x400096f	        0x488b4018	            mov rax, qword [rax + 0x18] 	        77	bisect.c	FUNCTION_3
+0x4000973	            0x8b00	                    mov eax, dword [rax]	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x4000975	             0x1c0	                            add eax, eax	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x4000977	          0x4429f0	                           sub eax, r14d	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x400097a	          0x83c001	                              add eax, 1	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x400097d	          0x83f802	                              cmp eax, 2	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x4000980	     0xf8605030000	                           jbe 0x4000c8b	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x4000986	        0x4183c701	                             add r15d, 1	       318	bisect.c	FUNCTION_10	FOR_2
+0x400098a	      0x4d8b642408	                mov r12, qword [r12 + 8]	       307	bisect.c	FUNCTION_10	FOR_2
+0x400098f	          0x4d85e4	                           test r12, r12	       307	bisect.c	FUNCTION_10	FOR_2
+0x4000992	            0x7594	                           jne 0x4000928	       307	bisect.c	FUNCTION_10	FOR_2
+0x4000994	      0xe986000000	                           jmp 0x4000a1f	       307	bisect.c	FUNCTION_10	FOR_2
+0x4000999	        0x498b0c24	                    mov rcx, qword [r12]	       326	bisect.c	FUNCTION_10	WHILE_1	FOR_3
+0x400099d	        0x488b7118	            mov rsi, qword [rcx + 0x18] 	        77	bisect.c	FUNCTION_3
+0x40009a1	          0x833e00	                      cmp dword [rsi], 0	       328	bisect.c	FUNCTION_10	WHILE_1	FOR_3	IF_5	CALL_10
+0x40009a4	            0x7962	                           jns 0x4000a08	       328	bisect.c	FUNCTION_10	WHILE_1	FOR_3	IF_5	CALL_10
+0x40009a6	        0x488b4130	            mov rax, qword [rcx + 0x30] 	       330	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4
+0x40009aa	          0x4885c0	                           test rax, rax	       330	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4
+0x40009ad	            0x7459	                            je 0x4000a08	       330	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4
+0x40009af	          0x488b10	                    mov rdx, qword [rax]	       331	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4	IF_6
+0x40009b2	          0xf60220	                   test byte [rdx], 0x20	       331	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4	IF_6
+0x40009b5	            0x750a	                           jne 0x40009c1	       331	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4	IF_6
+0x40009b7	        0x488b5218	            mov rdx, qword [rdx + 0x18] 	        77	bisect.c	FUNCTION_3
+0x40009bb	            0x8b12	                    mov edx, dword [rdx]	        77	bisect.c	FUNCTION_3
+0x40009bd	            0x85d2	                           test edx, edx	       333	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4	IF_7	CALL_11
+0x40009bf	            0x790b	                           jns 0x40009cc	       333	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4	IF_7	CALL_11
+0x40009c1	        0x488b4008	                mov rax, qword [rax + 8]	       330	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4
+0x40009c5	          0x4885c0	                           test rax, rax	       330	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4
+0x40009c8	            0x75e5	                           jne 0x40009af	       330	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4
+0x40009ca	            0xeb3c	                           jmp 0x4000a08	       330	bisect.c	FUNCTION_10	WHILE_1	FOR_3	FOR_4
+0x40009cc	          0x4885c0	                           test rax, rax	       336	bisect.c	FUNCTION_10	WHILE_1	FOR_3	IF_8
+0x40009cf	            0x7437	                            je 0x4000a08	       336	bisect.c	FUNCTION_10	WHILE_1	FOR_3	IF_8
+0x40009d1	          0xf60140	                   test byte [rcx], 0x40	       344	bisect.c	FUNCTION_10	WHILE_1	FOR_3	IF_9
+0x40009d4	            0x750b	                           jne 0x40009e1	       344	bisect.c	FUNCTION_10	WHILE_1	FOR_3	IF_9
+0x40009d6	          0x83c201	                              add edx, 1	        82	bisect.c	FUNCTION_4
+0x40009d9	            0x8916	                    mov dword [rsi], edx	        82	bisect.c	FUNCTION_4
+0x40009db	        0x4183c701	                             add r15d, 1	       346	bisect.c	FUNCTION_10	WHILE_1	FOR_3	IF_9
+0x40009df	            0xeb02	                           jmp 0x40009e3	       346	bisect.c	FUNCTION_10	WHILE_1	FOR_3	IF_9
+0x40009e1	            0x8916	                    mov dword [rsi], edx	        82	bisect.c	FUNCTION_4
+0x40009e3	          0x4585ed	                         test r13d, r13d	       354	bisect.c	FUNCTION_10	WHILE_1	FOR_3	IF_10	CALL_16
+0x40009e6	            0x7520	                           jne 0x4000a08	       354	bisect.c	FUNCTION_10	WHILE_1	FOR_3	IF_10	CALL_16
+0x40009e8	        0x498b0424	                    mov rax, qword [r12]	       103	bisect.c	FUNCTION_6	IF_1
+0x40009ec	          0xf60040	                   test byte [rax], 0x40	       103	bisect.c	FUNCTION_6	IF_1
+0x40009ef	            0x7517	                           jne 0x4000a08	       103	bisect.c	FUNCTION_6	IF_1
+0x40009f1	        0x488b4018	            mov rax, qword [rax + 0x18] 	        77	bisect.c	FUNCTION_3
+0x40009f5	            0x8b00	                    mov eax, dword [rax]	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x40009f7	             0x1c0	                            add eax, eax	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x40009f9	          0x4429f0	                           sub eax, r14d	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x40009fc	          0x83c001	                              add eax, 1	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x40009ff	          0x83f802	                              cmp eax, 2	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x4000a02	     0xf8683020000	                           jbe 0x4000c8b	       111	bisect.c	FUNCTION_6	SWITCH_1	CALL_1
+0x4000a08	      0x4d8b642408	                mov r12, qword [r12 + 8]	       324	bisect.c	FUNCTION_10	WHILE_1	FOR_3
+0x4000a0d	          0x4d85e4	                           test r12, r12	       324	bisect.c	FUNCTION_10	WHILE_1	FOR_3
+0x4000a10	            0x7587	                           jne 0x4000999	       324	bisect.c	FUNCTION_10	WHILE_1	FOR_3
+0x4000a12	          0x4539fe	                          cmp r14d, r15d	       323	bisect.c	FUNCTION_10	WHILE_1
+0x4000a15	            0x7f0d	                            jg 0x4000a24	       323	bisect.c	FUNCTION_10	WHILE_1
+0x4000a17	            0xeb19	                           jmp 0x4000a32	       323	bisect.c	FUNCTION_10	WHILE_1
+0x4000a19	    0x41bf00000000	                             mov r15d, 0	       262	bisect.c	FUNCTION_10
+0x4000a1f	          0x4539fe	                          cmp r14d, r15d	       323	bisect.c	FUNCTION_10	WHILE_1
+0x4000a22	            0x7e0e	                           jle 0x4000a32	       323	bisect.c	FUNCTION_10	WHILE_1
+0x4000a24	          0x4989dc	                            mov r12, rbx	       324	bisect.c	FUNCTION_10	WHILE_1	FOR_3
+0x4000a27	          0x4885db	                           test rbx, rbx	       324	bisect.c	FUNCTION_10	WHILE_1	FOR_3
+0x4000a2a	     0xf8569ffffff	                           jne 0x4000999	       324	bisect.c	FUNCTION_10	WHILE_1	FOR_3
+0x4000a30	            0xebe0	                           jmp 0x4000a12	       324	bisect.c	FUNCTION_10	WHILE_1	FOR_3
+0x4000a32	          0x4585ed	                         test r13d, r13d	       361	bisect.c	FUNCTION_10	IF_11
+0x4000a35	            0x7543	                           jne 0x4000a7a	       361	bisect.c	FUNCTION_10	IF_11
+0x4000a37	          0x4885db	                           test rbx, rbx	       167	bisect.c	FUNCTION_7	FOR_1
+0x4000a3a	     0xf84fc010000	                            je 0x4000c3c	       167	bisect.c	FUNCTION_7	FOR_1
+0x4000a40	          0x4989dc	                            mov r12, rbx	       167	bisect.c	FUNCTION_7	FOR_1
+0x4000a43	          0x4889d8	                            mov rax, rbx	       167	bisect.c	FUNCTION_7	FOR_1
+0x4000a46	      0xbeffffffff	                     mov esi, 0xffffffff	       167	bisect.c	FUNCTION_7	FOR_1
+0x4000a4b	          0x488b10	                    mov rdx, qword [rax]	       169	bisect.c	FUNCTION_7	FOR_1
+0x4000a4e	          0xf60240	                   test byte [rdx], 0x40	       171	bisect.c	FUNCTION_7	FOR_1	IF_1
+0x4000a51	            0x7519	                           jne 0x4000a6c	       171	bisect.c	FUNCTION_7	FOR_1	IF_1
+0x4000a53	        0x488b5218	            mov rdx, qword [rdx + 0x18] 	        77	bisect.c	FUNCTION_3
+0x4000a57	            0x8b12	                    mov edx, dword [rdx]	        77	bisect.c	FUNCTION_3
+0x4000a59	          0x4489f1	                           mov ecx, r14d	       174	bisect.c	FUNCTION_7	FOR_1	IF_2
+0x4000a5c	            0x29d1	                            sub ecx, edx	       174	bisect.c	FUNCTION_7	FOR_1	IF_2
+0x4000a5e	            0x39ca	                            cmp edx, ecx	       174	bisect.c	FUNCTION_7	FOR_1	IF_2
+0x4000a60	           0xf4fd1	                          cmovg edx, ecx	       174	bisect.c	FUNCTION_7	FOR_1	IF_2
+0x4000a63	            0x39f2	                            cmp edx, esi	       176	bisect.c	FUNCTION_7	FOR_1	IF_3
+0x4000a65	            0x7e05	                           jle 0x4000a6c	       176	bisect.c	FUNCTION_7	FOR_1	IF_3
+0x4000a67	            0x89d6	                            mov esi, edx	       178	bisect.c	FUNCTION_7	FOR_1	IF_3
+0x4000a69	          0x4989c4	                            mov r12, rax	       176	bisect.c	FUNCTION_7	FOR_1	IF_3
+0x4000a6c	        0x488b4008	                mov rax, qword [rax + 8]	       167	bisect.c	FUNCTION_7	FOR_1
+0x4000a70	          0x4885c0	                           test rax, rax	       167	bisect.c	FUNCTION_7	FOR_1
+0x4000a73	            0x75d6	                           jne 0x4000a4b	       167	bisect.c	FUNCTION_7	FOR_1
+0x4000a75	      0xe911020000	                           jmp 0x4000c8b	       167	bisect.c	FUNCTION_7	FOR_1
+0x4000a7a	          0x4963fe	                        movsxd rdi, r14d	       204	bisect.c	FUNCTION_9	CALL_1
+0x4000a7d	      0xbe10000000	                           mov esi, 0x10	       204	bisect.c	FUNCTION_9	CALL_1
+0x4000a82	      0xe800000000	                          call 0x4000a87	       204	bisect.c	FUNCTION_9	CALL_1
+0x4000a87	      0x4889442408	                mov qword [rsp + 8], rax	       204	bisect.c	FUNCTION_9	CALL_1
+0x4000a8c	    0x48c744243000	               mov qword [rsp + 0x30], 0	       205	bisect.c	FUNCTION_9
+0x4000a95	    0x48c744243800	               mov qword [rsp + 0x38], 0	       205	bisect.c	FUNCTION_9
+0x4000a9e	    0x48c744244000	               mov qword [rsp + 0x40], 0	       205	bisect.c	FUNCTION_9
+0x4000aa7	          0x4885db	                           test rbx, rbx	       208	bisect.c	FUNCTION_9	FOR_1
+0x4000aaa	     0xf8420010000	                            je 0x4000bd0	       208	bisect.c	FUNCTION_9	FOR_1
+0x4000ab0	          0x4889d8	                            mov rax, rbx	       208	bisect.c	FUNCTION_9	FOR_1
+0x4000ab3	      0xbf00000000	                              mov edi, 0	       208	bisect.c	FUNCTION_9	FOR_1
+0x4000ab8	          0x488b10	                    mov rdx, qword [rax]	       210	bisect.c	FUNCTION_9	FOR_1
+0x4000abb	          0xf60240	                   test byte [rdx], 0x40	       212	bisect.c	FUNCTION_9	FOR_1	IF_1
+0x4000abe	            0x7528	                           jne 0x4000ae8	       212	bisect.c	FUNCTION_9	FOR_1	IF_1
+0x4000ac0	        0x488b4a18	            mov rcx, qword [rdx + 0x18] 	        77	bisect.c	FUNCTION_3
+0x4000ac4	            0x8b31	                    mov esi, dword [rcx]	        77	bisect.c	FUNCTION_3
+0x4000ac6	          0x4589f0	                           mov r8d, r14d	       215	bisect.c	FUNCTION_9	FOR_1	IF_2
+0x4000ac9	          0x4129f0	                            sub r8d, esi	       215	bisect.c	FUNCTION_9	FOR_1	IF_2
+0x4000acc	          0x4863cf	                         movsxd rcx, edi	       217	bisect.c	FUNCTION_9	FOR_1
+0x4000acf	        0x48c1e104	                              shl rcx, 4	       217	bisect.c	FUNCTION_9	FOR_1
+0x4000ad3	      0x48034c2408	                add rcx, qword [rsp + 8]	       217	bisect.c	FUNCTION_9	FOR_1
+0x4000ad8	          0x488911	                    mov qword [rcx], rdx	       217	bisect.c	FUNCTION_9	FOR_1
+0x4000adb	          0x4439c6	                            cmp esi, r8d	       218	bisect.c	FUNCTION_9	FOR_1
+0x4000ade	        0x410f4ff0	                          cmovg esi, r8d	       218	bisect.c	FUNCTION_9	FOR_1
+0x4000ae2	          0x897108	                mov dword [rcx + 8], esi	       218	bisect.c	FUNCTION_9	FOR_1
+0x4000ae5	          0x83c701	                              add edi, 1	       219	bisect.c	FUNCTION_9	FOR_1
+0x4000ae8	        0x488b4008	                mov rax, qword [rax + 8]	       208	bisect.c	FUNCTION_9	FOR_1
+0x4000aec	          0x4885c0	                           test rax, rax	       208	bisect.c	FUNCTION_9	FOR_1
+0x4000aef	            0x75c7	                           jne 0x4000ab8	       208	bisect.c	FUNCTION_9	FOR_1
+0x4000af1	          0x893c24	                    mov dword [rsp], edi	       208	bisect.c	FUNCTION_9	FOR_1
+0x4000af4	          0x4863f7	                         movsxd rsi, edi	       221	bisect.c	FUNCTION_9
+0x4000af7	        0x4883fe01	                              cmp rsi, 1	      1048	git-compat-util.h	FUNCTION_69	IF_1
+0x4000afb	     0xf8694010000	                           jbe 0x4000c95	      1048	git-compat-util.h	FUNCTION_69	IF_1
+0x4000b01	      0xb900000000	                              mov ecx, 0	      1049	git-compat-util.h	FUNCTION_69	IF_1
+0x4000b06	      0xba10000000	                           mov edx, 0x10	      1049	git-compat-util.h	FUNCTION_69	IF_1
+0x4000b0b	      0x488b7c2408	                mov rdi, qword [rsp + 8]	      1049	git-compat-util.h	FUNCTION_69	IF_1
+0x4000b10	      0xe800000000	                          call 0x4000b15	      1049	git-compat-util.h	FUNCTION_69	IF_1
+0x4000b15	      0xe97b010000	                           jmp 0x4000c95	      1049	git-compat-util.h	FUNCTION_69	IF_1
+0x4000b1a	      0x4c8b6c2408	                mov r13, qword [rsp + 8]	      1049	git-compat-util.h	FUNCTION_69	IF_1
+0x4000b1f	          0x4989dc	                            mov r12, rbx	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000b22	    0x41bf00000000	                             mov r15d, 0	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000b28	          0x8b0424	                    mov eax, dword [rsp]	       230	bisect.c	FUNCTION_9	FOR_2	IF_3
+0x4000b2b	          0x83e801	                              sub eax, 1	       230	bisect.c	FUNCTION_9	FOR_2	IF_3
+0x4000b2e	        0x89442414	             mov dword [rsp + 0x14], eax	       230	bisect.c	FUNCTION_9	FOR_2	IF_3
+0x4000b32	      0x48895c2428	             mov qword [rsp + 0x28], rbx	       230	bisect.c	FUNCTION_9	FOR_2	IF_3
+0x4000b37	          0x4c89eb	                            mov rbx, r13	       230	bisect.c	FUNCTION_9	FOR_2	IF_3
+0x4000b3a	        0x4d8b7500	                    mov r14, qword [r13]	       223	bisect.c	FUNCTION_9	FOR_2
+0x4000b3e	    0x48c744243800	               mov qword [rsp + 0x38], 0	       164	strbuf.h	FUNCTION_74
+0x4000b47	      0x488b442440	            mov rax, qword [rsp + 0x40] 	       165	strbuf.h	FUNCTION_74	IF_2
+0x4000b4c	    0x483d00000000	                              cmp rax, 0	       165	strbuf.h	FUNCTION_74	IF_2
+0x4000b52	            0x7405	                            je 0x4000b59	       165	strbuf.h	FUNCTION_74	IF_2
+0x4000b54	          0xc60000	                       mov byte [rax], 0	       166	strbuf.h	FUNCTION_74	IF_2
+0x4000b57	            0xeb22	                           jmp 0x4000b7b	       166	strbuf.h	FUNCTION_74	IF_2
+0x4000b59	    0x803d00000000	                cmp byte [0x04000b60], 0	       168	strbuf.h	FUNCTION_74	CALL_2
+0x4000b60	            0x7419	                            je 0x4000b7b	       168	strbuf.h	FUNCTION_74	CALL_2
+0x4000b62	      0xb900000000	                              mov ecx, 0	       168	strbuf.h	FUNCTION_74	CALL_2
+0x4000b67	      0xbaa8000000	                           mov edx, 0xa8	       168	strbuf.h	FUNCTION_74	CALL_2
+0x4000b6c	      0xbe00000000	                              mov esi, 0	       168	strbuf.h	FUNCTION_74	CALL_2
+0x4000b71	      0xbf00000000	                              mov edi, 0	       168	strbuf.h	FUNCTION_74	CALL_2
+0x4000b76	      0xe800000000	                          call 0x4000b7b	       168	strbuf.h	FUNCTION_74	CALL_2
+0x4000b7b	          0x8b5308	                mov edx, dword [rbx + 8]	       226	bisect.c	FUNCTION_9	FOR_2	CALL_3
+0x4000b7e	      0xbe00000000	                              mov esi, 0	       226	bisect.c	FUNCTION_9	FOR_2	CALL_3
+0x4000b83	      0x488d7c2430	                   lea rdi, [rsp + 0x30]	       226	bisect.c	FUNCTION_9	FOR_2	CALL_3
+0x4000b88	      0xb800000000	                              mov eax, 0	       226	bisect.c	FUNCTION_9	FOR_2	CALL_3
+0x4000b8d	      0xe800000000	                          call 0x4000b92	       226	bisect.c	FUNCTION_9	FOR_2	CALL_3
+0x4000b92	          0x4c89f2	                            mov rdx, r14	       227	bisect.c	FUNCTION_9	FOR_2	CALL_4
+0x4000b95	      0x488b742440	            mov rsi, qword [rsp + 0x40] 	       227	bisect.c	FUNCTION_9	FOR_2	CALL_4
+0x4000b9a	      0xbf00000000	                              mov edi, 0	       227	bisect.c	FUNCTION_9	FOR_2	CALL_4
+0x4000b9f	      0xe800000000	                          call 0x4000ba4	       227	bisect.c	FUNCTION_9	FOR_2	CALL_4
+0x4000ba4	          0x488b03	                    mov rax, qword [rbx]	       229	bisect.c	FUNCTION_9	FOR_2
+0x4000ba7	        0x49890424	                    mov qword [r12], rax	       229	bisect.c	FUNCTION_9	FOR_2
+0x4000bab	      0x44397c2414	           cmp dword [rsp + 0x14], r15d 	       230	bisect.c	FUNCTION_9	FOR_2	IF_3
+0x4000bb0	            0x7e05	                           jle 0x4000bb7	       230	bisect.c	FUNCTION_9	FOR_2	IF_3
+0x4000bb2	      0x4d8b642408	                mov r12, qword [r12 + 8]	       231	bisect.c	FUNCTION_9	FOR_2	IF_3
+0x4000bb7	        0x4183c701	                             add r15d, 1	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000bbb	        0x4983c510	                           add r13, 0x10	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000bbf	        0x443b3c24	                   cmp r15d, dword [rsp]	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000bc3	     0xf856effffff	                           jne 0x4000b37	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000bc9	      0x488b5c2428	            mov rbx, qword [rsp + 0x28] 	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000bce	            0xeb03	                           jmp 0x4000bd3	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000bd0	          0x4989dc	                            mov r12, rbx	       208	bisect.c	FUNCTION_9	FOR_1
+0x4000bd3	          0x4d85e4	                           test r12, r12	       233	bisect.c	FUNCTION_9	IF_4
+0x4000bd6	            0x7413	                            je 0x4000beb	       233	bisect.c	FUNCTION_9	IF_4
+0x4000bd8	      0x498b7c2408	                mov rdi, qword [r12 + 8]	       234	bisect.c	FUNCTION_9	IF_4	CALL_5
+0x4000bdd	      0xe800000000	                          call 0x4000be2	       234	bisect.c	FUNCTION_9	IF_4	CALL_5
+0x4000be2	    0x49c744240800	                  mov qword [r12 + 8], 0	       235	bisect.c	FUNCTION_9	IF_4
+0x4000beb	      0x488d7c2430	                   lea rdi, [rsp + 0x30]	       237	bisect.c	FUNCTION_9	CALL_6
+0x4000bf0	      0xe800000000	                          call 0x4000bf5	       237	bisect.c	FUNCTION_9	CALL_6
+0x4000bf5	      0x488b7c2408	                mov rdi, qword [rsp + 8]	       238	bisect.c	FUNCTION_9	CALL_7
+0x4000bfa	      0xe800000000	                          call 0x4000bff	       238	bisect.c	FUNCTION_9	CALL_7
+0x4000bff	          0x4885db	                           test rbx, rbx	       404	bisect.c	FUNCTION_11	IF_3
+0x4000c02	            0x7522	                           jne 0x4000c26	       404	bisect.c	FUNCTION_11	IF_3
+0x4000c04	          0x4989dc	                            mov r12, rbx	       403	bisect.c	FUNCTION_11	CALL_3
+0x4000c07	            0xeb36	                           jmp 0x4000c3f	       403	bisect.c	FUNCTION_11	CALL_3
+0x4000c09	        0x498b0424	                    mov rax, qword [r12]	       406	bisect.c	FUNCTION_11	IF_3	IF_4
+0x4000c0d	          0x488903	                    mov qword [rbx], rax	       406	bisect.c	FUNCTION_11	IF_3	IF_4
+0x4000c10	        0x488b7b08	                mov rdi, qword [rbx + 8]	       407	bisect.c	FUNCTION_11	IF_3	IF_4	CALL_4
+0x4000c14	      0xe800000000	                          call 0x4000c19	       407	bisect.c	FUNCTION_11	IF_3	IF_4	CALL_4
+0x4000c19	    0x48c743080000	                  mov qword [rbx + 8], 0	       409	bisect.c	FUNCTION_11	IF_3	IF_4
+0x4000c21	          0x4989dc	                            mov r12, rbx	       409	bisect.c	FUNCTION_11	IF_3	IF_4
+0x4000c24	            0xeb03	                           jmp 0x4000c29	       409	bisect.c	FUNCTION_11	IF_3	IF_4
+0x4000c26	          0x4989dc	                            mov r12, rbx	       404	bisect.c	FUNCTION_11	IF_3
+0x4000c29	        0x498b0424	                    mov rax, qword [r12]	        77	bisect.c	FUNCTION_3
+0x4000c2d	        0x488b4018	            mov rax, qword [rax + 0x18] 	        77	bisect.c	FUNCTION_3
+0x4000c31	            0x8b00	                    mov eax, dword [rax]	        77	bisect.c	FUNCTION_3
+0x4000c33	      0x488b5c2420	            mov rbx, qword [rsp + 0x20] 	       411	bisect.c	FUNCTION_11	IF_3	CALL_5
+0x4000c38	            0x8903	                    mov dword [rbx], eax	       411	bisect.c	FUNCTION_11	IF_3	CALL_5
+0x4000c3a	            0xeb03	                           jmp 0x4000c3f	       411	bisect.c	FUNCTION_11	IF_3	CALL_5
+0x4000c3c	          0x4989dc	                            mov r12, rbx	       403	bisect.c	FUNCTION_11	CALL_3
+0x4000c3f	          0x4889ef	                            mov rdi, rbp	       413	bisect.c	FUNCTION_11	CALL_6
+0x4000c42	      0xe800000000	                          call 0x4000c47	       413	bisect.c	FUNCTION_11	CALL_6
+0x4000c47	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       414	bisect.c	FUNCTION_11
+0x4000c4c	          0x4c8920	                    mov qword [rax], r12	       414	bisect.c	FUNCTION_11
+0x4000c4f	      0x488b442448	            mov rax, qword [rsp + 0x48] 	       415	bisect.c	FUNCTION_11
+0x4000c54	    0x644833042528	                xor rax, qword fs:[0x28]	       415	bisect.c	FUNCTION_11
+0x4000c5d	            0x744d	                            je 0x4000cac	       415	bisect.c	FUNCTION_11
+0x4000c5f	            0xeb46	                           jmp 0x4000ca7	       415	bisect.c	FUNCTION_11
+0x4000c61	        0x488b0424	                    mov rax, qword [rsp]	       399	bisect.c	FUNCTION_11
+0x4000c65	    0xc70000000000	                      mov dword [rax], 0	       399	bisect.c	FUNCTION_11
+0x4000c6b	      0xbe04000000	                              mov esi, 4	       400	bisect.c	FUNCTION_11	CALL_2
+0x4000c70	      0xbf00000000	                              mov edi, 0	       400	bisect.c	FUNCTION_11	CALL_2
+0x4000c75	      0xe800000000	                          call 0x4000c7a	       400	bisect.c	FUNCTION_11	CALL_2
+0x4000c7a	          0x4889c5	                            mov rbp, rax	       400	bisect.c	FUNCTION_11	CALL_2
+0x4000c7d	          0x4c89e3	                            mov rbx, r12	       380	bisect.c	FUNCTION_11	FOR_1
+0x4000c80	    0x41be00000000	                             mov r14d, 0	       380	bisect.c	FUNCTION_11	FOR_1
+0x4000c86	      0xe9a7fdffff	                           jmp 0x4000a32	       380	bisect.c	FUNCTION_11	FOR_1
+0x4000c8b	          0x4d85e4	                           test r12, r12	       404	bisect.c	FUNCTION_11	IF_3
+0x4000c8e	            0x74af	                            je 0x4000c3f	       404	bisect.c	FUNCTION_11	IF_3
+0x4000c90	      0xe974ffffff	                           jmp 0x4000c09	       404	bisect.c	FUNCTION_11	IF_3
+0x4000c95	        0x833c2400	                      cmp dword [rsp], 0	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000c99	     0xf8f7bfeffff	                            jg 0x4000b1a	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000c9f	          0x4989dc	                            mov r12, rbx	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000ca2	      0xe931ffffff	                           jmp 0x4000bd8	       222	bisect.c	FUNCTION_9	FOR_2
+0x4000ca7	      0xe800000000	                          call 0x4000cac	       415	bisect.c	FUNCTION_11
+0x4000cac	        0x4883c458	                           add rsp, 0x58	       415	bisect.c	FUNCTION_11
+0x4000cb0	              0x5b	                                 pop rbx	       415	bisect.c	FUNCTION_11
+0x4000cb1	              0x5d	                                 pop rbp	       415	bisect.c	FUNCTION_11
+0x4000cb2	            0x415c	                                 pop r12	       415	bisect.c	FUNCTION_11
+0x4000cb4	            0x415d	                                 pop r13	       415	bisect.c	FUNCTION_11
+0x4000cb6	            0x415e	                                 pop r14	       415	bisect.c	FUNCTION_11
+0x4000cb8	            0x415f	                                 pop r15	       415	bisect.c	FUNCTION_11
+0x4000cba	              0xc3	                                     ret	       415	bisect.c	FUNCTION_11
+join_sha1_array_hex	functions,0:IF,1:FOR,1:CALL,4:SWITCH,0:DO,0:ELSE,0:WHILE,0	68
+0x400034b	            0x4156	                                push r14	       470	bisect.c	FUNCTION_15
+0x400034d	            0x4155	                                push r13	       470	bisect.c	FUNCTION_15
+0x400034f	            0x4154	                                push r12	       470	bisect.c	FUNCTION_15
+0x4000351	              0x55	                                push rbp	       470	bisect.c	FUNCTION_15
+0x4000352	              0x53	                                push rbx	       470	bisect.c	FUNCTION_15
+0x4000353	        0x4883ec20	                           sub rsp, 0x20	       470	bisect.c	FUNCTION_15
+0x4000357	          0x4889fd	                            mov rbp, rdi	       470	bisect.c	FUNCTION_15
+0x400035a	          0x4189f6	                           mov r14d, esi	       470	bisect.c	FUNCTION_15
+0x400035d	    0x64488b042528	                mov rax, qword fs:[0x28]	       470	bisect.c	FUNCTION_15
+0x4000366	      0x4889442418	             mov qword [rsp + 0x18], rax	       470	bisect.c	FUNCTION_15
+0x400036b	            0x31c0	                            xor eax, eax	       470	bisect.c	FUNCTION_15
+0x400036d	    0x48c704240000	                      mov qword [rsp], 0	       471	bisect.c	FUNCTION_15
+0x4000375	    0x48c744240800	                  mov qword [rsp + 8], 0	       471	bisect.c	FUNCTION_15
+0x400037e	    0x48c744241000	               mov qword [rsp + 0x10], 0	       471	bisect.c	FUNCTION_15
+0x4000387	      0xbb00000000	                              mov ebx, 0	       474	bisect.c	FUNCTION_15	FOR_1
+0x400038c	    0x49c7c5ffffff	             mov r13, 0xffffffffffffffff	       279	strbuf.h	FUNCTION_76	CALL_2
+0x4000393	    0x41bc00000000	                             mov r12d, 0	       279	strbuf.h	FUNCTION_76	CALL_2
+0x4000399	            0xeb7f	                           jmp 0x400041a	       474	bisect.c	FUNCTION_15	FOR_1
+0x400039b	          0x4863c3	                         movsxd rax, ebx	       475	bisect.c	FUNCTION_15	FOR_1	CALL_2
+0x400039e	        0x488d1480	                  lea rdx, [rax + rax*4]	       475	bisect.c	FUNCTION_15	FOR_1	CALL_2
+0x40003a2	        0x488b4500	                    mov rax, qword [rbp]	       475	bisect.c	FUNCTION_15	FOR_1	CALL_2
+0x40003a6	        0x488d3c90	                  lea rdi, [rax + rdx*4]	       475	bisect.c	FUNCTION_15	FOR_1	CALL_2
+0x40003aa	      0xe800000000	                          call 0x40003af	       475	bisect.c	FUNCTION_15	FOR_1	CALL_2
+0x40003af	          0x4889c6	                            mov rsi, rax	       475	bisect.c	FUNCTION_15	FOR_1	CALL_2
+0x40003b2	          0x4c89e9	                            mov rcx, r13	       279	strbuf.h	FUNCTION_76	CALL_2
+0x40003b5	          0x4889c7	                            mov rdi, rax	       279	strbuf.h	FUNCTION_76	CALL_2
+0x40003b8	          0x4489e0	                           mov eax, r12d	       279	strbuf.h	FUNCTION_76	CALL_2
+0x40003bb	            0xf2ae	              repne scasb al, byte [rdi]	       279	strbuf.h	FUNCTION_76	CALL_2
+0x40003bd	          0x48f7d1	                                 not rcx	       279	strbuf.h	FUNCTION_76	CALL_2
+0x40003c0	        0x488d51ff	                      lea rdx, [rcx - 1]	       279	strbuf.h	FUNCTION_76	CALL_2
+0x40003c4	          0x4889e7	                            mov rdi, rsp	       279	strbuf.h	FUNCTION_76	CALL_2
+0x40003c7	      0xe800000000	                          call 0x40003cc	       279	strbuf.h	FUNCTION_76	CALL_2
+0x40003cc	          0x83c301	                              add ebx, 1	       476	bisect.c	FUNCTION_15	FOR_1	IF_1
+0x40003cf	          0x3b5d08	                cmp ebx, dword [rbp + 8]	       476	bisect.c	FUNCTION_15	FOR_1	IF_1
+0x40003d2	            0x7d46	                           jge 0x400041a	       476	bisect.c	FUNCTION_15	FOR_1	IF_1
+0x40003d4	        0x488b0424	                    mov rax, qword [rsp]	       141	strbuf.h	FUNCTION_73
+0x40003d8	          0x4885c0	                           test rax, rax	       141	strbuf.h	FUNCTION_73
+0x40003db	            0x740b	                            je 0x40003e8	       141	strbuf.h	FUNCTION_73
+0x40003dd	        0x4883e801	                              sub rax, 1	       227	strbuf.h	FUNCTION_75	IF_1	CALL_1
+0x40003e1	      0x483b442408	                cmp rax, qword [rsp + 8]	       227	strbuf.h	FUNCTION_75	IF_1	CALL_1
+0x40003e6	            0x750d	                           jne 0x40003f5	       227	strbuf.h	FUNCTION_75	IF_1	CALL_1
+0x40003e8	      0xbe01000000	                              mov esi, 1	       228	strbuf.h	FUNCTION_75	CALL_2
+0x40003ed	          0x4889e7	                            mov rdi, rsp	       228	strbuf.h	FUNCTION_75	CALL_2
+0x40003f0	      0xe800000000	                          call 0x40003f5	       228	strbuf.h	FUNCTION_75	CALL_2
+0x40003f5	      0x488b442408	                mov rax, qword [rsp + 8]	       229	strbuf.h	FUNCTION_75
+0x40003fa	        0x488d5001	                      lea rdx, [rax + 1]	       229	strbuf.h	FUNCTION_75
+0x40003fe	      0x4889542408	                mov qword [rsp + 8], rdx	       229	strbuf.h	FUNCTION_75
+0x4000403	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       229	strbuf.h	FUNCTION_75
+0x4000408	        0x44883402	              mov byte [rdx + rax], r14b	       229	strbuf.h	FUNCTION_75
+0x400040c	      0x488b442408	                mov rax, qword [rsp + 8]	       230	strbuf.h	FUNCTION_75
+0x4000411	      0x488b542410	            mov rdx, qword [rsp + 0x10] 	       230	strbuf.h	FUNCTION_75
+0x4000416	        0xc6040200	                 mov byte [rdx + rax], 0	       230	strbuf.h	FUNCTION_75
+0x400041a	          0x3b5d08	                cmp ebx, dword [rbp + 8]	       474	bisect.c	FUNCTION_15	FOR_1
+0x400041d	     0xf8c78ffffff	                            jl 0x400039b	       474	bisect.c	FUNCTION_15	FOR_1
+0x4000423	      0xbe00000000	                              mov esi, 0	       480	bisect.c	FUNCTION_15	CALL_4
+0x4000428	          0x4889e7	                            mov rdi, rsp	       480	bisect.c	FUNCTION_15	CALL_4
+0x400042b	      0xe800000000	                          call 0x4000430	       480	bisect.c	FUNCTION_15	CALL_4
+0x4000430	      0x488b5c2418	            mov rbx, qword [rsp + 0x18] 	       481	bisect.c	FUNCTION_15
+0x4000435	    0x6448331c2528	                xor rbx, qword fs:[0x28]	       481	bisect.c	FUNCTION_15
+0x400043e	            0x7405	                            je 0x4000445	       481	bisect.c	FUNCTION_15
+0x4000440	      0xe800000000	                          call 0x4000445	       481	bisect.c	FUNCTION_15
+0x4000445	        0x4883c420	                           add rsp, 0x20	       481	bisect.c	FUNCTION_15
+0x4000449	              0x5b	                                 pop rbx	       481	bisect.c	FUNCTION_15
+0x400044a	              0x5d	                                 pop rbp	       481	bisect.c	FUNCTION_15
+0x400044b	            0x415c	                                 pop r12	       481	bisect.c	FUNCTION_15
+0x400044d	            0x415d	                                 pop r13	       481	bisect.c	FUNCTION_15
+0x400044f	            0x415e	                                 pop r14	       481	bisect.c	FUNCTION_15
+0x4000451	              0xc3	                                     ret	       481	bisect.c	FUNCTION_15
+filter_skipped	functions,0:IF,10:FOR,0:CALL,1:SWITCH,0:DO,0:ELSE,2:WHILE,1	87
+0x4000cbb	            0x4157	                                push r15	       501	bisect.c	FUNCTION_16
+0x4000cbd	            0x4156	                                push r14	       501	bisect.c	FUNCTION_16
+0x4000cbf	            0x4155	                                push r13	       501	bisect.c	FUNCTION_16
+0x4000cc1	            0x4154	                                push r12	       501	bisect.c	FUNCTION_16
+0x4000cc3	              0x55	                                push rbp	       501	bisect.c	FUNCTION_16
+0x4000cc4	              0x53	                                push rbx	       501	bisect.c	FUNCTION_16
+0x4000cc5	        0x4883ec28	                           sub rsp, 0x28	       501	bisect.c	FUNCTION_16
+0x4000cc9	          0x4889fb	                            mov rbx, rdi	       501	bisect.c	FUNCTION_16
+0x4000ccc	          0x4989f5	                            mov r13, rsi	       501	bisect.c	FUNCTION_16
+0x4000ccf	        0x8954240c	              mov dword [rsp + 0xc], edx	       501	bisect.c	FUNCTION_16
+0x4000cd3	          0x4989ce	                            mov r14, rcx	       501	bisect.c	FUNCTION_16
+0x4000cd6	          0x4d89c4	                             mov r12, r8	       501	bisect.c	FUNCTION_16
+0x4000cd9	    0x64488b042528	                mov rax, qword fs:[0x28]	       501	bisect.c	FUNCTION_16
+0x4000ce2	      0x4889442418	             mov qword [rsp + 0x18], rax	       501	bisect.c	FUNCTION_16
+0x4000ce7	            0x31c0	                            xor eax, eax	       501	bisect.c	FUNCTION_16
+0x4000ce9	    0x48c744241000	               mov qword [rsp + 0x10], 0	       502	bisect.c	FUNCTION_16
+0x4000cf2	    0x48c706000000	                      mov qword [rsi], 0	       504	bisect.c	FUNCTION_16
+0x4000cf9	          0x4d85c0	                             test r8, r8	       506	bisect.c	FUNCTION_16	IF_1
+0x4000cfc	            0x7407	                            je 0x4000d05	       506	bisect.c	FUNCTION_16	IF_1
+0x4000cfe	    0x41c700000000	                       mov dword [r8], 0	       507	bisect.c	FUNCTION_16	IF_1
+0x4000d05	          0x4d85f6	                           test r14, r14	       508	bisect.c	FUNCTION_16	IF_2
+0x4000d08	            0x7407	                            je 0x4000d11	       508	bisect.c	FUNCTION_16	IF_2
+0x4000d0a	    0x41c706000000	                      mov dword [r14], 0	       509	bisect.c	FUNCTION_16	IF_2
+0x4000d11	          0x4889d8	                            mov rax, rbx	       512	bisect.c	FUNCTION_16	IF_3
+0x4000d14	    0x833d00000000	               cmp dword [0x04000d1b], 0	       511	bisect.c	FUNCTION_16	IF_3
+0x4000d1b	     0xf84b1000000	                            je 0x4000dd2	       511	bisect.c	FUNCTION_16	IF_3
+0x4000d21	          0x4885db	                           test rbx, rbx	       514	bisect.c	FUNCTION_16	WHILE_1
+0x4000d24	     0xf8485000000	                            je 0x4000daf	       514	bisect.c	FUNCTION_16	WHILE_1
+0x4000d2a	      0x4c8d7c2410	                   lea r15, [rsp + 0x10]	       514	bisect.c	FUNCTION_16	WHILE_1
+0x4000d2f	        0x488b6b08	                mov rbp, qword [rbx + 8]	       515	bisect.c	FUNCTION_16	WHILE_1
+0x4000d33	    0x48c743080000	                  mov qword [rbx + 8], 0	       516	bisect.c	FUNCTION_16	WHILE_1
+0x4000d3b	          0x488b03	                    mov rax, qword [rbx]	       517	bisect.c	FUNCTION_16	WHILE_1	IF_4	CALL_1
+0x4000d3e	        0x488d7004	                      lea rsi, [rax + 4]	       517	bisect.c	FUNCTION_16	WHILE_1	IF_4	CALL_1
+0x4000d42	      0xbf00000000	                              mov edi, 0	       517	bisect.c	FUNCTION_16	WHILE_1	IF_4	CALL_1
+0x4000d47	      0xe800000000	                          call 0x4000d4c	       517	bisect.c	FUNCTION_16	WHILE_1	IF_4	CALL_1
+0x4000d4c	            0x85c0	                           test eax, eax	       517	bisect.c	FUNCTION_16	WHILE_1	IF_4	CALL_1
+0x4000d4e	            0x781e	                            js 0x4000d6e	       517	bisect.c	FUNCTION_16	WHILE_1	IF_4	CALL_1
+0x4000d50	          0x4d85e4	                           test r12, r12	       518	bisect.c	FUNCTION_16	WHILE_1	IF_4	IF_5
+0x4000d53	            0x740f	                            je 0x4000d64	       518	bisect.c	FUNCTION_16	WHILE_1	IF_4	IF_5
+0x4000d55	      0x41833c2400	                      cmp dword [r12], 0	       518	bisect.c	FUNCTION_16	WHILE_1	IF_4	IF_5
+0x4000d5a	            0x7508	                           jne 0x4000d64	       518	bisect.c	FUNCTION_16	WHILE_1	IF_4	IF_5
+0x4000d5c	    0x41c704240100	                      mov dword [r12], 1	       519	bisect.c	FUNCTION_16	WHILE_1	IF_4	IF_5
+0x4000d64	        0x49895d00	                    mov qword [r13], rbx	       521	bisect.c	FUNCTION_16	WHILE_1	IF_4
+0x4000d68	        0x4c8d6b08	                      lea r13, [rbx + 8]	       522	bisect.c	FUNCTION_16	WHILE_1	IF_4
+0x4000d6c	            0xeb39	                           jmp 0x4000da7	       522	bisect.c	FUNCTION_16	WHILE_1	IF_4
+0x4000d6e	      0x837c240c00	                cmp dword [rsp + 0xc], 0	       524	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_6
+0x4000d73	            0x750e	                           jne 0x4000d83	       524	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_6
+0x4000d75	          0x4d85e4	                           test r12, r12	       525	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_6	IF_7
+0x4000d78	            0x7450	                            je 0x4000dca	       525	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_6	IF_7
+0x4000d7a	      0x41833c2400	                      cmp dword [r12], 0	       525	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_6	IF_7
+0x4000d7f	            0x7516	                           jne 0x4000d97	       525	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_6	IF_7
+0x4000d81	            0xeb4c	                           jmp 0x4000dcf	       525	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_6	IF_7
+0x4000d83	          0x4d85e4	                           test r12, r12	       527	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	ELSE_2	IF_8
+0x4000d86	            0x740f	                            je 0x4000d97	       527	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	ELSE_2	IF_8
+0x4000d88	      0x41833c2400	                      cmp dword [r12], 0	       527	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	ELSE_2	IF_8
+0x4000d8d	            0x7508	                           jne 0x4000d97	       527	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	ELSE_2	IF_8
+0x4000d8f	    0x41c70424ffff	            mov dword [r12], 0xffffffff 	       529	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	ELSE_2	IF_8
+0x4000d97	          0x49891f	                    mov qword [r15], rbx	       532	bisect.c	FUNCTION_16	WHILE_1	ELSE_1
+0x4000d9a	        0x4c8d7b08	                      lea r15, [rbx + 8]	       533	bisect.c	FUNCTION_16	WHILE_1	ELSE_1
+0x4000d9e	          0x4d85f6	                           test r14, r14	       534	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_9
+0x4000da1	            0x7404	                            je 0x4000da7	       534	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_9
+0x4000da3	        0x41830601	                      add dword [r14], 1	       535	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_9
+0x4000da7	          0x4889eb	                            mov rbx, rbp	       535	bisect.c	FUNCTION_16	WHILE_1	ELSE_1	IF_9
+0x4000daa	          0x4885ed	                           test rbp, rbp	       514	bisect.c	FUNCTION_16	WHILE_1
+0x4000dad	            0x7580	                           jne 0x4000d2f	       514	bisect.c	FUNCTION_16	WHILE_1
+0x4000daf	          0x4d85e4	                           test r12, r12	       540	bisect.c	FUNCTION_16	IF_10
+0x4000db2	            0x740f	                            je 0x4000dc3	       540	bisect.c	FUNCTION_16	IF_10
+0x4000db4	      0x41833c24ff	     cmp dword [r12], 0xffffffffffffffff	       540	bisect.c	FUNCTION_16	IF_10
+0x4000db9	            0x7508	                           jne 0x4000dc3	       540	bisect.c	FUNCTION_16	IF_10
+0x4000dbb	    0x41c704240000	                      mov dword [r12], 0	       541	bisect.c	FUNCTION_16	IF_10
+0x4000dc3	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       543	bisect.c	FUNCTION_16
+0x4000dc8	            0xeb08	                           jmp 0x4000dd2	       543	bisect.c	FUNCTION_16
+0x4000dca	          0x4889d8	                            mov rax, rbx	       543	bisect.c	FUNCTION_16
+0x4000dcd	            0xeb03	                           jmp 0x4000dd2	       543	bisect.c	FUNCTION_16
+0x4000dcf	          0x4889d8	                            mov rax, rbx	       543	bisect.c	FUNCTION_16
+0x4000dd2	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	       544	bisect.c	FUNCTION_16
+0x4000dd7	    0x644833142528	                xor rdx, qword fs:[0x28]	       544	bisect.c	FUNCTION_16
+0x4000de0	            0x7405	                            je 0x4000de7	       544	bisect.c	FUNCTION_16
+0x4000de2	      0xe800000000	                          call 0x4000de7	       544	bisect.c	FUNCTION_16
+0x4000de7	        0x4883c428	                           add rsp, 0x28	       544	bisect.c	FUNCTION_16
+0x4000deb	              0x5b	                                 pop rbx	       544	bisect.c	FUNCTION_16
+0x4000dec	              0x5d	                                 pop rbp	       544	bisect.c	FUNCTION_16
+0x4000ded	            0x415c	                                 pop r12	       544	bisect.c	FUNCTION_16
+0x4000def	            0x415d	                                 pop r13	       544	bisect.c	FUNCTION_16
+0x4000df1	            0x415e	                                 pop r14	       544	bisect.c	FUNCTION_16
+0x4000df3	            0x415f	                                 pop r15	       544	bisect.c	FUNCTION_16
+0x4000df5	              0xc3	                                     ret	       544	bisect.c	FUNCTION_16
+bisect_clean_state	functions,0:IF,0:FOR,0:CALL,21:SWITCH,0:DO,0:ELSE,0:WHILE,0	85
+0x4001917	              0x53	                                push rbx	      1060	bisect.c	FUNCTION_40
+0x4001918	        0x4883ec30	                           sub rsp, 0x30	      1060	bisect.c	FUNCTION_40
+0x400191c	    0x64488b042528	                mov rax, qword fs:[0x28]	      1060	bisect.c	FUNCTION_40
+0x4001925	      0x4889442428	             mov qword [rsp + 0x28], rax	      1060	bisect.c	FUNCTION_40
+0x400192a	            0x31c0	                            xor eax, eax	      1060	bisect.c	FUNCTION_40
+0x400192c	    0x48c704240000	                      mov qword [rsp], 0	      1064	bisect.c	FUNCTION_40
+0x4001934	    0xc74424080000	                  mov dword [rsp + 8], 0	      1064	bisect.c	FUNCTION_40
+0x400193c	    0xc744240c0000	                mov dword [rsp + 0xc], 0	      1064	bisect.c	FUNCTION_40
+0x4001944	      0x80642410fe	             and byte [rsp + 0x10], 0xfe	      1064	bisect.c	FUNCTION_40
+0x4001949	    0x48c744241800	               mov qword [rsp + 0x18], 0	      1064	bisect.c	FUNCTION_40
+0x4001952	          0x4889e2	                            mov rdx, rsp	      1065	bisect.c	FUNCTION_40	CALL_1
+0x4001955	      0xbe00000000	                              mov esi, 0	      1065	bisect.c	FUNCTION_40	CALL_1
+0x400195a	      0xbf00000000	                              mov edi, 0	      1065	bisect.c	FUNCTION_40	CALL_1
+0x400195f	      0xe800000000	                          call 0x4001964	      1065	bisect.c	FUNCTION_40	CALL_1
+0x4001964	      0xbf00000000	                              mov edi, 0	      1066	bisect.c	FUNCTION_40	CALL_3
+0x4001969	      0xe800000000	                          call 0x400196e	      1066	bisect.c	FUNCTION_40	CALL_3
+0x400196e	          0x4889c6	                            mov rsi, rax	      1066	bisect.c	FUNCTION_40	CALL_3
+0x4001971	          0x4889e7	                            mov rdi, rsp	      1066	bisect.c	FUNCTION_40	CALL_3
+0x4001974	      0xe800000000	                          call 0x4001979	      1066	bisect.c	FUNCTION_40	CALL_3
+0x4001979	      0xba01000000	                              mov edx, 1	      1067	bisect.c	FUNCTION_40	CALL_4
+0x400197e	          0x4889e6	                            mov rsi, rsp	      1067	bisect.c	FUNCTION_40	CALL_4
+0x4001981	      0xbf00000000	                              mov edi, 0	      1067	bisect.c	FUNCTION_40	CALL_4
+0x4001986	      0xe800000000	                          call 0x400198b	      1067	bisect.c	FUNCTION_40	CALL_4
+0x400198b	            0x89c3	                            mov ebx, eax	      1067	bisect.c	FUNCTION_40	CALL_4
+0x400198d	      0x804c241001	                 or byte [rsp + 0x10], 1	      1068	bisect.c	FUNCTION_40
+0x4001992	      0xbe00000000	                              mov esi, 0	      1069	bisect.c	FUNCTION_40	CALL_5
+0x4001997	          0x4889e7	                            mov rdi, rsp	      1069	bisect.c	FUNCTION_40	CALL_5
+0x400199a	      0xe800000000	                          call 0x400199f	      1069	bisect.c	FUNCTION_40	CALL_5
+0x400199f	      0xe8ece7ffff	   call sym.git_path_bisect_expected_rev	      1070	bisect.c	FUNCTION_40	CALL_7
+0x40019a4	          0x4889c7	                            mov rdi, rax	      1070	bisect.c	FUNCTION_40	CALL_7
+0x40019a7	      0xe800000000	                          call 0x40019ac	      1070	bisect.c	FUNCTION_40	CALL_7
+0x40019ac	    0x48833d000000	               cmp qword [0x040019b4], 0	       445	bisect.c	CALL_8
+0x40019b4	            0x7516	                           jne 0x40019cc	       445	bisect.c	CALL_8
+0x40019b6	      0xbf00000000	                              mov edi, 0	       445	bisect.c	CALL_8
+0x40019bb	      0xb800000000	                              mov eax, 0	       445	bisect.c	CALL_8
+0x40019c0	      0xe800000000	                          call 0x40019c5	       445	bisect.c	CALL_8
+0x40019c5	    0x488905000000	            mov qword [0x040019cc], rax 	       445	bisect.c	CALL_8
+0x40019cc	    0x488b3d000000	            mov rdi, qword [0x040019d3] 	      1071	bisect.c	FUNCTION_40	CALL_9
+0x40019d3	      0xe800000000	                          call 0x40019d8	      1071	bisect.c	FUNCTION_40	CALL_9
+0x40019d8	    0x48833d000000	               cmp qword [0x040019e0], 0	       448	bisect.c	CALL_11
+0x40019e0	            0x7516	                           jne 0x40019f8	       448	bisect.c	CALL_11
+0x40019e2	      0xbf00000000	                              mov edi, 0	       448	bisect.c	CALL_11
+0x40019e7	      0xb800000000	                              mov eax, 0	       448	bisect.c	CALL_11
+0x40019ec	      0xe800000000	                          call 0x40019f1	       448	bisect.c	CALL_11
+0x40019f1	    0x488905000000	            mov qword [0x040019f8], rax 	       448	bisect.c	CALL_11
+0x40019f8	    0x488b3d000000	            mov rdi, qword [0x040019ff] 	      1072	bisect.c	FUNCTION_40	CALL_11
+0x40019ff	      0xe800000000	                          call 0x4001a04	      1072	bisect.c	FUNCTION_40	CALL_11
+0x4001a04	      0xe8bfe7ffff	          call sym.git_path_bisect_names	      1073	bisect.c	FUNCTION_40	CALL_13
+0x4001a09	          0x4889c7	                            mov rdi, rax	      1073	bisect.c	FUNCTION_40	CALL_13
+0x4001a0c	      0xe800000000	                          call 0x4001a11	      1073	bisect.c	FUNCTION_40	CALL_13
+0x4001a11	    0x48833d000000	               cmp qword [0x04001a19], 0	       446	bisect.c	CALL_9
+0x4001a19	            0x7516	                           jne 0x4001a31	       446	bisect.c	CALL_9
+0x4001a1b	      0xbf00000000	                              mov edi, 0	       446	bisect.c	CALL_9
+0x4001a20	      0xb800000000	                              mov eax, 0	       446	bisect.c	CALL_9
+0x4001a25	      0xe800000000	                          call 0x4001a2a	       446	bisect.c	CALL_9
+0x4001a2a	    0x488905000000	            mov qword [0x04001a31], rax 	       446	bisect.c	CALL_9
+0x4001a31	    0x488b3d000000	            mov rdi, qword [0x04001a38] 	      1074	bisect.c	FUNCTION_40	CALL_15
+0x4001a38	      0xe800000000	                          call 0x4001a3d	      1074	bisect.c	FUNCTION_40	CALL_15
+0x4001a3d	      0xe816e7ffff	          call sym.git_path_bisect_terms	      1075	bisect.c	FUNCTION_40	CALL_17
+0x4001a42	          0x4889c7	                            mov rdi, rax	      1075	bisect.c	FUNCTION_40	CALL_17
+0x4001a45	      0xe800000000	                          call 0x4001a4a	      1075	bisect.c	FUNCTION_40	CALL_17
+0x4001a4a	    0x48833d000000	               cmp qword [0x04001a52], 0	       450	bisect.c	CALL_13
+0x4001a52	            0x7516	                           jne 0x4001a6a	       450	bisect.c	CALL_13
+0x4001a54	      0xbf00000000	                              mov edi, 0	       450	bisect.c	CALL_13
+0x4001a59	      0xb800000000	                              mov eax, 0	       450	bisect.c	CALL_13
+0x4001a5e	      0xe800000000	                          call 0x4001a63	       450	bisect.c	CALL_13
+0x4001a63	    0x488905000000	            mov qword [0x04001a6a], rax 	       450	bisect.c	CALL_13
+0x4001a6a	    0x488b3d000000	            mov rdi, qword [0x04001a71] 	      1077	bisect.c	FUNCTION_40	CALL_19
+0x4001a71	      0xe800000000	                          call 0x4001a76	      1077	bisect.c	FUNCTION_40	CALL_19
+0x4001a76	    0x48833d000000	               cmp qword [0x04001a7e], 0	       447	bisect.c	CALL_10
+0x4001a7e	            0x7516	                           jne 0x4001a96	       447	bisect.c	CALL_10
+0x4001a80	      0xbf00000000	                              mov edi, 0	       447	bisect.c	CALL_10
+0x4001a85	      0xb800000000	                              mov eax, 0	       447	bisect.c	CALL_10
+0x4001a8a	      0xe800000000	                          call 0x4001a8f	       447	bisect.c	CALL_10
+0x4001a8f	    0x488905000000	            mov qword [0x04001a96], rax 	       447	bisect.c	CALL_10
+0x4001a96	    0x488b3d000000	            mov rdi, qword [0x04001a9d] 	      1082	bisect.c	FUNCTION_40	CALL_21
+0x4001a9d	      0xe800000000	                          call 0x4001aa2	      1082	bisect.c	FUNCTION_40	CALL_21
+0x4001aa2	            0x89d8	                            mov eax, ebx	      1085	bisect.c	FUNCTION_40
+0x4001aa4	      0x488b4c2428	            mov rcx, qword [rsp + 0x28] 	      1085	bisect.c	FUNCTION_40
+0x4001aa9	    0x6448330c2528	                xor rcx, qword fs:[0x28]	      1085	bisect.c	FUNCTION_40
+0x4001ab2	            0x7405	                            je 0x4001ab9	      1085	bisect.c	FUNCTION_40
+0x4001ab4	      0xe800000000	                          call 0x4001ab9	      1085	bisect.c	FUNCTION_40
+0x4001ab9	        0x4883c430	                           add rsp, 0x30	      1085	bisect.c	FUNCTION_40
+0x4001abd	              0x5b	                                 pop rbx	      1085	bisect.c	FUNCTION_40
+0x4001abe	              0xc3	                                     ret	      1085	bisect.c	FUNCTION_40
+compare_commit_dist	functions,0:IF,1:FOR,0:CALL,1:SWITCH,0:DO,0:ELSE,0:WHILE,0	15
+0x400012a	          0x8b5708	                mov edx, dword [rdi + 8]	       196	bisect.c	FUNCTION_8	IF_1
+0x400012d	          0x8b4608	                mov eax, dword [rsi + 8]	       196	bisect.c	FUNCTION_8	IF_1
+0x4000130	            0x39c2	                            cmp edx, eax	       196	bisect.c	FUNCTION_8	IF_1
+0x4000132	            0x7403	                            je 0x4000137	       196	bisect.c	FUNCTION_8	IF_1
+0x4000134	            0x29d0	                            sub eax, edx	       197	bisect.c	FUNCTION_8	IF_1
+0x4000136	              0xc3	                                     ret	       199	bisect.c	FUNCTION_8
+0x4000137	        0x4883ec08	                              sub rsp, 8	       191	bisect.c	FUNCTION_8
+0x400013b	          0x488b36	                    mov rsi, qword [rsi]	       975	cache.h	FUNCTION_90	CALL_1
+0x400013e	        0x4883c604	                              add rsi, 4	       975	cache.h	FUNCTION_90	CALL_1
+0x4000142	          0x488b3f	                    mov rdi, qword [rdi]	       975	cache.h	FUNCTION_90	CALL_1
+0x4000145	        0x4883c704	                              add rdi, 4	       975	cache.h	FUNCTION_90	CALL_1
+0x4000149	      0xba14000000	                           mov edx, 0x14	       975	cache.h	FUNCTION_90	CALL_1
+0x400014e	      0xe800000000	                          call 0x4000153	       975	cache.h	FUNCTION_90	CALL_1
+0x4000153	        0x4883c408	                              add rsp, 8	       199	bisect.c	FUNCTION_8
+0x4000157	              0xc3	                                     ret	       199	bisect.c	FUNCTION_8
+bisect_rev_setup	functions,0:IF,1:FOR,1:CALL,9:SWITCH,0:DO,0:ELSE,0:WHILE,0	100
+0x4000452	            0x4155	                                push r13	       625	bisect.c	FUNCTION_21
+0x4000454	            0x4154	                                push r12	       625	bisect.c	FUNCTION_21
+0x4000456	              0x55	                                push rbp	       625	bisect.c	FUNCTION_21
+0x4000457	              0x53	                                push rbx	       625	bisect.c	FUNCTION_21
+0x4000458	        0x4883ec38	                           sub rsp, 0x38	       625	bisect.c	FUNCTION_21
+0x400045c	          0x4989fc	                            mov r12, rdi	       625	bisect.c	FUNCTION_21
+0x400045f	          0x4889d3	                            mov rbx, rdx	       625	bisect.c	FUNCTION_21
+0x4000462	          0x4889cd	                            mov rbp, rcx	       625	bisect.c	FUNCTION_21
+0x4000465	          0x4589c5	                           mov r13d, r8d	       625	bisect.c	FUNCTION_21
+0x4000468	    0x64488b042528	                mov rax, qword fs:[0x28]	       625	bisect.c	FUNCTION_21
+0x4000471	      0x4889442428	             mov qword [rsp + 0x28], rax	       625	bisect.c	FUNCTION_21
+0x4000476	            0x31c0	                            xor eax, eax	       625	bisect.c	FUNCTION_21
+0x4000478	    0x48c704240000	                      mov qword [rsp], 0	       626	bisect.c	FUNCTION_21
+0x4000480	    0xc74424080000	                  mov dword [rsp + 8], 0	       626	bisect.c	FUNCTION_21
+0x4000488	    0xc744240c0000	                mov dword [rsp + 0xc], 0	       626	bisect.c	FUNCTION_21
+0x4000490	      0xe800000000	                          call 0x4000495	       629	bisect.c	FUNCTION_21	CALL_1
+0x4000495	    0x41c78424a000	               mov dword [r12 + 0xa0], 0	       630	bisect.c	FUNCTION_21
+0x40004a1	    0x41c78424a400	               mov dword [r12 + 0xa4], 9	       631	bisect.c	FUNCTION_21
+0x40004ad	      0xbe00000000	                              mov esi, 0	       634	bisect.c	FUNCTION_21	CALL_2
+0x40004b2	          0x4889e7	                            mov rdi, rsp	       634	bisect.c	FUNCTION_21	CALL_2
+0x40004b5	      0xe800000000	                          call 0x40004ba	       634	bisect.c	FUNCTION_21	CALL_2
+0x40004ba	    0x488b3d000000	            mov rdi, qword [0x040004c1] 	       635	bisect.c	FUNCTION_21	CALL_4
+0x40004c1	      0xe800000000	                          call 0x40004c6	       635	bisect.c	FUNCTION_21	CALL_4
+0x40004c6	          0x4889c2	                            mov rdx, rax	       635	bisect.c	FUNCTION_21	CALL_4
+0x40004c9	          0x4889de	                            mov rsi, rbx	       635	bisect.c	FUNCTION_21	CALL_4
+0x40004cc	          0x4889e7	                            mov rdi, rsp	       635	bisect.c	FUNCTION_21	CALL_4
+0x40004cf	      0xb800000000	                              mov eax, 0	       635	bisect.c	FUNCTION_21	CALL_4
+0x40004d4	      0xe800000000	                          call 0x40004d9	       635	bisect.c	FUNCTION_21	CALL_4
+0x40004d9	    0x833d00000000	               cmp dword [0x040004e0], 0	       636	bisect.c	FUNCTION_21	FOR_1
+0x40004e0	            0x7e3a	                           jle 0x400051c	       636	bisect.c	FUNCTION_21	FOR_1
+0x40004e2	      0xbb00000000	                              mov ebx, 0	       636	bisect.c	FUNCTION_21	FOR_1
+0x40004e7	          0x4863c3	                         movsxd rax, ebx	       637	bisect.c	FUNCTION_21	FOR_1	CALL_5
+0x40004ea	        0x488d1480	                  lea rdx, [rax + rax*4]	       637	bisect.c	FUNCTION_21	FOR_1	CALL_5
+0x40004ee	    0x488b05000000	            mov rax, qword [0x040004f5] 	       637	bisect.c	FUNCTION_21	FOR_1	CALL_5
+0x40004f5	        0x488d3c90	                  lea rdi, [rax + rdx*4]	       637	bisect.c	FUNCTION_21	FOR_1	CALL_5
+0x40004f9	      0xe800000000	                          call 0x40004fe	       637	bisect.c	FUNCTION_21	FOR_1	CALL_5
+0x40004fe	          0x4889c2	                            mov rdx, rax	       637	bisect.c	FUNCTION_21	FOR_1	CALL_5
+0x4000501	          0x4889ee	                            mov rsi, rbp	       637	bisect.c	FUNCTION_21	FOR_1	CALL_5
+0x4000504	          0x4889e7	                            mov rdi, rsp	       637	bisect.c	FUNCTION_21	FOR_1	CALL_5
+0x4000507	      0xb800000000	                              mov eax, 0	       637	bisect.c	FUNCTION_21	FOR_1	CALL_5
+0x400050c	      0xe800000000	                          call 0x4000511	       637	bisect.c	FUNCTION_21	FOR_1	CALL_5
+0x4000511	          0x83c301	                              add ebx, 1	       636	bisect.c	FUNCTION_21	FOR_1
+0x4000514	    0x391d00000000	            cmp dword [0x0400051a], ebx 	       636	bisect.c	FUNCTION_21	FOR_1
+0x400051a	            0x7fcb	                            jg 0x40004e7	       636	bisect.c	FUNCTION_21	FOR_1
+0x400051c	      0xbe00000000	                              mov esi, 0	       639	bisect.c	FUNCTION_21	CALL_7
+0x4000521	          0x4889e7	                            mov rdi, rsp	       639	bisect.c	FUNCTION_21	CALL_7
+0x4000524	      0xe800000000	                          call 0x4000529	       639	bisect.c	FUNCTION_21	CALL_7
+0x4000529	          0x4585ed	                         test r13d, r13d	       640	bisect.c	FUNCTION_21	IF_1
+0x400052c	     0xf84a0000000	                            je 0x40005d2	       640	bisect.c	FUNCTION_21	IF_1
+0x4000532	    0x48c744241000	               mov qword [rsp + 0x10], 0	       454	bisect.c	FUNCTION_14
+0x400053b	    0x48c744241800	               mov qword [rsp + 0x18], 0	       454	bisect.c	FUNCTION_14
+0x4000544	    0x48c744242000	               mov qword [rsp + 0x20], 0	       454	bisect.c	FUNCTION_14
+0x400054d	      0xe876fcffff	          call sym.git_path_bisect_names	       455	bisect.c	FUNCTION_14	CALL_1
+0x4000552	          0x4889c5	                            mov rbp, rax	       455	bisect.c	FUNCTION_14	CALL_1
+0x4000555	      0xbe00000000	                              mov esi, 0	       456	bisect.c	FUNCTION_14	CALL_2
+0x400055a	          0x4889c7	                            mov rdi, rax	       456	bisect.c	FUNCTION_14	CALL_2
+0x400055d	      0xe800000000	                          call 0x4000562	       456	bisect.c	FUNCTION_14	CALL_2
+0x4000562	          0x4889c3	                            mov rbx, rax	       456	bisect.c	FUNCTION_14	CALL_2
+0x4000565	            0xeb47	                           jmp 0x40005ae	       456	bisect.c	FUNCTION_14	CALL_2
+0x4000567	      0x488d7c2410	                   lea rdi, [rsp + 0x10]	       459	bisect.c	FUNCTION_14	WHILE_1	CALL_4
+0x400056c	      0xe800000000	                          call 0x4000571	       459	bisect.c	FUNCTION_14	WHILE_1	CALL_4
+0x4000571	          0x4889e6	                            mov rsi, rsp	       460	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_5
+0x4000574	      0x488b7c2420	            mov rdi, qword [rsp + 0x20] 	       460	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_5
+0x4000579	      0xe800000000	                          call 0x400057e	       460	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_5
+0x400057e	            0x85c0	                           test eax, eax	       460	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_5
+0x4000580	            0x742c	                            je 0x40005ae	       460	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_5
+0x4000582	      0x488b5c2420	            mov rbx, qword [rsp + 0x20] 	       461	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_7
+0x4000587	      0xba05000000	                              mov edx, 5	        54	gettext.h	FUNCTION_43
+0x400058c	      0xbe00000000	                              mov esi, 0	        54	gettext.h	FUNCTION_43
+0x4000591	      0xbf00000000	                              mov edi, 0	        54	gettext.h	FUNCTION_43
+0x4000596	      0xe800000000	                          call 0x400059b	        54	gettext.h	FUNCTION_43
+0x400059b	          0x4889da	                            mov rdx, rbx	       461	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_7
+0x400059e	          0x4889ee	                            mov rsi, rbp	       461	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_7
+0x40005a1	          0x4889c7	                            mov rdi, rax	       461	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_7
+0x40005a4	      0xb800000000	                              mov eax, 0	       461	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_7
+0x40005a9	      0xe800000000	                          call 0x40005ae	       461	bisect.c	FUNCTION_14	WHILE_1	IF_1	CALL_7
+0x40005ae	          0x4889de	                            mov rsi, rbx	       458	bisect.c	FUNCTION_14	WHILE_1	CALL_3
+0x40005b1	      0x488d7c2410	                   lea rdi, [rsp + 0x10]	       458	bisect.c	FUNCTION_14	WHILE_1	CALL_3
+0x40005b6	      0xe800000000	                          call 0x40005bb	       458	bisect.c	FUNCTION_14	WHILE_1	CALL_3
+0x40005bb	          0x83f8ff	             cmp eax, 0xffffffffffffffff	       458	bisect.c	FUNCTION_14	WHILE_1	CALL_3
+0x40005be	            0x75a7	                           jne 0x4000567	       458	bisect.c	FUNCTION_14	WHILE_1	CALL_3
+0x40005c0	      0x488d7c2410	                   lea rdi, [rsp + 0x10]	       465	bisect.c	FUNCTION_14	CALL_8
+0x40005c5	      0xe800000000	                          call 0x40005ca	       465	bisect.c	FUNCTION_14	CALL_8
+0x40005ca	          0x4889df	                            mov rdi, rbx	       466	bisect.c	FUNCTION_14	CALL_9
+0x40005cd	      0xe800000000	                          call 0x40005d2	       466	bisect.c	FUNCTION_14	CALL_9
+0x40005d2	      0xb900000000	                              mov ecx, 0	       643	bisect.c	FUNCTION_21	CALL_9
+0x40005d7	          0x4c89e2	                            mov rdx, r12	       643	bisect.c	FUNCTION_21	CALL_9
+0x40005da	        0x488b3424	                    mov rsi, qword [rsp]	       643	bisect.c	FUNCTION_21	CALL_9
+0x40005de	        0x8b7c2408	                mov edi, dword [rsp + 8]	       643	bisect.c	FUNCTION_21	CALL_9
+0x40005e2	      0xe800000000	                          call 0x40005e7	       643	bisect.c	FUNCTION_21	CALL_9
+0x40005e7	      0x488b442428	            mov rax, qword [rsp + 0x28] 	       645	bisect.c	FUNCTION_21
+0x40005ec	    0x644833042528	                xor rax, qword fs:[0x28]	       645	bisect.c	FUNCTION_21
+0x40005f5	            0x7405	                            je 0x40005fc	       645	bisect.c	FUNCTION_21
+0x40005f7	      0xe800000000	                          call 0x40005fc	       645	bisect.c	FUNCTION_21
+0x40005fc	        0x4883c438	                           add rsp, 0x38	       645	bisect.c	FUNCTION_21
+0x4000600	              0x5b	                                 pop rbx	       645	bisect.c	FUNCTION_21
+0x4000601	              0x5d	                                 pop rbp	       645	bisect.c	FUNCTION_21
+0x4000602	            0x415c	                                 pop r12	       645	bisect.c	FUNCTION_21
+0x4000604	            0x415d	                                 pop r13	       645	bisect.c	FUNCTION_21
+0x4000606	              0xc3	                                     ret	       645	bisect.c	FUNCTION_21
+read_bisect_terms	functions,0:IF,2:FOR,0:CALL,9:SWITCH,0:DO,0:ELSE,2:WHILE,0	63
+0x4000df6	            0x4155	                                push r13	       910	bisect.c	FUNCTION_34
+0x4000df8	            0x4154	                                push r12	       910	bisect.c	FUNCTION_34
+0x4000dfa	              0x55	                                push rbp	       910	bisect.c	FUNCTION_34
+0x4000dfb	              0x53	                                push rbx	       910	bisect.c	FUNCTION_34
+0x4000dfc	        0x4883ec28	                           sub rsp, 0x28	       910	bisect.c	FUNCTION_34
+0x4000e00	          0x4989fd	                            mov r13, rdi	       910	bisect.c	FUNCTION_34
+0x4000e03	          0x4989f4	                            mov r12, rsi	       910	bisect.c	FUNCTION_34
+0x4000e06	    0x64488b042528	                mov rax, qword fs:[0x28]	       910	bisect.c	FUNCTION_34
+0x4000e0f	      0x4889442418	             mov qword [rsp + 0x18], rax	       910	bisect.c	FUNCTION_34
+0x4000e14	            0x31c0	                            xor eax, eax	       910	bisect.c	FUNCTION_34
+0x4000e16	    0x48c704240000	                      mov qword [rsp], 0	       911	bisect.c	FUNCTION_34
+0x4000e1e	    0x48c744240800	                  mov qword [rsp + 8], 0	       911	bisect.c	FUNCTION_34
+0x4000e27	    0x48c744241000	               mov qword [rsp + 0x10], 0	       911	bisect.c	FUNCTION_34
+0x4000e30	      0xe823f3ffff	          call sym.git_path_bisect_terms	       912	bisect.c	FUNCTION_34	CALL_1
+0x4000e35	          0x4889c5	                            mov rbp, rax	       912	bisect.c	FUNCTION_34	CALL_1
+0x4000e38	      0xbe00000000	                              mov esi, 0	       913	bisect.c	FUNCTION_34
+0x4000e3d	          0x4889c7	                            mov rdi, rax	       913	bisect.c	FUNCTION_34
+0x4000e40	      0xe800000000	                          call 0x4000e45	       913	bisect.c	FUNCTION_34
+0x4000e45	          0x4885c0	                           test rax, rax	       915	bisect.c	FUNCTION_34	IF_1
+0x4000e48	            0x7540	                           jne 0x4000e8a	       915	bisect.c	FUNCTION_34	IF_1
+0x4000e4a	      0xe800000000	                          call 0x4000e4f	       916	bisect.c	FUNCTION_34	IF_1	IF_2
+0x4000e4f	          0x833802	                      cmp dword [rax], 2	       916	bisect.c	FUNCTION_34	IF_1	IF_2
+0x4000e52	            0x7512	                           jne 0x4000e66	       916	bisect.c	FUNCTION_34	IF_1	IF_2
+0x4000e54	    0x49c745000000	                      mov qword [r13], 0	       917	bisect.c	FUNCTION_34	IF_1	IF_2
+0x4000e5c	    0x49c704240000	                      mov qword [r12], 0	       918	bisect.c	FUNCTION_34	IF_1	IF_2
+0x4000e64	            0xeb6f	                           jmp 0x4000ed5	       918	bisect.c	FUNCTION_34	IF_1	IF_2
+0x4000e66	      0xba05000000	                              mov edx, 5	        54	gettext.h	FUNCTION_43
+0x4000e6b	      0xbe00000000	                              mov esi, 0	        54	gettext.h	FUNCTION_43
+0x4000e70	      0xbf00000000	                              mov edi, 0	        54	gettext.h	FUNCTION_43
+0x4000e75	      0xe800000000	                          call 0x4000e7a	        54	gettext.h	FUNCTION_43
+0x4000e7a	          0x4889ee	                            mov rsi, rbp	       921	bisect.c	FUNCTION_34	IF_1	ELSE_1	CALL_3
+0x4000e7d	          0x4889c7	                            mov rdi, rax	       921	bisect.c	FUNCTION_34	IF_1	ELSE_1	CALL_3
+0x4000e80	      0xb800000000	                              mov eax, 0	       921	bisect.c	FUNCTION_34	IF_1	ELSE_1	CALL_3
+0x4000e85	      0xe800000000	                          call 0x4000e8a	       921	bisect.c	FUNCTION_34	IF_1	ELSE_1	CALL_3
+0x4000e8a	          0x4889c3	                            mov rbx, rax	       921	bisect.c	FUNCTION_34	IF_1	ELSE_1	CALL_3
+0x4000e8d	          0x4889c6	                            mov rsi, rax	       924	bisect.c	FUNCTION_34	ELSE_2	CALL_4
+0x4000e90	          0x4889e7	                            mov rdi, rsp	       924	bisect.c	FUNCTION_34	ELSE_2	CALL_4
+0x4000e93	      0xe800000000	                          call 0x4000e98	       924	bisect.c	FUNCTION_34	ELSE_2	CALL_4
+0x4000e98	      0xbe00000000	                              mov esi, 0	       925	bisect.c	FUNCTION_34	ELSE_2	CALL_5
+0x4000e9d	          0x4889e7	                            mov rdi, rsp	       925	bisect.c	FUNCTION_34	ELSE_2	CALL_5
+0x4000ea0	      0xe800000000	                          call 0x4000ea5	       925	bisect.c	FUNCTION_34	ELSE_2	CALL_5
+0x4000ea5	        0x49894500	                    mov qword [r13], rax	       925	bisect.c	FUNCTION_34	ELSE_2	CALL_5
+0x4000ea9	          0x4889de	                            mov rsi, rbx	       926	bisect.c	FUNCTION_34	ELSE_2	CALL_6
+0x4000eac	          0x4889e7	                            mov rdi, rsp	       926	bisect.c	FUNCTION_34	ELSE_2	CALL_6
+0x4000eaf	      0xe800000000	                          call 0x4000eb4	       926	bisect.c	FUNCTION_34	ELSE_2	CALL_6
+0x4000eb4	      0xbe00000000	                              mov esi, 0	       927	bisect.c	FUNCTION_34	ELSE_2	CALL_7
+0x4000eb9	          0x4889e7	                            mov rdi, rsp	       927	bisect.c	FUNCTION_34	ELSE_2	CALL_7
+0x4000ebc	      0xe800000000	                          call 0x4000ec1	       927	bisect.c	FUNCTION_34	ELSE_2	CALL_7
+0x4000ec1	        0x49890424	                    mov qword [r12], rax	       927	bisect.c	FUNCTION_34	ELSE_2	CALL_7
+0x4000ec5	          0x4889e7	                            mov rdi, rsp	       929	bisect.c	FUNCTION_34	CALL_8
+0x4000ec8	      0xe800000000	                          call 0x4000ecd	       929	bisect.c	FUNCTION_34	CALL_8
+0x4000ecd	          0x4889df	                            mov rdi, rbx	       930	bisect.c	FUNCTION_34	CALL_9
+0x4000ed0	      0xe800000000	                          call 0x4000ed5	       930	bisect.c	FUNCTION_34	CALL_9
+0x4000ed5	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       931	bisect.c	FUNCTION_34
+0x4000eda	    0x644833042528	                xor rax, qword fs:[0x28]	       931	bisect.c	FUNCTION_34
+0x4000ee3	            0x7405	                            je 0x4000eea	       931	bisect.c	FUNCTION_34
+0x4000ee5	      0xe800000000	                          call 0x4000eea	       931	bisect.c	FUNCTION_34
+0x4000eea	        0x4883c428	                           add rsp, 0x28	       931	bisect.c	FUNCTION_34
+0x4000eee	              0x5b	                                 pop rbx	       931	bisect.c	FUNCTION_34
+0x4000eef	              0x5d	                                 pop rbp	       931	bisect.c	FUNCTION_34
+0x4000ef0	            0x415c	                                 pop r12	       931	bisect.c	FUNCTION_34
+0x4000ef2	            0x415d	                                 pop r13	       931	bisect.c	FUNCTION_34
+0x4000ef4	              0xc3	                                     ret	       931	bisect.c	FUNCTION_34
+bisect_checkout	functions,0:IF,2:FOR,0:CALL,7:SWITCH,0:DO,0:ELSE,1:WHILE,0	58
+0x40006c5	              0x55	                                push rbp	       698	bisect.c	FUNCTION_25
+0x40006c6	              0x53	                                push rbx	       698	bisect.c	FUNCTION_25
+0x40006c7	        0x4883ec48	                           sub rsp, 0x48	       698	bisect.c	FUNCTION_25
+0x40006cb	          0x4889fb	                            mov rbx, rdi	       698	bisect.c	FUNCTION_25
+0x40006ce	            0x89f5	                            mov ebp, esi	       698	bisect.c	FUNCTION_25
+0x40006d0	    0x64488b042528	                mov rax, qword fs:[0x28]	       698	bisect.c	FUNCTION_25
+0x40006d9	      0x4889442438	             mov qword [rsp + 0x38], rax	       698	bisect.c	FUNCTION_25
+0x40006de	            0x31c0	                            xor eax, eax	       698	bisect.c	FUNCTION_25
+0x40006e0	      0xe800000000	                          call 0x40006e5	       701	bisect.c	FUNCTION_25	CALL_2
+0x40006e5	          0x488b10	                    mov rdx, qword [rax]	       701	bisect.c	FUNCTION_25	CALL_2
+0x40006e8	        0x48891424	                    mov qword [rsp], rdx	       701	bisect.c	FUNCTION_25	CALL_2
+0x40006ec	        0x488b5008	                mov rdx, qword [rax + 8]	       701	bisect.c	FUNCTION_25	CALL_2
+0x40006f0	      0x4889542408	                mov qword [rsp + 8], rdx	       701	bisect.c	FUNCTION_25	CALL_2
+0x40006f5	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       701	bisect.c	FUNCTION_25	CALL_2
+0x40006f9	      0x4889542410	             mov qword [rsp + 0x10], rdx	       701	bisect.c	FUNCTION_25	CALL_2
+0x40006fe	        0x488b5018	            mov rdx, qword [rax + 0x18] 	       701	bisect.c	FUNCTION_25	CALL_2
+0x4000702	      0x4889542418	             mov qword [rsp + 0x18], rdx	       701	bisect.c	FUNCTION_25	CALL_2
+0x4000707	        0x488b5020	            mov rdx, qword [rax + 0x20] 	       701	bisect.c	FUNCTION_25	CALL_2
+0x400070b	      0x4889542420	             mov qword [rsp + 0x20], rdx	       701	bisect.c	FUNCTION_25	CALL_2
+0x4000710	         0xfb64028	           movzx eax, byte [rax + 0x28] 	       701	bisect.c	FUNCTION_25	CALL_2
+0x4000714	        0x88442428	               mov byte [rsp + 0x28], al	       701	bisect.c	FUNCTION_25	CALL_2
+0x4000718	    0x41b901000000	                              mov r9d, 1	       702	bisect.c	FUNCTION_25	CALL_3
+0x400071e	    0x41b800000000	                              mov r8d, 0	       702	bisect.c	FUNCTION_25	CALL_3
+0x4000724	      0xb900000000	                              mov ecx, 0	       702	bisect.c	FUNCTION_25	CALL_3
+0x4000729	          0x4889da	                            mov rdx, rbx	       702	bisect.c	FUNCTION_25	CALL_3
+0x400072c	      0xbe00000000	                              mov esi, 0	       702	bisect.c	FUNCTION_25	CALL_3
+0x4000731	      0xbf00000000	                              mov edi, 0	       702	bisect.c	FUNCTION_25	CALL_3
+0x4000736	      0xe800000000	                          call 0x400073b	       702	bisect.c	FUNCTION_25	CALL_3
+0x400073b	    0x488925000000	            mov qword [0x04000742], rsp 	       704	bisect.c	FUNCTION_25
+0x4000742	            0x85ed	                           test ebp, ebp	       705	bisect.c	FUNCTION_25	IF_1
+0x4000744	            0x7425	                            je 0x400076b	       705	bisect.c	FUNCTION_25	IF_1
+0x4000746	    0x41b901000000	                              mov r9d, 1	       706	bisect.c	FUNCTION_25	IF_1	CALL_4
+0x400074c	    0x41b800000000	                              mov r8d, 0	       706	bisect.c	FUNCTION_25	IF_1	CALL_4
+0x4000752	      0xb900000000	                              mov ecx, 0	       706	bisect.c	FUNCTION_25	IF_1	CALL_4
+0x4000757	          0x4889da	                            mov rdx, rbx	       706	bisect.c	FUNCTION_25	IF_1	CALL_4
+0x400075a	      0xbe00000000	                              mov esi, 0	       706	bisect.c	FUNCTION_25	IF_1	CALL_4
+0x400075f	      0xbf00000000	                              mov edi, 0	       706	bisect.c	FUNCTION_25	IF_1	CALL_4
+0x4000764	      0xe800000000	                          call 0x4000769	       706	bisect.c	FUNCTION_25	IF_1	CALL_4
+0x4000769	            0xeb1a	                           jmp 0x4000785	       706	bisect.c	FUNCTION_25	IF_1	CALL_4
+0x400076b	      0xbe02000000	                              mov esi, 2	       710	bisect.c	FUNCTION_25	ELSE_1	CALL_5
+0x4000770	      0xbf00000000	                              mov edi, 0	       710	bisect.c	FUNCTION_25	ELSE_1	CALL_5
+0x4000775	      0xe800000000	                          call 0x400077a	       710	bisect.c	FUNCTION_25	ELSE_1	CALL_5
+0x400077a	            0x85c0	                           test eax, eax	       711	bisect.c	FUNCTION_25	ELSE_1	IF_2
+0x400077c	            0x7407	                            je 0x4000785	       711	bisect.c	FUNCTION_25	ELSE_1	IF_2
+0x400077e	            0x89c7	                            mov edi, eax	       712	bisect.c	FUNCTION_25	ELSE_1	CALL_6
+0x4000780	      0xe800000000	                          call 0x4000785	       712	bisect.c	FUNCTION_25	ELSE_1	CALL_6
+0x4000785	    0x488925000000	            mov qword [0x0400078c], rsp 	       715	bisect.c	FUNCTION_25
+0x400078c	      0xbe02000000	                              mov esi, 2	       716	bisect.c	FUNCTION_25	CALL_7
+0x4000791	      0xbf00000000	                              mov edi, 0	       716	bisect.c	FUNCTION_25	CALL_7
+0x4000796	      0xe800000000	                          call 0x400079b	       716	bisect.c	FUNCTION_25	CALL_7
+0x400079b	      0x488b4c2438	            mov rcx, qword [rsp + 0x38] 	       717	bisect.c	FUNCTION_25
+0x40007a0	    0x6448330c2528	                xor rcx, qword fs:[0x28]	       717	bisect.c	FUNCTION_25
+0x40007a9	            0x7405	                            je 0x40007b0	       717	bisect.c	FUNCTION_25
+0x40007ab	      0xe800000000	                          call 0x40007b0	       717	bisect.c	FUNCTION_25
+0x40007b0	        0x4883c448	                           add rsp, 0x48	       717	bisect.c	FUNCTION_25
+0x40007b4	              0x5b	                                 pop rbx	       717	bisect.c	FUNCTION_25
+0x40007b5	              0x5d	                                 pop rbp	       717	bisect.c	FUNCTION_25
+0x40007b6	              0xc3	                                     ret	       717	bisect.c	FUNCTION_25
+exit_if_skipped_commits	functions,0:IF,2:FOR,1:CALL,4:SWITCH,0:DO,0:ELSE,0:WHILE,0	37
+0x4000638	          0x4885ff	                           test rdi, rdi	       658	bisect.c	FUNCTION_23	IF_1
+0x400063b	     0xf8483000000	                            je 0x40006c4	       658	bisect.c	FUNCTION_23	IF_1
+0x4000641	              0x55	                                push rbp	       657	bisect.c	FUNCTION_23
+0x4000642	              0x53	                                push rbx	       657	bisect.c	FUNCTION_23
+0x4000643	        0x4883ec08	                              sub rsp, 8	       657	bisect.c	FUNCTION_23
+0x4000647	          0x4889fb	                            mov rbx, rdi	       657	bisect.c	FUNCTION_23
+0x400064a	          0x4889f5	                            mov rbp, rsi	       657	bisect.c	FUNCTION_23
+0x400064d	    0x488b15000000	            mov rdx, qword [0x04000654] 	       104	stdio2.h	CALL_474
+0x4000654	      0xbe00000000	                              mov esi, 0	       104	stdio2.h	CALL_474
+0x4000659	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_474
+0x400065e	            0xb000	                               mov al, 0	       104	stdio2.h	CALL_474
+0x4000660	      0xe800000000	                          call 0x4000665	       104	stdio2.h	CALL_474
+0x4000665	          0x488b03	                    mov rax, qword [rbx]	       665	bisect.c	FUNCTION_23	CALL_1
+0x4000668	        0x488d7804	                      lea rdi, [rax + 4]	       665	bisect.c	FUNCTION_23	CALL_1
+0x400066c	      0xe800000000	                          call 0x4000671	       665	bisect.c	FUNCTION_23	CALL_1
+0x4000671	          0x4889c7	                            mov rdi, rax	       104	stdio2.h	CALL_474
+0x4000674	      0xe800000000	                          call 0x4000679	       104	stdio2.h	CALL_474
+0x4000679	        0x488b5b08	                mov rbx, qword [rbx + 8]	       664	bisect.c	FUNCTION_23	FOR_1
+0x400067d	          0x4885db	                           test rbx, rbx	       664	bisect.c	FUNCTION_23	FOR_1
+0x4000680	            0x75e3	                           jne 0x4000665	       664	bisect.c	FUNCTION_23	FOR_1
+0x4000682	          0x4885ed	                           test rbp, rbp	       667	bisect.c	FUNCTION_23	IF_2
+0x4000685	            0x7410	                            je 0x4000697	       667	bisect.c	FUNCTION_23	IF_2
+0x4000687	          0x4889ef	                            mov rdi, rbp	       668	bisect.c	FUNCTION_23	CALL_2
+0x400068a	      0xe800000000	                          call 0x400068f	       668	bisect.c	FUNCTION_23	CALL_2
+0x400068f	          0x4889c7	                            mov rdi, rax	       104	stdio2.h	CALL_474
+0x4000692	      0xe800000000	                          call 0x4000697	       104	stdio2.h	CALL_474
+0x4000697	      0xba05000000	                              mov edx, 5	        54	gettext.h	FUNCTION_43
+0x400069c	      0xbe00000000	                              mov esi, 0	        54	gettext.h	FUNCTION_43
+0x40006a1	      0xbf00000000	                              mov edi, 0	        54	gettext.h	FUNCTION_43
+0x40006a6	      0xe800000000	                          call 0x40006ab	        54	gettext.h	FUNCTION_43
+0x40006ab	          0x4889c6	                            mov rsi, rax	       104	stdio2.h	CALL_474
+0x40006ae	      0xbf01000000	                              mov edi, 1	       104	stdio2.h	CALL_474
+0x40006b3	            0xb000	                               mov al, 0	       104	stdio2.h	CALL_474
+0x40006b5	      0xe800000000	                          call 0x40006ba	       104	stdio2.h	CALL_474
+0x40006ba	      0xbf02000000	                              mov edi, 2	       670	bisect.c	FUNCTION_23	CALL_4
+0x40006bf	      0xe800000000	                          call 0x40006c4	       670	bisect.c	FUNCTION_23	CALL_4
+0x40006c4	              0xc3	                                     ret	       670	bisect.c	FUNCTION_23	CALL_4
+get_commit_reference	functions,0:IF,1:FOR,0:CALL,4:SWITCH,0:DO,0:ELSE,0:WHILE,0	18
+0x400030c	              0x53	                                push rbx	       720	bisect.c	FUNCTION_26
+0x400030d	          0x4889fb	                            mov rbx, rdi	       720	bisect.c	FUNCTION_26
+0x4000310	      0xe800000000	                          call 0x4000315	       721	bisect.c	FUNCTION_26	CALL_1
+0x4000315	          0x4885c0	                           test rax, rax	       722	bisect.c	FUNCTION_26	IF_1
+0x4000318	            0x752f	                           jne 0x4000349	       722	bisect.c	FUNCTION_26	IF_1
+0x400031a	          0x4889df	                            mov rdi, rbx	       723	bisect.c	FUNCTION_26	CALL_4
+0x400031d	      0xe800000000	                          call 0x4000322	       723	bisect.c	FUNCTION_26	CALL_4
+0x4000322	          0x4889c3	                            mov rbx, rax	       723	bisect.c	FUNCTION_26	CALL_4
+0x4000325	      0xba05000000	                              mov edx, 5	        54	gettext.h	FUNCTION_43
+0x400032a	      0xbe00000000	                              mov esi, 0	        54	gettext.h	FUNCTION_43
+0x400032f	      0xbf00000000	                              mov edi, 0	        54	gettext.h	FUNCTION_43
+0x4000334	      0xe800000000	                          call 0x4000339	        54	gettext.h	FUNCTION_43
+0x4000339	          0x4889de	                            mov rsi, rbx	       723	bisect.c	FUNCTION_26	CALL_4
+0x400033c	          0x4889c7	                            mov rdi, rax	       723	bisect.c	FUNCTION_26	CALL_4
+0x400033f	      0xb800000000	                              mov eax, 0	       723	bisect.c	FUNCTION_26	CALL_4
+0x4000344	      0xe800000000	                          call 0x4000349	       723	bisect.c	FUNCTION_26	CALL_4
+0x4000349	              0x5b	                                 pop rbx	       725	bisect.c	FUNCTION_26
+0x400034a	              0xc3	                                     ret	       725	bisect.c	FUNCTION_26
+count_distance	functions,0:IF,3:FOR,0:CALL,1:SWITCH,0:DO,0:ELSE,0:WHILE,2	51
+0x4000040	            0x4154	                                push r12	        38	bisect.c	FUNCTION_1
+0x4000042	              0x55	                                push rbp	        38	bisect.c	FUNCTION_1
+0x4000043	              0x53	                                push rbx	        38	bisect.c	FUNCTION_1
+0x4000044	          0x4885ff	                           test rdi, rdi	        41	bisect.c	FUNCTION_1	WHILE_1
+0x4000047	            0x7465	                            je 0x40000ae	        41	bisect.c	FUNCTION_1	WHILE_1
+0x4000049	          0x488b17	                    mov rdx, qword [rdi]	        42	bisect.c	FUNCTION_1	WHILE_1
+0x400004c	            0x8b02	                    mov eax, dword [rdx]	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x400004e	          0xc1e804	                              shr eax, 4	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x4000051	      0x25ffffff07	                      and eax, 0x7ffffff	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x4000056	      0xa902000100	                       test eax, 0x10002	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x400005b	            0x7558	                           jne 0x40000b5	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x400005d	      0xbd00000000	                              mov ebp, 0	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x4000062	            0x89c1	                            mov ecx, eax	        47	bisect.c	FUNCTION_1	WHILE_1	IF_2
+0x4000064	          0x83e104	                              and ecx, 4	        47	bisect.c	FUNCTION_1	WHILE_1	IF_2
+0x4000067	          0x83f901	                              cmp ecx, 1	        48	bisect.c	FUNCTION_1	WHILE_1	IF_2
+0x400006a	          0x83d500	                              adc ebp, 0	        48	bisect.c	FUNCTION_1	WHILE_1	IF_2
+0x400006d	       0xd00000100	                         or eax, 0x10000	        49	bisect.c	FUNCTION_1	WHILE_1
+0x4000072	      0x25ffffff07	                      and eax, 0x7ffffff	        49	bisect.c	FUNCTION_1	WHILE_1
+0x4000077	          0xc1e004	                              shl eax, 4	        49	bisect.c	FUNCTION_1	WHILE_1
+0x400007a	            0x8b0a	                    mov ecx, dword [rdx]	        49	bisect.c	FUNCTION_1	WHILE_1
+0x400007c	    0x81e10f000080	                     and ecx, 0x8000000f	        49	bisect.c	FUNCTION_1	WHILE_1
+0x4000082	             0x9c8	                             or eax, ecx	        49	bisect.c	FUNCTION_1	WHILE_1
+0x4000084	            0x8902	                    mov dword [rdx], eax	        49	bisect.c	FUNCTION_1	WHILE_1
+0x4000086	        0x4c8b6230	            mov r12, qword [rdx + 0x30] 	        50	bisect.c	FUNCTION_1	WHILE_1
+0x400008a	          0x4d85e4	                           test r12, r12	        52	bisect.c	FUNCTION_1	WHILE_1	IF_3
+0x400008d	            0x7442	                            je 0x40000d1	        52	bisect.c	FUNCTION_1	WHILE_1	IF_3
+0x400008f	      0x498b5c2408	                mov rbx, qword [r12 + 8]	        53	bisect.c	FUNCTION_1	WHILE_1	IF_3
+0x4000094	          0x4885db	                           test rbx, rbx	        54	bisect.c	FUNCTION_1	WHILE_1	IF_3	WHILE_2
+0x4000097	            0x7423	                            je 0x40000bc	        54	bisect.c	FUNCTION_1	WHILE_1	IF_3	WHILE_2
+0x4000099	          0x4889df	                            mov rdi, rbx	        55	bisect.c	FUNCTION_1	WHILE_1	IF_3	WHILE_2	CALL_1
+0x400009c	      0xe89fffffff	                 call sym.count_distance	        55	bisect.c	FUNCTION_1	WHILE_1	IF_3	WHILE_2	CALL_1
+0x40000a1	             0x1c5	                            add ebp, eax	        55	bisect.c	FUNCTION_1	WHILE_1	IF_3	WHILE_2	CALL_1
+0x40000a3	        0x488b5b08	                mov rbx, qword [rbx + 8]	        56	bisect.c	FUNCTION_1	WHILE_1	IF_3	WHILE_2
+0x40000a7	          0x4885db	                           test rbx, rbx	        54	bisect.c	FUNCTION_1	WHILE_1	IF_3	WHILE_2
+0x40000aa	            0x75ed	                           jne 0x4000099	        54	bisect.c	FUNCTION_1	WHILE_1	IF_3	WHILE_2
+0x40000ac	            0xeb0e	                           jmp 0x40000bc	        54	bisect.c	FUNCTION_1	WHILE_1	IF_3	WHILE_2
+0x40000ae	      0xbd00000000	                              mov ebp, 0	        39	bisect.c	FUNCTION_1
+0x40000b3	            0xeb1c	                           jmp 0x40000d1	        39	bisect.c	FUNCTION_1
+0x40000b5	      0xbd00000000	                              mov ebp, 0	        39	bisect.c	FUNCTION_1
+0x40000ba	            0xeb15	                           jmp 0x40000d1	        39	bisect.c	FUNCTION_1
+0x40000bc	        0x498b1424	                    mov rdx, qword [r12]	        42	bisect.c	FUNCTION_1	WHILE_1
+0x40000c0	            0x8b02	                    mov eax, dword [rdx]	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x40000c2	          0xc1e804	                              shr eax, 4	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x40000c5	      0x25ffffff07	                      and eax, 0x7ffffff	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x40000ca	      0xa902000100	                       test eax, 0x10002	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x40000cf	            0x7491	                            je 0x4000062	        45	bisect.c	FUNCTION_1	WHILE_1	IF_1
+0x40000d1	            0x89e8	                            mov eax, ebp	        62	bisect.c	FUNCTION_1
+0x40000d3	              0x5b	                                 pop rbx	        62	bisect.c	FUNCTION_1
+0x40000d4	              0x5d	                                 pop rbp	        62	bisect.c	FUNCTION_1
+0x40000d5	            0x415c	                                 pop r12	        62	bisect.c	FUNCTION_1
+0x40000d7	              0xc3	                                     ret	        62	bisect.c	FUNCTION_1
+mark_for_removal	functions,0:IF,0:FOR,0:CALL,2:SWITCH,0:DO,0:ELSE,0:WHILE,0	12
+0x40007b7	              0x53	                                push rbx	      1052	bisect.c	FUNCTION_39
+0x40007b8	          0x4889fe	                            mov rsi, rdi	      1052	bisect.c	FUNCTION_39
+0x40007bb	          0x4889cb	                            mov rbx, rcx	      1052	bisect.c	FUNCTION_39
+0x40007be	      0xbf00000000	                              mov edi, 0	      1054	bisect.c	FUNCTION_39	CALL_1
+0x40007c3	      0xb800000000	                              mov eax, 0	      1054	bisect.c	FUNCTION_39	CALL_1
+0x40007c8	      0xe800000000	                          call 0x40007cd	      1054	bisect.c	FUNCTION_39	CALL_1
+0x40007cd	          0x4889c6	                            mov rsi, rax	      1055	bisect.c	FUNCTION_39	CALL_2
+0x40007d0	          0x4889df	                            mov rdi, rbx	      1055	bisect.c	FUNCTION_39	CALL_2
+0x40007d3	      0xe800000000	                          call 0x40007d8	      1055	bisect.c	FUNCTION_39	CALL_2
+0x40007d8	      0xb800000000	                              mov eax, 0	      1057	bisect.c	FUNCTION_39
+0x40007dd	              0x5b	                                 pop rbx	      1057	bisect.c	FUNCTION_39
+0x40007de	              0xc3	                                     ret	      1057	bisect.c	FUNCTION_39
+sqrti	functions,0:IF,1:FOR,0:CALL,0:SWITCH,0:DO,1:ELSE,0:WHILE,0	23
+0x40000d8	      0xb800000000	                              mov eax, 0	       568	bisect.c	FUNCTION_18	IF_1
+0x40000dd	            0x85ff	                           test edi, edi	       567	bisect.c	FUNCTION_18	IF_1
+0x40000df	            0x7447	                            je 0x4000128	       567	bisect.c	FUNCTION_18	IF_1
+0x40000e1	        0x660fefdb	                         pxor xmm3, xmm3	       565	bisect.c	FUNCTION_18
+0x40000e5	        0xf30f2adf	                      cvtsi2ss xmm3, edi	       565	bisect.c	FUNCTION_18
+0x40000e9	           0xf28cb	                       movaps xmm1, xmm3	       565	bisect.c	FUNCTION_18
+0x40000ec	    0xf30f10250000	         movss xmm4, dword [0x040000f4] 	       571	bisect.c	FUNCTION_18	DO_1
+0x40000f4	           0xf28c3	                       movaps xmm0, xmm3	       571	bisect.c	FUNCTION_18	DO_1
+0x40000f7	        0xf30f5ec1	                        divss xmm0, xmm1	       571	bisect.c	FUNCTION_18	DO_1
+0x40000fb	        0xf30f58c1	                        addss xmm0, xmm1	       571	bisect.c	FUNCTION_18	DO_1
+0x40000ff	        0xf30f59c4	                        mulss xmm0, xmm4	       571	bisect.c	FUNCTION_18	DO_1
+0x4000103	           0xf2ec1	                      ucomiss xmm0, xmm1	       572	bisect.c	FUNCTION_18	DO_1
+0x4000106	            0x7609	                           jbe 0x4000111	       572	bisect.c	FUNCTION_18	DO_1
+0x4000108	           0xf28d0	                       movaps xmm2, xmm0	       572	bisect.c	FUNCTION_18	DO_1
+0x400010b	        0xf30f5cd1	                        subss xmm2, xmm1	       572	bisect.c	FUNCTION_18	DO_1
+0x400010f	            0xeb07	                           jmp 0x4000118	       572	bisect.c	FUNCTION_18	DO_1
+0x4000111	           0xf28d1	                       movaps xmm2, xmm1	       572	bisect.c	FUNCTION_18	DO_1
+0x4000114	        0xf30f5cd0	                        subss xmm2, xmm0	       572	bisect.c	FUNCTION_18	DO_1
+0x4000118	           0xf28c8	                       movaps xmm1, xmm0	       571	bisect.c	FUNCTION_18	DO_1
+0x400011b	     0xf2e15000000	        ucomiss xmm2, dword [0x04000122]	       574	bisect.c	FUNCTION_18	DO_1
+0x4000122	            0x73d0	                           jae 0x40000f4	       574	bisect.c	FUNCTION_18	DO_1
+0x4000124	        0xf30f2cc0	                     cvttss2si eax, xmm0	       576	bisect.c	FUNCTION_18
+0x4000128	            0xf3c3	                                     ret	       577	bisect.c	FUNCTION_18

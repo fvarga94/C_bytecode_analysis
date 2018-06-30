@@ -1,0 +1,107 @@
+acpi_tb_put_table	DO,0:WHILE,0:ELSE,0:CALL,3:SWITCH,0:IF,3:functions,0:FOR,0	16
+0x400024c	        0x668b471a	               mov ax, word [rdi + 0x1a]	       423	tbutils.c	FUNCTION_7	IF_1
+0x4000250	        0x6683f8ff	              cmp ax, 0xffffffffffffffff	       423	tbutils.c	FUNCTION_7	IF_1
+0x4000254	            0x7426	                            je 0x400027c	       423	tbutils.c	FUNCTION_7	IF_1
+0x4000256	            0xffc8	                                 dec eax	       424	tbutils.c	FUNCTION_7	IF_1
+0x4000258	        0x6689471a	               mov word [rdi + 0x1a], ax	       424	tbutils.c	FUNCTION_7	IF_1
+0x400025c	          0x66ffc0	                                  inc ax	       430	tbutils.c	FUNCTION_7	IF_1	IF_2
+0x400025f	            0x751b	                           jne 0x400027c	       430	tbutils.c	FUNCTION_7	IF_1	IF_2
+0x4000261	          0x4889f9	                            mov rcx, rdi	       431	tbutils.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x4000264	    0x48c7c2000000	                              mov rdx, 0	       431	tbutils.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x400026b	      0xbeb1010000	                          mov esi, 0x1b1	       431	tbutils.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x4000270	    0x48c7c7000000	                              mov rdi, 0	       431	tbutils.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x4000277	      0xe900000000	                           jmp 0x400027c	       431	tbutils.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x400027c	      0x66837f1a00	                cmp word [rdi + 0x1a], 0	       438	tbutils.c	FUNCTION_7	IF_3
+0x4000281	            0x7505	                           jne 0x4000288	       438	tbutils.c	FUNCTION_7	IF_3
+0x4000283	      0xe900000000	                           jmp 0x4000288	       442	tbutils.c	FUNCTION_7	IF_3	CALL_3
+0x4000288	              0xc3	                                     ret	       442	tbutils.c	FUNCTION_7	IF_3	CALL_3
+acpi_tb_initialize_facs	DO,0:WHILE,0:ELSE,2:CALL,4:SWITCH,0:IF,3:functions,0:FOR,0	31
+0x4000040	        0x4883ec10	                           sub rsp, 0x10	        36	tbutils.c	FUNCTION_1
+0x4000044	    0x65488b042528	                mov rax, qword gs:[0x28]	        36	tbutils.c	FUNCTION_1
+0x400004d	      0x4889442408	                mov qword [rsp + 8], rax	        36	tbutils.c	FUNCTION_1
+0x4000052	            0x31c0	                            xor eax, eax	        36	tbutils.c	FUNCTION_1
+0x4000054	    0x803d00000000	                cmp byte [0x0400005b], 0	        41	tbutils.c	FUNCTION_1	IF_1
+0x400005b	            0x740d	                            je 0x400006a	        41	tbutils.c	FUNCTION_1	IF_1
+0x400005d	    0x48c705000000	               mov qword [0x04000068], 0	        42	tbutils.c	FUNCTION_1	IF_1
+0x4000068	            0xeb49	                           jmp 0x40000b3	        43	tbutils.c	FUNCTION_1	IF_1
+0x400006a	    0x48833d000000	               cmp qword [0x04000072], 0	        44	tbutils.c	FUNCTION_1	ELSE_1	IF_2
+0x4000072	            0x741d	                            je 0x4000091	        44	tbutils.c	FUNCTION_1	ELSE_1	IF_2
+0x4000074	    0x833d00000000	               cmp dword [0x0400007b], 0	        44	tbutils.c	FUNCTION_1	ELSE_1	IF_2
+0x400007b	            0x7409	                            je 0x4000086	        44	tbutils.c	FUNCTION_1	ELSE_1	IF_2
+0x400007d	    0x803d00000000	                cmp byte [0x04000084], 0	        46	tbutils.c	FUNCTION_1	ELSE_1	IF_2
+0x4000084	            0x750b	                           jne 0x4000091	        46	tbutils.c	FUNCTION_1	ELSE_1	IF_2
+0x4000086	          0x4889e6	                            mov rsi, rsp	        47	tbutils.c	FUNCTION_1	ELSE_1	IF_2	CALL_1
+0x4000089	    0x8b3d00000000	            mov edi, dword [0x0400008f] 	        47	tbutils.c	FUNCTION_1	ELSE_1	IF_2	CALL_1
+0x400008f	            0xeb12	                           jmp 0x40000a3	        47	tbutils.c	FUNCTION_1	ELSE_1	IF_2	CALL_1
+0x4000091	    0x833d00000000	               cmp dword [0x04000098], 0	        52	tbutils.c	FUNCTION_1	ELSE_2	IF_3
+0x4000098	            0x7419	                            je 0x40000b3	        52	tbutils.c	FUNCTION_1	ELSE_2	IF_3
+0x400009a	    0x8b3d00000000	            mov edi, dword [0x040000a0] 	        53	tbutils.c	FUNCTION_1	ELSE_2	IF_3	CALL_3
+0x40000a0	          0x4889e6	                            mov rsi, rsp	        53	tbutils.c	FUNCTION_1	ELSE_2	IF_3	CALL_3
+0x40000a3	      0xe800000000	                          call 0x40000a8	        53	tbutils.c	FUNCTION_1	ELSE_2	IF_3	CALL_3
+0x40000a8	        0x488b0424	                    mov rax, qword [rsp]	        57	tbutils.c	FUNCTION_1	ELSE_2	IF_3
+0x40000ac	    0x488905000000	            mov qword [0x040000b3], rax 	        57	tbutils.c	FUNCTION_1	ELSE_2	IF_3
+0x40000b3	            0x31c0	                            xor eax, eax	        63	tbutils.c	FUNCTION_1
+0x40000b5	      0x488b542408	                mov rdx, qword [rsp + 8]	        63	tbutils.c	FUNCTION_1
+0x40000ba	    0x654833142528	                xor rdx, qword gs:[0x28]	        63	tbutils.c	FUNCTION_1
+0x40000c3	            0x7405	                            je 0x40000ca	        63	tbutils.c	FUNCTION_1
+0x40000c5	      0xe800000000	                          call 0x40000ca	        63	tbutils.c	FUNCTION_1
+0x40000ca	        0x4883c410	                           add rsp, 0x10	        63	tbutils.c	FUNCTION_1
+0x40000ce	              0xc3	                                     ret	        63	tbutils.c	FUNCTION_1
+acpi_tb_check_dsdt_header	DO,0:WHILE,0:ELSE,0:CALL,4:SWITCH,0:IF,1:functions,0:FOR,0	27
+0x40000cf	    0x488b05000000	            mov rax, qword [0x040000d6] 	        85	tbutils.c	FUNCTION_2	IF_1
+0x40000d6	          0x8b4804	                mov ecx, dword [rax + 4]	        85	tbutils.c	FUNCTION_2	IF_1
+0x40000d9	    0x390d00000000	            cmp dword [0x040000df], ecx 	        85	tbutils.c	FUNCTION_2	IF_1
+0x40000df	            0x750b	                           jne 0x40000ec	        85	tbutils.c	FUNCTION_2	IF_1
+0x40000e1	          0x8a4009	                  mov al, byte [rax + 9]	        85	tbutils.c	FUNCTION_2	IF_1
+0x40000e4	    0x380500000000	               cmp byte [0x040000ea], al	        85	tbutils.c	FUNCTION_2	IF_1
+0x40000ea	            0x7465	                            je 0x4000151	        85	tbutils.c	FUNCTION_2	IF_1
+0x40000ec	    0x48c7c2000000	                              mov rdx, 0	        87	tbutils.c	FUNCTION_2	IF_1	CALL_1
+0x40000f3	      0xbe59000000	                           mov esi, 0x59	        87	tbutils.c	FUNCTION_2	IF_1	CALL_1
+0x40000f8	    0x48c7c7000000	                              mov rdi, 0	        87	tbutils.c	FUNCTION_2	IF_1	CALL_1
+0x40000ff	      0xe800000000	                          call 0x4000104	        87	tbutils.c	FUNCTION_2	IF_1	CALL_1
+0x4000104	    0x48c7c6000000	                              mov rsi, 0	        91	tbutils.c	FUNCTION_2	IF_1	CALL_2
+0x400010b	            0x31ff	                            xor edi, edi	        91	tbutils.c	FUNCTION_2	IF_1	CALL_2
+0x400010d	      0xe800000000	                          call 0x4000112	        91	tbutils.c	FUNCTION_2	IF_1	CALL_2
+0x4000112	    0x488b35000000	            mov rsi, qword [0x04000119] 	        92	tbutils.c	FUNCTION_2	IF_1	CALL_3
+0x4000119	            0x31ff	                            xor edi, edi	        92	tbutils.c	FUNCTION_2	IF_1	CALL_3
+0x400011b	      0xe800000000	                          call 0x4000120	        92	tbutils.c	FUNCTION_2	IF_1	CALL_3
+0x4000120	    0x48c7c2000000	                              mov rdx, 0	        94	tbutils.c	FUNCTION_2	IF_1	CALL_4
+0x4000127	      0xbe60000000	                           mov esi, 0x60	        94	tbutils.c	FUNCTION_2	IF_1	CALL_4
+0x400012c	    0x48c7c7000000	                              mov rdi, 0	        94	tbutils.c	FUNCTION_2	IF_1	CALL_4
+0x4000133	      0xe800000000	                          call 0x4000138	        94	tbutils.c	FUNCTION_2	IF_1	CALL_4
+0x4000138	    0x488b05000000	            mov rax, qword [0x0400013f] 	       100	tbutils.c	FUNCTION_2	IF_1
+0x400013f	          0x8b5004	                mov edx, dword [rax + 4]	       100	tbutils.c	FUNCTION_2	IF_1
+0x4000142	          0x8a4009	                  mov al, byte [rax + 9]	       102	tbutils.c	FUNCTION_2	IF_1
+0x4000145	    0x891500000000	            mov dword [0x0400014b], edx 	       100	tbutils.c	FUNCTION_2	IF_1
+0x400014b	    0x880500000000	               mov byte [0x04000151], al	       101	tbutils.c	FUNCTION_2	IF_1
+0x4000151	              0xc3	                                     ret	       101	tbutils.c	FUNCTION_2	IF_1
+acpi_tb_get_table	DO,0:WHILE,0:ELSE,0:CALL,6:SWITCH,0:IF,4:functions,0:FOR,0	29
+0x40001f3	              0x55	                                push rbp	       370	tbutils.c	FUNCTION_6
+0x40001f4	              0x53	                                push rbx	       370	tbutils.c	FUNCTION_6
+0x40001f5	          0x4889f5	                            mov rbp, rsi	       370	tbutils.c	FUNCTION_6
+0x40001f8	      0x66837f1a00	                cmp word [rdi + 0x1a], 0	       375	tbutils.c	FUNCTION_6	IF_1
+0x40001fd	          0x4889fb	                            mov rbx, rdi	       370	tbutils.c	FUNCTION_6
+0x4000200	            0x740c	                            je 0x400020e	       375	tbutils.c	FUNCTION_6	IF_1
+0x4000202	        0x668b431a	               mov ax, word [rbx + 0x1a]	       385	tbutils.c	FUNCTION_6	IF_3
+0x4000206	        0x6683f8ff	              cmp ax, 0xffffffffffffffff	       385	tbutils.c	FUNCTION_6	IF_3
+0x400020a	            0x750d	                           jne 0x4000219	       385	tbutils.c	FUNCTION_6	IF_3
+0x400020c	            0xeb31	                           jmp 0x400023f	       385	tbutils.c	FUNCTION_6	IF_3
+0x400020e	      0xe800000000	                          call 0x4000213	       379	tbutils.c	FUNCTION_6	IF_1	CALL_2
+0x4000213	            0x85c0	                           test eax, eax	       380	tbutils.c	FUNCTION_6	IF_1	IF_2	CALL_3
+0x4000215	            0x74eb	                            je 0x4000202	       380	tbutils.c	FUNCTION_6	IF_1	IF_2	CALL_3
+0x4000217	            0xeb30	                           jmp 0x4000249	       380	tbutils.c	FUNCTION_6	IF_1	IF_2	CALL_3
+0x4000219	            0xffc0	                                 inc eax	       386	tbutils.c	FUNCTION_6	IF_3
+0x400021b	        0x6689431a	               mov word [rbx + 0x1a], ax	       386	tbutils.c	FUNCTION_6	IF_3
+0x400021f	          0x66ffc0	                                  inc ax	       392	tbutils.c	FUNCTION_6	IF_3	IF_4
+0x4000222	            0x751b	                           jne 0x400023f	       392	tbutils.c	FUNCTION_6	IF_3	IF_4
+0x4000224	          0x4889d9	                            mov rcx, rbx	       393	tbutils.c	FUNCTION_6	IF_3	IF_4	CALL_5
+0x4000227	    0x48c7c2000000	                              mov rdx, 0	       393	tbutils.c	FUNCTION_6	IF_3	IF_4	CALL_5
+0x400022e	      0xbe8b010000	                          mov esi, 0x18b	       393	tbutils.c	FUNCTION_6	IF_3	IF_4	CALL_5
+0x4000233	    0x48c7c7000000	                              mov rdi, 0	       393	tbutils.c	FUNCTION_6	IF_3	IF_4	CALL_5
+0x400023a	      0xe800000000	                          call 0x400023f	       393	tbutils.c	FUNCTION_6	IF_3	IF_4	CALL_5
+0x400023f	        0x488b4308	                mov rax, qword [rbx + 8]	       399	tbutils.c	FUNCTION_6
+0x4000243	        0x48894500	                    mov qword [rbp], rax	       399	tbutils.c	FUNCTION_6
+0x4000247	            0x31c0	                            xor eax, eax	       400	tbutils.c	FUNCTION_6	CALL_6
+0x4000249	              0x5b	                                 pop rbx	       401	tbutils.c	FUNCTION_6
+0x400024a	              0x5d	                                 pop rbp	       401	tbutils.c	FUNCTION_6
+0x400024b	              0xc3	                                     ret	       401	tbutils.c	FUNCTION_6

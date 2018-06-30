@@ -1,0 +1,30 @@
+timerqueue_iterate_next	IF,2:WHILE,0:ELSE,0:FOR,0:functions,0:SWITCH,0:DO,0:CALL,2	5
+0x40000c0	          0x4885ff	                           test rdi, rdi	       106	timerqueue.c	FUNCTION_3	IF_1
+0x40000c3	            0x7405	                            je 0x40000ca	       106	timerqueue.c	FUNCTION_3	IF_1
+0x40000c5	      0xe900000000	                           jmp 0x40000ca	       108	timerqueue.c	FUNCTION_3	CALL_1
+0x40000ca	            0x31c0	                            xor eax, eax	       112	timerqueue.c	FUNCTION_3
+0x40000cc	              0xc3	                                     ret	       112	timerqueue.c	FUNCTION_3
+timerqueue_del	IF,1:WHILE,0:ELSE,0:FOR,0:functions,0:SWITCH,0:DO,0:CALL,6	23
+0x40000d0	              0x55	                                push rbp	        78	timerqueue.c	FUNCTION_2
+0x40000d1	              0x53	                                push rbx	        78	timerqueue.c	FUNCTION_2
+0x40000d2	          0x4889fd	                            mov rbp, rdi	        78	timerqueue.c	FUNCTION_2
+0x40000d5	          0x483936	                    cmp qword [rsi], rsi	        79	timerqueue.c	FUNCTION_2	CALL_2
+0x40000d8	          0x4889f3	                            mov rbx, rsi	        78	timerqueue.c	FUNCTION_2
+0x40000db	            0x742d	                            je 0x400010a	        79	timerqueue.c	FUNCTION_2	CALL_2
+0x40000dd	        0x483b5d08	                cmp rbx, qword [rbp + 8]	        82	timerqueue.c	FUNCTION_2	IF_1
+0x40000e1	            0x7419	                            je 0x40000fc	        82	timerqueue.c	FUNCTION_2	IF_1
+0x40000e3	          0x4889ee	                            mov rsi, rbp	        87	timerqueue.c	FUNCTION_2	CALL_5
+0x40000e6	          0x4889df	                            mov rdi, rbx	        87	timerqueue.c	FUNCTION_2	CALL_5
+0x40000e9	      0xe800000000	                          call 0x40000ee	        87	timerqueue.c	FUNCTION_2	CALL_5
+0x40000ee	          0x48891b	                    mov qword [rbx], rbx	        88	timerqueue.c	FUNCTION_2	CALL_6
+0x40000f1	      0x48837d0800	                  cmp qword [rbp + 8], 0	        89	timerqueue.c	FUNCTION_2
+0x40000f6	              0x5b	                                 pop rbx	        90	timerqueue.c	FUNCTION_2
+0x40000f7	              0x5d	                                 pop rbp	        90	timerqueue.c	FUNCTION_2
+0x40000f8	           0xf95c0	                                setne al	        89	timerqueue.c	FUNCTION_2
+0x40000fb	              0xc3	                                     ret	        90	timerqueue.c	FUNCTION_2
+0x40000fc	          0x4889df	                            mov rdi, rbx	        83	timerqueue.c	FUNCTION_2	IF_1	CALL_3
+0x40000ff	      0xe800000000	                          call 0x4000104	        83	timerqueue.c	FUNCTION_2	IF_1	CALL_3
+0x4000104	        0x48894508	                mov qword [rbp + 8], rax	        85	timerqueue.c	FUNCTION_2	IF_1	CALL_4
+0x4000108	            0xebd9	                           jmp 0x40000e3	        85	timerqueue.c	FUNCTION_2	IF_1	CALL_4
+0x400010a	             0xf0b	                                     ud2	        85	timerqueue.c	FUNCTION_2	IF_1	CALL_4
+0x400010c	            0xebcf	                           jmp 0x40000dd	        79	timerqueue.c	FUNCTION_2	CALL_2

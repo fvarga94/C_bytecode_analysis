@@ -1,0 +1,53 @@
+xatexit	SWITCH,0:functions,0:IF,3:WHILE,0:FOR,0:ELSE,0:DO,0:CALL,1	30
+0x4000079	              0x55	                                push rbp	        68	xatexit.c	FUNCTION_1
+0x400007a	              0x53	                                push rbx	        68	xatexit.c	FUNCTION_1
+0x400007b	        0x4883ec08	                              sub rsp, 8	        68	xatexit.c	FUNCTION_1
+0x400007f	          0x4889fd	                            mov rbp, rdi	        68	xatexit.c	FUNCTION_1
+0x4000082	    0x48833d000000	               cmp qword [0x0400008a], 0	        72	xatexit.c	FUNCTION_1	IF_1
+0x400008a	            0x750b	                           jne 0x4000097	        72	xatexit.c	FUNCTION_1	IF_1
+0x400008c	    0x48c705000000	               mov qword [0x04000097], 0	        73	xatexit.c	FUNCTION_1	IF_1
+0x4000097	    0x488b1d000000	            mov rbx, qword [0x0400009e] 	        75	xatexit.c	FUNCTION_1
+0x400009e	        0x837b081f	               cmp dword [rbx + 8], 0x1f	        76	xatexit.c	FUNCTION_1	IF_2
+0x40000a2	            0x7e23	                           jle 0x40000c7	        76	xatexit.c	FUNCTION_1	IF_2
+0x40000a4	      0xbf10010000	                          mov edi, 0x110	        78	xatexit.c	FUNCTION_1	IF_2	IF_3	CALL_1
+0x40000a9	      0xe800000000	                          call 0x40000ae	        78	xatexit.c	FUNCTION_1	IF_2	IF_3	CALL_1
+0x40000ae	          0x4885c0	                           test rax, rax	        78	xatexit.c	FUNCTION_1	IF_2	IF_3	CALL_1
+0x40000b1	            0x742b	                            je 0x40000de	        78	xatexit.c	FUNCTION_1	IF_2	IF_3	CALL_1
+0x40000b3	    0xc74008000000	                  mov dword [rax + 8], 0	        80	xatexit.c	FUNCTION_1	IF_2
+0x40000ba	          0x488918	                    mov qword [rax], rbx	        81	xatexit.c	FUNCTION_1	IF_2
+0x40000bd	    0x488905000000	            mov qword [0x040000c4], rax 	        82	xatexit.c	FUNCTION_1	IF_2
+0x40000c4	          0x4889c3	                            mov rbx, rax	        78	xatexit.c	FUNCTION_1	IF_2	IF_3	CALL_1
+0x40000c7	          0x8b4308	                mov eax, dword [rbx + 8]	        84	xatexit.c	FUNCTION_1
+0x40000ca	          0x8d5001	                      lea edx, [rax + 1]	        84	xatexit.c	FUNCTION_1
+0x40000cd	          0x895308	                mov dword [rbx + 8], edx	        84	xatexit.c	FUNCTION_1
+0x40000d0	            0x4898	                                    cdqe	        84	xatexit.c	FUNCTION_1
+0x40000d2	      0x48896cc310	     mov qword [rbx + rax*8 + 0x10], rbp	        84	xatexit.c	FUNCTION_1
+0x40000d7	      0xb800000000	                              mov eax, 0	        85	xatexit.c	FUNCTION_1
+0x40000dc	            0xeb05	                           jmp 0x40000e3	        85	xatexit.c	FUNCTION_1
+0x40000de	      0xb8ffffffff	                     mov eax, 0xffffffff	        79	xatexit.c	FUNCTION_1	IF_2	IF_3
+0x40000e3	        0x4883c408	                              add rsp, 8	        86	xatexit.c	FUNCTION_1
+0x40000e7	              0x5b	                                 pop rbx	        86	xatexit.c	FUNCTION_1
+0x40000e8	              0x5d	                                 pop rbp	        86	xatexit.c	FUNCTION_1
+0x40000e9	              0xc3	                                     ret	        86	xatexit.c	FUNCTION_1
+xatexit_cleanup	SWITCH,0:functions,0:IF,0:WHILE,0:FOR,2:ELSE,0:DO,0:CALL,0	21
+0x4000040	              0x55	                                push rbp	        92	xatexit.c	FUNCTION_2
+0x4000041	              0x53	                                push rbx	        92	xatexit.c	FUNCTION_2
+0x4000042	        0x4883ec08	                              sub rsp, 8	        92	xatexit.c	FUNCTION_2
+0x4000046	    0x488b2d000000	            mov rbp, qword [0x0400004d] 	        96	xatexit.c	FUNCTION_2	FOR_1
+0x400004d	          0x4885ed	                           test rbp, rbp	        96	xatexit.c	FUNCTION_2	FOR_1
+0x4000050	            0x7420	                            je 0x4000072	        96	xatexit.c	FUNCTION_2	FOR_1
+0x4000052	          0x8b5d08	                mov ebx, dword [rbp + 8]	        97	xatexit.c	FUNCTION_2	FOR_1	FOR_2
+0x4000055	          0x83eb01	                              sub ebx, 1	        97	xatexit.c	FUNCTION_2	FOR_1	FOR_2
+0x4000058	            0x780f	                            js 0x4000069	        97	xatexit.c	FUNCTION_2	FOR_1	FOR_2
+0x400005a	          0x4863c3	                         movsxd rax, ebx	        98	xatexit.c	FUNCTION_2	FOR_1	FOR_2
+0x400005d	        0xff54c510	        call qword [rbp + rax*8 + 0x10] 	        98	xatexit.c	FUNCTION_2	FOR_1	FOR_2
+0x4000061	          0x83eb01	                              sub ebx, 1	        97	xatexit.c	FUNCTION_2	FOR_1	FOR_2
+0x4000064	          0x83fbff	             cmp ebx, 0xffffffffffffffff	        97	xatexit.c	FUNCTION_2	FOR_1	FOR_2
+0x4000067	            0x75f1	                           jne 0x400005a	        97	xatexit.c	FUNCTION_2	FOR_1	FOR_2
+0x4000069	        0x488b6d00	                    mov rbp, qword [rbp]	        96	xatexit.c	FUNCTION_2	FOR_1
+0x400006d	          0x4885ed	                           test rbp, rbp	        96	xatexit.c	FUNCTION_2	FOR_1
+0x4000070	            0x75e0	                           jne 0x4000052	        96	xatexit.c	FUNCTION_2	FOR_1
+0x4000072	        0x4883c408	                              add rsp, 8	        99	xatexit.c	FUNCTION_2
+0x4000076	              0x5b	                                 pop rbx	        99	xatexit.c	FUNCTION_2
+0x4000077	              0x5d	                                 pop rbp	        99	xatexit.c	FUNCTION_2
+0x4000078	              0xc3	                                     ret	        99	xatexit.c	FUNCTION_2

@@ -1,0 +1,509 @@
+ahci_show_host_cap2	FOR,0:IF,0:DO,0:ELSE,0:WHILE,0:CALL,3:functions,0:SWITCH,0	10
+0x4000480	          0x4889d0	                            mov rax, rdx	       266	libahci.c	FUNCTION_5
+0x4000483	    0x488b97e00200	           mov rdx, qword [rdi + 0x2e0] 	       269	libahci.c	FUNCTION_5
+0x400048a	    0x48c7c6000000	                              mov rsi, 0	       271	libahci.c	FUNCTION_5	CALL_3
+0x4000491	          0x4889c7	                            mov rdi, rax	       271	libahci.c	FUNCTION_5	CALL_3
+0x4000494	    0x488b92783300	          mov rdx, qword [rdx + 0x3378] 	       269	libahci.c	FUNCTION_5
+0x400049b	        0x488b5220	            mov rdx, qword [rdx + 0x20] 	       271	libahci.c	FUNCTION_5	CALL_3
+0x400049f	          0x8b521c	            mov edx, dword [rdx + 0x1c] 	       271	libahci.c	FUNCTION_5	CALL_3
+0x40004a2	      0xe800000000	                          call 0x40004a7	       271	libahci.c	FUNCTION_5	CALL_3
+0x40004a7	            0x4898	                                    cdqe	       271	libahci.c	FUNCTION_5	CALL_3
+0x40004a9	              0xc3	                                     ret	       272	libahci.c	FUNCTION_5
+ahci_post_internal_cmd	FOR,0:IF,1:DO,0:ELSE,0:WHILE,0:CALL,1:functions,0:SWITCH,0	5
+0x4000bd0	        0xf6475201	               test byte [rdi + 0x52], 1	      2098	libahci.c	FUNCTION_65	IF_1
+0x4000bd4	            0x7502	                           jne 0x4000bd8	      2098	libahci.c	FUNCTION_65	IF_1
+0x4000bd6	            0xf3c3	                                     ret	      2098	libahci.c	FUNCTION_65	IF_1
+0x4000bd8	          0x488b3f	                    mov rdi, qword [rdi]	      2099	libahci.c	FUNCTION_65	CALL_1
+0x4000bdb	      0xe930ffffff	                jmp sym.ahci_kick_engine	      2099	libahci.c	FUNCTION_65	CALL_1
+ahci_show_host_version	FOR,0:IF,0:DO,0:ELSE,0:WHILE,0:CALL,3:functions,0:SWITCH,0	10
+0x4000450	          0x4889d0	                            mov rax, rdx	       276	libahci.c	FUNCTION_6
+0x4000453	    0x488b97e00200	           mov rdx, qword [rdi + 0x2e0] 	       279	libahci.c	FUNCTION_6
+0x400045a	    0x48c7c6000000	                              mov rsi, 0	       281	libahci.c	FUNCTION_6	CALL_3
+0x4000461	          0x4889c7	                            mov rdi, rax	       281	libahci.c	FUNCTION_6	CALL_3
+0x4000464	    0x488b92783300	          mov rdx, qword [rdx + 0x3378] 	       279	libahci.c	FUNCTION_6
+0x400046b	        0x488b5220	            mov rdx, qword [rdx + 0x20] 	       281	libahci.c	FUNCTION_6	CALL_3
+0x400046f	          0x8b5220	            mov edx, dword [rdx + 0x20] 	       281	libahci.c	FUNCTION_6	CALL_3
+0x4000472	      0xe800000000	                          call 0x4000477	       281	libahci.c	FUNCTION_6	CALL_3
+0x4000477	            0x4898	                                    cdqe	       281	libahci.c	FUNCTION_6	CALL_3
+0x4000479	              0xc3	                                     ret	       282	libahci.c	FUNCTION_6
+ahci_activity_show	FOR,0:IF,0:DO,0:ELSE,0:WHILE,0:CALL,1:functions,0:SWITCH,0	13
+0x4000410	          0x488b07	                    mov rax, qword [rdi]	      1197	libahci.c	FUNCTION_34
+0x4000413	          0x4889f1	                            mov rcx, rsi	      1196	libahci.c	FUNCTION_34
+0x4000416	    0x48c7c6000000	                              mov rsi, 0	      1205	libahci.c	FUNCTION_34	CALL_1
+0x400041d	          0x4889cf	                            mov rdi, rcx	      1205	libahci.c	FUNCTION_34	CALL_1
+0x4000420	          0x488b10	                    mov rdx, qword [rax]	      1199	libahci.c	FUNCTION_34
+0x4000423	        0x48634008	            movsxd rax, dword [rax + 8] 	      1205	libahci.c	FUNCTION_34	CALL_1
+0x4000427	      0x488d448005	              lea rax, [rax + rax*4 + 5]	      1205	libahci.c	FUNCTION_34	CALL_1
+0x400042c	        0x48c1e004	                              shl rax, 4	      1205	libahci.c	FUNCTION_34	CALL_1
+0x4000430	    0x480382883700	           add rax, qword [rdx + 0x3788]	      1205	libahci.c	FUNCTION_34	CALL_1
+0x4000437	            0x8b10	                    mov edx, dword [rax]	      1205	libahci.c	FUNCTION_34	CALL_1
+0x4000439	      0xe800000000	                          call 0x400043e	      1205	libahci.c	FUNCTION_34	CALL_1
+0x400043e	            0x4898	                                    cdqe	      1205	libahci.c	FUNCTION_34	CALL_1
+0x4000440	              0xc3	                                     ret	      1206	libahci.c	FUNCTION_34
+ahci_hardreset	FOR,0:IF,0:DO,0:ELSE,0:WHILE,0:CALL,1:functions,0:SWITCH,0	12
+0x4001760	        0x4883ec10	                           sub rsp, 0x10	      1578	libahci.c	FUNCTION_48
+0x4001764	      0x488d4c2407	                      lea rcx, [rsp + 7]	      1581	libahci.c	FUNCTION_48	CALL_1
+0x4001769	    0x65488b042528	                mov rax, qword gs:[0x28]	      1578	libahci.c	FUNCTION_48
+0x4001772	      0x4889442408	                mov qword [rsp + 8], rax	      1578	libahci.c	FUNCTION_48
+0x4001777	            0x31c0	                            xor eax, eax	      1578	libahci.c	FUNCTION_48
+0x4001779	      0xe800000000	                          call 0x400177e	      1581	libahci.c	FUNCTION_48	CALL_1
+0x400177e	      0x488b4c2408	                mov rcx, qword [rsp + 8]	      1582	libahci.c	FUNCTION_48
+0x4001783	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      1582	libahci.c	FUNCTION_48
+0x400178c	            0x7505	                           jne 0x4001793	      1582	libahci.c	FUNCTION_48
+0x400178e	        0x4883c410	                           add rsp, 0x10	      1582	libahci.c	FUNCTION_48
+0x4001792	              0xc3	                                     ret	      1582	libahci.c	FUNCTION_48
+0x4001793	      0xe800000000	                          call 0x4001798	      1582	libahci.c	FUNCTION_48
+ahci_qc_prep	FOR,0:IF,4:DO,0:ELSE,0:WHILE,0:CALL,6:functions,0:SWITCH,0	92
+0x40023c0	            0x4156	                                push r14	      1639	libahci.c	FUNCTION_52
+0x40023c2	            0x4155	                                push r13	      1639	libahci.c	FUNCTION_52
+0x40023c4	      0xba01000000	                              mov edx, 1	      1654	libahci.c	FUNCTION_52	CALL_2
+0x40023c9	            0x4154	                                push r12	      1639	libahci.c	FUNCTION_52
+0x40023cb	              0x55	                                push rbp	      1639	libahci.c	FUNCTION_52
+0x40023cc	          0x4989fc	                            mov r12, rdi	      1639	libahci.c	FUNCTION_52
+0x40023cf	              0x53	                                push rbx	      1639	libahci.c	FUNCTION_52
+0x40023d0	          0x488b07	                    mov rax, qword [rdi]	      1641	libahci.c	FUNCTION_52
+0x40023d3	        0x4883c720	                           add rdi, 0x20	      1654	libahci.c	FUNCTION_52	CALL_2
+0x40023d7	    0x44696f38000b	    imul r13d, dword [rdi + 0x38], 0xb00	      1652	libahci.c	FUNCTION_52
+0x40023df	         0xfb66f08	               movzx ebp, byte [rdi + 8]	      1652	libahci.c	FUNCTION_52
+0x40023e3	    0x4c8bb0883700	          mov r14, qword [rax + 0x3788] 	      1641	libahci.c	FUNCTION_52
+0x40023ea	        0x488b47e8	             mov rax, qword [rdi - 0x18]	      1654	libahci.c	FUNCTION_52	CALL_2
+0x40023ee	          0x488b00	                    mov rax, qword [rax]	      1654	libahci.c	FUNCTION_52	CALL_2
+0x40023f1	        0x4d036e18	             add r13, qword [r14 + 0x18]	      1652	libahci.c	FUNCTION_52
+0x40023f5	          0x83e508	                              and ebp, 8	      1652	libahci.c	FUNCTION_52
+0x40023f8	         0xfb67008	               movzx esi, byte [rax + 8]	      1654	libahci.c	FUNCTION_52	CALL_2
+0x40023fc	          0x4c89e9	                            mov rcx, r13	      1654	libahci.c	FUNCTION_52	CALL_2
+0x40023ff	      0xe800000000	                          call 0x4002404	      1654	libahci.c	FUNCTION_52	CALL_2
+0x4002404	          0x4084ed	                           test bpl, bpl	      1655	libahci.c	FUNCTION_52	IF_1
+0x4002407	            0x757c	                           jne 0x4002485	      1655	libahci.c	FUNCTION_52	IF_1
+0x4002409	            0x31d2	                            xor edx, edx	      1655	libahci.c	FUNCTION_52	IF_1
+0x400240b	    0x41f644245002	               test byte [r12 + 0x50], 2	      1661	libahci.c	FUNCTION_52	IF_2
+0x4002411	     0xf85b5000000	                           jne 0x40024cc	      1661	libahci.c	FUNCTION_52	IF_2
+0x4002417	      0x498b442408	                mov rax, qword [r12 + 8]	      1667	libahci.c	FUNCTION_52
+0x400241c	        0x498b4e08	                mov rcx, qword [r14 + 8]	      1301	libahci.c	FUNCTION_39	CALL_1
+0x4002420	          0x488b00	                    mov rax, qword [rax]	      1667	libahci.c	FUNCTION_52
+0x4002423	          0x8b5808	                mov ebx, dword [rax + 8]	      1667	libahci.c	FUNCTION_52
+0x4002426	          0xc1e30c	                            shl ebx, 0xc	      1667	libahci.c	FUNCTION_52
+0x4002429	             0x9d3	                             or ebx, edx	      1667	libahci.c	FUNCTION_52
+0x400242b	            0x89d8	                            mov eax, ebx	      1667	libahci.c	FUNCTION_52
+0x400242d	          0x83cb45	                            or ebx, 0x45	      1667	libahci.c	FUNCTION_52
+0x4002430	          0x83c805	                               or eax, 5	      1667	libahci.c	FUNCTION_52
+0x4002433	    0x41f644242008	               test byte [r12 + 0x20], 8	      1667	libahci.c	FUNCTION_52
+0x4002439	           0xf44d8	                          cmove ebx, eax	      1667	libahci.c	FUNCTION_52
+0x400243c	            0x89d8	                            mov eax, ebx	      1671	libahci.c	FUNCTION_52	IF_4
+0x400243e	             0xca0	                             or al, 0xa0	      1671	libahci.c	FUNCTION_52	IF_4
+0x4002440	          0x4084ed	                           test bpl, bpl	      1671	libahci.c	FUNCTION_52	IF_4
+0x4002443	           0xf45d8	                         cmovne ebx, eax	      1671	libahci.c	FUNCTION_52	IF_4
+0x4002446	      0x418b442458	            mov eax, dword [r12 + 0x58] 	      1673	libahci.c	FUNCTION_52	CALL_6
+0x400244b	    0x69d0000b0000	                    imul edx, eax, 0xb00	      1299	libahci.c	FUNCTION_39
+0x4002451	        0x48c1e005	                              shl rax, 5	      1301	libahci.c	FUNCTION_39	CALL_1
+0x4002455	        0x49035620	             add rdx, qword [r14 + 0x20]	      1299	libahci.c	FUNCTION_39
+0x4002459	          0x891c01	              mov dword [rcx + rax], ebx	      1301	libahci.c	FUNCTION_39	CALL_1
+0x400245c	        0x498b4e08	                mov rcx, qword [r14 + 8]	      1302	libahci.c	FUNCTION_39
+0x4002460	    0xc74401040000	            mov dword [rcx + rax + 4], 0	      1302	libahci.c	FUNCTION_39
+0x4002468	        0x498b4e08	                mov rcx, qword [r14 + 8]	      1303	libahci.c	FUNCTION_39	CALL_2
+0x400246c	        0x89540108	          mov dword [rcx + rax + 8], edx	      1303	libahci.c	FUNCTION_39	CALL_2
+0x4002470	        0x498b4e08	                mov rcx, qword [r14 + 8]	      1304	libahci.c	FUNCTION_39	CALL_3
+0x4002474	        0x48c1ea20	                           shr rdx, 0x20	      1304	libahci.c	FUNCTION_39	CALL_3
+0x4002478	        0x8954010c	        mov dword [rcx + rax + 0xc], edx	      1304	libahci.c	FUNCTION_39	CALL_3
+0x400247c	              0x5b	                                 pop rbx	      1674	libahci.c	FUNCTION_52
+0x400247d	              0x5d	                                 pop rbp	      1674	libahci.c	FUNCTION_52
+0x400247e	            0x415c	                                 pop r12	      1674	libahci.c	FUNCTION_52
+0x4002480	            0x415d	                                 pop r13	      1674	libahci.c	FUNCTION_52
+0x4002482	            0x415e	                                 pop r14	      1674	libahci.c	FUNCTION_52
+0x4002484	              0xc3	                                     ret	      1674	libahci.c	FUNCTION_52
+0x4002485	        0x498d7d40	                   lea rdi, [r13 + 0x40]	      1656	libahci.c	FUNCTION_52	IF_1	CALL_3
+0x4002489	    0x49c745400000	               mov qword [r13 + 0x40], 0	      1656	libahci.c	FUNCTION_52	IF_1	CALL_3
+0x4002491	      0x498d742440	                   lea rsi, [r12 + 0x40]	      1657	libahci.c	FUNCTION_52	IF_1	CALL_4
+0x4002496	    0x48c747080000	                  mov qword [rdi + 8], 0	      1656	libahci.c	FUNCTION_52	IF_1	CALL_3
+0x400249e	    0x48c747100000	               mov qword [rdi + 0x10], 0	      1656	libahci.c	FUNCTION_52	IF_1	CALL_3
+0x40024a6	    0x48c747180000	               mov qword [rdi + 0x18], 0	      1656	libahci.c	FUNCTION_52	IF_1	CALL_3
+0x40024ae	      0x498b442408	                mov rax, qword [r12 + 8]	      1657	libahci.c	FUNCTION_52	IF_1	CALL_4
+0x40024b3	    0x8b9038030000	           mov edx, dword [rax + 0x338] 	      1657	libahci.c	FUNCTION_52	IF_1	CALL_4
+0x40024b9	      0xe800000000	                          call 0x40024be	      1657	libahci.c	FUNCTION_52	IF_1	CALL_4
+0x40024be	            0x31d2	                            xor edx, edx	      1657	libahci.c	FUNCTION_52	IF_1	CALL_4
+0x40024c0	    0x41f644245002	               test byte [r12 + 0x50], 2	      1661	libahci.c	FUNCTION_52	IF_2
+0x40024c6	     0xf844bffffff	                            je 0x4002417	      1661	libahci.c	FUNCTION_52	IF_2
+0x40024cc	      0x418b54245c	            mov edx, dword [r12 + 0x5c] 	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x40024d1	    0x498b84249800	            mov rax, qword [r12 + 0x98] 	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x40024d9	            0x85d2	                           test edx, edx	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x40024db	     0xf8436ffffff	                            je 0x4002417	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x40024e1	            0x31db	                            xor ebx, ebx	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x40024e3	            0x89d9	                            mov ecx, ebx	      1619	libahci.c	FUNCTION_50	FUNCTION_1	CALL_3
+0x40024e5	        0x488b5010	            mov rdx, qword [rax + 0x10] 	      1616	libahci.c	FUNCTION_50	FUNCTION_1	CALL_1
+0x40024e9	          0x8b7018	            mov esi, dword [rax + 0x18] 	      1617	libahci.c	FUNCTION_50	FUNCTION_1	CALL_2
+0x40024ec	        0x48c1e104	                              shl rcx, 4	      1619	libahci.c	FUNCTION_50	FUNCTION_1	CALL_3
+0x40024f0	          0x4889c7	                            mov rdi, rax	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x40024f3	          0x83c301	                              add ebx, 1	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x40024f6	    0x498d8c0d8000	            lea rcx, [r13 + rcx + 0x80] 	      1619	libahci.c	FUNCTION_50	FUNCTION_1	CALL_3
+0x40024fe	            0x8911	                    mov dword [rcx], edx	      1619	libahci.c	FUNCTION_50	FUNCTION_1	CALL_3
+0x4002500	        0x48c1ea20	                           shr rdx, 0x20	      1620	libahci.c	FUNCTION_50	FUNCTION_1	CALL_4
+0x4002504	          0x895104	                mov dword [rcx + 4], edx	      1620	libahci.c	FUNCTION_50	FUNCTION_1	CALL_4
+0x4002507	          0x8d56ff	                      lea edx, [rsi - 1]	      1621	libahci.c	FUNCTION_50	FUNCTION_1	CALL_5
+0x400250a	          0x89510c	              mov dword [rcx + 0xc], edx	      1621	libahci.c	FUNCTION_50	FUNCTION_1	CALL_5
+0x400250d	      0xe800000000	                          call 0x4002512	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x4002512	      0x413b5c245c	            cmp ebx, dword [r12 + 0x5c] 	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x4002517	            0x72ca	                            jb 0x40024e3	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x4002519	          0xc1e310	                           shl ebx, 0x10	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x400251c	            0x89da	                            mov edx, ebx	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+0x400251e	      0xe9f4feffff	                           jmp 0x4002417	      1615	libahci.c	FUNCTION_50	FUNCTION_1
+ahci_led_store	FOR,0:IF,3:DO,0:ELSE,1:WHILE,0:CALL,2:functions,0:SWITCH,0	46
+0x40009e0	            0x4154	                                push r12	      1138	libahci.c	FUNCTION_32
+0x40009e2	              0x55	                                push rbp	      1138	libahci.c	FUNCTION_32
+0x40009e3	          0x4889d5	                            mov rbp, rdx	      1138	libahci.c	FUNCTION_32
+0x40009e6	              0x53	                                push rbx	      1138	libahci.c	FUNCTION_32
+0x40009e7	          0x4889fb	                            mov rbx, rdi	      1138	libahci.c	FUNCTION_32
+0x40009ea	          0x4889f7	                            mov rdi, rsi	      1138	libahci.c	FUNCTION_32
+0x40009ed	            0x31f6	                            xor esi, esi	      1144	libahci.c	FUNCTION_32	IF_1	CALL_1
+0x40009ef	        0x4883ec10	                           sub rsp, 0x10	      1138	libahci.c	FUNCTION_32
+0x40009f3	    0x4c8ba3883700	          mov r12, qword [rbx + 0x3788] 	      1141	libahci.c	FUNCTION_32
+0x40009fa	      0x488d542404	                      lea rdx, [rsp + 4]	      1144	libahci.c	FUNCTION_32	IF_1	CALL_1
+0x40009ff	    0x65488b042528	                mov rax, qword gs:[0x28]	      1138	libahci.c	FUNCTION_32
+0x4000a08	      0x4889442408	                mov qword [rsp + 8], rax	      1138	libahci.c	FUNCTION_32
+0x4000a0d	            0x31c0	                            xor eax, eax	      1138	libahci.c	FUNCTION_32
+0x4000a0f	      0xe800000000	                          call 0x4000a14	      1144	libahci.c	FUNCTION_32	IF_1	CALL_1
+0x4000a14	            0x85c0	                           test eax, eax	      1144	libahci.c	FUNCTION_32	IF_1	CALL_1
+0x4000a16	            0x785d	                            js 0x4000a75	      1144	libahci.c	FUNCTION_32	IF_1	CALL_1
+0x4000a18	        0x8b742404	                mov esi, dword [rsp + 4]	      1148	libahci.c	FUNCTION_32
+0x4000a1c	          0x4889f0	                            mov rax, rsi	      1148	libahci.c	FUNCTION_32
+0x4000a1f	           0xfb6c4	                           movzx eax, ah	      1148	libahci.c	FUNCTION_32
+0x4000a22	          0x83f807	                              cmp eax, 7	      1149	libahci.c	FUNCTION_32	IF_2
+0x4000a25	            0x774e	                            ja 0x4000a75	      1149	libahci.c	FUNCTION_32	IF_2
+0x4000a27	            0x4898	                                    cdqe	      1158	libahci.c	FUNCTION_32	IF_3
+0x4000a29	      0x488d448005	              lea rax, [rax + rax*4 + 5]	      1158	libahci.c	FUNCTION_32	IF_3
+0x4000a2e	        0x48c1e004	                              shl rax, 4	      1158	libahci.c	FUNCTION_32	IF_3
+0x4000a32	        0x418b0404	              mov eax, dword [r12 + rax]	      1158	libahci.c	FUNCTION_32	IF_3
+0x4000a36	            0x85c0	                           test eax, eax	      1158	libahci.c	FUNCTION_32	IF_3
+0x4000a38	            0x752f	                           jne 0x4000a69	      1158	libahci.c	FUNCTION_32	IF_3
+0x4000a3a	        0x488b4308	                mov rax, qword [rbx + 8]	      1161	libahci.c	FUNCTION_32	CALL_2
+0x4000a3e	          0x4889ea	                            mov rdx, rbp	      1161	libahci.c	FUNCTION_32	CALL_2
+0x4000a41	          0x4889df	                            mov rdi, rbx	      1161	libahci.c	FUNCTION_32	CALL_2
+0x4000a44	    0x488b80c80100	           mov rax, qword [rax + 0x1c8] 	      1161	libahci.c	FUNCTION_32	CALL_2
+0x4000a4b	      0xe800000000	                          call 0x4000a50	      1161	libahci.c	FUNCTION_32	CALL_2
+0x4000a50	      0x488b4c2408	                mov rcx, qword [rsp + 8]	      1162	libahci.c	FUNCTION_32
+0x4000a55	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      1162	libahci.c	FUNCTION_32
+0x4000a5e	            0x751e	                           jne 0x4000a7e	      1162	libahci.c	FUNCTION_32
+0x4000a60	        0x4883c410	                           add rsp, 0x10	      1162	libahci.c	FUNCTION_32
+0x4000a64	              0x5b	                                 pop rbx	      1162	libahci.c	FUNCTION_32
+0x4000a65	              0x5d	                                 pop rbp	      1162	libahci.c	FUNCTION_32
+0x4000a66	            0x415c	                                 pop r12	      1162	libahci.c	FUNCTION_32
+0x4000a68	              0xc3	                                     ret	      1162	libahci.c	FUNCTION_32
+0x4000a69	    0x81e6fffff8ff	                     and esi, 0xfff8ffff	      1159	libahci.c	FUNCTION_32	IF_3
+0x4000a6f	        0x89742404	                mov dword [rsp + 4], esi	      1159	libahci.c	FUNCTION_32	IF_3
+0x4000a73	            0xebc5	                           jmp 0x4000a3a	      1159	libahci.c	FUNCTION_32	IF_3
+0x4000a75	    0x48c7c0eaffff	             mov rax, 0xffffffffffffffea	      1145	libahci.c	FUNCTION_32	IF_1
+0x4000a7c	            0xebd2	                           jmp 0x4000a50	      1145	libahci.c	FUNCTION_32	IF_1
+0x4000a7e	      0xe800000000	                          call 0x4000a83	      1162	libahci.c	FUNCTION_32
+ahci_show_host_caps	FOR,0:IF,0:DO,0:ELSE,0:WHILE,0:CALL,3:functions,0:SWITCH,0	10
+0x40004b0	          0x4889d0	                            mov rax, rdx	       256	libahci.c	FUNCTION_4
+0x40004b3	    0x488b97e00200	           mov rdx, qword [rdi + 0x2e0] 	       259	libahci.c	FUNCTION_4
+0x40004ba	    0x48c7c6000000	                              mov rsi, 0	       261	libahci.c	FUNCTION_4	CALL_3
+0x40004c1	          0x4889c7	                            mov rdi, rax	       261	libahci.c	FUNCTION_4	CALL_3
+0x40004c4	    0x488b92783300	          mov rdx, qword [rdx + 0x3378] 	       259	libahci.c	FUNCTION_4
+0x40004cb	        0x488b5220	            mov rdx, qword [rdx + 0x20] 	       261	libahci.c	FUNCTION_4	CALL_3
+0x40004cf	          0x8b5218	            mov edx, dword [rdx + 0x18] 	       261	libahci.c	FUNCTION_4	CALL_3
+0x40004d2	      0xe800000000	                          call 0x40004d7	       261	libahci.c	FUNCTION_4	CALL_3
+0x40004d7	            0x4898	                                    cdqe	       261	libahci.c	FUNCTION_4	CALL_3
+0x40004d9	              0xc3	                                     ret	       262	libahci.c	FUNCTION_4
+ahci_activity_store	FOR,0:IF,2:DO,0:ELSE,1:WHILE,0:CALL,2:functions,0:SWITCH,0	46
+0x40001b0	            0x4154	                                push r12	      1165	libahci.c	FUNCTION_33
+0x40001b2	              0x55	                                push rbp	      1165	libahci.c	FUNCTION_33
+0x40001b3	            0x89f5	                            mov ebp, esi	      1165	libahci.c	FUNCTION_33
+0x40001b5	              0x53	                                push rbx	      1165	libahci.c	FUNCTION_33
+0x40001b6	          0x488b07	                    mov rax, qword [rdi]	      1166	libahci.c	FUNCTION_33
+0x40001b9	        0x48635808	            movsxd rbx, dword [rax + 8] 	      1169	libahci.c	FUNCTION_33
+0x40001bd	          0x488b38	                    mov rdi, qword [rax]	      1167	libahci.c	FUNCTION_33
+0x40001c0	    0x4c8ba7883700	          mov r12, qword [rdi + 0x3788] 	      1168	libahci.c	FUNCTION_33
+0x40001c7	        0x488d149b	                  lea rdx, [rbx + rbx*4]	      1170	libahci.c	FUNCTION_33
+0x40001cb	          0x4889d9	                            mov rcx, rbx	      1169	libahci.c	FUNCTION_33
+0x40001ce	        0x48c1e204	                              shl rdx, 4	      1170	libahci.c	FUNCTION_33
+0x40001d2	            0x85ed	                           test ebp, ebp	      1173	libahci.c	FUNCTION_33	IF_1
+0x40001d4	    0x498bb4149000	      mov rsi, qword [r12 + rdx + 0x90] 	      1170	libahci.c	FUNCTION_33
+0x40001dc	            0x7423	                            je 0x4000201	      1173	libahci.c	FUNCTION_33	IF_1
+0x40001de	    0x8188e8020000	            or dword [rax + 0x2e8], 0x80	      1182	libahci.c	FUNCTION_33	ELSE_1
+0x40001e8	          0x83fd02	                              cmp ebp, 2	      1183	libahci.c	FUNCTION_33	ELSE_1	IF_2
+0x40001eb	            0x7443	                            je 0x4000230	      1183	libahci.c	FUNCTION_33	ELSE_1	IF_2
+0x40001ed	      0x488d449b05	              lea rax, [rbx + rbx*4 + 5]	      1191	libahci.c	FUNCTION_33
+0x40001f2	        0x48c1e004	                              shl rax, 4	      1191	libahci.c	FUNCTION_33
+0x40001f6	        0x41892c04	              mov dword [r12 + rax], ebp	      1191	libahci.c	FUNCTION_33
+0x40001fa	            0x31c0	                            xor eax, eax	      1193	libahci.c	FUNCTION_33
+0x40001fc	              0x5b	                                 pop rbx	      1193	libahci.c	FUNCTION_33
+0x40001fd	              0x5d	                                 pop rbp	      1193	libahci.c	FUNCTION_33
+0x40001fe	            0x415c	                                 pop r12	      1193	libahci.c	FUNCTION_33
+0x4000200	              0xc3	                                     ret	      1193	libahci.c	FUNCTION_33
+0x4000201	    0x81a0e8020000	     and dword [rax + 0x2e8], 0xffffff7f	      1175	libahci.c	FUNCTION_33	IF_1
+0x400020b	    0x81e60000f8ff	                     and esi, 0xfff80000	      1175	libahci.c	FUNCTION_33	IF_1
+0x4000211	          0xc1e108	                              shl ecx, 8	      1175	libahci.c	FUNCTION_33	IF_1
+0x4000214	        0x488b4708	                mov rax, qword [rdi + 8]	      1180	libahci.c	FUNCTION_33	IF_1	CALL_1
+0x4000218	             0x9ce	                             or esi, ecx	      1180	libahci.c	FUNCTION_33	IF_1	CALL_1
+0x400021a	           0xb772c	              or esi, dword [rdi + 0x2c]	      1180	libahci.c	FUNCTION_33	IF_1	CALL_1
+0x400021d	      0xba04000000	                              mov edx, 4	      1180	libahci.c	FUNCTION_33	IF_1	CALL_1
+0x4000222	    0x488b80c80100	           mov rax, qword [rax + 0x1c8] 	      1180	libahci.c	FUNCTION_33	IF_1	CALL_1
+0x4000229	      0xe800000000	                          call 0x400022e	      1180	libahci.c	FUNCTION_33	IF_1	CALL_1
+0x400022e	            0xebbd	                           jmp 0x40001ed	      1180	libahci.c	FUNCTION_33	IF_1	CALL_1
+0x4000230	          0x8b472c	            mov eax, dword [rdi + 0x2c] 	      1180	libahci.c	FUNCTION_33	IF_1	CALL_1
+0x4000233	    0x81e60000f8ff	                     and esi, 0xfff80000	      1180	libahci.c	FUNCTION_33	IF_1	CALL_1
+0x4000239	          0xc1e108	                              shl ecx, 8	      1188	libahci.c	FUNCTION_33	ELSE_1	IF_2	CALL_2
+0x400023c	      0xba04000000	                              mov edx, 4	      1188	libahci.c	FUNCTION_33	ELSE_1	IF_2	CALL_2
+0x4000241	       0xd00000100	                         or eax, 0x10000	      1188	libahci.c	FUNCTION_33	ELSE_1	IF_2	CALL_2
+0x4000246	             0x9c6	                             or esi, eax	      1188	libahci.c	FUNCTION_33	ELSE_1	IF_2	CALL_2
+0x4000248	        0x488b4708	                mov rax, qword [rdi + 8]	      1188	libahci.c	FUNCTION_33	ELSE_1	IF_2	CALL_2
+0x400024c	             0x9ce	                             or esi, ecx	      1188	libahci.c	FUNCTION_33	ELSE_1	IF_2	CALL_2
+0x400024e	    0x488b80c80100	           mov rax, qword [rax + 0x1c8] 	      1188	libahci.c	FUNCTION_33	ELSE_1	IF_2	CALL_2
+0x4000255	      0xe800000000	                          call 0x400025a	      1188	libahci.c	FUNCTION_33	ELSE_1	IF_2	CALL_2
+0x400025a	            0xeb91	                           jmp 0x40001ed	      1188	libahci.c	FUNCTION_33	ELSE_1	IF_2	CALL_2
+ahci_print_info	FOR,0:IF,3:DO,0:ELSE,3:WHILE,0:CALL,2:functions,0:SWITCH,0	170
+0x4000be0	            0x4157	                                push r15	      2442	libahci.c	FUNCTION_75
+0x4000be2	            0x4156	                                push r14	      2442	libahci.c	FUNCTION_75
+0x4000be4	    0x49c7c2000000	                              mov r10, 0	      2454	libahci.c	FUNCTION_75	IF_1
+0x4000beb	            0x4155	                                push r13	      2442	libahci.c	FUNCTION_75
+0x4000bed	            0x4154	                                push r12	      2442	libahci.c	FUNCTION_75
+0x4000bef	              0x55	                                push rbp	      2442	libahci.c	FUNCTION_75
+0x4000bf0	              0x53	                                push rbx	      2442	libahci.c	FUNCTION_75
+0x4000bf1	          0x4889fd	                            mov rbp, rdi	      2442	libahci.c	FUNCTION_75
+0x4000bf4	        0x4883ec58	                           sub rsp, 0x58	      2442	libahci.c	FUNCTION_75
+0x4000bf8	        0x488b4720	            mov rax, qword [rdi + 0x20] 	      2443	libahci.c	FUNCTION_75
+0x4000bfc	          0x8b5818	            mov ebx, dword [rax + 0x18] 	      2448	libahci.c	FUNCTION_75
+0x4000bff	        0x448b4820	            mov r9d, dword [rax + 0x20] 	      2447	libahci.c	FUNCTION_75
+0x4000c03	        0x448b601c	           mov r12d, dword [rax + 0x1c] 	      2449	libahci.c	FUNCTION_75
+0x4000c07	        0x448b5824	           mov r11d, dword [rax + 0x24] 	      2450	libahci.c	FUNCTION_75
+0x4000c0b	            0x89d8	                            mov eax, ebx	      2452	libahci.c	FUNCTION_75
+0x4000c0d	          0xc1e814	                           shr eax, 0x14	      2452	libahci.c	FUNCTION_75
+0x4000c10	          0x83e00f	                            and eax, 0xf	      2452	libahci.c	FUNCTION_75
+0x4000c13	          0x83f801	                              cmp eax, 1	      2453	libahci.c	FUNCTION_75	IF_1
+0x4000c16	            0x7421	                            je 0x4000c39	      2453	libahci.c	FUNCTION_75	IF_1
+0x4000c18	          0x83f802	                              cmp eax, 2	      2455	libahci.c	FUNCTION_75	ELSE_1	IF_2
+0x4000c1b	    0x49c7c2000000	                              mov r10, 0	      2456	libahci.c	FUNCTION_75	ELSE_1	IF_2
+0x4000c22	            0x7415	                            je 0x4000c39	      2455	libahci.c	FUNCTION_75	ELSE_1	IF_2
+0x4000c24	          0x83f803	                              cmp eax, 3	      2460	libahci.c	FUNCTION_75	ELSE_3
+0x4000c27	    0x49c7c2000000	                              mov r10, 0	      2460	libahci.c	FUNCTION_75	ELSE_3
+0x4000c2e	    0x48c7c0000000	                              mov rax, 0	      2460	libahci.c	FUNCTION_75	ELSE_3
+0x4000c35	        0x4c0f44d0	                          cmove r10, rax	      2460	libahci.c	FUNCTION_75	ELSE_3
+0x4000c39	          0x4c89c8	                             mov rax, r9	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c3c	        0x488b7d08	                mov rdi, qword [rbp + 8]	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c40	              0x56	                                push rsi	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c41	           0xfb6c4	                           movzx eax, ah	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c44	            0x4153	                                push r11	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c46	            0x4152	                                push r10	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c48	          0x4189c0	                            mov r8d, eax	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c4b	            0x89d8	                            mov eax, ebx	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c4d	          0x4489c9	                            mov ecx, r9d	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c50	          0x83e01f	                           and eax, 0x1f	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c53	          0xc1e910	                           shr ecx, 0x10	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c56	          0x4489ca	                            mov edx, r9d	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c59	          0x83c001	                              add eax, 1	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c5c	          0xc1ea18	                           shr edx, 0x18	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c5f	           0xfb6c9	                           movzx ecx, cl	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c62	              0x50	                                push rax	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c63	            0x89d8	                            mov eax, ebx	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c65	        0x450fb6c9	                          movzx r9d, r9b	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c69	          0xc1e808	                              shr eax, 8	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c6c	    0x48c7c6000000	                              mov rsi, 0	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c73	    0x49c7c7000000	                              mov r15, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000c7a	          0x83e01f	                           and eax, 0x1f	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c7d	    0x49c7c6000000	                              mov r14, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000c84	    0x49c7c5000000	                              mov r13, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000c8b	          0x83c001	                              add eax, 1	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c8e	              0x50	                                push rax	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c8f	      0xe800000000	                          call 0x4000c94	      2462	libahci.c	FUNCTION_75	CALL_1
+0x4000c94	    0x48c7c2000000	                              mov rdx, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000c9b	        0x4883c428	                           add rsp, 0x28	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000c9f	        0x41f6c401	                            test r12b, 1	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000ca3	        0x4c0f44fa	                          cmove r15, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000ca7	        0x41f6c402	                            test r12b, 2	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cab	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cb2	        0x4c0f44f2	                          cmove r14, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cb6	        0x41f6c404	                            test r12b, 4	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cba	        0x4c0f44ea	                          cmove r13, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cbe	        0x41f6c408	                            test r12b, 8	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cc2	        0x480f44c2	                          cmove rax, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cc6	        0x41f6c410	                         test r12b, 0x10	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cca	        0x48890424	                    mov qword [rsp], rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cce	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cd5	        0x480f44c2	                          cmove rax, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cd9	        0x4183e420	                          and r12d, 0x20	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cdd	      0x4889442408	                mov qword [rsp + 8], rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000ce2	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000ce9	          0x4889c6	                            mov rsi, rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cec	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cf3	        0x480f44f2	                          cmove rsi, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cf7	          0x4889c7	                            mov rdi, rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cfa	          0xf6c320	                           test bl, 0x20	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000cfd	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d04	        0x480f44fa	                          cmove rdi, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d08	          0xf6c340	                           test bl, 0x40	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d0b	          0x4889c1	                            mov rcx, rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d0e	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d15	      0x4889742410	             mov qword [rsp + 0x10], rsi	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d1a	        0x480f44ca	                          cmove rcx, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d1e	          0x4989c3	                            mov r11, rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d21	          0xf6c380	                           test bl, 0x80	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d24	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d2b	        0x4c0f44da	                          cmove r11, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d2f	          0xf6c720	                           test bh, 0x20	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d32	          0x4989c0	                             mov r8, rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d35	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d3c	      0x4c895c2428	             mov qword [rsp + 0x28], r11	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d41	        0x4c0f44c2	                           cmove r8, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d45	          0x4989c2	                            mov r10, rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d48	          0xf6c740	                           test bh, 0x40	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d4b	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d52	        0x4c0f44d2	                          cmove r10, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d56	          0xf6c780	                           test bh, 0x80	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d59	          0x4989c1	                             mov r9, rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d5c	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d63	    0x49c7c3000000	                              mov r11, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d6a	        0x4c0f44ca	                           cmove r9, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d6e	          0x4989c4	                            mov r12, rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d71	    0xf7c300000100	                       test ebx, 0x10000	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d77	        0x4c0f44e2	                          cmove r12, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d7b	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d82	    0xf7c300000200	                       test ebx, 0x20000	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d88	      0x4c89642448	             mov qword [rsp + 0x48], r12	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d8d	        0x480f44c2	                          cmove rax, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d91	    0x49c7c4000000	                              mov r12, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d98	    0xf7c300000400	                       test ebx, 0x40000	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000d9e	      0x4c89542438	             mov qword [rsp + 0x38], r10	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000da3	    0x49c7c2000000	                              mov r10, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000daa	        0x4c0f44e2	                          cmove r12, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000dae	    0xf7c300000001	                     test ebx, 0x1000000	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000db4	    0x48c7c6000000	                              mov rsi, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000dbb	        0x4c0f44da	                          cmove r11, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000dbf	    0xf7c300000002	                     test ebx, 0x2000000	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000dc5	      0x4889442450	             mov qword [rsp + 0x50], rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000dca	        0x4c0f44d2	                          cmove r10, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000dce	    0xf7c300000004	  test ebx, loc.imp.dev_attr_em_message 	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000dd4	    0x48c7c0000000	                              mov rax, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000ddb	        0x480f44f2	                          cmove rsi, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000ddf	    0xf7c300000008	                  test ebx, section_end.	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000de5	      0x4c894c2440	              mov qword [rsp + 0x40], r9	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000dea	        0x480f44c2	                          cmove rax, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000dee	    0x49c7c1000000	                               mov r9, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000df5	    0xf7c300000010	                    test ebx, 0x10000000	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000dfb	      0x4c89442430	              mov qword [rsp + 0x30], r8	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e00	        0x4c0f44ca	                           cmove r9, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e04	    0x49c7c0000000	                               mov r8, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e0b	    0xf7c300000020	                    test ebx, 0x20000000	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e11	      0x48894c2420	             mov qword [rsp + 0x20], rcx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e16	    0x48c7c1000000	                              mov rcx, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e1d	        0x4c0f44c2	                           cmove r8, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e21	    0xf7c300000040	                    test ebx, 0x40000000	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e27	      0x48897c2418	             mov qword [rsp + 0x18], rdi	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e2c	        0x480f44ca	                          cmove rcx, rdx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e30	    0x48c7c7000000	                              mov rdi, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e37	            0x85db	                           test ebx, ebx	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e39	        0x480f48d7	                          cmovs rdx, rdi	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e3d	        0x488b7d08	                mov rdi, qword [rbp + 8]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e41	            0x4157	                                push r15	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e43	            0x4156	                                push r14	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e45	            0x4155	                                push r13	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e47	        0xff742418	                 push qword [rsp + 0x18]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e4b	        0xff742428	                 push qword [rsp + 0x28]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e4f	        0xff742438	                 push qword [rsp + 0x38]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e53	        0xff742448	                 push qword [rsp + 0x48]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e57	        0xff742458	                 push qword [rsp + 0x58]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e5b	        0xff742468	                 push qword [rsp + 0x68]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e5f	        0xff742478	                 push qword [rsp + 0x78]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e63	    0xffb424880000	                 push qword [rsp + 0x88]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e6a	    0xffb424980000	                 push qword [rsp + 0x98]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e71	    0xffb424a80000	                 push qword [rsp + 0xa8]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e78	    0xffb424b80000	                 push qword [rsp + 0xb8]	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e7f	            0x4154	                                push r12	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e81	            0x4153	                                push r11	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e83	            0x4152	                                push r10	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e85	              0x56	                                push rsi	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e86	              0x50	                                push rax	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e87	    0x48c7c6000000	                              mov rsi, 0	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e8e	      0xe800000000	                          call 0x4000e93	      2478	libahci.c	FUNCTION_75	CALL_2
+0x4000e93	    0x4881c4f00000	                           add rsp, 0xf0	      2510	libahci.c	FUNCTION_75
+0x4000e9a	              0x5b	                                 pop rbx	      2510	libahci.c	FUNCTION_75
+0x4000e9b	              0x5d	                                 pop rbp	      2510	libahci.c	FUNCTION_75
+0x4000e9c	            0x415c	                                 pop r12	      2510	libahci.c	FUNCTION_75
+0x4000e9e	            0x415d	                                 pop r13	      2510	libahci.c	FUNCTION_75
+0x4000ea0	            0x415e	                                 pop r14	      2510	libahci.c	FUNCTION_75
+0x4000ea2	            0x415f	                                 pop r15	      2510	libahci.c	FUNCTION_75
+0x4000ea4	              0xc3	                                     ret	      2510	libahci.c	FUNCTION_75
+ahci_pmp_qc_defer	FOR,0:IF,1:DO,0:ELSE,1:WHILE,0:CALL,3:functions,0:SWITCH,0	9
+0x4001570	          0x488b07	                    mov rax, qword [rdi]	      1629	libahci.c	FUNCTION_51
+0x4001573	    0x8b9048330000	          mov edx, dword [rax + 0x3348] 	      1632	libahci.c	FUNCTION_51	IF_1	CALL_1
+0x4001579	            0x85d2	                           test edx, edx	      1632	libahci.c	FUNCTION_51	IF_1	CALL_1
+0x400157b	            0x740d	                            je 0x400158a	      1632	libahci.c	FUNCTION_51	IF_1	CALL_1
+0x400157d	    0x488b80883700	          mov rax, qword [rax + 0x3788] 	      1632	libahci.c	FUNCTION_51	IF_1	CALL_1
+0x4001584	        0x80784500	                cmp byte [rax + 0x45], 0	      1632	libahci.c	FUNCTION_51	IF_1	CALL_1
+0x4001588	            0x7405	                            je 0x400158f	      1632	libahci.c	FUNCTION_51	IF_1	CALL_1
+0x400158a	      0xe900000000	                           jmp 0x400158f	      1633	libahci.c	FUNCTION_51	CALL_2
+0x400158f	      0xe900000000	                           jmp 0x4001594	      1635	libahci.c	FUNCTION_51	CALL_3
+ahci_qc_fill_rtf	FOR,0:IF,2:DO,0:ELSE,1:WHILE,0:CALL,2:functions,0:SWITCH,0	33
+0x40014f0	              0x55	                                push rbp	      2028	libahci.c	FUNCTION_61
+0x40014f1	              0x53	                                push rbx	      2028	libahci.c	FUNCTION_61
+0x40014f2	          0x4889fb	                            mov rbx, rdi	      2028	libahci.c	FUNCTION_61
+0x40014f5	          0x488b07	                    mov rax, qword [rdi]	      2029	libahci.c	FUNCTION_61
+0x40014f8	    0x488b80883700	          mov rax, qword [rax + 0x3788] 	      2029	libahci.c	FUNCTION_61
+0x40014ff	        0x80784500	                cmp byte [rax + 0x45], 0	      2032	libahci.c	FUNCTION_61	IF_1
+0x4001503	        0x488b6828	            mov rbp, qword [rax + 0x28] 	      2030	libahci.c	FUNCTION_61
+0x4001507	            0x7412	                            je 0x400151b	      2032	libahci.c	FUNCTION_61	IF_1
+0x4001509	        0x488b4708	                mov rax, qword [rdi + 8]	      2033	libahci.c	FUNCTION_61	IF_1
+0x400150d	          0x488b00	                    mov rax, qword [rax]	      2033	libahci.c	FUNCTION_61	IF_1
+0x4001510	          0x8b4008	                mov eax, dword [rax + 8]	      2033	libahci.c	FUNCTION_61	IF_1
+0x4001513	          0xc1e008	                              shl eax, 8	      2033	libahci.c	FUNCTION_61	IF_1
+0x4001516	            0x4898	                                    cdqe	      2033	libahci.c	FUNCTION_61	IF_1
+0x4001518	          0x4801c5	                            add rbp, rax	      2033	libahci.c	FUNCTION_61	IF_1
+0x400151b	        0x807b2801	                cmp byte [rbx + 0x28], 1	      2041	libahci.c	FUNCTION_61	IF_2
+0x400151f	            0x7418	                            je 0x4001539	      2041	libahci.c	FUNCTION_61	IF_2
+0x4001521	    0x488db3b00000	                   lea rsi, [rbx + 0xb0]	      2046	libahci.c	FUNCTION_61	CALL_2
+0x4001528	        0x488d7d40	                   lea rdi, [rbp + 0x40]	      2046	libahci.c	FUNCTION_61	CALL_2
+0x400152c	      0xe800000000	                          call 0x4001531	      2046	libahci.c	FUNCTION_61	CALL_2
+0x4001531	      0xb801000000	                              mov eax, 1	      2049	libahci.c	FUNCTION_61
+0x4001536	              0x5b	                                 pop rbx	      2049	libahci.c	FUNCTION_61
+0x4001537	              0x5d	                                 pop rbp	      2049	libahci.c	FUNCTION_61
+0x4001538	              0xc3	                                     ret	      2049	libahci.c	FUNCTION_61
+0x4001539	        0x837b6402	               cmp dword [rbx + 0x64], 2	      2041	libahci.c	FUNCTION_61	IF_2
+0x400153d	            0x75e2	                           jne 0x4001521	      2041	libahci.c	FUNCTION_61	IF_2
+0x400153f	        0xf6435201	               test byte [rbx + 0x52], 1	      2041	libahci.c	FUNCTION_61	IF_2
+0x4001543	            0x75dc	                           jne 0x4001521	      2041	libahci.c	FUNCTION_61	IF_2
+0x4001545	    0x488db3b00000	                   lea rsi, [rbx + 0xb0]	      2043	libahci.c	FUNCTION_61	IF_2	CALL_1
+0x400154c	        0x488d7d20	                   lea rdi, [rbp + 0x20]	      2043	libahci.c	FUNCTION_61	IF_2	CALL_1
+0x4001550	      0xe800000000	                          call 0x4001555	      2043	libahci.c	FUNCTION_61	IF_2	CALL_1
+0x4001555	         0xfb6452f	           movzx eax, byte [rbp + 0x2f] 	      2044	libahci.c	FUNCTION_61	IF_2
+0x4001559	    0x8883c5000000	               mov byte [rbx + 0xc5], al	      2044	libahci.c	FUNCTION_61	IF_2
+0x400155f	            0xebd0	                           jmp 0x4001531	      2044	libahci.c	FUNCTION_61	IF_2
+ahci_led_show	FOR,0:IF,0:DO,0:ELSE,0:WHILE,0:CALL,0:functions,1:SWITCH,0	40
+0x4000a90	            0x4156	                                push r14	      1123	libahci.c	FUNCTION_31
+0x4000a92	            0x4155	                                push r13	      1123	libahci.c	FUNCTION_31
+0x4000a94	            0x31d2	                            xor edx, edx	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000a96	            0x4154	                                push r12	      1123	libahci.c	FUNCTION_31
+0x4000a98	              0x55	                                push rbp	      1123	libahci.c	FUNCTION_31
+0x4000a99	          0x4989fc	                            mov r12, rdi	      1123	libahci.c	FUNCTION_31
+0x4000a9c	              0x53	                                push rbx	      1123	libahci.c	FUNCTION_31
+0x4000a9d	          0x4989f6	                            mov r14, rsi	      1123	libahci.c	FUNCTION_31
+0x4000aa0	    0x4c8baf883700	          mov r13, qword [rdi + 0x3788] 	      1124	libahci.c	FUNCTION_31
+0x4000aa7	          0x4889fe	                            mov rsi, rdi	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000aaa	            0x31ff	                            xor edi, edi	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000aac	      0xe800000000	                          call 0x4000ab1	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000ab1	          0x4885c0	                           test rax, rax	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000ab4	            0x744b	                            je 0x4000b01	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000ab6	          0x4889c3	                            mov rbx, rax	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000ab9	            0x31ed	                            xor ebp, ebp	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000abb	        0x48634308	            movsxd rax, dword [rbx + 8] 	      1131	libahci.c	FUNCTION_31	FUNCTION_1	CALL_1
+0x4000abf	    0x48c7c6000000	                              mov rsi, 0	      1131	libahci.c	FUNCTION_31	FUNCTION_1	CALL_1
+0x4000ac6	          0x4c89f7	                            mov rdi, r14	      1131	libahci.c	FUNCTION_31	FUNCTION_1	CALL_1
+0x4000ac9	        0x488d1480	                  lea rdx, [rax + rax*4]	      1131	libahci.c	FUNCTION_31	FUNCTION_1	CALL_1
+0x4000acd	        0x48c1e204	                              shl rdx, 4	      1131	libahci.c	FUNCTION_31	FUNCTION_1	CALL_1
+0x4000ad1	    0x498b94159000	      mov rdx, qword [r13 + rdx + 0x90] 	      1131	libahci.c	FUNCTION_31	FUNCTION_1	CALL_1
+0x4000ad9	      0xe800000000	                          call 0x4000ade	      1131	libahci.c	FUNCTION_31	FUNCTION_1	CALL_1
+0x4000ade	            0x31d2	                            xor edx, edx	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000ae0	          0x4889df	                            mov rdi, rbx	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000ae3	          0x4c89e6	                            mov rsi, r12	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000ae6	             0x1c5	                            add ebp, eax	      1131	libahci.c	FUNCTION_31	FUNCTION_1	CALL_1
+0x4000ae8	      0xe800000000	                          call 0x4000aed	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000aed	          0x4885c0	                           test rax, rax	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000af0	          0x4889c3	                            mov rbx, rax	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000af3	            0x75c6	                           jne 0x4000abb	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000af5	          0x4863c5	                         movsxd rax, ebp	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000af8	              0x5b	                                 pop rbx	      1134	libahci.c	FUNCTION_31
+0x4000af9	              0x5d	                                 pop rbp	      1134	libahci.c	FUNCTION_31
+0x4000afa	            0x415c	                                 pop r12	      1134	libahci.c	FUNCTION_31
+0x4000afc	            0x415d	                                 pop r13	      1134	libahci.c	FUNCTION_31
+0x4000afe	            0x415e	                                 pop r14	      1134	libahci.c	FUNCTION_31
+0x4000b00	              0xc3	                                     ret	      1134	libahci.c	FUNCTION_31
+0x4000b01	            0x31c0	                            xor eax, eax	      1129	libahci.c	FUNCTION_31	FUNCTION_1
+0x4000b03	            0xebf3	                           jmp 0x4000af8	      1129	libahci.c	FUNCTION_31	FUNCTION_1

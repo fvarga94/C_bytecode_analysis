@@ -1,0 +1,199 @@
+ptp_clock_settime	DO,0:ELSE,0:IF,0:SWITCH,0:CALL,2:FOR,0:functions,0:WHILE,0	3
+0x4000060	    0x488bbf000100	           mov rdi, qword [rdi + 0x100] 	       112	ptp_clock.c	FUNCTION_5	CALL_2
+0x4000067	        0x488b4760	            mov rax, qword [rdi + 0x60] 	       112	ptp_clock.c	FUNCTION_5	CALL_2
+0x400006b	      0xe900000000	               jmp sym.ptp_clock_gettime	       112	ptp_clock.c	FUNCTION_5	CALL_2
+ptp_clock_adjtime	DO,0:ELSE,3:IF,7:SWITCH,0:CALL,7:FOR,0:functions,0:WHILE,0	66
+0x40000e0	            0x8b06	                    mov eax, dword [rsi]	       132	ptp_clock.c	FUNCTION_7	IF_1
+0x40000e2	          0x4889fa	                            mov rdx, rdi	       125	ptp_clock.c	FUNCTION_7
+0x40000e5	    0x488bbf000100	           mov rdi, qword [rdi + 0x100] 	       130	ptp_clock.c	FUNCTION_7
+0x40000ec	          0xf6c401	                              test ah, 1	       132	ptp_clock.c	FUNCTION_7	IF_1
+0x40000ef	            0x7447	                            je 0x4000138	       132	ptp_clock.c	FUNCTION_7	IF_1
+0x40000f1	          0xf6c420	                           test ah, 0x20	       140	ptp_clock.c	FUNCTION_7	IF_1	IF_2
+0x40000f4	        0x488b4e48	            mov rcx, qword [rsi + 0x48] 	       137	ptp_clock.c	FUNCTION_7	IF_1
+0x40000f8	        0x488b5650	            mov rdx, qword [rsi + 0x50] 	       138	ptp_clock.c	FUNCTION_7	IF_1
+0x40000fc	            0x7507	                           jne 0x4000105	       140	ptp_clock.c	FUNCTION_7	IF_1	IF_2
+0x40000fe	    0x4869d2e80300	                    imul rdx, rdx, 0x3e8	       141	ptp_clock.c	FUNCTION_7	IF_1	IF_2
+0x4000105	    0x4881faffc99a	                     cmp rdx, 0x3b9ac9ff	       143	ptp_clock.c	FUNCTION_7	IF_1	IF_3
+0x400010c	     0xf8797000000	                            ja 0x40001a9	       143	ptp_clock.c	FUNCTION_7	IF_1	IF_3
+0x4000112	    0x48b8037dc125	                 movabs rax, 0x225c17d03	        39	ktime.h	FUNCTION_18	IF_1	CALL_1
+0x400011c	          0x4839c1	                            cmp rcx, rax	        39	ktime.h	FUNCTION_18	IF_1	CALL_1
+0x400011f	     0xf8f8a000000	                            jg 0x40001af	        39	ktime.h	FUNCTION_18	IF_1	CALL_1
+0x4000125	    0x4869f100ca9a	               imul rsi, rcx, 0x3b9aca00	        42	ktime.h	FUNCTION_18
+0x400012c	          0x4801d6	                            add rsi, rdx	        42	ktime.h	FUNCTION_18
+0x400012f	        0x488b4748	            mov rax, qword [rdi + 0x48] 	       148	ptp_clock.c	FUNCTION_7	IF_1	CALL_4
+0x4000133	      0xe900000000	                           jmp 0x4000138	       148	ptp_clock.c	FUNCTION_7	IF_1	CALL_4
+0x4000138	            0xa802	                              test al, 2	       149	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4
+0x400013a	            0x744e	                            je 0x400018a	       149	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4
+0x400013c	        0x4c8b4610	              mov r8, qword [rsi + 0x10]	       150	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	CALL_5
+0x4000140	        0x498d4001	                       lea rax, [r8 + 1]	        93	ptp_clock.c	FUNCTION_3
+0x4000144	          0x4889c1	                            mov rcx, rax	        94	ptp_clock.c	FUNCTION_3
+0x4000147	        0x48c1e105	                              shl rcx, 5	        94	ptp_clock.c	FUNCTION_3
+0x400014b	          0x4829c1	                            sub rcx, rax	        94	ptp_clock.c	FUNCTION_3
+0x400014e	        0x488d0488	                  lea rax, [rax + rcx*4]	        94	ptp_clock.c	FUNCTION_3
+0x4000152	          0x8b4f18	            mov ecx, dword [rdi + 0x18] 	       151	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_5
+0x4000155	        0x48c1f80d	                            sar rax, 0xd	        96	ptp_clock.c	FUNCTION_3
+0x4000159	            0x39c1	                            cmp ecx, eax	       151	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_5
+0x400015b	            0x7c61	                            jl 0x40001be	       151	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_5
+0x400015d	            0xf7d9	                                 neg ecx	       151	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_5
+0x400015f	            0x39c1	                            cmp ecx, eax	       151	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_5
+0x4000161	            0x7f5b	                            jg 0x40001be	       151	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_5
+0x4000163	              0x55	                                push rbp	       125	ptp_clock.c	FUNCTION_7
+0x4000164	          0x4889d5	                            mov rbp, rdx	       125	ptp_clock.c	FUNCTION_7
+0x4000167	              0x53	                                push rbx	       125	ptp_clock.c	FUNCTION_7
+0x4000168	        0x488b5738	            mov rdx, qword [rdi + 0x38] 	       153	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_6
+0x400016c	          0x4889f3	                            mov rbx, rsi	       153	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_6
+0x400016f	          0x4885d2	                           test rdx, rdx	       153	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_6
+0x4000172	            0x7428	                            je 0x400019c	       153	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_6
+0x4000174	          0x4c89c6	                             mov rsi, r8	       154	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	CALL_6
+0x4000177	      0xe800000000	                          call 0x400017c	       154	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	CALL_6
+0x400017c	        0x488b5310	            mov rdx, qword [rbx + 0x10] 	       157	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4
+0x4000180	    0x488995180100	           mov qword [rbp + 0x118], rdx 	       157	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4
+0x4000187	              0x5b	                                 pop rbx	       164	ptp_clock.c	FUNCTION_7
+0x4000188	              0x5d	                                 pop rbp	       164	ptp_clock.c	FUNCTION_7
+0x4000189	              0xc3	                                     ret	       164	ptp_clock.c	FUNCTION_7
+0x400018a	            0x85c0	                           test eax, eax	       158	ptp_clock.c	FUNCTION_7	ELSE_3	IF_7
+0x400018c	            0x7536	                           jne 0x40001c4	       158	ptp_clock.c	FUNCTION_7	ELSE_3	IF_7
+0x400018e	    0x488b82180100	           mov rax, qword [rdx + 0x118] 	       159	ptp_clock.c	FUNCTION_7	ELSE_3	IF_7
+0x4000195	        0x48894610	             mov qword [rsi + 0x10], rax	       159	ptp_clock.c	FUNCTION_7	ELSE_3	IF_7
+0x4000199	            0x31c0	                            xor eax, eax	       160	ptp_clock.c	FUNCTION_7	ELSE_3	IF_7
+0x400019b	              0xc3	                                     ret	       160	ptp_clock.c	FUNCTION_7	ELSE_3	IF_7
+0x400019c	        0x488b5740	            mov rdx, qword [rdi + 0x40] 	       156	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	CALL_7
+0x40001a0	            0x89c6	                            mov esi, eax	       156	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	CALL_7
+0x40001a2	      0xe800000000	                          call 0x40001a7	       156	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	CALL_7
+0x40001a7	            0xebd3	                           jmp 0x400017c	       156	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	CALL_7
+0x40001a9	      0xb8eaffffff	                     mov eax, 0xffffffea	       144	ptp_clock.c	FUNCTION_7	IF_1	IF_3
+0x40001ae	              0xc3	                                     ret	       144	ptp_clock.c	FUNCTION_7	IF_1	IF_3
+0x40001af	    0x48beffffffff	         movabs rsi, 0x7fffffffffffffff 	        40	ktime.h	FUNCTION_18	IF_1
+0x40001b9	      0xe971ffffff	                           jmp 0x400012f	        40	ktime.h	FUNCTION_18	IF_1
+0x40001be	      0xb8deffffff	                     mov eax, 0xffffffde	       152	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_5
+0x40001c3	              0xc3	                                     ret	       152	ptp_clock.c	FUNCTION_7	ELSE_1	IF_4	IF_5
+0x40001c4	      0xb8a1ffffff	                     mov eax, 0xffffffa1	       128	ptp_clock.c	FUNCTION_7
+0x40001c9	              0xc3	                                     ret	       128	ptp_clock.c	FUNCTION_7
+ptp_aux_kworker	DO,0:ELSE,0:IF,1:SWITCH,0:CALL,3:FOR,0:functions,0:WHILE,0	14
+0x40000b0	              0x53	                                push rbx	       189	ptp_clock.c	FUNCTION_9
+0x40000b1	          0x4889fb	                            mov rbx, rdi	       189	ptp_clock.c	FUNCTION_9
+0x40000b4	    0x488bbf20efff	           mov rdi, qword [rdi - 0x10e0]	       192	ptp_clock.c	FUNCTION_9
+0x40000bb	        0x488b4778	            mov rax, qword [rdi + 0x78] 	       195	ptp_clock.c	FUNCTION_9	CALL_2
+0x40000bf	      0xe800000000	                          call 0x40000c4	       195	ptp_clock.c	FUNCTION_9	CALL_2
+0x40000c4	          0x4885c0	                           test rax, rax	       197	ptp_clock.c	FUNCTION_9	IF_1
+0x40000c7	            0x7810	                            js 0x40000d9	       197	ptp_clock.c	FUNCTION_9	IF_1
+0x40000c9	        0x488b7bf8	                mov rdi, qword [rbx - 8]	       198	ptp_clock.c	FUNCTION_9	CALL_3
+0x40000cd	          0x4889de	                            mov rsi, rbx	       198	ptp_clock.c	FUNCTION_9	CALL_3
+0x40000d0	          0x4889c2	                            mov rdx, rax	       198	ptp_clock.c	FUNCTION_9	CALL_3
+0x40000d3	              0x5b	                                 pop rbx	       199	ptp_clock.c	FUNCTION_9
+0x40000d4	      0xe900000000	                           jmp 0x40000d9	       198	ptp_clock.c	FUNCTION_9	CALL_3
+0x40000d9	              0x5b	                                 pop rbx	       199	ptp_clock.c	FUNCTION_9
+0x40000da	              0xc3	                                     ret	       199	ptp_clock.c	FUNCTION_9
+ptp_schedule_worker	DO,0:ELSE,0:IF,0:SWITCH,0:CALL,1:FOR,0:functions,0:WHILE,0	6
+0x40002d0	          0x4889f2	                            mov rdx, rsi	       379	ptp_clock.c	FUNCTION_15
+0x40002d3	    0x488db7e01100	                 lea rsi, [rdi + 0x11e0]	       380	ptp_clock.c	FUNCTION_15	CALL_1
+0x40002da	    0x488bbfd81100	          mov rdi, qword [rdi + 0x11d8] 	       380	ptp_clock.c	FUNCTION_15	CALL_1
+0x40002e1	      0xe800000000	                          call 0x40002e6	       380	ptp_clock.c	FUNCTION_15	CALL_1
+0x40002e6	           0xfb6c0	                           movzx eax, al	       380	ptp_clock.c	FUNCTION_15	CALL_1
+0x40002e9	              0xc3	                                     ret	       381	ptp_clock.c	FUNCTION_15
+delete_ptp_clock	DO,0:ELSE,0:IF,0:SWITCH,0:CALL,5:FOR,0:functions,0:WHILE,0	8
+0x4000090	              0x53	                                push rbx	       179	ptp_clock.c	FUNCTION_8
+0x4000091	    0x8bb70c010000	           mov esi, dword [rdi + 0x10c] 	       184	ptp_clock.c	FUNCTION_8	CALL_4
+0x4000097	          0x4889fb	                            mov rbx, rdi	       179	ptp_clock.c	FUNCTION_8
+0x400009a	    0x48c7c7000000	                              mov rdi, 0	       184	ptp_clock.c	FUNCTION_8	CALL_4
+0x40000a1	      0xe800000000	                          call 0x40000a6	       184	ptp_clock.c	FUNCTION_8	CALL_4
+0x40000a6	          0x4889df	                            mov rdi, rbx	       185	ptp_clock.c	FUNCTION_8	CALL_5
+0x40000a9	              0x5b	                                 pop rbx	       186	ptp_clock.c	FUNCTION_8
+0x40000aa	      0xe900000000	                           jmp 0x40000af	       185	ptp_clock.c	FUNCTION_8	CALL_5
+ptp_clock_index	DO,0:ELSE,0:IF,0:SWITCH,0:CALL,0:FOR,0:functions,0:WHILE,0	2
+0x4000080	    0x8b870c010000	           mov eax, dword [rdi + 0x10c] 	       354	ptp_clock.c	FUNCTION_13
+0x4000086	              0xc3	                                     ret	       355	ptp_clock.c	FUNCTION_13
+ptp_clock_getres	DO,0:ELSE,0:IF,0:SWITCH,0:CALL,0:FOR,0:functions,0:WHILE,0	4
+0x4000040	    0x48c706000000	                      mov qword [rsi], 0	       103	ptp_clock.c	FUNCTION_4
+0x4000047	    0x48c746080100	                  mov qword [rsi + 8], 1	       104	ptp_clock.c	FUNCTION_4
+0x400004f	            0x31c0	                            xor eax, eax	       106	ptp_clock.c	FUNCTION_4
+0x4000051	              0xc3	                                     ret	       106	ptp_clock.c	FUNCTION_4
+ptp_clock_gettime	DO,0:ELSE,0:IF,0:SWITCH,0:CALL,2:FOR,0:functions,0:WHILE,0	3
+0x4000070	    0x488bbf000100	           mov rdi, qword [rdi + 0x100] 	       120	ptp_clock.c	FUNCTION_6	CALL_2
+0x4000077	        0x488b4750	            mov rax, qword [rdi + 0x50] 	       120	ptp_clock.c	FUNCTION_6	CALL_2
+0x400007b	      0xe900000000	                 jmp sym.ptp_clock_index	       120	ptp_clock.c	FUNCTION_6	CALL_2
+ptp_clock_unregister	DO,0:ELSE,0:IF,2:SWITCH,0:CALL,7:FOR,0:functions,0:WHILE,0	28
+0x40001d0	              0x53	                                push rbx	       304	ptp_clock.c	FUNCTION_11
+0x40001d1	            0x31c9	                            xor ecx, ecx	       306	ptp_clock.c	FUNCTION_11	CALL_1
+0x40001d3	    0xc78788110000	            mov dword [rdi + 0x1188], 1 	       305	ptp_clock.c	FUNCTION_11
+0x40001dd	          0x4889fb	                            mov rbx, rdi	       304	ptp_clock.c	FUNCTION_11
+0x40001e0	      0xba01000000	                              mov edx, 1	       306	ptp_clock.c	FUNCTION_11	CALL_1
+0x40001e5	    0x4881c7701100	                         add rdi, 0x1170	       306	ptp_clock.c	FUNCTION_11	CALL_1
+0x40001ec	      0xbe01000000	                              mov esi, 1	       306	ptp_clock.c	FUNCTION_11	CALL_1
+0x40001f1	      0xe800000000	                          call 0x40001f6	       306	ptp_clock.c	FUNCTION_11	CALL_1
+0x40001f6	    0x4883bbd81100	             cmp qword [rbx + 0x11d8], 0	       308	ptp_clock.c	FUNCTION_11	IF_1
+0x40001fe	            0x7418	                            je 0x4000218	       308	ptp_clock.c	FUNCTION_11	IF_1
+0x4000200	    0x488dbbe01100	                 lea rdi, [rbx + 0x11e0]	       309	ptp_clock.c	FUNCTION_11	IF_1	CALL_2
+0x4000207	      0xe800000000	                          call 0x400020c	       309	ptp_clock.c	FUNCTION_11	IF_1	CALL_2
+0x400020c	    0x488bbbd81100	          mov rdi, qword [rbx + 0x11d8] 	       310	ptp_clock.c	FUNCTION_11	IF_1	CALL_3
+0x4000213	      0xe800000000	                          call 0x4000218	       310	ptp_clock.c	FUNCTION_11	IF_1	CALL_3
+0x4000218	    0x488bbb100100	           mov rdi, qword [rbx + 0x110] 	       314	ptp_clock.c	FUNCTION_11	IF_2
+0x400021f	          0x4885ff	                           test rdi, rdi	       314	ptp_clock.c	FUNCTION_11	IF_2
+0x4000222	            0x7405	                            je 0x4000229	       314	ptp_clock.c	FUNCTION_11	IF_2
+0x4000224	      0xe800000000	                          call 0x4000229	       315	ptp_clock.c	FUNCTION_11	CALL_4
+0x4000229	    0x8bb308010000	           mov esi, dword [rbx + 0x108] 	       317	ptp_clock.c	FUNCTION_11	CALL_5
+0x400022f	    0x488b3d000000	            mov rdi, qword [0x04000236] 	       317	ptp_clock.c	FUNCTION_11	CALL_5
+0x4000236	      0xe800000000	                          call 0x400023b	       317	ptp_clock.c	FUNCTION_11	CALL_5
+0x400023b	          0x4889df	                            mov rdi, rbx	       318	ptp_clock.c	FUNCTION_11	CALL_6
+0x400023e	      0xe800000000	                          call 0x4000243	       318	ptp_clock.c	FUNCTION_11	CALL_6
+0x4000243	          0x4889df	                            mov rdi, rbx	       320	ptp_clock.c	FUNCTION_11	CALL_7
+0x4000246	      0xe800000000	                          call 0x400024b	       320	ptp_clock.c	FUNCTION_11	CALL_7
+0x400024b	            0x31c0	                            xor eax, eax	       322	ptp_clock.c	FUNCTION_11
+0x400024d	              0x5b	                                 pop rbx	       322	ptp_clock.c	FUNCTION_11
+0x400024e	              0xc3	                                     ret	       322	ptp_clock.c	FUNCTION_11
+ptp_find_pin	DO,0:ELSE,0:IF,1:SWITCH,0:CALL,2:FOR,1:functions,0:WHILE,0	46
+0x4000250	            0x4156	                                push r14	       360	ptp_clock.c	FUNCTION_14
+0x4000252	    0x4c8db7501100	                 lea r14, [rdi + 0x1150]	       364	ptp_clock.c	FUNCTION_14	CALL_1
+0x4000259	            0x4155	                                push r13	       360	ptp_clock.c	FUNCTION_14
+0x400025b	            0x4154	                                push r12	       360	ptp_clock.c	FUNCTION_14
+0x400025d	              0x55	                                push rbp	       360	ptp_clock.c	FUNCTION_14
+0x400025e	          0x4189d5	                           mov r13d, edx	       360	ptp_clock.c	FUNCTION_14
+0x4000261	              0x53	                                push rbx	       360	ptp_clock.c	FUNCTION_14
+0x4000262	          0x4889fb	                            mov rbx, rdi	       360	ptp_clock.c	FUNCTION_14
+0x4000265	          0x4c89f7	                            mov rdi, r14	       364	ptp_clock.c	FUNCTION_14	CALL_1
+0x4000268	          0x4189f4	                           mov r12d, esi	       360	ptp_clock.c	FUNCTION_14
+0x400026b	      0xe800000000	                          call 0x4000270	       364	ptp_clock.c	FUNCTION_14	CALL_1
+0x4000270	    0x488b93000100	           mov rdx, qword [rbx + 0x100] 	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x4000277	          0x8b4228	            mov eax, dword [rdx + 0x28] 	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x400027a	            0x85c0	                           test eax, eax	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x400027c	            0x7e3b	                           jle 0x40002b9	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x400027e	        0x488b5a30	            mov rbx, qword [rdx + 0x30] 	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x4000282	            0x31ed	                            xor ebp, ebp	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x4000284	            0xeb0b	                           jmp 0x4000291	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x4000286	          0x83c501	                              add ebp, 1	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x4000289	        0x4883c360	                           add rbx, 0x60	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x400028d	            0x39c5	                            cmp ebp, eax	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x400028f	            0x7428	                            je 0x40002b9	       365	ptp_clock.c	FUNCTION_14	FOR_1
+0x4000291	        0x44396344	           cmp dword [rbx + 0x44], r12d 	       366	ptp_clock.c	FUNCTION_14	FOR_1	IF_1
+0x4000295	            0x75ef	                           jne 0x4000286	       366	ptp_clock.c	FUNCTION_14	FOR_1	IF_1
+0x4000297	        0x44396b48	           cmp dword [rbx + 0x48], r13d 	       366	ptp_clock.c	FUNCTION_14	FOR_1	IF_1
+0x400029b	            0x75e9	                           jne 0x4000286	       366	ptp_clock.c	FUNCTION_14	FOR_1	IF_1
+0x400029d	          0x4c89f7	                            mov rdi, r14	       372	ptp_clock.c	FUNCTION_14	CALL_2
+0x40002a0	      0xe800000000	                          call 0x40002a5	       372	ptp_clock.c	FUNCTION_14	CALL_2
+0x40002a5	          0x4885db	                           test rbx, rbx	       374	ptp_clock.c	FUNCTION_14
+0x40002a8	      0xb8ffffffff	                     mov eax, 0xffffffff	       374	ptp_clock.c	FUNCTION_14
+0x40002ad	              0x5b	                                 pop rbx	       375	ptp_clock.c	FUNCTION_14
+0x40002ae	           0xf45c5	                         cmovne eax, ebp	       374	ptp_clock.c	FUNCTION_14
+0x40002b1	              0x5d	                                 pop rbp	       375	ptp_clock.c	FUNCTION_14
+0x40002b2	            0x415c	                                 pop r12	       375	ptp_clock.c	FUNCTION_14
+0x40002b4	            0x415d	                                 pop r13	       375	ptp_clock.c	FUNCTION_14
+0x40002b6	            0x415e	                                 pop r14	       375	ptp_clock.c	FUNCTION_14
+0x40002b8	              0xc3	                                     ret	       375	ptp_clock.c	FUNCTION_14
+0x40002b9	          0x4c89f7	                            mov rdi, r14	       372	ptp_clock.c	FUNCTION_14	CALL_2
+0x40002bc	      0xe800000000	                          call 0x40002c1	       372	ptp_clock.c	FUNCTION_14	CALL_2
+0x40002c1	      0xb8ffffffff	                     mov eax, 0xffffffff	       374	ptp_clock.c	FUNCTION_14
+0x40002c6	              0x5b	                                 pop rbx	       375	ptp_clock.c	FUNCTION_14
+0x40002c7	              0x5d	                                 pop rbp	       375	ptp_clock.c	FUNCTION_14
+0x40002c8	            0x415c	                                 pop r12	       375	ptp_clock.c	FUNCTION_14
+0x40002ca	            0x415d	                                 pop r13	       375	ptp_clock.c	FUNCTION_14
+0x40002cc	            0x415e	                                 pop r14	       375	ptp_clock.c	FUNCTION_14
+0x40002ce	              0xc3	                                     ret	       375	ptp_clock.c	FUNCTION_14
+ptp_exit	DO,0:ELSE,0:IF,0:SWITCH,0:CALL,3:FOR,0:functions,0:WHILE,0	8
+0x4000040	    0x48c706000000	                      mov qword [rsi], 0	       103	ptp_clock.c	FUNCTION_4
+0x4000047	    0x48c746080100	                  mov qword [rsi + 8], 1	       104	ptp_clock.c	FUNCTION_4
+0x400004f	            0x31c0	                            xor eax, eax	       106	ptp_clock.c	FUNCTION_4
+0x4000051	              0xc3	                                     ret	       106	ptp_clock.c	FUNCTION_4
+0x4000052	         0xf1f4000	                         nop dword [rax]	       106	ptp_clock.c	FUNCTION_4
+0x4000056	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       106	ptp_clock.c	FUNCTION_4
+0x4000060	    0x488bbf000100	           mov rdi, qword [rdi + 0x100] 	       112	ptp_clock.c	FUNCTION_5	CALL_2
+0x4000067	              0x48	                                 invalid	       112	ptp_clock.c	FUNCTION_5	CALL_2

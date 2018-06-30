@@ -1,0 +1,114 @@
+pci_set_host_bridge_release	ELSE,0:IF,0:functions,0:SWITCH,0:CALL,0:DO,0:WHILE,0:FOR,0	3
+0x4000040	    0x4889b7100300	           mov qword [rdi + 0x310], rsi 	        45	host-bridge.c	FUNCTION_5
+0x4000047	    0x488997180300	            mov qword [rdi + 0x318], rdx	        46	host-bridge.c	FUNCTION_5
+0x400004e	              0xc3	                                     ret	        46	host-bridge.c	FUNCTION_5
+pcibios_resource_to_bus	ELSE,0:IF,0:functions,1:SWITCH,0:CALL,1:DO,0:WHILE,0:FOR,0	46
+0x4000050	            0xeb03	                           jmp 0x4000055	        52	host-bridge.c	FUNCTION_6
+0x4000052	          0x4889c7	                            mov rdi, rax	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x4000055	        0x488b4710	            mov rax, qword [rdi + 0x10] 	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x4000059	          0x4885c0	                           test rax, rax	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x400005c	            0x75f4	                           jne 0x4000052	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x400005e	              0x53	                                push rbx	        52	host-bridge.c	FUNCTION_6
+0x400005f	    0x4c8b8f180100	            mov r9, qword [rdi + 0x118] 	        24	host-bridge.c	FUNCTION_2	CALL_2
+0x4000066	    0x498b81f00200	            mov rax, qword [r9 + 0x2f0] 	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x400006d	    0x4981c1f00200	                           add r9, 0x2f0	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x4000074	          0x4c39c8	                             cmp rax, r9	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x4000077	            0x7467	                            je 0x40000e0	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x4000079	        0x4c8b5a18	            mov r11, qword [rdx + 0x18] 	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x400007d	          0x488b1a	                    mov rbx, qword [rdx]	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x4000080	          0x4d89da	                            mov r10, r11	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x4000083	    0x4181e2001f00	                        and r10d, 0x1f00	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x400008a	            0xeb08	                           jmp 0x4000094	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x400008c	          0x488b00	                    mov rax, qword [rax]	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x400008f	          0x4c39c8	                             cmp rax, r9	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x4000092	            0x7437	                            je 0x40000cb	        57	host-bridge.c	FUNCTION_6	FUNCTION_1
+0x4000094	        0x488b7810	            mov rdi, qword [rax + 0x10] 	        58	host-bridge.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x4000098	        0x488b4f18	            mov rcx, qword [rdi + 0x18] 	        58	host-bridge.c	FUNCTION_6	FUNCTION_1	IF_1	CALL_1
+0x400009c	          0x4989c8	                             mov r8, rcx	       211	ioport.h	FUNCTION_12	IF_1	CALL_2
+0x400009f	    0x4181e0001f00	                         and r8d, 0x1f00	       211	ioport.h	FUNCTION_12	IF_1	CALL_2
+0x40000a6	          0x4d39d0	                             cmp r8, r10	       211	ioport.h	FUNCTION_12	IF_1	CALL_2
+0x40000a9	            0x75e1	                           jne 0x400008c	       211	ioport.h	FUNCTION_12	IF_1	CALL_2
+0x40000ab	          0x4c09d9	                             or rcx, r11	       213	ioport.h	FUNCTION_12	IF_2
+0x40000ae	    0xf7c100000020	                    test ecx, 0x20000000	       213	ioport.h	FUNCTION_12	IF_2
+0x40000b4	            0x75d6	                           jne 0x400008c	       213	ioport.h	FUNCTION_12	IF_2
+0x40000b6	          0x48391f	                    cmp qword [rdi], rbx	       215	ioport.h	FUNCTION_12
+0x40000b9	            0x77d1	                            ja 0x400008c	       215	ioport.h	FUNCTION_12
+0x40000bb	        0x488b4a08	                mov rcx, qword [rdx + 8]	       215	ioport.h	FUNCTION_12
+0x40000bf	        0x48394f08	                cmp qword [rdi + 8], rcx	       215	ioport.h	FUNCTION_12
+0x40000c3	            0x72c7	                            jb 0x400008c	       215	ioport.h	FUNCTION_12
+0x40000c5	        0x488b4818	            mov rcx, qword [rax + 0x18] 	        59	host-bridge.c	FUNCTION_6	FUNCTION_1	IF_1
+0x40000c9	            0xeb02	                           jmp 0x40000cd	        60	host-bridge.c	FUNCTION_6	FUNCTION_1	IF_1
+0x40000cb	            0x31c9	                            xor ecx, ecx	        55	host-bridge.c	FUNCTION_6
+0x40000cd	          0x4829cb	                            sub rbx, rcx	        64	host-bridge.c	FUNCTION_6
+0x40000d0	          0x48891e	                    mov qword [rsi], rbx	        64	host-bridge.c	FUNCTION_6
+0x40000d3	        0x488b4208	                mov rax, qword [rdx + 8]	        65	host-bridge.c	FUNCTION_6
+0x40000d7	              0x5b	                                 pop rbx	        66	host-bridge.c	FUNCTION_6
+0x40000d8	          0x4829c8	                            sub rax, rcx	        65	host-bridge.c	FUNCTION_6
+0x40000db	        0x48894608	                mov qword [rsi + 8], rax	        65	host-bridge.c	FUNCTION_6
+0x40000df	              0xc3	                                     ret	        66	host-bridge.c	FUNCTION_6
+0x40000e0	          0x488b1a	                    mov rbx, qword [rdx]	        66	host-bridge.c	FUNCTION_6
+0x40000e3	            0x31c9	                            xor ecx, ecx	        55	host-bridge.c	FUNCTION_6
+0x40000e5	            0xebe6	                           jmp 0x40000cd	        55	host-bridge.c	FUNCTION_6
+pcibios_bus_to_resource	ELSE,0:IF,0:functions,1:SWITCH,0:CALL,1:DO,0:WHILE,0:FOR,0	45
+0x40000f0	            0xeb03	                           jmp 0x40000f5	        77	host-bridge.c	FUNCTION_8
+0x40000f2	          0x4889c7	                            mov rdi, rax	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x40000f5	        0x488b4710	            mov rax, qword [rdi + 0x10] 	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x40000f9	          0x4885c0	                           test rax, rax	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x40000fc	            0x75f4	                           jne 0x40000f2	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x40000fe	    0x4c8b87180100	            mov r8, qword [rdi + 0x118] 	        24	host-bridge.c	FUNCTION_2	CALL_2
+0x4000105	    0x498b80f00200	            mov rax, qword [r8 + 0x2f0] 	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x400010c	    0x4981c0f00200	                           add r8, 0x2f0	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x4000113	          0x4939c0	                             cmp r8, rax	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x4000116	            0x7468	                            je 0x4000180	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x4000118	        0x4c8b4e18	              mov r9, qword [rsi + 0x18]	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x400011c	          0x4c8b1a	                    mov r11, qword [rdx]	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x400011f	    0x4181e1001f00	                         and r9d, 0x1f00	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x4000126	            0xeb08	                           jmp 0x4000130	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x4000128	          0x488b00	                    mov rax, qword [rax]	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x400012b	          0x4939c0	                             cmp r8, rax	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x400012e	            0x743e	                            je 0x400016e	        82	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x4000130	        0x488b7810	            mov rdi, qword [rax + 0x10] 	        85	host-bridge.c	FUNCTION_8	FUNCTION_1	IF_1	CALL_2
+0x4000134	        0x488b4f18	            mov rcx, qword [rdi + 0x18] 	        85	host-bridge.c	FUNCTION_8	FUNCTION_1	IF_1	CALL_2
+0x4000138	    0x81e1001f0000	                         and ecx, 0x1f00	        85	host-bridge.c	FUNCTION_8	FUNCTION_1	IF_1	CALL_2
+0x400013e	          0x4c39c9	                             cmp rcx, r9	        85	host-bridge.c	FUNCTION_8	FUNCTION_1	IF_1	CALL_2
+0x4000141	            0x75e5	                           jne 0x4000128	        85	host-bridge.c	FUNCTION_8	FUNCTION_1	IF_1	CALL_2
+0x4000143	        0x4c8b5018	            mov r10, qword [rax + 0x18] 	        88	host-bridge.c	FUNCTION_8	FUNCTION_1
+0x4000147	          0x488b0f	                    mov rcx, qword [rdi]	        72	host-bridge.c	FUNCTION_7
+0x400014a	          0x4c29d1	                            sub rcx, r10	        72	host-bridge.c	FUNCTION_7
+0x400014d	          0x4c39d9	                            cmp rcx, r11	        72	host-bridge.c	FUNCTION_7
+0x4000150	            0x77d6	                            ja 0x4000128	        72	host-bridge.c	FUNCTION_7
+0x4000152	        0x488b4f08	                mov rcx, qword [rdi + 8]	        72	host-bridge.c	FUNCTION_7
+0x4000156	          0x4c29d1	                            sub rcx, r10	        72	host-bridge.c	FUNCTION_7
+0x4000159	        0x483b4a08	                cmp rcx, qword [rdx + 8]	        72	host-bridge.c	FUNCTION_7
+0x400015d	            0x72c9	                            jb 0x4000128	        72	host-bridge.c	FUNCTION_7
+0x400015f	          0x4d01d3	                            add r11, r10	        97	host-bridge.c	FUNCTION_8
+0x4000162	          0x4c891e	                    mov qword [rsi], r11	        97	host-bridge.c	FUNCTION_8
+0x4000165	        0x4c035208	                add r10, qword [rdx + 8]	        98	host-bridge.c	FUNCTION_8
+0x4000169	        0x4c895608	                mov qword [rsi + 8], r10	        98	host-bridge.c	FUNCTION_8
+0x400016d	              0xc3	                                     ret	        98	host-bridge.c	FUNCTION_8
+0x400016e	          0x4531d2	                          xor r10d, r10d	        80	host-bridge.c	FUNCTION_8
+0x4000171	          0x4d01d3	                            add r11, r10	        97	host-bridge.c	FUNCTION_8
+0x4000174	          0x4c891e	                    mov qword [rsi], r11	        97	host-bridge.c	FUNCTION_8
+0x4000177	        0x4c035208	                add r10, qword [rdx + 8]	        98	host-bridge.c	FUNCTION_8
+0x400017b	        0x4c895608	                mov qword [rsi + 8], r10	        98	host-bridge.c	FUNCTION_8
+0x400017f	              0xc3	                                     ret	        98	host-bridge.c	FUNCTION_8
+0x4000180	          0x4c8b1a	                    mov r11, qword [rdx]	        98	host-bridge.c	FUNCTION_8
+0x4000183	          0x4531d2	                          xor r10d, r10d	        80	host-bridge.c	FUNCTION_8
+0x4000186	            0xebd7	                           jmp 0x400015f	        80	host-bridge.c	FUNCTION_8
+pci_get_host_bridge_device	ELSE,0:IF,0:functions,0:SWITCH,0:CALL,2:DO,0:WHILE,0:FOR,0	13
+0x40001b0	        0x488b5710	            mov rdx, qword [rdi + 0x10] 	        29	host-bridge.c	FUNCTION_3	CALL_1
+0x40001b4	            0xeb03	                           jmp 0x40001b9	        29	host-bridge.c	FUNCTION_3	CALL_1
+0x40001b6	          0x4889c2	                            mov rdx, rax	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x40001b9	        0x488b4210	            mov rax, qword [rdx + 0x10] 	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x40001bd	          0x4885c0	                           test rax, rax	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x40001c0	            0x75f4	                           jne 0x40001b6	        14	host-bridge.c	FUNCTION_1	WHILE_1
+0x40001c2	              0x53	                                push rbx	        28	host-bridge.c	FUNCTION_3
+0x40001c3	    0x488b9a180100	           mov rbx, qword [rdx + 0x118] 	        30	host-bridge.c	FUNCTION_3
+0x40001ca	        0x488d7b10	                   lea rdi, [rbx + 0x10]	        32	host-bridge.c	FUNCTION_3	CALL_2
+0x40001ce	      0xe800000000	                          call 0x40001d3	        32	host-bridge.c	FUNCTION_3	CALL_2
+0x40001d3	          0x4889d8	                            mov rax, rbx	        34	host-bridge.c	FUNCTION_3
+0x40001d6	              0x5b	                                 pop rbx	        34	host-bridge.c	FUNCTION_3
+0x40001d7	              0xc3	                                     ret	        34	host-bridge.c	FUNCTION_3
+pci_put_host_bridge_device	ELSE,0:IF,0:functions,0:SWITCH,0:CALL,1:DO,0:WHILE,0:FOR,0	2
+0x40001e0	        0x4883c710	                           add rdi, 0x10	        38	host-bridge.c	FUNCTION_4	CALL_1
+0x40001e4	      0xe900000000	                   jmp section_end..text	        38	host-bridge.c	FUNCTION_4	CALL_1

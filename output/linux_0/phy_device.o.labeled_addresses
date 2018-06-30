@@ -1,0 +1,744 @@
+phy_link_change	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,1:CALL,3:IF,2	21
+0x40008d0	            0x84d2	                             test dl, dl	       714	phy_device.c	FUNCTION_29	IF_1
+0x40008d2	              0x55	                                push rbp	       711	phy_device.c	FUNCTION_29
+0x40008d3	              0x53	                                push rbx	       711	phy_device.c	FUNCTION_29
+0x40008d4	          0x4889fb	                            mov rbx, rdi	       711	phy_device.c	FUNCTION_29
+0x40008d7	    0x488baf500400	           mov rbp, qword [rdi + 0x450] 	       712	phy_device.c	FUNCTION_29
+0x40008de	            0x740d	                            je 0x40008ed	       714	phy_device.c	FUNCTION_29	IF_1
+0x40008e0	          0x4084f6	                           test sil, sil	       715	phy_device.c	FUNCTION_29	IF_1	IF_2
+0x40008e3	          0x4889ef	                            mov rdi, rbp	       716	phy_device.c	FUNCTION_29	IF_1	CALL_1
+0x40008e6	            0x7516	                           jne 0x40008fe	       715	phy_device.c	FUNCTION_29	IF_1	IF_2
+0x40008e8	      0xe800000000	                          call 0x40008ed	       718	phy_device.c	FUNCTION_29	IF_1	CALL_2
+0x40008ed	    0x488b83680400	           mov rax, qword [rbx + 0x468] 	       720	phy_device.c	FUNCTION_29	CALL_3
+0x40008f4	          0x4889ef	                            mov rdi, rbp	       720	phy_device.c	FUNCTION_29	CALL_3
+0x40008f7	              0x5b	                                 pop rbx	       721	phy_device.c	FUNCTION_29
+0x40008f8	              0x5d	                                 pop rbp	       721	phy_device.c	FUNCTION_29
+0x40008f9	      0xe900000000	                           jmp 0x40008fe	       720	phy_device.c	FUNCTION_29	CALL_3
+0x40008fe	      0xe800000000	                          call 0x4000903	       716	phy_device.c	FUNCTION_29	IF_1	CALL_1
+0x4000903	    0x488b83680400	           mov rax, qword [rbx + 0x468] 	       720	phy_device.c	FUNCTION_29	CALL_3
+0x400090a	          0x4889ef	                            mov rdi, rbp	       720	phy_device.c	FUNCTION_29	CALL_3
+0x400090d	              0x5b	                                 pop rbx	       721	phy_device.c	FUNCTION_29
+0x400090e	              0x5d	                                 pop rbp	       721	phy_device.c	FUNCTION_29
+0x400090f	      0xe900000000	                           jmp 0x4000914	       720	phy_device.c	FUNCTION_29	CALL_3
+mdio_bus_phy_may_suspend	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,3:IF,4	28
+0x4000050	    0x488b87880000	            mov rax, qword [rdi + 0x88] 	        81	phy_device.c	FUNCTION_5
+0x4000057	          0x4885c0	                           test rax, rax	        85	phy_device.c	FUNCTION_5	IF_1
+0x400005a	            0x7453	                            je 0x40000af	        85	phy_device.c	FUNCTION_5	IF_1
+0x400005c	    0x4883b8c80000	               cmp qword [rax + 0xc8], 0	        85	phy_device.c	FUNCTION_5	IF_1
+0x4000064	            0x7449	                            je 0x40000af	        85	phy_device.c	FUNCTION_5	IF_1
+0x4000066	    0x488b97500400	           mov rdx, qword [rdi + 0x450] 	        83	phy_device.c	FUNCTION_5
+0x400006d	          0x4885d2	                           test rdx, rdx	        93	phy_device.c	FUNCTION_5	IF_2
+0x4000070	            0x7440	                            je 0x40000b2	        93	phy_device.c	FUNCTION_5	IF_2
+0x4000072	    0x488b8ab00400	           mov rcx, qword [rdx + 0x4b0] 	        99	phy_device.c	FUNCTION_5	IF_3	CALL_2
+0x4000079	          0x4885c9	                           test rcx, rcx	        99	phy_device.c	FUNCTION_5	IF_3	CALL_2
+0x400007c	            0x7409	                            je 0x4000087	        99	phy_device.c	FUNCTION_5	IF_3	CALL_2
+0x400007e	    0xf681cc000000	               test byte [rcx + 0xcc], 1	        88	pm_wakeup.h	FUNCTION_74
+0x4000085	            0x751a	                           jne 0x40000a1	        88	pm_wakeup.h	FUNCTION_74
+0x4000087	    0xf6827c050000	              test byte [rdx + 0x57c], 1	        88	pm_wakeup.h	FUNCTION_74
+0x400008e	      0xb801000000	                              mov eax, 1	       109	phy_device.c	FUNCTION_5
+0x4000093	            0x7418	                            je 0x40000ad	        88	pm_wakeup.h	FUNCTION_74
+0x4000095	    0x4883bab80500	              cmp qword [rdx + 0x5b8], 0	        88	pm_wakeup.h	FUNCTION_74
+0x400009d	           0xf94c0	                                 sete al	        88	pm_wakeup.h	FUNCTION_74
+0x40000a0	              0xc3	                                     ret	        88	pm_wakeup.h	FUNCTION_74
+0x40000a1	            0x31c0	                            xor eax, eax	        86	phy_device.c	FUNCTION_5	IF_1
+0x40000a3	    0x4883b9080100	              cmp qword [rcx + 0x108], 0	        88	pm_wakeup.h	FUNCTION_74
+0x40000ab	            0x74da	                            je 0x4000087	        88	pm_wakeup.h	FUNCTION_74
+0x40000ad	            0xf3c3	                                     ret	       110	phy_device.c	FUNCTION_5
+0x40000af	            0x31c0	                            xor eax, eax	        86	phy_device.c	FUNCTION_5	IF_1
+0x40000b1	              0xc3	                                     ret	       110	phy_device.c	FUNCTION_5
+0x40000b2	     0xfb687640300	          movzx eax, byte [rdi + 0x364] 	        94	phy_device.c	FUNCTION_5	IF_2
+0x40000b9	          0x83f001	                              xor eax, 1	        94	phy_device.c	FUNCTION_5	IF_2
+0x40000bc	              0xc3	                                     ret	        94	phy_device.c	FUNCTION_5	IF_2
+phy_loopback	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,1:CALL,4:IF,4	43
+0x4000140	            0x4156	                                push r14	      1219	phy_device.c	FUNCTION_44
+0x4000142	            0x4155	                                push r13	      1219	phy_device.c	FUNCTION_44
+0x4000144	    0x4c8daf280400	                  lea r13, [rdi + 0x428]	      1223	phy_device.c	FUNCTION_44	CALL_2
+0x400014b	            0x4154	                                push r12	      1219	phy_device.c	FUNCTION_44
+0x400014d	              0x55	                                push rbp	      1219	phy_device.c	FUNCTION_44
+0x400014e	            0x89f5	                            mov ebp, esi	      1219	phy_device.c	FUNCTION_44
+0x4000150	              0x53	                                push rbx	      1219	phy_device.c	FUNCTION_44
+0x4000151	          0x4889fb	                            mov rbx, rdi	      1219	phy_device.c	FUNCTION_44
+0x4000154	    0x4c8bb7880000	            mov r14, qword [rdi + 0x88] 	      1220	phy_device.c	FUNCTION_44	CALL_1
+0x400015b	          0x4c89ef	                            mov rdi, r13	      1223	phy_device.c	FUNCTION_44	CALL_2
+0x400015e	      0xe800000000	                          call 0x4000163	      1223	phy_device.c	FUNCTION_44	CALL_2
+0x4000163	          0x4084ed	                           test bpl, bpl	      1225	phy_device.c	FUNCTION_44	IF_1
+0x4000166	            0x7453	                            je 0x40001bb	      1225	phy_device.c	FUNCTION_44	IF_1
+0x4000168	    0x80bb66030000	               cmp byte [rbx + 0x366], 0	      1225	phy_device.c	FUNCTION_44	IF_1
+0x400016f	            0x755b	                           jne 0x40001cc	      1225	phy_device.c	FUNCTION_44	IF_1
+0x4000171	    0x4883bb300300	              cmp qword [rbx + 0x330], 0	      1235	phy_device.c	FUNCTION_44	IF_3
+0x4000179	    0x41bca1ffffff	                    mov r12d, 0xffffffa1	      1235	phy_device.c	FUNCTION_44	IF_3
+0x400017f	            0x7426	                            je 0x40001a7	      1235	phy_device.c	FUNCTION_44	IF_3
+0x4000181	    0x498b86a80100	           mov rax, qword [r14 + 0x1a8] 	      1235	phy_device.c	FUNCTION_44	IF_3
+0x4000188	          0x4885c0	                           test rax, rax	      1235	phy_device.c	FUNCTION_44	IF_3
+0x400018b	            0x741a	                            je 0x40001a7	      1235	phy_device.c	FUNCTION_44	IF_3
+0x400018d	        0x400fb6f5	                          movzx esi, bpl	      1236	phy_device.c	FUNCTION_44	CALL_3
+0x4000191	          0x4889df	                            mov rdi, rbx	      1236	phy_device.c	FUNCTION_44	CALL_3
+0x4000194	      0xe800000000	                          call 0x4000199	      1236	phy_device.c	FUNCTION_44	CALL_3
+0x4000199	            0x85c0	                           test eax, eax	      1240	phy_device.c	FUNCTION_44	IF_4
+0x400019b	          0x4189c4	                           mov r12d, eax	      1236	phy_device.c	FUNCTION_44	CALL_3
+0x400019e	            0x7507	                           jne 0x40001a7	      1240	phy_device.c	FUNCTION_44	IF_4
+0x40001a0	    0x4088ab660300	             mov byte [rbx + 0x366], bpl	      1243	phy_device.c	FUNCTION_44
+0x40001a7	          0x4c89ef	                            mov rdi, r13	      1246	phy_device.c	FUNCTION_44	CALL_4
+0x40001aa	      0xe800000000	                          call 0x40001af	      1246	phy_device.c	FUNCTION_44	CALL_4
+0x40001af	          0x4489e0	                           mov eax, r12d	      1248	phy_device.c	FUNCTION_44
+0x40001b2	              0x5b	                                 pop rbx	      1248	phy_device.c	FUNCTION_44
+0x40001b3	              0x5d	                                 pop rbp	      1248	phy_device.c	FUNCTION_44
+0x40001b4	            0x415c	                                 pop r12	      1248	phy_device.c	FUNCTION_44
+0x40001b6	            0x415d	                                 pop r13	      1248	phy_device.c	FUNCTION_44
+0x40001b8	            0x415e	                                 pop r14	      1248	phy_device.c	FUNCTION_44
+0x40001ba	              0xc3	                                     ret	      1248	phy_device.c	FUNCTION_44
+0x40001bb	    0x80bb66030000	               cmp byte [rbx + 0x366], 0	      1230	phy_device.c	FUNCTION_44	IF_2
+0x40001c2	            0x75ad	                           jne 0x4000171	      1230	phy_device.c	FUNCTION_44	IF_2
+0x40001c4	    0x41bceaffffff	                    mov r12d, 0xffffffea	      1231	phy_device.c	FUNCTION_44	IF_2
+0x40001ca	            0xebdb	                           jmp 0x40001a7	      1231	phy_device.c	FUNCTION_44	IF_2
+0x40001cc	    0x41bcf0ffffff	                    mov r12d, 0xfffffff0	      1226	phy_device.c	FUNCTION_44	IF_1
+0x40001d2	            0xebd3	                           jmp 0x40001a7	      1226	phy_device.c	FUNCTION_44	IF_1
+phy_find_first	WHILE,0:DO,0:functions,0:FOR,1:SWITCH,0:ELSE,0:CALL,1:IF,1	16
+0x4000760	              0x55	                                push rbp	       697	phy_device.c	FUNCTION_28
+0x4000761	          0x4889fd	                            mov rbp, rdi	       697	phy_device.c	FUNCTION_28
+0x4000764	              0x53	                                push rbx	       697	phy_device.c	FUNCTION_28
+0x4000765	            0x31db	                            xor ebx, ebx	       701	phy_device.c	FUNCTION_28	FOR_1
+0x4000767	            0xeb08	                           jmp 0x4000771	       701	phy_device.c	FUNCTION_28	FOR_1
+0x4000769	          0x83c301	                              add ebx, 1	       701	phy_device.c	FUNCTION_28	FOR_1
+0x400076c	          0x83fb20	                           cmp ebx, 0x20	       701	phy_device.c	FUNCTION_28	FOR_1
+0x400076f	            0x740f	                            je 0x4000780	       701	phy_device.c	FUNCTION_28	FOR_1
+0x4000771	            0x89de	                            mov esi, ebx	       702	phy_device.c	FUNCTION_28	FOR_1	CALL_1
+0x4000773	          0x4889ef	                            mov rdi, rbp	       702	phy_device.c	FUNCTION_28	FOR_1	CALL_1
+0x4000776	      0xe800000000	                          call 0x400077b	       702	phy_device.c	FUNCTION_28	FOR_1	CALL_1
+0x400077b	          0x4885c0	                           test rax, rax	       703	phy_device.c	FUNCTION_28	FOR_1	IF_1
+0x400077e	            0x74e9	                            je 0x4000769	       703	phy_device.c	FUNCTION_28	FOR_1	IF_1
+0x4000780	              0x5b	                                 pop rbx	       707	phy_device.c	FUNCTION_28
+0x4000781	              0x5d	                                 pop rbp	       707	phy_device.c	FUNCTION_28
+0x4000782	              0xc3	                                     ret	       707	phy_device.c	FUNCTION_28
+phy_id_show	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,2:IF,0	7
+0x4000560	          0x4889d0	                            mov rax, rdx	       592	phy_device.c	FUNCTION_23
+0x4000563	    0x8b9738030000	           mov edx, dword [rdi + 0x338] 	       595	phy_device.c	FUNCTION_23	CALL_2
+0x4000569	    0x48c7c6000000	                              mov rsi, 0	       595	phy_device.c	FUNCTION_23	CALL_2
+0x4000570	          0x4889c7	                            mov rdi, rax	       595	phy_device.c	FUNCTION_23	CALL_2
+0x4000573	      0xe800000000	                          call 0x4000578	       595	phy_device.c	FUNCTION_23	CALL_2
+0x4000578	            0x4898	                                    cdqe	       595	phy_device.c	FUNCTION_23	CALL_2
+0x400057a	              0xc3	                                     ret	       596	phy_device.c	FUNCTION_23
+phy_attach_direct	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,1:CALL,20:IF,12	141
+0x4001520	            0x4157	                                push r15	       955	phy_device.c	FUNCTION_38
+0x4001522	            0x4156	                                push r14	       955	phy_device.c	FUNCTION_38
+0x4001524	          0x4189cf	                           mov r15d, ecx	       955	phy_device.c	FUNCTION_38
+0x4001527	            0x4155	                                push r13	       955	phy_device.c	FUNCTION_38
+0x4001529	            0x4154	                                push r12	       955	phy_device.c	FUNCTION_38
+0x400152b	          0x4189d6	                           mov r14d, edx	       955	phy_device.c	FUNCTION_38
+0x400152e	              0x55	                                push rbp	       955	phy_device.c	FUNCTION_38
+0x400152f	              0x53	                                push rbx	       955	phy_device.c	FUNCTION_38
+0x4001530	          0x4889fd	                            mov rbp, rdi	       955	phy_device.c	FUNCTION_38
+0x4001533	          0x4889f3	                            mov rbx, rsi	       955	phy_device.c	FUNCTION_38
+0x4001536	        0x4883ec08	                              sub rsp, 8	       955	phy_device.c	FUNCTION_38
+0x400153a	    0x488b87b00400	           mov rax, qword [rdi + 0x4b0] 	       956	phy_device.c	FUNCTION_38
+0x4001541	    0x4c8baed80200	           mov r13, qword [rsi + 0x2d8] 	       957	phy_device.c	FUNCTION_38
+0x4001548	    0x488b80880000	            mov rax, qword [rax + 0x88] 	       956	phy_device.c	FUNCTION_38
+0x400154f	        0x498b7d00	                    mov rdi, qword [r13]	       967	phy_device.c	FUNCTION_38	IF_1	CALL_1
+0x4001553	        0x4c8b6010	            mov r12, qword [rax + 0x10] 	       956	phy_device.c	FUNCTION_38
+0x4001557	          0x4939fc	                            cmp r12, rdi	       967	phy_device.c	FUNCTION_38	IF_1	CALL_1
+0x400155a	            0x740d	                            je 0x4001569	       967	phy_device.c	FUNCTION_38	IF_1	CALL_1
+0x400155c	      0xe800000000	                          call 0x4001561	       967	phy_device.c	FUNCTION_38	IF_1	CALL_1
+0x4001561	            0x84c0	                             test al, al	       967	phy_device.c	FUNCTION_38	IF_1	CALL_1
+0x4001563	     0xf84db010000	                            je 0x4001744	       967	phy_device.c	FUNCTION_38	IF_1	CALL_1
+0x4001569	          0x4889df	                            mov rdi, rbx	       972	phy_device.c	FUNCTION_38	CALL_3
+0x400156c	      0xe800000000	                          call 0x4001571	       972	phy_device.c	FUNCTION_38	CALL_3
+0x4001571	    0x488b83880000	            mov rax, qword [rbx + 0x88] 	       977	phy_device.c	FUNCTION_38	IF_2
+0x4001578	          0x4885c0	                           test rax, rax	       977	phy_device.c	FUNCTION_38	IF_2
+0x400157b	     0xf8495000000	                            je 0x4001616	       977	phy_device.c	FUNCTION_38	IF_2
+0x4001581	        0x488b7810	            mov rdi, qword [rax + 0x10] 	       986	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_4
+0x4001585	      0xe800000000	                          call 0x400158a	       986	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_4
+0x400158a	            0x84c0	                             test al, al	       986	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_4
+0x400158c	            0x743f	                            je 0x40015cd	       986	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_4
+0x400158e	    0x4883bb500400	              cmp qword [rbx + 0x450], 0	      1001	phy_device.c	FUNCTION_38	IF_8
+0x4001596	     0xf84ec000000	                            je 0x4001688	      1001	phy_device.c	FUNCTION_38	IF_8
+0x400159c	    0x488dbdb00400	                  lea rdi, [rbp + 0x4b0]	      1002	phy_device.c	FUNCTION_38	IF_8	CALL_8
+0x40015a3	    0x48c7c6000000	                              mov rsi, 0	      1002	phy_device.c	FUNCTION_38	IF_8	CALL_8
+0x40015aa	      0xbdf0ffffff	                     mov ebp, 0xfffffff0	      1003	phy_device.c	FUNCTION_38	IF_8
+0x40015af	      0xe800000000	                          call 0x40015b4	      1002	phy_device.c	FUNCTION_38	IF_8	CALL_8
+0x40015b4	          0x4889df	                            mov rdi, rbx	      1065	phy_device.c	FUNCTION_38	CALL_17
+0x40015b7	      0xe800000000	                          call 0x40015bc	      1065	phy_device.c	FUNCTION_38	CALL_17
+0x40015bc	            0x89e8	                            mov eax, ebp	      1066	phy_device.c	FUNCTION_38
+0x40015be	        0x4883c408	                              add rsp, 8	      1075	phy_device.c	FUNCTION_38
+0x40015c2	              0x5b	                                 pop rbx	      1075	phy_device.c	FUNCTION_38
+0x40015c3	              0x5d	                                 pop rbp	      1075	phy_device.c	FUNCTION_38
+0x40015c4	            0x415c	                                 pop r12	      1075	phy_device.c	FUNCTION_38
+0x40015c6	            0x415d	                                 pop r13	      1075	phy_device.c	FUNCTION_38
+0x40015c8	            0x415e	                                 pop r14	      1075	phy_device.c	FUNCTION_38
+0x40015ca	            0x415f	                                 pop r15	      1075	phy_device.c	FUNCTION_38
+0x40015cc	              0xc3	                                     ret	      1075	phy_device.c	FUNCTION_38
+0x40015cd	    0x488dbdb00400	                  lea rdi, [rbp + 0x4b0]	       987	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_5
+0x40015d4	    0x48c7c6000000	                              mov rsi, 0	       987	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_5
+0x40015db	      0xe800000000	                          call 0x40015e0	       987	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_5
+0x40015e0	      0xb8fbffffff	                     mov eax, 0xfffffffb	       988	phy_device.c	FUNCTION_38	ELSE_1	IF_4
+0x40015e5	          0x4889df	                            mov rdi, rbx	      1071	phy_device.c	FUNCTION_38	CALL_19
+0x40015e8	        0x89442404	                mov dword [rsp + 4], eax	      1071	phy_device.c	FUNCTION_38	CALL_19
+0x40015ec	      0xe800000000	                          call 0x40015f1	      1071	phy_device.c	FUNCTION_38	CALL_19
+0x40015f1	        0x498b7d00	                    mov rdi, qword [r13]	      1072	phy_device.c	FUNCTION_38	IF_12
+0x40015f5	        0x8b442404	                mov eax, dword [rsp + 4]	      1074	phy_device.c	FUNCTION_38
+0x40015f9	          0x4939fc	                            cmp r12, rdi	      1072	phy_device.c	FUNCTION_38	IF_12
+0x40015fc	            0x74c0	                            je 0x40015be	      1072	phy_device.c	FUNCTION_38	IF_12
+0x40015fe	      0xe800000000	                          call 0x4001603	      1073	phy_device.c	FUNCTION_38	CALL_20
+0x4001603	        0x8b442404	                mov eax, dword [rsp + 4]	      1073	phy_device.c	FUNCTION_38	CALL_20
+0x4001607	        0x4883c408	                              add rsp, 8	      1075	phy_device.c	FUNCTION_38
+0x400160b	              0x5b	                                 pop rbx	      1075	phy_device.c	FUNCTION_38
+0x400160c	              0x5d	                                 pop rbp	      1075	phy_device.c	FUNCTION_38
+0x400160d	            0x415c	                                 pop r12	      1075	phy_device.c	FUNCTION_38
+0x400160f	            0x415d	                                 pop r13	      1075	phy_device.c	FUNCTION_38
+0x4001611	            0x415e	                                 pop r14	      1075	phy_device.c	FUNCTION_38
+0x4001613	            0x415f	                                 pop r15	      1075	phy_device.c	FUNCTION_38
+0x4001615	              0xc3	                                     ret	      1075	phy_device.c	FUNCTION_38
+0x4001616	    0x80bb60030000	               cmp byte [rbx + 0x360], 0	       978	phy_device.c	FUNCTION_38	IF_2	IF_3
+0x400161d	     0xf84eb000000	                            je 0x400170e	       978	phy_device.c	FUNCTION_38	IF_2	IF_3
+0x4001623	    0x48c783880000	               mov qword [rbx + 0x88], 0	       979	phy_device.c	FUNCTION_38	IF_2	IF_3
+0x400162e	    0x48c7c0000000	                              mov rax, 0	       979	phy_device.c	FUNCTION_38	IF_2	IF_3
+0x4001635	        0x488b7810	            mov rdi, qword [rax + 0x10] 	       986	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_4
+0x4001639	      0xe800000000	                          call 0x400163e	       986	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_4
+0x400163e	            0x84c0	                             test al, al	       986	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_4
+0x4001640	            0x748b	                            je 0x40015cd	       986	phy_device.c	FUNCTION_38	ELSE_1	IF_4	CALL_4
+0x4001642	    0x488b83880000	            mov rax, qword [rbx + 0x88] 	       993	phy_device.c	FUNCTION_38	IF_5	CALL_6
+0x4001649	          0x4889df	                            mov rdi, rbx	       993	phy_device.c	FUNCTION_38	IF_5	CALL_6
+0x400164c	        0x488b4038	            mov rax, qword [rax + 0x38] 	       993	phy_device.c	FUNCTION_38	IF_5	CALL_6
+0x4001650	      0xe800000000	                          call 0x4001655	       993	phy_device.c	FUNCTION_38	IF_5	CALL_6
+0x4001655	            0x85c0	                           test eax, eax	       994	phy_device.c	FUNCTION_38	IF_5	IF_6
+0x4001657	            0x791d	                           jns 0x4001676	       994	phy_device.c	FUNCTION_38	IF_5	IF_6
+0x4001659	    0x488b93880000	            mov rdx, qword [rbx + 0x88] 	      1069	phy_device.c	FUNCTION_38	CALL_18
+0x4001660	        0x89442404	                mov dword [rsp + 4], eax	      1069	phy_device.c	FUNCTION_38	CALL_18
+0x4001664	        0x488b7a10	            mov rdi, qword [rdx + 0x10] 	      1069	phy_device.c	FUNCTION_38	CALL_18
+0x4001668	      0xe800000000	                          call 0x400166d	      1069	phy_device.c	FUNCTION_38	CALL_18
+0x400166d	        0x8b442404	                mov eax, dword [rsp + 4]	      1069	phy_device.c	FUNCTION_38	CALL_18
+0x4001671	      0xe96fffffff	                           jmp 0x40015e5	      1069	phy_device.c	FUNCTION_38	CALL_18
+0x4001676	          0x4889df	                            mov rdi, rbx	       995	phy_device.c	FUNCTION_38	IF_5	CALL_7
+0x4001679	      0xe800000000	                          call 0x400167e	       995	phy_device.c	FUNCTION_38	IF_5	CALL_7
+0x400167e	            0x85c0	                           test eax, eax	       997	phy_device.c	FUNCTION_38	IF_5	IF_7
+0x4001680	     0xf8408ffffff	                            je 0x400158e	       997	phy_device.c	FUNCTION_38	IF_5	IF_7
+0x4001686	            0xebd1	                           jmp 0x4001659	       997	phy_device.c	FUNCTION_38	IF_5	IF_7
+0x4001688	    0x4c8da5c00400	                  lea r12, [rbp + 0x4c0]	      1021	phy_device.c	FUNCTION_38	CALL_9
+0x400168f	        0x4c8d6b10	                   lea r13, [rbx + 0x10]	      1021	phy_device.c	FUNCTION_38	CALL_9
+0x4001693	    0x48c783600400	              mov qword [rbx + 0x460], 0	      1007	phy_device.c	FUNCTION_38
+0x400169e	    0x4889ab500400	            mov qword [rbx + 0x450], rbp	      1008	phy_device.c	FUNCTION_38
+0x40016a5	    0x48c7c2000000	                              mov rdx, 0	      1021	phy_device.c	FUNCTION_38	CALL_9
+0x40016ac	    0x48899d080800	           mov qword [rbp + 0x808], rbx 	      1009	phy_device.c	FUNCTION_38
+0x40016b3	          0x4c89e6	                            mov rsi, r12	      1021	phy_device.c	FUNCTION_38	CALL_9
+0x40016b6	    0xc68365030000	               mov byte [rbx + 0x365], 0	      1019	phy_device.c	FUNCTION_38
+0x40016bd	          0x4c89ef	                            mov rdi, r13	      1021	phy_device.c	FUNCTION_38	CALL_9
+0x40016c0	      0xe800000000	                          call 0x40016c5	      1021	phy_device.c	FUNCTION_38	CALL_9
+0x40016c5	            0x85c0	                           test eax, eax	      1023	phy_device.c	FUNCTION_38	IF_9
+0x40016c7	            0x745c	                            je 0x4001725	      1023	phy_device.c	FUNCTION_38	IF_9
+0x40016c9	    0x488bbb500400	           mov rdi, qword [rbx + 0x450] 	      1048	phy_device.c	FUNCTION_38	CALL_13
+0x40016d0	    0x4489b36c0300	           mov dword [rbx + 0x36c], r14d	      1039	phy_device.c	FUNCTION_38
+0x40016d7	    0x4489bb700300	           mov dword [rbx + 0x370], r15d	      1041	phy_device.c	FUNCTION_38
+0x40016de	    0xc78368030000	              mov dword [rbx + 0x368], 2	      1043	phy_device.c	FUNCTION_38
+0x40016e8	      0xe800000000	                          call 0x40016ed	      1048	phy_device.c	FUNCTION_38	CALL_13
+0x40016ed	          0x4889df	                            mov rdi, rbx	      1054	phy_device.c	FUNCTION_38	CALL_14
+0x40016f0	      0xe800000000	                          call 0x40016f5	      1054	phy_device.c	FUNCTION_38	CALL_14
+0x40016f5	            0x85c0	                           test eax, eax	      1055	phy_device.c	FUNCTION_38	IF_11
+0x40016f7	            0x89c5	                            mov ebp, eax	      1054	phy_device.c	FUNCTION_38	CALL_14
+0x40016f9	     0xf85b5feffff	                           jne 0x40015b4	      1055	phy_device.c	FUNCTION_38	IF_11
+0x40016ff	          0x4889df	                            mov rdi, rbx	      1058	phy_device.c	FUNCTION_38	CALL_15
+0x4001702	      0xe800000000	                          call 0x4001707	      1058	phy_device.c	FUNCTION_38	CALL_15
+0x4001707	            0x31c0	                            xor eax, eax	      1061	phy_device.c	FUNCTION_38
+0x4001709	      0xe9b0feffff	                           jmp 0x40015be	      1061	phy_device.c	FUNCTION_38
+0x400170e	    0x48c783880000	               mov qword [rbx + 0x88], 0	       981	phy_device.c	FUNCTION_38	IF_2	ELSE_1
+0x4001719	    0x48c7c0000000	                              mov rax, 0	       981	phy_device.c	FUNCTION_38	IF_2	ELSE_1
+0x4001720	      0xe910ffffff	                           jmp 0x4001635	       981	phy_device.c	FUNCTION_38	IF_2	ELSE_1
+0x4001725	    0x48c7c2000000	                              mov rdx, 0	      1024	phy_device.c	FUNCTION_38	IF_9	CALL_10
+0x400172c	          0x4c89ee	                            mov rsi, r13	      1024	phy_device.c	FUNCTION_38	IF_9	CALL_10
+0x400172f	          0x4c89e7	                            mov rdi, r12	      1024	phy_device.c	FUNCTION_38	IF_9	CALL_10
+0x4001732	      0xe800000000	                          call 0x4001737	      1024	phy_device.c	FUNCTION_38	IF_9	CALL_10
+0x4001737	            0x85c0	                           test eax, eax	      1027	phy_device.c	FUNCTION_38	IF_9	IF_10
+0x4001739	            0x7526	                           jne 0x4001761	      1027	phy_device.c	FUNCTION_38	IF_9	IF_10
+0x400173b	    0xc68365030000	               mov byte [rbx + 0x365], 1	      1036	phy_device.c	FUNCTION_38	IF_9
+0x4001742	            0xeb85	                           jmp 0x40016c9	      1036	phy_device.c	FUNCTION_38	IF_9
+0x4001744	    0x488dbdb00400	                  lea rdi, [rbp + 0x4b0]	       968	phy_device.c	FUNCTION_38	IF_1	CALL_2
+0x400174b	    0x48c7c6000000	                              mov rsi, 0	       968	phy_device.c	FUNCTION_38	IF_1	CALL_2
+0x4001752	      0xe800000000	                          call 0x4001757	       968	phy_device.c	FUNCTION_38	IF_1	CALL_2
+0x4001757	      0xb8fbffffff	                     mov eax, 0xfffffffb	       969	phy_device.c	FUNCTION_38	IF_1
+0x400175c	      0xe95dfeffff	                           jmp 0x40015be	       969	phy_device.c	FUNCTION_38	IF_1
+0x4001761	        0x488b5310	            mov rdx, qword [rbx + 0x10] 	      1028	phy_device.c	FUNCTION_38	IF_9	IF_10	CALL_11
+0x4001765	    0x488dbdb00400	                  lea rdi, [rbp + 0x4b0]	      1028	phy_device.c	FUNCTION_38	IF_9	IF_10	CALL_11
+0x400176c	            0x89c1	                            mov ecx, eax	      1028	phy_device.c	FUNCTION_38	IF_9	IF_10	CALL_11
+0x400176e	    0x48c7c6000000	                              mov rsi, 0	      1028	phy_device.c	FUNCTION_38	IF_9	IF_10	CALL_11
+0x4001775	      0xe800000000	                          call 0x400177a	      1028	phy_device.c	FUNCTION_38	IF_9	IF_10	CALL_11
+0x400177a	            0xebbf	                           jmp 0x400173b	      1028	phy_device.c	FUNCTION_38	IF_9	IF_10	CALL_11
+phy_disconnect	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,3:IF,1	12
+0x4000af0	              0x53	                                push rbx	       815	phy_device.c	FUNCTION_33
+0x4000af1	    0x8b87a4030000	           mov eax, dword [rdi + 0x3a4] 	       816	phy_device.c	FUNCTION_33	IF_1
+0x4000af7	          0x4889fb	                            mov rbx, rdi	       815	phy_device.c	FUNCTION_33
+0x4000afa	            0x85c0	                           test eax, eax	       816	phy_device.c	FUNCTION_33	IF_1
+0x4000afc	            0x7e05	                           jle 0x4000b03	       816	phy_device.c	FUNCTION_33	IF_1
+0x4000afe	      0xe800000000	                          call 0x4000b03	       817	phy_device.c	FUNCTION_33	CALL_1
+0x4000b03	          0x4889df	                            mov rdi, rbx	       819	phy_device.c	FUNCTION_33	CALL_2
+0x4000b06	      0xe800000000	                          call 0x4000b0b	       819	phy_device.c	FUNCTION_33	CALL_2
+0x4000b0b	    0x48c783680400	              mov qword [rbx + 0x468], 0	       821	phy_device.c	FUNCTION_33
+0x4000b16	          0x4889df	                            mov rdi, rbx	       823	phy_device.c	FUNCTION_33	CALL_3
+0x4000b19	              0x5b	                                 pop rbx	       824	phy_device.c	FUNCTION_33
+0x4000b1a	      0xe9f1feffff	                      jmp sym.phy_detach	       823	phy_device.c	FUNCTION_33	CALL_3
+get_phy_device	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,4:IF,2	137
+0x4001c50	            0x4157	                                push r15	       573	phy_device.c	FUNCTION_22
+0x4001c52	            0x4156	                                push r14	       573	phy_device.c	FUNCTION_22
+0x4001c54	          0x4189d6	                           mov r14d, edx	       573	phy_device.c	FUNCTION_22
+0x4001c57	            0x4155	                                push r13	       573	phy_device.c	FUNCTION_22
+0x4001c59	            0x4154	                                push r12	       573	phy_device.c	FUNCTION_22
+0x4001c5b	          0x4189f4	                           mov r12d, esi	       573	phy_device.c	FUNCTION_22
+0x4001c5e	              0x55	                                push rbp	       573	phy_device.c	FUNCTION_22
+0x4001c5f	              0x53	                                push rbx	       573	phy_device.c	FUNCTION_22
+0x4001c60	          0x4889fd	                            mov rbp, rdi	       573	phy_device.c	FUNCTION_22
+0x4001c63	        0x4883ec38	                           sub rsp, 0x38	       573	phy_device.c	FUNCTION_22
+0x4001c67	    0x65488b042528	                mov rax, qword gs:[0x28]	       573	phy_device.c	FUNCTION_22
+0x4001c70	      0x4889442430	             mov qword [rsp + 0x30], rax	       573	phy_device.c	FUNCTION_22
+0x4001c75	            0x31c0	                            xor eax, eax	       573	phy_device.c	FUNCTION_22
+0x4001c77	            0x84d2	                             test dl, dl	       533	phy_device.c	FUNCTION_21	IF_1
+0x4001c79	    0x48c744240c00	                mov qword [rsp + 0xc], 0	       574	phy_device.c	FUNCTION_22
+0x4001c82	    0x48c744241400	               mov qword [rsp + 0x14], 0	       574	phy_device.c	FUNCTION_22
+0x4001c8b	    0x48c744241c00	               mov qword [rsp + 0x1c], 0	       574	phy_device.c	FUNCTION_22
+0x4001c94	    0x48c744242400	               mov qword [rsp + 0x24], 0	       574	phy_device.c	FUNCTION_22
+0x4001c9d	    0xc744242c0000	               mov dword [rsp + 0x2c], 0	       574	phy_device.c	FUNCTION_22
+0x4001ca5	     0xf8590000000	                           jne 0x4001d3b	       533	phy_device.c	FUNCTION_21	IF_1
+0x4001cab	      0xba02000000	                              mov edx, 2	       537	phy_device.c	FUNCTION_21	CALL_2
+0x4001cb0	      0xe800000000	                          call 0x4001cb5	       537	phy_device.c	FUNCTION_21	CALL_2
+0x4001cb5	            0x85c0	                           test eax, eax	       538	phy_device.c	FUNCTION_21	IF_2
+0x4001cb7	            0x7866	                            js 0x4001d1f	       538	phy_device.c	FUNCTION_21	IF_2
+0x4001cb9	          0xc1e010	                           shl eax, 0x10	       550	phy_device.c	FUNCTION_21
+0x4001cbc	      0xba03000000	                              mov edx, 3	       553	phy_device.c	FUNCTION_21	CALL_3
+0x4001cc1	          0x4489e6	                           mov esi, r12d	       553	phy_device.c	FUNCTION_21	CALL_3
+0x4001cc4	          0x4889ef	                            mov rdi, rbp	       553	phy_device.c	FUNCTION_21	CALL_3
+0x4001cc7	            0x89c3	                            mov ebx, eax	       550	phy_device.c	FUNCTION_21
+0x4001cc9	      0xe800000000	                          call 0x4001cce	       553	phy_device.c	FUNCTION_21	CALL_3
+0x4001cce	            0x85c0	                           test eax, eax	       554	phy_device.c	FUNCTION_21	IF_4
+0x4001cd0	            0x7860	                            js 0x4001d32	       554	phy_device.c	FUNCTION_21	IF_4
+0x4001cd2	           0xfb7d0	                           movzx edx, ax	       557	phy_device.c	FUNCTION_21
+0x4001cd5	             0x9da	                             or edx, ebx	       557	phy_device.c	FUNCTION_21
+0x4001cd7	            0x89d0	                            mov eax, edx	       583	phy_device.c	FUNCTION_22	IF_2
+0x4001cd9	      0x25ffffff1f	                     and eax, 0x1fffffff	       583	phy_device.c	FUNCTION_22	IF_2
+0x4001cde	      0x3dffffff1f	                     cmp eax, 0x1fffffff	       583	phy_device.c	FUNCTION_22	IF_2
+0x4001ce3	            0x7444	                            je 0x4001d29	       583	phy_device.c	FUNCTION_22	IF_2
+0x4001ce5	      0x4c8d6c240c	                    lea r13, [rsp + 0xc]	       583	phy_device.c	FUNCTION_22	IF_2
+0x4001cea	        0x410fb6ce	                         movzx ecx, r14b	       586	phy_device.c	FUNCTION_22	CALL_4
+0x4001cee	          0x4d89e8	                             mov r8, r13	       586	phy_device.c	FUNCTION_22	CALL_4
+0x4001cf1	          0x4489e6	                           mov esi, r12d	       586	phy_device.c	FUNCTION_22	CALL_4
+0x4001cf4	          0x4889ef	                            mov rdi, rbp	       586	phy_device.c	FUNCTION_22	CALL_4
+0x4001cf7	      0xe800000000	                          call 0x4001cfc	       586	phy_device.c	FUNCTION_22	CALL_4
+0x4001cfc	      0x488b742430	            mov rsi, qword [rsp + 0x30] 	       587	phy_device.c	FUNCTION_22
+0x4001d01	    0x654833342528	                xor rsi, qword gs:[0x28]	       587	phy_device.c	FUNCTION_22
+0x4001d0a	     0xf852d010000	                           jne 0x4001e3d	       587	phy_device.c	FUNCTION_22
+0x4001d10	        0x4883c438	                           add rsp, 0x38	       587	phy_device.c	FUNCTION_22
+0x4001d14	              0x5b	                                 pop rbx	       587	phy_device.c	FUNCTION_22
+0x4001d15	              0x5d	                                 pop rbp	       587	phy_device.c	FUNCTION_22
+0x4001d16	            0x415c	                                 pop r12	       587	phy_device.c	FUNCTION_22
+0x4001d18	            0x415d	                                 pop r13	       587	phy_device.c	FUNCTION_22
+0x4001d1a	            0x415e	                                 pop r14	       587	phy_device.c	FUNCTION_22
+0x4001d1c	            0x415f	                                 pop r15	       587	phy_device.c	FUNCTION_22
+0x4001d1e	              0xc3	                                     ret	       587	phy_device.c	FUNCTION_22
+0x4001d1f	          0x83f8fb	             cmp eax, 0xfffffffffffffffb	       542	phy_device.c	FUNCTION_21	IF_2	IF_3
+0x4001d22	            0x7405	                            je 0x4001d29	       542	phy_device.c	FUNCTION_21	IF_2	IF_3
+0x4001d24	          0x83f8ed	             cmp eax, 0xffffffffffffffed	       542	phy_device.c	FUNCTION_21	IF_2	IF_3
+0x4001d27	            0x7509	                           jne 0x4001d32	       542	phy_device.c	FUNCTION_21	IF_2	IF_3
+0x4001d29	    0x48c7c0edffff	             mov rax, 0xffffffffffffffed	       584	phy_device.c	FUNCTION_22	CALL_3
+0x4001d30	            0xebca	                           jmp 0x4001cfc	       584	phy_device.c	FUNCTION_22	CALL_3
+0x4001d32	    0x48c7c0fbffff	             mov rax, 0xfffffffffffffffb	       580	phy_device.c	FUNCTION_22	CALL_2
+0x4001d39	            0xebc1	                           jmp 0x4001cfc	       580	phy_device.c	FUNCTION_22	CALL_2
+0x4001d3b	      0x4c8d6c240c	                    lea r13, [rsp + 0xc]	       580	phy_device.c	FUNCTION_22	CALL_2
+0x4001d40	      0xbb01000000	                              mov ebx, 1	       533	phy_device.c	FUNCTION_21	IF_1
+0x4001d45	          0x4c89e9	                            mov rcx, r13	       468	phy_device.c	FUNCTION_20	FOR_1	CALL_2
+0x4001d48	            0x89da	                            mov edx, ebx	       468	phy_device.c	FUNCTION_20	FOR_1	CALL_2
+0x4001d4a	          0x4489e6	                           mov esi, r12d	       468	phy_device.c	FUNCTION_20	FOR_1	CALL_2
+0x4001d4d	          0x4889ef	                            mov rdi, rbp	       468	phy_device.c	FUNCTION_20	FOR_1	CALL_2
+0x4001d50	      0xe85be6ffff	        call sym.get_phy_c45_devs_in_pkg	       468	phy_device.c	FUNCTION_20	FOR_1	CALL_2
+0x4001d55	            0x85c0	                           test eax, eax	       469	phy_device.c	FUNCTION_20	FOR_1	IF_1
+0x4001d57	            0x78d9	                            js 0x4001d32	       469	phy_device.c	FUNCTION_20	FOR_1	IF_1
+0x4001d59	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       472	phy_device.c	FUNCTION_20	FOR_1	IF_2
+0x4001d5d	            0x89c2	                            mov edx, eax	       472	phy_device.c	FUNCTION_20	FOR_1	IF_2
+0x4001d5f	    0x81e2ffffff1f	                     and edx, 0x1fffffff	       472	phy_device.c	FUNCTION_20	FOR_1	IF_2
+0x4001d65	    0x81faffffff1f	                     cmp edx, 0x1fffffff	       472	phy_device.c	FUNCTION_20	FOR_1	IF_2
+0x4001d6b	     0xf8497000000	                            je 0x4001e08	       472	phy_device.c	FUNCTION_20	FOR_1	IF_2
+0x4001d71	          0x83c301	                              add ebx, 1	       467	phy_device.c	FUNCTION_20	FOR_1
+0x4001d74	          0x83fb08	                              cmp ebx, 8	       467	phy_device.c	FUNCTION_20	FOR_1
+0x4001d77	            0x7404	                            je 0x4001d7d	       467	phy_device.c	FUNCTION_20	FOR_1
+0x4001d79	            0x85c0	                           test eax, eax	       467	phy_device.c	FUNCTION_20	FOR_1
+0x4001d7b	            0x74c8	                            je 0x4001d45	       467	phy_device.c	FUNCTION_20	FOR_1
+0x4001d7d	          0x4d89ef	                            mov r15, r13	       467	phy_device.c	FUNCTION_20	FOR_1
+0x4001d80	      0xbb01000000	                              mov ebx, 1	       533	phy_device.c	FUNCTION_21	IF_1
+0x4001d85	            0xeb10	                           jmp 0x4001d97	       533	phy_device.c	FUNCTION_21	IF_1
+0x4001d87	          0x83c301	                              add ebx, 1	       492	phy_device.c	FUNCTION_20	FOR_2
+0x4001d8a	        0x4983c704	                              add r15, 4	       492	phy_device.c	FUNCTION_20	FOR_2
+0x4001d8e	          0x83fb08	                              cmp ebx, 8	       492	phy_device.c	FUNCTION_20	FOR_2
+0x4001d91	            0x746e	                            je 0x4001e01	       492	phy_device.c	FUNCTION_20	FOR_2
+0x4001d93	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       492	phy_device.c	FUNCTION_20	FOR_2
+0x4001d97	      0xba01000000	                              mov edx, 1	       493	phy_device.c	FUNCTION_20	FOR_2	IF_5
+0x4001d9c	            0x89d9	                            mov ecx, ebx	       493	phy_device.c	FUNCTION_20	FOR_2	IF_5
+0x4001d9e	            0xd3e2	                             shl edx, cl	       493	phy_device.c	FUNCTION_20	FOR_2	IF_5
+0x4001da0	            0x85c2	                           test edx, eax	       493	phy_device.c	FUNCTION_20	FOR_2	IF_5
+0x4001da2	            0x74e3	                            je 0x4001d87	       493	phy_device.c	FUNCTION_20	FOR_2	IF_5
+0x4001da4	            0x89d9	                            mov ecx, ebx	       496	phy_device.c	FUNCTION_20	FOR_2
+0x4001da6	          0x4489e6	                           mov esi, r12d	       497	phy_device.c	FUNCTION_20	FOR_2	CALL_4
+0x4001da9	          0x4889ef	                            mov rdi, rbp	       497	phy_device.c	FUNCTION_20	FOR_2	CALL_4
+0x4001dac	          0xc1e110	                           shl ecx, 0x10	       496	phy_device.c	FUNCTION_20	FOR_2
+0x4001daf	            0x89ca	                            mov edx, ecx	       497	phy_device.c	FUNCTION_20	FOR_2	CALL_4
+0x4001db1	        0x894c2404	                mov dword [rsp + 4], ecx	       497	phy_device.c	FUNCTION_20	FOR_2	CALL_4
+0x4001db5	    0x81ca02000040	                      or edx, 0x40000002	       497	phy_device.c	FUNCTION_20	FOR_2	CALL_4
+0x4001dbb	      0xe800000000	                          call 0x4001dc0	       497	phy_device.c	FUNCTION_20	FOR_2	CALL_4
+0x4001dc0	            0x85c0	                           test eax, eax	       498	phy_device.c	FUNCTION_20	FOR_2	IF_6
+0x4001dc2	     0xf886affffff	                            js 0x4001d32	       498	phy_device.c	FUNCTION_20	FOR_2	IF_6
+0x4001dc8	        0x8b4c2404	                mov ecx, dword [rsp + 4]	       503	phy_device.c	FUNCTION_20	FOR_2	CALL_5
+0x4001dcc	          0xc1e010	                           shl eax, 0x10	       500	phy_device.c	FUNCTION_20	FOR_2
+0x4001dcf	          0x4489e6	                           mov esi, r12d	       503	phy_device.c	FUNCTION_20	FOR_2	CALL_5
+0x4001dd2	        0x41894708	                mov dword [r15 + 8], eax	       500	phy_device.c	FUNCTION_20	FOR_2
+0x4001dd6	          0x4889ef	                            mov rdi, rbp	       503	phy_device.c	FUNCTION_20	FOR_2	CALL_5
+0x4001dd9	    0x81c903000040	                      or ecx, 0x40000003	       503	phy_device.c	FUNCTION_20	FOR_2	CALL_5
+0x4001ddf	            0x89ca	                            mov edx, ecx	       503	phy_device.c	FUNCTION_20	FOR_2	CALL_5
+0x4001de1	      0xe800000000	                          call 0x4001de6	       503	phy_device.c	FUNCTION_20	FOR_2	CALL_5
+0x4001de6	            0x85c0	                           test eax, eax	       504	phy_device.c	FUNCTION_20	FOR_2	IF_7
+0x4001de8	     0xf8844ffffff	                            js 0x4001d32	       504	phy_device.c	FUNCTION_20	FOR_2	IF_7
+0x4001dee	          0x83c301	                              add ebx, 1	       492	phy_device.c	FUNCTION_20	FOR_2
+0x4001df1	           0xfb7c0	                           movzx eax, ax	       506	phy_device.c	FUNCTION_20	FOR_2
+0x4001df4	        0x41094708	                 or dword [r15 + 8], eax	       506	phy_device.c	FUNCTION_20	FOR_2
+0x4001df8	        0x4983c704	                              add r15, 4	       506	phy_device.c	FUNCTION_20	FOR_2
+0x4001dfc	          0x83fb08	                              cmp ebx, 8	       492	phy_device.c	FUNCTION_20	FOR_2
+0x4001dff	            0x7592	                           jne 0x4001d93	       492	phy_device.c	FUNCTION_20	FOR_2
+0x4001e01	            0x31d2	                            xor edx, edx	       492	phy_device.c	FUNCTION_20	FOR_2
+0x4001e03	      0xe9e2feffff	                           jmp 0x4001cea	       492	phy_device.c	FUNCTION_20	FOR_2
+0x4001e08	            0x31d2	                            xor edx, edx	       478	phy_device.c	FUNCTION_20	FOR_1	IF_2	CALL_3
+0x4001e0a	          0x4c89e9	                            mov rcx, r13	       478	phy_device.c	FUNCTION_20	FOR_1	IF_2	CALL_3
+0x4001e0d	          0x4489e6	                           mov esi, r12d	       478	phy_device.c	FUNCTION_20	FOR_1	IF_2	CALL_3
+0x4001e10	          0x4889ef	                            mov rdi, rbp	       478	phy_device.c	FUNCTION_20	FOR_1	IF_2	CALL_3
+0x4001e13	      0xe898e5ffff	        call sym.get_phy_c45_devs_in_pkg	       478	phy_device.c	FUNCTION_20	FOR_1	IF_2	CALL_3
+0x4001e18	            0x85c0	                           test eax, eax	       479	phy_device.c	FUNCTION_20	FOR_1	IF_2	IF_3
+0x4001e1a	     0xf8812ffffff	                            js 0x4001d32	       479	phy_device.c	FUNCTION_20	FOR_1	IF_2	IF_3
+0x4001e20	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       482	phy_device.c	FUNCTION_20	FOR_1	IF_2	IF_4
+0x4001e24	            0x89c2	                            mov edx, eax	       482	phy_device.c	FUNCTION_20	FOR_1	IF_2	IF_4
+0x4001e26	    0x81e2ffffff1f	                     and edx, 0x1fffffff	       482	phy_device.c	FUNCTION_20	FOR_1	IF_2	IF_4
+0x4001e2c	    0x81faffffff1f	                     cmp edx, 0x1fffffff	       482	phy_device.c	FUNCTION_20	FOR_1	IF_2	IF_4
+0x4001e32	     0xf8545ffffff	                           jne 0x4001d7d	       482	phy_device.c	FUNCTION_20	FOR_1	IF_2	IF_4
+0x4001e38	      0xe9ecfeffff	                           jmp 0x4001d29	       482	phy_device.c	FUNCTION_20	FOR_1	IF_2	IF_4
+0x4001e3d	      0xe800000000	                          call 0x4001e42	       587	phy_device.c	FUNCTION_22
+phy_driver_register	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,3:IF,1	23
+0x4000d20	              0x55	                                push rbp	      1908	phy_device.c	FUNCTION_67
+0x4000d21	              0x53	                                push rbx	      1908	phy_device.c	FUNCTION_67
+0x4000d22	          0x4889fb	                            mov rbx, rdi	      1908	phy_device.c	FUNCTION_67
+0x4000d25	    0x818f80000000	       or dword [rdi + 0x80], 0x80000000	      1911	phy_device.c	FUNCTION_67
+0x4000d2f	    0x488b87900000	            mov rax, qword [rdi + 0x90] 	      1912	phy_device.c	FUNCTION_67
+0x4000d36	    0x48c747080000	                  mov qword [rdi + 8], 0	      1913	phy_device.c	FUNCTION_67
+0x4000d3e	    0x48c747380000	               mov qword [rdi + 0x38], 0	      1914	phy_device.c	FUNCTION_67
+0x4000d46	    0x48c747400000	               mov qword [rdi + 0x40], 0	      1915	phy_device.c	FUNCTION_67
+0x4000d4e	        0x48897710	             mov qword [rdi + 0x10], rsi	      1916	phy_device.c	FUNCTION_67
+0x4000d52	          0x488907	                    mov qword [rdi], rax	      1912	phy_device.c	FUNCTION_67
+0x4000d55	      0xe800000000	                          call 0x4000d5a	      1918	phy_device.c	FUNCTION_67	CALL_1
+0x4000d5a	            0x85c0	                           test eax, eax	      1919	phy_device.c	FUNCTION_67	IF_1
+0x4000d5c	            0x89c5	                            mov ebp, eax	      1918	phy_device.c	FUNCTION_67	CALL_1
+0x4000d5e	            0x7505	                           jne 0x4000d65	      1919	phy_device.c	FUNCTION_67	IF_1
+0x4000d60	            0x89e8	                            mov eax, ebp	      1929	phy_device.c	FUNCTION_67
+0x4000d62	              0x5b	                                 pop rbx	      1929	phy_device.c	FUNCTION_67
+0x4000d63	              0x5d	                                 pop rbp	      1929	phy_device.c	FUNCTION_67
+0x4000d64	              0xc3	                                     ret	      1929	phy_device.c	FUNCTION_67
+0x4000d65	    0x488bb3900000	            mov rsi, qword [rbx + 0x90] 	      1920	phy_device.c	FUNCTION_67	IF_1	CALL_2
+0x4000d6c	            0x89c2	                            mov edx, eax	      1920	phy_device.c	FUNCTION_67	IF_1	CALL_2
+0x4000d6e	    0x48c7c7000000	                              mov rdi, 0	      1920	phy_device.c	FUNCTION_67	IF_1	CALL_2
+0x4000d75	      0xe800000000	                          call 0x4000d7a	      1920	phy_device.c	FUNCTION_67	IF_1	CALL_2
+0x4000d7a	            0xebe4	                           jmp 0x4000d60	      1923	phy_device.c	FUNCTION_67	IF_1
+genphy_read_mmd_unsupported	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,0:IF,0	2
+0x40000c0	      0xb8a1ffffff	                     mov eax, 0xffffffa1	      1692	phy_device.c	FUNCTION_56
+0x40000c5	              0xc3	                                     ret	      1692	phy_device.c	FUNCTION_56
+phy_mdio_device_remove	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,2:IF,0	1
+0x4000750	            0xebde	               jmp sym.phy_device_remove	        69	phy_device.c	FUNCTION_4	CALL_2
+phy_set_max_speed	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,1:IF,1	18
+0x40000e0	    0x8b878c030000	           mov eax, dword [rdi + 0x38c] 	      1727	phy_device.c	FUNCTION_61
+0x40000e6	      0x25c0020000	                          and eax, 0x2c0	      1727	phy_device.c	FUNCTION_61
+0x40000eb	          0x83fe64	                           cmp esi, 0x64	      1729	phy_device.c	FUNCTION_61	SWITCH_1
+0x40000ee	    0x89878c030000	            mov dword [rdi + 0x38c], eax	      1727	phy_device.c	FUNCTION_61
+0x40000f4	            0x7416	                            je 0x400010c	      1729	phy_device.c	FUNCTION_61	SWITCH_1
+0x40000f6	    0x81fee8030000	                          cmp esi, 0x3e8	      1729	phy_device.c	FUNCTION_61	SWITCH_1
+0x40000fc	            0x740b	                            je 0x4000109	      1729	phy_device.c	FUNCTION_61	SWITCH_1
+0x40000fe	          0x83fe0a	                            cmp esi, 0xa	      1729	phy_device.c	FUNCTION_61	SWITCH_1
+0x4000101	            0x740c	                            je 0x400010f	      1729	phy_device.c	FUNCTION_61	SWITCH_1
+0x4000103	      0xb8f4fdffff	                     mov eax, 0xfffffdf4	      1731	phy_device.c	FUNCTION_61	SWITCH_1
+0x4000108	              0xc3	                                     ret	      1756	phy_device.c	FUNCTION_62
+0x4000109	          0x83c830	                            or eax, 0x30	      1733	phy_device.c	FUNCTION_61	SWITCH_1
+0x400010c	          0x83c80c	                             or eax, 0xc	      1736	phy_device.c	FUNCTION_61	SWITCH_1
+0x400010f	          0x83c803	                               or eax, 3	      1739	phy_device.c	FUNCTION_61	SWITCH_1
+0x4000112	    0x89878c030000	            mov dword [rdi + 0x38c], eax	      1739	phy_device.c	FUNCTION_61	SWITCH_1
+0x4000118	    0x898790030000	            mov dword [rdi + 0x390], eax	      1753	phy_device.c	FUNCTION_62
+0x400011e	            0x31c0	                            xor eax, eax	      1755	phy_device.c	FUNCTION_62
+0x4000120	              0xc3	                                     ret	      1755	phy_device.c	FUNCTION_62
+genphy_setup_forced	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,1:CALL,1:IF,3	18
+0x4000be0	    0x8b8774030000	           mov eax, dword [rdi + 0x374] 	      1400	phy_device.c	FUNCTION_48	IF_1
+0x4000be6	    0xc7877c030000	              mov dword [rdi + 0x37c], 0	      1397	phy_device.c	FUNCTION_48
+0x4000bf0	      0xb940000000	                           mov ecx, 0x40	      1401	phy_device.c	FUNCTION_48	IF_1
+0x4000bf5	    0xc78780030000	              mov dword [rdi + 0x380], 0	      1398	phy_device.c	FUNCTION_48
+0x4000bff	      0x3de8030000	                          cmp eax, 0x3e8	      1400	phy_device.c	FUNCTION_48	IF_1
+0x4000c04	            0x7410	                            je 0x4000c16	      1400	phy_device.c	FUNCTION_48	IF_1
+0x4000c06	          0x83f864	                           cmp eax, 0x64	      1403	phy_device.c	FUNCTION_48	ELSE_1	IF_2
+0x4000c09	      0xb900200000	                         mov ecx, 0x2000	      1403	phy_device.c	FUNCTION_48	ELSE_1	IF_2
+0x4000c0e	      0xb800000000	                              mov eax, 0	      1403	phy_device.c	FUNCTION_48	ELSE_1	IF_2
+0x4000c13	           0xf45c8	                         cmovne ecx, eax	      1403	phy_device.c	FUNCTION_48	ELSE_1	IF_2
+0x4000c16	            0x89c8	                            mov eax, ecx	      1406	phy_device.c	FUNCTION_48	IF_3
+0x4000c18	      0xbaffb30000	                         mov edx, 0xb3ff	      1408	phy_device.c	FUNCTION_48	CALL_1
+0x4000c1d	          0x80cc01	                                or ah, 1	      1406	phy_device.c	FUNCTION_48	IF_3
+0x4000c20	    0x83bf78030000	              cmp dword [rdi + 0x378], 1	      1406	phy_device.c	FUNCTION_48	IF_3
+0x4000c27	           0xf44c8	                          cmove ecx, eax	      1406	phy_device.c	FUNCTION_48	IF_3
+0x4000c2a	            0x31f6	                            xor esi, esi	      1408	phy_device.c	FUNCTION_48	CALL_1
+0x4000c2c	           0xfb7c9	                           movzx ecx, cx	      1408	phy_device.c	FUNCTION_48	CALL_1
+0x4000c2f	      0xe900000000	                           jmp 0x4000c34	      1408	phy_device.c	FUNCTION_48	CALL_1
+mdio_bus_phy_suspend	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,4:IF,2	17
+0x40009d0	              0x53	                                push rbx	       113	phy_device.c	FUNCTION_6
+0x40009d1	    0x4883bf500400	              cmp qword [rdi + 0x450], 0	       121	phy_device.c	FUNCTION_6	IF_1
+0x40009d9	          0x4889fb	                            mov rbx, rdi	       113	phy_device.c	FUNCTION_6
+0x40009dc	            0x740f	                            je 0x40009ed	       121	phy_device.c	FUNCTION_6	IF_1
+0x40009de	    0x4883bf680400	              cmp qword [rdi + 0x468], 0	       121	phy_device.c	FUNCTION_6	IF_1
+0x40009e6	            0x7405	                            je 0x40009ed	       121	phy_device.c	FUNCTION_6	IF_1
+0x40009e8	      0xe800000000	                          call 0x40009ed	       122	phy_device.c	FUNCTION_6	CALL_2
+0x40009ed	          0x4889df	                            mov rdi, rbx	       124	phy_device.c	FUNCTION_6	IF_2	CALL_3
+0x40009f0	      0xe85bf6ffff	       call sym.mdio_bus_phy_may_suspend	       124	phy_device.c	FUNCTION_6	IF_2	CALL_3
+0x40009f5	            0x84c0	                             test al, al	       124	phy_device.c	FUNCTION_6	IF_2	CALL_3
+0x40009f7	            0x7504	                           jne 0x40009fd	       124	phy_device.c	FUNCTION_6	IF_2	CALL_3
+0x40009f9	            0x31c0	                            xor eax, eax	       128	phy_device.c	FUNCTION_6
+0x40009fb	              0x5b	                                 pop rbx	       128	phy_device.c	FUNCTION_6
+0x40009fc	              0xc3	                                     ret	       128	phy_device.c	FUNCTION_6
+0x40009fd	          0x4889df	                            mov rdi, rbx	       127	phy_device.c	FUNCTION_6	CALL_4
+0x4000a00	              0x5b	                                 pop rbx	       128	phy_device.c	FUNCTION_6
+0x4000a01	      0xe91affffff	                     jmp sym.phy_suspend	       127	phy_device.c	FUNCTION_6	CALL_4
+phy_interface_show	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,1:CALL,4:IF,1	15
+0x4000510	    0x80bf61030000	               cmp byte [rdi + 0x361], 0	       605	phy_device.c	FUNCTION_24	IF_1	CALL_2
+0x4000517	          0x4889d1	                            mov rcx, rdx	       601	phy_device.c	FUNCTION_24
+0x400051a	    0x48c7c2000000	                              mov rdx, 0	       606	phy_device.c	FUNCTION_24	IF_1
+0x4000521	            0x7512	                           jne 0x4000535	       605	phy_device.c	FUNCTION_24	IF_1	CALL_2
+0x4000523	    0x8b8770030000	           mov eax, dword [rdi + 0x370] 	       608	phy_device.c	FUNCTION_24	CALL_3
+0x4000529	    0x48c7c2000000	                              mov rdx, 0	       608	phy_device.c	FUNCTION_24	CALL_3
+0x4000530	          0x83f816	                           cmp eax, 0x16	       608	phy_device.c	FUNCTION_24	CALL_3
+0x4000533	            0x7612	                           jbe 0x4000547	       608	phy_device.c	FUNCTION_24	CALL_3
+0x4000535	    0x48c7c6000000	                              mov rsi, 0	       610	phy_device.c	FUNCTION_24	CALL_4
+0x400053c	          0x4889cf	                            mov rdi, rcx	       610	phy_device.c	FUNCTION_24	CALL_4
+0x400053f	      0xe800000000	                          call 0x4000544	       610	phy_device.c	FUNCTION_24	CALL_4
+0x4000544	            0x4898	                                    cdqe	       610	phy_device.c	FUNCTION_24	CALL_4
+0x4000546	              0xc3	                                     ret	       611	phy_device.c	FUNCTION_24
+0x4000547	    0x488b14c50000	                  mov rdx, qword [rax*8]	       611	phy_device.c	FUNCTION_24
+0x400054f	            0xebe4	                           jmp 0x4000535	       611	phy_device.c	FUNCTION_24
+phy_unregister_fixup_for_id	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,1:IF,0	3
+0x4000390	      0xbaffffffff	                     mov edx, 0xffffffff	       276	phy_device.c	FUNCTION_14	CALL_1
+0x4000395	            0x89d6	                            mov esi, edx	       276	phy_device.c	FUNCTION_14	CALL_1
+0x4000397	      0xe924ffffff	            jmp sym.phy_unregister_fixup	       276	phy_device.c	FUNCTION_14	CALL_1
+phy_resume	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,3:IF,0	15
+0x4000b70	              0x55	                                push rbp	      1207	phy_device.c	FUNCTION_43
+0x4000b71	              0x53	                                push rbx	      1207	phy_device.c	FUNCTION_43
+0x4000b72	    0x488d9f280400	                  lea rbx, [rdi + 0x428]	      1210	phy_device.c	FUNCTION_43	CALL_1
+0x4000b79	          0x4889fd	                            mov rbp, rdi	      1207	phy_device.c	FUNCTION_43
+0x4000b7c	          0x4889df	                            mov rdi, rbx	      1210	phy_device.c	FUNCTION_43	CALL_1
+0x4000b7f	      0xe800000000	                          call 0x4000b84	      1210	phy_device.c	FUNCTION_43	CALL_1
+0x4000b84	          0x4889ef	                            mov rdi, rbp	      1211	phy_device.c	FUNCTION_43	CALL_2
+0x4000b87	      0xe800000000	                          call 0x4000b8c	      1211	phy_device.c	FUNCTION_43	CALL_2
+0x4000b8c	          0x4889df	                            mov rdi, rbx	      1212	phy_device.c	FUNCTION_43	CALL_3
+0x4000b8f	            0x89c5	                            mov ebp, eax	      1211	phy_device.c	FUNCTION_43	CALL_2
+0x4000b91	      0xe800000000	                          call 0x4000b96	      1212	phy_device.c	FUNCTION_43	CALL_3
+0x4000b96	            0x89e8	                            mov eax, ebp	      1215	phy_device.c	FUNCTION_43
+0x4000b98	              0x5b	                                 pop rbx	      1215	phy_device.c	FUNCTION_43
+0x4000b99	              0x5d	                                 pop rbp	      1215	phy_device.c	FUNCTION_43
+0x4000b9a	              0xc3	                                     ret	      1215	phy_device.c	FUNCTION_43
+phy_has_fixups_show	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,2:IF,0	7
+0x40004f0	          0x4889d0	                            mov rax, rdx	       617	phy_device.c	FUNCTION_25
+0x40004f3	     0xfb697630300	          movzx edx, byte [rdi + 0x363] 	       620	phy_device.c	FUNCTION_25	CALL_2
+0x40004fa	    0x48c7c6000000	                              mov rsi, 0	       620	phy_device.c	FUNCTION_25	CALL_2
+0x4000501	          0x4889c7	                            mov rdi, rax	       620	phy_device.c	FUNCTION_25	CALL_2
+0x4000504	      0xe800000000	                          call 0x4000509	       620	phy_device.c	FUNCTION_25	CALL_2
+0x4000509	            0x4898	                                    cdqe	       620	phy_device.c	FUNCTION_25	CALL_2
+0x400050b	              0xc3	                                     ret	       621	phy_device.c	FUNCTION_25
+phy_register_fixup_for_uid	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,1:IF,0	5
+0x4001f00	          0x4889d1	                            mov rcx, rdx	       221	phy_device.c	FUNCTION_10	CALL_1
+0x4001f03	            0x89f2	                            mov edx, esi	       221	phy_device.c	FUNCTION_10	CALL_1
+0x4001f05	            0x89fe	                            mov esi, edi	       221	phy_device.c	FUNCTION_10	CALL_1
+0x4001f07	    0x48c7c7000000	                              mov rdi, 0	       221	phy_device.c	FUNCTION_10	CALL_1
+0x4001f0e	      0xe94dffffff	              jmp sym.phy_register_fixup	       221	phy_device.c	FUNCTION_10	CALL_1
+phy_unregister_fixup_for_uid	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,1:IF,0	4
+0x4000380	            0x89f2	                            mov edx, esi	       268	phy_device.c	FUNCTION_13
+0x4000382	            0x89fe	                            mov esi, edi	       269	phy_device.c	FUNCTION_13	CALL_1
+0x4000384	    0x48c7c7000000	                              mov rdi, 0	       269	phy_device.c	FUNCTION_13	CALL_1
+0x400038b	      0xe930ffffff	            jmp sym.phy_unregister_fixup	       269	phy_device.c	FUNCTION_13	CALL_1
+phy_device_release	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,2:IF,0	1
+0x40003a0	      0xe900000000	                           jmp 0x40003a5	        61	phy_device.c	FUNCTION_3	CALL_2
+genphy_write_mmd_unsupported	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,0:IF,0	2
+0x40000d0	      0xb8a1ffffff	                     mov eax, 0xffffffa1	      1699	phy_device.c	FUNCTION_57
+0x40000d5	              0xc3	                                     ret	      1699	phy_device.c	FUNCTION_57
+phy_register_fixup_for_id	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,1:IF,0	4
+0x4001f20	      0xbaffffffff	                     mov edx, 0xffffffff	       229	phy_device.c	FUNCTION_11	CALL_1
+0x4001f25	          0x4889f1	                            mov rcx, rsi	       228	phy_device.c	FUNCTION_11
+0x4001f28	            0x89d6	                            mov esi, edx	       229	phy_device.c	FUNCTION_11	CALL_1
+0x4001f2a	      0xe931ffffff	              jmp sym.phy_register_fixup	       229	phy_device.c	FUNCTION_11	CALL_1
+mdio_bus_phy_resume	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,4:IF,3	22
+0x4000ba0	              0x55	                                push rbp	       131	phy_device.c	FUNCTION_7
+0x4000ba1	              0x53	                                push rbx	       131	phy_device.c	FUNCTION_7
+0x4000ba2	          0x4889fb	                            mov rbx, rdi	       131	phy_device.c	FUNCTION_7
+0x4000ba5	      0xe8a6f4ffff	       call sym.mdio_bus_phy_may_suspend	       135	phy_device.c	FUNCTION_7	IF_1	CALL_2
+0x4000baa	            0x84c0	                             test al, al	       135	phy_device.c	FUNCTION_7	IF_1	CALL_2
+0x4000bac	            0x7523	                           jne 0x4000bd1	       135	phy_device.c	FUNCTION_7	IF_1	CALL_2
+0x4000bae	            0x31ed	                            xor ebp, ebp	       146	phy_device.c	FUNCTION_7
+0x4000bb0	    0x4883bb500400	              cmp qword [rbx + 0x450], 0	       143	phy_device.c	FUNCTION_7	IF_3
+0x4000bb8	            0x7412	                            je 0x4000bcc	       143	phy_device.c	FUNCTION_7	IF_3
+0x4000bba	    0x4883bb680400	              cmp qword [rbx + 0x468], 0	       143	phy_device.c	FUNCTION_7	IF_3
+0x4000bc2	            0x7408	                            je 0x4000bcc	       143	phy_device.c	FUNCTION_7	IF_3
+0x4000bc4	          0x4889df	                            mov rdi, rbx	       144	phy_device.c	FUNCTION_7	CALL_4
+0x4000bc7	      0xe800000000	                          call 0x4000bcc	       144	phy_device.c	FUNCTION_7	CALL_4
+0x4000bcc	            0x89e8	                            mov eax, ebp	       147	phy_device.c	FUNCTION_7
+0x4000bce	              0x5b	                                 pop rbx	       147	phy_device.c	FUNCTION_7
+0x4000bcf	              0x5d	                                 pop rbp	       147	phy_device.c	FUNCTION_7
+0x4000bd0	              0xc3	                                     ret	       147	phy_device.c	FUNCTION_7
+0x4000bd1	      0xe800000000	                          call 0x4000bd6	       138	phy_device.c	FUNCTION_7	CALL_3
+0x4000bd6	            0x85c0	                           test eax, eax	       139	phy_device.c	FUNCTION_7	IF_2
+0x4000bd8	            0x79d4	                           jns 0x4000bae	       139	phy_device.c	FUNCTION_7	IF_2
+0x4000bda	            0x89c5	                            mov ebp, eax	       139	phy_device.c	FUNCTION_7	IF_2
+0x4000bdc	            0xebee	                           jmp 0x4000bcc	       139	phy_device.c	FUNCTION_7	IF_2
+phy_drivers_unregister	WHILE,0:DO,0:functions,0:FOR,1:SWITCH,0:ELSE,0:CALL,1:IF,0	18
+0x4000e90	            0x85f6	                           test esi, esi	      1959	phy_device.c	FUNCTION_70	FOR_1
+0x4000e92	            0x7e2e	                           jle 0x4000ec2	      1959	phy_device.c	FUNCTION_70	FOR_1
+0x4000e94	          0x8d46ff	                      lea eax, [rsi - 1]	      1959	phy_device.c	FUNCTION_70	FOR_1
+0x4000e97	              0x55	                                push rbp	      1956	phy_device.c	FUNCTION_70
+0x4000e98	              0x53	                                push rbx	      1956	phy_device.c	FUNCTION_70
+0x4000e99	          0x4889fb	                            mov rbx, rdi	      1956	phy_device.c	FUNCTION_70
+0x4000e9c	      0x488d444003	              lea rax, [rax + rax*2 + 3]	      1956	phy_device.c	FUNCTION_70
+0x4000ea1	        0x488d2cc0	                  lea rbp, [rax + rax*8]	      1956	phy_device.c	FUNCTION_70
+0x4000ea5	        0x48c1e504	                              shl rbp, 4	      1956	phy_device.c	FUNCTION_70
+0x4000ea9	          0x4801fd	                            add rbp, rdi	      1956	phy_device.c	FUNCTION_70
+0x4000eac	          0x4889df	                            mov rdi, rbx	      1951	phy_device.c	FUNCTION_69	CALL_1
+0x4000eaf	    0x4881c3b00100	                          add rbx, 0x1b0	      1951	phy_device.c	FUNCTION_69	CALL_1
+0x4000eb6	      0xe800000000	                          call 0x4000ebb	      1951	phy_device.c	FUNCTION_69	CALL_1
+0x4000ebb	          0x4839eb	                            cmp rbx, rbp	      1959	phy_device.c	FUNCTION_70	FOR_1
+0x4000ebe	            0x75ec	                           jne 0x4000eac	      1959	phy_device.c	FUNCTION_70	FOR_1
+0x4000ec0	              0x5b	                                 pop rbx	      1961	phy_device.c	FUNCTION_70
+0x4000ec1	              0x5d	                                 pop rbp	      1961	phy_device.c	FUNCTION_70
+0x4000ec2	            0xf3c3	                                     ret	      1961	phy_device.c	FUNCTION_70
+phy_suspend	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,3:IF,3	39
+0x4000920	              0x55	                                push rbp	      1165	phy_device.c	FUNCTION_41
+0x4000921	              0x53	                                push rbx	      1165	phy_device.c	FUNCTION_41
+0x4000922	          0x4889fb	                            mov rbx, rdi	      1165	phy_device.c	FUNCTION_41
+0x4000925	        0x4883ec20	                           sub rsp, 0x20	      1165	phy_device.c	FUNCTION_41
+0x4000929	    0x488baf880000	            mov rbp, qword [rdi + 0x88] 	      1166	phy_device.c	FUNCTION_41	CALL_1
+0x4000930	      0x488d742404	                      lea rsi, [rsp + 4]	      1171	phy_device.c	FUNCTION_41	CALL_2
+0x4000935	    0x48c744240400	                  mov qword [rsp + 4], 0	      1167	phy_device.c	FUNCTION_41
+0x400093e	    0x48c744240c00	                mov qword [rsp + 0xc], 0	      1167	phy_device.c	FUNCTION_41
+0x4000947	    0x65488b042528	                mov rax, qword gs:[0x28]	      1165	phy_device.c	FUNCTION_41
+0x4000950	      0x4889442418	             mov qword [rsp + 0x18], rax	      1165	phy_device.c	FUNCTION_41
+0x4000955	            0x31c0	                            xor eax, eax	      1165	phy_device.c	FUNCTION_41
+0x4000957	    0xc74424140000	               mov dword [rsp + 0x14], 0	      1167	phy_device.c	FUNCTION_41
+0x400095f	    0xc74424040500	                  mov dword [rsp + 4], 5	      1167	phy_device.c	FUNCTION_41
+0x4000967	      0xe800000000	                          call 0x400096c	      1171	phy_device.c	FUNCTION_41	CALL_2
+0x400096c	        0x8b44240c	              mov eax, dword [rsp + 0xc]	      1172	phy_device.c	FUNCTION_41	IF_1
+0x4000970	            0x85c0	                           test eax, eax	      1172	phy_device.c	FUNCTION_41	IF_1
+0x4000972	            0x7544	                           jne 0x40009b8	      1172	phy_device.c	FUNCTION_41	IF_1
+0x4000974	    0x4883bb300300	              cmp qword [rbx + 0x330], 0	      1175	phy_device.c	FUNCTION_41	IF_2
+0x400097c	            0x742f	                            je 0x40009ad	      1175	phy_device.c	FUNCTION_41	IF_2
+0x400097e	    0x488b85c80000	            mov rax, qword [rbp + 0xc8] 	      1175	phy_device.c	FUNCTION_41	IF_2
+0x4000985	          0x4885c0	                           test rax, rax	      1175	phy_device.c	FUNCTION_41	IF_2
+0x4000988	            0x7423	                            je 0x40009ad	      1175	phy_device.c	FUNCTION_41	IF_2
+0x400098a	          0x4889df	                            mov rdi, rbx	      1176	phy_device.c	FUNCTION_41	CALL_3
+0x400098d	      0xe800000000	                          call 0x4000992	      1176	phy_device.c	FUNCTION_41	CALL_3
+0x4000992	            0x85c0	                           test eax, eax	      1178	phy_device.c	FUNCTION_41	IF_3
+0x4000994	            0x7417	                            je 0x40009ad	      1178	phy_device.c	FUNCTION_41	IF_3
+0x4000996	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	      1184	phy_device.c	FUNCTION_41
+0x400099b	    0x654833142528	                xor rdx, qword gs:[0x28]	      1184	phy_device.c	FUNCTION_41
+0x40009a4	            0x7519	                           jne 0x40009bf	      1184	phy_device.c	FUNCTION_41
+0x40009a6	        0x4883c420	                           add rsp, 0x20	      1184	phy_device.c	FUNCTION_41
+0x40009aa	              0x5b	                                 pop rbx	      1184	phy_device.c	FUNCTION_41
+0x40009ab	              0x5d	                                 pop rbp	      1184	phy_device.c	FUNCTION_41
+0x40009ac	              0xc3	                                     ret	      1184	phy_device.c	FUNCTION_41
+0x40009ad	    0xc68364030000	               mov byte [rbx + 0x364], 1	      1181	phy_device.c	FUNCTION_41
+0x40009b4	            0x31c0	                            xor eax, eax	      1183	phy_device.c	FUNCTION_41
+0x40009b6	            0xebde	                           jmp 0x4000996	      1183	phy_device.c	FUNCTION_41
+0x40009b8	      0xb8f0ffffff	                     mov eax, 0xfffffff0	      1173	phy_device.c	FUNCTION_41	IF_1
+0x40009bd	            0xebd7	                           jmp 0x4000996	      1173	phy_device.c	FUNCTION_41	IF_1
+0x40009bf	      0xe800000000	                          call 0x40009c4	      1184	phy_device.c	FUNCTION_41
+get_phy_c45_devs_in_pkg	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,2:IF,2	33
+0x40003b0	            0x4155	                                push r13	       426	phy_device.c	FUNCTION_19
+0x40003b2	            0x4154	                                push r12	       426	phy_device.c	FUNCTION_19
+0x40003b4	          0x4189f5	                           mov r13d, esi	       426	phy_device.c	FUNCTION_19
+0x40003b7	              0x55	                                push rbp	       426	phy_device.c	FUNCTION_19
+0x40003b8	              0x53	                                push rbx	       426	phy_device.c	FUNCTION_19
+0x40003b9	            0x89d3	                            mov ebx, edx	       429	phy_device.c	FUNCTION_19
+0x40003bb	          0xc1e310	                           shl ebx, 0x10	       429	phy_device.c	FUNCTION_19
+0x40003be	          0x4989fc	                            mov r12, rdi	       426	phy_device.c	FUNCTION_19
+0x40003c1	          0x4889cd	                            mov rbp, rcx	       426	phy_device.c	FUNCTION_19
+0x40003c4	            0x89da	                            mov edx, ebx	       430	phy_device.c	FUNCTION_19	CALL_1
+0x40003c6	    0x81ca06000040	                      or edx, 0x40000006	       430	phy_device.c	FUNCTION_19	CALL_1
+0x40003cc	      0xe800000000	                          call 0x40003d1	       430	phy_device.c	FUNCTION_19	CALL_1
+0x40003d1	            0x85c0	                           test eax, eax	       431	phy_device.c	FUNCTION_19	IF_1
+0x40003d3	            0x782c	                            js 0x4000401	       431	phy_device.c	FUNCTION_19	IF_1
+0x40003d5	          0xc1e010	                           shl eax, 0x10	       433	phy_device.c	FUNCTION_19
+0x40003d8	    0x81cb05000040	                      or ebx, 0x40000005	       436	phy_device.c	FUNCTION_19	CALL_2
+0x40003de	          0x4489ee	                           mov esi, r13d	       436	phy_device.c	FUNCTION_19	CALL_2
+0x40003e1	          0x894500	                    mov dword [rbp], eax	       433	phy_device.c	FUNCTION_19
+0x40003e4	            0x89da	                            mov edx, ebx	       436	phy_device.c	FUNCTION_19	CALL_2
+0x40003e6	          0x4c89e7	                            mov rdi, r12	       436	phy_device.c	FUNCTION_19	CALL_2
+0x40003e9	      0xe800000000	                          call 0x40003ee	       436	phy_device.c	FUNCTION_19	CALL_2
+0x40003ee	            0x85c0	                           test eax, eax	       437	phy_device.c	FUNCTION_19	IF_2
+0x40003f0	            0x780f	                            js 0x4000401	       437	phy_device.c	FUNCTION_19	IF_2
+0x40003f2	           0xfb7c0	                           movzx eax, ax	       439	phy_device.c	FUNCTION_19
+0x40003f5	           0x94500	                     or dword [rbp], eax	       439	phy_device.c	FUNCTION_19
+0x40003f8	            0x31c0	                            xor eax, eax	       441	phy_device.c	FUNCTION_19
+0x40003fa	              0x5b	                                 pop rbx	       442	phy_device.c	FUNCTION_19
+0x40003fb	              0x5d	                                 pop rbp	       442	phy_device.c	FUNCTION_19
+0x40003fc	            0x415c	                                 pop r12	       442	phy_device.c	FUNCTION_19
+0x40003fe	            0x415d	                                 pop r13	       442	phy_device.c	FUNCTION_19
+0x4000400	              0xc3	                                     ret	       442	phy_device.c	FUNCTION_19
+0x4000401	      0xb8fbffffff	                     mov eax, 0xfffffffb	       432	phy_device.c	FUNCTION_19	IF_1
+0x4000406	            0xebf2	                           jmp 0x40003fa	       432	phy_device.c	FUNCTION_19	IF_1
+phy_attached_info	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,1:IF,0	2
+0x40008c0	            0x31f6	                            xor esi, esi	       895	phy_device.c	FUNCTION_36	CALL_1
+0x40008c2	      0xe9c9feffff	              jmp sym.phy_attached_print	       895	phy_device.c	FUNCTION_36	CALL_1
+phy_drivers_register	WHILE,1:DO,0:functions,0:FOR,1:SWITCH,0:ELSE,0:CALL,2:IF,1	53
+0x4000e00	            0x85f6	                           test esi, esi	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e02	            0x4157	                                push r15	      1934	phy_device.c	FUNCTION_68
+0x4000e04	            0x4156	                                push r14	      1934	phy_device.c	FUNCTION_68
+0x4000e06	            0x4155	                                push r13	      1934	phy_device.c	FUNCTION_68
+0x4000e08	            0x4154	                                push r12	      1934	phy_device.c	FUNCTION_68
+0x4000e0a	              0x55	                                push rbp	      1934	phy_device.c	FUNCTION_68
+0x4000e0b	              0x53	                                push rbx	      1934	phy_device.c	FUNCTION_68
+0x4000e0c	            0x7e65	                           jle 0x4000e73	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e0e	          0x4989fc	                            mov r12, rdi	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e11	          0x4189f6	                           mov r14d, esi	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e14	          0x4989d7	                            mov r15, rdx	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e17	          0x4889fd	                            mov rbp, rdi	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e1a	            0x31db	                            xor ebx, ebx	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e1c	            0xeb0f	                           jmp 0x4000e2d	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e1e	          0x83c301	                              add ebx, 1	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e21	    0x4881c5b00100	                          add rbp, 0x1b0	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e28	          0x4139de	                           cmp r14d, ebx	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e2b	            0x7446	                            je 0x4000e73	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e2d	          0x4c89fe	                            mov rsi, r15	      1938	phy_device.c	FUNCTION_68	FOR_1	CALL_1
+0x4000e30	          0x4889ef	                            mov rdi, rbp	      1938	phy_device.c	FUNCTION_68	FOR_1	CALL_1
+0x4000e33	      0xe800000000	                          call 0x4000e38	      1938	phy_device.c	FUNCTION_68	FOR_1	CALL_1
+0x4000e38	            0x85c0	                           test eax, eax	      1939	phy_device.c	FUNCTION_68	FOR_1	IF_1
+0x4000e3a	          0x4189c5	                           mov r13d, eax	      1938	phy_device.c	FUNCTION_68	FOR_1	CALL_1
+0x4000e3d	            0x74df	                            je 0x4000e1e	      1939	phy_device.c	FUNCTION_68	FOR_1	IF_1
+0x4000e3f	            0x85db	                           test ebx, ebx	      1940	phy_device.c	FUNCTION_68	FOR_1	IF_1	WHILE_1
+0x4000e41	          0x8d6bff	                      lea ebp, [rbx - 1]	      1940	phy_device.c	FUNCTION_68	FOR_1	IF_1	WHILE_1
+0x4000e44	            0x7e30	                           jle 0x4000e76	      1940	phy_device.c	FUNCTION_68	FOR_1	IF_1	WHILE_1
+0x4000e46	          0x4863c5	                         movsxd rax, ebp	      1951	phy_device.c	FUNCTION_69	CALL_1
+0x4000e49	          0x83ed01	                              sub ebp, 1	      1940	phy_device.c	FUNCTION_68	FOR_1	IF_1	WHILE_1
+0x4000e4c	        0x488d0440	                  lea rax, [rax + rax*2]	      1951	phy_device.c	FUNCTION_69	CALL_1
+0x4000e50	        0x488d3cc0	                  lea rdi, [rax + rax*8]	      1951	phy_device.c	FUNCTION_69	CALL_1
+0x4000e54	        0x48c1e704	                              shl rdi, 4	      1951	phy_device.c	FUNCTION_69	CALL_1
+0x4000e58	          0x4c01e7	                            add rdi, r12	      1951	phy_device.c	FUNCTION_69	CALL_1
+0x4000e5b	      0xe800000000	                          call 0x4000e60	      1951	phy_device.c	FUNCTION_69	CALL_1
+0x4000e60	          0x83fdff	             cmp ebp, 0xffffffffffffffff	      1940	phy_device.c	FUNCTION_68	FOR_1	IF_1	WHILE_1
+0x4000e63	            0x75e1	                           jne 0x4000e46	      1940	phy_device.c	FUNCTION_68	FOR_1	IF_1	WHILE_1
+0x4000e65	              0x5b	                                 pop rbx	      1946	phy_device.c	FUNCTION_68
+0x4000e66	          0x4489e8	                           mov eax, r13d	      1946	phy_device.c	FUNCTION_68
+0x4000e69	              0x5d	                                 pop rbp	      1946	phy_device.c	FUNCTION_68
+0x4000e6a	            0x415c	                                 pop r12	      1946	phy_device.c	FUNCTION_68
+0x4000e6c	            0x415d	                                 pop r13	      1946	phy_device.c	FUNCTION_68
+0x4000e6e	            0x415e	                                 pop r14	      1946	phy_device.c	FUNCTION_68
+0x4000e70	            0x415f	                                 pop r15	      1946	phy_device.c	FUNCTION_68
+0x4000e72	              0xc3	                                     ret	      1946	phy_device.c	FUNCTION_68
+0x4000e73	          0x4531ed	                          xor r13d, r13d	      1937	phy_device.c	FUNCTION_68	FOR_1
+0x4000e76	              0x5b	                                 pop rbx	      1946	phy_device.c	FUNCTION_68
+0x4000e77	          0x4489e8	                           mov eax, r13d	      1946	phy_device.c	FUNCTION_68
+0x4000e7a	              0x5d	                                 pop rbp	      1946	phy_device.c	FUNCTION_68
+0x4000e7b	            0x415c	                                 pop r12	      1946	phy_device.c	FUNCTION_68
+0x4000e7d	            0x415d	                                 pop r13	      1946	phy_device.c	FUNCTION_68
+0x4000e7f	            0x415e	                                 pop r14	      1946	phy_device.c	FUNCTION_68
+0x4000e81	            0x415f	                                 pop r15	      1946	phy_device.c	FUNCTION_68
+0x4000e83	              0xc3	                                     ret	      1946	phy_device.c	FUNCTION_68
+genphy_loopback	WHILE,0:DO,0:functions,0:FOR,0:SWITCH,0:ELSE,0:CALL,1:IF,0	7
+0x4000c80	        0x4080fe01	                              cmp sil, 1	      1716	phy_device.c	FUNCTION_60	CALL_1
+0x4000c84	      0xba00400000	                         mov edx, 0x4000	      1716	phy_device.c	FUNCTION_60	CALL_1
+0x4000c89	            0x19c9	                            sbb ecx, ecx	      1716	phy_device.c	FUNCTION_60	CALL_1
+0x4000c8b	            0x31f6	                            xor esi, esi	      1716	phy_device.c	FUNCTION_60	CALL_1
+0x4000c8d	            0xf7d1	                                 not ecx	      1716	phy_device.c	FUNCTION_60	CALL_1
+0x4000c8f	    0x81e100400000	                         and ecx, 0x4000	      1716	phy_device.c	FUNCTION_60	CALL_1
+0x4000c95	      0xe900000000	                           jmp 0x4000c9a	      1716	phy_device.c	FUNCTION_60	CALL_1

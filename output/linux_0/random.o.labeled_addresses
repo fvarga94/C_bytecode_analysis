@@ -1,0 +1,370 @@
+rand_initialize	WHILE,0:IF,1:DO,0:SWITCH,0:CALL,3:FOR,0:ELSE,0:functions,0	15
+0x4003d60	    0x48c7c7000000	                              mov rdi, 0	      1789	random.c	FUNCTION_43	CALL_1
+0x4003d67	      0xe8d4e4ffff	                  call sym.init_std_data	      1789	random.c	FUNCTION_43	CALL_1
+0x4003d6c	    0x48c7c7000000	                              mov rdi, 0	      1790	random.c	FUNCTION_43	CALL_2
+0x4003d73	      0xe8c8e4ffff	                  call sym.init_std_data	      1790	random.c	FUNCTION_43	CALL_2
+0x4003d78	    0x48c7c7000000	                              mov rdi, 0	      1791	random.c	FUNCTION_43	CALL_3
+0x4003d7f	      0xe8bcfdffff	                call sym.crng_initialize	      1791	random.c	FUNCTION_43	CALL_3
+0x4003d84	    0x488b05000000	            mov rax, qword [0x04003d8b] 	      1792	random.c	FUNCTION_43
+0x4003d8b	    0x488905000000	            mov qword [0x04003d92], rax 	      1792	random.c	FUNCTION_43
+0x4003d92	    0x8b0500000000	            mov eax, dword [0x04003d98] 	      1793	random.c	FUNCTION_43	IF_1
+0x4003d98	            0x85c0	                           test eax, eax	      1793	random.c	FUNCTION_43	IF_1
+0x4003d9a	            0x7414	                            je 0x4003db0	      1793	random.c	FUNCTION_43	IF_1
+0x4003d9c	    0xc70500000000	               mov dword [0x04003da6], 0	      1794	random.c	FUNCTION_43	IF_1
+0x4003da6	    0xc70500000000	               mov dword [0x04003db0], 0	      1795	random.c	FUNCTION_43	IF_1
+0x4003db0	            0x31c0	                            xor eax, eax	      1798	random.c	FUNCTION_43
+0x4003db2	              0xc3	                                     ret	      1798	random.c	FUNCTION_43
+invalidate_batched_entropy	WHILE,0:IF,0:DO,0:SWITCH,0:CALL,2:FOR,0:ELSE,0:functions,1	34
+0x4000040	          0x488b07	                    mov rax, qword [rdi]	       525	random.c	FUNCTION_1
+0x4000043	            0x4157	                                push r15	       522	random.c	FUNCTION_1
+0x4000045	            0x85d2	                           test edx, edx	       539	random.c	FUNCTION_1	WHILE_1
+0x4000047	            0x4156	                                push r14	       522	random.c	FUNCTION_1
+0x4000049	            0x4155	                                push r13	       522	random.c	FUNCTION_1
+0x400004b	            0x4154	                                push r12	       522	random.c	FUNCTION_1
+0x400004d	              0x55	                                push rbp	       522	random.c	FUNCTION_1
+0x400004e	              0x53	                                push rbx	       522	random.c	FUNCTION_1
+0x400004f	          0x8b5804	                mov ebx, dword [rax + 4]	       525	random.c	FUNCTION_1
+0x4000052	        0x4c635814	         movsxd r11, dword [rax + 0x14] 	       529	random.c	FUNCTION_1
+0x4000056	        0x4863681c	         movsxd rbp, dword [rax + 0x1c] 	       531	random.c	FUNCTION_1
+0x400005a	        0x4c636020	         movsxd r12, dword [rax + 0x20] 	       532	random.c	FUNCTION_1
+0x400005e	        0x4c636824	         movsxd r13, dword [rax + 0x24] 	       533	random.c	FUNCTION_1
+0x4000062	        0x448d4bff	                      lea r9d, [rbx - 1]	       525	random.c	FUNCTION_1
+0x4000066	         0xfb74f4e	           movzx ecx, word [rdi + 0x4e] 	       535	random.c	FUNCTION_1
+0x400006a	        0x48635818	         movsxd rbx, dword [rax + 0x18] 	       530	random.c	FUNCTION_1
+0x400006e	      0x440fb7474c	           movzx r8d, word [rdi + 0x4c] 	       536	random.c	FUNCTION_1
+0x4000073	     0xf8488000000	                            je 0x4000101	       539	random.c	FUNCTION_1	WHILE_1
+0x4000079	          0x8d42ff	                      lea eax, [rdx - 1]	       539	random.c	FUNCTION_1	WHILE_1
+0x400007c	          0x4d63c9	                          movsxd r9, r9d	       539	random.c	FUNCTION_1	WHILE_1
+0x400007f	      0x4c8d740601	                lea r14, [rsi + rax + 1]	       539	random.c	FUNCTION_1	WHILE_1
+0x4000084	        0x4983e801	                               sub r8, 1	       541	random.c	FUNCTION_1	WHILE_1
+0x4000088	        0x488b5708	                mov rdx, qword [rdi + 8]	       544	random.c	FUNCTION_1	WHILE_1
+0x400008c	        0x4883c601	                              add rsi, 1	       540	random.c	FUNCTION_1	WHILE_1	CALL_1
+0x4000090	          0x4d21c8	                              and r8, r9	       541	random.c	FUNCTION_1	WHILE_1
+0x4000093	        0x4b8d0403	                     lea rax, [r11 + r8]	       545	random.c	FUNCTION_1	WHILE_1
+0x4000097	        0x4e8d3c03	                     lea r15, [rbx + r8]	       546	random.c	FUNCTION_1	WHILE_1
+0x400009b	        0x4e8d1482	                   lea r10, [rdx + r8*4]	       544	random.c	FUNCTION_1	WHILE_1
+0x400009f	          0x4d21cf	                             and r15, r9	       546	random.c	FUNCTION_1	WHILE_1
+0x40000a2	          0x4c21c8	                             and rax, r9	       545	random.c	FUNCTION_1	WHILE_1
+0x40000a5	          0x8b0482	            mov eax, dword [rdx + rax*4]	       549	random.c	FUNCTION_1	WHILE_1
+0x40000a8	        0x423304ba	            xor eax, dword [rdx + r15*4]	       549	random.c	FUNCTION_1	WHILE_1
+0x40000ac	      0x4e8d7c0500	                     lea r15, [rbp + r8]	       547	random.c	FUNCTION_1	WHILE_1
+0x40000b1	              0x41	                                 invalid	       549	random.c	FUNCTION_1	WHILE_1
+proc_do_entropy	WHILE,0:IF,0:DO,0:SWITCH,0:CALL,1:FOR,0:ELSE,0:functions,0	19
+0x40015a0	        0x4883ec50	                           sub rsp, 0x50	      2091	random.c	FUNCTION_56
+0x40015a4	    0x65488b042528	                mov rax, qword gs:[0x28]	      2091	random.c	FUNCTION_56
+0x40015ad	      0x4889442448	             mov qword [rsp + 0x48], rax	      2091	random.c	FUNCTION_56
+0x40015b2	            0x31c0	                            xor eax, eax	      2091	random.c	FUNCTION_56
+0x40015b4	        0x488b4708	                mov rax, qword [rdi + 8]	      2095	random.c	FUNCTION_56
+0x40015b8	      0x488d7c2408	                      lea rdi, [rsp + 8]	      2100	random.c	FUNCTION_56	CALL_1
+0x40015bd	            0x8b00	                    mov eax, dword [rax]	      2095	random.c	FUNCTION_56
+0x40015bf	    0xc74424180400	               mov dword [rsp + 0x18], 4	      2098	random.c	FUNCTION_56
+0x40015c7	          0xc1f803	                              sar eax, 3	      2095	random.c	FUNCTION_56
+0x40015ca	        0x89442404	                mov dword [rsp + 4], eax	      2095	random.c	FUNCTION_56
+0x40015ce	      0x488d442404	                      lea rax, [rsp + 4]	      2097	random.c	FUNCTION_56
+0x40015d3	      0x4889442410	             mov qword [rsp + 0x10], rax	      2097	random.c	FUNCTION_56
+0x40015d8	      0xe800000000	                          call 0x40015dd	      2100	random.c	FUNCTION_56	CALL_1
+0x40015dd	      0x488b542448	            mov rdx, qword [rsp + 0x48] 	      2101	random.c	FUNCTION_56
+0x40015e2	    0x654833142528	                xor rdx, qword gs:[0x28]	      2101	random.c	FUNCTION_56
+0x40015eb	            0x7505	                           jne 0x40015f2	      2101	random.c	FUNCTION_56
+0x40015ed	        0x4883c450	                           add rsp, 0x50	      2101	random.c	FUNCTION_56
+0x40015f1	              0xc3	                                     ret	      2101	random.c	FUNCTION_56
+0x40015f2	      0xe800000000	                          call 0x40015f7	      2101	random.c	FUNCTION_56
+random_read	WHILE,0:IF,0:DO,0:SWITCH,0:CALL,1:FOR,0:ELSE,0:functions,0	7
+0x40033a0	          0x4885d2	                           test rdx, rdx	      1823	random.c	FUNCTION_45	IF_1
+0x40033a3	            0x7503	                           jne 0x40033a8	      1823	random.c	FUNCTION_45	IF_1
+0x40033a5	            0x31c0	                            xor eax, eax	      1853	random.c	FUNCTION_46
+0x40033a7	              0xc3	                                     ret	      1853	random.c	FUNCTION_46
+0x40033a8	          0x8b7f40	            mov edi, dword [rdi + 0x40] 	      1853	random.c	FUNCTION_46
+0x40033ab	    0x81e700080000	                          and edi, 0x800	      1853	random.c	FUNCTION_46
+0x40033b1	      0xe97afcffff	            jmp sym._random_read.part.35	      1853	random.c	FUNCTION_46
+random_poll_mask	WHILE,0:IF,2:DO,0:SWITCH,0:CALL,2:FOR,0:ELSE,0:functions,0	11
+0x4000130	    0x8b1500000000	            mov edx, dword [0x04000136] 	      1889	random.c	FUNCTION_49	IF_1	CALL_1
+0x4000136	      0xb941000000	                           mov ecx, 0x41	      1890	random.c	FUNCTION_49	IF_1
+0x400013b	      0xb800000000	                              mov eax, 0	      1890	random.c	FUNCTION_49	IF_1
+0x4000140	          0xc1fa03	                              sar edx, 3	      1889	random.c	FUNCTION_49	IF_1	CALL_1
+0x4000143	    0x3b1500000000	            cmp edx, dword [0x04000149] 	      1890	random.c	FUNCTION_49	IF_1
+0x4000149	           0xf4dc1	                         cmovge eax, ecx	      1890	random.c	FUNCTION_49	IF_1
+0x400014c	            0x89c1	                            mov ecx, eax	      1892	random.c	FUNCTION_49	IF_2
+0x400014e	    0x81c904010000	                           or ecx, 0x104	      1892	random.c	FUNCTION_49	IF_2
+0x4000154	    0x3b1500000000	            cmp edx, dword [0x0400015a] 	      1892	random.c	FUNCTION_49	IF_2
+0x400015a	           0xf4cc1	                          cmovl eax, ecx	      1892	random.c	FUNCTION_49	IF_2
+0x400015d	              0xc3	                                     ret	      1894	random.c	FUNCTION_49
+random_get_poll_head	WHILE,0:IF,0:DO,0:SWITCH,0:CALL,0:FOR,0:ELSE,0:functions,0	2
+0x4000120	    0x48c7c0000000	                              mov rax, 0	      1882	random.c	FUNCTION_48
+0x4000127	              0xc3	                                     ret	      1882	random.c	FUNCTION_48
+random_write	WHILE,0:IF,1:DO,0:SWITCH,0:CALL,1:FOR,0:ELSE,0:functions,0	11
+0x4001930	              0x53	                                push rbx	      1920	random.c	FUNCTION_51
+0x4001931	          0x4889f7	                            mov rdi, rsi	      1920	random.c	FUNCTION_51
+0x4001934	          0x4889d3	                            mov rbx, rdx	      1920	random.c	FUNCTION_51
+0x4001937	          0x4889d6	                            mov rsi, rdx	      1923	random.c	FUNCTION_51	CALL_1
+0x400193a	      0xe851ffffff	        call sym.write_pool.constprop.37	      1923	random.c	FUNCTION_51	CALL_1
+0x400193f	          0x4863c8	                         movsxd rcx, eax	      1925	random.c	FUNCTION_51	IF_1
+0x4001942	            0x85c0	                           test eax, eax	      1925	random.c	FUNCTION_51	IF_1
+0x4001944	          0x4889d8	                            mov rax, rbx	      1925	random.c	FUNCTION_51	IF_1
+0x4001947	        0x480f45c1	                         cmovne rax, rcx	      1925	random.c	FUNCTION_51	IF_1
+0x400194b	              0x5b	                                 pop rbx	      1928	random.c	FUNCTION_51
+0x400194c	              0xc3	                                     ret	      1928	random.c	FUNCTION_51
+xfer_secondary_pool	WHILE,0:IF,1:DO,0:SWITCH,0:CALL,1:FOR,0:ELSE,0:functions,0	12
+0x4003000	      0x48837f1800	               cmp qword [rdi + 0x18], 0	      1313	random.c	FUNCTION_27	IF_1
+0x4003005	            0x7418	                            je 0x400301f	      1313	random.c	FUNCTION_27	IF_1
+0x4003007	        0x48634f50	         movsxd rcx, dword [rdi + 0x50] 	      1314	random.c	FUNCTION_27	IF_1
+0x400300b	          0x4889f2	                            mov rdx, rsi	      1313	random.c	FUNCTION_27	IF_1
+0x400300e	        0x48c1e206	                              shl rdx, 6	      1313	random.c	FUNCTION_27	IF_1
+0x4003012	          0x4839d1	                            cmp rcx, rdx	      1313	random.c	FUNCTION_27	IF_1
+0x4003015	            0x7308	                           jae 0x400301f	      1313	random.c	FUNCTION_27	IF_1
+0x4003017	          0x488b17	                    mov rdx, qword [rdi]	      1315	random.c	FUNCTION_27	IF_1
+0x400301a	          0x3b4a10	            cmp ecx, dword [rdx + 0x10] 	      1314	random.c	FUNCTION_27	IF_1
+0x400301d	            0x7e02	                           jle 0x4003021	      1314	random.c	FUNCTION_27	IF_1
+0x400301f	            0xf3c3	                                     ret	      1314	random.c	FUNCTION_27	IF_1
+0x4003021	      0xe9eafdffff	            jmp sym._xfer_secondary_pool	      1318	random.c	FUNCTION_27	CALL_1
+random_ioctl	WHILE,0:IF,11:DO,0:SWITCH,1:CALL,13:FOR,0:ELSE,0:functions,0	115
+0x4003780	    0x81fe07520000	                         cmp esi, 0x5207	      1936	random.c	FUNCTION_52	SWITCH_1
+0x4003786	              0x55	                                push rbp	      1931	random.c	FUNCTION_52
+0x4003787	              0x53	                                push rbx	      1931	random.c	FUNCTION_52
+0x4003788	     0xf844d010000	                            je 0x40038db	      1936	random.c	FUNCTION_52	SWITCH_1
+0x400378e	            0x762d	                           jbe 0x40037bd	      1936	random.c	FUNCTION_52	SWITCH_1
+0x4003790	    0x81fe03520840	                     cmp esi, 0x40085203	      1936	random.c	FUNCTION_52	SWITCH_1
+0x4003796	          0x4889d5	                            mov rbp, rdx	      1936	random.c	FUNCTION_52	SWITCH_1
+0x4003799	            0x745d	                            je 0x40037f8	      1936	random.c	FUNCTION_52	SWITCH_1
+0x400379b	    0x81fe00520480	                     cmp esi, 0x80045200	      1936	random.c	FUNCTION_52	SWITCH_1
+0x40037a1	     0xf8410010000	                            je 0x40038b7	      1936	random.c	FUNCTION_52	SWITCH_1
+0x40037a7	    0x81fe01520440	                     cmp esi, 0x40045201	      1936	random.c	FUNCTION_52	SWITCH_1
+0x40037ad	     0xf84b9000000	                            je 0x400386c	      1936	random.c	FUNCTION_52	SWITCH_1
+0x40037b3	    0x48c7c0eaffff	             mov rax, 0xffffffffffffffea	      1955	random.c	FUNCTION_52	SWITCH_1	IF_6
+0x40037ba	              0x5b	                                 pop rbx	      1985	random.c	FUNCTION_52
+0x40037bb	              0x5d	                                 pop rbp	      1985	random.c	FUNCTION_52
+0x40037bc	              0xc3	                                     ret	      1985	random.c	FUNCTION_52
+0x40037bd	    0x81fe04520000	                         cmp esi, 0x5204	      1936	random.c	FUNCTION_52	SWITCH_1
+0x40037c3	            0x7408	                            je 0x40037cd	      1936	random.c	FUNCTION_52	SWITCH_1
+0x40037c5	    0x81fe06520000	                         cmp esi, 0x5206	      1936	random.c	FUNCTION_52	SWITCH_1
+0x40037cb	            0x75e6	                           jne 0x40037b3	      1936	random.c	FUNCTION_52	SWITCH_1
+0x40037cd	      0xbf15000000	                           mov edi, 0x15	      1969	random.c	FUNCTION_52	SWITCH_1	IF_9	CALL_11
+0x40037d2	      0xe800000000	                          call 0x40037d7	      1969	random.c	FUNCTION_52	SWITCH_1	IF_9	CALL_11
+0x40037d7	            0x84c0	                             test al, al	      1969	random.c	FUNCTION_52	SWITCH_1	IF_9	CALL_11
+0x40037d9	     0xf8438010000	                            je 0x4003917	      1969	random.c	FUNCTION_52	SWITCH_1	IF_9	CALL_11
+0x40037df	    0xc70500000000	               mov dword [0x040037e9], 0	      1971	random.c	FUNCTION_52	SWITCH_1
+0x40037e9	    0xc70500000000	               mov dword [0x040037f3], 0	      1972	random.c	FUNCTION_52	SWITCH_1
+0x40037f3	            0x31c0	                            xor eax, eax	      1973	random.c	FUNCTION_52	SWITCH_1
+0x40037f5	              0x5b	                                 pop rbx	      1985	random.c	FUNCTION_52
+0x40037f6	              0x5d	                                 pop rbp	      1985	random.c	FUNCTION_52
+0x40037f7	              0xc3	                                     ret	      1985	random.c	FUNCTION_52
+0x40037f8	      0xbf15000000	                           mov edi, 0x15	      1950	random.c	FUNCTION_52	SWITCH_1	IF_4	CALL_6
+0x40037fd	      0xe800000000	                          call 0x4003802	      1950	random.c	FUNCTION_52	SWITCH_1	IF_4	CALL_6
+0x4003802	            0x84c0	                             test al, al	      1950	random.c	FUNCTION_52	SWITCH_1	IF_4	CALL_6
+0x4003804	     0xf840d010000	                            je 0x4003917	      1950	random.c	FUNCTION_52	SWITCH_1	IF_4	CALL_6
+0x400380a	        0x488d4d04	                      lea rcx, [rbp + 4]	      1952	random.c	FUNCTION_52	SWITCH_1	IF_5	CALL_7
+0x400380e	          0x4889e8	                            mov rax, rbp	      1952	random.c	FUNCTION_52	SWITCH_1	IF_5	CALL_7
+0x4003811	      0xe800000000	                          call 0x4003816	      1952	random.c	FUNCTION_52	SWITCH_1	IF_5	CALL_7
+0x4003816	            0x85c0	                           test eax, eax	      1952	random.c	FUNCTION_52	SWITCH_1	IF_5	CALL_7
+0x4003818	          0x4889d3	                            mov rbx, rdx	      1952	random.c	FUNCTION_52	SWITCH_1	IF_5	CALL_7
+0x400381b	     0xf85b1000000	                           jne 0x40038d2	      1952	random.c	FUNCTION_52	SWITCH_1	IF_5	CALL_7
+0x4003821	            0x85d2	                           test edx, edx	      1954	random.c	FUNCTION_52	SWITCH_1	IF_6
+0x4003823	            0x788e	                            js 0x40037b3	      1954	random.c	FUNCTION_52	SWITCH_1	IF_6
+0x4003825	        0x488d7d08	                      lea rdi, [rbp + 8]	      1956	random.c	FUNCTION_52	SWITCH_1	IF_7	CALL_8
+0x4003829	          0x4889c8	                            mov rax, rcx	      1956	random.c	FUNCTION_52	SWITCH_1	IF_7	CALL_8
+0x400382c	      0xe800000000	                          call 0x4003831	      1956	random.c	FUNCTION_52	SWITCH_1	IF_7	CALL_8
+0x4003831	            0x85c0	                           test eax, eax	      1956	random.c	FUNCTION_52	SWITCH_1	IF_7	CALL_8
+0x4003833	     0xf8599000000	                           jne 0x40038d2	      1956	random.c	FUNCTION_52	SWITCH_1	IF_7	CALL_8
+0x4003839	          0x4863f2	                         movsxd rsi, edx	      1958	random.c	FUNCTION_52	SWITCH_1	CALL_9
+0x400383c	      0xe84fe0ffff	        call sym.write_pool.constprop.37	      1958	random.c	FUNCTION_52	SWITCH_1	CALL_9
+0x4003841	            0x85c0	                           test eax, eax	      1960	random.c	FUNCTION_52	SWITCH_1	IF_8
+0x4003843	     0xf88da000000	                            js 0x4003923	      1960	random.c	FUNCTION_52	SWITCH_1	IF_8
+0x4003849	    0x488b05000000	            mov rax, qword [0x04003850] 	       747	random.c	FUNCTION_7
+0x4003850	    0x48c7c7000000	                              mov rdi, 0	       755	random.c	FUNCTION_7	CALL_2
+0x4003857	          0x8b7004	                mov esi, dword [rax + 4]	       755	random.c	FUNCTION_7	CALL_2
+0x400385a	          0xc1e605	                              shl esi, 5	       755	random.c	FUNCTION_7	CALL_2
+0x400385d	            0x39de	                            cmp esi, ebx	       755	random.c	FUNCTION_7	CALL_2
+0x400385f	           0xf4ff3	                          cmovg esi, ebx	       755	random.c	FUNCTION_7	CALL_2
+0x4003862	      0xe829f1ffff	            call sym.credit_entropy_bits	       755	random.c	FUNCTION_7	CALL_2
+0x4003867	            0x31c0	                            xor eax, eax	      1962	random.c	FUNCTION_52	SWITCH_1	CALL_10
+0x4003869	              0x5b	                                 pop rbx	      1985	random.c	FUNCTION_52
+0x400386a	              0x5d	                                 pop rbp	      1985	random.c	FUNCTION_52
+0x400386b	              0xc3	                                     ret	      1985	random.c	FUNCTION_52
+0x400386c	      0xbf15000000	                           mov edi, 0x15	      1944	random.c	FUNCTION_52	SWITCH_1	IF_2	CALL_3
+0x4003871	      0xe800000000	                          call 0x4003876	      1944	random.c	FUNCTION_52	SWITCH_1	IF_2	CALL_3
+0x4003876	            0x84c0	                             test al, al	      1944	random.c	FUNCTION_52	SWITCH_1	IF_2	CALL_3
+0x4003878	     0xf8499000000	                            je 0x4003917	      1944	random.c	FUNCTION_52	SWITCH_1	IF_2	CALL_3
+0x400387e	          0x4889e8	                            mov rax, rbp	      1946	random.c	FUNCTION_52	SWITCH_1	IF_3	CALL_4
+0x4003881	      0xe800000000	                          call 0x4003886	      1946	random.c	FUNCTION_52	SWITCH_1	IF_3	CALL_4
+0x4003886	            0x85c0	                           test eax, eax	      1946	random.c	FUNCTION_52	SWITCH_1	IF_3	CALL_4
+0x4003888	            0x7548	                           jne 0x40038d2	      1946	random.c	FUNCTION_52	SWITCH_1	IF_3	CALL_4
+0x400388a	            0x85d2	                           test edx, edx	       749	random.c	FUNCTION_7	IF_1
+0x400388c	    0x48c7c0eaffff	             mov rax, 0xffffffffffffffea	       749	random.c	FUNCTION_7	IF_1
+0x4003893	            0x78d4	                            js 0x4003869	       749	random.c	FUNCTION_7	IF_1
+0x4003895	    0x488b05000000	            mov rax, qword [0x0400389c] 	       747	random.c	FUNCTION_7
+0x400389c	    0x48c7c7000000	                              mov rdi, 0	       755	random.c	FUNCTION_7	CALL_2
+0x40038a3	          0x8b7004	                mov esi, dword [rax + 4]	       755	random.c	FUNCTION_7	CALL_2
+0x40038a6	          0xc1e605	                              shl esi, 5	       755	random.c	FUNCTION_7	CALL_2
+0x40038a9	            0x39d6	                            cmp esi, edx	       755	random.c	FUNCTION_7	CALL_2
+0x40038ab	           0xf4ff2	                          cmovg esi, edx	       755	random.c	FUNCTION_7	CALL_2
+0x40038ae	      0xe8ddf0ffff	            call sym.credit_entropy_bits	       755	random.c	FUNCTION_7	CALL_2
+0x40038b3	            0x31c0	                            xor eax, eax	       755	random.c	FUNCTION_7	CALL_2
+0x40038b5	            0xebb2	                           jmp 0x4003869	       755	random.c	FUNCTION_7	CALL_2
+0x40038b7	    0x8b1500000000	            mov edx, dword [0x040038bd] 	      1940	random.c	FUNCTION_52	SWITCH_1	IF_1	CALL_2
+0x40038bd	          0x4889e9	                            mov rcx, rbp	      1940	random.c	FUNCTION_52	SWITCH_1	IF_1	CALL_2
+0x40038c0	          0xc1fa03	                              sar edx, 3	      1940	random.c	FUNCTION_52	SWITCH_1	IF_1	CALL_2
+0x40038c3	            0x89d0	                            mov eax, edx	      1940	random.c	FUNCTION_52	SWITCH_1	IF_1	CALL_2
+0x40038c5	      0xe800000000	                          call 0x40038ca	      1940	random.c	FUNCTION_52	SWITCH_1	IF_1	CALL_2
+0x40038ca	            0x89c2	                            mov edx, eax	      1940	random.c	FUNCTION_52	SWITCH_1	IF_1	CALL_2
+0x40038cc	            0x31c0	                            xor eax, eax	      1942	random.c	FUNCTION_52	SWITCH_1
+0x40038ce	            0x85d2	                           test edx, edx	      1940	random.c	FUNCTION_52	SWITCH_1	IF_1	CALL_2
+0x40038d0	            0x7497	                            je 0x4003869	      1940	random.c	FUNCTION_52	SWITCH_1	IF_1	CALL_2
+0x40038d2	    0x48c7c0f2ffff	             mov rax, 0xfffffffffffffff2	      1941	random.c	FUNCTION_52	SWITCH_1	IF_1
+0x40038d9	            0xeb8e	                           jmp 0x4003869	      1941	random.c	FUNCTION_52	SWITCH_1	IF_1
+0x40038db	      0xbf15000000	                           mov edi, 0x15	      1975	random.c	FUNCTION_52	SWITCH_1	IF_10	CALL_12
+0x40038e0	      0xe800000000	                          call 0x40038e5	      1975	random.c	FUNCTION_52	SWITCH_1	IF_10	CALL_12
+0x40038e5	            0x84c0	                             test al, al	      1975	random.c	FUNCTION_52	SWITCH_1	IF_10	CALL_12
+0x40038e7	            0x742e	                            je 0x4003917	      1975	random.c	FUNCTION_52	SWITCH_1	IF_10	CALL_12
+0x40038e9	    0x833d00000000	               cmp dword [0x040038f0], 1	      1977	random.c	FUNCTION_52	SWITCH_1	IF_11
+0x40038f0	            0x7e38	                           jle 0x400392a	      1977	random.c	FUNCTION_52	SWITCH_1	IF_11
+0x40038f2	            0x31f6	                            xor esi, esi	      1979	random.c	FUNCTION_52	SWITCH_1	CALL_13
+0x40038f4	    0x48c7c7000000	                              mov rdi, 0	      1979	random.c	FUNCTION_52	SWITCH_1	CALL_13
+0x40038fb	      0xe840eeffff	                    call sym.crng_reseed	      1979	random.c	FUNCTION_52	SWITCH_1	CALL_13
+0x4003900	    0x488b05000000	            mov rax, qword [0x04003907] 	      1980	random.c	FUNCTION_52	SWITCH_1
+0x4003907	        0x4883e801	                              sub rax, 1	      1980	random.c	FUNCTION_52	SWITCH_1
+0x400390b	    0x488905000000	            mov qword [0x04003912], rax 	      1980	random.c	FUNCTION_52	SWITCH_1
+0x4003912	            0x31c0	                            xor eax, eax	      1981	random.c	FUNCTION_52	SWITCH_1
+0x4003914	              0x5b	                                 pop rbx	      1985	random.c	FUNCTION_52
+0x4003915	              0x5d	                                 pop rbp	      1985	random.c	FUNCTION_52
+0x4003916	              0xc3	                                     ret	      1985	random.c	FUNCTION_52
+0x4003917	    0x48c7c0ffffff	             mov rax, 0xffffffffffffffff	      1945	random.c	FUNCTION_52	SWITCH_1	IF_2
+0x400391e	      0xe946ffffff	                           jmp 0x4003869	      1945	random.c	FUNCTION_52	SWITCH_1	IF_2
+0x4003923	            0x4898	                                    cdqe	      1961	random.c	FUNCTION_52	SWITCH_1	IF_8
+0x4003925	      0xe93fffffff	                           jmp 0x4003869	      1961	random.c	FUNCTION_52	SWITCH_1	IF_8
+0x400392a	    0x48c7c0c3ffff	             mov rax, 0xffffffffffffffc3	      1978	random.c	FUNCTION_52	SWITCH_1	IF_11
+0x4003931	      0xe933ffffff	                           jmp 0x4003869	      1978	random.c	FUNCTION_52	SWITCH_1	IF_11
+add_hwgenerator_randomness	WHILE,0:IF,1:DO,0:SWITCH,0:CALL,7:FOR,0:ELSE,0:functions,0	64
+0x4003680	            0x4155	                                push r13	      2317	random.c	FUNCTION_61
+0x4003682	            0x4154	                                push r12	      2317	random.c	FUNCTION_61
+0x4003684	          0x4989f4	                            mov r12, rsi	      2317	random.c	FUNCTION_61
+0x4003687	              0x55	                                push rbp	      2317	random.c	FUNCTION_61
+0x4003688	              0x53	                                push rbx	      2317	random.c	FUNCTION_61
+0x4003689	          0x4889fd	                            mov rbp, rdi	      2317	random.c	FUNCTION_61
+0x400368c	        0x4883ec30	                           sub rsp, 0x30	      2317	random.c	FUNCTION_61
+0x4003690	    0x65488b042528	                mov rax, qword gs:[0x28]	      2317	random.c	FUNCTION_61
+0x4003699	      0x4889442428	             mov qword [rsp + 0x28], rax	      2317	random.c	FUNCTION_61
+0x400369e	            0x31c0	                            xor eax, eax	      2317	random.c	FUNCTION_61
+0x40036a0	    0x8b0500000000	            mov eax, dword [0x040036a6] 	      2320	random.c	FUNCTION_61	IF_1	CALL_1
+0x40036a6	            0x85c0	                           test eax, eax	      2320	random.c	FUNCTION_61	IF_1	CALL_1
+0x40036a8	     0xf84bd000000	                            je 0x400376b	      2320	random.c	FUNCTION_61	IF_1	CALL_1
+0x40036ae	          0x4989d5	                            mov r13, rdx	      2320	random.c	FUNCTION_61	IF_1	CALL_1
+0x40036b1	      0xe800000000	                          call 0x40036b6	      2329	random.c	FUNCTION_61	CALL_4
+0x40036b6	      0xe800000000	                          call 0x40036bb	      2329	random.c	FUNCTION_61	CALL_4
+0x40036bb	            0x84c0	                             test al, al	      2329	random.c	FUNCTION_61	CALL_4
+0x40036bd	            0x7440	                            je 0x40036ff	      2329	random.c	FUNCTION_61	CALL_4
+0x40036bf	          0x4889ee	                            mov rsi, rbp	      2331	random.c	FUNCTION_61	CALL_6
+0x40036c2	    0x48c7c7000000	                              mov rdi, 0	      2331	random.c	FUNCTION_61	CALL_6
+0x40036c9	          0x4489e2	                           mov edx, r12d	      2331	random.c	FUNCTION_61	CALL_6
+0x40036cc	      0xe88fcaffff	                 call sym.mix_pool_bytes	      2331	random.c	FUNCTION_61	CALL_6
+0x40036d1	          0x4489ee	                           mov esi, r13d	      2332	random.c	FUNCTION_61	CALL_7
+0x40036d4	    0x48c7c7000000	                              mov rdi, 0	      2332	random.c	FUNCTION_61	CALL_7
+0x40036db	      0xe8b0f2ffff	            call sym.credit_entropy_bits	      2332	random.c	FUNCTION_61	CALL_7
+0x40036e0	      0x488b442428	            mov rax, qword [rsp + 0x28] 	      2333	random.c	FUNCTION_61
+0x40036e5	    0x654833042528	                xor rax, qword gs:[0x28]	      2333	random.c	FUNCTION_61
+0x40036ee	     0xf8581000000	                           jne 0x4003775	      2333	random.c	FUNCTION_61
+0x40036f4	        0x4883c430	                           add rsp, 0x30	      2333	random.c	FUNCTION_61
+0x40036f8	              0x5b	                                 pop rbx	      2333	random.c	FUNCTION_61
+0x40036f9	              0x5d	                                 pop rbp	      2333	random.c	FUNCTION_61
+0x40036fa	            0x415c	                                 pop r12	      2333	random.c	FUNCTION_61
+0x40036fc	            0x415d	                                 pop r13	      2333	random.c	FUNCTION_61
+0x40036fe	              0xc3	                                     ret	      2333	random.c	FUNCTION_61
+0x40036ff	    0x8b0500000000	            mov eax, dword [0x04003705] 	      2329	random.c	FUNCTION_61	CALL_4
+0x4003705	          0xc1f803	                              sar eax, 3	      2329	random.c	FUNCTION_61	CALL_4
+0x4003708	    0x3b0500000000	            cmp eax, dword [0x0400370e] 	      2329	random.c	FUNCTION_61	CALL_4
+0x400370e	            0x7eaf	                           jle 0x40036bf	      2329	random.c	FUNCTION_61	CALL_4
+0x4003710	            0x31f6	                            xor esi, esi	      2329	random.c	FUNCTION_61	CALL_4
+0x4003712	          0x4889e7	                            mov rdi, rsp	      2329	random.c	FUNCTION_61	CALL_4
+0x4003715	      0xe800000000	                          call 0x400371a	      2329	random.c	FUNCTION_61	CALL_4
+0x400371a	            0xeb1b	                           jmp 0x4003737	      2329	random.c	FUNCTION_61	CALL_4
+0x400371c	    0x8b0500000000	            mov eax, dword [0x04003722] 	      2329	random.c	FUNCTION_61	CALL_4
+0x4003722	          0xc1f803	                              sar eax, 3	      2329	random.c	FUNCTION_61	CALL_4
+0x4003725	    0x3b0500000000	            cmp eax, dword [0x0400372b] 	      2329	random.c	FUNCTION_61	CALL_4
+0x400372b	            0x7e2a	                           jle 0x4003757	      2329	random.c	FUNCTION_61	CALL_4
+0x400372d	          0x4885db	                           test rbx, rbx	      2329	random.c	FUNCTION_61	CALL_4
+0x4003730	            0x758d	                           jne 0x40036bf	      2329	random.c	FUNCTION_61	CALL_4
+0x4003732	      0xe800000000	                          call 0x4003737	      2329	random.c	FUNCTION_61	CALL_4
+0x4003737	      0xba01000000	                              mov edx, 1	      2329	random.c	FUNCTION_61	CALL_4
+0x400373c	          0x4889e6	                            mov rsi, rsp	      2329	random.c	FUNCTION_61	CALL_4
+0x400373f	    0x48c7c7000000	                              mov rdi, 0	      2329	random.c	FUNCTION_61	CALL_4
+0x4003746	      0xe800000000	                          call 0x400374b	      2329	random.c	FUNCTION_61	CALL_4
+0x400374b	          0x4889c3	                            mov rbx, rax	      2329	random.c	FUNCTION_61	CALL_4
+0x400374e	      0xe800000000	                          call 0x4003753	      2329	random.c	FUNCTION_61	CALL_4
+0x4003753	            0x84c0	                             test al, al	      2329	random.c	FUNCTION_61	CALL_4
+0x4003755	            0x74c5	                            je 0x400371c	      2329	random.c	FUNCTION_61	CALL_4
+0x4003757	          0x4889e6	                            mov rsi, rsp	      2329	random.c	FUNCTION_61	CALL_4
+0x400375a	    0x48c7c7000000	                              mov rdi, 0	      2329	random.c	FUNCTION_61	CALL_4
+0x4003761	      0xe800000000	                          call 0x4003766	      2329	random.c	FUNCTION_61	CALL_4
+0x4003766	      0xe954ffffff	                           jmp 0x40036bf	      2329	random.c	FUNCTION_61	CALL_4
+0x400376b	      0xe8d0dcffff	                 call sym.crng_fast_load	      2321	random.c	FUNCTION_61	IF_1	CALL_2
+0x4003770	      0xe96bffffff	                           jmp 0x40036e0	      2322	random.c	FUNCTION_61	IF_1
+0x4003775	      0xe800000000	                          call 0x400377a	      2333	random.c	FUNCTION_61
+_mix_pool_bytes	WHILE,1:IF,0:DO,0:SWITCH,0:CALL,1:FOR,0:ELSE,0:functions,0	66
+0x4000040	          0x488b07	                    mov rax, qword [rdi]	       525	random.c	FUNCTION_1
+0x4000043	            0x4157	                                push r15	       522	random.c	FUNCTION_1
+0x4000045	            0x85d2	                           test edx, edx	       539	random.c	FUNCTION_1	WHILE_1
+0x4000047	            0x4156	                                push r14	       522	random.c	FUNCTION_1
+0x4000049	            0x4155	                                push r13	       522	random.c	FUNCTION_1
+0x400004b	            0x4154	                                push r12	       522	random.c	FUNCTION_1
+0x400004d	              0x55	                                push rbp	       522	random.c	FUNCTION_1
+0x400004e	              0x53	                                push rbx	       522	random.c	FUNCTION_1
+0x400004f	          0x8b5804	                mov ebx, dword [rax + 4]	       525	random.c	FUNCTION_1
+0x4000052	        0x4c635814	         movsxd r11, dword [rax + 0x14] 	       529	random.c	FUNCTION_1
+0x4000056	        0x4863681c	         movsxd rbp, dword [rax + 0x1c] 	       531	random.c	FUNCTION_1
+0x400005a	        0x4c636020	         movsxd r12, dword [rax + 0x20] 	       532	random.c	FUNCTION_1
+0x400005e	        0x4c636824	         movsxd r13, dword [rax + 0x24] 	       533	random.c	FUNCTION_1
+0x4000062	        0x448d4bff	                      lea r9d, [rbx - 1]	       525	random.c	FUNCTION_1
+0x4000066	         0xfb74f4e	           movzx ecx, word [rdi + 0x4e] 	       535	random.c	FUNCTION_1
+0x400006a	        0x48635818	         movsxd rbx, dword [rax + 0x18] 	       530	random.c	FUNCTION_1
+0x400006e	      0x440fb7474c	           movzx r8d, word [rdi + 0x4c] 	       536	random.c	FUNCTION_1
+0x4000073	     0xf8488000000	                            je 0x4000101	       539	random.c	FUNCTION_1	WHILE_1
+0x4000079	          0x8d42ff	                      lea eax, [rdx - 1]	       539	random.c	FUNCTION_1	WHILE_1
+0x400007c	          0x4d63c9	                          movsxd r9, r9d	       539	random.c	FUNCTION_1	WHILE_1
+0x400007f	      0x4c8d740601	                lea r14, [rsi + rax + 1]	       539	random.c	FUNCTION_1	WHILE_1
+0x4000084	        0x4983e801	                               sub r8, 1	       541	random.c	FUNCTION_1	WHILE_1
+0x4000088	        0x488b5708	                mov rdx, qword [rdi + 8]	       544	random.c	FUNCTION_1	WHILE_1
+0x400008c	        0x4883c601	                              add rsi, 1	       540	random.c	FUNCTION_1	WHILE_1	CALL_1
+0x4000090	          0x4d21c8	                              and r8, r9	       541	random.c	FUNCTION_1	WHILE_1
+0x4000093	        0x4b8d0403	                     lea rax, [r11 + r8]	       545	random.c	FUNCTION_1	WHILE_1
+0x4000097	        0x4e8d3c03	                     lea r15, [rbx + r8]	       546	random.c	FUNCTION_1	WHILE_1
+0x400009b	        0x4e8d1482	                   lea r10, [rdx + r8*4]	       544	random.c	FUNCTION_1	WHILE_1
+0x400009f	          0x4d21cf	                             and r15, r9	       546	random.c	FUNCTION_1	WHILE_1
+0x40000a2	          0x4c21c8	                             and rax, r9	       545	random.c	FUNCTION_1	WHILE_1
+0x40000a5	          0x8b0482	            mov eax, dword [rdx + rax*4]	       549	random.c	FUNCTION_1	WHILE_1
+0x40000a8	        0x423304ba	            xor eax, dword [rdx + r15*4]	       549	random.c	FUNCTION_1	WHILE_1
+0x40000ac	      0x4e8d7c0500	                     lea r15, [rbp + r8]	       547	random.c	FUNCTION_1	WHILE_1
+0x40000b1	          0x413302	                    xor eax, dword [r10]	       549	random.c	FUNCTION_1	WHILE_1
+0x40000b4	          0x4d21cf	                             and r15, r9	       547	random.c	FUNCTION_1	WHILE_1
+0x40000b7	        0x423304ba	            xor eax, dword [rdx + r15*4]	       549	random.c	FUNCTION_1	WHILE_1
+0x40000bb	        0x4f8d3c04	                     lea r15, [r12 + r8]	       548	random.c	FUNCTION_1	WHILE_1
+0x40000bf	          0x4d21cf	                             and r15, r9	       548	random.c	FUNCTION_1	WHILE_1
+0x40000c2	        0x423304ba	            xor eax, dword [rdx + r15*4]	       549	random.c	FUNCTION_1	WHILE_1
+0x40000c6	      0x4f8d7c0500	                     lea r15, [r13 + r8]	       549	random.c	FUNCTION_1	WHILE_1
+0x40000cb	          0x4d21cf	                             and r15, r9	       549	random.c	FUNCTION_1	WHILE_1
+0x40000ce	        0x423304ba	            xor eax, dword [rdx + r15*4]	       549	random.c	FUNCTION_1	WHILE_1
+0x40000d2	         0xfbe56ff	               movsx edx, byte [rsi - 1]	       549	random.c	FUNCTION_1	WHILE_1
+0x40000d6	            0xd3c2	                             rol edx, cl	       549	random.c	FUNCTION_1	WHILE_1
+0x40000d8	            0x31d0	                            xor eax, edx	       549	random.c	FUNCTION_1	WHILE_1
+0x40000da	            0x89c2	                            mov edx, eax	       552	random.c	FUNCTION_1	WHILE_1
+0x40000dc	          0xc1e803	                              shr eax, 3	       552	random.c	FUNCTION_1	WHILE_1
+0x40000df	          0x83e207	                              and edx, 7	       552	random.c	FUNCTION_1	WHILE_1
+0x40000e2	    0x330495000000	                  xor eax, dword [rdx*4]	       552	random.c	FUNCTION_1	WHILE_1
+0x40000e9	        0x4983f801	                               cmp r8, 1	       560	random.c	FUNCTION_1	WHILE_1
+0x40000ed	          0x418902	                    mov dword [r10], eax	       552	random.c	FUNCTION_1	WHILE_1
+0x40000f0	            0x19c0	                            sbb eax, eax	       560	random.c	FUNCTION_1	WHILE_1
+0x40000f2	          0x83e007	                              and eax, 7	       560	random.c	FUNCTION_1	WHILE_1
+0x40000f5	        0x8d4c0807	                lea ecx, [rax + rcx + 7]	       560	random.c	FUNCTION_1	WHILE_1
+0x40000f9	          0x83e11f	                           and ecx, 0x1f	       560	random.c	FUNCTION_1	WHILE_1
+0x40000fc	          0x4c39f6	                            cmp rsi, r14	       539	random.c	FUNCTION_1	WHILE_1
+0x40000ff	            0x7583	                           jne 0x4000084	       539	random.c	FUNCTION_1	WHILE_1
+0x4000101	              0x5b	                                 pop rbx	       565	random.c	FUNCTION_1
+0x4000102	        0x66894f4e	               mov word [rdi + 0x4e], cx	       563	random.c	FUNCTION_1
+0x4000106	      0x664489474c	              mov word [rdi + 0x4c], r8w	       564	random.c	FUNCTION_1
+0x400010b	              0x5d	                                 pop rbp	       565	random.c	FUNCTION_1
+0x400010c	            0x415c	                                 pop r12	       565	random.c	FUNCTION_1
+0x400010e	            0x415d	                                 pop r13	       565	random.c	FUNCTION_1
+0x4000110	            0x415e	                                 pop r14	       565	random.c	FUNCTION_1
+0x4000112	            0x415f	                                 pop r15	       565	random.c	FUNCTION_1
+0x4000114	              0xc3	                                     ret	       565	random.c	FUNCTION_1
+random_fasync	WHILE,0:IF,0:DO,0:SWITCH,0:CALL,1:FOR,0:ELSE,0:functions,0	2
+0x4001590	    0x48c7c1000000	                              mov rcx, 0	      1989	random.c	FUNCTION_53	CALL_1
+0x4001597	      0xe900000000	                           jmp 0x400159c	      1989	random.c	FUNCTION_53	CALL_1

@@ -1,0 +1,118 @@
+acpi_enable_wakeup_devices	SWITCH,0:FOR,0:ELSE,0:IF,0:CALL,0:functions,1:DO,0:WHILE,0	44
+0x4000040	            0x4154	                                push r12	        32	wakeup.c	FUNCTION_1
+0x4000042	              0x55	                                push rbp	        32	wakeup.c	FUNCTION_1
+0x4000043	        0x440fb6e7	                         movzx r12d, dil	        32	wakeup.c	FUNCTION_1
+0x4000047	              0x53	                                push rbx	        32	wakeup.c	FUNCTION_1
+0x4000048	    0x488b1d000000	            mov rbx, qword [0x0400004f] 	        35	wakeup.c	FUNCTION_1
+0x400004f	    0x4881fb000000	                              cmp rbx, 0	        35	wakeup.c	FUNCTION_1
+0x4000056	          0x488b2b	                    mov rbp, qword [rbx]	        35	wakeup.c	FUNCTION_1
+0x4000059	            0x7540	                           jne 0x400009b	        35	wakeup.c	FUNCTION_1
+0x400005b	            0xeb73	                           jmp 0x40000d0	        35	wakeup.c	FUNCTION_1
+0x400005d	    0x4883bb100300	              cmp qword [rbx + 0x310], 0	        88	pm_wakeup.h	FUNCTION_5
+0x4000065	            0x746e	                            je 0x40000d5	        88	pm_wakeup.h	FUNCTION_5
+0x4000067	        0x488d7bb8	                   lea rdi, [rbx - 0x48]	        46	wakeup.c	CALL_4
+0x400006b	          0x4489e6	                           mov esi, r12d	        46	wakeup.c	CALL_4
+0x400006e	      0xe800000000	                          call 0x4000073	        46	wakeup.c	CALL_4
+0x4000073	    0x488bb3500100	           mov rsi, qword [rbx + 0x150] 	        49	wakeup.c	CALL_5
+0x400007a	    0x488bbb480100	           mov rdi, qword [rbx + 0x148] 	        49	wakeup.c	CALL_5
+0x4000081	            0x31d2	                            xor edx, edx	        49	wakeup.c	CALL_5
+0x4000083	      0xe800000000	                          call 0x4000088	        49	wakeup.c	CALL_5
+0x4000088	    0x4881fd000000	                              cmp rbp, 0	        35	wakeup.c	FUNCTION_1
+0x400008f	        0x488b4500	                    mov rax, qword [rbp]	        35	wakeup.c	FUNCTION_1
+0x4000093	          0x4889eb	                            mov rbx, rbp	        35	wakeup.c	FUNCTION_1
+0x4000096	            0x7438	                            je 0x40000d0	        35	wakeup.c	FUNCTION_1
+0x4000098	          0x4889c5	                            mov rbp, rax	        35	wakeup.c	FUNCTION_1
+0x400009b	    0xf68370010000	              test byte [rbx + 0x170], 1	        39	wakeup.c	IF_1
+0x40000a2	            0x74e4	                            je 0x4000088	        39	wakeup.c	IF_1
+0x40000a4	    0x443ba3580100	          cmp r12d, dword [rbx + 0x158] 	        40	wakeup.c	IF_1
+0x40000ab	            0x77db	                            ja 0x4000088	        40	wakeup.c	IF_1
+0x40000ad	    0xf683d4020000	              test byte [rbx + 0x2d4], 1	        88	pm_wakeup.h	FUNCTION_5
+0x40000b4	            0x75a7	                           jne 0x400005d	        88	pm_wakeup.h	FUNCTION_5
+0x40000b6	    0x8b8390010000	           mov eax, dword [rbx + 0x190] 	        41	wakeup.c	IF_1	CALL_2
+0x40000bc	            0x85c0	                           test eax, eax	        41	wakeup.c	IF_1	CALL_2
+0x40000be	            0x75b3	                           jne 0x4000073	        41	wakeup.c	IF_1	CALL_2
+0x40000c0	    0x4881fd000000	                              cmp rbp, 0	        35	wakeup.c	FUNCTION_1
+0x40000c7	        0x488b4500	                    mov rax, qword [rbp]	        35	wakeup.c	FUNCTION_1
+0x40000cb	          0x4889eb	                            mov rbx, rbp	        35	wakeup.c	FUNCTION_1
+0x40000ce	            0x75c8	                           jne 0x4000098	        35	wakeup.c	FUNCTION_1
+0x40000d0	              0x5b	                                 pop rbx	        52	wakeup.c	FUNCTION_1
+0x40000d1	              0x5d	                                 pop rbp	        52	wakeup.c	FUNCTION_1
+0x40000d2	            0x415c	                                 pop r12	        52	wakeup.c	FUNCTION_1
+0x40000d4	              0xc3	                                     ret	        52	wakeup.c	FUNCTION_1
+0x40000d5	    0x8b9390010000	           mov edx, dword [rbx + 0x190] 	        41	wakeup.c	IF_1	CALL_2
+0x40000db	            0x85d2	                           test edx, edx	        41	wakeup.c	IF_1	CALL_2
+0x40000dd	            0x74a9	                            je 0x4000088	        41	wakeup.c	IF_1	CALL_2
+0x40000df	            0xeb92	                           jmp 0x4000073	        41	wakeup.c	IF_1	CALL_2
+acpi_wakeup_device_init	SWITCH,0:FOR,0:ELSE,0:IF,0:CALL,2:functions,1:DO,0:WHILE,0	28
+0x4000040	            0x4154	                                push r12	        32	wakeup.c	FUNCTION_1
+0x4000042	              0x55	                                push rbp	        32	wakeup.c	FUNCTION_1
+0x4000043	        0x440fb6e7	                         movzx r12d, dil	        32	wakeup.c	FUNCTION_1
+0x4000047	              0x53	                                push rbx	        32	wakeup.c	FUNCTION_1
+0x4000048	    0x488b1d000000	            mov rbx, qword [0x0400004f] 	        35	wakeup.c	FUNCTION_1
+0x400004f	    0x4881fb000000	                              cmp rbx, 0	        35	wakeup.c	FUNCTION_1
+0x4000056	          0x488b2b	                    mov rbp, qword [rbx]	        35	wakeup.c	FUNCTION_1
+0x4000059	            0x7540	                           jne 0x400009b	        35	wakeup.c	FUNCTION_1
+0x400005b	            0xeb73	                           jmp 0x40000d0	        35	wakeup.c	FUNCTION_1
+0x400005d	    0x4883bb100300	              cmp qword [rbx + 0x310], 0	        88	pm_wakeup.h	FUNCTION_5
+0x4000065	            0x746e	                            je 0x40000d5	        88	pm_wakeup.h	FUNCTION_5
+0x4000067	        0x488d7bb8	                   lea rdi, [rbx - 0x48]	        46	wakeup.c	CALL_4
+0x400006b	          0x4489e6	                           mov esi, r12d	        46	wakeup.c	CALL_4
+0x400006e	      0xe800000000	                          call 0x4000073	        46	wakeup.c	CALL_4
+0x4000073	    0x488bb3500100	           mov rsi, qword [rbx + 0x150] 	        49	wakeup.c	CALL_5
+0x400007a	    0x488bbb480100	           mov rdi, qword [rbx + 0x148] 	        49	wakeup.c	CALL_5
+0x4000081	            0x31d2	                            xor edx, edx	        49	wakeup.c	CALL_5
+0x4000083	      0xe800000000	                          call 0x4000088	        49	wakeup.c	CALL_5
+0x4000088	    0x4881fd000000	                              cmp rbp, 0	        35	wakeup.c	FUNCTION_1
+0x400008f	        0x488b4500	                    mov rax, qword [rbp]	        35	wakeup.c	FUNCTION_1
+0x4000093	          0x4889eb	                            mov rbx, rbp	        35	wakeup.c	FUNCTION_1
+0x4000096	            0x7438	                            je 0x40000d0	        35	wakeup.c	FUNCTION_1
+0x4000098	          0x4889c5	                            mov rbp, rax	        35	wakeup.c	FUNCTION_1
+0x400009b	    0xf68370010000	              test byte [rbx + 0x170], 1	        39	wakeup.c	IF_1
+0x40000a2	            0x74e4	                            je 0x4000088	        39	wakeup.c	IF_1
+0x40000a4	              0x44	                                 invalid	        40	wakeup.c	IF_1
+0x40000a5	              0x3b	                                 invalid	        40	wakeup.c	IF_1
+0x40000a6	              0xa3	                                 invalid	        40	wakeup.c	IF_1
+acpi_disable_wakeup_devices	SWITCH,0:FOR,0:ELSE,0:IF,0:CALL,0:functions,1:DO,0:WHILE,0	43
+0x40000f0	            0x4154	                                push r12	        59	wakeup.c	FUNCTION_2
+0x40000f2	              0x55	                                push rbp	        59	wakeup.c	FUNCTION_2
+0x40000f3	        0x440fb6e7	                         movzx r12d, dil	        59	wakeup.c	FUNCTION_2
+0x40000f7	              0x53	                                push rbx	        59	wakeup.c	FUNCTION_2
+0x40000f8	    0x488b1d000000	            mov rbx, qword [0x040000ff] 	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x40000ff	    0x4881fb000000	                              cmp rbx, 0	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x4000106	          0x488b2b	                    mov rbp, qword [rbx]	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x4000109	            0x7555	                           jne 0x4000160	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x400010b	      0xe985000000	                           jmp 0x4000195	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x4000110	    0x4883bb100300	              cmp qword [rbx + 0x310], 0	        88	pm_wakeup.h	FUNCTION_5
+0x4000118	            0x7461	                            je 0x400017b	        88	pm_wakeup.h	FUNCTION_5
+0x400011a	    0x488bbb480100	           mov rdi, qword [rbx + 0x148] 	        72	wakeup.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x4000121	    0x8bb350010000	           mov esi, dword [rbx + 0x150] 	        72	wakeup.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x4000127	      0xba01000000	                              mov edx, 1	        72	wakeup.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x400012c	      0xe800000000	                          call 0x4000131	        72	wakeup.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x4000131	    0xf683d4020000	              test byte [rbx + 0x2d4], 1	        88	pm_wakeup.h	FUNCTION_5
+0x4000138	            0x7413	                            je 0x400014d	        88	pm_wakeup.h	FUNCTION_5
+0x400013a	    0x4883bb100300	              cmp qword [rbx + 0x310], 0	        88	pm_wakeup.h	FUNCTION_5
+0x4000142	            0x7409	                            je 0x400014d	        88	pm_wakeup.h	FUNCTION_5
+0x4000144	        0x488d7bb8	                   lea rdi, [rbx - 0x48]	        76	wakeup.c	FUNCTION_2	FUNCTION_1	CALL_5
+0x4000148	      0xe800000000	                          call 0x400014d	        76	wakeup.c	FUNCTION_2	FUNCTION_1	CALL_5
+0x400014d	    0x4881fd000000	                              cmp rbp, 0	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x4000154	        0x488b4500	                    mov rax, qword [rbp]	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x4000158	          0x4889eb	                            mov rbx, rbp	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x400015b	            0x7438	                            je 0x4000195	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x400015d	          0x4889c5	                            mov rbp, rax	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x4000160	    0xf68370010000	              test byte [rbx + 0x170], 1	        66	wakeup.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000167	            0x74e4	                            je 0x400014d	        66	wakeup.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000169	    0x443ba3580100	          cmp r12d, dword [rbx + 0x158] 	        67	wakeup.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000170	            0x77db	                            ja 0x400014d	        67	wakeup.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000172	    0xf683d4020000	              test byte [rbx + 0x2d4], 1	        88	pm_wakeup.h	FUNCTION_5
+0x4000179	            0x7595	                           jne 0x4000110	        88	pm_wakeup.h	FUNCTION_5
+0x400017b	    0x8b8390010000	           mov eax, dword [rbx + 0x190] 	        68	wakeup.c	FUNCTION_2	FUNCTION_1	IF_1	CALL_2
+0x4000181	            0x85c0	                           test eax, eax	        68	wakeup.c	FUNCTION_2	FUNCTION_1	IF_1	CALL_2
+0x4000183	            0x7595	                           jne 0x400011a	        68	wakeup.c	FUNCTION_2	FUNCTION_1	IF_1	CALL_2
+0x4000185	    0x4881fd000000	                              cmp rbp, 0	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x400018c	        0x488b4500	                    mov rax, qword [rbp]	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x4000190	          0x4889eb	                            mov rbx, rbp	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x4000193	            0x75c8	                           jne 0x400015d	        62	wakeup.c	FUNCTION_2	FUNCTION_1
+0x4000195	              0x5b	                                 pop rbx	        78	wakeup.c	FUNCTION_2
+0x4000196	              0x5d	                                 pop rbp	        78	wakeup.c	FUNCTION_2
+0x4000197	            0x415c	                                 pop r12	        78	wakeup.c	FUNCTION_2
+0x4000199	              0xc3	                                     ret	        78	wakeup.c	FUNCTION_2

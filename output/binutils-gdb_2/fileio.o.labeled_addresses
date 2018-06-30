@@ -1,0 +1,238 @@
+fileio_to_host_openflags	DO,0:FOR,0:CALL,0:ELSE,0:SWITCH,0:IF,8:WHILE,0:functions,0	31
+0x4000060	            0x89f8	                            mov eax, edi	        85	fileio.c	FUNCTION_2	IF_1
+0x4000062	      0x25f4f1ffff	                     and eax, 0xfffff1f4	        85	fileio.c	FUNCTION_2	IF_1
+0x4000067	            0x754f	                           jne 0x40000b8	        85	fileio.c	FUNCTION_2	IF_1
+0x4000069	            0x89fa	                            mov edx, edi	        89	fileio.c	FUNCTION_2	IF_2
+0x400006b	          0xc1ea03	                              shr edx, 3	        89	fileio.c	FUNCTION_2	IF_2
+0x400006e	          0x83e240	                           and edx, 0x40	        89	fileio.c	FUNCTION_2	IF_2
+0x4000071	            0x89d1	                            mov ecx, edx	        91	fileio.c	FUNCTION_2	IF_3
+0x4000073	          0x80c980	                             or cl, 0x80	        91	fileio.c	FUNCTION_2	IF_3
+0x4000076	    0xf7c700080000	                         test edi, 0x800	        91	fileio.c	FUNCTION_2	IF_3
+0x400007c	           0xf45d1	                         cmovne edx, ecx	        91	fileio.c	FUNCTION_2	IF_3
+0x400007f	            0x89d1	                            mov ecx, edx	        93	fileio.c	FUNCTION_2	IF_4
+0x4000081	          0x80cd02	                                or ch, 2	        93	fileio.c	FUNCTION_2	IF_4
+0x4000084	    0xf7c700040000	                         test edi, 0x400	        93	fileio.c	FUNCTION_2	IF_4
+0x400008a	           0xf45d1	                         cmovne edx, ecx	        93	fileio.c	FUNCTION_2	IF_4
+0x400008d	            0x89d1	                            mov ecx, edx	        95	fileio.c	FUNCTION_2	IF_5
+0x400008f	          0x80cd04	                                or ch, 4	        95	fileio.c	FUNCTION_2	IF_5
+0x4000092	        0x40f6c708	                             test dil, 8	        95	fileio.c	FUNCTION_2	IF_5
+0x4000096	           0xf45d1	                         cmovne edx, ecx	        95	fileio.c	FUNCTION_2	IF_5
+0x4000099	            0x89d1	                            mov ecx, edx	        99	fileio.c	FUNCTION_2	IF_7
+0x400009b	          0x83c901	                               or ecx, 1	        99	fileio.c	FUNCTION_2	IF_7
+0x400009e	        0x40f6c701	                             test dil, 1	        99	fileio.c	FUNCTION_2	IF_7
+0x40000a2	           0xf45d1	                         cmovne edx, ecx	        99	fileio.c	FUNCTION_2	IF_7
+0x40000a5	            0x89d1	                            mov ecx, edx	       101	fileio.c	FUNCTION_2	IF_8
+0x40000a7	          0x83c902	                               or ecx, 2	       101	fileio.c	FUNCTION_2	IF_8
+0x40000aa	          0x83e702	                              and edi, 2	       101	fileio.c	FUNCTION_2	IF_8
+0x40000ad	           0xf45d1	                         cmovne edx, ecx	       101	fileio.c	FUNCTION_2	IF_8
+0x40000b0	            0x8916	                    mov dword [rsi], edx	       108	fileio.c	FUNCTION_2
+0x40000b2	              0xc3	                                     ret	       109	fileio.c	FUNCTION_2
+0x40000b3	       0xf1f440000	                   nop dword [rax + rax]	       109	fileio.c	FUNCTION_2
+0x40000b8	      0xb8ffffffff	                     mov eax, 0xffffffff	        86	fileio.c	FUNCTION_2	IF_1
+0x40000bd	              0xc3	                                     ret	       110	fileio.c	FUNCTION_2
+fileio_to_host_mode	DO,0:FOR,0:CALL,0:ELSE,0:SWITCH,0:IF,13:WHILE,0:functions,0	9
+0x40000c0	            0x89f8	                            mov eax, edi	       119	fileio.c	FUNCTION_3	IF_1
+0x40000c2	      0x25003effff	                     and eax, 0xffff3e00	       119	fileio.c	FUNCTION_3	IF_1
+0x40000c7	            0x750f	                           jne 0x40000d8	       119	fileio.c	FUNCTION_3	IF_1
+0x40000c9	    0x81e7ffe10000	                         and edi, 0xe1ff	       154	fileio.c	FUNCTION_3	IF_13
+0x40000cf	            0x893e	                    mov dword [rsi], edi	       157	fileio.c	FUNCTION_3
+0x40000d1	              0xc3	                                     ret	       158	fileio.c	FUNCTION_3
+0x40000d2	    0x660f1f440000	                    nop word [rax + rax]	       158	fileio.c	FUNCTION_3
+0x40000d8	      0xb8ffffffff	                     mov eax, 0xffffffff	       120	fileio.c	FUNCTION_3	IF_1
+0x40000dd	              0xc3	                                     ret	       159	fileio.c	FUNCTION_3
+host_to_fileio_error	DO,0:FOR,0:CALL,0:ELSE,0:SWITCH,1:IF,0:WHILE,0:functions,0	6
+0x4000040	          0x83ef01	                              sub edi, 1	        29	fileio.c	FUNCTION_1
+0x4000043	      0xb80f270000	                         mov eax, 0x270f	        30	fileio.c	FUNCTION_1	SWITCH_1
+0x4000048	          0x83ff25	                           cmp edi, 0x25	        30	fileio.c	FUNCTION_1	SWITCH_1
+0x400004b	            0x7708	                            ja 0x4000055	        30	fileio.c	FUNCTION_1	SWITCH_1
+0x400004d	     0xfbf843f0000	             movsx eax, word [rdi + rdi]	        30	fileio.c	FUNCTION_1	SWITCH_1
+0x4000055	            0xf3c3	                                     ret	        76	fileio.c	FUNCTION_1
+host_to_fileio_stat	DO,0:FOR,0:CALL,14:ELSE,0:SWITCH,0:IF,0:WHILE,0:functions,0	188
+0x40000e0	          0x488b07	                    mov rax, qword [rdi]	       228	fileio.c	FUNCTION_7	CALL_1
+0x40000e3	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x40000e6	          0x884603	                  mov byte [rsi + 3], al	        50	fileio.h	FUNCTION_8	FOR_1
+0x40000e9	        0x48c1fa18	                           sar rdx, 0x18	        50	fileio.h	FUNCTION_8	FOR_1
+0x40000ed	            0x8816	                      mov byte [rsi], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40000ef	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x40000f2	        0x48c1fa10	                           sar rdx, 0x10	        50	fileio.h	FUNCTION_8	FOR_1
+0x40000f6	          0x885601	                  mov byte [rsi + 1], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40000f9	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x40000fc	        0x48c1fa08	                              sar rdx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000100	          0x885602	                  mov byte [rsi + 2], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000103	        0x488b4708	                mov rax, qword [rdi + 8]	       229	fileio.c	FUNCTION_7	CALL_2
+0x4000107	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x400010a	          0x884607	                  mov byte [rsi + 7], al	        50	fileio.h	FUNCTION_8	FOR_1
+0x400010d	        0x48c1fa18	                           sar rdx, 0x18	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000111	          0x885604	                  mov byte [rsi + 4], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000114	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000117	        0x48c1fa10	                           sar rdx, 0x10	        50	fileio.h	FUNCTION_8	FOR_1
+0x400011b	          0x885605	                  mov byte [rsi + 5], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x400011e	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000121	      0xb800800000	                         mov eax, 0x8000	       169	fileio.c	FUNCTION_4	IF_1
+0x4000126	        0x48c1fa08	                              sar rdx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x400012a	          0x885606	                  mov byte [rsi + 6], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x400012d	          0x8b5718	            mov edx, dword [rdi + 0x18] 	       230	fileio.c	FUNCTION_7	CALL_3
+0x4000130	            0x89d1	                            mov ecx, edx	       168	fileio.c	FUNCTION_4	IF_1	CALL_1
+0x4000132	    0x81e100f00000	                         and ecx, 0xf000	       168	fileio.c	FUNCTION_4	IF_1	CALL_1
+0x4000138	    0x81f900800000	                         cmp ecx, 0x8000	       168	fileio.c	FUNCTION_4	IF_1	CALL_1
+0x400013e	            0x7420	                            je 0x4000160	       168	fileio.c	FUNCTION_4	IF_1	CALL_1
+0x4000140	    0x81f900400000	                         cmp ecx, 0x4000	       170	fileio.c	FUNCTION_4	IF_2	CALL_2
+0x4000146	      0xb800400000	                         mov eax, 0x4000	       171	fileio.c	FUNCTION_4	IF_2
+0x400014b	            0x7413	                            je 0x4000160	       170	fileio.c	FUNCTION_4	IF_2	CALL_2
+0x400014d	    0x81f900200000	                         cmp ecx, 0x2000	       166	fileio.c	FUNCTION_4
+0x4000153	      0xb800200000	                         mov eax, 0x2000	       166	fileio.c	FUNCTION_4
+0x4000158	      0xb900000000	                              mov ecx, 0	       166	fileio.c	FUNCTION_4
+0x400015d	           0xf45c1	                         cmovne eax, ecx	       166	fileio.c	FUNCTION_4
+0x4000160	            0x89c1	                            mov ecx, eax	       175	fileio.c	FUNCTION_4	IF_4
+0x4000162	        0xc6460800	                   mov byte [rsi + 8], 0	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000166	        0xc6460900	                   mov byte [rsi + 9], 0	        50	fileio.h	FUNCTION_8	FOR_1
+0x400016a	          0x80cd01	                                or ch, 1	       175	fileio.c	FUNCTION_4	IF_4
+0x400016d	          0xf6c601	                              test dh, 1	       175	fileio.c	FUNCTION_4	IF_4
+0x4000170	           0xf45c1	                         cmovne eax, ecx	       175	fileio.c	FUNCTION_4	IF_4
+0x4000173	            0x89c1	                            mov ecx, eax	       177	fileio.c	FUNCTION_4	IF_5
+0x4000175	          0x80c980	                             or cl, 0x80	       177	fileio.c	FUNCTION_4	IF_5
+0x4000178	          0xf6c280	                           test dl, 0x80	       177	fileio.c	FUNCTION_4	IF_5
+0x400017b	           0xf45c1	                         cmovne eax, ecx	       177	fileio.c	FUNCTION_4	IF_5
+0x400017e	            0x89c1	                            mov ecx, eax	       179	fileio.c	FUNCTION_4	IF_6
+0x4000180	          0x83c940	                            or ecx, 0x40	       179	fileio.c	FUNCTION_4	IF_6
+0x4000183	          0xf6c240	                           test dl, 0x40	       179	fileio.c	FUNCTION_4	IF_6
+0x4000186	           0xf45c1	                         cmovne eax, ecx	       179	fileio.c	FUNCTION_4	IF_6
+0x4000189	            0x89c1	                            mov ecx, eax	       182	fileio.c	FUNCTION_4	IF_7
+0x400018b	          0x83c920	                            or ecx, 0x20	       182	fileio.c	FUNCTION_4	IF_7
+0x400018e	          0xf6c220	                           test dl, 0x20	       182	fileio.c	FUNCTION_4	IF_7
+0x4000191	           0xf45c1	                         cmovne eax, ecx	       182	fileio.c	FUNCTION_4	IF_7
+0x4000194	            0x89c1	                            mov ecx, eax	       186	fileio.c	FUNCTION_4	IF_8
+0x4000196	          0x83c910	                            or ecx, 0x10	       186	fileio.c	FUNCTION_4	IF_8
+0x4000199	          0xf6c210	                           test dl, 0x10	       186	fileio.c	FUNCTION_4	IF_8
+0x400019c	           0xf45c1	                         cmovne eax, ecx	       186	fileio.c	FUNCTION_4	IF_8
+0x400019f	            0x89c1	                            mov ecx, eax	       190	fileio.c	FUNCTION_4	IF_9
+0x40001a1	          0x83c908	                               or ecx, 8	       190	fileio.c	FUNCTION_4	IF_9
+0x40001a4	          0xf6c208	                              test dl, 8	       190	fileio.c	FUNCTION_4	IF_9
+0x40001a7	           0xf45c1	                         cmovne eax, ecx	       190	fileio.c	FUNCTION_4	IF_9
+0x40001aa	            0x89c1	                            mov ecx, eax	       193	fileio.c	FUNCTION_4	IF_10
+0x40001ac	          0x83c904	                               or ecx, 4	       193	fileio.c	FUNCTION_4	IF_10
+0x40001af	          0xf6c204	                              test dl, 4	       193	fileio.c	FUNCTION_4	IF_10
+0x40001b2	           0xf45c1	                         cmovne eax, ecx	       193	fileio.c	FUNCTION_4	IF_10
+0x40001b5	            0x89c1	                            mov ecx, eax	       196	fileio.c	FUNCTION_4	IF_11
+0x40001b7	          0x83c902	                               or ecx, 2	       196	fileio.c	FUNCTION_4	IF_11
+0x40001ba	          0xf6c202	                              test dl, 2	       196	fileio.c	FUNCTION_4	IF_11
+0x40001bd	           0xf45c1	                         cmovne eax, ecx	       196	fileio.c	FUNCTION_4	IF_11
+0x40001c0	            0x89c1	                            mov ecx, eax	       200	fileio.c	FUNCTION_4	IF_12
+0x40001c2	          0x83c901	                               or ecx, 1	       200	fileio.c	FUNCTION_4	IF_12
+0x40001c5	          0x83e201	                              and edx, 1	       200	fileio.c	FUNCTION_4	IF_12
+0x40001c8	           0xf45c1	                         cmovne eax, ecx	       200	fileio.c	FUNCTION_4	IF_12
+0x40001cb	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001ce	          0x88460b	                mov byte [rsi + 0xb], al	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001d1	        0x48c1ea08	                              shr rdx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001d5	          0x88560a	                mov byte [rsi + 0xa], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001d8	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       231	fileio.c	FUNCTION_7	CALL_4
+0x40001dc	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001df	          0x88460f	                mov byte [rsi + 0xf], al	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001e2	        0x48c1fa18	                           sar rdx, 0x18	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001e6	          0x88560c	                mov byte [rsi + 0xc], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001e9	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001ec	        0x48c1fa10	                           sar rdx, 0x10	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001f0	          0x88560d	                mov byte [rsi + 0xd], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001f3	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001f6	        0x48c1fa08	                              sar rdx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001fa	          0x88560e	                mov byte [rsi + 0xe], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40001fd	          0x8b471c	            mov eax, dword [rdi + 0x1c] 	       232	fileio.c	FUNCTION_7	CALL_5
+0x4000200	          0x4889c1	                            mov rcx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000203	          0x4889c2	                            mov rdx, rax	       232	fileio.c	FUNCTION_7	CALL_5
+0x4000206	        0x48c1f918	                           sar rcx, 0x18	        50	fileio.h	FUNCTION_8	FOR_1
+0x400020a	          0x885613	               mov byte [rsi + 0x13], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x400020d	          0x884e10	               mov byte [rsi + 0x10], cl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000210	          0x4889c1	                            mov rcx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000213	        0x48c1f808	                              sar rax, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000217	        0x48c1f910	                           sar rcx, 0x10	        50	fileio.h	FUNCTION_8	FOR_1
+0x400021b	          0x884612	               mov byte [rsi + 0x12], al	        50	fileio.h	FUNCTION_8	FOR_1
+0x400021e	          0x884e11	               mov byte [rsi + 0x11], cl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000221	          0x8b4720	            mov eax, dword [rdi + 0x20] 	       233	fileio.c	FUNCTION_7	CALL_6
+0x4000224	          0x4889c1	                            mov rcx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000227	          0x4889c2	                            mov rdx, rax	       233	fileio.c	FUNCTION_7	CALL_6
+0x400022a	        0x48c1f918	                           sar rcx, 0x18	        50	fileio.h	FUNCTION_8	FOR_1
+0x400022e	          0x885617	               mov byte [rsi + 0x17], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000231	          0x884e14	               mov byte [rsi + 0x14], cl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000234	          0x4889c1	                            mov rcx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000237	        0x48c1f808	                              sar rax, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x400023b	        0x48c1f910	                           sar rcx, 0x10	        50	fileio.h	FUNCTION_8	FOR_1
+0x400023f	          0x884616	               mov byte [rsi + 0x16], al	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000242	          0x884e15	               mov byte [rsi + 0x15], cl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000245	        0x488b4728	            mov rax, qword [rdi + 0x28] 	       234	fileio.c	FUNCTION_7	CALL_7
+0x4000249	      0xb938000000	                           mov ecx, 0x38	       235	fileio.c	FUNCTION_7	CALL_8
+0x400024e	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000251	          0x88461b	               mov byte [rsi + 0x1b], al	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000254	        0x48c1fa18	                           sar rdx, 0x18	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000258	          0x885618	               mov byte [rsi + 0x18], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x400025b	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x400025e	        0x48c1fa10	                           sar rdx, 0x10	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000262	          0x885619	               mov byte [rsi + 0x19], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000265	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000268	        0x488d461c	                   lea rax, [rsi + 0x1c]	       235	fileio.c	FUNCTION_7	CALL_8
+0x400026c	        0x48c1fa08	                              sar rdx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000270	          0x88561a	               mov byte [rsi + 0x1a], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000273	        0x4c8b4730	              mov r8, qword [rdi + 0x30]	       235	fileio.c	FUNCTION_7	CALL_8
+0x4000277	    0x660f1f840000	                    nop word [rax + rax]	       235	fileio.c	FUNCTION_7	CALL_8
+0x4000280	          0x4c89c2	                             mov rdx, r8	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000283	        0x4883c001	                              add rax, 1	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000287	          0x48d3fa	                             sar rdx, cl	        50	fileio.h	FUNCTION_8	FOR_1
+0x400028a	          0x83e908	                              sub ecx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x400028d	          0x8850ff	                  mov byte [rax - 1], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000290	          0x83f9f8	             cmp ecx, 0xfffffffffffffff8	        49	fileio.h	FUNCTION_8	FOR_1
+0x4000293	            0x75eb	                           jne 0x4000280	        49	fileio.h	FUNCTION_8	FOR_1
+0x4000295	        0x4c8b4738	              mov r8, qword [rdi + 0x38]	       237	fileio.c	FUNCTION_7
+0x4000299	        0x488d4624	                   lea rax, [rsi + 0x24]	       241	fileio.c	FUNCTION_7	CALL_9
+0x400029d	      0xb938000000	                           mov ecx, 0x38	       241	fileio.c	FUNCTION_7	CALL_9
+0x40002a2	    0x660f1f440000	                    nop word [rax + rax]	       241	fileio.c	FUNCTION_7	CALL_9
+0x40002a8	          0x4c89c2	                             mov rdx, r8	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002ab	        0x4883c001	                              add rax, 1	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002af	          0x48d3fa	                             sar rdx, cl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002b2	          0x83e908	                              sub ecx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002b5	          0x8850ff	                  mov byte [rax - 1], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002b8	          0x83f9f8	             cmp ecx, 0xfffffffffffffff8	        49	fileio.h	FUNCTION_8	FOR_1
+0x40002bb	            0x75eb	                           jne 0x40002a8	        49	fileio.h	FUNCTION_8	FOR_1
+0x40002bd	        0x4c8b4740	              mov r8, qword [rdi + 0x40]	       243	fileio.c	FUNCTION_7	CALL_10
+0x40002c1	        0x488d462c	                   lea rax, [rsi + 0x2c]	       243	fileio.c	FUNCTION_7	CALL_10
+0x40002c5	      0xb938000000	                           mov ecx, 0x38	       243	fileio.c	FUNCTION_7	CALL_10
+0x40002ca	    0x660f1f440000	                    nop word [rax + rax]	       243	fileio.c	FUNCTION_7	CALL_10
+0x40002d0	          0x4c89c2	                             mov rdx, r8	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002d3	        0x4883c001	                              add rax, 1	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002d7	          0x48d3fa	                             sar rdx, cl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002da	          0x83e908	                              sub ecx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002dd	          0x8850ff	                  mov byte [rax - 1], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002e0	          0x83f9f8	             cmp ecx, 0xfffffffffffffff8	        49	fileio.h	FUNCTION_8	FOR_1
+0x40002e3	            0x75eb	                           jne 0x40002d0	        49	fileio.h	FUNCTION_8	FOR_1
+0x40002e5	        0x488b4748	            mov rax, qword [rdi + 0x48] 	       252	fileio.c	FUNCTION_7	CALL_12
+0x40002e9	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002ec	          0x884637	               mov byte [rsi + 0x37], al	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002ef	        0x48c1fa18	                           sar rdx, 0x18	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002f3	          0x885634	               mov byte [rsi + 0x34], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002f6	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002f9	        0x48c1fa10	                           sar rdx, 0x10	        50	fileio.h	FUNCTION_8	FOR_1
+0x40002fd	          0x885635	               mov byte [rsi + 0x35], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000300	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000303	        0x48c1fa08	                              sar rdx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000307	          0x885636	               mov byte [rsi + 0x36], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x400030a	        0x488b4758	            mov rax, qword [rdi + 0x58] 	       253	fileio.c	FUNCTION_7	CALL_13
+0x400030e	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000311	          0x88463b	               mov byte [rsi + 0x3b], al	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000314	        0x48c1fa18	                           sar rdx, 0x18	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000318	          0x885638	               mov byte [rsi + 0x38], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x400031b	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x400031e	        0x48c1fa10	                           sar rdx, 0x10	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000322	          0x885639	               mov byte [rsi + 0x39], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000325	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000328	        0x48c1fa08	                              sar rdx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x400032c	          0x88563a	               mov byte [rsi + 0x3a], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x400032f	        0x488b4768	            mov rax, qword [rdi + 0x68] 	       254	fileio.c	FUNCTION_7	CALL_14
+0x4000333	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000336	          0x88463f	               mov byte [rsi + 0x3f], al	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000339	        0x48c1fa18	                           sar rdx, 0x18	        50	fileio.h	FUNCTION_8	FOR_1
+0x400033d	          0x88563c	               mov byte [rsi + 0x3c], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000340	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000343	        0x48c1fa10	                           sar rdx, 0x10	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000347	          0x88563d	               mov byte [rsi + 0x3d], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x400034a	          0x4889c2	                            mov rdx, rax	        50	fileio.h	FUNCTION_8	FOR_1
+0x400034d	        0x48c1fa08	                              sar rdx, 8	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000351	          0x88563e	               mov byte [rsi + 0x3e], dl	        50	fileio.h	FUNCTION_8	FOR_1
+0x4000354	              0xc3	                                     ret	        50	fileio.h	FUNCTION_8	FOR_1

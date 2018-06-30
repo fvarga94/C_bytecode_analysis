@@ -1,0 +1,40 @@
+pci_iomap	DO,0:CALL,1:FOR,0:IF,0:functions,0:WHILE,0:ELSE,0:SWITCH,0	3
+0x40000c0	          0x4889d1	                            mov rcx, rdx	       113	pci_iomap.c	FUNCTION_3	CALL_1
+0x40000c3	            0x31d2	                            xor edx, edx	       113	pci_iomap.c	FUNCTION_3	CALL_1
+0x40000c5	      0xe976ffffff	                 jmp sym.pci_iomap_range	       113	pci_iomap.c	FUNCTION_3	CALL_1
+pci_iomap_wc	DO,0:CALL,1:FOR,0:IF,0:functions,0:WHILE,0:ELSE,0:SWITCH,0	3
+0x4000140	          0x4889d1	                            mov rcx, rdx	       134	pci_iomap.c	FUNCTION_4	CALL_1
+0x4000143	            0x31d2	                            xor edx, edx	       134	pci_iomap.c	FUNCTION_4	CALL_1
+0x4000145	            0xeb89	              jmp sym.pci_iomap_wc_range	       134	pci_iomap.c	FUNCTION_4	CALL_1
+pci_iomap_wc_range	DO,0:CALL,4:FOR,0:IF,4:functions,0:WHILE,0:ELSE,0:SWITCH,0	31
+0x40000d0	          0x4863c6	                         movsxd rax, esi	        73	pci_iomap.c	FUNCTION_2	CALL_1
+0x40000d3	          0x4989c0	                             mov r8, rax	        73	pci_iomap.c	FUNCTION_2	CALL_1
+0x40000d6	        0x49c1e006	                               shl r8, 6	        73	pci_iomap.c	FUNCTION_2	CALL_1
+0x40000da	          0x4901f8	                             add r8, rdi	        73	pci_iomap.c	FUNCTION_2	CALL_1
+0x40000dd	    0x498bb0780300	            mov rsi, qword [r8 + 0x378] 	        73	pci_iomap.c	FUNCTION_2	CALL_1
+0x40000e4	          0x4885f6	                           test rsi, rsi	        74	pci_iomap.c	FUNCTION_2	CALL_2
+0x40000e7	            0x7503	                           jne 0x40000ec	        74	pci_iomap.c	FUNCTION_2	CALL_2
+0x40000e9	            0x31c0	                            xor eax, eax	        94	pci_iomap.c	FUNCTION_2
+0x40000eb	              0xc3	                                     ret	        94	pci_iomap.c	FUNCTION_2
+0x40000ec	        0x4883c00e	                            add rax, 0xe	        75	pci_iomap.c	FUNCTION_2	CALL_3
+0x40000f0	    0x4d8b80800300	              mov r8, qword [r8 + 0x380]	        74	pci_iomap.c	FUNCTION_2	CALL_2
+0x40000f7	        0x48c1e006	                              shl rax, 6	        75	pci_iomap.c	FUNCTION_2	CALL_3
+0x40000fb	      0x488b440710	      mov rax, qword [rdi + rax + 0x10] 	        75	pci_iomap.c	FUNCTION_2	CALL_3
+0x4000100	        0x4983c001	                               add r8, 1	        74	pci_iomap.c	FUNCTION_2	CALL_2
+0x4000104	          0x4929f0	                             sub r8, rsi	        74	pci_iomap.c	FUNCTION_2	CALL_2
+0x4000107	          0xf6c401	                              test ah, 1	        78	pci_iomap.c	FUNCTION_2	IF_1
+0x400010a	            0x75dd	                           jne 0x40000e9	        78	pci_iomap.c	FUNCTION_2	IF_1
+0x400010c	          0x4939d0	                             cmp r8, rdx	        81	pci_iomap.c	FUNCTION_2	IF_2
+0x400010f	            0x76d8	                           jbe 0x40000e9	        81	pci_iomap.c	FUNCTION_2	IF_2
+0x4000111	          0x4929d0	                             sub r8, rdx	        84	pci_iomap.c	FUNCTION_2
+0x4000114	          0x4885c9	                           test rcx, rcx	        86	pci_iomap.c	FUNCTION_2	IF_3
+0x4000117	        0x488d3c16	                    lea rdi, [rsi + rdx]	        85	pci_iomap.c	FUNCTION_2
+0x400011b	            0x7412	                            je 0x400012f	        86	pci_iomap.c	FUNCTION_2	IF_3
+0x400011d	          0x4939c8	                             cmp r8, rcx	        86	pci_iomap.c	FUNCTION_2	IF_3
+0x4000120	            0x760d	                           jbe 0x400012f	        86	pci_iomap.c	FUNCTION_2	IF_3
+0x4000122	          0xf6c402	                              test ah, 2	        89	pci_iomap.c	FUNCTION_2	IF_4
+0x4000125	            0x74c2	                            je 0x40000e9	        89	pci_iomap.c	FUNCTION_2	IF_4
+0x4000127	          0x4889ce	                            mov rsi, rcx	        90	pci_iomap.c	FUNCTION_2	CALL_4
+0x400012a	      0xe900000000	                           jmp 0x400012f	        90	pci_iomap.c	FUNCTION_2	CALL_4
+0x400012f	          0x4c89c1	                             mov rcx, r8	        84	pci_iomap.c	FUNCTION_2
+0x4000132	            0xebee	                           jmp 0x4000122	        84	pci_iomap.c	FUNCTION_2

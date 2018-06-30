@@ -1,0 +1,36 @@
+acpi_pci_detect_ejectable	SWITCH,0:CALL,1:ELSE,0:WHILE,0:DO,0:functions,0:FOR,0:IF,1	23
+0x4000040	        0x4883ec10	                           sub rsp, 0x10	       200	acpi_pcihp.c	FUNCTION_6
+0x4000044	    0x65488b042528	                mov rax, qword gs:[0x28]	       200	acpi_pcihp.c	FUNCTION_6
+0x400004d	      0x4889442408	                mov qword [rsp + 8], rax	       200	acpi_pcihp.c	FUNCTION_6
+0x4000052	            0x31c0	                            xor eax, eax	       200	acpi_pcihp.c	FUNCTION_6
+0x4000054	          0x4885ff	                           test rdi, rdi	       203	acpi_pcihp.c	FUNCTION_6	IF_1
+0x4000057	    0xc74424040000	                  mov dword [rsp + 4], 0	       201	acpi_pcihp.c	FUNCTION_6
+0x400005f	            0x7428	                            je 0x4000089	       203	acpi_pcihp.c	FUNCTION_6	IF_1
+0x4000061	            0x6a00	                                  push 0	       206	acpi_pcihp.c	FUNCTION_6	CALL_1
+0x4000063	      0xba01000000	                              mov edx, 1	       206	acpi_pcihp.c	FUNCTION_6	CALL_1
+0x4000068	          0x4889fe	                            mov rsi, rdi	       206	acpi_pcihp.c	FUNCTION_6	CALL_1
+0x400006b	          0x4531c0	                            xor r8d, r8d	       206	acpi_pcihp.c	FUNCTION_6	CALL_1
+0x400006e	    0x48c7c1000000	                              mov rcx, 0	       206	acpi_pcihp.c	FUNCTION_6	CALL_1
+0x4000075	      0xbf06000000	                              mov edi, 6	       206	acpi_pcihp.c	FUNCTION_6	CALL_1
+0x400007a	      0x4c8d4c240c	                     lea r9, [rsp + 0xc]	       206	acpi_pcihp.c	FUNCTION_6	CALL_1
+0x400007f	      0xe800000000	                          call 0x4000084	       206	acpi_pcihp.c	FUNCTION_6	CALL_1
+0x4000084	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       208	acpi_pcihp.c	FUNCTION_6
+0x4000088	              0x5a	                                 pop rdx	       208	acpi_pcihp.c	FUNCTION_6
+0x4000089	      0x488b542408	                mov rdx, qword [rsp + 8]	       209	acpi_pcihp.c	FUNCTION_6
+0x400008e	    0x654833142528	                xor rdx, qword gs:[0x28]	       209	acpi_pcihp.c	FUNCTION_6
+0x4000097	            0x7505	                           jne 0x400009e	       209	acpi_pcihp.c	FUNCTION_6
+0x4000099	        0x4883c410	                           add rsp, 0x10	       209	acpi_pcihp.c	FUNCTION_6
+0x400009d	              0xc3	                                     ret	       209	acpi_pcihp.c	FUNCTION_6
+0x400009e	      0xe800000000	                          call 0x40000a3	       209	acpi_pcihp.c	FUNCTION_6
+check_hotplug	SWITCH,0:CALL,1:ELSE,0:WHILE,0:DO,0:functions,0:FOR,0:IF,1	11
+0x4000530	              0x53	                                push rbx	       184	acpi_pcihp.c	FUNCTION_5
+0x4000531	          0x4889d3	                            mov rbx, rdx	       184	acpi_pcihp.c	FUNCTION_5
+0x4000534	      0xe867ffffff	             call sym.pcihp_is_ejectable	       186	acpi_pcihp.c	FUNCTION_5	IF_1	CALL_1
+0x4000539	            0x31c9	                            xor ecx, ecx	       186	acpi_pcihp.c	FUNCTION_5	IF_1	CALL_1
+0x400053b	            0x85c0	                           test eax, eax	       186	acpi_pcihp.c	FUNCTION_5	IF_1	CALL_1
+0x400053d	            0x740b	                            je 0x400054a	       186	acpi_pcihp.c	FUNCTION_5	IF_1	CALL_1
+0x400053f	    0xc70301000000	                      mov dword [rbx], 1	       187	acpi_pcihp.c	FUNCTION_5	IF_1
+0x4000545	      0xb903400000	                         mov ecx, 0x4003	       188	acpi_pcihp.c	FUNCTION_5	IF_1
+0x400054a	            0x89c8	                            mov eax, ecx	       191	acpi_pcihp.c	FUNCTION_5
+0x400054c	              0x5b	                                 pop rbx	       191	acpi_pcihp.c	FUNCTION_5
+0x400054d	              0xc3	                                     ret	       191	acpi_pcihp.c	FUNCTION_5

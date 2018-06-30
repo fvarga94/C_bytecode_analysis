@@ -1,0 +1,98 @@
+acpi_read	functions,0:ELSE,0:WHILE,0:FOR,0:CALL,2:SWITCH,0:IF,0:DO,0	1
+0x4000045	      0xe900000000	          jmp sym.acpi_read_bit_register	        98	hwxface.c	FUNCTION_2	CALL_2
+acpi_write_bit_register	functions,0:ELSE,1:WHILE,0:FOR,0:CALL,13:SWITCH,0:IF,4:DO,0	62
+0x40000b3	            0x4154	                                push r12	       215	hwxface.c	FUNCTION_5
+0x40000b5	              0x55	                                push rbp	       215	hwxface.c	FUNCTION_5
+0x40000b6	          0x4189f4	                           mov r12d, esi	       215	hwxface.c	FUNCTION_5
+0x40000b9	              0x53	                                push rbx	       215	hwxface.c	FUNCTION_5
+0x40000ba	        0x4883ec18	                           sub rsp, 0x18	       215	hwxface.c	FUNCTION_5
+0x40000be	    0x65488b042528	                mov rax, qword gs:[0x28]	       215	hwxface.c	FUNCTION_5
+0x40000c7	      0x4889442410	             mov qword [rsp + 0x10], rax	       215	hwxface.c	FUNCTION_5
+0x40000cc	            0x31c0	                            xor eax, eax	       215	hwxface.c	FUNCTION_5
+0x40000ce	      0xe800000000	                          call 0x40000d3	       225	hwxface.c	FUNCTION_5	CALL_2
+0x40000d3	          0x4889c3	                            mov rbx, rax	       225	hwxface.c	FUNCTION_5	CALL_2
+0x40000d6	      0xb801100000	                         mov eax, 0x1001	       225	hwxface.c	FUNCTION_5	CALL_2
+0x40000db	          0x4885db	                           test rbx, rbx	       226	hwxface.c	FUNCTION_5	IF_1
+0x40000de	     0xf8486000000	                            je 0x400016a	       226	hwxface.c	FUNCTION_5	IF_1
+0x40000e4	    0x488b3d000000	            mov rdi, qword [0x040000eb] 	       108	aclinuxex.h	FUNCTION_12	CALL_1
+0x40000eb	      0xe800000000	                          call 0x40000f0	       108	aclinuxex.h	FUNCTION_12	CALL_1
+0x40000f0	           0xfb63b	                   movzx edi, byte [rbx]	       236	hwxface.c	FUNCTION_5	IF_2
+0x40000f3	          0x4889c5	                            mov rbp, rax	       108	aclinuxex.h	FUNCTION_12	CALL_1
+0x40000f6	        0x4080ff01	                              cmp dil, 1	       236	hwxface.c	FUNCTION_5	IF_2
+0x40000fa	            0x7434	                            je 0x4000130	       236	hwxface.c	FUNCTION_5	IF_2
+0x40000fc	      0x488d74240c	                    lea rsi, [rsp + 0xc]	       243	hwxface.c	FUNCTION_5	IF_2	CALL_5
+0x4000101	      0xe800000000	                          call 0x4000106	       243	hwxface.c	FUNCTION_5	IF_2	CALL_5
+0x4000106	            0x85c0	                           test eax, eax	       245	hwxface.c	FUNCTION_5	IF_2	IF_3	CALL_6
+0x4000108	            0x7549	                           jne 0x4000153	       245	hwxface.c	FUNCTION_5	IF_2	IF_3	CALL_6
+0x400010a	         0xfb74302	               movzx eax, word [rbx + 2]	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x400010e	        0x8b54240c	              mov edx, dword [rsp + 0xc]	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x4000112	         0xfb64b01	               movzx ecx, byte [rbx + 1]	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x4000116	            0x89c6	                            mov esi, eax	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x4000118	            0xf7d6	                                 not esi	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x400011a	            0x21f2	                            and edx, esi	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x400011c	          0x4489e6	                           mov esi, r12d	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x400011f	            0xd3e6	                             shl esi, cl	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x4000121	            0x21f0	                            and eax, esi	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x4000123	             0x9c2	                             or edx, eax	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x4000125	        0x8954240c	              mov dword [rsp + 0xc], edx	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x4000129	            0x89d6	                            mov esi, edx	       253	hwxface.c	FUNCTION_5	IF_2	CALL_7
+0x400012b	           0xfb63b	                   movzx edi, byte [rbx]	       258	hwxface.c	FUNCTION_5	IF_2	CALL_8
+0x400012e	            0xeb1e	                           jmp 0x400014e	       258	hwxface.c	FUNCTION_5	IF_2	CALL_8
+0x4000130	         0xfb64b01	               movzx ecx, byte [rbx + 1]	       269	hwxface.c	FUNCTION_5	ELSE_1	CALL_9
+0x4000134	         0xfb75302	               movzx edx, word [rbx + 2]	       269	hwxface.c	FUNCTION_5	ELSE_1	CALL_9
+0x4000138	          0x4489e6	                           mov esi, r12d	       269	hwxface.c	FUNCTION_5	ELSE_1	CALL_9
+0x400013b	            0x31c0	                            xor eax, eax	       219	hwxface.c	FUNCTION_5
+0x400013d	            0xd3e6	                             shl esi, cl	       269	hwxface.c	FUNCTION_5	ELSE_1	CALL_9
+0x400013f	            0x21d6	                            and esi, edx	       269	hwxface.c	FUNCTION_5	ELSE_1	CALL_9
+0x4000141	            0x85f6	                           test esi, esi	       277	hwxface.c	FUNCTION_5	ELSE_1	IF_4
+0x4000143	        0x8974240c	              mov dword [rsp + 0xc], esi	       269	hwxface.c	FUNCTION_5	ELSE_1	CALL_9
+0x4000147	            0x740a	                            je 0x4000153	       277	hwxface.c	FUNCTION_5	ELSE_1	IF_4
+0x4000149	      0xbf01000000	                              mov edi, 1	       278	hwxface.c	FUNCTION_5	ELSE_1	IF_4
+0x400014e	      0xe800000000	                          call 0x4000153	       278	hwxface.c	FUNCTION_5	ELSE_1	IF_4
+0x4000153	    0x488b3d000000	            mov rdi, qword [0x0400015a] 	       115	aclinuxex.h	FUNCTION_13	CALL_1
+0x400015a	          0x4889ee	                            mov rsi, rbp	       115	aclinuxex.h	FUNCTION_13	CALL_1
+0x400015d	        0x89442404	                mov dword [rsp + 4], eax	       115	aclinuxex.h	FUNCTION_13	CALL_1
+0x4000161	      0xe800000000	                          call 0x4000166	       115	aclinuxex.h	FUNCTION_13	CALL_1
+0x4000166	        0x8b442404	                mov eax, dword [rsp + 4]	       292	hwxface.c	FUNCTION_5	CALL_13
+0x400016a	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       293	hwxface.c	FUNCTION_5
+0x400016f	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       293	hwxface.c	FUNCTION_5
+0x4000178	            0x7405	                            je 0x400017f	       293	hwxface.c	FUNCTION_5
+0x400017a	      0xe800000000	                          call 0x400017f	       293	hwxface.c	FUNCTION_5
+0x400017f	        0x4883c418	                           add rsp, 0x18	       293	hwxface.c	FUNCTION_5
+0x4000183	              0x5b	                                 pop rbx	       293	hwxface.c	FUNCTION_5
+0x4000184	              0x5d	                                 pop rbp	       293	hwxface.c	FUNCTION_5
+0x4000185	            0x415c	                                 pop r12	       293	hwxface.c	FUNCTION_5
+0x4000187	              0xc3	                                     ret	       293	hwxface.c	FUNCTION_5
+acpi_write	functions,0:ELSE,0:WHILE,0:FOR,0:CALL,2:SWITCH,0:IF,0:DO,0	1
+0x4000040	      0xe900000000	                       jmp sym.acpi_read	       122	hwxface.c	FUNCTION_3	CALL_2
+acpi_read_bit_register	functions,0:ELSE,0:WHILE,0:FOR,0:CALL,8:SWITCH,0:IF,2:DO,0	30
+0x400004a	              0x55	                                push rbp	       154	hwxface.c	FUNCTION_4
+0x400004b	              0x53	                                push rbx	       154	hwxface.c	FUNCTION_4
+0x400004c	          0x4889f5	                            mov rbp, rsi	       154	hwxface.c	FUNCTION_4
+0x400004f	        0x4883ec10	                           sub rsp, 0x10	       154	hwxface.c	FUNCTION_4
+0x4000053	    0x65488b042528	                mov rax, qword gs:[0x28]	       154	hwxface.c	FUNCTION_4
+0x400005c	      0x4889442408	                mov qword [rsp + 8], rax	       154	hwxface.c	FUNCTION_4
+0x4000061	            0x31c0	                            xor eax, eax	       154	hwxface.c	FUNCTION_4
+0x4000063	      0xe800000000	                          call 0x4000068	       164	hwxface.c	FUNCTION_4	CALL_2
+0x4000068	          0x4889c3	                            mov rbx, rax	       164	hwxface.c	FUNCTION_4	CALL_2
+0x400006b	      0xb801100000	                         mov eax, 0x1001	       166	hwxface.c	FUNCTION_4	IF_1	CALL_3
+0x4000070	          0x4885db	                           test rbx, rbx	       165	hwxface.c	FUNCTION_4	IF_1
+0x4000073	            0x7422	                            je 0x4000097	       165	hwxface.c	FUNCTION_4	IF_1
+0x4000075	           0xfb63b	                   movzx edi, byte [rbx]	       171	hwxface.c	FUNCTION_4	CALL_4
+0x4000078	      0x488d742404	                      lea rsi, [rsp + 4]	       171	hwxface.c	FUNCTION_4	CALL_4
+0x400007d	      0xe800000000	                          call 0x4000082	       171	hwxface.c	FUNCTION_4	CALL_4
+0x4000082	            0x85c0	                           test eax, eax	       173	hwxface.c	FUNCTION_4	IF_2	CALL_5
+0x4000084	            0x7511	                           jne 0x4000097	       173	hwxface.c	FUNCTION_4	IF_2	CALL_5
+0x4000086	         0xfb75302	               movzx edx, word [rbx + 2]	       187	hwxface.c	FUNCTION_4
+0x400008a	         0xfb64b01	               movzx ecx, byte [rbx + 1]	       187	hwxface.c	FUNCTION_4
+0x400008e	        0x23542404	                and edx, dword [rsp + 4]	       187	hwxface.c	FUNCTION_4
+0x4000092	            0xd3ea	                             shr edx, cl	       187	hwxface.c	FUNCTION_4
+0x4000094	          0x895500	                    mov dword [rbp], edx	       187	hwxface.c	FUNCTION_4
+0x4000097	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       189	hwxface.c	FUNCTION_4
+0x400009c	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       189	hwxface.c	FUNCTION_4
+0x40000a5	            0x7405	                            je 0x40000ac	       189	hwxface.c	FUNCTION_4
+0x40000a7	      0xe800000000	                          call 0x40000ac	       189	hwxface.c	FUNCTION_4
+0x40000ac	        0x4883c410	                           add rsp, 0x10	       189	hwxface.c	FUNCTION_4
+0x40000b0	              0x5b	                                 pop rbx	       189	hwxface.c	FUNCTION_4
+0x40000b1	              0x5d	                                 pop rbp	       189	hwxface.c	FUNCTION_4
+0x40000b2	              0xc3	                                     ret	       189	hwxface.c	FUNCTION_4

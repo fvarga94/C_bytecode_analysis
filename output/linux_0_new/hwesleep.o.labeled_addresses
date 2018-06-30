@@ -1,0 +1,68 @@
+acpi_hw_execute_sleep_method	WHILE,0:CALL,4:DO,0:FOR,0:functions,0:IF,1:ELSE,0:SWITCH,0	32
+0x4000040	        0x4883ec38	                           sub rsp, 0x38	        31	hwesleep.c	FUNCTION_1
+0x4000044	            0x31c9	                            xor ecx, ecx	        45	hwesleep.c	FUNCTION_1	CALL_2
+0x4000046	    0x65488b042528	                mov rax, qword gs:[0x28]	        31	hwesleep.c	FUNCTION_1
+0x400004f	      0x4889442430	             mov qword [rsp + 0x30], rax	        31	hwesleep.c	FUNCTION_1
+0x4000054	            0x31c0	                            xor eax, eax	        31	hwesleep.c	FUNCTION_1
+0x4000056	      0x488d442418	                   lea rax, [rsp + 0x18]	        41	hwesleep.c	FUNCTION_1
+0x400005b	      0x488d542408	                      lea rdx, [rsp + 8]	        45	hwesleep.c	FUNCTION_1	CALL_2
+0x4000060	        0x48893c24	                    mov qword [rsp], rdi	        45	hwesleep.c	FUNCTION_1	CALL_2
+0x4000064	    0xc74424080100	                  mov dword [rsp + 8], 1	        40	hwesleep.c	FUNCTION_1
+0x400006c	    0xc74424180100	               mov dword [rsp + 0x18], 1	        42	hwesleep.c	FUNCTION_1
+0x4000074	      0x4889442410	             mov qword [rsp + 0x10], rax	        41	hwesleep.c	FUNCTION_1
+0x4000079	            0x89f0	                            mov eax, esi	        43	hwesleep.c	FUNCTION_1
+0x400007b	          0x4889fe	                            mov rsi, rdi	        45	hwesleep.c	FUNCTION_1	CALL_2
+0x400007e	            0x31ff	                            xor edi, edi	        45	hwesleep.c	FUNCTION_1	CALL_2
+0x4000080	      0x4889442420	             mov qword [rsp + 0x20], rax	        43	hwesleep.c	FUNCTION_1
+0x4000085	      0xe800000000	                          call 0x400008a	        45	hwesleep.c	FUNCTION_1	CALL_2
+0x400008a	            0x85c0	                           test eax, eax	        46	hwesleep.c	FUNCTION_1	IF_1	CALL_3
+0x400008c	            0x7423	                            je 0x40000b1	        46	hwesleep.c	FUNCTION_1	IF_1	CALL_3
+0x400008e	          0x83f805	                              cmp eax, 5	        46	hwesleep.c	FUNCTION_1	IF_1	CALL_3
+0x4000091	            0x741e	                            je 0x40000b1	        46	hwesleep.c	FUNCTION_1	IF_1	CALL_3
+0x4000093	        0x4c8b0424	                     mov r8, qword [rsp]	        47	hwesleep.c	FUNCTION_1	IF_1	CALL_4
+0x4000097	    0x48c7c1000000	                              mov rcx, 0	        47	hwesleep.c	FUNCTION_1	IF_1	CALL_4
+0x400009e	            0x89c2	                            mov edx, eax	        47	hwesleep.c	FUNCTION_1	IF_1	CALL_4
+0x40000a0	      0xbe30000000	                           mov esi, 0x30	        47	hwesleep.c	FUNCTION_1	IF_1	CALL_4
+0x40000a5	    0x48c7c7000000	                              mov rdi, 0	        47	hwesleep.c	FUNCTION_1	IF_1	CALL_4
+0x40000ac	      0xe800000000	                          call 0x40000b1	        47	hwesleep.c	FUNCTION_1	IF_1	CALL_4
+0x40000b1	      0x488b442430	            mov rax, qword [rsp + 0x30] 	        52	hwesleep.c	FUNCTION_1
+0x40000b6	    0x654833042528	                xor rax, qword gs:[0x28]	        52	hwesleep.c	FUNCTION_1
+0x40000bf	            0x7405	                            je 0x40000c6	        52	hwesleep.c	FUNCTION_1
+0x40000c1	      0xe800000000	                          call 0x40000c6	        52	hwesleep.c	FUNCTION_1
+0x40000c6	        0x4883c438	                           add rsp, 0x38	        52	hwesleep.c	FUNCTION_1
+0x40000ca	              0xc3	                                     ret	        52	hwesleep.c	FUNCTION_1
+acpi_hw_extended_wake_prep	WHILE,0:CALL,5:DO,0:FOR,0:functions,0:IF,1:ELSE,0:SWITCH,0	14
+0x4000196	            0x31ff	                            xor edi, edi	       155	hwesleep.c	FUNCTION_3	CALL_2
+0x4000198	    0x48c7c2000000	                              mov rdx, 0	       155	hwesleep.c	FUNCTION_3	CALL_2
+0x400019f	    0x48c7c6000000	                              mov rsi, 0	       155	hwesleep.c	FUNCTION_3	CALL_2
+0x40001a6	      0xe800000000	                          call 0x40001ab	       155	hwesleep.c	FUNCTION_3	CALL_2
+0x40001ab	            0x85c0	                           test eax, eax	       158	hwesleep.c	FUNCTION_3	IF_1	CALL_3
+0x40001ad	            0x751d	                           jne 0x40001cc	       158	hwesleep.c	FUNCTION_3	IF_1	CALL_3
+0x40001af	     0xfb63d000000	           movzx edi, byte [0x040001b6] 	       163	hwesleep.c	FUNCTION_3	IF_1	CALL_4
+0x40001b6	    0x48c7c6000000	                              mov rsi, 0	       163	hwesleep.c	FUNCTION_3	IF_1	CALL_4
+0x40001bd	          0xc1e702	                              shl edi, 2	       163	hwesleep.c	FUNCTION_3	IF_1	CALL_4
+0x40001c0	          0x83e71c	                           and edi, 0x1c	       163	hwesleep.c	FUNCTION_3	IF_1	CALL_4
+0x40001c3	        0x4883cf20	                            or rdi, 0x20	       163	hwesleep.c	FUNCTION_3	IF_1	CALL_4
+0x40001c7	      0xe800000000	                          call 0x40001cc	       163	hwesleep.c	FUNCTION_3	IF_1	CALL_4
+0x40001cc	            0x31c0	                            xor eax, eax	       168	hwesleep.c	FUNCTION_3
+0x40001ce	              0xc3	                                     ret	       168	hwesleep.c	FUNCTION_3
+acpi_hw_extended_wake	WHILE,0:CALL,6:DO,0:FOR,0:functions,0:IF,0:ELSE,0:SWITCH,0	19
+0x40001cf	              0x53	                                push rbx	       184	hwesleep.c	FUNCTION_4
+0x40001d0	      0xbe02000000	                              mov esi, 2	       193	hwesleep.c	FUNCTION_4	CALL_2
+0x40001d5	            0x89fb	                            mov ebx, edi	       184	hwesleep.c	FUNCTION_4
+0x40001d7	    0x48c7c7000000	                              mov rdi, 0	       193	hwesleep.c	FUNCTION_4	CALL_2
+0x40001de	    0xc60500000000	            mov byte [0x040001e5], 0xff 	       189	hwesleep.c	FUNCTION_4
+0x40001e5	      0xe800000000	                          call 0x40001ea	       193	hwesleep.c	FUNCTION_4	CALL_2
+0x40001ea	           0xfb6f3	                           movzx esi, bl	       194	hwesleep.c	FUNCTION_4	CALL_3
+0x40001ed	    0x48c7c7000000	                              mov rdi, 0	       194	hwesleep.c	FUNCTION_4	CALL_3
+0x40001f4	      0xe800000000	                          call 0x40001f9	       194	hwesleep.c	FUNCTION_4	CALL_3
+0x40001f9	    0x48c7c6000000	                              mov rsi, 0	       201	hwesleep.c	FUNCTION_4	CALL_4
+0x4000200	      0xbf80000000	                           mov edi, 0x80	       201	hwesleep.c	FUNCTION_4	CALL_4
+0x4000205	      0xe800000000	                          call 0x400020a	       201	hwesleep.c	FUNCTION_4	CALL_4
+0x400020a	      0xbe01000000	                              mov esi, 1	       204	hwesleep.c	FUNCTION_4	CALL_5
+0x400020f	    0x48c7c7000000	                              mov rdi, 0	       204	hwesleep.c	FUNCTION_4	CALL_5
+0x4000216	    0xc60500000000	                mov byte [0x0400021d], 1	       202	hwesleep.c	FUNCTION_4
+0x400021d	      0xe800000000	                          call 0x4000222	       204	hwesleep.c	FUNCTION_4	CALL_5
+0x4000222	            0x31c0	                            xor eax, eax	       206	hwesleep.c	FUNCTION_4
+0x4000224	              0x5b	                                 pop rbx	       206	hwesleep.c	FUNCTION_4
+0x4000225	              0xc3	                                     ret	       206	hwesleep.c	FUNCTION_4

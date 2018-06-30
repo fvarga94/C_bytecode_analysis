@@ -1,0 +1,145 @@
+mpol_new_bind	functions,0:ELSE,0:IF,1:WHILE,0:FOR,0:CALL,1:DO,0:SWITCH,0	8
+0x40007e0	        0x48833e00	                      cmp qword [rsi], 0	       188	mempolicy.c	FUNCTION_6	IF_1	CALL_1
+0x40007e4	            0x740a	                            je 0x40007f0	       188	mempolicy.c	FUNCTION_6	IF_1	CALL_1
+0x40007e6	          0x488b06	                    mov rax, qword [rsi]	       190	mempolicy.c	FUNCTION_6
+0x40007e9	        0x48894708	                mov qword [rdi + 8], rax	       190	mempolicy.c	FUNCTION_6
+0x40007ed	            0x31c0	                            xor eax, eax	       191	mempolicy.c	FUNCTION_6
+0x40007ef	              0xc3	                                     ret	       191	mempolicy.c	FUNCTION_6
+0x40007f0	      0xb8eaffffff	                     mov eax, 0xffffffea	       189	mempolicy.c	FUNCTION_6	IF_1
+0x40007f5	              0xc3	                                     ret	       192	mempolicy.c	FUNCTION_6
+kernel_set_mempolicy	functions,0:ELSE,0:IF,3:WHILE,0:FOR,0:CALL,2:DO,0:SWITCH,0	38
+0x4000ea0	              0x55	                                push rbp	      1346	mempolicy.c	FUNCTION_43
+0x4000ea1	              0x53	                                push rbx	      1346	mempolicy.c	FUNCTION_43
+0x4000ea2	            0x89fd	                            mov ebp, edi	      1351	mempolicy.c	FUNCTION_43
+0x4000ea4	      0x6681e500c0	                          and bp, 0xc000	      1351	mempolicy.c	FUNCTION_43
+0x4000ea9	        0x4883ec10	                           sub rsp, 0x10	      1346	mempolicy.c	FUNCTION_43
+0x4000ead	    0x65488b042528	                mov rax, qword gs:[0x28]	      1346	mempolicy.c	FUNCTION_43
+0x4000eb6	      0x4889442408	                mov qword [rsp + 8], rax	      1346	mempolicy.c	FUNCTION_43
+0x4000ebb	            0x31c0	                            xor eax, eax	      1346	mempolicy.c	FUNCTION_43
+0x4000ebd	            0x89f8	                            mov eax, edi	      1353	mempolicy.c	FUNCTION_43	IF_1
+0x4000ebf	          0x80e43f	                            and ah, 0x3f	      1353	mempolicy.c	FUNCTION_43	IF_1
+0x4000ec2	          0x83f804	                              cmp eax, 4	      1353	mempolicy.c	FUNCTION_43	IF_1
+0x4000ec5	            0x7731	                            ja 0x4000ef8	      1353	mempolicy.c	FUNCTION_43	IF_1
+0x4000ec7	          0x6685ed	                             test bp, bp	      1355	mempolicy.c	FUNCTION_43	IF_2
+0x4000eca	            0x89fb	                            mov ebx, edi	      1355	mempolicy.c	FUNCTION_43	IF_2
+0x4000ecc	            0x7825	                            js 0x4000ef3	      1355	mempolicy.c	FUNCTION_43	IF_2
+0x4000ece	          0x4889e7	                            mov rdi, rsp	      1357	mempolicy.c	FUNCTION_43	CALL_1
+0x4000ed1	      0xe8baf7ffff	                      call sym.get_nodes	      1357	mempolicy.c	FUNCTION_43	CALL_1
+0x4000ed6	            0x85c0	                           test eax, eax	      1358	mempolicy.c	FUNCTION_43	IF_3
+0x4000ed8	            0x7427	                            je 0x4000f01	      1358	mempolicy.c	FUNCTION_43	IF_3
+0x4000eda	            0x4898	                                    cdqe	      1359	mempolicy.c	FUNCTION_43	IF_3
+0x4000edc	      0x488b4c2408	                mov rcx, qword [rsp + 8]	      1361	mempolicy.c	FUNCTION_43
+0x4000ee1	    0x6548330c2528	                xor rcx, qword gs:[0x28]	      1361	mempolicy.c	FUNCTION_43
+0x4000eea	            0x752a	                           jne 0x4000f16	      1361	mempolicy.c	FUNCTION_43
+0x4000eec	        0x4883c410	                           add rsp, 0x10	      1361	mempolicy.c	FUNCTION_43
+0x4000ef0	              0x5b	                                 pop rbx	      1361	mempolicy.c	FUNCTION_43
+0x4000ef1	              0x5d	                                 pop rbp	      1361	mempolicy.c	FUNCTION_43
+0x4000ef2	              0xc3	                                     ret	      1361	mempolicy.c	FUNCTION_43
+0x4000ef3	          0xf6c740	                           test bh, 0x40	      1355	mempolicy.c	FUNCTION_43	IF_2
+0x4000ef6	            0x74d6	                            je 0x4000ece	      1355	mempolicy.c	FUNCTION_43	IF_2
+0x4000ef8	    0x48c7c0eaffff	             mov rax, 0xffffffffffffffea	      1354	mempolicy.c	FUNCTION_43	IF_1
+0x4000eff	            0xebdb	                           jmp 0x4000edc	      1354	mempolicy.c	FUNCTION_43	IF_1
+0x4000f01	            0x89df	                            mov edi, ebx	      1360	mempolicy.c	FUNCTION_43	CALL_2
+0x4000f03	           0xfb7f5	                           movzx esi, bp	      1360	mempolicy.c	FUNCTION_43	CALL_2
+0x4000f06	          0x4889e2	                            mov rdx, rsp	      1360	mempolicy.c	FUNCTION_43	CALL_2
+0x4000f09	    0x81e7ff3f0000	                         and edi, 0x3fff	      1360	mempolicy.c	FUNCTION_43	CALL_2
+0x4000f0f	      0xe88cfeffff	               call sym.do_set_mempolicy	      1360	mempolicy.c	FUNCTION_43	CALL_2
+0x4000f14	            0xebc6	                           jmp 0x4000edc	      1360	mempolicy.c	FUNCTION_43	CALL_2
+0x4000f16	      0xe800000000	                          call 0x4000f1b	      1361	mempolicy.c	FUNCTION_43
+queue_pages_range	functions,0:ELSE,0:IF,0:WHILE,0:FOR,0:CALL,1:DO,0:SWITCH,0	28
+0x40000e0	        0x4883ec70	                           sub rsp, 0x70	       622	mempolicy.c	FUNCTION_23
+0x40000e4	          0x4989fb	                            mov r11, rdi	       622	mempolicy.c	FUNCTION_23
+0x40000e7	          0x4989f2	                            mov r10, rsi	       622	mempolicy.c	FUNCTION_23
+0x40000ea	    0x65488b042528	                mov rax, qword gs:[0x28]	       622	mempolicy.c	FUNCTION_23
+0x40000f3	      0x4889442468	             mov qword [rsp + 0x68], rax	       622	mempolicy.c	FUNCTION_23
+0x40000f8	            0x31c0	                            xor eax, eax	       622	mempolicy.c	FUNCTION_23
+0x40000fa	      0x488d7c2420	                   lea rdi, [rsp + 0x20]	       629	mempolicy.c	FUNCTION_23
+0x40000ff	          0x4889d6	                            mov rsi, rdx	       622	mempolicy.c	FUNCTION_23
+0x4000102	      0x48894c2410	             mov qword [rsp + 0x10], rcx	       623	mempolicy.c	FUNCTION_23
+0x4000107	      0x488d542420	                   lea rdx, [rsp + 0x20]	       637	mempolicy.c	FUNCTION_23	CALL_1
+0x400010c	      0xb909000000	                              mov ecx, 9	       629	mempolicy.c	FUNCTION_23
+0x4000111	        0x4c890c24	                     mov qword [rsp], r9	       623	mempolicy.c	FUNCTION_23
+0x4000115	          0xf348ab	              rep stosq qword [rdi], rax	       629	mempolicy.c	FUNCTION_23
+0x4000118	          0x4c89d7	                            mov rdi, r10	       637	mempolicy.c	FUNCTION_23	CALL_1
+0x400011b	      0x4c89442408	                 mov qword [rsp + 8], r8	       623	mempolicy.c	FUNCTION_23
+0x4000120	    0x48c744241800	               mov qword [rsp + 0x18], 0	       623	mempolicy.c	FUNCTION_23
+0x4000129	    0x48c744242800	               mov qword [rsp + 0x28], 0	       629	mempolicy.c	FUNCTION_23
+0x4000132	    0x48c744244000	               mov qword [rsp + 0x40], 0	       629	mempolicy.c	FUNCTION_23
+0x400013b	    0x48c744244800	               mov qword [rsp + 0x48], 0	       629	mempolicy.c	FUNCTION_23
+0x4000144	      0x4c895c2450	             mov qword [rsp + 0x50], r11	       629	mempolicy.c	FUNCTION_23
+0x4000149	      0x4889642460	             mov qword [rsp + 0x60], rsp	       629	mempolicy.c	FUNCTION_23
+0x400014e	      0xe800000000	                          call 0x4000153	       637	mempolicy.c	FUNCTION_23	CALL_1
+0x4000153	      0x488b542468	            mov rdx, qword [rsp + 0x68] 	       638	mempolicy.c	FUNCTION_23
+0x4000158	    0x654833142528	                xor rdx, qword gs:[0x28]	       638	mempolicy.c	FUNCTION_23
+0x4000161	            0x7505	                           jne 0x4000168	       638	mempolicy.c	FUNCTION_23
+0x4000163	        0x4883c470	                           add rsp, 0x70	       638	mempolicy.c	FUNCTION_23
+0x4000167	              0xc3	                                     ret	       638	mempolicy.c	FUNCTION_23
+0x4000168	      0xe800000000	                          call 0x400016d	       638	mempolicy.c	FUNCTION_23
+mpol_new_preferred	functions,0:ELSE,2:IF,2:WHILE,0:FOR,0:CALL,2:DO,0:SWITCH,0	21
+0x40007a0	          0x4885f6	                           test rsi, rsi	       177	mempolicy.c	FUNCTION_5	IF_1
+0x40007a3	            0x7433	                            je 0x40007d8	       177	mempolicy.c	FUNCTION_5	IF_1
+0x40007a5	        0x48833e00	                      cmp qword [rsi], 0	       179	mempolicy.c	FUNCTION_5	ELSE_1	IF_2	CALL_1
+0x40007a9	      0xb8eaffffff	                     mov eax, 0xffffffea	       180	mempolicy.c	FUNCTION_5	ELSE_1	IF_2
+0x40007ae	            0x7426	                            je 0x40007d6	       179	mempolicy.c	FUNCTION_5	ELSE_1	IF_2	CALL_1
+0x40007b0	          0x4889f0	                            mov rax, rsi	       179	mempolicy.c	FUNCTION_5	ELSE_1	IF_2	CALL_1
+0x40007b3	              0x53	                                push rbx	       176	mempolicy.c	FUNCTION_5
+0x40007b4	      0xbe40000000	                           mov esi, 0x40	       265	nodemask.h	FUNCTION_144	CALL_2
+0x40007b9	          0x4889fb	                            mov rbx, rdi	       265	nodemask.h	FUNCTION_144	CALL_2
+0x40007bc	          0x4889c7	                            mov rdi, rax	       265	nodemask.h	FUNCTION_144	CALL_2
+0x40007bf	      0xe800000000	                          call 0x40007c4	       265	nodemask.h	FUNCTION_144	CALL_2
+0x40007c4	      0xba40000000	                           mov edx, 0x40	       182	mempolicy.c	FUNCTION_5	CALL_2
+0x40007c9	          0x83f840	                           cmp eax, 0x40	       182	mempolicy.c	FUNCTION_5	CALL_2
+0x40007cc	           0xf4fc2	                          cmovg eax, edx	       182	mempolicy.c	FUNCTION_5	CALL_2
+0x40007cf	        0x66894308	                  mov word [rbx + 8], ax	       182	mempolicy.c	FUNCTION_5	CALL_2
+0x40007d3	            0x31c0	                            xor eax, eax	       183	mempolicy.c	FUNCTION_5
+0x40007d5	              0x5b	                                 pop rbx	       184	mempolicy.c	FUNCTION_5
+0x40007d6	            0xf3c3	                                     ret	       184	mempolicy.c	FUNCTION_5
+0x40007d8	      0x66834f0602	                    or word [rdi + 6], 2	       178	mempolicy.c	FUNCTION_5	IF_1
+0x40007dd	            0x31c0	                            xor eax, eax	       183	mempolicy.c	FUNCTION_5
+0x40007df	              0xc3	                                     ret	       184	mempolicy.c	FUNCTION_5
+mpol_rebind_policy	functions,0:ELSE,0:IF,2:WHILE,0:FOR,0:CALL,3:DO,0:SWITCH,0	12
+0x4000770	          0x4885ff	                           test rdi, rdi	       351	mempolicy.c	FUNCTION_13	IF_1
+0x4000773	            0x7425	                            je 0x400079a	       351	mempolicy.c	FUNCTION_13	IF_1
+0x4000775	    0x66f7470600c0	            test word [rdi + 6], 0xc000 	       353	mempolicy.c	FUNCTION_13	IF_2	CALL_1
+0x400077b	            0x7509	                           jne 0x4000786	       353	mempolicy.c	FUNCTION_13	IF_2	CALL_1
+0x400077d	          0x488b06	                    mov rax, qword [rsi]	       353	mempolicy.c	FUNCTION_13	IF_2	CALL_1
+0x4000780	        0x48394710	            cmp qword [rdi + 0x10], rax 	       353	mempolicy.c	FUNCTION_13	IF_2	CALL_1
+0x4000784	            0x7414	                            je 0x400079a	       353	mempolicy.c	FUNCTION_13	IF_2	CALL_1
+0x4000786	         0xfb74704	               movzx eax, word [rdi + 4]	       357	mempolicy.c	FUNCTION_13	CALL_3
+0x400078a	        0x48c1e004	                              shl rax, 4	       357	mempolicy.c	FUNCTION_13	CALL_3
+0x400078e	    0x488b80000000	                    mov rax, qword [rax]	       357	mempolicy.c	FUNCTION_13	CALL_3
+0x4000795	      0xe900000000	                           jmp 0x400079a	       357	mempolicy.c	FUNCTION_13	CALL_3
+0x400079a	            0xf3c3	                                     ret	       357	mempolicy.c	FUNCTION_13	CALL_3
+mpol_rebind_mm	functions,0:ELSE,0:IF,0:WHILE,0:FOR,1:CALL,3:DO,0:SWITCH,0	22
+0x4001590	            0x4154	                                push r12	       379	mempolicy.c	FUNCTION_15
+0x4001592	        0x4c8d6770	                   lea r12, [rdi + 0x70]	       382	mempolicy.c	FUNCTION_15	CALL_1
+0x4001596	              0x55	                                push rbp	       379	mempolicy.c	FUNCTION_15
+0x4001597	              0x53	                                push rbx	       379	mempolicy.c	FUNCTION_15
+0x4001598	          0x4889fb	                            mov rbx, rdi	       379	mempolicy.c	FUNCTION_15
+0x400159b	          0x4889f5	                            mov rbp, rsi	       379	mempolicy.c	FUNCTION_15
+0x400159e	          0x4c89e7	                            mov rdi, r12	       382	mempolicy.c	FUNCTION_15	CALL_1
+0x40015a1	      0xe800000000	                          call 0x40015a6	       382	mempolicy.c	FUNCTION_15	CALL_1
+0x40015a6	          0x488b1b	                    mov rbx, qword [rbx]	       383	mempolicy.c	FUNCTION_15	FOR_1
+0x40015a9	          0x4885db	                           test rbx, rbx	       383	mempolicy.c	FUNCTION_15	FOR_1
+0x40015ac	            0x7418	                            je 0x40015c6	       383	mempolicy.c	FUNCTION_15	FOR_1
+0x40015ae	    0x488bbbb80000	            mov rdi, qword [rbx + 0xb8] 	       384	mempolicy.c	FUNCTION_15	CALL_2
+0x40015b5	          0x4889ee	                            mov rsi, rbp	       384	mempolicy.c	FUNCTION_15	CALL_2
+0x40015b8	      0xe8b3f1ffff	             call sym.mpol_rebind_policy	       384	mempolicy.c	FUNCTION_15	CALL_2
+0x40015bd	        0x488b5b10	            mov rbx, qword [rbx + 0x10] 	       383	mempolicy.c	FUNCTION_15	FOR_1
+0x40015c1	          0x4885db	                           test rbx, rbx	       383	mempolicy.c	FUNCTION_15	FOR_1
+0x40015c4	            0x75e8	                           jne 0x40015ae	       383	mempolicy.c	FUNCTION_15	FOR_1
+0x40015c6	              0x5b	                                 pop rbx	       386	mempolicy.c	FUNCTION_15
+0x40015c7	          0x4c89e7	                            mov rdi, r12	       385	mempolicy.c	FUNCTION_15	CALL_3
+0x40015ca	              0x5d	                                 pop rbp	       386	mempolicy.c	FUNCTION_15
+0x40015cb	            0x415c	                                 pop r12	       386	mempolicy.c	FUNCTION_15
+0x40015cd	      0xe900000000	                           jmp 0x40015d2	       385	mempolicy.c	FUNCTION_15	CALL_3
+numa_default_policy	functions,0:ELSE,0:IF,0:WHILE,0:FOR,0:CALL,1:DO,0:SWITCH,0	4
+0x4002e40	            0x31d2	                            xor edx, edx	      2666	mempolicy.c	FUNCTION_89	CALL_1
+0x4002e42	            0x31f6	                            xor esi, esi	      2666	mempolicy.c	FUNCTION_89	CALL_1
+0x4002e44	            0x31ff	                            xor edi, edi	      2666	mempolicy.c	FUNCTION_89	CALL_1
+0x4002e46	      0xe955dfffff	                jmp sym.do_set_mempolicy	      2666	mempolicy.c	FUNCTION_89	CALL_1
+mpol_rebind_default	functions,0:ELSE,0:IF,0:WHILE,0:FOR,0:CALL,0:DO,0:SWITCH,0	1
+0x4000040	            0xf3c3	                                     ret	       295	mempolicy.c	FUNCTION_10
+mpol_rebind_task	functions,0:ELSE,0:IF,0:WHILE,0:FOR,0:CALL,1:DO,0:SWITCH,0	2
+0x4001580	    0x488bbf580800	           mov rdi, qword [rdi + 0x858] 	       369	mempolicy.c	FUNCTION_14	CALL_1
+0x4001587	      0xe9e4f1ffff	              jmp sym.mpol_rebind_policy	       369	mempolicy.c	FUNCTION_14	CALL_1

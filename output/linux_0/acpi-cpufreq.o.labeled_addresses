@@ -1,0 +1,252 @@
+cpu_freq_write_io	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,1:IF,0:DO,0	3
+0x4000380	         0xfb65704	               movzx edx, byte [rdi + 4]	       294	acpi-cpufreq.c	FUNCTION_19	CALL_1
+0x4000384	        0x488b7f07	                mov rdi, qword [rdi + 7]	       294	acpi-cpufreq.c	FUNCTION_19	CALL_1
+0x4000388	      0xe900000000	                           jmp 0x400038d	       294	acpi-cpufreq.c	FUNCTION_19	CALL_1
+boost_set_msr_each	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,1:IF,0:DO,0	4
+0x4000810	          0x4885ff	                           test rdi, rdi	       139	acpi-cpufreq.c	FUNCTION_4	CALL_1
+0x4000813	        0x400f95c7	                               setne dil	       139	acpi-cpufreq.c	FUNCTION_4	CALL_1
+0x4000817	        0x400fb6ff	                          movzx edi, dil	       139	acpi-cpufreq.c	FUNCTION_4	CALL_1
+0x400081b	      0xe930ffffff	                   jmp sym.boost_set_msr	       139	acpi-cpufreq.c	FUNCTION_4	CALL_1
+extract_freq	WHILE,0:ELSE,0:SWITCH,1:FOR,0:functions,0:CALL,2:IF,0:DO,0	71
+0x40003e0	    0x488b8f880100	           mov rcx, qword [rdi + 0x188] 	       241	acpi-cpufreq.c	FUNCTION_13
+0x40003e7	          0x8b4104	                mov eax, dword [rcx + 4]	       243	acpi-cpufreq.c	FUNCTION_13	SWITCH_1
+0x40003ea	          0x83f801	                              cmp eax, 1	       243	acpi-cpufreq.c	FUNCTION_13	SWITCH_1
+0x40003ed	            0x7255	                            jb 0x4000444	       243	acpi-cpufreq.c	FUNCTION_13	SWITCH_1
+0x40003ef	          0x83f802	                              cmp eax, 2	       243	acpi-cpufreq.c	FUNCTION_13	SWITCH_1
+0x40003f2	            0x7657	                           jbe 0x400044b	       243	acpi-cpufreq.c	FUNCTION_13	SWITCH_1
+0x40003f4	          0x83f803	                              cmp eax, 3	       243	acpi-cpufreq.c	FUNCTION_13	SWITCH_1
+0x40003f7	            0x754b	                           jne 0x4000444	       243	acpi-cpufreq.c	FUNCTION_13	SWITCH_1
+0x40003f9	          0x8b5108	                mov edx, dword [rcx + 8]	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x40003fc	    0x488b05000000	            mov rax, qword [0x04000403] 	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x4000403	    0x480304d50000	                  add rax, qword [rdx*8]	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x400040b	          0x4889c2	                            mov rdx, rax	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x400040e	          0x8b4028	            mov eax, dword [rax + 0x28] 	       213	acpi-cpufreq.c	FUNCTION_11	FOR_1
+0x4000411	            0x85c0	                           test eax, eax	       213	acpi-cpufreq.c	FUNCTION_11	FOR_1
+0x4000413	            0x7434	                            je 0x4000449	       213	acpi-cpufreq.c	FUNCTION_11	FOR_1
+0x4000415	        0x4c8b4a30	              mov r9, qword [rdx + 0x30]	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x4000419	            0x89f6	                            mov esi, esi	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x400041b	            0x31d2	                            xor edx, edx	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x400041d	        0x493b7128	              cmp rsi, qword [r9 + 0x28]	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x4000421	            0x751a	                           jne 0x400043d	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x4000423	      0xe9a4000000	                           jmp 0x40004cc	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x4000428	          0x4863ca	                         movsxd rcx, edx	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x400042b	        0x488d0c49	                  lea rcx, [rcx + rcx*2]	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x400042f	          0x4989c8	                             mov r8, rcx	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x4000432	        0x49c1e004	                               shl r8, 4	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x4000436	      0x4b39740128	        cmp qword [r9 + r8 + 0x28], rsi 	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x400043b	            0x747d	                            je 0x40004ba	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x400043d	          0x83c201	                              add edx, 1	       213	acpi-cpufreq.c	FUNCTION_11	FOR_1
+0x4000440	            0x39c2	                            cmp edx, eax	       213	acpi-cpufreq.c	FUNCTION_11	FOR_1
+0x4000442	            0x75e4	                           jne 0x4000428	       213	acpi-cpufreq.c	FUNCTION_11	FOR_1
+0x4000444	            0x31c0	                            xor eax, eax	       250	acpi-cpufreq.c	FUNCTION_13	SWITCH_1
+0x4000446	              0xc3	                                     ret	       250	acpi-cpufreq.c	FUNCTION_13	SWITCH_1
+0x4000447	            0x89f8	                            mov eax, edi	       233	acpi-cpufreq.c	FUNCTION_12	CALL_2
+0x4000449	            0xf3c3	                                     ret	       252	acpi-cpufreq.c	FUNCTION_13
+0x400044b	            0x89f0	                            mov eax, esi	       227	acpi-cpufreq.c	FUNCTION_12	IF_1
+0x400044d	          0x8b4908	                mov ecx, dword [rcx + 8]	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x4000450	           0xfb7f6	                           movzx esi, si	       227	acpi-cpufreq.c	FUNCTION_12	IF_1
+0x4000453	          0x83e007	                              and eax, 7	       227	acpi-cpufreq.c	FUNCTION_12	IF_1
+0x4000456	    0x803d00000000	                cmp byte [0x0400045d], 2	       227	acpi-cpufreq.c	FUNCTION_12	IF_1
+0x400045d	    0x488b97980000	            mov rdx, qword [rdi + 0x98] 	       227	acpi-cpufreq.c	FUNCTION_12	IF_1
+0x4000464	        0x480f44f0	                          cmove rsi, rax	       227	acpi-cpufreq.c	FUNCTION_12	IF_1
+0x4000468	    0x488b05000000	            mov rax, qword [0x0400046f] 	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x400046f	    0x480304cd0000	                  add rax, qword [rcx*8]	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x4000477	          0x4889c1	                            mov rcx, rax	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x400047a	          0x8b4208	                mov eax, dword [rdx + 8]	       233	acpi-cpufreq.c	FUNCTION_12	CALL_2
+0x400047d	          0x83f8fe	             cmp eax, 0xfffffffffffffffe	       233	acpi-cpufreq.c	FUNCTION_12	CALL_2
+0x4000480	            0x74c7	                            je 0x4000449	       233	acpi-cpufreq.c	FUNCTION_12	CALL_2
+0x4000482	        0x4c8b4130	              mov r8, qword [rcx + 0x30]	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x4000486	          0x8b4a04	                mov ecx, dword [rdx + 4]	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x4000489	        0x488d0c49	                  lea rcx, [rcx + rcx*2]	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x400048d	        0x48c1e104	                              shl rcx, 4	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x4000491	      0x493b740828	       cmp rsi, qword [r8 + rcx + 0x28] 	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x4000496	            0x7514	                           jne 0x40004ac	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x4000498	            0xeb30	                           jmp 0x40004ca	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x400049a	          0x8b4a04	                mov ecx, dword [rdx + 4]	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x400049d	        0x488d0c49	                  lea rcx, [rcx + rcx*2]	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x40004a1	        0x48c1e104	                              shl rcx, 4	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x40004a5	      0x493b740828	       cmp rsi, qword [r8 + rcx + 0x28] 	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x40004aa	            0x749b	                            je 0x4000447	       234	acpi-cpufreq.c	FUNCTION_12	IF_2
+0x40004ac	        0x4883c20c	                            add rdx, 0xc	       233	acpi-cpufreq.c	FUNCTION_12	CALL_2
+0x40004b0	          0x8b7a08	                mov edi, dword [rdx + 8]	       233	acpi-cpufreq.c	FUNCTION_12	CALL_2
+0x40004b3	          0x83fffe	             cmp edi, 0xfffffffffffffffe	       233	acpi-cpufreq.c	FUNCTION_12	CALL_2
+0x40004b6	            0x75e2	                           jne 0x400049a	       233	acpi-cpufreq.c	FUNCTION_12	CALL_2
+0x40004b8	            0xf3c3	                                     ret	       233	acpi-cpufreq.c	FUNCTION_12	CALL_2
+0x40004ba	        0x48c1e102	                              shl rcx, 2	       233	acpi-cpufreq.c	FUNCTION_12	CALL_2
+0x40004be	    0x488b87980000	            mov rax, qword [rdi + 0x98] 	       215	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x40004c5	        0x8b440808	         mov eax, dword [rax + rcx + 8] 	       215	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x40004c9	              0xc3	                                     ret	       215	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x40004ca	            0xf3c3	                                     ret	       215	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x40004cc	            0x31c9	                            xor ecx, ecx	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+0x40004ce	            0xebee	                           jmp 0x40004be	       214	acpi-cpufreq.c	FUNCTION_11	FOR_1	IF_1
+free_acpi_perf_data	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,4:IF,0:DO,0	13
+0x4000040	              0x53	                                push rbx	       308	acpi-cpufreq.c	FUNCTION_20
+0x4000041	          0x4889fb	                            mov rbx, rdi	       308	acpi-cpufreq.c	FUNCTION_20
+0x4000044	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x4000048	          0x488b3f	                    mov rdi, qword [rdi]	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x400004b	      0xe800000000	                          call 0x4000050	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x4000050	          0x894308	                mov dword [rbx + 8], eax	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x4000053	              0x5b	                                 pop rbx	       312	acpi-cpufreq.c	FUNCTION_20
+0x4000054	              0xc3	                                     ret	       312	acpi-cpufreq.c	FUNCTION_20
+0x4000055	              0x90	                                     nop	       312	acpi-cpufreq.c	FUNCTION_20
+0x4000056	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       312	acpi-cpufreq.c	FUNCTION_20
+0x4000060	          0x8b7708	                mov esi, dword [rdi + 8]	       333	acpi-cpufreq.c	FUNCTION_22	CALL_1
+0x4000063	              0x48	                                 invalid	       333	acpi-cpufreq.c	FUNCTION_22	CALL_1
+0x4000064	              0x8b	                                 invalid	       333	acpi-cpufreq.c	FUNCTION_22	CALL_1
+store_cpb	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,2:IF,2:DO,0	29
+0x40001c0	              0x53	                                push rbx	       167	acpi-cpufreq.c	FUNCTION_7
+0x40001c1	        0x4883ec10	                           sub rsp, 0x10	       167	acpi-cpufreq.c	FUNCTION_7
+0x40001c5	    0x65488b042528	                mov rax, qword gs:[0x28]	       167	acpi-cpufreq.c	FUNCTION_7
+0x40001ce	      0x4889442408	                mov qword [rsp + 8], rax	       167	acpi-cpufreq.c	FUNCTION_7
+0x40001d3	            0x31c0	                            xor eax, eax	       167	acpi-cpufreq.c	FUNCTION_7
+0x40001d5	    0x48833d000000	               cmp qword [0x040001dd], 0	       171	acpi-cpufreq.c	FUNCTION_7	IF_1
+0x40001dd	    0xc74424040000	                  mov dword [rsp + 4], 0	       169	acpi-cpufreq.c	FUNCTION_7
+0x40001e5	            0x7440	                            je 0x4000227	       171	acpi-cpufreq.c	FUNCTION_7	IF_1
+0x40001e7	          0x4889d3	                            mov rbx, rdx	       171	acpi-cpufreq.c	FUNCTION_7	IF_1
+0x40001ea	      0x488d542404	                      lea rdx, [rsp + 4]	       174	acpi-cpufreq.c	FUNCTION_7	CALL_1
+0x40001ef	          0x4889f7	                            mov rdi, rsi	       174	acpi-cpufreq.c	FUNCTION_7	CALL_1
+0x40001f2	      0xbe0a000000	                            mov esi, 0xa	       174	acpi-cpufreq.c	FUNCTION_7	CALL_1
+0x40001f7	      0xe800000000	                          call 0x40001fc	       174	acpi-cpufreq.c	FUNCTION_7	CALL_1
+0x40001fc	            0x85c0	                           test eax, eax	       175	acpi-cpufreq.c	FUNCTION_7	IF_2
+0x40001fe	            0x7527	                           jne 0x4000227	       175	acpi-cpufreq.c	FUNCTION_7	IF_2
+0x4000200	        0x8b7c2404	                mov edi, dword [rsp + 4]	       175	acpi-cpufreq.c	FUNCTION_7	IF_2
+0x4000204	          0x83ff01	                              cmp edi, 1	       175	acpi-cpufreq.c	FUNCTION_7	IF_2
+0x4000207	            0x771e	                            ja 0x4000227	       175	acpi-cpufreq.c	FUNCTION_7	IF_2
+0x4000209	      0xe882ffffff	                      call sym.set_boost	       178	acpi-cpufreq.c	FUNCTION_7	CALL_2
+0x400020e	          0x4889d8	                            mov rax, rbx	       180	acpi-cpufreq.c	FUNCTION_7
+0x4000211	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       181	acpi-cpufreq.c	FUNCTION_7
+0x4000216	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       181	acpi-cpufreq.c	FUNCTION_7
+0x400021f	            0x750f	                           jne 0x4000230	       181	acpi-cpufreq.c	FUNCTION_7
+0x4000221	        0x4883c410	                           add rsp, 0x10	       181	acpi-cpufreq.c	FUNCTION_7
+0x4000225	              0x5b	                                 pop rbx	       181	acpi-cpufreq.c	FUNCTION_7
+0x4000226	              0xc3	                                     ret	       181	acpi-cpufreq.c	FUNCTION_7
+0x4000227	    0x48c7c0eaffff	             mov rax, 0xffffffffffffffea	       172	acpi-cpufreq.c	FUNCTION_7	IF_1
+0x400022e	            0xebe1	                           jmp 0x4000211	       172	acpi-cpufreq.c	FUNCTION_7	IF_1
+0x4000230	      0xe800000000	                          call 0x4000235	       181	acpi-cpufreq.c	FUNCTION_7
+cpu_freq_read_io	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,1:IF,0:DO,0	15
+0x4000390	        0x4883ec10	                           sub rsp, 0x10	       285	acpi-cpufreq.c	FUNCTION_18
+0x4000394	         0xfb65704	               movzx edx, byte [rdi + 4]	       288	acpi-cpufreq.c	FUNCTION_18	CALL_1
+0x4000398	        0x488b7f07	                mov rdi, qword [rdi + 7]	       288	acpi-cpufreq.c	FUNCTION_18	CALL_1
+0x400039c	      0x488d742404	                      lea rsi, [rsp + 4]	       288	acpi-cpufreq.c	FUNCTION_18	CALL_1
+0x40003a1	    0x65488b042528	                mov rax, qword gs:[0x28]	       285	acpi-cpufreq.c	FUNCTION_18
+0x40003aa	      0x4889442408	                mov qword [rsp + 8], rax	       285	acpi-cpufreq.c	FUNCTION_18
+0x40003af	            0x31c0	                            xor eax, eax	       285	acpi-cpufreq.c	FUNCTION_18
+0x40003b1	      0xe800000000	                          call 0x40003b6	       288	acpi-cpufreq.c	FUNCTION_18	CALL_1
+0x40003b6	      0x488b4c2408	                mov rcx, qword [rsp + 8]	       290	acpi-cpufreq.c	FUNCTION_18
+0x40003bb	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       290	acpi-cpufreq.c	FUNCTION_18
+0x40003c4	        0x8b442404	                mov eax, dword [rsp + 4]	       290	acpi-cpufreq.c	FUNCTION_18
+0x40003c8	            0x7505	                           jne 0x40003cf	       290	acpi-cpufreq.c	FUNCTION_18
+0x40003ca	        0x4883c410	                           add rsp, 0x10	       290	acpi-cpufreq.c	FUNCTION_18
+0x40003ce	              0xc3	                                     ret	       290	acpi-cpufreq.c	FUNCTION_18
+0x40003cf	      0xe800000000	                          call 0x40003d4	       290	acpi-cpufreq.c	FUNCTION_18
+acpi_cpufreq_exit	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,4:IF,0:DO,0	12
+0x4000040	              0x53	                                push rbx	       308	acpi-cpufreq.c	FUNCTION_20
+0x4000041	          0x4889fb	                            mov rbx, rdi	       308	acpi-cpufreq.c	FUNCTION_20
+0x4000044	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x4000048	          0x488b3f	                    mov rdi, qword [rdi]	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x400004b	      0xe800000000	                          call 0x4000050	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x4000050	          0x894308	                mov dword [rbx + 8], eax	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x4000053	              0x5b	                                 pop rbx	       312	acpi-cpufreq.c	FUNCTION_20
+0x4000054	              0xc3	                                     ret	       312	acpi-cpufreq.c	FUNCTION_20
+0x4000055	              0x90	                                     nop	       312	acpi-cpufreq.c	FUNCTION_20
+0x4000056	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       312	acpi-cpufreq.c	FUNCTION_20
+0x4000060	              0x8b	                                 invalid	       333	acpi-cpufreq.c	FUNCTION_22	CALL_1
+0x4000061	              0x77	                                 invalid	       333	acpi-cpufreq.c	FUNCTION_22	CALL_1
+acpi_cpufreq_resume	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,1:IF,0:DO,0	4
+0x4000080	    0x488b87880100	           mov rax, qword [rdi + 0x188] 	       877	acpi-cpufreq.c	FUNCTION_39
+0x4000087	    0xc70001000000	                      mov dword [rax], 1	       881	acpi-cpufreq.c	FUNCTION_39
+0x400008d	            0x31c0	                            xor eax, eax	       884	acpi-cpufreq.c	FUNCTION_39
+0x400008f	              0xc3	                                     ret	       884	acpi-cpufreq.c	FUNCTION_39
+drv_read	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,3:IF,0:DO,0	29
+0x4000300	        0x4883ec20	                           sub rsp, 0x20	       315	acpi-cpufreq.c	FUNCTION_21
+0x4000304	          0x8b5708	                mov edx, dword [rdi + 8]	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x4000307	          0x4989f0	                             mov r8, rsi	       315	acpi-cpufreq.c	FUNCTION_21
+0x400030a	    0x65488b042528	                mov rax, qword gs:[0x28]	       315	acpi-cpufreq.c	FUNCTION_21
+0x4000313	      0x4889442418	             mov qword [rsp + 0x18], rax	       315	acpi-cpufreq.c	FUNCTION_21
+0x4000318	            0x31c0	                            xor eax, eax	       315	acpi-cpufreq.c	FUNCTION_21
+0x400031a	    0x488b05000000	            mov rax, qword [0x04000321] 	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x4000321	      0xb901000000	                              mov ecx, 1	       323	acpi-cpufreq.c	FUNCTION_21	CALL_2
+0x4000326	    0x48c7c6000000	                              mov rsi, 0	       323	acpi-cpufreq.c	FUNCTION_21	CALL_2
+0x400032d	    0x480304d50000	                  add rax, qword [rdx*8]	        81	acpi-cpufreq.c	FUNCTION_1	CALL_1
+0x4000335	          0x4889e2	                            mov rdx, rsp	       323	acpi-cpufreq.c	FUNCTION_21	CALL_2
+0x4000338	    0x48c744240800	                  mov qword [rsp + 8], 0	       317	acpi-cpufreq.c	FUNCTION_21
+0x4000341	        0x4883c008	                              add rax, 8	       318	acpi-cpufreq.c	FUNCTION_21
+0x4000345	        0x48890424	                    mov qword [rsp], rax	       318	acpi-cpufreq.c	FUNCTION_21
+0x4000349	        0x488b4720	            mov rax, qword [rdi + 0x20] 	       317	acpi-cpufreq.c	FUNCTION_21
+0x400034d	          0x4c89c7	                             mov rdi, r8	       323	acpi-cpufreq.c	FUNCTION_21	CALL_2
+0x4000350	      0x4889442410	             mov qword [rsp + 0x10], rax	       317	acpi-cpufreq.c	FUNCTION_21
+0x4000355	      0xe800000000	                          call 0x400035a	       323	acpi-cpufreq.c	FUNCTION_21	CALL_2
+0x400035a	            0x85c0	                           test eax, eax	       324	acpi-cpufreq.c	FUNCTION_21	CALL_3
+0x400035c	            0x7519	                           jne 0x4000377	       324	acpi-cpufreq.c	FUNCTION_21	CALL_3
+0x400035e	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	       326	acpi-cpufreq.c	FUNCTION_21
+0x4000363	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       326	acpi-cpufreq.c	FUNCTION_21
+0x400036c	        0x8b442408	                mov eax, dword [rsp + 8]	       326	acpi-cpufreq.c	FUNCTION_21
+0x4000370	            0x7509	                           jne 0x400037b	       326	acpi-cpufreq.c	FUNCTION_21
+0x4000372	        0x4883c420	                           add rsp, 0x20	       326	acpi-cpufreq.c	FUNCTION_21
+0x4000376	              0xc3	                                     ret	       326	acpi-cpufreq.c	FUNCTION_21
+0x4000377	             0xf0b	                                     ud2	       326	acpi-cpufreq.c	FUNCTION_21
+0x4000379	            0xebe3	                           jmp 0x400035e	       324	acpi-cpufreq.c	FUNCTION_21	CALL_3
+0x400037b	      0xe800000000	              call sym.cpu_freq_write_io	       326	acpi-cpufreq.c	FUNCTION_21
+cpufreq_boost_online	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,1:IF,0:DO,0	2
+0x4000830	     0xfb63d000000	           movzx edi, byte [0x04000837] 	       548	acpi-cpufreq.c	FUNCTION_31	CALL_1
+0x4000837	      0xe914ffffff	                   jmp sym.boost_set_msr	       548	acpi-cpufreq.c	FUNCTION_31	CALL_1
+sw_any_bug_found	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,0:IF,0:DO,0	3
+0x4000070	    0xc70500000000	               mov dword [0x0400007a], 1	       605	acpi-cpufreq.c	FUNCTION_34
+0x400007a	            0x31c0	                            xor eax, eax	       607	acpi-cpufreq.c	FUNCTION_34
+0x400007c	              0xc3	                                     ret	       607	acpi-cpufreq.c	FUNCTION_34
+acpi_cpufreq_cpu_exit	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,5:IF,0:DO,0	16
+0x40002c0	              0x55	                                push rbp	       851	acpi-cpufreq.c	FUNCTION_37
+0x40002c1	              0x53	                                push rbx	       851	acpi-cpufreq.c	FUNCTION_37
+0x40002c2	          0x4889fb	                            mov rbx, rdi	       851	acpi-cpufreq.c	FUNCTION_37
+0x40002c5	    0x488baf880100	           mov rbp, qword [rdi + 0x188] 	       852	acpi-cpufreq.c	FUNCTION_37
+0x40002cc	    0xc68740010000	               mov byte [rdi + 0x140], 0	       856	acpi-cpufreq.c	FUNCTION_37
+0x40002d3	    0x48c787880100	              mov qword [rdi + 0x188], 0	       857	acpi-cpufreq.c	FUNCTION_37
+0x40002de	          0x8b7d08	                mov edi, dword [rbp + 8]	       858	acpi-cpufreq.c	FUNCTION_37	CALL_2
+0x40002e1	      0xe800000000	                          call 0x40002e6	       858	acpi-cpufreq.c	FUNCTION_37	CALL_2
+0x40002e6	    0x488bbb980000	            mov rdi, qword [rbx + 0x98] 	       860	acpi-cpufreq.c	FUNCTION_37	CALL_4
+0x40002ed	      0xe800000000	                          call 0x40002f2	       860	acpi-cpufreq.c	FUNCTION_37	CALL_4
+0x40002f2	          0x4889ef	                            mov rdi, rbp	       861	acpi-cpufreq.c	FUNCTION_37	CALL_5
+0x40002f5	      0xe800000000	                          call 0x40002fa	       861	acpi-cpufreq.c	FUNCTION_37	CALL_5
+0x40002fa	            0x31c0	                            xor eax, eax	       864	acpi-cpufreq.c	FUNCTION_37
+0x40002fc	              0x5b	                                 pop rbx	       864	acpi-cpufreq.c	FUNCTION_37
+0x40002fd	              0x5d	                                 pop rbp	       864	acpi-cpufreq.c	FUNCTION_37
+0x40002fe	              0xc3	                                     ret	       864	acpi-cpufreq.c	FUNCTION_37
+show_freqdomain_cpus	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,2:IF,1:DO,0	7
+0x4000260	    0x488bbf880100	           mov rdi, qword [rdi + 0x188] 	       154	acpi-cpufreq.c	FUNCTION_6
+0x4000267	          0x4885ff	                           test rdi, rdi	       156	acpi-cpufreq.c	FUNCTION_6	IF_1	CALL_1
+0x400026a	            0x7409	                            je 0x4000275	       156	acpi-cpufreq.c	FUNCTION_6	IF_1	CALL_1
+0x400026c	        0x4883c710	                           add rdi, 0x10	       159	acpi-cpufreq.c	FUNCTION_6	CALL_2
+0x4000270	      0xe900000000	                           jmp 0x4000275	       159	acpi-cpufreq.c	FUNCTION_6	CALL_2
+0x4000275	    0x48c7c0edffff	             mov rax, 0xffffffffffffffed	       160	acpi-cpufreq.c	FUNCTION_6
+0x400027c	              0xc3	                                     ret	       160	acpi-cpufreq.c	FUNCTION_6
+show_cpb	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,1:IF,0:DO,0	6
+0x4000240	     0xfb615000000	           movzx edx, byte [0x04000247] 	       185	acpi-cpufreq.c	FUNCTION_8	CALL_1
+0x4000247	          0x4889f7	                            mov rdi, rsi	       184	acpi-cpufreq.c	FUNCTION_8
+0x400024a	    0x48c7c6000000	                              mov rsi, 0	       185	acpi-cpufreq.c	FUNCTION_8	CALL_1
+0x4000251	      0xe800000000	                          call 0x4000256	       185	acpi-cpufreq.c	FUNCTION_8	CALL_1
+0x4000256	            0x4898	                                    cdqe	       185	acpi-cpufreq.c	FUNCTION_8	CALL_1
+0x4000258	              0xc3	                                     ret	       186	acpi-cpufreq.c	FUNCTION_8
+do_drv_read	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,1:IF,0:DO,0	8
+0x4000040	              0x53	                                push rbx	       308	acpi-cpufreq.c	FUNCTION_20
+0x4000041	          0x4889fb	                            mov rbx, rdi	       308	acpi-cpufreq.c	FUNCTION_20
+0x4000044	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x4000048	          0x488b3f	                    mov rdi, qword [rdi]	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x400004b	      0xe800000000	                          call 0x4000050	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x4000050	          0x894308	                mov dword [rbx + 8], eax	       311	acpi-cpufreq.c	FUNCTION_20	CALL_1
+0x4000053	              0x5b	                                 pop rbx	       312	acpi-cpufreq.c	FUNCTION_20
+0x4000054	              0xc3	                                     ret	       312	acpi-cpufreq.c	FUNCTION_20
+acpi_cpufreq_cpu_ready	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,2:IF,1:DO,0	11
+0x4000280	          0x8b571c	            mov edx, dword [rdi + 0x1c] 	       868	acpi-cpufreq.c	FUNCTION_38	CALL_1
+0x4000283	    0x488b05000000	            mov rax, qword [0x0400028a] 	       868	acpi-cpufreq.c	FUNCTION_38	CALL_1
+0x400028a	    0x488b14d50000	                  mov rdx, qword [rdx*8]	       871	acpi-cpufreq.c	FUNCTION_38	IF_1
+0x4000292	      0x488b440230	      mov rax, qword [rdx + rax + 0x30] 	       871	acpi-cpufreq.c	FUNCTION_38	IF_1
+0x4000297	    0x486910e80300	            imul rdx, qword [rax], 0x3e8	       871	acpi-cpufreq.c	FUNCTION_38	IF_1
+0x400029e	          0x8b4728	            mov eax, dword [rdi + 0x28] 	       871	acpi-cpufreq.c	FUNCTION_38	IF_1
+0x40002a1	          0x4839c2	                            cmp rdx, rax	       871	acpi-cpufreq.c	FUNCTION_38	IF_1
+0x40002a4	            0x7502	                           jne 0x40002a8	       871	acpi-cpufreq.c	FUNCTION_38	IF_1
+0x40002a6	            0xf3c3	                                     ret	       871	acpi-cpufreq.c	FUNCTION_38	IF_1
+0x40002a8	    0x48c7c7000000	                              mov rdi, 0	       872	acpi-cpufreq.c	FUNCTION_38	CALL_2
+0x40002af	      0xe900000000	                           jmp 0x40002b4	       872	acpi-cpufreq.c	FUNCTION_38	CALL_2
+cpufreq_boost_down_prep	WHILE,0:ELSE,0:SWITCH,0:FOR,0:functions,0:CALL,1:IF,0:DO,0	2
+0x4000820	      0xbf01000000	                              mov edi, 1	       557	acpi-cpufreq.c	FUNCTION_32	CALL_1
+0x4000825	      0xe926ffffff	                   jmp sym.boost_set_msr	       557	acpi-cpufreq.c	FUNCTION_32	CALL_1

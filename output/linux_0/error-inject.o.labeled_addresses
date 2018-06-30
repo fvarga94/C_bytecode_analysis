@@ -1,0 +1,74 @@
+ei_open	functions,0:WHILE,0:FOR,0:DO,0:ELSE,0:CALL,1:SWITCH,0:IF,0	3
+0x4000170	          0x4889f7	                            mov rdi, rsi	       205	error-inject.c	FUNCTION_14
+0x4000173	    0x48c7c6000000	                              mov rsi, 0	       206	error-inject.c	FUNCTION_14	CALL_1
+0x400017a	      0xe900000000	                           jmp 0x400017f	       206	error-inject.c	FUNCTION_14	CALL_1
+within_error_injection_list	functions,1:WHILE,0:FOR,0:DO,0:ELSE,0:CALL,2:SWITCH,0:IF,0	26
+0x40002b0	              0x53	                                push rbx	        24	error-inject.c	FUNCTION_1
+0x40002b1	          0x4889fb	                            mov rbx, rdi	        24	error-inject.c	FUNCTION_1
+0x40002b4	    0x48c7c7000000	                              mov rdi, 0	        28	error-inject.c	FUNCTION_1	CALL_1
+0x40002bb	      0xe800000000	                          call 0x40002c0	        28	error-inject.c	FUNCTION_1	CALL_1
+0x40002c0	    0x488b05000000	            mov rax, qword [0x040002c7] 	        29	error-inject.c	FUNCTION_1
+0x40002c7	    0x483d00000000	                              cmp rax, 0	        29	error-inject.c	FUNCTION_1
+0x40002cd	            0x7417	                            je 0x40002e6	        29	error-inject.c	FUNCTION_1
+0x40002cf	        0x48395810	            cmp qword [rax + 0x10], rbx 	        30	error-inject.c	IF_1
+0x40002d3	            0x7706	                            ja 0x40002db	        30	error-inject.c	IF_1
+0x40002d5	        0x483b5818	            cmp rbx, qword [rax + 0x18] 	        30	error-inject.c	IF_1
+0x40002d9	            0x721d	                            jb 0x40002f8	        30	error-inject.c	IF_1
+0x40002db	          0x488b00	                    mov rax, qword [rax]	        29	error-inject.c	FUNCTION_1
+0x40002de	    0x483d00000000	                              cmp rax, 0	        29	error-inject.c	FUNCTION_1
+0x40002e4	            0x75e9	                           jne 0x40002cf	        29	error-inject.c	FUNCTION_1
+0x40002e6	            0x31db	                            xor ebx, ebx	        26	error-inject.c	FUNCTION_1
+0x40002e8	    0x48c7c7000000	                              mov rdi, 0	        35	error-inject.c	FUNCTION_1	CALL_2
+0x40002ef	      0xe800000000	                          call 0x40002f4	        35	error-inject.c	FUNCTION_1	CALL_2
+0x40002f4	            0x89d8	                            mov eax, ebx	        37	error-inject.c	FUNCTION_1
+0x40002f6	              0x5b	                                 pop rbx	        37	error-inject.c	FUNCTION_1
+0x40002f7	              0xc3	                                     ret	        37	error-inject.c	FUNCTION_1
+0x40002f8	      0xbb01000000	                              mov ebx, 1	        31	error-inject.c	IF_1
+0x40002fd	    0x48c7c7000000	                              mov rdi, 0	        35	error-inject.c	FUNCTION_1	CALL_2
+0x4000304	      0xe800000000	                          call 0x4000309	        35	error-inject.c	FUNCTION_1	CALL_2
+0x4000309	            0x89d8	                            mov eax, ebx	        37	error-inject.c	FUNCTION_1
+0x400030b	              0x5b	                                 pop rbx	        37	error-inject.c	FUNCTION_1
+0x400030c	              0xc3	                                     ret	        37	error-inject.c	FUNCTION_1
+get_injectable_error_type	functions,1:WHILE,0:FOR,0:DO,0:ELSE,0:CALL,0:SWITCH,0:IF,0	14
+0x4000310	    0x488b05000000	            mov rax, qword [0x04000317] 	        43	error-inject.c	FUNCTION_2	FUNCTION_1
+0x4000317	    0x483d00000000	                              cmp rax, 0	        43	error-inject.c	FUNCTION_2	FUNCTION_1
+0x400031d	            0x7417	                            je 0x4000336	        43	error-inject.c	FUNCTION_2	FUNCTION_1
+0x400031f	        0x48397810	            cmp qword [rax + 0x10], rdi 	        44	error-inject.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000323	            0x7706	                            ja 0x400032b	        44	error-inject.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000325	        0x483b7818	            cmp rdi, qword [rax + 0x18] 	        44	error-inject.c	FUNCTION_2	FUNCTION_1	IF_1
+0x4000329	            0x720e	                            jb 0x4000339	        44	error-inject.c	FUNCTION_2	FUNCTION_1	IF_1
+0x400032b	          0x488b00	                    mov rax, qword [rax]	        43	error-inject.c	FUNCTION_2	FUNCTION_1
+0x400032e	    0x483d00000000	                              cmp rax, 0	        43	error-inject.c	FUNCTION_2	FUNCTION_1
+0x4000334	            0x75e9	                           jne 0x400031f	        43	error-inject.c	FUNCTION_2	FUNCTION_1
+0x4000336	            0x31c0	                            xor eax, eax	        47	error-inject.c	FUNCTION_2
+0x4000338	              0xc3	                                     ret	        48	error-inject.c	FUNCTION_2
+0x4000339	          0x8b4020	            mov eax, dword [rax + 0x20] 	        45	error-inject.c	FUNCTION_2	FUNCTION_1	IF_1
+0x400033c	              0xc3	                                     ret	        45	error-inject.c	FUNCTION_2	FUNCTION_1	IF_1
+ei_seq_next	functions,0:WHILE,0:FOR,0:DO,0:ELSE,0:CALL,1:SWITCH,0:IF,0	3
+0x40001b0	          0x4889f7	                            mov rdi, rsi	       170	error-inject.c	FUNCTION_11
+0x40001b3	    0x48c7c6000000	                              mov rsi, 0	       171	error-inject.c	FUNCTION_11	CALL_1
+0x40001ba	      0xe900000000	                           jmp 0x40001bf	       171	error-inject.c	FUNCTION_11	CALL_1
+ei_seq_show	functions,0:WHILE,0:FOR,0:DO,0:ELSE,0:CALL,3:SWITCH,0:IF,0	11
+0x4000180	          0x8b4620	            mov eax, dword [rsi + 0x20] 	       189	error-inject.c	FUNCTION_13
+0x4000183	    0x48c7c1000000	                              mov rcx, 0	       176	error-inject.c	FUNCTION_12	SWITCH_1
+0x400018a	          0x83e801	                              sub eax, 1	       176	error-inject.c	FUNCTION_12	SWITCH_1
+0x400018d	          0x83f802	                              cmp eax, 2	       176	error-inject.c	FUNCTION_12	SWITCH_1
+0x4000190	            0x7708	                            ja 0x400019a	       176	error-inject.c	FUNCTION_12	SWITCH_1
+0x4000192	    0x488b0cc50000	                  mov rcx, qword [rax*8]	       176	error-inject.c	FUNCTION_12	SWITCH_1
+0x400019a	        0x488b5610	            mov rdx, qword [rsi + 0x10] 	       192	error-inject.c	FUNCTION_13	CALL_2
+0x400019e	    0x48c7c6000000	                              mov rsi, 0	       192	error-inject.c	FUNCTION_13	CALL_2
+0x40001a5	      0xe800000000	                          call 0x40001aa	       192	error-inject.c	FUNCTION_13	CALL_2
+0x40001aa	            0x31c0	                            xor eax, eax	       195	error-inject.c	FUNCTION_13
+0x40001ac	              0xc3	                                     ret	       195	error-inject.c	FUNCTION_13
+ei_seq_start	functions,0:WHILE,0:FOR,0:DO,0:ELSE,0:CALL,2:SWITCH,0:IF,0	8
+0x40001c0	              0x53	                                push rbx	       159	error-inject.c	FUNCTION_9
+0x40001c1	    0x48c7c7000000	                              mov rdi, 0	       160	error-inject.c	FUNCTION_9	CALL_1
+0x40001c8	          0x4889f3	                            mov rbx, rsi	       159	error-inject.c	FUNCTION_9
+0x40001cb	      0xe800000000	                          call 0x40001d0	       160	error-inject.c	FUNCTION_9	CALL_1
+0x40001d0	          0x488b33	                    mov rsi, qword [rbx]	       161	error-inject.c	FUNCTION_9	CALL_2
+0x40001d3	    0x48c7c7000000	                              mov rdi, 0	       161	error-inject.c	FUNCTION_9	CALL_2
+0x40001da	              0x5b	                                 pop rbx	       162	error-inject.c	FUNCTION_9
+0x40001db	      0xe900000000	              jmp sym.ei_module_callback	       161	error-inject.c	FUNCTION_9	CALL_2
+ei_seq_stop	functions,0:WHILE,0:FOR,0:DO,0:ELSE,0:CALL,1:SWITCH,0:IF,0	2
+0x4000040	    0x48c7c7000000	                              mov rdi, 0	       166	error-inject.c	FUNCTION_10	CALL_1
+0x4000047	      0xe900000000	                           jmp 0x400004c	       166	error-inject.c	FUNCTION_10	CALL_1

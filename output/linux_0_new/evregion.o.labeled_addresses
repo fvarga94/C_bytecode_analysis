@@ -1,0 +1,401 @@
+acpi_ev_reg_run	functions,0:SWITCH,0:DO,0:ELSE,0:WHILE,0:CALL,4:IF,4:FOR,0	26
+0x40005da	              0x53	                                push rbx	       701	evregion.c	FUNCTION_7
+0x40005db	          0x4889d3	                            mov rbx, rdx	       701	evregion.c	FUNCTION_7
+0x40005de	      0xe800000000	                          call 0x40005e3	       711	evregion.c	FUNCTION_7	CALL_2
+0x40005e3	          0x4885c0	                           test rax, rax	       712	evregion.c	FUNCTION_7	IF_1
+0x40005e6	            0x7436	                            je 0x400061e	       712	evregion.c	FUNCTION_7	IF_1
+0x40005e8	        0x8078090a	                 cmp byte [rax + 9], 0xa	       720	evregion.c	FUNCTION_7	IF_2
+0x40005ec	            0x740d	                            je 0x40005fb	       720	evregion.c	FUNCTION_7	IF_2
+0x40005ee	    0x483b05000000	            cmp rax, qword [0x040005f5] 	       720	evregion.c	FUNCTION_7	IF_2
+0x40005f5	            0x7404	                            je 0x40005fb	       720	evregion.c	FUNCTION_7	IF_2
+0x40005f7	            0x31c0	                            xor eax, eax	       721	evregion.c	FUNCTION_7	IF_2
+0x40005f9	            0xeb28	                           jmp 0x4000623	       721	evregion.c	FUNCTION_7	IF_2
+0x40005fb	          0x4889c7	                            mov rdi, rax	       726	evregion.c	FUNCTION_7	CALL_3
+0x40005fe	      0xe800000000	                          call 0x4000603	       726	evregion.c	FUNCTION_7	CALL_3
+0x4000603	          0x4885c0	                           test rax, rax	       727	evregion.c	FUNCTION_7	IF_3
+0x4000606	            0x74ef	                            je 0x40005f7	       727	evregion.c	FUNCTION_7	IF_3
+0x4000608	            0x8a0b	                      mov cl, byte [rbx]	       736	evregion.c	FUNCTION_7	IF_4
+0x400060a	          0x38480d	                cmp byte [rax + 0xd], cl	       736	evregion.c	FUNCTION_7	IF_4
+0x400060d	            0x75e8	                           jne 0x40005f7	       736	evregion.c	FUNCTION_7	IF_4
+0x400060f	          0xff4308	                     inc dword [rbx + 8]	       743	evregion.c	FUNCTION_7
+0x4000612	          0x8b7304	                mov esi, dword [rbx + 4]	       744	evregion.c	FUNCTION_7	CALL_4
+0x4000615	          0x4889c7	                            mov rdi, rax	       744	evregion.c	FUNCTION_7	CALL_4
+0x4000618	              0x5b	                                 pop rbx	       746	evregion.c	FUNCTION_7
+0x4000619	      0xe9b5fcffff	      jmp sym.acpi_ev_execute_reg_method	       744	evregion.c	FUNCTION_7	CALL_4
+0x400061e	      0xb801100000	                         mov eax, 0x1001	       713	evregion.c	FUNCTION_7	IF_1
+0x4000623	              0x5b	                                 pop rbx	       746	evregion.c	FUNCTION_7
+0x4000624	              0xc3	                                     ret	       746	evregion.c	FUNCTION_7
+acpi_ev_address_space_dispatch	functions,0:SWITCH,0:DO,0:ELSE,0:WHILE,0:CALL,28:IF,13:FOR,0	159
+0x4000040	            0x4157	                                push r15	       106	evregion.c	FUNCTION_2
+0x4000042	            0x4156	                                push r14	       106	evregion.c	FUNCTION_2
+0x4000044	            0x4155	                                push r13	       106	evregion.c	FUNCTION_2
+0x4000046	            0x4154	                                push r12	       106	evregion.c	FUNCTION_2
+0x4000048	          0x4189cd	                           mov r13d, ecx	       106	evregion.c	FUNCTION_2
+0x400004b	              0x55	                                push rbp	       106	evregion.c	FUNCTION_2
+0x400004c	              0x53	                                push rbx	       106	evregion.c	FUNCTION_2
+0x400004d	          0x4889fb	                            mov rbx, rdi	       106	evregion.c	FUNCTION_2
+0x4000050	      0xbd06000000	                              mov ebp, 6	       120	evregion.c	FUNCTION_2	IF_1	CALL_3
+0x4000055	        0x4883ec30	                           sub rsp, 0x30	       106	evregion.c	FUNCTION_2
+0x4000059	    0x65488b042528	                mov rax, qword gs:[0x28]	       106	evregion.c	FUNCTION_2
+0x4000062	      0x4889442428	             mov qword [rsp + 0x28], rax	       106	evregion.c	FUNCTION_2
+0x4000067	            0x31c0	                            xor eax, eax	       106	evregion.c	FUNCTION_2
+0x4000069	      0x4889742418	             mov qword [rsp + 0x18], rsi	       106	evregion.c	FUNCTION_2
+0x400006e	        0x8954240c	              mov dword [rsp + 0xc], edx	       106	evregion.c	FUNCTION_2
+0x4000072	        0x44890424	                    mov dword [rsp], r8d	       106	evregion.c	FUNCTION_2
+0x4000076	      0x4c894c2410	              mov qword [rsp + 0x10], r9	       106	evregion.c	FUNCTION_2
+0x400007b	    0x48c744242000	               mov qword [rsp + 0x20], 0	       112	evregion.c	FUNCTION_2
+0x4000084	      0xe800000000	                          call 0x4000089	       118	evregion.c	FUNCTION_2	CALL_2
+0x4000089	          0x4885c0	                           test rax, rax	       119	evregion.c	FUNCTION_2	IF_1
+0x400008c	     0xf84f7010000	                            je 0x4000289	       119	evregion.c	FUNCTION_2	IF_1
+0x4000092	        0x4c8b6318	            mov r12, qword [rbx + 0x18] 	       125	evregion.c	FUNCTION_2
+0x4000096	      0x4c8b542418	            mov r10, qword [rsp + 0x18] 	       126	evregion.c	FUNCTION_2	IF_2
+0x400009b	          0x4d85e4	                           test r12, r12	       126	evregion.c	FUNCTION_2	IF_2
+0x400009e	            0x753d	                           jne 0x40000dd	       126	evregion.c	FUNCTION_2	IF_2
+0x40000a0	         0xfb67b0d	            movzx edi, byte [rbx + 0xd] 	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000a4	      0xe800000000	                          call 0x40000a9	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000a9	        0x488b7b10	            mov rdi, qword [rbx + 0x10] 	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000ad	        0x48890424	                    mov qword [rsp], rax	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000b1	      0xe800000000	                          call 0x40000b6	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000b6	        0x4c8b0c24	                     mov r9, qword [rsp]	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000ba	          0x4989d8	                             mov r8, rbx	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000bd	          0x4889c1	                            mov rcx, rax	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000c0	    0x48c7c2000000	                              mov rdx, 0	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000c7	      0xbe84000000	                           mov esi, 0x84	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000cc	    0x48c7c7000000	                              mov rdi, 0	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000d3	      0xe800000000	                          call 0x40000d8	       127	evregion.c	FUNCTION_2	IF_2	CALL_4
+0x40000d8	      0xe9ac010000	                           jmp 0x4000289	       134	evregion.c	FUNCTION_2	IF_2	CALL_7
+0x40000dd	        0xf6430c20	            test byte [rbx + 0xc], 0x20 	       143	evregion.c	FUNCTION_2	IF_3
+0x40000e1	          0x4989c6	                            mov r14, rax	       143	evregion.c	FUNCTION_2	IF_3
+0x40000e4	      0x4d8b7c2420	            mov r15, qword [r12 + 0x20] 	       137	evregion.c	FUNCTION_2
+0x40000e9	     0xf85af000000	                           jne 0x400019e	       143	evregion.c	FUNCTION_2	IF_3
+0x40000ef	      0x498b6c2428	            mov rbp, qword [r12 + 0x28] 	       147	evregion.c	FUNCTION_2	IF_3
+0x40000f4	          0x4885ed	                           test rbp, rbp	       148	evregion.c	FUNCTION_2	IF_3	IF_4
+0x40000f7	            0x7531	                           jne 0x400012a	       148	evregion.c	FUNCTION_2	IF_3	IF_4
+0x40000f9	         0xfb67b0d	            movzx edi, byte [rbx + 0xd] 	       152	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_8
+0x40000fd	      0xbd06000000	                              mov ebp, 6	       157	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_10
+0x4000102	      0xe800000000	                          call 0x4000107	       152	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_8
+0x4000107	          0x4889d9	                            mov rcx, rbx	       152	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_8
+0x400010a	          0x4989c0	                             mov r8, rax	       152	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_8
+0x400010d	    0x48c7c2000000	                              mov rdx, 0	       152	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_8
+0x4000114	      0xbe9c000000	                           mov esi, 0x9c	       152	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_8
+0x4000119	    0x48c7c7000000	                              mov rdi, 0	       152	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_8
+0x4000120	      0xe800000000	                          call 0x4000125	       152	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_8
+0x4000125	      0xe95f010000	                           jmp 0x4000289	       157	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_10
+0x400012a	      0x4c89542418	             mov qword [rsp + 0x18], r10	       157	evregion.c	FUNCTION_2	IF_3	IF_4	CALL_10
+0x400012f	      0xe800000000	                          call 0x4000134	       165	evregion.c	FUNCTION_2	IF_3	CALL_11
+0x4000134	            0x31f6	                            xor esi, esi	       167	evregion.c	FUNCTION_2	IF_3	CALL_12
+0x4000136	      0x488d4c2420	                   lea rcx, [rsp + 0x20]	       167	evregion.c	FUNCTION_2	IF_3	CALL_12
+0x400013b	          0x4c89fa	                            mov rdx, r15	       167	evregion.c	FUNCTION_2	IF_3	CALL_12
+0x400013e	          0x4889df	                            mov rdi, rbx	       167	evregion.c	FUNCTION_2	IF_3	CALL_12
+0x4000141	      0xe800000000	                          call 0x4000146	       167	evregion.c	FUNCTION_2	IF_3	CALL_12
+0x4000146	            0x89c5	                            mov ebp, eax	       167	evregion.c	FUNCTION_2	IF_3	CALL_12
+0x4000148	      0xe800000000	                          call 0x400014d	       172	evregion.c	FUNCTION_2	IF_3	CALL_13
+0x400014d	            0x85ed	                           test ebp, ebp	       176	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_14
+0x400014f	      0x4c8b542418	            mov r10, qword [rsp + 0x18] 	       176	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_14
+0x4000154	            0x742b	                            je 0x4000181	       176	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_14
+0x4000156	         0xfb67b0d	            movzx edi, byte [rbx + 0xd] 	       177	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_15
+0x400015a	      0xe800000000	                          call 0x400015f	       177	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_15
+0x400015f	    0x48c7c1000000	                              mov rcx, 0	       177	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_15
+0x4000166	          0x4989c0	                             mov r8, rax	       177	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_15
+0x4000169	            0x89ea	                            mov edx, ebp	       177	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_15
+0x400016b	      0xbeb5000000	                           mov esi, 0xb5	       177	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_15
+0x4000170	    0x48c7c7000000	                              mov rdi, 0	       177	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_15
+0x4000177	      0xe800000000	                          call 0x400017c	       177	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_15
+0x400017c	      0xe908010000	                           jmp 0x4000289	       182	evregion.c	FUNCTION_2	IF_3	IF_5	CALL_17
+0x4000181	          0x8a430c	                mov al, byte [rbx + 0xc]	       187	evregion.c	FUNCTION_2	IF_3	IF_6
+0x4000184	            0xa820	                           test al, 0x20	       187	evregion.c	FUNCTION_2	IF_3	IF_6
+0x4000186	            0x7516	                           jne 0x400019e	       187	evregion.c	FUNCTION_2	IF_3	IF_6
+0x4000188	          0x83c820	                            or eax, 0x20	       188	evregion.c	FUNCTION_2	IF_3	IF_6
+0x400018b	          0x88430c	                mov byte [rbx + 0xc], al	       188	evregion.c	FUNCTION_2	IF_3	IF_6
+0x400018e	      0x49837e2000	               cmp qword [r14 + 0x20], 0	       194	evregion.c	FUNCTION_2	IF_3	IF_6	IF_7
+0x4000193	            0x7509	                           jne 0x400019e	       194	evregion.c	FUNCTION_2	IF_3	IF_6	IF_7
+0x4000195	      0x488b442420	            mov rax, qword [rsp + 0x20] 	       195	evregion.c	FUNCTION_2	IF_3	IF_6	IF_7
+0x400019a	        0x49894620	             mov qword [r14 + 0x20], rax	       195	evregion.c	FUNCTION_2	IF_3	IF_6	IF_7
+0x400019e	        0x4c036b28	             add r13, qword [rbx + 0x28]	       204	evregion.c	FUNCTION_2
+0x40001a2	        0x807b0d09	                 cmp byte [rbx + 0xd], 9	       220	evregion.c	FUNCTION_2	IF_8
+0x40001a6	      0x498b6c2410	            mov rbp, qword [r12 + 0x10] 	       203	evregion.c	FUNCTION_2
+0x40001ab	            0x7523	                           jne 0x40001d0	       220	evregion.c	FUNCTION_2	IF_8
+0x40001ad	          0x4d85ff	                           test r15, r15	       221	evregion.c	FUNCTION_2	IF_8
+0x40001b0	            0x741e	                            je 0x40001d0	       221	evregion.c	FUNCTION_2	IF_8
+0x40001b2	          0x4d85d2	                           test r10, r10	       221	evregion.c	FUNCTION_2	IF_8
+0x40001b5	            0x7419	                            je 0x40001d0	       221	evregion.c	FUNCTION_2	IF_8
+0x40001b7	        0x498b4230	            mov rax, qword [r10 + 0x30] 	       225	evregion.c	FUNCTION_2	IF_8
+0x40001bb	          0x498907	                    mov qword [r15], rax	       225	evregion.c	FUNCTION_2	IF_8
+0x40001be	      0x66418b4226	               mov ax, word [r10 + 0x26]	       226	evregion.c	FUNCTION_2	IF_8
+0x40001c3	      0x6641894708	                  mov word [r15 + 8], ax	       226	evregion.c	FUNCTION_2	IF_8
+0x40001c8	        0x418a4225	               mov al, byte [r10 + 0x25]	       227	evregion.c	FUNCTION_2	IF_8
+0x40001cc	        0x4188470a	                mov byte [r15 + 0xa], al	       227	evregion.c	FUNCTION_2	IF_8
+0x40001d0	        0x807b0d08	                 cmp byte [rbx + 0xd], 8	       229	evregion.c	FUNCTION_2	IF_9
+0x40001d4	            0x752f	                           jne 0x4000205	       229	evregion.c	FUNCTION_2	IF_9
+0x40001d6	          0x4d85ff	                           test r15, r15	       230	evregion.c	FUNCTION_2	IF_9
+0x40001d9	            0x742a	                            je 0x4000205	       230	evregion.c	FUNCTION_2	IF_9
+0x40001db	          0x4d85d2	                           test r10, r10	       230	evregion.c	FUNCTION_2	IF_9
+0x40001de	            0x7425	                            je 0x4000205	       230	evregion.c	FUNCTION_2	IF_9
+0x40001e0	        0x498b4230	            mov rax, qword [r10 + 0x30] 	       234	evregion.c	FUNCTION_2	IF_9
+0x40001e4	          0x498907	                    mov qword [r15], rax	       234	evregion.c	FUNCTION_2	IF_9
+0x40001e7	      0x66418b4226	               mov ax, word [r10 + 0x26]	       235	evregion.c	FUNCTION_2	IF_9
+0x40001ec	      0x6641894708	                  mov word [r15 + 8], ax	       235	evregion.c	FUNCTION_2	IF_9
+0x40001f1	        0x418a4225	               mov al, byte [r10 + 0x25]	       236	evregion.c	FUNCTION_2	IF_9
+0x40001f5	        0x4188470a	                mov byte [r15 + 0xa], al	       236	evregion.c	FUNCTION_2	IF_9
+0x40001f9	        0x418b4218	            mov eax, dword [r10 + 0x18] 	       238	evregion.c	FUNCTION_2	IF_9
+0x40001fd	      0x450fb76a38	          movzx r13d, word [r10 + 0x38] 	       237	evregion.c	FUNCTION_2	IF_9
+0x4000202	          0x890424	                    mov dword [rsp], eax	       238	evregion.c	FUNCTION_2	IF_9
+0x4000205	    0x41f644240e01	                test byte [r12 + 0xe], 1	       248	evregion.c	FUNCTION_2	IF_10
+0x400020b	            0x7505	                           jne 0x4000212	       248	evregion.c	FUNCTION_2	IF_10
+0x400020d	      0xe800000000	                          call 0x4000212	       255	evregion.c	FUNCTION_2	IF_10	CALL_21
+0x4000212	        0x4d8b4e20	              mov r9, qword [r14 + 0x20]	       260	evregion.c	FUNCTION_2	CALL_22
+0x4000216	          0x4d89f8	                             mov r8, r15	       260	evregion.c	FUNCTION_2	CALL_22
+0x4000219	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       260	evregion.c	FUNCTION_2	CALL_22
+0x400021e	          0x8b1424	                    mov edx, dword [rsp]	       260	evregion.c	FUNCTION_2	CALL_22
+0x4000221	          0x4c89ee	                            mov rsi, r13	       260	evregion.c	FUNCTION_2	CALL_22
+0x4000224	        0x8b7c240c	              mov edi, dword [rsp + 0xc]	       260	evregion.c	FUNCTION_2	CALL_22
+0x4000228	      0xe800000000	                          call 0x400022d	       260	evregion.c	FUNCTION_2	CALL_22
+0x400022d	            0x85c0	                           test eax, eax	       263	evregion.c	FUNCTION_2	IF_11	CALL_23
+0x400022f	            0x89c5	                            mov ebp, eax	       260	evregion.c	FUNCTION_2	CALL_22
+0x4000231	            0x7449	                            je 0x400027c	       263	evregion.c	FUNCTION_2	IF_11	CALL_23
+0x4000233	         0xfb67b0d	            movzx edi, byte [rbx + 0xd] 	       264	evregion.c	FUNCTION_2	IF_11	CALL_24
+0x4000237	      0xe800000000	                          call 0x400023c	       264	evregion.c	FUNCTION_2	IF_11	CALL_24
+0x400023c	    0x48c7c1000000	                              mov rcx, 0	       264	evregion.c	FUNCTION_2	IF_11	CALL_24
+0x4000243	          0x4989c0	                             mov r8, rax	       264	evregion.c	FUNCTION_2	IF_11	CALL_24
+0x4000246	            0x89ea	                            mov edx, ebp	       264	evregion.c	FUNCTION_2	IF_11	CALL_24
+0x4000248	      0xbe0a010000	                          mov esi, 0x10a	       264	evregion.c	FUNCTION_2	IF_11	CALL_24
+0x400024d	    0x48c7c7000000	                              mov rdi, 0	       264	evregion.c	FUNCTION_2	IF_11	CALL_24
+0x4000254	      0xe800000000	                          call 0x4000259	       264	evregion.c	FUNCTION_2	IF_11	CALL_24
+0x4000259	        0x807b0d03	                 cmp byte [rbx + 0xd], 3	       272	evregion.c	FUNCTION_2	IF_11	IF_12
+0x400025d	            0x751d	                           jne 0x400027c	       272	evregion.c	FUNCTION_2	IF_11	IF_12
+0x400025f	          0x83fd11	                           cmp ebp, 0x11	       272	evregion.c	FUNCTION_2	IF_11	IF_12
+0x4000262	            0x7518	                           jne 0x400027c	       272	evregion.c	FUNCTION_2	IF_11	IF_12
+0x4000264	    0x48c7c2000000	                              mov rdx, 0	       274	evregion.c	FUNCTION_2	IF_11	IF_12	CALL_26
+0x400026b	      0xbe13010000	                          mov esi, 0x113	       274	evregion.c	FUNCTION_2	IF_11	IF_12	CALL_26
+0x4000270	    0x48c7c7000000	                              mov rdi, 0	       274	evregion.c	FUNCTION_2	IF_11	IF_12	CALL_26
+0x4000277	      0xe800000000	                          call 0x400027c	       274	evregion.c	FUNCTION_2	IF_11	IF_12	CALL_26
+0x400027c	    0x41f644240e01	                test byte [r12 + 0xe], 1	       279	evregion.c	FUNCTION_2	IF_13
+0x4000282	            0x7505	                           jne 0x4000289	       279	evregion.c	FUNCTION_2	IF_13
+0x4000284	      0xe800000000	                          call 0x4000289	       285	evregion.c	FUNCTION_2	IF_13	CALL_27
+0x4000289	      0x488b4c2428	            mov rcx, qword [rsp + 0x28] 	       289	evregion.c	FUNCTION_2
+0x400028e	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       289	evregion.c	FUNCTION_2
+0x4000297	            0x89e8	                            mov eax, ebp	       289	evregion.c	FUNCTION_2
+0x4000299	            0x7405	                            je 0x40002a0	       289	evregion.c	FUNCTION_2
+0x400029b	      0xe800000000	                          call 0x40002a0	       289	evregion.c	FUNCTION_2
+0x40002a0	        0x4883c430	                           add rsp, 0x30	       289	evregion.c	FUNCTION_2
+0x40002a4	              0x5b	                                 pop rbx	       289	evregion.c	FUNCTION_2
+0x40002a5	              0x5d	                                 pop rbp	       289	evregion.c	FUNCTION_2
+0x40002a6	            0x415c	                                 pop r12	       289	evregion.c	FUNCTION_2
+0x40002a8	            0x415d	                                 pop r13	       289	evregion.c	FUNCTION_2
+0x40002aa	            0x415e	                                 pop r14	       289	evregion.c	FUNCTION_2
+0x40002ac	            0x415f	                                 pop r15	       289	evregion.c	FUNCTION_2
+0x40002ae	              0xc3	                                     ret	       289	evregion.c	FUNCTION_2
+acpi_ev_attach_region	functions,0:SWITCH,0:DO,0:ELSE,0:WHILE,0:CALL,7:IF,1:FOR,0	10
+0x40002af	      0x48837e1800	               cmp qword [rsi + 0x18], 0	       482	evregion.c	FUNCTION_4	IF_1
+0x40002b4	      0xb807000000	                              mov eax, 7	       483	evregion.c	FUNCTION_4	IF_1	CALL_2
+0x40002b9	            0x7517	                           jne 0x40002d2	       482	evregion.c	FUNCTION_4	IF_1
+0x40002bb	        0x488b4730	            mov rax, qword [rdi + 0x30] 	       495	evregion.c	FUNCTION_4
+0x40002bf	        0x48894620	             mov qword [rsi + 0x20], rax	       495	evregion.c	FUNCTION_4
+0x40002c3	        0x48897730	             mov qword [rdi + 0x30], rsi	       496	evregion.c	FUNCTION_4
+0x40002c7	        0x48897e18	             mov qword [rsi + 0x18], rdi	       497	evregion.c	FUNCTION_4
+0x40002cb	      0xe800000000	                          call 0x40002d0	       498	evregion.c	FUNCTION_4	CALL_6
+0x40002d0	            0x31c0	                            xor eax, eax	       500	evregion.c	FUNCTION_4	CALL_7
+0x40002d2	              0xc3	                                     ret	       501	evregion.c	FUNCTION_4
+acpi_ev_execute_reg_methods	functions,0:SWITCH,0:DO,0:ELSE,0:WHILE,0:CALL,7:IF,1:FOR,0	71
+0x4000625	              0x55	                                push rbp	       651	evregion.c	FUNCTION_6
+0x4000626	              0x53	                                push rbx	       651	evregion.c	FUNCTION_6
+0x4000627	            0x89f5	                            mov ebp, esi	       651	evregion.c	FUNCTION_6
+0x4000629	          0x4531c9	                            xor r9d, r9d	       670	evregion.c	FUNCTION_6	CALL_4
+0x400062c	          0x4889fb	                            mov rbx, rdi	       651	evregion.c	FUNCTION_6
+0x400062f	    0x49c7c0000000	                               mov r8, 0	       670	evregion.c	FUNCTION_6	CALL_4
+0x4000636	        0x4883ec60	                           sub rsp, 0x60	       651	evregion.c	FUNCTION_6
+0x400063a	      0xb901000000	                              mov ecx, 1	       670	evregion.c	FUNCTION_6	CALL_4
+0x400063f	    0x65488b042528	                mov rax, qword gs:[0x28]	       651	evregion.c	FUNCTION_6
+0x4000648	      0x4889442458	             mov qword [rsp + 0x58], rax	       651	evregion.c	FUNCTION_6
+0x400064d	            0x31c0	                            xor eax, eax	       651	evregion.c	FUNCTION_6
+0x400064f	      0x408874240c	               mov byte [rsp + 0xc], sil	       656	evregion.c	FUNCTION_6
+0x4000654	        0x89542410	             mov dword [rsp + 0x10], edx	       657	evregion.c	FUNCTION_6
+0x4000658	          0x4889fe	                            mov rsi, rdi	       670	evregion.c	FUNCTION_6	CALL_4
+0x400065b	    0xc74424140000	               mov dword [rsp + 0x14], 0	       658	evregion.c	FUNCTION_6
+0x4000663	            0x6a00	                                  push 0	       670	evregion.c	FUNCTION_6	CALL_4
+0x4000665	          0x83caff	                      or edx, 0xffffffff	       670	evregion.c	FUNCTION_6	CALL_4
+0x4000668	            0x31ff	                            xor edi, edi	       670	evregion.c	FUNCTION_6	CALL_4
+0x400066a	      0x488d442414	                   lea rax, [rsp + 0x14]	       670	evregion.c	FUNCTION_6	CALL_4
+0x400066f	              0x50	                                push rax	       670	evregion.c	FUNCTION_6	CALL_4
+0x4000670	      0xe800000000	                          call 0x4000675	       670	evregion.c	FUNCTION_6	CALL_4
+0x4000675	        0x4080fd03	                              cmp bpl, 3	       676	evregion.c	FUNCTION_6	IF_1
+0x4000679	              0x58	                                 pop rax	       676	evregion.c	FUNCTION_6	IF_1
+0x400067a	              0x5a	                                 pop rdx	       676	evregion.c	FUNCTION_6	IF_1
+0x400067b	     0xf85a1000000	                           jne 0x4000722	       676	evregion.c	FUNCTION_6	IF_1
+0x4000681	          0x4885db	                           test rbx, rbx	       784	evregion.c	FUNCTION_8	IF_1
+0x4000684	     0xf8498000000	                            je 0x4000722	       784	evregion.c	FUNCTION_8	IF_1
+0x400068a	      0xbf01000000	                              mov edi, 1	       790	evregion.c	FUNCTION_8	CALL_2
+0x400068f	      0xe800000000	                          call 0x4000694	       790	evregion.c	FUNCTION_8	CALL_2
+0x4000694	    0x48c7c6000000	                              mov rsi, 0	       794	evregion.c	FUNCTION_8	CALL_3
+0x400069b	          0x4889e2	                            mov rdx, rsp	       794	evregion.c	FUNCTION_8	CALL_3
+0x400069e	          0x4889df	                            mov rdi, rbx	       794	evregion.c	FUNCTION_8	CALL_3
+0x40006a1	      0xe800000000	                          call 0x40006a6	       794	evregion.c	FUNCTION_8	CALL_3
+0x40006a6	            0x31f6	                            xor esi, esi	       806	evregion.c	FUNCTION_8	CALL_5
+0x40006a8	            0x85c0	                           test eax, eax	       795	evregion.c	FUNCTION_8	IF_2	CALL_4
+0x40006aa	            0x756c	                           jne 0x4000718	       795	evregion.c	FUNCTION_8	IF_2	CALL_4
+0x40006ac	          0x4889df	                            mov rdi, rbx	       814	evregion.c	FUNCTION_8	WHILE_1	CALL_6
+0x40006af	      0xe800000000	                          call 0x40006b4	       814	evregion.c	FUNCTION_8	WHILE_1	CALL_6
+0x40006b4	          0x4885c0	                           test rax, rax	       807	evregion.c	FUNCTION_8	WHILE_1
+0x40006b7	            0x7419	                            je 0x40006d2	       807	evregion.c	FUNCTION_8	WHILE_1
+0x40006b9	        0x8078090a	                 cmp byte [rax + 9], 0xa	       808	evregion.c	FUNCTION_8	WHILE_1	IF_3
+0x40006bd	            0x750e	                           jne 0x40006cd	       808	evregion.c	FUNCTION_8	WHILE_1	IF_3
+0x40006bf	          0x488b10	                    mov rdx, qword [rax]	       809	evregion.c	FUNCTION_8	WHILE_1	IF_3
+0x40006c2	          0x4885d2	                           test rdx, rdx	       808	evregion.c	FUNCTION_8	WHILE_1	IF_3
+0x40006c5	            0x7406	                            je 0x40006cd	       808	evregion.c	FUNCTION_8	WHILE_1	IF_3
+0x40006c7	        0x807a0d03	                 cmp byte [rdx + 0xd], 3	       809	evregion.c	FUNCTION_8	WHILE_1	IF_3
+0x40006cb	            0x744b	                            je 0x4000718	       809	evregion.c	FUNCTION_8	WHILE_1	IF_3
+0x40006cd	          0x4889c6	                            mov rsi, rax	       814	evregion.c	FUNCTION_8	WHILE_1	CALL_6
+0x40006d0	            0xebda	                           jmp 0x40006ac	       814	evregion.c	FUNCTION_8	WHILE_1	CALL_6
+0x40006d2	        0x488b3c24	                    mov rdi, qword [rsp]	       826	evregion.c	FUNCTION_8	CALL_7
+0x40006d6	      0x488d442428	                   lea rax, [rsp + 0x28]	       820	evregion.c	FUNCTION_8
+0x40006db	      0x488d542418	                   lea rdx, [rsp + 0x18]	       826	evregion.c	FUNCTION_8	CALL_7
+0x40006e0	            0x31c9	                            xor ecx, ecx	       826	evregion.c	FUNCTION_8	CALL_7
+0x40006e2	            0x31f6	                            xor esi, esi	       826	evregion.c	FUNCTION_8	CALL_7
+0x40006e4	    0xc74424180200	               mov dword [rsp + 0x18], 2	       819	evregion.c	FUNCTION_8
+0x40006ec	      0x4889442420	             mov qword [rsp + 0x20], rax	       820	evregion.c	FUNCTION_8
+0x40006f1	    0xc74424280100	               mov dword [rsp + 0x28], 1	       821	evregion.c	FUNCTION_8
+0x40006f9	    0x48c744243003	               mov qword [rsp + 0x30], 3	       822	evregion.c	FUNCTION_8
+0x4000702	    0xc74424400100	               mov dword [rsp + 0x40], 1	       823	evregion.c	FUNCTION_8
+0x400070a	    0x48c744244801	               mov qword [rsp + 0x48], 1	       824	evregion.c	FUNCTION_8
+0x4000713	      0xe800000000	                          call 0x4000718	       826	evregion.c	FUNCTION_8	CALL_7
+0x4000718	      0xbf01000000	                              mov edi, 1	       831	evregion.c	FUNCTION_8	CALL_8
+0x400071d	      0xe800000000	                          call 0x4000722	       831	evregion.c	FUNCTION_8	CALL_8
+0x4000722	      0x488b442458	            mov rax, qword [rsp + 0x58] 	       686	evregion.c	FUNCTION_6
+0x4000727	    0x654833042528	                xor rax, qword gs:[0x28]	       686	evregion.c	FUNCTION_6
+0x4000730	            0x7405	                            je 0x4000737	       686	evregion.c	FUNCTION_6
+0x4000732	      0xe800000000	                          call 0x4000737	       686	evregion.c	FUNCTION_6
+0x4000737	        0x4883c460	                           add rsp, 0x60	       686	evregion.c	FUNCTION_6
+0x400073b	              0x5b	                                 pop rbx	       686	evregion.c	FUNCTION_6
+0x400073c	              0x5d	                                 pop rbp	       686	evregion.c	FUNCTION_6
+0x400073d	              0xc3	                                     ret	       686	evregion.c	FUNCTION_6
+acpi_ev_initialize_op_regions	functions,0:SWITCH,0:DO,0:ELSE,0:WHILE,0:CALL,8:IF,2:FOR,1	26
+0x400073e	              0x55	                                push rbp	        44	evregion.c	FUNCTION_1
+0x400073f	              0x53	                                push rbx	        44	evregion.c	FUNCTION_1
+0x4000740	      0xbf01000000	                              mov edi, 1	        50	evregion.c	FUNCTION_1	CALL_2
+0x4000745	      0xe800000000	                          call 0x400074a	        50	evregion.c	FUNCTION_1	CALL_2
+0x400074a	            0x85c0	                           test eax, eax	        51	evregion.c	FUNCTION_1	IF_1	CALL_3
+0x400074c	            0x89c5	                            mov ebp, eax	        50	evregion.c	FUNCTION_1	CALL_2
+0x400074e	            0x7544	                           jne 0x4000794	        51	evregion.c	FUNCTION_1	IF_1	CALL_3
+0x4000750	            0x31db	                            xor ebx, ebx	        51	evregion.c	FUNCTION_1	IF_1	CALL_3
+0x4000752	     0xfb6b3000000	                   movzx esi, byte [rbx]	        63	evregion.c	FUNCTION_1	FOR_1	IF_2	CALL_5
+0x4000759	    0x488b3d000000	            mov rdi, qword [0x04000760] 	        63	evregion.c	FUNCTION_1	FOR_1	IF_2	CALL_5
+0x4000760	      0xe800000000	                          call 0x4000765	        63	evregion.c	FUNCTION_1	FOR_1	IF_2	CALL_5
+0x4000765	            0x84c0	                             test al, al	        63	evregion.c	FUNCTION_1	FOR_1	IF_2	CALL_5
+0x4000767	            0x7418	                            je 0x4000781	        63	evregion.c	FUNCTION_1	FOR_1	IF_2	CALL_5
+0x4000769	     0xfb6b3000000	                   movzx esi, byte [rbx]	        66	evregion.c	FUNCTION_1	FOR_1	IF_2	CALL_6
+0x4000770	    0x488b3d000000	            mov rdi, qword [0x04000777] 	        66	evregion.c	FUNCTION_1	FOR_1	IF_2	CALL_6
+0x4000777	      0xba01000000	                              mov edx, 1	        66	evregion.c	FUNCTION_1	FOR_1	IF_2	CALL_6
+0x400077c	      0xe800000000	                          call 0x4000781	        66	evregion.c	FUNCTION_1	FOR_1	IF_2	CALL_6
+0x4000781	          0x48ffc3	                                 inc rbx	        66	evregion.c	FUNCTION_1	FOR_1	IF_2	CALL_6
+0x4000784	        0x4883fb04	                              cmp rbx, 4	        57	evregion.c	FUNCTION_1	FOR_1
+0x4000788	            0x75c8	                           jne 0x4000752	        57	evregion.c	FUNCTION_1	FOR_1
+0x400078a	      0xbf01000000	                              mov edi, 1	        72	evregion.c	FUNCTION_1	CALL_7
+0x400078f	      0xe800000000	                          call 0x4000794	        72	evregion.c	FUNCTION_1	CALL_7
+0x4000794	            0x89e8	                            mov eax, ebp	        74	evregion.c	FUNCTION_1
+0x4000796	              0x5b	                                 pop rbx	        74	evregion.c	FUNCTION_1
+0x4000797	              0x5d	                                 pop rbp	        74	evregion.c	FUNCTION_1
+0x4000798	              0xc3	                                     ret	        74	evregion.c	FUNCTION_1
+acpi_ev_detach_region	functions,0:SWITCH,0:DO,0:ELSE,0:WHILE,1:CALL,18:IF,12:FOR,0	103
+0x4000466	            0x4156	                                push r14	       308	evregion.c	FUNCTION_3
+0x4000468	            0x4155	                                push r13	       308	evregion.c	FUNCTION_3
+0x400046a	          0x4189f5	                           mov r13d, esi	       308	evregion.c	FUNCTION_3
+0x400046d	            0x4154	                                push r12	       308	evregion.c	FUNCTION_3
+0x400046f	              0x55	                                push rbp	       308	evregion.c	FUNCTION_3
+0x4000470	              0x53	                                push rbx	       308	evregion.c	FUNCTION_3
+0x4000471	          0x4889fb	                            mov rbx, rdi	       308	evregion.c	FUNCTION_3
+0x4000474	      0xe800000000	                          call 0x4000479	       320	evregion.c	FUNCTION_3	CALL_2
+0x4000479	          0x4885c0	                           test rax, rax	       321	evregion.c	FUNCTION_3	IF_1
+0x400047c	     0xf844f010000	                            je 0x40005d1	       321	evregion.c	FUNCTION_3	IF_1
+0x4000482	        0x488b6b18	            mov rbp, qword [rbx + 0x18] 	       328	evregion.c	FUNCTION_3
+0x4000486	          0x4885ed	                           test rbp, rbp	       329	evregion.c	FUNCTION_3	IF_2
+0x4000489	     0xf8442010000	                            je 0x40005d1	       329	evregion.c	FUNCTION_3	IF_2
+0x400048f	        0x488b4d30	            mov rcx, qword [rbp + 0x30] 	       338	evregion.c	FUNCTION_3
+0x4000493	        0x488d5530	                   lea rdx, [rbp + 0x30]	       340	evregion.c	FUNCTION_3
+0x4000497	          0x4989c4	                            mov r12, rax	       340	evregion.c	FUNCTION_3
+0x400049a	          0x4889c8	                            mov rax, rcx	       338	evregion.c	FUNCTION_3
+0x400049d	          0x4885c0	                           test rax, rax	       342	evregion.c	FUNCTION_3	WHILE_1
+0x40004a0	     0xf842b010000	                            je 0x40005d1	       342	evregion.c	FUNCTION_3	WHILE_1
+0x40004a6	          0x4839d8	                            cmp rax, rbx	       346	evregion.c	FUNCTION_3	WHILE_1	IF_3
+0x40004a9	     0xf85ee000000	                           jne 0x400059d	       346	evregion.c	FUNCTION_3	WHILE_1	IF_3
+0x40004af	        0x488b4320	            mov rax, qword [rbx + 0x20] 	       353	evregion.c	FUNCTION_3	WHILE_1	IF_3
+0x40004b3	          0x4584ed	                         test r13b, r13b	       356	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_4
+0x40004b6	          0x488902	                    mov qword [rdx], rax	       353	evregion.c	FUNCTION_3	WHILE_1	IF_3
+0x40004b9	    0x48c743200000	               mov qword [rbx + 0x20], 0	       354	evregion.c	FUNCTION_3	WHILE_1	IF_3
+0x40004c1	            0x753a	                           jne 0x40004fd	       356	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_4
+0x40004c3	            0x31f6	                            xor esi, esi	       366	evregion.c	FUNCTION_3	WHILE_1	IF_3
+0x40004c5	          0x4889df	                            mov rdi, rbx	       366	evregion.c	FUNCTION_3	WHILE_1	IF_3
+0x40004c8	      0xe800000000	                          call 0x40004cd	       366	evregion.c	FUNCTION_3	WHILE_1	IF_3
+0x40004cd	            0x85c0	                           test eax, eax	       369	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_7
+0x40004cf	          0x4189c6	                           mov r14d, eax	       366	evregion.c	FUNCTION_3	WHILE_1	IF_3
+0x40004d2	            0x743c	                            je 0x4000510	       369	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_7
+0x40004d4	         0xfb67b0d	            movzx edi, byte [rbx + 0xd] 	       370	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_8
+0x40004d8	      0xe800000000	                          call 0x40004dd	       370	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_8
+0x40004dd	    0x48c7c1000000	                              mov rcx, 0	       370	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_8
+0x40004e4	          0x4989c0	                             mov r8, rax	       370	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_8
+0x40004e7	          0x4489f2	                           mov edx, r14d	       370	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_8
+0x40004ea	      0xbe75010000	                          mov esi, 0x175	       370	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_8
+0x40004ef	    0x48c7c7000000	                              mov rdi, 0	       370	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_8
+0x40004f6	      0xe800000000	                          call 0x40004fb	       370	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_8
+0x40004fb	            0xeb13	                           jmp 0x4000510	       370	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_6	CALL_8
+0x40004fd	      0xbf01000000	                              mov edi, 1	       357	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_4
+0x4000502	      0xe800000000	                          call 0x4000507	       357	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_4
+0x4000507	            0x85c0	                           test eax, eax	       359	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_4	IF_5	CALL_5
+0x4000509	            0x74b8	                            je 0x40004c3	       359	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_4	IF_5	CALL_5
+0x400050b	      0xe9c1000000	                           jmp 0x40005d1	       359	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_4	IF_5	CALL_5
+0x4000510	          0x4584ed	                         test r13b, r13b	       376	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_7
+0x4000513	            0x7508	                           jne 0x400051d	       376	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_7
+0x4000515	        0xf6430c20	            test byte [rbx + 0xc], 0x20 	       388	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9
+0x4000519	            0x746a	                            je 0x4000585	       388	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9
+0x400051b	            0xeb13	                           jmp 0x4000530	       388	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9
+0x400051d	      0xbf01000000	                              mov edi, 1	       377	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_7
+0x4000522	      0xe800000000	                          call 0x4000527	       377	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_7
+0x4000527	            0x85c0	                           test eax, eax	       379	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_7	IF_8	CALL_11
+0x4000529	            0x74ea	                            je 0x4000515	       379	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_7	IF_8	CALL_11
+0x400052b	      0xe9a1000000	                           jmp 0x40005d1	       379	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_7	IF_8	CALL_11
+0x4000530	      0x498d4c2420	                   lea rcx, [r12 + 0x20]	       324	evregion.c	FUNCTION_3
+0x4000535	        0x488b5520	            mov rdx, qword [rbp + 0x20] 	       390	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9
+0x4000539	        0x488b4528	            mov rax, qword [rbp + 0x28] 	       390	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9
+0x400053d	      0xbe01000000	                              mov esi, 1	       390	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9
+0x4000542	          0x4889df	                            mov rdi, rbx	       390	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9
+0x4000545	      0xe800000000	                          call 0x400054a	       390	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9
+0x400054a	            0x85c0	                           test eax, eax	       406	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_11	CALL_13
+0x400054c	          0x4189c5	                           mov r13d, eax	       390	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9
+0x400054f	    0x49c744242000	               mov qword [r12 + 0x20], 0	       401	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_10
+0x4000558	            0x7427	                            je 0x4000581	       406	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_11	CALL_13
+0x400055a	         0xfb67b0d	            movzx edi, byte [rbx + 0xd] 	       407	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_11	CALL_14
+0x400055e	      0xe800000000	                          call 0x4000563	       407	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_11	CALL_14
+0x4000563	    0x48c7c1000000	                              mov rcx, 0	       407	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_11	CALL_14
+0x400056a	          0x4989c0	                             mov r8, rax	       407	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_11	CALL_14
+0x400056d	          0x4489ea	                           mov edx, r13d	       407	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_11	CALL_14
+0x4000570	      0xbe9b010000	                          mov esi, 0x19b	       407	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_11	CALL_14
+0x4000575	    0x48c7c7000000	                              mov rdi, 0	       407	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_11	CALL_14
+0x400057c	      0xe800000000	                          call 0x4000581	       407	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9	IF_11	CALL_14
+0x4000581	        0x80630cdf	              and byte [rbx + 0xc], 0xdf	       414	evregion.c	FUNCTION_3	WHILE_1	IF_3	IF_9
+0x4000585	    0x48c743180000	               mov qword [rbx + 0x18], 0	       427	evregion.c	FUNCTION_3	WHILE_1	IF_3
+0x400058d	          0x4889ef	                            mov rdi, rbp	       428	evregion.c	FUNCTION_3	WHILE_1	IF_3	CALL_16
+0x4000590	              0x5b	                                 pop rbx	       455	evregion.c	FUNCTION_3
+0x4000591	              0x5d	                                 pop rbp	       455	evregion.c	FUNCTION_3
+0x4000592	            0x415c	                                 pop r12	       455	evregion.c	FUNCTION_3
+0x4000594	            0x415d	                                 pop r13	       455	evregion.c	FUNCTION_3
+0x4000596	            0x415e	                                 pop r14	       455	evregion.c	FUNCTION_3
+0x4000598	      0xe900000000	                           jmp 0x400059d	       428	evregion.c	FUNCTION_3	WHILE_1	IF_3	CALL_16
+0x400059d	        0x488d5020	                   lea rdx, [rax + 0x20]	       435	evregion.c	FUNCTION_3	WHILE_1
+0x40005a1	        0x488b4020	            mov rax, qword [rax + 0x20] 	       436	evregion.c	FUNCTION_3	WHILE_1
+0x40005a5	          0x4839c1	                            cmp rcx, rax	       440	evregion.c	FUNCTION_3	WHILE_1	IF_12
+0x40005a8	     0xf85effeffff	                           jne 0x400049d	       440	evregion.c	FUNCTION_3	WHILE_1	IF_12
+0x40005ae	          0x4889d9	                            mov rcx, rbx	       441	evregion.c	FUNCTION_3	WHILE_1	IF_12	CALL_17
+0x40005b1	    0x48c7c2000000	                              mov rdx, 0	       441	evregion.c	FUNCTION_3	WHILE_1	IF_12	CALL_17
+0x40005b8	      0xbebb010000	                          mov esi, 0x1bb	       441	evregion.c	FUNCTION_3	WHILE_1	IF_12	CALL_17
+0x40005bd	              0x5b	                                 pop rbx	       455	evregion.c	FUNCTION_3
+0x40005be	              0x5d	                                 pop rbp	       455	evregion.c	FUNCTION_3
+0x40005bf	            0x415c	                                 pop r12	       455	evregion.c	FUNCTION_3
+0x40005c1	            0x415d	                                 pop r13	       455	evregion.c	FUNCTION_3
+0x40005c3	            0x415e	                                 pop r14	       455	evregion.c	FUNCTION_3
+0x40005c5	    0x48c7c7000000	                              mov rdi, 0	       441	evregion.c	FUNCTION_3	WHILE_1	IF_12	CALL_17
+0x40005cc	      0xe900000000	                           jmp 0x40005d1	       441	evregion.c	FUNCTION_3	WHILE_1	IF_12	CALL_17
+0x40005d1	              0x5b	                                 pop rbx	       455	evregion.c	FUNCTION_3
+0x40005d2	              0x5d	                                 pop rbp	       455	evregion.c	FUNCTION_3
+0x40005d3	            0x415c	                                 pop r12	       455	evregion.c	FUNCTION_3
+0x40005d5	            0x415d	                                 pop r13	       455	evregion.c	FUNCTION_3
+0x40005d7	            0x415e	                                 pop r14	       455	evregion.c	FUNCTION_3
+0x40005d9	              0xc3	                                     ret	       455	evregion.c	FUNCTION_3

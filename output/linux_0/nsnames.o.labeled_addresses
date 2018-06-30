@@ -1,0 +1,347 @@
+acpi_ns_get_pathname_length	IF,1:SWITCH,0:ELSE,0:functions,0:FOR,0:CALL,4:DO,0:WHILE,0	16
+0x40001ae	      0x440fb64708	               movzx r8d, byte [rdi + 8]	        62	nsnames.c	FUNCTION_2	IF_1	CALL_1
+0x40001b3	        0x4180f80f	                            cmp r8b, 0xf	        62	nsnames.c	FUNCTION_2	IF_1	CALL_1
+0x40001b7	            0x741e	                            je 0x40001d7	        62	nsnames.c	FUNCTION_2	IF_1	CALL_1
+0x40001b9	          0x4889f9	                            mov rcx, rdi	        63	nsnames.c	FUNCTION_2	IF_1	CALL_2
+0x40001bc	    0x48c7c2000000	                              mov rdx, 0	        63	nsnames.c	FUNCTION_2	IF_1	CALL_2
+0x40001c3	      0xbe41000000	                           mov esi, 0x41	        63	nsnames.c	FUNCTION_2	IF_1	CALL_2
+0x40001c8	    0x48c7c7000000	                              mov rdi, 0	        63	nsnames.c	FUNCTION_2	IF_1	CALL_2
+0x40001cf	      0xe800000000	                          call 0x40001d4	        63	nsnames.c	FUNCTION_2	IF_1	CALL_2
+0x40001d4	            0x31c0	                            xor eax, eax	        66	nsnames.c	FUNCTION_2	IF_1
+0x40001d6	              0xc3	                                     ret	        66	nsnames.c	FUNCTION_2	IF_1
+0x40001d7	            0x31c9	                            xor ecx, ecx	        69	nsnames.c	FUNCTION_2	CALL_4
+0x40001d9	            0x31d2	                            xor edx, edx	        69	nsnames.c	FUNCTION_2	CALL_4
+0x40001db	            0x31f6	                            xor esi, esi	        69	nsnames.c	FUNCTION_2	CALL_4
+0x40001dd	      0xe800000000	                          call 0x40001e2	        69	nsnames.c	FUNCTION_2	CALL_4
+0x40001e2	            0x89c0	                            mov eax, eax	        69	nsnames.c	FUNCTION_2	CALL_4
+0x40001e4	              0xc3	                                     ret	        71	nsnames.c	FUNCTION_2
+acpi_ns_build_prefixed_pathname	IF,8:SWITCH,0:ELSE,0:functions,0:FOR,0:CALL,12:DO,0:WHILE,0	139
+0x40002b9	            0x4155	                                push r13	       344	nsnames.c	FUNCTION_7
+0x40002bb	            0x4154	                                push r12	       344	nsnames.c	FUNCTION_7
+0x40002bd	          0x4989f4	                            mov r12, rsi	       344	nsnames.c	FUNCTION_7
+0x40002c0	              0x55	                                push rbp	       344	nsnames.c	FUNCTION_7
+0x40002c1	              0x53	                                push rbx	       344	nsnames.c	FUNCTION_7
+0x40002c2	        0x4883ec10	                           sub rsp, 0x10	       344	nsnames.c	FUNCTION_7
+0x40002c6	    0x65488b042528	                mov rax, qword gs:[0x28]	       344	nsnames.c	FUNCTION_7
+0x40002cf	      0x4889442408	                mov qword [rsp + 8], rax	       344	nsnames.c	FUNCTION_7
+0x40002d4	            0x31c0	                            xor eax, eax	       344	nsnames.c	FUNCTION_7
+0x40002d6	          0x4885ff	                           test rdi, rdi	       353	nsnames.c	FUNCTION_7	IF_1
+0x40002d9	    0x48c704240000	                      mov qword [rsp], 0	       347	nsnames.c	FUNCTION_7
+0x40002e1	            0x7430	                            je 0x4000313	       353	nsnames.c	FUNCTION_7	IF_1
+0x40002e3	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	       353	nsnames.c	FUNCTION_7	IF_1
+0x40002e7	          0x4885ff	                           test rdi, rdi	       353	nsnames.c	FUNCTION_7	IF_1
+0x40002ea	            0x7427	                            je 0x4000313	       353	nsnames.c	FUNCTION_7	IF_1
+0x40002ec	      0xbe01000000	                              mov esi, 1	       354	nsnames.c	FUNCTION_7	IF_1
+0x40002f1	            0x31ed	                            xor ebp, ebp	       349	nsnames.c	FUNCTION_7
+0x40002f3	      0xe800000000	                          call 0x40002f8	       354	nsnames.c	FUNCTION_7	IF_1
+0x40002f8	          0x4885c0	                           test rax, rax	       357	nsnames.c	FUNCTION_7	IF_1	IF_2
+0x40002fb	          0x4889c3	                            mov rbx, rax	       354	nsnames.c	FUNCTION_7	IF_1
+0x40002fe	            0x7417	                            je 0x4000317	       357	nsnames.c	FUNCTION_7	IF_1	IF_2
+0x4000300	            0x31c0	                            xor eax, eax	       358	nsnames.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x4000302	        0x4883c9ff	              or rcx, 0xffffffffffffffff	       358	nsnames.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x4000306	          0x4889df	                            mov rdi, rbx	       358	nsnames.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x4000309	            0xf2ae	              repne scasb al, byte [rdi]	       358	nsnames.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x400030b	          0x48f7d1	                                 not rcx	       358	nsnames.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x400030e	          0x8d69ff	                      lea ebp, [rcx - 1]	       358	nsnames.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x4000311	            0xeb04	                           jmp 0x4000317	       358	nsnames.c	FUNCTION_7	IF_1	IF_2	CALL_2
+0x4000313	            0x31ed	                            xor ebp, ebp	       349	nsnames.c	FUNCTION_7
+0x4000315	            0x31db	                            xor ebx, ebx	       348	nsnames.c	FUNCTION_7
+0x4000317	            0x31d2	                            xor edx, edx	       362	nsnames.c	FUNCTION_7	CALL_3
+0x4000319	          0x83cfff	                      or edi, 0xffffffff	       362	nsnames.c	FUNCTION_7	CALL_3
+0x400031c	          0x4889e1	                            mov rcx, rsp	       362	nsnames.c	FUNCTION_7	CALL_3
+0x400031f	          0x4c89e6	                            mov rsi, r12	       362	nsnames.c	FUNCTION_7	CALL_3
+0x4000322	      0xe800000000	                          call 0x4000327	       362	nsnames.c	FUNCTION_7	CALL_3
+0x4000327	            0x85c0	                           test eax, eax	       364	nsnames.c	FUNCTION_7	IF_3	CALL_4
+0x4000329	            0x7407	                            je 0x4000332	       364	nsnames.c	FUNCTION_7	IF_3	CALL_4
+0x400032b	            0x31ed	                            xor ebp, ebp	       346	nsnames.c	FUNCTION_7
+0x400032d	      0xe9f6000000	                           jmp 0x4000428	       346	nsnames.c	FUNCTION_7
+0x4000332	        0x488b3c24	                    mov rdi, qword [rsp]	       371	nsnames.c	FUNCTION_7	CALL_6
+0x4000336	            0x31c0	                            xor eax, eax	       371	nsnames.c	FUNCTION_7	CALL_6
+0x4000338	        0x4883c9ff	              or rcx, 0xffffffffffffffff	       371	nsnames.c	FUNCTION_7	CALL_6
+0x400033c	            0xf2ae	              repne scasb al, byte [rdi]	       371	nsnames.c	FUNCTION_7	CALL_6
+0x400033e	            0x89ef	                            mov edi, ebp	       370	nsnames.c	FUNCTION_7
+0x4000340	          0x4829cf	                            sub rdi, rcx	       370	nsnames.c	FUNCTION_7
+0x4000343	      0xe8f8fcffff	        call sym.acpi_os_allocate_zeroed	       370	nsnames.c	FUNCTION_7
+0x4000348	          0x4885c0	                           test rax, rax	       373	nsnames.c	FUNCTION_7	IF_4
+0x400034b	          0x4889c5	                            mov rbp, rax	       370	nsnames.c	FUNCTION_7
+0x400034e	            0x74db	                            je 0x400032b	       373	nsnames.c	FUNCTION_7	IF_4
+0x4000350	          0x4885db	                           test rbx, rbx	       379	nsnames.c	FUNCTION_7	IF_5
+0x4000353	            0x742d	                            je 0x4000382	       379	nsnames.c	FUNCTION_7	IF_5
+0x4000355	        0x488b0424	                    mov rax, qword [rsp]	       379	nsnames.c	FUNCTION_7	IF_5
+0x4000359	            0x8a00	                      mov al, byte [rax]	       379	nsnames.c	FUNCTION_7	IF_5
+0x400035b	          0x83e0fd	                     and eax, 0xfffffffd	       379	nsnames.c	FUNCTION_7	IF_5
+0x400035e	            0x3c5c	                            cmp al, 0x5c	       379	nsnames.c	FUNCTION_7	IF_5
+0x4000360	            0x7420	                            je 0x4000382	       379	nsnames.c	FUNCTION_7	IF_5
+0x4000362	          0x4889de	                            mov rsi, rbx	       380	nsnames.c	FUNCTION_7	IF_5	CALL_7
+0x4000365	          0x4889ef	                            mov rdi, rbp	       380	nsnames.c	FUNCTION_7	IF_5	CALL_7
+0x4000368	      0xe800000000	                          call 0x400036d	       380	nsnames.c	FUNCTION_7	IF_5	CALL_7
+0x400036d	        0x807b0100	                   cmp byte [rbx + 1], 0	       381	nsnames.c	FUNCTION_7	IF_5	IF_6
+0x4000371	            0x740f	                            je 0x4000382	       381	nsnames.c	FUNCTION_7	IF_5	IF_6
+0x4000373	    0x48c7c6000000	                              mov rsi, 0	       382	nsnames.c	FUNCTION_7	IF_5	IF_6	CALL_8
+0x400037a	          0x4889ef	                            mov rdi, rbp	       382	nsnames.c	FUNCTION_7	IF_5	IF_6	CALL_8
+0x400037d	      0xe800000000	                          call 0x4000382	       382	nsnames.c	FUNCTION_7	IF_5	IF_6	CALL_8
+0x4000382	        0x4c8b2c24	                    mov r13, qword [rsp]	       386	nsnames.c	FUNCTION_7	CALL_9
+0x4000386	            0x31c0	                            xor eax, eax	       423	nsnames.c	FUNCTION_8	CALL_2
+0x4000388	        0x4883c9ff	              or rcx, 0xffffffffffffffff	       423	nsnames.c	FUNCTION_8	CALL_2
+0x400038c	          0x4c89ef	                            mov rdi, r13	       423	nsnames.c	FUNCTION_8	CALL_2
+0x400038f	            0xf2ae	              repne scasb al, byte [rdi]	       423	nsnames.c	FUNCTION_8	CALL_2
+0x4000391	          0x48f7d1	                                 not rcx	       423	nsnames.c	FUNCTION_8	CALL_2
+0x4000394	          0x4889cf	                            mov rdi, rcx	       423	nsnames.c	FUNCTION_8	CALL_2
+0x4000397	      0xe8a4fcffff	        call sym.acpi_os_allocate_zeroed	       423	nsnames.c	FUNCTION_8	CALL_2
+0x400039c	          0x4885c0	                           test rax, rax	       425	nsnames.c	FUNCTION_8	IF_1
+0x400039f	          0x4989c4	                            mov r12, rax	       423	nsnames.c	FUNCTION_8	CALL_2
+0x40003a2	            0x7478	                            je 0x400041c	       425	nsnames.c	FUNCTION_8	IF_1
+0x40003a4	      0x41807d005c	                    cmp byte [r13], 0x5c	       431	nsnames.c	FUNCTION_8	IF_2
+0x40003a9	            0x750d	                           jne 0x40003b8	       431	nsnames.c	FUNCTION_8	IF_2
+0x40003ab	          0xc6005c	                    mov byte [rax], 0x5c	       432	nsnames.c	FUNCTION_8	IF_2
+0x40003ae	        0x498d5501	                      lea rdx, [r13 + 1]	       434	nsnames.c	FUNCTION_8	IF_2
+0x40003b2	        0x488d4001	                      lea rax, [rax + 1]	       433	nsnames.c	FUNCTION_8	IF_2
+0x40003b6	            0xeb03	                           jmp 0x40003bb	       433	nsnames.c	FUNCTION_8	IF_2
+0x40003b8	          0x4c89ea	                            mov rdx, r13	       416	nsnames.c	FUNCTION_8
+0x40003bb	          0x803a5e	                    cmp byte [rdx], 0x5e	       437	nsnames.c	FUNCTION_8	WHILE_1
+0x40003be	            0x7535	                           jne 0x40003f5	       437	nsnames.c	FUNCTION_8	WHILE_1
+0x40003c0	          0xc6005e	                    mov byte [rax], 0x5e	       438	nsnames.c	FUNCTION_8	WHILE_1
+0x40003c3	          0x48ffc2	                                 inc rdx	       440	nsnames.c	FUNCTION_8	WHILE_1
+0x40003c6	          0x48ffc0	                                 inc rax	       439	nsnames.c	FUNCTION_8	WHILE_1
+0x40003c9	            0xebf0	                           jmp 0x40003bb	       439	nsnames.c	FUNCTION_8	WHILE_1
+0x40003cb	          0x408a32	                     mov sil, byte [rdx]	       449	nsnames.c	FUNCTION_8	WHILE_2	FOR_1
+0x40003ce	          0x4084f6	                           test sil, sil	       449	nsnames.c	FUNCTION_8	WHILE_2	FOR_1
+0x40003d1	            0x7414	                            je 0x40003e7	       449	nsnames.c	FUNCTION_8	WHILE_2	FOR_1
+0x40003d3	        0x4080fe5f	                           cmp sil, 0x5f	       450	nsnames.c	FUNCTION_8	WHILE_2	FOR_1	IF_3
+0x40003d7	            0x7525	                           jne 0x40003fe	       450	nsnames.c	FUNCTION_8	WHILE_2	FOR_1	IF_3
+0x40003d9	            0x85c9	                           test ecx, ecx	       450	nsnames.c	FUNCTION_8	WHILE_2	FOR_1	IF_3
+0x40003db	            0x7421	                            je 0x40003fe	       450	nsnames.c	FUNCTION_8	WHILE_2	FOR_1	IF_3
+0x40003dd	            0xffc1	                                 inc ecx	       449	nsnames.c	FUNCTION_8	WHILE_2	FOR_1
+0x40003df	          0x48ffc2	                                 inc rdx	       455	nsnames.c	FUNCTION_8	WHILE_2	FOR_1
+0x40003e2	          0x83f904	                              cmp ecx, 4	       449	nsnames.c	FUNCTION_8	WHILE_2	FOR_1
+0x40003e5	            0x75e4	                           jne 0x40003cb	       449	nsnames.c	FUNCTION_8	WHILE_2	FOR_1
+0x40003e7	          0x803a2e	                    cmp byte [rdx], 0x2e	       460	nsnames.c	FUNCTION_8	WHILE_2	IF_4
+0x40003ea	            0x7509	                           jne 0x40003f5	       460	nsnames.c	FUNCTION_8	WHILE_2	IF_4
+0x40003ec	          0xc6002e	                    mov byte [rax], 0x2e	       461	nsnames.c	FUNCTION_8	WHILE_2	IF_4
+0x40003ef	          0x48ffc2	                                 inc rdx	       463	nsnames.c	FUNCTION_8	WHILE_2	IF_4
+0x40003f2	          0x48ffc0	                                 inc rax	       462	nsnames.c	FUNCTION_8	WHILE_2	IF_4
+0x40003f5	          0x803a00	                       cmp byte [rdx], 0	       445	nsnames.c	FUNCTION_8	WHILE_2
+0x40003f8	            0x740c	                            je 0x4000406	       445	nsnames.c	FUNCTION_8	WHILE_2
+0x40003fa	            0x31c9	                            xor ecx, ecx	       445	nsnames.c	FUNCTION_8	WHILE_2
+0x40003fc	            0xebcd	                           jmp 0x40003cb	       445	nsnames.c	FUNCTION_8	WHILE_2
+0x40003fe	          0x408830	                     mov byte [rax], sil	       451	nsnames.c	FUNCTION_8	WHILE_2	FOR_1	IF_3
+0x4000401	          0x48ffc0	                                 inc rax	       452	nsnames.c	FUNCTION_8	WHILE_2	FOR_1	IF_3
+0x4000404	            0xebd7	                           jmp 0x40003dd	       452	nsnames.c	FUNCTION_8	WHILE_2	FOR_1	IF_3
+0x4000406	          0x4c89ef	                            mov rdi, r13	       468	nsnames.c	FUNCTION_8	CALL_3
+0x4000409	          0xc60000	                       mov byte [rax], 0	       467	nsnames.c	FUNCTION_8
+0x400040c	          0x4c89e6	                            mov rsi, r12	       468	nsnames.c	FUNCTION_8	CALL_3
+0x400040f	      0xe800000000	                          call 0x4000414	       468	nsnames.c	FUNCTION_8	CALL_3
+0x4000414	          0x4c89e7	                            mov rdi, r12	        62	aclinuxex.h	FUNCTION_11	CALL_1
+0x4000417	      0xe800000000	                          call 0x400041c	        62	aclinuxex.h	FUNCTION_11	CALL_1
+0x400041c	        0x488b3424	                    mov rsi, qword [rsp]	       387	nsnames.c	FUNCTION_7	CALL_10
+0x4000420	          0x4889ef	                            mov rdi, rbp	       387	nsnames.c	FUNCTION_7	CALL_10
+0x4000423	      0xe800000000	                          call 0x4000428	       387	nsnames.c	FUNCTION_7	CALL_10
+0x4000428	          0x4885db	                           test rbx, rbx	       390	nsnames.c	FUNCTION_7	IF_7
+0x400042b	            0x7408	                            je 0x4000435	       390	nsnames.c	FUNCTION_7	IF_7
+0x400042d	          0x4889df	                            mov rdi, rbx	        62	aclinuxex.h	FUNCTION_11	CALL_1
+0x4000430	      0xe800000000	                          call 0x4000435	        62	aclinuxex.h	FUNCTION_11	CALL_1
+0x4000435	        0x488b3c24	                    mov rdi, qword [rsp]	       393	nsnames.c	FUNCTION_7	IF_8
+0x4000439	          0x4885ff	                           test rdi, rdi	       393	nsnames.c	FUNCTION_7	IF_8
+0x400043c	            0x7405	                            je 0x4000443	       393	nsnames.c	FUNCTION_7	IF_8
+0x400043e	      0xe800000000	                          call 0x4000443	        62	aclinuxex.h	FUNCTION_11	CALL_1
+0x4000443	      0x488b542408	                mov rdx, qword [rsp + 8]	       398	nsnames.c	FUNCTION_7
+0x4000448	    0x654833142528	                xor rdx, qword gs:[0x28]	       398	nsnames.c	FUNCTION_7
+0x4000451	          0x4889e8	                            mov rax, rbp	       398	nsnames.c	FUNCTION_7
+0x4000454	            0x7405	                            je 0x400045b	       398	nsnames.c	FUNCTION_7
+0x4000456	      0xe800000000	                          call 0x400045b	       398	nsnames.c	FUNCTION_7
+0x400045b	        0x4883c410	                           add rsp, 0x10	       398	nsnames.c	FUNCTION_7
+0x400045f	              0x5b	                                 pop rbx	       398	nsnames.c	FUNCTION_7
+0x4000460	              0x5d	                                 pop rbp	       398	nsnames.c	FUNCTION_7
+0x4000461	            0x415c	                                 pop r12	       398	nsnames.c	FUNCTION_7
+0x4000463	            0x415d	                                 pop r13	       398	nsnames.c	FUNCTION_7
+0x4000465	              0xc3	                                     ret	       398	nsnames.c	FUNCTION_7
+acpi_ns_get_external_pathname	IF,0:SWITCH,0:ELSE,0:functions,0:FOR,0:CALL,3:DO,0:WHILE,0	2
+0x40002b5	            0x31f6	                            xor esi, esi	        40	nsnames.c	FUNCTION_1	CALL_2
+0x40002b7	            0xeb92	 jmp sym.acpi_ns_get_normalized_pathname	        40	nsnames.c	FUNCTION_1	CALL_2
+acpi_ns_handle_to_pathname	IF,3:SWITCH,0:ELSE,0:functions,0:FOR,0:CALL,11:DO,0:WHILE,0	40
+0x40001e5	            0x4156	                                push r14	       137	nsnames.c	FUNCTION_4
+0x40001e7	            0x4155	                                push r13	       137	nsnames.c	FUNCTION_4
+0x40001e9	          0x4989f6	                            mov r14, rsi	       137	nsnames.c	FUNCTION_4
+0x40001ec	            0x4154	                                push r12	       137	nsnames.c	FUNCTION_4
+0x40001ee	              0x55	                                push rbp	       137	nsnames.c	FUNCTION_4
+0x40001ef	              0x53	                                push rbx	       137	nsnames.c	FUNCTION_4
+0x40001f0	            0x89d3	                            mov ebx, edx	       137	nsnames.c	FUNCTION_4
+0x40001f2	      0xe800000000	                          call 0x40001f7	       144	nsnames.c	FUNCTION_4	CALL_2
+0x40001f7	          0x4885c0	                           test rax, rax	       145	nsnames.c	FUNCTION_4	IF_1
+0x40001fa	            0x7507	                           jne 0x4000203	       145	nsnames.c	FUNCTION_4	IF_1
+0x40001fc	      0xbd01100000	                         mov ebp, 0x1001	       146	nsnames.c	FUNCTION_4	IF_1	CALL_3
+0x4000201	            0xeb3d	                           jmp 0x4000240	       146	nsnames.c	FUNCTION_4	IF_1	CALL_3
+0x4000203	           0xfb6db	                           movzx ebx, bl	       152	nsnames.c	FUNCTION_4	CALL_4
+0x4000206	            0x31f6	                            xor esi, esi	       152	nsnames.c	FUNCTION_4	CALL_4
+0x4000208	            0x31d2	                            xor edx, edx	       152	nsnames.c	FUNCTION_4	CALL_4
+0x400020a	            0x89d9	                            mov ecx, ebx	       152	nsnames.c	FUNCTION_4	CALL_4
+0x400020c	          0x4889c7	                            mov rdi, rax	       152	nsnames.c	FUNCTION_4	CALL_4
+0x400020f	          0x4989c4	                            mov r12, rax	       152	nsnames.c	FUNCTION_4	CALL_4
+0x4000212	      0xe800000000	                          call 0x4000217	       152	nsnames.c	FUNCTION_4	CALL_4
+0x4000217	            0x89c6	                            mov esi, eax	       152	nsnames.c	FUNCTION_4	CALL_4
+0x4000219	          0x4885f6	                           test rsi, rsi	       153	nsnames.c	FUNCTION_4	IF_2
+0x400021c	          0x4989f5	                            mov r13, rsi	       152	nsnames.c	FUNCTION_4	CALL_4
+0x400021f	            0x74db	                            je 0x40001fc	       153	nsnames.c	FUNCTION_4	IF_2
+0x4000221	          0x4c89f7	                            mov rdi, r14	       159	nsnames.c	FUNCTION_4	CALL_6
+0x4000224	      0xe800000000	                          call 0x4000229	       159	nsnames.c	FUNCTION_4	CALL_6
+0x4000229	            0x85c0	                           test eax, eax	       160	nsnames.c	FUNCTION_4	IF_3	CALL_7
+0x400022b	            0x89c5	                            mov ebp, eax	       159	nsnames.c	FUNCTION_4	CALL_6
+0x400022d	            0x7511	                           jne 0x4000240	       160	nsnames.c	FUNCTION_4	IF_3	CALL_7
+0x400022f	        0x498b7608	                mov rsi, qword [r14 + 8]	       166	nsnames.c	FUNCTION_4	CALL_9
+0x4000233	            0x89d9	                            mov ecx, ebx	       166	nsnames.c	FUNCTION_4	CALL_9
+0x4000235	          0x4489ea	                           mov edx, r13d	       166	nsnames.c	FUNCTION_4	CALL_9
+0x4000238	          0x4c89e7	                            mov rdi, r12	       166	nsnames.c	FUNCTION_4	CALL_9
+0x400023b	      0xe800000000	                          call 0x4000240	       166	nsnames.c	FUNCTION_4	CALL_9
+0x4000240	              0x5b	                                 pop rbx	       172	nsnames.c	FUNCTION_4
+0x4000241	            0x89e8	                            mov eax, ebp	       172	nsnames.c	FUNCTION_4
+0x4000243	              0x5d	                                 pop rbp	       172	nsnames.c	FUNCTION_4
+0x4000244	            0x415c	                                 pop r12	       172	nsnames.c	FUNCTION_4
+0x4000246	            0x415d	                                 pop r13	       172	nsnames.c	FUNCTION_4
+0x4000248	            0x415e	                                 pop r14	       172	nsnames.c	FUNCTION_4
+0x400024a	              0xc3	                                     ret	       172	nsnames.c	FUNCTION_4
+acpi_ns_get_normalized_pathname	IF,2:SWITCH,0:ELSE,0:functions,0:FOR,0:CALL,9:DO,0:WHILE,0	37
+0x400024b	            0x4155	                                push r13	       295	nsnames.c	FUNCTION_6
+0x400024d	            0x4154	                                push r12	       295	nsnames.c	FUNCTION_6
+0x400024f	            0x31d2	                            xor edx, edx	       303	nsnames.c	FUNCTION_6	CALL_2
+0x4000251	              0x55	                                push rbp	       295	nsnames.c	FUNCTION_6
+0x4000252	        0x400fb6ee	                          movzx ebp, sil	       303	nsnames.c	FUNCTION_6	CALL_2
+0x4000256	              0x53	                                push rbx	       295	nsnames.c	FUNCTION_6
+0x4000257	            0x31f6	                            xor esi, esi	       303	nsnames.c	FUNCTION_6	CALL_2
+0x4000259	            0x89e9	                            mov ecx, ebp	       303	nsnames.c	FUNCTION_6	CALL_2
+0x400025b	          0x4989fd	                            mov r13, rdi	       295	nsnames.c	FUNCTION_6
+0x400025e	      0xe800000000	                          call 0x4000263	       303	nsnames.c	FUNCTION_6	CALL_2
+0x4000263	            0x89c7	                            mov edi, eax	       303	nsnames.c	FUNCTION_6	CALL_2
+0x4000265	            0x31c0	                            xor eax, eax	       305	nsnames.c	FUNCTION_6	IF_1	CALL_3
+0x4000267	          0x4885ff	                           test rdi, rdi	       304	nsnames.c	FUNCTION_6	IF_1
+0x400026a	            0x7442	                            je 0x40002ae	       304	nsnames.c	FUNCTION_6	IF_1
+0x400026c	          0x4989fc	                            mov r12, rdi	       304	nsnames.c	FUNCTION_6	IF_1
+0x400026f	      0xe8ccfdffff	        call sym.acpi_os_allocate_zeroed	       310	nsnames.c	FUNCTION_6	CALL_4
+0x4000274	          0x4885c0	                           test rax, rax	       311	nsnames.c	FUNCTION_6	IF_2
+0x4000277	          0x4889c3	                            mov rbx, rax	       310	nsnames.c	FUNCTION_6	CALL_4
+0x400027a	            0x751f	                           jne 0x400029b	       311	nsnames.c	FUNCTION_6	IF_2
+0x400027c	          0x4489e1	                           mov ecx, r12d	       312	nsnames.c	FUNCTION_6	IF_2	CALL_5
+0x400027f	    0x48c7c2000000	                              mov rdx, 0	       312	nsnames.c	FUNCTION_6	IF_2	CALL_5
+0x4000286	      0xbe38010000	                          mov esi, 0x138	       312	nsnames.c	FUNCTION_6	IF_2	CALL_5
+0x400028b	    0x48c7c7000000	                              mov rdi, 0	       312	nsnames.c	FUNCTION_6	IF_2	CALL_5
+0x4000292	      0xe800000000	                          call 0x4000297	       312	nsnames.c	FUNCTION_6	IF_2	CALL_5
+0x4000297	            0x31c0	                            xor eax, eax	       313	nsnames.c	FUNCTION_6	IF_2	CALL_6
+0x4000299	            0xeb13	                           jmp 0x40002ae	       313	nsnames.c	FUNCTION_6	IF_2	CALL_6
+0x400029b	            0x89e9	                            mov ecx, ebp	       318	nsnames.c	FUNCTION_6	CALL_7
+0x400029d	          0x4489e2	                           mov edx, r12d	       318	nsnames.c	FUNCTION_6	CALL_7
+0x40002a0	          0x4889c6	                            mov rsi, rax	       318	nsnames.c	FUNCTION_6	CALL_7
+0x40002a3	          0x4c89ef	                            mov rdi, r13	       318	nsnames.c	FUNCTION_6	CALL_7
+0x40002a6	      0xe800000000	                          call 0x40002ab	       318	nsnames.c	FUNCTION_6	CALL_7
+0x40002ab	          0x4889d8	                            mov rax, rbx	       324	nsnames.c	FUNCTION_6	CALL_9
+0x40002ae	              0x5b	                                 pop rbx	       325	nsnames.c	FUNCTION_6
+0x40002af	              0x5d	                                 pop rbp	       325	nsnames.c	FUNCTION_6
+0x40002b0	            0x415c	                                 pop r12	       325	nsnames.c	FUNCTION_6
+0x40002b2	            0x415d	                                 pop r13	       325	nsnames.c	FUNCTION_6
+0x40002b4	              0xc3	                                     ret	       325	nsnames.c	FUNCTION_6
+acpi_ns_build_normalized_path	IF,6:SWITCH,0:ELSE,0:functions,0:FOR,1:CALL,7:DO,0:WHILE,2	79
+0x40000af	        0x4883ec10	                           sub rsp, 0x10	       199	nsnames.c	FUNCTION_5
+0x40000b3	    0x65488b042528	                mov rax, qword gs:[0x28]	       199	nsnames.c	FUNCTION_5
+0x40000bc	      0x4889442408	                mov qword [rsp + 8], rax	       199	nsnames.c	FUNCTION_5
+0x40000c1	            0x31c0	                            xor eax, eax	       199	nsnames.c	FUNCTION_5
+0x40000c3	          0x4885f6	                           test rsi, rsi	       221	nsnames.c	FUNCTION_5	IF_1
+0x40000c6	     0xf84ce000000	                            je 0x400019a	       221	nsnames.c	FUNCTION_5	IF_1
+0x40000cc	          0x4885ff	                           test rdi, rdi	       225	nsnames.c	FUNCTION_5	IF_2
+0x40000cf	     0xf84a2000000	                            je 0x4000177	       225	nsnames.c	FUNCTION_5	IF_2
+0x40000d5	          0x4989f8	                             mov r8, rdi	       244	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5	CALL_4
+0x40000d8	            0x31c0	                            xor eax, eax	       244	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5	CALL_4
+0x40000da	    0x4c3905000000	              cmp qword [0x040000e1], r8	       230	nsnames.c	FUNCTION_5	WHILE_1
+0x40000e1	            0x745f	                            je 0x4000142	       230	nsnames.c	FUNCTION_5	WHILE_1
+0x40000e3	          0x4c39c7	                             cmp rdi, r8	       231	nsnames.c	FUNCTION_5	WHILE_1	IF_3
+0x40000e6	            0x740e	                            je 0x40000f6	       231	nsnames.c	FUNCTION_5	WHILE_1	IF_3
+0x40000e8	            0x39c2	                            cmp edx, eax	       232	nsnames.c	FUNCTION_5	WHILE_1	IF_3	CALL_2
+0x40000ea	            0x7608	                           jbe 0x40000f4	       232	nsnames.c	FUNCTION_5	WHILE_1	IF_3	CALL_2
+0x40000ec	          0x4189c1	                            mov r9d, eax	       232	nsnames.c	FUNCTION_5	WHILE_1	IF_3	CALL_2
+0x40000ef	      0x42c6040e2e	               mov byte [rsi + r9], 0x2e	       232	nsnames.c	FUNCTION_5	WHILE_1	IF_3	CALL_2
+0x40000f4	            0xffc0	                                 inc eax	       232	nsnames.c	FUNCTION_5	WHILE_1	IF_3	CALL_2
+0x40000f6	        0x458b480c	               mov r9d, dword [r8 + 0xc]	       236	nsnames.c	FUNCTION_5	WHILE_1	CALL_3
+0x40000fa	          0x4188ca	                            mov r10b, cl	       237	nsnames.c	FUNCTION_5	WHILE_1
+0x40000fd	      0x44894c2404	                mov dword [rsp + 4], r9d	       236	nsnames.c	FUNCTION_5	WHILE_1	CALL_3
+0x4000102	    0x41b903000000	                              mov r9d, 3	       236	nsnames.c	FUNCTION_5	WHILE_1	CALL_3
+0x4000108	          0x4589cb	                           mov r11d, r9d	       239	nsnames.c	FUNCTION_5	WHILE_1	FOR_1
+0x400010b	          0x4584d2	                         test r10b, r10b	       240	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_4
+0x400010e	      0x468a5c1c04	         mov r11b, byte [rsp + r11 + 4] 	       239	nsnames.c	FUNCTION_5	WHILE_1	FOR_1
+0x4000113	            0x7406	                            je 0x400011b	       240	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_4
+0x4000115	        0x4180fb5f	                          cmp r11b, 0x5f	       240	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_4
+0x4000119	            0x7505	                           jne 0x4000120	       240	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_4
+0x400011b	          0x4584d2	                         test r10b, r10b	       243	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5
+0x400011e	            0x7510	                           jne 0x4000130	       243	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5
+0x4000120	            0x39c2	                            cmp edx, eax	       244	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5	CALL_4
+0x4000122	            0x7607	                           jbe 0x400012b	       244	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5	CALL_4
+0x4000124	          0x4189c2	                           mov r10d, eax	       244	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5	CALL_4
+0x4000127	        0x46881c16	              mov byte [rsi + r10], r11b	       244	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5	CALL_4
+0x400012b	            0xffc0	                                 inc eax	       244	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5	CALL_4
+0x400012d	          0x4531d2	                          xor r10d, r10d	       244	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5	CALL_4
+0x4000130	          0x41ffc9	                                 dec r9d	       244	nsnames.c	FUNCTION_5	WHILE_1	FOR_1	IF_5	CALL_4
+0x4000133	        0x4183f9ff	             cmp r9d, 0xffffffffffffffff	       238	nsnames.c	FUNCTION_5	WHILE_1	FOR_1
+0x4000137	            0x75cf	                           jne 0x4000108	       238	nsnames.c	FUNCTION_5	WHILE_1	FOR_1
+0x4000139	        0x4d8b4010	               mov r8, qword [r8 + 0x10]	       248	nsnames.c	FUNCTION_5	WHILE_1
+0x400013d	          0x4d85c0	                             test r8, r8	       230	nsnames.c	FUNCTION_5	WHILE_1
+0x4000140	            0x7598	                           jne 0x40000da	       230	nsnames.c	FUNCTION_5	WHILE_1
+0x4000142	            0x39d0	                            cmp eax, edx	       251	nsnames.c	FUNCTION_5	CALL_5
+0x4000144	            0x7306	                           jae 0x400014c	       251	nsnames.c	FUNCTION_5	CALL_5
+0x4000146	            0x89c1	                            mov ecx, eax	       251	nsnames.c	FUNCTION_5	CALL_5
+0x4000148	        0xc6040e5c	              mov byte [rsi + rcx], 0x5c	       251	nsnames.c	FUNCTION_5	CALL_5
+0x400014c	            0xffc0	                                 inc eax	       251	nsnames.c	FUNCTION_5	CALL_5
+0x400014e	            0x39d0	                            cmp eax, edx	       255	nsnames.c	FUNCTION_5	IF_6
+0x4000150	            0x7731	                            ja 0x4000183	       255	nsnames.c	FUNCTION_5	IF_6
+0x4000152	            0x89c1	                            mov ecx, eax	       257	nsnames.c	FUNCTION_5	IF_6
+0x4000154	          0x4889f7	                            mov rdi, rsi	       259	nsnames.c	FUNCTION_5	IF_6	WHILE_2
+0x4000157	      0x488d4c0eff	                lea rcx, [rsi + rcx - 1]	       257	nsnames.c	FUNCTION_5	IF_6
+0x400015c	          0x4839cf	                            cmp rdi, rcx	       259	nsnames.c	FUNCTION_5	IF_6	WHILE_2
+0x400015f	            0x7318	                           jae 0x4000179	       259	nsnames.c	FUNCTION_5	IF_6	WHILE_2
+0x4000161	          0x448a07	                     mov r8b, byte [rdi]	       260	nsnames.c	FUNCTION_5	IF_6	WHILE_2
+0x4000164	          0x448a09	                     mov r9b, byte [rcx]	       261	nsnames.c	FUNCTION_5	IF_6	WHILE_2
+0x4000167	          0x48ffc7	                                 inc rdi	       261	nsnames.c	FUNCTION_5	IF_6	WHILE_2
+0x400016a	          0x48ffc9	                                 dec rcx	       262	nsnames.c	FUNCTION_5	IF_6	WHILE_2
+0x400016d	        0x44884fff	                 mov byte [rdi - 1], r9b	       261	nsnames.c	FUNCTION_5	IF_6	WHILE_2
+0x4000171	        0x44884101	                 mov byte [rcx + 1], r8b	       262	nsnames.c	FUNCTION_5	IF_6	WHILE_2
+0x4000175	            0xebe5	                           jmp 0x400015c	       262	nsnames.c	FUNCTION_5	IF_6	WHILE_2
+0x4000177	            0x31c0	                            xor eax, eax	       200	nsnames.c	FUNCTION_5
+0x4000179	            0x39d0	                            cmp eax, edx	       269	nsnames.c	FUNCTION_5	CALL_6
+0x400017b	            0x7306	                           jae 0x4000183	       269	nsnames.c	FUNCTION_5	CALL_6
+0x400017d	            0x89c2	                            mov edx, eax	       269	nsnames.c	FUNCTION_5	CALL_6
+0x400017f	        0xc6041600	                 mov byte [rsi + rdx], 0	       269	nsnames.c	FUNCTION_5	CALL_6
+0x4000183	            0xffc0	                                 inc eax	       273	nsnames.c	FUNCTION_5	CALL_7
+0x4000185	      0x488b742408	                mov rsi, qword [rsp + 8]	       274	nsnames.c	FUNCTION_5
+0x400018a	    0x654833342528	                xor rsi, qword gs:[0x28]	       274	nsnames.c	FUNCTION_5
+0x4000193	            0x7414	                            je 0x40001a9	       274	nsnames.c	FUNCTION_5
+0x4000195	      0xe800000000	                          call 0x400019a	       274	nsnames.c	FUNCTION_5
+0x400019a	            0x31c0	                            xor eax, eax	       200	nsnames.c	FUNCTION_5
+0x400019c	            0x31d2	                            xor edx, edx	       222	nsnames.c	FUNCTION_5	IF_1
+0x400019e	          0x4885ff	                           test rdi, rdi	       225	nsnames.c	FUNCTION_5	IF_2
+0x40001a1	     0xf852effffff	                           jne 0x40000d5	       225	nsnames.c	FUNCTION_5	IF_2
+0x40001a7	            0xebda	                           jmp 0x4000183	       225	nsnames.c	FUNCTION_5	IF_2
+0x40001a9	        0x4883c410	                           add rsp, 0x10	       274	nsnames.c	FUNCTION_5
+0x40001ad	              0xc3	                                     ret	       274	nsnames.c	FUNCTION_5
+acpi_ns_handle_to_name	IF,2:SWITCH,0:ELSE,0:functions,0:FOR,0:CALL,10:DO,0:WHILE,0	27
+0x4000064	            0x4154	                                push r12	        89	nsnames.c	FUNCTION_3
+0x4000066	              0x55	                                push rbp	        89	nsnames.c	FUNCTION_3
+0x4000067	          0x4889f5	                            mov rbp, rsi	        89	nsnames.c	FUNCTION_3
+0x400006a	              0x53	                                push rbx	        89	nsnames.c	FUNCTION_3
+0x400006b	      0xbb01100000	                         mov ebx, 0x1001	        98	nsnames.c	FUNCTION_3	IF_1	CALL_3
+0x4000070	      0xe800000000	                          call 0x4000075	        96	nsnames.c	FUNCTION_3	CALL_2
+0x4000075	          0x4885c0	                           test rax, rax	        97	nsnames.c	FUNCTION_3	IF_1
+0x4000078	            0x742e	                            je 0x40000a8	        97	nsnames.c	FUNCTION_3	IF_1
+0x400007a	      0xbe05000000	                              mov esi, 5	       103	nsnames.c	FUNCTION_3	CALL_4
+0x400007f	          0x4889ef	                            mov rdi, rbp	       103	nsnames.c	FUNCTION_3	CALL_4
+0x4000082	          0x4989c4	                            mov r12, rax	       103	nsnames.c	FUNCTION_3	CALL_4
+0x4000085	      0xe800000000	                          call 0x400008a	       103	nsnames.c	FUNCTION_3	CALL_4
+0x400008a	            0x85c0	                           test eax, eax	       104	nsnames.c	FUNCTION_3	IF_2	CALL_5
+0x400008c	            0x89c3	                            mov ebx, eax	       103	nsnames.c	FUNCTION_3	CALL_4
+0x400008e	            0x7518	                           jne 0x40000a8	       104	nsnames.c	FUNCTION_3	IF_2	CALL_5
+0x4000090	          0x4c89e7	                            mov rdi, r12	       110	nsnames.c	FUNCTION_3	CALL_7
+0x4000093	      0xe800000000	                          call 0x4000098	       110	nsnames.c	FUNCTION_3	CALL_7
+0x4000098	        0x488b5508	                mov rdx, qword [rbp + 8]	       111	nsnames.c	FUNCTION_3	CALL_8
+0x400009c	            0x8b00	                    mov eax, dword [rax]	       111	nsnames.c	FUNCTION_3	CALL_8
+0x400009e	            0x8902	                    mov dword [rdx], eax	       111	nsnames.c	FUNCTION_3	CALL_8
+0x40000a0	        0x488b4508	                mov rax, qword [rbp + 8]	       112	nsnames.c	FUNCTION_3
+0x40000a4	        0xc6400400	                   mov byte [rax + 4], 0	       112	nsnames.c	FUNCTION_3
+0x40000a8	            0x89d8	                            mov eax, ebx	       116	nsnames.c	FUNCTION_3
+0x40000aa	              0x5b	                                 pop rbx	       116	nsnames.c	FUNCTION_3
+0x40000ab	              0x5d	                                 pop rbp	       116	nsnames.c	FUNCTION_3
+0x40000ac	            0x415c	                                 pop r12	       116	nsnames.c	FUNCTION_3
+0x40000ae	              0xc3	                                     ret	       116	nsnames.c	FUNCTION_3

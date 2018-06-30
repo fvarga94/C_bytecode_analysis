@@ -1,0 +1,155 @@
+kill_l4proto	ELSE,0:FOR,0:functions,0:IF,0:CALL,2:DO,0:WHILE,0:SWITCH,0	10
+0x4000050	         0xfb65746	           movzx edx, byte [rdi + 0x46] 	       286	nf_conntrack_proto.c	FUNCTION_16	CALL_1
+0x4000054	            0x31c0	                            xor eax, eax	       286	nf_conntrack_proto.c	FUNCTION_16	CALL_1
+0x4000056	          0x385602	                  cmp byte [rsi + 2], dl	       286	nf_conntrack_proto.c	FUNCTION_16	CALL_1
+0x4000059	            0x7402	                            je 0x400005d	       286	nf_conntrack_proto.c	FUNCTION_16	CALL_1
+0x400005b	            0xf3c3	                                     ret	       288	nf_conntrack_proto.c	FUNCTION_16
+0x400005d	         0xfb74732	           movzx eax, word [rdi + 0x32] 	       286	nf_conntrack_proto.c	FUNCTION_16	CALL_1
+0x4000061	          0x663906	                      cmp word [rsi], ax	       286	nf_conntrack_proto.c	FUNCTION_16	CALL_1
+0x4000064	           0xf94c0	                                 sete al	       286	nf_conntrack_proto.c	FUNCTION_16	CALL_1
+0x4000067	           0xfb6c0	                           movzx eax, al	       286	nf_conntrack_proto.c	FUNCTION_16	CALL_1
+0x400006a	              0xc3	                                     ret	       288	nf_conntrack_proto.c	FUNCTION_16
+kill_l3proto	ELSE,0:FOR,0:functions,0:IF,0:CALL,1:DO,0:WHILE,0:SWITCH,0	5
+0x4000040	         0xfb74732	           movzx eax, word [rdi + 0x32] 	       279	nf_conntrack_proto.c	FUNCTION_15	CALL_1
+0x4000044	          0x663906	                      cmp word [rsi], ax	       279	nf_conntrack_proto.c	FUNCTION_15	CALL_1
+0x4000047	           0xf94c0	                                 sete al	       279	nf_conntrack_proto.c	FUNCTION_15	CALL_1
+0x400004a	           0xfb6c0	                           movzx eax, al	       279	nf_conntrack_proto.c	FUNCTION_15	CALL_1
+0x400004d	              0xc3	                                     ret	       280	nf_conntrack_proto.c	FUNCTION_15
+nf_ct_l4proto_put	ELSE,0:FOR,0:functions,0:IF,0:CALL,1:DO,0:WHILE,0:SWITCH,0	2
+0x40001e0	    0x488bbf980000	            mov rdi, qword [rdi + 0x98] 	       273	nf_conntrack_proto.c	FUNCTION_14	CALL_1
+0x40001e7	      0xe900000000	                           jmp 0x40001ec	       273	nf_conntrack_proto.c	FUNCTION_14	CALL_1
+nf_conntrack_proto_fini	ELSE,0:FOR,1:functions,0:IF,0:CALL,2:DO,0:WHILE,0:SWITCH,0	9
+0x4000980	              0x53	                                push rbx	       608	nf_conntrack_proto.c	FUNCTION_34
+0x4000981	    0x48c7c3000000	                              mov rbx, 0	       608	nf_conntrack_proto.c	FUNCTION_34
+0x4000988	          0x488b3b	                    mov rdi, qword [rbx]	       612	nf_conntrack_proto.c	FUNCTION_34	CALL_2
+0x400098b	        0x4883c308	                              add rbx, 8	       612	nf_conntrack_proto.c	FUNCTION_34	CALL_2
+0x400098f	      0xe800000000	                          call 0x4000994	       612	nf_conntrack_proto.c	FUNCTION_34	CALL_2
+0x4000994	    0x4881fb000000	                              cmp rbx, 0	       611	nf_conntrack_proto.c	FUNCTION_34	FOR_1	CALL_1
+0x400099b	            0x75eb	                           jne 0x4000988	       611	nf_conntrack_proto.c	FUNCTION_34	FOR_1	CALL_1
+0x400099d	              0x5b	                                 pop rbx	       613	nf_conntrack_proto.c	FUNCTION_34
+0x400099e	              0xc3	                                     ret	       613	nf_conntrack_proto.c	FUNCTION_34
+nf_ct_l4proto_unregister	ELSE,0:FOR,0:functions,0:IF,0:CALL,5:DO,0:WHILE,1:SWITCH,0	23
+0x40005f0	              0x55	                                push rbp	       546	nf_conntrack_proto.c	FUNCTION_29
+0x40005f1	              0x53	                                push rbx	       546	nf_conntrack_proto.c	FUNCTION_29
+0x40005f2	            0x89f5	                            mov ebp, esi	       546	nf_conntrack_proto.c	FUNCTION_29
+0x40005f4	          0x4889fb	                            mov rbx, rdi	       546	nf_conntrack_proto.c	FUNCTION_29
+0x40005f7	    0x48c7c7000000	                              mov rdi, 0	       547	nf_conntrack_proto.c	FUNCTION_29	CALL_1
+0x40005fe	      0xe800000000	                          call 0x4000603	       547	nf_conntrack_proto.c	FUNCTION_29	CALL_1
+0x4000603	            0x85ed	                           test ebp, ebp	       548	nf_conntrack_proto.c	FUNCTION_29	WHILE_1
+0x4000605	          0x8d4dff	                      lea ecx, [rbp - 1]	       548	nf_conntrack_proto.c	FUNCTION_29	WHILE_1
+0x4000608	            0x7412	                            je 0x400061c	       548	nf_conntrack_proto.c	FUNCTION_29	WHILE_1
+0x400060a	            0x89c8	                            mov eax, ecx	       549	nf_conntrack_proto.c	FUNCTION_29	CALL_2
+0x400060c	        0x488b3cc3	            mov rdi, qword [rbx + rax*8]	       549	nf_conntrack_proto.c	FUNCTION_29	CALL_2
+0x4000610	      0xe86bffffff	 call sym.__nf_ct_l4proto_unregister_one	       549	nf_conntrack_proto.c	FUNCTION_29	CALL_2
+0x4000615	            0x85c9	                           test ecx, ecx	       548	nf_conntrack_proto.c	FUNCTION_29	WHILE_1
+0x4000617	          0x8d49ff	                      lea ecx, [rcx - 1]	       548	nf_conntrack_proto.c	FUNCTION_29	WHILE_1
+0x400061a	            0x75ee	                           jne 0x400060a	       548	nf_conntrack_proto.c	FUNCTION_29	WHILE_1
+0x400061c	    0x48c7c7000000	                              mov rdi, 0	       550	nf_conntrack_proto.c	FUNCTION_29	CALL_3
+0x4000623	      0xe800000000	                          call 0x4000628	       550	nf_conntrack_proto.c	FUNCTION_29	CALL_3
+0x4000628	      0xe800000000	                          call 0x400062d	       552	nf_conntrack_proto.c	FUNCTION_29	CALL_4
+0x400062d	          0x4889de	                            mov rsi, rbx	       554	nf_conntrack_proto.c	FUNCTION_29	CALL_5
+0x4000630	    0x48c7c7000000	                              mov rdi, 0	       554	nf_conntrack_proto.c	FUNCTION_29	CALL_5
+0x4000637	              0x5b	                                 pop rbx	       555	nf_conntrack_proto.c	FUNCTION_29
+0x4000638	              0x5d	                                 pop rbp	       555	nf_conntrack_proto.c	FUNCTION_29
+0x4000639	      0xe900000000	                           jmp 0x400063e	       554	nf_conntrack_proto.c	FUNCTION_29	CALL_5
+nf_ct_l4proto_pernet_register	ELSE,0:FOR,1:functions,0:IF,2:CALL,3:DO,0:WHILE,0:SWITCH,0	55
+0x4000800	            0x85d2	                           test edx, edx	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x4000802	            0x4157	                                push r15	       525	nf_conntrack_proto.c	FUNCTION_28
+0x4000804	            0x4156	                                push r14	       525	nf_conntrack_proto.c	FUNCTION_28
+0x4000806	            0x4155	                                push r13	       525	nf_conntrack_proto.c	FUNCTION_28
+0x4000808	            0x4154	                                push r12	       525	nf_conntrack_proto.c	FUNCTION_28
+0x400080a	    0x41bceaffffff	                    mov r12d, 0xffffffea	       526	nf_conntrack_proto.c	FUNCTION_28
+0x4000810	              0x55	                                push rbp	       525	nf_conntrack_proto.c	FUNCTION_28
+0x4000811	              0x53	                                push rbx	       525	nf_conntrack_proto.c	FUNCTION_28
+0x4000812	            0x7434	                            je 0x4000848	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x4000814	          0x4189d5	                           mov r13d, edx	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x4000817	          0x4989f7	                            mov r15, rsi	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x400081a	          0x4989fe	                            mov r14, rdi	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x400081d	          0x4889f5	                            mov rbp, rsi	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x4000820	            0x31db	                            xor ebx, ebx	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x4000822	            0xeb0c	                           jmp 0x4000830	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x4000824	          0x83c301	                              add ebx, 1	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x4000827	        0x4883c508	                              add rbp, 8	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x400082b	          0x4139dd	                           cmp r13d, ebx	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x400082e	            0x7418	                            je 0x4000848	       529	nf_conntrack_proto.c	FUNCTION_28	FOR_1
+0x4000830	        0x488b7500	                    mov rsi, qword [rbp]	       530	nf_conntrack_proto.c	FUNCTION_28	FOR_1	CALL_1
+0x4000834	          0x4c89f7	                            mov rdi, r14	       530	nf_conntrack_proto.c	FUNCTION_28	FOR_1	CALL_1
+0x4000837	      0xe800000000	                          call 0x400083c	       530	nf_conntrack_proto.c	FUNCTION_28	FOR_1	CALL_1
+0x400083c	            0x85c0	                           test eax, eax	       531	nf_conntrack_proto.c	FUNCTION_28	FOR_1	IF_1
+0x400083e	          0x4189c4	                           mov r12d, eax	       530	nf_conntrack_proto.c	FUNCTION_28	FOR_1	CALL_1
+0x4000841	            0x79e1	                           jns 0x4000824	       531	nf_conntrack_proto.c	FUNCTION_28	FOR_1	IF_1
+0x4000843	          0x4139dd	                           cmp r13d, ebx	       534	nf_conntrack_proto.c	FUNCTION_28	IF_2
+0x4000846	            0x750e	                           jne 0x4000856	       534	nf_conntrack_proto.c	FUNCTION_28	IF_2
+0x4000848	              0x5b	                                 pop rbx	       541	nf_conntrack_proto.c	FUNCTION_28
+0x4000849	          0x4489e0	                           mov eax, r12d	       541	nf_conntrack_proto.c	FUNCTION_28
+0x400084c	              0x5d	                                 pop rbp	       541	nf_conntrack_proto.c	FUNCTION_28
+0x400084d	            0x415c	                                 pop r12	       541	nf_conntrack_proto.c	FUNCTION_28
+0x400084f	            0x415d	                                 pop r13	       541	nf_conntrack_proto.c	FUNCTION_28
+0x4000851	            0x415e	                                 pop r14	       541	nf_conntrack_proto.c	FUNCTION_28
+0x4000853	            0x415f	                                 pop r15	       541	nf_conntrack_proto.c	FUNCTION_28
+0x4000855	              0xc3	                                     ret	       541	nf_conntrack_proto.c	FUNCTION_28
+0x4000856	            0x89d8	                            mov eax, ebx	       535	nf_conntrack_proto.c	FUNCTION_28	IF_2	CALL_2
+0x4000858	            0x31d2	                            xor edx, edx	       535	nf_conntrack_proto.c	FUNCTION_28	IF_2	CALL_2
+0x400085a	    0x48c7c7000000	                              mov rdi, 0	       535	nf_conntrack_proto.c	FUNCTION_28	IF_2	CALL_2
+0x4000861	        0x498b04c7	            mov rax, qword [r15 + rax*8]	       535	nf_conntrack_proto.c	FUNCTION_28	IF_2	CALL_2
+0x4000865	          0x8d6bff	                      lea ebp, [rbx - 1]	       562	nf_conntrack_proto.c	FUNCTION_30	WHILE_1
+0x4000868	        0x6683380a	                     cmp word [rax], 0xa	       535	nf_conntrack_proto.c	FUNCTION_28	IF_2	CALL_2
+0x400086c	         0xfb67002	               movzx esi, byte [rax + 2]	       535	nf_conntrack_proto.c	FUNCTION_28	IF_2	CALL_2
+0x4000870	           0xf94c2	                                 sete dl	       535	nf_conntrack_proto.c	FUNCTION_28	IF_2	CALL_2
+0x4000873	        0x8d541204	                lea edx, [rdx + rdx + 4]	       535	nf_conntrack_proto.c	FUNCTION_28	IF_2	CALL_2
+0x4000877	      0xe800000000	                          call 0x400087c	       535	nf_conntrack_proto.c	FUNCTION_28	IF_2	CALL_2
+0x400087c	            0x85db	                           test ebx, ebx	       562	nf_conntrack_proto.c	FUNCTION_30	WHILE_1
+0x400087e	            0x74c8	                            je 0x4000848	       562	nf_conntrack_proto.c	FUNCTION_30	WHILE_1
+0x4000880	            0x89e8	                            mov eax, ebp	       563	nf_conntrack_proto.c	FUNCTION_30	CALL_1
+0x4000882	          0x4c89f7	                            mov rdi, r14	       563	nf_conntrack_proto.c	FUNCTION_30	CALL_1
+0x4000885	        0x498b34c7	            mov rsi, qword [r15 + rax*8]	       563	nf_conntrack_proto.c	FUNCTION_30	CALL_1
+0x4000889	      0xe800000000	                          call 0x400088e	       563	nf_conntrack_proto.c	FUNCTION_30	CALL_1
+0x400088e	            0x85ed	                           test ebp, ebp	       562	nf_conntrack_proto.c	FUNCTION_30	WHILE_1
+0x4000890	          0x8d6dff	                      lea ebp, [rbp - 1]	       562	nf_conntrack_proto.c	FUNCTION_30	WHILE_1
+0x4000893	            0x75eb	                           jne 0x4000880	       562	nf_conntrack_proto.c	FUNCTION_30	WHILE_1
+0x4000895	            0xebb1	                           jmp 0x4000848	       562	nf_conntrack_proto.c	FUNCTION_30	WHILE_1
+nf_ct_l4proto_register	ELSE,0:FOR,1:functions,0:IF,2:CALL,3:DO,0:WHILE,0:SWITCH,0	44
+0x4000640	            0x85f6	                           test esi, esi	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x4000642	            0x4156	                                push r14	       503	nf_conntrack_proto.c	FUNCTION_27
+0x4000644	            0x4155	                                push r13	       503	nf_conntrack_proto.c	FUNCTION_27
+0x4000646	            0x4154	                                push r12	       503	nf_conntrack_proto.c	FUNCTION_27
+0x4000648	    0x41bceaffffff	                    mov r12d, 0xffffffea	       504	nf_conntrack_proto.c	FUNCTION_27
+0x400064e	              0x55	                                push rbp	       503	nf_conntrack_proto.c	FUNCTION_27
+0x400064f	              0x53	                                push rbx	       503	nf_conntrack_proto.c	FUNCTION_27
+0x4000650	            0x742e	                            je 0x4000680	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x4000652	          0x4189f5	                           mov r13d, esi	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x4000655	          0x4989fe	                            mov r14, rdi	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x4000658	          0x4889fd	                            mov rbp, rdi	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x400065b	            0x31db	                            xor ebx, ebx	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x400065d	            0xeb0c	                           jmp 0x400066b	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x400065f	          0x83c301	                              add ebx, 1	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x4000662	        0x4883c508	                              add rbp, 8	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x4000666	          0x4139dd	                           cmp r13d, ebx	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x4000669	            0x7415	                            je 0x4000680	       507	nf_conntrack_proto.c	FUNCTION_27	FOR_1
+0x400066b	        0x488b7d00	                    mov rdi, qword [rbp]	       508	nf_conntrack_proto.c	FUNCTION_27	FOR_1	CALL_1
+0x400066f	      0xe800000000	                          call 0x4000674	       508	nf_conntrack_proto.c	FUNCTION_27	FOR_1	CALL_1
+0x4000674	            0x85c0	                           test eax, eax	       509	nf_conntrack_proto.c	FUNCTION_27	FOR_1	IF_1
+0x4000676	          0x4189c4	                           mov r12d, eax	       508	nf_conntrack_proto.c	FUNCTION_27	FOR_1	CALL_1
+0x4000679	            0x79e4	                           jns 0x400065f	       509	nf_conntrack_proto.c	FUNCTION_27	FOR_1	IF_1
+0x400067b	          0x4139dd	                           cmp r13d, ebx	       512	nf_conntrack_proto.c	FUNCTION_27	IF_2
+0x400067e	            0x750c	                           jne 0x400068c	       512	nf_conntrack_proto.c	FUNCTION_27	IF_2
+0x4000680	              0x5b	                                 pop rbx	       519	nf_conntrack_proto.c	FUNCTION_27
+0x4000681	          0x4489e0	                           mov eax, r12d	       519	nf_conntrack_proto.c	FUNCTION_27
+0x4000684	              0x5d	                                 pop rbp	       519	nf_conntrack_proto.c	FUNCTION_27
+0x4000685	            0x415c	                                 pop r12	       519	nf_conntrack_proto.c	FUNCTION_27
+0x4000687	            0x415d	                                 pop r13	       519	nf_conntrack_proto.c	FUNCTION_27
+0x4000689	            0x415e	                                 pop r14	       519	nf_conntrack_proto.c	FUNCTION_27
+0x400068b	              0xc3	                                     ret	       519	nf_conntrack_proto.c	FUNCTION_27
+0x400068c	            0x89d8	                            mov eax, ebx	       513	nf_conntrack_proto.c	FUNCTION_27	IF_2
+0x400068e	            0x31f6	                            xor esi, esi	       513	nf_conntrack_proto.c	FUNCTION_27	IF_2
+0x4000690	    0x48c7c7000000	                              mov rdi, 0	       514	nf_conntrack_proto.c	FUNCTION_27	IF_2	CALL_2
+0x4000697	        0x498b04c6	            mov rax, qword [r14 + rax*8]	       513	nf_conntrack_proto.c	FUNCTION_27	IF_2
+0x400069b	        0x6683380a	                     cmp word [rax], 0xa	       513	nf_conntrack_proto.c	FUNCTION_27	IF_2
+0x400069f	         0xfb65002	               movzx edx, byte [rax + 2]	       514	nf_conntrack_proto.c	FUNCTION_27	IF_2	CALL_2
+0x40006a3	        0x400f94c6	                                sete sil	       513	nf_conntrack_proto.c	FUNCTION_27	IF_2
+0x40006a7	        0x8d743604	                lea esi, [rsi + rsi + 4]	       513	nf_conntrack_proto.c	FUNCTION_27	IF_2
+0x40006ab	      0xe800000000	                          call 0x40006b0	       514	nf_conntrack_proto.c	FUNCTION_27	IF_2	CALL_2
+0x40006b0	            0x89de	                            mov esi, ebx	       516	nf_conntrack_proto.c	FUNCTION_27	IF_2	CALL_3
+0x40006b2	          0x4c89f7	                            mov rdi, r14	       516	nf_conntrack_proto.c	FUNCTION_27	IF_2	CALL_3
+0x40006b5	      0xe800000000	                          call 0x40006ba	       516	nf_conntrack_proto.c	FUNCTION_27	IF_2	CALL_3
+0x40006ba	            0xebc4	                           jmp 0x4000680	       516	nf_conntrack_proto.c	FUNCTION_27	IF_2	CALL_3

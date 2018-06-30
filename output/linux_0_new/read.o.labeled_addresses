@@ -1,0 +1,47 @@
+nfs_pageio_reset_read_mds	FOR,0:functions,0:WHILE,0:DO,0:SWITCH,0:ELSE,0:CALL,3:IF,1	22
+0x4000140	        0x488b4710	            mov rax, qword [rdi + 0x10] 	        80	read.c	FUNCTION_5	IF_1
+0x4000144	              0x53	                                push rbx	        77	read.c	FUNCTION_5
+0x4000145	          0x4889fb	                            mov rbx, rdi	        77	read.c	FUNCTION_5
+0x4000148	          0x4885c0	                           test rax, rax	        80	read.c	FUNCTION_5	IF_1
+0x400014b	            0x740e	                            je 0x400015b	        80	read.c	FUNCTION_5	IF_1
+0x400014d	        0x488b4020	            mov rax, qword [rax + 0x20] 	        80	read.c	FUNCTION_5	IF_1
+0x4000151	          0x4885c0	                           test rax, rax	        80	read.c	FUNCTION_5	IF_1
+0x4000154	            0x7405	                            je 0x400015b	        80	read.c	FUNCTION_5	IF_1
+0x4000156	      0xe800000000	                          call 0x400015b	        81	read.c	FUNCTION_5	CALL_1
+0x400015b	        0x837b5401	               cmp dword [rbx + 0x54], 1	        86	read.c	FUNCTION_5	CALL_2
+0x400015f	    0x48c743100000	               mov qword [rbx + 0x10], 0	        83	read.c	FUNCTION_5
+0x4000167	            0x751c	                           jne 0x4000185	        86	read.c	FUNCTION_5	CALL_2
+0x4000169	        0x488b5308	                mov rdx, qword [rbx + 8]	        86	read.c	FUNCTION_5	CALL_2
+0x400016d	        0x488b4358	            mov rax, qword [rbx + 0x58] 	        88	read.c	FUNCTION_5
+0x4000171	        0x488b5228	            mov rdx, qword [rdx + 0x28] 	        88	read.c	FUNCTION_5
+0x4000175	    0x488b92080400	           mov rdx, qword [rdx + 0x408] 	        89	read.c	FUNCTION_5	CALL_3
+0x400017c	          0x8b4a58	            mov ecx, dword [rdx + 0x58] 	        89	read.c	FUNCTION_5	CALL_3
+0x400017f	        0x48894820	             mov qword [rax + 0x20], rcx	        89	read.c	FUNCTION_5	CALL_3
+0x4000183	              0x5b	                                 pop rbx	        90	read.c	FUNCTION_5
+0x4000184	              0xc3	                                     ret	        90	read.c	FUNCTION_5
+0x4000185	             0xf0b	                                     ud2	        90	read.c	FUNCTION_5
+0x4000187	            0xebe0	                           jmp 0x4000169	        86	read.c	FUNCTION_5	CALL_2
+nfs_readhdr_free	FOR,0:functions,0:WHILE,0:DO,0:SWITCH,0:ELSE,0:CALL,1:IF,0	3
+0x4000110	          0x4889fe	                            mov rsi, rdi	        47	read.c	FUNCTION_2
+0x4000113	    0x488b3d000000	            mov rdi, qword [0x0400011a] 	        48	read.c	FUNCTION_2	CALL_1
+0x400011a	      0xe900000000	                           jmp 0x400011f	        48	read.c	FUNCTION_2	CALL_1
+nfs_destroy_readpagecache	FOR,0:functions,0:WHILE,0:DO,0:SWITCH,0:ELSE,0:CALL,1:IF,0	2
+0x4000e00	    0x488b3d000000	            mov rdi, qword [0x04000e07] 	       458	read.c	FUNCTION_19	CALL_1
+0x4000e07	      0xe900000000	                   jmp section_end..text	       458	read.c	FUNCTION_19	CALL_1
+nfs_init_readpagecache	FOR,0:functions,0:WHILE,0:DO,0:SWITCH,0:ELSE,0:CALL,1:IF,1	16
+0x4000040	            0x4155	                                push r13	       198	read.c	FUNCTION_10
+0x4000042	            0x4154	                                push r12	       198	read.c	FUNCTION_10
+0x4000044	              0x55	                                push rbp	       198	read.c	FUNCTION_10
+0x4000045	              0x53	                                push rbx	       198	read.c	FUNCTION_10
+0x4000046	          0x4889fb	                            mov rbx, rdi	       198	read.c	FUNCTION_10
+0x4000049	          0x488b2f	                    mov rbp, qword [rdi]	       199	read.c	FUNCTION_10
+0x400004c	          0x8b450c	              mov eax, dword [rbp + 0xc]	       200	read.c	FUNCTION_10	CALL_1
+0x400004f	      0x2500010000	                          and eax, 0x100	       200	read.c	FUNCTION_10	CALL_1
+0x4000054	          0x83f801	                              cmp eax, 1	       200	read.c	FUNCTION_10	CALL_1
+0x4000057	            0x19c0	                            sbb eax, eax	       200	read.c	FUNCTION_10	CALL_1
+0x4000059	            0xf7d0	                                 not eax	       200	read.c	FUNCTION_10	CALL_1
+0x400005b	          0x83e042	                           and eax, 0x42	       200	read.c	FUNCTION_10	CALL_1
+0x400005e	        0x66094138	                or word [rcx + 0x38], ax	       202	read.c	FUNCTION_10
+0x4000062	    0x488b82180100	           mov rax, qword [rdx + 0x118] 	       203	read.c	FUNCTION_10	CALL_2
+0x4000069	              0xe8	                                 invalid	       203	read.c	FUNCTION_10	CALL_2
+0x400006a	               0x0	                      add byte [rax], al	       203	read.c	FUNCTION_10	CALL_2

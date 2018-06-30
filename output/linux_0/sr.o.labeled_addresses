@@ -1,0 +1,201 @@
+exit_sr	WHILE,0:IF,0:FOR,0:SWITCH,0:functions,0:ELSE,0:DO,0:CALL,2	10
+0x4000040	    0x488b87980000	            mov rax, qword [rdi + 0x98] 	       144	sr.c	FUNCTION_2
+0x4000047	          0x4885c0	                           test rax, rax	       147	sr.c	FUNCTION_2	IF_1
+0x400004a	            0x740e	                            je 0x400005a	       147	sr.c	FUNCTION_2	IF_1
+0x400004c	         0xfb64028	           movzx eax, byte [rax + 0x28] 	       150	sr.c	FUNCTION_2	IF_2
+0x4000050	          0xc1e01a	                           shl eax, 0x1a	       151	sr.c	FUNCTION_2	IF_2
+0x4000053	          0xc1f81f	                           sar eax, 0x1f	       151	sr.c	FUNCTION_2	IF_2
+0x4000056	          0x83e0f0	                     and eax, 0xfffffff0	       151	sr.c	FUNCTION_2	IF_2
+0x4000059	              0xc3	                                     ret	       151	sr.c	FUNCTION_2	IF_2
+0x400005a	            0x31c0	                            xor eax, eax	       153	sr.c	FUNCTION_2	ELSE_1
+0x400005c	              0xc3	                                     ret	       154	sr.c	FUNCTION_2	ELSE_1
+sr_release	WHILE,0:IF,1:FOR,0:SWITCH,0:functions,0:ELSE,0:DO,0:CALL,1	7
+0x4000170	        0x488b7f20	            mov rdi, qword [rdi + 0x20] 	       660	sr.c	FUNCTION_15
+0x4000174	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       662	sr.c	FUNCTION_15	IF_1
+0x4000178	    0x81b894000000	          cmp dword [rax + 0x94], 0x800 	       662	sr.c	FUNCTION_15	IF_1
+0x4000182	            0x7702	                            ja 0x4000186	       662	sr.c	FUNCTION_15	IF_1
+0x4000184	            0xf3c3	                                     ret	       662	sr.c	FUNCTION_15	IF_1
+0x4000186	      0xbe00080000	                          mov esi, 0x800	       663	sr.c	FUNCTION_15	CALL_1
+0x400018b	      0xe900000000	                 jmp sym.sr_init_command	       663	sr.c	FUNCTION_15	CALL_1
+sr_runtime_suspend	WHILE,0:IF,2:FOR,0:SWITCH,0:functions,0:ELSE,1:DO,0:CALL,1	10
+0x4000040	    0x488b87980000	            mov rax, qword [rdi + 0x98] 	       144	sr.c	FUNCTION_2
+0x4000047	          0x4885c0	                           test rax, rax	       147	sr.c	FUNCTION_2	IF_1
+0x400004a	            0x740e	                            je 0x400005a	       147	sr.c	FUNCTION_2	IF_1
+0x400004c	         0xfb64028	           movzx eax, byte [rax + 0x28] 	       150	sr.c	FUNCTION_2	IF_2
+0x4000050	          0xc1e01a	                           shl eax, 0x1a	       151	sr.c	FUNCTION_2	IF_2
+0x4000053	          0xc1f81f	                           sar eax, 0x1f	       151	sr.c	FUNCTION_2	IF_2
+0x4000056	          0x83e0f0	                     and eax, 0xfffffff0	       151	sr.c	FUNCTION_2	IF_2
+0x4000059	              0xc3	                                     ret	       151	sr.c	FUNCTION_2	IF_2
+0x400005a	            0x31c0	                            xor eax, eax	       153	sr.c	FUNCTION_2	ELSE_1
+0x400005c	              0xc3	                                     ret	       154	sr.c	FUNCTION_2	ELSE_1
+sr_done	WHILE,0:IF,7:FOR,0:SWITCH,1:functions,0:ELSE,0:DO,0:CALL,8	71
+0x4000060	    0x8b9788010000	           mov edx, dword [rdi + 0x188] 	       320	sr.c	FUNCTION_7
+0x4000066	    0x8b8710010000	           mov eax, dword [rdi + 0x110] 	       321	sr.c	FUNCTION_7	CALL_1
+0x400006c	            0x85d2	                           test edx, edx	       322	sr.c	FUNCTION_7
+0x400006e	            0x741e	                            je 0x400008e	       322	sr.c	FUNCTION_7
+0x4000070	          0xc1ea18	                           shr edx, 0x18	       337	sr.c	FUNCTION_7	IF_1	CALL_4
+0x4000073	            0x85d2	                           test edx, edx	       337	sr.c	FUNCTION_7	IF_1	CALL_4
+0x4000075	            0x7415	                            je 0x400008c	       337	sr.c	FUNCTION_7	IF_1	CALL_4
+0x4000077	    0x488b97300100	           mov rdx, qword [rdi + 0x130] 	       338	sr.c	FUNCTION_7	IF_1
+0x400007e	           0xfb60a	                   movzx ecx, byte [rdx]	       338	sr.c	FUNCTION_7	IF_1
+0x4000081	            0x89ce	                            mov esi, ecx	       337	sr.c	FUNCTION_7	IF_1	CALL_4
+0x4000083	          0x83e67f	                           and esi, 0x7f	       337	sr.c	FUNCTION_7	IF_1	CALL_4
+0x4000086	        0x4080fe70	                           cmp sil, 0x70	       337	sr.c	FUNCTION_7	IF_1	CALL_4
+0x400008a	            0x7404	                            je 0x4000090	       337	sr.c	FUNCTION_7	IF_1	CALL_4
+0x400008c	            0x31c0	                            xor eax, eax	       322	sr.c	FUNCTION_7
+0x400008e	            0xf3c3	                                     ret	       384	sr.c	FUNCTION_7
+0x4000090	         0xfb67202	               movzx esi, byte [rdx + 2]	       339	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x4000094	        0x4080fe03	                              cmp sil, 3	       339	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x4000098	            0x7416	                            je 0x40000b0	       339	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x400009a	            0x7708	                            ja 0x40000a4	       339	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x400009c	        0x4080fe01	                              cmp sil, 1	       339	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x40000a0	            0x75ea	                           jne 0x400008c	       339	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x40000a2	            0xf3c3	                                     ret	       384	sr.c	FUNCTION_7
+0x40000a4	        0x4080fe05	                              cmp sil, 5	       339	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x40000a8	            0x7406	                            je 0x40000b0	       339	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x40000aa	        0x4080fe0d	                            cmp sil, 0xd	       339	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x40000ae	            0x75dc	                           jne 0x400008c	       339	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x40000b0	    0x81e190000000	                           and ecx, 0x90	       343	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_2
+0x40000b6	            0x74d4	                            je 0x400008c	       343	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_2
+0x40000b8	    0x488bbf280100	           mov rdi, qword [rdi + 0x128] 	       325	sr.c	FUNCTION_7	CALL_2
+0x40000bf	          0x8b5203	                mov edx, dword [rdx + 3]	       325	sr.c	FUNCTION_7	CALL_2
+0x40000c2	    0x48c7c1fcffff	             mov rcx, 0xfffffffffffffffc	       325	sr.c	FUNCTION_7	CALL_2
+0x40000c9	        0x488b7730	            mov rsi, qword [rdi + 0x30] 	       349	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_3
+0x40000cd	             0xfca	                               bswap edx	       349	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_3
+0x40000cf	          0x4863d2	                         movsxd rdx, edx	       345	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x40000d2	          0x4885f6	                           test rsi, rsi	       349	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_3
+0x40000d5	            0x7410	                            je 0x40000e7	       349	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_3
+0x40000d7	          0x8b7630	            mov esi, dword [rsi + 0x30] 	       351	sr.c	FUNCTION_7	IF_1	SWITCH_1	CALL_5
+0x40000da	          0xc1ee09	                              shr esi, 9	       351	sr.c	FUNCTION_7	IF_1	SWITCH_1	CALL_5
+0x40000dd	          0x83fe03	                              cmp esi, 3	       352	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_4
+0x40000e0	            0x7605	                           jbe 0x40000e7	       352	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_4
+0x40000e2	            0xf7de	                                 neg esi	       352	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_4
+0x40000e4	          0x4863ce	                         movsxd rcx, esi	       352	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_4
+0x40000e7	    0x488bb7980000	            mov rsi, qword [rdi + 0x98] 	       352	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_4
+0x40000ee	    0x4c8d04950000	                         lea r8, [rdx*4]	       355	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_5
+0x40000f6	    0x488bb6c80300	           mov rsi, qword [rsi + 0x3c8] 	       355	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_5
+0x40000fd	        0x4c8b4e10	              mov r9, qword [rsi + 0x10]	       354	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_5
+0x4000101	    0x4181b9940000	           cmp dword [r9 + 0x94], 0x800 	       355	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_5
+0x400010c	        0x490f44d0	                           cmove rdx, r8	       355	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_5
+0x4000110	          0x4821ca	                            and rdx, rcx	       356	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x4000113	          0x4889d1	                            mov rcx, rdx	       357	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x4000116	        0x482b4f28	             sub rcx, qword [rdi + 0x28]	       357	sr.c	FUNCTION_7	IF_1	SWITCH_1
+0x400011a	          0x4889cf	                            mov rdi, rcx	       359	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+0x400011d	        0x48c1e709	                              shl rdi, 9	       359	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+0x4000121	    0xf7c100004000	                      test ecx, 0x400000	       359	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+0x4000127	            0x7534	                           jne 0x400015d	       359	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+0x4000129	            0x39f8	                            cmp eax, edi	       359	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+0x400012b	            0x89f8	                            mov eax, edi	       359	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+0x400012d	           0xf9ec1	                                setle cl	       359	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+0x4000130	            0x84c9	                             test cl, cl	       359	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+0x4000132	            0x7529	                           jne 0x400015d	       359	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+0x4000134	    0x488bbeb80000	            mov rdi, qword [rsi + 0xb8] 	       369	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_7	CALL_7
+0x400013b	        0x483b5750	            cmp rdx, qword [rdi + 0x50] 	       369	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_7	CALL_7
+0x400013f	     0xf8349ffffff	                           jae 0x400008e	       369	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_7	CALL_7
+0x4000145	          0x8b4e08	                mov ecx, dword [rsi + 8]	       369	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_7	CALL_7
+0x4000148	          0x4829d1	                            sub rcx, rdx	       369	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_7	CALL_7
+0x400014b	    0x4881f92b0100	                          cmp rcx, 0x12b	       369	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_7	CALL_7
+0x4000152	     0xf8f36ffffff	                            jg 0x400008e	       369	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_7	CALL_7
+0x4000158	        0x48895750	             mov qword [rdi + 0x50], rdx	       438	genhd.h	FUNCTION_91
+0x400015c	              0xc3	                                     ret	       438	genhd.h	FUNCTION_91
+0x400015d	            0x31c0	                            xor eax, eax	       360	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+0x400015f	            0xebd3	                           jmp 0x4000134	       360	sr.c	FUNCTION_7	IF_1	SWITCH_1	IF_6
+sr_block_release	WHILE,0:IF,0:FOR,0:SWITCH,0:functions,0:ELSE,0:DO,0:CALL,5	15
+0x4000eb0	              0x55	                                push rbp	       542	sr.c	FUNCTION_10
+0x4000eb1	              0x53	                                push rbx	       542	sr.c	FUNCTION_10
+0x4000eb2	            0x89f5	                            mov ebp, esi	       542	sr.c	FUNCTION_10
+0x4000eb4	    0x488b9fc80300	           mov rbx, qword [rdi + 0x3c8] 	       542	sr.c	FUNCTION_10
+0x4000ebb	    0x48c7c7000000	                              mov rdi, 0	       544	sr.c	FUNCTION_10	CALL_2
+0x4000ec2	      0xe800000000	                          call 0x4000ec7	       544	sr.c	FUNCTION_10	CALL_2
+0x4000ec7	            0x89ee	                            mov esi, ebp	       545	sr.c	FUNCTION_10	CALL_3
+0x4000ec9	        0x488d7b38	                   lea rdi, [rbx + 0x38]	       545	sr.c	FUNCTION_10	CALL_3
+0x4000ecd	      0xe800000000	                          call 0x4000ed2	       545	sr.c	FUNCTION_10	CALL_3
+0x4000ed2	          0x4889df	                            mov rdi, rbx	       546	sr.c	FUNCTION_10	CALL_4
+0x4000ed5	      0xe886ffffff	                    call sym.scsi_cd_put	       546	sr.c	FUNCTION_10	CALL_4
+0x4000eda	              0x5b	                                 pop rbx	       548	sr.c	FUNCTION_10
+0x4000edb	              0x5d	                                 pop rbp	       548	sr.c	FUNCTION_10
+0x4000edc	    0x48c7c7000000	                              mov rdi, 0	       547	sr.c	FUNCTION_10	CALL_5
+0x4000ee3	      0xe900000000	                           jmp 0x4000ee8	       547	sr.c	FUNCTION_10	CALL_5
+sr_open	WHILE,0:IF,1:FOR,0:SWITCH,0:functions,0:ELSE,0:DO,0:CALL,1	7
+0x4000800	        0x488b4720	            mov rax, qword [rdi + 0x20] 	       641	sr.c	FUNCTION_14
+0x4000804	        0x488b7810	            mov rdi, qword [rax + 0x10] 	       649	sr.c	FUNCTION_14	IF_1	CALL_1
+0x4000808	      0xe800000000	                          call 0x400080d	       649	sr.c	FUNCTION_14	IF_1	CALL_1
+0x400080d	          0x83f801	                              cmp eax, 1	       655	sr.c	FUNCTION_14
+0x4000810	            0x19c0	                            sbb eax, eax	       655	sr.c	FUNCTION_14
+0x4000812	          0x83e0fa	                     and eax, 0xfffffffa	       655	sr.c	FUNCTION_14
+0x4000815	              0xc3	                                     ret	       656	sr.c	FUNCTION_14
+sr_packet	WHILE,0:IF,2:FOR,0:SWITCH,0:functions,0:ELSE,0:DO,0:CALL,1	20
+0x40004f0	          0x803e51	                    cmp byte [rsi], 0x51	       963	sr.c	FUNCTION_19	IF_1
+0x40004f3	              0x53	                                push rbx	       959	sr.c	FUNCTION_19
+0x40004f4	        0x488b7f20	            mov rdi, qword [rdi + 0x20] 	       960	sr.c	FUNCTION_19
+0x40004f8	            0x7414	                            je 0x400050e	       963	sr.c	FUNCTION_19	IF_1
+0x40004fa	          0x8b4630	            mov eax, dword [rsi + 0x30] 	       966	sr.c	FUNCTION_19	IF_2
+0x40004fd	            0x85c0	                           test eax, eax	       966	sr.c	FUNCTION_19	IF_2
+0x40004ff	            0x7e21	                           jle 0x4000522	       966	sr.c	FUNCTION_19	IF_2
+0x4000501	          0x4889f3	                            mov rbx, rsi	       966	sr.c	FUNCTION_19	IF_2
+0x4000504	      0xe800000000	                          call 0x4000509	       969	sr.c	FUNCTION_19	CALL_1
+0x4000509	          0x8b431c	            mov eax, dword [rbx + 0x1c] 	       971	sr.c	FUNCTION_19
+0x400050c	              0x5b	                                 pop rbx	       972	sr.c	FUNCTION_19
+0x400050d	              0xc3	                                     ret	       972	sr.c	FUNCTION_19
+0x400050e	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       963	sr.c	FUNCTION_19	IF_1
+0x4000512	    0xf6801c010000	              test byte [rax + 0x11c], 8	       963	sr.c	FUNCTION_19	IF_1
+0x4000519	            0x74df	                            je 0x40004fa	       963	sr.c	FUNCTION_19	IF_1
+0x400051b	      0xb8a1ffffff	                     mov eax, 0xffffffa1	       964	sr.c	FUNCTION_19	IF_1
+0x4000520	              0x5b	                                 pop rbx	       972	sr.c	FUNCTION_19
+0x4000521	              0xc3	                                     ret	       972	sr.c	FUNCTION_19
+0x4000522	    0xc74630307500	         mov dword [rsi + 0x30], 0x7530 	       967	sr.c	FUNCTION_19	IF_2
+0x4000529	            0xebd6	                           jmp 0x4000501	       967	sr.c	FUNCTION_19	IF_2
+sr_block_ioctl	WHILE,0:IF,2:FOR,0:SWITCH,1:functions,0:ELSE,0:DO,0:CALL,7	53
+0x4000820	            0x4157	                                push r15	       552	sr.c	FUNCTION_11
+0x4000822	            0x4156	                                push r14	       552	sr.c	FUNCTION_11
+0x4000824	          0x4989ff	                            mov r15, rdi	       552	sr.c	FUNCTION_11
+0x4000827	            0x4155	                                push r13	       552	sr.c	FUNCTION_11
+0x4000829	            0x4154	                                push r12	       552	sr.c	FUNCTION_11
+0x400082b	          0x4989cd	                            mov r13, rcx	       552	sr.c	FUNCTION_11
+0x400082e	              0x55	                                push rbp	       552	sr.c	FUNCTION_11
+0x400082f	              0x53	                                push rbx	       552	sr.c	FUNCTION_11
+0x4000830	            0x89f5	                            mov ebp, esi	       552	sr.c	FUNCTION_11
+0x4000832	            0x89d3	                            mov ebx, edx	       552	sr.c	FUNCTION_11
+0x4000834	        0x4883ec08	                              sub rsp, 8	       552	sr.c	FUNCTION_11
+0x4000838	    0x488b87800000	            mov rax, qword [rdi + 0x80] 	       552	sr.c	FUNCTION_11
+0x400083f	    0x48c7c7000000	                              mov rdi, 0	       558	sr.c	FUNCTION_11	CALL_2
+0x4000846	    0x4c8bb0c80300	           mov r14, qword [rax + 0x3c8] 	       558	sr.c	FUNCTION_11	CALL_2
+0x400084d	        0x4d8b6610	            mov r12, qword [r14 + 0x10] 	       554	sr.c	FUNCTION_11
+0x4000851	      0xe800000000	                          call 0x4000856	       558	sr.c	FUNCTION_11	CALL_2
+0x4000856	            0x89ea	                            mov edx, ebp	       560	sr.c	FUNCTION_11	CALL_3
+0x4000858	            0x89de	                            mov esi, ebx	       560	sr.c	FUNCTION_11	CALL_3
+0x400085a	          0xc1ea06	                              shr edx, 6	       560	sr.c	FUNCTION_11	CALL_3
+0x400085d	          0x4c89e7	                            mov rdi, r12	       560	sr.c	FUNCTION_11	CALL_3
+0x4000860	          0x83e201	                              and edx, 1	       560	sr.c	FUNCTION_11	CALL_3
+0x4000863	      0xe800000000	                          call 0x4000868	       560	sr.c	FUNCTION_11	CALL_3
+0x4000868	            0x85c0	                           test eax, eax	       562	sr.c	FUNCTION_11	IF_1
+0x400086a	            0x7528	                           jne 0x4000894	       562	sr.c	FUNCTION_11	IF_1
+0x400086c	    0x81fb82530000	                         cmp ebx, 0x5382	       569	sr.c	FUNCTION_11	SWITCH_1
+0x4000872	            0x7443	                            je 0x40008b7	       569	sr.c	FUNCTION_11	SWITCH_1
+0x4000874	    0x81fb86530000	                         cmp ebx, 0x5386	       569	sr.c	FUNCTION_11	SWITCH_1
+0x400087a	            0x743b	                            je 0x40008b7	       569	sr.c	FUNCTION_11	SWITCH_1
+0x400087c	        0x498d7e38	                   lea rdi, [r14 + 0x38]	       576	sr.c	FUNCTION_11	CALL_5
+0x4000880	          0x4d89e8	                             mov r8, r13	       576	sr.c	FUNCTION_11	CALL_5
+0x4000883	            0x89d9	                            mov ecx, ebx	       576	sr.c	FUNCTION_11	CALL_5
+0x4000885	            0x89ea	                            mov edx, ebp	       576	sr.c	FUNCTION_11	CALL_5
+0x4000887	          0x4c89fe	                            mov rsi, r15	       576	sr.c	FUNCTION_11	CALL_5
+0x400088a	      0xe800000000	                          call 0x400088f	       576	sr.c	FUNCTION_11	CALL_5
+0x400088f	          0x83f8da	             cmp eax, 0xffffffffffffffda	       577	sr.c	FUNCTION_11	IF_2
+0x4000892	            0x7423	                            je 0x40008b7	       577	sr.c	FUNCTION_11	IF_2
+0x4000894	    0x48c7c7000000	                              mov rdi, 0	       583	sr.c	FUNCTION_11	CALL_7
+0x400089b	        0x89442404	                mov dword [rsp + 4], eax	       583	sr.c	FUNCTION_11	CALL_7
+0x400089f	      0xe800000000	                          call 0x40008a4	       583	sr.c	FUNCTION_11	CALL_7
+0x40008a4	        0x8b442404	                mov eax, dword [rsp + 4]	       585	sr.c	FUNCTION_11
+0x40008a8	        0x4883c408	                              add rsp, 8	       585	sr.c	FUNCTION_11
+0x40008ac	              0x5b	                                 pop rbx	       585	sr.c	FUNCTION_11
+0x40008ad	              0x5d	                                 pop rbp	       585	sr.c	FUNCTION_11
+0x40008ae	            0x415c	                                 pop r12	       585	sr.c	FUNCTION_11
+0x40008b0	            0x415d	                                 pop r13	       585	sr.c	FUNCTION_11
+0x40008b2	            0x415e	                                 pop r14	       585	sr.c	FUNCTION_11
+0x40008b4	            0x415f	                                 pop r15	       585	sr.c	FUNCTION_11
+0x40008b6	              0xc3	                                     ret	       585	sr.c	FUNCTION_11
+0x40008b7	          0x4c89ea	                            mov rdx, r13	       580	sr.c	FUNCTION_11	CALL_6
+0x40008ba	            0x89de	                            mov esi, ebx	       580	sr.c	FUNCTION_11	CALL_6
+0x40008bc	          0x4c89e7	                            mov rdi, r12	       580	sr.c	FUNCTION_11	CALL_6
+0x40008bf	      0xe800000000	                          call 0x40008c4	       580	sr.c	FUNCTION_11	CALL_6
+0x40008c4	            0xebce	                           jmp 0x4000894	       580	sr.c	FUNCTION_11	CALL_6

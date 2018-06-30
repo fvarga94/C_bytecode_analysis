@@ -1,0 +1,164 @@
+usb_stor_set_xfer_buf	WHILE,0:CALL,6:ELSE,0:DO,0:functions,0:IF,1:FOR,0:SWITCH,0	26
+0x4000190	              0x53	                                push rbx	       171	protocol.c	FUNCTION_5
+0x4000191	          0x4889d3	                            mov rbx, rdx	       171	protocol.c	FUNCTION_5
+0x4000194	        0x4883ec18	                           sub rsp, 0x18	       171	protocol.c	FUNCTION_5
+0x4000198	    0x65488b042528	                mov rax, qword gs:[0x28]	       171	protocol.c	FUNCTION_5
+0x40001a1	      0x4889442410	             mov qword [rsp + 0x10], rax	       171	protocol.c	FUNCTION_5
+0x40001a6	            0x31c0	                            xor eax, eax	       171	protocol.c	FUNCTION_5
+0x40001a8	    0x39b210010000	           cmp dword [rdx + 0x110], esi 	       175	protocol.c	FUNCTION_5	CALL_2
+0x40001ae	      0x4c8d442404	                       lea r8, [rsp + 4]	       176	protocol.c	FUNCTION_5	CALL_3
+0x40001b3	      0x488d4c2408	                      lea rcx, [rsp + 8]	       176	protocol.c	FUNCTION_5	CALL_3
+0x40001b8	     0xf46b2100100	         cmovbe esi, dword [rdx + 0x110]	       175	protocol.c	FUNCTION_5	CALL_2
+0x40001bf	          0x4531c9	                            xor r9d, r9d	       176	protocol.c	FUNCTION_5	CALL_3
+0x40001c2	    0xc74424040000	                  mov dword [rsp + 4], 0	       172	protocol.c	FUNCTION_5
+0x40001ca	    0x48c744240800	                  mov qword [rsp + 8], 0	       173	protocol.c	FUNCTION_5
+0x40001d3	      0xe800000000	                          call 0x40001d8	       176	protocol.c	FUNCTION_5	CALL_3
+0x40001d8	    0x8b9310010000	           mov edx, dword [rbx + 0x110] 	       197	scsi_cmnd.h	FUNCTION_12
+0x40001de	            0x39d0	                            cmp eax, edx	       178	protocol.c	FUNCTION_5	IF_1	CALL_4
+0x40001e0	            0x7308	                           jae 0x40001ea	       178	protocol.c	FUNCTION_5	IF_1	CALL_4
+0x40001e2	            0x29c2	                            sub edx, eax	       202	scsi_cmnd.h	FUNCTION_13
+0x40001e4	    0x899314010000	            mov dword [rbx + 0x114], edx	       202	scsi_cmnd.h	FUNCTION_13
+0x40001ea	      0x488b442410	            mov rax, qword [rsp + 0x10] 	       180	protocol.c	FUNCTION_5
+0x40001ef	    0x654833042528	                xor rax, qword gs:[0x28]	       180	protocol.c	FUNCTION_5
+0x40001f8	            0x7506	                           jne 0x4000200	       180	protocol.c	FUNCTION_5
+0x40001fa	        0x4883c418	                           add rsp, 0x18	       180	protocol.c	FUNCTION_5
+0x40001fe	              0x5b	                                 pop rbx	       180	protocol.c	FUNCTION_5
+0x40001ff	              0xc3	                                     ret	       180	protocol.c	FUNCTION_5
+0x4000200	      0xe800000000	                          call 0x4000205	       180	protocol.c	FUNCTION_5
+usb_stor_pad12_command	WHILE,0:CALL,1:ELSE,0:DO,0:functions,0:IF,0:FOR,1:SWITCH,0	12
+0x4000210	     0xfb787ec0000	           movzx eax, word [rdi + 0xec] 	        54	protocol.c	FUNCTION_1	FOR_1
+0x4000217	        0x6683f80b	                             cmp ax, 0xb	        54	protocol.c	FUNCTION_1	FOR_1
+0x400021b	            0x7725	                            ja 0x4000242	        54	protocol.c	FUNCTION_1	FOR_1
+0x400021d	    0x488b97f80000	            mov rdx, qword [rdi + 0xf8] 	        55	protocol.c	FUNCTION_1	FOR_1
+0x4000224	           0xfb7c0	                           movzx eax, ax	        55	protocol.c	FUNCTION_1	FOR_1
+0x4000227	        0xc6040200	                 mov byte [rdx + rax], 0	        55	protocol.c	FUNCTION_1	FOR_1
+0x400022b	     0xfb787ec0000	           movzx eax, word [rdi + 0xec] 	        54	protocol.c	FUNCTION_1	FOR_1
+0x4000232	          0x83c001	                              add eax, 1	        54	protocol.c	FUNCTION_1	FOR_1
+0x4000235	        0x6683f80b	                             cmp ax, 0xb	        54	protocol.c	FUNCTION_1	FOR_1
+0x4000239	    0x668987ec0000	               mov word [rdi + 0xec], ax	        54	protocol.c	FUNCTION_1	FOR_1
+0x4000240	            0x76db	                           jbe 0x400021d	        54	protocol.c	FUNCTION_1	FOR_1
+0x4000242	      0xe900000000	                           jmp 0x4000247	        58	protocol.c	FUNCTION_1	CALL_1
+usb_stor_transparent_scsi_command	WHILE,0:CALL,1:ELSE,0:DO,0:functions,0:IF,0:FOR,0:SWITCH,0	1
+0x4000040	      0xe900000000	                           jmp 0x4000045	       108	protocol.c	FUNCTION_3	CALL_1
+usb_stor_ufi_command	WHILE,0:CALL,1:ELSE,0:DO,0:functions,0:IF,0:FOR,1:SWITCH,1	30
+0x4000250	     0xfb787ec0000	           movzx eax, word [rdi + 0xec] 	        72	protocol.c	FUNCTION_2	FOR_1
+0x4000257	        0x6683f80b	                             cmp ax, 0xb	        72	protocol.c	FUNCTION_2	FOR_1
+0x400025b	            0x7725	                            ja 0x4000282	        72	protocol.c	FUNCTION_2	FOR_1
+0x400025d	    0x488b97f80000	            mov rdx, qword [rdi + 0xf8] 	        73	protocol.c	FUNCTION_2	FOR_1
+0x4000264	           0xfb7c0	                           movzx eax, ax	        73	protocol.c	FUNCTION_2	FOR_1
+0x4000267	        0xc6040200	                 mov byte [rdx + rax], 0	        73	protocol.c	FUNCTION_2	FOR_1
+0x400026b	     0xfb787ec0000	           movzx eax, word [rdi + 0xec] 	        72	protocol.c	FUNCTION_2	FOR_1
+0x4000272	          0x83c001	                              add eax, 1	        72	protocol.c	FUNCTION_2	FOR_1
+0x4000275	        0x6683f80b	                             cmp ax, 0xb	        72	protocol.c	FUNCTION_2	FOR_1
+0x4000279	    0x668987ec0000	               mov word [rdi + 0xec], ax	        72	protocol.c	FUNCTION_2	FOR_1
+0x4000280	            0x76db	                           jbe 0x400025d	        72	protocol.c	FUNCTION_2	FOR_1
+0x4000282	    0x488b97f80000	            mov rdx, qword [rdi + 0xf8] 	        81	protocol.c	FUNCTION_2	SWITCH_1
+0x4000289	      0xb80c000000	                            mov eax, 0xc	        76	protocol.c	FUNCTION_2
+0x400028e	    0x668987ec0000	               mov word [rdi + 0xec], ax	        76	protocol.c	FUNCTION_2
+0x4000295	           0xfb602	                   movzx eax, byte [rdx]	        81	protocol.c	FUNCTION_2	SWITCH_1
+0x4000298	            0x3c12	                            cmp al, 0x12	        81	protocol.c	FUNCTION_2	SWITCH_1
+0x400029a	            0x742a	                            je 0x40002c6	        81	protocol.c	FUNCTION_2	SWITCH_1
+0x400029c	            0x3c5a	                            cmp al, 0x5a	        81	protocol.c	FUNCTION_2	SWITCH_1
+0x400029e	            0x7412	                            je 0x40002b2	        81	protocol.c	FUNCTION_2	SWITCH_1
+0x40002a0	            0x3c03	                               cmp al, 3	        81	protocol.c	FUNCTION_2	SWITCH_1
+0x40002a2	            0x7405	                            je 0x40002a9	        81	protocol.c	FUNCTION_2	SWITCH_1
+0x40002a4	      0xe900000000	                           jmp 0x40002a9	       101	protocol.c	FUNCTION_2	CALL_1
+0x40002a9	        0xc6420412	                mov byte [rdx + 4], 0x12	        96	protocol.c	FUNCTION_2	SWITCH_1
+0x40002ad	      0xe900000000	                           jmp 0x40002b2	       101	protocol.c	FUNCTION_2	CALL_1
+0x40002b2	        0xc6420700	                   mov byte [rdx + 7], 0	        90	protocol.c	FUNCTION_2	SWITCH_1
+0x40002b6	    0x488b87f80000	            mov rax, qword [rdi + 0xf8] 	        91	protocol.c	FUNCTION_2	SWITCH_1
+0x40002bd	        0xc6400808	                   mov byte [rax + 8], 8	        91	protocol.c	FUNCTION_2	SWITCH_1
+0x40002c1	      0xe900000000	                           jmp 0x40002c6	       101	protocol.c	FUNCTION_2	CALL_1
+0x40002c6	        0xc6420424	                mov byte [rdx + 4], 0x24	        85	protocol.c	FUNCTION_2	SWITCH_1
+0x40002ca	      0xe900000000	                   jmp section_end..text	       101	protocol.c	FUNCTION_2	CALL_1
+usb_stor_access_xfer_buf	WHILE,1:CALL,11:ELSE,3:DO,0:functions,0:IF,4:FOR,0:SWITCH,0	90
+0x4000050	            0x4157	                                push r15	       124	protocol.c	FUNCTION_4
+0x4000052	            0x4156	                                push r14	       124	protocol.c	FUNCTION_4
+0x4000054	          0x4989ce	                            mov r14, rcx	       124	protocol.c	FUNCTION_4
+0x4000057	            0x4155	                                push r13	       124	protocol.c	FUNCTION_4
+0x4000059	            0x4154	                                push r12	       124	protocol.c	FUNCTION_4
+0x400005b	          0x4589cd	                           mov r13d, r9d	       124	protocol.c	FUNCTION_4
+0x400005e	              0x55	                                push rbp	       124	protocol.c	FUNCTION_4
+0x400005f	              0x53	                                push rbx	       124	protocol.c	FUNCTION_4
+0x4000060	          0x4189f4	                           mov r12d, esi	       124	protocol.c	FUNCTION_4
+0x4000063	          0x4c89c5	                             mov rbp, r8	       124	protocol.c	FUNCTION_4
+0x4000066	        0x4883ec58	                           sub rsp, 0x58	       124	protocol.c	FUNCTION_4
+0x400006a	          0x488b19	                    mov rbx, qword [rcx]	       126	protocol.c	FUNCTION_4
+0x400006d	    0x65488b042528	                mov rax, qword gs:[0x28]	       124	protocol.c	FUNCTION_4
+0x4000076	      0x4889442450	             mov qword [rsp + 0x50], rax	       124	protocol.c	FUNCTION_4
+0x400007b	            0x31c0	                            xor eax, eax	       124	protocol.c	FUNCTION_4
+0x400007d	        0x48893c24	                    mov qword [rsp], rdi	       124	protocol.c	FUNCTION_4
+0x4000081	          0x4885db	                           test rbx, rbx	       130	protocol.c	FUNCTION_4	IF_1
+0x4000084	     0xf84e5000000	                            je 0x400016f	       130	protocol.c	FUNCTION_4	IF_1
+0x400008a	          0x4889df	                            mov rdi, rbx	       131	protocol.c	FUNCTION_4	CALL_2
+0x400008d	      0xe800000000	                          call 0x4000092	       131	protocol.c	FUNCTION_4	CALL_2
+0x4000092	            0x31c9	                            xor ecx, ecx	       135	protocol.c	FUNCTION_4	CALL_4
+0x4000094	        0x4183fd01	                             cmp r13d, 1	       135	protocol.c	FUNCTION_4	CALL_4
+0x4000098	      0x488d7c2408	                      lea rdi, [rsp + 8]	       135	protocol.c	FUNCTION_4	CALL_4
+0x400009d	           0xf94c1	                                 sete cl	       135	protocol.c	FUNCTION_4	CALL_4
+0x40000a0	          0x4889de	                            mov rsi, rbx	       135	protocol.c	FUNCTION_4	CALL_4
+0x40000a3	            0x89c2	                            mov edx, eax	       135	protocol.c	FUNCTION_4	CALL_4
+0x40000a5	        0x8d4c0902	                lea ecx, [rcx + rcx + 2]	       135	protocol.c	FUNCTION_4	CALL_4
+0x40000a9	            0x31db	                            xor ebx, ebx	       139	protocol.c	FUNCTION_4	IF_2
+0x40000ab	      0xe800000000	                          call 0x40000b0	       135	protocol.c	FUNCTION_4	CALL_4
+0x40000b0	          0x8b7500	                    mov esi, dword [rbp]	       138	protocol.c	FUNCTION_4	IF_2	CALL_5
+0x40000b3	      0x488d7c2408	                      lea rdi, [rsp + 8]	       138	protocol.c	FUNCTION_4	IF_2	CALL_5
+0x40000b8	      0xe800000000	                          call 0x40000bd	       138	protocol.c	FUNCTION_4	IF_2	CALL_5
+0x40000bd	            0x84c0	                             test al, al	       138	protocol.c	FUNCTION_4	IF_2	CALL_5
+0x40000bf	            0x750e	                           jne 0x40000cf	       138	protocol.c	FUNCTION_4	IF_2	CALL_5
+0x40000c1	      0xe988000000	                           jmp 0x400014e	       138	protocol.c	FUNCTION_4	IF_2	CALL_5
+0x40000c6	          0x894500	                    mov dword [rbp], eax	       151	protocol.c	FUNCTION_4	WHILE_1	IF_4
+0x40000c9	          0x49893e	                    mov qword [r14], rdi	       152	protocol.c	FUNCTION_4	WHILE_1	IF_4
+0x40000cc	          0x4401fb	                           add ebx, r15d	       157	protocol.c	FUNCTION_4	WHILE_1
+0x40000cf	      0x488d7c2408	                      lea rdi, [rsp + 8]	       141	protocol.c	FUNCTION_4	WHILE_1	CALL_6
+0x40000d4	      0xe800000000	                          call 0x40000d9	       141	protocol.c	FUNCTION_4	WHILE_1	CALL_6
+0x40000d9	          0x4439e3	                           cmp ebx, r12d	       141	protocol.c	FUNCTION_4	WHILE_1	CALL_6
+0x40000dc	            0x7366	                           jae 0x4000144	       141	protocol.c	FUNCTION_4	WHILE_1	CALL_6
+0x40000de	            0x84c0	                             test al, al	       141	protocol.c	FUNCTION_4	WHILE_1	CALL_6
+0x40000e0	            0x7462	                            je 0x4000144	       141	protocol.c	FUNCTION_4	WHILE_1	CALL_6
+0x40000e2	      0x488b442418	            mov rax, qword [rsp + 0x18] 	       142	protocol.c	FUNCTION_4	WHILE_1	CALL_7
+0x40000e7	          0x4489e1	                           mov ecx, r12d	       142	protocol.c	FUNCTION_4	WHILE_1	CALL_7
+0x40000ea	            0x29d9	                            sub ecx, ebx	       142	protocol.c	FUNCTION_4	WHILE_1	CALL_7
+0x40000ec	            0x39c1	                            cmp ecx, eax	       142	protocol.c	FUNCTION_4	WHILE_1	CALL_7
+0x40000ee	          0x4189c7	                           mov r15d, eax	       142	protocol.c	FUNCTION_4	WHILE_1	CALL_7
+0x40000f1	        0x440f42f9	                         cmovb r15d, ecx	       142	protocol.c	FUNCTION_4	WHILE_1	CALL_7
+0x40000f5	        0x4183fd01	                             cmp r13d, 1	       145	protocol.c	FUNCTION_4	WHILE_1	IF_3
+0x40000f9	            0x7434	                            je 0x400012f	       145	protocol.c	FUNCTION_4	WHILE_1	IF_3
+0x40000fb	            0x89de	                            mov esi, ebx	       148	protocol.c	FUNCTION_4	WHILE_1	CALL_9
+0x40000fd	        0x48033424	                    add rsi, qword [rsp]	       148	protocol.c	FUNCTION_4	WHILE_1	CALL_9
+0x4000101	      0x488b7c2410	            mov rdi, qword [rsp + 0x10] 	       148	protocol.c	FUNCTION_4	WHILE_1	CALL_9
+0x4000106	          0x4489fa	                           mov edx, r15d	       148	protocol.c	FUNCTION_4	WHILE_1	CALL_9
+0x4000109	      0xe800000000	                          call 0x400010e	       148	protocol.c	FUNCTION_4	WHILE_1	CALL_9
+0x400010e	          0x8b4500	                    mov eax, dword [rbp]	       150	protocol.c	FUNCTION_4	WHILE_1	IF_4
+0x4000111	      0x488b7c2428	            mov rdi, qword [rsp + 0x28] 	       150	protocol.c	FUNCTION_4	WHILE_1	IF_4
+0x4000116	          0x4401f8	                           add eax, r15d	       150	protocol.c	FUNCTION_4	WHILE_1	IF_4
+0x4000119	          0x3b470c	              cmp eax, dword [rdi + 0xc]	       150	protocol.c	FUNCTION_4	WHILE_1	IF_4
+0x400011c	            0x72a8	                            jb 0x40000c6	       150	protocol.c	FUNCTION_4	WHILE_1	IF_4
+0x400011e	    0xc74500000000	                      mov dword [rbp], 0	       154	protocol.c	FUNCTION_4	WHILE_1	ELSE_3
+0x4000125	      0xe800000000	                          call 0x400012a	       155	protocol.c	FUNCTION_4	WHILE_1	ELSE_3	CALL_10
+0x400012a	          0x498906	                    mov qword [r14], rax	       155	protocol.c	FUNCTION_4	WHILE_1	ELSE_3	CALL_10
+0x400012d	            0xeb9d	                           jmp 0x40000cc	       155	protocol.c	FUNCTION_4	WHILE_1	ELSE_3	CALL_10
+0x400012f	            0x89df	                            mov edi, ebx	       146	protocol.c	FUNCTION_4	WHILE_1	CALL_8
+0x4000131	        0x48033c24	                    add rdi, qword [rsp]	       146	protocol.c	FUNCTION_4	WHILE_1	CALL_8
+0x4000135	      0x488b742410	            mov rsi, qword [rsp + 0x10] 	       146	protocol.c	FUNCTION_4	WHILE_1	CALL_8
+0x400013a	          0x4489fa	                           mov edx, r15d	       146	protocol.c	FUNCTION_4	WHILE_1	CALL_8
+0x400013d	      0xe800000000	                          call 0x4000142	       146	protocol.c	FUNCTION_4	WHILE_1	CALL_8
+0x4000142	            0xebca	                           jmp 0x400010e	       146	protocol.c	FUNCTION_4	WHILE_1	CALL_8
+0x4000144	      0x488d7c2408	                      lea rdi, [rsp + 8]	       159	protocol.c	FUNCTION_4	CALL_11
+0x4000149	      0xe800000000	                          call 0x400014e	       159	protocol.c	FUNCTION_4	CALL_11
+0x400014e	      0x488b742450	            mov rsi, qword [rsp + 0x50] 	       162	protocol.c	FUNCTION_4
+0x4000153	    0x654833342528	                xor rsi, qword gs:[0x28]	       162	protocol.c	FUNCTION_4
+0x400015c	            0x89d8	                            mov eax, ebx	       162	protocol.c	FUNCTION_4
+0x400015e	            0x7521	                           jne 0x4000181	       162	protocol.c	FUNCTION_4
+0x4000160	        0x4883c458	                           add rsp, 0x58	       162	protocol.c	FUNCTION_4
+0x4000164	              0x5b	                                 pop rbx	       162	protocol.c	FUNCTION_4
+0x4000165	              0x5d	                                 pop rbp	       162	protocol.c	FUNCTION_4
+0x4000166	            0x415c	                                 pop r12	       162	protocol.c	FUNCTION_4
+0x4000168	            0x415d	                                 pop r13	       162	protocol.c	FUNCTION_4
+0x400016a	            0x415e	                                 pop r14	       162	protocol.c	FUNCTION_4
+0x400016c	            0x415f	                                 pop r15	       162	protocol.c	FUNCTION_4
+0x400016e	              0xc3	                                     ret	       162	protocol.c	FUNCTION_4
+0x400016f	    0x8b8208010000	           mov eax, dword [rdx + 0x108] 	       187	scsi_cmnd.h	FUNCTION_10
+0x4000175	    0x488b9a000100	           mov rbx, qword [rdx + 0x100] 	       192	scsi_cmnd.h	FUNCTION_11
+0x400017c	      0xe911ffffff	                           jmp 0x4000092	       192	scsi_cmnd.h	FUNCTION_11
+0x4000181	      0xe800000000	                          call 0x4000186	       162	protocol.c	FUNCTION_4

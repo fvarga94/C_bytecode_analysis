@@ -1,0 +1,167 @@
+fan_set_cur_state	functions,0:DO,0:ELSE,1:IF,1:WHILE,0:FOR,0:SWITCH,0:CALL,3	23
+0x40000c0	    0x488bbff00200	           mov rdi, qword [rdi + 0x2f0] 	       215	fan.c	FUNCTION_7
+0x40000c7	    0x488b97480200	           mov rdx, qword [rdi + 0x248] 	       215	fan.c	FUNCTION_7
+0x40000ce	          0x803a00	                       cmp byte [rdx], 0	       218	fan.c	FUNCTION_7	IF_1
+0x40000d1	            0x7517	                           jne 0x40000ea	       218	fan.c	FUNCTION_7	IF_1
+0x40000d3	        0x4883fe01	                              cmp rsi, 1	       187	fan.c	FUNCTION_5	IF_1
+0x40000d7	      0xb8eaffffff	                     mov eax, 0xffffffea	       200	fan.c	FUNCTION_6	IF_1
+0x40000dc	            0x7602	                           jbe 0x40000e0	       187	fan.c	FUNCTION_5	IF_1
+0x40000de	            0xf3c3	                                     ret	       222	fan.c	FUNCTION_7
+0x40000e0	            0x19f6	                            sbb esi, esi	       190	fan.c	FUNCTION_5	CALL_1
+0x40000e2	          0x83e604	                              and esi, 4	       190	fan.c	FUNCTION_5	CALL_1
+0x40000e5	      0xe900000000	                           jmp 0x40000ea	       190	fan.c	FUNCTION_5	CALL_1
+0x40000ea	        0x48634a30	         movsxd rcx, dword [rdx + 0x30] 	       199	fan.c	FUNCTION_6	IF_1
+0x40000ee	      0xb8eaffffff	                     mov eax, 0xffffffea	       200	fan.c	FUNCTION_6	IF_1
+0x40000f3	          0x4839ce	                            cmp rsi, rcx	       199	fan.c	FUNCTION_6	IF_1
+0x40000f6	            0x73e6	                           jae 0x40000de	       199	fan.c	FUNCTION_6	IF_1
+0x40000f8	        0x488b4a28	            mov rcx, qword [rdx + 0x28] 	       202	fan.c	FUNCTION_6	CALL_2
+0x40000fc	        0x488d04b6	                  lea rax, [rsi + rsi*4]	       202	fan.c	FUNCTION_6	CALL_2
+0x4000100	        0x488b7f08	                mov rdi, qword [rdi + 8]	       202	fan.c	FUNCTION_6	CALL_2
+0x4000104	    0x48c7c6000000	                              mov rsi, 0	       202	fan.c	FUNCTION_6	CALL_2
+0x400010b	        0x488d04c1	                  lea rax, [rcx + rax*8]	       202	fan.c	FUNCTION_6	CALL_2
+0x400010f	          0x488b10	                    mov rdx, qword [rax]	       202	fan.c	FUNCTION_6	CALL_2
+0x4000112	      0xe800000000	                          call 0x4000117	       202	fan.c	FUNCTION_6	CALL_2
+0x4000117	            0xf3c3	                                     ret	       202	fan.c	FUNCTION_6	CALL_2
+acpi_fan_remove	functions,0:DO,0:ELSE,0:IF,0:WHILE,0:FOR,0:SWITCH,0:CALL,4	14
+0x4000080	              0x53	                                push rbx	       389	fan.c	FUNCTION_13
+0x4000081	    0x488b9fa80000	            mov rbx, qword [rdi + 0xa8] 	       389	fan.c	FUNCTION_13
+0x4000088	    0x48c7c6000000	                              mov rsi, 0	       392	fan.c	FUNCTION_13	CALL_2
+0x400008f	        0x4883c720	                           add rdi, 0x20	       392	fan.c	FUNCTION_13	CALL_2
+0x4000093	      0xe800000000	                          call 0x4000098	       392	fan.c	FUNCTION_13	CALL_2
+0x4000098	        0x488b4338	            mov rax, qword [rbx + 0x38] 	       393	fan.c	FUNCTION_13	CALL_3
+0x400009c	    0x48c7c6000000	                              mov rsi, 0	       393	fan.c	FUNCTION_13	CALL_3
+0x40000a3	        0x488d7828	                   lea rdi, [rax + 0x28]	       393	fan.c	FUNCTION_13	CALL_3
+0x40000a7	      0xe800000000	                          call 0x40000ac	       393	fan.c	FUNCTION_13	CALL_3
+0x40000ac	        0x488b7b38	            mov rdi, qword [rbx + 0x38] 	       394	fan.c	FUNCTION_13	CALL_4
+0x40000b0	      0xe800000000	                          call 0x40000b5	       394	fan.c	FUNCTION_13	CALL_4
+0x40000b5	            0x31c0	                            xor eax, eax	       397	fan.c	FUNCTION_13
+0x40000b7	              0x5b	                                 pop rbx	       397	fan.c	FUNCTION_13
+0x40000b8	              0xc3	                                     ret	       397	fan.c	FUNCTION_13
+fan_get_max_state	functions,0:DO,0:ELSE,1:IF,1:WHILE,0:FOR,0:SWITCH,0:CALL,1	13
+0x4000040	    0x488b87f00200	           mov rax, qword [rdi + 0x2f0] 	        96	fan.c	FUNCTION_1
+0x4000047	    0x488b80480200	           mov rax, qword [rax + 0x248] 	        96	fan.c	FUNCTION_1
+0x400004e	          0x803800	                       cmp byte [rax], 0	       100	fan.c	FUNCTION_1	IF_1
+0x4000051	            0x750a	                           jne 0x400005d	       100	fan.c	FUNCTION_1	IF_1
+0x4000053	    0x48c706010000	                      mov qword [rsi], 1	       103	fan.c	FUNCTION_1	ELSE_1
+0x400005a	            0x31c0	                            xor eax, eax	       105	fan.c	FUNCTION_1	ELSE_1
+0x400005c	              0xc3	                                     ret	       105	fan.c	FUNCTION_1	ELSE_1
+0x400005d	          0x8b4030	            mov eax, dword [rax + 0x30] 	       101	fan.c	FUNCTION_1	IF_1
+0x4000060	          0x83e801	                              sub eax, 1	       101	fan.c	FUNCTION_1	IF_1
+0x4000063	            0x4898	                                    cdqe	       101	fan.c	FUNCTION_1	IF_1
+0x4000065	          0x488906	                    mov qword [rsi], rax	       101	fan.c	FUNCTION_1	IF_1
+0x4000068	            0x31c0	                            xor eax, eax	       105	fan.c	FUNCTION_1	ELSE_1
+0x400006a	              0xc3	                                     ret	       105	fan.c	FUNCTION_1	ELSE_1
+acpi_fan_speed_cmp	functions,0:DO,0:ELSE,0:IF,0:WHILE,0:FOR,0:SWITCH,0:CALL,0	3
+0x4000070	        0x488b4710	            mov rax, qword [rdi + 0x10] 	       278	fan.c	FUNCTION_10
+0x4000074	          0x2b4610	             sub eax, dword [rsi + 0x10]	       278	fan.c	FUNCTION_10
+0x4000077	              0xc3	                                     ret	       279	fan.c	FUNCTION_10
+fan_get_cur_state	functions,0:DO,0:ELSE,1:IF,1:WHILE,0:FOR,0:SWITCH,0:CALL,3	109
+0x4000120	            0x4155	                                push r13	       175	fan.c	FUNCTION_4
+0x4000122	            0x4154	                                push r12	       175	fan.c	FUNCTION_4
+0x4000124	              0x55	                                push rbp	       175	fan.c	FUNCTION_4
+0x4000125	              0x53	                                push rbx	       175	fan.c	FUNCTION_4
+0x4000126	          0x4889f5	                            mov rbp, rsi	       175	fan.c	FUNCTION_4
+0x4000129	        0x4883ec20	                           sub rsp, 0x20	       175	fan.c	FUNCTION_4
+0x400012d	    0x488b9ff00200	           mov rbx, qword [rdi + 0x2f0] 	       176	fan.c	FUNCTION_4
+0x4000134	    0x65488b042528	                mov rax, qword gs:[0x28]	       175	fan.c	FUNCTION_4
+0x400013d	      0x4889442418	             mov qword [rsp + 0x18], rax	       175	fan.c	FUNCTION_4
+0x4000142	            0x31c0	                            xor eax, eax	       175	fan.c	FUNCTION_4
+0x4000144	    0x4c8ba3480200	           mov r12, qword [rbx + 0x248] 	       175	fan.c	FUNCTION_4
+0x400014b	      0x41803c2400	                       cmp byte [r12], 0	       179	fan.c	FUNCTION_4	IF_1
+0x4000150	            0x7559	                           jne 0x40001ab	       179	fan.c	FUNCTION_4	IF_1
+0x4000152	      0x488d742408	                      lea rsi, [rsp + 8]	       163	fan.c	FUNCTION_3	CALL_1
+0x4000157	          0x4889df	                            mov rdi, rbx	       163	fan.c	FUNCTION_3	CALL_1
+0x400015a	    0xc74424080000	                  mov dword [rsp + 8], 0	       161	fan.c	FUNCTION_3
+0x4000162	      0xe800000000	                          call 0x4000167	       163	fan.c	FUNCTION_3	CALL_1
+0x4000167	            0x85c0	                           test eax, eax	       164	fan.c	FUNCTION_3	IF_1
+0x4000169	            0x7521	                           jne 0x400018c	       164	fan.c	FUNCTION_3	IF_1
+0x400016b	        0x8b542408	                mov edx, dword [rsp + 8]	       168	fan.c	FUNCTION_3
+0x400016f	            0x31c0	                            xor eax, eax	       167	fan.c	FUNCTION_3
+0x4000171	          0x8d4afd	                      lea ecx, [rdx - 3]	       167	fan.c	FUNCTION_3
+0x4000174	          0x83f901	                              cmp ecx, 1	       167	fan.c	FUNCTION_3
+0x4000177	            0x760d	                           jbe 0x4000186	       167	fan.c	FUNCTION_3
+0x4000179	          0x83fa01	                              cmp edx, 1	       167	fan.c	FUNCTION_3
+0x400017c	          0x4819c0	                            sbb rax, rax	       167	fan.c	FUNCTION_3
+0x400017f	          0x83e002	                              and eax, 2	       167	fan.c	FUNCTION_3
+0x4000182	        0x4883e801	                              sub rax, 1	       167	fan.c	FUNCTION_3
+0x4000186	        0x48894500	                    mov qword [rbp], rax	       167	fan.c	FUNCTION_3
+0x400018a	            0x31c0	                            xor eax, eax	       170	fan.c	FUNCTION_3
+0x400018c	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	       183	fan.c	FUNCTION_4
+0x4000191	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       183	fan.c	FUNCTION_4
+0x400019a	     0xf8510010000	                           jne 0x40002b0	       183	fan.c	FUNCTION_4
+0x40001a0	        0x4883c420	                           add rsp, 0x20	       183	fan.c	FUNCTION_4
+0x40001a4	              0x5b	                                 pop rbx	       183	fan.c	FUNCTION_4
+0x40001a5	              0x5d	                                 pop rbp	       183	fan.c	FUNCTION_4
+0x40001a6	            0x415c	                                 pop r12	       183	fan.c	FUNCTION_4
+0x40001a8	            0x415d	                                 pop r13	       183	fan.c	FUNCTION_4
+0x40001aa	              0xc3	                                     ret	       183	fan.c	FUNCTION_4
+0x40001ab	    0x48c7442408ff	 mov qword [rsp + 8], 0xffffffffffffffff	       109	fan.c	ELSE_1	FUNCTION_2
+0x40001b4	    0x48c744241000	               mov qword [rsp + 0x10], 0	       109	fan.c	ELSE_1	FUNCTION_2
+0x40001bd	      0x488d4c2408	                      lea rcx, [rsp + 8]	       115	fan.c	ELSE_1	FUNCTION_2	CALL_2
+0x40001c2	        0x488b7b08	                mov rdi, qword [rbx + 8]	       115	fan.c	ELSE_1	FUNCTION_2	CALL_2
+0x40001c6	            0x31d2	                            xor edx, edx	       115	fan.c	ELSE_1	FUNCTION_2	CALL_2
+0x40001c8	    0x48c7c6000000	                              mov rsi, 0	       115	fan.c	ELSE_1	FUNCTION_2	CALL_2
+0x40001cf	      0xe800000000	                          call 0x40001d4	       115	fan.c	ELSE_1	FUNCTION_2	CALL_2
+0x40001d4	            0x85c0	                           test eax, eax	       116	fan.c	ELSE_1	FUNCTION_2	IF_1	CALL_3
+0x40001d6	            0x7547	                           jne 0x400021f	       116	fan.c	ELSE_1	FUNCTION_2	IF_1	CALL_3
+0x40001d8	      0x4c8b6c2410	            mov r13, qword [rsp + 0x10] 	       121	fan.c	ELSE_1	FUNCTION_2
+0x40001dd	          0x4d85ed	                           test r13, r13	       122	fan.c	ELSE_1	FUNCTION_2	IF_2
+0x40001e0	            0x7410	                            je 0x40001f2	       122	fan.c	ELSE_1	FUNCTION_2	IF_2
+0x40001e2	    0x48b804000000	                 movabs rax, 0x300000004	       122	fan.c	ELSE_1	FUNCTION_2	IF_2
+0x40001ec	        0x49394500	                    cmp qword [r13], rax	       122	fan.c	ELSE_1	FUNCTION_2	IF_2
+0x40001f0	            0x744d	                            je 0x400023f	       122	fan.c	ELSE_1	FUNCTION_2	IF_2
+0x40001f2	    0x488dbb500200	                  lea rdi, [rbx + 0x250]	       125	fan.c	ELSE_1	FUNCTION_2	IF_2	CALL_5
+0x40001f9	    0x48c7c6000000	                              mov rsi, 0	       125	fan.c	ELSE_1	FUNCTION_2	IF_2	CALL_5
+0x4000200	      0xe800000000	                          call 0x4000205	       125	fan.c	ELSE_1	FUNCTION_2	IF_2	CALL_5
+0x4000205	      0xb8eaffffff	                     mov eax, 0xffffffea	       125	fan.c	ELSE_1	FUNCTION_2	IF_2	CALL_5
+0x400020a	          0x4c89ef	                            mov rdi, r13	       154	fan.c	FUNCTION_2	ELSE_1	CALL_7
+0x400020d	        0x89442404	                mov dword [rsp + 4], eax	       154	fan.c	FUNCTION_2	ELSE_1	CALL_7
+0x4000211	      0xe800000000	                          call 0x4000216	       154	fan.c	FUNCTION_2	ELSE_1	CALL_7
+0x4000216	        0x8b442404	                mov eax, dword [rsp + 4]	       180	fan.c	FUNCTION_4	CALL_2
+0x400021a	      0xe96dffffff	                           jmp 0x400018c	       180	fan.c	FUNCTION_4	CALL_2
+0x400021f	    0x488dbb500200	                  lea rdi, [rbx + 0x250]	       117	fan.c	ELSE_1	FUNCTION_2	IF_1	CALL_4
+0x4000226	    0x48c7c6000000	                              mov rsi, 0	       117	fan.c	ELSE_1	FUNCTION_2	IF_1	CALL_4
+0x400022d	        0x89442404	                mov dword [rsp + 4], eax	       117	fan.c	ELSE_1	FUNCTION_2	IF_1	CALL_4
+0x4000231	      0xe800000000	                          call 0x4000236	       117	fan.c	ELSE_1	FUNCTION_2	IF_1	CALL_4
+0x4000236	        0x8b442404	                mov eax, dword [rsp + 4]	       118	fan.c	ELSE_1	FUNCTION_2	IF_1
+0x400023a	      0xe94dffffff	                           jmp 0x400018c	       118	fan.c	ELSE_1	FUNCTION_2	IF_1
+0x400023f	        0x498b4508	                mov rax, qword [r13 + 8]	       124	fan.c	ELSE_1	FUNCTION_2	IF_2
+0x4000243	        0x83781801	               cmp dword [rax + 0x18], 1	       123	fan.c	ELSE_1	FUNCTION_2	IF_2
+0x4000247	            0x75a9	                           jne 0x40001f2	       123	fan.c	ELSE_1	FUNCTION_2	IF_2
+0x4000249	      0x418b7c2430	            mov edi, dword [r12 + 0x30] 	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x400024e	        0x488b7020	            mov rsi, qword [rax + 0x20] 	       130	fan.c	ELSE_1	FUNCTION_2
+0x4000252	            0x85ff	                           test edi, edi	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x4000254	            0x7e56	                           jle 0x40002ac	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x4000256	      0x4d8b442410	              mov r8, qword [r12 + 0x10]	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x400025b	          0x4863f6	                         movsxd rsi, esi	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x400025e	      0x498b542428	            mov rdx, qword [r12 + 0x28] 	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x4000263	            0x31c0	                            xor eax, eax	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x4000265	            0xeb0b	                           jmp 0x4000272	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x4000267	          0x83c001	                              add eax, 1	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x400026a	        0x4883c228	                           add rdx, 0x28	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x400026e	            0x39f8	                            cmp eax, edi	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x4000270	            0x7423	                            je 0x4000295	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x4000272	          0x4d85c0	                             test r8, r8	       138	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x4000275	          0x488b0a	                    mov rcx, qword [rdx]	       138	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x4000278	            0x7405	                            je 0x400027f	       138	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x400027a	          0x4839f1	                            cmp rcx, rsi	       138	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x400027d	            0x7720	                            ja 0x400029f	       138	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x400027f	          0x4839ce	                            cmp rsi, rcx	       141	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x4000282	            0x75e3	                           jne 0x4000267	       141	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x4000284	            0x39f8	                            cmp eax, edi	       145	fan.c	FUNCTION_2	ELSE_1	IF_5
+0x4000286	            0x740d	                            je 0x4000295	       145	fan.c	FUNCTION_2	ELSE_1	IF_5
+0x4000288	            0x4898	                                    cdqe	       151	fan.c	FUNCTION_2	ELSE_1
+0x400028a	        0x48894500	                    mov qword [rbp], rax	       151	fan.c	FUNCTION_2	ELSE_1
+0x400028e	            0x31c0	                            xor eax, eax	       151	fan.c	FUNCTION_2	ELSE_1
+0x4000290	      0xe975ffffff	                           jmp 0x400020a	       151	fan.c	FUNCTION_2	ELSE_1
+0x4000295	      0xb8eaffffff	                     mov eax, 0xffffffea	       145	fan.c	FUNCTION_2	ELSE_1	IF_5
+0x400029a	      0xe96bffffff	                           jmp 0x400020a	       145	fan.c	FUNCTION_2	ELSE_1	IF_5
+0x400029f	            0x85c0	                           test eax, eax	       139	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x40002a1	            0x7e05	                           jle 0x40002a8	       139	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x40002a3	          0x83e801	                              sub eax, 1	       139	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x40002a6	            0xebdc	                           jmp 0x4000284	       139	fan.c	ELSE_1	FUNCTION_2	FOR_1	IF_3
+0x40002a8	            0x31c0	                            xor eax, eax	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x40002aa	            0xebdc	                           jmp 0x4000288	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x40002ac	            0x31c0	                            xor eax, eax	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x40002ae	            0xebd4	                           jmp 0x4000284	       131	fan.c	ELSE_1	FUNCTION_2	FOR_1
+0x40002b0	      0xe800000000	                          call 0x40002b5	       183	fan.c	FUNCTION_4

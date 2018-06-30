@@ -1,0 +1,119 @@
+acpi_ut_remove_address_range	functions,0:ELSE,1:IF,3:DO,0:SWITCH,0:WHILE,1:CALL,6:FOR,0	20
+0x40000c5	        0x4080ff01	                              cmp dil, 1	       103	utaddress.c	FUNCTION_2	IF_1
+0x40000c9	            0x773c	                            ja 0x4000107	       103	utaddress.c	FUNCTION_2	IF_1
+0x40000cb	        0x400fb6c7	                          movzx eax, dil	       110	utaddress.c	FUNCTION_2
+0x40000cf	    0x488b3cc50000	                  mov rdi, qword [rax*8]	       110	utaddress.c	FUNCTION_2
+0x40000d7	          0x4889fa	                            mov rdx, rdi	       110	utaddress.c	FUNCTION_2
+0x40000da	          0x4885ff	                           test rdi, rdi	       111	utaddress.c	FUNCTION_2	WHILE_1
+0x40000dd	            0x7428	                            je 0x4000107	       111	utaddress.c	FUNCTION_2	WHILE_1
+0x40000df	        0x48397708	                cmp qword [rdi + 8], rsi	       112	utaddress.c	FUNCTION_2	WHILE_1	IF_2
+0x40000e3	          0x488b0f	                    mov rcx, qword [rdi]	       112	utaddress.c	FUNCTION_2	WHILE_1	IF_2
+0x40000e6	            0x7517	                           jne 0x40000ff	       112	utaddress.c	FUNCTION_2	WHILE_1	IF_2
+0x40000e8	          0x4839d7	                            cmp rdi, rdx	       113	utaddress.c	FUNCTION_2	WHILE_1	IF_2	IF_3
+0x40000eb	            0x750a	                           jne 0x40000f7	       113	utaddress.c	FUNCTION_2	WHILE_1	IF_2	IF_3
+0x40000ed	    0x48890cc50000	                  mov qword [rax*8], rcx	       114	utaddress.c	FUNCTION_2	WHILE_1	IF_2	IF_3
+0x40000f5	            0xeb03	                           jmp 0x40000fa	       114	utaddress.c	FUNCTION_2	WHILE_1	IF_2	IF_3
+0x40000f7	          0x48890a	                    mov qword [rdx], rcx	       117	utaddress.c	FUNCTION_2	WHILE_1	IF_2	ELSE_1
+0x40000fa	      0xe900000000	                           jmp 0x40000ff	        62	aclinuxex.h	FUNCTION_7	CALL_1
+0x40000ff	          0x4889fa	                            mov rdx, rdi	       134	utaddress.c	FUNCTION_2	WHILE_1
+0x4000102	          0x4889cf	                            mov rdi, rcx	       134	utaddress.c	FUNCTION_2	WHILE_1
+0x4000105	            0xebd3	                           jmp 0x40000da	       134	utaddress.c	FUNCTION_2	WHILE_1
+0x4000107	              0xc3	                                     ret	       134	utaddress.c	FUNCTION_2	WHILE_1
+acpi_ut_delete_address_lists	functions,0:ELSE,0:IF,0:DO,0:SWITCH,0:WHILE,1:CALL,1:FOR,1	19
+0x4000214	    0x488b3d000000	            mov rdi, qword [0x0400021b] 	       246	utaddress.c	FUNCTION_4	FOR_1
+0x400021b	              0x53	                                push rbx	       238	utaddress.c	FUNCTION_4
+0x400021c	          0x4885ff	                           test rdi, rdi	       248	utaddress.c	FUNCTION_4	FOR_1	WHILE_1
+0x400021f	            0x740d	                            je 0x400022e	       248	utaddress.c	FUNCTION_4	FOR_1	WHILE_1
+0x4000221	          0x488b1f	                    mov rbx, qword [rdi]	       250	utaddress.c	FUNCTION_4	FOR_1	WHILE_1
+0x4000224	      0xe800000000	                          call 0x4000229	        62	aclinuxex.h	FUNCTION_7	CALL_1
+0x4000229	          0x4889df	                            mov rdi, rbx	       250	utaddress.c	FUNCTION_4	FOR_1	WHILE_1
+0x400022c	            0xebee	                           jmp 0x400021c	       250	utaddress.c	FUNCTION_4	FOR_1	WHILE_1
+0x400022e	    0x488b3d000000	            mov rdi, qword [0x04000235] 	       246	utaddress.c	FUNCTION_4	FOR_1
+0x4000235	    0x48c705000000	               mov qword [0x04000240], 0	       254	utaddress.c	FUNCTION_4	FOR_1
+0x4000240	          0x4885ff	                           test rdi, rdi	       248	utaddress.c	FUNCTION_4	FOR_1	WHILE_1
+0x4000243	            0x740d	                            je 0x4000252	       248	utaddress.c	FUNCTION_4	FOR_1	WHILE_1
+0x4000245	          0x488b1f	                    mov rbx, qword [rdi]	       250	utaddress.c	FUNCTION_4	FOR_1	WHILE_1
+0x4000248	      0xe800000000	                          call 0x400024d	        62	aclinuxex.h	FUNCTION_7	CALL_1
+0x400024d	          0x4889df	                            mov rdi, rbx	       250	utaddress.c	FUNCTION_4	FOR_1	WHILE_1
+0x4000250	            0xebee	                           jmp 0x4000240	       250	utaddress.c	FUNCTION_4	FOR_1	WHILE_1
+0x4000252	    0x48c705000000	               mov qword [0x0400025d], 0	       254	utaddress.c	FUNCTION_4	FOR_1
+0x400025d	              0x5b	                                 pop rbx	       256	utaddress.c	FUNCTION_4
+0x400025e	              0xc3	                                     ret	       256	utaddress.c	FUNCTION_4
+acpi_ut_check_address_range	functions,0:ELSE,0:IF,3:DO,0:SWITCH,0:WHILE,1:CALL,11:FOR,0	77
+0x4000108	        0x4080ff01	                              cmp dil, 1	       171	utaddress.c	FUNCTION_3	IF_1
+0x400010c	     0xf87ff000000	                            ja 0x4000211	       171	utaddress.c	FUNCTION_3	IF_1
+0x4000112	            0x4157	                                push r15	       163	utaddress.c	FUNCTION_3
+0x4000114	            0x89d2	                            mov edx, edx	       177	utaddress.c	FUNCTION_3
+0x4000116	            0x4156	                                push r14	       163	utaddress.c	FUNCTION_3
+0x4000118	            0x4155	                                push r13	       163	utaddress.c	FUNCTION_3
+0x400011a	            0x4154	                                push r12	       163	utaddress.c	FUNCTION_3
+0x400011c	      0x4c8d6c16ff	                lea r13, [rsi + rdx - 1]	       177	utaddress.c	FUNCTION_3
+0x4000121	              0x55	                                push rbp	       163	utaddress.c	FUNCTION_3
+0x4000122	              0x53	                                push rbx	       163	utaddress.c	FUNCTION_3
+0x4000123	        0x400fb6c7	                          movzx eax, dil	       176	utaddress.c	FUNCTION_3
+0x4000127	          0x4188cf	                            mov r15b, cl	       176	utaddress.c	FUNCTION_3
+0x400012a	          0x4889f5	                            mov rbp, rsi	       176	utaddress.c	FUNCTION_3
+0x400012d	          0x4531e4	                          xor r12d, r12d	       167	utaddress.c	FUNCTION_3
+0x4000130	        0x4883ec38	                           sub rsp, 0x38	       163	utaddress.c	FUNCTION_3
+0x4000134	    0x488b1cc50000	                  mov rbx, qword [rax*8]	       176	utaddress.c	FUNCTION_3
+0x400013c	        0x89442404	                mov dword [rsp + 4], eax	       176	utaddress.c	FUNCTION_3
+0x4000140	          0x4c89e8	                            mov rax, r13	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x4000143	        0x48c1e820	                           shr rax, 0x20	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x4000147	      0x4889442408	                mov qword [rsp + 8], rax	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x400014c	          0x4889f0	                            mov rax, rsi	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x400014f	        0x48c1e820	                           shr rax, 0x20	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x4000153	      0x4889442418	             mov qword [rsp + 0x18], rax	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x4000158	          0x4885db	                           test rbx, rbx	       181	utaddress.c	FUNCTION_3	WHILE_1
+0x400015b	     0xf849e000000	                            je 0x40001ff	       181	utaddress.c	FUNCTION_3	WHILE_1
+0x4000161	        0x483b6b18	            cmp rbp, qword [rbx + 0x18] 	       192	utaddress.c	FUNCTION_3	WHILE_1	IF_2
+0x4000165	     0xf878c000000	                            ja 0x40001f7	       192	utaddress.c	FUNCTION_3	WHILE_1	IF_2
+0x400016b	        0x4c3b6b10	            cmp r13, qword [rbx + 0x10] 	       192	utaddress.c	FUNCTION_3	WHILE_1	IF_2
+0x400016f	     0xf8282000000	                            jb 0x40001f7	       192	utaddress.c	FUNCTION_3	WHILE_1	IF_2
+0x4000175	          0x41ffc4	                                inc r12d	       197	utaddress.c	FUNCTION_3	WHILE_1	IF_2
+0x4000178	          0x4584ff	                         test r15b, r15b	       198	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3
+0x400017b	            0x747a	                            je 0x40001f7	       198	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3
+0x400017d	        0x488b7b08	                mov rdi, qword [rbx + 8]	       199	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3
+0x4000181	      0xbe01000000	                              mov esi, 1	       199	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3
+0x4000186	      0xe800000000	                          call 0x400018b	       199	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3
+0x400018b	        0x488b7318	            mov rsi, qword [rbx + 0x18] 	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x400018f	        0x488b5310	            mov rdx, qword [rbx + 0x10] 	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x4000193	          0x4989c6	                            mov r14, rax	       199	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3
+0x4000196	        0x8b7c2404	                mov edi, dword [rsp + 4]	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x400019a	      0x4889742430	             mov qword [rsp + 0x30], rsi	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x400019f	      0x4889542428	             mov qword [rsp + 0x28], rdx	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001a4	      0xe800000000	                          call 0x40001a9	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001a9	            0x4156	                                push r14	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001ab	      0x488b742438	            mov rsi, qword [rsp + 0x38] 	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001b0	    0x48c7c7000000	                              mov rdi, 0	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001b7	          0x4189e9	                            mov r9d, ebp	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001ba	              0x56	                                push rsi	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001bb	        0x48c1ee20	                           shr rsi, 0x20	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001bf	              0x56	                                push rsi	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001c0	      0x488b542440	            mov rdx, qword [rsp + 0x40] 	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001c5	      0xbed5000000	                           mov esi, 0xd5	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001ca	              0x52	                                push rdx	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001cb	        0x48c1ea20	                           shr rdx, 0x20	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001cf	              0x52	                                push rdx	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001d0	            0x4155	                                push r13	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001d2	    0x48c7c2000000	                              mov rdx, 0	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001d9	        0x8b4c2438	            mov ecx, dword [rsp + 0x38] 	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001dd	              0x51	                                push rcx	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001de	      0x448b442450	            mov r8d, dword [rsp + 0x50] 	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001e3	          0x4889c1	                            mov rcx, rax	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001e6	      0xe800000000	                          call 0x40001eb	       204	utaddress.c	FUNCTION_3	WHILE_1	IF_2	IF_3	CALL_4
+0x40001eb	          0x4c89f7	                            mov rdi, r14	        62	aclinuxex.h	FUNCTION_7	CALL_1
+0x40001ee	        0x4883c438	                           add rsp, 0x38	        62	aclinuxex.h	FUNCTION_7	CALL_1
+0x40001f2	      0xe800000000	                          call 0x40001f7	        62	aclinuxex.h	FUNCTION_7	CALL_1
+0x40001f7	          0x488b1b	                    mov rbx, qword [rbx]	       218	utaddress.c	FUNCTION_3	WHILE_1
+0x40001fa	      0xe959ffffff	                           jmp 0x4000158	       218	utaddress.c	FUNCTION_3	WHILE_1
+0x40001ff	        0x4883c438	                           add rsp, 0x38	       222	utaddress.c	FUNCTION_3
+0x4000203	          0x4489e0	                           mov eax, r12d	       222	utaddress.c	FUNCTION_3
+0x4000206	              0x5b	                                 pop rbx	       222	utaddress.c	FUNCTION_3
+0x4000207	              0x5d	                                 pop rbp	       222	utaddress.c	FUNCTION_3
+0x4000208	            0x415c	                                 pop r12	       222	utaddress.c	FUNCTION_3
+0x400020a	            0x415d	                                 pop r13	       222	utaddress.c	FUNCTION_3
+0x400020c	            0x415e	                                 pop r14	       222	utaddress.c	FUNCTION_3
+0x400020e	            0x415f	                                 pop r15	       222	utaddress.c	FUNCTION_3
+0x4000210	              0xc3	                                     ret	       222	utaddress.c	FUNCTION_3
+0x4000211	            0x31c0	                            xor eax, eax	       222	utaddress.c	FUNCTION_3
+0x4000213	              0xc3	                                     ret	       222	utaddress.c	FUNCTION_3

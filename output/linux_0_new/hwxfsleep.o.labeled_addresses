@@ -1,0 +1,21 @@
+acpi_leave_sleep_state	SWITCH,0:functions,0:CALL,3:WHILE,0:ELSE,0:DO,0:IF,0:FOR,0	3
+0x40000a0	        0x400fb6ff	                          movzx edi, dil	       416	hwxfsleep.c	FUNCTION_8	CALL_2
+0x40000a4	      0xbe02000000	                              mov esi, 2	       416	hwxfsleep.c	FUNCTION_8	CALL_2
+0x40000a9	            0xebbe	          jmp sym.acpi_hw_sleep_dispatch	       416	hwxfsleep.c	FUNCTION_8	CALL_2
+acpi_set_firmware_waking_vector	SWITCH,0:functions,0:CALL,3:WHILE,0:ELSE,0:DO,0:IF,1:FOR,0	12
+0x4000040	    0x488b05000000	            mov rax, qword [0x04000047] 	       134	hwxfsleep.c	FUNCTION_2	IF_1
+0x4000047	          0x4885c0	                           test rax, rax	       134	hwxfsleep.c	FUNCTION_2	IF_1
+0x400004a	            0x741a	                            je 0x4000066	       134	hwxfsleep.c	FUNCTION_2	IF_1
+0x400004c	        0x83780420	               cmp dword [rax + 4], 0x20	        96	hwxfsleep.c	FUNCTION_1	IF_1
+0x4000050	          0x89780c	              mov dword [rax + 0xc], edi	        94	hwxfsleep.c	FUNCTION_1
+0x4000053	            0x7611	                           jbe 0x4000066	        96	hwxfsleep.c	FUNCTION_1	IF_1
+0x4000055	        0x80782000	                cmp byte [rax + 0x20], 0	       101	hwxfsleep.c	FUNCTION_1	IF_1	IF_2
+0x4000059	      0xba00000000	                              mov edx, 0	       101	hwxfsleep.c	FUNCTION_1	IF_1	IF_2
+0x400005e	        0x480f44f2	                          cmove rsi, rdx	       101	hwxfsleep.c	FUNCTION_1	IF_1	IF_2
+0x4000062	        0x48897018	             mov qword [rax + 0x18], rsi	       101	hwxfsleep.c	FUNCTION_1	IF_1	IF_2
+0x4000066	            0x31c0	                            xor eax, eax	       141	hwxfsleep.c	FUNCTION_2
+0x4000068	              0xc3	                                     ret	       141	hwxfsleep.c	FUNCTION_2
+acpi_leave_sleep_state_prep	SWITCH,0:functions,0:CALL,3:WHILE,0:ELSE,0:DO,0:IF,0:FOR,0	3
+0x4000095	        0x400fb6ff	                          movzx edi, dil	       391	hwxfsleep.c	FUNCTION_7
+0x4000099	      0xbe01000000	                              mov esi, 1	       391	hwxfsleep.c	FUNCTION_7
+0x400009e	            0xebc9	          jmp sym.acpi_hw_sleep_dispatch	       391	hwxfsleep.c	FUNCTION_7

@@ -1,0 +1,88 @@
+evregpy_dealloc	IF,0:WHILE,0:functions,0:SWITCH,0:DO,0:FOR,0:ELSE,0:CALL,2	14
+0x4000040	              0x53	                                push rbx	        99	py-evtregistry.c	FUNCTION_4
+0x4000041	          0x4889fb	                            mov rbx, rdi	        99	py-evtregistry.c	FUNCTION_4
+0x4000044	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	       100	py-evtregistry.c	FUNCTION_4	CALL_1
+0x4000048	          0x4885ff	                           test rdi, rdi	       100	py-evtregistry.c	FUNCTION_4	CALL_1
+0x400004b	            0x740d	                            je 0x400005a	       100	py-evtregistry.c	FUNCTION_4	CALL_1
+0x400004d	        0x48832f01	                      sub qword [rdi], 1	       200	python-internal.h	FUNCTION_7
+0x4000051	            0x7507	                           jne 0x400005a	       200	python-internal.h	FUNCTION_7
+0x4000053	        0x488b4708	                mov rax, qword [rdi + 8]	       200	python-internal.h	FUNCTION_7
+0x4000057	          0xff5030	                 call qword [rax + 0x30]	       200	python-internal.h	FUNCTION_7
+0x400005a	        0x488b4308	                mov rax, qword [rbx + 8]	       101	py-evtregistry.c	FUNCTION_4	CALL_2
+0x400005e	          0x4889df	                            mov rdi, rbx	       101	py-evtregistry.c	FUNCTION_4	CALL_2
+0x4000061	              0x5b	                                 pop rbx	       102	py-evtregistry.c	FUNCTION_4
+0x4000062	    0x488b80400100	           mov rax, qword [rax + 0x140] 	       101	py-evtregistry.c	FUNCTION_4	CALL_2
+0x4000069	            0xffe0	                                 jmp rax	       101	py-evtregistry.c	FUNCTION_4	CALL_2
+gdbpy_initialize_eventregistry	IF,1:WHILE,0:functions,0:SWITCH,0:DO,0:FOR,0:ELSE,0:CALL,2	14
+0x4000230	        0x4883ec08	                              sub rsp, 8	       108	py-evtregistry.c	FUNCTION_5
+0x4000234	      0xbf00000000	                              mov edi, 0	       109	py-evtregistry.c	FUNCTION_5	IF_1	CALL_1
+0x4000239	      0xe800000000	                          call 0x400023e	       109	py-evtregistry.c	FUNCTION_5	IF_1	CALL_1
+0x400023e	            0x85c0	                           test eax, eax	       109	py-evtregistry.c	FUNCTION_5	IF_1	CALL_1
+0x4000240	            0x781e	                            js 0x4000260	       109	py-evtregistry.c	FUNCTION_5	IF_1	CALL_1
+0x4000242	    0x488b3d000000	            mov rdi, qword [0x04000249] 	       113	py-evtregistry.c	FUNCTION_5
+0x4000249	      0xba00000000	                              mov edx, 0	       113	py-evtregistry.c	FUNCTION_5
+0x400024e	      0xbe00000000	                              mov esi, 0	       113	py-evtregistry.c	FUNCTION_5
+0x4000253	        0x4883c408	                              add rsp, 8	       114	py-evtregistry.c	FUNCTION_5
+0x4000257	      0xe900000000	                           jmp 0x400025c	       113	py-evtregistry.c	FUNCTION_5
+0x400025c	         0xf1f4000	                         nop dword [rax]	       113	py-evtregistry.c	FUNCTION_5
+0x4000260	      0xb8ffffffff	                     mov eax, 0xffffffff	       114	py-evtregistry.c	FUNCTION_5
+0x4000265	        0x4883c408	                              add rsp, 8	       114	py-evtregistry.c	FUNCTION_5
+0x4000269	              0xc3	                                     ret	       114	py-evtregistry.c	FUNCTION_5
+create_eventregistry_object	IF,2:WHILE,0:functions,0:SWITCH,0:DO,0:FOR,0:ELSE,0:CALL,4	48
+0x40001a0	              0x55	                                push rbp	        82	py-evtregistry.c	FUNCTION_3
+0x40001a1	              0x53	                                push rbx	        82	py-evtregistry.c	FUNCTION_3
+0x40001a2	      0xbf00000000	                              mov edi, 0	        84	py-evtregistry.c	FUNCTION_3	CALL_2
+0x40001a7	        0x4883ec18	                           sub rsp, 0x18	        82	py-evtregistry.c	FUNCTION_3
+0x40001ab	      0xe800000000	                          call 0x40001b0	        84	py-evtregistry.c	FUNCTION_3	CALL_2
+0x40001b0	          0x4885c0	                           test rax, rax	        87	py-evtregistry.c	FUNCTION_3	IF_1
+0x40001b3	            0x7453	                            je 0x4000208	        87	py-evtregistry.c	FUNCTION_3	IF_1
+0x40001b5	            0x31ff	                            xor edi, edi	        90	py-evtregistry.c	FUNCTION_3	CALL_3
+0x40001b7	          0x4889c3	                            mov rbx, rax	        90	py-evtregistry.c	FUNCTION_3	CALL_3
+0x40001ba	      0xe800000000	                          call 0x40001bf	        90	py-evtregistry.c	FUNCTION_3	CALL_3
+0x40001bf	          0x4885c0	                           test rax, rax	        91	py-evtregistry.c	FUNCTION_3	IF_2
+0x40001c2	        0x48894310	             mov qword [rbx + 0x10], rax	        90	py-evtregistry.c	FUNCTION_3	CALL_3
+0x40001c6	            0x7410	                            je 0x40001d8	        91	py-evtregistry.c	FUNCTION_3	IF_2
+0x40001c8	          0x4889d8	                            mov rax, rbx	        91	py-evtregistry.c	FUNCTION_3	IF_2
+0x40001cb	        0x4883c418	                           add rsp, 0x18	        95	py-evtregistry.c	FUNCTION_3
+0x40001cf	              0x5b	                                 pop rbx	        95	py-evtregistry.c	FUNCTION_3
+0x40001d0	              0x5d	                                 pop rbp	        95	py-evtregistry.c	FUNCTION_3
+0x40001d1	              0xc3	                                     ret	        95	py-evtregistry.c	FUNCTION_3
+0x40001d2	    0x660f1f440000	                    nop word [rax + rax]	        95	py-evtregistry.c	FUNCTION_3
+0x40001d8	          0x488b03	                    mov rax, qword [rbx]	       200	python-internal.h	FUNCTION_7
+0x40001db	        0x488d50ff	                      lea rdx, [rax - 1]	       200	python-internal.h	FUNCTION_7
+0x40001df	            0x31c0	                            xor eax, eax	        92	py-evtregistry.c	FUNCTION_3	IF_2
+0x40001e1	          0x4885d2	                           test rdx, rdx	       200	python-internal.h	FUNCTION_7
+0x40001e4	          0x488913	                    mov qword [rbx], rdx	       200	python-internal.h	FUNCTION_7
+0x40001e7	            0x75e2	                           jne 0x40001cb	       200	python-internal.h	FUNCTION_7
+0x40001e9	        0x488b5308	                mov rdx, qword [rbx + 8]	       200	python-internal.h	FUNCTION_7
+0x40001ed	      0x4889442408	                mov qword [rsp + 8], rax	       200	python-internal.h	FUNCTION_7
+0x40001f2	          0x4889df	                            mov rdi, rbx	       200	python-internal.h	FUNCTION_7
+0x40001f5	          0xff5230	                 call qword [rdx + 0x30]	       200	python-internal.h	FUNCTION_7
+0x40001f8	      0x488b442408	                mov rax, qword [rsp + 8]	       200	python-internal.h	FUNCTION_7
+0x40001fd	        0x4883c418	                           add rsp, 0x18	        95	py-evtregistry.c	FUNCTION_3
+0x4000201	              0x5b	                                 pop rbx	        95	py-evtregistry.c	FUNCTION_3
+0x4000202	              0x5d	                                 pop rbp	        95	py-evtregistry.c	FUNCTION_3
+0x4000203	              0xc3	                                     ret	        95	py-evtregistry.c	FUNCTION_3
+0x4000204	         0xf1f4000	                         nop dword [rax]	        95	py-evtregistry.c	FUNCTION_3
+0x4000208	            0x31c0	                            xor eax, eax	        88	py-evtregistry.c	FUNCTION_3	IF_1
+0x400020a	            0xebbf	                           jmp 0x40001cb	        88	py-evtregistry.c	FUNCTION_3	IF_1
+0x400020c	          0x4889c5	                            mov rbp, rax	        88	py-evtregistry.c	FUNCTION_3	IF_1
+0x400020f	          0x488b03	                    mov rax, qword [rbx]	       200	python-internal.h	FUNCTION_7
+0x4000212	        0x488d50ff	                      lea rdx, [rax - 1]	       200	python-internal.h	FUNCTION_7
+0x4000216	          0x4885d2	                           test rdx, rdx	       200	python-internal.h	FUNCTION_7
+0x4000219	          0x488913	                    mov qword [rbx], rdx	       200	python-internal.h	FUNCTION_7
+0x400021c	            0x750a	                           jne 0x4000228	       200	python-internal.h	FUNCTION_7
+0x400021e	        0x488b5308	                mov rdx, qword [rbx + 8]	       200	python-internal.h	FUNCTION_7
+0x4000222	          0x4889df	                            mov rdi, rbx	       200	python-internal.h	FUNCTION_7
+0x4000225	          0xff5230	                 call qword [rdx + 0x30]	       200	python-internal.h	FUNCTION_7
+0x4000228	          0x4889ef	                            mov rdi, rbp	       200	python-internal.h	FUNCTION_7
+0x400022b	      0xe800000000	 call sym.gdbpy_initialize_eventregistry	       200	python-internal.h	FUNCTION_7
+evregpy_no_listeners_p	IF,0:WHILE,0:functions,0:SWITCH,0:DO,0:FOR,0:ELSE,0:CALL,1	8
+0x4000270	        0x4883ec08	                              sub rsp, 8	       121	py-evtregistry.c	FUNCTION_6
+0x4000274	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	       122	py-evtregistry.c	FUNCTION_6	CALL_1
+0x4000278	      0xe800000000	                          call 0x400027d	       122	py-evtregistry.c	FUNCTION_6	CALL_1
+0x400027d	          0x4885c0	                           test rax, rax	       122	py-evtregistry.c	FUNCTION_6	CALL_1
+0x4000280	           0xf94c0	                                 sete al	       122	py-evtregistry.c	FUNCTION_6	CALL_1
+0x4000283	        0x4883c408	                              add rsp, 8	       123	py-evtregistry.c	FUNCTION_6
+0x4000287	           0xfb6c0	                           movzx eax, al	       122	py-evtregistry.c	FUNCTION_6	CALL_1
+0x400028a	              0xc3	                                     ret	       123	py-evtregistry.c	FUNCTION_6

@@ -1,0 +1,78 @@
+invalidate_inode_pages2	SWITCH,0:FOR,0:WHILE,0:IF,0:functions,0:DO,0:ELSE,0:CALL,1	3
+0x4000760	    0x48c7c2ffffff	             mov rdx, 0xffffffffffffffff	       767	truncate.c	FUNCTION_19	CALL_1
+0x4000767	            0x31f6	                            xor esi, esi	       767	truncate.c	FUNCTION_19	CALL_1
+0x4000769	      0xe9e2fbffff	   jmp sym.invalidate_inode_pages2_range	       767	truncate.c	FUNCTION_19	CALL_1
+truncate_pagecache_range	SWITCH,0:FOR,0:WHILE,0:IF,1:functions,0:DO,0:ELSE,0:CALL,4	25
+0x4001000	            0x4154	                                push r12	       895	truncate.c	FUNCTION_23
+0x4001002	              0x55	                                push rbp	       895	truncate.c	FUNCTION_23
+0x4001003	          0x4889d5	                            mov rbp, rdx	       895	truncate.c	FUNCTION_23
+0x4001006	        0x4883c201	                              add rdx, 1	       898	truncate.c	FUNCTION_23	CALL_2
+0x400100a	              0x53	                                push rbx	       895	truncate.c	FUNCTION_23
+0x400100b	          0x4889f3	                            mov rbx, rsi	       895	truncate.c	FUNCTION_23
+0x400100e	    0x4881e200f0ff	             and rdx, 0xfffffffffffff000	       898	truncate.c	FUNCTION_23	CALL_2
+0x4001015	        0x4883ee01	                              sub rsi, 1	       897	truncate.c	FUNCTION_23	CALL_1
+0x4001019	        0x4c8b6730	            mov r12, qword [rdi + 0x30] 	       896	truncate.c	FUNCTION_23
+0x400101d	    0x4881ceff0f00	                           or rsi, 0xfff	       897	truncate.c	FUNCTION_23	CALL_1
+0x4001024	        0x488d42ff	                      lea rax, [rdx - 1]	       912	truncate.c	FUNCTION_23	IF_1
+0x4001028	        0x4883c601	                              add rsi, 1	       897	truncate.c	FUNCTION_23	CALL_1
+0x400102c	          0x4839f0	                            cmp rax, rsi	       912	truncate.c	FUNCTION_23	IF_1
+0x400102f	            0x760d	                           jbe 0x400103e	       912	truncate.c	FUNCTION_23	IF_1
+0x4001031	          0x4829f2	                            sub rdx, rsi	       913	truncate.c	FUNCTION_23	IF_1	CALL_3
+0x4001034	            0x31c9	                            xor ecx, ecx	       913	truncate.c	FUNCTION_23	IF_1	CALL_3
+0x4001036	          0x4c89e7	                            mov rdi, r12	       913	truncate.c	FUNCTION_23	IF_1	CALL_3
+0x4001039	      0xe800000000	                          call 0x400103e	       913	truncate.c	FUNCTION_23	IF_1	CALL_3
+0x400103e	          0x4889ea	                            mov rdx, rbp	       915	truncate.c	FUNCTION_23	CALL_4
+0x4001041	          0x4889de	                            mov rsi, rbx	       915	truncate.c	FUNCTION_23	CALL_4
+0x4001044	          0x4c89e7	                            mov rdi, r12	       915	truncate.c	FUNCTION_23	CALL_4
+0x4001047	              0x5b	                                 pop rbx	       916	truncate.c	FUNCTION_23
+0x4001048	              0x5d	                                 pop rbp	       916	truncate.c	FUNCTION_23
+0x4001049	            0x415c	                                 pop r12	       916	truncate.c	FUNCTION_23
+0x400104b	      0xe920f7ffff	      jmp sym.truncate_inode_pages_range	       915	truncate.c	FUNCTION_23	CALL_4
+generic_error_remove_page	SWITCH,0:FOR,0:WHILE,0:IF,2:functions,0:DO,0:ELSE,0:CALL,2	21
+0x4000270	          0x4885ff	                           test rdi, rdi	       239	truncate.c	FUNCTION_10	IF_1
+0x4000273	            0x7433	                            je 0x40002a8	       239	truncate.c	FUNCTION_10	IF_1
+0x4000275	          0x488b07	                    mov rax, qword [rdi]	       245	truncate.c	FUNCTION_10	IF_2	CALL_1
+0x4000278	           0xfb710	                   movzx edx, word [rax]	       245	truncate.c	FUNCTION_10	IF_2	CALL_1
+0x400027b	      0xb8fbffffff	                     mov eax, 0xfffffffb	       246	truncate.c	FUNCTION_10	IF_2
+0x4000280	      0x6681e200f0	                          and dx, 0xf000	       245	truncate.c	FUNCTION_10	IF_2	CALL_1
+0x4000285	      0x6681fa0080	                          cmp dx, 0x8000	       245	truncate.c	FUNCTION_10	IF_2	CALL_1
+0x400028a	            0x7506	                           jne 0x4000292	       245	truncate.c	FUNCTION_10	IF_2	CALL_1
+0x400028c	        0x483b7e08	                cmp rdi, qword [rsi + 8]	       226	truncate.c	FUNCTION_9	IF_1
+0x4000290	            0x7401	                            je 0x4000293	       226	truncate.c	FUNCTION_9	IF_1
+0x4000292	              0xc3	                                     ret	       248	truncate.c	FUNCTION_10
+0x4000293	              0x53	                                push rbx	       238	truncate.c	FUNCTION_10
+0x4000294	          0x4889f3	                            mov rbx, rsi	       238	truncate.c	FUNCTION_10
+0x4000297	      0xe844ffffff	          call sym.truncate_cleanup_page	       229	truncate.c	FUNCTION_9	CALL_3
+0x400029c	          0x4889df	                            mov rdi, rbx	       230	truncate.c	FUNCTION_9	CALL_4
+0x400029f	      0xe800000000	                          call 0x40002a4	       230	truncate.c	FUNCTION_9	CALL_4
+0x40002a4	            0x31c0	                            xor eax, eax	       230	truncate.c	FUNCTION_9	CALL_4
+0x40002a6	              0x5b	                                 pop rbx	       248	truncate.c	FUNCTION_10
+0x40002a7	              0xc3	                                     ret	       248	truncate.c	FUNCTION_10
+0x40002a8	      0xb8eaffffff	                     mov eax, 0xffffffea	       240	truncate.c	FUNCTION_10	IF_1
+0x40002ad	              0xc3	                                     ret	       240	truncate.c	FUNCTION_10	IF_1
+truncate_pagecache	SWITCH,0:FOR,0:WHILE,0:IF,0:functions,0:DO,0:ELSE,0:CALL,4	25
+0x4000f70	            0x4154	                                push r12	       787	truncate.c	FUNCTION_20
+0x4000f72	              0x55	                                push rbp	       787	truncate.c	FUNCTION_20
+0x4000f73	          0x4989f4	                            mov r12, rsi	       787	truncate.c	FUNCTION_20
+0x4000f76	              0x53	                                push rbx	       787	truncate.c	FUNCTION_20
+0x4000f77	        0x488d5eff	                      lea rbx, [rsi - 1]	       789	truncate.c	FUNCTION_20	CALL_1
+0x4000f7b	        0x488b6f30	            mov rbp, qword [rdi + 0x30] 	       788	truncate.c	FUNCTION_20
+0x4000f7f	      0xb901000000	                              mov ecx, 1	       800	truncate.c	FUNCTION_20	CALL_2
+0x4000f84	            0x31d2	                            xor edx, edx	       800	truncate.c	FUNCTION_20	CALL_2
+0x4000f86	    0x4881cbff0f00	                           or rbx, 0xfff	       789	truncate.c	FUNCTION_20	CALL_1
+0x4000f8d	        0x4883c301	                              add rbx, 1	       789	truncate.c	FUNCTION_20	CALL_1
+0x4000f91	          0x4889ef	                            mov rdi, rbp	       800	truncate.c	FUNCTION_20	CALL_2
+0x4000f94	          0x4889de	                            mov rsi, rbx	       800	truncate.c	FUNCTION_20	CALL_2
+0x4000f97	      0xe800000000	                          call 0x4000f9c	       800	truncate.c	FUNCTION_20	CALL_2
+0x4000f9c	          0x4c89e6	                            mov rsi, r12	       478	truncate.c	FUNCTION_13	CALL_1
+0x4000f9f	          0x4889ef	                            mov rdi, rbp	       478	truncate.c	FUNCTION_13	CALL_1
+0x4000fa2	    0x48c7c2ffffff	             mov rdx, 0xffffffffffffffff	       478	truncate.c	FUNCTION_13	CALL_1
+0x4000fa9	      0xe800000000	                          call 0x4000fae	       478	truncate.c	FUNCTION_13	CALL_1
+0x4000fae	          0x4889de	                            mov rsi, rbx	       802	truncate.c	FUNCTION_20	CALL_4
+0x4000fb1	          0x4889ef	                            mov rdi, rbp	       802	truncate.c	FUNCTION_20	CALL_4
+0x4000fb4	      0xb901000000	                              mov ecx, 1	       802	truncate.c	FUNCTION_20	CALL_4
+0x4000fb9	              0x5b	                                 pop rbx	       803	truncate.c	FUNCTION_20
+0x4000fba	              0x5d	                                 pop rbp	       803	truncate.c	FUNCTION_20
+0x4000fbb	            0x415c	                                 pop r12	       803	truncate.c	FUNCTION_20
+0x4000fbd	            0x31d2	                            xor edx, edx	       802	truncate.c	FUNCTION_20	CALL_4
+0x4000fbf	      0xe900000000	                           jmp 0x4000fc4	       802	truncate.c	FUNCTION_20	CALL_4

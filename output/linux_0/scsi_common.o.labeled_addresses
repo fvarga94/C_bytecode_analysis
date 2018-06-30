@@ -1,0 +1,104 @@
+scsi_device_type	CALL,1:ELSE,0:IF,3:WHILE,0:functions,0:DO,0:SWITCH,0:FOR,0	12
+0x4000040	          0x83ff1e	                           cmp edi, 0x1e	        47	scsi_common.c	FUNCTION_1	IF_1
+0x4000043	    0x48c7c0000000	                              mov rax, 0	        48	scsi_common.c	FUNCTION_1	IF_1
+0x400004a	            0x7422	                            je 0x400006e	        47	scsi_common.c	FUNCTION_1	IF_1
+0x400004c	          0x83ff1f	                           cmp edi, 0x1f	        49	scsi_common.c	FUNCTION_1	IF_2
+0x400004f	    0x48c7c0000000	                              mov rax, 0	        50	scsi_common.c	FUNCTION_1	IF_2
+0x4000056	            0x7416	                            je 0x400006e	        49	scsi_common.c	FUNCTION_1	IF_2
+0x4000058	          0x83ff14	                           cmp edi, 0x14	        51	scsi_common.c	FUNCTION_1	IF_3	CALL_1
+0x400005b	    0x48c7c0000000	                              mov rax, 0	        52	scsi_common.c	FUNCTION_1	IF_3
+0x4000062	            0x770a	                            ja 0x400006e	        51	scsi_common.c	FUNCTION_1	IF_3	CALL_1
+0x4000064	            0x89ff	                            mov edi, edi	        53	scsi_common.c	FUNCTION_1
+0x4000066	    0x488b04fd0000	                  mov rax, qword [rdi*8]	        53	scsi_common.c	FUNCTION_1
+0x400006e	            0xf3c3	                                     ret	        54	scsi_common.c	FUNCTION_1
+scsi_sense_desc_find	CALL,0:ELSE,0:IF,4:WHILE,0:functions,0:DO,0:SWITCH,0:FOR,1	46
+0x40000b0	          0x83fe07	                              cmp esi, 7	       202	scsi_common.c	FUNCTION_5	IF_1
+0x40000b3	            0x7e77	                           jle 0x400012c	       202	scsi_common.c	FUNCTION_5	IF_1
+0x40000b5	      0x440fb64707	               movzx r8d, byte [rdi + 7]	       202	scsi_common.c	FUNCTION_5	IF_1
+0x40000ba	          0x4585c0	                           test r8d, r8d	       202	scsi_common.c	FUNCTION_5	IF_1
+0x40000bd	            0x746d	                            je 0x400012c	       202	scsi_common.c	FUNCTION_5	IF_1
+0x40000bf	           0xfb607	                   movzx eax, byte [rdi]	       204	scsi_common.c	FUNCTION_5	IF_2
+0x40000c2	          0x8d488e	                   lea ecx, [rax - 0x72]	       204	scsi_common.c	FUNCTION_5	IF_2
+0x40000c5	            0x31c0	                            xor eax, eax	       218	scsi_common.c	FUNCTION_5
+0x40000c7	          0x80f901	                               cmp cl, 1	       204	scsi_common.c	FUNCTION_5	IF_2
+0x40000ca	            0x774f	                            ja 0x400011b	       204	scsi_common.c	FUNCTION_5	IF_2
+0x40000cc	          0x83ee08	                              sub esi, 8	       206	scsi_common.c	FUNCTION_5
+0x40000cf	        0x488d4f08	                      lea rcx, [rdi + 8]	       208	scsi_common.c	FUNCTION_5
+0x40000d3	          0x4439c6	                            cmp esi, r8d	       206	scsi_common.c	FUNCTION_5
+0x40000d6	        0x410f4ff0	                          cmovg esi, r8d	       206	scsi_common.c	FUNCTION_5
+0x40000da	            0x85f6	                           test esi, esi	       209	scsi_common.c	FUNCTION_5	FOR_1
+0x40000dc	            0x743d	                            je 0x400011b	       209	scsi_common.c	FUNCTION_5	FOR_1
+0x40000de	          0x4189f0	                            mov r8d, esi	       211	scsi_common.c	FUNCTION_5	FOR_1
+0x40000e1	        0x4183e801	                              sub r8d, 1	       211	scsi_common.c	FUNCTION_5	FOR_1
+0x40000e5	            0x7436	                            je 0x400011d	       211	scsi_common.c	FUNCTION_5	FOR_1
+0x40000e7	         0xfb64709	               movzx eax, byte [rdi + 9]	       212	scsi_common.c	FUNCTION_5	FOR_1
+0x40000eb	         0xfb67f08	               movzx edi, byte [rdi + 8]	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x40000ef	          0x83c002	                              add eax, 2	       212	scsi_common.c	FUNCTION_5	FOR_1
+0x40000f2	            0x39fa	                            cmp edx, edi	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x40000f4	            0x7422	                            je 0x4000118	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x40000f6	            0x31ff	                            xor edi, edi	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x40000f8	             0x1c7	                            add edi, eax	       209	scsi_common.c	FUNCTION_5	FOR_1
+0x40000fa	            0x39fe	                            cmp esi, edi	       209	scsi_common.c	FUNCTION_5	FOR_1
+0x40000fc	            0x7e2e	                           jle 0x400012c	       209	scsi_common.c	FUNCTION_5	FOR_1
+0x40000fe	            0x4898	                                    cdqe	       210	scsi_common.c	FUNCTION_5	FOR_1
+0x4000100	          0x4801c1	                            add rcx, rax	       210	scsi_common.c	FUNCTION_5	FOR_1
+0x4000103	          0x4439c7	                            cmp edi, r8d	       211	scsi_common.c	FUNCTION_5	FOR_1
+0x4000106	            0x7d15	                           jge 0x400011d	       211	scsi_common.c	FUNCTION_5	FOR_1
+0x4000108	         0xfb64101	               movzx eax, byte [rcx + 1]	       212	scsi_common.c	FUNCTION_5	FOR_1
+0x400010c	        0x440fb609	                   movzx r9d, byte [rcx]	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x4000110	          0x83c002	                              add eax, 2	       212	scsi_common.c	FUNCTION_5	FOR_1
+0x4000113	          0x4439ca	                            cmp edx, r9d	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x4000116	            0x75e0	                           jne 0x40000f8	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x4000118	          0x4889c8	                            mov rax, rcx	       210	scsi_common.c	FUNCTION_5	FOR_1
+0x400011b	            0xf3c3	                                     ret	       219	scsi_common.c	FUNCTION_5
+0x400011d	           0xfb601	                   movzx eax, byte [rcx]	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x4000120	            0x39d0	                            cmp eax, edx	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x4000122	      0xb800000000	                              mov eax, 0	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x4000127	        0x480f44c1	                          cmove rax, rcx	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x400012b	              0xc3	                                     ret	       213	scsi_common.c	FUNCTION_5	FOR_1	IF_3
+0x400012c	            0x31c0	                            xor eax, eax	       218	scsi_common.c	FUNCTION_5
+0x400012e	              0xc3	                                     ret	       218	scsi_common.c	FUNCTION_5
+scsilun_to_int	CALL,0:ELSE,0:IF,0:WHILE,0:functions,0:DO,0:SWITCH,0:FOR,1	16
+0x4000070	      0xbe08000000	                              mov esi, 8	        78	scsi_common.c	FUNCTION_2
+0x4000075	            0x31c0	                            xor eax, eax	        78	scsi_common.c	FUNCTION_2
+0x4000077	         0xfb65701	               movzx edx, byte [rdi + 1]	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x400007b	          0x8d4ef8	                      lea ecx, [rsi - 8]	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x400007e	        0x4883c702	                              add rdi, 2	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x4000082	          0x48d3e2	                             shl rdx, cl	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x4000085	            0x89f1	                            mov ecx, esi	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x4000087	          0x83c610	                           add esi, 0x10	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x400008a	          0x4989d0	                             mov r8, rdx	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x400008d	         0xfb657fe	               movzx edx, byte [rdi - 2]	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x4000091	          0x48d3e2	                             shl rdx, cl	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x4000094	          0x4c09c2	                              or rdx, r8	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x4000097	          0x4809d0	                             or rax, rdx	        84	scsi_common.c	FUNCTION_2	FOR_1
+0x400009a	          0x83fe48	                           cmp esi, 0x48	        83	scsi_common.c	FUNCTION_2	FOR_1
+0x400009d	            0x75d8	                           jne 0x4000077	        83	scsi_common.c	FUNCTION_2	FOR_1
+0x400009f	            0xf3c3	                                     ret	        87	scsi_common.c	FUNCTION_2
+scsi_build_sense_buffer	CALL,0:ELSE,1:IF,1:WHILE,0:functions,0:DO,0:SWITCH,0:FOR,0	14
+0x4000130	            0x85ff	                           test edi, edi	       234	scsi_common.c	FUNCTION_6	IF_1
+0x4000132	            0x7512	                           jne 0x4000146	       234	scsi_common.c	FUNCTION_6	IF_1
+0x4000134	          0xc60670	                    mov byte [rsi], 0x70	       241	scsi_common.c	FUNCTION_6	ELSE_1
+0x4000137	          0x885602	                  mov byte [rsi + 2], dl	       242	scsi_common.c	FUNCTION_6	ELSE_1
+0x400013a	        0xc646070a	                 mov byte [rsi + 7], 0xa	       243	scsi_common.c	FUNCTION_6	ELSE_1
+0x400013e	          0x884e0c	                mov byte [rsi + 0xc], cl	       244	scsi_common.c	FUNCTION_6	ELSE_1
+0x4000141	        0x4488460d	               mov byte [rsi + 0xd], r8b	       245	scsi_common.c	FUNCTION_6	ELSE_1
+0x4000145	              0xc3	                                     ret	       245	scsi_common.c	FUNCTION_6	ELSE_1
+0x4000146	          0xc60672	                    mov byte [rsi], 0x72	       235	scsi_common.c	FUNCTION_6	IF_1
+0x4000149	          0x885601	                  mov byte [rsi + 1], dl	       236	scsi_common.c	FUNCTION_6	IF_1
+0x400014c	          0x884e02	                  mov byte [rsi + 2], cl	       237	scsi_common.c	FUNCTION_6	IF_1
+0x400014f	        0x44884603	                 mov byte [rsi + 3], r8b	       238	scsi_common.c	FUNCTION_6	IF_1
+0x4000153	        0xc6460700	                   mov byte [rsi + 7], 0	       239	scsi_common.c	FUNCTION_6	IF_1
+0x4000157	              0xc3	                                     ret	       239	scsi_common.c	FUNCTION_6	IF_1
+int_to_scsilun	CALL,1:ELSE,0:IF,0:WHILE,0:functions,0:DO,0:SWITCH,0:FOR,1	11
+0x4000160	        0x488d5608	                      lea rdx, [rsi + 8]	       106	scsi_common.c	FUNCTION_3
+0x4000164	    0x48c706000000	                      mov qword [rsi], 0	       109	scsi_common.c	FUNCTION_3	CALL_1
+0x400016b	          0x4889f8	                            mov rax, rdi	       112	scsi_common.c	FUNCTION_3	FOR_1
+0x400016e	        0x40887e01	                 mov byte [rsi + 1], dil	       113	scsi_common.c	FUNCTION_3	FOR_1
+0x4000172	        0x4883c602	                              add rsi, 2	       113	scsi_common.c	FUNCTION_3	FOR_1
+0x4000176	        0x48c1e808	                              shr rax, 8	       112	scsi_common.c	FUNCTION_3	FOR_1
+0x400017a	        0x48c1ef10	                           shr rdi, 0x10	       114	scsi_common.c	FUNCTION_3	FOR_1
+0x400017e	          0x8846fe	                  mov byte [rsi - 2], al	       112	scsi_common.c	FUNCTION_3	FOR_1
+0x4000181	          0x4839d6	                            cmp rsi, rdx	       111	scsi_common.c	FUNCTION_3	FOR_1
+0x4000184	            0x75e5	                           jne 0x400016b	       111	scsi_common.c	FUNCTION_3	FOR_1
+0x4000186	            0xf3c3	                                     ret	       116	scsi_common.c	FUNCTION_3

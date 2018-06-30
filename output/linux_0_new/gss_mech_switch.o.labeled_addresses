@@ -1,0 +1,225 @@
+gss_get_mic	CALL,1:FOR,0:SWITCH,0:IF,0:DO,0:WHILE,0:functions,0:ELSE,0	4
+0x40007b0	          0x488b07	                    mov rax, qword [rdi]	       420	gss_mech_switch.c	FUNCTION_22
+0x40007b3	        0x488b4048	            mov rax, qword [rax + 0x48] 	       421	gss_mech_switch.c	FUNCTION_22	CALL_1
+0x40007b7	        0x488b4008	                mov rax, qword [rax + 8]	       420	gss_mech_switch.c	FUNCTION_22
+0x40007bb	      0xe900000000	                  jmp sym.gss_verify_mic	       420	gss_mech_switch.c	FUNCTION_22
+gss_pseudoflavor_to_service	CALL,0:FOR,1:SWITCH,0:IF,1:DO,0:WHILE,0:functions,0:ELSE,0	21
+0x4000040	          0x8b4f50	            mov ecx, dword [rdi + 0x50] 	       356	gss_mech_switch.c	FUNCTION_17	FOR_1
+0x4000043	            0x85c9	                           test ecx, ecx	       356	gss_mech_switch.c	FUNCTION_17	FOR_1
+0x4000045	            0x7e2b	                           jle 0x4000072	       356	gss_mech_switch.c	FUNCTION_17	FOR_1
+0x4000047	        0x488b5758	            mov rdx, qword [rdi + 0x58] 	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x400004b	            0x3b32	                    cmp esi, dword [rdx]	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x400004d	            0x7426	                            je 0x4000075	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x400004f	          0x83e901	                              sub ecx, 1	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x4000052	        0x488d4228	                   lea rax, [rdx + 0x28]	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x4000056	      0x488d4c8905	              lea rcx, [rcx + rcx*4 + 5]	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x400005b	        0x488d0cca	                  lea rcx, [rdx + rcx*8]	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x400005f	            0xeb0c	                           jmp 0x400006d	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x4000061	          0x4889c2	                            mov rdx, rax	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x4000064	        0x4883c028	                           add rax, 0x28	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x4000068	          0x3970d8	            cmp dword [rax - 0x28], esi 	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x400006b	            0x7408	                            je 0x4000075	       357	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x400006d	          0x4839c8	                            cmp rax, rcx	       356	gss_mech_switch.c	FUNCTION_17	FOR_1
+0x4000070	            0x75ef	                           jne 0x4000061	       356	gss_mech_switch.c	FUNCTION_17	FOR_1
+0x4000072	            0x31c0	                            xor eax, eax	       360	gss_mech_switch.c	FUNCTION_17
+0x4000074	              0xc3	                                     ret	       361	gss_mech_switch.c	FUNCTION_17
+0x4000075	          0x8b4208	                mov eax, dword [rdx + 8]	       358	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+0x4000078	              0xc3	                                     ret	       358	gss_mech_switch.c	FUNCTION_17	FOR_1	IF_1
+gss_service_to_auth_domain_name	CALL,0:FOR,1:SWITCH,0:IF,1:DO,0:WHILE,0:functions,0:ELSE,0	21
+0x40006c0	          0x8b4f50	            mov ecx, dword [rdi + 0x50] 	       381	gss_mech_switch.c	FUNCTION_19	FOR_1
+0x40006c3	            0x85c9	                           test ecx, ecx	       381	gss_mech_switch.c	FUNCTION_19	FOR_1
+0x40006c5	            0x7e2c	                           jle 0x40006f3	       381	gss_mech_switch.c	FUNCTION_19	FOR_1
+0x40006c7	        0x488b5758	            mov rdx, qword [rdi + 0x58] 	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006cb	          0x3b7208	                cmp esi, dword [rdx + 8]	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006ce	            0x7426	                            je 0x40006f6	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006d0	          0x83e901	                              sub ecx, 1	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006d3	        0x488d4228	                   lea rax, [rdx + 0x28]	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006d7	      0x488d4c8905	              lea rcx, [rcx + rcx*4 + 5]	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006dc	        0x488d0cca	                  lea rcx, [rdx + rcx*8]	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006e0	            0xeb0c	                           jmp 0x40006ee	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006e2	          0x4889c2	                            mov rdx, rax	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006e5	        0x4883c028	                           add rax, 0x28	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006e9	          0x3970e0	            cmp dword [rax - 0x20], esi 	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006ec	            0x7408	                            je 0x40006f6	       382	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006ee	          0x4839c8	                            cmp rax, rcx	       381	gss_mech_switch.c	FUNCTION_19	FOR_1
+0x40006f1	            0x75ef	                           jne 0x40006e2	       381	gss_mech_switch.c	FUNCTION_19	FOR_1
+0x40006f3	            0x31c0	                            xor eax, eax	       385	gss_mech_switch.c	FUNCTION_19
+0x40006f5	              0xc3	                                     ret	       386	gss_mech_switch.c	FUNCTION_19
+0x40006f6	        0x488b4218	            mov rax, qword [rdx + 0x18] 	       383	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+0x40006fa	              0xc3	                                     ret	       383	gss_mech_switch.c	FUNCTION_19	FOR_1	IF_1
+gss_mech_info2flavor	CALL,3:FOR,0:SWITCH,0:IF,1:DO,0:WHILE,0:functions,0:ELSE,0	36
+0x4000550	              0x55	                                push rbp	       304	gss_mech_switch.c	FUNCTION_15
+0x4000551	              0x53	                                push rbx	       304	gss_mech_switch.c	FUNCTION_15
+0x4000552	          0x4889fb	                            mov rbx, rdi	       304	gss_mech_switch.c	FUNCTION_15
+0x4000555	      0xbd08000000	                              mov ebp, 8	       310	gss_mech_switch.c	FUNCTION_15	IF_1
+0x400055a	      0xe800000000	                          call 0x400055f	       308	gss_mech_switch.c	FUNCTION_15	CALL_1
+0x400055f	          0x4885c0	                           test rax, rax	       309	gss_mech_switch.c	FUNCTION_15	IF_1
+0x4000562	            0x7440	                            je 0x40005a4	       309	gss_mech_switch.c	FUNCTION_15	IF_1
+0x4000564	          0x4989c0	                             mov r8, rax	       309	gss_mech_switch.c	FUNCTION_15	IF_1
+0x4000567	          0x8b4050	            mov eax, dword [rax + 0x50] 	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x400056a	          0x8b7b28	            mov edi, dword [rbx + 0x28] 	       312	gss_mech_switch.c	FUNCTION_15	CALL_2
+0x400056d	          0x8b4b24	            mov ecx, dword [rbx + 0x24] 	       312	gss_mech_switch.c	FUNCTION_15	CALL_2
+0x4000570	            0x85c0	                           test eax, eax	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x4000572	            0x7e27	                           jle 0x400059b	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x4000574	        0x498b5058	              mov rdx, qword [r8 + 0x58]	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x4000578	          0x83e801	                              sub eax, 1	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x400057b	      0x488d448005	              lea rax, [rax + rax*4 + 5]	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x4000580	        0x488d34c2	                  lea rsi, [rdx + rax*8]	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x4000584	            0xeb09	                           jmp 0x400058f	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x4000586	        0x4883c228	                           add rdx, 0x28	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x400058a	          0x4839f2	                            cmp rdx, rsi	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x400058d	            0x741a	                            je 0x40005a9	       287	gss_mech_switch.c	FUNCTION_14	FOR_1
+0x400058f	          0x3b4a04	                cmp ecx, dword [rdx + 4]	       288	gss_mech_switch.c	FUNCTION_14	FOR_1	IF_1
+0x4000592	            0x75f2	                           jne 0x4000586	       288	gss_mech_switch.c	FUNCTION_14	FOR_1	IF_1
+0x4000594	          0x3b7a08	                cmp edi, dword [rdx + 8]	       288	gss_mech_switch.c	FUNCTION_14	FOR_1	IF_1
+0x4000597	            0x75ed	                           jne 0x4000586	       288	gss_mech_switch.c	FUNCTION_14	FOR_1	IF_1
+0x4000599	            0x8b2a	                    mov ebp, dword [rdx]	       290	gss_mech_switch.c	FUNCTION_14	FOR_1	IF_1
+0x400059b	        0x498b7810	              mov rdi, qword [r8 + 0x10]	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x400059f	      0xe800000000	                          call 0x40005a4	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x40005a4	            0x89e8	                            mov eax, ebp	       316	gss_mech_switch.c	FUNCTION_15
+0x40005a6	              0x5b	                                 pop rbx	       316	gss_mech_switch.c	FUNCTION_15
+0x40005a7	              0x5d	                                 pop rbp	       316	gss_mech_switch.c	FUNCTION_15
+0x40005a8	              0xc3	                                     ret	       316	gss_mech_switch.c	FUNCTION_15
+0x40005a9	        0x498b7810	              mov rdi, qword [r8 + 0x10]	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x40005ad	      0xbd08000000	                              mov ebp, 8	       293	gss_mech_switch.c	FUNCTION_14
+0x40005b2	      0xe800000000	                          call 0x40005b7	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x40005b7	            0xebeb	                           jmp 0x40005a4	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+gss_mech_flavor2info	CALL,4:FOR,1:SWITCH,0:IF,2:DO,0:WHILE,0:functions,0:ELSE,0	58
+0x40005c0	            0x4155	                                push r13	       328	gss_mech_switch.c	FUNCTION_16
+0x40005c2	            0x4154	                                push r12	       328	gss_mech_switch.c	FUNCTION_16
+0x40005c4	          0x4989f4	                            mov r12, rsi	       328	gss_mech_switch.c	FUNCTION_16
+0x40005c7	              0x55	                                push rbp	       328	gss_mech_switch.c	FUNCTION_16
+0x40005c8	              0x53	                                push rbx	       328	gss_mech_switch.c	FUNCTION_16
+0x40005c9	            0x89fd	                            mov ebp, edi	       328	gss_mech_switch.c	FUNCTION_16
+0x40005cb	      0xe800000000	                          call 0x40005d0	       332	gss_mech_switch.c	FUNCTION_16	CALL_1
+0x40005d0	          0x4885c0	                           test rax, rax	       333	gss_mech_switch.c	FUNCTION_16	IF_1
+0x40005d3	     0xf8494000000	                            je 0x400066d	       333	gss_mech_switch.c	FUNCTION_16	IF_1
+0x40005d9	          0x4989c5	                            mov r13, rax	       333	gss_mech_switch.c	FUNCTION_16	IF_1
+0x40005dc	          0x8b4050	            mov eax, dword [rax + 0x50] 	       336	gss_mech_switch.c	FUNCTION_16	FOR_1
+0x40005df	            0x85c0	                           test eax, eax	       336	gss_mech_switch.c	FUNCTION_16	FOR_1
+0x40005e1	            0x7e2d	                           jle 0x4000610	       336	gss_mech_switch.c	FUNCTION_16	FOR_1
+0x40005e3	        0x498b4d58	            mov rcx, qword [r13 + 0x58] 	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x40005e7	            0x3b29	                    cmp ebp, dword [rcx]	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x40005e9	            0x743a	                            je 0x4000625	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x40005eb	          0x83e801	                              sub eax, 1	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x40005ee	      0xbb28000000	                           mov ebx, 0x28	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x40005f3	      0x488d548005	              lea rdx, [rax + rax*4 + 5]	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x40005f8	        0x48c1e203	                              shl rdx, 3	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x40005fc	            0xeb0d	                           jmp 0x400060b	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x40005fe	        0x488d4328	                   lea rax, [rbx + 0x28]	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x4000602	        0x3b6c01d8	       cmp ebp, dword [rcx + rax - 0x28]	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x4000606	            0x741f	                            je 0x4000627	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x4000608	          0x4889c3	                            mov rbx, rax	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x400060b	          0x4839da	                            cmp rdx, rbx	       336	gss_mech_switch.c	FUNCTION_16	FOR_1
+0x400060e	            0x75ee	                           jne 0x40005fe	       336	gss_mech_switch.c	FUNCTION_16	FOR_1
+0x4000610	        0x498b7d10	            mov rdi, qword [r13 + 0x10] 	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x4000614	      0xe800000000	                          call 0x4000619	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x4000619	      0xb8feffffff	                     mov eax, 0xfffffffe	       348	gss_mech_switch.c	FUNCTION_16
+0x400061e	              0x5b	                                 pop rbx	       349	gss_mech_switch.c	FUNCTION_16
+0x400061f	              0x5d	                                 pop rbp	       349	gss_mech_switch.c	FUNCTION_16
+0x4000620	            0x415c	                                 pop r12	       349	gss_mech_switch.c	FUNCTION_16
+0x4000622	            0x415d	                                 pop r13	       349	gss_mech_switch.c	FUNCTION_16
+0x4000624	              0xc3	                                     ret	       349	gss_mech_switch.c	FUNCTION_16
+0x4000625	            0x31db	                            xor ebx, ebx	       337	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x4000627	        0x418b5518	            mov edx, dword [r13 + 0x18] 	       338	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2	CALL_2
+0x400062b	      0x498d7c2404	                      lea rdi, [r12 + 4]	       338	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2	CALL_2
+0x4000630	        0x498d751c	                   lea rsi, [r13 + 0x1c]	       338	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2	CALL_2
+0x4000634	      0xe800000000	                          call 0x4000639	       338	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2	CALL_2
+0x4000639	        0x418b4518	            mov eax, dword [r13 + 0x18] 	       339	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x400063d	        0x41890424	                    mov dword [r12], eax	       339	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x4000641	        0x498b4558	            mov rax, qword [r13 + 0x58] 	       340	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x4000645	        0x8b441804	         mov eax, dword [rax + rbx + 4] 	       340	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x4000649	      0x4189442424	             mov dword [r12 + 0x24], eax	       340	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x400064e	        0x498b4558	            mov rax, qword [r13 + 0x58] 	       341	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x4000652	        0x8b441808	         mov eax, dword [rax + rbx + 8] 	       341	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x4000656	      0x4189442428	             mov dword [r12 + 0x28], eax	       341	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x400065b	        0x498b7d10	            mov rdi, qword [r13 + 0x10] 	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x400065f	      0xe800000000	                          call 0x4000664	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x4000664	            0x31c0	                            xor eax, eax	       343	gss_mech_switch.c	FUNCTION_16	FOR_1	IF_2
+0x4000666	              0x5b	                                 pop rbx	       349	gss_mech_switch.c	FUNCTION_16
+0x4000667	              0x5d	                                 pop rbp	       349	gss_mech_switch.c	FUNCTION_16
+0x4000668	            0x415c	                                 pop r12	       349	gss_mech_switch.c	FUNCTION_16
+0x400066a	            0x415d	                                 pop r13	       349	gss_mech_switch.c	FUNCTION_16
+0x400066c	              0xc3	                                     ret	       349	gss_mech_switch.c	FUNCTION_16
+0x400066d	      0xb8feffffff	                     mov eax, 0xfffffffe	       334	gss_mech_switch.c	FUNCTION_16	IF_1
+0x4000672	            0xebaa	                           jmp 0x400061e	       334	gss_mech_switch.c	FUNCTION_16	IF_1
+gss_wrap	CALL,1:FOR,0:SWITCH,0:IF,0:DO,0:WHILE,0:functions,0:ELSE,0	4
+0x40007d0	          0x488b07	                    mov rax, qword [rdi]	       459	gss_mech_switch.c	FUNCTION_24
+0x40007d3	        0x488b4048	            mov rax, qword [rax + 0x48] 	       460	gss_mech_switch.c	FUNCTION_24	CALL_1
+0x40007d7	        0x488b4018	            mov rax, qword [rax + 0x18] 	       459	gss_mech_switch.c	FUNCTION_24
+0x40007db	      0xe900000000	                      jmp sym.gss_unwrap	       459	gss_mech_switch.c	FUNCTION_24
+gss_mech_get_by_name	CALL,3:FOR,0:SWITCH,0:IF,1:DO,0:WHILE,0:functions,0:ELSE,0	14
+0x4000340	              0x53	                                push rbx	       168	gss_mech_switch.c	FUNCTION_8
+0x4000341	          0x4889fb	                            mov rbx, rdi	       168	gss_mech_switch.c	FUNCTION_8
+0x4000344	      0xe8e7fdffff	          call sym._gss_mech_get_by_name	       171	gss_mech_switch.c	FUNCTION_8	CALL_1
+0x4000349	          0x4885c0	                           test rax, rax	       172	gss_mech_switch.c	FUNCTION_8	IF_1
+0x400034c	            0x7402	                            je 0x4000350	       172	gss_mech_switch.c	FUNCTION_8	IF_1
+0x400034e	              0x5b	                                 pop rbx	       177	gss_mech_switch.c	FUNCTION_8
+0x400034f	              0xc3	                                     ret	       177	gss_mech_switch.c	FUNCTION_8
+0x4000350	          0x4889da	                            mov rdx, rbx	       173	gss_mech_switch.c	FUNCTION_8	IF_1	CALL_2
+0x4000353	      0xbf01000000	                              mov edi, 1	       173	gss_mech_switch.c	FUNCTION_8	IF_1	CALL_2
+0x4000358	    0x48c7c6000000	                              mov rsi, 0	       173	gss_mech_switch.c	FUNCTION_8	IF_1	CALL_2
+0x400035f	      0xe800000000	                          call 0x4000364	       173	gss_mech_switch.c	FUNCTION_8	IF_1	CALL_2
+0x4000364	          0x4889df	                            mov rdi, rbx	       174	gss_mech_switch.c	FUNCTION_8	IF_1	CALL_3
+0x4000367	              0x5b	                                 pop rbx	       177	gss_mech_switch.c	FUNCTION_8
+0x4000368	      0xe9c3fdffff	           jmp sym._gss_mech_get_by_name	       174	gss_mech_switch.c	FUNCTION_8	IF_1	CALL_3
+gss_verify_mic	CALL,1:FOR,0:SWITCH,0:IF,0:DO,0:WHILE,0:functions,0:ELSE,0	4
+0x40007c0	          0x488b07	                    mov rax, qword [rdi]	       433	gss_mech_switch.c	FUNCTION_23
+0x40007c3	        0x488b4048	            mov rax, qword [rax + 0x48] 	       434	gss_mech_switch.c	FUNCTION_23	CALL_1
+0x40007c7	        0x488b4010	            mov rax, qword [rax + 0x10] 	       433	gss_mech_switch.c	FUNCTION_23
+0x40007cb	      0xe900000000	                        jmp sym.gss_wrap	       433	gss_mech_switch.c	FUNCTION_23
+gss_delete_sec_context	CALL,4:FOR,0:SWITCH,0:IF,2:DO,0:WHILE,0:functions,0:ELSE,0	27
+0x40007f0	          0x488b17	                    mov rdx, qword [rdi]	       483	gss_mech_switch.c	FUNCTION_26	IF_1
+0x40007f3	          0x4885d2	                           test rdx, rdx	       483	gss_mech_switch.c	FUNCTION_26	IF_1
+0x40007f6	            0x7447	                            je 0x400083f	       483	gss_mech_switch.c	FUNCTION_26	IF_1
+0x40007f8	              0x53	                                push rbx	       479	gss_mech_switch.c	FUNCTION_26
+0x40007f9	          0x4889fb	                            mov rbx, rdi	       479	gss_mech_switch.c	FUNCTION_26
+0x40007fc	        0x488b7a08	                mov rdi, qword [rdx + 8]	       485	gss_mech_switch.c	FUNCTION_26	IF_2
+0x4000800	          0x4885ff	                           test rdi, rdi	       485	gss_mech_switch.c	FUNCTION_26	IF_2
+0x4000803	            0x7413	                            je 0x4000818	       485	gss_mech_switch.c	FUNCTION_26	IF_2
+0x4000805	          0x488b02	                    mov rax, qword [rdx]	       486	gss_mech_switch.c	FUNCTION_26	IF_2
+0x4000808	        0x488b4048	            mov rax, qword [rax + 0x48] 	       487	gss_mech_switch.c	FUNCTION_26	IF_2	CALL_2
+0x400080c	        0x488b4028	            mov rax, qword [rax + 0x28] 	       486	gss_mech_switch.c	FUNCTION_26	IF_2
+0x4000810	      0xe800000000	                          call 0x4000815	       486	gss_mech_switch.c	FUNCTION_26	IF_2
+0x4000815	          0x488b13	                    mov rdx, qword [rbx]	       486	gss_mech_switch.c	FUNCTION_26	IF_2
+0x4000818	          0x488b02	                    mov rax, qword [rdx]	       489	gss_mech_switch.c	FUNCTION_26	CALL_3
+0x400081b	          0x4885c0	                           test rax, rax	       391	gss_mech_switch.c	FUNCTION_20	IF_1
+0x400081e	            0x740c	                            je 0x400082c	       391	gss_mech_switch.c	FUNCTION_20	IF_1
+0x4000820	        0x488b7810	            mov rdi, qword [rax + 0x10] 	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x4000824	      0xe800000000	                          call 0x4000829	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x4000829	          0x488b13	                    mov rdx, qword [rbx]	       392	gss_mech_switch.c	FUNCTION_20	CALL_1
+0x400082c	          0x4889d7	                            mov rdi, rdx	       490	gss_mech_switch.c	FUNCTION_26	CALL_4
+0x400082f	      0xe800000000	                          call 0x4000834	       490	gss_mech_switch.c	FUNCTION_26	CALL_4
+0x4000834	    0x48c703000000	                      mov qword [rbx], 0	       491	gss_mech_switch.c	FUNCTION_26
+0x400083b	            0x31c0	                            xor eax, eax	       492	gss_mech_switch.c	FUNCTION_26
+0x400083d	              0x5b	                                 pop rbx	       493	gss_mech_switch.c	FUNCTION_26
+0x400083e	              0xc3	                                     ret	       493	gss_mech_switch.c	FUNCTION_26
+0x400083f	      0xb800000800	                        mov eax, 0x80000	       493	gss_mech_switch.c	FUNCTION_26
+0x4000844	              0xc3	                                     ret	       493	gss_mech_switch.c	FUNCTION_26
+gss_pseudoflavor_to_datatouch	CALL,0:FOR,1:SWITCH,0:IF,1:DO,0:WHILE,0:functions,0:ELSE,0	21
+0x4000680	          0x8b4f50	            mov ecx, dword [rdi + 0x50] 	       369	gss_mech_switch.c	FUNCTION_18	FOR_1
+0x4000683	            0x85c9	                           test ecx, ecx	       369	gss_mech_switch.c	FUNCTION_18	FOR_1
+0x4000685	            0x7e2b	                           jle 0x40006b2	       369	gss_mech_switch.c	FUNCTION_18	FOR_1
+0x4000687	        0x488b5758	            mov rdx, qword [rdi + 0x58] 	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x400068b	            0x3b32	                    cmp esi, dword [rdx]	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x400068d	            0x7426	                            je 0x40006b5	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x400068f	          0x83e901	                              sub ecx, 1	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x4000692	        0x488d4228	                   lea rax, [rdx + 0x28]	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x4000696	      0x488d4c8905	              lea rcx, [rcx + rcx*4 + 5]	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x400069b	        0x488d0cca	                  lea rcx, [rdx + rcx*8]	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x400069f	            0xeb0c	                           jmp 0x40006ad	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x40006a1	          0x4889c2	                            mov rdx, rax	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x40006a4	        0x4883c028	                           add rax, 0x28	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x40006a8	          0x3970d8	            cmp dword [rax - 0x28], esi 	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x40006ab	            0x7408	                            je 0x40006b5	       370	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x40006ad	          0x4839c8	                            cmp rax, rcx	       369	gss_mech_switch.c	FUNCTION_18	FOR_1
+0x40006b0	            0x75ef	                           jne 0x40006a1	       369	gss_mech_switch.c	FUNCTION_18	FOR_1
+0x40006b2	            0x31c0	                            xor eax, eax	       373	gss_mech_switch.c	FUNCTION_18
+0x40006b4	              0xc3	                                     ret	       374	gss_mech_switch.c	FUNCTION_18
+0x40006b5	         0xfb64220	           movzx eax, byte [rdx + 0x20] 	       371	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+0x40006b9	              0xc3	                                     ret	       371	gss_mech_switch.c	FUNCTION_18	FOR_1	IF_1
+gss_unwrap	CALL,1:FOR,0:SWITCH,0:IF,0:DO,0:WHILE,0:functions,0:ELSE,0	4
+0x40007e0	          0x488b07	                    mov rax, qword [rdi]	       468	gss_mech_switch.c	FUNCTION_25
+0x40007e3	        0x488b4048	            mov rax, qword [rax + 0x48] 	       469	gss_mech_switch.c	FUNCTION_25	CALL_1
+0x40007e7	        0x488b4020	            mov rax, qword [rax + 0x20] 	       468	gss_mech_switch.c	FUNCTION_25
+0x40007eb	      0xe900000000	          jmp sym.gss_delete_sec_context	       468	gss_mech_switch.c	FUNCTION_25

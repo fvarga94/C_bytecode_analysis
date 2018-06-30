@@ -1,0 +1,63 @@
+pcie_pme_service_init	DO,0:FOR,0:functions,0:SWITCH,0:ELSE,0:WHILE,0:IF,0:CALL,1	6
+0x4000062	               0x0	                      add byte [rax], al	        88	pm_wakeup.h	FUNCTION_17
+0x4000064	          0x7408b8	         add byte [rax + rcx - 0x48], dh	        88	pm_wakeup.h	FUNCTION_17
+0x4000068	             0x100	                    add dword [rax], eax	       361	pme.c	FUNCTION_11	IF_2
+0x400006a	               0x0	                      add byte [rax], al	       361	pme.c	FUNCTION_11	IF_2
+0x400006c	              0x5b	                                 pop rbx	       364	pme.c	FUNCTION_11
+0x400006d	              0x5d	                                 pop rbp	       364	pme.c	FUNCTION_11
+pcie_pme_setup	DO,0:FOR,0:functions,0:SWITCH,0:ELSE,0:WHILE,0:IF,1:CALL,1	14
+0x4000040	          0x4885ff	                           test rdi, rdi	       355	pme.c	FUNCTION_11	IF_1
+0x4000043	            0x7442	                            je 0x4000087	       355	pme.c	FUNCTION_11	IF_1
+0x4000045	              0x55	                                push rbp	       352	pme.c	FUNCTION_11
+0x4000046	              0x53	                                push rbx	       352	pme.c	FUNCTION_11
+0x4000047	        0x488d6f28	                   lea rbp, [rdi + 0x28]	       358	pme.c	FUNCTION_11	CALL_1
+0x400004b	        0x488b5f28	            mov rbx, qword [rdi + 0x28] 	       358	pme.c	FUNCTION_11	CALL_1
+0x400004f	          0x4839eb	                            cmp rbx, rbp	       358	pme.c	FUNCTION_11	CALL_1
+0x4000052	            0x7436	                            je 0x400008a	       358	pme.c	FUNCTION_11	CALL_1
+0x4000054	    0xf6836c010000	              test byte [rbx + 0x16c], 1	        88	pm_wakeup.h	FUNCTION_17
+0x400005b	            0x7412	                            je 0x400006f	        88	pm_wakeup.h	FUNCTION_17
+0x400005d	              0x48	                                 invalid	        88	pm_wakeup.h	FUNCTION_17
+0x400005e	              0x83	                                 invalid	        88	pm_wakeup.h	FUNCTION_17
+0x400005f	              0xbb	                                 invalid	        88	pm_wakeup.h	FUNCTION_17
+0x4000060	            0xa801	                              test al, 1	        88	pm_wakeup.h	FUNCTION_17
+pcie_pme_remove	DO,0:FOR,0:functions,0:SWITCH,0:ELSE,0:WHILE,0:IF,0:CALL,4	9
+0x4000140	              0x53	                                push rbx	       429	pme.c	FUNCTION_14
+0x4000141	          0x4889fb	                            mov rbx, rdi	       429	pme.c	FUNCTION_14
+0x4000144	      0xe847ffffff	               call sym.pcie_pme_suspend	       430	pme.c	FUNCTION_14	CALL_1
+0x4000149	            0x8b3b	                    mov edi, dword [rbx]	       431	pme.c	FUNCTION_14	CALL_2
+0x400014b	          0x4889de	                            mov rsi, rbx	       431	pme.c	FUNCTION_14	CALL_2
+0x400014e	      0xe800000000	                          call 0x4000153	       431	pme.c	FUNCTION_14	CALL_2
+0x4000153	        0x488b7b18	            mov rdi, qword [rbx + 0x18] 	       432	pme.c	FUNCTION_14	CALL_4
+0x4000157	              0x5b	                                 pop rbx	       433	pme.c	FUNCTION_14
+0x4000158	      0xe900000000	                           jmp 0x400015d	       432	pme.c	FUNCTION_14	CALL_4
+pcie_pme_check_wakeup	DO,0:FOR,0:functions,0:SWITCH,0:ELSE,0:WHILE,0:IF,2:CALL,3	30
+0x4000040	          0x4885ff	                           test rdi, rdi	       355	pme.c	FUNCTION_11	IF_1
+0x4000043	            0x7442	                            je 0x4000087	       355	pme.c	FUNCTION_11	IF_1
+0x4000045	              0x55	                                push rbp	       352	pme.c	FUNCTION_11
+0x4000046	              0x53	                                push rbx	       352	pme.c	FUNCTION_11
+0x4000047	        0x488d6f28	                   lea rbp, [rdi + 0x28]	       358	pme.c	FUNCTION_11	CALL_1
+0x400004b	        0x488b5f28	            mov rbx, qword [rdi + 0x28] 	       358	pme.c	FUNCTION_11	CALL_1
+0x400004f	          0x4839eb	                            cmp rbx, rbp	       358	pme.c	FUNCTION_11	CALL_1
+0x4000052	            0x7436	                            je 0x400008a	       358	pme.c	FUNCTION_11	CALL_1
+0x4000054	    0xf6836c010000	              test byte [rbx + 0x16c], 1	        88	pm_wakeup.h	FUNCTION_17
+0x400005b	            0x7412	                            je 0x400006f	        88	pm_wakeup.h	FUNCTION_17
+0x400005d	    0x4883bba80100	              cmp qword [rbx + 0x1a8], 0	        88	pm_wakeup.h	FUNCTION_17
+0x4000065	            0x7408	                            je 0x400006f	        88	pm_wakeup.h	FUNCTION_17
+0x4000067	      0xb801000000	                              mov eax, 1	       361	pme.c	FUNCTION_11	IF_2
+0x400006c	              0x5b	                                 pop rbx	       364	pme.c	FUNCTION_11
+0x400006d	              0x5d	                                 pop rbp	       364	pme.c	FUNCTION_11
+0x400006e	              0xc3	                                     ret	       364	pme.c	FUNCTION_11
+0x400006f	        0x488b7b18	            mov rdi, qword [rbx + 0x18] 	       360	pme.c	FUNCTION_11	IF_2	CALL_3
+0x4000073	      0xe8c8ffffff	          call sym.pcie_pme_check_wakeup	       360	pme.c	FUNCTION_11	IF_2	CALL_3
+0x4000078	            0x84c0	                             test al, al	       360	pme.c	FUNCTION_11	IF_2	CALL_3
+0x400007a	            0x75f0	                           jne 0x400006c	       360	pme.c	FUNCTION_11	IF_2	CALL_3
+0x400007c	          0x488b1b	                    mov rbx, qword [rbx]	       358	pme.c	FUNCTION_11	CALL_1
+0x400007f	          0x4839eb	                            cmp rbx, rbp	       358	pme.c	FUNCTION_11	CALL_1
+0x4000082	            0x75d0	                           jne 0x4000054	       358	pme.c	FUNCTION_11	CALL_1
+0x4000084	              0x5b	                                 pop rbx	       364	pme.c	FUNCTION_11
+0x4000085	              0x5d	                                 pop rbp	       364	pme.c	FUNCTION_11
+0x4000086	              0xc3	                                     ret	       364	pme.c	FUNCTION_11
+0x4000087	            0x31c0	                            xor eax, eax	       356	pme.c	FUNCTION_11	IF_1
+0x4000089	              0xc3	                                     ret	       364	pme.c	FUNCTION_11
+0x400008a	            0x31c0	                            xor eax, eax	       356	pme.c	FUNCTION_11	IF_1
+0x400008c	            0xebde	                           jmp 0x400006c	       356	pme.c	FUNCTION_11	IF_1

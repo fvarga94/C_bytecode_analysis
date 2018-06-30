@@ -1,0 +1,393 @@
+qh_link_async	CALL,5:functions,0:DO,0:WHILE,0:SWITCH,0:ELSE,0:FOR,0:IF,1	47
+0x4003400	          0x8b4608	                mov eax, dword [rsi + 8]	       972	ehci-q.c	FUNCTION_128
+0x4003403	          0x83e0e0	                     and eax, 0xffffffe0	       972	ehci-q.c	FUNCTION_128
+0x4003406	          0x83c802	                               or eax, 2	       972	ehci-q.c	FUNCTION_128
+0x4003409	    0xf68688000000	               test byte [rsi + 0x88], 2	       976	ehci-q.c	FUNCTION_128	IF_1	CALL_1
+0x4003410	            0x756d	                           jne 0x400347f	       976	ehci-q.c	FUNCTION_128	IF_1	CALL_1
+0x4003412	    0x80be84000000	                cmp byte [rsi + 0x84], 3	       979	ehci-q.c	FUNCTION_128	CALL_2
+0x4003419	            0x4154	                                push r12	       971	ehci-q.c	FUNCTION_128
+0x400341b	          0x4189c4	                           mov r12d, eax	       971	ehci-q.c	FUNCTION_128
+0x400341e	              0x55	                                push rbp	       971	ehci-q.c	FUNCTION_128
+0x400341f	              0x53	                                push rbx	       971	ehci-q.c	FUNCTION_128
+0x4003420	            0x757a	                           jne 0x400349c	       979	ehci-q.c	FUNCTION_128	CALL_2
+0x4003422	          0x4889fd	                            mov rbp, rdi	       979	ehci-q.c	FUNCTION_128	CALL_2
+0x4003425	          0x4889f3	                            mov rbx, rsi	       979	ehci-q.c	FUNCTION_128	CALL_2
+0x4003428	      0xe803f1ffff	                     call sym.qh_refresh	       982	ehci-q.c	FUNCTION_128	CALL_3
+0x400342d	    0x488b85e80000	            mov rax, qword [rbp + 0xe8] 	       985	ehci-q.c	FUNCTION_128
+0x4003434	        0x488b5010	            mov rdx, qword [rax + 0x10] 	       986	ehci-q.c	FUNCTION_128
+0x4003438	        0x48895310	             mov qword [rbx + 0x10], rdx	       986	ehci-q.c	FUNCTION_128
+0x400343c	          0x488b08	                    mov rcx, qword [rax]	       987	ehci-q.c	FUNCTION_128
+0x400343f	          0x488b13	                    mov rdx, qword [rbx]	       987	ehci-q.c	FUNCTION_128
+0x4003442	            0x8b09	                    mov ecx, dword [rcx]	       987	ehci-q.c	FUNCTION_128
+0x4003444	            0x890a	                    mov dword [rdx], ecx	       987	ehci-q.c	FUNCTION_128
+0x4003446	           0xfaef8	                                  sfence	       988	ehci-q.c	FUNCTION_128	CALL_4
+0x4003449	        0x48895810	             mov qword [rax + 0x10], rbx	       990	ehci-q.c	FUNCTION_128
+0x400344d	          0x488b00	                    mov rax, qword [rax]	       991	ehci-q.c	FUNCTION_128
+0x4003450	          0x448920	                   mov dword [rax], r12d	       991	ehci-q.c	FUNCTION_128
+0x4003453	    0xc68384000000	                mov byte [rbx + 0x84], 1	       993	ehci-q.c	FUNCTION_128
+0x400345a	    0xc68385000000	                mov byte [rbx + 0x85], 0	       994	ehci-q.c	FUNCTION_128
+0x4003461	    0xc68386000000	                mov byte [rbx + 0x86], 0	       995	ehci-q.c	FUNCTION_128
+0x4003468	    0x8b851c010000	           mov eax, dword [rbp + 0x11c] 	       944	ehci-q.c	FUNCTION_126	IF_1
+0x400346e	          0x8d5001	                      lea edx, [rax + 1]	       944	ehci-q.c	FUNCTION_126	IF_1
+0x4003471	            0x85c0	                           test eax, eax	       944	ehci-q.c	FUNCTION_126	IF_1
+0x4003473	    0x89951c010000	           mov dword [rbp + 0x11c], edx 	       944	ehci-q.c	FUNCTION_126	IF_1
+0x4003479	            0x7406	                            je 0x4003481	       944	ehci-q.c	FUNCTION_126	IF_1
+0x400347b	              0x5b	                                 pop rbx	       999	ehci-q.c	FUNCTION_128
+0x400347c	              0x5d	                                 pop rbp	       999	ehci-q.c	FUNCTION_128
+0x400347d	            0x415c	                                 pop r12	       999	ehci-q.c	FUNCTION_128
+0x400347f	            0xf3c3	                                     ret	       999	ehci-q.c	FUNCTION_128
+0x4003481	    0x816504fffbff	         and dword [rbp + 4], 0xfffffbff	       948	ehci-q.c	FUNCTION_126	CALL_1
+0x4003488	          0x4889ef	                            mov rdi, rbp	       951	ehci-q.c	FUNCTION_126	CALL_2
+0x400348b	      0xe8c0feffff	                  call sym.ehci_poll_ASS	       951	ehci-q.c	FUNCTION_126	CALL_2
+0x4003490	          0x4889ef	                            mov rdi, rbp	       952	ehci-q.c	FUNCTION_126	CALL_3
+0x4003493	              0x5b	                                 pop rbx	       999	ehci-q.c	FUNCTION_128
+0x4003494	              0x5d	                                 pop rbp	       999	ehci-q.c	FUNCTION_128
+0x4003495	            0x415c	                                 pop r12	       999	ehci-q.c	FUNCTION_128
+0x4003497	      0xe904fcffff	             jmp sym.turn_on_io_watchdog	       952	ehci-q.c	FUNCTION_126	CALL_3
+0x400349c	             0xf0b	                                     ud2	       952	ehci-q.c	FUNCTION_126	CALL_3
+0x400349e	            0xeb82	                           jmp 0x4003422	       979	ehci-q.c	FUNCTION_128	CALL_2
+qh_schedule	CALL,9:functions,0:DO,0:WHILE,0:SWITCH,0:ELSE,1:FOR,2:IF,5	112
+0x4005760	            0x4157	                                push r15	       849	ehci-sched.c	FUNCTION_87
+0x4005762	            0x4156	                                push r14	       849	ehci-sched.c	FUNCTION_87
+0x4005764	            0x4155	                                push r13	       849	ehci-sched.c	FUNCTION_87
+0x4005766	            0x4154	                                push r12	       849	ehci-sched.c	FUNCTION_87
+0x4005768	              0x55	                                push rbp	       849	ehci-sched.c	FUNCTION_87
+0x4005769	              0x53	                                push rbx	       849	ehci-sched.c	FUNCTION_87
+0x400576a	        0x4883ec18	                           sub rsp, 0x18	       849	ehci-sched.c	FUNCTION_87
+0x400576e	          0x4c8b36	                    mov r14, qword [rsi]	       853	ehci-sched.c	FUNCTION_87
+0x4005771	    0x65488b042528	                mov rax, qword gs:[0x28]	       849	ehci-sched.c	FUNCTION_87
+0x400577a	      0x4889442410	             mov qword [rsp + 0x10], rax	       849	ehci-sched.c	FUNCTION_87
+0x400577f	            0x31c0	                            xor eax, eax	       849	ehci-sched.c	FUNCTION_87
+0x4005781	    0x41c706010000	                      mov dword [r14], 1	       856	ehci-sched.c	FUNCTION_87
+0x4005788	    0x66817e762f75	          cmp word [rsi + 0x76], 0x752f 	       859	ehci-sched.c	FUNCTION_87	IF_1
+0x400578e	            0x7423	                            je 0x40057b3	       859	ehci-sched.c	FUNCTION_87	IF_1
+0x4005790	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       914	ehci-sched.c	FUNCTION_87
+0x4005795	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       914	ehci-sched.c	FUNCTION_87
+0x400579e	     0xf8556010000	                           jne 0x40058fa	       914	ehci-sched.c	FUNCTION_87
+0x40057a4	        0x4883c418	                           add rsp, 0x18	       914	ehci-sched.c	FUNCTION_87
+0x40057a8	              0x5b	                                 pop rbx	       914	ehci-sched.c	FUNCTION_87
+0x40057a9	              0x5d	                                 pop rbp	       914	ehci-sched.c	FUNCTION_87
+0x40057aa	            0x415c	                                 pop r12	       914	ehci-sched.c	FUNCTION_87
+0x40057ac	            0x415d	                                 pop r13	       914	ehci-sched.c	FUNCTION_87
+0x40057ae	            0x415e	                                 pop r14	       914	ehci-sched.c	FUNCTION_87
+0x40057b0	            0x415f	                                 pop r15	       914	ehci-sched.c	FUNCTION_87
+0x40057b2	              0xc3	                                     ret	       914	ehci-sched.c	FUNCTION_87
+0x40057b3	          0x4989fc	                            mov r12, rdi	       914	ehci-sched.c	FUNCTION_87
+0x40057b6	        0x488b7e50	            mov rdi, qword [rsi + 0x50] 	       866	ehci-sched.c	FUNCTION_87	CALL_1
+0x40057ba	          0x4989f7	                            mov r15, rsi	       866	ehci-sched.c	FUNCTION_87	CALL_1
+0x40057bd	    0xc744240c0000	                mov dword [rsp + 0xc], 0	       865	ehci-sched.c	FUNCTION_87
+0x40057c5	      0xe8d6fbffff	                        call sym.find_tt	       866	ehci-sched.c	FUNCTION_87	CALL_1
+0x40057ca	    0x483d00f0ffff	             cmp rax, 0xfffffffffffff000	       867	ehci-sched.c	FUNCTION_87	IF_2	CALL_2
+0x40057d0	          0x4989c5	                            mov r13, rax	       866	ehci-sched.c	FUNCTION_87	CALL_1
+0x40057d3	            0x77bb	                            ja 0x4005790	       867	ehci-sched.c	FUNCTION_87	IF_2	CALL_2
+0x40057d5	    0x498dbc240203	                  lea rdi, [r12 + 0x302]	       871	ehci-sched.c	FUNCTION_87	CALL_4
+0x40057dd	          0x4889c6	                            mov rsi, rax	       871	ehci-sched.c	FUNCTION_87	CALL_4
+0x40057e0	      0xe8fbacffff	              call sym.compute_tt_budget	       871	ehci-sched.c	FUNCTION_87	CALL_4
+0x40057e5	      0x410fb66f7d	           movzx ebp, byte [r15 + 0x7d] 	       877	ehci-sched.c	FUNCTION_87	IF_3
+0x40057ea	          0x4084ed	                           test bpl, bpl	       877	ehci-sched.c	FUNCTION_87	IF_3
+0x40057ed	     0xf84e1000000	                            je 0x40058d4	       877	ehci-sched.c	FUNCTION_87	IF_3
+0x40057f3	        0x400fb6c5	                          movzx eax, bpl	       881	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x40057f7	        0x89442404	                mov dword [rsp + 4], eax	       881	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x40057fb	    0x418b84249802	           mov eax, dword [r12 + 0x298] 	       882	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x4005803	            0x31db	                            xor ebx, ebx	       883	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2
+0x4005805	          0x83c001	                              add eax, 1	       882	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x4005808	    0x418984249802	            mov dword [r12 + 0x298], eax	       882	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x4005810	      0x410fb66f7d	           movzx ebp, byte [r15 + 0x7d] 	       882	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x4005815	          0x83ed01	                              sub ebp, 1	       882	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x4005818	            0x21c5	                            and ebp, eax	       882	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x400581a	      0x4c8d44240c	                     lea r8, [rsp + 0xc]	       884	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2	CALL_5
+0x400581f	          0x4d89e9	                             mov r9, r13	       884	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2	CALL_5
+0x4005822	          0x4c89f9	                            mov rcx, r15	       884	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2	CALL_5
+0x4005825	            0x89da	                            mov edx, ebx	       884	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2	CALL_5
+0x4005827	            0x89ee	                            mov esi, ebp	       884	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2	CALL_5
+0x4005829	          0x4c89e7	                            mov rdi, r12	       884	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2	CALL_5
+0x400582c	      0xe80fe9ffff	            call sym.check_intr_schedule	       884	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2	CALL_5
+0x4005831	            0x85c0	                           test eax, eax	       886	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2	IF_4
+0x4005833	            0x7414	                            je 0x4005849	       886	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2	IF_4
+0x4005835	          0x83c301	                              add ebx, 1	       883	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2
+0x4005838	          0x83fb08	                              cmp ebx, 8	       883	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2
+0x400583b	            0x75dd	                           jne 0x400581a	       883	ehci-sched.c	FUNCTION_87	IF_3	FOR_1	FOR_2
+0x400583d	      0x836c240401	                  sub dword [rsp + 4], 1	       881	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x4005842	            0x75b7	                           jne 0x40057fb	       881	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x4005844	      0xe947ffffff	                           jmp 0x4005790	       881	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x4005849	            0x89dd	                            mov ebp, ebx	       881	ehci-sched.c	FUNCTION_87	IF_3	FOR_1
+0x400584b	      0x410fb74774	           movzx eax, word [r15 + 0x74] 	       899	ehci-sched.c	FUNCTION_87
+0x4005850	          0x6685c0	                             test ax, ax	       899	ehci-sched.c	FUNCTION_87
+0x4005853	            0x7468	                            je 0x40058bd	       899	ehci-sched.c	FUNCTION_87
+0x4005855	      0x410fb64f7d	           movzx ecx, byte [r15 + 0x7d] 	       901	ehci-sched.c	FUNCTION_87
+0x400585a	          0x83e801	                              sub eax, 1	       899	ehci-sched.c	FUNCTION_87
+0x400585d	    0x664123842498	              and ax, word [r12 + 0x298]	       899	ehci-sched.c	FUNCTION_87
+0x4005866	        0x41886f79	              mov byte [r15 + 0x79], bpl	       902	ehci-sched.c	FUNCTION_87
+0x400586a	          0x8d51ff	                      lea edx, [rcx - 1]	       901	ehci-sched.c	FUNCTION_87
+0x400586d	      0x6641894776	               mov word [r15 + 0x76], ax	       899	ehci-sched.c	FUNCTION_87
+0x4005872	            0x89d9	                            mov ecx, ebx	       903	ehci-sched.c	FUNCTION_87
+0x4005874	            0x21d0	                            and eax, edx	       901	ehci-sched.c	FUNCTION_87
+0x4005876	      0xba01000000	                              mov edx, 1	       903	ehci-sched.c	FUNCTION_87
+0x400587b	        0x41884778	               mov byte [r15 + 0x78], al	       901	ehci-sched.c	FUNCTION_87
+0x400587f	       0xfb744240c	            movzx eax, word [rsp + 0xc] 	       903	ehci-sched.c	FUNCTION_87
+0x4005884	            0xd3e2	                             shl edx, cl	       903	ehci-sched.c	FUNCTION_87
+0x4005886	          0xc1e008	                              shl eax, 8	       903	ehci-sched.c	FUNCTION_87
+0x4005889	             0x9d0	                             or eax, edx	       903	ehci-sched.c	FUNCTION_87
+0x400588b	      0x6641894772	               mov word [r15 + 0x72], ax	       903	ehci-sched.c	FUNCTION_87
+0x4005890	        0x418b4608	                mov eax, dword [r14 + 8]	       908	ehci-sched.c	FUNCTION_87	CALL_7
+0x4005894	          0x4c89fe	                            mov rsi, r15	       910	ehci-sched.c	FUNCTION_87	CALL_9
+0x4005897	          0x4c89e7	                            mov rdi, r12	       910	ehci-sched.c	FUNCTION_87	CALL_9
+0x400589a	          0x6631c0	                              xor ax, ax	       908	ehci-sched.c	FUNCTION_87	CALL_7
+0x400589d	        0x41894608	                mov dword [r14 + 8], eax	       908	ehci-sched.c	FUNCTION_87	CALL_7
+0x40058a1	      0x410fb75772	           movzx edx, word [r15 + 0x72] 	       909	ehci-sched.c	FUNCTION_87	CALL_8
+0x40058a6	             0x9d0	                             or eax, edx	       909	ehci-sched.c	FUNCTION_87	CALL_8
+0x40058a8	      0xba01000000	                              mov edx, 1	       910	ehci-sched.c	FUNCTION_87	CALL_9
+0x40058ad	        0x41894608	                mov dword [r14 + 8], eax	       909	ehci-sched.c	FUNCTION_87	CALL_8
+0x40058b1	      0xe8fafbffff	 call sym.reserve_release_intr_bandwidth	       910	ehci-sched.c	FUNCTION_87	CALL_9
+0x40058b6	            0x31c0	                            xor eax, eax	       910	ehci-sched.c	FUNCTION_87	CALL_9
+0x40058b8	      0xe9d3feffff	                           jmp 0x4005790	       910	ehci-sched.c	FUNCTION_87	CALL_9
+0x40058bd	            0x31c0	                            xor eax, eax	       899	ehci-sched.c	FUNCTION_87
+0x40058bf	      0x41c6477800	                mov byte [r15 + 0x78], 0	       901	ehci-sched.c	FUNCTION_87
+0x40058c4	        0x41886f79	              mov byte [r15 + 0x79], bpl	       902	ehci-sched.c	FUNCTION_87
+0x40058c8	      0x6641894776	               mov word [r15 + 0x76], ax	       899	ehci-sched.c	FUNCTION_87
+0x40058cd	      0xb8ff000000	                           mov eax, 0xff	       903	ehci-sched.c	FUNCTION_87
+0x40058d2	            0xebb7	                           jmp 0x400588b	       903	ehci-sched.c	FUNCTION_87
+0x40058d4	      0x4c8d44240c	                     lea r8, [rsp + 0xc]	       893	ehci-sched.c	FUNCTION_87	ELSE_1	CALL_6
+0x40058d9	            0x31d2	                            xor edx, edx	       893	ehci-sched.c	FUNCTION_87	ELSE_1	CALL_6
+0x40058db	            0x31f6	                            xor esi, esi	       893	ehci-sched.c	FUNCTION_87	ELSE_1	CALL_6
+0x40058dd	          0x4d89e9	                             mov r9, r13	       893	ehci-sched.c	FUNCTION_87	ELSE_1	CALL_6
+0x40058e0	          0x4c89f9	                            mov rcx, r15	       893	ehci-sched.c	FUNCTION_87	ELSE_1	CALL_6
+0x40058e3	          0x4c89e7	                            mov rdi, r12	       893	ehci-sched.c	FUNCTION_87	ELSE_1	CALL_6
+0x40058e6	      0xe855e8ffff	            call sym.check_intr_schedule	       893	ehci-sched.c	FUNCTION_87	ELSE_1	CALL_6
+0x40058eb	            0x85c0	                           test eax, eax	       895	ehci-sched.c	FUNCTION_87	IF_5
+0x40058ed	     0xf859dfeffff	                           jne 0x4005790	       895	ehci-sched.c	FUNCTION_87	IF_5
+0x40058f3	            0x31db	                            xor ebx, ebx	       864	ehci-sched.c	FUNCTION_87
+0x40058f5	      0xe951ffffff	                           jmp 0x400584b	       864	ehci-sched.c	FUNCTION_87
+0x40058fa	      0xe800000000	                          call 0x40058ff	       914	ehci-sched.c	FUNCTION_87
+ehci_relinquish_port	CALL,2:functions,0:DO,0:WHILE,0:SWITCH,0:ELSE,0:FOR,0:IF,1	4
+0x40004c0	          0x83ee01	                              sub esi, 1	      1313	ehci-hub.c	FUNCTION_159	CALL_2
+0x40004c3	    0x4881c7300200	                          add rdi, 0x230	       264	ehci.h	FUNCTION_29
+0x40004ca	      0xba00200000	                         mov edx, 0x2000	      1313	ehci-hub.c	FUNCTION_159	CALL_2
+0x40004cf	      0xe95cffffff	                       jmp sym.set_owner	      1313	ehci-hub.c	FUNCTION_159	CALL_2
+ehci_hcd_cleanup	CALL,6:functions,0:DO,0:WHILE,0:SWITCH,0:ELSE,0:FOR,0:IF,0	4
+0x4000040	    0x8b87b0020000	           mov eax, dword [rdi + 0x2b0] 	        23	ehci-timer.c	FUNCTION_50
+0x4000046	              0x48	                                 invalid	        24	ehci-timer.c	FUNCTION_50	CALL_1
+0x4000047	              0x8b	                                 invalid	        24	ehci-timer.c	FUNCTION_50	CALL_1
+0x4000048	              0x97	                           xchg eax, edi	        24	ehci-timer.c	FUNCTION_50	CALL_1
+qh_refresh	CALL,2:functions,0:DO,0:WHILE,0:SWITCH,0:ELSE,1:FOR,0:IF,2	61
+0x4002530	              0x53	                                push rbx	       110	ehci-q.c	FUNCTION_117
+0x4002531	          0x488b06	                    mov rax, qword [rsi]	       122	ehci-q.c	FUNCTION_117	IF_1
+0x4002534	          0x4889f3	                            mov rbx, rsi	       110	ehci-q.c	FUNCTION_117
+0x4002537	        0x488b4e18	            mov rcx, qword [rsi + 0x18] 	       113	ehci-q.c	FUNCTION_117	CALL_1
+0x400253b	          0x8b5018	            mov edx, dword [rax + 0x18] 	       122	ehci-q.c	FUNCTION_117	IF_1
+0x400253e	          0xf6c280	                           test dl, 0x80	       122	ehci-q.c	FUNCTION_117	IF_1
+0x4002541	            0x7418	                            je 0x400255b	       122	ehci-q.c	FUNCTION_117	IF_1
+0x4002543	          0x8b51c0	             mov edx, dword [rcx - 0x40]	       123	ehci-q.c	FUNCTION_117	IF_1
+0x4002546	          0x895010	             mov dword [rax + 0x10], edx	       123	ehci-q.c	FUNCTION_117	IF_1
+0x4002549	    0xf68688000000	               test byte [rsi + 0x88], 8	       124	ehci-q.c	FUNCTION_117	IF_1	IF_2
+0x4002550	            0x7566	                           jne 0x40025b8	       124	ehci-q.c	FUNCTION_117	IF_1	IF_2
+0x4002552	    0x80a388000000	             and byte [rbx + 0x88], 0xf7	       129	ehci-q.c	FUNCTION_117
+0x4002559	              0x5b	                                 pop rbx	       130	ehci-q.c	FUNCTION_117
+0x400255a	              0xc3	                                     ret	       130	ehci-q.c	FUNCTION_117
+0x400255b	    0x80be84000000	                cmp byte [rsi + 0x84], 3	        80	ehci-q.c	FUNCTION_116	CALL_1
+0x4002562	     0xf859c000000	                           jne 0x4002604	        80	ehci-q.c	FUNCTION_116	CALL_1
+0x4002568	        0x488b49f8	                mov rcx, qword [rcx - 8]	        82	ehci-q.c	FUNCTION_116
+0x400256c	    0xc74014010000	               mov dword [rax + 0x14], 1	        83	ehci-q.c	FUNCTION_116
+0x4002573	          0x894810	             mov dword [rax + 0x10], ecx	        82	ehci-q.c	FUNCTION_116
+0x4002576	          0x8b4804	                mov ecx, dword [rax + 4]	        90	ehci-q.c	FUNCTION_116	IF_1	CALL_2
+0x4002579	          0xf6c540	                           test ch, 0x40	        90	ehci-q.c	FUNCTION_116	IF_1	CALL_2
+0x400257c	            0x7528	                           jne 0x40025a6	        90	ehci-q.c	FUNCTION_116	IF_1	CALL_2
+0x400257e	     0xfb6b3880000	           movzx esi, byte [rbx + 0x88] 	        93	ehci-q.c	FUNCTION_116	IF_1
+0x4002585	        0x4c8b4350	              mov r8, qword [rbx + 0x50]	        95	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_5
+0x4002589	          0xc1e908	                              shr ecx, 8	        94	ehci-q.c	FUNCTION_116	IF_1	CALL_3
+0x400258c	          0x83e10f	                            and ecx, 0xf	        94	ehci-q.c	FUNCTION_116	IF_1	CALL_3
+0x400258f	          0x83e601	                              and esi, 1	        93	ehci-q.c	FUNCTION_116	IF_1
+0x4002592	          0x4889f7	                            mov rdi, rsi	        95	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_5
+0x4002595	          0x83e701	                              and edi, 1	        95	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_5
+0x4002598	        0x4883c708	                              add rdi, 8	        95	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_5
+0x400259c	      0x418b7cb80c	      mov edi, dword [r8 + rdi*4 + 0xc] 	        95	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_5
+0x40025a1	           0xfa3cf	                             bt edi, ecx	        95	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_5
+0x40025a4	            0x7331	                           jae 0x40025d7	        95	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_5
+0x40025a6	    0x81e201000080	                     and edx, 0x80000001	       101	ehci-q.c	FUNCTION_116	CALL_8
+0x40025ac	          0x895018	             mov dword [rax + 0x18], edx	       101	ehci-q.c	FUNCTION_116	CALL_8
+0x40025af	    0x80a388000000	             and byte [rbx + 0x88], 0xf7	       129	ehci-q.c	FUNCTION_117
+0x40025b6	              0x5b	                                 pop rbx	       130	ehci-q.c	FUNCTION_117
+0x40025b7	              0xc3	                                     ret	       130	ehci-q.c	FUNCTION_117
+0x40025b8	    0x488bbfd0fdff	            mov rdi, qword [rdi - 0x230]	       125	ehci-q.c	FUNCTION_117	IF_1	IF_2
+0x40025bf	          0x4889f2	                            mov rdx, rsi	       125	ehci-q.c	FUNCTION_117	IF_1	IF_2
+0x40025c2	    0x48c7c6000000	                              mov rsi, 0	       125	ehci-q.c	FUNCTION_117	IF_1	IF_2
+0x40025c9	      0xe800000000	                          call 0x40025ce	       125	ehci-q.c	FUNCTION_117	IF_1	IF_2
+0x40025ce	    0x80a388000000	             and byte [rbx + 0x88], 0xf7	       129	ehci-q.c	FUNCTION_117
+0x40025d5	              0x5b	                                 pop rbx	       130	ehci-q.c	FUNCTION_117
+0x40025d6	              0xc3	                                     ret	       130	ehci-q.c	FUNCTION_117
+0x40025d7	    0x81e2ffffff7f	                     and edx, 0x7fffffff	        96	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_6
+0x40025dd	        0x400fb6f6	                          movzx esi, sil	        96	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_6
+0x40025e1	          0x895018	             mov dword [rax + 0x18], edx	        96	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_6
+0x40025e4	        0x488b5350	            mov rdx, qword [rbx + 0x50] 	        96	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_6
+0x40025e8	        0x488d34b2	                  lea rsi, [rdx + rsi*4]	        96	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_6
+0x40025ec	      0xba01000000	                              mov edx, 1	        97	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_7
+0x40025f1	            0xd3e2	                             shl edx, cl	        97	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_7
+0x40025f3	            0x89d1	                            mov ecx, edx	        97	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_7
+0x40025f5	            0xf7d1	                                 not ecx	        97	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_7
+0x40025f7	          0x234e2c	             and ecx, dword [rsi + 0x2c]	        97	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_7
+0x40025fa	             0x9ca	                             or edx, ecx	        97	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_7
+0x40025fc	          0x89562c	             mov dword [rsi + 0x2c], edx	        97	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_7
+0x40025ff	          0x8b5018	            mov edx, dword [rax + 0x18] 	        97	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_7
+0x4002602	            0xeba2	                           jmp 0x40025a6	        97	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_7
+0x4002604	             0xf0b	                                     ud2	        97	ehci-q.c	FUNCTION_116	IF_1	IF_2	CALL_7
+0x4002606	      0xe95dffffff	                           jmp 0x4002568	        80	ehci-q.c	FUNCTION_116	CALL_1
+ehci_urb_done	CALL,9:functions,0:DO,0:WHILE,0:SWITCH,0:ELSE,1:FOR,0:IF,3	31
+0x40008d0	            0x4154	                                push r12	       241	ehci-q.c	FUNCTION_121
+0x40008d2	              0x55	                                push rbp	       241	ehci-q.c	FUNCTION_121
+0x40008d3	          0x4189d4	                           mov r12d, edx	       241	ehci-q.c	FUNCTION_121
+0x40008d6	              0x53	                                push rbx	       241	ehci-q.c	FUNCTION_121
+0x40008d7	          0x8b4658	            mov eax, dword [rsi + 0x58] 	       242	ehci-q.c	FUNCTION_121	IF_1	CALL_1
+0x40008da	          0x4889f5	                            mov rbp, rsi	       241	ehci-q.c	FUNCTION_121
+0x40008dd	          0xc1e81e	                           shr eax, 0x1e	       242	ehci-q.c	FUNCTION_121	IF_1	CALL_1
+0x40008e0	          0x83f801	                              cmp eax, 1	       242	ehci-q.c	FUNCTION_121	IF_1	CALL_1
+0x40008e3	            0x743c	                            je 0x4000921	       242	ehci-q.c	FUNCTION_121	IF_1	CALL_1
+0x40008e5	          0x8b4518	            mov eax, dword [rbp + 0x18] 	       247	ehci-q.c	FUNCTION_121	IF_2	CALL_3
+0x40008e8	            0x85c0	                           test eax, eax	       247	ehci-q.c	FUNCTION_121	IF_2	CALL_3
+0x40008ea	            0x750c	                           jne 0x40008f8	       247	ehci-q.c	FUNCTION_121	IF_2	CALL_3
+0x40008ec	        0x4183fc8d	            cmp r12d, 0xffffffffffffff8d	       251	ehci-q.c	FUNCTION_121	ELSE_1	IF_3
+0x40008f0	            0x742a	                            je 0x400091c	       251	ehci-q.c	FUNCTION_121	ELSE_1	IF_3
+0x40008f2	        0x4183fc87	            cmp r12d, 0xffffffffffffff87	       251	ehci-q.c	FUNCTION_121	ELSE_1	IF_3
+0x40008f6	            0x7424	                            je 0x400091c	       251	ehci-q.c	FUNCTION_121	ELSE_1	IF_3
+0x40008f8	    0x488d9fd0fdff	                  lea rbx, [rdi - 0x230]	       268	ehci.h	FUNCTION_30	CALL_1
+0x40008ff	          0x4889ee	                            mov rsi, rbp	       266	ehci-q.c	FUNCTION_121	CALL_7
+0x4000902	          0x4889df	                            mov rdi, rbx	       266	ehci-q.c	FUNCTION_121	CALL_7
+0x4000905	      0xe800000000	                          call 0x400090a	       266	ehci-q.c	FUNCTION_121	CALL_7
+0x400090a	          0x4489e2	                           mov edx, r12d	       267	ehci-q.c	FUNCTION_121	CALL_9
+0x400090d	          0x4889ee	                            mov rsi, rbp	       267	ehci-q.c	FUNCTION_121	CALL_9
+0x4000910	          0x4889df	                            mov rdi, rbx	       267	ehci-q.c	FUNCTION_121	CALL_9
+0x4000913	              0x5b	                                 pop rbx	       268	ehci-q.c	FUNCTION_121
+0x4000914	              0x5d	                                 pop rbp	       268	ehci-q.c	FUNCTION_121
+0x4000915	            0x415c	                                 pop r12	       268	ehci-q.c	FUNCTION_121
+0x4000917	      0xe900000000	                           jmp 0x400091c	       267	ehci-q.c	FUNCTION_121	CALL_9
+0x400091c	          0x4531e4	                          xor r12d, r12d	       252	ehci-q.c	FUNCTION_121	ELSE_1	IF_3
+0x400091f	            0xebd7	                           jmp 0x40008f8	       252	ehci-q.c	FUNCTION_121	ELSE_1	IF_3
+0x4000921	    0x83af44feffff	              sub dword [rdi - 0x1bc], 1	       244	ehci-q.c	FUNCTION_121	IF_1	CALL_2
+0x4000928	            0xebbb	                           jmp 0x40008e5	       244	ehci-q.c	FUNCTION_121	IF_1	CALL_2
+persist_enabled_on_companion	CALL,0:functions,0:DO,0:WHILE,0:SWITCH,0:ELSE,0:FOR,0:IF,0	13
+0x40000a0	    0x8b87d8040000	           mov eax, dword [rdi + 0x4d8] 	        27	ehci-hub.c	FUNCTION_147
+0x40000a6	            0x85c0	                           test eax, eax	        27	ehci-hub.c	FUNCTION_147
+0x40000a8	            0x751c	                           jne 0x40000c6	        27	ehci-hub.c	FUNCTION_147
+0x40000aa	    0xf687a4040000	              test byte [rdi + 0x4a4], 2	        27	ehci-hub.c	FUNCTION_147
+0x40000b1	            0x7415	                            je 0x40000c8	        27	ehci-hub.c	FUNCTION_147
+0x40000b3	        0x488b4740	            mov rax, qword [rdi + 0x40] 	        28	ehci-hub.c	FUNCTION_147
+0x40000b7	        0x488b4060	            mov rax, qword [rax + 0x60] 	        28	ehci-hub.c	FUNCTION_147
+0x40000bb	        0x83781c02	               cmp dword [rax + 0x1c], 2	        27	ehci-hub.c	FUNCTION_147
+0x40000bf	           0xf96c0	                                setbe al	        27	ehci-hub.c	FUNCTION_147
+0x40000c2	           0xfb6c0	                           movzx eax, al	        27	ehci-hub.c	FUNCTION_147
+0x40000c5	              0xc3	                                     ret	        27	ehci-hub.c	FUNCTION_147
+0x40000c6	            0x31c0	                            xor eax, eax	        27	ehci-hub.c	FUNCTION_147
+0x40000c8	            0xf3c3	                                     ret	        29	ehci-hub.c	FUNCTION_147
+uframe_periodic_max_show	CALL,3:functions,0:DO,0:WHILE,0:SWITCH,0:ELSE,0:FOR,0:IF,0	9
+0x4000b20	          0x4889d0	                            mov rax, rdx	        71	ehci-sysfs.c	FUNCTION_45
+0x4000b23	    0x488b97980000	            mov rdx, qword [rdi + 0x98] 	        76	ehci-sysfs.c	FUNCTION_45	CALL_3
+0x4000b2a	      0xbe00100000	                         mov esi, 0x1000	        76	ehci-sysfs.c	FUNCTION_45	CALL_3
+0x4000b2f	          0x4889c7	                            mov rdi, rax	        76	ehci-sysfs.c	FUNCTION_45	CALL_3
+0x4000b32	    0x8b8acc030000	           mov ecx, dword [rdx + 0x3cc] 	        76	ehci-sysfs.c	FUNCTION_45	CALL_3
+0x4000b38	    0x48c7c2000000	                              mov rdx, 0	        76	ehci-sysfs.c	FUNCTION_45	CALL_3
+0x4000b3f	      0xe800000000	                          call 0x4000b44	        76	ehci-sysfs.c	FUNCTION_45	CALL_3
+0x4000b44	            0x4898	                                    cdqe	        77	ehci-sysfs.c	FUNCTION_45
+0x4000b46	              0xc3	                                     ret	        78	ehci-sysfs.c	FUNCTION_45
+compute_tt_budget	CALL,1:functions,1:DO,0:WHILE,0:SWITCH,0:ELSE,0:FOR,0:IF,1	62
+0x40004e0	          0x4885f6	                           test rsi, rsi	       267	ehci-sched.c	FUNCTION_71	IF_1
+0x40004e3	          0x4989f8	                             mov r8, rdi	       262	ehci-sched.c	FUNCTION_71
+0x40004e6	     0xf84c1000000	                            je 0x40005ad	       267	ehci-sched.c	FUNCTION_71	IF_1
+0x40004ec	    0x48c707000000	                      mov qword [rdi], 0	       269	ehci-sched.c	FUNCTION_71	CALL_1
+0x40004f3	    0x48c747380000	               mov qword [rdi + 0x38], 0	       269	ehci-sched.c	FUNCTION_71	CALL_1
+0x40004fb	        0x488d7f08	                      lea rdi, [rdi + 8]	       269	ehci-sched.c	FUNCTION_71	CALL_1
+0x40004ff	          0x4c89c1	                             mov rcx, r8	       269	ehci-sched.c	FUNCTION_71	CALL_1
+0x4000502	            0x31c0	                            xor eax, eax	       269	ehci-sched.c	FUNCTION_71	CALL_1
+0x4000504	        0x4c8d5e20	                   lea r11, [rsi + 0x20]	       272	ehci-sched.c	FUNCTION_71	FUNCTION_1
+0x4000508	        0x4883e7f8	             and rdi, 0xfffffffffffffff8	       269	ehci-sched.c	FUNCTION_71	CALL_1
+0x400050c	          0x4829f9	                            sub rcx, rdi	       269	ehci-sched.c	FUNCTION_71	CALL_1
+0x400050f	          0x83c140	                           add ecx, 0x40	       269	ehci-sched.c	FUNCTION_71	CALL_1
+0x4000512	          0xc1e903	                              shr ecx, 3	       269	ehci-sched.c	FUNCTION_71	CALL_1
+0x4000515	          0xf348ab	              rep stosq qword [rdi], rax	       269	ehci-sched.c	FUNCTION_71	CALL_1
+0x4000518	        0x488b4620	            mov rax, qword [rsi + 0x20] 	       272	ehci-sched.c	FUNCTION_71	FUNCTION_1
+0x400051c	          0x4939c3	                            cmp r11, rax	       272	ehci-sched.c	FUNCTION_71	FUNCTION_1
+0x400051f	        0x4c8d50f0	                   lea r10, [rax - 0x10]	       272	ehci-sched.c	FUNCTION_71	FUNCTION_1
+0x4000523	     0xf8484000000	                            je 0x40005ad	       272	ehci-sched.c	FUNCTION_71	FUNCTION_1
+0x4000529	      0x450fb64a28	           movzx r9d, byte [r10 + 0x28] 	       273	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x400052e	        0x41c1e103	                              shl r9d, 3	       273	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x4000532	        0x4183f93f	                           cmp r9d, 0x3f	       273	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x4000536	            0x7f54	                            jg 0x400058c	       273	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x4000538	      0x410fb65229	           movzx edx, byte [r10 + 0x29] 	       279	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x400053d	          0x4489cf	                            mov edi, r9d	       275	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x4000540	      0x410fb74a20	           movzx ecx, word [r10 + 0x20] 	       276	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x4000545	          0x83fa07	                              cmp edx, 7	       279	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x4000548	          0x4889d0	                            mov rax, rdx	       279	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x400054b	            0x7731	                            ja 0x400057e	       279	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x400054d	          0x4801f8	                            add rax, rdi	       280	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x4000550	          0x4c01c0	                             add rax, r8	       280	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x4000553	           0xfb630	                   movzx esi, byte [rax]	       280	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x4000556	             0x1f1	                            add ecx, esi	       280	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x4000558	          0x83f97d	                           cmp ecx, 0x7d	       283	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2	IF_1
+0x400055b	            0x7716	                            ja 0x4000573	       283	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2	IF_1
+0x400055d	            0xeb3c	                           jmp 0x400059b	       283	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2	IF_1
+0x400055f	            0x89d0	                            mov eax, edx	       280	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x4000561	          0x4801f8	                            add rax, rdi	       280	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x4000564	          0x4c01c0	                             add rax, r8	       280	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x4000567	           0xfb630	                   movzx esi, byte [rax]	       280	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x400056a	        0x8d4c3183	             lea ecx, [rcx + rsi - 0x7d]	       280	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x400056e	          0x83f97d	                           cmp ecx, 0x7d	       283	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2	IF_1
+0x4000571	            0x7628	                           jbe 0x400059b	       283	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2	IF_1
+0x4000573	          0x83c201	                              add edx, 1	       279	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x4000576	          0xc6007d	                    mov byte [rax], 0x7d	       287	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x4000579	          0x83fa08	                              cmp edx, 8	       279	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x400057c	            0x75e1	                           jne 0x400055f	       279	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2
+0x400057e	      0x410fb6422c	           movzx eax, byte [r10 + 0x2c] 	       274	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x4000583	          0x4101c1	                            add r9d, eax	       274	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x4000586	        0x4183f93f	                           cmp r9d, 0x3f	       273	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x400058a	            0x76ac	                           jbe 0x4000538	       273	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x400058c	        0x498b4210	            mov rax, qword [r10 + 0x10] 	       272	ehci-sched.c	FUNCTION_71	FUNCTION_1
+0x4000590	          0x4939c3	                            cmp r11, rax	       272	ehci-sched.c	FUNCTION_71	FUNCTION_1
+0x4000593	        0x4c8d50f0	                   lea r10, [rax - 0x10]	       272	ehci-sched.c	FUNCTION_71	FUNCTION_1
+0x4000597	            0x7590	                           jne 0x4000529	       272	ehci-sched.c	FUNCTION_71	FUNCTION_1
+0x4000599	            0xf3c3	                                     ret	       272	ehci-sched.c	FUNCTION_71	FUNCTION_1
+0x400059b	            0x8808	                      mov byte [rax], cl	       284	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1	FOR_2	IF_1
+0x400059d	      0x410fb6422c	           movzx eax, byte [r10 + 0x2c] 	       274	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x40005a2	          0x4101c1	                            add r9d, eax	       274	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x40005a5	        0x4183f93f	                           cmp r9d, 0x3f	       273	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x40005a9	            0x768d	                           jbe 0x4000538	       273	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x40005ab	            0xebdf	                           jmp 0x400058c	       273	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+0x40005ad	            0xf3c3	                                     ret	       273	ehci-sched.c	FUNCTION_71	FUNCTION_1	FOR_1
+ehci_init_driver	CALL,0:functions,0:DO,0:WHILE,0:SWITCH,0:ELSE,0:FOR,0:IF,3	40
+0x4000160	          0x4889fa	                            mov rdx, rdi	      1238	ehci-hcd.c	FUNCTION_26
+0x4000163	            0x31c0	                            xor eax, eax	      1240	ehci-hcd.c	FUNCTION_26
+0x4000165	      0xb92c000000	                           mov ecx, 0x2c	      1240	ehci-hcd.c	FUNCTION_26
+0x400016a	          0x4885f6	                           test rsi, rsi	      1242	ehci-hcd.c	FUNCTION_26	IF_1
+0x400016d	          0xf348ab	              rep stosq qword [rdi], rax	      1240	ehci-hcd.c	FUNCTION_26
+0x4000170	    0x48c702000000	                      mov qword [rdx], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x4000177	    0x48c742080000	                  mov qword [rdx + 8], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x400017f	    0x48c742105803	          mov qword [rdx + 0x10], 0x358 	      1240	ehci-hcd.c	FUNCTION_26
+0x4000187	    0x48c742180000	               mov qword [rdx + 0x18], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x400018f	    0xc74220210100	          mov dword [rdx + 0x20], 0x121 	      1240	ehci-hcd.c	FUNCTION_26
+0x4000196	    0x48c742280000	               mov qword [rdx + 0x28], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x400019e	    0x48c742300000	               mov qword [rdx + 0x30], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x40001a6	    0x48c742480000	               mov qword [rdx + 0x48], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x40001ae	    0x48c742500000	               mov qword [rdx + 0x50], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x40001b6	    0x48c742580000	               mov qword [rdx + 0x58], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x40001be	    0x48c742600000	               mov qword [rdx + 0x60], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x40001c6	    0x48c742680000	               mov qword [rdx + 0x68], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x40001ce	    0x48c782800000	               mov qword [rdx + 0x80], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x40001d9	    0x48c782880000	               mov qword [rdx + 0x88], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x40001e4	    0x48c782900000	               mov qword [rdx + 0x90], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x40001ef	    0x48c782980000	               mov qword [rdx + 0x98], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x40001fa	    0x48c782a00000	               mov qword [rdx + 0xa0], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x4000205	    0x48c782a80000	               mov qword [rdx + 0xa8], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x4000210	    0x48c782b80000	               mov qword [rdx + 0xb8], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x400021b	    0x48c782c00000	               mov qword [rdx + 0xc0], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x4000226	    0x48c782c80000	               mov qword [rdx + 0xc8], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x4000231	    0x48c782d80000	               mov qword [rdx + 0xd8], 0	      1240	ehci-hcd.c	FUNCTION_26
+0x400023c	            0x742a	                            je 0x4000268	      1242	ehci-hcd.c	FUNCTION_26	IF_1
+0x400023e	          0x488b06	                    mov rax, qword [rsi]	      1243	ehci-hcd.c	FUNCTION_26	IF_1
+0x4000241	    0x480558030000	                          add rax, 0x358	      1243	ehci-hcd.c	FUNCTION_26	IF_1
+0x4000247	        0x48894210	             mov qword [rdx + 0x10], rax	      1243	ehci-hcd.c	FUNCTION_26	IF_1
+0x400024b	        0x488b4608	                mov rax, qword [rsi + 8]	      1244	ehci-hcd.c	FUNCTION_26	IF_1	IF_2
+0x400024f	          0x4885c0	                           test rax, rax	      1244	ehci-hcd.c	FUNCTION_26	IF_1	IF_2
+0x4000252	            0x7404	                            je 0x4000258	      1244	ehci-hcd.c	FUNCTION_26	IF_1	IF_2
+0x4000254	        0x48894228	             mov qword [rdx + 0x28], rax	      1245	ehci-hcd.c	FUNCTION_26	IF_1	IF_2
+0x4000258	        0x488b4610	            mov rax, qword [rsi + 0x10] 	      1246	ehci-hcd.c	FUNCTION_26	IF_1	IF_3
+0x400025c	          0x4885c0	                           test rax, rax	      1246	ehci-hcd.c	FUNCTION_26	IF_1	IF_3
+0x400025f	            0x7407	                            je 0x4000268	      1246	ehci-hcd.c	FUNCTION_26	IF_1	IF_3
+0x4000261	    0x488982580100	            mov qword [rdx + 0x158], rax	      1247	ehci-hcd.c	FUNCTION_26	IF_1	IF_3
+0x4000268	            0xf3c3	                                     ret	      1247	ehci-hcd.c	FUNCTION_26	IF_1	IF_3

@@ -1,0 +1,270 @@
+quota_getstatev	DO,0:SWITCH,0:FOR,1:IF,6:functions,0:WHILE,0:CALL,5:ELSE,0	96
+0x4000420	              0x55	                                push rbp	       409	quota.c	FUNCTION_22
+0x4000421	              0x53	                                push rbx	       409	quota.c	FUNCTION_22
+0x4000422	          0x4889fa	                            mov rdx, rdi	       409	quota.c	FUNCTION_22
+0x4000425	      0xb916000000	                           mov ecx, 0x16	       414	quota.c	FUNCTION_22	CALL_1
+0x400042a	          0x4889f3	                            mov rbx, rsi	       409	quota.c	FUNCTION_22
+0x400042d	    0x4881ecb80000	                           sub rsp, 0xb8	       409	quota.c	FUNCTION_22
+0x4000434	    0x65488b042528	                mov rax, qword gs:[0x28]	       409	quota.c	FUNCTION_22
+0x400043d	    0x48898424b000	             mov qword [rsp + 0xb0], rax	       409	quota.c	FUNCTION_22
+0x4000445	            0x31c0	                            xor eax, eax	       409	quota.c	FUNCTION_22
+0x4000447	          0x4889e7	                            mov rdi, rsp	       414	quota.c	FUNCTION_22	CALL_1
+0x400044a	          0x4889e6	                            mov rsi, rsp	       414	quota.c	FUNCTION_22	CALL_1
+0x400044d	          0xf348ab	              rep stosq qword [rdi], rax	       414	quota.c	FUNCTION_22	CALL_1
+0x4000450	        0x488b4240	            mov rax, qword [rdx + 0x40] 	       415	quota.c	FUNCTION_22	CALL_2
+0x4000454	          0x4889d7	                            mov rdi, rdx	       415	quota.c	FUNCTION_22	CALL_2
+0x4000457	        0x488b4048	            mov rax, qword [rax + 0x48] 	       415	quota.c	FUNCTION_22	CALL_2
+0x400045b	      0xe800000000	                          call 0x4000460	       415	quota.c	FUNCTION_22	CALL_2
+0x4000460	            0x85c0	                           test eax, eax	       416	quota.c	FUNCTION_22	IF_1
+0x4000462	     0xf88fd000000	                            js 0x4000565	       416	quota.c	FUNCTION_22	IF_1
+0x4000468	            0x31ed	                            xor ebp, ebp	       416	quota.c	FUNCTION_22	IF_1
+0x400046a	      0xb914000000	                           mov ecx, 0x14	       419	quota.c	FUNCTION_22	CALL_3
+0x400046f	          0x4889df	                            mov rdi, rbx	       419	quota.c	FUNCTION_22	CALL_3
+0x4000472	          0x4889e8	                            mov rax, rbp	       419	quota.c	FUNCTION_22	CALL_3
+0x4000475	      0x448b442408	                mov r8d, dword [rsp + 8]	       419	quota.c	FUNCTION_22	CALL_3
+0x400047a	      0x448b542478	           mov r10d, dword [rsp + 0x78] 	       421	quota.c	FUNCTION_22	CALL_4
+0x400047f	          0xf348ab	              rep stosq qword [rdi], rax	       419	quota.c	FUNCTION_22	CALL_3
+0x4000482	      0x448b4c2440	            mov r9d, dword [rsp + 0x40] 	       421	quota.c	FUNCTION_22	CALL_4
+0x4000487	          0xc60301	                       mov byte [rbx], 1	       420	quota.c	FUNCTION_22
+0x400048a	          0x4489d2	                           mov edx, r10d	       421	quota.c	FUNCTION_22	CALL_4
+0x400048d	          0x4489c7	                            mov edi, r8d	       421	quota.c	FUNCTION_22	CALL_4
+0x4000490	          0x4489ce	                            mov esi, r9d	       421	quota.c	FUNCTION_22	CALL_4
+0x4000493	      0xe8a8fdffff	    call sym.quota_state_to_flags.isra.4	       421	quota.c	FUNCTION_22	CALL_4
+0x4000498	          0x6685c0	                             test ax, ax	       423	quota.c	FUNCTION_22	IF_2
+0x400049b	        0x66894302	                  mov word [rbx + 2], ax	       421	quota.c	FUNCTION_22	CALL_4
+0x400049f	     0xf84e7000000	                            je 0x400058c	       423	quota.c	FUNCTION_22	IF_2
+0x40004a5	          0x8b0424	                    mov eax, dword [rsp]	       425	quota.c	FUNCTION_22
+0x40004a8	        0x4183e004	                              and r8d, 4	       431	quota.c	FUNCTION_22	FOR_1	IF_3
+0x40004ac	          0x894304	                mov dword [rbx + 4], eax	       425	quota.c	FUNCTION_22
+0x40004af	            0x7516	                           jne 0x40004c7	       431	quota.c	FUNCTION_22	FOR_1	IF_3
+0x40004b1	        0x4183e104	                              and r9d, 4	       431	quota.c	FUNCTION_22	FOR_1	IF_3
+0x40004b5	     0xf85c7000000	                           jne 0x4000582	       431	quota.c	FUNCTION_22	FOR_1	IF_3
+0x40004bb	        0x4183e204	                             and r10d, 4	       431	quota.c	FUNCTION_22	FOR_1	IF_3
+0x40004bf	     0xf85ce000000	                           jne 0x4000593	       431	quota.c	FUNCTION_22	FOR_1	IF_3
+0x40004c5	             0xf0b	                                     ud2	       431	quota.c	FUNCTION_22	FOR_1	IF_3
+0x40004c7	            0x31c0	                            xor eax, eax	       430	quota.c	FUNCTION_22	FOR_1
+0x40004c9	    0x488d14c50000	                        lea rdx, [rax*8]	       434	quota.c	FUNCTION_22
+0x40004d1	        0x48c1e006	                              shl rax, 6	       434	quota.c	FUNCTION_22
+0x40004d5	          0x4829d0	                            sub rax, rdx	       434	quota.c	FUNCTION_22
+0x40004d8	        0x8b54040c	       mov edx, dword [rsp + rax + 0xc] 	       434	quota.c	FUNCTION_22
+0x40004dc	          0x895350	             mov dword [rbx + 0x50], edx	       434	quota.c	FUNCTION_22
+0x40004df	        0x8b540410	      mov edx, dword [rsp + rax + 0x10] 	       435	quota.c	FUNCTION_22
+0x40004e3	          0x895354	             mov dword [rbx + 0x54], edx	       435	quota.c	FUNCTION_22
+0x40004e6	        0x8b540414	      mov edx, dword [rsp + rax + 0x14] 	       436	quota.c	FUNCTION_22
+0x40004ea	          0x895358	             mov dword [rbx + 0x58], edx	       436	quota.c	FUNCTION_22
+0x40004ed	        0x8b540418	      mov edx, dword [rsp + rax + 0x18] 	       437	quota.c	FUNCTION_22
+0x40004f1	        0x8b44041c	      mov eax, dword [rsp + rax + 0x1c] 	       438	quota.c	FUNCTION_22
+0x40004f5	        0x6689535c	               mov word [rbx + 0x5c], dx	       437	quota.c	FUNCTION_22
+0x40004f9	        0x6689435e	               mov word [rbx + 0x5e], ax	       438	quota.c	FUNCTION_22
+0x40004fd	      0x488b442428	            mov rax, qword [rsp + 0x28] 	       441	quota.c	FUNCTION_22	IF_4
+0x4000502	          0x4885c0	                           test rax, rax	       441	quota.c	FUNCTION_22	IF_4
+0x4000505	            0x7415	                            je 0x400051c	       441	quota.c	FUNCTION_22	IF_4
+0x4000507	        0x48894308	                mov qword [rbx + 8], rax	       442	quota.c	FUNCTION_22	IF_4
+0x400050b	      0x488b442430	            mov rax, qword [rsp + 0x30] 	       443	quota.c	FUNCTION_22	IF_4
+0x4000510	        0x48894310	             mov qword [rbx + 0x10], rax	       443	quota.c	FUNCTION_22	IF_4
+0x4000514	      0x488b442438	            mov rax, qword [rsp + 0x38] 	       444	quota.c	FUNCTION_22	IF_4
+0x4000519	          0x894318	             mov dword [rbx + 0x18], eax	       444	quota.c	FUNCTION_22	IF_4
+0x400051c	      0x488b442460	            mov rax, qword [rsp + 0x60] 	       446	quota.c	FUNCTION_22	IF_5
+0x4000521	          0x4885c0	                           test rax, rax	       446	quota.c	FUNCTION_22	IF_5
+0x4000524	            0x7415	                            je 0x400053b	       446	quota.c	FUNCTION_22	IF_5
+0x4000526	        0x48894320	             mov qword [rbx + 0x20], rax	       447	quota.c	FUNCTION_22	IF_5
+0x400052a	      0x488b442468	            mov rax, qword [rsp + 0x68] 	       448	quota.c	FUNCTION_22	IF_5
+0x400052f	        0x48894328	             mov qword [rbx + 0x28], rax	       448	quota.c	FUNCTION_22	IF_5
+0x4000533	      0x488b442470	            mov rax, qword [rsp + 0x70] 	       449	quota.c	FUNCTION_22	IF_5
+0x4000538	          0x894330	             mov dword [rbx + 0x30], eax	       449	quota.c	FUNCTION_22	IF_5
+0x400053b	    0x488b94249800	            mov rdx, qword [rsp + 0x98] 	       451	quota.c	FUNCTION_22	IF_6
+0x4000543	            0x31c0	                            xor eax, eax	       456	quota.c	FUNCTION_22
+0x4000545	          0x4885d2	                           test rdx, rdx	       451	quota.c	FUNCTION_22	IF_6
+0x4000548	            0x741b	                            je 0x4000565	       451	quota.c	FUNCTION_22	IF_6
+0x400054a	        0x48895338	             mov qword [rbx + 0x38], rdx	       452	quota.c	FUNCTION_22	IF_6
+0x400054e	    0x488b9424a000	            mov rdx, qword [rsp + 0xa0] 	       453	quota.c	FUNCTION_22	IF_6
+0x4000556	        0x48895340	             mov qword [rbx + 0x40], rdx	       453	quota.c	FUNCTION_22	IF_6
+0x400055a	    0x488b9424a800	            mov rdx, qword [rsp + 0xa8] 	       454	quota.c	FUNCTION_22	IF_6
+0x4000562	          0x895348	             mov dword [rbx + 0x48], edx	       454	quota.c	FUNCTION_22	IF_6
+0x4000565	    0x488b8c24b000	            mov rcx, qword [rsp + 0xb0] 	       457	quota.c	FUNCTION_22
+0x400056d	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       457	quota.c	FUNCTION_22
+0x4000576	            0x7525	                           jne 0x400059d	       457	quota.c	FUNCTION_22
+0x4000578	    0x4881c4b80000	                           add rsp, 0xb8	       457	quota.c	FUNCTION_22
+0x400057f	              0x5b	                                 pop rbx	       457	quota.c	FUNCTION_22
+0x4000580	              0x5d	                                 pop rbp	       457	quota.c	FUNCTION_22
+0x4000581	              0xc3	                                     ret	       457	quota.c	FUNCTION_22
+0x4000582	      0xb801000000	                              mov eax, 1	       430	quota.c	FUNCTION_22	FOR_1
+0x4000587	      0xe93dffffff	                           jmp 0x40004c9	       430	quota.c	FUNCTION_22	FOR_1
+0x400058c	      0xb8daffffff	                     mov eax, 0xffffffda	       424	quota.c	FUNCTION_22	IF_2
+0x4000591	            0xebd2	                           jmp 0x4000565	       424	quota.c	FUNCTION_22	IF_2
+0x4000593	      0xb802000000	                              mov eax, 2	       430	quota.c	FUNCTION_22	FOR_1
+0x4000598	      0xe92cffffff	                           jmp 0x40004c9	       430	quota.c	FUNCTION_22	FOR_1
+0x400059d	      0xe800000000	                          call 0x40005a2	       457	quota.c	FUNCTION_22
+quota_sync_one	DO,0:SWITCH,0:FOR,0:IF,1:functions,0:WHILE,0:CALL,1:ELSE,0	14
+0x4000040	        0x488b4740	            mov rax, qword [rdi + 0x40] 	        53	quota.c	FUNCTION_2	IF_1
+0x4000044	          0x4885c0	                           test rax, rax	        53	quota.c	FUNCTION_2	IF_1
+0x4000047	            0x741a	                            je 0x4000063	        53	quota.c	FUNCTION_2	IF_1
+0x4000049	        0x488b5020	            mov rdx, qword [rax + 0x20] 	        53	quota.c	FUNCTION_2	IF_1
+0x400004d	          0x4885d2	                           test rdx, rdx	        53	quota.c	FUNCTION_2	IF_1
+0x4000050	            0x7411	                            je 0x4000063	        53	quota.c	FUNCTION_2	IF_1
+0x4000052	            0x8b0e	                    mov ecx, dword [rsi]	        51	quota.c	FUNCTION_2
+0x4000054	      0xb801000000	                              mov eax, 1	        53	quota.c	FUNCTION_2	IF_1
+0x4000059	            0xd3e0	                             shl eax, cl	        53	quota.c	FUNCTION_2	IF_1
+0x400005b	    0x8587f8000000	           test dword [rdi + 0xf8], eax 	        53	quota.c	FUNCTION_2	IF_1
+0x4000061	            0x7502	                           jne 0x4000065	        53	quota.c	FUNCTION_2	IF_1
+0x4000063	            0xf3c3	                                     ret	        53	quota.c	FUNCTION_2	IF_1
+0x4000065	            0x89ce	                            mov esi, ecx	        55	quota.c	FUNCTION_2	CALL_1
+0x4000067	      0xe900000000	                           jmp 0x400006c	        55	quota.c	FUNCTION_2	CALL_1
+quota_getstate	DO,0:SWITCH,0:FOR,1:IF,7:functions,0:WHILE,0:CALL,5:ELSE,0	98
+0x4000290	              0x55	                                push rbp	       336	quota.c	FUNCTION_20
+0x4000291	              0x53	                                push rbx	       336	quota.c	FUNCTION_20
+0x4000292	          0x4889fa	                            mov rdx, rdi	       336	quota.c	FUNCTION_20
+0x4000295	      0xb916000000	                           mov ecx, 0x16	       341	quota.c	FUNCTION_20	CALL_1
+0x400029a	          0x4889f3	                            mov rbx, rsi	       336	quota.c	FUNCTION_20
+0x400029d	    0x4881ecb80000	                           sub rsp, 0xb8	       336	quota.c	FUNCTION_20
+0x40002a4	    0x65488b042528	                mov rax, qword gs:[0x28]	       336	quota.c	FUNCTION_20
+0x40002ad	    0x48898424b000	             mov qword [rsp + 0xb0], rax	       336	quota.c	FUNCTION_20
+0x40002b5	            0x31c0	                            xor eax, eax	       336	quota.c	FUNCTION_20
+0x40002b7	          0x4889e7	                            mov rdi, rsp	       341	quota.c	FUNCTION_20	CALL_1
+0x40002ba	          0x4889e6	                            mov rsi, rsp	       341	quota.c	FUNCTION_20	CALL_1
+0x40002bd	          0xf348ab	              rep stosq qword [rdi], rax	       341	quota.c	FUNCTION_20	CALL_1
+0x40002c0	        0x488b4240	            mov rax, qword [rdx + 0x40] 	       342	quota.c	FUNCTION_20	CALL_2
+0x40002c4	          0x4889d7	                            mov rdi, rdx	       342	quota.c	FUNCTION_20	CALL_2
+0x40002c7	        0x488b4048	            mov rax, qword [rax + 0x48] 	       342	quota.c	FUNCTION_20	CALL_2
+0x40002cb	      0xe800000000	                          call 0x40002d0	       342	quota.c	FUNCTION_20	CALL_2
+0x40002d0	            0x85c0	                           test eax, eax	       343	quota.c	FUNCTION_20	IF_1
+0x40002d2	     0xf8803010000	                            js 0x40003db	       343	quota.c	FUNCTION_20	IF_1
+0x40002d8	            0x31ed	                            xor ebp, ebp	       343	quota.c	FUNCTION_20	IF_1
+0x40002da	      0xb90a000000	                            mov ecx, 0xa	       346	quota.c	FUNCTION_20	CALL_3
+0x40002df	          0x4889df	                            mov rdi, rbx	       346	quota.c	FUNCTION_20	CALL_3
+0x40002e2	          0x4889e8	                            mov rax, rbp	       346	quota.c	FUNCTION_20	CALL_3
+0x40002e5	      0x448b4c2408	                mov r9d, dword [rsp + 8]	       346	quota.c	FUNCTION_20	CALL_3
+0x40002ea	      0x448b442440	            mov r8d, dword [rsp + 0x40] 	       346	quota.c	FUNCTION_20	CALL_3
+0x40002ef	          0xf348ab	              rep stosq qword [rdi], rax	       346	quota.c	FUNCTION_20	CALL_3
+0x40002f2	      0x448b542478	           mov r10d, dword [rsp + 0x78] 	       348	quota.c	FUNCTION_20	CALL_4
+0x40002f7	          0xc60301	                       mov byte [rbx], 1	       347	quota.c	FUNCTION_20
+0x40002fa	          0x4489c6	                            mov esi, r8d	       348	quota.c	FUNCTION_20	CALL_4
+0x40002fd	          0x4489cf	                            mov edi, r9d	       348	quota.c	FUNCTION_20	CALL_4
+0x4000300	          0x4489d2	                           mov edx, r10d	       348	quota.c	FUNCTION_20	CALL_4
+0x4000303	      0xe838ffffff	    call sym.quota_state_to_flags.isra.4	       348	quota.c	FUNCTION_20	CALL_4
+0x4000308	          0x6685c0	                             test ax, ax	       350	quota.c	FUNCTION_20	IF_2
+0x400030b	        0x66894302	                  mov word [rbx + 2], ax	       348	quota.c	FUNCTION_20	CALL_4
+0x400030f	     0xf84ed000000	                            je 0x4000402	       350	quota.c	FUNCTION_20	IF_2
+0x4000315	          0x8b0424	                    mov eax, dword [rsp]	       352	quota.c	FUNCTION_20
+0x4000318	        0x4183e104	                              and r9d, 4	       358	quota.c	FUNCTION_20	FOR_1	IF_3
+0x400031c	          0x894338	             mov dword [rbx + 0x38], eax	       352	quota.c	FUNCTION_20
+0x400031f	            0x7516	                           jne 0x4000337	       358	quota.c	FUNCTION_20	FOR_1	IF_3
+0x4000321	        0x41f6c004	                             test r8b, 4	       358	quota.c	FUNCTION_20	FOR_1	IF_3
+0x4000325	     0xf85cd000000	                           jne 0x40003f8	       358	quota.c	FUNCTION_20	FOR_1	IF_3
+0x400032b	        0x4183e204	                             and r10d, 4	       358	quota.c	FUNCTION_20	FOR_1	IF_3
+0x400032f	     0xf85d4000000	                           jne 0x4000409	       358	quota.c	FUNCTION_20	FOR_1	IF_3
+0x4000335	             0xf0b	                                     ud2	       358	quota.c	FUNCTION_20	FOR_1	IF_3
+0x4000337	            0x31c0	                            xor eax, eax	       357	quota.c	FUNCTION_20	FOR_1
+0x4000339	    0x488d14c50000	                        lea rdx, [rax*8]	       361	quota.c	FUNCTION_20
+0x4000341	        0x48c1e006	                              shl rax, 6	       361	quota.c	FUNCTION_20
+0x4000345	          0x4829d0	                            sub rax, rdx	       361	quota.c	FUNCTION_20
+0x4000348	        0x8b54040c	       mov edx, dword [rsp + rax + 0xc] 	       361	quota.c	FUNCTION_20
+0x400034c	          0x89533c	             mov dword [rbx + 0x3c], edx	       361	quota.c	FUNCTION_20
+0x400034f	        0x8b540410	      mov edx, dword [rsp + rax + 0x10] 	       362	quota.c	FUNCTION_20
+0x4000353	          0x895340	             mov dword [rbx + 0x40], edx	       362	quota.c	FUNCTION_20
+0x4000356	        0x8b540414	      mov edx, dword [rsp + rax + 0x14] 	       363	quota.c	FUNCTION_20
+0x400035a	          0x895344	             mov dword [rbx + 0x44], edx	       363	quota.c	FUNCTION_20
+0x400035d	        0x8b540418	      mov edx, dword [rsp + rax + 0x18] 	       364	quota.c	FUNCTION_20
+0x4000361	        0x8b44041c	      mov eax, dword [rsp + rax + 0x1c] 	       365	quota.c	FUNCTION_20
+0x4000365	        0x66895348	               mov word [rbx + 0x48], dx	       364	quota.c	FUNCTION_20
+0x4000369	        0x6689434a	               mov word [rbx + 0x4a], ax	       365	quota.c	FUNCTION_20
+0x400036d	      0x488b442428	            mov rax, qword [rsp + 0x28] 	       368	quota.c	FUNCTION_20	IF_4
+0x4000372	          0x4885c0	                           test rax, rax	       368	quota.c	FUNCTION_20	IF_4
+0x4000375	            0x7415	                            je 0x400038c	       368	quota.c	FUNCTION_20	IF_4
+0x4000377	        0x48894308	                mov qword [rbx + 8], rax	       369	quota.c	FUNCTION_20	IF_4
+0x400037b	      0x488b442430	            mov rax, qword [rsp + 0x30] 	       370	quota.c	FUNCTION_20	IF_4
+0x4000380	        0x48894310	             mov qword [rbx + 0x10], rax	       370	quota.c	FUNCTION_20	IF_4
+0x4000384	      0x488b442438	            mov rax, qword [rsp + 0x38] 	       371	quota.c	FUNCTION_20	IF_4
+0x4000389	          0x894318	             mov dword [rbx + 0x18], eax	       371	quota.c	FUNCTION_20	IF_4
+0x400038c	      0x488b442460	            mov rax, qword [rsp + 0x60] 	       373	quota.c	FUNCTION_20	IF_5
+0x4000391	          0x4885c0	                           test rax, rax	       373	quota.c	FUNCTION_20	IF_5
+0x4000394	            0x7415	                            je 0x40003ab	       373	quota.c	FUNCTION_20	IF_5
+0x4000396	        0x48894320	             mov qword [rbx + 0x20], rax	       374	quota.c	FUNCTION_20	IF_5
+0x400039a	      0x488b442468	            mov rax, qword [rsp + 0x68] 	       375	quota.c	FUNCTION_20	IF_5
+0x400039f	        0x48894328	             mov qword [rbx + 0x28], rax	       375	quota.c	FUNCTION_20	IF_5
+0x40003a3	      0x488b442470	            mov rax, qword [rsp + 0x70] 	       376	quota.c	FUNCTION_20	IF_5
+0x40003a8	          0x894330	             mov dword [rbx + 0x30], eax	       376	quota.c	FUNCTION_20	IF_5
+0x40003ab	    0x488b94249800	            mov rdx, qword [rsp + 0x98] 	       378	quota.c	FUNCTION_20	IF_6
+0x40003b3	            0x31c0	                            xor eax, eax	       392	quota.c	FUNCTION_20
+0x40003b5	          0x4885d2	                           test rdx, rdx	       378	quota.c	FUNCTION_20	IF_6
+0x40003b8	            0x7421	                            je 0x40003db	       378	quota.c	FUNCTION_20	IF_6
+0x40003ba	        0x4183e004	                              and r8d, 4	       384	quota.c	FUNCTION_20	IF_6	IF_7
+0x40003be	            0x751b	                           jne 0x40003db	       384	quota.c	FUNCTION_20	IF_6	IF_7
+0x40003c0	        0x48895320	             mov qword [rbx + 0x20], rdx	       385	quota.c	FUNCTION_20	IF_6	IF_7
+0x40003c4	    0x488b9424a000	            mov rdx, qword [rsp + 0xa0] 	       386	quota.c	FUNCTION_20	IF_6	IF_7
+0x40003cc	        0x48895328	             mov qword [rbx + 0x28], rdx	       386	quota.c	FUNCTION_20	IF_6	IF_7
+0x40003d0	    0x488b9424a800	            mov rdx, qword [rsp + 0xa8] 	       388	quota.c	FUNCTION_20	IF_6	IF_7
+0x40003d8	          0x895330	             mov dword [rbx + 0x30], edx	       388	quota.c	FUNCTION_20	IF_6	IF_7
+0x40003db	    0x488b8c24b000	            mov rcx, qword [rsp + 0xb0] 	       393	quota.c	FUNCTION_20
+0x40003e3	    0x6548330c2528	                xor rcx, qword gs:[0x28]	       393	quota.c	FUNCTION_20
+0x40003ec	            0x7525	                           jne 0x4000413	       393	quota.c	FUNCTION_20
+0x40003ee	    0x4881c4b80000	                           add rsp, 0xb8	       393	quota.c	FUNCTION_20
+0x40003f5	              0x5b	                                 pop rbx	       393	quota.c	FUNCTION_20
+0x40003f6	              0x5d	                                 pop rbp	       393	quota.c	FUNCTION_20
+0x40003f7	              0xc3	                                     ret	       393	quota.c	FUNCTION_20
+0x40003f8	      0xb801000000	                              mov eax, 1	       357	quota.c	FUNCTION_20	FOR_1
+0x40003fd	      0xe937ffffff	                           jmp 0x4000339	       357	quota.c	FUNCTION_20	FOR_1
+0x4000402	      0xb8daffffff	                     mov eax, 0xffffffda	       351	quota.c	FUNCTION_20	IF_2
+0x4000407	            0xebd2	                           jmp 0x40003db	       351	quota.c	FUNCTION_20	IF_2
+0x4000409	      0xb802000000	                              mov eax, 2	       357	quota.c	FUNCTION_20	FOR_1
+0x400040e	      0xe926ffffff	                           jmp 0x4000339	       357	quota.c	FUNCTION_20	FOR_1
+0x4000413	      0xe800000000	                          call 0x4000418	       393	quota.c	FUNCTION_20
+copy_to_xfs_dqblk	DO,0:SWITCH,0:FOR,0:IF,2:functions,0:WHILE,0:CALL,7:ELSE,2	58
+0x4000150	          0x4989f8	                             mov r8, rdi	       610	quota.c	FUNCTION_29
+0x4000153	          0x4189c9	                            mov r9d, ecx	       610	quota.c	FUNCTION_29
+0x4000156	            0x31c0	                            xor eax, eax	       611	quota.c	FUNCTION_29	CALL_1
+0x4000158	      0xb90e000000	                            mov ecx, 0xe	       611	quota.c	FUNCTION_29	CALL_1
+0x400015d	            0x85d2	                           test edx, edx	       614	quota.c	FUNCTION_29	IF_1
+0x400015f	          0xf348ab	              rep stosq qword [rdi], rax	       611	quota.c	FUNCTION_29	CALL_1
+0x4000162	        0x41c60001	                        mov byte [r8], 1	       612	quota.c	FUNCTION_29
+0x4000166	        0x45894804	                 mov dword [r8 + 4], r9d	       613	quota.c	FUNCTION_29
+0x400016a	     0xf84c3000000	                            je 0x4000233	       614	quota.c	FUNCTION_29	IF_1
+0x4000170	          0x83fa02	                              cmp edx, 2	       617	quota.c	FUNCTION_29	ELSE_1	IF_2
+0x4000173	           0xf95c0	                                setne al	       617	quota.c	FUNCTION_29	ELSE_1	IF_2
+0x4000176	        0x8d440002	                lea eax, [rax + rax + 2]	       617	quota.c	FUNCTION_29	ELSE_1	IF_2
+0x400017a	        0x41884001	                   mov byte [r8 + 1], al	       617	quota.c	FUNCTION_29	ELSE_1	IF_2
+0x400017e	        0x488b4608	                mov rax, qword [rsi + 8]	       620	quota.c	FUNCTION_29	CALL_2
+0x4000182	    0x4805ff010000	                          add rax, 0x1ff	       620	quota.c	FUNCTION_29	CALL_2
+0x4000188	        0x48c1e809	                              shr rax, 9	       620	quota.c	FUNCTION_29	CALL_2
+0x400018c	        0x49894008	                 mov qword [r8 + 8], rax	       620	quota.c	FUNCTION_29	CALL_2
+0x4000190	        0x488b4610	            mov rax, qword [rsi + 0x10] 	       621	quota.c	FUNCTION_29	CALL_3
+0x4000194	    0x4805ff010000	                          add rax, 0x1ff	       621	quota.c	FUNCTION_29	CALL_3
+0x400019a	        0x48c1e809	                              shr rax, 9	       621	quota.c	FUNCTION_29	CALL_3
+0x400019e	        0x49894010	              mov qword [r8 + 0x10], rax	       621	quota.c	FUNCTION_29	CALL_3
+0x40001a2	        0x488b4618	            mov rax, qword [rsi + 0x18] 	       622	quota.c	FUNCTION_29
+0x40001a6	        0x49894018	              mov qword [r8 + 0x18], rax	       622	quota.c	FUNCTION_29
+0x40001aa	        0x488b4620	            mov rax, qword [rsi + 0x20] 	       623	quota.c	FUNCTION_29
+0x40001ae	        0x49894020	              mov qword [r8 + 0x20], rax	       623	quota.c	FUNCTION_29
+0x40001b2	        0x488b4628	            mov rax, qword [rsi + 0x28] 	       624	quota.c	FUNCTION_29	CALL_4
+0x40001b6	    0x4805ff010000	                          add rax, 0x1ff	       624	quota.c	FUNCTION_29	CALL_4
+0x40001bc	        0x48c1e809	                              shr rax, 9	       624	quota.c	FUNCTION_29	CALL_4
+0x40001c0	        0x49894028	              mov qword [r8 + 0x28], rax	       624	quota.c	FUNCTION_29	CALL_4
+0x40001c4	        0x488b4630	            mov rax, qword [rsi + 0x30] 	       625	quota.c	FUNCTION_29
+0x40001c8	        0x49894030	              mov qword [r8 + 0x30], rax	       625	quota.c	FUNCTION_29
+0x40001cc	        0x488b4638	            mov rax, qword [rsi + 0x38] 	       626	quota.c	FUNCTION_29
+0x40001d0	        0x41894038	              mov dword [r8 + 0x38], eax	       626	quota.c	FUNCTION_29
+0x40001d4	        0x488b4640	            mov rax, qword [rsi + 0x40] 	       627	quota.c	FUNCTION_29
+0x40001d8	        0x4189403c	              mov dword [r8 + 0x3c], eax	       627	quota.c	FUNCTION_29
+0x40001dc	          0x8b4648	            mov eax, dword [rsi + 0x48] 	       628	quota.c	FUNCTION_29
+0x40001df	      0x6641894040	                mov word [r8 + 0x40], ax	       628	quota.c	FUNCTION_29
+0x40001e4	          0x8b464c	            mov eax, dword [rsi + 0x4c] 	       629	quota.c	FUNCTION_29
+0x40001e7	      0x6641894042	                mov word [r8 + 0x42], ax	       629	quota.c	FUNCTION_29
+0x40001ec	        0x488b4650	            mov rax, qword [rsi + 0x50] 	       630	quota.c	FUNCTION_29	CALL_5
+0x40001f0	    0x4805ff010000	                          add rax, 0x1ff	       630	quota.c	FUNCTION_29	CALL_5
+0x40001f6	        0x48c1e809	                              shr rax, 9	       630	quota.c	FUNCTION_29	CALL_5
+0x40001fa	        0x49894048	              mov qword [r8 + 0x48], rax	       630	quota.c	FUNCTION_29	CALL_5
+0x40001fe	        0x488b4658	            mov rax, qword [rsi + 0x58] 	       631	quota.c	FUNCTION_29	CALL_6
+0x4000202	    0x4805ff010000	                          add rax, 0x1ff	       631	quota.c	FUNCTION_29	CALL_6
+0x4000208	        0x48c1e809	                              shr rax, 9	       631	quota.c	FUNCTION_29	CALL_6
+0x400020c	        0x49894050	              mov qword [r8 + 0x50], rax	       631	quota.c	FUNCTION_29	CALL_6
+0x4000210	        0x488b4660	            mov rax, qword [rsi + 0x60] 	       632	quota.c	FUNCTION_29	CALL_7
+0x4000214	    0x4805ff010000	                          add rax, 0x1ff	       632	quota.c	FUNCTION_29	CALL_7
+0x400021a	        0x48c1e809	                              shr rax, 9	       632	quota.c	FUNCTION_29	CALL_7
+0x400021e	        0x49894058	              mov qword [r8 + 0x58], rax	       632	quota.c	FUNCTION_29	CALL_7
+0x4000222	        0x488b4668	            mov rax, qword [rsi + 0x68] 	       633	quota.c	FUNCTION_29
+0x4000226	        0x41894060	              mov dword [r8 + 0x60], eax	       633	quota.c	FUNCTION_29
+0x400022a	          0x8b4670	            mov eax, dword [rsi + 0x70] 	       634	quota.c	FUNCTION_29
+0x400022d	      0x6641894064	                mov word [r8 + 0x64], ax	       634	quota.c	FUNCTION_29
+0x4000232	              0xc3	                                     ret	       634	quota.c	FUNCTION_29
+0x4000233	      0x41c6400101	                    mov byte [r8 + 1], 1	       615	quota.c	FUNCTION_29	IF_1
+0x4000238	      0xe941ffffff	                           jmp 0x400017e	       615	quota.c	FUNCTION_29	IF_1

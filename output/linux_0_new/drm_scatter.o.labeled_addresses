@@ -1,0 +1,46 @@
+drm_legacy_sg_cleanup	CALL,3:ELSE,0:SWITCH,0:FOR,0:functions,0:WHILE,0:DO,0:IF,1	17
+0x4000090	        0x488b4720	            mov rax, qword [rdi + 0x20] 	       129	drmP.h	FUNCTION_7
+0x4000094	    0x8b8078010000	           mov eax, dword [rax + 0x178] 	       129	drmP.h	FUNCTION_7
+0x400009a	            0xa810	                           test al, 0x10	        70	drm_scatter.c	FUNCTION_3	IF_1	CALL_1
+0x400009c	            0x7410	                            je 0x40000ae	        70	drm_scatter.c	FUNCTION_3	IF_1	CALL_1
+0x400009e	    0x488b97c80100	           mov rdx, qword [rdi + 0x1c8] 	        70	drm_scatter.c	FUNCTION_3	IF_1	CALL_1
+0x40000a5	          0x4885d2	                           test rdx, rdx	        70	drm_scatter.c	FUNCTION_3	IF_1	CALL_1
+0x40000a8	            0x7404	                            je 0x40000ae	        70	drm_scatter.c	FUNCTION_3	IF_1	CALL_1
+0x40000aa	            0xa802	                              test al, 2	        70	drm_scatter.c	FUNCTION_3	IF_1	CALL_1
+0x40000ac	            0x7501	                           jne 0x40000af	        70	drm_scatter.c	FUNCTION_3	IF_1	CALL_1
+0x40000ae	              0xc3	                                     ret	        75	drm_scatter.c	FUNCTION_3
+0x40000af	              0x53	                                push rbx	        69	drm_scatter.c	FUNCTION_3
+0x40000b0	          0x4889fb	                            mov rbx, rdi	        69	drm_scatter.c	FUNCTION_3
+0x40000b3	          0x4889d7	                            mov rdi, rdx	        72	drm_scatter.c	FUNCTION_3	IF_1	CALL_3
+0x40000b6	      0xe885ffffff	                 call sym.drm_sg_cleanup	        72	drm_scatter.c	FUNCTION_3	IF_1	CALL_3
+0x40000bb	    0x48c783c80100	              mov qword [rbx + 0x1c8], 0	        73	drm_scatter.c	FUNCTION_3	IF_1
+0x40000c6	              0x5b	                                 pop rbx	        75	drm_scatter.c	FUNCTION_3
+0x40000c7	              0xc3	                                     ret	        75	drm_scatter.c	FUNCTION_3
+drm_legacy_sg_free	CALL,4:ELSE,0:SWITCH,0:FOR,0:functions,0:WHILE,0:DO,0:IF,3	27
+0x40002c0	        0x488b4720	            mov rax, qword [rdi + 0x20] 	       129	drmP.h	FUNCTION_7
+0x40002c4	    0x8b8078010000	           mov eax, dword [rax + 0x178] 	       207	drm_scatter.c	FUNCTION_5	IF_2	CALL_2
+0x40002ca	          0x83e012	                           and eax, 0x12	       207	drm_scatter.c	FUNCTION_5	IF_2	CALL_2
+0x40002cd	          0x83f812	                           cmp eax, 0x12	       207	drm_scatter.c	FUNCTION_5	IF_2	CALL_2
+0x40002d0	            0x7549	                           jne 0x400031b	       207	drm_scatter.c	FUNCTION_5	IF_2	CALL_2
+0x40002d2	              0x53	                                push rbx	       200	drm_scatter.c	FUNCTION_5
+0x40002d3	    0x488b9fc80100	           mov rbx, qword [rdi + 0x1c8] 	       210	drm_scatter.c	FUNCTION_5
+0x40002da	    0x48c787c80100	              mov qword [rdi + 0x1c8], 0	       211	drm_scatter.c	FUNCTION_5
+0x40002e5	          0x4885db	                           test rbx, rbx	       213	drm_scatter.c	FUNCTION_5	IF_3
+0x40002e8	            0x742a	                            je 0x4000314	       213	drm_scatter.c	FUNCTION_5	IF_3
+0x40002ea	        0x488b4608	                mov rax, qword [rsi + 8]	       213	drm_scatter.c	FUNCTION_5	IF_3
+0x40002ee	          0x483903	                    cmp qword [rbx], rax	       213	drm_scatter.c	FUNCTION_5	IF_3
+0x40002f1	            0x7521	                           jne 0x4000314	       213	drm_scatter.c	FUNCTION_5	IF_3
+0x40002f3	        0x488b5308	                mov rdx, qword [rbx + 8]	       216	drm_scatter.c	FUNCTION_5	CALL_3
+0x40002f7	    0x48c7c6000000	                              mov rsi, 0	       216	drm_scatter.c	FUNCTION_5	CALL_3
+0x40002fe	      0xbf01000000	                              mov edi, 1	       216	drm_scatter.c	FUNCTION_5	CALL_3
+0x4000303	      0xe800000000	                          call 0x4000308	       216	drm_scatter.c	FUNCTION_5	CALL_3
+0x4000308	          0x4889df	                            mov rdi, rbx	       218	drm_scatter.c	FUNCTION_5	CALL_4
+0x400030b	      0xe830fdffff	                 call sym.drm_sg_cleanup	       218	drm_scatter.c	FUNCTION_5	CALL_4
+0x4000310	            0x31c0	                            xor eax, eax	       220	drm_scatter.c	FUNCTION_5
+0x4000312	              0x5b	                                 pop rbx	       221	drm_scatter.c	FUNCTION_5
+0x4000313	              0xc3	                                     ret	       221	drm_scatter.c	FUNCTION_5
+0x4000314	      0xb8eaffffff	                     mov eax, 0xffffffea	       208	drm_scatter.c	FUNCTION_5	IF_2
+0x4000319	              0x5b	                                 pop rbx	       221	drm_scatter.c	FUNCTION_5
+0x400031a	              0xc3	                                     ret	       221	drm_scatter.c	FUNCTION_5
+0x400031b	      0xb8eaffffff	                     mov eax, 0xffffffea	       208	drm_scatter.c	FUNCTION_5	IF_2
+0x4000320	              0xc3	                                     ret	       221	drm_scatter.c	FUNCTION_5

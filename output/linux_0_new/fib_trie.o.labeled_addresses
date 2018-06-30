@@ -1,0 +1,174 @@
+__alias_free_mem	functions,0:SWITCH,0:DO,0:IF,0:CALL,2:ELSE,0:FOR,0:WHILE,0	3
+0x4000410	        0x488d77d8	                   lea rsi, [rdi - 0x28]	       307	fib_trie.c	FUNCTION_7	CALL_2
+0x4000414	    0x488b3d000000	            mov rdi, qword [0x0400041b] 	       307	fib_trie.c	FUNCTION_7	CALL_2
+0x400041b	      0xe900000000	                jmp sym.fib_table_lookup	       307	fib_trie.c	FUNCTION_7	CALL_2
+__trie_free_rcu	functions,0:SWITCH,0:DO,0:IF,1:CALL,3:ELSE,0:FOR,0:WHILE,0	2
+0x40008c0	        0x4883ef18	                           sub rdi, 0x18	      1993	fib_trie.c	FUNCTION_52	CALL_3
+0x40008c4	      0xe900000000	                           jmp 0x40008c9	      1993	fib_trie.c	FUNCTION_52	CALL_3
+update_suffix	functions,0:SWITCH,0:DO,0:IF,2:CALL,2:ELSE,0:FOR,1:WHILE,0	33
+0x4000080	         0xfb64f05	               movzx ecx, byte [rdi + 5]	       724	fib_trie.c	FUNCTION_26	CALL_1
+0x4000084	         0xfb64704	               movzx eax, byte [rdi + 4]	       716	fib_trie.c	FUNCTION_26
+0x4000088	    0x41b901000000	                              mov r9d, 1	       225	fib_trie.c	FUNCTION_5
+0x400008e	         0xfb65706	               movzx edx, byte [rdi + 6]	       724	fib_trie.c	FUNCTION_26	CALL_1
+0x4000092	      0x448d4408ff	                lea r8d, [rax + rcx - 1]	       724	fib_trie.c	FUNCTION_26	CALL_1
+0x4000097	          0x4138d0	                             cmp r8b, dl	       724	fib_trie.c	FUNCTION_26	CALL_1
+0x400009a	        0x450fb6d0	                         movzx r10d, r8b	       724	fib_trie.c	FUNCTION_26	CALL_1
+0x400009e	        0x440f43d2	                        cmovae r10d, edx	       724	fib_trie.c	FUNCTION_26	CALL_1
+0x40000a2	          0x49d3e1	                              shl r9, cl	       225	fib_trie.c	FUNCTION_5
+0x40000a5	        0x4983e1fe	              and r9, 0xfffffffffffffffe	       731	fib_trie.c	FUNCTION_26	FOR_1	CALL_2
+0x40000a9	            0x743a	                            je 0x40000e5	       731	fib_trie.c	FUNCTION_26	FOR_1	CALL_2
+0x40000ab	            0x31d2	                            xor edx, edx	       731	fib_trie.c	FUNCTION_26	FOR_1	CALL_2
+0x40000ad	    0x41b802000000	                              mov r8d, 2	       731	fib_trie.c	FUNCTION_26	FOR_1	CALL_2
+0x40000b3	      0x488b4cd708	       mov rcx, qword [rdi + rdx*8 + 8] 	       732	fib_trie.c	FUNCTION_26	FOR_1
+0x40000b8	          0x4885c9	                           test rcx, rcx	       734	fib_trie.c	FUNCTION_26	FOR_1	IF_1
+0x40000bb	            0x7420	                            je 0x40000dd	       734	fib_trie.c	FUNCTION_26	FOR_1	IF_1
+0x40000bd	         0xfb67106	               movzx esi, byte [rcx + 6]	       734	fib_trie.c	FUNCTION_26	FOR_1	IF_1
+0x40000c1	          0x4038c6	                             cmp sil, al	       734	fib_trie.c	FUNCTION_26	FOR_1	IF_1
+0x40000c4	            0x7617	                           jbe 0x40000dd	       734	fib_trie.c	FUNCTION_26	FOR_1	IF_1
+0x40000c6	            0x89f1	                            mov ecx, esi	       738	fib_trie.c	FUNCTION_26	FOR_1
+0x40000c8	            0x29c1	                            sub ecx, eax	       738	fib_trie.c	FUNCTION_26	FOR_1
+0x40000ca	          0x49d3e0	                              shl r8, cl	       738	fib_trie.c	FUNCTION_26	FOR_1
+0x40000cd	          0x4c89c0	                             mov rax, r8	       740	fib_trie.c	FUNCTION_26	FOR_1
+0x40000d0	          0x48f7d8	                                 neg rax	       740	fib_trie.c	FUNCTION_26	FOR_1
+0x40000d3	          0x4821c2	                            and rdx, rax	       740	fib_trie.c	FUNCTION_26	FOR_1
+0x40000d6	          0x4138f2	                           cmp r10b, sil	       743	fib_trie.c	FUNCTION_26	FOR_1	IF_2
+0x40000d9	            0x89f0	                            mov eax, esi	       734	fib_trie.c	FUNCTION_26	FOR_1	IF_1
+0x40000db	            0x7608	                           jbe 0x40000e5	       743	fib_trie.c	FUNCTION_26	FOR_1	IF_2
+0x40000dd	          0x4c01c2	                             add rdx, r8	       731	fib_trie.c	FUNCTION_26	FOR_1	CALL_2
+0x40000e0	          0x4c39ca	                             cmp rdx, r9	       731	fib_trie.c	FUNCTION_26	FOR_1	CALL_2
+0x40000e3	            0x72ce	                            jb 0x40000b3	       731	fib_trie.c	FUNCTION_26	FOR_1	CALL_2
+0x40000e5	          0x884706	                  mov byte [rdi + 6], al	       747	fib_trie.c	FUNCTION_26
+0x40000e8	              0xc3	                                     ret	       750	fib_trie.c	FUNCTION_26
+fib_route_seq_next	functions,0:SWITCH,0:DO,0:IF,2:CALL,1:ELSE,1:FOR,0:WHILE,0	23
+0x40003b0	              0x53	                                push rbx	      2593	fib_trie.c	FUNCTION_75
+0x40003b1	        0x488b5f78	            mov rbx, qword [rdi + 0x78] 	      2594	fib_trie.c	FUNCTION_75
+0x40003b5	          0x8b4320	            mov eax, dword [rbx + 0x20] 	      2596	fib_trie.c	FUNCTION_75
+0x40003b8	        0x48830201	                      add qword [rdx], 1	      2598	fib_trie.c	FUNCTION_75
+0x40003bc	          0x83c001	                              add eax, 1	      2596	fib_trie.c	FUNCTION_75
+0x40003bf	        0x4883fe01	                              cmp rsi, 1	      2601	fib_trie.c	FUNCTION_75	IF_1
+0x40003c3	            0x7404	                            je 0x40003c9	      2601	fib_trie.c	FUNCTION_75	IF_1
+0x40003c5	            0x85c0	                           test eax, eax	      2601	fib_trie.c	FUNCTION_75	IF_1
+0x40003c7	            0x741c	                            je 0x40003e5	      2601	fib_trie.c	FUNCTION_75	IF_1
+0x40003c9	        0x488d7b10	                   lea rdi, [rbx + 0x10]	      2602	fib_trie.c	FUNCTION_75	CALL_1
+0x40003cd	            0x89c6	                            mov esi, eax	      2602	fib_trie.c	FUNCTION_75	CALL_1
+0x40003cf	      0xe8acfdffff	                  call sym.leaf_walk_rcu	      2602	fib_trie.c	FUNCTION_75	CALL_1
+0x40003d4	          0x4885c0	                           test rax, rax	      2604	fib_trie.c	FUNCTION_75	IF_2
+0x40003d7	            0x740c	                            je 0x40003e5	      2604	fib_trie.c	FUNCTION_75	IF_2
+0x40003d9	            0x8b10	                    mov edx, dword [rax]	      2605	fib_trie.c	FUNCTION_75	IF_2
+0x40003db	      0x4883431801	               add qword [rbx + 0x18], 1	      2606	fib_trie.c	FUNCTION_75	IF_2
+0x40003e0	          0x895320	             mov dword [rbx + 0x20], edx	      2605	fib_trie.c	FUNCTION_75	IF_2
+0x40003e3	              0x5b	                                 pop rbx	      2612	fib_trie.c	FUNCTION_75
+0x40003e4	              0xc3	                                     ret	      2612	fib_trie.c	FUNCTION_75
+0x40003e5	    0x48c743180000	               mov qword [rbx + 0x18], 0	      2608	fib_trie.c	FUNCTION_75	ELSE_1
+0x40003ed	            0x31c0	                            xor eax, eax	      2608	fib_trie.c	FUNCTION_75	ELSE_1
+0x40003ef	              0x5b	                                 pop rbx	      2612	fib_trie.c	FUNCTION_75
+0x40003f0	              0xc3	                                     ret	      2612	fib_trie.c	FUNCTION_75
+node_pull_suffix	functions,0:SWITCH,0:DO,0:IF,1:CALL,1:ELSE,0:FOR,0:WHILE,1	20
+0x40000f0	              0x53	                                push rbx	       919	fib_trie.c	FUNCTION_31
+0x40000f1	         0xfb65f06	               movzx ebx, byte [rdi + 6]	       920	fib_trie.c	FUNCTION_31
+0x40000f5	          0x3a5f04	                  cmp bl, byte [rdi + 4]	       922	fib_trie.c	FUNCTION_31	WHILE_1
+0x40000f8	            0x7629	                           jbe 0x4000123	       922	fib_trie.c	FUNCTION_31	WHILE_1
+0x40000fa	          0x4038f3	                             cmp bl, sil	       922	fib_trie.c	FUNCTION_31	WHILE_1
+0x40000fd	          0x4989fb	                            mov r11, rdi	       922	fib_trie.c	FUNCTION_31	WHILE_1
+0x4000100	            0x7715	                            ja 0x4000117	       922	fib_trie.c	FUNCTION_31	WHILE_1
+0x4000102	            0xeb1f	                           jmp 0x4000123	       922	fib_trie.c	FUNCTION_31	WHILE_1
+0x4000104	        0x4d8b5bf8	                mov r11, qword [r11 - 8]	       927	fib_trie.c	FUNCTION_31	WHILE_1
+0x4000108	      0x410fb65b06	               movzx ebx, byte [r11 + 6]	       928	fib_trie.c	FUNCTION_31	WHILE_1
+0x400010d	        0x41385b04	                  cmp byte [r11 + 4], bl	       922	fib_trie.c	FUNCTION_31	WHILE_1
+0x4000111	            0x7310	                           jae 0x4000123	       922	fib_trie.c	FUNCTION_31	WHILE_1
+0x4000113	            0x38d8	                              cmp al, bl	       922	fib_trie.c	FUNCTION_31	WHILE_1
+0x4000115	            0x730c	                           jae 0x4000123	       922	fib_trie.c	FUNCTION_31	WHILE_1
+0x4000117	          0x4c89df	                            mov rdi, r11	       923	fib_trie.c	FUNCTION_31	WHILE_1	CALL_1
+0x400011a	      0xe861ffffff	                  call sym.update_suffix	       923	fib_trie.c	FUNCTION_31	WHILE_1	CALL_1
+0x400011f	            0x38d8	                              cmp al, bl	       924	fib_trie.c	FUNCTION_31	WHILE_1	IF_1
+0x4000121	            0x75e1	                           jne 0x4000104	       924	fib_trie.c	FUNCTION_31	WHILE_1	IF_1
+0x4000123	              0x5b	                                 pop rbx	       930	fib_trie.c	FUNCTION_31
+0x4000124	              0xc3	                                     ret	       930	fib_trie.c	FUNCTION_31
+fib_find_alias	functions,1:SWITCH,0:DO,0:IF,1:CALL,0:ELSE,0:FOR,0:WHILE,0	26
+0x4000130	          0x4885ff	                           test rdi, rdi	       991	fib_trie.c	FUNCTION_34	IF_1
+0x4000133	            0x7408	                            je 0x400013d	       991	fib_trie.c	FUNCTION_34	IF_1
+0x4000135	          0x488b07	                    mov rax, qword [rdi]	       994	fib_trie.c	FUNCTION_34	FUNCTION_1
+0x4000138	          0x4885c0	                           test rax, rax	       994	fib_trie.c	FUNCTION_34	FUNCTION_1
+0x400013b	            0x7503	                           jne 0x4000140	       994	fib_trie.c	FUNCTION_34	FUNCTION_1
+0x400013d	            0x31c0	                            xor eax, eax	       992	fib_trie.c	FUNCTION_34	IF_1
+0x400013f	              0xc3	                                     ret	       992	fib_trie.c	FUNCTION_34	IF_1
+0x4000140	        0x4038701b	              cmp byte [rax + 0x1b], sil	       995	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_1
+0x4000144	            0x7222	                            jb 0x4000168	       995	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_1
+0x4000146	            0x75f5	                           jne 0x400013d	       997	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_2
+0x4000148	        0x4439401c	            cmp dword [rax + 0x1c], r8d 	       999	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_3
+0x400014c	            0x771a	                            ja 0x4000168	       999	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_3
+0x400014e	            0x75ed	                           jne 0x400013d	      1001	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_4
+0x4000150	         0xfb67818	           movzx edi, byte [rax + 0x18] 	      1003	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_5
+0x4000154	          0x4038d7	                             cmp dil, dl	      1003	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_5
+0x4000157	            0x770f	                            ja 0x4000168	      1003	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_5
+0x4000159	        0x4c8b4810	              mov r9, qword [rax + 0x10]	      1005	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_6
+0x400015d	        0x41394940	              cmp dword [r9 + 0x40], ecx	      1005	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_6
+0x4000161	            0x730d	                           jae 0x4000170	      1005	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_6
+0x4000163	          0x4038d7	                             cmp dil, dl	      1005	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_6
+0x4000166	            0x720a	                            jb 0x4000172	      1005	fib_trie.c	FUNCTION_34	FUNCTION_1	IF_6
+0x4000168	          0x488b00	                    mov rax, qword [rax]	       994	fib_trie.c	FUNCTION_34	FUNCTION_1
+0x400016b	          0x4885c0	                           test rax, rax	       994	fib_trie.c	FUNCTION_34	FUNCTION_1
+0x400016e	            0x75d0	                           jne 0x4000140	       994	fib_trie.c	FUNCTION_34	FUNCTION_1
+0x4000170	            0xf3c3	                                     ret	      1010	fib_trie.c	FUNCTION_34
+0x4000172	            0xf3c3	                                     ret	      1010	fib_trie.c	FUNCTION_34
+fib_proc_init	functions,0:SWITCH,0:DO,0:IF,3:CALL,5:ELSE,0:FOR,0:WHILE,0	43
+0x4002e90	              0x53	                                push rbx	      2705	fib_trie.c	FUNCTION_79
+0x4002e91	    0x488b97880000	            mov rdx, qword [rdi + 0x88] 	      2706	fib_trie.c	FUNCTION_79	IF_1	CALL_1
+0x4002e98	          0x4531c9	                            xor r9d, r9d	      2706	fib_trie.c	FUNCTION_79	IF_1	CALL_1
+0x4002e9b	          0x4889fb	                            mov rbx, rdi	      2705	fib_trie.c	FUNCTION_79
+0x4002e9e	    0x41b820000000	                           mov r8d, 0x20	      2706	fib_trie.c	FUNCTION_79	IF_1	CALL_1
+0x4002ea4	    0x48c7c1000000	                              mov rcx, 0	      2706	fib_trie.c	FUNCTION_79	IF_1	CALL_1
+0x4002eab	      0xbe24010000	                          mov esi, 0x124	      2706	fib_trie.c	FUNCTION_79	IF_1	CALL_1
+0x4002eb0	    0x48c7c7000000	                              mov rdi, 0	      2706	fib_trie.c	FUNCTION_79	IF_1	CALL_1
+0x4002eb7	      0xe800000000	                          call 0x4002ebc	      2706	fib_trie.c	FUNCTION_79	IF_1	CALL_1
+0x4002ebc	          0x4885c0	                           test rax, rax	      2706	fib_trie.c	FUNCTION_79	IF_1	CALL_1
+0x4002ebf	            0x7458	                            je 0x4002f19	      2706	fib_trie.c	FUNCTION_79	IF_1	CALL_1
+0x4002ec1	    0x488b93880000	            mov rdx, qword [rbx + 0x88] 	      2710	fib_trie.c	FUNCTION_79	IF_2	CALL_2
+0x4002ec8	          0x4531c0	                            xor r8d, r8d	      2710	fib_trie.c	FUNCTION_79	IF_2	CALL_2
+0x4002ecb	    0x48c7c1000000	                              mov rcx, 0	      2710	fib_trie.c	FUNCTION_79	IF_2	CALL_2
+0x4002ed2	      0xbe24010000	                          mov esi, 0x124	      2710	fib_trie.c	FUNCTION_79	IF_2	CALL_2
+0x4002ed7	    0x48c7c7000000	                              mov rdi, 0	      2710	fib_trie.c	FUNCTION_79	IF_2	CALL_2
+0x4002ede	      0xe800000000	                          call 0x4002ee3	      2710	fib_trie.c	FUNCTION_79	IF_2	CALL_2
+0x4002ee3	          0x4885c0	                           test rax, rax	      2710	fib_trie.c	FUNCTION_79	IF_2	CALL_2
+0x4002ee6	            0x744b	                            je 0x4002f33	      2710	fib_trie.c	FUNCTION_79	IF_2	CALL_2
+0x4002ee8	    0x488b93880000	            mov rdx, qword [rbx + 0x88] 	      2714	fib_trie.c	FUNCTION_79	IF_3	CALL_3
+0x4002eef	          0x4531c9	                            xor r9d, r9d	      2714	fib_trie.c	FUNCTION_79	IF_3	CALL_3
+0x4002ef2	    0x41b828000000	                           mov r8d, 0x28	      2714	fib_trie.c	FUNCTION_79	IF_3	CALL_3
+0x4002ef8	    0x48c7c1000000	                              mov rcx, 0	      2714	fib_trie.c	FUNCTION_79	IF_3	CALL_3
+0x4002eff	      0xbe24010000	                          mov esi, 0x124	      2714	fib_trie.c	FUNCTION_79	IF_3	CALL_3
+0x4002f04	    0x48c7c7000000	                              mov rdi, 0	      2714	fib_trie.c	FUNCTION_79	IF_3	CALL_3
+0x4002f0b	      0xe800000000	                          call 0x4002f10	      2714	fib_trie.c	FUNCTION_79	IF_3	CALL_3
+0x4002f10	          0x4885c0	                           test rax, rax	      2714	fib_trie.c	FUNCTION_79	IF_3	CALL_3
+0x4002f13	            0x740b	                            je 0x4002f20	      2714	fib_trie.c	FUNCTION_79	IF_3	CALL_3
+0x4002f15	            0x31c0	                            xor eax, eax	      2718	fib_trie.c	FUNCTION_79
+0x4002f17	              0x5b	                                 pop rbx	      2726	fib_trie.c	FUNCTION_79
+0x4002f18	              0xc3	                                     ret	      2726	fib_trie.c	FUNCTION_79
+0x4002f19	      0xb8f4ffffff	                     mov eax, 0xfffffff4	      2725	fib_trie.c	FUNCTION_79
+0x4002f1e	              0x5b	                                 pop rbx	      2726	fib_trie.c	FUNCTION_79
+0x4002f1f	              0xc3	                                     ret	      2726	fib_trie.c	FUNCTION_79
+0x4002f20	    0x488bb3880000	            mov rsi, qword [rbx + 0x88] 	      2721	fib_trie.c	FUNCTION_79	CALL_4
+0x4002f27	    0x48c7c7000000	                              mov rdi, 0	      2721	fib_trie.c	FUNCTION_79	CALL_4
+0x4002f2e	      0xe800000000	                          call 0x4002f33	      2721	fib_trie.c	FUNCTION_79	CALL_4
+0x4002f33	    0x488bb3880000	            mov rsi, qword [rbx + 0x88] 	      2723	fib_trie.c	FUNCTION_79	CALL_5
+0x4002f3a	    0x48c7c7000000	                              mov rdi, 0	      2723	fib_trie.c	FUNCTION_79	CALL_5
+0x4002f41	      0xe800000000	                          call 0x4002f46	      2723	fib_trie.c	FUNCTION_79	CALL_5
+0x4002f46	      0xb8f4ffffff	                     mov eax, 0xfffffff4	      2725	fib_trie.c	FUNCTION_79
+0x4002f4b	              0x5b	                                 pop rbx	      2726	fib_trie.c	FUNCTION_79
+0x4002f4c	              0xc3	                                     ret	      2726	fib_trie.c	FUNCTION_79
+fib_free_table	functions,0:SWITCH,0:DO,0:IF,0:CALL,1:ELSE,0:FOR,0:WHILE,0	3
+0x4002c70	        0x4883c718	                           add rdi, 0x18	      1998	fib_trie.c	FUNCTION_53	CALL_1
+0x4002c74	    0x48c7c6000000	                              mov rsi, 0	      1998	fib_trie.c	FUNCTION_53	CALL_1
+0x4002c7b	      0xe900000000	                  jmp sym.fib_table_dump	      1998	fib_trie.c	FUNCTION_53	CALL_1
+fib_proc_exit	functions,0:SWITCH,0:DO,0:IF,0:CALL,3:ELSE,0:FOR,0:WHILE,0	12
+0x4002f50	              0x53	                                push rbx	      2729	fib_trie.c	FUNCTION_80
+0x4002f51	    0x488bb7880000	            mov rsi, qword [rdi + 0x88] 	      2730	fib_trie.c	FUNCTION_80	CALL_1
+0x4002f58	          0x4889fb	                            mov rbx, rdi	      2729	fib_trie.c	FUNCTION_80
+0x4002f5b	    0x48c7c7000000	                              mov rdi, 0	      2730	fib_trie.c	FUNCTION_80	CALL_1
+0x4002f62	      0xe800000000	                          call 0x4002f67	      2730	fib_trie.c	FUNCTION_80	CALL_1
+0x4002f67	    0x488bb3880000	            mov rsi, qword [rbx + 0x88] 	      2731	fib_trie.c	FUNCTION_80	CALL_2
+0x4002f6e	    0x48c7c7000000	                              mov rdi, 0	      2731	fib_trie.c	FUNCTION_80	CALL_2
+0x4002f75	      0xe800000000	                          call 0x4002f7a	      2731	fib_trie.c	FUNCTION_80	CALL_2
+0x4002f7a	    0x488bb3880000	            mov rsi, qword [rbx + 0x88] 	      2732	fib_trie.c	FUNCTION_80	CALL_3
+0x4002f81	    0x48c7c7000000	                              mov rdi, 0	      2732	fib_trie.c	FUNCTION_80	CALL_3
+0x4002f88	              0x5b	                                 pop rbx	      2733	fib_trie.c	FUNCTION_80
+0x4002f89	      0xe900000000	                   jmp section_end..text	      2732	fib_trie.c	FUNCTION_80	CALL_3

@@ -1,0 +1,58 @@
+nfs_inode_return_delegation_noreclaim	CALL,2:IF,1:WHILE,0:SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0	12
+0x4000c10	              0x53	                                push rbx	       529	delegation.c	FUNCTION_23
+0x4000c11	          0x4889fb	                            mov rbx, rdi	       529	delegation.c	FUNCTION_23
+0x4000c14	      0xe8f7f6ffff	    call sym.nfs_inode_detach_delegation	       532	delegation.c	FUNCTION_23	CALL_1
+0x4000c19	          0x4885c0	                           test rax, rax	       533	delegation.c	FUNCTION_23	IF_1
+0x4000c1c	            0x7411	                            je 0x4000c2f	       533	delegation.c	FUNCTION_23	IF_1
+0x4000c1e	          0x4889df	                            mov rdi, rbx	       534	delegation.c	FUNCTION_23	CALL_2
+0x4000c21	      0xba01000000	                              mov edx, 1	       534	delegation.c	FUNCTION_23	CALL_2
+0x4000c26	          0x4889c6	                            mov rsi, rax	       534	delegation.c	FUNCTION_23	CALL_2
+0x4000c29	              0x5b	                                 pop rbx	       535	delegation.c	FUNCTION_23
+0x4000c2a	      0xe9b1f4ffff	        jmp sym.nfs_do_return_delegation	       534	delegation.c	FUNCTION_23	CALL_2
+0x4000c2f	              0x5b	                                 pop rbx	       535	delegation.c	FUNCTION_23
+0x4000c30	              0xc3	                                     ret	       535	delegation.c	FUNCTION_23
+nfs_free_delegation	CALL,2:IF,1:WHILE,0:SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0	11
+0x40000b0	              0x53	                                push rbx	        28	delegation.c	FUNCTION_1
+0x40000b1	          0x4889fb	                            mov rbx, rdi	        28	delegation.c	FUNCTION_1
+0x40000b4	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	        29	delegation.c	FUNCTION_1	IF_1
+0x40000b8	          0x4885ff	                           test rdi, rdi	        29	delegation.c	FUNCTION_1	IF_1
+0x40000bb	            0x740d	                            je 0x40000ca	        29	delegation.c	FUNCTION_1	IF_1
+0x40000bd	      0xe800000000	                          call 0x40000c2	        30	delegation.c	FUNCTION_1	IF_1	CALL_1
+0x40000c2	    0x48c743100000	               mov qword [rbx + 0x10], 0	        31	delegation.c	FUNCTION_1	IF_1
+0x40000ca	        0x488d7b58	                   lea rdi, [rbx + 0x58]	        33	delegation.c	FUNCTION_1	CALL_2
+0x40000ce	      0xbe58000000	                           mov esi, 0x58	        33	delegation.c	FUNCTION_1	CALL_2
+0x40000d3	              0x5b	                                 pop rbx	        34	delegation.c	FUNCTION_1
+0x40000d4	      0xe900000000	                           jmp 0x40000d9	        33	delegation.c	FUNCTION_1	CALL_2
+nfs_server_return_all_delegations	CALL,5:IF,2:WHILE,0:SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0	14
+0x4000cd0	              0x53	                                push rbx	       635	delegation.c	FUNCTION_32
+0x4000cd1	          0x488b1f	                    mov rbx, qword [rdi]	       636	delegation.c	FUNCTION_32
+0x4000cd4	          0x4885db	                           test rbx, rbx	       639	delegation.c	FUNCTION_32	IF_1
+0x4000cd7	            0x7409	                            je 0x4000ce2	       639	delegation.c	FUNCTION_32	IF_1
+0x4000cd9	      0xe892f3ffff	call sym.nfs_server_mark_return_all_delegations	       643	delegation.c	FUNCTION_32	CALL_2
+0x4000cde	            0x84c0	                             test al, al	       646	delegation.c	FUNCTION_32	IF_2
+0x4000ce0	            0x7502	                           jne 0x4000ce4	       646	delegation.c	FUNCTION_32	IF_2
+0x4000ce2	              0x5b	                                 pop rbx	       650	delegation.c	FUNCTION_32
+0x4000ce3	              0xc3	                                     ret	       650	delegation.c	FUNCTION_32
+0x4000ce4	          0x4889df	                            mov rdi, rbx	       647	delegation.c	FUNCTION_32	IF_2	CALL_4
+0x4000ce7	      0xe800000000	                          call 0x4000cec	       647	delegation.c	FUNCTION_32	IF_2	CALL_4
+0x4000cec	          0x4889df	                            mov rdi, rbx	       648	delegation.c	FUNCTION_32	IF_2	CALL_5
+0x4000cef	              0x5b	                                 pop rbx	       650	delegation.c	FUNCTION_32
+0x4000cf0	      0xe900000000	                           jmp 0x4000cf5	       648	delegation.c	FUNCTION_32	IF_2	CALL_5
+nfs4_inode_return_delegation	CALL,4:IF,1:WHILE,0:SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0	15
+0x4000c40	              0x53	                                push rbx	       548	delegation.c	FUNCTION_24
+0x4000c41	          0x4889fb	                            mov rbx, rdi	       548	delegation.c	FUNCTION_24
+0x4000c44	      0xe800000000	                          call 0x4000c49	       553	delegation.c	FUNCTION_24	CALL_2
+0x4000c49	    0x488dbb28feff	                  lea rdi, [rbx - 0x1d8]	       259	delegation.c	FUNCTION_13	CALL_2
+0x4000c50	      0xe8ebf3ffff	call sym.nfs_start_delegation_return_locked	       259	delegation.c	FUNCTION_13	CALL_2
+0x4000c55	          0x4885c0	                           test rax, rax	       555	delegation.c	FUNCTION_24	IF_1
+0x4000c58	            0x7411	                            je 0x4000c6b	       555	delegation.c	FUNCTION_24	IF_1
+0x4000c5a	          0x4889df	                            mov rdi, rbx	       556	delegation.c	FUNCTION_24	CALL_4
+0x4000c5d	      0xba01000000	                              mov edx, 1	       556	delegation.c	FUNCTION_24	CALL_4
+0x4000c62	          0x4889c6	                            mov rsi, rax	       556	delegation.c	FUNCTION_24	CALL_4
+0x4000c65	              0x5b	                                 pop rbx	       558	delegation.c	FUNCTION_24
+0x4000c66	      0xe935f7ffff	       jmp sym.nfs_end_delegation_return	       556	delegation.c	FUNCTION_24	CALL_4
+0x4000c6b	            0x31c0	                            xor eax, eax	       558	delegation.c	FUNCTION_24
+0x4000c6d	              0x5b	                                 pop rbx	       558	delegation.c	FUNCTION_24
+0x4000c6e	              0xc3	                                     ret	       558	delegation.c	FUNCTION_24
+nfs4_inode_make_writeable	CALL,4:IF,1:WHILE,0:SWITCH,0:ELSE,0:DO,0:FOR,0:functions,0	1
+0x4000c70	            0xebce	    jmp sym.nfs4_inode_return_delegation	       572	delegation.c	FUNCTION_25	CALL_4

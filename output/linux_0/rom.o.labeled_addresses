@@ -1,0 +1,53 @@
+pci_enable_rom	IF,2:SWITCH,0:DO,0:WHILE,0:FOR,0:ELSE,0:functions,0:CALL,3	40
+0x4000070	              0x55	                                push rbp	        25	rom.c	FUNCTION_1
+0x4000071	              0x53	                                push rbx	        25	rom.c	FUNCTION_1
+0x4000072	        0x4883ec20	                           sub rsp, 0x20	        25	rom.c	FUNCTION_1
+0x4000076	    0x65488b042528	                mov rax, qword gs:[0x28]	        25	rom.c	FUNCTION_1
+0x400007f	      0x4889442418	             mov qword [rsp + 0x18], rax	        25	rom.c	FUNCTION_1
+0x4000084	            0x31c0	                            xor eax, eax	        25	rom.c	FUNCTION_1
+0x4000086	    0x488b87100500	           mov rax, qword [rdi + 0x510] 	        30	rom.c	FUNCTION_1	IF_1
+0x400008d	          0x4885c0	                           test rax, rax	        30	rom.c	FUNCTION_1	IF_1
+0x4000090	            0x7469	                            je 0x40000fb	        30	rom.c	FUNCTION_1	IF_1
+0x4000092	            0x31ed	                            xor ebp, ebp	        35	rom.c	FUNCTION_1	IF_2
+0x4000094	            0xa802	                              test al, 2	        34	rom.c	FUNCTION_1	IF_2
+0x4000096	            0x754a	                           jne 0x40000e2	        34	rom.c	FUNCTION_1	IF_2
+0x4000098	          0x4889fb	                            mov rbx, rdi	        34	rom.c	FUNCTION_1	IF_2
+0x400009b	    0x488d97f80400	                  lea rdx, [rdi + 0x4f8]	        26	rom.c	FUNCTION_1
+0x40000a2	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	        42	rom.c	FUNCTION_1	CALL_1
+0x40000a6	      0x488d742408	                      lea rsi, [rsp + 8]	        42	rom.c	FUNCTION_1	CALL_1
+0x40000ab	      0xe800000000	                          call 0x40000b0	        42	rom.c	FUNCTION_1	CALL_1
+0x40000b0	         0xfb67350	           movzx esi, byte [rbx + 0x50] 	        43	rom.c	FUNCTION_1	CALL_2
+0x40000b4	      0x488d542404	                      lea rdx, [rsp + 4]	        43	rom.c	FUNCTION_1	CALL_2
+0x40000b9	          0x4889df	                            mov rdi, rbx	        43	rom.c	FUNCTION_1	CALL_2
+0x40000bc	      0xe800000000	                          call 0x40000c1	        43	rom.c	FUNCTION_1	CALL_2
+0x40000c1	        0x8b542404	                mov edx, dword [rsp + 4]	        45	rom.c	FUNCTION_1
+0x40000c5	         0xfb67350	           movzx esi, byte [rbx + 0x50] 	        46	rom.c	FUNCTION_1	CALL_3
+0x40000c9	          0x4889df	                            mov rdi, rbx	        46	rom.c	FUNCTION_1	CALL_3
+0x40000cc	    0x81e2ff070000	                          and edx, 0x7ff	        45	rom.c	FUNCTION_1
+0x40000d2	         0xb542408	                 or edx, dword [rsp + 8]	        45	rom.c	FUNCTION_1
+0x40000d6	          0x83ca01	                               or edx, 1	        45	rom.c	FUNCTION_1
+0x40000d9	        0x89542404	                mov dword [rsp + 4], edx	        45	rom.c	FUNCTION_1
+0x40000dd	      0xe800000000	                          call 0x40000e2	        46	rom.c	FUNCTION_1	CALL_3
+0x40000e2	      0x488b4c2418	            mov rcx, qword [rsp + 0x18] 	        48	rom.c	FUNCTION_1
+0x40000e7	    0x6548330c2528	                xor rcx, qword gs:[0x28]	        48	rom.c	FUNCTION_1
+0x40000f0	            0x89e8	                            mov eax, ebp	        48	rom.c	FUNCTION_1
+0x40000f2	            0x750e	                           jne 0x4000102	        48	rom.c	FUNCTION_1
+0x40000f4	        0x4883c420	                           add rsp, 0x20	        48	rom.c	FUNCTION_1
+0x40000f8	              0x5b	                                 pop rbx	        48	rom.c	FUNCTION_1
+0x40000f9	              0x5d	                                 pop rbp	        48	rom.c	FUNCTION_1
+0x40000fa	              0xc3	                                     ret	        48	rom.c	FUNCTION_1
+0x40000fb	      0xbdffffffff	                     mov ebp, 0xffffffff	        31	rom.c	FUNCTION_1	IF_1
+0x4000100	            0xebe0	                           jmp 0x40000e2	        31	rom.c	FUNCTION_1	IF_1
+0x4000102	      0xe800000000	                          call 0x4000107	        48	rom.c	FUNCTION_1
+pci_unmap_rom	IF,1:SWITCH,0:DO,0:WHILE,0:FOR,0:ELSE,0:functions,0:CALL,2	11
+0x4000180	              0x53	                                push rbx	       181	rom.c	FUNCTION_5
+0x4000181	          0x4889fb	                            mov rbx, rdi	       181	rom.c	FUNCTION_5
+0x4000184	          0x4889f7	                            mov rdi, rsi	       184	rom.c	FUNCTION_5	CALL_1
+0x4000187	      0xe800000000	                          call 0x400018c	       184	rom.c	FUNCTION_5	CALL_1
+0x400018c	    0xf68310050000	              test byte [rbx + 0x510], 3	        63	rom.c	FUNCTION_2	IF_1
+0x4000193	            0x7402	                            je 0x4000197	        63	rom.c	FUNCTION_2	IF_1
+0x4000195	              0x5b	                                 pop rbx	       189	rom.c	FUNCTION_5
+0x4000196	              0xc3	                                     ret	       189	rom.c	FUNCTION_5
+0x4000197	          0x4889df	                            mov rdi, rbx	       189	rom.c	FUNCTION_5
+0x400019a	              0x5b	                                 pop rbx	       189	rom.c	FUNCTION_5
+0x400019b	      0xe970ffffff	          jmp sym.pci_disable_rom.part.0	       189	rom.c	FUNCTION_5

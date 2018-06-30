@@ -1,0 +1,34 @@
+lpss8250_dma_filter	SWITCH,0:ELSE,0:CALL,0:FOR,0:DO,0:IF,1:WHILE,0:functions,0	9
+0x4000040	          0x488b17	                    mov rdx, qword [rdi]	       236	8250_lpss.c	FUNCTION_10	IF_1
+0x4000043	            0x31c0	                            xor eax, eax	       237	8250_lpss.c	FUNCTION_10	IF_1
+0x4000045	        0x488b4a60	            mov rcx, qword [rdx + 0x60] 	       236	8250_lpss.c	FUNCTION_10	IF_1
+0x4000049	          0x48390e	                    cmp qword [rsi], rcx	       236	8250_lpss.c	FUNCTION_10	IF_1
+0x400004c	            0x7402	                            je 0x4000050	       236	8250_lpss.c	FUNCTION_10	IF_1
+0x400004e	            0xf3c3	                                     ret	       241	8250_lpss.c	FUNCTION_10
+0x4000050	        0x48897750	             mov qword [rdi + 0x50], rsi	       239	8250_lpss.c	FUNCTION_10
+0x4000054	      0xb801000000	                              mov eax, 1	       240	8250_lpss.c	FUNCTION_10
+0x4000059	              0xc3	                                     ret	       241	8250_lpss.c	FUNCTION_10
+lpss8250_remove	SWITCH,0:ELSE,0:CALL,3:FOR,0:DO,0:IF,1:WHILE,0:functions,0	13
+0x4000060	              0x53	                                push rbx	       330	8250_lpss.c	FUNCTION_13
+0x4000061	    0x488b9f380100	           mov rbx, qword [rdi + 0x138] 	       330	8250_lpss.c	FUNCTION_13
+0x4000068	            0x8b3b	                    mov edi, dword [rbx]	       333	8250_lpss.c	FUNCTION_13	CALL_2
+0x400006a	      0xe800000000	                          call 0x400006f	       333	8250_lpss.c	FUNCTION_13	CALL_2
+0x400006f	        0x488b4308	                mov rax, qword [rbx + 8]	       335	8250_lpss.c	FUNCTION_13	IF_1
+0x4000073	        0x488b4018	            mov rax, qword [rax + 0x18] 	       335	8250_lpss.c	FUNCTION_13	IF_1
+0x4000077	          0x4885c0	                           test rax, rax	       335	8250_lpss.c	FUNCTION_13	IF_1
+0x400007a	            0x7409	                            je 0x4000085	       335	8250_lpss.c	FUNCTION_13	IF_1
+0x400007c	          0x4889df	                            mov rdi, rbx	       336	8250_lpss.c	FUNCTION_13	CALL_3
+0x400007f	              0x5b	                                 pop rbx	       337	8250_lpss.c	FUNCTION_13
+0x4000080	      0xe900000000	                           jmp 0x4000085	       336	8250_lpss.c	FUNCTION_13	CALL_3
+0x4000085	              0x5b	                                 pop rbx	       337	8250_lpss.c	FUNCTION_13
+0x4000086	              0xc3	                                     ret	       337	8250_lpss.c	FUNCTION_13
+byt_get_mctrl	SWITCH,0:ELSE,0:CALL,1:FOR,0:DO,0:IF,0:WHILE,0:functions,0	3
+0x4000180	      0xe800000000	                          call 0x4000185	       101	8250_lpss.c	FUNCTION_2	CALL_1
+0x4000185	       0xd40010000	                           or eax, 0x140	       106	8250_lpss.c	FUNCTION_2
+0x400018a	              0xc3	                                     ret	       107	8250_lpss.c	FUNCTION_2
+qrk_serial_exit	SWITCH,0:ELSE,0:CALL,1:FOR,0:DO,0:IF,0:WHILE,0:functions,0	5
+0x40002b0	    0x4883bf300100	              cmp qword [rdi + 0x130], 0	       201	8250_lpss.c	FUNCTION_5	IF_1
+0x40002b8	            0x740c	                            je 0x40002c6	       201	8250_lpss.c	FUNCTION_5	IF_1
+0x40002ba	    0x4881c7000100	                          add rdi, 0x100	       203	8250_lpss.c	FUNCTION_5	CALL_1
+0x40002c1	      0xe900000000	                           jmp 0x40002c6	       203	8250_lpss.c	FUNCTION_5	CALL_1
+0x40002c6	            0xf3c3	                                     ret	       203	8250_lpss.c	FUNCTION_5	CALL_1

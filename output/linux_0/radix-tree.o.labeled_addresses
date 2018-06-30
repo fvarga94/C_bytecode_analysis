@@ -1,0 +1,252 @@
+radix_tree_preload	ELSE,0:IF,0:CALL,3:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	7
+0x4000130	    0xf7c700004000	                      test edi, 0x400000	       513	radix-tree.c	FUNCTION_32	CALL_2
+0x4000136	            0x740a	                            je 0x4000142	       513	radix-tree.c	FUNCTION_32	CALL_2
+0x4000138	      0xbe15000000	                           mov esi, 0x15	       514	radix-tree.c	FUNCTION_32	CALL_3
+0x400013d	      0xe95effffff	            jmp sym.__radix_tree_preload	       514	radix-tree.c	FUNCTION_32	CALL_3
+0x4000142	             0xf0b	                                     ud2	       514	radix-tree.c	FUNCTION_32	CALL_3
+0x4000144	      0xbe15000000	                           mov esi, 0x15	       514	radix-tree.c	FUNCTION_32	CALL_3
+0x4000149	      0xe952ffffff	            jmp sym.__radix_tree_preload	       514	radix-tree.c	FUNCTION_32	CALL_3
+radix_tree_iter_delete	ELSE,0:IF,1:CALL,1:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	10
+0x4000e20	              0x53	                                push rbx	      2016	radix-tree.c	FUNCTION_77
+0x4000e21	          0x4889f3	                            mov rbx, rsi	      2016	radix-tree.c	FUNCTION_77
+0x4000e24	        0x488b7618	            mov rsi, qword [rsi + 0x18] 	      2017	radix-tree.c	FUNCTION_77	IF_1	CALL_1
+0x4000e28	      0xe863ffffff	            call sym.__radix_tree_delete	      2017	radix-tree.c	FUNCTION_77	IF_1	CALL_1
+0x4000e2d	            0x84c0	                             test al, al	      2017	radix-tree.c	FUNCTION_77	IF_1	CALL_1
+0x4000e2f	            0x7407	                            je 0x4000e38	      2017	radix-tree.c	FUNCTION_77	IF_1	CALL_1
+0x4000e31	        0x488b4308	                mov rax, qword [rbx + 8]	      2018	radix-tree.c	FUNCTION_77	IF_1
+0x4000e35	          0x488903	                    mov qword [rbx], rax	      2018	radix-tree.c	FUNCTION_77	IF_1
+0x4000e38	              0x5b	                                 pop rbx	      2019	radix-tree.c	FUNCTION_77
+0x4000e39	              0xc3	                                     ret	      2019	radix-tree.c	FUNCTION_77
+radix_tree_lookup	ELSE,0:IF,0:CALL,1:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	3
+0x4001550	            0x31c9	                            xor ecx, ecx	      1099	radix-tree.c	FUNCTION_47	CALL_1
+0x4001552	            0x31d2	                            xor edx, edx	      1099	radix-tree.c	FUNCTION_47	CALL_1
+0x4001554	      0xe907ffffff	             jmp sym.__radix_tree_lookup	      1099	radix-tree.c	FUNCTION_47	CALL_1
+__radix_tree_preload	ELSE,1:IF,2:CALL,7:functions,0:FOR,0:WHILE,1:DO,0:SWITCH,0	47
+0x40000a0	    0x81e7ffffefff	                     and edi, 0xffefffff	       477	radix-tree.c	FUNCTION_31
+0x40000a6	            0x4155	                                push r13	       468	radix-tree.c	FUNCTION_31
+0x40000a8	            0x4154	                                push r12	       468	radix-tree.c	FUNCTION_31
+0x40000aa	          0x4189fc	                           mov r12d, edi	       477	radix-tree.c	FUNCTION_31
+0x40000ad	              0x55	                                push rbp	       468	radix-tree.c	FUNCTION_31
+0x40000ae	            0x89f5	                            mov ebp, esi	       468	radix-tree.c	FUNCTION_31
+0x40000b0	              0x53	                                push rbx	       468	radix-tree.c	FUNCTION_31
+0x40000b1	    0x49c7c5000000	                              mov r13, 0	       480	radix-tree.c	FUNCTION_31	CALL_2
+0x40000b8	          0x4c89e8	                            mov rax, r13	       480	radix-tree.c	FUNCTION_31	CALL_2
+0x40000bb	    0x654803050000	          add rax, qword gs:[0x040000c3]	       480	radix-tree.c	FUNCTION_31	CALL_2
+0x40000c3	            0x8b00	                    mov eax, dword [rax]	       480	radix-tree.c	FUNCTION_31	CALL_2
+0x40000c5	            0x39c5	                            cmp ebp, eax	       481	radix-tree.c	FUNCTION_31	WHILE_1
+0x40000c7	            0x763a	                           jbe 0x4000103	       481	radix-tree.c	FUNCTION_31	WHILE_1
+0x40000c9	    0x488b3d000000	            mov rdi, qword [0x040000d0] 	       483	radix-tree.c	FUNCTION_31	WHILE_1	CALL_4
+0x40000d0	          0x4489e6	                           mov esi, r12d	       483	radix-tree.c	FUNCTION_31	WHILE_1	CALL_4
+0x40000d3	      0xe800000000	                          call 0x40000d8	       483	radix-tree.c	FUNCTION_31	WHILE_1	CALL_4
+0x40000d8	          0x4885c0	                           test rax, rax	       484	radix-tree.c	FUNCTION_31	WHILE_1	IF_1
+0x40000db	            0x7442	                            je 0x400011f	       484	radix-tree.c	FUNCTION_31	WHILE_1	IF_1
+0x40000dd	          0x4c89eb	                            mov rbx, r13	       487	radix-tree.c	FUNCTION_31	WHILE_1	CALL_6
+0x40000e0	    0x6548031d0000	          add rbx, qword gs:[0x040000e8]	       487	radix-tree.c	FUNCTION_31	WHILE_1	CALL_6
+0x40000e8	            0x3b2b	                    cmp ebp, dword [rbx]	       488	radix-tree.c	FUNCTION_31	WHILE_1	IF_2
+0x40000ea	            0x7620	                           jbe 0x400010c	       488	radix-tree.c	FUNCTION_31	WHILE_1	IF_2
+0x40000ec	        0x488b5308	                mov rdx, qword [rbx + 8]	       489	radix-tree.c	FUNCTION_31	WHILE_1	IF_2
+0x40000f0	        0x48895008	                mov qword [rax + 8], rdx	       489	radix-tree.c	FUNCTION_31	WHILE_1	IF_2
+0x40000f4	        0x48894308	                mov qword [rbx + 8], rax	       490	radix-tree.c	FUNCTION_31	WHILE_1	IF_2
+0x40000f8	            0x8b03	                    mov eax, dword [rbx]	       491	radix-tree.c	FUNCTION_31	WHILE_1	IF_2
+0x40000fa	          0x83c001	                              add eax, 1	       491	radix-tree.c	FUNCTION_31	WHILE_1	IF_2
+0x40000fd	            0x39c5	                            cmp ebp, eax	       481	radix-tree.c	FUNCTION_31	WHILE_1
+0x40000ff	            0x8903	                    mov dword [rbx], eax	       491	radix-tree.c	FUNCTION_31	WHILE_1	IF_2
+0x4000101	            0x77c6	                            ja 0x40000c9	       481	radix-tree.c	FUNCTION_31	WHILE_1
+0x4000103	              0x5b	                                 pop rbx	       499	radix-tree.c	FUNCTION_31
+0x4000104	            0x31c0	                            xor eax, eax	       496	radix-tree.c	FUNCTION_31
+0x4000106	              0x5d	                                 pop rbp	       499	radix-tree.c	FUNCTION_31
+0x4000107	            0x415c	                                 pop r12	       499	radix-tree.c	FUNCTION_31
+0x4000109	            0x415d	                                 pop r13	       499	radix-tree.c	FUNCTION_31
+0x400010b	              0xc3	                                     ret	       499	radix-tree.c	FUNCTION_31
+0x400010c	    0x488b3d000000	            mov rdi, qword [0x04000113] 	       493	radix-tree.c	FUNCTION_31	WHILE_1	ELSE_1	CALL_7
+0x4000113	          0x4889c6	                            mov rsi, rax	       493	radix-tree.c	FUNCTION_31	WHILE_1	ELSE_1	CALL_7
+0x4000116	      0xe800000000	                          call 0x400011b	       493	radix-tree.c	FUNCTION_31	WHILE_1	ELSE_1	CALL_7
+0x400011b	            0x8b03	                    mov eax, dword [rbx]	       493	radix-tree.c	FUNCTION_31	WHILE_1	ELSE_1	CALL_7
+0x400011d	            0xeba6	                           jmp 0x40000c5	       493	radix-tree.c	FUNCTION_31	WHILE_1	ELSE_1	CALL_7
+0x400011f	              0x5b	                                 pop rbx	       499	radix-tree.c	FUNCTION_31
+0x4000120	      0xb8f4ffffff	                     mov eax, 0xfffffff4	       471	radix-tree.c	FUNCTION_31
+0x4000125	              0x5d	                                 pop rbp	       499	radix-tree.c	FUNCTION_31
+0x4000126	            0x415c	                                 pop r12	       499	radix-tree.c	FUNCTION_31
+0x4000128	            0x415d	                                 pop r13	       499	radix-tree.c	FUNCTION_31
+0x400012a	              0xc3	                                     ret	       499	radix-tree.c	FUNCTION_31
+radix_tree_delete	ELSE,0:IF,0:CALL,1:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	2
+0x4001610	            0x31d2	                            xor edx, edx	      2067	radix-tree.c	FUNCTION_79	CALL_1
+0x4001612	      0xe949ffffff	          jmp sym.radix_tree_delete_item	      2067	radix-tree.c	FUNCTION_79	CALL_1
+radix_tree_cpu_dead	ELSE,0:IF,0:CALL,5:functions,0:FOR,0:WHILE,1:DO,0:SWITCH,0	26
+0x4000bb0	              0x55	                                push rbp	      2266	radix-tree.c	FUNCTION_89
+0x4000bb1	            0x89fd	                            mov ebp, edi	      2271	radix-tree.c	FUNCTION_89	CALL_1
+0x4000bb3	              0x53	                                push rbx	      2266	radix-tree.c	FUNCTION_89
+0x4000bb4	    0x488b04ed0000	                  mov rax, qword [rbp*8]	      2271	radix-tree.c	FUNCTION_89	CALL_1
+0x4000bbc	    0x48c7c3000000	                              mov rbx, 0	      2271	radix-tree.c	FUNCTION_89	CALL_1
+0x4000bc3	          0x4801c3	                            add rbx, rax	      2271	radix-tree.c	FUNCTION_89	CALL_1
+0x4000bc6	            0x8b13	                    mov edx, dword [rbx]	      2272	radix-tree.c	FUNCTION_89	WHILE_1
+0x4000bc8	            0x85d2	                           test edx, edx	      2272	radix-tree.c	FUNCTION_89	WHILE_1
+0x4000bca	            0x7425	                            je 0x4000bf1	      2272	radix-tree.c	FUNCTION_89	WHILE_1
+0x4000bcc	        0x488b7308	                mov rsi, qword [rbx + 8]	      2273	radix-tree.c	FUNCTION_89	WHILE_1
+0x4000bd0	    0x488b3d000000	            mov rdi, qword [0x04000bd7] 	      2275	radix-tree.c	FUNCTION_89	WHILE_1	CALL_2
+0x4000bd7	        0x488b4608	                mov rax, qword [rsi + 8]	      2274	radix-tree.c	FUNCTION_89	WHILE_1
+0x4000bdb	        0x48894308	                mov qword [rbx + 8], rax	      2274	radix-tree.c	FUNCTION_89	WHILE_1
+0x4000bdf	      0xe800000000	                          call 0x4000be4	      2275	radix-tree.c	FUNCTION_89	WHILE_1	CALL_2
+0x4000be4	          0x832b01	                      sub dword [rbx], 1	      2272	radix-tree.c	FUNCTION_89	WHILE_1
+0x4000be7	            0x75e3	                           jne 0x4000bcc	      2272	radix-tree.c	FUNCTION_89	WHILE_1
+0x4000be9	    0x488b04ed0000	                  mov rax, qword [rbp*8]	      2272	radix-tree.c	FUNCTION_89	WHILE_1
+0x4000bf1	    0x48c7c3000000	                              mov rbx, 0	      2278	radix-tree.c	FUNCTION_89	CALL_4
+0x4000bf8	        0x488b3c03	              mov rdi, qword [rbx + rax]	      2278	radix-tree.c	FUNCTION_89	CALL_4
+0x4000bfc	      0xe800000000	                          call 0x4000c01	      2278	radix-tree.c	FUNCTION_89	CALL_4
+0x4000c01	    0x488b04ed0000	                  mov rax, qword [rbp*8]	      2279	radix-tree.c	FUNCTION_89	CALL_5
+0x4000c09	    0x48c704180000	                mov qword [rax + rbx], 0	      2279	radix-tree.c	FUNCTION_89	CALL_5
+0x4000c11	            0x31c0	                            xor eax, eax	      2281	radix-tree.c	FUNCTION_89
+0x4000c13	              0x5b	                                 pop rbx	      2281	radix-tree.c	FUNCTION_89
+0x4000c14	              0x5d	                                 pop rbp	      2281	radix-tree.c	FUNCTION_89
+0x4000c15	              0xc3	                                     ret	      2281	radix-tree.c	FUNCTION_89
+idr_preload	ELSE,0:IF,1:CALL,2:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	5
+0x4000150	      0xbe0b000000	                            mov esi, 0xb	      2104	radix-tree.c	FUNCTION_82	IF_1	CALL_1
+0x4000155	      0xe846ffffff	           call sym.__radix_tree_preload	      2104	radix-tree.c	FUNCTION_82	IF_1	CALL_1
+0x400015a	            0x85c0	                           test eax, eax	      2104	radix-tree.c	FUNCTION_82	IF_1	CALL_1
+0x400015c	            0x7400	                            je 0x400015e	      2104	radix-tree.c	FUNCTION_82	IF_1	CALL_1
+0x400015e	            0xf3c3	                                     ret	      2105	radix-tree.c	FUNCTION_82	CALL_2
+radix_tree_iter_tag_set	ELSE,0:IF,0:CALL,2:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	4
+0x4001700	            0x8b0e	                    mov ecx, dword [rsi]	      1459	radix-tree.c	FUNCTION_59	CALL_2
+0x4001702	        0x488b7618	            mov rsi, qword [rsi + 0x18] 	      1459	radix-tree.c	FUNCTION_59	CALL_2
+0x4001706	          0x83e13f	                           and ecx, 0x3f	      1459	radix-tree.c	FUNCTION_59	CALL_2
+0x4001709	      0xe932f5ffff	                    jmp sym.node_tag_set	      1459	radix-tree.c	FUNCTION_59	CALL_2
+radix_tree_delete_item	ELSE,0:IF,3:CALL,5:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	50
+0x4001560	            0x4154	                                push r12	      2035	radix-tree.c	FUNCTION_78
+0x4001562	              0x55	                                push rbp	      2035	radix-tree.c	FUNCTION_78
+0x4001563	          0x4989d4	                            mov r12, rdx	      2035	radix-tree.c	FUNCTION_78
+0x4001566	              0x53	                                push rbx	      2035	radix-tree.c	FUNCTION_78
+0x4001567	          0x4889fd	                            mov rbp, rdi	      2035	radix-tree.c	FUNCTION_78
+0x400156a	        0x4883ec18	                           sub rsp, 0x18	      2035	radix-tree.c	FUNCTION_78
+0x400156e	      0x488d4c2408	                      lea rcx, [rsp + 8]	      2040	radix-tree.c	FUNCTION_78	CALL_1
+0x4001573	          0x4889e2	                            mov rdx, rsp	      2040	radix-tree.c	FUNCTION_78	CALL_1
+0x4001576	    0x48c704240000	                      mov qword [rsp], 0	      2036	radix-tree.c	FUNCTION_78
+0x400157e	    0x65488b042528	                mov rax, qword gs:[0x28]	      2035	radix-tree.c	FUNCTION_78
+0x4001587	      0x4889442410	             mov qword [rsp + 0x10], rax	      2035	radix-tree.c	FUNCTION_78
+0x400158c	            0x31c0	                            xor eax, eax	      2035	radix-tree.c	FUNCTION_78
+0x400158e	    0x48c744240800	                  mov qword [rsp + 8], 0	      2037	radix-tree.c	FUNCTION_78
+0x4001597	      0xe800000000	                          call 0x400159c	      2040	radix-tree.c	FUNCTION_78	CALL_1
+0x400159c	      0x488b542408	                mov rdx, qword [rsp + 8]	      2041	radix-tree.c	FUNCTION_78	IF_1
+0x40015a1	          0x4885d2	                           test rdx, rdx	      2041	radix-tree.c	FUNCTION_78	IF_1
+0x40015a4	            0x7460	                            je 0x4001606	      2041	radix-tree.c	FUNCTION_78	IF_1
+0x40015a6	          0x4885c0	                           test rax, rax	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x40015a9	          0x4889c3	                            mov rbx, rax	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x40015ac	            0x7437	                            je 0x40015e5	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x40015ae	          0x4d85e4	                           test r12, r12	      2047	radix-tree.c	FUNCTION_78	IF_3
+0x40015b1	            0x7405	                            je 0x40015b8	      2047	radix-tree.c	FUNCTION_78	IF_3
+0x40015b3	          0x4c39e3	                            cmp rbx, r12	      2047	radix-tree.c	FUNCTION_78	IF_3
+0x40015b6	            0x754e	                           jne 0x4001606	      2047	radix-tree.c	FUNCTION_78	IF_3
+0x40015b8	      0x488b542408	                mov rdx, qword [rsp + 8]	      2050	radix-tree.c	FUNCTION_78	CALL_5
+0x40015bd	        0x488b3424	                    mov rsi, qword [rsp]	      2050	radix-tree.c	FUNCTION_78	CALL_5
+0x40015c1	          0x4889ef	                            mov rdi, rbp	      2050	radix-tree.c	FUNCTION_78	CALL_5
+0x40015c4	      0xe8c7f7ffff	            call sym.__radix_tree_delete	      2050	radix-tree.c	FUNCTION_78	CALL_5
+0x40015c9	          0x4889d8	                            mov rax, rbx	      2040	radix-tree.c	FUNCTION_78	CALL_1
+0x40015cc	      0x488b7c2410	            mov rdi, qword [rsp + 0x10] 	      2053	radix-tree.c	FUNCTION_78
+0x40015d1	    0x6548333c2528	                xor rdi, qword gs:[0x28]	      2053	radix-tree.c	FUNCTION_78
+0x40015da	            0x752e	                           jne 0x400160a	      2053	radix-tree.c	FUNCTION_78
+0x40015dc	        0x4883c418	                           add rsp, 0x18	      2053	radix-tree.c	FUNCTION_78
+0x40015e0	              0x5b	                                 pop rbx	      2053	radix-tree.c	FUNCTION_78
+0x40015e1	              0x5d	                                 pop rbp	      2053	radix-tree.c	FUNCTION_78
+0x40015e2	            0x415c	                                 pop r12	      2053	radix-tree.c	FUNCTION_78
+0x40015e4	              0xc3	                                     ret	      2053	radix-tree.c	FUNCTION_78
+0x40015e5	        0xf6450404	                  test byte [rbp + 4], 4	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x40015e9	            0x741b	                            je 0x4001606	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x40015eb	        0x488b3424	                    mov rsi, qword [rsp]	      2044	radix-tree.c	FUNCTION_78	IF_2	CALL_4
+0x40015ef	          0x4889ef	                            mov rdi, rbp	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x40015f2	        0x488d4628	                   lea rax, [rsi + 0x28]	       123	radix-tree.c	FUNCTION_5
+0x40015f6	          0x4829c2	                            sub rdx, rax	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x40015f9	        0x48c1fa03	                              sar rdx, 3	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x40015fd	      0xe86efbffff	      call sym.node_tag_get.constprop.24	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x4001602	            0x84c0	                             test al, al	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x4001604	            0x74a8	                            je 0x40015ae	      2043	radix-tree.c	FUNCTION_78	IF_2	CALL_3
+0x4001606	            0x31c0	                            xor eax, eax	      2042	radix-tree.c	FUNCTION_78	IF_1
+0x4001608	            0xebc2	                           jmp 0x40015cc	      2042	radix-tree.c	FUNCTION_78	IF_1
+0x400160a	      0xe800000000	                          call 0x400160f	      2053	radix-tree.c	FUNCTION_78
+radix_tree_iter_tag_clear	ELSE,0:IF,0:CALL,2:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	4
+0x4001710	            0x8b0e	                    mov ecx, dword [rsi]	      1530	radix-tree.c	FUNCTION_62	CALL_2
+0x4001712	        0x488b7618	            mov rsi, qword [rsi + 0x18] 	      1530	radix-tree.c	FUNCTION_62	CALL_2
+0x4001716	          0x83e13f	                           and ecx, 0x3f	      1530	radix-tree.c	FUNCTION_62	CALL_2
+0x4001719	      0xe982f5ffff	                  jmp sym.node_tag_clear	      1530	radix-tree.c	FUNCTION_62	CALL_2
+__radix_tree_delete_node	ELSE,0:IF,0:CALL,1:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	1
+0x4001720	      0xe90bf2ffff	                     jmp sym.delete_node	      1981	radix-tree.c	FUNCTION_75	CALL_1
+radix_tree_maybe_preload_order	ELSE,0:IF,1:CALL,3:functions,0:FOR,1:WHILE,0:DO,0:SWITCH,0	25
+0x4001190	    0xf7c700004000	                      test edi, 0x400000	       565	radix-tree.c	FUNCTION_35	IF_1	CALL_1
+0x4001196	            0x7439	                            je 0x40011d1	       565	radix-tree.c	FUNCTION_35	IF_1	CALL_1
+0x4001198	      0xb801000000	                              mov eax, 1	       574	radix-tree.c	FUNCTION_35
+0x400119d	            0x89f1	                            mov ecx, esi	       574	radix-tree.c	FUNCTION_35
+0x400119f	            0xd3e0	                             shl eax, cl	       574	radix-tree.c	FUNCTION_35
+0x40011a1	            0x4898	                                    cdqe	       574	radix-tree.c	FUNCTION_35
+0x40011a3	        0x4883f840	                           cmp rax, 0x40	       575	radix-tree.c	FUNCTION_35	FOR_1
+0x40011a7	            0x762b	                           jbe 0x40011d4	       575	radix-tree.c	FUNCTION_35	FOR_1
+0x40011a9	            0x31d2	                            xor edx, edx	       575	radix-tree.c	FUNCTION_35	FOR_1
+0x40011ab	        0x48c1e806	                              shr rax, 6	       577	radix-tree.c	FUNCTION_35	FOR_1
+0x40011af	          0x83c201	                              add edx, 1	       576	radix-tree.c	FUNCTION_35	FOR_1
+0x40011b2	        0x4883f840	                           cmp rax, 0x40	       575	radix-tree.c	FUNCTION_35	FOR_1
+0x40011b6	            0x77f3	                            ja 0x40011ab	       575	radix-tree.c	FUNCTION_35	FOR_1
+0x40011b8	            0x89d1	                            mov ecx, edx	       575	radix-tree.c	FUNCTION_35	FOR_1
+0x40011ba	            0xf7d1	                                 not ecx	       575	radix-tree.c	FUNCTION_35	FOR_1
+0x40011bc	          0x8d7116	                   lea esi, [rcx + 0x16]	       575	radix-tree.c	FUNCTION_35	FOR_1
+0x40011bf	          0x4863d2	                         movsxd rdx, edx	       595	radix-tree.c	FUNCTION_35
+0x40011c2	     0xfaf04d50000	                 imul eax, dword [rdx*8]	       597	radix-tree.c	FUNCTION_35	CALL_3
+0x40011ca	             0x1c6	                            add esi, eax	       597	radix-tree.c	FUNCTION_35	CALL_3
+0x40011cc	      0xe9cfeeffff	            jmp sym.__radix_tree_preload	       597	radix-tree.c	FUNCTION_35	CALL_3
+0x40011d1	            0x31c0	                            xor eax, eax	       598	radix-tree.c	FUNCTION_35
+0x40011d3	              0xc3	                                     ret	       598	radix-tree.c	FUNCTION_35
+0x40011d4	      0xbe15000000	                           mov esi, 0x15	       575	radix-tree.c	FUNCTION_35	FOR_1
+0x40011d9	            0x31d2	                            xor edx, edx	       575	radix-tree.c	FUNCTION_35	FOR_1
+0x40011db	            0xebe2	                           jmp 0x40011bf	       575	radix-tree.c	FUNCTION_35	FOR_1
+radix_tree_iter_replace	ELSE,0:IF,0:CALL,1:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	3
+0x40016f0	        0x488b7618	            mov rsi, qword [rsi + 0x18] 	      1244	radix-tree.c	FUNCTION_54	CALL_1
+0x40016f4	          0x4531c0	                            xor r8d, r8d	      1244	radix-tree.c	FUNCTION_54	CALL_1
+0x40016f7	      0xe924ffffff	            jmp sym.__radix_tree_replace	      1244	radix-tree.c	FUNCTION_54	CALL_1
+radix_tree_replace_slot	ELSE,0:IF,0:CALL,1:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	5
+0x40016e0	          0x4889d1	                            mov rcx, rdx	      1227	radix-tree.c	FUNCTION_53	CALL_1
+0x40016e3	          0x4531c0	                            xor r8d, r8d	      1227	radix-tree.c	FUNCTION_53	CALL_1
+0x40016e6	          0x4889f2	                            mov rdx, rsi	      1227	radix-tree.c	FUNCTION_53	CALL_1
+0x40016e9	            0x31f6	                            xor esi, esi	      1227	radix-tree.c	FUNCTION_53	CALL_1
+0x40016eb	      0xe930ffffff	            jmp sym.__radix_tree_replace	      1227	radix-tree.c	FUNCTION_53	CALL_1
+radix_tree_lookup_slot	ELSE,0:IF,1:CALL,1:functions,0:FOR,0:WHILE,0:DO,0:SWITCH,0	18
+0x4001500	        0x4883ec10	                           sub rsp, 0x10	      1076	radix-tree.c	FUNCTION_46
+0x4001504	            0x31d2	                            xor edx, edx	      1079	radix-tree.c	FUNCTION_46	IF_1	CALL_1
+0x4001506	          0x4889e1	                            mov rcx, rsp	      1079	radix-tree.c	FUNCTION_46	IF_1	CALL_1
+0x4001509	    0x65488b042528	                mov rax, qword gs:[0x28]	      1076	radix-tree.c	FUNCTION_46
+0x4001512	      0x4889442408	                mov qword [rsp + 8], rax	      1076	radix-tree.c	FUNCTION_46
+0x4001517	            0x31c0	                            xor eax, eax	      1076	radix-tree.c	FUNCTION_46
+0x4001519	      0xe800000000	                          call 0x400151e	      1079	radix-tree.c	FUNCTION_46	IF_1	CALL_1
+0x400151e	          0x4885c0	                           test rax, rax	      1079	radix-tree.c	FUNCTION_46	IF_1	CALL_1
+0x4001521	            0x7419	                            je 0x400153c	      1079	radix-tree.c	FUNCTION_46	IF_1	CALL_1
+0x4001523	        0x488b0424	                    mov rax, qword [rsp]	      1081	radix-tree.c	FUNCTION_46
+0x4001527	      0x488b542408	                mov rdx, qword [rsp + 8]	      1082	radix-tree.c	FUNCTION_46
+0x400152c	    0x654833142528	                xor rdx, qword gs:[0x28]	      1082	radix-tree.c	FUNCTION_46
+0x4001535	            0x7509	                           jne 0x4001540	      1082	radix-tree.c	FUNCTION_46
+0x4001537	        0x4883c410	                           add rsp, 0x10	      1082	radix-tree.c	FUNCTION_46
+0x400153b	              0xc3	                                     ret	      1082	radix-tree.c	FUNCTION_46
+0x400153c	            0x31c0	                            xor eax, eax	      1080	radix-tree.c	FUNCTION_46	IF_1
+0x400153e	            0xebe7	                           jmp 0x4001527	      1080	radix-tree.c	FUNCTION_46	IF_1
+0x4001540	      0xe800000000	                          call 0x4001545	      1082	radix-tree.c	FUNCTION_46
+radix_tree_clear_tags	ELSE,1:IF,1:CALL,3:functions,0:FOR,1:WHILE,0:DO,0:SWITCH,0	26
+0x4001730	          0x4885f6	                           test rsi, rsi	      2075	radix-tree.c	FUNCTION_80	IF_1
+0x4001733	            0x743a	                            je 0x400176f	      2075	radix-tree.c	FUNCTION_80	IF_1
+0x4001735	        0x488d4628	                   lea rax, [rsi + 0x28]	       123	radix-tree.c	FUNCTION_5
+0x4001739	            0x4154	                                push r12	      2074	radix-tree.c	FUNCTION_80
+0x400173b	              0x55	                                push rbp	      2074	radix-tree.c	FUNCTION_80
+0x400173c	              0x53	                                push rbx	      2074	radix-tree.c	FUNCTION_80
+0x400173d	          0x4889d3	                            mov rbx, rdx	      2074	radix-tree.c	FUNCTION_80
+0x4001740	          0x4889f5	                            mov rbp, rsi	      2074	radix-tree.c	FUNCTION_80
+0x4001743	          0x4829c3	                            sub rbx, rax	      2076	radix-tree.c	FUNCTION_80	IF_1	CALL_1
+0x4001746	          0x4989fc	                            mov r12, rdi	      2076	radix-tree.c	FUNCTION_80	IF_1	CALL_1
+0x4001749	          0x4531db	                          xor r11d, r11d	      2077	radix-tree.c	FUNCTION_80	IF_1	FOR_1
+0x400174c	        0x48c1eb03	                              shr rbx, 3	      2076	radix-tree.c	FUNCTION_80	IF_1	CALL_1
+0x4001750	          0x4489da	                           mov edx, r11d	      2078	radix-tree.c	FUNCTION_80	IF_1	CALL_2
+0x4001753	            0x89d9	                            mov ecx, ebx	      2078	radix-tree.c	FUNCTION_80	IF_1	CALL_2
+0x4001755	          0x4889ee	                            mov rsi, rbp	      2078	radix-tree.c	FUNCTION_80	IF_1	CALL_2
+0x4001758	          0x4c89e7	                            mov rdi, r12	      2078	radix-tree.c	FUNCTION_80	IF_1	CALL_2
+0x400175b	      0xe840f5ffff	                 call sym.node_tag_clear	      2078	radix-tree.c	FUNCTION_80	IF_1	CALL_2
+0x4001760	        0x4183c301	                             add r11d, 1	      2077	radix-tree.c	FUNCTION_80	IF_1	FOR_1
+0x4001764	        0x4183fb03	                             cmp r11d, 3	      2077	radix-tree.c	FUNCTION_80	IF_1	FOR_1
+0x4001768	            0x75e6	                           jne 0x4001750	      2077	radix-tree.c	FUNCTION_80	IF_1	FOR_1
+0x400176a	              0x5b	                                 pop rbx	      2082	radix-tree.c	FUNCTION_80
+0x400176b	              0x5d	                                 pop rbp	      2082	radix-tree.c	FUNCTION_80
+0x400176c	            0x415c	                                 pop r12	      2082	radix-tree.c	FUNCTION_80
+0x400176e	              0xc3	                                     ret	      2082	radix-tree.c	FUNCTION_80
+0x400176f	    0x816704ffffff	          and dword [rdi + 4], 0x1ffffff	       182	radix-tree.c	FUNCTION_13
+0x4001776	              0xc3	                                     ret	      2082	radix-tree.c	FUNCTION_80

@@ -1,20 +1,437 @@
-plug_bulk_checkin	WHILE,0:CALL,0:SWITCH,0:DO,0:FOR,0:ELSE,0:functions,0:IF,0	2
-0x40007e0	    0x800d00000000	                 or byte [0x040007e7], 1	       272	bulk-checkin.c	FUNCTION_7
-0x40007e7	              0xc3	                                     ret	       272	bulk-checkin.c	FUNCTION_7
-unplug_bulk_checkin	WHILE,0:CALL,1:SWITCH,0:DO,0:FOR,0:ELSE,0:functions,0:IF,1	6
-0x40007f0	    0x802500000000	             and byte [0x040007f7], 0xfe	       277	bulk-checkin.c	FUNCTION_8
-0x40007f7	    0x48833d000000	               cmp qword [0x040007ff], 0	       278	bulk-checkin.c	FUNCTION_8	IF_1
-0x40007ff	            0x740f	                            je 0x4000810	       278	bulk-checkin.c	FUNCTION_8	IF_1
-0x4000801	      0xe93af8ffff	 jmp sym.finish_bulk_checkin.constprop.4	       279	bulk-checkin.c	FUNCTION_8	CALL_1
-0x4000806	    0x662e0f1f8400	                 nop word cs:[rax + rax]	       279	bulk-checkin.c	FUNCTION_8	CALL_1
-0x4000810	            0xf3c3	                                     ret	       279	bulk-checkin.c	FUNCTION_8	CALL_1
-index_bulk_checkin	WHILE,0:CALL,2:SWITCH,0:DO,0:FOR,0:ELSE,0:functions,0:IF,1	9
-0x40007b0	        0x4883ec18	                           sub rsp, 0x18	       262	bulk-checkin.c	FUNCTION_6
-0x40007b4	      0xe817faffff	    call sym.deflate_to_pack.constprop.1	       263	bulk-checkin.c	FUNCTION_6	CALL_1
-0x40007b9	    0xf60500000000	               test byte [0x040007c0], 1	       265	bulk-checkin.c	FUNCTION_6	IF_1
-0x40007c0	            0x750d	                           jne 0x40007cf	       265	bulk-checkin.c	FUNCTION_6	IF_1
-0x40007c2	        0x8944240c	              mov dword [rsp + 0xc], eax	       265	bulk-checkin.c	FUNCTION_6	IF_1
-0x40007c6	      0xe875f8ffff	call sym.finish_bulk_checkin.constprop.4	       266	bulk-checkin.c	FUNCTION_6	CALL_2
-0x40007cb	        0x8b44240c	              mov eax, dword [rsp + 0xc]	       266	bulk-checkin.c	FUNCTION_6	CALL_2
-0x40007cf	        0x4883c418	                           add rsp, 0x18	       268	bulk-checkin.c	FUNCTION_6
-0x40007d3	              0xc3	                                     ret	       268	bulk-checkin.c	FUNCTION_6
+deflate_to_pack	CALL,22:functions,0:FOR,0:WHILE,1:DO,0:ELSE,1:IF,8:SWITCH,0	316
+0x40001a0	            0x4157	                                push r15	       194	bulk-checkin.c	FUNCTION_5
+0x40001a2	            0x4156	                                push r14	       194	bulk-checkin.c	FUNCTION_5
+0x40001a4	            0x4155	                                push r13	       194	bulk-checkin.c	FUNCTION_5
+0x40001a6	            0x4154	                                push r12	       194	bulk-checkin.c	FUNCTION_5
+0x40001a8	              0x55	                                push rbp	       194	bulk-checkin.c	FUNCTION_5
+0x40001a9	              0x53	                                push rbx	       194	bulk-checkin.c	FUNCTION_5
+0x40001aa	    0x4881ecd8d300	                         sub rsp, 0xd3d8	       194	bulk-checkin.c	FUNCTION_5
+0x40001b1	          0x4989fd	                            mov r13, rdi	       194	bulk-checkin.c	FUNCTION_5
+0x40001b4	      0x4889742438	             mov qword [rsp + 0x38], rsi	       194	bulk-checkin.c	FUNCTION_5
+0x40001b9	            0x89d7	                            mov edi, edx	       194	bulk-checkin.c	FUNCTION_5
+0x40001bb	        0x8954241c	             mov dword [rsp + 0x1c], edx	       194	bulk-checkin.c	FUNCTION_5
+0x40001bf	      0x48894c2428	             mov qword [rsp + 0x28], rcx	       194	bulk-checkin.c	FUNCTION_5
+0x40001c4	      0x4489442430	             mov dword [rsp + 0x30], r8d	       194	bulk-checkin.c	FUNCTION_5
+0x40001c9	      0x4c894c2448	              mov qword [rsp + 0x48], r9	       194	bulk-checkin.c	FUNCTION_5
+0x40001ce	    0x64488b042528	                mov rax, qword fs:[0x28]	       194	bulk-checkin.c	FUNCTION_5
+0x40001d7	    0x48898424c8d3	          mov qword [rsp + 0xd3c8], rax 	       194	bulk-checkin.c	FUNCTION_5
+0x40001df	            0x31c0	                            xor eax, eax	       194	bulk-checkin.c	FUNCTION_5
+0x40001e1	      0xba01000000	                              mov edx, 1	       202	bulk-checkin.c	FUNCTION_5	CALL_1
+0x40001e6	      0xbe00000000	                              mov esi, 0	       202	bulk-checkin.c	FUNCTION_5	CALL_1
+0x40001eb	      0xe800000000	                          call 0x40001f0	       202	bulk-checkin.c	FUNCTION_5	CALL_1
+0x40001f0	      0x4889442440	             mov qword [rsp + 0x40], rax	       202	bulk-checkin.c	FUNCTION_5	CALL_1
+0x40001f5	        0x4883f8ff	             cmp rax, 0xffffffffffffffff	       203	bulk-checkin.c	FUNCTION_5	IF_1
+0x40001f9	            0x7519	                           jne 0x4000214	       203	bulk-checkin.c	FUNCTION_5	IF_1
+0x40001fb	      0xbf00000000	                              mov edi, 0	       204	bulk-checkin.c	FUNCTION_5	CALL_2
+0x4000200	      0xb800000000	                              mov eax, 0	       204	bulk-checkin.c	FUNCTION_5	CALL_2
+0x4000205	      0xe800000000	                          call 0x400020a	       204	bulk-checkin.c	FUNCTION_5	CALL_2
+0x400020a	      0xbbffffffff	                     mov ebx, 0xffffffff	       204	bulk-checkin.c	FUNCTION_5	CALL_2
+0x400020f	      0xe969040000	                           jmp 0x400067d	       204	bulk-checkin.c	FUNCTION_5	CALL_2
+0x4000214	        0x8b7c2430	            mov edi, dword [rsp + 0x30] 	       206	bulk-checkin.c	FUNCTION_5	CALL_3
+0x4000218	      0xe800000000	                          call 0x400021d	       206	bulk-checkin.c	FUNCTION_5	CALL_3
+0x400021d	      0x4c8b442428	              mov r8, qword [rsp + 0x28]	       206	bulk-checkin.c	FUNCTION_5	CALL_3
+0x4000222	          0x4889c1	                            mov rcx, rax	       206	bulk-checkin.c	FUNCTION_5	CALL_3
+0x4000225	      0xba00000000	                              mov edx, 0	       206	bulk-checkin.c	FUNCTION_5	CALL_3
+0x400022a	      0xbe00400000	                         mov esi, 0x4000	       206	bulk-checkin.c	FUNCTION_5	CALL_3
+0x400022f	    0x488dbc24c013	                 lea rdi, [rsp + 0x13c0]	       206	bulk-checkin.c	FUNCTION_5	CALL_3
+0x4000237	      0xb800000000	                              mov eax, 0	       206	bulk-checkin.c	FUNCTION_5	CALL_3
+0x400023c	      0xe800000000	                          call 0x4000241	       206	bulk-checkin.c	FUNCTION_5	CALL_3
+0x4000241	            0x89c3	                            mov ebx, eax	       206	bulk-checkin.c	FUNCTION_5	CALL_3
+0x4000243	    0x488b05000000	            mov rax, qword [0x0400024a] 	       208	bulk-checkin.c	FUNCTION_5	CALL_5
+0x400024a	        0x488b4058	            mov rax, qword [rax + 0x58] 	       208	bulk-checkin.c	FUNCTION_5	CALL_5
+0x400024e	    0x488dbc24f000	                   lea rdi, [rsp + 0xf0]	       208	bulk-checkin.c	FUNCTION_5	CALL_5
+0x4000256	          0xff5020	                 call qword [rax + 0x20]	       208	bulk-checkin.c	FUNCTION_5	CALL_5
+0x4000259	          0x8d5301	                      lea edx, [rbx + 1]	       209	bulk-checkin.c	FUNCTION_5	CALL_6
+0x400025c	    0x488b05000000	            mov rax, qword [0x04000263] 	       209	bulk-checkin.c	FUNCTION_5	CALL_6
+0x4000263	        0x488b4058	            mov rax, qword [rax + 0x58] 	       209	bulk-checkin.c	FUNCTION_5	CALL_6
+0x4000267	    0x488db424c013	                 lea rsi, [rsp + 0x13c0]	       209	bulk-checkin.c	FUNCTION_5	CALL_6
+0x400026f	    0x488dbc24f000	                   lea rdi, [rsp + 0xf0]	       209	bulk-checkin.c	FUNCTION_5	CALL_6
+0x4000277	          0xff5028	                 call qword [rax + 0x28]	       209	bulk-checkin.c	FUNCTION_5	CALL_6
+0x400027a	    0x8b842410d400	          mov eax, dword [rsp + 0xd410] 	       212	bulk-checkin.c	FUNCTION_5	IF_2
+0x4000281	          0x83e001	                              and eax, 1	       212	bulk-checkin.c	FUNCTION_5	IF_2
+0x4000284	        0x89442434	             mov dword [rsp + 0x34], eax	       212	bulk-checkin.c	FUNCTION_5	IF_2
+0x4000288	            0x7416	                            je 0x40002a0	       212	bulk-checkin.c	FUNCTION_5	IF_2
+0x400028a	      0xbe20000000	                           mov esi, 0x20	       213	bulk-checkin.c	FUNCTION_5	CALL_7
+0x400028f	      0xbf01000000	                              mov edi, 1	       213	bulk-checkin.c	FUNCTION_5	CALL_7
+0x4000294	      0xe800000000	                          call 0x4000299	       213	bulk-checkin.c	FUNCTION_5	CALL_7
+0x4000299	      0x4889442420	             mov qword [rsp + 0x20], rax	       213	bulk-checkin.c	FUNCTION_5	CALL_7
+0x400029e	            0xeb09	                           jmp 0x40002a9	       213	bulk-checkin.c	FUNCTION_5	CALL_7
+0x40002a0	    0x48c744242000	               mov qword [rsp + 0x20], 0	       200	bulk-checkin.c	FUNCTION_5
+0x40002a9	    0x48c744241000	               mov qword [rsp + 0x10], 0	       215	bulk-checkin.c	FUNCTION_5
+0x40002b2	    0x4c8dbc24c053	                 lea r15, [rsp + 0x53c0]	       110	bulk-checkin.c	FUNCTION_3	CALL_2
+0x40002ba	      0x837c243400	               cmp dword [rsp + 0x34], 0	       177	bulk-checkin.c	FUNCTION_4	IF_1
+0x40002bf	            0x743e	                            je 0x40002ff	       177	bulk-checkin.c	FUNCTION_4	IF_1
+0x40002c1	      0x49837d1000	               cmp qword [r13 + 0x10], 0	       177	bulk-checkin.c	FUNCTION_4	IF_1
+0x40002c6	            0x7537	                           jne 0x40002ff	       177	bulk-checkin.c	FUNCTION_4	IF_1
+0x40002c8	        0x498d7d08	                      lea rdi, [r13 + 8]	       180	bulk-checkin.c	FUNCTION_4	CALL_1
+0x40002cc	      0xe800000000	                          call 0x40002d1	       180	bulk-checkin.c	FUNCTION_4	CALL_1
+0x40002d1	        0x49894510	             mov qword [r13 + 0x10], rax	       180	bulk-checkin.c	FUNCTION_4	CALL_1
+0x40002d5	        0x498d7d20	                   lea rdi, [r13 + 0x20]	       181	bulk-checkin.c	FUNCTION_4	CALL_2
+0x40002d9	      0xe800000000	                          call 0x40002de	       181	bulk-checkin.c	FUNCTION_4	CALL_2
+0x40002de	        0x498b7d10	            mov rdi, qword [r13 + 0x10] 	       184	bulk-checkin.c	FUNCTION_4	CALL_3
+0x40002e2	      0xbe01000000	                              mov esi, 1	       184	bulk-checkin.c	FUNCTION_4	CALL_3
+0x40002e7	      0xe800000000	                          call 0x40002ec	       184	bulk-checkin.c	FUNCTION_4	CALL_3
+0x40002ec	        0x49894518	             mov qword [r13 + 0x18], rax	       184	bulk-checkin.c	FUNCTION_4	CALL_3
+0x40002f0	          0x4885c0	                           test rax, rax	       185	bulk-checkin.c	FUNCTION_4	IF_2
+0x40002f3	            0x750a	                           jne 0x40002ff	       185	bulk-checkin.c	FUNCTION_4	IF_2
+0x40002f5	      0xbf00000000	                              mov edi, 0	       186	bulk-checkin.c	FUNCTION_4	CALL_4
+0x40002fa	      0xe800000000	                          call 0x40002ff	       186	bulk-checkin.c	FUNCTION_4	CALL_4
+0x40002ff	      0x488b5c2420	            mov rbx, qword [rsp + 0x20] 	       219	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_3
+0x4000304	          0x4885db	                           test rbx, rbx	       219	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_3
+0x4000307	            0x7422	                            je 0x400032b	       219	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_3
+0x4000309	        0x498b7d10	            mov rdi, qword [r13 + 0x10] 	       220	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_3	CALL_9
+0x400030d	    0x488db424500a	                  lea rsi, [rsp + 0xa50]	       220	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_3	CALL_9
+0x4000315	      0xe800000000	                          call 0x400031a	       220	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_3	CALL_9
+0x400031a	        0x498b4518	            mov rax, qword [r13 + 0x18] 	       221	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_3
+0x400031e	        0x48894318	             mov qword [rbx + 0x18], rax	       221	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_3
+0x4000322	        0x498b7d10	            mov rdi, qword [r13 + 0x10] 	       222	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_3	CALL_10
+0x4000326	      0xe800000000	                          call 0x400032b	       222	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_3	CALL_10
+0x400032b	    0x448bb42410d4	         mov r14d, dword [rsp + 0xd410] 	       105	bulk-checkin.c	FUNCTION_3
+0x4000333	        0x4183e601	                             and r14d, 1	       105	bulk-checkin.c	FUNCTION_3
+0x4000337	    0x8b3500000000	            mov esi, dword [0x0400033d] 	       108	bulk-checkin.c	FUNCTION_3	CALL_1
+0x400033d	      0x488d7c2450	                   lea rdi, [rsp + 0x50]	       108	bulk-checkin.c	FUNCTION_3	CALL_1
+0x4000342	      0xe800000000	                          call 0x4000347	       108	bulk-checkin.c	FUNCTION_3	CALL_1
+0x4000347	      0x488b6c2428	            mov rbp, qword [rsp + 0x28] 	       110	bulk-checkin.c	FUNCTION_3	CALL_2
+0x400034c	          0x4889e9	                            mov rcx, rbp	       110	bulk-checkin.c	FUNCTION_3	CALL_2
+0x400034f	        0x8b542430	            mov edx, dword [rsp + 0x30] 	       110	bulk-checkin.c	FUNCTION_3	CALL_2
+0x4000353	      0xbe00400000	                         mov esi, 0x4000	       110	bulk-checkin.c	FUNCTION_3	CALL_2
+0x4000358	          0x4c89ff	                            mov rdi, r15	       110	bulk-checkin.c	FUNCTION_3	CALL_2
+0x400035b	      0xe800000000	                          call 0x4000360	       110	bulk-checkin.c	FUNCTION_3	CALL_2
+0x4000360	            0x89c0	                            mov eax, eax	       111	bulk-checkin.c	FUNCTION_3
+0x4000362	        0x498d1407	                    lea rdx, [r15 + rax]	       111	bulk-checkin.c	FUNCTION_3
+0x4000366	    0x48899424e800	             mov qword [rsp + 0xe8], rdx	       111	bulk-checkin.c	FUNCTION_3
+0x400036e	      0xba00400000	                         mov edx, 0x4000	       112	bulk-checkin.c	FUNCTION_3
+0x4000373	          0x4829c2	                            sub rdx, rax	       112	bulk-checkin.c	FUNCTION_3
+0x4000376	    0x48899424c800	             mov qword [rsp + 0xc8], rdx	       112	bulk-checkin.c	FUNCTION_3
+0x400037e	    0x48c744240800	                  mov qword [rsp + 8], 0	       106	bulk-checkin.c	FUNCTION_3
+0x4000387	          0x4885ed	                           test rbp, rbp	       117	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x400038a	     0xf84e5000000	                            je 0x4000475	       117	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x4000390	      0xbe00000000	                              mov esi, 0	       139	bulk-checkin.c	FUNCTION_3	WHILE_1	CALL_7
+0x4000395	    0x4883bc24c000	               cmp qword [rsp + 0xc0], 0	       117	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x400039e	     0xf85d6000000	                           jne 0x400047a	       117	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x40003a4	    0x4881fd004000	                         cmp rbp, 0x4000	       118	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x40003ab	      0xbb00400000	                         mov ebx, 0x4000	       118	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x40003b0	        0x480f46dd	                         cmovbe rbx, rbp	       118	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x40003b4	          0x4889da	                            mov rdx, rbx	       119	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	CALL_3
+0x40003b7	    0x488db424c093	                 lea rsi, [rsp + 0x93c0]	       119	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	CALL_3
+0x40003bf	        0x8b7c241c	            mov edi, dword [rsp + 0x1c] 	       119	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	CALL_3
+0x40003c3	      0xe800000000	                          call 0x40003c8	       119	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	CALL_3
+0x40003c8	          0x4885c0	                           test rax, rax	       120	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_2
+0x40003cb	            0x7914	                           jns 0x40003e1	       120	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_2
+0x40003cd	      0x488b742448	            mov rsi, qword [rsp + 0x48] 	       121	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	CALL_4
+0x40003d2	      0xbf00000000	                              mov edi, 0	       121	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	CALL_4
+0x40003d7	      0xb800000000	                              mov eax, 0	       121	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	CALL_4
+0x40003dc	      0xe800000000	                          call 0x40003e1	       121	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	CALL_4
+0x40003e1	          0x4839c3	                            cmp rbx, rax	       122	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_3
+0x40003e4	            0x7416	                            je 0x40003fc	       122	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_3
+0x40003e6	      0x488b542448	            mov rdx, qword [rsp + 0x48] 	       123	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_3	CALL_5
+0x40003eb	            0x89de	                            mov esi, ebx	       123	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_3	CALL_5
+0x40003ed	      0xbf00000000	                              mov edi, 0	       123	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_3	CALL_5
+0x40003f2	      0xb800000000	                              mov eax, 0	       123	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_3	CALL_5
+0x40003f7	      0xe800000000	                          call 0x40003fc	       123	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_3	CALL_5
+0x40003fc	      0x48015c2408	                add qword [rsp + 8], rbx	       125	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x4000401	      0x488b442408	                mov rax, qword [rsp + 8]	       125	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x4000406	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       126	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4
+0x400040b	          0x4839c8	                            cmp rax, rcx	       126	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4
+0x400040e	            0x7e3f	                           jle 0x400044f	       126	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4
+0x4000410	          0x4889c2	                            mov rdx, rax	       127	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4
+0x4000413	          0x4829ca	                            sub rdx, rcx	       127	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4
+0x4000416	          0x4839d3	                            cmp rbx, rdx	       127	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4
+0x4000419	        0x480f46d3	                         cmovbe rdx, rbx	       127	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4
+0x400041d	      0x4889442410	             mov qword [rsp + 0x10], rax	       132	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4
+0x4000422	          0x4885d2	                           test rdx, rdx	       130	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4	IF_6
+0x4000425	            0x7428	                            je 0x400044f	       130	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4	IF_6
+0x4000427	    0x488b05000000	            mov rax, qword [0x0400042e] 	       131	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4	CALL_6
+0x400042e	        0x488b4058	            mov rax, qword [rax + 0x58] 	       131	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4	CALL_6
+0x4000432	    0x488db424c093	                 lea rsi, [rsp + 0x93c0]	       131	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4	CALL_6
+0x400043a	    0x488dbc24f000	                   lea rdi, [rsp + 0xf0]	       131	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4	CALL_6
+0x4000442	          0xff5028	                 call qword [rax + 0x28]	       131	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4	CALL_6
+0x4000445	      0x488b442408	                mov rax, qword [rsp + 8]	       132	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4
+0x400044a	      0x4889442410	             mov qword [rsp + 0x10], rax	       132	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1	IF_4
+0x400044f	    0x488d8424c093	                 lea rax, [rsp + 0x93c0]	       134	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x4000457	    0x48898424e000	             mov qword [rsp + 0xe0], rax	       134	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x400045f	    0x48899c24c000	             mov qword [rsp + 0xc0], rbx	       135	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x4000467	          0x4829dd	                            sub rbp, rbx	       136	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_1
+0x400046a	        0x4883fd01	                              cmp rbp, 1	       139	bulk-checkin.c	FUNCTION_3	WHILE_1	CALL_7
+0x400046e	            0x19f6	                            sbb esi, esi	       139	bulk-checkin.c	FUNCTION_3	WHILE_1	CALL_7
+0x4000470	          0x83e604	                              and esi, 4	       139	bulk-checkin.c	FUNCTION_3	WHILE_1	CALL_7
+0x4000473	            0xeb05	                           jmp 0x400047a	       139	bulk-checkin.c	FUNCTION_3	WHILE_1	CALL_7
+0x4000475	      0xbe04000000	                              mov esi, 4	       139	bulk-checkin.c	FUNCTION_3	WHILE_1	CALL_7
+0x400047a	      0x488d7c2450	                   lea rdi, [rsp + 0x50]	       139	bulk-checkin.c	FUNCTION_3	WHILE_1	CALL_7
+0x400047f	      0xe800000000	                          call 0x4000484	       139	bulk-checkin.c	FUNCTION_3	WHILE_1	CALL_7
+0x4000484	            0x89c3	                            mov ebx, eax	       139	bulk-checkin.c	FUNCTION_3	WHILE_1	CALL_7
+0x4000486	    0x4883bc24c800	               cmp qword [rsp + 0xc8], 0	       141	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7
+0x400048f	            0x7405	                            je 0x4000496	       141	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7
+0x4000491	          0x83f801	                              cmp eax, 1	       141	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7
+0x4000494	            0x7571	                           jne 0x4000507	       141	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7
+0x4000496	          0x4585f6	                         test r14d, r14d	       142	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8
+0x4000499	            0x7458	                            je 0x40004f3	       142	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8
+0x400049b	    0x4c8ba424e800	            mov r12, qword [rsp + 0xe8] 	       143	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8
+0x40004a3	          0x4d29fc	                            sub r12, r15	       143	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8
+0x40004a6	      0x41837d4c00	               cmp dword [r13 + 0x4c], 0	       146	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9
+0x40004ab	            0x7433	                            je 0x40004e0	       146	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9
+0x40004ad	    0x488b05000000	            mov rax, qword [0x040004b4] 	       146	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9
+0x40004b4	          0x4885c0	                           test rax, rax	       146	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9
+0x40004b7	            0x7427	                            je 0x40004e0	       146	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9
+0x40004b9	          0x4c89e2	                            mov rdx, r12	       147	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9
+0x40004bc	        0x49035518	             add rdx, qword [r13 + 0x18]	       147	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9
+0x40004c0	          0x4839d0	                            cmp rax, rdx	       147	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9
+0x40004c3	            0x731b	                           jae 0x40004e0	       147	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9
+0x40004c5	      0x488d7c2450	                   lea rdi, [rsp + 0x50]	       149	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9	CALL_8
+0x40004ca	      0xe800000000	                          call 0x40004cf	       149	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	IF_9	CALL_8
+0x40004cf	    0x48837c242000	               cmp qword [rsp + 0x20], 0	       232	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_5
+0x40004d5	     0xf85a0000000	                           jne 0x400057b	       232	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_5
+0x40004db	      0xe98c000000	                           jmp 0x400056c	       232	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_5
+0x40004e0	        0x498b7d10	            mov rdi, qword [r13 + 0x10] 	       153	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	CALL_9
+0x40004e4	          0x4489e2	                           mov edx, r12d	       153	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	CALL_9
+0x40004e7	          0x4c89fe	                            mov rsi, r15	       153	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	CALL_9
+0x40004ea	      0xe800000000	                          call 0x40004ef	       153	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8	CALL_9
+0x40004ef	        0x4d016518	            add qword [r13 + 0x18], r12 	       154	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7	IF_8
+0x40004f3	    0x4c89bc24e800	             mov qword [rsp + 0xe8], r15	       156	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7
+0x40004fb	    0x48c78424c800	         mov qword [rsp + 0xc8], 0x4000 	       157	bulk-checkin.c	FUNCTION_3	WHILE_1	IF_7
+0x4000507	          0x83fbfb	             cmp ebx, 0xfffffffffffffffb	       160	bulk-checkin.c	FUNCTION_3	WHILE_1	SWITCH_1
+0x400050a	            0x740a	                            je 0x4000516	       160	bulk-checkin.c	FUNCTION_3	WHILE_1	SWITCH_1
+0x400050c	          0x83fbfb	             cmp ebx, 0xfffffffffffffffb	       160	bulk-checkin.c	FUNCTION_3	WHILE_1	SWITCH_1
+0x400050f	            0x7c10	                            jl 0x4000521	       160	bulk-checkin.c	FUNCTION_3	WHILE_1	SWITCH_1
+0x4000511	          0x83fb01	                              cmp ebx, 1	       160	bulk-checkin.c	FUNCTION_3	WHILE_1	SWITCH_1
+0x4000514	            0x770b	                            ja 0x4000521	       160	bulk-checkin.c	FUNCTION_3	WHILE_1	SWITCH_1
+0x4000516	          0x83fb01	                              cmp ebx, 1	       114	bulk-checkin.c	FUNCTION_3	WHILE_1
+0x4000519	     0xf8568feffff	                           jne 0x4000387	       114	bulk-checkin.c	FUNCTION_3	WHILE_1
+0x400051f	            0xeb11	                           jmp 0x4000532	       114	bulk-checkin.c	FUNCTION_3	WHILE_1
+0x4000521	            0x89de	                            mov esi, ebx	       166	bulk-checkin.c	FUNCTION_3	WHILE_1	SWITCH_1	CALL_10
+0x4000523	      0xbf00000000	                              mov edi, 0	       166	bulk-checkin.c	FUNCTION_3	WHILE_1	SWITCH_1	CALL_10
+0x4000528	      0xb800000000	                              mov eax, 0	       166	bulk-checkin.c	FUNCTION_3	WHILE_1	SWITCH_1	CALL_10
+0x400052d	      0xe800000000	                          call 0x4000532	       166	bulk-checkin.c	FUNCTION_3	WHILE_1	SWITCH_1	CALL_10
+0x4000532	      0x488d7c2450	                   lea rdi, [rsp + 0x50]	       169	bulk-checkin.c	FUNCTION_3	CALL_11
+0x4000537	      0xe800000000	                          call 0x400053c	       169	bulk-checkin.c	FUNCTION_3	CALL_11
+0x400053c	      0x488b7c2438	            mov rdi, qword [rsp + 0x38] 	       240	bulk-checkin.c	FUNCTION_5	CALL_17
+0x4000541	          0x4889fd	                            mov rbp, rdi	       240	bulk-checkin.c	FUNCTION_5	CALL_17
+0x4000544	    0x488b05000000	            mov rax, qword [0x0400054b] 	       240	bulk-checkin.c	FUNCTION_5	CALL_17
+0x400054b	        0x488b4058	            mov rax, qword [rax + 0x58] 	       240	bulk-checkin.c	FUNCTION_5	CALL_17
+0x400054f	    0x488db424f000	                   lea rsi, [rsp + 0xf0]	       240	bulk-checkin.c	FUNCTION_5	CALL_17
+0x4000557	          0xff5030	                 call qword [rax + 0x30]	       240	bulk-checkin.c	FUNCTION_5	CALL_17
+0x400055a	      0xbb00000000	                              mov ebx, 0	       242	bulk-checkin.c	FUNCTION_5	IF_7
+0x400055f	    0x48837c242000	               cmp qword [rsp + 0x20], 0	       241	bulk-checkin.c	FUNCTION_5	IF_7
+0x4000565	            0x756f	                           jne 0x40005d6	       241	bulk-checkin.c	FUNCTION_5	IF_7
+0x4000567	      0xe911010000	                           jmp 0x400067d	       241	bulk-checkin.c	FUNCTION_5	IF_7
+0x400056c	      0xbf00000000	                              mov edi, 0	       233	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_12
+0x4000571	      0xb800000000	                              mov eax, 0	       233	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_12
+0x4000576	      0xe800000000	                          call 0x400057b	       233	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_12
+0x400057b	        0x498b7d10	            mov rdi, qword [r13 + 0x10] 	       234	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_13
+0x400057f	    0x488db424500a	                  lea rsi, [rsp + 0xa50]	       234	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_13
+0x4000587	      0xe800000000	                          call 0x400058c	       234	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_13
+0x400058c	    0x488b8424500a	           mov rax, qword [rsp + 0xa50] 	       235	bulk-checkin.c	FUNCTION_5	WHILE_1
+0x4000594	        0x49894518	             mov qword [r13 + 0x18], rax	       235	bulk-checkin.c	FUNCTION_5	WHILE_1
+0x4000598	          0x4c89ef	                            mov rdi, r13	       236	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_14
+0x400059b	      0xe8a0faffff	            call sym.finish_bulk_checkin	       236	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_14
+0x40005a0	      0xba00000000	                              mov edx, 0	       237	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_6	CALL_15
+0x40005a5	      0x488b742440	            mov rsi, qword [rsp + 0x40] 	       237	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_6	CALL_15
+0x40005aa	        0x8b7c241c	            mov edi, dword [rsp + 0x1c] 	       237	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_6	CALL_15
+0x40005ae	      0xe800000000	                          call 0x40005b3	       237	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_6	CALL_15
+0x40005b3	        0x4883f8ff	             cmp rax, 0xffffffffffffffff	       237	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_6	CALL_15
+0x40005b7	     0xf85fdfcffff	                           jne 0x40002ba	       237	bulk-checkin.c	FUNCTION_5	WHILE_1	IF_6	CALL_15
+0x40005bd	      0xbf00000000	                              mov edi, 0	       238	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_16
+0x40005c2	      0xb800000000	                              mov eax, 0	       238	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_16
+0x40005c7	      0xe800000000	                          call 0x40005cc	       238	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_16
+0x40005cc	      0xbbffffffff	                     mov ebx, 0xffffffff	       238	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_16
+0x40005d1	      0xe9a7000000	                           jmp 0x400067d	       238	bulk-checkin.c	FUNCTION_5	WHILE_1	CALL_16
+0x40005d6	        0x498b7d10	            mov rdi, qword [r13 + 0x10] 	       244	bulk-checkin.c	FUNCTION_5	CALL_18
+0x40005da	      0xe800000000	                          call 0x40005df	       244	bulk-checkin.c	FUNCTION_5	CALL_18
+0x40005df	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	       244	bulk-checkin.c	FUNCTION_5	CALL_18
+0x40005e4	          0x894114	             mov dword [rcx + 0x14], eax	       244	bulk-checkin.c	FUNCTION_5	CALL_18
+0x40005e7	      0xbe00000000	                              mov esi, 0	      1251	cache.h	FUNCTION_31	CALL_1
+0x40005ec	      0x488b7c2438	            mov rdi, qword [rsp + 0x38] 	      1251	cache.h	FUNCTION_31	CALL_1
+0x40005f1	      0xe800000000	                          call 0x40005f6	      1251	cache.h	FUNCTION_31	CALL_1
+0x40005f6	            0x89c3	                            mov ebx, eax	      1251	cache.h	FUNCTION_31	CALL_1
+0x40005f8	            0x85c0	                           test eax, eax	        69	bulk-checkin.c	FUNCTION_2	IF_1	CALL_1
+0x40005fa	     0xf8594000000	                           jne 0x4000694	        69	bulk-checkin.c	FUNCTION_2	IF_1	CALL_1
+0x4000600	        0x458b754c	           mov r14d, dword [r13 + 0x4c] 	        73	bulk-checkin.c	FUNCTION_2	FOR_1
+0x4000604	          0x4585f6	                         test r14d, r14d	        73	bulk-checkin.c	FUNCTION_2	FOR_1
+0x4000607	     0xf84b5000000	                            je 0x40006c2	        73	bulk-checkin.c	FUNCTION_2	FOR_1
+0x400060d	        0x4d8b7d40	            mov r15, qword [r13 + 0x40] 	        74	bulk-checkin.c	FUNCTION_2	FOR_1	IF_2	CALL_2
+0x4000611	    0x41bc00000000	                             mov r12d, 0	        74	bulk-checkin.c	FUNCTION_2	FOR_1	IF_2	CALL_2
+0x4000617	          0x4963c4	                        movsxd rax, r12d	        74	bulk-checkin.c	FUNCTION_2	FOR_1	IF_2	CALL_2
+0x400061a	        0x498b3cc7	            mov rdi, qword [r15 + rax*8]	       975	cache.h	FUNCTION_16	CALL_1
+0x400061e	      0xba14000000	                           mov edx, 0x14	       975	cache.h	FUNCTION_16	CALL_1
+0x4000623	          0x4889ee	                            mov rsi, rbp	       975	cache.h	FUNCTION_16	CALL_1
+0x4000626	      0xe800000000	                          call 0x400062b	       975	cache.h	FUNCTION_16	CALL_1
+0x400062b	            0x85c0	                           test eax, eax	        74	bulk-checkin.c	FUNCTION_2	FOR_1	IF_2	CALL_2
+0x400062d	            0x7465	                            je 0x4000694	        74	bulk-checkin.c	FUNCTION_2	FOR_1	IF_2	CALL_2
+0x400062f	        0x4183c401	                             add r12d, 1	        73	bulk-checkin.c	FUNCTION_2	FOR_1
+0x4000633	          0x4539f4	                          cmp r12d, r14d	        73	bulk-checkin.c	FUNCTION_2	FOR_1
+0x4000636	            0x75df	                           jne 0x4000617	        73	bulk-checkin.c	FUNCTION_2	FOR_1
+0x4000638	      0xe985000000	                           jmp 0x40006c2	        73	bulk-checkin.c	FUNCTION_2	FOR_1
+0x400063d	        0x8d444030	          lea eax, [rax + rax*2 + 0x30] 	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x4000641	            0xd1e8	                              shr eax, 1	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x4000643	            0x39c2	                            cmp edx, eax	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x4000645	           0xf47c2	                          cmova eax, edx	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x4000648	        0x41894548	             mov dword [r13 + 0x48], eax	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x400064c	            0x89c0	                            mov eax, eax	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x400064e	    0x488d34c50000	                        lea rsi, [rax*8]	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x4000656	        0x498b7d40	            mov rdi, qword [r13 + 0x40] 	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x400065a	      0xe800000000	                          call 0x400065f	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x400065f	        0x49894540	             mov qword [r13 + 0x40], rax	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x4000663	        0x498b5540	            mov rdx, qword [r13 + 0x40] 	       254	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x4000667	        0x418b454c	            mov eax, dword [r13 + 0x4c] 	       254	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x400066b	          0x8d4801	                      lea ecx, [rax + 1]	       254	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x400066e	        0x41894d4c	             mov dword [r13 + 0x4c], ecx	       254	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x4000672	            0x89c0	                            mov eax, eax	       254	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x4000674	      0x488b4c2420	            mov rcx, qword [rsp + 0x20] 	       254	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x4000679	        0x48890cc2	            mov qword [rdx + rax*8], rcx	       254	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x400067d	            0x89d8	                            mov eax, ebx	       257	bulk-checkin.c	FUNCTION_5
+0x400067f	    0x488b8c24c8d3	          mov rcx, qword [rsp + 0xd3c8] 	       257	bulk-checkin.c	FUNCTION_5
+0x4000687	    0x6448330c2528	                xor rcx, qword fs:[0x28]	       257	bulk-checkin.c	FUNCTION_5
+0x4000690	            0x746b	                            je 0x40006fd	       257	bulk-checkin.c	FUNCTION_5
+0x4000692	            0xeb64	                           jmp 0x40006f8	       257	bulk-checkin.c	FUNCTION_5
+0x4000694	        0x498b7d10	            mov rdi, qword [r13 + 0x10] 	       246	bulk-checkin.c	FUNCTION_5	IF_8	CALL_20
+0x4000698	    0x488db424500a	                  lea rsi, [rsp + 0xa50]	       246	bulk-checkin.c	FUNCTION_5	IF_8	CALL_20
+0x40006a0	      0xe800000000	                          call 0x40006a5	       246	bulk-checkin.c	FUNCTION_5	IF_8	CALL_20
+0x40006a5	    0x488b8424500a	           mov rax, qword [rsp + 0xa50] 	       247	bulk-checkin.c	FUNCTION_5	IF_8
+0x40006ad	        0x49894518	             mov qword [r13 + 0x18], rax	       247	bulk-checkin.c	FUNCTION_5	IF_8
+0x40006b1	      0x488b7c2420	            mov rdi, qword [rsp + 0x20] 	       248	bulk-checkin.c	FUNCTION_5	IF_8	CALL_21
+0x40006b6	      0xe800000000	                          call 0x40006bb	       248	bulk-checkin.c	FUNCTION_5	IF_8	CALL_21
+0x40006bb	      0xbb00000000	                              mov ebx, 0	       256	bulk-checkin.c	FUNCTION_5
+0x40006c0	            0xebbb	                           jmp 0x400067d	       256	bulk-checkin.c	FUNCTION_5
+0x40006c2	      0x488b4c2438	            mov rcx, qword [rsp + 0x38] 	        53	string3.h	FUNCTION_36	CALL_3
+0x40006c7	          0x488b01	                    mov rax, qword [rcx]	        53	string3.h	FUNCTION_36	CALL_3
+0x40006ca	      0x488b542420	            mov rdx, qword [rsp + 0x20] 	        53	string3.h	FUNCTION_36	CALL_3
+0x40006cf	          0x488902	                    mov qword [rdx], rax	        53	string3.h	FUNCTION_36	CALL_3
+0x40006d2	        0x488b4108	                mov rax, qword [rcx + 8]	        53	string3.h	FUNCTION_36	CALL_3
+0x40006d6	        0x48894208	                mov qword [rdx + 8], rax	        53	string3.h	FUNCTION_36	CALL_3
+0x40006da	          0x8b4110	            mov eax, dword [rcx + 0x10] 	        53	string3.h	FUNCTION_36	CALL_3
+0x40006dd	          0x894210	             mov dword [rdx + 0x10], eax	        53	string3.h	FUNCTION_36	CALL_3
+0x40006e0	        0x418b454c	            mov eax, dword [r13 + 0x4c] 	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x40006e4	          0x8d5001	                      lea edx, [rax + 1]	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x40006e7	        0x418b4548	            mov eax, dword [r13 + 0x48] 	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x40006eb	            0x39c2	                            cmp edx, eax	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x40006ed	     0xf874affffff	                            ja 0x400063d	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x40006f3	      0xe96bffffff	                           jmp 0x4000663	       251	bulk-checkin.c	FUNCTION_5	ELSE_1
+0x40006f8	      0xe800000000	                          call 0x40006fd	       257	bulk-checkin.c	FUNCTION_5
+0x40006fd	    0x4881c4d8d300	                         add rsp, 0xd3d8	       257	bulk-checkin.c	FUNCTION_5
+0x4000704	              0x5b	                                 pop rbx	       257	bulk-checkin.c	FUNCTION_5
+0x4000705	              0x5d	                                 pop rbp	       257	bulk-checkin.c	FUNCTION_5
+0x4000706	            0x415c	                                 pop r12	       257	bulk-checkin.c	FUNCTION_5
+0x4000708	            0x415d	                                 pop r13	       257	bulk-checkin.c	FUNCTION_5
+0x400070a	            0x415e	                                 pop r14	       257	bulk-checkin.c	FUNCTION_5
+0x400070c	            0x415f	                                 pop r15	       257	bulk-checkin.c	FUNCTION_5
+0x400070e	              0xc3	                                     ret	       257	bulk-checkin.c	FUNCTION_5
+unplug_bulk_checkin	CALL,1:functions,0:FOR,0:WHILE,0:DO,0:ELSE,0:IF,1:SWITCH,0	8
+0x4000753	    0x802500000000	             and byte [0x0400075a], 0xfe	       277	bulk-checkin.c	FUNCTION_8
+0x400075a	    0x48833d000000	               cmp qword [0x04000762], 0	       278	bulk-checkin.c	FUNCTION_8	IF_1
+0x4000762	            0x7412	                            je 0x4000776	       278	bulk-checkin.c	FUNCTION_8	IF_1
+0x4000764	        0x4883ec08	                              sub rsp, 8	       276	bulk-checkin.c	FUNCTION_8
+0x4000768	      0xbf00000000	                              mov edi, 0	       279	bulk-checkin.c	FUNCTION_8	CALL_1
+0x400076d	      0xe8cef8ffff	            call sym.finish_bulk_checkin	       279	bulk-checkin.c	FUNCTION_8	CALL_1
+0x4000772	        0x4883c408	                              add rsp, 8	       280	bulk-checkin.c	FUNCTION_8
+0x4000776	            0xf3c3	                                     ret	       280	bulk-checkin.c	FUNCTION_8
+index_bulk_checkin	CALL,2:functions,0:FOR,0:WHILE,0:DO,0:ELSE,0:IF,1:SWITCH,0	19
+0x400070f	              0x53	                                push rbx	       262	bulk-checkin.c	FUNCTION_6
+0x4000710	        0x4883ec08	                              sub rsp, 8	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x4000714	            0x4151	                                 push r9	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x4000716	          0x4d89c1	                              mov r9, r8	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x4000719	          0x4189c8	                            mov r8d, ecx	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x400071c	          0x4889d1	                            mov rcx, rdx	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x400071f	            0x89f2	                            mov edx, esi	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x4000721	          0x4889fe	                            mov rsi, rdi	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x4000724	      0xbf00000000	                              mov edi, 0	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x4000729	      0xe872faffff	                call sym.deflate_to_pack	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x400072e	            0x89c3	                            mov ebx, eax	       263	bulk-checkin.c	FUNCTION_6	CALL_1
+0x4000730	        0x4883c410	                           add rsp, 0x10	       265	bulk-checkin.c	FUNCTION_6	IF_1
+0x4000734	    0xf60500000000	               test byte [0x0400073b], 1	       265	bulk-checkin.c	FUNCTION_6	IF_1
+0x400073b	            0x750a	                           jne 0x4000747	       265	bulk-checkin.c	FUNCTION_6	IF_1
+0x400073d	      0xbf00000000	                              mov edi, 0	       266	bulk-checkin.c	FUNCTION_6	CALL_2
+0x4000742	      0xe8f9f8ffff	            call sym.finish_bulk_checkin	       266	bulk-checkin.c	FUNCTION_6	CALL_2
+0x4000747	            0x89d8	                            mov eax, ebx	       268	bulk-checkin.c	FUNCTION_6
+0x4000749	              0x5b	                                 pop rbx	       268	bulk-checkin.c	FUNCTION_6
+0x400074a	              0xc3	                                     ret	       268	bulk-checkin.c	FUNCTION_6
+finish_bulk_checkin	CALL,14:functions,0:FOR,1:WHILE,0:DO,0:ELSE,2:IF,3:SWITCH,0	87
+0x4000040	              0x55	                                push rbp	        26	bulk-checkin.c	FUNCTION_1
+0x4000041	              0x53	                                push rbx	        26	bulk-checkin.c	FUNCTION_1
+0x4000042	        0x4883ec48	                           sub rsp, 0x48	        26	bulk-checkin.c	FUNCTION_1
+0x4000046	          0x4889fb	                            mov rbx, rdi	        26	bulk-checkin.c	FUNCTION_1
+0x4000049	    0x64488b042528	                mov rax, qword fs:[0x28]	        26	bulk-checkin.c	FUNCTION_1
+0x4000052	      0x4889442438	             mov qword [rsp + 0x38], rax	        26	bulk-checkin.c	FUNCTION_1
+0x4000057	            0x31c0	                            xor eax, eax	        26	bulk-checkin.c	FUNCTION_1
+0x4000059	    0x48c704240000	                      mov qword [rsp], 0	        28	bulk-checkin.c	FUNCTION_1
+0x4000061	    0x48c744240800	                  mov qword [rsp + 8], 0	        28	bulk-checkin.c	FUNCTION_1
+0x400006a	    0x48c744241000	               mov qword [rsp + 0x10], 0	        28	bulk-checkin.c	FUNCTION_1
+0x4000073	        0x488b7f10	            mov rdi, qword [rdi + 0x10] 	        31	bulk-checkin.c	FUNCTION_1	IF_1
+0x4000077	          0x4885ff	                           test rdi, rdi	        31	bulk-checkin.c	FUNCTION_1	IF_1
+0x400007a	     0xf8404010000	                            je 0x4000184	        31	bulk-checkin.c	FUNCTION_1	IF_1
+0x4000080	          0x8b434c	            mov eax, dword [rbx + 0x4c] 	        34	bulk-checkin.c	FUNCTION_1	IF_2
+0x4000083	            0x85c0	                           test eax, eax	        34	bulk-checkin.c	FUNCTION_1	IF_2
+0x4000085	            0x7515	                           jne 0x400009c	        34	bulk-checkin.c	FUNCTION_1	IF_2
+0x4000087	            0x8b3f	                    mov edi, dword [rdi]	        35	bulk-checkin.c	FUNCTION_1	IF_2	CALL_1
+0x4000089	      0xe800000000	                          call 0x400008e	        35	bulk-checkin.c	FUNCTION_1	IF_2	CALL_1
+0x400008e	        0x488b7b08	                mov rdi, qword [rbx + 8]	        36	bulk-checkin.c	FUNCTION_1	IF_2	CALL_2
+0x4000092	      0xe800000000	                          call 0x4000097	        36	bulk-checkin.c	FUNCTION_1	IF_2	CALL_2
+0x4000097	      0xe9a1000000	                           jmp 0x400013d	        37	bulk-checkin.c	FUNCTION_1	IF_2
+0x400009c	          0x83f801	                              cmp eax, 1	        38	bulk-checkin.c	FUNCTION_1	ELSE_1	IF_3
+0x400009f	            0x7511	                           jne 0x40000b2	        38	bulk-checkin.c	FUNCTION_1	ELSE_1	IF_3
+0x40000a1	      0xba07000000	                              mov edx, 7	        39	bulk-checkin.c	FUNCTION_1	ELSE_1	IF_3	CALL_3
+0x40000a6	      0x488d742420	                   lea rsi, [rsp + 0x20]	        39	bulk-checkin.c	FUNCTION_1	ELSE_1	IF_3	CALL_3
+0x40000ab	      0xe800000000	                          call 0x40000b0	        39	bulk-checkin.c	FUNCTION_1	ELSE_1	IF_3	CALL_3
+0x40000b0	            0xeb32	                           jmp 0x40000e4	        39	bulk-checkin.c	FUNCTION_1	ELSE_1	IF_3	CALL_3
+0x40000b2	      0xba00000000	                              mov edx, 0	        41	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_4
+0x40000b7	      0x488d742420	                   lea rsi, [rsp + 0x20]	        41	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_4
+0x40000bc	      0xe800000000	                          call 0x40000c1	        41	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_4
+0x40000c1	            0x89c5	                            mov ebp, eax	        41	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_4
+0x40000c3	          0x8b4b4c	            mov ecx, dword [rbx + 0x4c] 	        42	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_5
+0x40000c6	        0x488b5308	                mov rdx, qword [rbx + 8]	        42	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_5
+0x40000ca	        0x4c8b4b18	              mov r9, qword [rbx + 0x18]	        42	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_5
+0x40000ce	      0x4c8d442420	                    lea r8, [rsp + 0x20]	        42	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_5
+0x40000d3	          0x4c89c6	                             mov rsi, r8	        42	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_5
+0x40000d6	            0x89c7	                            mov edi, eax	        42	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_5
+0x40000d8	      0xe800000000	                          call 0x40000dd	        42	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_5
+0x40000dd	            0x89ef	                            mov edi, ebp	        45	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_6
+0x40000df	      0xe800000000	                          call 0x40000e4	        45	bulk-checkin.c	FUNCTION_1	ELSE_2	CALL_6
+0x40000e4	      0xe800000000	                          call 0x40000e9	        48	bulk-checkin.c	FUNCTION_1	CALL_8
+0x40000e9	          0x4889c2	                            mov rdx, rax	        48	bulk-checkin.c	FUNCTION_1	CALL_8
+0x40000ec	      0xbe00000000	                              mov esi, 0	        48	bulk-checkin.c	FUNCTION_1	CALL_8
+0x40000f1	          0x4889e7	                            mov rdi, rsp	        48	bulk-checkin.c	FUNCTION_1	CALL_8
+0x40000f4	      0xb800000000	                              mov eax, 0	        48	bulk-checkin.c	FUNCTION_1	CALL_8
+0x40000f9	      0xe800000000	                          call 0x40000fe	        48	bulk-checkin.c	FUNCTION_1	CALL_8
+0x40000fe	          0x8b4b4c	            mov ecx, dword [rbx + 0x4c] 	        49	bulk-checkin.c	FUNCTION_1	CALL_9
+0x4000101	        0x488b5340	            mov rdx, qword [rbx + 0x40] 	        49	bulk-checkin.c	FUNCTION_1	CALL_9
+0x4000105	        0x488b7308	                mov rsi, qword [rbx + 8]	        49	bulk-checkin.c	FUNCTION_1	CALL_9
+0x4000109	      0x4c8d4c2420	                    lea r9, [rsp + 0x20]	        49	bulk-checkin.c	FUNCTION_1	CALL_9
+0x400010e	        0x4c8d4320	                    lea r8, [rbx + 0x20]	        49	bulk-checkin.c	FUNCTION_1	CALL_9
+0x4000112	          0x4889e7	                            mov rdi, rsp	        49	bulk-checkin.c	FUNCTION_1	CALL_9
+0x4000115	      0xe800000000	                          call 0x400011a	        49	bulk-checkin.c	FUNCTION_1	CALL_9
+0x400011a	        0x837b4c00	               cmp dword [rbx + 0x4c], 0	        52	bulk-checkin.c	FUNCTION_1	FOR_1
+0x400011e	            0x741d	                            je 0x400013d	        52	bulk-checkin.c	FUNCTION_1	FOR_1
+0x4000120	      0xbd00000000	                              mov ebp, 0	        52	bulk-checkin.c	FUNCTION_1	FOR_1
+0x4000125	          0x4863d5	                         movsxd rdx, ebp	        53	bulk-checkin.c	FUNCTION_1	CALL_10
+0x4000128	        0x488b4340	            mov rax, qword [rbx + 0x40] 	        53	bulk-checkin.c	FUNCTION_1	CALL_10
+0x400012c	        0x488b3cd0	            mov rdi, qword [rax + rdx*8]	        53	bulk-checkin.c	FUNCTION_1	CALL_10
+0x4000130	      0xe800000000	                          call 0x4000135	        53	bulk-checkin.c	FUNCTION_1	CALL_10
+0x4000135	          0x83c501	                              add ebp, 1	        52	bulk-checkin.c	FUNCTION_1	FOR_1
+0x4000138	          0x396b4c	            cmp dword [rbx + 0x4c], ebp 	        52	bulk-checkin.c	FUNCTION_1	FOR_1
+0x400013b	            0x77e8	                            ja 0x4000125	        52	bulk-checkin.c	FUNCTION_1	FOR_1
+0x400013d	        0x488b7b40	            mov rdi, qword [rbx + 0x40] 	        56	bulk-checkin.c	FUNCTION_1	CALL_11
+0x4000141	      0xe800000000	                          call 0x4000146	        56	bulk-checkin.c	FUNCTION_1	CALL_11
+0x4000146	    0x48c703000000	                      mov qword [rbx], 0	        90	string3.h	FUNCTION_39	CALL_6
+0x400014d	    0x48c743480000	               mov qword [rbx + 0x48], 0	        90	string3.h	FUNCTION_39	CALL_6
+0x4000155	        0x488d7b08	                      lea rdi, [rbx + 8]	        90	string3.h	FUNCTION_39	CALL_6
+0x4000159	        0x4883e7f8	             and rdi, 0xfffffffffffffff8	        90	string3.h	FUNCTION_39	CALL_6
+0x400015d	          0x4829fb	                            sub rbx, rdi	        90	string3.h	FUNCTION_39	CALL_6
+0x4000160	          0x8d4b50	                   lea ecx, [rbx + 0x50]	        90	string3.h	FUNCTION_39	CALL_6
+0x4000163	          0xc1e903	                              shr ecx, 3	        90	string3.h	FUNCTION_39	CALL_6
+0x4000166	            0x89c9	                            mov ecx, ecx	        90	string3.h	FUNCTION_39	CALL_6
+0x4000168	      0xb800000000	                              mov eax, 0	        90	string3.h	FUNCTION_39	CALL_6
+0x400016d	          0xf348ab	              rep stosq qword [rdi], rax	        90	string3.h	FUNCTION_39	CALL_6
+0x4000170	          0x4889e7	                            mov rdi, rsp	        59	bulk-checkin.c	FUNCTION_1	CALL_13
+0x4000173	      0xe800000000	                          call 0x4000178	        59	bulk-checkin.c	FUNCTION_1	CALL_13
+0x4000178	    0x488b3d000000	            mov rdi, qword [0x0400017f] 	        61	bulk-checkin.c	FUNCTION_1	CALL_14
+0x400017f	      0xe800000000	                          call 0x4000184	        61	bulk-checkin.c	FUNCTION_1	CALL_14
+0x4000184	      0x488b442438	            mov rax, qword [rsp + 0x38] 	        62	bulk-checkin.c	FUNCTION_1
+0x4000189	    0x644833042528	                xor rax, qword fs:[0x28]	        62	bulk-checkin.c	FUNCTION_1
+0x4000192	            0x7405	                            je 0x4000199	        62	bulk-checkin.c	FUNCTION_1
+0x4000194	      0xe800000000	                          call 0x4000199	        62	bulk-checkin.c	FUNCTION_1
+0x4000199	        0x4883c448	                           add rsp, 0x48	        62	bulk-checkin.c	FUNCTION_1
+0x400019d	              0x5b	                                 pop rbx	        62	bulk-checkin.c	FUNCTION_1
+0x400019e	              0x5d	                                 pop rbp	        62	bulk-checkin.c	FUNCTION_1
+0x400019f	              0xc3	                                     ret	        62	bulk-checkin.c	FUNCTION_1
+plug_bulk_checkin	CALL,0:functions,0:FOR,0:WHILE,0:DO,0:ELSE,0:IF,0:SWITCH,0	2
+0x400074b	    0x800d00000000	                 or byte [0x04000752], 1	       272	bulk-checkin.c	FUNCTION_7
+0x4000752	              0xc3	                                     ret	       272	bulk-checkin.c	FUNCTION_7

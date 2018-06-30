@@ -1,0 +1,250 @@
+sb_new	DO,0:IF,0:ELSE,0:FOR,0:CALL,1:functions,0:SWITCH,0:WHILE,0	5
+0x4000106	        0x4883ec08	                              sub rsp, 8	        69	sb.c	FUNCTION_2
+0x400010a	      0xbe2f000000	                           mov esi, 0x2f	        70	sb.c	FUNCTION_2	CALL_1
+0x400010f	      0xe800000000	                          call 0x4000114	        70	sb.c	FUNCTION_2	CALL_1
+0x4000114	        0x4883c408	                              add rsp, 8	        71	sb.c	FUNCTION_2
+0x4000118	              0xc3	                                     ret	        71	sb.c	FUNCTION_2
+scrub_from_sb	DO,0:IF,1:ELSE,0:FOR,0:CALL,1:functions,0:SWITCH,0:WHILE,0	21
+0x4000094	              0x55	                                push rbp	        97	sb.c	FUNCTION_5
+0x4000095	              0x53	                                push rbx	        97	sb.c	FUNCTION_5
+0x4000096	        0x4883ec08	                              sub rsp, 8	        97	sb.c	FUNCTION_5
+0x400009a	    0x488b05000000	            mov rax, qword [0x040000a1] 	        99	sb.c	FUNCTION_5
+0x40000a1	    0x488b2d000000	            mov rbp, qword [0x040000a8] 	        99	sb.c	FUNCTION_5
+0x40000a8	          0x4889ea	                            mov rdx, rbp	        99	sb.c	FUNCTION_5
+0x40000ab	          0x482b10	                    sub rdx, qword [rax]	        99	sb.c	FUNCTION_5
+0x40000ae	        0x488b5808	                mov rbx, qword [rax + 8]	        99	sb.c	FUNCTION_5
+0x40000b2	          0x4829d3	                            sub rbx, rdx	        99	sb.c	FUNCTION_5
+0x40000b5	          0x4839f3	                            cmp rbx, rsi	        99	sb.c	FUNCTION_5
+0x40000b8	        0x480f47de	                          cmova rbx, rsi	        99	sb.c	FUNCTION_5
+0x40000bc	          0x4889da	                            mov rdx, rbx	        53	string3.h	FUNCTION_15	CALL_3
+0x40000bf	          0x4889ee	                            mov rsi, rbp	        53	string3.h	FUNCTION_15	CALL_3
+0x40000c2	      0xe800000000	                          call 0x40000c7	        53	string3.h	FUNCTION_15	CALL_3
+0x40000c7	          0x4801dd	                            add rbp, rbx	       103	sb.c	FUNCTION_5
+0x40000ca	    0x48892d000000	            mov qword [0x040000d1], rbp 	       103	sb.c	FUNCTION_5
+0x40000d1	          0x4889d8	                            mov rax, rbx	       105	sb.c	FUNCTION_5
+0x40000d4	        0x4883c408	                              add rsp, 8	       105	sb.c	FUNCTION_5
+0x40000d8	              0x5b	                                 pop rbx	       105	sb.c	FUNCTION_5
+0x40000d9	              0x5d	                                 pop rbp	       105	sb.c	FUNCTION_5
+0x40000da	              0xc3	                                     ret	       105	sb.c	FUNCTION_5
+sb_add_char	DO,0:IF,0:ELSE,0:FOR,0:CALL,1:functions,0:SWITCH,0:WHILE,0	16
+0x40001c7	              0x55	                                push rbp	       166	sb.c	FUNCTION_9
+0x40001c8	              0x53	                                push rbx	       166	sb.c	FUNCTION_9
+0x40001c9	        0x4883ec08	                              sub rsp, 8	       166	sb.c	FUNCTION_9
+0x40001cd	          0x4889fb	                            mov rbx, rdi	       166	sb.c	FUNCTION_9
+0x40001d0	          0x4889f5	                            mov rbp, rsi	       166	sb.c	FUNCTION_9
+0x40001d3	      0xbe01000000	                              mov esi, 1	       167	sb.c	FUNCTION_9	CALL_1
+0x40001d8	      0xe863feffff	                       call sym.sb_check	       167	sb.c	FUNCTION_9	CALL_1
+0x40001dd	          0x488b13	                    mov rdx, qword [rbx]	       168	sb.c	FUNCTION_9
+0x40001e0	        0x488b4308	                mov rax, qword [rbx + 8]	       168	sb.c	FUNCTION_9
+0x40001e4	        0x488d4801	                      lea rcx, [rax + 1]	       168	sb.c	FUNCTION_9
+0x40001e8	        0x48894b08	                mov qword [rbx + 8], rcx	       168	sb.c	FUNCTION_9
+0x40001ec	        0x40882c02	               mov byte [rdx + rax], bpl	       168	sb.c	FUNCTION_9
+0x40001f0	        0x4883c408	                              add rsp, 8	       169	sb.c	FUNCTION_9
+0x40001f4	              0x5b	                                 pop rbx	       169	sb.c	FUNCTION_9
+0x40001f5	              0x5d	                                 pop rbp	       169	sb.c	FUNCTION_9
+0x40001f6	              0xc3	                                     ret	       169	sb.c	FUNCTION_9
+sb_terminate	DO,0:IF,0:ELSE,0:FOR,0:CALL,0:functions,0:SWITCH,0:WHILE,0	5
+0x4000270	          0x488b17	                    mov rdx, qword [rdi]	       197	sb.c	FUNCTION_12
+0x4000273	        0x488b4708	                mov rax, qword [rdi + 8]	       197	sb.c	FUNCTION_12
+0x4000277	        0xc6040200	                 mov byte [rdx + rax], 0	       197	sb.c	FUNCTION_12
+0x400027b	          0x488b07	                    mov rax, qword [rdi]	       198	sb.c	FUNCTION_12
+0x400027e	              0xc3	                                     ret	       199	sb.c	FUNCTION_12
+sb_kill	DO,0:IF,0:ELSE,0:FOR,0:CALL,1:functions,0:SWITCH,0:WHILE,0	5
+0x4000119	        0x4883ec08	                              sub rsp, 8	        77	sb.c	FUNCTION_3
+0x400011d	          0x488b3f	                    mov rdi, qword [rdi]	        78	sb.c	FUNCTION_3	CALL_1
+0x4000120	      0xe800000000	                          call 0x4000125	        78	sb.c	FUNCTION_3	CALL_1
+0x4000125	        0x4883c408	                              add rsp, 8	        79	sb.c	FUNCTION_3
+0x4000129	              0xc3	                                     ret	        79	sb.c	FUNCTION_3
+sb_skip_comma	DO,0:IF,1:ELSE,0:FOR,0:CALL,0:functions,0:SWITCH,0:WHILE,2	43
+0x40002b5	          0x4889f8	                            mov rax, rdi	       220	sb.c	FUNCTION_14
+0x40002b8	        0x488b4e08	                mov rcx, qword [rsi + 8]	       221	sb.c	FUNCTION_14	WHILE_1
+0x40002bc	          0x4839cf	                            cmp rdi, rcx	       221	sb.c	FUNCTION_14	WHILE_1
+0x40002bf	            0x736b	                           jae 0x400032c	       221	sb.c	FUNCTION_14	WHILE_1
+0x40002c1	          0x488b3e	                    mov rdi, qword [rsi]	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002c4	         0xfb61407	             movzx edx, byte [rdi + rax]	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002c8	          0x80fa20	                            cmp dl, 0x20	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002cb	            0x7405	                            je 0x40002d2	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002cd	          0x80fa09	                               cmp dl, 9	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002d0	            0x7554	                           jne 0x4000326	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002d2	        0x4883c001	                              add rax, 1	       224	sb.c	FUNCTION_14	WHILE_1
+0x40002d6	          0x4839c8	                            cmp rax, rcx	       221	sb.c	FUNCTION_14	WHILE_1
+0x40002d9	            0x7351	                           jae 0x400032c	       221	sb.c	FUNCTION_14	WHILE_1
+0x40002db	         0xfb61407	             movzx edx, byte [rdi + rax]	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002df	          0x80fa20	                            cmp dl, 0x20	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002e2	            0x74ee	                            je 0x40002d2	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002e4	          0x80fa09	                               cmp dl, 9	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002e7	            0x74e9	                            je 0x40002d2	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002e9	            0xeb33	                           jmp 0x400031e	       222	sb.c	FUNCTION_14	WHILE_1
+0x40002eb	        0x4883c001	                              add rax, 1	       228	sb.c	FUNCTION_14	IF_1
+0x40002ef	          0x4839c8	                            cmp rax, rcx	       230	sb.c	FUNCTION_14	WHILE_2
+0x40002f2	            0x7338	                           jae 0x400032c	       230	sb.c	FUNCTION_14	WHILE_2
+0x40002f4	          0x488b36	                    mov rsi, qword [rsi]	       231	sb.c	FUNCTION_14	WHILE_2
+0x40002f7	         0xfb61406	             movzx edx, byte [rsi + rax]	       231	sb.c	FUNCTION_14	WHILE_2
+0x40002fb	          0x80fa20	                            cmp dl, 0x20	       231	sb.c	FUNCTION_14	WHILE_2
+0x40002fe	            0x7405	                            je 0x4000305	       231	sb.c	FUNCTION_14	WHILE_2
+0x4000300	          0x80fa09	                               cmp dl, 9	       231	sb.c	FUNCTION_14	WHILE_2
+0x4000303	            0x7527	                           jne 0x400032c	       231	sb.c	FUNCTION_14	WHILE_2
+0x4000305	        0x4883c001	                              add rax, 1	       233	sb.c	FUNCTION_14	WHILE_2
+0x4000309	          0x4839c8	                            cmp rax, rcx	       230	sb.c	FUNCTION_14	WHILE_2
+0x400030c	            0x731e	                           jae 0x400032c	       230	sb.c	FUNCTION_14	WHILE_2
+0x400030e	         0xfb61406	             movzx edx, byte [rsi + rax]	       231	sb.c	FUNCTION_14	WHILE_2
+0x4000312	          0x80fa20	                            cmp dl, 0x20	       231	sb.c	FUNCTION_14	WHILE_2
+0x4000315	            0x74ee	                            je 0x4000305	       231	sb.c	FUNCTION_14	WHILE_2
+0x4000317	          0x80fa09	                               cmp dl, 9	       231	sb.c	FUNCTION_14	WHILE_2
+0x400031a	            0x74e9	                            je 0x4000305	       231	sb.c	FUNCTION_14	WHILE_2
+0x400031c	            0xf3c3	                                     ret	       231	sb.c	FUNCTION_14	WHILE_2
+0x400031e	        0x803c072c	              cmp byte [rdi + rax], 0x2c	       227	sb.c	FUNCTION_14	IF_1
+0x4000322	            0x75d0	                           jne 0x40002f4	       227	sb.c	FUNCTION_14	IF_1
+0x4000324	            0xebc5	                           jmp 0x40002eb	       227	sb.c	FUNCTION_14	IF_1
+0x4000326	        0x803c072c	              cmp byte [rdi + rax], 0x2c	       227	sb.c	FUNCTION_14	IF_1
+0x400032a	            0x74bf	                            je 0x40002eb	       227	sb.c	FUNCTION_14	IF_1
+0x400032c	            0xf3c3	                                     ret	       236	sb.c	FUNCTION_14
+sb_scrub_and_add_sb	DO,0:IF,0:ELSE,0:FOR,0:CALL,2:functions,0:SWITCH,0:WHILE,0	22
+0x4000162	              0x55	                                push rbp	       112	sb.c	FUNCTION_6
+0x4000163	              0x53	                                push rbx	       112	sb.c	FUNCTION_6
+0x4000164	        0x4883ec08	                              sub rsp, 8	       112	sb.c	FUNCTION_6
+0x4000168	          0x4889fb	                            mov rbx, rdi	       112	sb.c	FUNCTION_6
+0x400016b	          0x4889f5	                            mov rbp, rsi	       112	sb.c	FUNCTION_6
+0x400016e	    0x488935000000	            mov qword [0x04000175], rsi 	       113	sb.c	FUNCTION_6
+0x4000175	          0x488b06	                    mov rax, qword [rsi]	       114	sb.c	FUNCTION_6
+0x4000178	    0x488905000000	            mov qword [0x0400017f], rax 	       114	sb.c	FUNCTION_6
+0x400017f	        0x488b7608	                mov rsi, qword [rsi + 8]	       116	sb.c	FUNCTION_6	CALL_1
+0x4000183	      0xe8b8feffff	                       call sym.sb_check	       116	sb.c	FUNCTION_6	CALL_1
+0x4000188	        0x488b5508	                mov rdx, qword [rbp + 8]	       117	sb.c	FUNCTION_6	CALL_2
+0x400018c	        0x488b7308	                mov rsi, qword [rbx + 8]	       117	sb.c	FUNCTION_6	CALL_2
+0x4000190	          0x480333	                    add rsi, qword [rbx]	       117	sb.c	FUNCTION_6	CALL_2
+0x4000193	      0xbf00000000	                              mov edi, 0	       117	sb.c	FUNCTION_6	CALL_2
+0x4000198	      0xe800000000	                          call 0x400019d	       117	sb.c	FUNCTION_6	CALL_2
+0x400019d	        0x48014308	                add qword [rbx + 8], rax	       117	sb.c	FUNCTION_6	CALL_2
+0x40001a1	    0x48c705000000	               mov qword [0x040001ac], 0	       119	sb.c	FUNCTION_6
+0x40001ac	    0x48c705000000	               mov qword [0x040001b7], 0	       120	sb.c	FUNCTION_6
+0x40001b7	        0x4883c408	                              add rsp, 8	       121	sb.c	FUNCTION_6
+0x40001bb	              0x5b	                                 pop rbx	       121	sb.c	FUNCTION_6
+0x40001bc	              0x5d	                                 pop rbp	       121	sb.c	FUNCTION_6
+0x40001bd	              0xc3	                                     ret	       121	sb.c	FUNCTION_6
+sb_reset	DO,0:IF,0:ELSE,0:FOR,0:CALL,0:functions,0:SWITCH,0:WHILE,0	2
+0x40001be	    0x48c747080000	                  mov qword [rdi + 8], 0	       159	sb.c	FUNCTION_8
+0x40001c6	              0xc3	                                     ret	       159	sb.c	FUNCTION_8
+sb_check	DO,0:IF,2:ELSE,0:FOR,0:CALL,4:functions,0:SWITCH,0:WHILE,1	24
+0x4000040	        0x48037708	                add rsi, qword [rdi + 8]	       129	sb.c	FUNCTION_7
+0x4000044	        0x483b7710	            cmp rsi, qword [rdi + 0x10] 	       131	sb.c	FUNCTION_7	IF_1
+0x4000048	            0x7648	                           jbe 0x4000092	       131	sb.c	FUNCTION_7	IF_1
+0x400004a	              0x53	                                push rbx	       128	sb.c	FUNCTION_7
+0x400004b	          0x4889fb	                            mov rbx, rdi	       128	sb.c	FUNCTION_7
+0x400004e	        0x4883c611	                           add rsi, 0x11	       136	sb.c	FUNCTION_7	IF_1	IF_2
+0x4000052	            0x790f	                           jns 0x4000063	       136	sb.c	FUNCTION_7	IF_1	IF_2
+0x4000054	      0xbf00000000	                              mov edi, 0	       137	sb.c	FUNCTION_7	IF_1	CALL_1
+0x4000059	      0xb800000000	                              mov eax, 0	       137	sb.c	FUNCTION_7	IF_1	CALL_1
+0x400005e	      0xe800000000	                          call 0x4000063	       137	sb.c	FUNCTION_7	IF_1	CALL_1
+0x4000063	        0x480fbdf6	                            bsr rsi, rsi	       141	sb.c	FUNCTION_7	IF_1	CALL_2
+0x4000067	        0x4883f63f	                           xor rsi, 0x3f	       141	sb.c	FUNCTION_7	IF_1	CALL_2
+0x400006b	      0xb940000000	                           mov ecx, 0x40	       139	sb.c	FUNCTION_7	IF_1
+0x4000070	            0x29f1	                            sub ecx, esi	       139	sb.c	FUNCTION_7	IF_1
+0x4000072	      0xbe01000000	                              mov esi, 1	       139	sb.c	FUNCTION_7	IF_1
+0x4000077	          0x48d3e6	                             shl rsi, cl	       139	sb.c	FUNCTION_7	IF_1
+0x400007a	        0x488d46ef	                   lea rax, [rsi - 0x11]	       149	sb.c	FUNCTION_7	IF_1
+0x400007e	        0x48894710	             mov qword [rdi + 0x10], rax	       149	sb.c	FUNCTION_7	IF_1
+0x4000082	        0x4883ee10	                           sub rsi, 0x10	       150	sb.c	FUNCTION_7	IF_1	CALL_4
+0x4000086	          0x488b3f	                    mov rdi, qword [rdi]	       150	sb.c	FUNCTION_7	IF_1	CALL_4
+0x4000089	      0xe800000000	                          call 0x400008e	       150	sb.c	FUNCTION_7	IF_1	CALL_4
+0x400008e	          0x488903	                    mov qword [rbx], rax	       150	sb.c	FUNCTION_7	IF_1	CALL_4
+0x4000091	              0x5b	                                 pop rbx	       152	sb.c	FUNCTION_7
+0x4000092	            0xf3c3	                                     ret	       152	sb.c	FUNCTION_7
+sb_build	DO,0:IF,0:ELSE,0:FOR,0:CALL,1:functions,0:SWITCH,0:WHILE,0	14
+0x40000db	              0x55	                                push rbp	        61	sb.c	FUNCTION_1
+0x40000dc	              0x53	                                push rbx	        61	sb.c	FUNCTION_1
+0x40000dd	        0x4883ec08	                              sub rsp, 8	        61	sb.c	FUNCTION_1
+0x40000e1	          0x4889fb	                            mov rbx, rdi	        61	sb.c	FUNCTION_1
+0x40000e4	          0x4889f5	                            mov rbp, rsi	        61	sb.c	FUNCTION_1
+0x40000e7	        0x488d7e01	                      lea rdi, [rsi + 1]	        62	sb.c	FUNCTION_1	CALL_1
+0x40000eb	      0xe800000000	                          call 0x40000f0	        62	sb.c	FUNCTION_1	CALL_1
+0x40000f0	          0x488903	                    mov qword [rbx], rax	        62	sb.c	FUNCTION_1	CALL_1
+0x40000f3	        0x48896b10	             mov qword [rbx + 0x10], rbp	        63	sb.c	FUNCTION_1
+0x40000f7	    0x48c743080000	                  mov qword [rbx + 8], 0	        64	sb.c	FUNCTION_1
+0x40000ff	        0x4883c408	                              add rsp, 8	        65	sb.c	FUNCTION_1
+0x4000103	              0x5b	                                 pop rbx	        65	sb.c	FUNCTION_1
+0x4000104	              0x5d	                                 pop rbp	        65	sb.c	FUNCTION_1
+0x4000105	              0xc3	                                     ret	        65	sb.c	FUNCTION_1
+sb_add_buffer	DO,0:IF,0:ELSE,0:FOR,0:CALL,2:functions,0:SWITCH,0:WHILE,0	18
+0x4000240	            0x4154	                                push r12	       186	sb.c	FUNCTION_11
+0x4000242	              0x55	                                push rbp	       186	sb.c	FUNCTION_11
+0x4000243	              0x53	                                push rbx	       186	sb.c	FUNCTION_11
+0x4000244	          0x4889fb	                            mov rbx, rdi	       186	sb.c	FUNCTION_11
+0x4000247	          0x4989f4	                            mov r12, rsi	       186	sb.c	FUNCTION_11
+0x400024a	          0x4889d5	                            mov rbp, rdx	       186	sb.c	FUNCTION_11
+0x400024d	          0x4889d6	                            mov rsi, rdx	       187	sb.c	FUNCTION_11	CALL_1
+0x4000250	      0xe8ebfdffff	                       call sym.sb_check	       187	sb.c	FUNCTION_11	CALL_1
+0x4000255	        0x488b7b08	                mov rdi, qword [rbx + 8]	        53	string3.h	FUNCTION_15	CALL_3
+0x4000259	          0x48033b	                    add rdi, qword [rbx]	        53	string3.h	FUNCTION_15	CALL_3
+0x400025c	          0x4889ea	                            mov rdx, rbp	        53	string3.h	FUNCTION_15	CALL_3
+0x400025f	          0x4c89e6	                            mov rsi, r12	        53	string3.h	FUNCTION_15	CALL_3
+0x4000262	      0xe800000000	                          call 0x4000267	        53	string3.h	FUNCTION_15	CALL_3
+0x4000267	        0x48016b08	                add qword [rbx + 8], rbp	       189	sb.c	FUNCTION_11
+0x400026b	              0x5b	                                 pop rbx	       190	sb.c	FUNCTION_11
+0x400026c	              0x5d	                                 pop rbp	       190	sb.c	FUNCTION_11
+0x400026d	            0x415c	                                 pop r12	       190	sb.c	FUNCTION_11
+0x400026f	              0xc3	                                     ret	       190	sb.c	FUNCTION_11
+sb_add_string	DO,0:IF,0:ELSE,0:FOR,0:CALL,3:functions,0:SWITCH,0:WHILE,0	24
+0x40001f7	            0x4154	                                push r12	       175	sb.c	FUNCTION_10
+0x40001f9	              0x55	                                push rbp	       175	sb.c	FUNCTION_10
+0x40001fa	              0x53	                                push rbx	       175	sb.c	FUNCTION_10
+0x40001fb	          0x4889fd	                            mov rbp, rdi	       175	sb.c	FUNCTION_10
+0x40001fe	          0x4989f4	                            mov r12, rsi	       175	sb.c	FUNCTION_10
+0x4000201	      0xb800000000	                              mov eax, 0	       176	sb.c	FUNCTION_10	CALL_1
+0x4000206	    0x48c7c1ffffff	             mov rcx, 0xffffffffffffffff	       176	sb.c	FUNCTION_10	CALL_1
+0x400020d	          0x4889f7	                            mov rdi, rsi	       176	sb.c	FUNCTION_10	CALL_1
+0x4000210	            0xf2ae	              repne scasb al, byte [rdi]	       176	sb.c	FUNCTION_10	CALL_1
+0x4000212	          0x48f7d1	                                 not rcx	       176	sb.c	FUNCTION_10	CALL_1
+0x4000215	        0x488d59ff	                      lea rbx, [rcx - 1]	       176	sb.c	FUNCTION_10	CALL_1
+0x4000219	          0x4889de	                            mov rsi, rbx	       177	sb.c	FUNCTION_10	CALL_2
+0x400021c	          0x4889ef	                            mov rdi, rbp	       177	sb.c	FUNCTION_10	CALL_2
+0x400021f	      0xe81cfeffff	                       call sym.sb_check	       177	sb.c	FUNCTION_10	CALL_2
+0x4000224	        0x488b7d08	                mov rdi, qword [rbp + 8]	        53	string3.h	FUNCTION_15	CALL_3
+0x4000228	        0x48037d00	                    add rdi, qword [rbp]	        53	string3.h	FUNCTION_15	CALL_3
+0x400022c	          0x4889da	                            mov rdx, rbx	        53	string3.h	FUNCTION_15	CALL_3
+0x400022f	          0x4c89e6	                            mov rsi, r12	        53	string3.h	FUNCTION_15	CALL_3
+0x4000232	      0xe800000000	                          call 0x4000237	        53	string3.h	FUNCTION_15	CALL_3
+0x4000237	        0x48015d08	                add qword [rbp + 8], rbx	       179	sb.c	FUNCTION_10
+0x400023b	              0x5b	                                 pop rbx	       180	sb.c	FUNCTION_10
+0x400023c	              0x5d	                                 pop rbp	       180	sb.c	FUNCTION_10
+0x400023d	            0x415c	                                 pop r12	       180	sb.c	FUNCTION_10
+0x400023f	              0xc3	                                     ret	       180	sb.c	FUNCTION_10
+sb_skip_white	DO,0:IF,0:ELSE,0:FOR,0:CALL,0:functions,0:SWITCH,0:WHILE,1	19
+0x400027f	          0x4889f8	                            mov rax, rdi	       206	sb.c	FUNCTION_13
+0x4000282	        0x488b4e08	                mov rcx, qword [rsi + 8]	       207	sb.c	FUNCTION_13	WHILE_1
+0x4000286	          0x4839cf	                            cmp rdi, rcx	       207	sb.c	FUNCTION_13	WHILE_1
+0x4000289	            0x7328	                           jae 0x40002b3	       207	sb.c	FUNCTION_13	WHILE_1
+0x400028b	          0x488b36	                    mov rsi, qword [rsi]	       208	sb.c	FUNCTION_13	WHILE_1
+0x400028e	         0xfb6143e	             movzx edx, byte [rsi + rdi]	       208	sb.c	FUNCTION_13	WHILE_1
+0x4000292	          0x80fa20	                            cmp dl, 0x20	       208	sb.c	FUNCTION_13	WHILE_1
+0x4000295	            0x7405	                            je 0x400029c	       208	sb.c	FUNCTION_13	WHILE_1
+0x4000297	          0x80fa09	                               cmp dl, 9	       208	sb.c	FUNCTION_13	WHILE_1
+0x400029a	            0x7517	                           jne 0x40002b3	       208	sb.c	FUNCTION_13	WHILE_1
+0x400029c	        0x4883c001	                              add rax, 1	       210	sb.c	FUNCTION_13	WHILE_1
+0x40002a0	          0x4839c8	                            cmp rax, rcx	       207	sb.c	FUNCTION_13	WHILE_1
+0x40002a3	            0x730e	                           jae 0x40002b3	       207	sb.c	FUNCTION_13	WHILE_1
+0x40002a5	         0xfb61406	             movzx edx, byte [rsi + rax]	       208	sb.c	FUNCTION_13	WHILE_1
+0x40002a9	          0x80fa20	                            cmp dl, 0x20	       208	sb.c	FUNCTION_13	WHILE_1
+0x40002ac	            0x74ee	                            je 0x400029c	       208	sb.c	FUNCTION_13	WHILE_1
+0x40002ae	          0x80fa09	                               cmp dl, 9	       208	sb.c	FUNCTION_13	WHILE_1
+0x40002b1	            0x74e9	                            je 0x400029c	       208	sb.c	FUNCTION_13	WHILE_1
+0x40002b3	            0xf3c3	                                     ret	       212	sb.c	FUNCTION_13
+sb_add_sb	DO,0:IF,0:ELSE,0:FOR,0:CALL,2:functions,0:SWITCH,0:WHILE,0	18
+0x400012a	              0x55	                                push rbp	        85	sb.c	FUNCTION_4
+0x400012b	              0x53	                                push rbx	        85	sb.c	FUNCTION_4
+0x400012c	        0x4883ec08	                              sub rsp, 8	        85	sb.c	FUNCTION_4
+0x4000130	          0x4889fb	                            mov rbx, rdi	        85	sb.c	FUNCTION_4
+0x4000133	          0x4889f5	                            mov rbp, rsi	        85	sb.c	FUNCTION_4
+0x4000136	        0x488b7608	                mov rsi, qword [rsi + 8]	        86	sb.c	FUNCTION_4	CALL_1
+0x400013a	      0xe801ffffff	                       call sym.sb_check	        86	sb.c	FUNCTION_4	CALL_1
+0x400013f	        0x488b7b08	                mov rdi, qword [rbx + 8]	        53	string3.h	FUNCTION_15	CALL_3
+0x4000143	          0x48033b	                    add rdi, qword [rbx]	        53	string3.h	FUNCTION_15	CALL_3
+0x4000146	        0x488b7500	                    mov rsi, qword [rbp]	        53	string3.h	FUNCTION_15	CALL_3
+0x400014a	        0x488b5508	                mov rdx, qword [rbp + 8]	        53	string3.h	FUNCTION_15	CALL_3
+0x400014e	      0xe800000000	                          call 0x4000153	        53	string3.h	FUNCTION_15	CALL_3
+0x4000153	        0x488b4508	                mov rax, qword [rbp + 8]	        88	sb.c	FUNCTION_4
+0x4000157	        0x48014308	                add qword [rbx + 8], rax	        88	sb.c	FUNCTION_4
+0x400015b	        0x4883c408	                              add rsp, 8	        89	sb.c	FUNCTION_4
+0x400015f	              0x5b	                                 pop rbx	        89	sb.c	FUNCTION_4
+0x4000160	              0x5d	                                 pop rbp	        89	sb.c	FUNCTION_4
+0x4000161	              0xc3	                                     ret	        89	sb.c	FUNCTION_4

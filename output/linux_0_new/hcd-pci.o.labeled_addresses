@@ -1,0 +1,258 @@
+hcd_pci_runtime_resume	FOR,0:functions,0:DO,0:SWITCH,0:ELSE,0:CALL,4:WHILE,0:IF,0	2
+0x40003e0	      0xbe10040000	                          mov esi, 0x410	       614	hcd-pci.c	FUNCTION_17	CALL_3
+0x40003e5	      0xe9d6feffff	                   jmp sym.resume_common	       614	hcd-pci.c	FUNCTION_17	CALL_3
+suspend_common	FOR,0:functions,0:DO,0:SWITCH,0:ELSE,0:CALL,13:WHILE,0:IF,8	80
+0x4000490	            0x4154	                                push r12	       428	hcd-pci.c	FUNCTION_14
+0x4000492	              0x55	                                push rbp	       428	hcd-pci.c	FUNCTION_14
+0x4000493	          0x4889fd	                            mov rbp, rdi	       428	hcd-pci.c	FUNCTION_14
+0x4000496	              0x53	                                push rbx	       428	hcd-pci.c	FUNCTION_14
+0x4000497	            0x89f3	                            mov ebx, esi	       428	hcd-pci.c	FUNCTION_14
+0x4000499	    0x4c8ba7980000	            mov r12, qword [rdi + 0x98] 	       428	hcd-pci.c	FUNCTION_14
+0x40004a0	      0xe89bffffff	       call sym.check_root_hub_suspended	       438	hcd-pci.c	FUNCTION_14	CALL_3
+0x40004a5	            0x85c0	                           test eax, eax	       439	hcd-pci.c	FUNCTION_14	IF_1
+0x40004a7	     0xf8507010000	                           jne 0x40005b4	       439	hcd-pci.c	FUNCTION_14	IF_1
+0x40004ad	    0x498b84241001	           mov rax, qword [r12 + 0x110] 	       442	hcd-pci.c	FUNCTION_14	IF_2	CALL_4
+0x40004b5	        0x488b4038	            mov rax, qword [rax + 0x38] 	       442	hcd-pci.c	FUNCTION_14	IF_2	CALL_4
+0x40004b9	          0x4885c0	                           test rax, rax	       442	hcd-pci.c	FUNCTION_14	IF_2	CALL_4
+0x40004bc	     0xf84d9000000	                            je 0x400059b	       442	hcd-pci.c	FUNCTION_14	IF_2	CALL_4
+0x40004c2	    0x498b94242801	           mov rdx, qword [r12 + 0x128] 	       442	hcd-pci.c	FUNCTION_14	IF_2	CALL_4
+0x40004ca	          0xf6c240	                           test dl, 0x40	       442	hcd-pci.c	FUNCTION_14	IF_2	CALL_4
+0x40004cd	     0xf85c8000000	                           jne 0x400059b	       442	hcd-pci.c	FUNCTION_14	IF_2	CALL_4
+0x40004d3	            0x84db	                             test bl, bl	       446	hcd-pci.c	FUNCTION_14	IF_2	IF_3	CALL_5
+0x40004d5	     0xf8496000000	                            je 0x4000571	       446	hcd-pci.c	FUNCTION_14	IF_2	IF_3	CALL_5
+0x40004db	          0x83e210	                           and edx, 0x10	       446	hcd-pci.c	FUNCTION_14	IF_2	IF_3	CALL_5
+0x40004de	     0xf8583000000	                           jne 0x4000567	       446	hcd-pci.c	FUNCTION_14	IF_2	IF_3	CALL_5
+0x40004e4	    0x498b9424f801	           mov rdx, qword [r12 + 0x1f8] 	       448	hcd-pci.c	FUNCTION_14	IF_2	IF_4
+0x40004ec	          0x4885d2	                           test rdx, rdx	       448	hcd-pci.c	FUNCTION_14	IF_2	IF_4
+0x40004ef	            0x7409	                            je 0x40004fa	       448	hcd-pci.c	FUNCTION_14	IF_2	IF_4
+0x40004f1	    0xf68228010000	          test byte [rdx + 0x128], 0x10 	       448	hcd-pci.c	FUNCTION_14	IF_2	IF_4
+0x40004f8	            0x756d	                           jne 0x4000567	       448	hcd-pci.c	FUNCTION_14	IF_2	IF_4
+0x40004fa	      0xbe01000000	                              mov esi, 1	       451	hcd-pci.c	FUNCTION_14	IF_2	CALL_7
+0x40004ff	          0x4c89e7	                            mov rdi, r12	       451	hcd-pci.c	FUNCTION_14	IF_2	CALL_7
+0x4000502	      0xe800000000	                          call 0x4000507	       451	hcd-pci.c	FUNCTION_14	IF_2	CALL_7
+0x4000507	            0x89c3	                            mov ebx, eax	       451	hcd-pci.c	FUNCTION_14	IF_2	CALL_7
+0x4000509	    0x498b84241001	           mov rax, qword [r12 + 0x110] 	       452	hcd-pci.c	FUNCTION_14	IF_2	CALL_8
+0x4000511	    0x48c7c7000000	                              mov rdi, 0	       452	hcd-pci.c	FUNCTION_14	IF_2	CALL_8
+0x4000518	            0x89da	                            mov edx, ebx	       452	hcd-pci.c	FUNCTION_14	IF_2	CALL_8
+0x400051a	        0x488b7038	            mov rsi, qword [rax + 0x38] 	       452	hcd-pci.c	FUNCTION_14	IF_2	CALL_8
+0x400051e	      0xe800000000	                          call 0x4000523	       452	hcd-pci.c	FUNCTION_14	IF_2	CALL_8
+0x4000523	            0x85db	                           test ebx, ebx	       455	hcd-pci.c	FUNCTION_14	IF_2	IF_5	CALL_9
+0x4000525	     0xf859b000000	                           jne 0x40005c6	       455	hcd-pci.c	FUNCTION_14	IF_2	IF_5	CALL_9
+0x400052b	    0x41f684242801	          test byte [r12 + 0x128], 0x10 	       455	hcd-pci.c	FUNCTION_14	IF_2	IF_5	CALL_9
+0x4000534	            0x7516	                           jne 0x400054c	       455	hcd-pci.c	FUNCTION_14	IF_2	IF_5	CALL_9
+0x4000536	    0x498b8424f801	           mov rax, qword [r12 + 0x1f8] 	       456	hcd-pci.c	FUNCTION_14	IF_2	IF_5
+0x400053e	          0x4885c0	                           test rax, rax	       456	hcd-pci.c	FUNCTION_14	IF_2	IF_5
+0x4000541	            0x7458	                            je 0x400059b	       456	hcd-pci.c	FUNCTION_14	IF_2	IF_5
+0x4000543	    0xf68028010000	          test byte [rax + 0x128], 0x10 	       456	hcd-pci.c	FUNCTION_14	IF_2	IF_5
+0x400054a	            0x744f	                            je 0x400059b	       456	hcd-pci.c	FUNCTION_14	IF_2	IF_5
+0x400054c	    0x498b84241001	           mov rax, qword [r12 + 0x110] 	       458	hcd-pci.c	FUNCTION_14	IF_2	IF_5	IF_6
+0x4000554	        0x488b4040	            mov rax, qword [rax + 0x40] 	       458	hcd-pci.c	FUNCTION_14	IF_2	IF_5	IF_6
+0x4000558	          0x4885c0	                           test rax, rax	       458	hcd-pci.c	FUNCTION_14	IF_2	IF_5	IF_6
+0x400055b	            0x740a	                            je 0x4000567	       458	hcd-pci.c	FUNCTION_14	IF_2	IF_5	IF_6
+0x400055d	            0x31f6	                            xor esi, esi	       459	hcd-pci.c	FUNCTION_14	IF_2	IF_5	CALL_11
+0x400055f	          0x4c89e7	                            mov rdi, r12	       459	hcd-pci.c	FUNCTION_14	IF_2	IF_5	CALL_11
+0x4000562	      0xe800000000	                          call 0x4000567	       459	hcd-pci.c	FUNCTION_14	IF_2	IF_5	CALL_11
+0x4000567	              0x5b	                                 pop rbx	       480	hcd-pci.c	FUNCTION_14
+0x4000568	      0xb8f0ffffff	                     mov eax, 0xfffffff0	       479	hcd-pci.c	FUNCTION_14
+0x400056d	              0x5d	                                 pop rbp	       480	hcd-pci.c	FUNCTION_14
+0x400056e	            0x415c	                                 pop r12	       480	hcd-pci.c	FUNCTION_14
+0x4000570	              0xc3	                                     ret	       480	hcd-pci.c	FUNCTION_14
+0x4000571	            0x31f6	                            xor esi, esi	       451	hcd-pci.c	FUNCTION_14	IF_2	CALL_7
+0x4000573	          0x4c89e7	                            mov rdi, r12	       451	hcd-pci.c	FUNCTION_14	IF_2	CALL_7
+0x4000576	      0xe800000000	                          call 0x400057b	       451	hcd-pci.c	FUNCTION_14	IF_2	CALL_7
+0x400057b	            0x89c3	                            mov ebx, eax	       451	hcd-pci.c	FUNCTION_14	IF_2	CALL_7
+0x400057d	    0x498b84241001	           mov rax, qword [r12 + 0x110] 	       452	hcd-pci.c	FUNCTION_14	IF_2	CALL_8
+0x4000585	    0x48c7c7000000	                              mov rdi, 0	       452	hcd-pci.c	FUNCTION_14	IF_2	CALL_8
+0x400058c	            0x89da	                            mov edx, ebx	       452	hcd-pci.c	FUNCTION_14	IF_2	CALL_8
+0x400058e	        0x488b7038	            mov rsi, qword [rax + 0x38] 	       452	hcd-pci.c	FUNCTION_14	IF_2	CALL_8
+0x4000592	      0xe800000000	                          call 0x4000597	       452	hcd-pci.c	FUNCTION_14	IF_2	CALL_8
+0x4000597	            0x85db	                           test ebx, ebx	       462	hcd-pci.c	FUNCTION_14	IF_2	IF_7
+0x4000599	            0x752b	                           jne 0x40005c6	       462	hcd-pci.c	FUNCTION_14	IF_2	IF_7
+0x400059b	    0x41f684243001	              test byte [r12 + 0x130], 4	       470	hcd-pci.c	FUNCTION_14	IF_8
+0x40005a4	            0x7413	                            je 0x40005b9	       470	hcd-pci.c	FUNCTION_14	IF_8
+0x40005a6	    0x488dbd60ffff	                   lea rdi, [rbp - 0xa0]	       478	hcd-pci.c	FUNCTION_14	CALL_13
+0x40005ad	      0xe800000000	                          call 0x40005b2	       478	hcd-pci.c	FUNCTION_14	CALL_13
+0x40005b2	            0x31c0	                            xor eax, eax	       479	hcd-pci.c	FUNCTION_14
+0x40005b4	              0x5b	                                 pop rbx	       480	hcd-pci.c	FUNCTION_14
+0x40005b5	              0x5d	                                 pop rbp	       480	hcd-pci.c	FUNCTION_14
+0x40005b6	            0x415c	                                 pop r12	       480	hcd-pci.c	FUNCTION_14
+0x40005b8	              0xc3	                                     ret	       480	hcd-pci.c	FUNCTION_14
+0x40005b9	    0x8bbdd4020000	           mov edi, dword [rbp + 0x2d4] 	       471	hcd-pci.c	FUNCTION_14	CALL_12
+0x40005bf	      0xe800000000	                          call 0x40005c4	       471	hcd-pci.c	FUNCTION_14	CALL_12
+0x40005c4	            0xebe0	                           jmp 0x40005a6	       471	hcd-pci.c	FUNCTION_14	CALL_12
+0x40005c6	            0x89d8	                            mov eax, ebx	       471	hcd-pci.c	FUNCTION_14	CALL_12
+0x40005c8	            0xebea	                           jmp 0x40005b4	       471	hcd-pci.c	FUNCTION_14	CALL_12
+check_root_hub_suspended	FOR,0:functions,0:DO,0:SWITCH,0:ELSE,0:CALL,6:WHILE,0:IF,3	18
+0x4000440	    0x488b87980000	            mov rax, qword [rdi + 0x98] 	       409	hcd-pci.c	FUNCTION_13
+0x4000447	    0xf68028010000	          test byte [rax + 0x128], 0x20 	       413	hcd-pci.c	FUNCTION_13	IF_1	CALL_3
+0x400044e	            0x7518	                           jne 0x4000468	       413	hcd-pci.c	FUNCTION_13	IF_1	CALL_3
+0x4000450	    0x488b80f80100	           mov rax, qword [rax + 0x1f8] 	       417	hcd-pci.c	FUNCTION_13	IF_2
+0x4000457	          0x4885c0	                           test rax, rax	       417	hcd-pci.c	FUNCTION_13	IF_2
+0x400045a	            0x7409	                            je 0x4000465	       417	hcd-pci.c	FUNCTION_13	IF_2
+0x400045c	    0xf68028010000	          test byte [rax + 0x128], 0x20 	       419	hcd-pci.c	FUNCTION_13	IF_2	IF_3	CALL_5
+0x4000463	            0x7515	                           jne 0x400047a	       419	hcd-pci.c	FUNCTION_13	IF_2	IF_3	CALL_5
+0x4000465	            0x31c0	                            xor eax, eax	       424	hcd-pci.c	FUNCTION_13
+0x4000467	              0xc3	                                     ret	       425	hcd-pci.c	FUNCTION_13
+0x4000468	    0x48c7c6000000	                              mov rsi, 0	       414	hcd-pci.c	FUNCTION_13	IF_1	CALL_4
+0x400046f	      0xe800000000	                          call 0x4000474	       414	hcd-pci.c	FUNCTION_13	IF_1	CALL_4
+0x4000474	      0xb8f0ffffff	                     mov eax, 0xfffffff0	       415	hcd-pci.c	FUNCTION_13	IF_1
+0x4000479	              0xc3	                                     ret	       415	hcd-pci.c	FUNCTION_13	IF_1
+0x400047a	    0x48c7c6000000	                              mov rsi, 0	       420	hcd-pci.c	FUNCTION_13	IF_2	IF_3	CALL_6
+0x4000481	      0xe800000000	                          call 0x4000486	       420	hcd-pci.c	FUNCTION_13	IF_2	IF_3	CALL_6
+0x4000486	      0xb8f0ffffff	                     mov eax, 0xfffffff0	       421	hcd-pci.c	FUNCTION_13	IF_2	IF_3
+0x400048b	              0xc3	                                     ret	       421	hcd-pci.c	FUNCTION_13	IF_2	IF_3
+resume_common	FOR,0:functions,0:DO,0:SWITCH,0:ELSE,0:CALL,14:WHILE,0:IF,6	73
+0x40002c0	            0x4156	                                push r14	       483	hcd-pci.c	FUNCTION_15
+0x40002c2	            0x4155	                                push r13	       483	hcd-pci.c	FUNCTION_15
+0x40002c4	            0x4154	                                push r12	       483	hcd-pci.c	FUNCTION_15
+0x40002c6	              0x55	                                push rbp	       483	hcd-pci.c	FUNCTION_15
+0x40002c7	              0x53	                                push rbx	       483	hcd-pci.c	FUNCTION_15
+0x40002c8	    0x488baf980000	            mov rbp, qword [rdi + 0x98] 	       483	hcd-pci.c	FUNCTION_15
+0x40002cf	    0xf68528010000	          test byte [rbp + 0x128], 0x20 	       488	hcd-pci.c	FUNCTION_15	IF_1	CALL_3
+0x40002d6	     0xf85d6000000	                           jne 0x40003b2	       488	hcd-pci.c	FUNCTION_15	IF_1	CALL_3
+0x40002dc	    0x488b85f80100	           mov rax, qword [rbp + 0x1f8] 	       489	hcd-pci.c	FUNCTION_15	IF_1
+0x40002e3	          0x4885c0	                           test rax, rax	       488	hcd-pci.c	FUNCTION_15	IF_1	CALL_3
+0x40002e6	            0x740d	                            je 0x40002f5	       488	hcd-pci.c	FUNCTION_15	IF_1	CALL_3
+0x40002e8	    0xf68028010000	          test byte [rax + 0x128], 0x20 	       489	hcd-pci.c	FUNCTION_15	IF_1
+0x40002ef	     0xf85bd000000	                           jne 0x40003b2	       489	hcd-pci.c	FUNCTION_15	IF_1
+0x40002f5	    0x4c8db760ffff	                   lea r14, [rdi - 0xa0]	       484	hcd-pci.c	FUNCTION_15	CALL_1
+0x40002fc	          0x4989fc	                            mov r12, rdi	       484	hcd-pci.c	FUNCTION_15	CALL_1
+0x40002ff	          0x4189f5	                           mov r13d, esi	       484	hcd-pci.c	FUNCTION_15	CALL_1
+0x4000302	          0x4c89f7	                            mov rdi, r14	       495	hcd-pci.c	FUNCTION_15	CALL_6
+0x4000305	      0xe800000000	                          call 0x400030a	       495	hcd-pci.c	FUNCTION_15	CALL_6
+0x400030a	            0x85c0	                           test eax, eax	       496	hcd-pci.c	FUNCTION_15	IF_2
+0x400030c	            0x89c3	                            mov ebx, eax	       495	hcd-pci.c	FUNCTION_15	CALL_6
+0x400030e	     0xf88a9000000	                            js 0x40003bd	       496	hcd-pci.c	FUNCTION_15	IF_2
+0x4000314	          0x4c89f7	                            mov rdi, r14	       501	hcd-pci.c	FUNCTION_15	CALL_8
+0x4000317	      0xe800000000	                          call 0x400031c	       501	hcd-pci.c	FUNCTION_15	CALL_8
+0x400031c	    0x488b85100100	           mov rax, qword [rbp + 0x110] 	       503	hcd-pci.c	FUNCTION_15	IF_3	CALL_9
+0x4000323	        0x488b5040	            mov rdx, qword [rax + 0x40] 	       503	hcd-pci.c	FUNCTION_15	IF_3	CALL_9
+0x4000327	            0x89d8	                            mov eax, ebx	       503	hcd-pci.c	FUNCTION_15	IF_3	CALL_9
+0x4000329	          0x4885d2	                           test rdx, rdx	       503	hcd-pci.c	FUNCTION_15	IF_3	CALL_9
+0x400032c	     0xf8482000000	                            je 0x40003b4	       503	hcd-pci.c	FUNCTION_15	IF_3	CALL_9
+0x4000332	    0xf68528010000	          test byte [rbp + 0x128], 0x40 	       503	hcd-pci.c	FUNCTION_15	IF_3	CALL_9
+0x4000339	            0x7579	                           jne 0x40003b4	       503	hcd-pci.c	FUNCTION_15	IF_3	CALL_9
+0x400033b	    0x41817c24a420	        cmp dword [r12 - 0x5c], 0xc0320 	       510	hcd-pci.c	FUNCTION_15	IF_3	IF_4
+0x4000344	            0x7526	                           jne 0x400036c	       510	hcd-pci.c	FUNCTION_15	IF_3	IF_4
+0x4000346	    0x4181fd100400	                         cmp r13d, 0x410	       510	hcd-pci.c	FUNCTION_15	IF_3	IF_4
+0x400034d	            0x741d	                            je 0x400036c	       510	hcd-pci.c	FUNCTION_15	IF_3	IF_4
+0x400034f	    0x48c7c2000000	                              mov rdx, 0	       511	hcd-pci.c	FUNCTION_15	IF_3	IF_4	CALL_10
+0x4000356	          0x4889ee	                            mov rsi, rbp	       511	hcd-pci.c	FUNCTION_15	IF_3	IF_4	CALL_10
+0x4000359	          0x4c89f7	                            mov rdi, r14	       511	hcd-pci.c	FUNCTION_15	IF_3	IF_4	CALL_10
+0x400035c	      0xe82ffdffff	             call sym.for_each_companion	       511	hcd-pci.c	FUNCTION_15	IF_3	IF_4	CALL_10
+0x4000361	    0x488b85100100	           mov rax, qword [rbp + 0x110] 	       511	hcd-pci.c	FUNCTION_15	IF_3	IF_4	CALL_10
+0x4000368	        0x488b5040	            mov rdx, qword [rax + 0x40] 	       511	hcd-pci.c	FUNCTION_15	IF_3	IF_4	CALL_10
+0x400036c	            0x31f6	                            xor esi, esi	       514	hcd-pci.c	FUNCTION_15	IF_3	CALL_11
+0x400036e	        0x4183fd40	                          cmp r13d, 0x40	       514	hcd-pci.c	FUNCTION_15	IF_3	CALL_11
+0x4000372	          0x4889ef	                            mov rdi, rbp	       514	hcd-pci.c	FUNCTION_15	IF_3	CALL_11
+0x4000375	        0x400f94c6	                                sete sil	       514	hcd-pci.c	FUNCTION_15	IF_3	CALL_11
+0x4000379	      0xe800000000	                          call 0x400037e	       514	hcd-pci.c	FUNCTION_15	IF_3	CALL_11
+0x400037e	            0x85c0	                           test eax, eax	       516	hcd-pci.c	FUNCTION_15	IF_3	IF_5
+0x4000380	            0x89c3	                            mov ebx, eax	       514	hcd-pci.c	FUNCTION_15	IF_3	CALL_11
+0x4000382	            0x742e	                            je 0x40003b2	       516	hcd-pci.c	FUNCTION_15	IF_3	IF_5
+0x4000384	          0x4c89e7	                            mov rdi, r12	       517	hcd-pci.c	FUNCTION_15	IF_3	IF_5	CALL_12
+0x4000387	            0x89c2	                            mov edx, eax	       517	hcd-pci.c	FUNCTION_15	IF_3	IF_5	CALL_12
+0x4000389	    0x48c7c6000000	                              mov rsi, 0	       517	hcd-pci.c	FUNCTION_15	IF_3	IF_5	CALL_12
+0x4000390	      0xe800000000	                          call 0x4000395	       517	hcd-pci.c	FUNCTION_15	IF_3	IF_5	CALL_12
+0x4000395	    0x488bbdf80100	           mov rdi, qword [rbp + 0x1f8] 	       518	hcd-pci.c	FUNCTION_15	IF_3	IF_5	IF_6
+0x400039c	          0x4885ff	                           test rdi, rdi	       518	hcd-pci.c	FUNCTION_15	IF_3	IF_5	IF_6
+0x400039f	            0x7405	                            je 0x40003a6	       518	hcd-pci.c	FUNCTION_15	IF_3	IF_5	IF_6
+0x40003a1	      0xe800000000	                          call 0x40003a6	       519	hcd-pci.c	FUNCTION_15	IF_3	IF_5	CALL_13
+0x40003a6	          0x4889ef	                            mov rdi, rbp	       520	hcd-pci.c	FUNCTION_15	IF_3	IF_5	CALL_14
+0x40003a9	      0xe800000000	                          call 0x40003ae	       520	hcd-pci.c	FUNCTION_15	IF_3	IF_5	CALL_14
+0x40003ae	            0x89d8	                            mov eax, ebx	       520	hcd-pci.c	FUNCTION_15	IF_3	IF_5	CALL_14
+0x40003b0	            0xeb02	                           jmp 0x40003b4	       520	hcd-pci.c	FUNCTION_15	IF_3	IF_5	CALL_14
+0x40003b2	            0x31c0	                            xor eax, eax	       492	hcd-pci.c	FUNCTION_15	IF_1
+0x40003b4	              0x5b	                                 pop rbx	       524	hcd-pci.c	FUNCTION_15
+0x40003b5	              0x5d	                                 pop rbp	       524	hcd-pci.c	FUNCTION_15
+0x40003b6	            0x415c	                                 pop r12	       524	hcd-pci.c	FUNCTION_15
+0x40003b8	            0x415d	                                 pop r13	       524	hcd-pci.c	FUNCTION_15
+0x40003ba	            0x415e	                                 pop r14	       524	hcd-pci.c	FUNCTION_15
+0x40003bc	              0xc3	                                     ret	       524	hcd-pci.c	FUNCTION_15
+0x40003bd	            0x89c2	                            mov edx, eax	       497	hcd-pci.c	FUNCTION_15	IF_2	CALL_7
+0x40003bf	    0x48c7c6000000	                              mov rsi, 0	       497	hcd-pci.c	FUNCTION_15	IF_2	CALL_7
+0x40003c6	          0x4c89e7	                            mov rdi, r12	       497	hcd-pci.c	FUNCTION_15	IF_2	CALL_7
+0x40003c9	      0xe800000000	                          call 0x40003ce	       497	hcd-pci.c	FUNCTION_15	IF_2	CALL_7
+0x40003ce	            0x89d8	                            mov eax, ebx	       498	hcd-pci.c	FUNCTION_15	IF_2
+0x40003d0	            0xebe2	                           jmp 0x40003b4	       498	hcd-pci.c	FUNCTION_15	IF_2
+ehci_remove	FOR,0:functions,0:DO,0:SWITCH,0:ELSE,0:CALL,1:WHILE,0:IF,1	6
+0x4000060	          0x8b4244	            mov eax, dword [rdx + 0x44] 	       137	hcd-pci.c	FUNCTION_6	IF_1	CALL_1
+0x4000063	          0x83e0ef	                     and eax, 0xffffffef	       137	hcd-pci.c	FUNCTION_6	IF_1	CALL_1
+0x4000066	      0x3d00030c00	                        cmp eax, 0xc0300	       137	hcd-pci.c	FUNCTION_6	IF_1	CALL_1
+0x400006b	            0x7508	                           jne 0x4000075	       137	hcd-pci.c	FUNCTION_6	IF_1	CALL_1
+0x400006d	    0x48c741680000	               mov qword [rcx + 0x68], 0	       138	hcd-pci.c	FUNCTION_6	IF_1
+0x4000075	            0xf3c3	                                     ret	       138	hcd-pci.c	FUNCTION_6	IF_1
+ehci_wait_for_companions	FOR,0:functions,0:DO,0:SWITCH,0:ELSE,0:CALL,2:WHILE,0:IF,1	8
+0x4000410	          0x8b4244	            mov eax, dword [rdx + 0x44] 	       147	hcd-pci.c	FUNCTION_7	IF_1	CALL_1
+0x4000413	          0x83e0ef	                     and eax, 0xffffffef	       147	hcd-pci.c	FUNCTION_7	IF_1	CALL_1
+0x4000416	      0x3d00030c00	                        cmp eax, 0xc0300	       147	hcd-pci.c	FUNCTION_7	IF_1	CALL_1
+0x400041b	            0x7402	                            je 0x400041f	       147	hcd-pci.c	FUNCTION_7	IF_1	CALL_1
+0x400041d	            0xf3c3	                                     ret	       147	hcd-pci.c	FUNCTION_7	IF_1	CALL_1
+0x400041f	    0x488db2a00000	                   lea rsi, [rdx + 0xa0]	       148	hcd-pci.c	FUNCTION_7	CALL_2
+0x4000426	    0x4881c7a00000	                           add rdi, 0xa0	       148	hcd-pci.c	FUNCTION_7	CALL_2
+0x400042d	      0xe900000000	                           jmp 0x4000432	       148	hcd-pci.c	FUNCTION_7	CALL_2
+hcd_pci_runtime_suspend	FOR,0:functions,0:DO,0:SWITCH,0:ELSE,0:CALL,4:WHILE,0:IF,1	2
+0x40005d0	      0xbe01000000	                              mov esi, 1	       602	hcd-pci.c	FUNCTION_16	CALL_1
+0x40005d5	      0xe9b6feffff	                  jmp sym.suspend_common	       602	hcd-pci.c	FUNCTION_16	CALL_1
+non_ehci_add	FOR,0:functions,0:DO,0:SWITCH,0:ELSE,0:CALL,3:WHILE,0:IF,1	9
+0x4000040	          0x8b4744	            mov eax, dword [rdi + 0x44] 	       126	hcd-pci.c	FUNCTION_5	IF_1	CALL_1
+0x4000043	          0x83e0ef	                     and eax, 0xffffffef	       126	hcd-pci.c	FUNCTION_5	IF_1	CALL_1
+0x4000046	      0x3d00030c00	                        cmp eax, 0xc0300	       126	hcd-pci.c	FUNCTION_5	IF_1	CALL_1
+0x400004b	            0x7509	                           jne 0x4000056	       126	hcd-pci.c	FUNCTION_5	IF_1	CALL_1
+0x400004d	    0x817a4420030c	        cmp dword [rdx + 0x44], 0xc0320 	       126	hcd-pci.c	FUNCTION_5	IF_1	CALL_1
+0x4000054	            0x7402	                            je 0x4000058	       126	hcd-pci.c	FUNCTION_5	IF_1	CALL_1
+0x4000056	            0xf3c3	                                     ret	       126	hcd-pci.c	FUNCTION_5	IF_1	CALL_1
+0x4000058	        0x48894e68	             mov qword [rsi + 0x68], rcx	       129	hcd-pci.c	FUNCTION_5	IF_1
+0x400005c	              0xc3	                                     ret	       129	hcd-pci.c	FUNCTION_5	IF_1
+for_each_companion	FOR,0:functions,1:DO,0:SWITCH,0:ELSE,0:CALL,1:WHILE,0:IF,0	51
+0x4000090	            0x4155	                                push r13	        48	hcd-pci.c	FUNCTION_2
+0x4000092	            0x4154	                                push r12	        48	hcd-pci.c	FUNCTION_2
+0x4000094	          0x4989f5	                            mov r13, rsi	        48	hcd-pci.c	FUNCTION_2
+0x4000097	              0x55	                                push rbp	        48	hcd-pci.c	FUNCTION_2
+0x4000098	              0x53	                                push rbx	        48	hcd-pci.c	FUNCTION_2
+0x4000099	          0x4989d4	                            mov r12, rdx	        48	hcd-pci.c	FUNCTION_2
+0x400009c	          0x4889fb	                            mov rbx, rdi	        48	hcd-pci.c	FUNCTION_2
+0x400009f	            0x31c0	                            xor eax, eax	        58	hcd-pci.c	FUNCTION_2
+0x40000a1	        0x4883ec08	                              sub rsp, 8	        48	hcd-pci.c	FUNCTION_2
+0x40000a5	          0x8b6f38	            mov ebp, dword [rdi + 0x38] 	        51	hcd-pci.c	FUNCTION_2	CALL_1
+0x40000a8	          0xc1ed03	                              shr ebp, 3	        51	hcd-pci.c	FUNCTION_2	CALL_1
+0x40000ab	          0x83e51f	                           and ebp, 0x1f	        51	hcd-pci.c	FUNCTION_2	CALL_1
+0x40000ae	      0xbeffffffff	                     mov esi, 0xffffffff	        59	hcd-pci.c	FUNCTION_2	FUNCTION_1
+0x40000b3	          0x4889c2	                            mov rdx, rax	        59	hcd-pci.c	FUNCTION_2	FUNCTION_1
+0x40000b6	            0x89f7	                            mov edi, esi	        59	hcd-pci.c	FUNCTION_2	FUNCTION_1
+0x40000b8	      0xe800000000	                          call 0x40000bd	        59	hcd-pci.c	FUNCTION_2	FUNCTION_1
+0x40000bd	          0x4885c0	                           test rax, rax	        59	hcd-pci.c	FUNCTION_2	FUNCTION_1
+0x40000c0	            0x745a	                            je 0x400011c	        59	hcd-pci.c	FUNCTION_2	FUNCTION_1
+0x40000c2	        0x488b4b10	            mov rcx, qword [rbx + 0x10] 	        60	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_1
+0x40000c6	        0x48394810	            cmp qword [rax + 0x10], rcx 	        60	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_1
+0x40000ca	            0x75e2	                           jne 0x40000ae	        60	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_1
+0x40000cc	          0x8b5038	            mov edx, dword [rax + 0x38] 	        60	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_1
+0x40000cf	          0xc1ea03	                              shr edx, 3	        60	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_1
+0x40000d2	          0x83e21f	                           and edx, 0x1f	        60	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_1
+0x40000d5	            0x39d5	                            cmp ebp, edx	        60	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_1
+0x40000d7	            0x75d5	                           jne 0x40000ae	        60	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_1
+0x40000d9	          0x8b5044	            mov edx, dword [rax + 0x44] 	        68	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_2
+0x40000dc	            0x89d1	                            mov ecx, edx	        68	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_2
+0x40000de	          0x83e1ef	                     and ecx, 0xffffffef	        68	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_2
+0x40000e1	    0x81f900030c00	                        cmp ecx, 0xc0300	        68	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_2
+0x40000e7	            0x7408	                            je 0x40000f1	        68	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_2
+0x40000e9	    0x81fa20030c00	                        cmp edx, 0xc0320	        68	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_2
+0x40000ef	            0x75bd	                           jne 0x40000ae	        68	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_2
+0x40000f1	    0x488b88380100	           mov rcx, qword [rax + 0x138] 	        68	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_2
+0x40000f8	          0x4885c9	                           test rcx, rcx	        73	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_3
+0x40000fb	            0x74b1	                            je 0x40000ae	        73	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_3
+0x40000fd	      0x4883796000	               cmp qword [rcx + 0x60], 0	        73	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_3
+0x4000102	            0x74aa	                            je 0x40000ae	        73	hcd-pci.c	FUNCTION_2	FUNCTION_1	IF_3
+0x4000104	          0x4889c2	                            mov rdx, rax	        75	hcd-pci.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x4000107	        0x48890424	                    mov qword [rsp], rax	        75	hcd-pci.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x400010b	          0x4c89ee	                            mov rsi, r13	        75	hcd-pci.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x400010e	          0x4889df	                            mov rdi, rbx	        75	hcd-pci.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x4000111	      0xe800000000	                          call 0x4000116	        75	hcd-pci.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x4000116	        0x488b0424	                    mov rax, qword [rsp]	        75	hcd-pci.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x400011a	            0xeb92	                           jmp 0x40000ae	        75	hcd-pci.c	FUNCTION_2	FUNCTION_1	CALL_3
+0x400011c	        0x4883c408	                              add rsp, 8	        77	hcd-pci.c	FUNCTION_2
+0x4000120	              0x5b	                                 pop rbx	        77	hcd-pci.c	FUNCTION_2
+0x4000121	              0x5d	                                 pop rbp	        77	hcd-pci.c	FUNCTION_2
+0x4000122	            0x415c	                                 pop r12	        77	hcd-pci.c	FUNCTION_2
+0x4000124	            0x415d	                                 pop r13	        77	hcd-pci.c	FUNCTION_2
+0x4000126	              0xc3	                                     ret	        77	hcd-pci.c	FUNCTION_2

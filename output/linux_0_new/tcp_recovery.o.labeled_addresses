@@ -1,0 +1,68 @@
+tcp_rack_mark_lost	FOR,0:CALL,5:WHILE,0:SWITCH,0:ELSE,0:functions,0:DO,0:IF,2	37
+0x40001e0	              0x53	                                push rbx	        94	tcp_recovery.c	FUNCTION_4
+0x40001e1	        0x4883ec10	                           sub rsp, 0x10	        94	tcp_recovery.c	FUNCTION_4
+0x40001e5	    0x65488b042528	                mov rax, qword gs:[0x28]	        94	tcp_recovery.c	FUNCTION_4
+0x40001ee	      0x4889442408	                mov qword [rsp + 8], rax	        94	tcp_recovery.c	FUNCTION_4
+0x40001f3	            0x31c0	                            xor eax, eax	        94	tcp_recovery.c	FUNCTION_4
+0x40001f5	     0xfb687a50500	          movzx eax, byte [rdi + 0x5a5] 	        98	tcp_recovery.c	FUNCTION_4	IF_1
+0x40001fc	            0xa840	                           test al, 0x40	        98	tcp_recovery.c	FUNCTION_4	IF_1
+0x40001fe	            0x7516	                           jne 0x4000216	        98	tcp_recovery.c	FUNCTION_4	IF_1
+0x4000200	      0x488b442408	                mov rax, qword [rsp + 8]	       109	tcp_recovery.c	FUNCTION_4
+0x4000205	    0x654833042528	                xor rax, qword gs:[0x28]	       109	tcp_recovery.c	FUNCTION_4
+0x400020e	            0x7566	                           jne 0x4000276	       109	tcp_recovery.c	FUNCTION_4
+0x4000210	        0x4883c410	                           add rsp, 0x10	       109	tcp_recovery.c	FUNCTION_4
+0x4000214	              0x5b	                                 pop rbx	       109	tcp_recovery.c	FUNCTION_4
+0x4000215	              0xc3	                                     ret	       109	tcp_recovery.c	FUNCTION_4
+0x4000216	          0x83e0bf	                     and eax, 0xffffffbf	       102	tcp_recovery.c	FUNCTION_4
+0x4000219	      0x488d742404	                      lea rsi, [rsp + 4]	       103	tcp_recovery.c	FUNCTION_4	CALL_2
+0x400021e	          0x4889fb	                            mov rbx, rdi	       103	tcp_recovery.c	FUNCTION_4	CALL_2
+0x4000221	    0x8887a5050000	              mov byte [rdi + 0x5a5], al	       102	tcp_recovery.c	FUNCTION_4
+0x4000227	      0xe814feffff	           call sym.tcp_rack_detect_loss	       103	tcp_recovery.c	FUNCTION_4	CALL_2
+0x400022c	        0x8b7c2404	                mov edi, dword [rsp + 4]	       104	tcp_recovery.c	FUNCTION_4	IF_2
+0x4000230	            0x85ff	                           test edi, edi	       104	tcp_recovery.c	FUNCTION_4	IF_2
+0x4000232	            0x74cc	                            je 0x4000200	       104	tcp_recovery.c	FUNCTION_4	IF_2
+0x4000234	      0xe800000000	                          call 0x4000239	       417	jiffies.h	FUNCTION_16	ELSE_1	CALL_4
+0x4000239	    0x8b9338040000	           mov edx, dword [rbx + 0x438] 	       106	tcp_recovery.c	FUNCTION_4	IF_2	CALL_4
+0x400023f	          0x83c002	                              add eax, 2	       105	tcp_recovery.c	FUNCTION_4	IF_2	CALL_3
+0x4000242	    0x488b0d000000	            mov rcx, qword [0x04000249] 	       244	inet_connection_sock.h	FUNCTION_26	IF_2
+0x4000249	    0x488db3e80300	                  lea rsi, [rbx + 0x3e8]	       245	inet_connection_sock.h	FUNCTION_26	IF_2	CALL_4
+0x4000250	    0xc6837a040000	               mov byte [rbx + 0x47a], 6	       243	inet_connection_sock.h	FUNCTION_26	IF_2
+0x4000257	          0x4889df	                            mov rdi, rbx	       245	inet_connection_sock.h	FUNCTION_26	IF_2	CALL_4
+0x400025a	        0x89442404	                mov dword [rsp + 4], eax	       105	tcp_recovery.c	FUNCTION_4	IF_2	CALL_3
+0x400025e	          0x4839c2	                            cmp rdx, rax	       244	inet_connection_sock.h	FUNCTION_26	IF_2
+0x4000261	        0x480f47d0	                          cmova rdx, rax	       244	inet_connection_sock.h	FUNCTION_26	IF_2
+0x4000265	          0x4801ca	                            add rdx, rcx	       244	inet_connection_sock.h	FUNCTION_26	IF_2
+0x4000268	    0x488993e00300	            mov qword [rbx + 0x3e0], rdx	       244	inet_connection_sock.h	FUNCTION_26	IF_2
+0x400026f	      0xe800000000	                          call 0x4000274	       245	inet_connection_sock.h	FUNCTION_26	IF_2	CALL_4
+0x4000274	            0xeb8a	                           jmp 0x4000200	       245	inet_connection_sock.h	FUNCTION_26	IF_2	CALL_4
+0x4000276	      0xe800000000	                          call 0x400027b	       109	tcp_recovery.c	FUNCTION_4
+tcp_rack_update_reo_wnd	FOR,0:CALL,4:WHILE,0:SWITCH,0:ELSE,1:functions,0:DO,0:IF,4	29
+0x40003b0	        0x488b4730	            mov rax, qword [rdi + 0x30] 	       186	tcp_recovery.c	FUNCTION_7	IF_1	CALL_2
+0x40003b4	    0xf68020050000	              test byte [rax + 0x520], 2	       186	tcp_recovery.c	FUNCTION_7	IF_1	CALL_2
+0x40003bb	            0x7525	                           jne 0x40003e2	       186	tcp_recovery.c	FUNCTION_7	IF_1	CALL_2
+0x40003bd	          0x8b4608	                mov eax, dword [rsi + 8]	       187	tcp_recovery.c	FUNCTION_7	IF_1
+0x40003c0	            0x85c0	                           test eax, eax	       186	tcp_recovery.c	FUNCTION_7	IF_1	CALL_2
+0x40003c2	            0x741e	                            je 0x40003e2	       186	tcp_recovery.c	FUNCTION_7	IF_1	CALL_2
+0x40003c4	    0x3b87a0050000	           cmp eax, dword [rdi + 0x5a0] 	       191	tcp_recovery.c	FUNCTION_7	IF_2	CALL_3
+0x40003ca	            0x784f	                            js 0x400041b	       191	tcp_recovery.c	FUNCTION_7	IF_2	CALL_3
+0x40003cc	     0xfb687a50500	          movzx eax, byte [rdi + 0x5a5] 	       195	tcp_recovery.c	FUNCTION_7	IF_3
+0x40003d3	            0xa820	                           test al, 0x20	       195	tcp_recovery.c	FUNCTION_7	IF_3
+0x40003d5	            0x750d	                           jne 0x40003e4	       195	tcp_recovery.c	FUNCTION_7	IF_3
+0x40003d7	            0xa81f	                           test al, 0x1f	       201	tcp_recovery.c	FUNCTION_7	ELSE_1	IF_4
+0x40003d9	            0x7507	                           jne 0x40003e2	       201	tcp_recovery.c	FUNCTION_7	ELSE_1	IF_4
+0x40003db	    0xc687a4050000	               mov byte [rdi + 0x5a4], 1	       202	tcp_recovery.c	FUNCTION_7	ELSE_1	IF_4
+0x40003e2	            0xf3c3	                                     ret	       202	tcp_recovery.c	FUNCTION_7	ELSE_1	IF_4
+0x40003e4	     0xfb697a40500	          movzx edx, byte [rdi + 0x5a4] 	       196	tcp_recovery.c	FUNCTION_7	IF_3	CALL_4
+0x40003eb	      0xb9ff000000	                           mov ecx, 0xff	       196	tcp_recovery.c	FUNCTION_7	IF_3	CALL_4
+0x40003f0	          0x83c201	                              add edx, 1	       196	tcp_recovery.c	FUNCTION_7	IF_3	CALL_4
+0x40003f3	    0x81faff000000	                           cmp edx, 0xff	       196	tcp_recovery.c	FUNCTION_7	IF_3	CALL_4
+0x40003f9	           0xf47d1	                          cmova edx, ecx	       196	tcp_recovery.c	FUNCTION_7	IF_3	CALL_4
+0x40003fc	          0x83e0c0	                     and eax, 0xffffffc0	       200	tcp_recovery.c	FUNCTION_7	IF_3
+0x40003ff	    0x8897a4050000	              mov byte [rdi + 0x5a4], dl	       196	tcp_recovery.c	FUNCTION_7	IF_3	CALL_4
+0x4000405	    0x8b975c060000	           mov edx, dword [rdi + 0x65c] 	       199	tcp_recovery.c	FUNCTION_7	IF_3
+0x400040b	          0x83c810	                            or eax, 0x10	       200	tcp_recovery.c	FUNCTION_7	IF_3
+0x400040e	    0x8887a5050000	              mov byte [rdi + 0x5a5], al	       200	tcp_recovery.c	FUNCTION_7	IF_3
+0x4000414	    0x8997a0050000	            mov dword [rdi + 0x5a0], edx	       199	tcp_recovery.c	FUNCTION_7	IF_3
+0x400041a	              0xc3	                                     ret	       199	tcp_recovery.c	FUNCTION_7	IF_3
+0x400041b	    0x80a7a5050000	            and byte [rdi + 0x5a5], 0xdf	       192	tcp_recovery.c	FUNCTION_7	IF_2
+0x4000422	            0xeba8	                           jmp 0x40003cc	       192	tcp_recovery.c	FUNCTION_7	IF_2

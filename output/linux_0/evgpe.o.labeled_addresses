@@ -1,0 +1,413 @@
+acpi_ev_low_get_gpe_info	IF,2:SWITCH,0:DO,0:WHILE,0:CALL,0:functions,0:ELSE,0:FOR,0	14
+0x400017d	            0x31c0	                            xor eax, eax	       256	evgpe.c	FUNCTION_6	IF_1
+0x400017f	          0x4885f6	                           test rsi, rsi	       255	evgpe.c	FUNCTION_6	IF_1
+0x4000182	            0x741d	                            je 0x40001a1	       255	evgpe.c	FUNCTION_6	IF_1
+0x4000184	         0xfb7563e	           movzx edx, word [rsi + 0x3e] 	       255	evgpe.c	FUNCTION_6	IF_1
+0x4000188	            0x39fa	                            cmp edx, edi	       255	evgpe.c	FUNCTION_6	IF_1
+0x400018a	            0x7715	                            ja 0x40001a1	       255	evgpe.c	FUNCTION_6	IF_1
+0x400018c	            0x29d7	                            sub edi, edx	       259	evgpe.c	FUNCTION_6
+0x400018e	         0xfb7563c	           movzx edx, word [rsi + 0x3c] 	       260	evgpe.c	FUNCTION_6	IF_2
+0x4000192	            0x39d7	                            cmp edi, edx	       260	evgpe.c	FUNCTION_6	IF_2
+0x4000194	            0x730b	                           jae 0x40001a1	       260	evgpe.c	FUNCTION_6	IF_2
+0x4000196	        0x486bff18	                     imul rdi, rdi, 0x18	       264	evgpe.c	FUNCTION_6
+0x400019a	          0x4889f8	                            mov rax, rdi	       264	evgpe.c	FUNCTION_6
+0x400019d	        0x48034628	             add rax, qword [rsi + 0x28]	       264	evgpe.c	FUNCTION_6
+0x40001a1	              0xc3	                                     ret	       265	evgpe.c	FUNCTION_6
+acpi_ev_enable_gpe	IF,0:SWITCH,0:DO,0:WHILE,0:CALL,3:functions,0:ELSE,0:FOR,0	2
+0x4000078	            0x31f6	                            xor esi, esi	        86	evgpe.c	FUNCTION_2	CALL_2
+0x400007a	      0xe900000000	                jmp sym.acpi_ev_mask_gpe	        86	evgpe.c	FUNCTION_2	CALL_2
+acpi_ev_asynch_enable_gpe	IF,0:SWITCH,0:DO,0:WHILE,0:CALL,3:functions,0:ELSE,0:FOR,0	13
+0x400020c	              0x55	                                push rbp	       547	evgpe.c	FUNCTION_10
+0x400020d	          0x4889fd	                            mov rbp, rdi	       547	evgpe.c	FUNCTION_10
+0x4000210	    0x488b3d000000	            mov rdi, qword [0x04000217] 	       551	evgpe.c	FUNCTION_10	CALL_1
+0x4000217	              0x53	                                push rbx	       547	evgpe.c	FUNCTION_10
+0x4000218	      0xe800000000	                          call 0x400021d	       551	evgpe.c	FUNCTION_10	CALL_1
+0x400021d	          0x4889ef	                            mov rdi, rbp	       552	evgpe.c	FUNCTION_10	CALL_2
+0x4000220	          0x4889c3	                            mov rbx, rax	       551	evgpe.c	FUNCTION_10	CALL_1
+0x4000223	      0xe800000000	                          call 0x4000228	       552	evgpe.c	FUNCTION_10	CALL_2
+0x4000228	          0x4889de	                            mov rsi, rbx	       553	evgpe.c	FUNCTION_10	CALL_3
+0x400022b	    0x488b3d000000	            mov rdi, qword [0x04000232] 	       553	evgpe.c	FUNCTION_10	CALL_3
+0x4000232	              0x5b	                                 pop rbx	       556	evgpe.c	FUNCTION_10
+0x4000233	              0x5d	                                 pop rbp	       556	evgpe.c	FUNCTION_10
+0x4000234	      0xe900000000	jmp sym.acpi_ev_asynch_execute_gpe_method	       553	evgpe.c	FUNCTION_10	CALL_3
+acpi_ev_gpe_dispatch	IF,5:SWITCH,1:DO,0:WHILE,0:CALL,18:functions,0:ELSE,0:FOR,0	81
+0x400032e	              0x55	                                push rbp	       744	evgpe.c	FUNCTION_13
+0x400032f	              0x53	                                push rbx	       744	evgpe.c	FUNCTION_13
+0x4000330	          0x4889f3	                            mov rbx, rsi	       744	evgpe.c	FUNCTION_13
+0x4000333	              0x51	                                push rcx	       744	evgpe.c	FUNCTION_13
+0x4000334	          0x4889fd	                            mov rbp, rdi	       744	evgpe.c	FUNCTION_13
+0x4000337	      0xbe01000000	                              mov esi, 1	       759	evgpe.c	FUNCTION_13	CALL_2
+0x400033c	          0x4889df	                            mov rdi, rbx	       759	evgpe.c	FUNCTION_13	CALL_2
+0x400033f	        0x89542404	                mov dword [rsp + 4], edx	       744	evgpe.c	FUNCTION_13
+0x4000343	      0xe800000000	                          call 0x4000348	       759	evgpe.c	FUNCTION_13	CALL_2
+0x4000348	            0x85c0	                           test eax, eax	       760	evgpe.c	FUNCTION_13	IF_1	CALL_3
+0x400034a	      0x448b442404	                mov r8d, dword [rsp + 4]	       760	evgpe.c	FUNCTION_13	IF_1	CALL_3
+0x400034f	            0x741c	                            je 0x400036d	       760	evgpe.c	FUNCTION_13	IF_1	CALL_3
+0x4000351	    0x48c7c1000000	                              mov rcx, 0	       761	evgpe.c	FUNCTION_13	IF_1	CALL_4
+0x4000358	            0x89c2	                            mov edx, eax	       761	evgpe.c	FUNCTION_13	IF_1	CALL_4
+0x400035a	      0xbefa020000	                          mov esi, 0x2fa	       761	evgpe.c	FUNCTION_13	IF_1	CALL_4
+0x400035f	    0x48c7c7000000	                              mov rdi, 0	       761	evgpe.c	FUNCTION_13	IF_1	CALL_4
+0x4000366	      0xe800000000	                          call 0x400036b	       761	evgpe.c	FUNCTION_13	IF_1	CALL_4
+0x400036b	            0xeb43	                           jmp 0x40003b0	       761	evgpe.c	FUNCTION_13	IF_1	CALL_4
+0x400036d	        0xf6431008	               test byte [rbx + 0x10], 8	       770	evgpe.c	FUNCTION_13	IF_2
+0x4000371	            0x7544	                           jne 0x40003b7	       770	evgpe.c	FUNCTION_13	IF_2
+0x4000373	          0x4889df	                            mov rdi, rbx	       772	evgpe.c	FUNCTION_13	IF_2	CALL_6
+0x4000376	      0x4489442404	                mov dword [rsp + 4], r8d	       772	evgpe.c	FUNCTION_13	IF_2	CALL_6
+0x400037b	      0xe800000000	                          call 0x4000380	       772	evgpe.c	FUNCTION_13	IF_2	CALL_6
+0x4000380	            0x85c0	                           test eax, eax	       773	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_7
+0x4000382	      0x448b442404	                mov r8d, dword [rsp + 4]	       773	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_7
+0x4000387	            0x742e	                            je 0x40003b7	       773	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_7
+0x4000389	      0xbe08030000	                          mov esi, 0x308	       774	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_8
+0x400038e	    0x48c7c7000000	                              mov rdi, 0	       774	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_8
+0x4000395	    0x48c7c1000000	                              mov rcx, 0	       774	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_8
+0x400039c	            0x89c2	                            mov edx, eax	       774	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_8
+0x400039e	      0xe800000000	                          call 0x40003a3	       774	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_8
+0x40003a3	      0xbe02000000	                              mov esi, 2	       777	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_9
+0x40003a8	          0x4889df	                            mov rdi, rbx	       777	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_9
+0x40003ab	      0xe800000000	                          call 0x40003b0	       777	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_9
+0x40003b0	            0x31c0	                            xor eax, eax	       779	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_10
+0x40003b2	      0xe999000000	                           jmp 0x4000450	       779	evgpe.c	FUNCTION_13	IF_2	IF_3	CALL_10
+0x40003b7	          0x8a4310	               mov al, byte [rbx + 0x10]	       792	evgpe.c	FUNCTION_13	SWITCH_1	CALL_11
+0x40003ba	        0xc6431301	                mov byte [rbx + 0x13], 1	       783	evgpe.c	FUNCTION_13
+0x40003be	          0x83e007	                              and eax, 7	       792	evgpe.c	FUNCTION_13	SWITCH_1	CALL_11
+0x40003c1	            0x3c02	                               cmp al, 2	       792	evgpe.c	FUNCTION_13	SWITCH_1	CALL_11
+0x40003c3	            0x740a	                            je 0x40003cf	       792	evgpe.c	FUNCTION_13	SWITCH_1	CALL_11
+0x40003c5	            0x3c03	                               cmp al, 3	       792	evgpe.c	FUNCTION_13	SWITCH_1	CALL_11
+0x40003c7	            0x7429	                            je 0x40003f2	       792	evgpe.c	FUNCTION_13	SWITCH_1	CALL_11
+0x40003c9	            0xfec8	                                  dec al	       792	evgpe.c	FUNCTION_13	SWITCH_1	CALL_11
+0x40003cb	            0x7563	                           jne 0x4000430	       792	evgpe.c	FUNCTION_13	SWITCH_1	CALL_11
+0x40003cd	            0xeb23	                           jmp 0x40003f2	       792	evgpe.c	FUNCTION_13	SWITCH_1	CALL_11
+0x40003cf	          0x488b03	                    mov rax, qword [rbx]	       798	evgpe.c	FUNCTION_13	SWITCH_1	CALL_12
+0x40003d2	          0x4489c6	                            mov esi, r8d	       797	evgpe.c	FUNCTION_13	SWITCH_1
+0x40003d5	          0x4889ef	                            mov rdi, rbp	       797	evgpe.c	FUNCTION_13	SWITCH_1
+0x40003d8	        0x488b5008	                mov rdx, qword [rax + 8]	       797	evgpe.c	FUNCTION_13	SWITCH_1
+0x40003dc	          0x488b00	                    mov rax, qword [rax]	       797	evgpe.c	FUNCTION_13	SWITCH_1
+0x40003df	      0xe800000000	                          call 0x40003e4	       797	evgpe.c	FUNCTION_13	SWITCH_1
+0x40003e4	            0xa880	                           test al, 0x80	       806	evgpe.c	FUNCTION_13	SWITCH_1	IF_4
+0x40003e6	            0x7463	                            je 0x400044b	       806	evgpe.c	FUNCTION_13	SWITCH_1	IF_4
+0x40003e8	          0x4889df	                            mov rdi, rbx	       807	evgpe.c	FUNCTION_13	SWITCH_1	IF_4	CALL_13
+0x40003eb	      0xe800000000	                          call 0x40003f0	       807	evgpe.c	FUNCTION_13	SWITCH_1	IF_4	CALL_13
+0x40003f0	            0xeb59	                           jmp 0x400044b	       807	evgpe.c	FUNCTION_13	SWITCH_1	IF_4	CALL_13
+0x40003f2	          0x4889da	                            mov rdx, rbx	       817	evgpe.c	FUNCTION_13	SWITCH_1	CALL_14
+0x40003f5	    0x48c7c6000000	                              mov rsi, 0	       817	evgpe.c	FUNCTION_13	SWITCH_1	CALL_14
+0x40003fc	      0xbf02000000	                              mov edi, 2	       817	evgpe.c	FUNCTION_13	SWITCH_1	CALL_14
+0x4000401	      0x4489442404	                mov dword [rsp + 4], r8d	       817	evgpe.c	FUNCTION_13	SWITCH_1	CALL_14
+0x4000406	      0xe800000000	                          call 0x400040b	       817	evgpe.c	FUNCTION_13	SWITCH_1	CALL_14
+0x400040b	            0x85c0	                           test eax, eax	       820	evgpe.c	FUNCTION_13	SWITCH_1	IF_5	CALL_15
+0x400040d	      0x448b442404	                mov r8d, dword [rsp + 4]	       820	evgpe.c	FUNCTION_13	SWITCH_1	IF_5	CALL_15
+0x4000412	            0x7437	                            je 0x400044b	       820	evgpe.c	FUNCTION_13	SWITCH_1	IF_5	CALL_15
+0x4000414	    0x48c7c1000000	                              mov rcx, 0	       821	evgpe.c	FUNCTION_13	SWITCH_1	IF_5	CALL_16
+0x400041b	            0x89c2	                            mov edx, eax	       821	evgpe.c	FUNCTION_13	SWITCH_1	IF_5	CALL_16
+0x400041d	      0xbe37030000	                          mov esi, 0x337	       821	evgpe.c	FUNCTION_13	SWITCH_1	IF_5	CALL_16
+0x4000422	    0x48c7c7000000	                              mov rdi, 0	       821	evgpe.c	FUNCTION_13	SWITCH_1	IF_5	CALL_16
+0x4000429	      0xe800000000	                          call 0x400042e	       821	evgpe.c	FUNCTION_13	SWITCH_1	IF_5	CALL_16
+0x400042e	            0xeb1b	                           jmp 0x400044b	       821	evgpe.c	FUNCTION_13	SWITCH_1	IF_5	CALL_16
+0x4000430	          0x4489c1	                            mov ecx, r8d	       833	evgpe.c	FUNCTION_13	SWITCH_1	CALL_17
+0x4000433	    0x48c7c2000000	                              mov rdx, 0	       833	evgpe.c	FUNCTION_13	SWITCH_1	CALL_17
+0x400043a	      0xbe43030000	                          mov esi, 0x343	       833	evgpe.c	FUNCTION_13	SWITCH_1	CALL_17
+0x400043f	    0x48c7c7000000	                              mov rdi, 0	       833	evgpe.c	FUNCTION_13	SWITCH_1	CALL_17
+0x4000446	      0xe800000000	                          call 0x400044b	       833	evgpe.c	FUNCTION_13	SWITCH_1	CALL_17
+0x400044b	      0xb801000000	                              mov eax, 1	       840	evgpe.c	FUNCTION_13	CALL_18
+0x4000450	              0x5a	                                 pop rdx	       841	evgpe.c	FUNCTION_13
+0x4000451	              0x5b	                                 pop rbx	       841	evgpe.c	FUNCTION_13
+0x4000452	              0x5d	                                 pop rbp	       841	evgpe.c	FUNCTION_13
+0x4000453	              0xc3	                                     ret	       841	evgpe.c	FUNCTION_13
+acpi_ev_mask_gpe	IF,5:SWITCH,0:DO,0:WHILE,0:CALL,10:functions,0:ELSE,1:FOR,0	45
+0x400007f	            0x4155	                                push r13	       105	evgpe.c	FUNCTION_3
+0x4000081	            0x4154	                                push r12	       105	evgpe.c	FUNCTION_3
+0x4000083	              0x55	                                push rbp	       105	evgpe.c	FUNCTION_3
+0x4000084	              0x53	                                push rbx	       105	evgpe.c	FUNCTION_3
+0x4000085	      0xbb06000000	                              mov ebx, 6	       113	evgpe.c	FUNCTION_3	IF_1	CALL_2
+0x400008a	        0x4c8b6f08	                mov r13, qword [rdi + 8]	       111	evgpe.c	FUNCTION_3
+0x400008e	          0x4d85ed	                           test r13, r13	       112	evgpe.c	FUNCTION_3	IF_1
+0x4000091	            0x7465	                            je 0x40000f8	       112	evgpe.c	FUNCTION_3	IF_1
+0x4000093	            0x89f3	                            mov ebx, esi	       112	evgpe.c	FUNCTION_3	IF_1
+0x4000095	          0x4889fd	                            mov rbp, rdi	       112	evgpe.c	FUNCTION_3	IF_1
+0x4000098	      0xe800000000	                          call 0x400009d	       116	evgpe.c	FUNCTION_3	CALL_3
+0x400009d	            0x84db	                             test bl, bl	       120	evgpe.c	FUNCTION_3	IF_2
+0x400009f	          0x4189c4	                           mov r12d, eax	       116	evgpe.c	FUNCTION_3	CALL_3
+0x40000a2	            0x741c	                            je 0x40000c0	       120	evgpe.c	FUNCTION_3	IF_2
+0x40000a4	      0x410fb65d1c	           movzx ebx, byte [r13 + 0x1c] 	       121	evgpe.c	FUNCTION_3	IF_2	IF_3
+0x40000a9	            0x21c3	                            and ebx, eax	       121	evgpe.c	FUNCTION_3	IF_2	IF_3
+0x40000ab	            0x7546	                           jne 0x40000f3	       121	evgpe.c	FUNCTION_3	IF_2	IF_3
+0x40000ad	      0xbe01000000	                              mov esi, 1	       125	evgpe.c	FUNCTION_3	IF_2	CALL_5
+0x40000b2	          0x4889ef	                            mov rdi, rbp	       125	evgpe.c	FUNCTION_3	IF_2	CALL_5
+0x40000b5	      0xe800000000	                          call 0x40000ba	       125	evgpe.c	FUNCTION_3	IF_2	CALL_5
+0x40000ba	        0x4508651c	              or byte [r13 + 0x1c], r12b	       126	evgpe.c	FUNCTION_3	IF_2	CALL_6
+0x40000be	            0xeb38	                           jmp 0x40000f8	       126	evgpe.c	FUNCTION_3	IF_2	CALL_6
+0x40000c0	      0x410fb6551c	           movzx edx, byte [r13 + 0x1c] 	       128	evgpe.c	FUNCTION_3	ELSE_1	IF_4
+0x40000c5	      0xbb01100000	                         mov ebx, 0x1001	       122	evgpe.c	FUNCTION_3	IF_2	IF_3	CALL_4
+0x40000ca	          0x4485e2	                          test edx, r12d	       128	evgpe.c	FUNCTION_3	ELSE_1	IF_4
+0x40000cd	            0x7429	                            je 0x40000f8	       128	evgpe.c	FUNCTION_3	ELSE_1	IF_4
+0x40000cf	          0x41f7d4	                                not r12d	       132	evgpe.c	FUNCTION_3	ELSE_1	CALL_8
+0x40000d2	            0x31db	                            xor ebx, ebx	       141	evgpe.c	FUNCTION_3	CALL_10
+0x40000d4	          0x4121d4	                           and r12d, edx	       132	evgpe.c	FUNCTION_3	ELSE_1	CALL_8
+0x40000d7	        0x4588651c	             mov byte [r13 + 0x1c], r12b	       132	evgpe.c	FUNCTION_3	ELSE_1	CALL_8
+0x40000db	        0x807d1200	                cmp byte [rbp + 0x12], 0	       134	evgpe.c	FUNCTION_3	ELSE_1	IF_5
+0x40000df	            0x7417	                            je 0x40000f8	       134	evgpe.c	FUNCTION_3	ELSE_1	IF_5
+0x40000e1	        0x807d1300	                cmp byte [rbp + 0x13], 0	       135	evgpe.c	FUNCTION_3	ELSE_1	IF_5
+0x40000e5	            0x7511	                           jne 0x40000f8	       135	evgpe.c	FUNCTION_3	ELSE_1	IF_5
+0x40000e7	            0x31f6	                            xor esi, esi	       136	evgpe.c	FUNCTION_3	ELSE_1	IF_5	CALL_9
+0x40000e9	          0x4889ef	                            mov rdi, rbp	       136	evgpe.c	FUNCTION_3	ELSE_1	IF_5	CALL_9
+0x40000ec	      0xe800000000	                          call 0x40000f1	       136	evgpe.c	FUNCTION_3	ELSE_1	IF_5	CALL_9
+0x40000f1	            0xeb05	                           jmp 0x40000f8	       136	evgpe.c	FUNCTION_3	ELSE_1	IF_5	CALL_9
+0x40000f3	      0xbb01100000	                         mov ebx, 0x1001	       122	evgpe.c	FUNCTION_3	IF_2	IF_3	CALL_4
+0x40000f8	            0x89d8	                            mov eax, ebx	       142	evgpe.c	FUNCTION_3
+0x40000fa	              0x5b	                                 pop rbx	       142	evgpe.c	FUNCTION_3
+0x40000fb	              0x5d	                                 pop rbp	       142	evgpe.c	FUNCTION_3
+0x40000fc	            0x415c	                                 pop r12	       142	evgpe.c	FUNCTION_3
+0x40000fe	            0x415d	                                 pop r13	       142	evgpe.c	FUNCTION_3
+0x4000100	              0xc3	                                     ret	       142	evgpe.c	FUNCTION_3
+acpi_ev_detect_gpe	IF,7:SWITCH,0:DO,0:WHILE,0:CALL,16:functions,0:ELSE,1:FOR,0	97
+0x4000454	            0x4157	                                push r15	       622	evgpe.c	FUNCTION_12
+0x4000456	            0x4156	                                push r14	       622	evgpe.c	FUNCTION_12
+0x4000458	            0x4155	                                push r13	       622	evgpe.c	FUNCTION_12
+0x400045a	            0x4154	                                push r12	       622	evgpe.c	FUNCTION_12
+0x400045c	          0x4189d4	                           mov r12d, edx	       622	evgpe.c	FUNCTION_12
+0x400045f	              0x55	                                push rbp	       622	evgpe.c	FUNCTION_12
+0x4000460	              0x53	                                push rbx	       622	evgpe.c	FUNCTION_12
+0x4000461	          0x4889fd	                            mov rbp, rdi	       622	evgpe.c	FUNCTION_12
+0x4000464	          0x4889f3	                            mov rbx, rsi	       622	evgpe.c	FUNCTION_12
+0x4000467	        0x4883ec20	                           sub rsp, 0x20	       622	evgpe.c	FUNCTION_12
+0x400046b	    0x488b3d000000	            mov rdi, qword [0x04000472] 	       635	evgpe.c	FUNCTION_12	CALL_2
+0x4000472	    0x65488b042528	                mov rax, qword gs:[0x28]	       622	evgpe.c	FUNCTION_12
+0x400047b	      0x4889442418	             mov qword [rsp + 0x18], rax	       622	evgpe.c	FUNCTION_12
+0x4000480	            0x31c0	                            xor eax, eax	       622	evgpe.c	FUNCTION_12
+0x4000482	      0xe800000000	                          call 0x4000487	       635	evgpe.c	FUNCTION_12	CALL_2
+0x4000487	          0x4885db	                           test rbx, rbx	       637	evgpe.c	FUNCTION_12	IF_1
+0x400048a	          0x4989c5	                            mov r13, rax	       635	evgpe.c	FUNCTION_12	CALL_2
+0x400048d	            0x751a	                           jne 0x40004a9	       637	evgpe.c	FUNCTION_12	IF_1
+0x400048f	          0x4489e6	                           mov esi, r12d	       638	evgpe.c	FUNCTION_12	IF_1	CALL_3
+0x4000492	          0x4889ef	                            mov rdi, rbp	       638	evgpe.c	FUNCTION_12	IF_1	CALL_3
+0x4000495	          0x4531ff	                          xor r15d, r15d	       623	evgpe.c	FUNCTION_12
+0x4000498	      0xe800000000	                          call 0x400049d	       638	evgpe.c	FUNCTION_12	IF_1	CALL_3
+0x400049d	          0x4885c0	                           test rax, rax	       639	evgpe.c	FUNCTION_12	IF_1	IF_2
+0x40004a0	          0x4889c3	                            mov rbx, rax	       638	evgpe.c	FUNCTION_12	IF_1	CALL_3
+0x40004a3	     0xf84d5000000	                            je 0x400057e	       639	evgpe.c	FUNCTION_12	IF_1	IF_2
+0x40004a9	        0x4c8b7308	                mov r14, qword [rbx + 8]	       645	evgpe.c	FUNCTION_12
+0x40004ad	          0x4889df	                            mov rdi, rbx	       649	evgpe.c	FUNCTION_12	CALL_4
+0x40004b0	          0x4531ff	                          xor r15d, r15d	       623	evgpe.c	FUNCTION_12
+0x40004b3	      0xe800000000	                          call 0x40004b8	       649	evgpe.c	FUNCTION_12	CALL_4
+0x40004b8	      0x488d7c2410	                   lea rdi, [rsp + 0x10]	       653	evgpe.c	FUNCTION_12	CALL_5
+0x40004bd	          0x890424	                    mov dword [rsp], eax	       649	evgpe.c	FUNCTION_12	CALL_4
+0x40004c0	        0x498d760c	                    lea rsi, [r14 + 0xc]	       653	evgpe.c	FUNCTION_12	CALL_5
+0x40004c4	      0xe800000000	                          call 0x40004c9	       653	evgpe.c	FUNCTION_12	CALL_5
+0x40004c9	            0x85c0	                           test eax, eax	       654	evgpe.c	FUNCTION_12	IF_3	CALL_6
+0x40004cb	     0xf85ad000000	                           jne 0x400057e	       654	evgpe.c	FUNCTION_12	IF_3	CALL_6
+0x40004d1	      0x488d7c2408	                      lea rdi, [rsp + 8]	       660	evgpe.c	FUNCTION_12	CALL_7
+0x40004d6	          0x4c89f6	                            mov rsi, r14	       660	evgpe.c	FUNCTION_12	CALL_7
+0x40004d9	        0x89442404	                mov dword [rsp + 4], eax	       660	evgpe.c	FUNCTION_12	CALL_7
+0x40004dd	      0xe800000000	                          call 0x40004e2	       660	evgpe.c	FUNCTION_12	CALL_7
+0x40004e2	        0x8b4c2404	                mov ecx, dword [rsp + 4]	       623	evgpe.c	FUNCTION_12
+0x40004e6	            0x85c0	                           test eax, eax	       661	evgpe.c	FUNCTION_12	IF_4	CALL_8
+0x40004e8	          0x4189cf	                           mov r15d, ecx	       623	evgpe.c	FUNCTION_12
+0x40004eb	     0xf858d000000	                           jne 0x400057e	       661	evgpe.c	FUNCTION_12	IF_4	CALL_8
+0x40004f1	      0x488b4c2410	            mov rcx, qword [rsp + 0x10] 	       677	evgpe.c	FUNCTION_12	IF_5
+0x40004f6	        0x234c2408	                and ecx, dword [rsp + 8]	       677	evgpe.c	FUNCTION_12	IF_5
+0x40004fa	          0x4189c7	                           mov r15d, eax	       623	evgpe.c	FUNCTION_12
+0x40004fd	           0xfb6c9	                           movzx ecx, cl	       677	evgpe.c	FUNCTION_12	IF_5
+0x4000500	          0x850c24	                   test dword [rsp], ecx	       677	evgpe.c	FUNCTION_12	IF_5
+0x4000503	            0x7479	                            je 0x400057e	       677	evgpe.c	FUNCTION_12	IF_5
+0x4000505	    0x488b05000000	            mov rax, qword [0x0400050c] 	       684	evgpe.c	FUNCTION_12	IF_6
+0x400050c	    0xff0500000000	                  inc dword [0x04000512]	       683	evgpe.c	FUNCTION_12
+0x4000512	          0x4885c0	                           test rax, rax	       684	evgpe.c	FUNCTION_12	IF_6
+0x4000515	            0x7414	                            je 0x400052b	       684	evgpe.c	FUNCTION_12	IF_6
+0x4000517	    0x488b0d000000	            mov rcx, qword [0x0400051e] 	       685	evgpe.c	FUNCTION_12	IF_6	CALL_10
+0x400051e	          0x4489e2	                           mov edx, r12d	       685	evgpe.c	FUNCTION_12	IF_6	CALL_10
+0x4000521	          0x4889ee	                            mov rsi, rbp	       685	evgpe.c	FUNCTION_12	IF_6	CALL_10
+0x4000524	            0x31ff	                            xor edi, edi	       685	evgpe.c	FUNCTION_12	IF_6	CALL_10
+0x4000526	      0xe800000000	                          call 0x400052b	       685	evgpe.c	FUNCTION_12	IF_6	CALL_10
+0x400052b	          0x8a4310	               mov al, byte [rbx + 0x10]	       692	evgpe.c	FUNCTION_12	IF_7	CALL_11
+0x400052e	          0x83e007	                              and eax, 7	       692	evgpe.c	FUNCTION_12	IF_7	CALL_11
+0x4000531	            0x3c04	                               cmp al, 4	       692	evgpe.c	FUNCTION_12	IF_7	CALL_11
+0x4000533	            0x7538	                           jne 0x400056d	       692	evgpe.c	FUNCTION_12	IF_7	CALL_11
+0x4000535	          0x488b1b	                    mov rbx, qword [rbx]	       697	evgpe.c	FUNCTION_12	IF_7
+0x4000538	    0x488b3d000000	            mov rdi, qword [0x0400053f] 	       709	evgpe.c	FUNCTION_12	IF_7	CALL_12
+0x400053f	          0x4c89ee	                            mov rsi, r13	       709	evgpe.c	FUNCTION_12	IF_7	CALL_12
+0x4000542	      0xe800000000	                          call 0x4000547	       709	evgpe.c	FUNCTION_12	IF_7	CALL_12
+0x4000547	        0x488b5308	                mov rdx, qword [rbx + 8]	       711	evgpe.c	FUNCTION_12	IF_7	CALL_13
+0x400054b	          0x4489e6	                           mov esi, r12d	       711	evgpe.c	FUNCTION_12	IF_7	CALL_13
+0x400054e	          0x4889ef	                            mov rdi, rbp	       711	evgpe.c	FUNCTION_12	IF_7	CALL_13
+0x4000551	          0x488b03	                    mov rax, qword [rbx]	       711	evgpe.c	FUNCTION_12	IF_7	CALL_13
+0x4000554	      0xe800000000	                          call 0x4000559	       711	evgpe.c	FUNCTION_12	IF_7	CALL_13
+0x4000559	    0x488b3d000000	            mov rdi, qword [0x04000560] 	       713	evgpe.c	FUNCTION_12	IF_7	CALL_14
+0x4000560	          0x4189c7	                           mov r15d, eax	       711	evgpe.c	FUNCTION_12	IF_7	CALL_13
+0x4000563	      0xe800000000	                          call 0x4000568	       713	evgpe.c	FUNCTION_12	IF_7	CALL_14
+0x4000568	          0x4989c5	                            mov r13, rax	       713	evgpe.c	FUNCTION_12	IF_7	CALL_14
+0x400056b	            0xeb11	                           jmp 0x400057e	       713	evgpe.c	FUNCTION_12	IF_7	CALL_14
+0x400056d	          0x4489e2	                           mov edx, r12d	       717	evgpe.c	FUNCTION_12	ELSE_1	CALL_15
+0x4000570	          0x4889de	                            mov rsi, rbx	       717	evgpe.c	FUNCTION_12	ELSE_1	CALL_15
+0x4000573	          0x4889ef	                            mov rdi, rbp	       717	evgpe.c	FUNCTION_12	ELSE_1	CALL_15
+0x4000576	      0xe800000000	                          call 0x400057b	       717	evgpe.c	FUNCTION_12	ELSE_1	CALL_15
+0x400057b	          0x4189c7	                           mov r15d, eax	       717	evgpe.c	FUNCTION_12	ELSE_1	CALL_15
+0x400057e	    0x488b3d000000	            mov rdi, qword [0x04000585] 	       722	evgpe.c	FUNCTION_12	CALL_16
+0x4000585	          0x4c89ee	                            mov rsi, r13	       722	evgpe.c	FUNCTION_12	CALL_16
+0x4000588	      0xe800000000	                          call 0x400058d	       722	evgpe.c	FUNCTION_12	CALL_16
+0x400058d	      0x488b542418	            mov rdx, qword [rsp + 0x18] 	       724	evgpe.c	FUNCTION_12
+0x4000592	    0x654833142528	                xor rdx, qword gs:[0x28]	       724	evgpe.c	FUNCTION_12
+0x400059b	          0x4489f8	                           mov eax, r15d	       724	evgpe.c	FUNCTION_12
+0x400059e	            0x7405	                            je 0x40005a5	       724	evgpe.c	FUNCTION_12
+0x40005a0	      0xe800000000	                          call 0x40005a5	       724	evgpe.c	FUNCTION_12
+0x40005a5	        0x4883c420	                           add rsp, 0x20	       724	evgpe.c	FUNCTION_12
+0x40005a9	              0x5b	                                 pop rbx	       724	evgpe.c	FUNCTION_12
+0x40005aa	              0x5d	                                 pop rbp	       724	evgpe.c	FUNCTION_12
+0x40005ab	            0x415c	                                 pop r12	       724	evgpe.c	FUNCTION_12
+0x40005ad	            0x415d	                                 pop r13	       724	evgpe.c	FUNCTION_12
+0x40005af	            0x415e	                                 pop r14	       724	evgpe.c	FUNCTION_12
+0x40005b1	            0x415f	                                 pop r15	       724	evgpe.c	FUNCTION_12
+0x40005b3	              0xc3	                                     ret	       724	evgpe.c	FUNCTION_12
+acpi_ev_remove_gpe_reference	IF,4:SWITCH,0:DO,0:WHILE,0:CALL,7:functions,0:ELSE,0:FOR,0	25
+0x400013d	          0x8a5712	               mov dl, byte [rdi + 0x12]	       206	evgpe.c	FUNCTION_5	IF_1
+0x4000140	      0xb810000000	                           mov eax, 0x10	       207	evgpe.c	FUNCTION_5	IF_1	CALL_2
+0x4000145	            0x84d2	                             test dl, dl	       206	evgpe.c	FUNCTION_5	IF_1
+0x4000147	            0x7430	                            je 0x4000179	       206	evgpe.c	FUNCTION_5	IF_1
+0x4000149	          0x8d42ff	                      lea eax, [rdx - 1]	       210	evgpe.c	FUNCTION_5
+0x400014c	            0x84c0	                             test al, al	       211	evgpe.c	FUNCTION_5	IF_2
+0x400014e	          0x884712	               mov byte [rdi + 0x12], al	       210	evgpe.c	FUNCTION_5
+0x4000151	            0x7527	                           jne 0x400017a	       211	evgpe.c	FUNCTION_5	IF_2
+0x4000153	              0x53	                                push rbx	       201	evgpe.c	FUNCTION_5
+0x4000154	          0x4889fb	                            mov rbx, rdi	       201	evgpe.c	FUNCTION_5
+0x4000157	      0xe800000000	                          call 0x400015c	       215	evgpe.c	FUNCTION_5	IF_2	CALL_3
+0x400015c	            0x85c0	                           test eax, eax	       216	evgpe.c	FUNCTION_5	IF_2	IF_3	CALL_4
+0x400015e	            0x7515	                           jne 0x4000175	       216	evgpe.c	FUNCTION_5	IF_2	IF_3	CALL_4
+0x4000160	      0xbe01000000	                              mov esi, 1	       217	evgpe.c	FUNCTION_5	IF_2	IF_3
+0x4000165	          0x4889df	                            mov rdi, rbx	       217	evgpe.c	FUNCTION_5	IF_2	IF_3
+0x4000168	      0xe800000000	                          call 0x400016d	       217	evgpe.c	FUNCTION_5	IF_2	IF_3
+0x400016d	            0x85c0	                           test eax, eax	       222	evgpe.c	FUNCTION_5	IF_2	IF_4	CALL_6
+0x400016f	            0x7504	                           jne 0x4000175	       222	evgpe.c	FUNCTION_5	IF_2	IF_4	CALL_6
+0x4000171	            0x31c0	                            xor eax, eax	       202	evgpe.c	FUNCTION_5
+0x4000173	            0xeb03	                           jmp 0x4000178	       202	evgpe.c	FUNCTION_5
+0x4000175	          0xfe4312	                   inc byte [rbx + 0x12]	       223	evgpe.c	FUNCTION_5	IF_2	IF_4
+0x4000178	              0x5b	                                 pop rbx	       228	evgpe.c	FUNCTION_5
+0x4000179	              0xc3	                                     ret	       228	evgpe.c	FUNCTION_5
+0x400017a	            0x31c0	                            xor eax, eax	       202	evgpe.c	FUNCTION_5
+0x400017c	              0xc3	                                     ret	       228	evgpe.c	FUNCTION_5
+acpi_ev_update_gpe_enable_mask	IF,2:SWITCH,0:DO,0:WHILE,0:CALL,6:functions,0:ELSE,0:FOR,0	22
+0x4000040	              0x55	                                push rbp	        38	evgpe.c	FUNCTION_1
+0x4000041	              0x53	                                push rbx	        38	evgpe.c	FUNCTION_1
+0x4000042	      0xb806000000	                              mov eax, 6	        38	evgpe.c	FUNCTION_1
+0x4000047	        0x488b5f08	                mov rbx, qword [rdi + 8]	        44	evgpe.c	FUNCTION_1
+0x400004b	          0x4885db	                           test rbx, rbx	        45	evgpe.c	FUNCTION_1	IF_1
+0x400004e	            0x7425	                            je 0x4000075	        45	evgpe.c	FUNCTION_1	IF_1
+0x4000050	          0x4889fd	                            mov rbp, rdi	        45	evgpe.c	FUNCTION_1	IF_1
+0x4000053	      0xe800000000	                          call 0x4000058	        49	evgpe.c	FUNCTION_1	CALL_3
+0x4000058	            0x88c2	                              mov dl, al	        53	evgpe.c	FUNCTION_1	CALL_4
+0x400005a	            0xf7d2	                                 not edx	        53	evgpe.c	FUNCTION_1	CALL_4
+0x400005c	          0x22531b	               and dl, byte [rbx + 0x1b]	        53	evgpe.c	FUNCTION_1	CALL_4
+0x400005f	          0x88531b	               mov byte [rbx + 0x1b], dl	        53	evgpe.c	FUNCTION_1	CALL_4
+0x4000062	        0x807d1200	                cmp byte [rbp + 0x12], 0	        57	evgpe.c	FUNCTION_1	IF_2
+0x4000066	            0x7405	                            je 0x400006d	        57	evgpe.c	FUNCTION_1	IF_2
+0x4000068	             0x9d0	                             or eax, edx	        58	evgpe.c	FUNCTION_1	IF_2	CALL_5
+0x400006a	          0x88431b	               mov byte [rbx + 0x1b], al	        58	evgpe.c	FUNCTION_1	IF_2	CALL_5
+0x400006d	          0x8a431b	               mov al, byte [rbx + 0x1b]	        62	evgpe.c	FUNCTION_1
+0x4000070	          0x88431d	               mov byte [rbx + 0x1d], al	        62	evgpe.c	FUNCTION_1
+0x4000073	            0x31c0	                            xor eax, eax	        63	evgpe.c	FUNCTION_1	CALL_6
+0x4000075	              0x5b	                                 pop rbx	        64	evgpe.c	FUNCTION_1
+0x4000076	              0x5d	                                 pop rbp	        64	evgpe.c	FUNCTION_1
+0x4000077	              0xc3	                                     ret	        64	evgpe.c	FUNCTION_1
+acpi_ev_add_gpe_reference	IF,4:SWITCH,0:DO,0:WHILE,0:CALL,7:functions,0:ELSE,0:FOR,0	24
+0x4000101	          0x8a5712	               mov dl, byte [rdi + 0x12]	       164	evgpe.c	FUNCTION_4	IF_1
+0x4000104	      0xb810000000	                           mov eax, 0x10	       165	evgpe.c	FUNCTION_4	IF_1	CALL_2
+0x4000109	          0x80faff	                            cmp dl, 0xff	       164	evgpe.c	FUNCTION_4	IF_1
+0x400010c	            0x742b	                            je 0x4000139	       164	evgpe.c	FUNCTION_4	IF_1
+0x400010e	          0x8d4201	                      lea eax, [rdx + 1]	       168	evgpe.c	FUNCTION_4
+0x4000111	          0x884712	               mov byte [rdi + 0x12], al	       168	evgpe.c	FUNCTION_4
+0x4000114	            0xfec8	                                  dec al	       169	evgpe.c	FUNCTION_4	IF_2
+0x4000116	            0x7522	                           jne 0x400013a	       169	evgpe.c	FUNCTION_4	IF_2
+0x4000118	              0x53	                                push rbx	       159	evgpe.c	FUNCTION_4
+0x4000119	          0x4889fb	                            mov rbx, rdi	       159	evgpe.c	FUNCTION_4
+0x400011c	      0xe800000000	                          call 0x4000121	       173	evgpe.c	FUNCTION_4	IF_2	CALL_3
+0x4000121	            0x85c0	                           test eax, eax	       174	evgpe.c	FUNCTION_4	IF_2	IF_3	CALL_4
+0x4000123	            0x7510	                           jne 0x4000135	       174	evgpe.c	FUNCTION_4	IF_2	IF_3	CALL_4
+0x4000125	          0x4889df	                            mov rdi, rbx	       175	evgpe.c	FUNCTION_4	IF_2	IF_3	CALL_5
+0x4000128	      0xe800000000	                          call 0x400012d	       175	evgpe.c	FUNCTION_4	IF_2	IF_3	CALL_5
+0x400012d	            0x85c0	                           test eax, eax	       178	evgpe.c	FUNCTION_4	IF_2	IF_4	CALL_6
+0x400012f	            0x7504	                           jne 0x4000135	       178	evgpe.c	FUNCTION_4	IF_2	IF_4	CALL_6
+0x4000131	            0x31c0	                            xor eax, eax	       160	evgpe.c	FUNCTION_4
+0x4000133	            0xeb03	                           jmp 0x4000138	       160	evgpe.c	FUNCTION_4
+0x4000135	          0xfe4b12	                   dec byte [rbx + 0x12]	       179	evgpe.c	FUNCTION_4	IF_2	IF_4
+0x4000138	              0x5b	                                 pop rbx	       184	evgpe.c	FUNCTION_4
+0x4000139	              0xc3	                                     ret	       184	evgpe.c	FUNCTION_4
+0x400013a	            0x31c0	                            xor eax, eax	       160	evgpe.c	FUNCTION_4
+0x400013c	              0xc3	                                     ret	       184	evgpe.c	FUNCTION_4
+acpi_ev_gpe_detect	IF,2:SWITCH,0:DO,0:WHILE,1:CALL,7:functions,0:ELSE,0:FOR,2	64
+0x40005b4	            0x4157	                                push r15	       342	evgpe.c	FUNCTION_8
+0x40005b6	            0x4156	                                push r14	       342	evgpe.c	FUNCTION_8
+0x40005b8	            0x4155	                                push r13	       342	evgpe.c	FUNCTION_8
+0x40005ba	            0x4154	                                push r12	       342	evgpe.c	FUNCTION_8
+0x40005bc	          0x4531e4	                          xor r12d, r12d	       358	evgpe.c	FUNCTION_8	IF_1
+0x40005bf	              0x55	                                push rbp	       342	evgpe.c	FUNCTION_8
+0x40005c0	              0x53	                                push rbx	       342	evgpe.c	FUNCTION_8
+0x40005c1	        0x4883ec18	                           sub rsp, 0x18	       342	evgpe.c	FUNCTION_8
+0x40005c5	          0x4885ff	                           test rdi, rdi	       357	evgpe.c	FUNCTION_8	IF_1
+0x40005c8	     0xf84b5000000	                            je 0x4000683	       357	evgpe.c	FUNCTION_8	IF_1
+0x40005ce	          0x4889fb	                            mov rbx, rdi	       357	evgpe.c	FUNCTION_8	IF_1
+0x40005d1	    0x488b3d000000	            mov rdi, qword [0x040005d8] 	       366	evgpe.c	FUNCTION_8	CALL_2
+0x40005d8	      0xe800000000	                          call 0x40005dd	       366	evgpe.c	FUNCTION_8	CALL_2
+0x40005dd	        0x488b5b10	            mov rbx, qword [rbx + 0x10] 	       426	evgpe.c	FUNCTION_8	WHILE_1
+0x40005e1	          0x4885db	                           test rbx, rbx	       371	evgpe.c	FUNCTION_8	WHILE_1
+0x40005e4	     0xf848a000000	                            je 0x4000674	       371	evgpe.c	FUNCTION_8	WHILE_1
+0x40005ea	          0x488b0b	                    mov rcx, qword [rbx]	       372	evgpe.c	FUNCTION_8	WHILE_1
+0x40005ed	          0x4531ff	                          xor r15d, r15d	       378	evgpe.c	FUNCTION_8	WHILE_1	FOR_1
+0x40005f0	        0x48890c24	                    mov qword [rsp], rcx	       372	evgpe.c	FUNCTION_8	WHILE_1
+0x40005f4	        0x443b7b38	           cmp r15d, dword [rbx + 0x38] 	       378	evgpe.c	FUNCTION_8	WHILE_1	FOR_1
+0x40005f8	            0x73e3	                           jae 0x40005dd	       378	evgpe.c	FUNCTION_8	WHILE_1	FOR_1
+0x40005fa	          0x4489fd	                           mov ebp, r15d	       382	evgpe.c	FUNCTION_8	WHILE_1	FOR_1
+0x40005fd	        0x486bcd1e	                     imul rcx, rbp, 0x1e	       382	evgpe.c	FUNCTION_8	WHILE_1	FOR_1
+0x4000601	        0x48034b20	             add rcx, qword [rbx + 0x20]	       382	evgpe.c	FUNCTION_8	WHILE_1	FOR_1
+0x4000605	          0x8a511b	               mov dl, byte [rcx + 0x1b]	       388	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	IF_2
+0x4000608	           0xa511a	                or dl, byte [rcx + 0x1a]	       388	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	IF_2
+0x400060b	          0x4989ce	                            mov r14, rcx	       382	evgpe.c	FUNCTION_8	WHILE_1	FOR_1
+0x400060e	            0x745f	                            je 0x400066f	       388	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	IF_2
+0x4000610	    0x4869edc00000	                     imul rbp, rbp, 0xc0	       388	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	IF_2
+0x4000617	          0x4531ed	                          xor r13d, r13d	       388	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	IF_2
+0x400061a	          0x4889ee	                            mov rsi, rbp	       411	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2
+0x400061d	      0x410fb75618	           movzx edx, word [r14 + 0x18] 	       415	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2
+0x4000622	        0x48037328	             add rsi, qword [rbx + 0x28]	       411	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2
+0x4000626	    0x488b3d000000	            mov rdi, qword [0x0400062d] 	       417	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2	CALL_4
+0x400062d	        0x4883c518	                           add rbp, 0x18	       417	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2	CALL_4
+0x4000631	          0x4401ea	                           add edx, r13d	       415	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2
+0x4000634	      0x4889742408	                mov qword [rsp + 8], rsi	       411	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2
+0x4000639	          0x4889c6	                            mov rsi, rax	       417	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2	CALL_4
+0x400063c	        0x89542414	             mov dword [rsp + 0x14], edx	       415	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2
+0x4000640	          0x41ffc5	                                inc r13d	       407	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2
+0x4000643	      0xe800000000	                          call 0x4000648	       417	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2	CALL_4
+0x4000648	        0x8b542414	            mov edx, dword [rsp + 0x14] 	       419	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2	CALL_5
+0x400064c	      0x488b742408	                mov rsi, qword [rsp + 8]	       419	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2	CALL_5
+0x4000651	        0x488b3c24	                    mov rdi, qword [rsp]	       419	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2	CALL_5
+0x4000655	      0xe800000000	                          call 0x400065a	       419	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2	CALL_5
+0x400065a	    0x488b3d000000	            mov rdi, qword [0x04000661] 	       422	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2	CALL_6
+0x4000661	          0x4109c4	                            or r12d, eax	       418	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2
+0x4000664	      0xe800000000	                          call 0x4000669	       422	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2	CALL_6
+0x4000669	        0x4183fd08	                             cmp r13d, 8	       407	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2
+0x400066d	            0x75ab	                           jne 0x400061a	       407	evgpe.c	FUNCTION_8	WHILE_1	FOR_1	FOR_2
+0x400066f	          0x41ffc7	                                inc r15d	       378	evgpe.c	FUNCTION_8	WHILE_1	FOR_1
+0x4000672	            0xeb80	                           jmp 0x40005f4	       378	evgpe.c	FUNCTION_8	WHILE_1	FOR_1
+0x4000674	    0x488b3d000000	            mov rdi, qword [0x0400067b] 	       429	evgpe.c	FUNCTION_8	CALL_7
+0x400067b	          0x4889c6	                            mov rsi, rax	       429	evgpe.c	FUNCTION_8	CALL_7
+0x400067e	      0xe800000000	                          call 0x4000683	       429	evgpe.c	FUNCTION_8	CALL_7
+0x4000683	        0x4883c418	                           add rsp, 0x18	       431	evgpe.c	FUNCTION_8
+0x4000687	          0x4489e0	                           mov eax, r12d	       431	evgpe.c	FUNCTION_8
+0x400068a	              0x5b	                                 pop rbx	       431	evgpe.c	FUNCTION_8
+0x400068b	              0x5d	                                 pop rbp	       431	evgpe.c	FUNCTION_8
+0x400068c	            0x415c	                                 pop r12	       431	evgpe.c	FUNCTION_8
+0x400068e	            0x415d	                                 pop r13	       431	evgpe.c	FUNCTION_8
+0x4000690	            0x415e	                                 pop r14	       431	evgpe.c	FUNCTION_8
+0x4000692	            0x415f	                                 pop r15	       431	evgpe.c	FUNCTION_8
+0x4000694	              0xc3	                                     ret	       431	evgpe.c	FUNCTION_8
+acpi_ev_finish_gpe	IF,2:SWITCH,0:DO,0:WHILE,0:CALL,3:functions,0:ELSE,0:FOR,0	15
+0x40001e2	              0x53	                                push rbx	       573	evgpe.c	FUNCTION_11
+0x40001e3	        0xf6471008	               test byte [rdi + 0x10], 8	       576	evgpe.c	FUNCTION_11	IF_1
+0x40001e7	          0x4889fb	                            mov rbx, rdi	       573	evgpe.c	FUNCTION_11
+0x40001ea	            0x7515	                           jne 0x4000201	       576	evgpe.c	FUNCTION_11	IF_1
+0x40001ec	      0xbe02000000	                              mov esi, 2	       593	evgpe.c	FUNCTION_11	CALL_3
+0x40001f1	          0x4889df	                            mov rdi, rbx	       593	evgpe.c	FUNCTION_11	CALL_3
+0x40001f4	      0xe800000000	                          call 0x40001f9	       593	evgpe.c	FUNCTION_11	CALL_3
+0x40001f9	        0xc6431300	                mov byte [rbx + 0x13], 0	       594	evgpe.c	FUNCTION_11
+0x40001fd	            0x31c0	                            xor eax, eax	       595	evgpe.c	FUNCTION_11
+0x40001ff	            0xeb09	                           jmp 0x400020a	       595	evgpe.c	FUNCTION_11
+0x4000201	      0xe800000000	                          call 0x4000206	       582	evgpe.c	FUNCTION_11	IF_1	CALL_1
+0x4000206	            0x85c0	                           test eax, eax	       583	evgpe.c	FUNCTION_11	IF_1	IF_2	CALL_2
+0x4000208	            0x74e2	                            je 0x40001ec	       583	evgpe.c	FUNCTION_11	IF_1	IF_2	CALL_2
+0x400020a	              0x5b	                                 pop rbx	       596	evgpe.c	FUNCTION_11
+0x400020b	              0xc3	                                     ret	       596	evgpe.c	FUNCTION_11
