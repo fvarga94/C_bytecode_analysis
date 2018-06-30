@@ -45,19 +45,15 @@ def process_file(filename, address_start, address_end, offset):
         number_f=len(ndict.keys())
         new_output = []
         function_length={}
+        alf_list = decode_file_line (dwarfinfo, ndict,address_end)
+        print ("End")
         function_counter=-1
         for func_name in ndict:
             function_counter+=1
             output=[]
-            min_a,max_a = address_end,0
-            addresses=[]
             output.append([func_name])
-            for address in ndict[func_name]:
-                addresses.append(address)
-            print ("Processing func_name: ",func_name," i= ",function_counter," of: ", number_f)
-            alf_list = decode_file_line (dwarfinfo, addresses)
-            print ("End")
-            for address, line, file_name in alf_list:
+            min_a,max_a = address_end,0
+            for address, line, file_name in alf_list[func_name]:
                 if file_name == None:
                     continue
                 #print('Function:', bytes2str(funcname))
@@ -67,7 +63,7 @@ def process_file(filename, address_start, address_end, offset):
                     min_a=address
                 output.append([address, bytes2str(file_name), str(line)])
             print (func_name,hex(min_a),hex(max_a))
-            sys.stderr.write("Proccessing: "+str(function_counter+1)+" / "+str(number_f)+"\n")
+            #sys.stderr.write("Proccessing: "+str(function_counter+1)+" / "+str(number_f)+"\n")
             fo, base_address = r2script.disassemble( hex(min_a), 1 - min_a + max_a, filename)
             i=0
             if fo==None:
@@ -145,40 +141,55 @@ def decode_funcname(dwarfinfo, address_start, address_end):
     return func_l
 
 
-def decode_file_line(dwarfinfo, addresses):
+def decode_file_line(dwarfinfo,ndict,address_end):
     # Go over all the line programs in the DWARF information, looking for
     # one that describes the given address.
 
-    dfl=[] #decode file listdwarfinfo.iter_CUs()
+    dfl=dict() #decode file listdwarfinfo.iter_CUs()
+    ends=dict()
     i=-1
     #count=0
     #count_flag=len(addresses)
+    cnt=-1
+    for CU in dwarfinfo.iter_CUs():
+        cnt+=1
+    sys.stderr.write("CUs:"+str(cnt+1)+"\n")
     for CU in dwarfinfo.iter_CUs():
         i+=1
         # First, look at line programs to find the file/line for the address
         #print ("----",hex(addresses[-1]))
         lineprog = dwarfinfo.line_program_for_CU(CU)
-        for address in addresses:
-            i+=1
-            prevstate = None
-            for entry in lineprog.get_entries():
-                # We're interested in those entries where a new state is assigned
-                if entry.state is None:
-                    continue
-                #print ("entry ...",hex(entry.state.address))
-                # Looking for a range of addresses in two consecutive states that
-                # contain the required address.
-                if prevstate and prevstate.address <= address < entry.state.address:
-                    filename = lineprog['file_entry'][prevstate.file - 1].name
-                    line = prevstate.line
-                    #print (hex(address))
-                    dfl.append((address, line, filename))
-                    #print (filename)
-                    #count+=1
-                prevstate = entry.state
-            #if count==count_flag:
-            #    break
-        print ("i: ",i)
+        function_length={}
+        function_counter=-1
+        fc=len(ndict.keys())
+        for func_name in ndict:
+            dfl[func_name]=[]
+            function_counter+=1
+            addresses=[]
+            for address in ndict[func_name]:
+                addresses.append(address)
+            #print ("Processing func_name: ",func_name," i= ",function_counter," of: ", number_f)
+            for address in addresses:
+                prevstate = None
+                for entry in lineprog.get_entries():
+                    # We're interested in those entries where a new state is assigned
+                    if entry.state is None:
+                        continue
+                    #print ("entry ...",hex(entry.state.address))
+                    # Looking for a range of addresses in two consecutive states that
+                    # contain the required address.
+                    if prevstate and prevstate.address <= address < entry.state.address:
+                        filename = lineprog['file_entry'][prevstate.file - 1].name
+                        line = prevstate.line
+                        #print (hex(address))
+                        dfl[func_name].append((address, line, filename))
+                        #print (filename)
+                        #count+=1
+                    prevstate = entry.state
+                #if count==count_flag:
+                #    break
+            sys.stderr.write("In CU:"+str(i+1)+"func: "+str(function_counter)+"/"+str(fc)+"\n")
+        sys.stderr.write("CU: "+str(i+1)+"/"+str(cnt+1)+"\n")
     return dfl
 
 
